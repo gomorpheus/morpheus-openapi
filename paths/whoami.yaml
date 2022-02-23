@@ -1,0 +1,19 @@
+get:
+  summary: Retrieves information about current user roles and permissions
+  operationId: whoami
+  description: |-
+    Provides API to retrieve information about yourself, including your roles and permissions.
+
+    The appliance build version is also returned.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#whoami
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/200-user.yaml'
+  tags:
+    - Authentication
+    - Users

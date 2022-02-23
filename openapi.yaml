@@ -1,4 +1,3 @@
-//openapi.yaml
 openapi: 3.0.1
 info:
   title: Morpheus API
@@ -16,10 +15,26 @@ servers:
         default: ""
 
 paths:
-  $ref: "./paths/_index.yaml"
+  /api/dashboard:
+    $ref: "./paths/dashboard.yaml"
+
+  /api/forgot/reset-password:
+    $ref: "./paths/resetPassword.yaml"
+
+  /api/forgot/send-email:
+    $ref: "./paths/forgotPassword.yaml"
+
+  /api/ping:
+    $ref: "./paths/ping.yaml"
+
+  /api/whoami:
+    $ref: "./paths/whoami.yaml"
+
+  /oauth/token:
+    $ref: "./paths/getAccessToken.yaml"
 
 components:
-  paramters:
+  parameters:
     $ref: "./parameters/_index.yaml"
 
   schemas:
@@ -33,6 +48,9 @@ components:
       description: Populate a bearer token for the Morpheus appliance you are testing
       type: http
       scheme: bearer
+
+security:
+  - bearerAuth: []
 
 externalDocs:
   url: https://docs.morpheusdata.com
@@ -118,6 +136,3 @@ tags:
   - name: Virtual Images
   - name: Whitelabel Settings
   - name: Wiki
-
-security:
-  - bearerAuth: []
