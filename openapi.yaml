@@ -1,0 +1,123 @@
+//openapi.yaml
+openapi: 3.0.1
+info:
+  title: Morpheus API
+  description: |-
+    Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
+
+    This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
+  version: 5.4.4
+  termsOfService: https://morpheusdata.com/terms-and-conditions/
+
+servers:
+  - url: https://{serverFQDN}
+    variables:
+      serverFQDN:
+        default: ""
+
+paths:
+  $ref: "./paths/_index.yaml"
+
+components:
+  paramters:
+    $ref: "./parameters/_index.yaml"
+
+  schemas:
+    $ref: "./schemas/_index.yaml"
+
+  responses:
+    $ref: "./responses/_index.yaml"
+
+  securitySchemes:
+    bearerAuth:
+      description: Populate a bearer token for the Morpheus appliance you are testing
+      type: http
+      scheme: bearer
+
+externalDocs:
+  url: https://docs.morpheusdata.com
+
+tags:
+  - name: Activity
+  - name: Administration
+  - name: Alerts
+  - name: Appliance Settings
+  - name: Approvals
+  - name: Apps
+  - name: Archives
+  - name: Authentication
+  - name: Automation
+  - name: Backup Settings
+  - name: Billing
+  - name: Blueprints
+  - name: Budgets
+  - name: Checks
+  - name: Clouds
+  - name: Cluster Layouts
+  - name: Clusters
+  - name: Contacts
+  - name: Cypher
+  - name: Dashboard
+  - name: Deployments
+  - name: Deploys
+  - name: Environments
+  - name: File Templates
+  - name: Groups
+  - name: Guidance
+  - name: Health
+  - name: History
+  - name: Identity Sources
+  - name: Image Builds
+  - name: Incidents
+  - name: Infrastructure
+  - name: Inputs
+  - name: Instance Types
+  - name: Instances
+  - name: Integrations
+  - name: Invoices
+  - name: Jobs
+  - name: Key Pairs
+  - name: Layouts
+  - name: Library
+  - name: License
+  - name: Load Balancers
+  - name: Log Settings
+  - name: Logs
+  - name: Monitoring
+  - name: Networks
+  - name: Node Types
+  - name: Option Lists
+  - name: Options
+  - name: Personas
+  - name: Policies
+  - name: Price Sets
+  - name: Prices
+  - name: Projects
+  - name: Provisioning
+  - name: Provisioning Settings
+  - name: Provisioning Licenses
+  - name: Reports
+  - name: Roles
+  - name: Scripts
+  - name: Search
+  - name: Security Groups
+  - name: Self Service
+  - name: Servers
+  - name: Service Catalog
+  - name: Service Plans
+  - name: Setup
+  - name: Spec Templates
+  - name: SSL Certificates
+  - name: Storage
+  - name: Tenants
+  - name: Tools
+  - name: Usage
+  - name: Users
+  - name: VDI Pools
+  - name: Virtual Desktop
+  - name: Virtual Images
+  - name: Whitelabel Settings
+  - name: Wiki
+
+security:
+  - bearerAuth: []
