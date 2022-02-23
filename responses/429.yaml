@@ -1,0 +1,8 @@
+429:
+  description: Too Many Requests Response
+  content:
+    text/plain:
+      schema:
+        title: Too Many Requests
+        type: string
+        example: Too Many Requests – You’re asking too much of the server. Slow down!

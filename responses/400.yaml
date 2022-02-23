@@ -1,0 +1,8 @@
+400:
+  description: Bad Request Response
+  content:
+    text/plain:
+      schema:
+        title: Bad Request
+        type: string
+        example: Bad Request – Your request failed. Check your request parameters and try again.

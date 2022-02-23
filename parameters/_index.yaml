@@ -1,1 +1,30 @@
 //parameters/_index.yaml
+accountName:
+  $ref: "./accountName.yaml"
+
+applianceUrl:
+  $ref: "./applianceUrl.yaml"
+
+applianceName:
+  $ref: "./applianceName.yaml"
+
+backups:
+  $ref: "./backups.yaml"
+
+email:
+  $ref: "./email.yaml"
+
+firstName:
+  $ref: "./firstName.yaml"
+
+id:
+  $ref: "./id.yaml"
+
+lastName:
+  $ref: "./lastName.yaml"
+
+password:
+  $ref: "./password.yaml"
+
+username:
+  $ref: "./username.yaml"

@@ -1,1 +1,9 @@
 //schemas/_index.yaml
+200-accessToken:
+  $ref: "./200-accessToken.yaml"
+
+200-ping:
+  $ref: "./200-ping.yaml"
+
+200-user:
+  $ref: "./200-user.yaml"

@@ -1,0 +1,8 @@
+405:
+  description: Method Not Allowed Response
+  content:
+    text/plain:
+      schema:
+        title: Method Not Allowed
+        type: string
+        example: Method Not Allowed – You tried to access a resource with an invalid method.

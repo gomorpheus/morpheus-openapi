@@ -1,0 +1,8 @@
+404:
+  description: Not Found Response
+  content:
+    text/plain:
+      schema:
+        title: Object Not Found
+        type: string
+        example: Not Found – The specified resource could not be found.

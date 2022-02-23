@@ -1,1 +1,36 @@
 //responses/_index.yaml
+200:
+  $ref: "./200.yaml"
+
+400:
+  $ref: "./400.yaml"
+
+401:
+  $ref: "./401.yaml"
+
+403:
+  $ref: "./403.yaml"
+
+404:
+  $ref: "./404.yaml"
+
+405:
+  $ref: "./405.yaml"
+
+406:
+  $ref: "./406.yaml"
+
+410:
+  $ref: "./410.yaml"
+
+418:
+  $ref: "./418.yaml"
+
+429:
+  $ref: "./429.yaml"
+
+500:
+  $ref: "./500.yaml"
+
+503:
+  $ref: "./503.yaml"

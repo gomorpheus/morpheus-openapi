@@ -1,0 +1,8 @@
+500:
+  description: Internal Server Error Response
+  content:
+    text/plain:
+      schema:
+        title: Internal Server Error
+        type: string
+        example: Internal Server Error – We had a problem with our server. Try again later.

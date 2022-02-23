@@ -1,0 +1,7 @@
+email:
+  name: email
+  in: query
+  description: E-Mail Address
+  example: jsmith@morpheusdata.com
+  schema:
+    type: string

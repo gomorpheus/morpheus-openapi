@@ -1,0 +1,8 @@
+406:
+  description: Not Acceptable Response
+  content:
+    text/plain:
+      schema:
+        title: Not Acceptable
+        type: string
+        example: Not Acceptable – You requested a format that isn’t json.

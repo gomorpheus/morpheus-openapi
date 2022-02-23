@@ -1,0 +1,8 @@
+401:
+  description: Unauthorized Response
+  content:
+    text/plain:
+      schema:
+        title: Unauthorized
+        type: string
+        example: Unauthorized to Perform this Action. Check your Authorization Header.

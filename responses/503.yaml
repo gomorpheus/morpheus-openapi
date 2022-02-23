@@ -1,0 +1,8 @@
+503:
+  description: Service Unavailable Response
+  content:
+    text/plain:
+      schema:
+        title: Service Unavailable
+        type: string
+        example: Service Unavailable – We’re temporarily offline for maintanance. Please try again later.
