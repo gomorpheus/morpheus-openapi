@@ -1,7 +1,6 @@
-username:
-  name: username
-  in: query
-  description: Username
-  example: jsmith
-  schema:
-    type: string
+name: username
+in: query
+description: Username
+example: jsmith
+schema:
+  type: string

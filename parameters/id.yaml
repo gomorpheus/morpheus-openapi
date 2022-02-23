@@ -1,7 +1,6 @@
-id:
-  name: id
-  in: query
-  description: Morpheus ID of the Object being created or referenced
-  example: 3
-  schema:
-    type: string
+name: id
+in: query
+description: Morpheus ID of the Object being created or referenced
+example: 3
+schema:
+  type: string

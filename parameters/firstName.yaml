@@ -1,7 +1,6 @@
-firstName:
-  name: firstName
-  in: query
-  description: First Name
-  example: John
-  schema:
-    type: string
+name: firstName
+in: query
+description: First Name
+example: John
+schema:
+  type: string
