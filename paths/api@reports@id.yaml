@@ -7,6 +7,13 @@ get:
     url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-reports.yaml
   tags:
     - Reports
 delete:

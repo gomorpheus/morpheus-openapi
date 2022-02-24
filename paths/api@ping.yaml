@@ -4,5 +4,12 @@ get:
     This endpoint can be used to check the remote appliance build version and some other basic information.
 
     This is an unsecured endpoint and does not require authorization. However, build version will not be returned unless you are authenticated with a valid access token.
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-ping.yaml
   tags:
     - Health

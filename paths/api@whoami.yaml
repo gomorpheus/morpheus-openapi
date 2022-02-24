@@ -7,6 +7,13 @@ get:
     The appliance build version is also returned.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#whoami
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schema/200-user.yaml
   tags:
     - Authentication
     - Users

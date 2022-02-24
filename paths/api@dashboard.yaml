@@ -5,5 +5,12 @@ get:
     This endpoint can be used to view dashboard information about the remote Morpheus appliance. This is an overview and summary of data available to the user that can be used to render a dashboard.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#dashboard
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-dashboard.yaml
   tags:
     - Dashboard

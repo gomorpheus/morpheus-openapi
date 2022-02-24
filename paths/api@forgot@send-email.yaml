@@ -25,7 +25,7 @@ post:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#reset-password
   responses:
-    200:
+    '200':
       description: Successful Request
       content:
         application/json:

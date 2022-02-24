@@ -19,7 +19,7 @@ get:
         type: string
     - $ref: ../components/parameters/category.yaml
   responses:
-    200:
+    '200':
       description: Successful Request
       content:
         application/json:
@@ -61,7 +61,7 @@ post:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#run-a-report
   responses:
-    200:
+    '200':
       description: Successful Request
       content:
         application/json:
