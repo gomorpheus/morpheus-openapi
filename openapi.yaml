@@ -39,6 +39,9 @@ paths:
   /api/reports/download/{id}{format}:
     $ref: "./paths/api-reports-download-id.yaml"
 
+  /api/search:
+    $ref: "./paths/api-search.yaml"
+
   /api/whoami:
     $ref: "./paths/api-whoami.yaml"
 

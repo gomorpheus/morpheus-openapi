@@ -1,8 +1,5 @@
-410:
-  description: Object Removed Response
-  content:
-    text/plain:
-      schema:
-        title: Object Removed
-        type: string
-        example: Gone – The entity requested has been removed.
+description: Gone – The entity requested has been removed.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/410'

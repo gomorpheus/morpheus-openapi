@@ -4,12 +4,38 @@ get:
     This endpoint provides global search for all types of objects, with the results sorted in order of relevance.
 
     The `phrase` parameter can be specified as part of the URL or as a query parameter. If phrase is not specified, then 0 results (hits) will be returned.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#search
+  parameters:
+    - $ref: '../parameters/max.yaml'
+    - $ref: '../parameters/offset.yaml'
+    - $ref: '../parameters/phrase.yaml'
+    - $ref: '../parameters/query.yaml'
   responses:
     '200':
-      description: Successful Request
-      content:
-        application/json:
-          schema:
-            $ref: '../schemas/200-ping.yaml'
+      $ref: "#/components/responses/200"
+    '400':
+      $ref: "#/components/responses/400"
+    '401':
+      $ref: "#/components/responses/401"
+    '403':
+      $ref: "#/components/responses/403"
+    '404':
+      $ref: "#/components/responses/404"
+    '405':
+      $ref: "#/components/responses/405"
+    '406':
+      $ref: "#/components/responses/406"
+    '410':
+      $ref: "#/components/responses/410"
+    '418':
+      $ref: "#/components/responses/418"
+    '429':
+      $ref: "#/components/responses/429"
+    '500':
+      $ref: "#/components/responses/500"
+    '503':
+      $ref: "#/components/responses/503"
+
   tags:
-    - Health
+    - Search

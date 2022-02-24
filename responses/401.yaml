@@ -1,8 +1,5 @@
-401:
-  description: Unauthorized Response
-  content:
-    text/plain:
-      schema:
-        title: Unauthorized
-        type: string
-        example: Unauthorized to Perform this Action. Check your Authorization Header.
+description: Unauthorized to Perform this Action. Check your Authorization Header.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/401'

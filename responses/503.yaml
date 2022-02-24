@@ -1,8 +1,5 @@
-503:
-  description: Service Unavailable Response
-  content:
-    text/plain:
-      schema:
-        title: Service Unavailable
-        type: string
-        example: Service Unavailable – We’re temporarily offline for maintanance. Please try again later.
+description: Service Unavailable – We’re temporarily offline for maintanance. Please try again later.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/503'

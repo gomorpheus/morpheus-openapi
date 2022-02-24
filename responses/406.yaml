@@ -1,8 +1,5 @@
-406:
-  description: Not Acceptable Response
-  content:
-    text/plain:
-      schema:
-        title: Not Acceptable
-        type: string
-        example: Not Acceptable – You requested a format that isn’t json.
+description: Not Acceptable – You requested a format that isn’t json.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/406'

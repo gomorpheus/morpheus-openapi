@@ -1,8 +1,5 @@
-403:
-  description: Forbidden Response
-  content:
-    text/plain:
-      schema:
-        title: Forbidden
-        type: string
-        example: Forbidden – Your API key does not have the required role or permissions.
+description: Forbidden – Your API key does not have the required role or permissions.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/403'

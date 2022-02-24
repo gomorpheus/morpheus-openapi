@@ -1,8 +1,5 @@
-500:
-  description: Internal Server Error Response
-  content:
-    text/plain:
-      schema:
-        title: Internal Server Error
-        type: string
-        example: Internal Server Error – We had a problem with our server. Try again later.
+description: Internal Server Error – We had a problem with our server. Try again later.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/500'

@@ -1,8 +1,5 @@
-400:
-  description: Bad Request Response
-  content:
-    text/plain:
-      schema:
-        title: Bad Request
-        type: string
-        example: Bad Request – Your request failed. Check your request parameters and try again.
+description: Bad Request – Your request failed. Check your request parameters and try again.
+content:
+  application/json:
+    schema:
+      $ref: '#/components/schemas/400'
