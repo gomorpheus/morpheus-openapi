@@ -6,21 +6,21 @@ get:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
-    - $ref: '#/components/parameters/max'
-    - $ref: '#/components/parameters/offset'
-    - $ref: '#/components/parameters/sort'
-    - $ref: '#/components/parameters/direction'
-    - $ref: '#/components/parameters/phrase'
-    - $ref: '#/components/parameters/name'
+    - $ref: components/parameters/max.yaml
+    - $ref: components/parameters/offset.yaml
+    - $ref: components/parameters/sort.yaml
+    - $ref: components/parameters/direction.yaml
+    - $ref: components/parameters/phrase.yaml
+    - $ref: components/parameters/name.yaml
     - name: reportType
       in: query
       description: If specified will return an exact match on report type code, accepts multiple values
       schema:
         type: string
-    - $ref: '#/components/parameters/category'
+    - $ref: components/parameters/category.yaml
   responses:
     200:
-      $ref: "#/components/responses/200"
+      $ref: components/responses/200.yaml
   tags:
     - Reports
 post:

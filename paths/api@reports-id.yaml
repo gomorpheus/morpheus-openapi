@@ -6,7 +6,7 @@ get:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
-    - $ref: '#/components/parameters/id-path'
+    - $ref: components/parameters/id-path.yaml
   tags:
     - Reports
 delete:
@@ -17,6 +17,6 @@ delete:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#delete-a-report
   parameters:
-    - $ref: '#/components/parameters/id-path'
+    - $ref: components/parameters/id-path.yaml
   tags:
     - Reports

@@ -2,4 +2,4 @@ description: Service Unavailable. We're temporarily offline for maintanance. Ple
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/400-error'
+      $ref: components/schemas/503-error.yaml

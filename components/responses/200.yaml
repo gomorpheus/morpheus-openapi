@@ -1,0 +1,13 @@
+description: Successful Request
+content:
+  application/json:
+    schema:
+      oneOf:
+        - $ref: components/schemas/200-accessToken.yaml
+        - $ref: components/schemas/200-dashboard.yaml
+        - $ref: components/schemas/200-ping.yaml
+        - $ref: components/schemas/200-reports.yaml
+        - $ref: components/schemas/200-reportTypes.yaml
+        - $ref: components/schemas/200-search.yaml
+        - $ref: components/schemas/200-success.yaml
+        - $ref: components/schemas/200-user.yaml

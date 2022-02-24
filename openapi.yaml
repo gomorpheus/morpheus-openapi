@@ -7,69 +7,44 @@ info:
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
   version: 5.4.4
   termsOfService: https://morpheusdata.com/terms-and-conditions/
-
 servers:
   - url: https://{serverFQDN}
     variables:
       serverFQDN:
         default: ""
-
 paths:
   /api/dashboard:
-    $ref: "./paths/api-dashboard.yaml"
-
+    $ref: paths/api@dashboard.yaml
   /api/forgot/reset-password:
-    $ref: "./paths/api-forgot-reset-password.yaml"
-
+    $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:
-    $ref: "./paths/api-forgot-send-email.yaml"
-
+    $ref: paths/api@forgot@send-email.yaml
   /api/ping:
-    $ref: "./paths/api-ping.yaml"
-
+    $ref: paths/api@ping.yaml
   /api/report-types:
-    $ref: "./paths/api-report-types.yaml"
-
+    $ref: paths/api@report@types.yaml
   /api/reports:
-    $ref: "./paths/api-reports.yaml"
-
+    $ref: paths/api@reports.yaml
   /api/reports/{id-path}:
-    $ref: "./paths/api-reports-id.yaml"
-
+    $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
-    $ref: "./paths/api-reports-download-id.yaml"
-
+    $ref: paths/api@reports@download@id.yaml
   /api/search:
-    $ref: "./paths/api-search.yaml"
-
+    $ref: paths/api@search.yaml
   /api/whoami:
-    $ref: "./paths/api-whoami.yaml"
-
+    $ref: paths/api@whoami.yaml
   /oauth/token:
-    $ref: "./paths/oauth-token.yaml"
-
+    $ref: paths/oauth@token.yaml
 components:
-  parameters:
-    $ref: "./parameters/_index.yaml"
-
-  schemas:
-    $ref: "./schemas/_index.yaml"
-
-  responses:
-    $ref: "./responses/_index.yaml"
-
   securitySchemes:
     bearerAuth:
       description: Populate a bearer token for the Morpheus appliance you are testing
       type: http
       scheme: bearer
-
 security:
   - bearerAuth: []
-
 externalDocs:
   url: https://docs.morpheusdata.com
-
 tags:
   - name: Activity
   - name: Alerts

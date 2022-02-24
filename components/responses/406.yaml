@@ -2,4 +2,4 @@ description: Not Acceptable. You requested a format that is not json.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/400-error'
+      $ref: components/schemas/406-error.yaml

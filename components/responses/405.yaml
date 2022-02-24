@@ -2,4 +2,4 @@ description: Method Not Allowed. You tried to access a resource with an invalid 
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/400-error'
+      $ref: components/schemas/405-error.yaml

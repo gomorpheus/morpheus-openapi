@@ -45,12 +45,10 @@ post:
             username:
               description: Specified as "username" or "tenantId\username" with proper HTML encoding and used in conjunction with `password`. Not utilized with `refresh_token`.
               type: string
-              example: jsmith
             password:
               description: The Password for defined `username`. Must have proper HTML encoding
               type: string
               format: password
-              example: P@ssw0rd!
             refresh_token:
               description: The `refresh_token` value from a previous API generation can be utilized instead of `username` and `password`.
   externalDocs:

@@ -2,4 +2,4 @@ description: Forbidden. Your API key does not have the required role or permissi
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/400-error'
+      $ref: components/schemas/403-error.yaml
