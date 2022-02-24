@@ -1,0 +1,59 @@
+title: 200 Wiki Create Page
+type: object
+properties: 
+  page: 
+    type: object
+    properties: 
+      id: 
+        type: number
+        example: 934
+      name: 
+        type: string
+        example: Sample Doc
+      urlName: 
+        type: string
+        example: info/sample-doc
+      category: 
+        type: string
+        example: info
+      refId: 
+        type: string
+        format: nullable
+      refType: 
+        type: string
+        format: nullable
+      format: 
+        type: string
+        example: markdown
+      content: 
+        type: string
+        example: #Sample Doc
+          A sample document in **markdown**.
+      createdBy: 
+        type: object
+        properties: 
+          id: 
+            type: number
+            example: 1
+          username: 
+            type: string
+            example: Admin
+      updatedBy: 
+        type: object
+        properties: 
+          id: 
+            type: number
+            example: 1
+          username: 
+            type: string
+            example: Admin
+      dateCreated: 
+        type: string
+        format: date-time
+        example: 2022-02-24T21:34:20Z
+      lastUpdated: 
+        type: string
+        format: date-time
+        example: 2022-02-24T21:34:20Z
+  success: 
+    type: boolean

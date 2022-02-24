@@ -1,0 +1,14 @@
+title: 200 Wiki Categories
+type: object
+properties:
+  categories: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        name: 
+          type: string
+          example: apps
+        pageCount: 
+          type: number
+          example: 1

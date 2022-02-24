@@ -1,0 +1,54 @@
+title: 200 Wiki Page
+type: object
+properties: 
+  page: 
+    type: object
+    properties: 
+      id: 
+        type: number
+        example: 1
+      name: 
+        type: string
+        example: Home
+      urlName: 
+        type: string
+        example: home
+      category: 
+        type: string
+        format: nullable
+      refId: 
+        type: string
+        format: nullable
+      refType: 
+        type: string
+        format: nullable
+      format: 
+        type: string
+        example: markdown
+      content: 
+        type: string
+        example: The home page for this wiki.
+      createdBy: 
+        type: object
+        properties: 
+          id: 
+            type: number
+            example: 1
+          username: 
+            type: string
+            example: admin
+      updatedBy: 
+        type: object
+        properties: 
+          id: 
+            type: number
+            example: 1
+          username: 
+            type: string
+            example: admin
+      dateCreated: 
+        type: string
+        example: 2019-06-27T16:55:59+0000
+      lastUpdated: 
+        type: string
+        example: 2019-06-27T16:55:59+0000

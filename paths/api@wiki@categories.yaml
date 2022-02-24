@@ -1,0 +1,19 @@
+get:
+  summary: Retrieves all Wiki categories associated with the account
+  operationId: getWikiCategories
+  description: |-
+    This endpoint retrieves all Wiki categories associated with the account. The results are not paginated. The categories returned are those of the found pages.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-all-wiki-categories
+  parameters:
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/pagePhrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-wikiCategories.yaml
+  tags:
+    - Wiki
