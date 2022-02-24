@@ -66,6 +66,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-reports.yaml
+            $ref: ../components/schemas/200-user.yaml
   tags:
     - Reports
