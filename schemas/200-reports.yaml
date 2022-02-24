@@ -1,0 +1,58 @@
+title: 200 Reports
+type: object
+properties:
+  reportResults:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: number
+        type:
+          type: object
+          properties:
+            id:
+              type: number
+            code:
+              type: string
+            name:
+              type: string
+        reportTitle:
+          type: string
+        filterTitle:
+          type: string
+        status:
+          type: string
+        dateCreated:
+          type: string
+        lastUpdated:
+          type: string
+        startDate:
+          type: object
+          properties:
+        endDate:
+          type: object
+          properties:
+        config:
+          type: object
+          properties:
+            type:
+              type: string
+        createdBy:
+          type: object
+          properties:
+            id:
+              type: number
+            username:
+              type: string
+  meta:
+    type: object
+    properties:
+      size:
+        type: number
+      total:
+        type: number
+      offset:
+        type: number
+      max:
+        type: number

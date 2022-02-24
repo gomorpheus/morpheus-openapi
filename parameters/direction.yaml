@@ -1,0 +1,6 @@
+name: direction
+in: query
+description: Sort direction, use 'desc' to reverse sort
+default: asc
+schema:
+  type: string

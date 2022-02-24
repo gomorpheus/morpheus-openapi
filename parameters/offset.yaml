@@ -1,0 +1,6 @@
+name: offset
+in: query
+description: Offset of records you want to load
+default: 0
+schema:
+  type: number

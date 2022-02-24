@@ -10,6 +10,15 @@ applianceName:
 backups:
   $ref: "./backups.yaml"
 
+category:
+  $ref: "./category.yaml"
+
+code:
+  $ref: "./code.yaml"
+
+direction:
+  $ref: "./direction.yaml"
+
 email:
   $ref: "./email.yaml"
 
@@ -19,11 +28,29 @@ firstName:
 id:
   $ref: "./id.yaml"
 
+id-path:
+  $ref: "./id-path.yaml"
+
 lastName:
   $ref: "./lastName.yaml"
 
+max:
+  $ref: "./max.yaml"
+
+name:
+  $ref: "./name.yaml"
+
+offset:
+  $ref: "./offset.yaml"
+
 password:
   $ref: "./password.yaml"
+
+phrase:
+  $ref: "./phrase.yaml"
+
+sort:
+  $ref: "./sort.yaml"
 
 username:
   $ref: "./username.yaml"

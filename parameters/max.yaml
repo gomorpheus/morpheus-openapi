@@ -1,0 +1,6 @@
+name: max
+in: query
+description: Maximum number of returned objects
+default: 25
+schema:
+  type: number

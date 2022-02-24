@@ -1,5 +1,5 @@
 name: id
-in: query
+in: path
 description: Morpheus ID of the Object being created or referenced
 schema:
   type: number

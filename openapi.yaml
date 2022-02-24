@@ -27,6 +27,15 @@ paths:
   /api/ping:
     $ref: "./paths/ping.yaml"
 
+  /api/report-types:
+    $ref: "./paths/getAllReportTypes.yaml"
+
+  /api/reports:
+    $ref: "./paths/getAllReports.yaml"
+
+  /api/reports/{id}:
+    $ref: "./paths/getSpecificReport.yaml"
+
   /api/whoami:
     $ref: "./paths/whoami.yaml"
 

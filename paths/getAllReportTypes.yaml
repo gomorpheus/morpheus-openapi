@@ -1,0 +1,24 @@
+get:
+  summary: This endpoint retrieves all available report types
+  description: |-
+    This endpoint retrieves all available report types. A report type has optionTypes that define the parameters available when executing a report of that type. The sample response has been abbreviated.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-all-report-types
+  parameters:
+    - $ref: '../parameters/max.yaml'
+    - $ref: '../parameters/offset.yaml'
+    - $ref: '../parameters/sort.yaml'
+    - $ref: '../parameters/direction.yaml'
+    - $ref: '../parameters/phrase.yaml'
+    - $ref: '../parameters/name.yaml'
+    - $ref: '../parameters/code.yaml'
+    - $ref: '../parameters/category.yaml'
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/200-reportTypes.yaml'
+  tags:
+    - Reports

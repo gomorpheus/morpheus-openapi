@@ -1,10 +1,9 @@
-200-ping:
-  title: 200-ping
-  type: object
-  properties:
-    success:
-      type: boolean
-      example: true
-    buildVersion:
-      type: string
-      example: 5.4.4
+title: 200 Ping
+type: object
+properties:
+  success:
+    type: boolean
+    example: true
+  buildVersion:
+    type: string
+    example: 5.4.4
