@@ -1,7 +1,7 @@
 get:
   summary: This endpoint returns a specific report result
   operationId: getSpecificReport
-  description: |-
+  description: |
     This endpoint retrieves a specific report result. The response includes the result data as rows which can be used to render the report. Each report type will have sections for data and headers that vary by type, use Download a Specific Report to get the results organized by section.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
@@ -19,11 +19,18 @@ get:
 delete:
   summary: This endpoint will delete a report result
   operationId: deleteSpecificReport
-  description: |-
+  description: |
     This endpoint will delete a report result.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#delete-a-report
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
   tags:
     - Reports

@@ -1,7 +1,7 @@
 get:
   summary: Retrieves wiki a specific Wiki page
   operationId: getWikiSpecificPage
-  description: |-
+  description: |
     This endpoint retrieves a specific wiki page.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-a-specific-wiki-page
@@ -16,10 +16,10 @@ get:
             $ref: ../components/schemas/200-wikiSpecificPage.yaml
   tags:
     - Wiki
-post:
+put:
   summary: Update a Wiki Page
   operationId: updateWikiPage
-  description: |-
+  description: |
     Updates a Wiki Page
   parameters:
     - $ref: ../components/parameters/id-path.yaml
@@ -30,15 +30,14 @@ post:
         schema:
           type: object
           properties:
-            name: 
-              description: A unique name scoped to your account for the wiki page.
-              type: string
-            category:
-              description: Optional category for grouping with other pages.
-              type: string
-            content:
-              description: The content of the page (markdown).
-              type: string
+            page: 
+              type: object
+              properties: 
+                content:
+                  type: string
+                  example: #Sample Doc
+                    An updated sample document in **markdown**.
+                    Cheers!
   externalDocs:
     url: https://apidocs.morpheusdata.com/#update-a-wiki-page
   responses:

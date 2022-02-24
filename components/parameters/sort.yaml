@@ -1,6 +1,6 @@
 name: sort
 in: query
 description: Sort order
-default: name
 schema:
   type: string
+  default: name

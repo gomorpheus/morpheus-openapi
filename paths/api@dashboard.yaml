@@ -1,7 +1,7 @@
 get:
   summary: Overview of Dashboard information
   operationId: getDashboard
-  description: |-
+  description: |
     This endpoint can be used to view dashboard information about the remote Morpheus appliance. This is an overview and summary of data available to the user that can be used to render a dashboard.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#dashboard

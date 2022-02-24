@@ -7,48 +7,64 @@ properties:
       type: object
       properties: 
         id: 
-          type: integer
-          format: int32
-          example: 21
+          type: number
+          example: 95
         code: 
           type: string
-          example: appCost
+          example: amazonReservationCoverage
         name: 
           type: string
-          example: Application Cost
+          example: Amazon Reservation Coverage
+        description: 
+          type: string
+          example: View how Amazon EC2 instance types are covered by Reserved Instances.
         category: 
           type: string
           example: cost
+        visible: 
+          type: boolean
+        masterOnly: 
+          type: boolean
+        ownerOnly: 
+          type: boolean
+        supportsAllZoneTypes: 
+          type: boolean
+        isPlugin: 
+          type: string
+          format: nullable
         dateCreated: 
           type: string
-          example: 2018-05-02T07:44:46+0000
+          format: date-time
+          example: 2020-09-02T19:35:18Z
         optionTypes: 
           type: array
           items: 
             type: object
             properties: 
               id: 
-                type: integer
-                format: int32
-                example: 1073
+                type: number
+                example: 2748
               name: 
                 type: string
                 example: endDate
-              code: 
-                type: string
-                example: reportType.endDate
               description: 
                 type: string
                 format: nullable
+              code: 
+                type: string
+                example: reportType.endDate
               fieldName: 
                 type: string
                 example: endDate
               fieldLabel: 
                 type: string
                 example: End Date
+              fieldCode: 
+                type: string
+                example: gomorpheus.optiontype.EndDate
               fieldContext: 
                 type: string
-                example: report
+                example: config
               fieldGroup: 
                 type: string
                 format: nullable
@@ -61,16 +77,31 @@ properties:
               fieldComponent: 
                 type: string
                 format: nullable
+              fieldInput: 
+                type: string
+                format: nullable
               placeHolder: 
+                type: string
+                format: nullable
+              verifyPattern: 
                 type: string
                 format: nullable
               helpBlock: 
                 type: string
                 example: 
+              helpBlockFieldCode: 
+                type: string
+                format: nullable
               defaultValue: 
                 type: string
                 format: nullable
               optionSource: 
+                type: string
+                format: nullable
+              optionSourceType: 
+                type: string
+                format: nullable
+              optionList: 
                 type: string
                 format: nullable
               type: 
@@ -80,17 +111,17 @@ properties:
                 type: boolean
               required: 
                 type: boolean
+              exportMeta: 
+                type: boolean
               editable: 
                 type: boolean
               creatable: 
-                type: string
-                format: nullable
+                type: boolean
               config: 
                 type: object
                 properties:  
               displayOrder: 
-                type: integer
-                format: int32
+                type: number
                 example: 2
               wrapperClass: 
                 type: string
@@ -102,24 +133,49 @@ properties:
               dependsOnCode: 
                 type: string
                 format: nullable
+              visibleOnCode: 
+                type: string
+                format: nullable
+              requireOnCode: 
+                type: string
+                format: nullable
               contextualDefault: 
                 type: boolean
+              displayValueOnDetails: 
+                type: string
+                format: nullable
+              showOnCreate: 
+                type: string
+                format: nullable
+              showOnEdit: 
+                type: string
+                format: nullable
+        supportedZoneTypes: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              id: 
+                type: number
+                example: 31
+              code: 
+                type: string
+                example: amazon
+              name: 
+                type: string
+                example: Amazon
   meta: 
     type: object
     properties: 
       size: 
-        type: integer
-        format: int32
-        example: 18
+        type: number
+        example: 25
       total: 
-        type: integer
-        format: int32
-        example: 18
+        type: number
+        example: 30
       offset: 
-        type: integer
-        format: int32
+        type: number
         example: 0
       max: 
-        type: integer
-        format: int32
+        type: number
         example: 25

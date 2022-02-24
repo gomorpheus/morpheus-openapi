@@ -6,16 +6,16 @@ properties:
     properties: 
       id: 
         type: number
-        example: 1
+        example: 934
       name: 
         type: string
-        example: Home
+        example: Sample Doc
       urlName: 
         type: string
-        example: home
+        example: info/sample-doc
       category: 
         type: string
-        format: nullable
+        example: info
       refId: 
         type: string
         format: nullable
@@ -27,7 +27,9 @@ properties:
         example: markdown
       content: 
         type: string
-        example: The home page for this wiki.
+        example: #Sample Doc
+          An updated sample document in **markdown**.
+          Cheers!
       createdBy: 
         type: object
         properties: 
@@ -36,7 +38,7 @@ properties:
             example: 1
           username: 
             type: string
-            example: admin
+            example: Admin
       updatedBy: 
         type: object
         properties: 
@@ -45,10 +47,12 @@ properties:
             example: 1
           username: 
             type: string
-            example: admin
+            example: Admin
       dateCreated: 
         type: string
-        example: 2019-06-27T16:55:59+0000
+        format: date-time
+        example: 2022-02-24T21:34:20Z
       lastUpdated: 
         type: string
-        example: 2019-06-27T16:55:59+0000
+        format: date-time
+        example: 2022-02-24T21:43:54Z

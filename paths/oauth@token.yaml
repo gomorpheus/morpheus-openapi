@@ -1,7 +1,7 @@
 post:
   summary: Provides authentication via username and password
   operationId: getAccessToken
-  description: |-
+  description: |
     This endpoint provides authentication via `username` and `password` of a Morpheus User. The response includes a valid access token. If your current token is expired, a new one will be created and returned.
 
     Subtenant users will need to pass their subdomain prefix like subdomain\username. The default subdomain is the tenant account ID.

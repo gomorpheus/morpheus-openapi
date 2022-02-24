@@ -25,7 +25,7 @@ paths:
     $ref: paths/api@report@types.yaml
   /api/reports:
     $ref: paths/api@reports.yaml
-  /api/reports/{id-path}:
+  /api/reports/{id}:
     $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
     $ref: paths/api@reports@download@id.yaml

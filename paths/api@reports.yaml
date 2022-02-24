@@ -1,7 +1,7 @@
 get:
   summary: Returns all reports
   operationId: getAllReports
-  description: |-
+  description: |
     This endpoint returns all reports. This is results of reports that have been executed in the past.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
@@ -30,7 +30,7 @@ get:
 post:
   summary: Run specified report
   operationId: runReport
-  description: |-
+  description: |
     This endpoint execute the specified report type and create a new report result.
 
     The available parameters vary by report type. Refer to the defined `inputs` for each report.
@@ -40,22 +40,29 @@ post:
       application/json:
         schema:
           type: object
-          properties:
-            type: 
-              description: The Report Type code to be executed.
-              type: string
-            startDate:
-              description: The start date for the report
-              type: string
-            endDate:
-              description: The end date for the report
-              type: string
-            groupId:
-              description: The Group ID filter for the report
-              type: string
-            cloudId:
-              description: The Cloud ID filter for the report
-              type: string
+          properties: 
+            report: 
+              type: object
+              properties: 
+                type: 
+                  type: string
+                  example: appCost
+                startDate: 
+                  type: string
+                  format: date
+                  example: 2019-01-01
+                endDate: 
+                  type: string
+                  format: date
+                  example: 2020-01-01
+                groupId:
+                  description: The Group ID filter for the report
+                  type: number
+                  example: 1
+                cloudId:
+                  description: The Cloud ID filter for the report
+                  type: number
+                  example: 7
           required:
             - type
   externalDocs:

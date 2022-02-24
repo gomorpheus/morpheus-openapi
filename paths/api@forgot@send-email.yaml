@@ -1,7 +1,7 @@
 post:
   summary: Reset user password
   operationId: resetPassword
-  description: |-
+  description: |
     This endpoint will reset the password for a user, updating it to the specified value. A secret token must be passed to identify the user who is being updated.
 
     **Note**: You can obtain this token by inspecting the URL of the “Click here to reset” link seen in the email.

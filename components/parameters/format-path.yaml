@@ -1,9 +1,10 @@
 name: format
 in: path
+required: true
 description: Format of the rendered report file, `.json` or `.csv`.
-default: .json
 schema:
   type: string
+  default: .json
   enum:
     - .json
-    - .csv
+    - .csv  

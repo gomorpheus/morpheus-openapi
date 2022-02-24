@@ -21,7 +21,7 @@ paths:
     get:
       summary: Overview of Dashboard information
       operationId: getDashboard
-      description: >-
+      description: >
         This endpoint can be used to view dashboard information about the remote
         Morpheus appliance. This is an overview and summary of data available to
         the user that can be used to render a dashboard.
@@ -40,7 +40,7 @@ paths:
     post:
       summary: Request a reset password email
       operationId: forgotPassword
-      description: >-
+      description: >
         This endpoint will trigger the Reset your password email to be sent to
         the specified user.
 
@@ -96,7 +96,7 @@ paths:
     post:
       summary: Reset user password
       operationId: resetPassword
-      description: >-
+      description: >
         This endpoint will reset the password for a user, updating it to the
         specified value. A secret token must be passed to identify the user who
         is being updated.
@@ -145,7 +145,7 @@ paths:
   /api/ping:
     get:
       summary: Basic information about current Morpheus Installation
-      description: >-
+      description: >
         This endpoint can be used to check the remote appliance build version
         and some other basic information.
 
@@ -166,7 +166,7 @@ paths:
     get:
       summary: This endpoint retrieves all available report types
       operationId: getAllReportTypes
-      description: >-
+      description: >
         This endpoint retrieves all available report types. A report type has
         optionTypes that define the parameters available when executing a report
         of that type. The sample response has been abbreviated.
@@ -192,9 +192,9 @@ paths:
         - Reports
   /api/reports:
     get:
-      summary: This endpoint returns all reports
+      summary: Returns all reports
       operationId: getAllReports
-      description: >-
+      description: >
         This endpoint returns all reports. This is results of reports that have
         been executed in the past.
       externalDocs:
@@ -226,7 +226,7 @@ paths:
     post:
       summary: Run specified report
       operationId: runReport
-      description: >-
+      description: >
         This endpoint execute the specified report type and create a new report
         result.
 
@@ -240,21 +240,28 @@ paths:
             schema:
               type: object
               properties:
-                type:
-                  description: The Report Type code to be executed.
-                  type: string
-                startDate:
-                  description: The start date for the report
-                  type: string
-                endDate:
-                  description: The end date for the report
-                  type: string
-                groupId:
-                  description: The Group ID filter for the report
-                  type: string
-                cloudId:
-                  description: The Cloud ID filter for the report
-                  type: string
+                report:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: appCost
+                    startDate:
+                      type: string
+                      format: date
+                      example: '2019-01-01'
+                    endDate:
+                      type: string
+                      format: date
+                      example: '2020-01-01'
+                    groupId:
+                      description: The Group ID filter for the report
+                      type: number
+                      example: 1
+                    cloudId:
+                      description: The Cloud ID filter for the report
+                      type: number
+                      example: 7
               required:
                 - type
       externalDocs:
@@ -268,11 +275,11 @@ paths:
                 $ref: '#/components/schemas/200-user'
       tags:
         - Reports
-  /api/reports/{id-path}:
+  /api/reports/{id}:
     get:
       summary: This endpoint returns a specific report result
       operationId: getSpecificReport
-      description: >-
+      description: >
         This endpoint retrieves a specific report result. The response includes
         the result data as rows which can be used to render the report. Each
         report type will have sections for data and headers that vary by type,
@@ -293,18 +300,26 @@ paths:
     delete:
       summary: This endpoint will delete a report result
       operationId: deleteSpecificReport
-      description: This endpoint will delete a report result.
+      description: |
+        This endpoint will delete a report result.
       externalDocs:
         url: https://apidocs.morpheusdata.com/#delete-a-report
       parameters:
         - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
       tags:
         - Reports
   /api/reports/download/{id}{format}:
     get:
       summary: Downloads a specific report result as a file attachment
       operationId: downloadSpecificReport
-      description: >-
+      description: >
         This endpoint downloads a specific report result as a file attachment.
         The default file format is `.json`.
       externalDocs:
@@ -324,7 +339,7 @@ paths:
   /api/search:
     get:
       summary: Provides global search for all types of objects
-      description: >-
+      description: >
         This endpoint provides global search for all types of objects, with the
         results sorted in order of relevance.
 
@@ -352,7 +367,7 @@ paths:
     get:
       summary: Retrieves information about current user roles and permissions
       operationId: whoami
-      description: >-
+      description: >
         Provides API to retrieve information about yourself, including your
         roles and permissions.
 
@@ -370,11 +385,142 @@ paths:
       tags:
         - Authentication
         - Users
+  /api/wiki/categories:
+    get:
+      summary: Retrieves all Wiki categories associated with the account
+      operationId: getWikiCategories
+      description: >
+        This endpoint retrieves all Wiki categories associated with the account.
+        The results are not paginated. The categories returned are those of the
+        found pages.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-wiki-categories
+      parameters:
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/pagePhrase'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-wikiCategories'
+      tags:
+        - Wiki
+  /api/wiki/pages:
+    get:
+      summary: Retrieves wiki pages associated with the account.
+      operationId: getAllWiki
+      description: |
+        This endpoint retrieves wiki pages associated with the account.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-wiki-pages
+      parameters:
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/phrase'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-wiki'
+      tags:
+        - Wiki
+    post:
+      summary: Create a Wiki Page
+      operationId: createWikiPage
+      description: |
+        Creates a Wiki Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - category
+                - content
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#create-a-wiki-page
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-wikiCreatePage'
+      tags:
+        - Wiki
+  /api/wiki/pages/{id}:
+    get:
+      summary: Retrieves wiki a specific Wiki page
+      operationId: getWikiSpecificPage
+      description: |
+        This endpoint retrieves a specific wiki page.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-specific-wiki-page
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-wikiSpecificPage'
+      tags:
+        - Wiki
+    put:
+      summary: Update a Wiki Page
+      operationId: updateWikiPage
+      description: |
+        Updates a Wiki Page
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    content:
+                      type: string
+                      example: An updated sample document in **markdown**. Cheers!
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-wikiCreatePage'
+      tags:
+        - Wiki
   /oauth/token:
     post:
       summary: Provides authentication via username and password
       operationId: getAccessToken
-      description: >-
+      description: >
         This endpoint provides authentication via `username` and `password` of a
         Morpheus User. The response includes a valid access token. If your
         current token is expired, a new one will be created and returned.
@@ -855,48 +1001,66 @@ components:
             type: object
             properties:
               id:
-                type: integer
-                format: int32
-                example: 21
+                type: number
+                example: 95
               code:
                 type: string
-                example: appCost
+                example: amazonReservationCoverage
               name:
                 type: string
-                example: Application Cost
+                example: Amazon Reservation Coverage
+              description:
+                type: string
+                example: >-
+                  View how Amazon EC2 instance types are covered by Reserved
+                  Instances.
               category:
                 type: string
                 example: cost
+              visible:
+                type: boolean
+              masterOnly:
+                type: boolean
+              ownerOnly:
+                type: boolean
+              supportsAllZoneTypes:
+                type: boolean
+              isPlugin:
+                type: string
+                format: nullable
               dateCreated:
                 type: string
-                example: 2018-05-02T07:44:46+0000
+                format: date-time
+                example: '2020-09-02T19:35:18Z'
               optionTypes:
                 type: array
                 items:
                   type: object
                   properties:
                     id:
-                      type: integer
-                      format: int32
-                      example: 1073
+                      type: number
+                      example: 2748
                     name:
                       type: string
                       example: endDate
-                    code:
-                      type: string
-                      example: reportType.endDate
                     description:
                       type: string
                       format: nullable
+                    code:
+                      type: string
+                      example: reportType.endDate
                     fieldName:
                       type: string
                       example: endDate
                     fieldLabel:
                       type: string
                       example: End Date
+                    fieldCode:
+                      type: string
+                      example: gomorpheus.optiontype.EndDate
                     fieldContext:
                       type: string
-                      example: report
+                      example: config
                     fieldGroup:
                       type: string
                       format: nullable
@@ -909,16 +1073,31 @@ components:
                     fieldComponent:
                       type: string
                       format: nullable
+                    fieldInput:
+                      type: string
+                      format: nullable
                     placeHolder:
+                      type: string
+                      format: nullable
+                    verifyPattern:
                       type: string
                       format: nullable
                     helpBlock:
                       type: string
                       example: null
+                    helpBlockFieldCode:
+                      type: string
+                      format: nullable
                     defaultValue:
                       type: string
                       format: nullable
                     optionSource:
+                      type: string
+                      format: nullable
+                    optionSourceType:
+                      type: string
+                      format: nullable
+                    optionList:
                       type: string
                       format: nullable
                     type:
@@ -928,17 +1107,17 @@ components:
                       type: boolean
                     required:
                       type: boolean
+                    exportMeta:
+                      type: boolean
                     editable:
                       type: boolean
                     creatable:
-                      type: string
-                      format: nullable
+                      type: boolean
                     config:
                       type: object
                       properties: null
                     displayOrder:
-                      type: integer
-                      format: int32
+                      type: number
                       example: 2
                     wrapperClass:
                       type: string
@@ -950,26 +1129,51 @@ components:
                     dependsOnCode:
                       type: string
                       format: nullable
+                    visibleOnCode:
+                      type: string
+                      format: nullable
+                    requireOnCode:
+                      type: string
+                      format: nullable
                     contextualDefault:
                       type: boolean
+                    displayValueOnDetails:
+                      type: string
+                      format: nullable
+                    showOnCreate:
+                      type: string
+                      format: nullable
+                    showOnEdit:
+                      type: string
+                      format: nullable
+              supportedZoneTypes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                      example: 31
+                    code:
+                      type: string
+                      example: amazon
+                    name:
+                      type: string
+                      example: Amazon
         meta:
           type: object
           properties:
             size:
-              type: integer
-              format: int32
-              example: 18
+              type: number
+              example: 25
             total:
-              type: integer
-              format: int32
-              example: 18
+              type: number
+              example: 30
             offset:
-              type: integer
-              format: int32
+              type: number
               example: 0
             max:
-              type: integer
-              format: int32
+              type: number
               example: 25
     200-reports:
       title: 200 Reports
@@ -1212,6 +1416,209 @@ components:
             total:
               type: number
               example: 3
+    200-wikiCategories:
+      title: 200 Wiki Categories
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                example: apps
+              pageCount:
+                type: number
+                example: 1
+    200-wiki:
+      title: 200 Wiki
+      type: object
+      properties:
+        pages:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: number
+                example: 1
+              name:
+                type: string
+                example: Home
+              urlName:
+                type: string
+                example: home
+              category:
+                type: string
+                format: nullable
+              refId:
+                type: string
+                format: nullable
+              refType:
+                type: string
+                format: nullable
+              format:
+                type: string
+                example: markdown
+              content:
+                type: string
+                example: Welcome to the home page for this Morpheus wiki.
+              createdBy:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    example: 1
+                  username:
+                    type: string
+                    example: admin
+              updatedBy:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    example: 1
+                  username:
+                    type: string
+                    example: admin
+              dateCreated:
+                type: string
+                example: 2019-06-27T16:55:59+0000
+              lastUpdated:
+                type: string
+                example: 2019-06-27T16:55:59+0000
+        meta:
+          type: object
+          properties:
+            size:
+              type: number
+              example: 2
+            total:
+              type: number
+              example: 2
+            max:
+              type: number
+              example: 25
+            offset:
+              type: number
+              example: 0
+    200-wikiCreatePage:
+      title: 200 Wiki Create Page
+      type: object
+      properties:
+        page:
+          type: object
+          properties:
+            id:
+              type: number
+              example: 934
+            name:
+              type: string
+              example: Sample Doc
+            urlName:
+              type: string
+              example: info/sample-doc
+            category:
+              type: string
+              example: info
+            refId:
+              type: string
+              format: nullable
+            refType:
+              type: string
+              format: nullable
+            format:
+              type: string
+              example: markdown
+            content:
+              type: string
+              example: A sample document in **markdown**.
+            createdBy:
+              type: object
+              properties:
+                id:
+                  type: number
+                  example: 1
+                username:
+                  type: string
+                  example: Admin
+            updatedBy:
+              type: object
+              properties:
+                id:
+                  type: number
+                  example: 1
+                username:
+                  type: string
+                  example: Admin
+            dateCreated:
+              type: string
+              format: date-time
+              example: '2022-02-24T21:34:20Z'
+            lastUpdated:
+              type: string
+              format: date-time
+              example: '2022-02-24T21:34:20Z'
+        success:
+          type: boolean
+    200-wikiSpecificPage:
+      title: 200 Wiki Page
+      type: object
+      properties:
+        page:
+          type: object
+          properties:
+            id:
+              type: number
+              example: 934
+            name:
+              type: string
+              example: Sample Doc
+            urlName:
+              type: string
+              example: info/sample-doc
+            category:
+              type: string
+              example: info
+            refId:
+              type: string
+              format: nullable
+            refType:
+              type: string
+              format: nullable
+            format:
+              type: string
+              example: markdown
+            content:
+              type: string
+              example: An updated sample document in **markdown**. Cheers!
+            createdBy:
+              type: object
+              properties:
+                id:
+                  type: number
+                  example: 1
+                username:
+                  type: string
+                  example: Admin
+            updatedBy:
+              type: object
+              properties:
+                id:
+                  type: number
+                  example: 1
+                username:
+                  type: string
+                  example: Admin
+            dateCreated:
+              type: string
+              format: date-time
+              example: '2022-02-24T21:34:20Z'
+            lastUpdated:
+              type: string
+              format: date-time
+              example: '2022-02-24T21:43:54Z'
     200-accessToken:
       title: 200 Access Token
       type: object
@@ -1236,30 +1643,30 @@ components:
       name: max
       in: query
       description: Maximum number of returned objects
-      default: 25
       schema:
         type: number
+        default: 25
     offset:
       name: offset
       in: query
       description: Offset of records you want to load
-      default: 0
       schema:
         type: number
+        default: 0
     sort:
       name: sort
       in: query
       description: Sort order
-      default: name
       schema:
         type: string
+        default: name
     direction:
       name: direction
       in: query
       description: Sort direction, use 'desc' to reverse sort
-      default: asc
       schema:
         type: string
+        default: asc
     phrase:
       name: phrase
       in: query
@@ -1294,10 +1701,11 @@ components:
     format-path:
       name: format
       in: path
+      required: true
       description: Format of the rendered report file, `.json` or `.csv`.
-      default: .json
       schema:
         type: string
+        default: .json
         enum:
           - .json
           - .csv
@@ -1305,6 +1713,12 @@ components:
       name: query
       in: query
       description: Alias for phrase
+      schema:
+        type: string
+    pagePhrase:
+      name: pagePhrase
+      in: query
+      description: If specified will return a partial match on page name
       schema:
         type: string
 security:

@@ -1,7 +1,7 @@
 get:
   summary: Retrieves information about current user roles and permissions
   operationId: whoami
-  description: |-
+  description: |
     Provides API to retrieve information about yourself, including your roles and permissions.
 
     The appliance build version is also returned.
