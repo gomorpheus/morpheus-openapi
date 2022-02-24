@@ -7,9 +7,9 @@ get:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#search
   parameters:
-    - $ref: components/parameters/max.yaml
-    - $ref: components/parameters/offset.yaml
-    - $ref: components/parameters/phrase.yaml
-    - $ref: components/parameters/query.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/query.yaml
   tags:
     - Search

@@ -1,0 +1,663 @@
+openapi: 3.0.1
+info:
+  title: Morpheus API
+  description: >-
+    Morpheus is a powerful cloud management tool that provides provisioning,
+    monitoring, logging, backups, and application deployment strategies.
+
+
+    This document describes the Morpheus API protocol and the available
+    endpoints. Sections are organized in the same manner as they appear in the
+    Morpheus UI.
+  version: 5.4.4
+  termsOfService: https://morpheusdata.com/terms-and-conditions/
+servers:
+  - url: https://{serverFQDN}
+    variables:
+      serverFQDN:
+        default: ''
+paths:
+  /api/dashboard:
+    get:
+      summary: Overview of Dashboard information
+      operationId: getDashboard
+      description: >-
+        This endpoint can be used to view dashboard information about the remote
+        Morpheus appliance. This is an overview and summary of data available to
+        the user that can be used to render a dashboard.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#dashboard
+      tags:
+        - Dashboard
+  /api/forgot/reset-password:
+    post:
+      summary: Request a reset password email
+      operationId: forgotPassword
+      description: >-
+        This endpoint will trigger the Reset your password email to be sent to
+        the specified user.
+
+
+        The User is identified by `username` and, if they exist, will be
+        notified via their configured email address. The email notification will
+        indicate a Reset Password Request was made and it will include a token.
+
+
+        Once you obtain the token from the email, it may be used to reset the
+        password of your user.
+
+
+        **Note**: This is an unauthorized endpoint and the response will always
+        appear successful, it is not possible determine from the response
+        whether the user exists or if an email was sent.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: >-
+                    Specified as "username" or "tenantId\username" with proper
+                    HTML encoding and used in conjunction with `password`.
+                  type: string
+              required:
+                - username
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#forgot-password
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  msg:
+                    type: string
+                    example: >-
+                      Reset password instructions have been sent to the user
+                      'jsmith', if they exist.
+      tags:
+        - Authentication
+      security: []
+  /api/forgot/send-email:
+    post:
+      summary: Reset user password
+      operationId: resetPassword
+      description: >-
+        This endpoint will reset the password for a user, updating it to the
+        specified value. A secret token must be passed to identify the user who
+        is being updated.
+
+
+        **Note**: You can obtain this token by inspecting the URL of the “Click
+        here to reset” link seen in the email.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  description: >-
+                    The secret Reset Password token that was included in the
+                    **Forgot Password Email**.
+                  type: string
+                password:
+                  description: User new password. This is the new password for your user.
+                  type: string
+                  format: password
+              required:
+                - token
+                - password
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#reset-password
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  msg:
+                    type: string
+                    example: Password has been updated and account unlocked
+      tags:
+        - Authentication
+      security: []
+  /api/ping:
+    get:
+      summary: Basic information about current Morpheus Installation
+      description: >-
+        This endpoint can be used to check the remote appliance build version
+        and some other basic information.
+
+
+        This is an unsecured endpoint and does not require authorization.
+        However, build version will not be returned unless you are authenticated
+        with a valid access token.
+      tags:
+        - Health
+  /api/report-types:
+    get:
+      summary: This endpoint retrieves all available report types
+      operationId: getAllReportTypes
+      description: >-
+        This endpoint retrieves all available report types. A report type has
+        optionTypes that define the parameters available when executing a report
+        of that type. The sample response has been abbreviated.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-report-types
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/code'
+        - $ref: '#/components/parameters/category'
+      tags:
+        - Reports
+  /api/reports:
+    get:
+      summary: This endpoint returns all reports
+      operationId: getAllReports
+      description: >-
+        This endpoint returns all reports. This is results of reports that have
+        been executed in the past.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-reports
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - name: reportType
+          in: query
+          description: >-
+            If specified will return an exact match on report type code, accepts
+            multiple values
+          schema:
+            type: string
+        - $ref: '#/components/parameters/category'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-reports'
+        '400':
+          $ref: '#/components/responses/400'
+      tags:
+        - Reports
+    post:
+      summary: Run specified report
+      operationId: runReport
+      description: >-
+        This endpoint execute the specified report type and create a new report
+        result.
+
+
+        The available parameters vary by report type. Refer to the defined
+        `inputs` for each report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  description: The Report Type code to be executed.
+                  type: string
+                startDate:
+                  description: The start date for the report
+                  type: string
+                endDate:
+                  description: The end date for the report
+                  type: string
+                groupId:
+                  description: The Group ID filter for the report
+                  type: string
+                cloudId:
+                  description: The Cloud ID filter for the report
+                  type: string
+              required:
+                - type
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#run-a-report
+      tags:
+        - Reports
+  /api/reports/{id-path}:
+    get:
+      summary: This endpoint returns a specific report result
+      operationId: getSpecificReport
+      description: >-
+        This endpoint retrieves a specific report result. The response includes
+        the result data as rows which can be used to render the report. Each
+        report type will have sections for data and headers that vary by type,
+        use Download a Specific Report to get the results organized by section.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-reports
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      tags:
+        - Reports
+    delete:
+      summary: This endpoint will delete a report result
+      operationId: deleteSpecificReport
+      description: This endpoint will delete a report result.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#delete-a-report
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      tags:
+        - Reports
+  /api/reports/download/{id}{format}:
+    get:
+      summary: Downloads a specific report result as a file attachment
+      operationId: downloadSpecificReport
+      description: >-
+        This endpoint downloads a specific report result as a file attachment.
+        The default file format is `.json`.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#download-a-specific-report
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+        - $ref: '#/components/parameters/format-path'
+      tags:
+        - Reports
+  /api/search:
+    get:
+      summary: Provides global search for all types of objects
+      description: >-
+        This endpoint provides global search for all types of objects, with the
+        results sorted in order of relevance.
+
+
+        The `phrase` parameter can be specified as part of the URL or as a query
+        parameter. If phrase is not specified, then 0 results (hits) will be
+        returned.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#search
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/query'
+      tags:
+        - Search
+  /api/whoami:
+    get:
+      summary: Retrieves information about current user roles and permissions
+      operationId: whoami
+      description: >-
+        Provides API to retrieve information about yourself, including your
+        roles and permissions.
+
+
+        The appliance build version is also returned.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#whoami
+      tags:
+        - Authentication
+        - Users
+  /oauth/token:
+    post:
+      summary: Provides authentication via username and password
+      operationId: getAccessToken
+      description: >-
+        This endpoint provides authentication via `username` and `password` of a
+        Morpheus User. The response includes a valid access token. If your
+        current token is expired, a new one will be created and returned.
+
+
+        Subtenant users will need to pass their subdomain prefix like
+        subdomain\username. The default subdomain is the tenant account ID.
+
+
+        This endpoint also allows refreshing your current access token to get a
+        new token. This is done by passing your current `refresh_token`. This
+        provides a way to renew your client’s session with the API, and extend
+        the expiration date.
+
+
+        This will render your current access token invalid, so you will need to
+        update any scripts relying on it.
+      parameters:
+        - name: client_id
+          required: true
+          in: query
+          description: >-
+            Client ID, use morph-api. Users may only have one access token per
+            Client ID. The CLI uses morph-cli.
+          schema:
+            type: string
+            enum:
+              - morph-api
+        - name: grant_type
+          required: true
+          in: query
+          description: OAuth Grant Type, use password.
+          schema:
+            type: string
+            enum:
+              - password
+              - refresh_token
+        - name: scope
+          required: true
+          in: query
+          description: OAuth token scope, use write.
+          schema:
+            type: string
+            enum:
+              - write
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: >-
+                    Specified as "username" or "tenantId\username" with proper
+                    HTML encoding and used in conjunction with `password`. Not
+                    utilized with `refresh_token`.
+                  type: string
+                password:
+                  description: >-
+                    The Password for defined `username`. Must have proper HTML
+                    encoding
+                  type: string
+                  format: password
+                refresh_token:
+                  description: >-
+                    The `refresh_token` value from a previous API generation can
+                    be utilized instead of `username` and `password`.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-access-token
+      tags:
+        - Authentication
+      security: []
+components:
+  securitySchemes:
+    bearerAuth:
+      description: Populate a bearer token for the Morpheus appliance you are testing
+      type: http
+      scheme: bearer
+  parameters:
+    max:
+      name: max
+      in: query
+      description: Maximum number of returned objects
+      default: 25
+      schema:
+        type: number
+    offset:
+      name: offset
+      in: query
+      description: Offset of records you want to load
+      default: 0
+      schema:
+        type: number
+    sort:
+      name: sort
+      in: query
+      description: Sort order
+      default: name
+      schema:
+        type: string
+    direction:
+      name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      default: asc
+      schema:
+        type: string
+    phrase:
+      name: phrase
+      in: query
+      description: If specified will return a partial match on name
+      schema:
+        type: string
+    name:
+      name: name
+      in: query
+      description: If specified will return an exact match on name
+      schema:
+        type: string
+    code:
+      name: code
+      in: query
+      description: If specified will return an exact match on code
+      schema:
+        type: string
+    category:
+      name: category
+      in: query
+      description: If specified will return an exact match on category
+      schema:
+        type: string
+    id-path:
+      name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      schema:
+        type: number
+    format-path:
+      name: format
+      in: path
+      description: Format of the rendered report file, `.json` or `.csv`.
+      default: .json
+      schema:
+        type: string
+        enum:
+          - .json
+          - .csv
+    query:
+      name: query
+      in: query
+      description: Alias for phrase
+      schema:
+        type: string
+  schemas:
+    200-reports:
+      title: 200 Reports
+      type: object
+      properties:
+        reportResults:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int32
+                example: 2
+              type:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                    example: 21
+                  code:
+                    type: string
+                    example: appCost
+                  name:
+                    type: string
+                    example: Application Cost
+              reportTitle:
+                type: string
+                example: Application Cost Jun 04 2019 19:28:02
+              filterTitle:
+                type: string
+                example: Jun 04 2019
+              status:
+                type: string
+                example: ready
+              dateCreated:
+                type: string
+                example: 2019-06-04T23:28:02+0000
+              lastUpdated:
+                type: string
+                example: 2019-06-04T23:28:02+0000
+              startDate:
+                type: string
+                format: nullable
+              endDate:
+                type: string
+                format: nullable
+              config:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: appCost
+              createdBy:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                    example: 1
+                  username:
+                    type: string
+                    example: root
+        meta:
+          type: object
+          properties:
+            size:
+              type: integer
+              format: int32
+              example: 2
+            total:
+              type: integer
+              format: int32
+              example: 2
+            offset:
+              type: integer
+              format: int32
+              example: 0
+            max:
+              type: integer
+              format: int32
+              example: 25
+    400-error:
+      title: 400 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Bad Request. Your request failed. Check your request parameters and
+            try again.
+  responses:
+    '400':
+      description: >-
+        Bad Request. Your request failed. Check your request parameters and try
+        again.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/400-error'
+security:
+  - bearerAuth: []
+externalDocs:
+  url: https://docs.morpheusdata.com
+tags:
+  - name: Activity
+  - name: Alerts
+  - name: Appliance Settings
+  - name: Approvals
+  - name: Apps
+  - name: Archives
+  - name: Authentication
+  - name: Automation
+  - name: Backup Settings
+  - name: Billing
+  - name: Blueprints
+  - name: Budgets
+  - name: Checks
+  - name: Clouds
+  - name: Cluster Layouts
+  - name: Clusters
+  - name: Contacts
+  - name: Cypher
+  - name: Dashboard
+  - name: Deployments
+  - name: Deploys
+  - name: Environments
+  - name: File Templates
+  - name: Groups
+  - name: Guidance
+  - name: Health
+  - name: History
+  - name: Identity Sources
+  - name: Image Builds
+  - name: Incidents
+  - name: Infrastructure
+  - name: Inputs
+  - name: Instance Types
+  - name: Instances
+  - name: Integrations
+  - name: Invoices
+  - name: Jobs
+  - name: Key Pairs
+  - name: Layouts
+  - name: Library
+  - name: License
+  - name: Load Balancers
+  - name: Log Settings
+  - name: Logs
+  - name: Monitoring
+  - name: Networks
+  - name: Node Types
+  - name: Option Lists
+  - name: Options
+  - name: Personas
+  - name: Policies
+  - name: Price Sets
+  - name: Prices
+  - name: Projects
+  - name: Provisioning
+  - name: Provisioning Settings
+  - name: Provisioning Licenses
+  - name: Reports
+  - name: Roles
+  - name: Scripts
+  - name: Search
+  - name: Security Groups
+  - name: Self Service
+  - name: Servers
+  - name: Service Catalog
+  - name: Service Plans
+  - name: Setup
+  - name: Spec Templates
+  - name: SSL Certificates
+  - name: Storage
+  - name: Tenants
+  - name: Tools
+  - name: Usage
+  - name: Users
+  - name: VDI Pools
+  - name: Virtual Desktop
+  - name: Virtual Images
+  - name: Whitelabel Settings
+  - name: Wiki
