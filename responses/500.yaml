@@ -1,5 +1,5 @@
-description: Internal Server Error – We had a problem with our server. Try again later.
+description: Internal Server Error. We had a problem with our server. Try again later.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/500'
+      $ref: '#/components/schemas/400-error'

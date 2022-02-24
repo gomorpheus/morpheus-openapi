@@ -1,5 +1,5 @@
-description: Service Unavailable – We’re temporarily offline for maintanance. Please try again later.
+description: Service Unavailable. We're temporarily offline for maintanance. Please try again later.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/503'
+      $ref: '#/components/schemas/400-error'

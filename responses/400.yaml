@@ -1,5 +1,5 @@
-description: Bad Request – Your request failed. Check your request parameters and try again.
+description: Bad Request. Your request failed. Check your request parameters and try again.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/400'
+      $ref: '#/components/schemas/400-error'

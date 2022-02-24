@@ -15,19 +15,17 @@ post:
             token: 
               description: The secret Reset Password token that was included in the **Forgot Password Email**.
               type: string
-              example: 718cc628-b89f-43f5-bef7-f39887b47e68
             password:
               description: User new password. This is the new password for your user.
               type: string
               format: password
-              example: P@ssw0rd!
           required:
             - token
             - password
   externalDocs:
     url: https://apidocs.morpheusdata.com/#reset-password
   responses:
-    '200':
+    200:
       description: Successful Request
       content:
         application/json:
@@ -40,28 +38,6 @@ post:
               msg:
                 type: string
                 example: Password has been updated and account unlocked
-    '400':
-      $ref: "#/components/responses/400"
-    '401':
-      $ref: "#/components/responses/401"
-    '403':
-      $ref: "#/components/responses/403"
-    '404':
-      $ref: "#/components/responses/404"
-    '405':
-      $ref: "#/components/responses/405"
-    '406':
-      $ref: "#/components/responses/406"
-    '410':
-      $ref: "#/components/responses/410"
-    '418':
-      $ref: "#/components/responses/418"
-    '429':
-      $ref: "#/components/responses/429"
-    '500':
-      $ref: "#/components/responses/500"
-    '503':
-      $ref: "#/components/responses/503"
   tags:
     - Authentication
   security: []

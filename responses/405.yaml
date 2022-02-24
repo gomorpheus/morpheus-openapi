@@ -1,5 +1,5 @@
-description: Method Not Allowed – You tried to access a resource with an invalid method.
+description: Method Not Allowed. You tried to access a resource with an invalid method.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/405'
+      $ref: '#/components/schemas/400-error'

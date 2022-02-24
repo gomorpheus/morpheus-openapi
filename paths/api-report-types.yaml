@@ -6,38 +6,13 @@ get:
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-report-types
   parameters:
-    - $ref: '../parameters/max.yaml'
-    - $ref: '../parameters/offset.yaml'
-    - $ref: '../parameters/sort.yaml'
-    - $ref: '../parameters/direction.yaml'
-    - $ref: '../parameters/phrase.yaml'
-    - $ref: '../parameters/name.yaml'
-    - $ref: '../parameters/code.yaml'
-    - $ref: '../parameters/category.yaml'
-  responses:
-    '200':
-      $ref: "#/components/responses/200"
-    '400':
-      $ref: "#/components/responses/400"
-    '401':
-      $ref: "#/components/responses/401"
-    '403':
-      $ref: "#/components/responses/403"
-    '404':
-      $ref: "#/components/responses/404"
-    '405':
-      $ref: "#/components/responses/405"
-    '406':
-      $ref: "#/components/responses/406"
-    '410':
-      $ref: "#/components/responses/410"
-    '418':
-      $ref: "#/components/responses/418"
-    '429':
-      $ref: "#/components/responses/429"
-    '500':
-      $ref: "#/components/responses/500"
-    '503':
-      $ref: "#/components/responses/503"
+    - $ref: '#/components/parameters/max'
+    - $ref: '#/components/parameters/offset'
+    - $ref: '#/components/parameters/sort'
+    - $ref: '#/components/parameters/direction'
+    - $ref: '#/components/parameters/phrase'
+    - $ref: '#/components/parameters/name'
+    - $ref: '#/components/parameters/code'
+    - $ref: '#/components/parameters/category'
   tags:
     - Reports

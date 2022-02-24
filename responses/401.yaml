@@ -2,4 +2,4 @@ description: Unauthorized to Perform this Action. Check your Authorization Heade
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/401'
+      $ref: '#/components/schemas/400-error'

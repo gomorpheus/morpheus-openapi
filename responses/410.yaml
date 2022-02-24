@@ -1,5 +1,5 @@
-description: Gone – The entity requested has been removed.
+description: Gone. The entity requested has been removed.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/410'
+      $ref: '#/components/schemas/400-error'

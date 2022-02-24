@@ -4,30 +4,5 @@ get:
     This endpoint can be used to check the remote appliance build version and some other basic information.
 
     This is an unsecured endpoint and does not require authorization. However, build version will not be returned unless you are authenticated with a valid access token.
-  responses:
-    '200':
-      $ref: "#/components/responses/200"
-    '400':
-      $ref: "#/components/responses/400"
-    '401':
-      $ref: "#/components/responses/401"
-    '403':
-      $ref: "#/components/responses/403"
-    '404':
-      $ref: "#/components/responses/404"
-    '405':
-      $ref: "#/components/responses/405"
-    '406':
-      $ref: "#/components/responses/406"
-    '410':
-      $ref: "#/components/responses/410"
-    '418':
-      $ref: "#/components/responses/418"
-    '429':
-      $ref: "#/components/responses/429"
-    '500':
-      $ref: "#/components/responses/500"
-    '503':
-      $ref: "#/components/responses/503"
   tags:
     - Health

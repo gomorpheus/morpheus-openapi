@@ -1,5 +1,5 @@
-description: Not Found – The specified resource could not be found.
+description: Not Found. The specified resource could not be found.
 content:
   application/json:
     schema:
-      $ref: '#/components/schemas/404'
+      $ref: '#/components/schemas/400-error'
