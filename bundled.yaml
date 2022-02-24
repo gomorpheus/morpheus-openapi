@@ -202,6 +202,26 @@ paths:
                 $ref: '#/components/schemas/200-reports'
         '400':
           $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '418':
+          $ref: '#/components/responses/418'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
       tags:
         - Reports
     post:
@@ -240,6 +260,35 @@ paths:
                 - type
       externalDocs:
         url: https://apidocs.morpheusdata.com/#run-a-report
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-reports'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '418':
+          $ref: '#/components/responses/418'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
       tags:
         - Reports
   /api/reports/{id-path}:
@@ -568,6 +617,86 @@ components:
           example: >-
             Bad Request. Your request failed. Check your request parameters and
             try again.
+    401-error:
+      title: 401 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Unauthorized to Perform this Action. Check your Authorization
+            Header.
+    403-error:
+      title: 403 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Service Unavailable. We're temporarily offline for maintanance.
+            Please try again later.
+    404-error:
+      title: 404 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Not Found. The specified resource could not be found.
+    405-error:
+      title: 405 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Service Unavailable. We're temporarily offline for maintanance.
+            Please try again later.
+    406-error:
+      title: 406 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Not Acceptable. You requested a format that is not json.
+    410-error:
+      title: 410 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Gone. The entity requested has been removed.
+    418-error:
+      title: 418 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: I'm a Teapot
+    429-error:
+      title: 429 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Too Many Requests. You're asking too much of the server. Slow down!
+    500-error:
+      title: 500 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Internal Server Error. We had a problem with our server. Try again
+            later.
+    503-error:
+      title: 503 Error
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Service Unavailable. We're temporarily offline for maintanance.
+            Please try again later.
   responses:
     '400':
       description: >-
@@ -577,6 +706,72 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/400-error'
+    '401':
+      description: Unauthorized to Perform this Action. Check your Authorization Header.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/401-error'
+    '403':
+      description: Forbidden. Your API key does not have the required role or permissions.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/403-error'
+    '404':
+      description: Not Found. The specified resource could not be found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/404-error'
+    '405':
+      description: >-
+        Method Not Allowed. You tried to access a resource with an invalid
+        method.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/405-error'
+    '406':
+      description: Not Acceptable. You requested a format that is not json.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/406-error'
+    '410':
+      description: Gone. The entity requested has been removed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/410-error'
+    '418':
+      description: I'm a Teapot
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/418-error'
+    '429':
+      description: Too Many Requests. You're asking too much of the server. Slow down!
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/429-error'
+    '500':
+      description: >-
+        Internal Server Error. We had a problem with our server. Try again
+        later.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/500-error'
+    '503':
+      description: >-
+        Service Unavailable. We're temporarily offline for maintanance. Please
+        try again later.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/503-error'
 security:
   - bearerAuth: []
 externalDocs:

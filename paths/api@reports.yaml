@@ -25,8 +25,6 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/200-reports.yaml
-    400:
-      $ref: ../components/responses/400.yaml
   tags:
     - Reports
 post:
@@ -62,5 +60,12 @@ post:
             - type
   externalDocs:
     url: https://apidocs.morpheusdata.com/#run-a-report
+  responses:
+    200:
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-reports.yaml
   tags:
     - Reports
