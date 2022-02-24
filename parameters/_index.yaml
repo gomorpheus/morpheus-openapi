@@ -55,5 +55,8 @@ phrase:
 sort:
   $ref: "./sort.yaml"
 
+tenantId:
+  $ref: "./tenantId.yaml"
+
 username:
   $ref: "./username.yaml"

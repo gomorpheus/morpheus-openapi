@@ -1,0 +1,15 @@
+get:
+  summary: Provides global search for all types of objects
+  description: |-
+    This endpoint provides global search for all types of objects, with the results sorted in order of relevance.
+
+    The `phrase` parameter can be specified as part of the URL or as a query parameter. If phrase is not specified, then 0 results (hits) will be returned.
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/200-ping.yaml'
+  tags:
+    - Health
