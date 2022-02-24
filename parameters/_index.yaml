@@ -25,6 +25,9 @@ email:
 firstName:
   $ref: "./firstName.yaml"
 
+format:
+  $ref: "./format-path.yaml"
+
 id:
   $ref: "./id.yaml"
 

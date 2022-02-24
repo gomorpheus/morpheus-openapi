@@ -1,5 +1,6 @@
 get:
   summary: This endpoint returns all reports
+  operationId: getSpecificReport
   description: |-
     This endpoint returns all reports. This is results of reports that have been executed in the past.
   externalDocs:

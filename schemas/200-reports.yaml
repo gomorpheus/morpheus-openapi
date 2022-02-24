@@ -1,58 +1,81 @@
 title: 200 Reports
 type: object
 properties:
-  reportResults:
+  reportResults: 
     type: array
-    items:
+    items: 
       type: object
-      properties:
-        id:
-          type: number
-        type:
+      properties: 
+        id: 
+          type: integer
+          format: int32
+          example: 2
+        type: 
           type: object
-          properties:
-            id:
-              type: number
-            code:
+          properties: 
+            id: 
+              type: integer
+              format: int32
+              example: 21
+            code: 
               type: string
-            name:
+              example: appCost
+            name: 
               type: string
-        reportTitle:
+              example: Application Cost
+        reportTitle: 
           type: string
-        filterTitle:
+          example: Application Cost Jun 04 2019 19:28:02
+        filterTitle: 
           type: string
-        status:
+          example: Jun 04 2019
+        status: 
           type: string
-        dateCreated:
+          example: ready
+        dateCreated: 
           type: string
-        lastUpdated:
+          example: 2019-06-04T23:28:02+0000
+        lastUpdated: 
           type: string
-        startDate:
+          example: 2019-06-04T23:28:02+0000
+        startDate: 
+          type: string
+          format: nullable
+        endDate: 
+          type: string
+          format: nullable
+        config: 
           type: object
-          properties:
-        endDate:
-          type: object
-          properties:
-        config:
-          type: object
-          properties:
-            type:
+          properties: 
+            type: 
               type: string
-        createdBy:
+              example: appCost
+        createdBy: 
           type: object
-          properties:
-            id:
-              type: number
-            username:
+          properties: 
+            id: 
+              type: integer
+              format: int32
+              example: 1
+            username: 
               type: string
-  meta:
+              example: root
+  meta: 
     type: object
-    properties:
-      size:
-        type: number
-      total:
-        type: number
-      offset:
-        type: number
-      max:
-        type: number
+    properties: 
+      size: 
+        type: integer
+        format: int32
+        example: 2
+      total: 
+        type: integer
+        format: int32
+        example: 2
+      offset: 
+        type: integer
+        format: int32
+        example: 0
+      max: 
+        type: integer
+        format: int32
+        example: 25

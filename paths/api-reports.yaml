@@ -1,0 +1,71 @@
+get:
+  summary: This endpoint returns all reports
+  operationId: getAllReports
+  description: |-
+    This endpoint returns all reports. This is results of reports that have been executed in the past.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-all-reports
+  parameters:
+    - $ref: '../parameters/max.yaml'
+    - $ref: '../parameters/offset.yaml'
+    - $ref: '../parameters/sort.yaml'
+    - $ref: '../parameters/direction.yaml'
+    - $ref: '../parameters/phrase.yaml'
+    - $ref: '../parameters/name.yaml'
+    - name: reportType
+      in: query
+      description: If specified will return an exact match on report type code, accepts multiple values
+      schema:
+        type: string
+    - $ref: '../parameters/category.yaml'
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/200-reports.yaml'
+  tags:
+    - Reports
+post:
+  summary: Run specified report
+  operationId: runReport
+  description: |-
+    This endpoint execute the specified report type and create a new report result.
+
+    The available parameters vary by report type. Refer to the defined `inputs` for each report.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type: 
+              description: The Report Type code to be executed.
+              type: string
+            startDate:
+              description: The start date for the report
+              type: string
+            endDate:
+              description: The end date for the report
+              type: string
+            groupId:
+              description: The Group ID filter for the report
+              type: string
+            cloudId:
+              description: The Cloud ID filter for the report
+              type: string
+          required:
+            - type
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#run-a-report
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/200-success.yaml"
+  tags:
+    - Reports

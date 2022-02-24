@@ -1,0 +1,17 @@
+get:
+  summary: Downloads a specific report result as a file attachment
+  operationId: downloadSpecificReport
+  description: |-
+    This endpoint downloads a specific report result as a file attachment. The default file format is `.json`.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#download-a-specific-report
+  parameters:
+    - $ref: '../parameters/id-path.yaml'
+    - $ref: '../parameters/format-path.yaml'
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+  tags:
+    - Reports
