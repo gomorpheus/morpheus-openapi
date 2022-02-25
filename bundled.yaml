@@ -34,6 +34,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-dashboard'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Dashboard
   /api/forgot/reset-password:
@@ -89,6 +101,18 @@ paths:
                     example: >-
                       Reset password instructions have been sent to the user
                       'jsmith', if they exist.
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Authentication
       security: []
@@ -139,6 +163,18 @@ paths:
                   msg:
                     type: string
                     example: Password has been updated and account unlocked
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Authentication
       security: []
@@ -160,6 +196,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-ping'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Health
   /api/report-types:
@@ -188,6 +236,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-reportTypes'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Reports
   /api/reports:
@@ -221,6 +281,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-reports'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Reports
     post:
@@ -273,6 +345,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-user'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Reports
   /api/reports/{id}:
@@ -295,6 +379,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-reports'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Reports
     delete:
@@ -313,6 +409,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Reports
   /api/reports/download/{id}{format}:
@@ -334,6 +442,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Reports
   /api/search:
@@ -361,6 +481,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-search'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Search
   /api/whoami:
@@ -382,6 +514,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-user'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Authentication
         - Users
@@ -405,6 +549,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-wikiCategories'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Wiki
   /api/wiki/pages:
@@ -425,36 +581,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-wiki'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Wiki
     post:
       summary: Create a Wiki Page
       operationId: createWikiPage
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Body
+          description: Wiki Page to Create
+          schema:
+            type: object
+            required:
+              - name
+              - category
+              - content
+            properties:
+              name:
+                type: string
+                example: Sample Doc
+              category:
+                type: string
+                example: info
+              content:
+                type: string
+                example: A sample document in **markdown**.
       description: |
         Creates a Wiki Page
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - name
-                - category
-                - content
-              properties:
-                page:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                      example: Sample Doc
-                    category:
-                      type: string
-                      example: info
-                    content:
-                      type: string
-                      example: A sample document in **markdown**.
       externalDocs:
         url: https://apidocs.morpheusdata.com/#create-a-wiki-page
       responses:
@@ -464,6 +631,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-wikiCreatePage'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Wiki
   /api/wiki/pages/{id}:
@@ -483,6 +662,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-wikiSpecificPage'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Wiki
     put:
@@ -490,21 +681,27 @@ paths:
       operationId: updateWikiPage
       description: |
         Updates a Wiki Page
+      consumes:
+        - application/json
       parameters:
         - $ref: '#/components/parameters/id-path'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                page:
-                  type: object
-                  properties:
-                    content:
-                      type: string
-                      example: An updated sample document in **markdown**. Cheers!
+        - in: body
+          name: Body
+          description: >-
+            Wiki Page to Update.  Only the values you wish to update should be
+            in the body payload.
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: Sample Doc
+              category:
+                type: string
+                example: info
+              content:
+                type: string
+                example: A sample document in **markdown**.
       externalDocs:
         url: https://apidocs.morpheusdata.com/#update-a-wiki-page
       responses:
@@ -514,6 +711,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-wikiCreatePage'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Wiki
   /oauth/token:
@@ -598,6 +807,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-accessToken'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
       tags:
         - Authentication
       security: []

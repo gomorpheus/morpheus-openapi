@@ -11,5 +11,17 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/200-ping.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
   tags:
     - Health
