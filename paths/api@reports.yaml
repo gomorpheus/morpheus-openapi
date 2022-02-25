@@ -52,7 +52,7 @@ post:
     - in: body
       name: Body
       required: true
-      description: Wiki Page to Update.  Only the values you wish to update should be in the body payload.
+      description: Run a specific report.  Check the report for custom options / inputs that need to be supplied in the body of the payload.
       schema:
         type: object
         required:

@@ -305,37 +305,42 @@ paths:
 
         The available parameters vary by report type. Refer to the defined
         `inputs` for each report.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                report:
-                  type: object
-                  properties:
-                    type:
-                      type: string
-                      example: appCost
-                    startDate:
-                      type: string
-                      format: date
-                      example: '2019-01-01'
-                    endDate:
-                      type: string
-                      format: date
-                      example: '2020-01-01'
-                    groupId:
-                      description: The Group ID filter for the report
-                      type: number
-                      example: 1
-                    cloudId:
-                      description: The Cloud ID filter for the report
-                      type: number
-                      example: 7
-              required:
-                - type
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Body
+          required: true
+          description: >-
+            Wiki Page to Update.  Only the values you wish to update should be
+            in the body payload.
+          schema:
+            type: object
+            required:
+              - type
+            properties:
+              report:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    example: appCost
+                  startDate:
+                    type: string
+                    format: date
+                    example: '2019-01-01'
+                  endDate:
+                    type: string
+                    format: date
+                    example: '2020-01-01'
+                  groupId:
+                    description: The Group ID filter for the report
+                    type: number
+                    example: 1
+                  cloudId:
+                    description: The Cloud ID filter for the report
+                    type: number
+                    example: 7
       externalDocs:
         url: https://apidocs.morpheusdata.com/#run-a-report
       responses:
@@ -603,6 +608,7 @@ paths:
       parameters:
         - in: body
           name: Body
+          required: true
           description: Wiki Page to Create
           schema:
             type: object
@@ -611,15 +617,18 @@ paths:
               - category
               - content
             properties:
-              name:
-                type: string
-                example: Sample Doc
-              category:
-                type: string
-                example: info
-              content:
-                type: string
-                example: A sample document in **markdown**.
+              page:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Sample Doc
+                  category:
+                    type: string
+                    example: info
+                  content:
+                    type: string
+                    example: A sample document in **markdown**.
       description: |
         Creates a Wiki Page
       externalDocs:
@@ -687,21 +696,25 @@ paths:
         - $ref: '#/components/parameters/id-path'
         - in: body
           name: Body
+          required: true
           description: >-
             Wiki Page to Update.  Only the values you wish to update should be
             in the body payload.
           schema:
             type: object
             properties:
-              name:
-                type: string
-                example: Sample Doc
-              category:
-                type: string
-                example: info
-              content:
-                type: string
-                example: A sample document in **markdown**.
+              page:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: Sample Doc
+                  category:
+                    type: string
+                    example: info
+                  content:
+                    type: string
+                    example: A sample document in **markdown**.
       externalDocs:
         url: https://apidocs.morpheusdata.com/#update-a-wiki-page
       responses:
