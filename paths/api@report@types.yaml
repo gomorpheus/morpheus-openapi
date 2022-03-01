@@ -2,7 +2,7 @@ get:
   summary: This endpoint retrieves all available report types
   description: |
     This endpoint retrieves all available report types. A report type has optionTypes that define the parameters available when executing a report of that type. The sample response has been abbreviated.
-  operationId: getAllReportTypes
+  operationId: reportsGetType
   tags:
     - Reports
   externalDocs:

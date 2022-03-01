@@ -20,7 +20,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-search.yaml
+            $ref: ../components/schemas/search.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/search.yaml
     '400':
       description: Bad Request.
     '401':

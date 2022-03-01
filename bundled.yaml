@@ -20,11 +20,13 @@ paths:
   /api/dashboard:
     get:
       summary: Overview of Dashboard information
-      operationId: getDashboard
       description: >
         This endpoint can be used to view dashboard information about the remote
         Morpheus appliance. This is an overview and summary of data available to
         the user that can be used to render a dashboard.
+      operationId: dashboard
+      tags:
+        - Dashboard
       externalDocs:
         url: https://apidocs.morpheusdata.com/#dashboard
       responses:
@@ -33,7 +35,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-dashboard'
+                $ref: '#/components/schemas/dashboard'
+              examples:
+                Dashboard Response:
+                  $ref: '#/components/examples/dashboard'
         '400':
           description: Bad Request.
         '401':
@@ -46,12 +51,9 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Dashboard
   /api/forgot/reset-password:
     post:
       summary: Reset user password
-      operationId: resetPassword
       description: >
         This endpoint will reset the password for a user, updating it to the
         specified value. A secret token must be passed to identify the user who
@@ -60,6 +62,10 @@ paths:
 
         **Note**: You can obtain this token by inspecting the URL of the “Click
         here to reset” link seen in the email.
+      operationId: resetPassword
+      tags:
+        - Authentication
+      security: []
       requestBody:
         required: true
         content:
@@ -107,13 +113,9 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Authentication
-      security: []
   /api/forgot/send-email:
     post:
       summary: Request a reset password email
-      operationId: forgotPassword
       description: >
         This endpoint will trigger the Reset your password email to be sent to
         the specified user.
@@ -131,6 +133,10 @@ paths:
         **Note**: This is an unauthorized endpoint and the response will always
         appear successful, it is not possible determine from the response
         whether the user exists or if an email was sent.
+      operationId: forgotPassword
+      tags:
+        - Authentication
+      security: []
       consumes:
         - application/json
       parameters:
@@ -178,9 +184,6 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Authentication
-      security: []
   /api/ping:
     get:
       summary: Basic information about current Morpheus Installation
@@ -192,13 +195,22 @@ paths:
         This is an unsecured endpoint and does not require authorization.
         However, build version will not be returned unless you are authenticated
         with a valid access token.
+      operationId: ping
+      tags:
+        - Ping
+        - Health
       responses:
         '200':
           description: Successful Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-ping'
+                $ref: '#/components/schemas/ping'
+              examples:
+                Authenticated Ping Response:
+                  $ref: '#/components/examples/ping-authenticated'
+                Unauthenticated Ping Response:
+                  $ref: '#/components/examples/ping-unauthenticated'
         '400':
           description: Bad Request.
         '401':
@@ -211,16 +223,16 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Health
   /api/report-types:
     get:
       summary: This endpoint retrieves all available report types
-      operationId: getAllReportTypes
       description: >
         This endpoint retrieves all available report types. A report type has
         optionTypes that define the parameters available when executing a report
         of that type. The sample response has been abbreviated.
+      operationId: getAllReportTypes
+      tags:
+        - Reports
       externalDocs:
         url: https://apidocs.morpheusdata.com/#get-all-report-types
       parameters:
@@ -251,15 +263,15 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Reports
   /api/reports:
     get:
       summary: Returns all reports
-      operationId: getAllReports
       description: >
         This endpoint returns all reports. This is results of reports that have
         been executed in the past.
+      operationId: getAllReports
+      tags:
+        - Reports
       externalDocs:
         url: https://apidocs.morpheusdata.com/#get-all-reports
       parameters:
@@ -296,11 +308,8 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Reports
     post:
       summary: Run specified report
-      operationId: runReport
       description: >
         This endpoint execute the specified report type and create a new report
         result.
@@ -308,6 +317,9 @@ paths:
 
         The available parameters vary by report type. Refer to the defined
         `inputs` for each report.
+      operationId: runReport
+      tags:
+        - Reports
       consumes:
         - application/json
       parameters:
@@ -352,7 +364,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-user'
+                $ref: '#/components/schemas/200-reports'
         '400':
           description: Bad Request.
         '401':
@@ -365,17 +377,17 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Reports
   /api/reports/{id}:
     get:
       summary: This endpoint returns a specific report result
-      operationId: getSpecificReport
       description: >
         This endpoint retrieves a specific report result. The response includes
         the result data as rows which can be used to render the report. Each
         report type will have sections for data and headers that vary by type,
         use Download a Specific Report to get the results organized by section.
+      operationId: getSpecificReport
+      tags:
+        - Reports
       externalDocs:
         url: https://apidocs.morpheusdata.com/#get-all-reports
       parameters:
@@ -399,13 +411,13 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Reports
     delete:
       summary: This endpoint will delete a report result
-      operationId: deleteSpecificReport
       description: |
         This endpoint will delete a report result.
+      operationId: deleteSpecificReport
+      tags:
+        - Reports
       externalDocs:
         url: https://apidocs.morpheusdata.com/#delete-a-report
       parameters:
@@ -429,15 +441,15 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Reports
   /api/reports/download/{id}{format}:
     get:
       summary: Downloads a specific report result as a file attachment
-      operationId: downloadSpecificReport
       description: >
         This endpoint downloads a specific report result as a file attachment.
         The default file format is `.json`.
+      operationId: downloadSpecificReport
+      tags:
+        - Reports
       externalDocs:
         url: https://apidocs.morpheusdata.com/#download-a-specific-report
       parameters:
@@ -462,8 +474,6 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Reports
   /api/search:
     get:
       summary: Provides global search for all types of objects
@@ -475,6 +485,9 @@ paths:
         The `phrase` parameter can be specified as part of the URL or as a query
         parameter. If phrase is not specified, then 0 results (hits) will be
         returned.
+      operationId: search
+      tags:
+        - Search
       externalDocs:
         url: https://apidocs.morpheusdata.com/#search
       parameters:
@@ -488,7 +501,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-search'
+                $ref: '#/components/schemas/search'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/search'
         '400':
           description: Bad Request.
         '401':
@@ -501,18 +517,19 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Search
   /api/whoami:
     get:
       summary: Retrieves information about current user roles and permissions
-      operationId: whoami
       description: >
         Provides API to retrieve information about yourself, including your
         roles and permissions.
 
 
         The appliance build version is also returned.
+      operationId: whoami
+      tags:
+        - Authentication
+        - Users
       externalDocs:
         url: https://apidocs.morpheusdata.com/#whoami
       responses:
@@ -521,7 +538,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-user'
+                $ref: '#/components/schemas/user'
+              examples:
+                Whoami Response:
+                  $ref: '#/components/examples/user'
         '400':
           description: Bad Request.
         '401':
@@ -534,17 +554,16 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Authentication
-        - Users
   /api/wiki/categories:
     get:
       summary: Retrieves all Wiki categories associated with the account
-      operationId: getWikiCategories
       description: >
         This endpoint retrieves all Wiki categories associated with the account.
         The results are not paginated. The categories returned are those of the
         found pages.
+      operationId: getWikiCategories
+      tags:
+        - Wiki
       externalDocs:
         url: https://apidocs.morpheusdata.com/#get-all-wiki-categories
       parameters:
@@ -569,14 +588,14 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Wiki
   /api/wiki/pages:
     get:
       summary: Retrieves wiki pages associated with the account.
-      operationId: getAllWiki
       description: |
         This endpoint retrieves wiki pages associated with the account.
+      operationId: getAllWiki
+      tags:
+        - Wiki
       externalDocs:
         url: https://apidocs.morpheusdata.com/#get-all-wiki-pages
       parameters:
@@ -601,11 +620,13 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Wiki
     post:
       summary: Create a Wiki Page
+      description: |
+        Creates a Wiki Page
       operationId: createWikiPage
+      tags:
+        - Wiki
       consumes:
         - application/json
       parameters:
@@ -632,8 +653,6 @@ paths:
                   content:
                     type: string
                     example: A sample document in **markdown**.
-      description: |
-        Creates a Wiki Page
       externalDocs:
         url: https://apidocs.morpheusdata.com/#create-a-wiki-page
       responses:
@@ -655,14 +674,14 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Wiki
   /api/wiki/pages/{id}:
     get:
       summary: Retrieves wiki a specific Wiki page
-      operationId: getWikiSpecificPage
       description: |
         This endpoint retrieves a specific wiki page.
+      operationId: getWikiSpecificPage
+      tags:
+        - Wiki
       externalDocs:
         url: https://apidocs.morpheusdata.com/#get-a-specific-wiki-page
       parameters:
@@ -686,13 +705,13 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Wiki
     put:
       summary: Update a Wiki Page
-      operationId: updateWikiPage
       description: |
         Updates a Wiki Page
+      operationId: updateWikiPage
+      tags:
+        - Wiki
       consumes:
         - application/json
       parameters:
@@ -739,12 +758,9 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Wiki
   /oauth/token:
     post:
       summary: Provides authentication via username and password
-      operationId: getAccessToken
       description: >
         This endpoint provides authentication via `username` and `password` of a
         Morpheus User. The response includes a valid access token. If your
@@ -763,6 +779,10 @@ paths:
 
         This will render your current access token invalid, so you will need to
         update any scripts relying on it.
+      operationId: getAccessToken
+      tags:
+        - Authentication
+      security: []
       parameters:
         - name: client_id
           required: true
@@ -835,9 +855,6 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-      tags:
-        - Authentication
-      security: []
 components:
   securitySchemes:
     bearerAuth:
@@ -845,277 +862,83 @@ components:
       type: http
       scheme: bearer
   schemas:
-    200-dashboard:
+    dashboard:
       title: 200 Dashboard
       type: object
       properties:
         success:
           type: boolean
-        monitoring:
+        instanceStats:
           type: object
           properties:
-            avgHealth:
+            maxCpu:
               type: number
-              example: 8.3333333333
-            avgResponseTime:
+            maxCores:
               type: number
-              example: 22.3333333333
-            warningApps:
+            cpuUsage:
               type: number
-              example: 0
-            warningChecks:
+            cpuUsageAverage:
               type: number
-              example: 0
-            failApps:
+            cpuUsagePeak:
               type: number
-              example: 0
-            totalApps:
+            usedMemory:
               type: number
-              example: 2
-            failChecks:
+            maxMemory:
               type: number
-              example: 1
-            successApps:
+            usedStorage:
               type: number
-              example: 2
-            mutedApps:
+            maxStorage:
               type: number
-              example: 0
-            successChecks:
+            running:
               type: number
-              example: 5
-            totalChecks:
+            total:
               type: number
-              example: 6
-            mutedChecks:
+            totalContainers:
               type: number
-              example: 0
-            responseTimes:
-              type: array
-              items:
-                type: number
-                example: 0
-            allSuccess:
-              type: boolean
-            openIncidents:
-              type: number
-              example: 0
         provisioning:
           type: object
           properties:
             instanceCount:
               type: number
-              example: 3
             favoriteInstances:
               type: array
               items:
                 type: object
-                properties:
-                  id:
-                    type: number
-                    example: 319
-                  accountId:
-                    type: number
-                    example: 1
-                  instanceType:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                        example: 6
-                      code:
-                        type: string
-                        example: apache
-                      category:
-                        type: string
-                        example: web
-                      name:
-                        type: string
-                        example: Apache
-                  zones:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                          example: 40
-                        accountId:
-                          type: number
-                          example: 1
-                        groups:
-                          type: array
-                          items:
-                            type: number
-                            example: 1
-                        name:
-                          type: string
-                          example: qa-azure2
-                        description:
-                          type: string
-                          format: nullable
-                        location:
-                          type: string
-                          format: nullable
-                        visibility:
-                          type: string
-                          example: private
-                        zoneTypeId:
-                          type: number
-                          example: 9
-                  layout:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                        example: 1292
-                      code:
-                        type: string
-                        example: apache-azure-2.4-ubuntu-16.04-single
-                      name:
-                        type: string
-                        example: Azure Apache
-                      description:
-                        type: string
-                        example: >-
-                          This will provision a single process with no
-                          redundancy
-                      sortOrder:
-                        type: number
-                        example: 10
-                  plan:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        example: Basic_A0 (1 Core 0.75GB Memory) (westus)
-                      id:
-                        type: number
-                        example: 187
-                      code:
-                        type: string
-                        example: azure.plan.westus.Basic_A0
-                  name:
-                    type: string
-                    example: test-azureapache1
-                  displayName:
-                    type: string
-                    example: test-azureapache1
-                  description:
-                    type: string
-                    format: nullable
-                  dateCreated:
-                    type: string
-                    format: date-time
-                    example: '2019-09-18T16:07:47Z'
-                  lastUpdated:
-                    type: string
-                    format: date-time
-                    example: '2019-10-25T09:12:29Z'
-                  status:
-                    type: string
-                    example: unknown
-                  containerIds:
-                    type: array
-                    items:
-                      type: number
-                      example: 317
-                  containers:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        ip:
-                          type: string
-                          example: 0.0.0.0
-                        port:
-                          type: object
-                          properties:
-                            id:
-                              type: number
-                              example: 19
-                            exportName:
-                              type: string
-                              example: HTTP
-                            container:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                  example: 317
-                            loadBalancerInstance:
-                              type: string
-                              format: nullable
-                            primaryPort:
-                              type: boolean
-                            loadBalanceProtocol:
-                              type: string
-                              format: nullable
-                            linkPort:
-                              type: boolean
-                            internalPort:
-                              type: number
-                              example: 80
-                            export:
-                              type: boolean
-                            portType:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                  example: 8
-                            displayName:
-                              type: string
-                              example: Http
-                            protocol:
-                              type: string
-                              example: http
-                            portIndex:
-                              type: number
-                              example: 0
-                            externalIp:
-                              type: string
-                              format: nullable
-                            externalPort:
-                              type: number
-                              example: 80
-                            internalIp:
-                              type: string
-                              format: nullable
-                            visible:
-                              type: boolean
-                            loadBalance:
-                              type: boolean
-                  version:
-                    type: string
-                    example: 2.4
-                  environmentPrefix:
-                    type: string
-                    format: nullable
-        instanceStats:
+        monitoring:
           type: object
           properties:
-            usedMemory:
+            avgHealth:
               type: number
-              example: 479804000
-            maxMemory:
+            avgResponseTime:
               type: number
-              example: 1771446368
-            usedStorage:
+            warningApps:
               type: number
-              example: 6202490880
-            maxStorage:
+            warningChecks:
               type: number
-              example: 55530786816
-            running:
+            failApps:
               type: number
-              example: 2
-            total:
+            totalApps:
               type: number
-              example: 3
-            totalContainers:
+            failChecks:
               type: number
-              example: 4
+            successApps:
+              type: number
+            mutedApps:
+              type: number
+            successChecks:
+              type: number
+            totalChecks:
+              type: number
+            mutedChecks:
+              type: number
+            responseTimes:
+              type: array
+              items:
+                type: number
+            allSuccess:
+              type: boolean
+            openIncidents:
+              type: number
         backups:
           type: object
           properties:
@@ -1126,108 +949,93 @@ components:
                   type: array
                   items:
                     type: number
-                    example: 0
                 totalSizeByDay7Days:
                   type: array
                   items:
                     type: number
-                    example: 0
                 formattedTotalSize:
                   type: object
                   properties:
                     value:
                       type: string
-                      example: 0
                     units:
                       type: string
-                      example: KB
                 backupCount:
                   type: number
-                  example: 3
                 totalSize:
                   type: number
-                  example: 0
                 success:
                   type: number
-                  example: 0
                 failed:
                   type: number
-                  example: 0
                 totalCompleted:
                   type: number
-                  example: 0
+                lastSevenDays:
+                  type: object
+                  properties:
+                    failed:
+                      type: number
+                    successful:
+                      type: number
+                    completed:
+                      type: number
                 avgSize:
                   type: number
-                  example: 0
                 failedRate:
                   type: number
-                  example: 0
                 successRate:
                   type: number
-                  example: 0
                 nextFireTotal:
                   type: number
-                  example: 1
                 backupDayCount:
                   type: array
                   items:
                     type: number
-                    example: 0
                 backupDayCountTotal:
                   type: number
-                  example: 0
         activity:
           type: array
           items:
             type: object
             properties:
-              success:
-                type: boolean
-              name:
-                type: string
-                example: dev-appliance
-              message:
-                type: string
-                example: Check successfully been created.
-              ts:
-                type: string
-                format: date-time
-                example: '2019-10-22T00:06:20Z'
-              activityType:
-                type: string
-                example: Monitoring
-              accountId:
-                type: number
-                example: 1
-              userId:
-                type: number
-                example: 1
-              userName:
-                type: string
-                example: admin
-              objectId:
-                type: number
-                example: 238
-              objectType:
-                type: string
-                example: MonitorCheck
               _id:
                 type: string
-                example: 0276e1fc-214d-4cb3-bcf4-9ebda0b26542
-              timestamp:
+              success:
+                type: boolean
+              activityType:
                 type: string
-                format: date-time
-                example: '2019-10-22T00:06:20Z'
-    200-ping:
+              name:
+                type: string
+              message:
+                type: string
+              objectType:
+                type: string
+              objectId:
+                type: number
+              user:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  username:
+                    type: string
+              ts:
+                type: string
+        logStats:
+          type: object
+          properties:
+            success:
+              type: boolean
+            msg:
+              type: string
+    ping:
       title: 200 Ping
       type: object
       properties:
         success:
           type: boolean
-          example: true
         buildVersion:
           type: string
-          example: 5.4.4
     200-reportTypes:
       title: 200 Report Types
       type: object
@@ -1494,7 +1302,59 @@ components:
               type: integer
               format: int32
               example: 25
-    200-user:
+    200-success:
+      title: 200 Success
+      type: object
+      properties:
+        success:
+          type: boolean
+    search:
+      title: 200 Search
+      type: object
+      properties:
+        hits:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              uuid:
+                type: string
+              name:
+                type: string
+              description:
+                type: string
+                format: nullable
+              type:
+                type: string
+              dateCreated:
+                type: string
+                format: date-time
+              score:
+                type: integer
+                format: int32
+        query:
+          type: string
+        took:
+          type: integer
+          format: int32
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              format: int32
+            max:
+              type: integer
+              format: int32
+            size:
+              type: integer
+              format: int32
+            total:
+              type: integer
+              format: int32
+    user:
       title: 200 User
       type: object
       properties:
@@ -1502,9 +1362,11 @@ components:
           type: object
           properties:
             id:
-              type: number
+              type: integer
+              format: int32
             accountId:
-              type: number
+              type: integer
+              format: int32
             username:
               type: string
             displayName:
@@ -1528,18 +1390,22 @@ components:
             passwordExpired:
               type: boolean
             loginCount:
-              type: number
+              type: integer
+              format: int32
             loginAttempts:
-              type: number
+              type: integer
+              format: int32
             lastLoginDate:
               type: string
+              format: date-time
             roles:
               type: array
               items:
                 type: object
                 properties:
                   id:
-                    type: number
+                    type: integer
+                    format: int32
                   authority:
                     type: string
                   description:
@@ -1548,7 +1414,8 @@ components:
               type: object
               properties:
                 id:
-                  type: number
+                  type: integer
+                  format: int32
                 name:
                   type: string
             linuxUsername:
@@ -1556,103 +1423,39 @@ components:
             linuxPassword:
               type: string
             linuxKeyPairId:
-              type: object
-              properties:
-                id:
-                  type: number
+              type: string
+              format: nullable
             windowsUsername:
               type: string
             windowsPassword:
               type: string
             defaultPersona:
-              type: object
-              properties:
-                id:
-                  type: number
-                code:
-                  type: string
-                name:
-                  type: string
+              type: string
+              format: nullable
             dateCreated:
               type: string
+              format: date-time
             lastUpdated:
               type: string
-            isMasterAccount:
-              type: boolean
-            permissions:
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  code:
-                    type: string
-                  access:
-                    type: string
-            appliance:
-              type: object
-              properties:
-                buildVersion:
-                  type: string
-    200-success:
-      title: 200 Success
-      type: object
-      properties:
-        success:
+              format: date-time
+        isMasterAccount:
           type: boolean
-    200-search:
-      title: 200 Search
-      type: object
-      properties:
-        hits:
+        permissions:
           type: array
           items:
             type: object
             properties:
-              id:
-                type: string
-                example: 18157
-              uuid:
-                type: string
-                example: 4e33c2ef-5b70-45c0-9700-939e3162e42b
               name:
                 type: string
-                example: EC2Instance
-              description:
+              code:
                 type: string
-                format: nullable
-              type:
+              access:
                 type: string
-                example: Instance
-              dateCreated:
-                type: string
-                format: date-time
-                example: '2022-02-22T19:49:28Z'
-              score:
-                type: number
-                example: 20
-        query:
-          type: string
-          example: ec2
-        took:
-          type: number
-          example: 3249
-        meta:
+        appliance:
           type: object
           properties:
-            offset:
-              type: number
-              example: 0
-            max:
-              type: number
-              example: 25
-            size:
-              type: number
-              example: 3
-            total:
-              type: number
-              example: 3
+            buildVersion:
+              type: string
     200-wikiCategories:
       title: 200 Wiki Categories
       type: object
@@ -1875,25 +1678,690 @@ components:
         scope:
           type: string
           example: write
+  examples:
+    dashboard:
+      summary: Dashboard Response
+      value:
+        success: true
+        instanceStats:
+          maxCpu: 18
+          maxCores: 35
+          cpuUsage: 0
+          cpuUsageAverage: 7.213778379417601
+          cpuUsagePeak: 34.55673
+          usedMemory: 55459662848
+          maxMemory: 106568876032
+          usedStorage: 173983399936
+          maxStorage: 1113470271488
+          running: 13
+          total: 18
+          totalContainers: 24
+        provisioning:
+          instanceCount: 18
+          favoriteInstances: []
+        monitoring:
+          avgHealth: 8.4444444444
+          avgResponseTime: 915.5555555556
+          warningApps: 4
+          warningChecks: 2
+          failApps: 0
+          totalApps: 5
+          failChecks: 4
+          successApps: 0
+          mutedApps: 1
+          successChecks: 21
+          totalChecks: 30
+          mutedChecks: 4
+          responseTimes:
+            - 0
+            - 0
+            - 10
+            - 0
+            - 0
+            - 0
+            - 0
+          allSuccess: false
+          openIncidents: 5
+        backups:
+          accountStats:
+            totalSizeByDay:
+              - 1883
+              - 1883
+              - 71515
+              - 134532
+              - 134532
+            totalSizeByDay7Days:
+              - 134532
+              - 134532
+              - 134532
+              - 134532
+              - 134532
+              - 134532
+              - 134532
+            formattedTotalSize:
+              value: '132'
+              units: GB
+            backupCount: 10
+            totalSize: 134532
+            success: 11
+            failed: 0
+            totalCompleted: 11
+            lastSevenDays:
+              failed: 0
+              successful: 6
+              completed: 6
+            avgSize: 12230.1818181818
+            failedRate: 0
+            successRate: 1
+            nextFireTotal: 1
+            backupDayCount:
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+            backupDayCountTotal: 0
+        activity:
+          - _id: 5a6e90e3-b7fa-4105-ba17-46999c2a0ebd
+            success: true
+            activityType: Admin
+            name: areid
+            message: User 'areid' updated.
+            objectType: User
+            objectId: 189
+            user:
+              id: 240
+              username: Greg Willis
+            ts: '2022-03-01T02:09:21Z'
+          - _id: 98d7f835-002a-4800-8f5c-8b24501a3690
+            success: true
+            activityType: Admin
+            name: Aaron Reid
+            message: User 'Aaron Reid' updated.
+            objectType: User
+            objectId: 238
+            user:
+              id: 240
+              username: Greg Willis
+            ts: '2022-03-01T02:09:15Z'
+          - _id: cb01fcf7-b2a8-4f42-9cbe-4402e4c86b9b
+            success: true
+            activityType: Alert
+            name: MRDMMON1010
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18182
+            user:
+              id: 263
+              username: Martez Reed
+            ts: '2022-02-28T22:37:18Z'
+          - _id: c11fc2d4-04f4-40dd-aece-d8672f665529
+            success: true
+            activityType: Alert
+            name: MRDMMON1010
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 218891
+            user: null
+            ts: '2022-02-28T22:37:18Z'
+          - _id: d47ad6db-dd84-4b02-9e32-fdeb43a6a568
+            success: true
+            activityType: Provisioning
+            name: MRDMMON1011
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18183
+            user: null
+            ts: '2022-02-28T22:37:18Z'
+          - _id: d618bd64-04dd-47ef-856d-65800936806b
+            success: true
+            activityType: Provisioning
+            name: MRDMMON1010
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18182
+            user: null
+            ts: '2022-02-28T21:27:43Z'
+          - _id: 9961de13-836d-4967-a4ca-31b13f19b726
+            success: true
+            activityType: Provisioning
+            name: MRDMRAB1017
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18181
+            user: null
+            ts: '2022-02-28T20:09:43Z'
+          - _id: 84538ec5-5016-418e-8f23-599640813b9a
+            success: true
+            activityType: Provisioning
+            name: JWDMCEN1300
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18180
+            user:
+              id: 236
+              username: Jeff Wheeler
+            ts: '2022-02-28T19:44:42Z'
+        logStats:
+          success: false
+          msg: Found no scope objects for user
+    ping-authenticated:
+      summary: Authenticated Ping Response
+      value:
+        success: true
+        buildVersion: 5.4.4
+    ping-unauthenticated:
+      summary: Unauthenticated Ping Response
+      value:
+        success: true
+        buildVersion: ''
+    search:
+      summary: Search Response
+      value:
+        hits:
+          - id: '18157'
+            uuid: 4e33c2ef-5b70-45c0-9700-939e3162e42b
+            name: EC2Instance
+            description: null
+            type: Instance
+            dateCreated: '2022-02-22T19:49:28Z'
+            score: 20
+          - id: '218195'
+            uuid: aef509cc-8727-4691-bfdd-55b4b6d06941
+            name: EC2Instance
+            description: null
+            type: ComputeServer
+            dateCreated: '2022-02-22T19:49:28Z'
+            score: 3
+          - id: '4'
+            uuid: fca933d0-5105-4e63-aa8b-6c381f25bf95
+            name: EC2 Instance
+            description: >-
+              Easily provision any Amazon AMI tied to your Amazon cloud account
+              just as if it were any other instance type.
+            type: InstanceType
+            dateCreated: null
+            score: 1.5
+        query: ec2
+        took: 2964
+        meta:
+          offset: 0
+          max: 25
+          size: 3
+          total: 3
+    user:
+      summary: User Response
+      value:
+        user:
+          id: 127
+          accountId: 3
+          username: morpheusUser
+          displayName: morpheusUser
+          email: morpheusUser@morpheusdata.com
+          firstName: Morpheus
+          lastName: User
+          enabled: true
+          receiveNotifications: true
+          isUsing2FA: false
+          accountExpired: false
+          accountLocked: false
+          passwordExpired: false
+          loginCount: 228
+          loginAttempts: 0
+          lastLoginDate: '2022-02-24T14:37:58Z'
+          roles:
+            - id: 294
+              authority: Morpheus Engineer
+              description: Morpheus Engineer
+          account:
+            id: 3
+            name: Morpheus
+          linuxUsername: morpheusUser
+          linuxPassword: '************'
+          linuxKeyPairId: null
+          windowsUsername: morpheusUser
+          windowsPassword: '************'
+          defaultPersona: null
+          dateCreated: '2018-08-06T13:22:13Z'
+          lastUpdated: '2022-02-24T14:38:03Z'
+        isMasterAccount: true
+        permissions:
+          - name: AppTemplate
+            code: AppTemplate
+            access: full
+          - name: CatalogItemType
+            code: CatalogItemType
+            access: full
+          - name: ComputeSite-full
+            code: ComputeSite
+            access: custom
+          - name: ComputeZone-full
+            code: ComputeZone
+            access: full
+          - name: InstanceType
+            code: InstanceType
+            access: custom
+          - name: ReportTypes
+            code: ReportTypes
+            access: full
+          - name: VdiPools
+            code: VdiPools
+            access: full
+          - name: 'Operations: Usage'
+            code: account-usage
+            access: full
+          - name: 'Operations: Activity'
+            code: activity
+            access: read
+          - name: 'Admin: Tenant - Impersonate Users'
+            code: admin-accounts-users
+            access: full
+          - name: 'Admin: Tenant'
+            code: admin-accounts
+            access: full
+          - name: 'Admin: Appliance Settings'
+            code: admin-appliance
+            access: full
+          - name: 'Admin: Backup Settings'
+            code: admin-backupSettings
+            access: full
+          - name: 'Infrastructure: Certificates'
+            code: admin-certificates
+            access: full
+          - name: 'Admin: Integrations'
+            code: admin-cm
+            access: full
+          - name: 'Library: Instance Types'
+            code: admin-containers
+            access: full
+          - name: 'Admin: Distributed Workers'
+            code: admin-distributed-workers
+            access: full
+          - name: 'Admin: Environment Settings'
+            code: admin-environments
+            access: full
+          - name: 'Admin: Policies'
+            code: admin-global-policies
+            access: full
+          - name: 'Infrastructure: Groups'
+            code: admin-groups
+            access: full
+          - name: 'Admin: Guidance Settings'
+            code: admin-guidanceSettings
+            access: full
+          - name: 'Admin: Health'
+            code: admin-health
+            access: read
+          - name: 'Admin: Identity Source'
+            code: admin-identity-sources
+            access: full
+          - name: 'Infrastructure: Keypairs'
+            code: admin-keypairs
+            access: full
+          - name: 'Admin: License Settings'
+            code: admin-licenses
+            access: full
+          - name: 'Admin: Log Settings'
+            code: admin-logSettings
+            access: full
+          - name: 'Admin: Monitoring Settings'
+            code: admin-monitorSettings
+            access: full
+          - name: 'Admin: Message of the day'
+            code: admin-motd
+            access: full
+          - name: 'Admin: Packages'
+            code: admin-packages
+            access: full
+          - name: 'Admin: Plugins'
+            code: admin-plugins
+            access: full
+          - name: 'Infrastructure: Policies'
+            code: admin-policies
+            access: full
+          - name: 'Admin: Profiles'
+            code: admin-profiles
+            access: read
+          - name: 'Admin: Provisioning Settings'
+            code: admin-provisioningSettings
+            access: full
+          - name: 'Admin: Roles'
+            code: admin-roles
+            access: full
+          - name: 'Infrastructure: Compute'
+            code: admin-servers
+            access: full
+          - name: 'Admin: Service Plans'
+            code: admin-servicePlans
+            access: full
+          - name: 'Admin: Users'
+            code: admin-users
+            access: full
+          - name: 'Admin: Whitelabel Settings'
+            code: admin-whitelabel
+            access: full
+          - name: 'Infrastructure: Clouds'
+            code: admin-zones
+            access: full
+          - name: 'Library: App Blueprints'
+            code: app-templates
+            access: full
+          - name: 'Provisioning: Apps'
+            code: apps
+            access: full
+          - name: 'Library: Blueprints - ARM'
+            code: arm-template
+            access: full
+          - name: 'Library: Integrations'
+            code: automation-services
+            access: full
+          - name: 'Backups: Integrations'
+            code: backup-services
+            access: full
+          - name: Backups
+            code: backups
+            access: full
+          - name: 'API: Billing'
+            code: billing
+            access: full
+          - name: 'Library: Catalog Items'
+            code: catalog
+            access: full
+          - name: 'Library: Blueprints - CloudFormation'
+            code: cloudFormation-template
+            access: full
+          - name: 'Provisioning: Code Repositories'
+            code: code-repositories
+            access: full
+          - name: 'Infrastructure: Credentials'
+            code: credentials
+            access: full
+          - name: Custom Instance Tab
+            code: custom-instance-tab
+            access: full
+          - name: Custom Server Tab
+            code: custom-server-tab
+            access: full
+          - name: 'Operations: Dashboard'
+            code: dashboard
+            access: read
+          - name: DataDog Instance Tab
+            code: datadog-instance-tab
+            access: full
+          - name: 'Provisioning: Code Integrations'
+            code: deployment-services
+            access: full
+          - name: 'Provisioning: Code Deployments'
+            code: deployments
+            access: full
+          - name: Example Catalog Layout
+            code: example-catalog-view
+            access: none
+          - name: 'API: Execution Request'
+            code: execution-request
+            access: full
+          - name: 'Provisioning: Executions'
+            code: executions
+            access: read
+          - name: 'Operations: Guidance'
+            code: guidance
+            access: full
+          - name: 'Library: Blueprints - Helm'
+            code: helm-template
+            access: full
+          - name: 'Infrastructure: Boot'
+            code: infrastructure-boot
+            access: full
+          - name: 'Infrastructure: Clusters'
+            code: infrastructure-cluster
+            access: full
+          - name: 'Infrastructure: Network Router DHCP Pool'
+            code: infrastructure-dhcp-pool
+            access: full
+          - name: 'Infrastructure: Network Domains'
+            code: infrastructure-domains
+            access: full
+          - name: 'Infrastructure: Network IP Pools'
+            code: infrastructure-ippools
+            access: full
+          - name: 'Infrastructure: Kubernetes Control'
+            code: infrastructure-kube-cntl
+            access: full
+          - name: 'Infrastructure: Load Balancers'
+            code: infrastructure-loadbalancer
+            access: full
+          - name: 'Infrastructure: Network Router NAT'
+            code: infrastructure-nat
+            access: full
+          - name: 'Infrastructure: DHCP Relays'
+            code: infrastructure-network-dhcp-relay
+            access: full
+          - name: 'Infrastructure: Network Static Routes'
+            code: infrastructure-network-dhcp-routes
+            access: full
+          - name: 'Infrastructure: DHCP Servers'
+            code: infrastructure-network-dhcp-server
+            access: full
+          - name: 'Infrastructure: Network Firewalls'
+            code: infrastructure-network-firewalls
+            access: full
+          - name: 'Infrastructure: Network Integration'
+            code: infrastructure-network-integrations
+            access: full
+          - name: 'Infrastructure: Network Router Firewalls'
+            code: infrastructure-network-router-firewalls
+            access: full
+          - name: 'Infrastructure: Network Router Interfaces'
+            code: infrastructure-network-router-interfaces
+            access: full
+          - name: 'Infrastructure: Network Router Redistribution'
+            code: infrastructure-network-router-redistribution
+            access: full
+          - name: 'Infrastructure: Network Router Routes'
+            code: infrastructure-network-router-routes
+            access: full
+          - name: 'Infrastructure: Network Server Groups'
+            code: infrastructure-network-server-groups
+            access: full
+          - name: 'Infrastructure: Networks'
+            code: infrastructure-networks
+            access: full
+          - name: 'Infrastructure: Network Proxies'
+            code: infrastructure-proxies
+            access: full
+          - name: 'Infrastructure: Network Router DHCP Binding'
+            code: infrastructure-router-dhcp-binding
+            access: full
+          - name: 'Infrastructure: Network Router DHCP Relay'
+            code: infrastructure-router-dhcp-relay
+            access: full
+          - name: 'Infrastructure: Network Routers'
+            code: infrastructure-routers
+            access: full
+          - name: 'Infrastructure: Security Groups'
+            code: infrastructure-securityGroups
+            access: full
+          - name: 'Infrastructure: State'
+            code: infrastructure-state
+            access: full
+          - name: 'Infrastructure: Storage Browser'
+            code: infrastructure-storage-browser
+            access: full
+          - name: 'Infrastructure: Storage'
+            code: infrastructure-storage
+            access: full
+          - name: 'Integrations: Ansible'
+            code: integrations-ansible
+            access: full
+          - name: 'Provisioning: Job Executions'
+            code: job-executions
+            access: read
+          - name: 'Provisioning: Jobs'
+            code: job-templates
+            access: full
+          - name: 'Library: Blueprints - Kubernetes'
+            code: kubernetes-template
+            access: full
+          - name: 'Provisioning: Advanced Node Type Options'
+            code: library-advanced-node-type-options
+            access: full
+          - name: 'Library: Options'
+            code: library-options
+            access: full
+          - name: 'Library: Templates'
+            code: library-templates
+            access: full
+          - name: 'Monitoring: Logs'
+            code: logs
+            access: full
+          - name: Monitoring
+            code: monitoring
+            access: full
+          - name: 'Operations: Alarms'
+            code: operations-alarms
+            access: full
+          - name: 'Operations: Approvals'
+            code: operations-approvals
+            access: full
+          - name: 'Operations: Budgets'
+            code: operations-budgets
+            access: full
+          - name: 'Operations: Invoices'
+            code: operations-invoices
+            access: full
+          - name: 'Operations: Wiki'
+            code: operations-wiki
+            access: full
+          - name: Projects
+            code: projects
+            access: full
+          - name: Provisioning Administrator
+            code: provisioning-admin
+            access: full
+          - name: 'Provisioning: Clone Instance'
+            code: provisioning-clone
+            access: full
+          - name: 'Provisioning: Execute Script'
+            code: provisioning-execute-script
+            access: full
+          - name: 'Provisioning: Execute Task'
+            code: provisioning-execute-task
+            access: full
+          - name: 'Provisioning: Execute Workflow'
+            code: provisioning-execute-workflow
+            access: full
+          - name: 'Provisioning: Allow Force Delete'
+            code: provisioning-force-delete
+            access: full
+          - name: 'Provisioning: Import Image'
+            code: provisioning-import-image
+            access: full
+          - name: Reconfigure Servers
+            code: provisioning-reconfigure
+            access: full
+          - name: 'Provisioning: Instances'
+            code: provisioning
+            access: full
+          - name: 'Operations: Analytics'
+            code: reports-analytics
+            access: full
+          - name: 'Operations: Reports'
+            code: reports
+            access: full
+          - name: 'Library: Scheduling - Execute'
+            code: scheduling-execute
+            access: full
+          - name: 'Library: Scheduling - Power'
+            code: scheduling-power
+            access: full
+          - name: 'Security: Scanning'
+            code: security-scan
+            access: full
+          - name: 'Catalog: Dashboard'
+            code: service-catalog-dashboard
+            access: read
+          - name: 'Catalog: Inventory'
+            code: service-catalog-inventory
+            access: full
+          - name: Catalog
+            code: service-catalog
+            access: full
+          - name: 'Tools: Archives'
+            code: services-archives
+            access: full
+          - name: 'Tools: Cypher'
+            code: services-cypher
+            access: user
+          - name: 'Tools: Image Builder'
+            code: services-image-builder
+            access: full
+          - name: 'Tools: Kubernetes'
+            code: services-kubernetes
+            access: full
+          - name: 'Provisioning: Service Mesh'
+            code: services-network-registry
+            access: full
+          - name: 'VDI: Copy/Paste'
+            code: services-vdi-copy
+            access: full
+          - name: 'Tools: VDI Pools'
+            code: services-vdi-pools
+            access: full
+          - name: 'VDI: Local Printer'
+            code: services-vdi-printer
+            access: full
+          - name: Snapshots
+            code: snapshots
+            access: full
+          - name: 'Library: Tasks - Script Engines'
+            code: task-scripts
+            access: full
+          - name: 'Library: Tasks'
+            code: tasks
+            access: full
+          - name: 'Remote Console: Auto Login'
+            code: terminal-access
+            access: 'yes'
+          - name: Remote Console
+            code: terminal
+            access: full
+          - name: 'Library: Blueprints - Terraform'
+            code: terraform-template
+            access: full
+          - name: 'Library: Thresholds'
+            code: thresholds
+            access: full
+          - name: 'Infrastructure: Trust Integrations'
+            code: trust-services
+            access: full
+          - name: 'Library: Virtual Images'
+            code: virtual-images
+            access: full
+        appliance:
+          buildVersion: 5.4.4
   parameters:
     max:
       name: max
       in: query
-      description: Maximum number of returned objects
+      description: Maximum number of records to return
       schema:
-        type: number
+        type: integer
+        format: int64
         default: 25
     offset:
       name: offset
       in: query
-      description: Offset of records you want to load
+      description: Offset records, the number of records to skip, for paginating requests
       schema:
-        type: number
+        type: integer
+        format: int64
         default: 0
     sort:
       name: sort
       in: query
-      description: Sort order
+      description: Sort order, the name of the property to sort by
       schema:
         type: string
         default: name
@@ -1904,10 +2372,13 @@ components:
       schema:
         type: string
         default: asc
+        enum:
+          - asc
+          - desc
     phrase:
       name: phrase
       in: query
-      description: If specified will return a partial match on name
+      description: Search phrase for partial matches on name or description
       schema:
         type: string
     name:
@@ -2014,6 +2485,7 @@ tags:
   - name: Option Lists
   - name: Options
   - name: Personas
+  - name: Ping
   - name: Policies
   - name: Price Sets
   - name: Prices

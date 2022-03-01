@@ -2,7 +2,7 @@ get:
   summary: Downloads a specific report result as a file attachment
   description: |
     This endpoint downloads a specific report result as a file attachment. The default file format is `.json`.
-  operationId: downloadSpecificReport
+  operationId: reportsDownload
   tags:
     - Reports
   externalDocs:

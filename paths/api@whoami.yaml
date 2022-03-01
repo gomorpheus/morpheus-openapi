@@ -16,7 +16,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-user.yaml
+            $ref: ../components/schemas/user.yaml
+          examples:
+            Whoami Response:
+              $ref: ../components/examples/user.yaml
     '400':
       description: Bad Request.
     '401':

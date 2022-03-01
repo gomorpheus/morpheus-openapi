@@ -1,6 +1,6 @@
 title: 200 Search
 type: object
-properties:
+properties: 
   hits: 
     type: array
     items: 
@@ -8,44 +8,38 @@ properties:
       properties: 
         id: 
           type: string
-          example: 18157
         uuid: 
           type: string
-          example: 4e33c2ef-5b70-45c0-9700-939e3162e42b
         name: 
           type: string
-          example: EC2Instance
         description: 
           type: string
           format: nullable
         type: 
           type: string
-          example: Instance
         dateCreated: 
           type: string
           format: date-time
-          example: 2022-02-22T19:49:28Z
         score: 
-          type: number
-          example: 20
+          type: integer
+          format: int32
   query: 
     type: string
-    example: ec2
   took: 
-    type: number
-    example: 3249
+    type: integer
+    format: int32
   meta: 
     type: object
     properties: 
       offset: 
-        type: number
-        example: 0
+        type: integer
+        format: int32
       max: 
-        type: number
-        example: 25
+        type: integer
+        format: int32
       size: 
-        type: number
-        example: 3
+        type: integer
+        format: int32
       total: 
-        type: number
-        example: 3
+        type: integer
+        format: int32

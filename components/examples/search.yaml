@@ -1,0 +1,32 @@
+summary: Search Response
+value:
+  hits:
+  - id: '18157'
+    uuid: 4e33c2ef-5b70-45c0-9700-939e3162e42b
+    name: EC2Instance
+    description:
+    type: Instance
+    dateCreated: '2022-02-22T19:49:28Z'
+    score: 20
+  - id: '218195'
+    uuid: aef509cc-8727-4691-bfdd-55b4b6d06941
+    name: EC2Instance
+    description:
+    type: ComputeServer
+    dateCreated: '2022-02-22T19:49:28Z'
+    score: 3
+  - id: '4'
+    uuid: fca933d0-5105-4e63-aa8b-6c381f25bf95
+    name: EC2 Instance
+    description: Easily provision any Amazon AMI tied to your Amazon cloud account just
+      as if it were any other instance type.
+    type: InstanceType
+    dateCreated:
+    score: 1.5
+  query: ec2
+  took: 2964
+  meta:
+    offset: 0
+    max: 25
+    size: 3
+    total: 3

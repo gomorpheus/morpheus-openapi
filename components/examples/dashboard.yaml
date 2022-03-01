@@ -1,0 +1,167 @@
+summary: Dashboard Response
+value:
+  success: true
+  instanceStats:
+    maxCpu: 18
+    maxCores: 35
+    cpuUsage: 0
+    cpuUsageAverage: 7.213778379417601
+    cpuUsagePeak: 34.55673
+    usedMemory: 55459662848
+    maxMemory: 106568876032
+    usedStorage: 173983399936
+    maxStorage: 1113470271488
+    running: 13
+    total: 18
+    totalContainers: 24
+  provisioning:
+    instanceCount: 18
+    favoriteInstances: []
+  monitoring:
+    avgHealth: 8.4444444444
+    avgResponseTime: 915.5555555556
+    warningApps: 4
+    warningChecks: 2
+    failApps: 0
+    totalApps: 5
+    failChecks: 4
+    successApps: 0
+    mutedApps: 1
+    successChecks: 21
+    totalChecks: 30
+    mutedChecks: 4
+    responseTimes:
+    - 0
+    - 0
+    - 10
+    - 0
+    - 0
+    - 0
+    - 0
+    allSuccess: false
+    openIncidents: 5
+  backups:
+    accountStats:
+      totalSizeByDay:
+      - 1883
+      - 1883
+      - 71515
+      - 134532
+      - 134532
+      totalSizeByDay7Days:
+      - 134532
+      - 134532
+      - 134532
+      - 134532
+      - 134532
+      - 134532
+      - 134532
+      formattedTotalSize:
+        value: '132'
+        units: GB
+      backupCount: 10
+      totalSize: 134532
+      success: 11
+      failed: 0
+      totalCompleted: 11
+      lastSevenDays:
+        failed: 0
+        successful: 6
+        completed: 6
+      avgSize: 12230.1818181818
+      failedRate: 0
+      successRate: 1
+      nextFireTotal: 1
+      backupDayCount:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      backupDayCountTotal: 0
+  activity:
+  - _id: 5a6e90e3-b7fa-4105-ba17-46999c2a0ebd
+    success: true
+    activityType: Admin
+    name: areid
+    message: User 'areid' updated.
+    objectType: User
+    objectId: 189
+    user:
+      id: 240
+      username: Greg Willis
+    ts: '2022-03-01T02:09:21Z'
+  - _id: 98d7f835-002a-4800-8f5c-8b24501a3690
+    success: true
+    activityType: Admin
+    name: Aaron Reid
+    message: User 'Aaron Reid' updated.
+    objectType: User
+    objectId: 238
+    user:
+      id: 240
+      username: Greg Willis
+    ts: '2022-03-01T02:09:15Z'
+  - _id: cb01fcf7-b2a8-4f42-9cbe-4402e4c86b9b
+    success: true
+    activityType: Alert
+    name: MRDMMON1010
+    message: Instance has successfully been deleted by 'Morpheus'.
+    objectType: Instance
+    objectId: 18182
+    user:
+      id: 263
+      username: Martez Reed
+    ts: '2022-02-28T22:37:18Z'
+  - _id: c11fc2d4-04f4-40dd-aece-d8672f665529
+    success: true
+    activityType: Alert
+    name: MRDMMON1010
+    message: Server has successfully been deleted by 'Morpheus'.
+    objectType: ComputeServer
+    objectId: 218891
+    user:
+    ts: '2022-02-28T22:37:18Z'
+  - _id: d47ad6db-dd84-4b02-9e32-fdeb43a6a568
+    success: true
+    activityType: Provisioning
+    name: MRDMMON1011
+    message: New instance has successfully been created by Morpheus.
+    objectType: Instance
+    objectId: 18183
+    user:
+    ts: '2022-02-28T22:37:18Z'
+  - _id: d618bd64-04dd-47ef-856d-65800936806b
+    success: true
+    activityType: Provisioning
+    name: MRDMMON1010
+    message: New instance has successfully been created by Morpheus.
+    objectType: Instance
+    objectId: 18182
+    user:
+    ts: '2022-02-28T21:27:43Z'
+  - _id: 9961de13-836d-4967-a4ca-31b13f19b726
+    success: true
+    activityType: Provisioning
+    name: MRDMRAB1017
+    message: New instance has successfully been created by Morpheus.
+    objectType: Instance
+    objectId: 18181
+    user:
+    ts: '2022-02-28T20:09:43Z'
+  - _id: 84538ec5-5016-418e-8f23-599640813b9a
+    success: true
+    activityType: Provisioning
+    name: JWDMCEN1300
+    message: New instance has successfully been created by Morpheus.
+    objectType: Instance
+    objectId: 18180
+    user:
+      id: 236
+      username: Jeff Wheeler
+    ts: '2022-02-28T19:44:42Z'
+  logStats:
+    success: false
+    msg: Found no scope objects for user

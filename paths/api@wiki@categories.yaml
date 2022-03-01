@@ -2,7 +2,7 @@ get:
   summary: Retrieves all Wiki categories associated with the account
   description: |
     This endpoint retrieves all Wiki categories associated with the account. The results are not paginated. The categories returned are those of the found pages.
-  operationId: getWikiCategories
+  operationId: wikiCategories
   tags:
     - Wiki
   externalDocs:

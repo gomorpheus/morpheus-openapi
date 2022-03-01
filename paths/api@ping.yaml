@@ -14,7 +14,12 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-ping.yaml
+            $ref: ../components/schemas/ping.yaml
+          examples:
+            Authenticated Ping Response:
+              $ref: ../components/examples/ping-authenticated.yaml
+            Unauthenticated Ping Response:
+              $ref: ../components/examples/ping-unauthenticated.yaml
     '400':
       description: Bad Request.
     '401':
@@ -27,4 +32,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  

@@ -8,7 +8,7 @@ post:
     This endpoint also allows refreshing your current access token to get a new token. This is done by passing your current `refresh_token`. This provides a way to renew your client’s session with the API, and extend the expiration date.
 
     This will render your current access token invalid, so you will need to update any scripts relying on it.
-  operationId: getAccessToken
+  operationId: accessTokenGet
   tags:
     - Authentication
   security: []

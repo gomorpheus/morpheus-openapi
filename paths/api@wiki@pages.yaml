@@ -2,7 +2,7 @@ get:
   summary: Retrieves wiki pages associated with the account.
   description: |
     This endpoint retrieves wiki pages associated with the account.
-  operationId: getAllWiki
+  operationId: wikiList
   tags:
     - Wiki
   externalDocs:
@@ -33,7 +33,7 @@ post:
   summary: Create a Wiki Page
   description: |
     Creates a Wiki Page
-  operationId: createWikiPage
+  operationId: wikiAdd
   tags:
     - Wiki
   consumes:

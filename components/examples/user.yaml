@@ -1,0 +1,449 @@
+summary: User Response
+value:
+  user:
+    id: 127
+    accountId: 3
+    username: morpheusUser
+    displayName: morpheusUser
+    email: morpheusUser@morpheusdata.com
+    firstName: Morpheus
+    lastName: User
+    enabled: true
+    receiveNotifications: true
+    isUsing2FA: false
+    accountExpired: false
+    accountLocked: false
+    passwordExpired: false
+    loginCount: 228
+    loginAttempts: 0
+    lastLoginDate: '2022-02-24T14:37:58Z'
+    roles:
+    - id: 294
+      authority: Morpheus Engineer
+      description: Morpheus Engineer
+    account:
+      id: 3
+      name: Morpheus
+    linuxUsername: morpheusUser
+    linuxPassword: "************"
+    linuxKeyPairId:
+    windowsUsername: morpheusUser
+    windowsPassword: "************"
+    defaultPersona:
+    dateCreated: '2018-08-06T13:22:13Z'
+    lastUpdated: '2022-02-24T14:38:03Z'
+  isMasterAccount: true
+  permissions:
+  - name: AppTemplate
+    code: AppTemplate
+    access: full
+  - name: CatalogItemType
+    code: CatalogItemType
+    access: full
+  - name: ComputeSite-full
+    code: ComputeSite
+    access: custom
+  - name: ComputeZone-full
+    code: ComputeZone
+    access: full
+  - name: InstanceType
+    code: InstanceType
+    access: custom
+  - name: ReportTypes
+    code: ReportTypes
+    access: full
+  - name: VdiPools
+    code: VdiPools
+    access: full
+  - name: 'Operations: Usage'
+    code: account-usage
+    access: full
+  - name: 'Operations: Activity'
+    code: activity
+    access: read
+  - name: 'Admin: Tenant - Impersonate Users'
+    code: admin-accounts-users
+    access: full
+  - name: 'Admin: Tenant'
+    code: admin-accounts
+    access: full
+  - name: 'Admin: Appliance Settings'
+    code: admin-appliance
+    access: full
+  - name: 'Admin: Backup Settings'
+    code: admin-backupSettings
+    access: full
+  - name: 'Infrastructure: Certificates'
+    code: admin-certificates
+    access: full
+  - name: 'Admin: Integrations'
+    code: admin-cm
+    access: full
+  - name: 'Library: Instance Types'
+    code: admin-containers
+    access: full
+  - name: 'Admin: Distributed Workers'
+    code: admin-distributed-workers
+    access: full
+  - name: 'Admin: Environment Settings'
+    code: admin-environments
+    access: full
+  - name: 'Admin: Policies'
+    code: admin-global-policies
+    access: full
+  - name: 'Infrastructure: Groups'
+    code: admin-groups
+    access: full
+  - name: 'Admin: Guidance Settings'
+    code: admin-guidanceSettings
+    access: full
+  - name: 'Admin: Health'
+    code: admin-health
+    access: read
+  - name: 'Admin: Identity Source'
+    code: admin-identity-sources
+    access: full
+  - name: 'Infrastructure: Keypairs'
+    code: admin-keypairs
+    access: full
+  - name: 'Admin: License Settings'
+    code: admin-licenses
+    access: full
+  - name: 'Admin: Log Settings'
+    code: admin-logSettings
+    access: full
+  - name: 'Admin: Monitoring Settings'
+    code: admin-monitorSettings
+    access: full
+  - name: 'Admin: Message of the day'
+    code: admin-motd
+    access: full
+  - name: 'Admin: Packages'
+    code: admin-packages
+    access: full
+  - name: 'Admin: Plugins'
+    code: admin-plugins
+    access: full
+  - name: 'Infrastructure: Policies'
+    code: admin-policies
+    access: full
+  - name: 'Admin: Profiles'
+    code: admin-profiles
+    access: read
+  - name: 'Admin: Provisioning Settings'
+    code: admin-provisioningSettings
+    access: full
+  - name: 'Admin: Roles'
+    code: admin-roles
+    access: full
+  - name: 'Infrastructure: Compute'
+    code: admin-servers
+    access: full
+  - name: 'Admin: Service Plans'
+    code: admin-servicePlans
+    access: full
+  - name: 'Admin: Users'
+    code: admin-users
+    access: full
+  - name: 'Admin: Whitelabel Settings'
+    code: admin-whitelabel
+    access: full
+  - name: 'Infrastructure: Clouds'
+    code: admin-zones
+    access: full
+  - name: 'Library: App Blueprints'
+    code: app-templates
+    access: full
+  - name: 'Provisioning: Apps'
+    code: apps
+    access: full
+  - name: 'Library: Blueprints - ARM'
+    code: arm-template
+    access: full
+  - name: 'Library: Integrations'
+    code: automation-services
+    access: full
+  - name: 'Backups: Integrations'
+    code: backup-services
+    access: full
+  - name: Backups
+    code: backups
+    access: full
+  - name: 'API: Billing'
+    code: billing
+    access: full
+  - name: 'Library: Catalog Items'
+    code: catalog
+    access: full
+  - name: 'Library: Blueprints - CloudFormation'
+    code: cloudFormation-template
+    access: full
+  - name: 'Provisioning: Code Repositories'
+    code: code-repositories
+    access: full
+  - name: 'Infrastructure: Credentials'
+    code: credentials
+    access: full
+  - name: Custom Instance Tab
+    code: custom-instance-tab
+    access: full
+  - name: Custom Server Tab
+    code: custom-server-tab
+    access: full
+  - name: 'Operations: Dashboard'
+    code: dashboard
+    access: read
+  - name: DataDog Instance Tab
+    code: datadog-instance-tab
+    access: full
+  - name: 'Provisioning: Code Integrations'
+    code: deployment-services
+    access: full
+  - name: 'Provisioning: Code Deployments'
+    code: deployments
+    access: full
+  - name: Example Catalog Layout
+    code: example-catalog-view
+    access: none
+  - name: 'API: Execution Request'
+    code: execution-request
+    access: full
+  - name: 'Provisioning: Executions'
+    code: executions
+    access: read
+  - name: 'Operations: Guidance'
+    code: guidance
+    access: full
+  - name: 'Library: Blueprints - Helm'
+    code: helm-template
+    access: full
+  - name: 'Infrastructure: Boot'
+    code: infrastructure-boot
+    access: full
+  - name: 'Infrastructure: Clusters'
+    code: infrastructure-cluster
+    access: full
+  - name: 'Infrastructure: Network Router DHCP Pool'
+    code: infrastructure-dhcp-pool
+    access: full
+  - name: 'Infrastructure: Network Domains'
+    code: infrastructure-domains
+    access: full
+  - name: 'Infrastructure: Network IP Pools'
+    code: infrastructure-ippools
+    access: full
+  - name: 'Infrastructure: Kubernetes Control'
+    code: infrastructure-kube-cntl
+    access: full
+  - name: 'Infrastructure: Load Balancers'
+    code: infrastructure-loadbalancer
+    access: full
+  - name: 'Infrastructure: Network Router NAT'
+    code: infrastructure-nat
+    access: full
+  - name: 'Infrastructure: DHCP Relays'
+    code: infrastructure-network-dhcp-relay
+    access: full
+  - name: 'Infrastructure: Network Static Routes'
+    code: infrastructure-network-dhcp-routes
+    access: full
+  - name: 'Infrastructure: DHCP Servers'
+    code: infrastructure-network-dhcp-server
+    access: full
+  - name: 'Infrastructure: Network Firewalls'
+    code: infrastructure-network-firewalls
+    access: full
+  - name: 'Infrastructure: Network Integration'
+    code: infrastructure-network-integrations
+    access: full
+  - name: 'Infrastructure: Network Router Firewalls'
+    code: infrastructure-network-router-firewalls
+    access: full
+  - name: 'Infrastructure: Network Router Interfaces'
+    code: infrastructure-network-router-interfaces
+    access: full
+  - name: 'Infrastructure: Network Router Redistribution'
+    code: infrastructure-network-router-redistribution
+    access: full
+  - name: 'Infrastructure: Network Router Routes'
+    code: infrastructure-network-router-routes
+    access: full
+  - name: 'Infrastructure: Network Server Groups'
+    code: infrastructure-network-server-groups
+    access: full
+  - name: 'Infrastructure: Networks'
+    code: infrastructure-networks
+    access: full
+  - name: 'Infrastructure: Network Proxies'
+    code: infrastructure-proxies
+    access: full
+  - name: 'Infrastructure: Network Router DHCP Binding'
+    code: infrastructure-router-dhcp-binding
+    access: full
+  - name: 'Infrastructure: Network Router DHCP Relay'
+    code: infrastructure-router-dhcp-relay
+    access: full
+  - name: 'Infrastructure: Network Routers'
+    code: infrastructure-routers
+    access: full
+  - name: 'Infrastructure: Security Groups'
+    code: infrastructure-securityGroups
+    access: full
+  - name: 'Infrastructure: State'
+    code: infrastructure-state
+    access: full
+  - name: 'Infrastructure: Storage Browser'
+    code: infrastructure-storage-browser
+    access: full
+  - name: 'Infrastructure: Storage'
+    code: infrastructure-storage
+    access: full
+  - name: 'Integrations: Ansible'
+    code: integrations-ansible
+    access: full
+  - name: 'Provisioning: Job Executions'
+    code: job-executions
+    access: read
+  - name: 'Provisioning: Jobs'
+    code: job-templates
+    access: full
+  - name: 'Library: Blueprints - Kubernetes'
+    code: kubernetes-template
+    access: full
+  - name: 'Provisioning: Advanced Node Type Options'
+    code: library-advanced-node-type-options
+    access: full
+  - name: 'Library: Options'
+    code: library-options
+    access: full
+  - name: 'Library: Templates'
+    code: library-templates
+    access: full
+  - name: 'Monitoring: Logs'
+    code: logs
+    access: full
+  - name: Monitoring
+    code: monitoring
+    access: full
+  - name: 'Operations: Alarms'
+    code: operations-alarms
+    access: full
+  - name: 'Operations: Approvals'
+    code: operations-approvals
+    access: full
+  - name: 'Operations: Budgets'
+    code: operations-budgets
+    access: full
+  - name: 'Operations: Invoices'
+    code: operations-invoices
+    access: full
+  - name: 'Operations: Wiki'
+    code: operations-wiki
+    access: full
+  - name: Projects
+    code: projects
+    access: full
+  - name: Provisioning Administrator
+    code: provisioning-admin
+    access: full
+  - name: 'Provisioning: Clone Instance'
+    code: provisioning-clone
+    access: full
+  - name: 'Provisioning: Execute Script'
+    code: provisioning-execute-script
+    access: full
+  - name: 'Provisioning: Execute Task'
+    code: provisioning-execute-task
+    access: full
+  - name: 'Provisioning: Execute Workflow'
+    code: provisioning-execute-workflow
+    access: full
+  - name: 'Provisioning: Allow Force Delete'
+    code: provisioning-force-delete
+    access: full
+  - name: 'Provisioning: Import Image'
+    code: provisioning-import-image
+    access: full
+  - name: Reconfigure Servers
+    code: provisioning-reconfigure
+    access: full
+  - name: 'Provisioning: Instances'
+    code: provisioning
+    access: full
+  - name: 'Operations: Analytics'
+    code: reports-analytics
+    access: full
+  - name: 'Operations: Reports'
+    code: reports
+    access: full
+  - name: 'Library: Scheduling - Execute'
+    code: scheduling-execute
+    access: full
+  - name: 'Library: Scheduling - Power'
+    code: scheduling-power
+    access: full
+  - name: 'Security: Scanning'
+    code: security-scan
+    access: full
+  - name: 'Catalog: Dashboard'
+    code: service-catalog-dashboard
+    access: read
+  - name: 'Catalog: Inventory'
+    code: service-catalog-inventory
+    access: full
+  - name: Catalog
+    code: service-catalog
+    access: full
+  - name: 'Tools: Archives'
+    code: services-archives
+    access: full
+  - name: 'Tools: Cypher'
+    code: services-cypher
+    access: user
+  - name: 'Tools: Image Builder'
+    code: services-image-builder
+    access: full
+  - name: 'Tools: Kubernetes'
+    code: services-kubernetes
+    access: full
+  - name: 'Provisioning: Service Mesh'
+    code: services-network-registry
+    access: full
+  - name: 'VDI: Copy/Paste'
+    code: services-vdi-copy
+    access: full
+  - name: 'Tools: VDI Pools'
+    code: services-vdi-pools
+    access: full
+  - name: 'VDI: Local Printer'
+    code: services-vdi-printer
+    access: full
+  - name: Snapshots
+    code: snapshots
+    access: full
+  - name: 'Library: Tasks - Script Engines'
+    code: task-scripts
+    access: full
+  - name: 'Library: Tasks'
+    code: tasks
+    access: full
+  - name: 'Remote Console: Auto Login'
+    code: terminal-access
+    access: 'yes'
+  - name: Remote Console
+    code: terminal
+    access: full
+  - name: 'Library: Blueprints - Terraform'
+    code: terraform-template
+    access: full
+  - name: 'Library: Thresholds'
+    code: thresholds
+    access: full
+  - name: 'Infrastructure: Trust Integrations'
+    code: trust-services
+    access: full
+  - name: 'Library: Virtual Images'
+    code: virtual-images
+    access: full
+  appliance:
+    buildVersion: 5.4.4

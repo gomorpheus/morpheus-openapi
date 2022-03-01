@@ -2,7 +2,7 @@ get:
   summary: Retrieves wiki a specific Wiki page
   description: |
     This endpoint retrieves a specific wiki page.
-  operationId: getWikiSpecificPage
+  operationId: wikiGet
   tags:
     - Wiki
   externalDocs:
@@ -32,7 +32,7 @@ put:
   summary: Update a Wiki Page
   description: |
     Updates a Wiki Page
-  operationId: updateWikiPage
+  operationId: wikiUpdate
   tags:
     - Wiki
   consumes:
