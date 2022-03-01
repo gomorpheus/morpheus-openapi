@@ -230,7 +230,7 @@ paths:
         This endpoint retrieves all available report types. A report type has
         optionTypes that define the parameters available when executing a report
         of that type. The sample response has been abbreviated.
-      operationId: getAllReportTypes
+      operationId: reportsGetType
       tags:
         - Reports
       externalDocs:
@@ -269,7 +269,7 @@ paths:
       description: >
         This endpoint returns all reports. This is results of reports that have
         been executed in the past.
-      operationId: getAllReports
+      operationId: reportsList
       tags:
         - Reports
       externalDocs:
@@ -317,7 +317,7 @@ paths:
 
         The available parameters vary by report type. Refer to the defined
         `inputs` for each report.
-      operationId: runReport
+      operationId: reportsRun
       tags:
         - Reports
       consumes:
@@ -385,7 +385,7 @@ paths:
         the result data as rows which can be used to render the report. Each
         report type will have sections for data and headers that vary by type,
         use Download a Specific Report to get the results organized by section.
-      operationId: getSpecificReport
+      operationId: reportsGet
       tags:
         - Reports
       externalDocs:
@@ -415,7 +415,7 @@ paths:
       summary: This endpoint will delete a report result
       description: |
         This endpoint will delete a report result.
-      operationId: deleteSpecificReport
+      operationId: reportsRemove
       tags:
         - Reports
       externalDocs:
@@ -447,7 +447,7 @@ paths:
       description: >
         This endpoint downloads a specific report result as a file attachment.
         The default file format is `.json`.
-      operationId: downloadSpecificReport
+      operationId: reportsDownload
       tags:
         - Reports
       externalDocs:
@@ -561,7 +561,7 @@ paths:
         This endpoint retrieves all Wiki categories associated with the account.
         The results are not paginated. The categories returned are those of the
         found pages.
-      operationId: getWikiCategories
+      operationId: wikiCategories
       tags:
         - Wiki
       externalDocs:
@@ -593,7 +593,7 @@ paths:
       summary: Retrieves wiki pages associated with the account.
       description: |
         This endpoint retrieves wiki pages associated with the account.
-      operationId: getAllWiki
+      operationId: wikiList
       tags:
         - Wiki
       externalDocs:
@@ -624,7 +624,7 @@ paths:
       summary: Create a Wiki Page
       description: |
         Creates a Wiki Page
-      operationId: createWikiPage
+      operationId: wikiAdd
       tags:
         - Wiki
       consumes:
@@ -679,7 +679,7 @@ paths:
       summary: Retrieves wiki a specific Wiki page
       description: |
         This endpoint retrieves a specific wiki page.
-      operationId: getWikiSpecificPage
+      operationId: wikiGet
       tags:
         - Wiki
       externalDocs:
@@ -709,7 +709,7 @@ paths:
       summary: Update a Wiki Page
       description: |
         Updates a Wiki Page
-      operationId: updateWikiPage
+      operationId: wikiUpdate
       tags:
         - Wiki
       consumes:
@@ -779,7 +779,7 @@ paths:
 
         This will render your current access token invalid, so you will need to
         update any scripts relying on it.
-      operationId: getAccessToken
+      operationId: accessTokenGet
       tags:
         - Authentication
       security: []
@@ -842,7 +842,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-accessToken'
+                $ref: '#/components/schemas/accessToken'
+              examples:
+                Access Token responses:
+                  $ref: '#/components/examples/accessToken'
         '400':
           description: Bad Request.
         '401':
@@ -1308,6 +1311,34 @@ components:
       properties:
         success:
           type: boolean
+    MetaObject:
+      type: object
+      description: >-
+        Metadata about the returned array of results, provides pagination
+        information.
+      properties:
+        size:
+          type: integer
+          format: int64
+          description: Number of records returned in the response
+          default: 0
+        total:
+          type: integer
+          format: int64
+          description: Total number of records found
+          default: 0
+        offset:
+          type: integer
+          format: int64
+          description: >-
+            Offset records, the number of records to skip, can be used to
+            paginate over results.
+          default: 0
+        max:
+          type: integer
+          format: int64
+          description: Max size, the maximum number of records to include in the response.
+          default: 25
     search:
       title: 200 Search
       type: object
@@ -1319,10 +1350,13 @@ components:
             properties:
               id:
                 type: string
+                description: ID
               uuid:
                 type: string
+                description: UUID
               name:
                 type: string
+                description: Name
               description:
                 type: string
                 format: nullable
@@ -1333,27 +1367,14 @@ components:
                 format: date-time
               score:
                 type: integer
-                format: int32
+                format: int64
         query:
           type: string
         took:
           type: integer
-          format: int32
+          format: int64
         meta:
-          type: object
-          properties:
-            offset:
-              type: integer
-              format: int32
-            max:
-              type: integer
-              format: int32
-            size:
-              type: integer
-              format: int32
-            total:
-              type: integer
-              format: int32
+          $ref: '#/components/schemas/MetaObject'
     user:
       title: 200 User
       type: object
@@ -1363,85 +1384,124 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
+              description: ID
             accountId:
               type: integer
-              format: int32
+              format: int64
+              description: Tenant ID
             username:
               type: string
+              description: Username
             displayName:
               type: string
+              description: Display Name, firstName + lastName or username
             email:
               type: string
+              description: email
             firstName:
               type: string
+              description: Fist Name
             lastName:
               type: string
+              description: Last Name
             enabled:
               type: boolean
+              description: Flag that can be used to disable a user
             receiveNotifications:
               type: boolean
+              description: Flag that indicates a user wishes to receive notifications
             isUsing2FA:
               type: boolean
+              description: Flag that indicates a user is utilizing local 2fa
             accountExpired:
               type: boolean
+              description: Flag that indicates user account is expired
             accountLocked:
               type: boolean
+              description: Flag that indicates user account is locked
             passwordExpired:
               type: boolean
+              description: Flag that indicates user password is expired
             loginCount:
               type: integer
-              format: int32
+              format: int64
+              description: Number of times user has logged in
             loginAttempts:
               type: integer
-              format: int32
+              format: int64
+              description: >-
+                Number of invalid login attempts. This resets to 0 after
+                successful login.
             lastLoginDate:
               type: string
               format: date-time
+              description: Last successful login date
             roles:
               type: array
+              description: User roles
               items:
                 type: object
                 properties:
                   id:
                     type: integer
-                    format: int32
+                    format: int64
+                    description: Role ID
                   authority:
                     type: string
+                    description: Unique name for a role
                   description:
                     type: string
             account:
               type: object
+              description: Tenant the user belongs to
               properties:
                 id:
                   type: integer
-                  format: int32
+                  format: int64
+                  description: Tenant ID
                 name:
                   type: string
+                  description: Tenant Name
             linuxUsername:
               type: string
+              description: Linux username/user settings for provisioning
+              nullable: true
             linuxPassword:
               type: string
+              description: Linux password/user settings for provisioning
+              nullable: true
             linuxKeyPairId:
               type: string
-              format: nullable
+              description: SSH Key (Key Pair ID)/user settings for provisioning
+              format: int64
+              nullable: true
             windowsUsername:
               type: string
+              description: Windows username/user settings for provisioning
+              nullable: true
             windowsPassword:
               type: string
+              description: Windows password/user settings for provisioning
+              nullable: true
             defaultPersona:
               type: string
-              format: nullable
+              description: Default person selected when user logs in
+              format: int64
             dateCreated:
               type: string
+              description: Date created timestamp
               format: date-time
             lastUpdated:
               type: string
+              description: Date last updated timestamp
               format: date-time
         isMasterAccount:
           type: boolean
+          description: Flag for master administrative account
         permissions:
           type: array
+          description: Applied permissions
           items:
             type: object
             properties:
@@ -1659,25 +1719,25 @@ components:
               type: string
               format: date-time
               example: '2022-02-24T21:43:54Z'
-    200-accessToken:
+    accessToken:
       title: 200 Access Token
       type: object
       properties:
         access_token:
           type: string
-          example: e1d62c34-f7f5-4713-a874-31491e7707de
+          description: Token that grants API Access
         refresh_token:
           type: string
-          example: 718cc628-b89f-43f5-bef7-f39887b47e68
+          description: Token that can request an new API access_token
         expires_in:
           type: number
-          example: 30463819
+          description: Epoch time when token expires
         token_type:
           type: string
-          example: bearer
+          description: Token type granted
         scope:
           type: string
-          example: write
+          description: Scope granted
   examples:
     dashboard:
       summary: Dashboard Response
@@ -2341,6 +2401,14 @@ components:
             access: full
         appliance:
           buildVersion: 5.4.4
+    accessToken:
+      summary: Access Token Response
+      value:
+        access_token: e1d62c34-f7f5-4713-a874-31491e7707de
+        refresh_token: 718cc628-b89f-43f5-bef7-f39887b47e68
+        expires_in: 30463819
+        token_type: bearer
+        scope: write
   parameters:
     max:
       name: max

@@ -8,10 +8,13 @@ properties:
       properties: 
         id: 
           type: string
+          description: ID
         uuid: 
           type: string
+          description: UUID
         name: 
           type: string
+          description: Name
         description: 
           type: string
           format: nullable
@@ -22,24 +25,11 @@ properties:
           format: date-time
         score: 
           type: integer
-          format: int32
+          format: int64
   query: 
     type: string
   took: 
     type: integer
-    format: int32
+    format: int64
   meta: 
-    type: object
-    properties: 
-      offset: 
-        type: integer
-        format: int32
-      max: 
-        type: integer
-        format: int32
-      size: 
-        type: integer
-        format: int32
-      total: 
-        type: integer
-        format: int32
+    $ref: MetaObject.yaml
