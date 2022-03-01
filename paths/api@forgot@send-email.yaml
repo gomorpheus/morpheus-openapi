@@ -1,6 +1,5 @@
 post:
   summary: Request a reset password email
-  operationId: forgotPassword
   description: |
     This endpoint will trigger the Reset your password email to be sent to the specified user.
 
@@ -9,6 +8,10 @@ post:
     Once you obtain the token from the email, it may be used to reset the password of your user.
 
     **Note**: This is an unauthorized endpoint and the response will always appear successful, it is not possible determine from the response whether the user exists or if an email was sent.
+  operationId: forgotPassword
+  tags:
+    - Authentication
+  security: []
   consumes:
     - application/json
   parameters:
@@ -53,6 +56,3 @@ post:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Authentication
-  security: []

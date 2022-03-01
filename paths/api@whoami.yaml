@@ -1,10 +1,13 @@
 get:
   summary: Retrieves information about current user roles and permissions
-  operationId: whoami
   description: |
     Provides API to retrieve information about yourself, including your roles and permissions.
 
     The appliance build version is also returned.
+  operationId: whoami
+  tags:
+    - Authentication
+    - Users
   externalDocs:
     url: https://apidocs.morpheusdata.com/#whoami
   responses:
@@ -26,6 +29,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Authentication
-    - Users

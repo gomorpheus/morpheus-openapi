@@ -1,8 +1,10 @@
 get:
   summary: Downloads a specific report result as a file attachment
-  operationId: downloadSpecificReport
   description: |
     This endpoint downloads a specific report result as a file attachment. The default file format is `.json`.
+  operationId: downloadSpecificReport
+  tags:
+    - Reports
   externalDocs:
     url: https://apidocs.morpheusdata.com/#download-a-specific-report
   parameters:
@@ -27,5 +29,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Reports

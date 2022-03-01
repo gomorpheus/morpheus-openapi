@@ -1,8 +1,10 @@
 get:
   summary: Overview of Dashboard information
-  operationId: getDashboard
   description: |
     This endpoint can be used to view dashboard information about the remote Morpheus appliance. This is an overview and summary of data available to the user that can be used to render a dashboard.
+  operationId: getDashboard
+  tags:
+    - Dashboard
   externalDocs:
     url: https://apidocs.morpheusdata.com/#dashboard
   responses:
@@ -24,5 +26,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Dashboard

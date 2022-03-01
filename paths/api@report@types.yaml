@@ -1,8 +1,10 @@
 get:
   summary: This endpoint retrieves all available report types
-  operationId: getAllReportTypes
   description: |
     This endpoint retrieves all available report types. A report type has optionTypes that define the parameters available when executing a report of that type. The sample response has been abbreviated.
+  operationId: getAllReportTypes
+  tags:
+    - Reports
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-report-types
   parameters:
@@ -33,5 +35,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Reports

@@ -1,8 +1,10 @@
 get:
   summary: Retrieves all Wiki categories associated with the account
-  operationId: getWikiCategories
   description: |
     This endpoint retrieves all Wiki categories associated with the account. The results are not paginated. The categories returned are those of the found pages.
+  operationId: getWikiCategories
+  tags:
+    - Wiki
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-wiki-categories
   parameters:
@@ -27,5 +29,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Wiki

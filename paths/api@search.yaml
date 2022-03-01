@@ -4,6 +4,9 @@ get:
     This endpoint provides global search for all types of objects, with the results sorted in order of relevance.
 
     The `phrase` parameter can be specified as part of the URL or as a query parameter. If phrase is not specified, then 0 results (hits) will be returned.
+  operationId: search
+  tags:
+    - Search
   externalDocs:
     url: https://apidocs.morpheusdata.com/#search
   parameters:
@@ -30,5 +33,3 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Search

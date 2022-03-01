@@ -1,8 +1,10 @@
 get:
   summary: Retrieves wiki a specific Wiki page
-  operationId: getWikiSpecificPage
   description: |
     This endpoint retrieves a specific wiki page.
+  operationId: getWikiSpecificPage
+  tags:
+    - Wiki
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-a-specific-wiki-page
   parameters:
@@ -26,13 +28,13 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Wiki
 put:
   summary: Update a Wiki Page
-  operationId: updateWikiPage
   description: |
     Updates a Wiki Page
+  operationId: updateWikiPage
+  tags:
+    - Wiki
   consumes:
     - application/json
   parameters:
@@ -78,5 +80,3 @@ put:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Wiki

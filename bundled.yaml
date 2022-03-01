@@ -50,74 +50,6 @@ paths:
         - Dashboard
   /api/forgot/reset-password:
     post:
-      summary: Request a reset password email
-      operationId: forgotPassword
-      description: >
-        This endpoint will trigger the Reset your password email to be sent to
-        the specified user.
-
-
-        The User is identified by `username` and, if they exist, will be
-        notified via their configured email address. The email notification will
-        indicate a Reset Password Request was made and it will include a token.
-
-
-        Once you obtain the token from the email, it may be used to reset the
-        password of your user.
-
-
-        **Note**: This is an unauthorized endpoint and the response will always
-        appear successful, it is not possible determine from the response
-        whether the user exists or if an email was sent.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  description: >-
-                    Specified as "username" or "tenantId\username" with proper
-                    HTML encoding and used in conjunction with `password`.
-                  type: string
-              required:
-                - username
-      externalDocs:
-        url: https://apidocs.morpheusdata.com/#forgot-password
-      responses:
-        '200':
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  msg:
-                    type: string
-                    example: >-
-                      Reset password instructions have been sent to the user
-                      'jsmith', if they exist.
-        '400':
-          description: Bad Request.
-        '401':
-          description: Unauthorized.
-        '403':
-          description: Forbidden.
-        '404':
-          description: Object Not Found.
-        '500':
-          description: Internal Server Error.
-        '503':
-          description: Service Unavailable.
-      tags:
-        - Authentication
-      security: []
-  /api/forgot/send-email:
-    post:
       summary: Reset user password
       operationId: resetPassword
       description: >
@@ -163,6 +95,77 @@ paths:
                   msg:
                     type: string
                     example: Password has been updated and account unlocked
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+      tags:
+        - Authentication
+      security: []
+  /api/forgot/send-email:
+    post:
+      summary: Request a reset password email
+      operationId: forgotPassword
+      description: >
+        This endpoint will trigger the Reset your password email to be sent to
+        the specified user.
+
+
+        The User is identified by `username` and, if they exist, will be
+        notified via their configured email address. The email notification will
+        indicate a Reset Password Request was made and it will include a token.
+
+
+        Once you obtain the token from the email, it may be used to reset the
+        password of your user.
+
+
+        **Note**: This is an unauthorized endpoint and the response will always
+        appear successful, it is not possible determine from the response
+        whether the user exists or if an email was sent.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Request Reset Password Email
+          required: true
+          description: Reset user password
+          schema:
+            type: object
+            required:
+              - username
+            properties:
+              username:
+                type: string
+                description: >
+                  Specified as "username" or "tenantId\username" with proper
+                  HTML encoding and used in conjunction with `password`.
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#forgot-password
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  msg:
+                    type: string
+                    example: >-
+                      Reset password instructions have been sent to the user
+                      'jsmith', if they exist.
         '400':
           description: Bad Request.
         '401':
@@ -312,8 +315,8 @@ paths:
           name: Body
           required: true
           description: >-
-            Wiki Page to Update.  Only the values you wish to update should be
-            in the body payload.
+            Run a specific report.  Check the report for custom options / inputs
+            that need to be supplied in the body of the payload.
           schema:
             type: object
             required:

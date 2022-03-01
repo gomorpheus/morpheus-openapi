@@ -4,6 +4,10 @@ get:
     This endpoint can be used to check the remote appliance build version and some other basic information.
 
     This is an unsecured endpoint and does not require authorization. However, build version will not be returned unless you are authenticated with a valid access token.
+  operationId: ping
+  tags:
+    - Ping
+    - Health
   responses:
     '200':
       description: Successful Request
@@ -23,5 +27,4 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Health
+  

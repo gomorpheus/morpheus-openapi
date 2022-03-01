@@ -1,5 +1,5 @@
 name: phrase
 in: query
-description: If specified will return a partial match on name
+description: Search phrase for partial matches on name or description
 schema:
   type: string

@@ -1,8 +1,10 @@
 get:
   summary: This endpoint returns a specific report result
-  operationId: getSpecificReport
   description: |
     This endpoint retrieves a specific report result. The response includes the result data as rows which can be used to render the report. Each report type will have sections for data and headers that vary by type, use Download a Specific Report to get the results organized by section.
+  operationId: getSpecificReport
+  tags:
+    - Reports
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
@@ -26,13 +28,13 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Reports
 delete:
   summary: This endpoint will delete a report result
-  operationId: deleteSpecificReport
   description: |
     This endpoint will delete a report result.
+  operationId: deleteSpecificReport
+  tags:
+    - Reports
   externalDocs:
     url: https://apidocs.morpheusdata.com/#delete-a-report
   parameters:
@@ -56,5 +58,3 @@ delete:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Reports

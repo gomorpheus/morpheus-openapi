@@ -1,8 +1,10 @@
 get:
   summary: Returns all reports
-  operationId: getAllReports
   description: |
     This endpoint returns all reports. This is results of reports that have been executed in the past.
+  operationId: getAllReports
+  tags:
+    - Reports
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
@@ -37,15 +39,15 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Reports
 post:
   summary: Run specified report
-  operationId: runReport
   description: |
     This endpoint execute the specified report type and create a new report result.
 
     The available parameters vary by report type. Refer to the defined `inputs` for each report.
+  operationId: runReport
+  tags:
+    - Reports
   consumes:
     - application/json
   parameters:
@@ -101,5 +103,3 @@ post:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Reports

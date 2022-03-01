@@ -1,6 +1,7 @@
 name: offset
 in: query
-description: Offset of records you want to load
+description: Offset records, the number of records to skip, for paginating requests
 schema:
-  type: number
+  type: integer
+  format: int64
   default: 0

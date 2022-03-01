@@ -1,8 +1,10 @@
 get:
   summary: Retrieves wiki pages associated with the account.
-  operationId: getAllWiki
   description: |
     This endpoint retrieves wiki pages associated with the account.
+  operationId: getAllWiki
+  tags:
+    - Wiki
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-wiki-pages
   parameters:
@@ -27,11 +29,13 @@ get:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Wiki
 post:
   summary: Create a Wiki Page
+  description: |
+    Creates a Wiki Page
   operationId: createWikiPage
+  tags:
+    - Wiki
   consumes:
     - application/json
   parameters:
@@ -59,8 +63,6 @@ post:
                 type: string
                 example: #Sample Doc
                   A sample document in **markdown**.
-  description: |
-    Creates a Wiki Page
   externalDocs:
     url: https://apidocs.morpheusdata.com/#create-a-wiki-page
   responses:
@@ -82,5 +84,3 @@ post:
       description: Internal Server Error.
     '503':
       description: Service Unavailable.
-  tags:
-    - Wiki

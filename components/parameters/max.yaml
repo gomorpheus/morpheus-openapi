@@ -1,6 +1,7 @@
 name: max
 in: query
-description: Maximum number of returned objects
+description: Maximum number of records to return
 schema:
-  type: number
+  type: integer
+  format: int64
   default: 25
