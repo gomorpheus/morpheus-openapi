@@ -1,0 +1,110 @@
+parameters:
+  - name: id
+    in: path
+    required: true
+    description: User ID
+    schema:
+      type: integer
+      format: int64
+      example: 2
+get:
+  summary: Get user
+  description: Get details about a user
+  operationId: getUser
+  tags:
+    - Users
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user:
+                $ref: ..\components\schemas\User.yaml
+          examples:
+            GetUserResponse:
+              $ref: ..\components\examples\GetUserResponse.yaml
+put:
+  summary: Update user
+  description: Update an existing user.
+  operationId: updateUser
+  tags:
+    - Users
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - user
+          properties:
+            user:
+              type: object
+              description: Payload for creating a new user
+              required:
+                - name
+                - roles
+              properties:
+                firstName:
+                  type: string
+                  description: First Name
+                lastName:
+                  type: string
+                  description: Last Name
+                username:
+                  type: string
+                  description: Username (unique per tenant).
+                email:
+                  type: string
+                  description: Email address
+                password:
+                  type: string
+                  format: password
+                  description: Password
+                roles:
+                  type: array
+                  description: List of Roles
+                  items:
+                    $ref: ..\components\schemas\ReferenceObject.yaml
+        examples:
+          updateUserResponse:
+            $ref: ..\components\examples\UpdateUserResponse.yaml
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user:
+                $ref: ..\components\schemas\User.yaml
+          examples:
+            updateUserResponse:
+              $ref: ..\components\examples\UpdateUserResponse.yaml
+delete:
+  summary: Delete user
+  description: Delete an existing user.
+  operationId: deleteUser
+  tags:
+    - Users
+  responses:
+    '200':
+      description: User was deleted successfully
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Success.yaml
+    '400':
+      description: User still has managed resources
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+          example:
+            success: false
+            msg: >-
+              Unable to delete an user without removing resources when managed
+              instances exist.

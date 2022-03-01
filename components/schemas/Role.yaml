@@ -1,0 +1,34 @@
+type: object
+description: Role Object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: ID
+  authority:
+    type: string
+    description: Authority, a unique name for the role
+  description:
+    type: string
+    description: Description
+    nullable: true
+  roleType:
+    type: string
+    description: Role type
+    enum:
+      - user
+      - account
+      - admin
+    default: user
+  multitenant:
+    type: boolean
+    default: false
+    description: Multitenant
+  multitenantLocked:
+    type: boolean
+    default: false
+    description: Multitenant Locked
+  dateCreated:
+    $ref: .\DateCreated.yaml
+  lastUpdated:
+    $ref: .\LastUpdated.yaml

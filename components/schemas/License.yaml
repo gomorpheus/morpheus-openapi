@@ -1,0 +1,71 @@
+description: >-
+  Object for logging in to the [Morpheus Hub](https://morpheushub.com) with
+  existing credentials. This is only required for `hubmode=login`.
+type: object
+properties:
+  productTier:
+    type: string
+    description: Product Tier
+  startDate:
+    type: string
+    format: date-time
+    description: Start Date
+  endDate:
+    type: string
+    format: date-time
+    description: End Date
+  maxInstances:
+    type: integer
+    format: int64
+    description: Max Instances
+  maxMemory:
+    type: integer
+    format: int64
+    description: Max Memory (bytes)
+  maxStorage:
+    type: integer
+    format: int64
+    description: Max Storage (bytes)
+  hardLimit:
+    type: integer
+    format: int64
+    description: >-
+      Hard Limit determines whether the capacity limits are actaully enforced or
+      just generate a warning
+  freeTrial:
+    type: integer
+    format: int64
+    description: Free Trial. This indicates that it is a free Community Edition license.
+  multiTenant:
+    type: integer
+    format: int64
+    description: Multi Tenant. Allow multiple tenants
+  whitelabel:
+    type: integer
+    format: int64
+    description: Multi Tenant. Allow white labeling
+  reportStatus:
+    type: integer
+    format: int64
+    description: Report Status
+  supportLevel:
+    type: integer
+    format: int64
+    description: Support Level
+  accountName:
+    type: integer
+    format: int64
+    description: Account Name
+  features:
+    type: object
+    description: Map of features and whether they are enabled (true) or disabled (false).
+  zoneTypes:
+    type: array
+    items:
+      type: string
+    description: Allowed cloud types, a value of null means all types are allowed.
+    nullable: true
+  dateCreated:
+    $ref: .\DateCreated.yaml
+  lastUpdated:
+    $ref: .\LastUpdated.yaml

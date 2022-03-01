@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.3
 info:
   title: Morpheus API
   description: |-
@@ -7,18 +7,34 @@ info:
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
   version: 5.4.4
   termsOfService: https://morpheusdata.com/terms-and-conditions/
+  contact:
+    email: dev@morpheusdata.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
   - url: https://{serverFQDN}
+    description: Morpheus API
     variables:
       serverFQDN:
         default: ""
 paths:
+  /accounts:
+    $ref: paths/accounts.yaml
+  /accounts/{id}:
+    $ref: paths/accounts@id.yaml
+  /accounts/available-roles:
+    $ref: paths/accounts@available-roles.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/forgot/reset-password:
     $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:
     $ref: paths/api@forgot@send-email.yaml
+  /api/license:
+    $ref: paths/api@license.yaml
+  /api/license/test:
+    $ref: paths/api@license@test.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/report-types:
@@ -29,8 +45,14 @@ paths:
     $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
     $ref: paths/api@reports@download@id.yaml
+  /roles:
+    $ref: paths/roles.yaml
+  /roles/{id}:
+    $ref: paths/roles@{id}.yaml
   /api/search:
     $ref: paths/api@search.yaml
+  /api/setup:
+    $ref: paths/api@setup.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
   /api/wiki/categories:
@@ -39,8 +61,20 @@ paths:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
     $ref: paths/api@wiki@pages@id.yaml
+  /doc:
+    $ref: paths/doc.yaml
+  /doc/openapi:
+    $ref: paths/doc@openapi.yaml
+  /doc/openapi.yaml:
+    $ref: paths/doc@openapi.yaml.yaml
   /oauth/token:
     $ref: paths/oauth@token.yaml
+  /users:
+    $ref: paths/users.yaml
+  /users/{id}:
+    $ref: paths/users@{id}.yaml
+  /users/available-roles:
+    $ref: paths/users@available-roles.yaml
 components:
   securitySchemes:
     bearerAuth:
@@ -52,84 +86,167 @@ security:
 externalDocs:
   url: https://docs.morpheusdata.com
 tags:
-  - name: Introduction
   - name: Activity
+    description: Manage Appliance Activity Logs
   - name: Alerts
+    description: Manage Alerts
   - name: Appliance Settings
+    description: Manage Appliance Settings
   - name: Approvals
+    description: Manage Approvals
   - name: Apps
+    description: Manage Apps
   - name: Archives
+    description: Manage Archives
   - name: Authentication
+    description: Manage Appliance Authentication
   - name: Automation
+    description: Manage Tasks and Workflows
   - name: Backup Settings
+    description: Manage Backup Settings
   - name: Billing
+    description: Manage Billing
   - name: Blueprints
+    description: Manage Blueprints
   - name: Budgets
+    description: Manage Budgets
   - name: Checks
+    description: Manage Monitoring Checks
   - name: Clouds
+    description: Manage Clouds
   - name: Cluster Layouts
+    description: Manage Cluster Layouts
   - name: Clusters
+    description: Manage Kubernetes Clusters
   - name: Contacts
+    description: Manage Monitoring Contacts
   - name: Cypher
+    description: Manage Cypher
   - name: Dashboard
+    description: View Dashboard Details
   - name: Deployments
+    description: Manage File Deployments
   - name: Deploys
+    description: Manage Deploys
+  - name: Documentation
+    description: >-
+      View documentation for your [Morpheus Data](https://morpheusdata.com)
+      appliance.
   - name: Environments
+    description: Manage Environments
   - name: File Templates
+    description: Manage File Templates
   - name: Groups
+    description: Manage Groups
   - name: Guidance
+    description: Manage Guidance Recommendations
   - name: Health
+    description: View Appliance Health Statistics
   - name: History
+    description: View History
   - name: Identity Sources
+    description: Manage Identity Sources
   - name: Image Builds
+    description: Manage Image Builds
   - name: Incidents
+    description: Manage Ticket Incidents
   - name: Infrastructure
+    description: Manage Infrastructure Settings
   - name: Inputs
+    description: Manage Inputs (Option Types)
   - name: Instance Types
+    description: Manage Instance Types
   - name: Instances
+    description: Manage Instances
   - name: Integrations
+    description: Manage Integrations
   - name: Invoices
+    description: Manage Invoices
   - name: Jobs
+    description: Manage Jobs
   - name: Key Pairs
+    description: Manage Key Pairs
   - name: Layouts
+    description: Manage Layouts
   - name: Library
+    description: Manage Library
   - name: License
+    description: Manage Appliance License
   - name: Load Balancers
+    description: Manage Load Balancers
   - name: Log Settings
+    description: Manage Log Settings
   - name: Logs
+    description: View Logs
   - name: Monitoring
+    description: Manage Monitoring
   - name: Networks
+    description: Manage Networks
   - name: Node Types
+    description: Manage Node/VM Types
   - name: Option Lists
+    description: Manage Option Lists
   - name: Options
+    description: Manage Options
   - name: Personas
+    description: Manage Personas
   - name: Ping
+    description: Ping Appliance
   - name: Policies
+    description: Manage Policies
   - name: Price Sets
+    description: Manage Price Sets
   - name: Prices
+    description: Manage Prices
   - name: Projects
+    description: Manage Projects
   - name: Provisioning
+    description: Manage Provisioning
   - name: Provisioning Settings
+    description: Manage Provisioning Settings
   - name: Provisioning Licenses
+    description: Manage Provisioning Licenses
   - name: Reports
+    description: Manage Reports
   - name: Roles
+    description: Manage Roles (Authorities)
   - name: Scripts
+    description: Manage Scripts
   - name: Search
+    description: Global Search Functions
   - name: Security Groups
+    description: Manage Security Groups
   - name: Self Service
+    description: Manage Self Service
   - name: Servers
+    description: Manage Servers (Hosts)
   - name: Service Catalog
+    description: Manage Service Catalog
   - name: Service Plans
+    description: Manage Service Plans
   - name: Setup
+    description: Setup New Appliance
   - name: Spec Templates
+    description: Manage Spec Templates
   - name: SSL Certificates
+    description: Manage SSL Certificates
   - name: Storage
+    description: Manage Storage
   - name: Tenants
+    description: Manage Tenants (Accounts)
   - name: Tools
+    description: Manage Tools
   - name: Usage
+    description: View Usage
   - name: Users
+    description: Manage Users
   - name: VDI Pools
+    description: Manage VDI Pools
   - name: Virtual Desktop
+    description: Manage Virtual Desktops
   - name: Virtual Images
+    description: Manage Virtual Images
   - name: Whitelabel Settings
+    description: Manage Whitelabelling
   - name: Wiki
+    description: Manage Wiki

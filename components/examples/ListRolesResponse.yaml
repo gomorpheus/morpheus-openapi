@@ -1,0 +1,38 @@
+summary: List Roles Response Example
+value:
+  roles:
+    - id: 1
+      authority: System Admin
+      description: Super User
+      scope: Admin
+      roleType: null
+      multitenant: false
+      multitenantLocked: null
+      owner: null
+      dateCreated: 2016-08-27T19:26:19+0000
+      lastUpdated: 2016-08-27T19:26:19+0000
+    - id: 2
+      authority: Tenant Admin
+      description: Tenant Role Template
+      scope: AppSystem
+      roleType: account
+      multitenant: false
+      multitenantLocked: null
+      owner: null
+      dateCreated: 2016-12-13T16:38:16+0000
+      lastUpdated: 2016-12-14T23:39:05+0000
+    - id: 3
+      authority: User Admin
+      description: Sub Tenant User Template
+      scope: AppSystem
+      roleType: user
+      multitenant: false
+      multitenantLocked: null
+      owner: null
+      dateCreated: 2016-12-02T15:01:17+0000
+      lastUpdated: 2016-12-02T15:01:17+0000
+  meta:
+    size: 3
+    total: 3
+    offset: 0
+    max: 25

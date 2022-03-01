@@ -1,0 +1,230 @@
+post:
+  summary: Setup appliance
+  description: >
+    Initialize a freshly installed appliance to create the master tenant and
+    System Admin user. 
+
+    Authorization is not required. 
+
+    This operation can only be executed successfully once.
+  operationId: setup
+  tags:
+    - Setup
+  security: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - applianceName
+            - accountName
+            - username
+            - email
+            - password
+          properties:
+            applianceName:
+              type: string
+              description: >-
+                Appliance Name. Choose a name for your Morpheus Appliance.  This
+                is stored in the Appliance Settings.
+            applianceUrl:
+              type: string
+              description: >-
+                Appliance URL. Specify the full URL for your Morpheus Appliance.
+                This is stored in the Appliance Settings.
+            accountName:
+              type: string
+              description: Name of the Master Tenant account being created.
+            firstName:
+              type: string
+              description: First Name for the System Admin user being created.
+            lastName:
+              type: string
+              description: Last Name for the System Admin user being created.
+            username:
+              type: string
+              description: Username for the System Admin user being created.
+            email:
+              type: string
+              description: Email for the System Admin user being created.
+            password:
+              type: string
+              format: password
+              description: Password for the System Admin user being created.
+            hubmode:
+              description: >-
+                Hub Mode. Determines if and how the appliance should connect
+                with the Morpheus Hub. The default value (skip) means do not
+                connect with the hub, and you will be installing your license
+                manually. If you login or register with the hub then a Community
+                Edition license will be installed automatically.
+              type: string
+              enum:
+                - skip
+                - register
+                - login
+              default: skip
+            hub:
+              oneOf:
+                - description: >-
+                    Object for logging in to the [Morpheus
+                    Hub](https://morpheushub.com) with existing credentials.
+                    This is only required for `hubmode=login`.
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      description: Email for existing Morpheus Hub user
+                    password:
+                      type: string
+                      format: password
+                      description: Password for existing Morpheus Hub user
+                  example:
+                    email: tanderson@mccorp.com
+                    password: YourExistingHubPassword
+                - description: >-
+                    Object for registering with the [Morpheus
+                    Hub](https://morpheushub.com). This is only required for
+                    `hubmode=register`.
+                  type: object
+                  properties:
+                    accountName:
+                      type: string
+                      description: Company Name for new Morpheus Hub organization
+                    firstName:
+                      type: string
+                      description: First Name for new Morpheus Hub user
+                    lastName:
+                      type: string
+                      description: Last Name for new Morpheus Hub user
+                    email:
+                      type: string
+                      description: Email for new Morpheus Hub user
+                    password:
+                      type: string
+                      format: password
+                      description: Password for new Morpheus Hub user
+                  example:
+                    accountName: Meta Cortex Corporation
+                    firstName: Thomas
+                    lastName: Anderson
+                    email: tanderson@mccorp.com
+                    username: tanderson
+                    password: AGoodPasswordForNewHubAccount
+              discriminator:
+                propertyName: hubmode
+                mapping:
+                  login: '#/components/schemas/HubLoginObject'
+                  register: '#/components/schemas/HubRegisterObject'
+        examples:
+          setup:
+            summary: Setup appliance
+            value:
+              accountName: Meta Cortex Corporation
+              firstName: Thomas
+              lastName: Anderson
+              email: tanderson@mccorp.com
+              username: tanderson
+              password: QnW}cg}8}<~:P9YU
+            description: >
+              This example initializes the appliance and without connecting to
+              the [Morpheus Hub](https://morpheushub.com).
+
+              A license key will need to be installed manually.
+          setupWithHubRegistration:
+            summary: Setup appliance with Hub Registration
+            description: >
+              This example initializes the appliance and connects to the
+              [Morpheus Hub](https://morpheushub.com) to create and register a
+              new hub account. 
+
+              This automatically retrieves a new Community Edition License from
+              the Hub and installs it in your appliance.
+            value:
+              accountName: Meta Cortex Corporation
+              firstName: Thomas
+              lastName: Anderson
+              email: tanderson@mccorp.com
+              username: tanderson
+              password: QnW}cg}8}<~:P9YU
+              hubmode: register
+              hub:
+                accountName: Meta Cortex Corporation
+                firstName: Thomas
+                lastName: Anderson
+                email: tanderson@mccorp.com
+                password: AGoodPasswordForNewHubAccount
+          setupWithHubLogin:
+            summary: Setup appliance with Hub Login
+            description: >
+              This example initializes the appliance and connects to the
+              [Morpheus Hub](https://morpheushub.com) using an existing hub
+              account.
+
+              This automatically retrieves a new Community Edition License from
+              the Hub and installs it in your appliance.
+            value:
+              accountName: Meta Cortex Corporation
+              firstName: Thomas
+              lastName: Anderson
+              email: tanderson@mccorp.com
+              username: tanderson
+              password: QnW}cg}8}<~:P9YU
+              hubmode: login
+              hub:
+                email: tanderson@mccorp.com
+                password: YourExistingHubPassword
+  responses:
+    '200':
+      description: >-
+        Appliance setup complete. The master tenant and system admin user were
+        created successfully.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              buildVersion:
+                type: string
+                description: Morpheus build version that the server is running.
+              applianceUrl:
+                type: string
+                description: The Appliance Server URL as defined under Appliance Settings.
+              setupNeeded:
+                type: boolean
+                description: >-
+                  Flag to determine if the appliance has been setup, only true
+                  when appliance is a fresh install and has not been
+                  initialized.
+              hub:
+                type: object
+                description: >-
+                  Settings for connecting to the [Morpheus
+                  Hub](https://morpheushub.com)
+                properties:
+                  enabled:
+                    type: boolean
+                    description: Flag to determine if hub connectivity is enabled.
+                  url:
+                    type: string
+                    description: The [Morpheus Hub](https://morpheushub.com) URL.
+                    default: https://morpheushub.com
+            example:
+              success: true
+              buildVersion: 5.4.4.876
+              applianceUrl: https://morpheus.bungebash.com/
+              environment: production
+              setupNeeded: false
+    '400':
+      description: Appliance has already been setup
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ..\components\schemas\Error.yaml
+              - example:
+                  success: false
+                  msg: Appliance has already been setup

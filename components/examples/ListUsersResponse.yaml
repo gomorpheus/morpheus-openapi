@@ -1,0 +1,35 @@
+summary: List of users
+value:
+  users:
+    - id: 1
+      accountId: 1
+      username: root
+      displayName: root
+      email: root@acmecorp.com
+      firstName: ''
+      lastName: ''
+      enabled: true
+      receiveNotifications: true
+      accountExpired: false
+      accountLocked: false
+      passwordExpired: false
+      loginCount: 27
+      loginAttempts: 0
+      lastLoginDate: 2019-03-05T06:00:05+0000
+      roles:
+        - id: 1
+          authority: System Admin
+          description: Super User
+      account:
+        id: 1
+        name: Acme
+      windowsUsername: null
+      linuxUsername: null
+      dateCreated: 2017-09-14T13:57:16+0000
+      lastUpdated: 2019-10-09T00:35:13+0000
+  meta:
+    offset: 0
+    max: 1
+    size: 1
+    total: 1
+  global: false

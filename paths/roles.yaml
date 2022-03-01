@@ -1,0 +1,113 @@
+get:
+  summary: List roles
+  description: Get a list of roles.
+  operationId: listRoles
+  tags:
+    - Roles
+  parameters:
+    - $ref: ..\components\parameters\phrase.yaml
+    - $ref: ..\components\parameters\max.yaml
+    - $ref: ..\components\parameters\offset.yaml
+    - $ref: ..\components\parameters\sort.yaml
+    - $ref: ..\components\parameters\direction.yaml
+    - name: authority
+      in: query
+      description: Filter by authority
+      schema:
+        type: string
+    - name: roleType
+      in: query
+      description: Filter by roleType
+      schema:
+        type: string
+        enum:
+          - user
+          - account
+  responses:
+    '200':
+      description: Array of roles
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              roles:
+                type: array
+                items:
+                  $ref: ..\components\schemas\Role.yaml
+              meta:
+                $ref: ..\components\schemas\MetaObject.yaml
+          examples:
+            ListRolesResponse:
+              $ref: ..\components\examples\ListRolesResponse.yaml
+post:
+  summary: Create role
+  description: Create a new role.
+  operationId: createRole
+  tags:
+    - Roles
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - role
+          properties:
+            role:
+              type: object
+              description: Payload for creating a new role
+              required:
+                - authority
+              properties:
+                authority:
+                  type: string
+                  description: Authority (Name)
+                description:
+                  type: string
+                  description: Description
+                  nullable: true
+                roleType:
+                  type: string
+                  description: Role type
+                  enum:
+                    - user
+                    - account
+                  default: user
+                baseRoleId:
+                  type: integer
+                  format: int64
+                  description: >-
+                    Base Role ID. Create the new role with the same permissions
+                    and access levels that the specified base role has. If this
+                    is not passed, the role is create without any permissions.
+                multitenant:
+                  type: boolean
+                  default: false
+                  description: >-
+                    Multitenant roles are copied to all tenant accounts and kept
+                    in sync until a sub-tenant user modifies their copy of the
+                    role. *Only available to master tenant*
+                multitenantLocked:
+                  type: boolean
+                  default: false
+                  description: >-
+                    Multitenant Locked, prevents sub-tenant users from modifying
+                    their copy of multienant roles. *Only available to master
+                    tenant*
+        examples:
+          CreateRoleRequest:
+            $ref: ..\components\examples\CreateRoleRequest.yaml
+  responses:
+    '200':
+      description: Role Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              role:
+                $ref: ..\components\schemas\Role.yaml
+          examples:
+            CreateRoleResponse:
+              $ref: ..\components\examples\CreateRoleResponse.yaml

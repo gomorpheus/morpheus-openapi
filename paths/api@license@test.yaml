@@ -1,0 +1,49 @@
+post:
+  summary: Test license key
+  description: >-
+    This endpoint can be used to decode a license to see if it is valid and
+    inspect the license settings, such as who it belongs to and the enabled
+    features. This is only a test, it does not install the key, or make any
+    changes to your appliance.
+  operationId: testLicense
+  tags:
+    - License
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - license
+          properties:
+            license:
+              type: string
+              description: >-
+                License Key. This is a long and unique string of your Morpheus
+                license. License keys can be requested from the [Morpheus
+                Hub](https://morpheushub.com).
+        example:
+          license: >-
+            4704270b94ab7713e8eaca4c82917d27b5b2a1cc95a1818d71b4648c3f821a18a20b78ba9623f8609cbc3712b96fb4c68bbef1880c16a5946a198c1ff6943badef07458898df99b83cddca7bc33e883a54b6025fbd5b8e84d83c419d2ca5b7ec847227b2b63d1ccbcf6a91fcc9dc4e9bd26321166bb04e54983fc858c5c2f7c7893741f435f4921ba33a9778ec714a6a95054a074ff6969dda1b4
+  responses:
+    '200':
+      description: License test succeeded, the license details are returned
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              license:
+                $ref: ..\components\schemas\License.yaml
+          examples:
+            testLicense:
+              $ref: ..\components\examples\InstallLicenseResponse.yaml
+    '400':
+      description: License test failed
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+          example:
+            success: false
+            msg: Unable to decode license content

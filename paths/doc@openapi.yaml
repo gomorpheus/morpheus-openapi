@@ -1,0 +1,22 @@
+get:
+  summary: Get Morpheus OpenAPI (Swagger) document as JSON.
+  description: >-
+    Get Morpheus OpenAPI (Swagger) document as JSON. This is the same document
+    that you are reading at this very moment.
+  operationId: openapi
+  tags:
+    - Documentation
+  security: []
+  responses:
+    '200':
+      description: OpenAPI JSON specification for the Morpheus API
+      content:
+        application/json:
+          examples:
+            jsonExample:
+              summary: OpenAPI (Swagger) JSON
+              value:
+                openapi: 3.0.3
+                info:
+                  title: Morpheus API
+                  description: Welcome ...

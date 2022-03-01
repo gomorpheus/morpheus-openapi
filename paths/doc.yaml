@@ -1,0 +1,36 @@
+get:
+  summary: List documentation links.
+  description: >-
+    Get a list documentation links. These are links to Morpheus documentation
+    and help.
+  operationId: doc
+  tags:
+    - Documentation
+  security: []
+  responses:
+    '200':
+      description: Array of documentation links
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              links:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    url:
+                      type: string
+                    description:
+                      type: string
+                    type:
+                      type: string
+                      enum:
+                        - openapi
+                        - external
+          examples:
+            foobar:
+              $ref: ..\components\examples\ListDocsResponse.yaml

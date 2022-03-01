@@ -1,0 +1,96 @@
+parameters:
+  - $ref: ..\components\parameters\id.yaml
+get:
+  summary: Get role
+  description: Get details about a role
+  operationId: getRole
+  tags:
+    - Roles
+  responses:
+    '200':
+      description: Role Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              role:
+                $ref: ..\components\schemas\Role.yaml
+          examples:
+            GetRoleResponse:
+              $ref: ..\components\examples\GetRoleResponse.yaml
+put:
+  summary: Update role
+  description: Update an existing role.
+  operationId: updateRole
+  tags:
+    - Roles
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - role
+          properties:
+            role:
+              type: object
+              description: Payload for updating an existing role
+              properties:
+                authority:
+                  type: string
+                  description: Authority (Name)
+                description:
+                  type: string
+                  description: Description
+                  nullable: true
+        examples:
+          UpdateRoleRequest:
+            $ref: ..\components\examples\UpdateRoleRequest.yaml
+  responses:
+    '200':
+      description: Role Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              role:
+                $ref: ..\components\schemas\Role.yaml
+          examples:
+            UpdateRoleResponse:
+              $ref: ..\components\examples\UpdateRoleResponse.yaml
+delete:
+  summary: Delete role
+  description: Delete an existing role. A role cannot be deleted while it is still in use.
+  operationId: deleteRole
+  tags:
+    - Roles
+  responses:
+    '200':
+      description: Role Object
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Success.yaml
+    '400':
+      description: Role still has managed resources
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+          examples:
+            roleInUse:
+              summary: Role is assigned to a user or tenant
+              value:
+                success: false
+                msg: >-
+                  Role is already in use. Please remove any occurrences of this
+                  role before attempting to remove.
+            roleInUseByIdentitySource:
+              summary: Role is assigned to an identity source
+              value:
+                success: false
+                msg: >-
+                  Role is assigned as a default account role for a configured
+                  Identity Source.

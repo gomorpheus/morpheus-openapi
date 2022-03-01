@@ -1,0 +1,137 @@
+get:
+  summary: List users
+  description: Get a list of users.
+  operationId: listUsers
+  tags:
+    - Users
+  parameters:
+    - $ref: ..\components\parameters\phrase.yaml
+    - $ref: ..\components\parameters\max.yaml
+    - $ref: ..\components\parameters\offset.yaml
+    - $ref: ..\components\parameters\sort.yaml
+    - $ref: ..\components\parameters\direction.yaml
+    - name: username
+      in: query
+      description: Filter by username
+      schema:
+        type: string
+    - name: email
+      in: query
+      description: Filter by email
+      schema:
+        type: string
+    - name: firstName
+      in: query
+      description: Filter by firstName
+      schema:
+        type: string
+    - name: roleId
+      in: query
+      description: Filter by Role ID (supports multiple values)
+      schema:
+        type: integer
+        format: int64
+    - name: role
+      in: query
+      description: Filter by Role authority (supports multiple values)
+      schema:
+        type: string
+    - name: accountId
+      in: query
+      description: >-
+        Filter by Tenant ID. This is only available to master tenant users with
+        permission to manage tenants and users.
+      schema:
+        type: integer
+        format: int64
+    - name: global
+      in: query
+      description: >-
+        Global (All Tenants), load users from all tenants. The default is to
+        only see your own tenant. This is only available to master tenant users
+        with permission to manage tenants and users.
+      schema:
+        type: boolean
+        default: false
+  responses:
+    '200':
+      description: Array of users
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              users:
+                type: array
+                items:
+                  $ref: ..\components\schemas\User.yaml
+              meta:
+                $ref: ..\components\schemas\MetaObject.yaml
+          examples:
+            getUser:
+              $ref: ..\components\examples\ListUsersResponse.yaml
+post:
+  summary: Create user
+  description: Create a new user.
+  operationId: createUser
+  tags:
+    - Users
+  parameters:
+    - name: accountId
+      in: query
+      description: Tenant ID, create user in a sub tenant account instead of your own.
+      schema:
+        type: integer
+        format: int64
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - user
+          properties:
+            user:
+              type: object
+              description: Payload for creating a new user
+              required:
+                - name
+                - roles
+              properties:
+                firstName:
+                  type: string
+                  description: First Name
+                lastName:
+                  type: string
+                  description: Last Name
+                username:
+                  type: string
+                  description: Username (unique per tenant).
+                email:
+                  type: string
+                  description: Email address
+                password:
+                  type: string
+                  format: password
+                  description: Password
+                roles:
+                  type: array
+                  description: List of Roles
+                  items:
+                    $ref: ..\components\schemas\ReferenceObject.yaml
+        examples:
+          createUserRequest:
+            $ref: ..\components\examples\CreateUserRequest.yaml
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user:
+                $ref: ..\components\schemas\User.yaml
+          examples:
+            createUserResponse:
+              $ref: ..\components\examples\CreateUserResponse.yaml

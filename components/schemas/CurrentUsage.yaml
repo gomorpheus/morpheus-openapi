@@ -1,0 +1,15 @@
+type: object
+description: Current usage totals for appliance
+properties:
+  memory:
+    type: integer
+    format: int64
+    description: Total Used Memory (bytes)
+  storage:
+    type: integer
+    format: int64
+    description: Total Used Storage (bytes)
+  workloads:
+    type: integer
+    format: int64
+    description: Total Workloads
