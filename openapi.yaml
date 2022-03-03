@@ -19,19 +19,19 @@ servers:
       serverFQDN:
         default: ""
 paths:
-  /accounts:
-    $ref: paths/accounts.yaml
-  /accounts/{id}:
-    $ref: paths/accounts@id.yaml
-  /accounts/available-roles:
-    $ref: paths/accounts@available-roles.yaml
+  /api/accounts:
+    $ref: paths/api@accounts.yaml
+  /api/accounts/{id}:
+    $ref: paths/api@accounts@id.yaml
+  /api/accounts/available-roles:
+    $ref: paths/api@accounts@available-roles.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
-  /doc:
+  /api/doc:
     $ref: paths/api@doc.yaml
-  /doc/openapi:
+  /api/doc/openapi:
     $ref: paths/api@doc@openapi.yaml
-  /doc/openapi.yaml:
+  /api/doc/openapi.yaml:
     $ref: paths/api@doc@openapi.yaml.yaml
   /api/forgot/reset-password:
     $ref: paths/api@forgot@reset-password.yaml
