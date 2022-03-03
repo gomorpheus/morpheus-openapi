@@ -48,40 +48,38 @@ post:
   operationId: reportsRun
   tags:
     - Reports
-  consumes:
-    - application/json
-  parameters:
-    - in: body
-      name: Body
-      required: true
-      description: Run a specific report.  Check the report for custom options / inputs that need to be supplied in the body of the payload.
-      schema:
-        type: object
-        required:
-          - type
-        properties:
-          report:
-            type: object
-            properties: 
-              type: 
-                type: string
-                example: appCost
-              startDate: 
-                type: string
-                format: date
-                example: 2019-01-01
-              endDate: 
-                type: string
-                format: date
-                example: 2020-01-01
-              groupId:
-                description: The Group ID filter for the report
-                type: number
-                example: 1
-              cloudId:
-                description: The Cloud ID filter for the report
-                type: number
-                example: 7
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - report
+          properties:
+            report:
+              type: object
+              required:
+                - type
+              properties: 
+                type: 
+                  type: string
+                  example: appCost
+                startDate: 
+                  type: string
+                  format: date
+                  example: 2019-01-01
+                endDate: 
+                  type: string
+                  format: date
+                  example: 2020-01-01
+                groupId:
+                  description: The Group ID filter for the report
+                  type: number
+                  example: 1
+                cloudId:
+                  description: The Cloud ID filter for the report
+                  type: number
+                  example: 7
   externalDocs:
     url: https://apidocs.morpheusdata.com/#run-a-report
   responses:

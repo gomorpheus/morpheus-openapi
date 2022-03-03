@@ -12,22 +12,18 @@ post:
   tags:
     - Authentication
   security: []
-  consumes:
-    - application/json
-  parameters:
-    - in: body
-      name: Request Reset Password Email
-      required: true
-      description: Reset user password
-      schema:
-        type: object
-        required:
-          - username
-        properties:
-          username:
-            type: string
-            description: |
-              Specified as "username" or "tenantId\username" with proper HTML encoding and used in conjunction with `password`.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - username
+          properties:
+            username:
+              type: string
+              description: |
+                Specified as "username" or "tenantId\username" with proper HTML encoding and used in conjunction with `password`.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#forgot-password
   responses:

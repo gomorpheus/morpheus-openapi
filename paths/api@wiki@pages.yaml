@@ -36,33 +36,31 @@ post:
   operationId: wikiAdd
   tags:
     - Wiki
-  consumes:
-    - application/json
-  parameters:
-    - in: body
-      name: Body
-      required: true
-      description: Wiki Page to Create
-      schema:
-        type: object
-        required:
-          - name
-          - category
-          - content
-        properties:
-          page:
-            type: object
-            properties:
-              name: 
-                type: string
-                example: Sample Doc
-              category: 
-                type: string
-                example: info
-              content: 
-                type: string
-                example: #Sample Doc
-                  A sample document in **markdown**.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - page
+          properties:
+            page:
+              type: object
+              required:
+                - name
+                - category
+                - content
+              properties:
+                name: 
+                  type: string
+                  example: Sample Doc
+                category: 
+                  type: string
+                  example: info
+                content: 
+                  type: string
+                  example: #Sample Doc
+                    A sample document in **markdown**.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#create-a-wiki-page
   responses:
