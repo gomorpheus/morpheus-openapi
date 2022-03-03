@@ -118,8 +118,8 @@ properties:
               creatable: 
                 type: boolean
               config: 
-                type: object
-                properties:  
+                type: string
+                format: nullable
               displayOrder: 
                 type: number
                 example: 2

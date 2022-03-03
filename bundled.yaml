@@ -11,12 +11,247 @@ info:
     Morpheus UI.
   version: 5.4.4
   termsOfService: https://morpheusdata.com/terms-and-conditions/
+  contact:
+    email: dev@morpheusdata.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
   - url: https://{serverFQDN}
+    description: Morpheus API
     variables:
       serverFQDN:
         default: ''
 paths:
+  /accounts:
+    get:
+      summary: List tenants
+      description: Get a list of tenants. A tenant is also referred to as an account.
+      operationId: listTenants
+      tags:
+        - Tenants
+      parameters:
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+      responses:
+        '200':
+          description: Array of tenants
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accounts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Tenant'
+                  meta:
+                    $ref: '#/components/schemas/MetaObject'
+    post:
+      summary: Create tenant
+      description: >-
+        Create a new tenant. This new account will be a sub-tenant with the
+        master tenant as its parent.
+      operationId: createTenant
+      tags:
+        - Tenants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - account
+              properties:
+                account:
+                  type: object
+                  description: Payload for creating a new tenant
+                  required:
+                    - name
+                  properties:
+                    name:
+                      type: string
+                      description: Name
+                    description:
+                      type: string
+                      description: Description
+                      nullable: true
+                    role:
+                      type: object
+                      description: >-
+                        Tenant Base Role. This restricts the access available to
+                        this tenant's roles and users.
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                    subdomain:
+                      type: string
+                      description: >-
+                        The subdomain. This will be part of the login URL and
+                        username for sub tenant users.
+                      nullable: true
+                    currency:
+                      $ref: '#/components/schemas/CurrencyCode'
+      responses:
+        '200':
+          description: Tenant Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  account:
+                    $ref: '#/components/schemas/Tenant'
+  /accounts/{id}:
+    parameters:
+      - $ref: '#/components/parameters/id-path'
+    get:
+      summary: Get tenant
+      description: Get details about a tenant
+      operationId: getTenant
+      tags:
+        - Tenants
+      responses:
+        '200':
+          description: Tenant Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  account:
+                    $ref: '#/components/schemas/Tenant'
+    put:
+      summary: Update tenant
+      description: Update an existing tenant.
+      operationId: updateTenant
+      tags:
+        - Tenants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - account
+              properties:
+                account:
+                  description: Payload for updating an existing tenant
+                  properties:
+                    name:
+                      type: string
+                      description: Name
+                    description:
+                      type: string
+                      description: Description
+                      nullable: true
+                    role:
+                      type: object
+                      description: >-
+                        Tenant Base Role. This restricts the access available to
+                        this tenant's roles and users.
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                    subdomain:
+                      type: string
+                      description: >-
+                        The subdomain. This will be part of the login URL and
+                        username for sub tenant users.
+                      nullable: true
+                    currency:
+                      $ref: '#/components/schemas/CurrencyCode'
+      responses:
+        '200':
+          description: Tenant Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  account:
+                    $ref: '#/components/schemas/Tenant'
+    delete:
+      summary: Delete tenant
+      description: >-
+        Delete an existing tenant. This deletes everything under the tenant. An
+        error will occur if the tenant still has managed resources, unless
+        `removeResources=true`.
+      operationId: deleteTenant
+      tags:
+        - Tenants
+      parameters:
+        - name: removeResources
+          in: query
+          description: >-
+            Remove Resources. This will delete all the managed resources under
+            the account instead of erroring.
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Tenant Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '400':
+          description: Tenant still has managed resources
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                success: false
+                msg: >-
+                  Unable to delete an account without removing resources when
+                  managed instances exist.
+  /accounts/available-roles:
+    get:
+      summary: List available roles for a tenant
+      description: >-
+        Get a list of available roles that can be assigned as the default base
+        role for a sub tenant account.
+      operationId: listTenantsAvailableRoles
+      tags:
+        - Tenants
+      parameters:
+        - name: accountId
+          in: query
+          description: Tenant ID, find roles for sub tenant account.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Array of roles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      type: object
+                      description: Available Tenant Role Object
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                        authority:
+                          type: string
+                          description: A unique name for the role.
+              examples:
+                ListAvailableUserRoles:
+                  $ref: '#/components/examples/ListTenantsAvailableRoles'
   /api/dashboard:
     get:
       summary: Overview of Dashboard information
@@ -67,11 +302,13 @@ paths:
         - Authentication
       security: []
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - token
+                - password
               properties:
                 token:
                   description: >-
@@ -82,9 +319,6 @@ paths:
                   description: User new password. This is the new password for your user.
                   type: string
                   format: password
-              required:
-                - token
-                - password
       externalDocs:
         url: https://apidocs.morpheusdata.com/#reset-password
       responses:
@@ -137,23 +371,19 @@ paths:
       tags:
         - Authentication
       security: []
-      consumes:
-        - application/json
-      parameters:
-        - in: body
-          name: Request Reset Password Email
-          required: true
-          description: Reset user password
-          schema:
-            type: object
-            required:
-              - username
-            properties:
-              username:
-                type: string
-                description: >
-                  Specified as "username" or "tenantId\username" with proper
-                  HTML encoding and used in conjunction with `password`.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+              properties:
+                username:
+                  type: string
+                  description: >
+                    Specified as "username" or "tenantId\username" with proper
+                    HTML encoding and used in conjunction with `password`.
       externalDocs:
         url: https://apidocs.morpheusdata.com/#forgot-password
       responses:
@@ -184,6 +414,155 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/license:
+    get:
+      summary: Get license
+      description: >-
+        Get details about the license that is currently installed on the
+        appliance. This returns the license details, but not the key itself.
+        Your license key will never be returned and should always be kept
+        secret.
+      operationId: getLicense
+      tags:
+        - License
+      responses:
+        '200':
+          description: Get details about the currently installed license
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  license:
+                    $ref: '#/components/schemas/License'
+                  currentUsage:
+                    $ref: '#/components/schemas/CurrentUsage'
+              examples:
+                getLicense:
+                  $ref: '#/components/examples/GetLicenseResponse'
+                getLicenseIsNotInstalled:
+                  summary: License is not installed
+                  value:
+                    license: null
+                    currentUsage:
+                      memory: 26256664064
+                      storage: 306786373632
+                      workloads: 12
+    post:
+      summary: Install license key
+      description: >-
+        Install a new license key. This will potentially change the enabled
+        features and capabilities of your Morpheus appliance.
+      operationId: installLicense
+      tags:
+        - License
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - license
+              properties:
+                license:
+                  type: string
+                  description: >-
+                    License Key. This is a long and unique string of your
+                    Morpheus license. License keys can be requested from the
+                    [Morpheus Hub](https://morpheushub.com).
+            example:
+              license: >-
+                4704270b94ab7713e8eaca4c82917d27b5b2a1cc95a1818d71b4648c3f821a18a20b78ba9623f8609cbc3712b96fb4c68bbef1880c16a5946a198c1ff6943badef07458898df99b83cddca7bc33e883a54b6025fbd5b8e84d83c419d2ca5b7ec847227b2b63d1ccbcf6a91fcc9dc4e9bd26321166bb04e54983fc858c5c2f7c7893741f435f4921ba33a9778ec714a6a95054a074ff6969dda1b4
+      responses:
+        '200':
+          description: License installed successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  license:
+                    $ref: '#/components/schemas/License'
+                  currentUsage:
+                    $ref: '#/components/schemas/CurrentUsage'
+              examples:
+                installLicense:
+                  $ref: '#/components/examples/GetLicenseResponse'
+        '400':
+          description: License install failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                success: false
+                msg: Unable to decode license content
+    delete:
+      summary: Uninstall license key
+      description: >-
+        Uninstall your appliance license, leaving the appliance with no license
+        installed. This will change the enabled features and capabilities of
+        your Morpheus appliance.
+      operationId: uninstallLicense
+      tags:
+        - License
+      responses:
+        '200':
+          description: License uninstalled successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+  /api/license/test:
+    post:
+      summary: Test license key
+      description: >-
+        This endpoint can be used to decode a license to see if it is valid and
+        inspect the license settings, such as who it belongs to and the enabled
+        features. This is only a test, it does not install the key, or make any
+        changes to your appliance.
+      operationId: testLicense
+      tags:
+        - License
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - license
+              properties:
+                license:
+                  type: string
+                  description: >-
+                    License Key. This is a long and unique string of your
+                    Morpheus license. License keys can be requested from the
+                    [Morpheus Hub](https://morpheushub.com).
+            example:
+              license: >-
+                4704270b94ab7713e8eaca4c82917d27b5b2a1cc95a1818d71b4648c3f821a18a20b78ba9623f8609cbc3712b96fb4c68bbef1880c16a5946a198c1ff6943badef07458898df99b83cddca7bc33e883a54b6025fbd5b8e84d83c419d2ca5b7ec847227b2b63d1ccbcf6a91fcc9dc4e9bd26321166bb04e54983fc858c5c2f7c7893741f435f4921ba33a9778ec714a6a95054a074ff6969dda1b4
+      responses:
+        '200':
+          description: License test succeeded, the license details are returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  license:
+                    $ref: '#/components/schemas/License'
+              examples:
+                testLicense:
+                  $ref: '#/components/examples/GetLicenseResponse'
+        '400':
+          description: License test failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                success: false
+                msg: Unable to decode license content
   /api/ping:
     get:
       summary: Basic information about current Morpheus Installation
@@ -320,42 +699,38 @@ paths:
       operationId: reportsRun
       tags:
         - Reports
-      consumes:
-        - application/json
-      parameters:
-        - in: body
-          name: Body
-          required: true
-          description: >-
-            Run a specific report.  Check the report for custom options / inputs
-            that need to be supplied in the body of the payload.
-          schema:
-            type: object
-            required:
-              - type
-            properties:
-              report:
-                type: object
-                properties:
-                  type:
-                    type: string
-                    example: appCost
-                  startDate:
-                    type: string
-                    format: date
-                    example: '2019-01-01'
-                  endDate:
-                    type: string
-                    format: date
-                    example: '2020-01-01'
-                  groupId:
-                    description: The Group ID filter for the report
-                    type: number
-                    example: 1
-                  cloudId:
-                    description: The Cloud ID filter for the report
-                    type: number
-                    example: 7
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - report
+              properties:
+                report:
+                  type: object
+                  required:
+                    - type
+                  properties:
+                    type:
+                      type: string
+                      example: appCost
+                    startDate:
+                      type: string
+                      format: date
+                      example: '2019-01-01'
+                    endDate:
+                      type: string
+                      format: date
+                      example: '2020-01-01'
+                    groupId:
+                      description: The Group ID filter for the report
+                      type: number
+                      example: 1
+                    cloudId:
+                      description: The Cloud ID filter for the report
+                      type: number
+                      example: 7
       externalDocs:
         url: https://apidocs.morpheusdata.com/#run-a-report
       responses:
@@ -474,6 +849,220 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /roles:
+    get:
+      summary: List roles
+      description: Get a list of roles.
+      operationId: listRoles
+      tags:
+        - Roles
+      parameters:
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - name: authority
+          in: query
+          description: Filter by authority
+          schema:
+            type: string
+        - name: roleType
+          in: query
+          description: Filter by roleType
+          schema:
+            type: string
+            enum:
+              - user
+              - account
+      responses:
+        '200':
+          description: Array of roles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+                  meta:
+                    $ref: '#/components/schemas/MetaObject'
+              examples:
+                ListRolesResponse:
+                  $ref: '#/components/examples/ListRolesResponse'
+    post:
+      summary: Create role
+      description: Create a new role.
+      operationId: createRole
+      tags:
+        - Roles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - role
+              properties:
+                role:
+                  type: object
+                  description: Payload for creating a new role
+                  required:
+                    - authority
+                  properties:
+                    authority:
+                      type: string
+                      description: Authority (Name)
+                    description:
+                      type: string
+                      description: Description
+                      nullable: true
+                    roleType:
+                      type: string
+                      description: Role type
+                      enum:
+                        - user
+                        - account
+                      default: user
+                    baseRoleId:
+                      type: integer
+                      format: int64
+                      description: >-
+                        Base Role ID. Create the new role with the same
+                        permissions and access levels that the specified base
+                        role has. If this is not passed, the role is create
+                        without any permissions.
+                    multitenant:
+                      type: boolean
+                      default: false
+                      description: >-
+                        Multitenant roles are copied to all tenant accounts and
+                        kept in sync until a sub-tenant user modifies their copy
+                        of the role. *Only available to master tenant*
+                    multitenantLocked:
+                      type: boolean
+                      default: false
+                      description: >-
+                        Multitenant Locked, prevents sub-tenant users from
+                        modifying their copy of multienant roles. *Only
+                        available to master tenant*
+            examples:
+              CreateRoleRequest:
+                $ref: '#/components/examples/CreateRoleRequest'
+      responses:
+        '200':
+          description: Role Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  role:
+                    $ref: '#/components/schemas/Role'
+              examples:
+                CreateRoleResponse:
+                  $ref: '#/components/examples/CreateRoleResponse'
+  /roles/{id}:
+    parameters:
+      - $ref: '#/components/parameters/id-path'
+    get:
+      summary: Get role
+      description: Get details about a role
+      operationId: getRole
+      tags:
+        - Roles
+      responses:
+        '200':
+          description: Role Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  role:
+                    $ref: '#/components/schemas/Role'
+              examples:
+                GetRoleResponse:
+                  $ref: '#/components/examples/GetRoleResponse'
+    put:
+      summary: Update role
+      description: Update an existing role.
+      operationId: updateRole
+      tags:
+        - Roles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - role
+              properties:
+                role:
+                  type: object
+                  description: Payload for updating an existing role
+                  properties:
+                    authority:
+                      type: string
+                      description: Authority (Name)
+                    description:
+                      type: string
+                      description: Description
+                      nullable: true
+            examples:
+              UpdateRoleRequest:
+                $ref: '#/components/examples/UpdateRoleRequest'
+      responses:
+        '200':
+          description: Role Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  role:
+                    $ref: '#/components/schemas/Role'
+              examples:
+                UpdateRoleResponse:
+                  $ref: '#/components/examples/UpdateRoleResponse'
+    delete:
+      summary: Delete role
+      description: >-
+        Delete an existing role. A role cannot be deleted while it is still in
+        use.
+      operationId: deleteRole
+      tags:
+        - Roles
+      responses:
+        '200':
+          description: Role Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '400':
+          description: Role still has managed resources
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                roleInUse:
+                  summary: Role is assigned to a user or tenant
+                  value:
+                    success: false
+                    msg: >-
+                      Role is already in use. Please remove any occurrences of
+                      this role before attempting to remove.
+                roleInUseByIdentitySource:
+                  summary: Role is assigned to an identity source
+                  value:
+                    success: false
+                    msg: >-
+                      Role is assigned as a default account role for a
+                      configured Identity Source.
   /api/search:
     get:
       summary: Provides global search for all types of objects
@@ -517,6 +1106,239 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/setup:
+    post:
+      summary: Setup appliance
+      description: >
+        Initialize a freshly installed appliance to create the master tenant and
+        System Admin user. 
+
+        Authorization is not required. 
+
+        This operation can only be executed successfully once.
+      operationId: setup
+      tags:
+        - Setup
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - applianceName
+                - accountName
+                - username
+                - email
+                - password
+              properties:
+                applianceName:
+                  type: string
+                  description: >-
+                    Appliance Name. Choose a name for your Morpheus Appliance. 
+                    This is stored in the Appliance Settings.
+                applianceUrl:
+                  type: string
+                  description: >-
+                    Appliance URL. Specify the full URL for your Morpheus
+                    Appliance. This is stored in the Appliance Settings.
+                accountName:
+                  type: string
+                  description: Name of the Master Tenant account being created.
+                firstName:
+                  type: string
+                  description: First Name for the System Admin user being created.
+                lastName:
+                  type: string
+                  description: Last Name for the System Admin user being created.
+                username:
+                  type: string
+                  description: Username for the System Admin user being created.
+                email:
+                  type: string
+                  description: Email for the System Admin user being created.
+                password:
+                  type: string
+                  format: password
+                  description: Password for the System Admin user being created.
+                hubmode:
+                  description: >-
+                    Hub Mode. Determines if and how the appliance should connect
+                    with the Morpheus Hub. The default value (skip) means do not
+                    connect with the hub, and you will be installing your
+                    license manually. If you login or register with the hub then
+                    a Community Edition license will be installed automatically.
+                  type: string
+                  enum:
+                    - skip
+                    - register
+                    - login
+                  default: skip
+                hub:
+                  oneOf:
+                    - description: >-
+                        Object for logging in to the [Morpheus
+                        Hub](https://morpheushub.com) with existing credentials.
+                        This is only required for `hubmode=login`.
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                          description: Email for existing Morpheus Hub user
+                        password:
+                          type: string
+                          format: password
+                          description: Password for existing Morpheus Hub user
+                      example:
+                        email: tanderson@mccorp.com
+                        password: YourExistingHubPassword
+                    - description: >-
+                        Object for registering with the [Morpheus
+                        Hub](https://morpheushub.com). This is only required for
+                        `hubmode=register`.
+                      type: object
+                      properties:
+                        accountName:
+                          type: string
+                          description: Company Name for new Morpheus Hub organization
+                        firstName:
+                          type: string
+                          description: First Name for new Morpheus Hub user
+                        lastName:
+                          type: string
+                          description: Last Name for new Morpheus Hub user
+                        email:
+                          type: string
+                          description: Email for new Morpheus Hub user
+                        password:
+                          type: string
+                          format: password
+                          description: Password for new Morpheus Hub user
+                      example:
+                        accountName: Meta Cortex Corporation
+                        firstName: Thomas
+                        lastName: Anderson
+                        email: tanderson@mccorp.com
+                        username: tanderson
+                        password: AGoodPasswordForNewHubAccount
+                  discriminator:
+                    propertyName: hubmode
+                    mapping:
+                      login: '#/components/schemas/HubLoginObject'
+                      register: '#/components/schemas/HubRegisterObject'
+            examples:
+              setup:
+                summary: Setup appliance
+                value:
+                  accountName: Meta Cortex Corporation
+                  firstName: Thomas
+                  lastName: Anderson
+                  email: tanderson@mccorp.com
+                  username: tanderson
+                  password: QnW}cg}8}<~:P9YU
+                description: >
+                  This example initializes the appliance and without connecting
+                  to the [Morpheus Hub](https://morpheushub.com).
+
+                  A license key will need to be installed manually.
+              setupWithHubRegistration:
+                summary: Setup appliance with Hub Registration
+                description: >
+                  This example initializes the appliance and connects to the
+                  [Morpheus Hub](https://morpheushub.com) to create and register
+                  a new hub account. 
+
+                  This automatically retrieves a new Community Edition License
+                  from the Hub and installs it in your appliance.
+                value:
+                  accountName: Meta Cortex Corporation
+                  firstName: Thomas
+                  lastName: Anderson
+                  email: tanderson@mccorp.com
+                  username: tanderson
+                  password: QnW}cg}8}<~:P9YU
+                  hubmode: register
+                  hub:
+                    accountName: Meta Cortex Corporation
+                    firstName: Thomas
+                    lastName: Anderson
+                    email: tanderson@mccorp.com
+                    password: AGoodPasswordForNewHubAccount
+              setupWithHubLogin:
+                summary: Setup appliance with Hub Login
+                description: >
+                  This example initializes the appliance and connects to the
+                  [Morpheus Hub](https://morpheushub.com) using an existing hub
+                  account.
+
+                  This automatically retrieves a new Community Edition License
+                  from the Hub and installs it in your appliance.
+                value:
+                  accountName: Meta Cortex Corporation
+                  firstName: Thomas
+                  lastName: Anderson
+                  email: tanderson@mccorp.com
+                  username: tanderson
+                  password: QnW}cg}8}<~:P9YU
+                  hubmode: login
+                  hub:
+                    email: tanderson@mccorp.com
+                    password: YourExistingHubPassword
+      responses:
+        '200':
+          description: >-
+            Appliance setup complete. The master tenant and system admin user
+            were created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  buildVersion:
+                    type: string
+                    description: Morpheus build version that the server is running.
+                  applianceUrl:
+                    type: string
+                    description: >-
+                      The Appliance Server URL as defined under Appliance
+                      Settings.
+                  setupNeeded:
+                    type: boolean
+                    description: >-
+                      Flag to determine if the appliance has been setup, only
+                      true when appliance is a fresh install and has not been
+                      initialized.
+                  hub:
+                    type: object
+                    description: >-
+                      Settings for connecting to the [Morpheus
+                      Hub](https://morpheushub.com)
+                    properties:
+                      enabled:
+                        type: boolean
+                        description: Flag to determine if hub connectivity is enabled.
+                      url:
+                        type: string
+                        description: The [Morpheus Hub](https://morpheushub.com) URL.
+                        default: https://morpheushub.com
+                example:
+                  success: true
+                  buildVersion: 5.4.4.876
+                  applianceUrl: https://morpheus.bungebash.com/
+                  environment: production
+                  setupNeeded: false
+        '400':
+          description: Appliance has already been setup
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Error'
+                  - example:
+                      success: false
+                      msg: Appliance has already been setup
   /api/whoami:
     get:
       summary: Retrieves information about current user roles and permissions
@@ -627,32 +1449,30 @@ paths:
       operationId: wikiAdd
       tags:
         - Wiki
-      consumes:
-        - application/json
-      parameters:
-        - in: body
-          name: Body
-          required: true
-          description: Wiki Page to Create
-          schema:
-            type: object
-            required:
-              - name
-              - category
-              - content
-            properties:
-              page:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    example: Sample Doc
-                  category:
-                    type: string
-                    example: info
-                  content:
-                    type: string
-                    example: A sample document in **markdown**.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - page
+              properties:
+                page:
+                  type: object
+                  required:
+                    - name
+                    - category
+                    - content
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.
       externalDocs:
         url: https://apidocs.morpheusdata.com/#create-a-wiki-page
       responses:
@@ -712,31 +1532,26 @@ paths:
       operationId: wikiUpdate
       tags:
         - Wiki
-      consumes:
-        - application/json
       parameters:
         - $ref: '#/components/parameters/id-path'
-        - in: body
-          name: Body
-          required: true
-          description: >-
-            Wiki Page to Update.  Only the values you wish to update should be
-            in the body payload.
-          schema:
-            type: object
-            properties:
-              page:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    example: Sample Doc
-                  category:
-                    type: string
-                    example: info
-                  content:
-                    type: string
-                    example: A sample document in **markdown**.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
       externalDocs:
         url: https://apidocs.morpheusdata.com/#update-a-wiki-page
       responses:
@@ -758,6 +1573,89 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /doc:
+    get:
+      summary: List documentation links.
+      description: >-
+        Get a list documentation links. These are links to Morpheus
+        documentation and help.
+      operationId: doc
+      tags:
+        - Documentation
+      security: []
+      responses:
+        '200':
+          description: Array of documentation links
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  links:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        url:
+                          type: string
+                        description:
+                          type: string
+                        type:
+                          type: string
+                          enum:
+                            - openapi
+                            - external
+              examples:
+                foobar:
+                  $ref: '#/components/examples/ListDocsResponse'
+  /doc/openapi:
+    get:
+      summary: Get Morpheus OpenAPI (Swagger) document as JSON.
+      description: >-
+        Get Morpheus OpenAPI (Swagger) document as JSON. This is the same
+        document that you are reading at this very moment.
+      operationId: openapi
+      tags:
+        - Documentation
+      security: []
+      responses:
+        '200':
+          description: OpenAPI JSON specification for the Morpheus API
+          content:
+            application/json:
+              examples:
+                jsonExample:
+                  summary: OpenAPI (Swagger) JSON
+                  value:
+                    openapi: 3.0.3
+                    info:
+                      title: Morpheus API
+                      description: Welcome ...
+  /doc/openapi.yaml:
+    get:
+      summary: Get Morpheus OpenAPI (Swagger) document as YAML.
+      description: >-
+        Get Morpheus OpenAPI (Swagger) document as YAML. This is the same
+        document that you are reading at this very moment.
+      operationId: openapiYaml
+      tags:
+        - Documentation
+      security: []
+      responses:
+        '200':
+          description: OpenAPI YAML specification for the Morpheus API
+          content:
+            text/yaml:
+              examples:
+                yamlExample:
+                  summary: OpenApi (Swagger) YAML
+                  value: |
+                    openapi: "3.0.3"
+                    info: 
+                      title: "Morpheus API"
+                      description: "Welcome ..."
   /oauth/token:
     post:
       summary: Provides authentication via username and password
@@ -858,13 +1756,592 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /users:
+    get:
+      summary: List users
+      description: Get a list of users.
+      operationId: listUsers
+      tags:
+        - Users
+      parameters:
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - name: username
+          in: query
+          description: Filter by username
+          schema:
+            type: string
+        - name: email
+          in: query
+          description: Filter by email
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          description: Filter by firstName
+          schema:
+            type: string
+        - name: roleId
+          in: query
+          description: Filter by Role ID (supports multiple values)
+          schema:
+            type: integer
+            format: int64
+        - name: role
+          in: query
+          description: Filter by Role authority (supports multiple values)
+          schema:
+            type: string
+        - name: accountId
+          in: query
+          description: >-
+            Filter by Tenant ID. This is only available to master tenant users
+            with permission to manage tenants and users.
+          schema:
+            type: integer
+            format: int64
+        - name: global
+          in: query
+          description: >-
+            Global (All Tenants), load users from all tenants. The default is to
+            only see your own tenant. This is only available to master tenant
+            users with permission to manage tenants and users.
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Array of users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+                  meta:
+                    $ref: '#/components/schemas/MetaObject'
+              examples:
+                getUser:
+                  $ref: '#/components/examples/ListUsersResponse'
+    post:
+      summary: Create user
+      description: Create a new user.
+      operationId: createUser
+      tags:
+        - Users
+      parameters:
+        - name: accountId
+          in: query
+          description: Tenant ID, create user in a sub tenant account instead of your own.
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user
+              properties:
+                user:
+                  type: object
+                  description: Payload for creating a new user
+                  required:
+                    - name
+                    - roles
+                  properties:
+                    firstName:
+                      type: string
+                      description: First Name
+                    lastName:
+                      type: string
+                      description: Last Name
+                    username:
+                      type: string
+                      description: Username (unique per tenant).
+                    email:
+                      type: string
+                      description: Email address
+                    password:
+                      type: string
+                      format: password
+                      description: Password
+                    roles:
+                      type: array
+                      description: List of Roles
+                      items:
+                        $ref: '#/components/schemas/ReferenceObject'
+            examples:
+              createUserRequest:
+                $ref: '#/components/examples/CreateUserRequest'
+      responses:
+        '200':
+          description: User Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+              examples:
+                createUserResponse:
+                  $ref: '#/components/examples/GetUserResponse'
+  /users/{id}:
+    parameters:
+      - $ref: '#/components/parameters/id-path'
+    get:
+      summary: Get user
+      description: Get details about a user
+      operationId: getUser
+      tags:
+        - Users
+      responses:
+        '200':
+          description: User Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+              examples:
+                GetUserResponse:
+                  $ref: '#/components/examples/GetUserResponse'
+    put:
+      summary: Update user
+      description: Update an existing user.
+      operationId: updateUser
+      tags:
+        - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user
+              properties:
+                user:
+                  type: object
+                  description: Payload for creating a new user
+                  required:
+                    - name
+                    - roles
+                  properties:
+                    firstName:
+                      type: string
+                      description: First Name
+                    lastName:
+                      type: string
+                      description: Last Name
+                    username:
+                      type: string
+                      description: Username (unique per tenant).
+                    email:
+                      type: string
+                      description: Email address
+                    password:
+                      type: string
+                      format: password
+                      description: Password
+                    roles:
+                      type: array
+                      description: List of Roles
+                      items:
+                        $ref: '#/components/schemas/ReferenceObject'
+            examples:
+              updateUserResponse:
+                $ref: '#/components/examples/GetUserResponse'
+      responses:
+        '200':
+          description: User Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+              examples:
+                updateUserResponse:
+                  $ref: '#/components/examples/GetUserResponse'
+    delete:
+      summary: Delete user
+      description: Delete an existing user.
+      operationId: deleteUser
+      tags:
+        - Users
+      responses:
+        '200':
+          description: User was deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '400':
+          description: User still has managed resources
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                success: false
+                msg: >-
+                  Unable to delete an user without removing resources when
+                  managed instances exist.
+  /users/available-roles:
+    get:
+      summary: List available roles for a user
+      description: Get a list of roles that can be assigned to a user.
+      operationId: listUsersAvailableRoles
+      tags:
+        - Users
+      parameters:
+        - name: accountId
+          in: query
+          description: Tenant ID, find roles available to users of a sub tenant account.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Array of roles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roles:
+                    type: array
+                    items:
+                      type: object
+                      description: Available User Role Object
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                        authority:
+                          type: string
+                          description: A unique name for the role.
+              examples:
+                ListAvailableUserRoles:
+                  $ref: '#/components/examples/ListUsersAvailableRoles'
 components:
   securitySchemes:
     bearerAuth:
       description: Populate a bearer token for the Morpheus appliance you are testing
       type: http
       scheme: bearer
+  parameters:
+    phrase:
+      name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      schema:
+        type: string
+    max:
+      name: max
+      in: query
+      description: Maximum number of records to return
+      schema:
+        type: integer
+        format: int64
+        default: 25
+    offset:
+      name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      schema:
+        type: integer
+        format: int64
+        default: 0
+    sort:
+      name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      schema:
+        type: string
+        default: name
+    direction:
+      name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      schema:
+        type: string
+        default: asc
+        enum:
+          - asc
+          - desc
+    id-path:
+      name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      schema:
+        type: number
+    name:
+      name: name
+      in: query
+      description: If specified will return an exact match on name
+      schema:
+        type: string
+    code:
+      name: code
+      in: query
+      description: If specified will return an exact match on code
+      schema:
+        type: string
+    category:
+      name: category
+      in: query
+      description: If specified will return an exact match on category
+      schema:
+        type: string
+    format-path:
+      name: format
+      in: path
+      required: true
+      description: Format of the rendered report file, `.json` or `.csv`.
+      schema:
+        type: string
+        default: .json
+        enum:
+          - .json
+          - .csv
+    query:
+      name: query
+      in: query
+      description: Alias for phrase
+      schema:
+        type: string
+    pagePhrase:
+      name: pagePhrase
+      in: query
+      description: If specified will return a partial match on page name
+      schema:
+        type: string
   schemas:
+    Tenant:
+      type: object
+      description: Tenant Object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: ID
+        name:
+          type: string
+          description: Name
+        description:
+          type: string
+          description: Description
+          nullable: true
+        role:
+          type: object
+          description: >-
+            Tenant Base Role. This is the primary role of the tenant. All roles
+            created within the tenant must inherit this role as the base role.
+          properties:
+            id:
+              type: integer
+              format: int64
+            authority:
+              type: string
+              description: A unique name for the role.
+        subdomain:
+          type: string
+          description: >-
+            Subdomain is used for creating a direct login url in Identity
+            Sources or as a login prefix to identify the tenant i.e.
+            'subdomain\username'
+          nullable: true
+        currency:
+          type: string
+          enum:
+            - AUD
+            - AUD
+            - BGN
+            - BRL
+            - CAD
+            - CHF
+            - CLF
+            - CLP
+            - CNY
+            - CZK
+            - DKK
+            - EUR
+            - GBP
+            - HKD
+            - HRK
+            - HUF
+            - IDR
+            - ILS
+            - INR
+            - JPY
+            - KRW
+            - MXN
+            - MYR
+            - NOK
+            - NZD
+            - PHP
+            - PLN
+            - RON
+            - RUB
+            - SEK
+            - SGD
+            - THB
+            - TRY
+            - USD
+            - ZAR
+          default: USD
+        externalId:
+          type: string
+          nullable: true
+        active:
+          type: boolean
+          default: true
+          description: Flag that can be used to disable a tenant
+        master:
+          type: boolean
+          default: false
+          description: >-
+            Master Tenant. This is the master account and parent of all other
+            tenants, only true for the tenant created during setup.
+        dateCreated:
+          type: string
+          format: date-time
+          description: Dated Created timestamp
+        lastUpdated:
+          type: string
+          format: date-time
+          description: Last Updated timestamp
+        stats:
+          type: object
+          description: Tenant Statistics
+          properties:
+            userCount:
+              type: integer
+              format: int64
+              description: The number of users belonging to the tenant
+            instanceCount:
+              type: integer
+              format: int64
+              description: The of the number of instances belonging to the tenant
+    MetaObject:
+      type: object
+      description: >-
+        Metadata about the returned array of results, provides pagination
+        information.
+      properties:
+        size:
+          type: integer
+          format: int64
+          description: Number of records returned in the response
+          default: 0
+        total:
+          type: integer
+          format: int64
+          description: Total number of records found
+          default: 0
+        offset:
+          type: integer
+          format: int64
+          description: >-
+            Offset records, the number of records to skip, can be used to
+            paginate over results.
+          default: 0
+        max:
+          type: integer
+          format: int64
+          description: Max size, the maximum number of records to include in the response.
+          default: 25
+    CurrencyCode:
+      type: string
+      description: Currency Code (ISO 4217)
+      enum:
+        - AUD
+        - AUD
+        - BGN
+        - BRL
+        - CAD
+        - CHF
+        - CLF
+        - CLP
+        - CNY
+        - CZK
+        - DKK
+        - EUR
+        - GBP
+        - HKD
+        - HRK
+        - HUF
+        - IDR
+        - ILS
+        - INR
+        - JPY
+        - KRW
+        - MXN
+        - MYR
+        - NOK
+        - NZD
+        - PHP
+        - PLN
+        - RON
+        - RUB
+        - SEK
+        - SGD
+        - THB
+        - TRY
+        - USD
+        - ZAR
+      default: USD
+    Success:
+      type: object
+      description: >-
+        The standard response object that is returned when an operation is
+        successful
+      properties:
+        success:
+          type: boolean
+          description: >-
+            Success indicator, true when the request succeeded and false when an
+            error occurred
+          default: true
+      example:
+        success: true
+    Error:
+      type: object
+      description: >-
+        The standard response object that is returned when a request fails to
+        complete successfully
+      properties:
+        success:
+          type: boolean
+          description: >-
+            Success indicator, true when the request succeeded and false when an
+            error occurred
+          default: true
+        msg:
+          type: string
+          description: >-
+            Message containing a description of the result, usually a message
+            about the error that occurred
+          nullable: true
+        errors:
+          type: object
+          description: >-
+            Validation errors, with a key for Object containing error messages
+            for each invalid parameter (key)
+          nullable: true
     dashboard:
       title: 200 Dashboard
       type: object
@@ -1031,6 +2508,108 @@ components:
               type: boolean
             msg:
               type: string
+    DateCreated:
+      type: string
+      format: date-time
+      description: Date Created timestamp (ISO 8601)
+      example: 2019-03-06T17:52:29+0000
+    LastUpdated:
+      type: string
+      format: date-time
+      description: Last Updated timestamp (ISO 8601)
+      example: 2019-03-06T17:52:29+0000
+    License:
+      description: >-
+        Object for logging in to the [Morpheus Hub](https://morpheushub.com)
+        with existing credentials. This is only required for `hubmode=login`.
+      type: object
+      properties:
+        productTier:
+          type: string
+          description: Product Tier
+        startDate:
+          type: string
+          format: date-time
+          description: Start Date
+        endDate:
+          type: string
+          format: date-time
+          description: End Date
+        maxInstances:
+          type: integer
+          format: int64
+          description: Max Instances
+        maxMemory:
+          type: integer
+          format: int64
+          description: Max Memory (bytes)
+        maxStorage:
+          type: integer
+          format: int64
+          description: Max Storage (bytes)
+        hardLimit:
+          type: integer
+          format: int64
+          description: >-
+            Hard Limit determines whether the capacity limits are actaully
+            enforced or just generate a warning
+        freeTrial:
+          type: integer
+          format: int64
+          description: >-
+            Free Trial. This indicates that it is a free Community Edition
+            license.
+        multiTenant:
+          type: integer
+          format: int64
+          description: Multi Tenant. Allow multiple tenants
+        whitelabel:
+          type: integer
+          format: int64
+          description: Multi Tenant. Allow white labeling
+        reportStatus:
+          type: integer
+          format: int64
+          description: Report Status
+        supportLevel:
+          type: integer
+          format: int64
+          description: Support Level
+        accountName:
+          type: integer
+          format: int64
+          description: Account Name
+        features:
+          type: object
+          description: >-
+            Map of features and whether they are enabled (true) or disabled
+            (false).
+        zoneTypes:
+          type: array
+          items:
+            type: string
+          description: Allowed cloud types, a value of null means all types are allowed.
+          nullable: true
+        dateCreated:
+          $ref: '#/components/schemas/DateCreated'
+        lastUpdated:
+          $ref: '#/components/schemas/LastUpdated'
+    CurrentUsage:
+      type: object
+      description: Current usage totals for appliance
+      properties:
+        memory:
+          type: integer
+          format: int64
+          description: Total Used Memory (bytes)
+        storage:
+          type: integer
+          format: int64
+          description: Total Used Storage (bytes)
+        workloads:
+          type: integer
+          format: int64
+          description: Total Workloads
     ping:
       title: 200 Ping
       type: object
@@ -1162,8 +2741,8 @@ components:
                     creatable:
                       type: boolean
                     config:
-                      type: object
-                      properties: null
+                      type: string
+                      format: nullable
                     displayOrder:
                       type: number
                       example: 2
@@ -1311,34 +2890,41 @@ components:
       properties:
         success:
           type: boolean
-    MetaObject:
+    Role:
       type: object
-      description: >-
-        Metadata about the returned array of results, provides pagination
-        information.
+      description: Role Object
       properties:
-        size:
+        id:
           type: integer
           format: int64
-          description: Number of records returned in the response
-          default: 0
-        total:
-          type: integer
-          format: int64
-          description: Total number of records found
-          default: 0
-        offset:
-          type: integer
-          format: int64
-          description: >-
-            Offset records, the number of records to skip, can be used to
-            paginate over results.
-          default: 0
-        max:
-          type: integer
-          format: int64
-          description: Max size, the maximum number of records to include in the response.
-          default: 25
+          description: ID
+        authority:
+          type: string
+          description: Authority, a unique name for the role
+        description:
+          type: string
+          description: Description
+          nullable: true
+        roleType:
+          type: string
+          description: Role type
+          enum:
+            - user
+            - account
+            - admin
+          default: user
+        multitenant:
+          type: boolean
+          default: false
+          description: Multitenant
+        multitenantLocked:
+          type: boolean
+          default: false
+          description: Multitenant Locked
+        dateCreated:
+          $ref: '#/components/schemas/DateCreated'
+        lastUpdated:
+          $ref: '#/components/schemas/LastUpdated'
     search:
       title: 200 Search
       type: object
@@ -1738,7 +3324,193 @@ components:
         scope:
           type: string
           description: Scope granted
+    User:
+      title: 200 User
+      type: object
+      properties:
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+              description: ID
+            accountId:
+              type: integer
+              format: int64
+              description: Tenant ID
+            username:
+              type: string
+              description: Username
+            displayName:
+              type: string
+              description: Display Name, firstName + lastName or username
+            email:
+              type: string
+              description: email
+            firstName:
+              type: string
+              description: Fist Name
+            lastName:
+              type: string
+              description: Last Name
+            enabled:
+              type: boolean
+              description: Flag that can be used to disable a user
+            receiveNotifications:
+              type: boolean
+              description: Flag that indicates a user wishes to receive notifications
+            isUsing2FA:
+              type: boolean
+              description: Flag that indicates a user is utilizing local 2fa
+            accountExpired:
+              type: boolean
+              description: Flag that indicates user account is expired
+            accountLocked:
+              type: boolean
+              description: Flag that indicates user account is locked
+            passwordExpired:
+              type: boolean
+              description: Flag that indicates user password is expired
+            loginCount:
+              type: integer
+              format: int64
+              description: Number of times user has logged in
+            loginAttempts:
+              type: integer
+              format: int64
+              description: >-
+                Number of invalid login attempts. This resets to 0 after
+                successful login.
+            lastLoginDate:
+              type: string
+              format: date-time
+              description: Last successful login date
+            roles:
+              type: array
+              description: User roles
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    description: Role ID
+                  authority:
+                    type: string
+                    description: Unique name for a role
+                  description:
+                    type: string
+            account:
+              type: object
+              description: Tenant the user belongs to
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                  description: Tenant ID
+                name:
+                  type: string
+                  description: Tenant Name
+            linuxUsername:
+              type: string
+              description: Linux username/user settings for provisioning
+              nullable: true
+            linuxPassword:
+              type: string
+              description: Linux password/user settings for provisioning
+              nullable: true
+            linuxKeyPairId:
+              type: string
+              description: SSH Key (Key Pair ID)/user settings for provisioning
+              format: int64
+              nullable: true
+            windowsUsername:
+              type: string
+              description: Windows username/user settings for provisioning
+              nullable: true
+            windowsPassword:
+              type: string
+              description: Windows password/user settings for provisioning
+              nullable: true
+            defaultPersona:
+              type: string
+              description: Default person selected when user logs in
+              format: int64
+            dateCreated:
+              type: string
+              description: Date created timestamp
+              format: date-time
+            lastUpdated:
+              type: string
+              description: Date last updated timestamp
+              format: date-time
+        isMasterAccount:
+          type: boolean
+          description: Flag for master administrative account
+        permissions:
+          type: array
+          description: Applied permissions
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              code:
+                type: string
+              access:
+                type: string
+        appliance:
+          type: object
+          properties:
+            buildVersion:
+              type: string
+    ReferenceObject:
+      type: object
+      description: >-
+        A simple object to represent a specific resource, typically an id and
+        name.
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Resource ID
+        name:
+          type: string
+          description: Resource name
+        code:
+          type: string
+          description: Resource code
+      required:
+        - id
   examples:
+    ListTenantsAvailableRoles:
+      summary: Available Tenant Roles
+      value:
+        roles:
+          - id: 1
+            authority: System Admin
+            description: Super User
+            scope: Admin
+            roleType: null
+            multitenant: false
+            multitenantLocked: null
+            ownerId: null
+            owner: null
+            dateCreated: 2016-08-27T19:26:19+0000
+            lastUpdated: 2016-08-27T19:26:19+0000
+          - id: 166
+            authority: Tenant Admin
+            description: Tenant Role Template
+            scope: AppSystem
+            roleType: account
+            multitenant: false
+            multitenantLocked: null
+            ownerId: null
+            owner: null
+            dateCreated: 2016-12-13T16:38:16+0000
+            lastUpdated: 2016-12-14T23:39:05+0000
+        meta: null
     dashboard:
       summary: Dashboard Response
       value:
@@ -1907,6 +3679,83 @@ components:
         logStats:
           success: false
           msg: Found no scope objects for user
+    GetLicenseResponse:
+      summary: Example License Response
+      value:
+        license:
+          productTier: capacity
+          startDate: '2020-04-07T00:00:00Z'
+          endDate: '2025-05-07T00:00:00Z'
+          maxInstances: 0
+          maxMemory: 0
+          maxStorage: 0
+          hardLimit: false
+          freeTrial: false
+          multiTenant: true
+          whitelabel: true
+          reportStatus: true
+          supportLevel: standard
+          accountName: Meta Cortex Corportation
+          amazonProductCodes: null
+          features:
+            dashboard: true
+            guidance: true
+            discovery: true
+            analytics: true
+            scheduling: true
+            approvals: true
+            usage: true
+            activity: true
+            instances: true
+            apps: true
+            templates: true
+            automation: true
+            virtualImages: true
+            library: true
+            migrations: true
+            deployments: true
+            groups: true
+            clouds: true
+            hosts: true
+            network: true
+            loadBalancers: true
+            storage: true
+            keyPairs: true
+            sslCertificates: true
+            boot: true
+            backups: true
+            cypher: true
+            archives: true
+            imageBuilder: true
+            tenants: true
+            plans: true
+            pricing: true
+            users: true
+            userGroups: true
+            monitoring: true
+            logging: true
+            monitoringServices: true
+            loggingServices: true
+            backupServices: true
+            dnsServices: true
+            codeService: true
+            buildServices: true
+            loadBalancerServices: true
+            ipamServices: true
+            approvalServices: true
+            cmdbServices: true
+            deploymentServices: true
+            automationServices: true
+            serviceDiscoveryServices: true
+            identityServices: true
+            trustServices: true
+          zoneTypes: null
+          lastUpdated: '2020-04-07T15:02:28Z'
+          dateCreated: '2020-04-07T15:02:28Z'
+        currentUsage:
+          memory: 26256664064
+          storage: 306786373632
+          workloads: 12
     ping-authenticated:
       summary: Authenticated Ping Response
       value:
@@ -1917,6 +3766,107 @@ components:
       value:
         success: true
         buildVersion: ''
+    ListRolesResponse:
+      summary: List Roles Response Example
+      value:
+        roles:
+          - id: 1
+            authority: System Admin
+            description: Super User
+            scope: Admin
+            roleType: null
+            multitenant: false
+            multitenantLocked: null
+            owner: null
+            dateCreated: 2016-08-27T19:26:19+0000
+            lastUpdated: 2016-08-27T19:26:19+0000
+          - id: 2
+            authority: Tenant Admin
+            description: Tenant Role Template
+            scope: AppSystem
+            roleType: account
+            multitenant: false
+            multitenantLocked: null
+            owner: null
+            dateCreated: 2016-12-13T16:38:16+0000
+            lastUpdated: 2016-12-14T23:39:05+0000
+          - id: 3
+            authority: User Admin
+            description: Sub Tenant User Template
+            scope: AppSystem
+            roleType: user
+            multitenant: false
+            multitenantLocked: null
+            owner: null
+            dateCreated: 2016-12-02T15:01:17+0000
+            lastUpdated: 2016-12-02T15:01:17+0000
+        meta:
+          size: 3
+          total: 3
+          offset: 0
+          max: 25
+    CreateRoleRequest:
+      summary: Create Role Request Example
+      value:
+        role:
+          authority: Operator
+          description: The operator
+    CreateRoleResponse:
+      summary: Create Role Response Example
+      value:
+        role:
+          id: 4
+          authority: Operator
+          description: The operator
+          roleType: user
+          multitenant: false
+          multitenantLocked: null
+          owner:
+            id: 1
+            name: root
+          dateCreated: 2016-12-12T01:28:28+0000
+          lastUpdated: 2019-10-23T21:36:22+0000
+    GetRoleResponse:
+      summary: Get Role Response Example
+      value:
+        role:
+          id: 4
+          authority: Operator
+          description: The operator
+          roleType: user
+          multitenant: false
+          multitenantLocked: null
+          owner:
+            id: 1
+            name: root
+          dateCreated: 2016-12-12T01:28:28+0000
+          lastUpdated: 2019-10-23T21:36:22+0000
+        featurePermissions: []
+        globalSiteAccess: full
+        globalZoneAccess: full
+        globalInstanceTypeAccess: full
+        globalAppTemplateAccess: full
+    UpdateRoleRequest:
+      summary: Update Role Request Example
+      value:
+        role:
+          authority: Operations
+          description: Operations user with limited permissions
+    UpdateRoleResponse:
+      summary: Update Role Response Example
+      value:
+        role:
+          id: 4
+          authority: Operations
+          description: Operations user with limited permissions
+          roleType: user
+          multitenant: false
+          multitenantLocked: null
+          owner:
+            id: 1
+            name: root
+          dateCreated: 2016-12-12T01:28:28+0000
+          lastUpdated: 2019-10-23T21:36:22+0000
     search:
       summary: Search Response
       value:
@@ -2401,6 +4351,30 @@ components:
             access: full
         appliance:
           buildVersion: 5.4.4
+    ListDocsResponse:
+      summary: List of documentation links.
+      value:
+        links:
+          - name: Morpheus API Swagger Documentation
+            url: https://morpheus.bungebash.com/api/doc/openapi.json
+            description: >-
+              Morpheus API Documentation in the OpenAPI 3.0 format. Default
+              format is JSON, use extension .yaml for YAML instead. This
+              document is generated and made available by the api itself.
+            type: openapi
+          - name: Morpheus Documentation
+            url: https://docs.morpheusdata.com/
+            description: >-
+              The Morpheus Documentation site is the main resource for
+              documentation on the Morpheus appliance and its features.
+            type: external
+          - name: Morpheus Homepage
+            url: https://morpheusdata.com
+            description: >-
+              The Morpheus Data homepage is a good place to start learning about
+              Morpheus and what is is capable of. It also contains links to
+              support.
+            link: external
     accessToken:
       summary: Access Token Response
       value:
@@ -2409,177 +4383,262 @@ components:
         expires_in: 30463819
         token_type: bearer
         scope: write
-  parameters:
-    max:
-      name: max
-      in: query
-      description: Maximum number of records to return
-      schema:
-        type: integer
-        format: int64
-        default: 25
-    offset:
-      name: offset
-      in: query
-      description: Offset records, the number of records to skip, for paginating requests
-      schema:
-        type: integer
-        format: int64
-        default: 0
-    sort:
-      name: sort
-      in: query
-      description: Sort order, the name of the property to sort by
-      schema:
-        type: string
-        default: name
-    direction:
-      name: direction
-      in: query
-      description: Sort direction, use 'desc' to reverse sort
-      schema:
-        type: string
-        default: asc
-        enum:
-          - asc
-          - desc
-    phrase:
-      name: phrase
-      in: query
-      description: Search phrase for partial matches on name or description
-      schema:
-        type: string
-    name:
-      name: name
-      in: query
-      description: If specified will return an exact match on name
-      schema:
-        type: string
-    code:
-      name: code
-      in: query
-      description: If specified will return an exact match on code
-      schema:
-        type: string
-    category:
-      name: category
-      in: query
-      description: If specified will return an exact match on category
-      schema:
-        type: string
-    id-path:
-      name: id
-      in: path
-      description: Morpheus ID of the Object being created or referenced
-      required: true
-      schema:
-        type: number
-    format-path:
-      name: format
-      in: path
-      required: true
-      description: Format of the rendered report file, `.json` or `.csv`.
-      schema:
-        type: string
-        default: .json
-        enum:
-          - .json
-          - .csv
-    query:
-      name: query
-      in: query
-      description: Alias for phrase
-      schema:
-        type: string
-    pagePhrase:
-      name: pagePhrase
-      in: query
-      description: If specified will return a partial match on page name
-      schema:
-        type: string
+    ListUsersResponse:
+      summary: List of users
+      value:
+        users:
+          - id: 1
+            accountId: 1
+            username: root
+            displayName: root
+            email: root@acmecorp.com
+            firstName: ''
+            lastName: ''
+            enabled: true
+            receiveNotifications: true
+            accountExpired: false
+            accountLocked: false
+            passwordExpired: false
+            loginCount: 27
+            loginAttempts: 0
+            lastLoginDate: 2019-03-05T06:00:05+0000
+            roles:
+              - id: 1
+                authority: System Admin
+                description: Super User
+            account:
+              id: 1
+              name: Acme
+            windowsUsername: null
+            linuxUsername: null
+            dateCreated: 2017-09-14T13:57:16+0000
+            lastUpdated: 2019-10-09T00:35:13+0000
+        meta:
+          offset: 0
+          max: 1
+          size: 1
+          total: 1
+        global: false
+    CreateUserRequest:
+      summary: Create User Request Example
+      value:
+        user:
+          username: admin
+          password: 8a20b78ba9623f8609cbc3712b96fb4c68bbef1880
+          email: admin@morpheusdata.com
+          firstName: Morpheus
+          lastName: Admin
+          receiveNotifications: true
+          windowsUsername: morpheusadmin
+          linuxUsername: morpheusadmin
+          roles:
+            - id: 1
+    GetUserResponse:
+      summary: Get User Response Example
+      value:
+        user:
+          id: 2
+          accountId: 1
+          username: admin
+          displayName: Morpheus Admin
+          email: admin@morpheusdata.com
+          firstName: Morpheus
+          lastName: Admin
+          enabled: true
+          receiveNotifications: true
+          accountExpired: false
+          accountLocked: false
+          passwordExpired: false
+          loginCount: 1822
+          loginAttempts: 0
+          lastLoginDate: 2020-06-30T15:58:28+0000
+          roles:
+            - id: 1
+              authority: System Admin
+              description: Super User
+          account:
+            id: 1
+            name: root
+          windowsUsername: morpheusadmin
+          linuxUsername: morpheusadmin
+          dateCreated: 2016-08-27T19:28:09+0000
+          lastUpdated: 2020-06-30T15:58:28+0000
+    ListUsersAvailableRoles:
+      summary: List of available roles for a user
+      value:
+        roles:
+          - id: 1
+            authority: System Admin
+            name: System Admin
+            description: Super User
+            roleType: null
+            owner: null
 security:
   - bearerAuth: []
 externalDocs:
   url: https://docs.morpheusdata.com
 tags:
-  - name: Introduction
   - name: Activity
+    description: Manage Appliance Activity Logs
   - name: Alerts
+    description: Manage Alerts
   - name: Appliance Settings
+    description: Manage Appliance Settings
   - name: Approvals
+    description: Manage Approvals
   - name: Apps
+    description: Manage Apps
   - name: Archives
+    description: Manage Archives
   - name: Authentication
+    description: Manage Appliance Authentication
   - name: Automation
+    description: Manage Tasks and Workflows
   - name: Backup Settings
+    description: Manage Backup Settings
   - name: Billing
+    description: Manage Billing
   - name: Blueprints
+    description: Manage Blueprints
   - name: Budgets
+    description: Manage Budgets
   - name: Checks
+    description: Manage Monitoring Checks
   - name: Clouds
+    description: Manage Clouds
   - name: Cluster Layouts
+    description: Manage Cluster Layouts
   - name: Clusters
+    description: Manage Kubernetes Clusters
   - name: Contacts
+    description: Manage Monitoring Contacts
   - name: Cypher
+    description: Manage Cypher
   - name: Dashboard
+    description: View Dashboard Details
   - name: Deployments
+    description: Manage File Deployments
   - name: Deploys
+    description: Manage Deploys
+  - name: Documentation
+    description: >-
+      View documentation for your [Morpheus Data](https://morpheusdata.com)
+      appliance.
   - name: Environments
+    description: Manage Environments
   - name: File Templates
+    description: Manage File Templates
   - name: Groups
+    description: Manage Groups
   - name: Guidance
+    description: Manage Guidance Recommendations
   - name: Health
+    description: View Appliance Health Statistics
   - name: History
+    description: View History
   - name: Identity Sources
+    description: Manage Identity Sources
   - name: Image Builds
+    description: Manage Image Builds
   - name: Incidents
+    description: Manage Ticket Incidents
   - name: Infrastructure
+    description: Manage Infrastructure Settings
   - name: Inputs
+    description: Manage Inputs (Option Types)
   - name: Instance Types
+    description: Manage Instance Types
   - name: Instances
+    description: Manage Instances
   - name: Integrations
+    description: Manage Integrations
   - name: Invoices
+    description: Manage Invoices
   - name: Jobs
+    description: Manage Jobs
   - name: Key Pairs
+    description: Manage Key Pairs
   - name: Layouts
+    description: Manage Layouts
   - name: Library
+    description: Manage Library
   - name: License
+    description: Manage Appliance License
   - name: Load Balancers
+    description: Manage Load Balancers
   - name: Log Settings
+    description: Manage Log Settings
   - name: Logs
+    description: View Logs
   - name: Monitoring
+    description: Manage Monitoring
   - name: Networks
+    description: Manage Networks
   - name: Node Types
+    description: Manage Node/VM Types
   - name: Option Lists
+    description: Manage Option Lists
   - name: Options
+    description: Manage Options
   - name: Personas
+    description: Manage Personas
   - name: Ping
+    description: Ping Appliance
   - name: Policies
+    description: Manage Policies
   - name: Price Sets
+    description: Manage Price Sets
   - name: Prices
+    description: Manage Prices
   - name: Projects
+    description: Manage Projects
   - name: Provisioning
+    description: Manage Provisioning
   - name: Provisioning Settings
+    description: Manage Provisioning Settings
   - name: Provisioning Licenses
+    description: Manage Provisioning Licenses
   - name: Reports
+    description: Manage Reports
   - name: Roles
+    description: Manage Roles (Authorities)
   - name: Scripts
+    description: Manage Scripts
   - name: Search
+    description: Global Search Functions
   - name: Security Groups
+    description: Manage Security Groups
   - name: Self Service
+    description: Manage Self Service
   - name: Servers
+    description: Manage Servers (Hosts)
   - name: Service Catalog
+    description: Manage Service Catalog
   - name: Service Plans
+    description: Manage Service Plans
   - name: Setup
+    description: Setup New Appliance
   - name: Spec Templates
+    description: Manage Spec Templates
   - name: SSL Certificates
+    description: Manage SSL Certificates
   - name: Storage
+    description: Manage Storage
   - name: Tenants
+    description: Manage Tenants (Accounts)
   - name: Tools
+    description: Manage Tools
   - name: Usage
+    description: View Usage
   - name: Users
+    description: Manage Users
   - name: VDI Pools
+    description: Manage VDI Pools
   - name: Virtual Desktop
+    description: Manage Virtual Desktops
   - name: Virtual Images
+    description: Manage Virtual Images
   - name: Whitelabel Settings
+    description: Manage Whitelabelling
   - name: Wiki
+    description: Manage Wiki

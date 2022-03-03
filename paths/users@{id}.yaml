@@ -1,12 +1,5 @@
 parameters:
-  - name: id
-    in: path
-    required: true
-    description: User ID
-    schema:
-      type: integer
-      format: int64
-      example: 2
+  - $ref: ..\components\parameters\id-path.yaml
 get:
   summary: Get user
   description: Get details about a user

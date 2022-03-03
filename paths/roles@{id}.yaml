@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ..\components\parameters\id.yaml
+  - $ref: ..\components\parameters\id-path.yaml
 get:
   summary: Get role
   description: Get details about a role
