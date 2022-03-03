@@ -27,6 +27,12 @@ paths:
     $ref: paths/accounts@available-roles.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
+  /doc:
+    $ref: paths/api@doc.yaml
+  /doc/openapi:
+    $ref: paths/api@doc@openapi.yaml
+  /doc/openapi.yaml:
+    $ref: paths/api@doc@openapi.yaml.yaml
   /api/forgot/reset-password:
     $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:
@@ -45,14 +51,20 @@ paths:
     $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
     $ref: paths/api@reports@download@id.yaml
-  /roles:
-    $ref: paths/roles.yaml
-  /roles/{id}:
-    $ref: paths/roles@{id}.yaml
+  /api/roles:
+    $ref: paths/api@roles.yaml
+  /api/roles/{id}:
+    $ref: paths/api@roles@{id}.yaml
   /api/search:
     $ref: paths/api@search.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
+  /api/users:
+    $ref: paths/api@users.yaml
+  /api/users/{id}:
+    $ref: paths/api@users@{id}.yaml
+  /api/users/available-roles:
+    $ref: paths/api@users@available-roles.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
   /api/wiki/categories:
@@ -61,20 +73,8 @@ paths:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
     $ref: paths/api@wiki@pages@id.yaml
-  /doc:
-    $ref: paths/doc.yaml
-  /doc/openapi:
-    $ref: paths/doc@openapi.yaml
-  /doc/openapi.yaml:
-    $ref: paths/doc@openapi.yaml.yaml
   /oauth/token:
     $ref: paths/oauth@token.yaml
-  /users:
-    $ref: paths/users.yaml
-  /users/{id}:
-    $ref: paths/users@{id}.yaml
-  /users/available-roles:
-    $ref: paths/users@available-roles.yaml
 components:
   securitySchemes:
     bearerAuth:
