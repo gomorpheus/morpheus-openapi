@@ -1,6 +1,6 @@
 title: 200 Reports
 type: object
-properties:
+properties: 
   reportResults: 
     type: array
     items: 
@@ -8,36 +8,32 @@ properties:
       properties: 
         id: 
           type: integer
-          format: int32
-          example: 2
+          format: int64
         type: 
           type: object
           properties: 
             id: 
               type: integer
-              format: int32
-              example: 21
+              format: int64
             code: 
               type: string
-              example: appCost
             name: 
               type: string
-              example: Application Cost
+            category: 
+              type: string
         reportTitle: 
           type: string
-          example: Application Cost Jun 04 2019 19:28:02
         filterTitle: 
           type: string
-          example: Jun 04 2019
+          format: nullable
         status: 
           type: string
-          example: ready
         dateCreated: 
           type: string
-          example: 2019-06-04T23:28:02+0000
+          format: date-time
         lastUpdated: 
           type: string
-          example: 2019-06-04T23:28:02+0000
+          format: date-time
         startDate: 
           type: string
           format: nullable
@@ -47,35 +43,22 @@ properties:
         config: 
           type: object
           properties: 
-            type: 
+            reportType: 
               type: string
-              example: appCost
+              format: nullable
+            metadata: 
+              type: string
+              format: nullable
+            metadataExclude: 
+              type: string
+              format: nullable
         createdBy: 
           type: object
           properties: 
             id: 
               type: integer
-              format: int32
-              example: 1
+              format: int64
             username: 
               type: string
-              example: root
-  meta: 
-    type: object
-    properties: 
-      size: 
-        type: integer
-        format: int32
-        example: 2
-      total: 
-        type: integer
-        format: int32
-        example: 2
-      offset: 
-        type: integer
-        format: int32
-        example: 0
-      max: 
-        type: integer
-        format: int32
-        example: 25
+  meta:
+    $ref: MetaObject.yaml

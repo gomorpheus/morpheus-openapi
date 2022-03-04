@@ -15,7 +15,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-wikiSpecificPage.yaml
+            $ref: ../components/schemas/wiki.yaml
+          examples:
+            Wiki Response:
+              $ref: ../components/examples/wiki.yaml
     '400':
       description: Bad Request.
     '401':
@@ -64,7 +67,10 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-wikiCreatePage.yaml
+            $ref: ../components/schemas/wikiAdd.yaml
+          examples:
+            Report Types Response:
+              $ref: ../components/examples/wikiAdd.yaml
     '400':
       description: Bad Request.
     '401':

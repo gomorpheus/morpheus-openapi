@@ -7,20 +7,16 @@ properties:
       type: object
       properties: 
         id: 
-          type: number
-          example: 95
+          type: integer
+          format: int64
         code: 
           type: string
-          example: amazonReservationCoverage
         name: 
           type: string
-          example: Amazon Reservation Coverage
         description: 
           type: string
-          example: View how Amazon EC2 instance types are covered by Reserved Instances.
         category: 
           type: string
-          example: cost
         visible: 
           type: boolean
         masterOnly: 
@@ -35,36 +31,29 @@ properties:
         dateCreated: 
           type: string
           format: date-time
-          example: 2020-09-02T19:35:18Z
         optionTypes: 
           type: array
           items: 
             type: object
             properties: 
               id: 
-                type: number
-                example: 2748
+                type: integer
+                format: int64
               name: 
                 type: string
-                example: endDate
               description: 
                 type: string
                 format: nullable
               code: 
                 type: string
-                example: reportType.endDate
               fieldName: 
                 type: string
-                example: endDate
               fieldLabel: 
                 type: string
-                example: End Date
               fieldCode: 
                 type: string
-                example: gomorpheus.optiontype.EndDate
               fieldContext: 
                 type: string
-                example: config
               fieldGroup: 
                 type: string
                 format: nullable
@@ -88,7 +77,6 @@ properties:
                 format: nullable
               helpBlock: 
                 type: string
-                example: 
               helpBlockFieldCode: 
                 type: string
                 format: nullable
@@ -97,7 +85,6 @@ properties:
                 format: nullable
               optionSource: 
                 type: string
-                format: nullable
               optionSourceType: 
                 type: string
                 format: nullable
@@ -106,7 +93,6 @@ properties:
                 format: nullable
               type: 
                 type: string
-                example: text
               advanced: 
                 type: boolean
               required: 
@@ -119,10 +105,10 @@ properties:
                 type: boolean
               config: 
                 type: string
-                format: nullable
+                format: nullable  
               displayOrder: 
-                type: number
-                example: 2
+                type: integer
+                format: int64
               wrapperClass: 
                 type: string
                 format: nullable
@@ -142,40 +128,22 @@ properties:
               contextualDefault: 
                 type: boolean
               displayValueOnDetails: 
-                type: string
-                format: nullable
+                type: boolean
               showOnCreate: 
-                type: string
-                format: nullable
+                type: boolean
               showOnEdit: 
-                type: string
-                format: nullable
+                type: boolean
         supportedZoneTypes: 
           type: array
           items: 
             type: object
             properties: 
               id: 
-                type: number
-                example: 31
+                type: integer
+                format: int64
               code: 
                 type: string
-                example: amazon
               name: 
                 type: string
-                example: Amazon
   meta: 
-    type: object
-    properties: 
-      size: 
-        type: number
-        example: 25
-      total: 
-        type: number
-        example: 30
-      offset: 
-        type: number
-        example: 0
-      max: 
-        type: number
-        example: 25
+    $ref: MetaObject.yaml

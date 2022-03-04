@@ -712,7 +712,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-reportTypes'
+                $ref: '#/components/schemas/reportTypes'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/reportTypes'
         '400':
           description: Bad Request.
         '401':
@@ -757,7 +760,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-reports'
+                $ref: '#/components/schemas/reports'
+              examples:
+                Report Response:
+                  $ref: '#/components/examples/reports'
         '400':
           description: Bad Request.
         '401':
@@ -822,7 +828,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-reports'
+                $ref: '#/components/schemas/reports'
+              examples:
+                Report Response:
+                  $ref: '#/components/examples/reports'
         '400':
           description: Bad Request.
         '401':
@@ -856,7 +865,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-reports'
+                $ref: '#/components/schemas/reports'
         '400':
           description: Bad Request.
         '401':
@@ -1759,7 +1768,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-wikiCategories'
+                $ref: '#/components/schemas/wikiCategories'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/wikiCategories'
         '400':
           description: Bad Request.
         '401':
@@ -1791,7 +1803,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-wiki'
+                $ref: '#/components/schemas/wiki'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wiki'
         '400':
           description: Bad Request.
         '401':
@@ -1843,7 +1858,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-wikiCreatePage'
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/wikiAdd'
         '400':
           description: Bad Request.
         '401':
@@ -1874,7 +1892,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-wikiSpecificPage'
+                $ref: '#/components/schemas/wiki'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wiki'
         '400':
           description: Bad Request.
         '401':
@@ -1922,7 +1943,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/200-wikiCreatePage'
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/wikiAdd'
         '400':
           description: Bad Request.
         '401':
@@ -2618,7 +2642,7 @@ components:
           type: boolean
         buildVersion:
           type: string
-    200-reportTypes:
+    reportTypes:
       title: 200 Report Types
       type: object
       properties:
@@ -2628,22 +2652,16 @@ components:
             type: object
             properties:
               id:
-                type: number
-                example: 95
+                type: integer
+                format: int64
               code:
                 type: string
-                example: amazonReservationCoverage
               name:
                 type: string
-                example: Amazon Reservation Coverage
               description:
                 type: string
-                example: >-
-                  View how Amazon EC2 instance types are covered by Reserved
-                  Instances.
               category:
                 type: string
-                example: cost
               visible:
                 type: boolean
               masterOnly:
@@ -2658,36 +2676,29 @@ components:
               dateCreated:
                 type: string
                 format: date-time
-                example: '2020-09-02T19:35:18Z'
               optionTypes:
                 type: array
                 items:
                   type: object
                   properties:
                     id:
-                      type: number
-                      example: 2748
+                      type: integer
+                      format: int64
                     name:
                       type: string
-                      example: endDate
                     description:
                       type: string
                       format: nullable
                     code:
                       type: string
-                      example: reportType.endDate
                     fieldName:
                       type: string
-                      example: endDate
                     fieldLabel:
                       type: string
-                      example: End Date
                     fieldCode:
                       type: string
-                      example: gomorpheus.optiontype.EndDate
                     fieldContext:
                       type: string
-                      example: config
                     fieldGroup:
                       type: string
                       format: nullable
@@ -2711,7 +2722,6 @@ components:
                       format: nullable
                     helpBlock:
                       type: string
-                      example: null
                     helpBlockFieldCode:
                       type: string
                       format: nullable
@@ -2720,7 +2730,6 @@ components:
                       format: nullable
                     optionSource:
                       type: string
-                      format: nullable
                     optionSourceType:
                       type: string
                       format: nullable
@@ -2729,7 +2738,6 @@ components:
                       format: nullable
                     type:
                       type: string
-                      example: text
                     advanced:
                       type: boolean
                     required:
@@ -2744,8 +2752,8 @@ components:
                       type: string
                       format: nullable
                     displayOrder:
-                      type: number
-                      example: 2
+                      type: integer
+                      format: int64
                     wrapperClass:
                       type: string
                       format: nullable
@@ -2765,44 +2773,26 @@ components:
                     contextualDefault:
                       type: boolean
                     displayValueOnDetails:
-                      type: string
-                      format: nullable
+                      type: boolean
                     showOnCreate:
-                      type: string
-                      format: nullable
+                      type: boolean
                     showOnEdit:
-                      type: string
-                      format: nullable
+                      type: boolean
               supportedZoneTypes:
                 type: array
                 items:
                   type: object
                   properties:
                     id:
-                      type: number
-                      example: 31
+                      type: integer
+                      format: int64
                     code:
                       type: string
-                      example: amazon
                     name:
                       type: string
-                      example: Amazon
         meta:
-          type: object
-          properties:
-            size:
-              type: number
-              example: 25
-            total:
-              type: number
-              example: 30
-            offset:
-              type: number
-              example: 0
-            max:
-              type: number
-              example: 25
-    200-reports:
+          $ref: '#/components/schemas/MetaObject'
+    reports:
       title: 200 Reports
       type: object
       properties:
@@ -2813,36 +2803,32 @@ components:
             properties:
               id:
                 type: integer
-                format: int32
-                example: 2
+                format: int64
               type:
                 type: object
                 properties:
                   id:
                     type: integer
-                    format: int32
-                    example: 21
+                    format: int64
                   code:
                     type: string
-                    example: appCost
                   name:
                     type: string
-                    example: Application Cost
+                  category:
+                    type: string
               reportTitle:
                 type: string
-                example: Application Cost Jun 04 2019 19:28:02
               filterTitle:
                 type: string
-                example: Jun 04 2019
+                format: nullable
               status:
                 type: string
-                example: ready
               dateCreated:
                 type: string
-                example: 2019-06-04T23:28:02+0000
+                format: date-time
               lastUpdated:
                 type: string
-                example: 2019-06-04T23:28:02+0000
+                format: date-time
               startDate:
                 type: string
                 format: nullable
@@ -2852,38 +2838,25 @@ components:
               config:
                 type: object
                 properties:
-                  type:
+                  reportType:
                     type: string
-                    example: appCost
+                    format: nullable
+                  metadata:
+                    type: string
+                    format: nullable
+                  metadataExclude:
+                    type: string
+                    format: nullable
               createdBy:
                 type: object
                 properties:
                   id:
                     type: integer
-                    format: int32
-                    example: 1
+                    format: int64
                   username:
                     type: string
-                    example: root
         meta:
-          type: object
-          properties:
-            size:
-              type: integer
-              format: int32
-              example: 2
-            total:
-              type: integer
-              format: int32
-              example: 2
-            offset:
-              type: integer
-              format: int32
-              example: 0
-            max:
-              type: integer
-              format: int32
-              example: 25
+          $ref: '#/components/schemas/MetaObject'
     200-success:
       title: 200 Success
       type: object
@@ -3261,7 +3234,7 @@ components:
           properties:
             buildVersion:
               type: string
-    200-wikiCategories:
+    wikiCategories:
       title: 200 Wiki Categories
       type: object
       properties:
@@ -3272,11 +3245,10 @@ components:
             properties:
               name:
                 type: string
-                example: apps
               pageCount:
-                type: number
-                example: 1
-    200-wiki:
+                type: integer
+                format: int64
+    wiki:
       title: 200 Wiki
       type: object
       properties:
@@ -3286,69 +3258,49 @@ components:
             type: object
             properties:
               id:
-                type: number
-                example: 1
+                type: integer
+                format: int32
               name:
                 type: string
-                example: Home
               urlName:
                 type: string
-                example: home
               category:
                 type: string
-                format: nullable
               refId:
-                type: string
-                format: nullable
+                type: integer
+                format: int32
               refType:
                 type: string
-                format: nullable
               format:
                 type: string
-                example: markdown
               content:
                 type: string
-                example: Welcome to the home page for this Morpheus wiki.
+                format: nullable
               createdBy:
                 type: object
                 properties:
                   id:
-                    type: number
-                    example: 1
+                    type: integer
+                    format: int32
                   username:
                     type: string
-                    example: admin
               updatedBy:
                 type: object
                 properties:
                   id:
-                    type: number
-                    example: 1
+                    type: integer
+                    format: int32
                   username:
                     type: string
-                    example: admin
               dateCreated:
                 type: string
-                example: 2019-06-27T16:55:59+0000
+                format: date-time
               lastUpdated:
                 type: string
-                example: 2019-06-27T16:55:59+0000
+                format: date-time
         meta:
-          type: object
-          properties:
-            size:
-              type: number
-              example: 2
-            total:
-              type: number
-              example: 2
-            max:
-              type: number
-              example: 25
-            offset:
-              type: number
-              example: 0
-    200-wikiCreatePage:
+          $ref: '#/components/schemas/MetaObject'
+    wikiAdd:
       title: 200 Wiki Create Page
       type: object
       properties:
@@ -3356,17 +3308,14 @@ components:
           type: object
           properties:
             id:
-              type: number
-              example: 934
+              type: integer
+              format: int64
             name:
               type: string
-              example: Sample Doc
             urlName:
               type: string
-              example: info/sample-doc
             category:
               type: string
-              example: info
             refId:
               type: string
               format: nullable
@@ -3375,95 +3324,32 @@ components:
               format: nullable
             format:
               type: string
-              example: markdown
             content:
               type: string
-              example: A sample document in **markdown**.
             createdBy:
               type: object
               properties:
                 id:
-                  type: number
-                  example: 1
+                  type: integer
+                  format: int64
                 username:
                   type: string
-                  example: Admin
             updatedBy:
               type: object
               properties:
                 id:
-                  type: number
-                  example: 1
+                  type: integer
+                  format: int64
                 username:
                   type: string
-                  example: Admin
             dateCreated:
               type: string
               format: date-time
-              example: '2022-02-24T21:34:20Z'
             lastUpdated:
               type: string
               format: date-time
-              example: '2022-02-24T21:34:20Z'
         success:
           type: boolean
-    200-wikiSpecificPage:
-      title: 200 Wiki Page
-      type: object
-      properties:
-        page:
-          type: object
-          properties:
-            id:
-              type: number
-              example: 934
-            name:
-              type: string
-              example: Sample Doc
-            urlName:
-              type: string
-              example: info/sample-doc
-            category:
-              type: string
-              example: info
-            refId:
-              type: string
-              format: nullable
-            refType:
-              type: string
-              format: nullable
-            format:
-              type: string
-              example: markdown
-            content:
-              type: string
-              example: An updated sample document in **markdown**. Cheers!
-            createdBy:
-              type: object
-              properties:
-                id:
-                  type: number
-                  example: 1
-                username:
-                  type: string
-                  example: Admin
-            updatedBy:
-              type: object
-              properties:
-                id:
-                  type: number
-                  example: 1
-                username:
-                  type: string
-                  example: Admin
-            dateCreated:
-              type: string
-              format: date-time
-              example: '2022-02-24T21:34:20Z'
-            lastUpdated:
-              type: string
-              format: date-time
-              example: '2022-02-24T21:43:54Z'
     accessToken:
       title: 200 Access Token
       type: object
@@ -3790,6 +3676,3905 @@ components:
       value:
         success: true
         buildVersion: ''
+    reportTypes:
+      summary: Report Types Response
+      value:
+        reportTypes:
+          - id: 33
+            code: amazonReservationCoverage
+            name: Amazon Reservation Coverage
+            description: >-
+              View how Amazon EC2 instance types are covered by Reserved
+              Instances.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: true
+            supportsAllZoneTypes: false
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1691
+                name: cloudId
+                description: null
+                code: reportType.amazonCloudId
+                fieldName: cloudId
+                fieldLabel: Amazon Cloud
+                fieldCode: gomorpheus.optiontype.amazon.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: amazonClouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes:
+              - id: 3
+                code: amazon
+                name: Amazon
+          - id: 31
+            code: amazonReservationUtilization
+            name: Amazon Reservation Utilization
+            description: View the utilization of Reserved Instances for Amazon resources.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: true
+            supportsAllZoneTypes: false
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1691
+                name: cloudId
+                description: null
+                code: reportType.amazonCloudId
+                fieldName: cloudId
+                fieldLabel: Amazon Cloud
+                fieldCode: gomorpheus.optiontype.amazon.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: amazonClouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes:
+              - id: 3
+                code: amazon
+                name: Amazon
+          - id: 30
+            code: amazonSavings
+            name: Amazon Savings Inventory Summary
+            description: >-
+              View the savings for Amazon resources due to Service Plan or
+              Reserved Instance utilization.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: true
+            supportsAllZoneTypes: false
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1691
+                name: cloudId
+                description: null
+                code: reportType.amazonCloudId
+                fieldName: cloudId
+                fieldLabel: Amazon Cloud
+                fieldCode: gomorpheus.optiontype.amazon.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: amazonClouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes:
+              - id: 3
+                code: amazon
+                name: Amazon
+          - id: 34
+            code: amazonSavingsPlanCoverage
+            name: Amazon Savings Plan Coverage
+            description: View how Amazon instance families are covered by Savings Plans.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: true
+            supportsAllZoneTypes: false
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1691
+                name: cloudId
+                description: null
+                code: reportType.amazonCloudId
+                fieldName: cloudId
+                fieldLabel: Amazon Cloud
+                fieldCode: gomorpheus.optiontype.amazon.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: amazonClouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes:
+              - id: 3
+                code: amazon
+                name: Amazon
+          - id: 32
+            code: amazonSavingsPlanUtilization
+            name: Amazon Savings Plan Utilization
+            description: View the utilization of Savings Plans for Amazon resources.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: true
+            supportsAllZoneTypes: false
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1691
+                name: cloudId
+                description: null
+                code: reportType.amazonCloudId
+                fieldName: cloudId
+                fieldLabel: Amazon Cloud
+                fieldCode: gomorpheus.optiontype.amazon.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: amazonClouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes:
+              - id: 3
+                code: amazon
+                name: Amazon
+          - id: 22
+            code: appCost
+            name: Application Cost
+            description: View costs by application.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2018-05-23T05:24:27Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1103
+                name: siteId
+                description: null
+                code: reportType.siteId
+                fieldName: siteId
+                fieldLabel: Group
+                fieldCode: gomorpheus.optiontype.Group
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: groups
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 4
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1109
+                name: environment
+                description: null
+                code: reportType.environment
+                fieldName: environment
+                fieldLabel: Environment
+                fieldCode: gomorpheus.optiontype.Environment
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: environments
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 9
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 60
+            code: automation-analytics-report
+            name: Automation Analytics
+            description: Automation analytics
+            category: inventory
+            visible: true
+            masterOnly: true
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: true
+            dateCreated: '2022-02-21T21:13:01Z'
+            optionTypes:
+              - id: 2192
+                name: Duration
+                description: null
+                code: automation-report-duration
+                fieldName: duration
+                fieldLabel: Duration
+                fieldCode: null
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: null
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: durationOptions
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 0
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+            supportedZoneTypes: []
+          - id: 59
+            code: automation-overview-report
+            name: Automation Overview
+            description: Automation overview
+            category: inventory
+            visible: true
+            masterOnly: true
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: true
+            dateCreated: '2022-02-11T21:07:54Z'
+            optionTypes: []
+            supportedZoneTypes: []
+          - id: 5
+            code: cloudCost
+            name: Cloud Cost
+            description: >-
+              View costs by cloud including number of nodes, instances, and
+              discovered VMs.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-13T18:45:59Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1103
+                name: siteId
+                description: null
+                code: reportType.siteId
+                fieldName: siteId
+                fieldLabel: Group
+                fieldCode: gomorpheus.optiontype.Group
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: groups
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 4
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 1
+            code: cloudInventory
+            name: Cloud Inventory Summary
+            description: >-
+              View an inventory of hosts, VMs, containers, and bare metal
+              servers by cloud.
+            category: infrastructureInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-13T18:45:59Z'
+            optionTypes:
+              - id: 1103
+                name: siteId
+                description: null
+                code: reportType.siteId
+                fieldName: siteId
+                fieldLabel: Group
+                fieldCode: gomorpheus.optiontype.Group
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: groups
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 4
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 12
+            code: cloudUsage
+            name: Cloud Usage
+            description: View a cloud's usage of storage, memory, and compute resources.
+            category: cloudUsage
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-22T04:17:38Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 13
+            code: cloudUsageApp
+            name: Cloud Usage App Summary
+            description: >-
+              View a cloud's usage of storage, memory, and compute resources by
+              app.
+            category: cloudUsage
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-22T04:17:38Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1105
+                name: cloudId
+                description: null
+                code: reportType.cloudIdRequired
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 14
+            code: cloudUsageInstanceType
+            name: Cloud Usage Instance Type Summary
+            description: >-
+              View a cloud's usage of storage, memory, and compute resources by
+              instance type.
+            category: cloudUsage
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-22T04:17:38Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1108
+                name: instanceTypeCode
+                description: null
+                code: reportType.instanceTypeCode
+                fieldName: instanceTypeCode
+                fieldLabel: Instance Type
+                fieldCode: gomorpheus.optiontype.InstanceType
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: instanceTypes
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 8
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1105
+                name: cloudId
+                description: null
+                code: reportType.cloudIdRequired
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 16
+            code: containerHostInventory
+            name: Container Host Inventory Summary
+            description: >-
+              View an inventory of hypervisors, their nodes, and associated
+              containers.
+            category: infrastructureInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-10-04T06:08:03Z'
+            optionTypes:
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 55
+            code: custom-report-cypher
+            name: Cypher Summary
+            description: View an inventory of Cypher items
+            category: inventory
+            visible: true
+            masterOnly: true
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: true
+            dateCreated: '2021-06-08T14:04:34Z'
+            optionTypes:
+              - id: 1989
+                name: Search
+                description: null
+                code: status-report-search
+                fieldName: phrase
+                fieldLabel: Search Phrase
+                fieldCode: null
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: null
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 0
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+            supportedZoneTypes: []
+          - id: 10
+            code: groupCost
+            name: Group Cost
+            description: View costs by group including number of clouds and instances.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-13T18:45:59Z'
+            optionTypes:
+              - id: 1107
+                name: accountId
+                description: null
+                code: reportType.accountIds
+                fieldName: accountIds
+                fieldLabel: Tenants
+                fieldCode: gomorpheus.optiontype.Tenants
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 7
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 6
+            code: groupInventory
+            name: Group Inventory Summary
+            description: >-
+              View an inventory of clouds, hosts, VMs, containers, and bare
+              metal servers by group.
+            category: infrastructureInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-06-13T18:45:59Z'
+            optionTypes:
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 29
+            code: guidance
+            name: Guidance
+            description: View various guidance recommendations.
+            category: infrastructureInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1690
+                name: lookBack
+                description: null
+                code: reportType.lookBack
+                fieldName: lookBack
+                fieldLabel: Lookback
+                fieldCode: gomorpheus.label.lookback
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: lookBack
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 11
+                wrapperClass: null
+                enabled: true
+                noBlank: true
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1698
+                name: cloudId
+                description: null
+                code: reportType.guidance.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: report
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 15
+            code: hypervisorInventory
+            name: Hypervisor Inventory Summary
+            description: >-
+              View an inventory of hypervisors, their associated VMs, and
+              capacity.
+            category: infrastructureInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2017-10-04T06:08:03Z'
+            optionTypes:
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 21
+            code: instanceCost
+            name: Instance Cost
+            description: View costs by instance.
+            category: cost
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2018-05-23T05:24:27Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1103
+                name: siteId
+                description: null
+                code: reportType.siteId
+                fieldName: siteId
+                fieldLabel: Group
+                fieldCode: gomorpheus.optiontype.Group
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: groups
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 4
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 24
+            code: instanceInventory
+            name: Instance Inventory Summary
+            description: View an inventory of instances, volumes, CPUs, memory and storage.
+            category: provisioningInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2018-06-21T04:54:43Z'
+            optionTypes:
+              - id: 1106
+                name: accountId
+                description: null
+                code: reportType.accountId
+                fieldName: accountId
+                fieldLabel: Tenant
+                fieldCode: gomorpheus.optiontype.Tenant
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: allTenants
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 6
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1109
+                name: environment
+                description: null
+                code: reportType.environment
+                fieldName: environment
+                fieldLabel: Environment
+                fieldCode: gomorpheus.optiontype.Environment
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: environments
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 9
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1101
+                name: endDate
+                description: null
+                code: reportType.endDate
+                fieldName: endDate
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1100
+                name: startDate
+                description: null
+                code: reportType.startDate
+                fieldName: startDate
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 37
+            code: invoice
+            name: Invoice Details
+            description: View invoice details with various groupings and filters.
+            category: cost
+            visible: true
+            masterOnly: true
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1696
+                name: groupByTagSecondary
+                description: null
+                code: reportType.groupBy.tagSecondary
+                fieldName: groupByTagSecondary
+                fieldLabel: Group By Tag
+                fieldCode: gomorpheus.optiontype.group.by.tag.secondary
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: reportGroupByTag
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 16
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: >-
+                  reportType.groupBySecondary, reportType.startMonth,
+                  reportType.endMonth, reportType.cloudId
+                visibleOnCode: config.groupBySecondary:Tag
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1689
+                name: endMonth
+                description: null
+                code: reportType.endMonth
+                fieldName: endMonth
+                fieldLabel: End Date
+                fieldCode: gomorpheus.optiontype.EndDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 2
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1695
+                name: groupBySecondary
+                description: null
+                code: reportType.invoice.groupBySecondary
+                fieldName: groupBySecondary
+                fieldLabel: Secondary Group By
+                fieldCode: gomorpheus.optiontype.group.by.secondary
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: reportInvoiceGroupBy
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 15
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1110
+                name: metadata
+                description: null
+                code: reportType.metadata
+                fieldName: metadata
+                fieldLabel: Metadata
+                fieldCode: gomorpheus.optiontype.Metadata
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+              - id: 1688
+                name: startMonth
+                description: null
+                code: reportType.startMonth
+                fieldName: startMonth
+                fieldLabel: Start Date
+                fieldCode: gomorpheus.optiontype.StartDate
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: null
+                optionSourceType: null
+                optionList: null
+                type: text
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 1
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1694
+                name: groupByTag
+                description: null
+                code: reportType.groupBy.tag
+                fieldName: groupByTag
+                fieldLabel: Group By Tag
+                fieldCode: gomorpheus.optiontype.group.by.tag
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: reportGroupByTag
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 14
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: >-
+                  reportType.groupBy, reportType.startMonth,
+                  reportType.endMonth, reportType.cloudId
+                visibleOnCode: config.groupBy:Tag
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1693
+                name: groupBy
+                description: null
+                code: reportType.invoice.groupBy
+                fieldName: groupBy
+                fieldLabel: Group By
+                fieldCode: gomorpheus.optiontype.group.by
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: reportInvoiceGroupBy
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 13
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+            supportedZoneTypes: []
+          - id: 36
+            code: migrationPlan
+            name: Migration Planning
+            description: Generate a migration plan recommendation to various clouds.
+            category: infrastructureInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2020-11-14T06:35:31Z'
+            optionTypes:
+              - id: 1719
+                name: serverIds
+                description: null
+                code: reportType.migrationPlan.serverIds
+                fieldName: serverIds
+                fieldLabel: Servers
+                fieldCode: gomorpheus.label.servers
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: gomorpheus.help.migration.servers
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: searchServers
+                optionSourceType: null
+                optionList: null
+                type: multiTypeahead
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 10
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: reportType.migrationPlan.cloudIdRequired
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1717
+                name: cloudId
+                description: null
+                code: reportType.migrationPlan.cloudIdRequired
+                fieldName: cloudId
+                fieldLabel: Source Cloud
+                fieldCode: gomorpheus.label.SourceCloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 0
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+              - id: 1718
+                name: targetCloudIds
+                description: null
+                code: reportType.migrationPlan.targetCloudIds
+                fieldName: targetCloudIds
+                fieldLabel: Target Clouds
+                fieldCode: gomorpheus.label.targetClouds
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: multiSelect
+                advanced: false
+                required: true
+                exportMeta: false
+                editable: true
+                creatable: true
+                config:
+                  addOnSelect: true
+                displayOrder: 20
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: false
+                showOnCreate: true
+                showOnEdit: true
+            supportedZoneTypes: []
+          - id: 28
+            code: softwareInventory
+            name: Software Inventory
+            description: View an inventory of software including clouds and platforms.
+            category: provisioningInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2020-08-06T22:43:19Z'
+            optionTypes:
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+          - id: 27
+            code: softwareInventoryByServer
+            name: Software Inventory By Server
+            description: View an inventory of software grouped by server.
+            category: provisioningInventory
+            visible: true
+            masterOnly: false
+            ownerOnly: false
+            supportsAllZoneTypes: true
+            isPlugin: null
+            dateCreated: '2020-08-06T22:43:19Z'
+            optionTypes:
+              - id: 1104
+                name: cloudId
+                description: null
+                code: reportType.cloudId
+                fieldName: cloudId
+                fieldLabel: Cloud
+                fieldCode: gomorpheus.optiontype.Cloud
+                fieldContext: config
+                fieldGroup: null
+                fieldClass: null
+                fieldAddOn: null
+                fieldComponent: null
+                fieldInput: null
+                placeHolder: null
+                verifyPattern: null
+                helpBlock: ''
+                helpBlockFieldCode: null
+                defaultValue: null
+                optionSource: clouds
+                optionSourceType: null
+                optionList: null
+                type: select
+                advanced: false
+                required: false
+                exportMeta: false
+                editable: true
+                creatable: true
+                config: {}
+                displayOrder: 5
+                wrapperClass: null
+                enabled: true
+                noBlank: false
+                dependsOnCode: null
+                visibleOnCode: null
+                requireOnCode: null
+                contextualDefault: false
+                displayValueOnDetails: null
+                showOnCreate: null
+                showOnEdit: null
+            supportedZoneTypes: []
+        meta:
+          size: 25
+          total: 35
+          offset: 0
+          max: 25
+    reports:
+      summary: Reports Response
+      value:
+        reportResults:
+          - id: 1380
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Overview Mar 02, 2022 16:06:36
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-03-02T16:06:36Z'
+            lastUpdated: '2022-03-02T16:06:37Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1378
+            type:
+              id: 31
+              code: amazonReservationUtilization
+              name: Amazon Reservation Utilization
+              category: cost
+            reportTitle: Amazon Reservation Utilization Mar 01, 2022 00:00:07
+            filterTitle: Mar 10, 2021 - Mar 12, 2022 | AWS Labs | Mar 01, 2022
+            status: ready
+            dateCreated: '2022-03-01T00:00:07Z'
+            lastUpdated: '2022-03-01T00:00:08Z'
+            startDate: '2021-03-10T00:00:00Z'
+            endDate: '2022-03-12T23:59:00Z'
+            config:
+              reportType: null
+              startDate: 03/10/2021 00:00:00
+              endDate: 03/12/2022 23:59:59
+              name: AWS Labs Reservation Utilization
+              scheduleMode: '7'
+              dateTime: '2021-03-12 21:38:42'
+              cloudId: '141'
+              config:
+                dateTime: '2021-03-12 21:38:42'
+                cloudId: '141'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 2
+              username: jwheeler
+          - id: 1379
+            type:
+              id: 19
+              code: tenantUsage
+              name: Tenant Usage
+              category: cloudUsage
+            reportTitle: Tenant Usage Mar 01, 2022 00:00:07
+            filterTitle: Mar 01, 2022 00:00:07 | Morpheus
+            status: ready
+            dateCreated: '2022-03-01T00:00:07Z'
+            lastUpdated: '2022-03-01T00:00:14Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              accountId: '3'
+              name: Tennant Cost Monthly CHS
+              scheduleMode: '7'
+              dateTime: '2021-04-09 23:30:14'
+              config:
+                dateTime: '2021-04-09 23:30:14'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 219
+              username: dzenz
+          - id: 1377
+            type:
+              id: 58
+              code: tagComplianceInventory
+              name: Tag Compliance
+              category: provisioningInventory
+            reportTitle: Tag Compliance Feb 25, 2022 15:51:51
+            filterTitle: Feb 25, 2022 | All Clouds
+            status: ready
+            dateCreated: '2022-02-25T15:51:51Z'
+            lastUpdated: '2022-02-25T15:51:52Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              cloudId: ''
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 174
+              username: aharker
+          - id: 1376
+            type:
+              id: 58
+              code: tagComplianceInventory
+              name: Tag Compliance
+              category: provisioningInventory
+            reportTitle: Tag Compliance Feb 25, 2022 15:41:41
+            filterTitle: Feb 25, 2022 | AWS
+            status: ready
+            dateCreated: '2022-02-25T15:41:41Z'
+            lastUpdated: '2022-02-25T15:41:41Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              cloudId: '12'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 294
+              username: kbryant
+          - id: 1375
+            type:
+              id: 60
+              code: automation-analytics-report
+              name: Automation Analytics
+              category: inventory
+            reportTitle: Automation Analytics Feb 22, 2022 21:29:37
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-22T21:29:37Z'
+            lastUpdated: '2022-02-22T21:29:38Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '90'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1374
+            type:
+              id: 60
+              code: automation-analytics-report
+              name: Automation Analytics
+              category: inventory
+            reportTitle: Automation Analytics Feb 22, 2022 21:17:59
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-22T21:17:59Z'
+            lastUpdated: '2022-02-22T21:18:00Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '90'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1373
+            type:
+              id: 60
+              code: automation-analytics-report
+              name: Automation Analytics
+              category: inventory
+            reportTitle: Automation Analytics Feb 22, 2022 19:41:56
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-22T19:41:56Z'
+            lastUpdated: '2022-02-22T19:41:56Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '60'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1372
+            type:
+              id: 60
+              code: automation-analytics-report
+              name: Automation Analytics
+              category: inventory
+            reportTitle: Automation Analytics Feb 22, 2022 19:28:00
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-22T19:28:00Z'
+            lastUpdated: '2022-02-22T19:28:00Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '30'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1371
+            type:
+              id: 60
+              code: automation-analytics-report
+              name: Automation Analytics
+              category: inventory
+            reportTitle: Automation Analytics Feb 22, 2022 19:20:08
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-22T19:20:08Z'
+            lastUpdated: '2022-02-22T19:20:08Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '7'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1370
+            type:
+              id: 60
+              code: automation-analytics-report
+              name: Automation Analytics
+              category: inventory
+            reportTitle: Automation Analytics Feb 22, 2022 17:49:16
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-22T17:49:16Z'
+            lastUpdated: '2022-02-22T17:49:20Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '7'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1369
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Overview Feb 21, 2022 22:07:43
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-21T22:07:43Z'
+            lastUpdated: '2022-02-21T22:07:44Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1368
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Overview Feb 21, 2022 21:35:16
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-21T21:35:16Z'
+            lastUpdated: '2022-02-21T21:35:16Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1367
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Overview Feb 21, 2022 21:31:53
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-21T21:31:53Z'
+            lastUpdated: '2022-02-21T21:31:54Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1366
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Overview Feb 21, 2022 21:13:13
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-21T21:13:13Z'
+            lastUpdated: '2022-02-21T21:13:14Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1365
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Analytics Feb 21, 2022 18:50:33
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-21T18:50:33Z'
+            lastUpdated: '2022-02-21T18:50:34Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '60'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1364
+            type:
+              id: 24
+              code: instanceInventory
+              name: Instance Inventory Summary
+              category: provisioningInventory
+            reportTitle: Instance Inventory Summary Feb 18, 2022 11:30:37
+            filterTitle: Feb 18, 2022 | Feb 17, 2022 - Feb 18, 2022 | Demo
+            status: ready
+            dateCreated: '2022-02-18T11:30:37Z'
+            lastUpdated: '2022-02-18T11:30:38Z'
+            startDate: '2022-02-17T00:00:00Z'
+            endDate: '2022-02-18T23:59:00Z'
+            config:
+              reportType: null
+              startDate: 02/17/2022 00:00:00
+              endDate: 02/18/2022 23:59:59
+              accountId: ''
+              environment: demo
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 318
+              username: gwhitaker
+          - id: 1363
+            type:
+              id: 36
+              code: migrationPlan
+              name: Migration Planning
+              category: infrastructureInventory
+            reportTitle: Migration Planning Feb 17, 2022 16:45:20
+            filterTitle: >-
+              Source Cloud: VMware Demo Cluster H5 | Target Clouds: AWS, Azure
+              US, Google Labs
+            status: ready
+            dateCreated: '2022-02-17T16:45:20Z'
+            lastUpdated: '2022-02-17T16:45:40Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              cloudId: '172'
+              targetCloudIds:
+                - '12'
+                - '121'
+                - '143'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 223
+              username: ashildmyer
+          - id: 1362
+            type:
+              id: 21
+              code: instanceCost
+              name: Instance Cost
+              category: cost
+            reportTitle: Instance Cost Feb 17, 2022 16:37:01
+            filterTitle: >-
+              Jan 01, 2022 - Jan 31, 2022 | All Clouds | All Groups | Feb 17,
+              2022
+            status: ready
+            dateCreated: '2022-02-17T16:37:01Z'
+            lastUpdated: '2022-02-17T16:37:09Z'
+            startDate: '2022-01-01T00:00:00Z'
+            endDate: '2022-01-31T23:59:00Z'
+            config:
+              reportType: null
+              startDate: 01/01/2022 00:00:00
+              endDate: 01/31/2022 23:59:59
+              accountId: ''
+              siteId: ''
+              cloudId: ''
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 223
+              username: ashildmyer
+          - id: 1361
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Analytics Feb 11, 2022 23:04:39
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-11T23:04:39Z'
+            lastUpdated: '2022-02-11T23:04:39Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '7'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1360
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Analytics Feb 11, 2022 22:02:42
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-11T22:02:42Z'
+            lastUpdated: '2022-02-11T22:02:53Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '7'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1359
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Analytics Feb 11, 2022 21:53:49
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-11T21:53:49Z'
+            lastUpdated: '2022-02-11T21:53:49Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '30'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1358
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Analytics Feb 11, 2022 21:26:26
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-11T21:26:26Z'
+            lastUpdated: '2022-02-11T21:26:27Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              duration: '60'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1357
+            type:
+              id: 59
+              code: automation-overview-report
+              name: Automation Overview
+              category: inventory
+            reportTitle: Automation Analytics Feb 11, 2022 21:08:12
+            filterTitle: null
+            status: ready
+            dateCreated: '2022-02-11T21:08:12Z'
+            lastUpdated: '2022-02-11T21:08:19Z'
+            startDate: null
+            endDate: null
+            config:
+              reportType: null
+              taskType: all
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 263
+              username: Martez Reed
+          - id: 1355
+            type:
+              id: 21
+              code: instanceCost
+              name: Instance Cost
+              category: cost
+            reportTitle: Instance Cost Feb 04, 2022 21:54:03
+            filterTitle: >-
+              Jan 01, 2022 - Jan 31, 2022 | VMware Demo Cluster H5 | All Groups
+              | Feb 04, 2022
+            status: ready
+            dateCreated: '2022-02-04T21:54:03Z'
+            lastUpdated: '2022-02-04T21:54:13Z'
+            startDate: '2022-01-01T00:00:00Z'
+            endDate: '2022-01-31T23:59:00Z'
+            config:
+              reportType: null
+              startDate: 01/01/2022 00:00:00
+              endDate: 01/31/2022 23:59:59
+              accountId: ''
+              siteId: ''
+              cloudId: '172'
+              metadata: {}
+              metadataExclude: {}
+            createdBy:
+              id: 223
+              username: ashildmyer
+        meta:
+          size: 25
+          total: 1162
+          offset: 0
+          max: 25
     ListRolesResponse:
       summary: List Roles Response Example
       value:
@@ -4465,6 +8250,454 @@ components:
             access: full
         appliance:
           buildVersion: 5.4.4
+    wikiCategories:
+      summary: Wiki Categories Response
+      value:
+        categories:
+          - name: apps
+            pageCount: 1
+          - name: Blueprints
+            pageCount: 1
+          - name: catalogItemType
+            pageCount: 9
+          - name: clouds
+            pageCount: 4
+          - name: info
+            pageCount: 1
+          - name: instances
+            pageCount: 3
+          - name: servers
+            pageCount: 10
+    wiki:
+      summary: Wiki Response
+      value:
+        pages:
+          - id: 94
+            name: AA-CustomCentos
+            urlName: catalogItemType/aa-customcentos
+            category: catalogItemType
+            refId: 26
+            refType: CatalogItemType
+            format: markdown
+            content: null
+            createdBy:
+              id: 126
+              username: aabraham
+            updatedBy:
+              id: 126
+              username: aabraham
+            dateCreated: '2021-01-11T15:19:25Z'
+            lastUpdated: '2021-01-11T15:19:25Z'
+          - id: 95
+            name: AA-CustomCentos
+            urlName: catalogItemType/aa-customcentos-1
+            category: catalogItemType
+            refId: 27
+            refType: CatalogItemType
+            format: markdown
+            content: null
+            createdBy:
+              id: 126
+              username: aabraham
+            updatedBy:
+              id: 126
+              username: aabraham
+            dateCreated: '2021-01-11T15:23:55Z'
+            lastUpdated: '2021-01-11T15:23:55Z'
+          - id: 90
+            name: Apache-BP
+            urlName: catalogItemType/apache-bp
+            category: catalogItemType
+            refId: 21
+            refType: CatalogItemType
+            format: markdown
+            content: "# Amazon Apache VM\r\nThis is a sample catalog item that provisions a single amazon apache service as a VM.  Several configuration options are presented using option types and lists.\r\n\r\nThis catalog item includes examples of using [Markdown Syntax](https://www.markdownguide.org/) for an embedded link. For more information on **Apache** you can visit the [Apache Project Site](https://httpd.apache.org/)."
+            createdBy:
+              id: 70
+              username: bparks
+            updatedBy:
+              id: 255
+              username: Brad Parks
+            dateCreated: '2020-12-09T00:27:54Z'
+            lastUpdated: '2021-01-04T23:18:17Z'
+          - id: 103
+            name: ASPCUS1001
+            urlName: servers/aspcus1001
+            category: servers
+            refId: 154011
+            refType: ComputeServer
+            format: markdown
+            content: ASPCUS1001 updated why
+            createdBy:
+              id: null
+              username: null
+            updatedBy:
+              id: null
+              username: null
+            dateCreated: '2021-03-08T17:18:35Z'
+            lastUpdated: '2021-03-08T17:18:35Z'
+          - id: 13
+            name: AWS
+            urlName: clouds/aws
+            category: clouds
+            refId: 12
+            refType: ComputeZone
+            format: markdown
+            content: "This is a public cloud\r\n\r\nThis is more detail"
+            createdBy:
+              id: 11
+              username: jsmith
+            updatedBy:
+              id: 11
+              username: jsmith
+            dateCreated: '2019-08-27T12:18:37Z'
+            lastUpdated: '2020-06-03T13:55:06Z'
+          - id: 40
+            name: Azure US
+            urlName: clouds/azure-us
+            category: clouds
+            refId: 121
+            refType: ComputeZone
+            format: markdown
+            content: This is a public cloud
+            createdBy:
+              id: 11
+              username: jsmith
+            updatedBy:
+              id: 11
+              username: jsmith
+            dateCreated: '2019-12-12T10:55:19Z'
+            lastUpdated: '2019-12-12T10:55:19Z'
+          - id: 87
+            name: Centos
+            urlName: catalogItemType/centos
+            category: catalogItemType
+            refId: 16
+            refType: CatalogItemType
+            format: markdown
+            content: null
+            createdBy:
+              id: 126
+              username: aabraham
+            updatedBy:
+              id: 253
+              username: Anish Abraham
+            dateCreated: '2020-12-01T07:29:42Z'
+            lastUpdated: '2021-01-04T15:09:43Z'
+          - id: 80
+            name: Create AD user
+            urlName: catalogItemType/create-ad-user
+            category: catalogItemType
+            refId: 4
+            refType: CatalogItemType
+            format: markdown
+            content: "# Create AD user \r\n\r\nThis will execute an operational workflow to create a user in Active Directory"
+            createdBy:
+              id: null
+              username: Hicham Mourad
+            updatedBy:
+              id: null
+              username: Ryan Garofalo
+            dateCreated: '2020-11-16T04:25:55Z'
+            lastUpdated: '2021-04-20T20:59:52Z'
+          - id: 102
+            name: dc2-den-labs-acisim-4.2
+            urlName: servers/dc2-den-labs-acisim-4-2
+            category: servers
+            refId: 151972
+            refType: ComputeServer
+            format: markdown
+            content: Running ACI Simulator 4.2-4p. Creds in 1Password
+            createdBy:
+              id: null
+              username: null
+            updatedBy:
+              id: null
+              username: null
+            dateCreated: '2021-03-02T20:47:12Z'
+            lastUpdated: '2021-03-02T20:47:12Z'
+          - id: 22
+            name: Demo Credentials
+            urlName: demo-credentials
+            category: null
+            refId: null
+            refType: null
+            format: markdown
+            content: "Some VM workloads have a preconfigured Demo user login. For accessing these vms please use the following credentials\r\n\r\n**Username:** demo\r\n**Password:** XKEph6hANbgMwq"
+            createdBy:
+              id: 5
+              username: davydotcom
+            updatedBy:
+              id: 5
+              username: davydotcom
+            dateCreated: '2019-10-02T14:10:16Z'
+            lastUpdated: '2019-10-02T14:10:16Z'
+          - id: 47
+            name: Demo HA Morpheus
+            urlName: apps/demo-ha-morpheus
+            category: apps
+            refId: 868
+            refType: App
+            format: markdown
+            content: "[Anchor](#markdown-header-demo-ha-morpheus)\r\n\r\nTake me to [pookie](#pookie)\r\n\r\n\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n### Why do we use it?\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n\r\n### Where does it come from?\r\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\r\n\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n### What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n\r\n[this is pookie]{#pookie}\r\n\r\n### pookie\r\n\r\n\r\n## Demo HA Morpheus\r\n\r\n1. Open the file containing the Linux mascot.\r\n2. Marvel at its beauty.\r\n\r\n    ![Tux, the Linux mascot](https://demo.morpheusdata.com/public-archives/download/images_aa/markdownTux.png)\r\n\r\n3. Close the file."
+            createdBy:
+              id: 2
+              username: jwheeler
+            updatedBy:
+              id: 236
+              username: Jeff Wheeler
+            dateCreated: '2020-08-05T06:11:51Z'
+            lastUpdated: '2022-02-10T16:40:12Z'
+          - id: 45
+            name: Demo test Blueprint
+            urlName: Blueprints/demo-test-blueprint
+            category: Blueprints
+            refId: null
+            refType: null
+            format: markdown
+            content: Demo test application is a 2 tier app
+            createdBy:
+              id: 126
+              username: aabraham
+            updatedBy:
+              id: 126
+              username: aabraham
+            dateCreated: '2020-07-02T10:24:24Z'
+            lastUpdated: '2020-07-02T10:24:24Z'
+          - id: 42
+            name: demo-ha-app1
+            urlName: instances/demo-ha-app1
+            category: instances
+            refId: 5859
+            refType: Instance
+            format: markdown
+            content: "`@cbunge this work now`\r\n\r\n```\r\nsweeeeeeeeeettt emooooooootions\r\n```\r\n\r\nVery good"
+            createdBy:
+              id: 2
+              username: jwheeler
+            updatedBy:
+              id: 11
+              username: jsmith
+            dateCreated: '2020-04-17T20:02:03Z'
+            lastUpdated: '2021-01-12T14:29:14Z'
+          - id: 9
+            name: demo-ha-app1-2
+            urlName: servers/demo-ha-app1-2
+            category: servers
+            refId: 71174
+            refType: ComputeServer
+            format: markdown
+            content: "`@cbunge this work now`\r\n\r\n```\r\nsweeeeeeeeeettt emooooooootions\r\n```\r\n\r\nVery good"
+            createdBy:
+              id: null
+              username: null
+            updatedBy:
+              id: null
+              username: null
+            dateCreated: '2019-08-22T08:14:24Z'
+            lastUpdated: '2021-01-12T14:29:14Z'
+          - id: 14
+            name: Example Page
+            urlName: example-page
+            category: null
+            refId: null
+            refType: null
+            format: markdown
+            content: Some content is here
+            createdBy:
+              id: 174
+              username: aharker
+            updatedBy:
+              id: 174
+              username: aharker
+            dateCreated: '2019-09-04T13:50:27Z'
+            lastUpdated: '2019-09-04T13:50:27Z'
+          - id: 93
+            name: GTD Demo
+            urlName: catalogItemType/gtd-demo
+            category: catalogItemType
+            refId: 25
+            refType: CatalogItemType
+            format: markdown
+            content: null
+            createdBy:
+              id: null
+              username: Alex Irizarry
+            updatedBy:
+              id: null
+              username: Alex Irizarry
+            dateCreated: '2021-01-07T14:59:26Z'
+            lastUpdated: '2021-01-07T14:59:26Z'
+          - id: 61
+            name: Jenkins How To
+            urlName: jenkins-how-to
+            category: null
+            refId: null
+            refType: null
+            format: markdown
+            content: "Adding Jenkins Integration\r\n../../_images/Jenkins-add-modal.png\r\nNavigate to Administration -> Integrations\r\n\r\nSelect + NEW INTEGRATION\r\n\r\nSelect Jenkins\r\nFill in the following:\r\n\r\nName\r\nName of the Integration in Morpheus\r\n\r\nEnabled\r\nEnable the Integration. Uncheck to disable the Jenkins Integration sync Job.\r\n\r\nJenkins URL\r\nJenkins URL or IP address. ex: https://jenkins.morpheus.com\r\n\r\nUsername\r\nJenkins service account username\r\n\r\nPassword\r\nJenkins service account password"
+            createdBy:
+              id: null
+              username: Carlos Fonseca
+            updatedBy:
+              id: null
+              username: Carlos Fonseca
+            dateCreated: '2020-09-21T13:35:35Z'
+            lastUpdated: '2020-09-21T13:36:09Z'
+          - id: 97
+            name: JWDMAZU1003
+            urlName: instances/jwdmazu1003
+            category: instances
+            refId: 11817
+            refType: Instance
+            format: markdown
+            content: "# Scans are in VM, not Instance, under Software Tab -> Security\r\n\r\n[View Sample Scan Report](https://demo.morpheusdata.com/infrastructure/servers/147216#!software)"
+            createdBy:
+              id: 2
+              username: jwheeler
+            updatedBy:
+              id: 2
+              username: jwheeler
+            dateCreated: '2021-02-04T07:28:09Z'
+            lastUpdated: '2021-02-04T07:31:40Z'
+          - id: 98
+            name: JWDMAZU1003
+            urlName: servers/jwdmazu1003
+            category: servers
+            refId: 147216
+            refType: ComputeServer
+            format: markdown
+            content: "# Scans are in VM, not Instance, under Software Tab -> Security\r\n\r\n[View Sample Scan Report](https://demo.morpheusdata.com/infrastructure/servers/147216#!software)"
+            createdBy:
+              id: null
+              username: null
+            updatedBy:
+              id: 2
+              username: jwheeler
+            dateCreated: '2021-02-04T07:28:09Z'
+            lastUpdated: '2021-02-04T07:31:15Z'
+          - id: 53
+            name: JWDMMOR1014
+            urlName: instances/jwdmmor1014
+            category: instances
+            refId: 9428
+            refType: Instance
+            format: markdown
+            content: 3node HA Morpheus Cluster with Percona local to App nodes.
+            createdBy:
+              id: 2
+              username: jwheeler
+            updatedBy:
+              id: 2
+              username: jwheeler
+            dateCreated: '2020-08-12T05:23:38Z'
+            lastUpdated: '2020-08-12T05:23:38Z'
+          - id: 86
+            name: Morpheus Appliances
+            urlName: catalogItemType/morpheus-appliances
+            category: catalogItemType
+            refId: 11
+            refType: CatalogItemType
+            format: markdown
+            content: "**Morpheus Appliances**\r\n\r\nThis Catalog item automates the provisin and installation of Morpheus on 7 Platforms: CentOS 7, CentOS 8, Ubunutu 16.04, Ubuntu 18.04, SLES 12, SLES 15, and Amazon Linux 2"
+            createdBy:
+              id: 2
+              username: jwheeler
+            updatedBy:
+              id: 2
+              username: jwheeler
+            dateCreated: '2020-11-21T06:51:45Z'
+            lastUpdated: '2021-01-05T22:31:30Z'
+          - id: 32
+            name: Nutanix Cluster 1
+            urlName: clouds/nutanix-cluster-1
+            category: clouds
+            refId: 137
+            refType: ComputeZone
+            format: markdown
+            content: This is my nutanix
+            createdBy:
+              id: 11
+              username: jsmith
+            updatedBy:
+              id: 11
+              username: jsmith
+            dateCreated: '2019-10-30T10:14:05Z'
+            lastUpdated: '2019-10-30T10:14:05Z'
+          - id: 109
+            name: Nutanix Cluster 2
+            urlName: clouds/nutanix-cluster-2
+            category: clouds
+            refId: 106
+            refType: ComputeZone
+            format: markdown
+            content: This is a cloud for your use to create new server
+            createdBy:
+              id: 11
+              username: jsmith
+            updatedBy:
+              id: 11
+              username: jsmith
+            dateCreated: '2021-03-29T13:12:30Z'
+            lastUpdated: '2021-03-29T13:12:30Z'
+          - id: 85
+            name: Small Ubuntu
+            urlName: catalogItemType/small-ubuntu
+            category: catalogItemType
+            refId: 7
+            refType: CatalogItemType
+            format: markdown
+            content: null
+            createdBy:
+              id: 11
+              username: jsmith
+            updatedBy:
+              id: 11
+              username: jsmith
+            dateCreated: '2020-11-19T16:33:27Z'
+            lastUpdated: '2020-11-19T16:33:27Z'
+          - id: 82
+            name: Windows 2016
+            urlName: catalogItemType/windows-2016
+            category: catalogItemType
+            refId: 5
+            refType: CatalogItemType
+            format: markdown
+            content: "## Cool Instance\r\n\r\nThis is a great version of Windows. \r\n\r\n* 2019\r\n* 2020 etc"
+            createdBy:
+              id: null
+              username: Alex Irizarry
+            updatedBy:
+              id: 259
+              username: Greg Pietro
+            dateCreated: '2020-11-19T16:05:37Z'
+            lastUpdated: '2021-11-23T15:15:40Z'
+        meta:
+          size: 25
+          total: 31
+          max: 25
+          offset: 0
+    wikiAdd:
+      summary: Add Wiki Response
+      value:
+        page:
+          id: 130
+          name: Sample Doc
+          urlName: info/sample-doc
+          category: info
+          refId: null
+          refType: null
+          format: markdown
+          content: A sample document in **markdown**.`
+          createdBy:
+            id: 127
+            username: cbunge
+          updatedBy:
+            id: 127
+            username: cbunge
+          dateCreated: '2022-03-04T02:39:34Z'
+          lastUpdated: '2022-03-04T02:39:34Z'
+        success: true
     accessToken:
       summary: Access Token Response
       value:

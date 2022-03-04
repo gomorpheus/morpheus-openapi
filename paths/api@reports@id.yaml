@@ -15,7 +15,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-reports.yaml
+            $ref: ../components/schemas/reports.yaml
     '400':
       description: Bad Request.
     '401':

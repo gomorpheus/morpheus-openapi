@@ -16,7 +16,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-wikiCategories.yaml
+            $ref: ../components/schemas/wikiCategories.yaml
+          examples:
+            Report Types Response:
+              $ref: ../components/examples/wikiCategories.yaml
     '400':
       description: Bad Request.
     '401':
