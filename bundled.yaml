@@ -2702,6 +2702,36 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+    delete:
+      summary: Deletes a Wiki Page
+      description: |
+        Deletes the specified Wiki page.
+      operationId: wikiRemove
+      tags:
+        - Wiki
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#delete-a-wiki-page
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/zones/{id}/wiki:
     get:
       summary: Retrieves a Cloud Wiki Page
