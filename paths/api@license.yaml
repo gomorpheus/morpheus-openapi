@@ -30,6 +30,18 @@ get:
                   memory: 26256664064
                   storage: 306786373632
                   workloads: 12
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 post:
   summary: Install license key
   description: >-
@@ -79,6 +91,16 @@ post:
           example:
             success: false
             msg: Unable to decode license content
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 delete:
   summary: Uninstall license key
   description: >-
@@ -95,3 +117,15 @@ delete:
         application/json:
           schema:
             $ref: ..\components\schemas\Success.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

@@ -252,6 +252,188 @@ paths:
               examples:
                 ListAvailableUserRoles:
                   $ref: '#/components/examples/ListTenantsAvailableRoles'
+  /api/apps/{id}/wiki:
+    get:
+      summary: Retrieves an App Wiki Page
+      description: |
+        This endpoint retrieves an app Wiki page.
+      operationId: wikiGetApp
+      tags:
+        - Wiki
+        - Apps
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-app
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiPage'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiPage'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Update an App Wiki Page
+      description: |
+        Updates an app Wiki page.
+      operationId: wikiUpdateApp
+      tags:
+        - Wiki
+        - Apps
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-app
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiAdd'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/clusters/{id}/wiki:
+    get:
+      summary: Retrieves a Cluster Wiki Page
+      description: |
+        This endpoint retrieves a cluster Wiki page.
+      operationId: wikiGetCluster
+      tags:
+        - Wiki
+        - Clusters
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-cluster
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiPage'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiPage'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Update a Cluster Wiki Page
+      description: |
+        Updates a cluster Wiki page.
+      operationId: wikiUpdateCluster
+      tags:
+        - Wiki
+        - Clusters
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-cluster
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiAdd'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/dashboard:
     get:
       summary: Overview of Dashboard information
@@ -485,6 +667,188 @@ paths:
                     example: >-
                       Reset password instructions have been sent to the user
                       'jsmith', if they exist.
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/groups/{id}/wiki:
+    get:
+      summary: Retrieves a Group Wiki Page
+      description: |
+        This endpoint retrieves a group Wiki page.
+      operationId: wikiGetGroup
+      tags:
+        - Wiki
+        - Groups
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-group
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiPage'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiPage'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Update a Group Wiki Page
+      description: |
+        Updates a group Wiki page.
+      operationId: wikiUpdateGroup
+      tags:
+        - Wiki
+        - Groups
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-group
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiAdd'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/instances/{id}/wiki:
+    get:
+      summary: Retrieves an Instance Wiki Page
+      description: |
+        This endpoint retrieves an instance Wiki page.
+      operationId: wikiGetInstance
+      tags:
+        - Wiki
+        - Instances
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-instance
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiPage'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiPage'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Update an Instance Wiki Page
+      description: |
+        Updates an instance Wiki page.
+      operationId: wikiUpdateInstance
+      tags:
+        - Wiki
+        - Instances
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-instance
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiAdd'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
         '400':
           description: Bad Request.
         '401':
@@ -1198,6 +1562,97 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/servers/{id}/wiki:
+    get:
+      summary: Retrieves a Server Wiki Page
+      description: |
+        This endpoint retrieves a server Wiki page.
+      operationId: wikiGetServer
+      tags:
+        - Wiki
+        - Servers
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-server
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiPage'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiPage'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Update a Server Wiki Page
+      description: |
+        Updates a server Wiki page.
+      operationId: wikiUpdateServer
+      tags:
+        - Wiki
+        - Servers
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-server
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiAdd'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/setup:
     post:
       summary: Setup appliance
@@ -1803,10 +2258,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/wiki'
+                $ref: '#/components/schemas/wikiPages'
               examples:
                 Wiki Response:
-                  $ref: '#/components/examples/wiki'
+                  $ref: '#/components/examples/wikiPages'
         '400':
           description: Bad Request.
         '401':
@@ -1892,10 +2347,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/wiki'
+                $ref: '#/components/schemas/wikiPage'
               examples:
                 Wiki Response:
-                  $ref: '#/components/examples/wiki'
+                  $ref: '#/components/examples/wikiPage'
         '400':
           description: Bad Request.
         '401':
@@ -1947,6 +2402,97 @@ paths:
               examples:
                 Report Types Response:
                   $ref: '#/components/examples/wikiAdd'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/zones/{id}/wiki:
+    get:
+      summary: Retrieves a Cloud Wiki Page
+      description: |
+        This endpoint retrieves a cloud Wiki page.
+      operationId: wikiGetCloud
+      tags:
+        - Wiki
+        - Clouds
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-cloud
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiPage'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiPage'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Update a Cloud Wiki Page
+      description: |
+        Updates a cloud Wiki page.
+      operationId: wikiUpdateCloud
+      tags:
+        - Wiki
+        - Clouds
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Sample Doc
+                    category:
+                      type: string
+                      example: info
+                    content:
+                      type: string
+                      example: A sample document in **markdown**.`
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-cloud
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wikiAdd'
+              examples:
+                Wiki Response:
+                  $ref: '#/components/examples/wikiAdd'
+                Blank Wiki Response:
+                  $ref: '#/components/examples/wikiEmpty'
         '400':
           description: Bad Request.
         '401':
@@ -2366,6 +2912,104 @@ components:
             Validation errors, with a key for Object containing error messages
             for each invalid parameter (key)
           nullable: true
+    wikiPage:
+      title: 200 Wiki Page
+      type: object
+      properties:
+        page:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+            urlName:
+              type: string
+            category:
+              type: string
+            refId:
+              type: string
+              format: nullable
+            refType:
+              type: string
+              format: nullable
+            format:
+              type: string
+            content:
+              type: string
+            createdBy:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                username:
+                  type: string
+            updatedBy:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                username:
+                  type: string
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+    wikiAdd:
+      title: 200 Wiki Create Page
+      type: object
+      properties:
+        page:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            urlName:
+              type: string
+            category:
+              type: string
+            refId:
+              type: string
+              format: nullable
+            refType:
+              type: string
+              format: nullable
+            format:
+              type: string
+            content:
+              type: string
+            createdBy:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                username:
+                  type: string
+            updatedBy:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                username:
+                  type: string
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+        success:
+          type: boolean
     dashboard:
       title: 200 Dashboard
       type: object
@@ -3248,8 +3892,8 @@ components:
               pageCount:
                 type: integer
                 format: int64
-    wiki:
-      title: 200 Wiki
+    wikiPages:
+      title: 200 Wiki Pages
       type: object
       properties:
         pages:
@@ -3300,56 +3944,6 @@ components:
                 format: date-time
         meta:
           $ref: '#/components/schemas/MetaObject'
-    wikiAdd:
-      title: 200 Wiki Create Page
-      type: object
-      properties:
-        page:
-          type: object
-          properties:
-            id:
-              type: integer
-              format: int64
-            name:
-              type: string
-            urlName:
-              type: string
-            category:
-              type: string
-            refId:
-              type: string
-              format: nullable
-            refType:
-              type: string
-              format: nullable
-            format:
-              type: string
-            content:
-              type: string
-            createdBy:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int64
-                username:
-                  type: string
-            updatedBy:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int64
-                username:
-                  type: string
-            dateCreated:
-              type: string
-              format: date-time
-            lastUpdated:
-              type: string
-              format: date-time
-        success:
-          type: boolean
     accessToken:
       title: 200 Access Token
       type: object
@@ -3397,6 +3991,51 @@ components:
             dateCreated: 2016-12-13T16:38:16+0000
             lastUpdated: 2016-12-14T23:39:05+0000
         meta: null
+    wikiPage:
+      summary: Wiki Response
+      value:
+        page:
+          id: 130
+          name: Sample Doc
+          urlName: info/sample-doc
+          category: info
+          refId: null
+          refType: null
+          format: markdown
+          content: A sample document in **markdown**.`
+          createdBy:
+            id: 127
+            username: cbunge
+          updatedBy:
+            id: 127
+            username: cbunge
+          dateCreated: '2022-03-04T02:39:34Z'
+          lastUpdated: '2022-03-04T02:39:34Z'
+    wikiEmpty:
+      summary: Empty Wiki Page Response
+      value:
+        page: null
+    wikiAdd:
+      summary: Add Wiki Response
+      value:
+        page:
+          id: 130
+          name: Sample Doc
+          urlName: info/sample-doc
+          category: info
+          refId: null
+          refType: null
+          format: markdown
+          content: A sample document in **markdown**.`
+          createdBy:
+            id: 127
+            username: cbunge
+          updatedBy:
+            id: 127
+            username: cbunge
+          dateCreated: '2022-03-04T02:39:34Z'
+          lastUpdated: '2022-03-04T02:39:34Z'
+        success: true
     dashboard:
       summary: Dashboard Response
       value:
@@ -8268,7 +8907,7 @@ components:
             pageCount: 3
           - name: servers
             pageCount: 10
-    wiki:
+    wikiPages:
       summary: Wiki Response
       value:
         pages:
@@ -8677,27 +9316,6 @@ components:
           total: 31
           max: 25
           offset: 0
-    wikiAdd:
-      summary: Add Wiki Response
-      value:
-        page:
-          id: 130
-          name: Sample Doc
-          urlName: info/sample-doc
-          category: info
-          refId: null
-          refType: null
-          format: markdown
-          content: A sample document in **markdown**.`
-          createdBy:
-            id: 127
-            username: cbunge
-          updatedBy:
-            id: 127
-            username: cbunge
-          dateCreated: '2022-03-04T02:39:34Z'
-          lastUpdated: '2022-03-04T02:39:34Z'
-        success: true
     accessToken:
       summary: Access Token Response
       value:

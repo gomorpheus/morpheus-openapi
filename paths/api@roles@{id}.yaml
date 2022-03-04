@@ -19,6 +19,18 @@ get:
           examples:
             GetRoleResponse:
               $ref: ..\components\examples\GetRoleResponse.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 put:
   summary: Update role
   description: Update an existing role.
@@ -60,6 +72,18 @@ put:
           examples:
             UpdateRoleResponse:
               $ref: ..\components\examples\UpdateRoleResponse.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 delete:
   summary: Delete role
   description: Delete an existing role. A role cannot be deleted while it is still in use.
@@ -94,3 +118,13 @@ delete:
                 msg: >-
                   Role is assigned as a default account role for a configured
                   Identity Source.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

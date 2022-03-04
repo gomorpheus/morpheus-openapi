@@ -19,6 +19,18 @@ get:
           examples:
             GetUserResponse:
               $ref: ..\components\examples\GetUserResponse.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 put:
   summary: Update user
   description: Update an existing user.
@@ -77,6 +89,18 @@ put:
           examples:
             updateUserResponse:
               $ref: ..\components\examples\UpdateUserResponse.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 delete:
   summary: Delete user
   description: Delete an existing user.
@@ -101,3 +125,13 @@ delete:
             msg: >-
               Unable to delete an user without removing resources when managed
               instances exist.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
