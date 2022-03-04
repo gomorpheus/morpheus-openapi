@@ -50,6 +50,18 @@ paths:
                       $ref: '#/components/schemas/Tenant'
                   meta:
                     $ref: '#/components/schemas/MetaObject'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     post:
       summary: Create tenant
       description: >-
@@ -106,6 +118,18 @@ paths:
                 properties:
                   account:
                     $ref: '#/components/schemas/Tenant'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/accounts/{id}:
     parameters:
       - $ref: '#/components/parameters/id-path'
@@ -125,6 +149,18 @@ paths:
                 properties:
                   account:
                     $ref: '#/components/schemas/Tenant'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     put:
       summary: Update tenant
       description: Update an existing tenant.
@@ -176,6 +212,18 @@ paths:
                 properties:
                   account:
                     $ref: '#/components/schemas/Tenant'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     delete:
       summary: Delete tenant
       description: >-
@@ -213,6 +261,16 @@ paths:
                 msg: >-
                   Unable to delete an account without removing resources when
                   managed instances exist.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/accounts/available-roles:
     get:
       summary: List available roles for a tenant
@@ -252,6 +310,18 @@ paths:
               examples:
                 ListAvailableUserRoles:
                   $ref: '#/components/examples/ListTenantsAvailableRoles'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/apps/{id}/wiki:
     get:
       summary: Retrieves an App Wiki Page
@@ -505,6 +575,18 @@ paths:
               examples:
                 foobar:
                   $ref: '#/components/examples/ListDocsResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/doc/openapi:
     get:
       summary: Get Morpheus OpenAPI (Swagger) document as JSON.
@@ -528,6 +610,18 @@ paths:
                     info:
                       title: Morpheus API
                       description: Welcome ...
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/doc/openapi.yaml:
     get:
       summary: Get Morpheus OpenAPI (Swagger) document as YAML.
@@ -551,6 +645,18 @@ paths:
                     info: 
                       title: "Morpheus API"
                       description: "Welcome ..."
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/forgot/reset-password:
     post:
       summary: Reset user password
@@ -895,6 +1001,18 @@ paths:
                       memory: 26256664064
                       storage: 306786373632
                       workloads: 12
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     post:
       summary: Install license key
       description: >-
@@ -944,6 +1062,16 @@ paths:
               example:
                 success: false
                 msg: Unable to decode license content
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     delete:
       summary: Uninstall license key
       description: >-
@@ -960,6 +1088,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/license/test:
     post:
       summary: Test license key
@@ -1010,6 +1150,16 @@ paths:
               example:
                 success: false
                 msg: Unable to decode license content
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/ping:
     get:
       summary: Basic information about current Morpheus Installation
@@ -1348,6 +1498,18 @@ paths:
               examples:
                 ListRolesResponse:
                   $ref: '#/components/examples/ListRolesResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     post:
       summary: Create role
       description: Create a new role.
@@ -1420,6 +1582,18 @@ paths:
               examples:
                 CreateRoleResponse:
                   $ref: '#/components/examples/CreateRoleResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/roles/{id}:
     parameters:
       - $ref: '#/components/parameters/id-path'
@@ -1442,6 +1616,18 @@ paths:
               examples:
                 GetRoleResponse:
                   $ref: '#/components/examples/GetRoleResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     put:
       summary: Update role
       description: Update an existing role.
@@ -1483,6 +1669,18 @@ paths:
               examples:
                 UpdateRoleResponse:
                   $ref: '#/components/examples/UpdateRoleResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     delete:
       summary: Delete role
       description: >-
@@ -1519,6 +1717,16 @@ paths:
                     msg: >-
                       Role is assigned as a default account role for a
                       configured Identity Source.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/search:
     get:
       summary: Provides global search for all types of objects
@@ -1886,6 +2094,16 @@ paths:
                   - example:
                       success: false
                       msg: Appliance has already been setup
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/users:
     get:
       summary: List users
@@ -1959,6 +2177,18 @@ paths:
               examples:
                 getUser:
                   $ref: '#/components/examples/ListUsersResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     post:
       summary: Create user
       description: Create a new user.
@@ -2024,6 +2254,18 @@ paths:
               examples:
                 createUserResponse:
                   $ref: '#/components/examples/GetUserResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/users/{id}:
     parameters:
       - $ref: '#/components/parameters/id-path'
@@ -2046,6 +2288,18 @@ paths:
               examples:
                 GetUserResponse:
                   $ref: '#/components/examples/GetUserResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     put:
       summary: Update user
       description: Update an existing user.
@@ -2104,6 +2358,18 @@ paths:
               examples:
                 updateUserResponse:
                   $ref: '#/components/examples/GetUserResponse'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
     delete:
       summary: Delete user
       description: Delete an existing user.
@@ -2128,6 +2394,16 @@ paths:
                 msg: >-
                   Unable to delete an user without removing resources when
                   managed instances exist.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/users/available-roles:
     get:
       summary: List available roles for a user
@@ -2165,6 +2441,18 @@ paths:
               examples:
                 ListAvailableUserRoles:
                   $ref: '#/components/examples/ListUsersAvailableRoles'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/whoami:
     get:
       summary: Retrieves information about current user roles and permissions
