@@ -16,10 +16,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/wiki.yaml
+            $ref: ../components/schemas/wikiPages.yaml
           examples:
             Wiki Response:
-              $ref: ../components/examples/wiki.yaml
+              $ref: ../components/examples/wikiPages.yaml
     '400':
       description: Bad Request.
     '401':

@@ -25,6 +25,10 @@ paths:
     $ref: paths/api@accounts@id.yaml
   /api/accounts/available-roles:
     $ref: paths/api@accounts@available-roles.yaml
+  /api/apps/{id}/wiki:
+    $ref: paths/api@apps@{id}@wiki.yaml
+  /api/clusters/{id}/wiki:
+    $ref: paths/api@clusters@{id}@wiki.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/doc:
@@ -37,6 +41,10 @@ paths:
     $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:
     $ref: paths/api@forgot@send-email.yaml
+  /api/groups/{id}/wiki:
+    $ref: paths/api@groups@{id}@wiki.yaml
+  /api/instances/{id}/wiki:
+    $ref: paths/api@instances@{id}@wiki.yaml
   /api/license:
     $ref: paths/api@license.yaml
   /api/license/test:
@@ -57,6 +65,8 @@ paths:
     $ref: paths/api@roles@{id}.yaml
   /api/search:
     $ref: paths/api@search.yaml
+  /api/servers/{id}/wiki:
+    $ref: paths/api@servers@{id}@wiki.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
   /api/users:
@@ -73,6 +83,8 @@ paths:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
     $ref: paths/api@wiki@pages@id.yaml
+  /api/zones/{id}/wiki:
+    $ref: paths/api@zones@{id}@wiki.yaml
   /oauth/token:
     $ref: paths/oauth@token.yaml
 components:

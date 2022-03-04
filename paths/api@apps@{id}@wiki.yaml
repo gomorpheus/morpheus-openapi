@@ -1,12 +1,13 @@
 get:
-  summary: Retrieves a specific Wiki page
+  summary: Retrieves an App Wiki Page
   description: |
-    This endpoint retrieves a specific wiki page.
-  operationId: wikiGet
+    This endpoint retrieves an app Wiki page.
+  operationId: wikiGetApp
   tags:
     - Wiki
+    - Apps
   externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-specific-wiki-page
+    url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-app
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -19,6 +20,8 @@ get:
           examples:
             Wiki Response:
               $ref: ../components/examples/wikiPage.yaml
+            Blank Wiki Response:
+              $ref: ../components/examples/wikiEmpty.yaml
     '400':
       description: Bad Request.
     '401':
@@ -32,12 +35,13 @@ get:
     '503':
       description: Service Unavailable.
 put:
-  summary: Updates a Wiki Page
+  summary: Update an App Wiki Page
   description: |
-    Updates a Wiki Page
-  operationId: wikiUpdate
+    Updates an app Wiki page.
+  operationId: wikiUpdateApp
   tags:
     - Wiki
+    - Apps
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -60,7 +64,7 @@ put:
                   example: #Sample Doc
                     A sample document in **markdown**.`
   externalDocs:
-    url: https://apidocs.morpheusdata.com/#update-a-wiki-page
+    url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-app
   responses:
     '200':
       description: Successful Request
@@ -69,8 +73,10 @@ put:
           schema:
             $ref: ../components/schemas/wikiAdd.yaml
           examples:
-            Report Types Response:
+            Wiki Response:
               $ref: ../components/examples/wikiAdd.yaml
+            Blank Wiki Response:
+              $ref: ../components/examples/wikiEmpty.yaml
     '400':
       description: Bad Request.
     '401':

@@ -1876,7 +1876,7 @@ paths:
           description: Service Unavailable.
   /api/wiki/pages/{id}:
     get:
-      summary: Retrieves wiki a specific Wiki page
+      summary: Retrieves a specific Wiki page
       description: |
         This endpoint retrieves a specific wiki page.
       operationId: wikiGet
@@ -1909,7 +1909,7 @@ paths:
         '503':
           description: Service Unavailable.
     put:
-      summary: Update a Wiki Page
+      summary: Updates a Wiki Page
       description: |
         Updates a Wiki Page
       operationId: wikiUpdate
