@@ -1,0 +1,49 @@
+get:
+  summary: Retrieves Usage Records
+  description: |
+    Retrieves a paginated list of usage records. The usages are scoped to only include resources you have access to.
+  operationId: listUsages
+  tags:
+    - Usage
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#list-usages
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - name: startDate
+      in: query
+      description: Filter by startDate greater than or equal to a specified date
+      schema:
+        type: string
+        format: date-time
+    - name: endDate
+      in: query
+      description: Filter by endDate less than or equal to a specified date
+      schema:
+        type: string
+        format: date-time
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/usages.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/usages.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

@@ -33,11 +33,13 @@ get:
       description: Filter by activity on or after a date(time). Default is 1 month prior
       schema:
         type: string
+        format: date-time
     - name: end
       in: query
       description: Filter by activity on or before a date(time). Default is current date
       schema:
         type: string
+        format: date-time
   responses:
     '200':
       description: Successful Request
