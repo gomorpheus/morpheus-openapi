@@ -2,7 +2,7 @@ get:
   summary: Retrieves a Server Wiki Page
   description: |
     This endpoint retrieves a server Wiki page.
-  operationId: wikiGetServer
+  operationId: getWikiServer
   tags:
     - Wiki
     - Servers
@@ -38,7 +38,7 @@ put:
   summary: Update a Server Wiki Page
   description: |
     Updates a server Wiki page.
-  operationId: wikiUpdateServer
+  operationId: updateWikiServer
   tags:
     - Wiki
     - Servers

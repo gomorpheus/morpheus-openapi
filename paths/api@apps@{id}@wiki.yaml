@@ -2,7 +2,7 @@ get:
   summary: Retrieves an App Wiki Page
   description: |
     This endpoint retrieves an app Wiki page.
-  operationId: wikiGetApp
+  operationId: getWikiApp
   tags:
     - Wiki
     - Apps
@@ -38,7 +38,7 @@ put:
   summary: Update an App Wiki Page
   description: |
     Updates an app Wiki page.
-  operationId: wikiUpdateApp
+  operationId: updateWikiApp
   tags:
     - Wiki
     - Apps

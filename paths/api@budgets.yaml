@@ -1,0 +1,148 @@
+get:
+  summary: Retrieves all Budgets
+  description: |
+    Retrieves all budgets.
+  operationId: listBudgets
+  tags:
+    - Budgets
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-all-budgets
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/budgets.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/budgets.yaml
+          
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+post:
+  summary: Creates a Budget
+  description: |
+    Creates a budget.
+  operationId: addBudgets
+  tags:
+    - Budgets
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - budget
+          properties:
+            budget:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                description:
+                  type: string
+                scope:
+                  type: string
+                  default: account
+                  enum:
+                    - account
+                    - group
+                    - cloud
+                    - user
+                period:
+                  type: string
+                  default: year
+                year:
+                  type: integer
+                  format: int64
+                  example: 2020
+                startDate:
+                  type: string
+                  format: date-time
+                endDate:
+                  type: string
+                  format: date-time
+                interval:
+                  type: string
+                  default: year
+                  enum:
+                    - year
+                    - quarter
+                    - month
+                scopeTenantId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=tenant
+                scopeGroupId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=group 
+                scopeCloudId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=cloud
+                scopeUserId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=user
+                costs:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+                  example:
+                    - 100
+                    - 100
+                    - 110
+                    - 120
+                enabled:
+                  type: boolean
+                  default: true
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#create-a-budget
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/budget.yaml
+          examples:
+            Report Types Response:
+              $ref: ../components/examples/budget.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

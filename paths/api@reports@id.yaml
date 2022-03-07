@@ -2,7 +2,7 @@ get:
   summary: This endpoint returns a specific report result
   description: |
     This endpoint retrieves a specific report result. The response includes the result data as rows which can be used to render the report. Each report type will have sections for data and headers that vary by type, use Download a Specific Report to get the results organized by section.
-  operationId: reportsGet
+  operationId: getReports
   tags:
     - Reports
   externalDocs:
@@ -32,7 +32,7 @@ delete:
   summary: This endpoint will delete a report result
   description: |
     This endpoint will delete a report result.
-  operationId: reportsRemove
+  operationId: removeReports
   tags:
     - Reports
   externalDocs:

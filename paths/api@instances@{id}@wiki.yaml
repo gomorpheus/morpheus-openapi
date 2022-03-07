@@ -2,7 +2,7 @@ get:
   summary: Retrieves an Instance Wiki Page
   description: |
     This endpoint retrieves an instance Wiki page.
-  operationId: wikiGetInstance
+  operationId: getWikiInstance
   tags:
     - Wiki
     - Instances
@@ -38,7 +38,7 @@ put:
   summary: Update an Instance Wiki Page
   description: |
     Updates an instance Wiki page.
-  operationId: wikiUpdateInstance
+  operationId: updateWikiInstance
   tags:
     - Wiki
     - Instances

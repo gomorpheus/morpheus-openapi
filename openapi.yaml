@@ -27,6 +27,10 @@ paths:
     $ref: paths/api@accounts@available-roles.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@{id}@wiki.yaml
+  /api/budgets:
+    $ref: paths/api@budgets.yaml
+  /api/budgets/{id}:
+    $ref: paths/api@budgets@{id}.yaml
   /api/clusters/{id}/wiki:
     $ref: paths/api@clusters@{id}@wiki.yaml
   /api/dashboard:

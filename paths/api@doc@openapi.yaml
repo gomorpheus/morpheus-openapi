@@ -3,7 +3,7 @@ get:
   description: >-
     Get Morpheus OpenAPI (Swagger) document as JSON. This is the same document
     that you are reading at this very moment.
-  operationId: openapi
+  operationId: docOpenapi
   tags:
     - Documentation
   security: []

@@ -2,7 +2,7 @@ get:
   summary: Retrieves a Cluster Wiki Page
   description: |
     This endpoint retrieves a cluster Wiki page.
-  operationId: wikiGetCluster
+  operationId: getWikiCluster
   tags:
     - Wiki
     - Clusters
@@ -38,7 +38,7 @@ put:
   summary: Update a Cluster Wiki Page
   description: |
     Updates a cluster Wiki page.
-  operationId: wikiUpdateCluster
+  operationId: updateWikiCluster
   tags:
     - Wiki
     - Clusters

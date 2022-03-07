@@ -2,7 +2,7 @@ get:
   summary: Retrieves a Group Wiki Page
   description: |
     This endpoint retrieves a group Wiki page.
-  operationId: wikiGetGroup
+  operationId: getWikiGroup
   tags:
     - Wiki
     - Groups
@@ -38,7 +38,7 @@ put:
   summary: Update a Group Wiki Page
   description: |
     Updates a group Wiki page.
-  operationId: wikiUpdateGroup
+  operationId: updateWikiGroup
   tags:
     - Wiki
     - Groups

@@ -2,7 +2,7 @@ get:
   summary: Retrieves a Cloud Wiki Page
   description: |
     This endpoint retrieves a cloud Wiki page.
-  operationId: wikiGetCloud
+  operationId: getWikiCloud
   tags:
     - Wiki
     - Clouds
@@ -38,7 +38,7 @@ put:
   summary: Update a Cloud Wiki Page
   description: |
     Updates a cloud Wiki page.
-  operationId: wikiUpdateCloud
+  operationId: updateWikiCloud
   tags:
     - Wiki
     - Clouds

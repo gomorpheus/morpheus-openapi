@@ -2,7 +2,7 @@ get:
   summary: Returns all reports
   description: |
     This endpoint returns all reports. This is results of reports that have been executed in the past.
-  operationId: reportsList
+  operationId: listReports
   tags:
     - Reports
   externalDocs:
@@ -48,7 +48,7 @@ post:
     This endpoint execute the specified report type and create a new report result.
 
     The available parameters vary by report type. Refer to the defined `inputs` for each report.
-  operationId: reportsRun
+  operationId: runReports
   tags:
     - Reports
   requestBody:
