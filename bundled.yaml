@@ -271,6 +271,75 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/activity:
+    get:
+      summary: Retrieves Activity
+      description: |
+        Retrieves activity.
+      operationId: listActivity
+      tags:
+        - Activity
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-activity
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/order'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/userId'
+        - $ref: '#/components/parameters/tenantId'
+        - name: timeframe
+          in: query
+          description: Filter by a timeframe
+          schema:
+            type: string
+            default: month
+            examples:
+              - today
+              - yesterday
+              - week
+              - month
+              - 3months
+        - name: start
+          in: query
+          description: >-
+            Filter by activity on or after a date(time). Default is 1 month
+            prior
+          schema:
+            type: string
+            format: date-time
+        - name: end
+          in: query
+          description: >-
+            Filter by activity on or before a date(time). Default is current
+            date
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/activity'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/activity'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/accounts/available-roles:
     get:
       summary: List available roles for a tenant
@@ -322,12 +391,151 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/approval-items/{id}:
+    get:
+      summary: Retrieves a Specific Approval Item
+      description: |
+        Retrieves a specific approval item.
+      operationId: getApprovalsItem
+      tags:
+        - Approvals
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-specific-approval-item
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/approvalItem'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/approvalItem'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/approval-items/{id}/{action}:
+    get:
+      summary: Updates a Specific Approval Item
+      description: |
+        Updates a specific approval item.
+      operationId: updateApprovalsItem
+      tags:
+        - Approvals
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#update-an-approval-item
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+        - $ref: '#/components/parameters/action-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/approvals:
+    get:
+      summary: Retrieves all Approvals
+      description: |
+        Retrieves all approvals.
+      operationId: listApprovals
+      tags:
+        - Approvals
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#approvals
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/approvals'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/approvals'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/approvals/{id}:
+    get:
+      summary: Retrieves a Specific Approval
+      description: |
+        Retrieves a specific approval.
+      operationId: getApprovals
+      tags:
+        - Approvals
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-specific-approval
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/approval'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/approval'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/apps/{id}/wiki:
     get:
       summary: Retrieves an App Wiki Page
       description: |
         This endpoint retrieves an app Wiki page.
-      operationId: wikiGetApp
+      operationId: getWikiApp
       tags:
         - Wiki
         - Apps
@@ -363,7 +571,7 @@ paths:
       summary: Update an App Wiki Page
       description: |
         Updates an app Wiki page.
-      operationId: wikiUpdateApp
+      operationId: updateWikiApp
       tags:
         - Wiki
         - Apps
@@ -413,12 +621,335 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/budgets:
+    get:
+      summary: Retrieves all Budgets
+      description: |
+        Retrieves all budgets.
+      operationId: listBudgets
+      tags:
+        - Budgets
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-all-budgets
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/budgets'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/budgets'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    post:
+      summary: Creates a Budget
+      description: |
+        Creates a budget.
+      operationId: addBudgets
+      tags:
+        - Budgets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - budget
+              properties:
+                budget:
+                  type: object
+                  required:
+                    - name
+                  properties:
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    scope:
+                      type: string
+                      default: account
+                      enum:
+                        - account
+                        - group
+                        - cloud
+                        - user
+                    period:
+                      type: string
+                      default: year
+                    year:
+                      type: integer
+                      format: int64
+                      example: 2020
+                    startDate:
+                      type: string
+                      format: date-time
+                    endDate:
+                      type: string
+                      format: date-time
+                    interval:
+                      type: string
+                      default: year
+                      enum:
+                        - year
+                        - quarter
+                        - month
+                    scopeTenantId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=tenant
+                    scopeGroupId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=group 
+                    scopeCloudId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=cloud
+                    scopeUserId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=user
+                    costs:
+                      type: array
+                      items:
+                        type: integer
+                        format: int64
+                      example:
+                        - 100
+                        - 100
+                        - 110
+                        - 120
+                    enabled:
+                      type: boolean
+                      default: true
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#create-a-budget
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/budget'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/budget'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/budgets/{id}:
+    get:
+      summary: Retrieves a Specific Budget
+      description: |
+        Retrieves a specific budget.
+      operationId: getBudgets
+      tags:
+        - Budgets
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-specific-budget
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/budget'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/budget'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    put:
+      summary: Updates a Budget
+      description: |
+        Updates a budget.
+      operationId: updateBudgets
+      tags:
+        - Budgets
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - budget
+              properties:
+                budget:
+                  type: object
+                  required:
+                    - name
+                  properties:
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    scope:
+                      type: string
+                      default: account
+                      enum:
+                        - account
+                        - group
+                        - cloud
+                        - user
+                    period:
+                      type: string
+                      default: year
+                    year:
+                      type: integer
+                      format: int64
+                      example: 2020
+                    startDate:
+                      type: string
+                      format: date-time
+                    endDate:
+                      type: string
+                      format: date-time
+                    interval:
+                      type: string
+                      default: year
+                      enum:
+                        - year
+                        - quarter
+                        - month
+                    scopeTenantId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=tenant
+                    scopeGroupId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=group 
+                    scopeCloudId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=cloud
+                    scopeUserId:
+                      type: integer
+                      format: int64
+                      description: |
+                        The Tenant ID to scope to, for use with ``scope``=user
+                    costs:
+                      type: array
+                      items:
+                        type: integer
+                        format: int64
+                      example:
+                        - 100
+                        - 100
+                        - 110
+                        - 120
+                    enabled:
+                      type: boolean
+                      default: true
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#updating-a-budget
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/budget'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/budget'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    delete:
+      summary: Deletes a Budget
+      description: |
+        Deletes a specified Budget.
+      operationId: removeBudget
+      tags:
+        - Budgets
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#delete-a-wiki-page
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/clusters/{id}/wiki:
     get:
       summary: Retrieves a Cluster Wiki Page
       description: |
         This endpoint retrieves a cluster Wiki page.
-      operationId: wikiGetCluster
+      operationId: getWikiCluster
       tags:
         - Wiki
         - Clusters
@@ -454,7 +985,7 @@ paths:
       summary: Update a Cluster Wiki Page
       description: |
         Updates a cluster Wiki page.
-      operationId: wikiUpdateCluster
+      operationId: updateWikiCluster
       tags:
         - Wiki
         - Clusters
@@ -593,7 +1124,7 @@ paths:
       description: >-
         Get Morpheus OpenAPI (Swagger) document as JSON. This is the same
         document that you are reading at this very moment.
-      operationId: openapi
+      operationId: docOpenapi
       tags:
         - Documentation
       security: []
@@ -628,7 +1159,7 @@ paths:
       description: >-
         Get Morpheus OpenAPI (Swagger) document as YAML. This is the same
         document that you are reading at this very moment.
-      operationId: openapiYaml
+      operationId: docOpenapiYaml
       tags:
         - Documentation
       security: []
@@ -790,7 +1321,7 @@ paths:
       summary: Retrieves a Group Wiki Page
       description: |
         This endpoint retrieves a group Wiki page.
-      operationId: wikiGetGroup
+      operationId: getWikiGroup
       tags:
         - Wiki
         - Groups
@@ -826,7 +1357,7 @@ paths:
       summary: Update a Group Wiki Page
       description: |
         Updates a group Wiki page.
-      operationId: wikiUpdateGroup
+      operationId: updateWikiGroup
       tags:
         - Wiki
         - Groups
@@ -881,7 +1412,7 @@ paths:
       summary: Retrieves an Instance Wiki Page
       description: |
         This endpoint retrieves an instance Wiki page.
-      operationId: wikiGetInstance
+      operationId: getWikiInstance
       tags:
         - Wiki
         - Instances
@@ -917,7 +1448,7 @@ paths:
       summary: Update an Instance Wiki Page
       description: |
         Updates an instance Wiki page.
-      operationId: wikiUpdateInstance
+      operationId: updateWikiInstance
       tags:
         - Wiki
         - Instances
@@ -1206,7 +1737,7 @@ paths:
         This endpoint retrieves all available report types. A report type has
         optionTypes that define the parameters available when executing a report
         of that type. The sample response has been abbreviated.
-      operationId: reportsGetType
+      operationId: getReportTypes
       tags:
         - Reports
       externalDocs:
@@ -1248,7 +1779,7 @@ paths:
       description: >
         This endpoint returns all reports. This is results of reports that have
         been executed in the past.
-      operationId: reportsList
+      operationId: listReports
       tags:
         - Reports
       externalDocs:
@@ -1299,7 +1830,7 @@ paths:
 
         The available parameters vary by report type. Refer to the defined
         `inputs` for each report.
-      operationId: reportsRun
+      operationId: runReports
       tags:
         - Reports
       requestBody:
@@ -1366,7 +1897,7 @@ paths:
         the result data as rows which can be used to render the report. Each
         report type will have sections for data and headers that vary by type,
         use Download a Specific Report to get the results organized by section.
-      operationId: reportsGet
+      operationId: getReports
       tags:
         - Reports
       externalDocs:
@@ -1396,7 +1927,7 @@ paths:
       summary: This endpoint will delete a report result
       description: |
         This endpoint will delete a report result.
-      operationId: reportsRemove
+      operationId: removeReports
       tags:
         - Reports
       externalDocs:
@@ -1428,7 +1959,7 @@ paths:
       description: >
         This endpoint downloads a specific report result as a file attachment.
         The default file format is `.json`.
-      operationId: reportsDownload
+      operationId: downloadReports
       tags:
         - Reports
       externalDocs:
@@ -1775,7 +2306,7 @@ paths:
       summary: Retrieves a Server Wiki Page
       description: |
         This endpoint retrieves a server Wiki page.
-      operationId: wikiGetServer
+      operationId: getWikiServer
       tags:
         - Wiki
         - Servers
@@ -1811,7 +2342,7 @@ paths:
       summary: Update a Server Wiki Page
       description: |
         Updates a server Wiki page.
-      operationId: wikiUpdateServer
+      operationId: updateWikiServer
       tags:
         - Wiki
         - Servers
@@ -2497,7 +3028,7 @@ paths:
         This endpoint retrieves all Wiki categories associated with the account.
         The results are not paginated. The categories returned are those of the
         found pages.
-      operationId: wikiCategories
+      operationId: getWikiCategories
       tags:
         - Wiki
       externalDocs:
@@ -2532,7 +3063,7 @@ paths:
       summary: Retrieves wiki pages associated with the account.
       description: |
         This endpoint retrieves wiki pages associated with the account.
-      operationId: wikiList
+      operationId: listWiki
       tags:
         - Wiki
       externalDocs:
@@ -2566,7 +3097,7 @@ paths:
       summary: Create a Wiki Page
       description: |
         Creates a Wiki Page
-      operationId: wikiAdd
+      operationId: addWiki
       tags:
         - Wiki
       requestBody:
@@ -2622,7 +3153,7 @@ paths:
       summary: Retrieves a specific Wiki page
       description: |
         This endpoint retrieves a specific wiki page.
-      operationId: wikiGet
+      operationId: getWiki
       tags:
         - Wiki
       externalDocs:
@@ -2655,7 +3186,7 @@ paths:
       summary: Updates a Wiki Page
       description: |
         Updates a Wiki Page
-      operationId: wikiUpdate
+      operationId: updateWiki
       tags:
         - Wiki
       parameters:
@@ -2706,7 +3237,7 @@ paths:
       summary: Deletes a Wiki Page
       description: |
         Deletes the specified Wiki page.
-      operationId: wikiRemove
+      operationId: removeWiki
       tags:
         - Wiki
       externalDocs:
@@ -2737,7 +3268,7 @@ paths:
       summary: Retrieves a Cloud Wiki Page
       description: |
         This endpoint retrieves a cloud Wiki page.
-      operationId: wikiGetCloud
+      operationId: getWikiCloud
       tags:
         - Wiki
         - Clouds
@@ -2773,7 +3304,7 @@ paths:
       summary: Update a Cloud Wiki Page
       description: |
         Updates a cloud Wiki page.
-      operationId: wikiUpdateCloud
+      operationId: updateWikiCloud
       tags:
         - Wiki
         - Clouds
@@ -2844,7 +3375,7 @@ paths:
 
         This will render your current access token invalid, so you will need to
         update any scripts relying on it.
-      operationId: accessTokenGet
+      operationId: getAccessToken
       tags:
         - Authentication
       security: []
@@ -2976,12 +3507,45 @@ components:
       required: true
       schema:
         type: number
+    order:
+      name: order
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      schema:
+        type: string
+        default: asc
+        enum:
+          - asc
+          - desc
     name:
       name: name
       in: query
       description: If specified will return an exact match on name
       schema:
         type: string
+    userId:
+      name: userId
+      in: query
+      description: Filter by User ID
+      schema:
+        type: number
+    tenantId:
+      name: tenantId
+      in: query
+      description: Filter by Tenant ID. Only available to the master account.
+      schema:
+        type: number
+    action-path:
+      name: action
+      in: path
+      description: Approval Action Item
+      required: true
+      schema:
+        type: string
+        enum:
+          - approve
+          - deny
+          - cancel
     code:
       name: code
       in: query
@@ -3230,6 +3794,302 @@ components:
             Validation errors, with a key for Object containing error messages
             for each invalid parameter (key)
           nullable: true
+    activity:
+      title: 200 Activity
+      type: object
+      properties:
+        activity:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+              success:
+                type: boolean
+              activityType:
+                type: string
+              name:
+                type: string
+              message:
+                type: string
+              objectType:
+                type: string
+              objectId:
+                type: integer
+                format: int32
+              user:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                  username:
+                    type: string
+              ts:
+                type: string
+                format: date-time
+        meta:
+          type: object
+          properties:
+            size:
+              type: integer
+              format: int32
+            total:
+              type: integer
+              format: int32
+            max:
+              type: integer
+              format: int32
+            offset:
+              type: integer
+              format: int32
+            startDate:
+              type: string
+              format: date-time
+            endDate:
+              type: string
+              format: date-time
+    approvalItem:
+      title: 200 Approval Item
+      type: object
+      properties:
+        approvalItem:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+            externalId:
+              type: string
+              format: nullable
+            externalName:
+              type: string
+              format: nullable
+            internalId:
+              type: string
+              format: nullable
+            approvedBy:
+              type: string
+            deniedBy:
+              type: string
+              format: nullable
+            status:
+              type: string
+            errorMessage:
+              type: string
+              format: nullable
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+            dateApproved:
+              type: string
+              format: date-time
+            dateDenied:
+              type: string
+              format: nullable
+            approval:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+            reference:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                type:
+                  type: string
+                name:
+                  type: string
+                displayName:
+                  type: string
+    200-success:
+      title: 200 Success
+      type: object
+      properties:
+        success:
+          type: boolean
+    approvals:
+      title: 200 Approvals
+      type: object
+      properties:
+        approvals:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int32
+              name:
+                type: string
+              internalId:
+                type: string
+                format: nullable
+              externalId:
+                type: string
+                format: nullable
+              externalName:
+                type: string
+                format: nullable
+              requestType:
+                type: string
+              account:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                  name:
+                    type: string
+              approver:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                  name:
+                    type: string
+              accountIntegration:
+                type: string
+                format: nullable
+              status:
+                type: string
+              errorMessage:
+                type: string
+                format: nullable
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+              requestBy:
+                type: string
+        meta:
+          $ref: '#/components/schemas/MetaObject'
+    approval:
+      title: 200 Approval
+      type: object
+      properties:
+        approval:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+            internalId:
+              type: string
+              format: nullable
+            externalId:
+              type: string
+              format: nullable
+            externalName:
+              type: string
+              format: nullable
+            requestType:
+              type: string
+            account:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                name:
+                  type: string
+            approver:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                name:
+                  type: string
+            accountIntegration:
+              type: string
+              format: nullable
+            status:
+              type: string
+            errorMessage:
+              type: string
+              format: nullable
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+            requestBy:
+              type: string
+            approvalItems:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                  name:
+                    type: string
+                  externalId:
+                    type: string
+                    format: nullable
+                  externalName:
+                    type: string
+                    format: nullable
+                  internalId:
+                    type: string
+                    format: nullable
+                  approvedBy:
+                    type: string
+                  deniedBy:
+                    type: string
+                    format: nullable
+                  status:
+                    type: string
+                  errorMessage:
+                    type: string
+                    format: nullable
+                  dateCreated:
+                    type: string
+                    format: date-time
+                  lastUpdated:
+                    type: string
+                    format: date-time
+                  dateApproved:
+                    type: string
+                    format: date-time
+                  dateDenied:
+                    type: string
+                    format: nullable
+                  approval:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int32
+                  reference:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int32
+                      type:
+                        type: string
+                      name:
+                        type: string
+                      displayName:
+                        type: string
     wikiPage:
       title: 200 Wiki Page
       type: object
@@ -3328,6 +4188,246 @@ components:
               format: date-time
         success:
           type: boolean
+    budgets:
+      title: 200 Budgets
+      type: object
+      properties:
+        budgets:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              name:
+                type: string
+              description:
+                type: string
+                format: nullable
+              account:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  name:
+                    type: string
+              enabled:
+                type: boolean
+              refScope:
+                type: string
+              refType:
+                type: string
+              refId:
+                type: integer
+                format: int64
+              refName:
+                type: string
+              period:
+                type: string
+              year:
+                type: string
+              resourceType:
+                type: string
+              timezone:
+                type: string
+              startDate:
+                type: string
+                format: date-time
+              endDate:
+                type: string
+                format: date-time
+              interval:
+                type: string
+              costs:
+                type: array
+                items:
+                  type: integer
+                  format: int64
+              isFiscal:
+                type: boolean
+              averageCost:
+                type: integer
+                format: int64
+              totalCost:
+                type: integer
+                format: int64
+              currency:
+                type: string
+              rollover:
+                type: boolean
+              warningLimit:
+                type: string
+                format: nullable
+              overLimit:
+                type: string
+                format: nullable
+              externalId:
+                type: string
+                format: nullable
+              internalId:
+                type: string
+                format: nullable
+              createdById:
+                type: integer
+                format: int64
+              createdByName:
+                type: string
+              updatedById:
+                type: string
+                format: nullable
+              updatedByName:
+                type: string
+                format: nullable
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+        meta:
+          $ref: '#/components/schemas/MetaObject'
+    budget:
+      title: 200 Budget
+      type: object
+      properties:
+        success:
+          type: boolean
+        budget:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            description:
+              type: string
+              format: nullable
+            account:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+            enabled:
+              type: boolean
+            refScope:
+              type: string
+            refType:
+              type: string
+            refId:
+              type: integer
+              format: int64
+            refName:
+              type: string
+            period:
+              type: string
+            year:
+              type: string
+            resourceType:
+              type: string
+            timezone:
+              type: string
+            startDate:
+              type: string
+              format: date-time
+            endDate:
+              type: string
+              format: date-time
+            interval:
+              type: string
+            costs:
+              type: array
+              items:
+                type: integer
+                format: int64
+            isFiscal:
+              type: boolean
+            averageCost:
+              type: integer
+              format: int64
+            totalCost:
+              type: integer
+              format: int64
+            currency:
+              type: string
+            rollover:
+              type: boolean
+            warningLimit:
+              type: string
+              format: nullable
+            overLimit:
+              type: string
+              format: nullable
+            externalId:
+              type: string
+              format: nullable
+            internalId:
+              type: string
+              format: nullable
+            createdById:
+              type: integer
+              format: int64
+            createdByName:
+              type: string
+            updatedById:
+              type: string
+              format: nullable
+            updatedByName:
+              type: string
+              format: nullable
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+            stats:
+              type: object
+              properties:
+                currency:
+                  type: string
+                conversionRate:
+                  type: integer
+                  format: int64
+                intervals:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      index:
+                        type: integer
+                        format: int64
+                      month:
+                        type: string
+                      shortName:
+                        type: string
+                      chartName:
+                        type: string
+                      budget:
+                        type: integer
+                        format: int64
+                      cost:
+                        type: number
+                      startDate:
+                        type: string
+                        format: date-time
+                      endDate:
+                        type: string
+                        format: date-time
+                current:
+                  type: object
+                  properties:
+                    estimatedCost:
+                      type: string
+                      format: nullable
+                    lastCost:
+                      type: string
+                      format: nullable
     dashboard:
       title: 200 Dashboard
       type: object
@@ -3819,12 +4919,6 @@ components:
                     type: string
         meta:
           $ref: '#/components/schemas/MetaObject'
-    200-success:
-      title: 200 Success
-      type: object
-      properties:
-        success:
-          type: boolean
     Role:
       type: object
       description: Role Object
@@ -4282,6 +5376,254 @@ components:
           type: string
           description: Scope granted
   examples:
+    activity:
+      summary: Activity Response
+      value:
+        activity:
+          - _id: a1f0e20c-8d56-4b53-8dd0-a8444d7bc875
+            success: true
+            activityType: Alert
+            name: MRDMMON1014
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18217
+            user:
+              id: 263
+              username: Martez Reed
+            ts: '2022-03-07T03:27:06Z'
+          - _id: e99b092c-c0b0-43b0-b50b-8f6697faeaf0
+            success: true
+            activityType: Alert
+            name: MRDMMON1014
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 219679
+            user: null
+            ts: '2022-03-07T03:27:06Z'
+          - _id: 7e03abb2-be1e-4424-8749-c29bd6646e24
+            success: true
+            activityType: Provisioning
+            name: MRDMMON1015
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18218
+            user: null
+            ts: '2022-03-07T03:22:07Z'
+          - _id: 1782bcbc-a5b3-4ca8-8d40-de5d9f52c6ab
+            success: true
+            activityType: Alert
+            name: MRDMMON1013
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18216
+            user:
+              id: 263
+              username: Martez Reed
+            ts: '2022-03-07T02:03:34Z'
+          - _id: 00e59d56-ac20-44d2-8e11-82068bf937cd
+            success: true
+            activityType: Alert
+            name: MRDMMON1013
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 219664
+            user: null
+            ts: '2022-03-07T02:03:34Z'
+          - _id: 7f6e31b5-ba2d-4287-b2ee-3444abb92e44
+            success: true
+            activityType: Provisioning
+            name: MRDMMON1014
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18217
+            user: null
+            ts: '2022-03-07T02:03:21Z'
+          - _id: 1c84ff12-9059-45a8-8861-11451cac8f93
+            success: true
+            activityType: Provisioning
+            name: MRDMMON1013
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18216
+            user: null
+            ts: '2022-03-07T01:43:39Z'
+          - _id: ca165d7c-7e9c-4d1f-9d66-58a3a17760d2
+            success: true
+            activityType: Alert
+            name: MRDMMON1012
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18215
+            user:
+              id: 263
+              username: Martez Reed
+            ts: '2022-03-07T01:35:26Z'
+          - _id: 8271f55c-f83e-4e38-814e-551b87c3e275
+            success: true
+            activityType: Alert
+            name: MRDMMON1012
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 219644
+            user: null
+            ts: '2022-03-07T01:35:26Z'
+          - _id: 308effe8-6fe0-4199-b328-7e8c722dd423
+            success: true
+            activityType: Provisioning
+            name: MRDMMON1012
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18215
+            user: null
+            ts: '2022-03-07T01:11:15Z'
+          - _id: cbac4882-368c-471b-9da2-a3befc38833a
+            success: true
+            activityType: Alert
+            name: JSDMAPA1056
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18210
+            user: null
+            ts: '2022-03-06T18:26:59Z'
+          - _id: eb13c0c0-accf-46e3-bc59-d83d1bc0ebf5
+            success: false
+            activityType: Alert
+            name: apache_570231
+            message: Check has successfully been deleted by 'Morpheus.
+            objectType: MonitorCheck
+            objectId: 15090
+            user: null
+            ts: '2022-03-06T18:26:45Z'
+          - _id: faed6625-fad4-4727-8db8-e909f687a1b9
+            success: true
+            activityType: Alert
+            name: JWDMAPA1036
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18209
+            user: null
+            ts: '2022-03-06T18:01:47Z'
+          - _id: faa5bd5a-ca09-451a-a819-b8874531e5f9
+            success: false
+            activityType: Alert
+            name: apache_570158
+            message: Check has successfully been deleted by 'Morpheus.
+            objectType: MonitorCheck
+            objectId: 15089
+            user: null
+            ts: '2022-03-06T18:01:45Z'
+          - _id: 632984a3-3a37-4676-b8f9-d3f6e767de76
+            success: true
+            activityType: Alert
+            name: TGDMCEN1031
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 219302
+            user: null
+            ts: '2022-03-05T13:36:07Z'
+          - _id: b0480ce4-fc7c-4ce3-b164-7c188b15a0b0
+            success: true
+            activityType: Alert
+            name: TGDMCEN1031
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18198
+            user: null
+            ts: '2022-03-05T13:36:03Z'
+          - _id: 09adcc9a-6a98-4cb6-a704-3a449f49792c
+            success: false
+            activityType: Alert
+            name: TGDMCEN1031
+            message: Check has successfully been deleted by 'Morpheus.
+            objectType: MonitorCheck
+            objectId: 15078
+            user: null
+            ts: '2022-03-05T13:35:57Z'
+          - _id: 454779b8-2fdc-4e07-865c-74e442346541
+            success: true
+            activityType: Alert
+            name: ASDMAPA1139
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18211
+            user:
+              id: 223
+              username: ashildmyer
+            ts: '2022-03-04T20:32:49Z'
+          - _id: 739b3b25-8653-45ad-a409-736a710067ba
+            success: true
+            activityType: Alert
+            name: ASDMAPA1139
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 219554
+            user: null
+            ts: '2022-03-04T20:32:49Z'
+          - _id: e2b1a9a7-9710-49cd-a3af-32e857d1a748
+            success: true
+            activityType: Alert
+            name: ASDMAPA1140
+            message: Instance has successfully been deleted by 'Morpheus'.
+            objectType: Instance
+            objectId: 18212
+            user:
+              id: 223
+              username: ashildmyer
+            ts: '2022-03-04T20:32:38Z'
+          - _id: 1678bcbb-9aa1-4cb4-9370-7b7b7aa4e66d
+            success: true
+            activityType: Alert
+            name: ASDMAPA1140
+            message: Server has successfully been deleted by 'Morpheus'.
+            objectType: ComputeServer
+            objectId: 219555
+            user: null
+            ts: '2022-03-04T20:32:38Z'
+          - _id: 07d8e2bf-097a-406f-8e80-d53123829ef0
+            success: false
+            activityType: Alert
+            name: ASDMAPA1140
+            message: Check has successfully been deleted by 'Morpheus.
+            objectType: MonitorCheck
+            objectId: 15092
+            user: null
+            ts: '2022-03-04T20:32:35Z'
+          - _id: e37af2e4-2532-4522-ad63-d29bb852bf43
+            success: false
+            activityType: Alert
+            name: ASDMAPA1139
+            message: Check has successfully been deleted by 'Morpheus.
+            objectType: MonitorCheck
+            objectId: 15091
+            user: null
+            ts: '2022-03-04T20:32:35Z'
+          - _id: 3301a6fe-9cb9-42a2-9db7-246457ed6ee3
+            success: true
+            activityType: Provisioning
+            name: ASDMAPA1140
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18212
+            user: null
+            ts: '2022-03-04T20:13:11Z'
+          - _id: 7db55f27-437d-4a38-b968-3f6540e86c88
+            success: true
+            activityType: Provisioning
+            name: ASDMAPA1139
+            message: New instance has successfully been created by Morpheus.
+            objectType: Instance
+            objectId: 18211
+            user:
+              id: 223
+              username: ashildmyer
+            ts: '2022-03-04T20:08:59Z'
+        meta:
+          size: 25
+          total: 999
+          max: 25
+          offset: 0
+          startDate: '2022-02-07T00:00:00Z'
+          endDate: '2022-03-07T03:38:50Z'
     ListTenantsAvailableRoles:
       summary: Available Tenant Roles
       value:
@@ -4309,6 +5651,100 @@ components:
             dateCreated: 2016-12-13T16:38:16+0000
             lastUpdated: 2016-12-14T23:39:05+0000
         meta: null
+    approvalItem:
+      summary: Approval Items Response
+      value:
+        approvalItem:
+          id: 13
+          name: ITEM-0000013
+          externalId: null
+          externalName: null
+          internalId: null
+          approvedBy: Aaron Reid
+          deniedBy: null
+          status: approved
+          errorMessage: null
+          dateCreated: '2022-01-25T21:43:35Z'
+          lastUpdated: '2022-01-25T21:44:01Z'
+          dateApproved: '2022-01-25T21:44:01Z'
+          dateDenied: null
+          approval:
+            id: 45
+          reference:
+            id: 17901
+            type: instance
+            name: ARDMCEN1280
+            displayName: ARDMCEN1280
+    approvals:
+      summary: Approvals Response
+      valuel:
+        approvals:
+          - id: 45
+            name: APPROVAL-0000045
+            internalId: null
+            externalId: null
+            externalName: null
+            requestType: Instance Approval
+            account:
+              id: 3
+              name: Morpheus
+            approver:
+              id: 3
+              name: Morpheus
+            accountIntegration: null
+            status: 1 approved
+            errorMessage: null
+            dateCreated: '2022-01-25T21:43:35Z'
+            lastUpdated: '2022-01-27T00:14:27Z'
+            requestBy: Aaron Reid
+        meta:
+          size: 1
+          total: 1
+          max: 25
+          offset: 0
+    approval:
+      summary: Approval Response
+      value:
+        approval:
+          id: 45
+          name: APPROVAL-0000045
+          internalId: null
+          externalId: null
+          externalName: null
+          requestType: Instance Approval
+          account:
+            id: 3
+            name: Morpheus
+          approver:
+            id: 3
+            name: Morpheus
+          accountIntegration: null
+          status: 1 approved
+          errorMessage: null
+          dateCreated: '2022-01-25T21:43:35Z'
+          lastUpdated: '2022-01-27T00:14:27Z'
+          requestBy: Aaron Reid
+          approvalItems:
+            - id: 13
+              name: ITEM-0000013
+              externalId: null
+              externalName: null
+              internalId: null
+              approvedBy: Aaron Reid
+              deniedBy: null
+              status: approved
+              errorMessage: null
+              dateCreated: '2022-01-25T21:43:35Z'
+              lastUpdated: '2022-01-25T21:44:01Z'
+              dateApproved: '2022-01-25T21:44:01Z'
+              dateDenied: null
+              approval:
+                id: 45
+              reference:
+                id: 17901
+                type: instance
+                name: ARDMCEN1280
+                displayName: ARDMCEN1280
     wikiPage:
       summary: Wiki Response
       value:
@@ -4354,6 +5790,621 @@ components:
           dateCreated: '2022-03-04T02:39:34Z'
           lastUpdated: '2022-03-04T02:39:34Z'
         success: true
+    budgets:
+      summary: Budgets Response
+      value:
+        budgets:
+          - id: 8
+            name: Adam H
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: user
+            refType: User
+            refId: 4
+            refName: ahicks
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+            isFiscal: false
+            averageCost: 1000
+            totalCost: 12000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 4
+            createdByName: Adam Hicks
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2021-03-05T19:54:00Z'
+            lastUpdated: '2021-03-05T19:54:00Z'
+          - id: 9
+            name: AWS monthly spend
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: cloud
+            refType: ComputeZone
+            refId: 12
+            refName: AWS
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+              - 1000
+            isFiscal: false
+            averageCost: 1000
+            totalCost: 12000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 253
+            createdByName: Anish Abraham
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2021-04-08T14:30:29Z'
+            lastUpdated: '2021-04-08T14:30:29Z'
+          - id: 3
+            name: AWS Spend
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: cloud
+            refType: ComputeZone
+            refId: 12
+            refName: AWS
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+              - 10000
+            isFiscal: false
+            averageCost: 10000
+            totalCost: 120000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 5
+            createdByName: David Estes
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2019-04-17T16:34:52Z'
+            lastUpdated: '2021-03-25T20:49:37Z'
+          - id: 5
+            name: Azure Spend
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: cloud
+            refType: ComputeZone
+            refId: 121
+            refName: Azure US
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+              - 2500
+            isFiscal: false
+            averageCost: 2500
+            totalCost: 30000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 2
+            createdByName: Jeff Wheeler
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2020-07-24T04:42:42Z'
+            lastUpdated: '2021-06-15T17:46:24Z'
+          - id: 1
+            name: Demo Budget
+            description: Demo Budget
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: account
+            refType: null
+            refId: null
+            refName: Morpheus
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+              - 25000
+            isFiscal: false
+            averageCost: 25000
+            totalCost: 300000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 2
+            createdByName: Jeff Wheeler
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2019-04-09T09:21:16Z'
+            lastUpdated: '2021-03-25T20:50:46Z'
+          - id: 10
+            name: DZ-VMware Budget
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: cloud
+            refType: ComputeZone
+            refId: 138
+            refName: VMware Demo Cluster
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+            isFiscal: false
+            averageCost: 5000
+            totalCost: 60000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 219
+            createdByName: Dave Zenz
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2021-04-16T02:07:56Z'
+            lastUpdated: '2021-04-16T02:07:56Z'
+          - id: 7
+            name: Google Spend
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: cloud
+            refType: ComputeZone
+            refId: 143
+            refName: Google Labs
+            period: year
+            year: '2020'
+            resourceType: all
+            timezone: UTC
+            startDate: '2020-01-01T00:00:00Z'
+            endDate: '2020-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+            isFiscal: false
+            averageCost: 0
+            totalCost: 0
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 212
+            createdByName: Karl Rabe
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2020-12-01T20:34:45Z'
+            lastUpdated: '2020-12-01T20:34:59Z'
+          - id: 11
+            name: hank-test-budget
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: user
+            refType: User
+            refId: 275
+            refName: Hank Pike
+            period: year
+            year: '2021'
+            resourceType: all
+            timezone: UTC
+            startDate: '2021-01-01T00:00:00Z'
+            endDate: '2021-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 0
+              - 5
+              - 0
+              - 0.01
+              - 0
+              - 0
+              - 0
+            isFiscal: false
+            averageCost: 0.4175
+            totalCost: 5.01
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 275
+            createdByName: Hank Pike
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2021-09-14T02:18:47Z'
+            lastUpdated: '2021-09-14T02:18:47Z'
+          - id: 4
+            name: Pied Piper
+            description: null
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: tenant
+            refType: Account
+            refId: 5
+            refName: Pied Piper
+            period: year
+            year: '2020'
+            resourceType: all
+            timezone: UTC
+            startDate: '2020-01-01T00:00:00Z'
+            endDate: '2020-12-31T23:59:59Z'
+            interval: month
+            costs:
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+              - 100
+            isFiscal: false
+            averageCost: 100
+            totalCost: 1200
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 2
+            createdByName: Jeff Wheeler
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2020-03-31T15:52:37Z'
+            lastUpdated: '2020-03-31T15:52:37Z'
+          - id: 2
+            name: Production Group
+            description: Production Group
+            account:
+              id: 3
+              name: Morpheus
+            enabled: true
+            refScope: group
+            refType: ComputeSite
+            refId: 50
+            refName: Production
+            period: year
+            year: '2020'
+            resourceType: all
+            timezone: UTC
+            startDate: '2020-01-01T00:00:00Z'
+            endDate: '2020-12-31T23:59:59Z'
+            interval: quarter
+            costs:
+              - 5000
+              - 5000
+              - 5000
+              - 5000
+            isFiscal: false
+            averageCost: 5000
+            totalCost: 20000
+            currency: USD
+            rollover: false
+            warningLimit: null
+            overLimit: null
+            externalId: null
+            internalId: null
+            createdById: 2
+            createdByName: Jeff Wheeler
+            updatedById: null
+            updatedByName: null
+            dateCreated: '2019-04-12T18:33:17Z'
+            lastUpdated: '2020-06-02T22:17:29Z'
+        meta:
+          size: 10
+          total: 10
+          offset: 0
+          max: 25
+    budget:
+      summary: Budgets Response
+      value:
+        success: true
+        budget:
+          id: 8
+          name: Adam H
+          description: null
+          account:
+            id: 3
+            name: Morpheus
+          enabled: true
+          refScope: user
+          refType: User
+          refId: 4
+          refName: ahicks
+          period: year
+          year: '2021'
+          resourceType: all
+          timezone: UTC
+          startDate: '2021-01-01T00:00:00Z'
+          endDate: '2021-12-31T23:59:59Z'
+          interval: month
+          costs:
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+            - 1000
+          isFiscal: false
+          averageCost: 1000
+          totalCost: 12000
+          currency: USD
+          rollover: false
+          warningLimit: null
+          overLimit: null
+          externalId: null
+          internalId: null
+          createdById: 4
+          createdByName: Adam Hicks
+          updatedById: null
+          updatedByName: null
+          dateCreated: '2021-03-05T19:54:00Z'
+          lastUpdated: '2021-03-05T19:54:00Z'
+          stats:
+            currency: USD
+            conversionRate: 1
+            intervals:
+              - index: 1
+                month: january
+                shortName: jan
+                chartName: jan
+                budget: 1000
+                cost: 884.773840967118
+                startDate: '2021-01-01T00:00:00Z'
+                endDate: '2021-01-31T23:59:59Z'
+              - index: 2
+                month: february
+                shortName: feb
+                chartName: feb
+                budget: 1000
+                cost: 1240.8496766124817
+                startDate: '2021-02-01T00:00:00Z'
+                endDate: '2021-02-28T23:59:59Z'
+              - index: 3
+                month: march
+                shortName: mar
+                chartName: mar
+                budget: 1000
+                cost: 1565.7323574072502
+                startDate: '2021-03-01T00:00:00Z'
+                endDate: '2021-03-31T23:59:59Z'
+              - index: 4
+                month: april
+                shortName: apr
+                chartName: apr
+                budget: 1000
+                cost: 1677.0989975803122
+                startDate: '2021-04-01T00:00:00Z'
+                endDate: '2021-04-30T23:59:59Z'
+              - index: 5
+                month: may
+                shortName: may
+                chartName: may
+                budget: 1000
+                cost: 1419.696091726683
+                startDate: '2021-05-01T00:00:00Z'
+                endDate: '2021-05-31T23:59:59Z'
+              - index: 6
+                month: june
+                shortName: jun
+                chartName: jun
+                budget: 1000
+                cost: 1679.3112808045264
+                startDate: '2021-06-01T00:00:00Z'
+                endDate: '2021-06-30T23:59:59Z'
+              - index: 7
+                month: july
+                shortName: jul
+                chartName: jul
+                budget: 1000
+                cost: 435.9711428389873
+                startDate: '2021-07-01T00:00:00Z'
+                endDate: '2021-07-31T23:59:59Z'
+              - index: 8
+                month: august
+                shortName: aug
+                chartName: aug
+                budget: 1000
+                cost: 582.1822446573134
+                startDate: '2021-08-01T00:00:00Z'
+                endDate: '2021-08-31T23:59:59Z'
+              - index: 9
+                month: september
+                shortName: sep
+                chartName: sep
+                budget: 1000
+                cost: 0
+                startDate: '2021-09-01T00:00:00Z'
+                endDate: '2021-09-30T23:59:59Z'
+              - index: 10
+                month: october
+                shortName: oct
+                chartName: oct
+                budget: 1000
+                cost: 0
+                startDate: '2021-10-01T00:00:00Z'
+                endDate: '2021-10-31T23:59:59Z'
+              - index: 11
+                month: november
+                shortName: nov
+                chartName: nov
+                budget: 1000
+                cost: 0
+                startDate: '2021-11-01T00:00:00Z'
+                endDate: '2021-11-30T23:59:59Z'
+              - index: 12
+                month: december
+                shortName: dec
+                chartName: dec
+                budget: 1000
+                cost: 0
+                startDate: '2021-12-01T00:00:00Z'
+                endDate: '2021-12-31T23:59:59Z'
+            current:
+              estimatedCost: null
+              lastCost: null
     dashboard:
       summary: Dashboard Response
       value:

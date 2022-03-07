@@ -18,16 +18,10 @@ get:
     - $ref: ../components/parameters/tenantId.yaml
     - name: timeframe
       in: query
-      description: Filter by a timeframe
+      description: Filter by a timeframe (ex - today, yesterday, week, month, 3months)
       schema:
         type: string
         default: month
-        examples:
-          - today
-          - yesterday
-          - week
-          - month
-          - 3months
     - name: start
       in: query
       description: Filter by activity on or after a date(time). Default is 1 month prior

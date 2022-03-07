@@ -83,6 +83,8 @@ paths:
     $ref: paths/api@servers@{id}@wiki.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
+  /api/usage:
+    $ref: paths/api@usage.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
