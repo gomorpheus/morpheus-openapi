@@ -1,0 +1,22 @@
+title: Hub Login Object
+type: object
+properties:
+  description: >-
+    Object for logging in to the [Morpheus
+    Hub](https://morpheushub.com) with existing credentials.
+    This is only required for `hubmode=login`.
+  type: object
+  required:
+    - email
+    - password
+  properties:
+    email:
+      type: string
+      description: Email for existing Morpheus Hub user
+    password:
+      type: string
+      format: password
+      description: Password for existing Morpheus Hub user
+  example:
+    email: tanderson@mccorp.com
+    password: YourExistingHubPassword

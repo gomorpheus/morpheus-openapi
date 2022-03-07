@@ -66,57 +66,15 @@ post:
                 - login
               default: skip
             hub:
-              oneOf:
-                - description: >-
-                    Object for logging in to the [Morpheus
-                    Hub](https://morpheushub.com) with existing credentials.
-                    This is only required for `hubmode=login`.
-                  type: object
-                  properties:
-                    email:
-                      type: string
-                      description: Email for existing Morpheus Hub user
-                    password:
-                      type: string
-                      format: password
-                      description: Password for existing Morpheus Hub user
-                  example:
-                    email: tanderson@mccorp.com
-                    password: YourExistingHubPassword
-                - description: >-
-                    Object for registering with the [Morpheus
-                    Hub](https://morpheushub.com). This is only required for
-                    `hubmode=register`.
-                  type: object
-                  properties:
-                    accountName:
-                      type: string
-                      description: Company Name for new Morpheus Hub organization
-                    firstName:
-                      type: string
-                      description: First Name for new Morpheus Hub user
-                    lastName:
-                      type: string
-                      description: Last Name for new Morpheus Hub user
-                    email:
-                      type: string
-                      description: Email for new Morpheus Hub user
-                    password:
-                      type: string
-                      format: password
-                      description: Password for new Morpheus Hub user
-                  example:
-                    accountName: Meta Cortex Corporation
-                    firstName: Thomas
-                    lastName: Anderson
-                    email: tanderson@mccorp.com
-                    username: tanderson
-                    password: AGoodPasswordForNewHubAccount
-              discriminator:
-                propertyName: hubmode
-                mapping:
-                  login: '#/components/schemas/HubLoginObject'
-                  register: '#/components/schemas/HubRegisterObject'
+              schema:
+                oneOf:
+                  - $ref: ../components/schemas/hubLoginObject.yaml
+                  - $ref: ../components/schemas/hubRegisterObject.yaml
+                discriminator:
+                  propertyName: hubmode
+                  mapping:
+                    login: ../components/schemas/hubLoginObject.yaml
+                    register: ../components/schemas/hubRegisterObject.yaml
         examples:
           setup:
             summary: Setup appliance
@@ -214,8 +172,8 @@ post:
                     default: https://morpheushub.com
             example:
               success: true
-              buildVersion: 5.4.4.876
-              applianceUrl: https://morpheus.bungebash.com/
+              buildVersion: 5.4.4
+              applianceUrl: https://matrix.morpheusdata.com/
               environment: production
               setupNeeded: false
     '400':
