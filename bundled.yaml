@@ -1873,26 +1873,32 @@ paths:
           description: Service Unavailable.
   /api/provision-types/{id}:
     get:
-      summary: Retrieves a Specific Provision Type
+      summary: Retrieves all Provision Types
       description: |
-        Retrieves a specific provision type.
-      operationId: getProvisionTypes
+        Retrieves all provision types.
+      operationId: listProvisionTypes
       tags:
         - Provisioning
       externalDocs:
-        url: https://apidocs.morpheusdata.com/#get-specific-provision-type
+        url: https://apidocs.morpheusdata.com/#get-all-provision-types
       parameters:
-        - $ref: '#/components/parameters/id-path'
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/code'
       responses:
         '200':
           description: Successful Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/provisionType'
+                $ref: '#/components/schemas/provisionTypes'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/provisionType'
+                  $ref: '#/components/examples/provisionTypes'
         '400':
           description: Bad Request.
         '401':
@@ -2636,115 +2642,22 @@ paths:
                     - login
                   default: skip
                 hub:
-                  oneOf:
-                    - description: >-
-                        Object for logging in to the [Morpheus
-                        Hub](https://morpheushub.com) with existing credentials.
-                        This is only required for `hubmode=login`.
-                      type: object
-                      properties:
-                        email:
-                          type: string
-                          description: Email for existing Morpheus Hub user
-                        password:
-                          type: string
-                          format: password
-                          description: Password for existing Morpheus Hub user
-                      example:
-                        email: tanderson@mccorp.com
-                        password: YourExistingHubPassword
-                    - description: >-
-                        Object for registering with the [Morpheus
-                        Hub](https://morpheushub.com). This is only required for
-                        `hubmode=register`.
-                      type: object
-                      properties:
-                        accountName:
-                          type: string
-                          description: Company Name for new Morpheus Hub organization
-                        firstName:
-                          type: string
-                          description: First Name for new Morpheus Hub user
-                        lastName:
-                          type: string
-                          description: Last Name for new Morpheus Hub user
-                        email:
-                          type: string
-                          description: Email for new Morpheus Hub user
-                        password:
-                          type: string
-                          format: password
-                          description: Password for new Morpheus Hub user
-                      example:
-                        accountName: Meta Cortex Corporation
-                        firstName: Thomas
-                        lastName: Anderson
-                        email: tanderson@mccorp.com
-                        username: tanderson
-                        password: AGoodPasswordForNewHubAccount
-                  discriminator:
-                    propertyName: hubmode
-                    mapping:
-                      login: '#/components/schemas/HubLoginObject'
-                      register: '#/components/schemas/HubRegisterObject'
+                  schema:
+                    oneOf:
+                      - $ref: ../components/schemas/hubLoginObject.yaml
+                      - $ref: ../components/schemas/hubRegisterObject.yaml
+                    discriminator:
+                      propertyName: hubmode
+                      mapping:
+                        login: ../components/schemas/hubLoginObject.yaml
+                        register: ../components/schemas/hubRegisterObject.yaml
             examples:
               setup:
-                summary: Setup appliance
-                value:
-                  accountName: Meta Cortex Corporation
-                  firstName: Thomas
-                  lastName: Anderson
-                  email: tanderson@mccorp.com
-                  username: tanderson
-                  password: QnW}cg}8}<~:P9YU
-                description: >
-                  This example initializes the appliance and without connecting
-                  to the [Morpheus Hub](https://morpheushub.com).
-
-                  A license key will need to be installed manually.
+                $ref: '#/components/examples/setup'
               setupWithHubRegistration:
-                summary: Setup appliance with Hub Registration
-                description: >
-                  This example initializes the appliance and connects to the
-                  [Morpheus Hub](https://morpheushub.com) to create and register
-                  a new hub account. 
-
-                  This automatically retrieves a new Community Edition License
-                  from the Hub and installs it in your appliance.
-                value:
-                  accountName: Meta Cortex Corporation
-                  firstName: Thomas
-                  lastName: Anderson
-                  email: tanderson@mccorp.com
-                  username: tanderson
-                  password: QnW}cg}8}<~:P9YU
-                  hubmode: register
-                  hub:
-                    accountName: Meta Cortex Corporation
-                    firstName: Thomas
-                    lastName: Anderson
-                    email: tanderson@mccorp.com
-                    password: AGoodPasswordForNewHubAccount
+                $ref: '#/components/examples/hubRegisterObject'
               setupWithHubLogin:
-                summary: Setup appliance with Hub Login
-                description: >
-                  This example initializes the appliance and connects to the
-                  [Morpheus Hub](https://morpheushub.com) using an existing hub
-                  account.
-
-                  This automatically retrieves a new Community Edition License
-                  from the Hub and installs it in your appliance.
-                value:
-                  accountName: Meta Cortex Corporation
-                  firstName: Thomas
-                  lastName: Anderson
-                  email: tanderson@mccorp.com
-                  username: tanderson
-                  password: QnW}cg}8}<~:P9YU
-                  hubmode: login
-                  hub:
-                    email: tanderson@mccorp.com
-                    password: YourExistingHubPassword
+                $ref: '#/components/examples/hubLoginObject'
       responses:
         '200':
           description: >-
@@ -2786,8 +2699,8 @@ paths:
                         default: https://morpheushub.com
                 example:
                   success: true
-                  buildVersion: 5.4.4.876
-                  applianceUrl: https://morpheus.bungebash.com/
+                  buildVersion: 5.4.4
+                  applianceUrl: https://matrix.morpheusdata.com/
                   environment: production
                   setupNeeded: false
         '400':
@@ -5615,120 +5528,6 @@ components:
                 items: []
         meta:
           $ref: '#/components/schemas/MetaObject'
-    provisionType:
-      title: 200 Provision Type
-      type: object
-      properties:
-        provisionType:
-          type: object
-          properties:
-            id:
-              type: integer
-              format: int32
-            name:
-              type: string
-            description:
-              type: string
-              format: nullable
-            code:
-              type: string
-            aclEnabled:
-              type: boolean
-            multiTenant:
-              type: boolean
-            managed:
-              type: boolean
-            hostNetwork:
-              type: boolean
-            customSupported:
-              type: boolean
-            mapPorts:
-              type: boolean
-            exportServer:
-              type: boolean
-            viewSet:
-              type: string
-            serverType:
-              type: string
-            hostType:
-              type: string
-            addVolumes:
-              type: boolean
-            hasVolumes:
-              type: boolean
-            hasDatastore:
-              type: boolean
-            hasNetworks:
-              type: boolean
-            maxNetworks:
-              type: integer
-              format: int32
-            customizeVolume:
-              type: boolean
-            rootDiskCustomizable:
-              type: boolean
-            rootDiskSizeKnown:
-              type: boolean
-            rootDiskResizable:
-              type: boolean
-            lvmSupported:
-              type: boolean
-            hostDiskMode:
-              type: string
-            minDisk:
-              type: integer
-              format: int32
-            maxDisk:
-              type: string
-              format: nullable
-            resizeCopiesVolumes:
-              type: boolean
-            supportsAutoDatastore:
-              type: boolean
-            hasZonePools:
-              type: boolean
-            hasSecurityGroups:
-              type: boolean
-            hasParameters:
-              type: boolean
-            canEnforceTags:
-              type: string
-              format: nullable
-            disableRootDatastore:
-              type: boolean
-            hasSnapshots:
-              type: boolean
-            hasSpecTemplates:
-              type: boolean
-            hasPreview:
-              type: boolean
-            zonePoolRequired:
-              type: boolean
-            planRequiresPool:
-              type: boolean
-            hasFolders:
-              type: string
-              format: nullable
-            optionTypes:
-              type: array
-              items: []
-            customOptionTypes:
-              type: array
-              items: []
-            networkTypes:
-              type: array
-              items: []
-            storageTypes:
-              type: array
-              items: []
-            rootStorageTypes:
-              type: array
-              items: []
-            controllerTypes:
-              type: array
-              items: []
-        success:
-          type: boolean
     reportTypes:
       title: 200 Report Types
       type: object
@@ -21292,57 +21091,6 @@ components:
           max: 54
           size: 54
           total: 54
-    provisionType:
-      summary: Provision Type Response
-      value:
-        provisionType:
-          id: 48
-          name: AKS
-          description: null
-          code: aks
-          aclEnabled: false
-          multiTenant: false
-          managed: true
-          hostNetwork: true
-          customSupported: true
-          mapPorts: false
-          exportServer: false
-          viewSet: aks
-          serverType: service
-          hostType: vm
-          addVolumes: false
-          hasVolumes: false
-          hasDatastore: false
-          hasNetworks: false
-          maxNetworks: 0
-          customizeVolume: false
-          rootDiskCustomizable: false
-          rootDiskSizeKnown: false
-          rootDiskResizable: false
-          lvmSupported: false
-          hostDiskMode: single
-          minDisk: 1
-          maxDisk: null
-          resizeCopiesVolumes: false
-          supportsAutoDatastore: false
-          hasZonePools: true
-          hasSecurityGroups: true
-          hasParameters: false
-          canEnforceTags: null
-          disableRootDatastore: false
-          hasSnapshots: false
-          hasSpecTemplates: false
-          hasPreview: false
-          zonePoolRequired: true
-          planRequiresPool: false
-          hasFolders: null
-          optionTypes: []
-          customOptionTypes: []
-          networkTypes: []
-          storageTypes: []
-          rootStorageTypes: []
-          controllerTypes: []
-        success: true
     reportTypes:
       summary: Report Types Response
       value:
@@ -25377,6 +25125,62 @@ components:
           max: 25
           size: 3
           total: 3
+    setup:
+      summary: Setup appliance
+      description: >
+        This example initializes the appliance and without connecting to the
+        [Morpheus Hub](https://morpheushub.com).
+
+        A license key will need to be installed manually.
+      value:
+        accountName: Meta Cortex Corporation
+        firstName: Thomas
+        lastName: Anderson
+        email: tanderson@mccorp.com
+        username: tanderson
+        password: QnW}cg}8}<~:P9YU
+    hubRegisterObject:
+      summary: Setup appliance with Hub Registration
+      description: >
+        This example initializes the appliance and connects to the [Morpheus
+        Hub](https://morpheushub.com) to create and register a new hub account. 
+
+        This automatically retrieves a new Community Edition License from the
+        Hub and installs it in your appliance.
+      value:
+        accountName: Meta Cortex Corporation
+        firstName: Thomas
+        lastName: Anderson
+        email: tanderson@mccorp.com
+        username: tanderson
+        password: QnW}cg}8}<~:P9YU
+        hubmode: register
+        hub:
+          companyName: Meta Cortex Corporation
+          firstName: Thomas
+          lastName: Anderson
+          email: tanderson@mccorp.com
+          password: AGoodPasswordForNewHubAccount
+          jobTitle: The One
+    hubLoginObject:
+      summary: Setup appliance with Hub Login
+      description: >
+        This example initializes the appliance and connects to the [Morpheus
+        Hub](https://morpheushub.com) using an existing hub account.
+
+        This automatically retrieves a new Community Edition License from the
+        Hub and installs it in your appliance.
+      value:
+        accountName: Meta Cortex Corporation
+        firstName: Thomas
+        lastName: Anderson
+        email: tanderson@mccorp.com
+        username: tanderson
+        password: QnW}cg}8}<~:P9YU
+        hubmode: login
+        hub:
+          email: tanderson@mccorp.com
+          password: YourExistingHubPassword
     usages:
       summary: Usages Response
       value:

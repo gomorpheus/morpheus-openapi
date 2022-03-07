@@ -1,0 +1,23 @@
+summary: Setup appliance with Hub Registration
+description: >
+  This example initializes the appliance and connects to the
+  [Morpheus Hub](https://morpheushub.com) to create and register a
+  new hub account. 
+
+  This automatically retrieves a new Community Edition License from
+  the Hub and installs it in your appliance.
+value:
+  accountName: Meta Cortex Corporation
+  firstName: Thomas
+  lastName: Anderson
+  email: tanderson@mccorp.com
+  username: tanderson
+  password: QnW}cg}8}<~:P9YU
+  hubmode: register
+  hub:
+    companyName: Meta Cortex Corporation
+    firstName: Thomas
+    lastName: Anderson
+    email: tanderson@mccorp.com
+    password: AGoodPasswordForNewHubAccount
+    jobTitle: The One
