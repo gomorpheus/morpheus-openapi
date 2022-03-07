@@ -13,11 +13,19 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: https://{serverFQDN}
+  - url: https://{api_url}
     description: Morpheus API
     variables:
-      serverFQDN:
+      api_url:
         default: ""
+      application_name:
+        default: Morpheus
+      company_name:
+        default: Morpheus Data
+      company_website:
+        default: https://www.morpheusdata.com
+      company_domain:
+        default: morpheusdata.com
 paths:
   /api/accounts:
     $ref: paths/api@accounts.yaml
