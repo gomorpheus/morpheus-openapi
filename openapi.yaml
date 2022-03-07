@@ -25,6 +25,14 @@ paths:
     $ref: paths/api@accounts@id.yaml
   /api/accounts/available-roles:
     $ref: paths/api@accounts@available-roles.yaml
+  /api/approval-items/{id}:
+    $ref: paths/api@approval-items@{id}.yaml
+  /api/approval-items/{id}/{action}:
+    $ref: paths/api@approval-items@{id}@{action}.yaml
+  /api/approvals:
+    $ref: paths/api@approvals.yaml
+  /api/approvals/{id}:
+    $ref: paths/api@approvals@{id}.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@{id}@wiki.yaml
   /api/budgets:

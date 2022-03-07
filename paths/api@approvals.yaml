@@ -1,0 +1,39 @@
+get:
+  summary: Retrieves all Approvals
+  description: |
+    Retrieves all approvals.
+  operationId: listApprovals
+  tags:
+    - Approvals
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#approvals
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/approvals.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/approvals.yaml
+          
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
