@@ -22,7 +22,7 @@ paths:
   /api/accounts:
     $ref: paths/api@accounts.yaml
   /api/accounts/{id}:
-    $ref: paths/api@accounts@id.yaml
+    $ref: paths/api@accounts@{id}.yaml
   /api/activity:
     $ref: paths/api@activity.yaml
   /api/accounts/available-roles:
@@ -70,9 +70,9 @@ paths:
   /api/reports:
     $ref: paths/api@reports.yaml
   /api/reports/{id}:
-    $ref: paths/api@reports@id.yaml
+    $ref: paths/api@reports@{id}.yaml
   /api/reports/download/{id}{format}:
-    $ref: paths/api@reports@download@id.yaml
+    $ref: paths/api@reports@download@{id}.yaml
   /api/roles:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
@@ -98,7 +98,7 @@ paths:
   /api/wiki/pages:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
-    $ref: paths/api@wiki@pages@id.yaml
+    $ref: paths/api@wiki@pages@{id}.yaml
   /api/zones/{id}/wiki:
     $ref: paths/api@zones@{id}@wiki.yaml
   /oauth/token:
