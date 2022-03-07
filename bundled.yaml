@@ -2646,18 +2646,8 @@ paths:
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/direction'
         - $ref: '#/components/parameters/phrase'
-        - name: startDate
-          in: query
-          description: Filter by startDate greater than or equal to a specified date
-          schema:
-            type: string
-            format: date-time
-        - name: endDate
-          in: query
-          description: Filter by endDate less than or equal to a specified date
-          schema:
-            type: string
-            format: date-time
+        - $ref: '#/components/parameters/startDate'
+        - $ref: '#/components/parameters/endDate'
       responses:
         '200':
           description: Successful Request
@@ -3620,6 +3610,20 @@ components:
       description: Alias for phrase
       schema:
         type: string
+    startDate:
+      name: startDate
+      in: query
+      description: Filter by startDate greater than or equal to a specified date
+      schema:
+        type: string
+        format: date-time
+    endDate:
+      name: endDate
+      in: query
+      description: Filter by endDate less than or equal to a specified date
+      schema:
+        type: string
+        format: date-time
     pagePhrase:
       name: pagePhrase
       in: query
@@ -12092,8 +12096,6 @@ tags:
     description: Manage Image Builds
   - name: Incidents
     description: Manage Ticket Incidents
-  - name: Infrastructure
-    description: Manage Infrastructure Settings
   - name: Inputs
     description: Manage Inputs (Option Types)
   - name: Instance Types
@@ -12110,8 +12112,6 @@ tags:
     description: Manage Key Pairs
   - name: Layouts
     description: Manage Layouts
-  - name: Library
-    description: Manage Library
   - name: License
     description: Manage Appliance License
   - name: Load Balancers
@@ -12176,8 +12176,6 @@ tags:
     description: Manage Storage
   - name: Tenants
     description: Manage Tenants (Accounts)
-  - name: Tools
-    description: Manage Tools
   - name: Usage
     description: View Usage
   - name: Users
