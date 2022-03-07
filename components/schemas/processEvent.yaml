@@ -6,13 +6,13 @@ properties:
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
       processId: 
         type: integer
-        format: int32
+        format: int64
       accountId: 
         type: integer
-        format: int32
+        format: int64
       uniqueId: 
         type: string
       processType: 
@@ -29,7 +29,7 @@ properties:
         type: string
       refId: 
         type: integer
-        format: int32
+        format: int64
       subType: 
         type: string
         format: nullable
@@ -38,19 +38,19 @@ properties:
         format: nullable
       zoneId: 
         type: integer
-        format: int32
+        format: int64
       integrationId: 
         type: string
         format: nullable
       instanceId: 
         type: integer
-        format: int32
+        format: int64
       containerId: 
         type: integer
-        format: int32
+        format: int64
       serverId: 
         type: integer
-        format: int32
+        format: int64
       containerName: 
         type: string
       displayName: 
@@ -62,10 +62,10 @@ properties:
         format: nullable
       percent: 
         type: integer
-        format: int32
+        format: int64
       statusEta: 
         type: integer
-        format: int32
+        format: int64
       message: 
         type: string
         format: nullable
@@ -83,7 +83,7 @@ properties:
         format: date-time
       duration: 
         type: integer
-        format: int32
+        format: int64
       dateCreated: 
         type: string
         format: date-time

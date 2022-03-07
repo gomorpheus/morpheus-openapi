@@ -1,0 +1,50 @@
+summary: Provision Type Response
+value:
+  provisionType:
+    id: 48
+    name: AKS
+    description:
+    code: aks
+    aclEnabled: false
+    multiTenant: false
+    managed: true
+    hostNetwork: true
+    customSupported: true
+    mapPorts: false
+    exportServer: false
+    viewSet: aks
+    serverType: service
+    hostType: vm
+    addVolumes: false
+    hasVolumes: false
+    hasDatastore: false
+    hasNetworks: false
+    maxNetworks: 0
+    customizeVolume: false
+    rootDiskCustomizable: false
+    rootDiskSizeKnown: false
+    rootDiskResizable: false
+    lvmSupported: false
+    hostDiskMode: single
+    minDisk: 1
+    maxDisk:
+    resizeCopiesVolumes: false
+    supportsAutoDatastore: false
+    hasZonePools: true
+    hasSecurityGroups: true
+    hasParameters: false
+    canEnforceTags:
+    disableRootDatastore: false
+    hasSnapshots: false
+    hasSpecTemplates: false
+    hasPreview: false
+    zonePoolRequired: true
+    planRequiresPool: false
+    hasFolders:
+    optionTypes: []
+    customOptionTypes: []
+    networkTypes: []
+    storageTypes: []
+    rootStorageTypes: []
+    controllerTypes: []
+  success: true

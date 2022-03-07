@@ -1,0 +1,39 @@
+get:
+  summary: Retrieves all Provision Types
+  description: |
+    Retrieves all provision types.
+  operationId: listProvisionTypes
+  tags:
+    - Provisioning
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-all-provision-types
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/provisionTypes.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/provisionTypes.yaml 
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

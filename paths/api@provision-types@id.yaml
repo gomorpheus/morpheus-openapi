@@ -1,0 +1,34 @@
+get:
+  summary: Retrieves a Specific Provision Type
+  description: |
+    Retrieves a specific provision type.
+  operationId: getProvisionTypes
+  tags:
+    - Provisioning
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-specific-provision-type
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/provisionType.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/provisionType.yaml
+          
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

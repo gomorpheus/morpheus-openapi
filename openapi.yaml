@@ -22,27 +22,27 @@ paths:
   /api/accounts:
     $ref: paths/api@accounts.yaml
   /api/accounts/{id}:
-    $ref: paths/api@accounts@{id}.yaml
+    $ref: paths/api@accounts@id.yaml
   /api/activity:
     $ref: paths/api@activity.yaml
   /api/accounts/available-roles:
     $ref: paths/api@accounts@available-roles.yaml
   /api/approval-items/{id}:
-    $ref: paths/api@approval-items@{id}.yaml
+    $ref: paths/api@approval-items@id.yaml
   /api/approval-items/{id}/{action}:
-    $ref: paths/api@approval-items@{id}@{action}.yaml
+    $ref: paths/api@approval-items@id@action.yaml
   /api/approvals:
     $ref: paths/api@approvals.yaml
   /api/approvals/{id}:
-    $ref: paths/api@approvals@{id}.yaml
+    $ref: paths/api@approvals@id.yaml
   /api/apps/{id}/wiki:
-    $ref: paths/api@apps@{id}@wiki.yaml
+    $ref: paths/api@apps@id@wiki.yaml
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
-    $ref: paths/api@budgets@{id}.yaml
+    $ref: paths/api@budgets@id.yaml
   /api/clusters/{id}/wiki:
-    $ref: paths/api@clusters@{id}@wiki.yaml
+    $ref: paths/api@clusters@id@wiki.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/doc:
@@ -56,9 +56,9 @@ paths:
   /api/forgot/send-email:
     $ref: paths/api@forgot@send-email.yaml
   /api/groups/{id}/wiki:
-    $ref: paths/api@groups@{id}@wiki.yaml
+    $ref: paths/api@groups@id@wiki.yaml
   /api/instances/{id}/wiki:
-    $ref: paths/api@instances@{id}@wiki.yaml
+    $ref: paths/api@instances@id@wiki.yaml
   /api/license:
     $ref: paths/api@license.yaml
   /api/license/test:
@@ -68,25 +68,29 @@ paths:
   /api/processes:
     $ref: paths/api@processes.yaml
   /api/processes/{id}:
-    $ref: paths/api@processes@{id}.yaml
+    $ref: paths/api@processes@id.yaml
   /api/processes/events/{id}:
-    $ref: paths/api@processes@events@{id}.yaml
+    $ref: paths/api@processes@events@id.yaml
+  /api/provision-types:
+    $ref: paths/api@provision-types.yaml
+  /api/provision-types/{id}:
+    $ref: paths/api@provision-types@id.yaml
   /api/report-types:
     $ref: paths/api@report@types.yaml
   /api/reports:
     $ref: paths/api@reports.yaml
   /api/reports/{id}:
-    $ref: paths/api@reports@{id}.yaml
+    $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
-    $ref: paths/api@reports@download@{id}.yaml
+    $ref: paths/api@reports@download@id.yaml
   /api/roles:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
-    $ref: paths/api@roles@{id}.yaml
+    $ref: paths/api@roles@id.yaml
   /api/search:
     $ref: paths/api@search.yaml
   /api/servers/{id}/wiki:
-    $ref: paths/api@servers@{id}@wiki.yaml
+    $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
   /api/usage:
@@ -94,7 +98,7 @@ paths:
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
-    $ref: paths/api@users@{id}.yaml
+    $ref: paths/api@users@id.yaml
   /api/users/available-roles:
     $ref: paths/api@users@available-roles.yaml
   /api/whoami:
@@ -104,9 +108,9 @@ paths:
   /api/wiki/pages:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
-    $ref: paths/api@wiki@pages@{id}.yaml
+    $ref: paths/api@wiki@pages@id.yaml
   /api/zones/{id}/wiki:
-    $ref: paths/api@zones@{id}@wiki.yaml
+    $ref: paths/api@zones@id@wiki.yaml
   /oauth/token:
     $ref: paths/oauth@token.yaml
 components:
