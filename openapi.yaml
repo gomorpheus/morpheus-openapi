@@ -65,6 +65,12 @@ paths:
     $ref: paths/api@license@test.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
+  /api/processes:
+    $ref: paths/api@processes.yaml
+  /api/processes/{id}:
+    $ref: paths/api@processes@{id}.yaml
+  /api/processes/events/{id}:
+    $ref: paths/api@processes@events@{id}.yaml
   /api/report-types:
     $ref: paths/api@report@types.yaml
   /api/reports:
