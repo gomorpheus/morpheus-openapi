@@ -13,18 +13,8 @@ get:
     - $ref: ../components/parameters/sort.yaml
     - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/phrase.yaml
-    - name: startDate
-      in: query
-      description: Filter by startDate greater than or equal to a specified date
-      schema:
-        type: string
-        format: date-time
-    - name: endDate
-      in: query
-      description: Filter by endDate less than or equal to a specified date
-      schema:
-        type: string
-        format: date-time
+    - $ref: ../components/parameters/startDate.yaml
+    - $ref: ../components/parameters/endDate.yaml
   responses:
     '200':
       description: Successful Request
