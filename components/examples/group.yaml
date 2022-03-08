@@ -1,0 +1,38 @@
+summary: Group Response
+value:
+  group:
+    id: 443
+    uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+    name: ServiceNow
+    code: snow
+    location: ServiceNow Approval, CMDB
+    accountId: 3
+    active: true
+    config:
+      dnsIntegrationId: ''
+      configCmdbId: '12'
+      serviceRegistryId: ''
+      configManagementId: '3'
+    dateCreated: '2018-07-20T05:24:25Z'
+    lastUpdated: '2022-01-13T00:54:57Z'
+    zones:
+    - id: 12
+      name: AWS
+    - id: 121
+      name: Azure US
+    - id: 143
+      name: Google Labs
+    - id: 172
+      name: VMware Demo Cluster H5
+    stats:
+      instanceCounts:
+        all: 0
+      serverCounts:
+        all: 45
+        host: 45
+        hypervisor: 5
+        containerHost: 40
+        vm: 555
+        baremetal: 0
+        unmanaged: 243
+    serverCount: 45

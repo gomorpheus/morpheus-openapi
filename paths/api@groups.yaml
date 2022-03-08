@@ -1,0 +1,91 @@
+get:
+  summary: Retrieves all Groups
+  description: |
+    Retrieves all groups.
+  operationId: listGroups
+  tags:
+    - Groups
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-all-groups
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/groups.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/groups.yaml 
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+post:
+  summary: Creates a Group
+  description: |
+    Creates a group.
+  operationId: addGroups
+  tags:
+    - Groups
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - group
+          properties:
+            group:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                  description: A unique name scoped to your account for the group
+                code:
+                  type: string
+                  description: Optional code for use with policies
+                location:
+                  type: string
+                  description: Optional location argument for your group
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#create-a-group
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/group.yaml
+          examples:
+            Report Types Response:
+              $ref: ../components/examples/group.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

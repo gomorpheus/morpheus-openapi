@@ -1,0 +1,5 @@
+name: description
+in: query
+description: Filter by description, wildcard may be specified as %. eg. example-%
+schema:
+  type: string

@@ -1,5 +1,5 @@
 name: name
 in: query
-description: If specified will return an exact match on name
+description: Filter by name, wildcard may be specified as %, eg. example-%
 schema:
   type: string

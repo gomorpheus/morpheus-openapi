@@ -23,8 +23,7 @@ get:
             $ref: ../components/schemas/budgets.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/budgets.yaml
-          
+              $ref: ../components/examples/budgets.yaml 
     '400':
       description: Bad Request.
     '401':
@@ -44,6 +43,8 @@ post:
   operationId: addBudgets
   tags:
     - Budgets
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#create-a-budget
   requestBody:
     content:
       application/json:
@@ -122,8 +123,6 @@ post:
                 enabled:
                   type: boolean
                   default: true
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#create-a-budget
   responses:
     '200':
       description: Successful Request

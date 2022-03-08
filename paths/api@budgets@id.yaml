@@ -39,6 +39,8 @@ put:
   operationId: updateBudgets
   tags:
     - Budgets
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#updating-a-budget
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -119,8 +121,6 @@ put:
                 enabled:
                   type: boolean
                   default: true
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#updating-a-budget
   responses:
     '200':
       description: Successful Request
