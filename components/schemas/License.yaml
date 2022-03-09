@@ -2,70 +2,172 @@ description: >-
   Object for logging in to the [Morpheus Hub](https://morpheushub.com) with
   existing credentials. This is only required for `hubmode=login`.
 type: object
-properties:
-  productTier:
-    type: string
-    description: Product Tier
-  startDate:
-    type: string
-    format: date-time
-    description: Start Date
-  endDate:
-    type: string
-    format: date-time
-    description: End Date
-  maxInstances:
-    type: integer
-    format: int64
-    description: Max Instances
-  maxMemory:
-    type: integer
-    format: int64
-    description: Max Memory (bytes)
-  maxStorage:
-    type: integer
-    format: int64
-    description: Max Storage (bytes)
-  hardLimit:
-    type: integer
-    format: int64
-    description: >-
-      Hard Limit determines whether the capacity limits are actaully enforced or
-      just generate a warning
-  freeTrial:
-    type: integer
-    format: int64
-    description: Free Trial. This indicates that it is a free Community Edition license.
-  multiTenant:
-    type: integer
-    format: int64
-    description: Multi Tenant. Allow multiple tenants
-  whitelabel:
-    type: integer
-    format: int64
-    description: Multi Tenant. Allow white labeling
-  reportStatus:
-    type: integer
-    format: int64
-    description: Report Status
-  supportLevel:
-    type: integer
-    format: int64
-    description: Support Level
-  accountName:
-    type: integer
-    format: int64
-    description: Account Name
-  features:
+properties: 
+  license: 
     type: object
-    description: Map of features and whether they are enabled (true) or disabled (false).
-  zoneTypes:
-    type: array
-    items:
-      type: string
-    description: Allowed cloud types, a value of null means all types are allowed.
-    nullable: true
-  dateCreated:
-    $ref: .\DateCreated.yaml
-  lastUpdated:
-    $ref: .\LastUpdated.yaml
+    properties: 
+      productTier: 
+        type: string
+      startDate: 
+        type: string
+        format: date-time
+      endDate: 
+        type: string
+        format: date-time
+      maxInstances: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      hardLimit: 
+        type: boolean
+      freeTrial: 
+        type: boolean
+      multiTenant: 
+        type: boolean
+      whitelabel: 
+        type: boolean
+      reportStatus: 
+        type: boolean
+      supportLevel: 
+        type: string
+      accountName: 
+        type: string
+      config: 
+        type: object
+        properties:  
+      amazonProductCodes: 
+        type: string
+        format: nullable
+      features: 
+        type: object
+        properties: 
+          dashboard: 
+            type: boolean
+          guidance: 
+            type: boolean
+          discovery: 
+            type: boolean
+          analytics: 
+            type: boolean
+          scheduling: 
+            type: boolean
+          approvals: 
+            type: boolean
+          usage: 
+            type: boolean
+          activity: 
+            type: boolean
+          instances: 
+            type: boolean
+          apps: 
+            type: boolean
+          templates: 
+            type: boolean
+          automation: 
+            type: boolean
+          virtualImages: 
+            type: boolean
+          library: 
+            type: boolean
+          migrations: 
+            type: boolean
+          deployments: 
+            type: boolean
+          groups: 
+            type: boolean
+          clouds: 
+            type: boolean
+          hosts: 
+            type: boolean
+          network: 
+            type: boolean
+          loadBalancers: 
+            type: boolean
+          storage: 
+            type: boolean
+          keyPairs: 
+            type: boolean
+          sslCertificates: 
+            type: boolean
+          boot: 
+            type: boolean
+          backups: 
+            type: boolean
+          cypher: 
+            type: boolean
+          archives: 
+            type: boolean
+          imageBuilder: 
+            type: boolean
+          tenants: 
+            type: boolean
+          plans: 
+            type: boolean
+          pricing: 
+            type: boolean
+          users: 
+            type: boolean
+          userGroups: 
+            type: boolean
+          monitoring: 
+            type: boolean
+          logging: 
+            type: boolean
+          monitoringServices: 
+            type: boolean
+          loggingServices: 
+            type: boolean
+          backupServices: 
+            type: boolean
+          dnsServices: 
+            type: boolean
+          codeService: 
+            type: boolean
+          buildServices: 
+            type: boolean
+          loadBalancerServices: 
+            type: boolean
+          ipamServices: 
+            type: boolean
+          approvalServices: 
+            type: boolean
+          cmdbServices: 
+            type: boolean
+          deploymentServices: 
+            type: boolean
+          automationServices: 
+            type: boolean
+          serviceDiscoveryServices: 
+            type: boolean
+          identityServices: 
+            type: boolean
+          trustServices: 
+            type: boolean
+          securityServices: 
+            type: boolean
+      zoneTypes: 
+        type: string
+        format: nullable
+      lastUpdated: 
+        type: string
+        format: date-time
+      dateCreated: 
+        type: string
+        format: date-time
+  currentUsage: 
+    type: object
+    properties: 
+      memory: 
+        type: integer
+        format: int64
+      storage: 
+        type: integer
+        format: int64
+      workloads: 
+        type: integer
+        format: int64

@@ -34,10 +34,10 @@ post:
             type: object
             properties:
               license:
-                $ref: ..\components\schemas\License.yaml
+                $ref: ..\components\schemas\license.yaml
           examples:
             testLicense:
-              $ref: ..\components\examples\InstallLicenseResponse.yaml
+              $ref: ..\components\examples\license.yaml
     '400':
       description: License test failed
       content:

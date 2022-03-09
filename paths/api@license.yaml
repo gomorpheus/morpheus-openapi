@@ -13,23 +13,10 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              license:
-                $ref: ..\components\schemas\License.yaml
-              currentUsage:
-                $ref: ..\components\schemas\CurrentUsage.yaml
+            $ref: ..\components\schemas\license.yaml
           examples:
             getLicense:
-              $ref: ..\components\examples\GetLicenseResponse.yaml
-            getLicenseIsNotInstalled:
-              summary: License is not installed
-              value:
-                license: null
-                currentUsage:
-                  memory: 26256664064
-                  storage: 306786373632
-                  workloads: 12
+              $ref: ..\components\examples\license.yaml
     '400':
       description: Bad Request.
     '401':
@@ -73,15 +60,10 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              license:
-                $ref: ..\components\schemas\License.yaml
-              currentUsage:
-                $ref: ..\components\schemas\CurrentUsage.yaml
+            $ref: ..\components\schemas\license.yaml
           examples:
             installLicense:
-              $ref: ..\components\examples\InstallLicenseResponse.yaml
+              $ref: ..\components\examples\license.yaml
     '400':
       description: License install failed
       content:
@@ -116,7 +98,7 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Success.yaml
+            $ref: ..\components\schemas\200-success.yaml
     '400':
       description: Bad Request.
     '401':

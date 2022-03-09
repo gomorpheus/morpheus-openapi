@@ -94,7 +94,7 @@ paths:
   /api/provision-types/{id}:
     $ref: paths/api@provision-types@id.yaml
   /api/report-types:
-    $ref: paths/api@report@types.yaml
+    $ref: paths/api@report-types.yaml
   /api/reports:
     $ref: paths/api@reports.yaml
   /api/reports/{id}:

@@ -1,10 +1,10 @@
-summary: Example License Response
+summary: License Response
 value:
   license:
-    productTier: capacity
-    startDate: '2020-04-07T00:00:00Z'
-    endDate: '2025-05-07T00:00:00Z'
-    maxInstances: 0
+    productTier: enterprise
+    startDate: '2021-10-07T00:00:00Z'
+    endDate: '2022-10-07T00:00:00Z'
+    maxInstances: 5000
     maxMemory: 0
     maxStorage: 0
     hardLimit: false
@@ -13,8 +13,9 @@ value:
     whitelabel: true
     reportStatus: true
     supportLevel: standard
-    accountName: Meta Cortex Corportation
-    amazonProductCodes: null
+    accountName: Morpheus
+    config: {}
+    amazonProductCodes:
     features:
       dashboard: true
       guidance: true
@@ -67,10 +68,11 @@ value:
       serviceDiscoveryServices: true
       identityServices: true
       trustServices: true
-    zoneTypes: null
-    lastUpdated: '2020-04-07T15:02:28Z'
-    dateCreated: '2020-04-07T15:02:28Z'
+      securityServices: true
+    zoneTypes:
+    lastUpdated: '2021-10-07T14:36:08Z'
+    dateCreated: '2021-10-07T14:36:08Z'
   currentUsage:
-    memory: 26256664064
-    storage: 306786373632
-    workloads: 12
+    memory: 531366034976
+    storage: 6017299099648
+    workloads: 631

@@ -96,7 +96,7 @@ properties:
         optionTypes: 
           type: array
           items:
-            type: string
+            type: object
           default: []
         customOptionTypes: 
           type: array

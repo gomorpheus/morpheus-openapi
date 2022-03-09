@@ -52,16 +52,16 @@ properties:
         costs: 
           type: array
           items: 
-            type: integer
-            format: int64
+            type: number
+            format: nullable
         isFiscal: 
           type: boolean
         averageCost: 
-          type: integer
-          format: int64
+          type: number
+          format: nullable
         totalCost: 
-          type: integer
-          format: int64
+          type: number
+          format: nullable
         currency: 
           type: string
         rollover: 

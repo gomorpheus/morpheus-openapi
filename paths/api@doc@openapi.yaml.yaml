@@ -15,11 +15,11 @@ get:
           examples:
             yamlExample:
               summary: OpenApi (Swagger) YAML
-              value: |
-                openapi: "3.0.3"
+              value:
+                openapi: 3.0.3
                 info: 
-                  title: "Morpheus API"
-                  description: "Welcome ..."
+                  title: Morpheus API
+                  description: Welcome ...
     '400':
       description: Bad Request.
     '401':
