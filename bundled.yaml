@@ -1894,6 +1894,124 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/key-pairs:
+    post:
+      summary: Creates a Key Pair
+      description: |
+        Creates a Key Pair.  Private keys are typically optional.
+      operationId: addKeyPairs
+      tags:
+        - Key Pairs
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#create-a-keypair
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - keyPair
+              properties:
+                keyPair:
+                  type: object
+                  required:
+                    - name
+                    - publicKey
+                  properties:
+                    name:
+                      type: string
+                    publicKey:
+                      type: string
+                    privateKey:
+                      type: string
+                    passphrase:
+                      type: string
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-pairs'
+              examples:
+                Report Types Response:
+                  $ref: '#/components/examples/key-pairs'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+  /api/key-pairs/id:
+    get:
+      summary: Retrieves a Specific Key Pair
+      description: |
+        Retrieves a specific key pair.
+      operationId: getKeyPairs
+      tags:
+        - Key Pairs
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#get-a-specific-key-pair
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-pair'
+              examples:
+                Search Response:
+                  $ref: '#/components/examples/key-pair'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
+    delete:
+      summary: Deletes a Key Pair
+      description: |
+        Deletes a specified key pair.
+      operationId: removeKeyPairs
+      tags:
+        - Key Pairs
+      externalDocs:
+        url: https://apidocs.morpheusdata.com/#delete-a-key-pair
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+        '400':
+          description: Bad Request.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: Forbidden.
+        '404':
+          description: Object Not Found.
+        '500':
+          description: Internal Server Error.
+        '503':
+          description: Service Unavailable.
   /api/license/test:
     post:
       summary: Test license key
@@ -5343,6 +5461,64 @@ components:
           type: integer
           format: int64
           description: Total Workloads
+    key-pairs:
+      title: 200 Key Pairs
+      type: object
+      properties:
+        keyPair:
+          type: object
+          properties:
+            id:
+              type: string
+              format: nullable
+            name:
+              type: string
+            accountId:
+              type: integer
+              format: int64
+            publicKey:
+              type: string
+            hasPrivateKey:
+              type: boolean
+            fingerprint:
+              type: string
+            dateCreated:
+              type: string
+              format: nullable
+            lastUpdated:
+              type: string
+              format: nullable
+        success:
+          type: boolean
+    key-pair:
+      title: 200 Key Pair
+      type: object
+      properties:
+        keyPair:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            accountId:
+              type: integer
+              format: int64
+            publicKey:
+              type: string
+              format: nullable
+            hasPrivateKey:
+              type: boolean
+            fingerprint:
+              type: string
+              format: nullable
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
     ping:
       title: 200 Ping
       type: object
@@ -8351,6 +8527,33 @@ components:
           memory: 26256664064
           storage: 306786373632
           workloads: 12
+    key-pairs:
+      summary: Key Pairs Response
+      value:
+        keyPair:
+          id: 55
+          name: testKey
+          accountId: 3
+          publicKey: >-
+            ssh-rsa
+            +baNlUQG4Q69oQ4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2BgGql0aGk0E592rRmaMDcZcDQ4MyT6iPgxpRiNWzx4wVEldbCrE6FtYhSLy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAvDVO17v/GDR95nTiomV33mVwm5Ziky2/doJTk+WszcrmXZv4kV7eXb2LlpZ+X0ZmcCQy3zt9jLNYQHj4HLKqH/aA2cpdiSQqnSqcRukIBPEF+lJasbMiXMVfw==9zwjFp4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2
+          hasPrivateKey: true
+          fingerprint: ab:cd:ef:12:34:56:a1:b2:c3:d4:e5:f6:aa:bc:ff:ee
+          dateCreated: '2021-01-01T00:00:00Z'
+          lastUpdated: '2021-01-01T00:00:00Z'
+        success: true
+    key-pair:
+      summary: Key Pair Response
+      value:
+        keyPair:
+          id: 61
+          name: ahicks
+          accountId: 3
+          publicKey: null
+          hasPrivateKey: false
+          fingerprint: null
+          dateCreated: '2019-11-08T09:03:45Z'
+          lastUpdated: '2020-12-24T06:38:20Z'
     ping-authenticated:
       summary: Authenticated Ping Response
       value:

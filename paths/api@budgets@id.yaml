@@ -19,7 +19,6 @@ get:
           examples:
             Search Response:
               $ref: ../components/examples/budget.yaml
-          
     '400':
       description: Bad Request.
     '401':
