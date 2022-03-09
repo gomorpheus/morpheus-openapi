@@ -13,27 +13,10 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              links:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                    url:
-                      type: string
-                    description:
-                      type: string
-                    type:
-                      type: string
-                      enum:
-                        - openapi
-                        - external
+            $ref: ..\components\schemas\docs.yaml
           examples:
-            foobar:
-              $ref: ..\components\examples\ListDocsResponse.yaml
+            Docs Response:
+              $ref: ..\components\examples\docs.yaml
     '400':
       description: Bad Request.
     '401':

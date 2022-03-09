@@ -26,10 +26,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/reports.yaml
+            $ref: ..\components\schemas\reports.yaml
           examples:
-            Report Response:
-              $ref: ../components/examples/reports.yaml
+            Reports Response:
+              $ref: ..\components\schemas\reports.yaml
     '400':
       description: Bad Request.
     '401':
@@ -91,10 +91,10 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/reports.yaml
+            $ref: ..\components\schemas\reports.yaml
           examples:
-            Report Response:
-              $ref: ../components/examples/reports.yaml
+            Reports Response:
+              $ref: ..\components\schemas\reports.yaml
     '400':
       description: Bad Request.
     '401':

@@ -1,0 +1,16 @@
+type: object
+properties:
+  success:
+    type: boolean
+  buildVersion:
+    type: string
+    description: Morpheus build version that the server is running.
+  applianceUrl:
+    type: string
+    description: The Appliance Server URL as defined under Appliance Settings.
+  setupNeeded:
+    type: boolean
+    description: >-
+      Flag to determine if the appliance has been setup, only true
+      when appliance is a fresh install and has not been
+      initialized.

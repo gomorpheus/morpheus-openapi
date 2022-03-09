@@ -25,7 +25,7 @@ get:
           - account
   responses:
     '200':
-      description: Array of roles
+      description: Successful Request
       content:
         application/json:
           schema:

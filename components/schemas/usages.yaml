@@ -34,4 +34,6 @@ properties:
           type: string
           format: date-time
   meta: 
-    $ref: MetaObject.yaml
+    allOf:
+      - $ref: MetaObject.yaml
+      - $ref: MetaObjectDates.yaml

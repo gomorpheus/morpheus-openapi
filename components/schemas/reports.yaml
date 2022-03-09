@@ -45,6 +45,38 @@ properties:
             reportType: 
               type: string
               format: nullable
+            startDate:
+              type: string
+              format: date-time
+              nullable: true
+            endDate:
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              format: nullable
+            scheduleMode:
+              type: string
+              nullable: true
+            dateTime:
+              type: string
+              format: date-time
+              nullable: true
+            cloudId:
+              type: string
+              format: nullable
+            config:
+              type: object
+              nullable: true
+              properties:
+                dateTime:
+                  type: string
+                  format: date-time
+                  nullable: true
+                cloudId:
+                  type: string
+                  format: nullable
             metadata: 
               type: string
               format: nullable

@@ -89,41 +89,7 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              success:
-                type: boolean
-              buildVersion:
-                type: string
-                description: Morpheus build version that the server is running.
-              applianceUrl:
-                type: string
-                description: The Appliance Server URL as defined under Appliance Settings.
-              setupNeeded:
-                type: boolean
-                description: >-
-                  Flag to determine if the appliance has been setup, only true
-                  when appliance is a fresh install and has not been
-                  initialized.
-              hub:
-                type: object
-                description: >-
-                  Settings for connecting to the [Morpheus
-                  Hub](https://morpheushub.com)
-                properties:
-                  enabled:
-                    type: boolean
-                    description: Flag to determine if hub connectivity is enabled.
-                  url:
-                    type: string
-                    description: The [Morpheus Hub](https://morpheushub.com) URL.
-                    default: https://morpheushub.com
-            example:
-              success: true
-              buildVersion: 5.4.4
-              applianceUrl: https://matrix.morpheusdata.com/
-              environment: production
-              setupNeeded: false
+            $ref: ../components/schemas/setup.yaml
     '400':
       description: Appliance has already been setup
       content:

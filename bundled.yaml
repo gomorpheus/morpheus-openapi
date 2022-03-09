@@ -354,23 +354,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  roles:
-                    type: array
-                    items:
-                      type: object
-                      description: Available Tenant Role Object
-                      properties:
-                        id:
-                          type: integer
-                          format: int64
-                        authority:
-                          type: string
-                          description: A unique name for the role.
+                $ref: '#/components/schemas/tenantsAvailableRoles'
               examples:
-                ListAvailableUserRoles:
-                  $ref: '#/components/examples/ListTenantsAvailableRoles'
+                Tenants Available Roles Response:
+                  $ref: '#/components/examples/tenantsAvailableRoles'
         '400':
           description: Bad Request.
         '401':
@@ -1077,27 +1064,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  links:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        name:
-                          type: string
-                        url:
-                          type: string
-                        description:
-                          type: string
-                        type:
-                          type: string
-                          enum:
-                            - openapi
-                            - external
+                $ref: '#/components/schemas/docs'
               examples:
-                foobar:
-                  $ref: '#/components/examples/ListDocsResponse'
+                Docs Response:
+                  $ref: '#/components/examples/docs'
         '400':
           description: Bad Request.
         '401':
@@ -2335,7 +2305,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/reports'
               examples:
-                Report Response:
+                Reports Response:
                   $ref: '#/components/examples/reports'
         '400':
           description: Bad Request.
@@ -2403,7 +2373,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/reports'
               examples:
-                Report Response:
+                Reports Response:
                   $ref: '#/components/examples/reports'
         '400':
           description: Bad Request.
@@ -2542,7 +2512,7 @@ paths:
               - account
       responses:
         '200':
-          description: Array of roles
+          description: Successful Request
           content:
             application/json:
               schema:
@@ -2994,43 +2964,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                  buildVersion:
-                    type: string
-                    description: Morpheus build version that the server is running.
-                  applianceUrl:
-                    type: string
-                    description: >-
-                      The Appliance Server URL as defined under Appliance
-                      Settings.
-                  setupNeeded:
-                    type: boolean
-                    description: >-
-                      Flag to determine if the appliance has been setup, only
-                      true when appliance is a fresh install and has not been
-                      initialized.
-                  hub:
-                    type: object
-                    description: >-
-                      Settings for connecting to the [Morpheus
-                      Hub](https://morpheushub.com)
-                    properties:
-                      enabled:
-                        type: boolean
-                        description: Flag to determine if hub connectivity is enabled.
-                      url:
-                        type: string
-                        description: The [Morpheus Hub](https://morpheushub.com) URL.
-                        default: https://morpheushub.com
-                example:
-                  success: true
-                  buildVersion: 5.4.4
-                  applianceUrl: https://matrix.morpheusdata.com/
-                  environment: production
-                  setupNeeded: false
+                $ref: '#/components/schemas/setup'
         '400':
           description: Appliance has already been setup
           content:
@@ -3219,9 +3153,6 @@ paths:
                       description: List of Roles
                       items:
                         $ref: '#/components/schemas/ReferenceObject'
-            examples:
-              createUserRequest:
-                $ref: '#/components/examples/user'
       responses:
         '200':
           description: User Object
@@ -3245,24 +3176,21 @@ paths:
         '503':
           description: Service Unavailable.
   /api/users/{id}:
-    parameters:
-      - $ref: '#/components/parameters/id-path'
     get:
-      summary: Get user
-      description: Get details about a user
-      operationId: getUser
+      summary: Get a Specific User
+      description: Get details about a specific user.
+      operationId: getUsers
       tags:
         - Users
+      parameters:
+        - $ref: '#/components/parameters/id-path'
       responses:
         '200':
           description: User Object
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  user:
-                    $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/user'
               examples:
                 Get User Response:
                   $ref: '#/components/examples/user'
@@ -3284,6 +3212,8 @@ paths:
       operationId: updateUser
       tags:
         - Users
+      parameters:
+        - $ref: '#/components/parameters/id-path'
       requestBody:
         content:
           application/json:
@@ -3294,10 +3224,6 @@ paths:
               properties:
                 user:
                   type: object
-                  description: Payload for creating a new user
-                  required:
-                    - name
-                    - roles
                   properties:
                     firstName:
                       type: string
@@ -3320,19 +3246,13 @@ paths:
                       description: List of Roles
                       items:
                         $ref: '#/components/schemas/ReferenceObject'
-            examples:
-              Update User Response:
-                $ref: '#/components/examples/user'
       responses:
         '200':
           description: User Object
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  user:
-                    $ref: '#/components/schemas/user'
+                $ref: '#/components/schemas/user'
               examples:
                 Update User Response:
                   $ref: '#/components/examples/user'
@@ -3362,16 +3282,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: User still has managed resources
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                success: false
-                msg: >-
-                  Unable to delete an user without removing resources when
-                  managed instances exist.
+          description: Bad Request.
         '401':
           description: Unauthorized.
         '403':
@@ -3404,7 +3315,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/usersAvailableRoles'
               examples:
-                Search Response:
+                Users Available Roles Response:
                   $ref: '#/components/examples/usersAvailableRoles'
         '400':
           description: Bad Request.
@@ -4354,6 +4265,28 @@ components:
             endDate:
               type: string
               format: date-time
+    tenantsAvailableRoles:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              authority:
+                type: string
+              description:
+                type: string
+                format: nullable
+              roleType:
+                type: string
+                format: nullable
+              owner:
+                type: string
+                format: nullable
     approvalItem:
       title: 200 Approval Item
       type: object
@@ -5091,6 +5024,23 @@ components:
               type: boolean
             msg:
               type: string
+    docs:
+      type: object
+      properties:
+        links:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              url:
+                type: string
+              description:
+                type: string
+                format: nullable
+              type:
+                type: string
     groups:
       title: 200 Groups
       type: object
@@ -6491,6 +6441,38 @@ components:
                   reportType:
                     type: string
                     format: nullable
+                  startDate:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  endDate:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  name:
+                    type: string
+                    format: nullable
+                  scheduleMode:
+                    type: string
+                    nullable: true
+                  dateTime:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  cloudId:
+                    type: string
+                    format: nullable
+                  config:
+                    type: object
+                    nullable: true
+                    properties:
+                      dateTime:
+                        type: string
+                        format: date-time
+                        nullable: true
+                      cloudId:
+                        type: string
+                        format: nullable
                   metadata:
                     type: string
                     format: nullable
@@ -6798,9 +6780,6 @@ components:
               type: string
               format: password
               description: Password for existing Morpheus Hub user
-          example:
-            email: tanderson@mccorp.com
-            password: YourExistingHubPassword
     hubRegisterObject:
       title: Hub Register Object
       description: >-
@@ -6839,13 +6818,31 @@ components:
             jobTitle:
               type: string
               description: Job title of new Morpheus Hub user
-          example:
-            companyName: Meta Cortex Corporation
-            firstName: Thomas
-            lastName: Anderson
-            email: tanderson@mccorp.com
-            password: AGoodPasswordForNewHubAccount
-            jobTitle: The One
+    setup:
+      type: object
+      properties:
+        success:
+          type: boolean
+        buildVersion:
+          type: string
+          description: Morpheus build version that the server is running.
+        applianceUrl:
+          type: string
+          description: The Appliance Server URL as defined under Appliance Settings.
+        setupNeeded:
+          type: boolean
+          description: >-
+            Flag to determine if the appliance has been setup, only true when
+            appliance is a fresh install and has not been initialized.
+    MetaObjectDates:
+      type: object
+      properties:
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
     usages:
       title: 200 Usages
       type: object
@@ -6883,7 +6880,9 @@ components:
                 type: string
                 format: date-time
         meta:
-          $ref: '#/components/schemas/MetaObject'
+          allOf:
+            - $ref: '#/components/schemas/MetaObject'
+            - $ref: '#/components/schemas/MetaObjectDates'
     users:
       type: object
       properties:
@@ -6995,90 +6994,6 @@ components:
       required:
         - id
     user:
-      title: 200 User
-      type: object
-      properties:
-        user:
-          type: object
-          properties:
-            id:
-              type: integer
-              format: int64
-            accountId:
-              type: integer
-              format: int64
-            username:
-              type: string
-            displayName:
-              type: string
-            email:
-              type: string
-            firstName:
-              type: string
-            lastName:
-              type: string
-            enabled:
-              type: boolean
-            receiveNotifications:
-              type: boolean
-            isUsing2FA:
-              type: boolean
-            accountExpired:
-              type: boolean
-            accountLocked:
-              type: boolean
-            passwordExpired:
-              type: boolean
-            loginCount:
-              type: integer
-              format: int64
-            loginAttempts:
-              type: integer
-              format: int64
-            lastLoginDate:
-              type: string
-              format: date-time
-            roles:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int64
-                  authority:
-                    type: string
-                  description:
-                    type: string
-            account:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int64
-                name:
-                  type: string
-            linuxUsername:
-              type: string
-            linuxPassword:
-              type: string
-            linuxKeyPairId:
-              type: integer
-              format: int64
-            windowsUsername:
-              type: string
-            windowsPassword:
-              type: string
-            defaultPersona:
-              type: string
-              format: nullable
-            dateCreated:
-              type: string
-              format: date-time
-            lastUpdated:
-              type: string
-              format: date-time
-    User:
       title: 200 User
       type: object
       properties:
@@ -7393,33 +7308,78 @@ components:
           offset: 0
           startDate: '2022-02-07T00:00:00Z'
           endDate: '2022-03-07T03:38:50Z'
-    ListTenantsAvailableRoles:
-      summary: Available Tenant Roles
+    tenantsAvailableRoles:
+      summary: Tenants Available Roles Response
       value:
         roles:
           - id: 1
             authority: System Admin
             description: Super User
-            scope: Admin
             roleType: null
-            multitenant: false
-            multitenantLocked: null
-            ownerId: null
             owner: null
-            dateCreated: 2016-08-27T19:26:19+0000
-            lastUpdated: 2016-08-27T19:26:19+0000
-          - id: 166
-            authority: Tenant Admin
-            description: Tenant Role Template
-            scope: AppSystem
+          - id: 425
+            authority: A Tenant Role
+            description: null
             roleType: account
-            multitenant: false
-            multitenantLocked: null
-            ownerId: null
-            owner: null
-            dateCreated: 2016-12-13T16:38:16+0000
-            lastUpdated: 2016-12-14T23:39:05+0000
-        meta: null
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 299
+            authority: Beatles
+            description: 'Role for Sub-Tenant:  The Beatles'
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 601
+            authority: Channels Demo
+            description: Base role for Channels Demo Tenants
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 84
+            authority: Gekko & Co
+            description: 'Role for Sub-Tenant: Gekko Tenant Role'
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 595
+            authority: k8sdemo-tenant
+            description: null
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 34
+            authority: Pied Piper
+            description: 'Role for Sub-Tenant: Pied Piper'
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 424
+            authority: Remote Console
+            description: remote console auto login
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 420
+            authority: Subtenant Tenant Role
+            description: null
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 197
+            authority: Wonka
+            description: 'Role for Sub-Tenant: Wonka Industries'
+            roleType: account
+            owner:
+              id: 3
+              name: Morpheus
     approvalItem:
       summary: Approval Items Response
       value:
@@ -8295,17 +8255,23 @@ components:
         logStats:
           success: false
           msg: Found no scope objects for user
-    ListDocsResponse:
-      summary: List of documentation links.
+    docs:
+      summary: Docs Response
       value:
         links:
           - name: Morpheus API Swagger Documentation
-            url: https://morpheus.bungebash.com/api/doc/openapi.json
+            url: https://demo.morpheusdata.com/api/doc/openapi.json
             description: >-
               Morpheus API Documentation in the OpenAPI 3.0 format. Default
-              format is JSON, use extension .yaml for YAML instead. This
-              document is generated and made available by the api itself.
+              format is JSON, use extension .yaml for YAML instead.
             type: openapi
+          - name: Morpheus API Documentation
+            url: https://apidocs.morpheusdata.com
+            description: >-
+              The Morpheus API Documentation is the main resource for learning
+              about the Morpheus API endpoints. It contains a definition and
+              example of each api endpoint.
+            type: external
           - name: Morpheus Documentation
             url: https://docs.morpheusdata.com/
             description: >-
@@ -8318,7 +8284,7 @@ components:
               The Morpheus Data homepage is a good place to start learning about
               Morpheus and what is is capable of. It also contains links to
               support.
-            link: external
+            type: external
     groups:
       summary: Groups Response
       value:
@@ -9846,568 +9812,101 @@ components:
           offset: 0
           max: 2
     reports:
-      summary: Reports Response
-      value:
+      type: object
+      properties:
         reportResults:
-          - id: 1380
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Overview Mar 02, 2022 16:06:36
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-03-02T16:06:36Z'
-            lastUpdated: '2022-03-02T16:06:37Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1378
-            type:
-              id: 31
-              code: amazonReservationUtilization
-              name: Amazon Reservation Utilization
-              category: cost
-            reportTitle: Amazon Reservation Utilization Mar 01, 2022 00:00:07
-            filterTitle: Mar 10, 2021 - Mar 12, 2022 | AWS Labs | Mar 01, 2022
-            status: ready
-            dateCreated: '2022-03-01T00:00:07Z'
-            lastUpdated: '2022-03-01T00:00:08Z'
-            startDate: '2021-03-10T00:00:00Z'
-            endDate: '2022-03-12T23:59:00Z'
-            config:
-              reportType: null
-              startDate: 03/10/2021 00:00:00
-              endDate: 03/12/2022 23:59:59
-              name: AWS Labs Reservation Utilization
-              scheduleMode: '7'
-              dateTime: '2021-03-12 21:38:42'
-              cloudId: '141'
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              type:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  code:
+                    type: string
+                  name:
+                    type: string
+                  category:
+                    type: string
+              reportTitle:
+                type: string
+              filterTitle:
+                type: string
+                format: nullable
+              status:
+                type: string
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+              startDate:
+                type: string
+                format: nullable
+              endDate:
+                type: string
+                format: nullable
               config:
-                dateTime: '2021-03-12 21:38:42'
-                cloudId: '141'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 2
-              username: jwheeler
-          - id: 1379
-            type:
-              id: 19
-              code: tenantUsage
-              name: Tenant Usage
-              category: cloudUsage
-            reportTitle: Tenant Usage Mar 01, 2022 00:00:07
-            filterTitle: Mar 01, 2022 00:00:07 | Morpheus
-            status: ready
-            dateCreated: '2022-03-01T00:00:07Z'
-            lastUpdated: '2022-03-01T00:00:14Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              accountId: '3'
-              name: Tennant Cost Monthly CHS
-              scheduleMode: '7'
-              dateTime: '2021-04-09 23:30:14'
-              config:
-                dateTime: '2021-04-09 23:30:14'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 219
-              username: dzenz
-          - id: 1377
-            type:
-              id: 58
-              code: tagComplianceInventory
-              name: Tag Compliance
-              category: provisioningInventory
-            reportTitle: Tag Compliance Feb 25, 2022 15:51:51
-            filterTitle: Feb 25, 2022 | All Clouds
-            status: ready
-            dateCreated: '2022-02-25T15:51:51Z'
-            lastUpdated: '2022-02-25T15:51:52Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              cloudId: ''
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 174
-              username: aharker
-          - id: 1376
-            type:
-              id: 58
-              code: tagComplianceInventory
-              name: Tag Compliance
-              category: provisioningInventory
-            reportTitle: Tag Compliance Feb 25, 2022 15:41:41
-            filterTitle: Feb 25, 2022 | AWS
-            status: ready
-            dateCreated: '2022-02-25T15:41:41Z'
-            lastUpdated: '2022-02-25T15:41:41Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              cloudId: '12'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 294
-              username: kbryant
-          - id: 1375
-            type:
-              id: 60
-              code: automation-analytics-report
-              name: Automation Analytics
-              category: inventory
-            reportTitle: Automation Analytics Feb 22, 2022 21:29:37
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-22T21:29:37Z'
-            lastUpdated: '2022-02-22T21:29:38Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '90'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1374
-            type:
-              id: 60
-              code: automation-analytics-report
-              name: Automation Analytics
-              category: inventory
-            reportTitle: Automation Analytics Feb 22, 2022 21:17:59
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-22T21:17:59Z'
-            lastUpdated: '2022-02-22T21:18:00Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '90'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1373
-            type:
-              id: 60
-              code: automation-analytics-report
-              name: Automation Analytics
-              category: inventory
-            reportTitle: Automation Analytics Feb 22, 2022 19:41:56
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-22T19:41:56Z'
-            lastUpdated: '2022-02-22T19:41:56Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '60'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1372
-            type:
-              id: 60
-              code: automation-analytics-report
-              name: Automation Analytics
-              category: inventory
-            reportTitle: Automation Analytics Feb 22, 2022 19:28:00
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-22T19:28:00Z'
-            lastUpdated: '2022-02-22T19:28:00Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '30'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1371
-            type:
-              id: 60
-              code: automation-analytics-report
-              name: Automation Analytics
-              category: inventory
-            reportTitle: Automation Analytics Feb 22, 2022 19:20:08
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-22T19:20:08Z'
-            lastUpdated: '2022-02-22T19:20:08Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '7'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1370
-            type:
-              id: 60
-              code: automation-analytics-report
-              name: Automation Analytics
-              category: inventory
-            reportTitle: Automation Analytics Feb 22, 2022 17:49:16
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-22T17:49:16Z'
-            lastUpdated: '2022-02-22T17:49:20Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '7'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1369
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Overview Feb 21, 2022 22:07:43
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-21T22:07:43Z'
-            lastUpdated: '2022-02-21T22:07:44Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1368
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Overview Feb 21, 2022 21:35:16
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-21T21:35:16Z'
-            lastUpdated: '2022-02-21T21:35:16Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1367
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Overview Feb 21, 2022 21:31:53
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-21T21:31:53Z'
-            lastUpdated: '2022-02-21T21:31:54Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1366
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Overview Feb 21, 2022 21:13:13
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-21T21:13:13Z'
-            lastUpdated: '2022-02-21T21:13:14Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1365
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Analytics Feb 21, 2022 18:50:33
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-21T18:50:33Z'
-            lastUpdated: '2022-02-21T18:50:34Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '60'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1364
-            type:
-              id: 24
-              code: instanceInventory
-              name: Instance Inventory Summary
-              category: provisioningInventory
-            reportTitle: Instance Inventory Summary Feb 18, 2022 11:30:37
-            filterTitle: Feb 18, 2022 | Feb 17, 2022 - Feb 18, 2022 | Demo
-            status: ready
-            dateCreated: '2022-02-18T11:30:37Z'
-            lastUpdated: '2022-02-18T11:30:38Z'
-            startDate: '2022-02-17T00:00:00Z'
-            endDate: '2022-02-18T23:59:00Z'
-            config:
-              reportType: null
-              startDate: 02/17/2022 00:00:00
-              endDate: 02/18/2022 23:59:59
-              accountId: ''
-              environment: demo
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 318
-              username: gwhitaker
-          - id: 1363
-            type:
-              id: 36
-              code: migrationPlan
-              name: Migration Planning
-              category: infrastructureInventory
-            reportTitle: Migration Planning Feb 17, 2022 16:45:20
-            filterTitle: >-
-              Source Cloud: VMware Demo Cluster H5 | Target Clouds: AWS, Azure
-              US, Google Labs
-            status: ready
-            dateCreated: '2022-02-17T16:45:20Z'
-            lastUpdated: '2022-02-17T16:45:40Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              cloudId: '172'
-              targetCloudIds:
-                - '12'
-                - '121'
-                - '143'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 223
-              username: ashildmyer
-          - id: 1362
-            type:
-              id: 21
-              code: instanceCost
-              name: Instance Cost
-              category: cost
-            reportTitle: Instance Cost Feb 17, 2022 16:37:01
-            filterTitle: >-
-              Jan 01, 2022 - Jan 31, 2022 | All Clouds | All Groups | Feb 17,
-              2022
-            status: ready
-            dateCreated: '2022-02-17T16:37:01Z'
-            lastUpdated: '2022-02-17T16:37:09Z'
-            startDate: '2022-01-01T00:00:00Z'
-            endDate: '2022-01-31T23:59:00Z'
-            config:
-              reportType: null
-              startDate: 01/01/2022 00:00:00
-              endDate: 01/31/2022 23:59:59
-              accountId: ''
-              siteId: ''
-              cloudId: ''
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 223
-              username: ashildmyer
-          - id: 1361
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Analytics Feb 11, 2022 23:04:39
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-11T23:04:39Z'
-            lastUpdated: '2022-02-11T23:04:39Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '7'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1360
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Analytics Feb 11, 2022 22:02:42
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-11T22:02:42Z'
-            lastUpdated: '2022-02-11T22:02:53Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '7'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1359
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Analytics Feb 11, 2022 21:53:49
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-11T21:53:49Z'
-            lastUpdated: '2022-02-11T21:53:49Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '30'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1358
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Analytics Feb 11, 2022 21:26:26
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-11T21:26:26Z'
-            lastUpdated: '2022-02-11T21:26:27Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              duration: '60'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1357
-            type:
-              id: 59
-              code: automation-overview-report
-              name: Automation Overview
-              category: inventory
-            reportTitle: Automation Analytics Feb 11, 2022 21:08:12
-            filterTitle: null
-            status: ready
-            dateCreated: '2022-02-11T21:08:12Z'
-            lastUpdated: '2022-02-11T21:08:19Z'
-            startDate: null
-            endDate: null
-            config:
-              reportType: null
-              taskType: all
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 263
-              username: Martez Reed
-          - id: 1355
-            type:
-              id: 21
-              code: instanceCost
-              name: Instance Cost
-              category: cost
-            reportTitle: Instance Cost Feb 04, 2022 21:54:03
-            filterTitle: >-
-              Jan 01, 2022 - Jan 31, 2022 | VMware Demo Cluster H5 | All Groups
-              | Feb 04, 2022
-            status: ready
-            dateCreated: '2022-02-04T21:54:03Z'
-            lastUpdated: '2022-02-04T21:54:13Z'
-            startDate: '2022-01-01T00:00:00Z'
-            endDate: '2022-01-31T23:59:00Z'
-            config:
-              reportType: null
-              startDate: 01/01/2022 00:00:00
-              endDate: 01/31/2022 23:59:59
-              accountId: ''
-              siteId: ''
-              cloudId: '172'
-              metadata: {}
-              metadataExclude: {}
-            createdBy:
-              id: 223
-              username: ashildmyer
+                type: object
+                properties:
+                  reportType:
+                    type: string
+                    format: nullable
+                  startDate:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  endDate:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  name:
+                    type: string
+                    format: nullable
+                  scheduleMode:
+                    type: string
+                    nullable: true
+                  dateTime:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  cloudId:
+                    type: string
+                    format: nullable
+                  config:
+                    type: object
+                    nullable: true
+                    properties:
+                      dateTime:
+                        type: string
+                        format: date-time
+                        nullable: true
+                      cloudId:
+                        type: string
+                        format: nullable
+                  metadata:
+                    type: string
+                    format: nullable
+                  metadataExclude:
+                    type: string
+                    format: nullable
+              createdBy:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  username:
+                    type: string
         meta:
-          size: 25
-          total: 1162
-          offset: 0
-          max: 25
+          $ref: '#/components/schemas/MetaObject'
     roles:
       summary: Roles Response
       value: null
@@ -12385,6 +11884,7 @@ components:
         This automatically retrieves a new Community Edition License from the
         Hub and installs it in your appliance.
       value:
+        applianceName: The Matrix
         accountName: Meta Cortex Corporation
         firstName: Thomas
         lastName: Anderson
@@ -12408,6 +11908,7 @@ components:
         This automatically retrieves a new Community Edition License from the
         Hub and installs it in your appliance.
       value:
+        applianceName: The Matrix
         accountName: Meta Cortex Corporation
         firstName: Thomas
         lastName: Anderson

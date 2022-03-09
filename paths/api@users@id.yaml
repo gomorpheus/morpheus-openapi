@@ -1,21 +1,18 @@
-parameters:
-  - $ref: ..\components\parameters\id-path.yaml
 get:
-  summary: Get user
-  description: Get details about a user
-  operationId: getUser
+  summary: Get a Specific User
+  description: Get details about a specific user.
+  operationId: getUsers
   tags:
     - Users
+  parameters:
+  - $ref: ..\components\parameters\id-path.yaml
   responses:
     '200':
       description: User Object
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              user:
-                $ref: ..\components\schemas\User.yaml
+            $ref: ..\components\schemas\user.yaml
           examples:
             Get User Response:
               $ref: ..\components\examples\user.yaml
@@ -37,6 +34,8 @@ put:
   operationId: updateUser
   tags:
     - Users
+  parameters:
+  - $ref: ..\components\parameters\id-path.yaml
   requestBody:
     content:
       application/json:
@@ -47,10 +46,6 @@ put:
           properties:
             user:
               type: object
-              description: Payload for creating a new user
-              required:
-                - name
-                - roles
               properties:
                 firstName:
                   type: string
@@ -73,19 +68,13 @@ put:
                   description: List of Roles
                   items:
                     $ref: ..\components\schemas\ReferenceObject.yaml
-        examples:
-          Update User Response:
-            $ref: ..\components\examples\user.yaml
   responses:
     '200':
       description: User Object
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              user:
-                $ref: ..\components\schemas\user.yaml
+            $ref: ..\components\schemas\user.yaml
           examples:
             Update User Response:
               $ref: ..\components\examples\user.yaml
@@ -115,16 +104,7 @@ delete:
           schema:
             $ref: ..\components\schemas\200-success.yaml
     '400':
-      description: User still has managed resources
-      content:
-        application/json:
-          schema:
-            $ref: ..\components\schemas\Error.yaml
-          example:
-            success: false
-            msg: >-
-              Unable to delete an user without removing resources when managed
-              instances exist.
+      description: Bad Request.
     '401':
       description: Unauthorized.
     '403':
