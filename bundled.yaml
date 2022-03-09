@@ -25,31 +25,29 @@ servers:
 paths:
   /api/accounts:
     get:
-      summary: List tenants
+      summary: List All Tenants
       description: Get a list of tenants. A tenant is also referred to as an account.
       operationId: listTenants
       tags:
         - Tenants
       parameters:
-        - $ref: '#/components/parameters/phrase'
         - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/offset'
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/lastUpdated'
       responses:
         '200':
           description: Array of tenants
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  accounts:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Tenant'
-                  meta:
-                    $ref: '#/components/schemas/MetaObject'
+                $ref: '#/components/schemas/tenants'
+              examples:
+                Tenants Response:
+                  $ref: '#/components/examples/tenants'
         '400':
           description: Bad Request.
         '401':
@@ -63,11 +61,11 @@ paths:
         '503':
           description: Service Unavailable.
     post:
-      summary: Create tenant
+      summary: Create a Tenant
       description: >-
         Create a new tenant. This new account will be a sub-tenant with the
         master tenant as its parent.
-      operationId: createTenant
+      operationId: addTenant
       tags:
         - Tenants
       requestBody:
@@ -114,10 +112,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  account:
-                    $ref: '#/components/schemas/Tenant'
+                $ref: '#/components/schemas/tenant'
+              examples:
+                Tenant Response:
+                  $ref: '#/components/examples/tenant'
         '400':
           description: Bad Request.
         '401':
@@ -145,10 +143,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  account:
-                    $ref: '#/components/schemas/Tenant'
+                $ref: '#/components/schemas/tenant'
+              examples:
+                Tenant Response:
+                  $ref: '#/components/examples/tenant'
         '400':
           description: Bad Request.
         '401':
@@ -208,10 +206,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  account:
-                    $ref: '#/components/schemas/Tenant'
+                $ref: '#/components/schemas/tenant'
+              examples:
+                Tenant Response:
+                  $ref: '#/components/examples/tenant'
         '400':
           description: Bad Request.
         '401':
@@ -230,7 +228,7 @@ paths:
         Delete an existing tenant. This deletes everything under the tenant. An
         error will occur if the tenant still has managed resources, unless
         `removeResources=true`.
-      operationId: deleteTenant
+      operationId: removeTenant
       tags:
         - Tenants
       parameters:
@@ -249,7 +247,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Success'
+                $ref: '#/components/schemas/200-success'
         '400':
           description: Tenant still has managed resources
           content:
@@ -3404,23 +3402,10 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  roles:
-                    type: array
-                    items:
-                      type: object
-                      description: Available User Role Object
-                      properties:
-                        id:
-                          type: integer
-                          format: int64
-                        authority:
-                          type: string
-                          description: A unique name for the role.
+                $ref: '#/components/schemas/usersAvailableRoles'
               examples:
-                ListAvailableUserRoles:
-                  $ref: '#/components/examples/ListUsersAvailableRoles'
+                Search Response:
+                  $ref: '#/components/examples/usersAvailableRoles'
         '400':
           description: Bad Request.
         '401':
@@ -3910,12 +3895,6 @@ components:
       type: http
       scheme: bearer
   parameters:
-    phrase:
-      name: phrase
-      in: query
-      description: Search phrase for partial matches on name or description
-      schema:
-        type: string
     max:
       name: max
       in: query
@@ -3949,6 +3928,28 @@ components:
         enum:
           - asc
           - desc
+    phrase:
+      name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      schema:
+        type: string
+    name:
+      name: name
+      in: query
+      description: Filter by name, wildcard may be specified as %, eg. example-%
+      schema:
+        type: string
+    lastUpdated:
+      name: lastUpdated
+      in: query
+      description: >-
+        Date filter, restricts query to only load tenants updated more recently
+        than the date specified (ISO 8601)
+      example: 2019-03-06T17:52:29+0000
+      schema:
+        type: string
+        format: date-time
     id-path:
       name: id
       in: path
@@ -3966,12 +3967,6 @@ components:
         enum:
           - asc
           - desc
-    name:
-      name: name
-      in: query
-      description: Filter by name, wildcard may be specified as %, eg. example-%
-      schema:
-        type: string
     userId:
       name: userId
       in: query
@@ -4085,112 +4080,6 @@ components:
       schema:
         type: string
   schemas:
-    Tenant:
-      type: object
-      description: Tenant Object
-      properties:
-        id:
-          type: integer
-          format: int64
-          description: ID
-        name:
-          type: string
-          description: Name
-        description:
-          type: string
-          description: Description
-          nullable: true
-        role:
-          type: object
-          description: >-
-            Tenant Base Role. This is the primary role of the tenant. All roles
-            created within the tenant must inherit this role as the base role.
-          properties:
-            id:
-              type: integer
-              format: int64
-            authority:
-              type: string
-              description: A unique name for the role.
-        subdomain:
-          type: string
-          description: >-
-            Subdomain is used for creating a direct login url in Identity
-            Sources or as a login prefix to identify the tenant i.e.
-            'subdomain\username'
-          nullable: true
-        currency:
-          type: string
-          enum:
-            - AUD
-            - AUD
-            - BGN
-            - BRL
-            - CAD
-            - CHF
-            - CLF
-            - CLP
-            - CNY
-            - CZK
-            - DKK
-            - EUR
-            - GBP
-            - HKD
-            - HRK
-            - HUF
-            - IDR
-            - ILS
-            - INR
-            - JPY
-            - KRW
-            - MXN
-            - MYR
-            - NOK
-            - NZD
-            - PHP
-            - PLN
-            - RON
-            - RUB
-            - SEK
-            - SGD
-            - THB
-            - TRY
-            - USD
-            - ZAR
-          default: USD
-        externalId:
-          type: string
-          nullable: true
-        active:
-          type: boolean
-          default: true
-          description: Flag that can be used to disable a tenant
-        master:
-          type: boolean
-          default: false
-          description: >-
-            Master Tenant. This is the master account and parent of all other
-            tenants, only true for the tenant created during setup.
-        dateCreated:
-          type: string
-          format: date-time
-          description: Dated Created timestamp
-        lastUpdated:
-          type: string
-          format: date-time
-          description: Last Updated timestamp
-        stats:
-          type: object
-          description: Tenant Statistics
-          properties:
-            userCount:
-              type: integer
-              format: int64
-              description: The number of users belonging to the tenant
-            instanceCount:
-              type: integer
-              format: int64
-              description: The of the number of instances belonging to the tenant
     MetaObject:
       type: object
       description: >-
@@ -4219,6 +4108,68 @@ components:
           format: int64
           description: Max size, the maximum number of records to include in the response.
           default: 25
+    tenants:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              name:
+                type: string
+              description:
+                type: string
+              subdomain:
+                type: string
+              currency:
+                type: string
+              externalId:
+                type: string
+                format: nullable
+              customerNumber:
+                type: string
+                format: nullable
+              accountNumber:
+                type: string
+                format: nullable
+              accountName:
+                type: string
+              active:
+                type: boolean
+              master:
+                type: boolean
+              role:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  authority:
+                    type: string
+                  description:
+                    type: string
+                    format: nullable
+              stats:
+                type: object
+                properties:
+                  instanceCount:
+                    type: integer
+                    format: int64
+                  userCount:
+                    type: integer
+                    format: int64
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+        meta:
+          $ref: '#/components/schemas/MetaObject'
     CurrencyCode:
       type: string
       description: Currency Code (ISO 4217)
@@ -4259,20 +4210,70 @@ components:
         - USD
         - ZAR
       default: USD
-    Success:
+    tenant:
       type: object
-      description: >-
-        The standard response object that is returned when an operation is
-        successful
+      properties:
+        account:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            description:
+              type: string
+            subdomain:
+              type: string
+            currency:
+              type: string
+            externalId:
+              type: string
+              format: nullable
+            customerNumber:
+              type: string
+              format: nullable
+            accountNumber:
+              type: string
+              format: nullable
+            accountName:
+              type: string
+            active:
+              type: boolean
+            master:
+              type: boolean
+            role:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                authority:
+                  type: string
+                description:
+                  type: string
+                  format: nullable
+            stats:
+              type: object
+              properties:
+                instanceCount:
+                  type: integer
+                  format: int64
+                userCount:
+                  type: integer
+                  format: int64
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+    200-success:
+      title: 200 Success
+      type: object
       properties:
         success:
           type: boolean
-          description: >-
-            Success indicator, true when the request succeeded and false when an
-            error occurred
-          default: true
-      example:
-        success: true
     Error:
       type: object
       description: >-
@@ -4414,12 +4415,6 @@ components:
                   type: string
                 displayName:
                   type: string
-    200-success:
-      title: 200 Success
-      type: object
-      properties:
-        success:
-          type: boolean
     approvals:
       title: 200 Approvals
       type: object
@@ -7167,6 +7162,31 @@ components:
             lastUpdated:
               type: string
               format: date-time
+    usersAvailableRoles:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              authority:
+                type: string
+              description:
+                type: string
+              roleType:
+                type: string
+              owner:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  name:
+                    type: string
     wikiCategories:
       title: 200 Wiki Categories
       type: object
@@ -7256,6 +7276,79 @@ components:
           type: string
           description: Scope granted
   examples:
+    tenants:
+      summary: Tenants Response
+      value:
+        accounts:
+          - id: 52
+            name: A Tenant
+            description: A subtenant
+            subdomain: atenant
+            currency: USD
+            externalId: null
+            customerNumber: null
+            accountNumber: null
+            accountName: atenant
+            active: true
+            master: false
+            role:
+              id: 425
+              authority: A Tenant Role
+              description: null
+            stats:
+              instanceCount: 0
+              userCount: 9
+            dateCreated: '2020-06-18T23:13:32Z'
+            lastUpdated: '2022-01-20T21:35:32Z'
+          - id: 50
+            name: Gekko & Co
+            description: null
+            subdomain: gekko
+            currency: USD
+            externalId: null
+            customerNumber: null
+            accountNumber: null
+            accountName: gekko
+            active: true
+            master: false
+            role:
+              id: 84
+              authority: Gekko & Co
+              description: 'Role for Sub-Tenant: Gekko Tenant Role'
+            stats:
+              instanceCount: 0
+              userCount: 3
+            dateCreated: '2017-11-14T14:22:49Z'
+            lastUpdated: '2021-01-11T15:06:14Z'
+        meta:
+          offset: 0
+          max: 2
+          size: 2
+          total: 8
+    tenant:
+      summary: Tenant Response
+      value:
+        account:
+          id: 52
+          name: A Tenant
+          description: A subtenant
+          subdomain: atenant
+          currency: USD
+          externalId: null
+          customerNumber: null
+          accountNumber: null
+          accountName: atenant
+          active: true
+          master: false
+          role:
+            id: 425
+            authority: A Tenant Role
+            description: null
+          stats:
+            instanceCount: 0
+            userCount: 9
+          dateCreated: '2020-06-18T23:13:32Z'
+          lastUpdated: '2022-01-20T21:35:32Z'
     activity:
       summary: Activity Response
       value:
@@ -12680,16 +12773,236 @@ components:
           defaultPersona: null
           dateCreated: '2017-02-17T06:47:17Z'
           lastUpdated: '2021-08-26T18:58:09Z'
-    ListUsersAvailableRoles:
-      summary: List of available roles for a user
+    usersAvailableRoles:
+      summary: Users Available Roles Response
       value:
         roles:
-          - id: 1
-            authority: System Admin
-            name: System Admin
-            description: Super User
-            roleType: null
-            owner: null
+          - id: 17
+            authority: ah-admin
+            description: Adam Hicks Role
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 296
+            authority: al-admin
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 593
+            authority: Archives
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 609
+            authority: Channels West Demo Role 1
+            description: User permissions
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 254
+            authority: chef-user
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 491
+            authority: CT Admin
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 224
+            authority: Dashboard
+            description: Dashboard Read Access Only
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 62
+            authority: Demo
+            description: Role for Demo use
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 273
+            authority: Dev Limited
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 26
+            authority: Developer
+            description: Developer Access Role
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 285
+            authority: End User Basic
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 594
+            authority: gp-admin
+            description: Greg Pietro Admin
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 384
+            authority: Irresponsible Developer
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 223
+            authority: js-admin
+            description: James Smith Role
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 15
+            authority: jw-admin
+            description: Jeff Wheeler Role
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 619
+            authority: lockout instance types
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 293
+            authority: Marketing
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 260
+            authority: Monitoring Admin
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 16
+            authority: Morpheus Admin
+            description: Morpheus Administrator Role
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 294
+            authority: Morpheus Engineer
+            description: Morpheus Engineer
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 378
+            authority: multi-tenant user locked
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 67
+            authority: Provisioning User
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 328
+            authority: ProvisionOnly
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 19
+            authority: QA
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 336
+            authority: ReadOnly
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 63
+            authority: Sales
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 421
+            authority: Service Catalog Access
+            description: >-
+              This Role only grants access to Service Catalog Persona. No other
+              permissions
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 335
+            authority: Space Developer
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 21
+            authority: Sub Account Admin
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 415
+            authority: Subtenant Multirole
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 620
+            authority: thuan - test
+            description: null
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
+          - id: 585
+            authority: Web Tour
+            description: Tourial User to limit options
+            roleType: user
+            owner:
+              id: 3
+              name: Morpheus
     wikiCategories:
       summary: Wiki Categories Response
       value:

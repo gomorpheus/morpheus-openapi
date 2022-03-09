@@ -17,23 +17,10 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              roles:
-                type: array
-                items:
-                  type: object
-                  description: Available User Role Object
-                  properties:
-                    id:
-                      type: integer
-                      format: int64
-                    authority:
-                      type: string
-                      description: A unique name for the role.
+            $ref: ../components/schemas/usersAvailableRoles.yaml
           examples:
-            ListAvailableUserRoles:
-              $ref: ..\components\examples\ListUsersAvailableRoles.yaml
+            Users Available Roles Response:
+              $ref: ../components/examples/usersAvailableRoles.yaml
     '400':
       description: Bad Request.
     '401':

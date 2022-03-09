@@ -1,0 +1,23 @@
+summary: Tenant Response
+value:
+  account:
+    id: 52
+    name: A Tenant
+    description: A subtenant
+    subdomain: atenant
+    currency: USD
+    externalId: null
+    customerNumber: null
+    accountNumber: null
+    accountName: atenant
+    active: true
+    master: false
+    role:
+      id: 425
+      authority: A Tenant Role
+      description: null
+    stats:
+      instanceCount: 0
+      userCount: 9
+    dateCreated: '2020-06-18T23:13:32Z'
+    lastUpdated: '2022-01-20T21:35:32Z'

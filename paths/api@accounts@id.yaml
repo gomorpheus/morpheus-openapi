@@ -12,10 +12,10 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              account:
-                $ref: ..\components\schemas\Tenant.yaml
+            $ref: ../components/schemas/tenant.yaml
+          examples:
+            Tenant Response:
+              $ref: ../components/examples/tenant.yaml
     '400':
       description: Bad Request.
     '401':
@@ -75,10 +75,10 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              account:
-                $ref: ..\components\schemas\Tenant.yaml
+            $ref: ../components/schemas/tenant.yaml
+          examples:
+            Tenant Response:
+              $ref: ../components/examples/tenant.yaml
     '400':
       description: Bad Request.
     '401':
@@ -97,7 +97,7 @@ delete:
     Delete an existing tenant. This deletes everything under the tenant. An
     error will occur if the tenant still has managed resources, unless
     `removeResources=true`.
-  operationId: deleteTenant
+  operationId: removeTenant
   tags:
     - Tenants
   parameters:
@@ -116,7 +116,7 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Success.yaml
+            $ref: ..\components\schemas\200-success.yaml
     '400':
       description: Tenant still has managed resources
       content:

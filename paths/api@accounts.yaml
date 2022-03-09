@@ -1,29 +1,27 @@
 get:
-  summary: List tenants
+  summary: List All Tenants
   description: Get a list of tenants. A tenant is also referred to as an account.
   operationId: listTenants
   tags:
     - Tenants
   parameters:
-    - $ref: ..\components\parameters\phrase.yaml
-    - $ref: ..\components\parameters\max.yaml
-    - $ref: ..\components\parameters\offset.yaml
-    - $ref: ..\components\parameters\sort.yaml
-    - $ref: ..\components\parameters\direction.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
   responses:
     '200':
       description: Array of tenants
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              accounts:
-                type: array
-                items:
-                  $ref: ..\components\schemas\Tenant.yaml
-              meta:
-                $ref: ..\components\schemas\MetaObject.yaml
+            $ref: ../components/schemas/tenants.yaml
+          examples:
+            Tenants Response:
+              $ref: ../components/examples/tenants.yaml 
     '400':
       description: Bad Request.
     '401':
@@ -37,11 +35,11 @@ get:
     '503':
       description: Service Unavailable.
 post:
-  summary: Create tenant
+  summary: Create a Tenant
   description: >-
     Create a new tenant. This new account will be a sub-tenant with the master
     tenant as its parent.
-  operationId: createTenant
+  operationId: addTenant
   tags:
     - Tenants
   requestBody:
@@ -81,17 +79,17 @@ post:
                     username for sub tenant users.
                   nullable: true
                 currency:
-                  $ref: ..\components\schemas\CurrencyCode.yaml
+                  $ref: ../components/schemas/CurrencyCode.yaml
   responses:
     '200':
       description: Tenant Object
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              account:
-                $ref: ..\components\schemas\Tenant.yaml
+            $ref: ../components/schemas/tenant.yaml
+          examples:
+            Tenant Response:
+              $ref: ../components/examples/tenant.yaml 
     '400':
       description: Bad Request.
     '401':
