@@ -1,80 +1,130 @@
 post:
-  summary: Provides authentication via username and password
-  description: |
-    This endpoint provides authentication via `username` and `password` of a Morpheus User. The response includes a valid access token. If your current token is expired, a new one will be created and returned.
-
-    Subtenant users will need to pass their subdomain prefix like subdomain\username. The default subdomain is the tenant account ID.
-
-    This endpoint also allows refreshing your current access token to get a new token. This is done by passing your current `refresh_token`. This provides a way to renew your client’s session with the API, and extend the expiration date.
-
-    This will render your current access token invalid, so you will need to update any scripts relying on it.
-  operationId: getAccessToken
   tags:
     - Authentication
-  security: []
+  summary: getAccessToken
+  description: >
+    This endpoint provides authentication via `username` and `password` of a
+    Morpheus User. The response includes a valid access token. If your current
+    token is expired, a new one will be created and returned.
+
+
+    Subtenant users will need to pass their subdomain prefix like
+    subdomain\username. The default subdomain is the tenant account ID.
+
+
+    This endpoint also allows refreshing your current access token to get a new
+    token. This is done by passing your current `refresh_token`. This provides a
+    way to renew your client’s session with the API, and extend the expiration
+    date.
+
+
+    This will render your current access token invalid, so you will need to
+    update any scripts relying on it.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-access-token
+  operationId: getAccessToken
   parameters:
     - name: client_id
-      required: true
       in: query
-      description: Client ID, use morph-api. Users may only have one access token per Client ID. The CLI uses morph-cli.
-      schema:
-        type: string
-        enum:
-          - morph-api
-    - name: grant_type
+      description: >-
+        Client ID, use morph-api. Users may only have one access token per
+        Client ID. The CLI uses morph-cli.
       required: true
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\client_id.yaml
+    - name: grant_type
       in: query
       description: OAuth Grant Type, use password.
-      schema:
-        type: string
-        enum:
-          - password
-          - refresh_token
-    - name: scope
       required: true
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\grant_type.yaml
+    - name: scope
       in: query
       description: OAuth token scope, use write.
+      required: true
+      style: form
+      explode: true
       schema:
+        $ref: ..\components\schemas\scope2.yaml
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      style: simple
+      schema:
+        const: application/x-www-form-urlencoded
         type: string
-        enum:
-          - write
+        examples:
+          - application/x-www-form-urlencoded
   requestBody:
-    required: true
     content:
       application/x-www-form-urlencoded:
+        encoding: {}
         schema:
           type: object
           properties:
             username:
-              description: Specified as "username" or "tenantId\username" with proper HTML encoding and used in conjunction with `password`. Not utilized with `refresh_token`.
               type: string
+              description: >-
+                Specified as "username" or "tenantId\username" with proper HTML
+                encoding and used in conjunction with `password`. Not utilized
+                with `refresh_token`.
             password:
-              description: The Password for defined `username`. Must have proper HTML encoding
               type: string
-              format: password
+              description: >-
+                The Password for defined `username`. Must have proper HTML
+                encoding
             refresh_token:
-              description: The `refresh_token` value from a previous API generation can be utilized instead of `username` and `password`.
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-access-token
+              description: >-
+                The `refresh_token` value from a previous API generation can be
+                utilized instead of `username` and `password`.
+          contentMediaType: application/x-www-form-urlencoded
+    required: false
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/accessToken.yaml
+            $ref: ..\components\schemas\200AccessToken.yaml
           examples:
             Access Token responses:
-              $ref: ../components/examples/accessToken.yaml
+              summary: Access Token Response
+              value:
+                access_token: e1d62c34-f7f5-4713-a874-31491e7707de
+                refresh_token: 718cc628-b89f-43f5-bef7-f39887b47e68
+                expires_in: 30463819
+                token_type: bearer
+                scope: write
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+  security: []
+parameters: []

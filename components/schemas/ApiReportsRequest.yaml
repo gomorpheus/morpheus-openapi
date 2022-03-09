@@ -1,0 +1,7 @@
+title: ApiReportsRequest
+required:
+  - report
+type: object
+properties:
+  report:
+    $ref: .\Report.yaml

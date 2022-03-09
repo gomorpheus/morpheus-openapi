@@ -1,0 +1,36 @@
+title: Role7
+required:
+  - authority
+type: object
+properties:
+  authority:
+    type: string
+    description: Authority (Name)
+  description:
+    type:
+      - string
+      - 'null'
+    description: Description
+  roleType:
+    $ref: .\RoleType1.yaml
+  baseRoleId:
+    type: integer
+    description: >-
+      Base Role ID. Create the new role with the same permissions and access
+      levels that the specified base role has. If this is not passed, the role
+      is create without any permissions.
+    contentEncoding: int64
+  multitenant:
+    type: boolean
+    description: >-
+      Multitenant roles are copied to all tenant accounts and kept in sync until
+      a sub-tenant user modifies their copy of the role. *Only available to
+      master tenant*
+    default: false
+  multitenantLocked:
+    type: boolean
+    description: >-
+      Multitenant Locked, prevents sub-tenant users from modifying their copy of
+      multienant roles. *Only available to master tenant*
+    default: false
+description: Payload for creating a new role

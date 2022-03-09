@@ -1,0 +1,9 @@
+title: Stats
+type: object
+properties:
+  instanceCount:
+    type: integer
+    contentEncoding: int64
+  userCount:
+    type: integer
+    contentEncoding: int64

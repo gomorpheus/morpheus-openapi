@@ -1,0 +1,23 @@
+title: Interval
+type: object
+properties:
+  index:
+    type: integer
+    contentEncoding: int64
+  month:
+    type: string
+  shortName:
+    type: string
+  chartName:
+    type: string
+  budget:
+    type: integer
+    contentEncoding: int64
+  cost:
+    type: number
+  startDate:
+    type: string
+    contentEncoding: date-time
+  endDate:
+    type: string
+    contentEncoding: date-time

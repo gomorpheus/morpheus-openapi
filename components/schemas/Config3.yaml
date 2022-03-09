@@ -1,0 +1,10 @@
+title: Config3
+type: object
+properties:
+  dateTime:
+    type:
+      - string
+      - 'null'
+    contentEncoding: date-time
+  cloudId:
+    type: string

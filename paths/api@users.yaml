@@ -1,39 +1,84 @@
 get:
-  summary: List users
-  description: Get a list of users.
-  operationId: listUsers
   tags:
     - Users
+  summary: listUsers
+  description: Get a list of users.
+  operationId: listUsers
   parameters:
-    - $ref: ..\components\parameters\phrase.yaml
-    - $ref: ..\components\parameters\max.yaml
-    - $ref: ..\components\parameters\offset.yaml
-    - $ref: ..\components\parameters\sort.yaml
-    - $ref: ..\components\parameters\direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: max
+      in: query
+      description: Maximum number of records to return
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 25
+    - name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 0
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      style: form
+      explode: true
+      schema:
+        type: string
+        default: name
+    - name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\direction.yaml
     - name: username
       in: query
       description: Filter by username
+      style: form
+      explode: true
       schema:
         type: string
     - name: email
       in: query
       description: Filter by email
+      style: form
+      explode: true
       schema:
         type: string
     - name: firstName
       in: query
       description: Filter by firstName
+      style: form
+      explode: true
       schema:
         type: string
     - name: roleId
       in: query
       description: Filter by Role ID (supports multiple values)
+      style: form
+      explode: true
       schema:
         type: integer
-        format: int64
+        contentEncoding: int64
     - name: role
       in: query
       description: Filter by Role authority (supports multiple values)
+      style: form
+      explode: true
       schema:
         type: string
     - name: accountId
@@ -41,108 +86,217 @@ get:
       description: >-
         Filter by Tenant ID. This is only available to master tenant users with
         permission to manage tenants and users.
+      style: form
+      explode: true
       schema:
         type: integer
-        format: int64
+        contentEncoding: int64
     - name: global
       in: query
       description: >-
         Global (All Tenants), load users from all tenants. The default is to
         only see your own tenant. This is only available to master tenant users
         with permission to manage tenants and users.
+      style: form
+      explode: true
       schema:
         type: boolean
         default: false
   responses:
     '200':
       description: Array of users
+      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\users.yaml
           examples:
             Users Response:
-              $ref: ..\components\examples\users.yaml
+              summary: Users Response
+              value:
+                users:
+                  - id: 238
+                    accountId: 3
+                    username: Aaron Reid
+                    displayName: Aaron Reid
+                    email: areid@morpheusdata.com
+                    firstName: Aaron
+                    lastName: Reid
+                    enabled: false
+                    receiveNotifications: true
+                    isUsing2FA: false
+                    accountExpired: false
+                    accountLocked: false
+                    passwordExpired: false
+                    loginCount: 0
+                    loginAttempts: 0
+                    lastLoginDate: '2022-01-06T20:47:47Z'
+                    roles:
+                      - id: 294
+                        authority: Morpheus Engineer
+                        description: Morpheus Engineer
+                    account:
+                      id: 3
+                      name: Morpheus
+                    linuxUsername: 'null'
+                    linuxPassword: '************'
+                    linuxKeyPairId: 'null'
+                    windowsUsername: 'null'
+                    windowsPassword: 'null'
+                    defaultPersona: 'null'
+                    dateCreated: '2020-10-14T15:15:36Z'
+                    lastUpdated: '2022-03-01T02:09:16Z'
+                  - id: 4
+                    accountId: 3
+                    username: ahicks
+                    displayName: Adam Hicks
+                    email: ahicks@morpheusdata.com
+                    firstName: Adam
+                    lastName: Hicks
+                    enabled: false
+                    receiveNotifications: true
+                    isUsing2FA: false
+                    accountExpired: false
+                    accountLocked: false
+                    passwordExpired: false
+                    loginCount: 1576
+                    loginAttempts: 0
+                    lastLoginDate: '2021-08-17T17:12:08Z'
+                    roles:
+                      - id: 16
+                        authority: Morpheus Admin
+                        description: Morpheus Administrator Role
+                    account:
+                      id: 3
+                      name: Morpheus
+                    linuxUsername: ahicks
+                    linuxPassword: '************'
+                    linuxKeyPairId: '13'
+                    windowsUsername: ahicks
+                    windowsPassword: '************'
+                    defaultPersona: 'null'
+                    dateCreated: '2017-02-17T06:47:17Z'
+                    lastUpdated: '2021-08-26T18:58:09Z'
+                meta:
+                  offset: 0
+                  max: 2
+                  size: 2
+                  total: 118
+                global: false
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
 post:
-  summary: Create user
-  description: Create a new user.
-  operationId: createUser
   tags:
     - Users
+  summary: createUser
+  description: Create a new user.
+  operationId: createUser
   parameters:
     - name: accountId
       in: query
       description: Tenant ID, create user in a sub tenant account instead of your own.
+      style: form
+      explode: true
       schema:
         type: integer
-        format: int64
+        contentEncoding: int64
   requestBody:
+    description: ''
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - user
-          properties:
-            user:
-              type: object
-              description: Payload for creating a new user
-              required:
-                - name
-                - roles
-              properties:
-                firstName:
-                  type: string
-                  description: First Name
-                lastName:
-                  type: string
-                  description: Last Name
-                username:
-                  type: string
-                  description: Username (unique per tenant).
-                email:
-                  type: string
-                  description: Email address
-                password:
-                  type: string
-                  format: password
-                  description: Password
-                roles:
-                  type: array
-                  description: List of Roles
-                  items:
-                    $ref: ..\components\schemas\ReferenceObject.yaml
+          $ref: ..\components\schemas\ApiUsersRequest.yaml
+    required: false
   responses:
     '200':
       description: User Object
+      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\user.yaml
+            $ref: ..\components\schemas\200User.yaml
           examples:
             Create User Response:
-              $ref: ..\components\examples\user.yaml
+              summary: User Response
+              value:
+                user:
+                  id: 4
+                  accountId: 3
+                  username: ahicks
+                  displayName: Adam Hicks
+                  email: ahicks@morpheusdata.com
+                  firstName: Adam
+                  lastName: Hicks
+                  enabled: false
+                  receiveNotifications: true
+                  isUsing2FA: false
+                  accountExpired: false
+                  accountLocked: false
+                  passwordExpired: false
+                  loginCount: 1576
+                  loginAttempts: 0
+                  lastLoginDate: '2021-08-17T17:12:08Z'
+                  roles:
+                    - id: 16
+                      authority: Morpheus Admin
+                      description: Morpheus Administrator Role
+                  account:
+                    id: 3
+                    name: Morpheus
+                  linuxUsername: ahicks
+                  linuxPassword: '************'
+                  linuxKeyPairId: 13
+                  windowsUsername: ahicks
+                  windowsPassword: '************'
+                  defaultPersona: 'null'
+                  dateCreated: '2017-02-17T06:47:17Z'
+                  lastUpdated: '2021-08-26T18:58:09Z'
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

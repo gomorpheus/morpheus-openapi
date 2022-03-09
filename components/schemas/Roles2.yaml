@@ -1,0 +1,10 @@
+title: Roles2
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  authority:
+    type: string
+  description:
+    type: string

@@ -1,39 +1,119 @@
 get:
-  summary: Retrieves all Approvals
-  description: |
-    Retrieves all approvals.
-  operationId: listApprovals
   tags:
     - Approvals
+  summary: listApprovals
+  description: |
+    Retrieves all approvals.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#approvals
+  operationId: listApprovals
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/direction.yaml
-    - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/name.yaml
+    - name: max
+      in: query
+      description: Maximum number of records to return
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 25
+    - name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 0
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      style: form
+      explode: true
+      schema:
+        type: string
+        default: name
+    - name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: Filter by name, wildcard may be specified as %, eg. example-%
+      style: form
+      explode: true
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/approvals.yaml
+            $ref: ..\components\schemas\200Approvals.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/approvals.yaml
-          
+              summary: Approvals Response
+              value:
+                approvals:
+                  - id: 45
+                    name: APPROVAL-0000045
+                    internalId: 'null'
+                    externalId: 'null'
+                    externalName: 'null'
+                    requestType: Instance Approval
+                    account:
+                      id: 3
+                      name: Morpheus
+                    approver:
+                      id: 3
+                      name: Morpheus
+                    accountIntegration: 'null'
+                    status: 1 approved
+                    errorMessage: 'null'
+                    dateCreated: '2022-01-25T21:43:35Z'
+                    lastUpdated: '2022-01-27T00:14:27Z'
+                    requestBy: Aaron Reid
+                meta:
+                  size: 1
+                  total: 1
+                  max: 25
+                  offset: 0
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

@@ -1,0 +1,7 @@
+title: ApiBudgetsRequest
+required:
+  - budget
+type: object
+properties:
+  budget:
+    $ref: .\Budget1.yaml

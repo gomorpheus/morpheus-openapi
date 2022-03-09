@@ -1,17 +1,20 @@
 get:
-  summary: Get Morpheus OpenAPI (Swagger) document as JSON.
+  tags:
+    - Documentation
+  summary: docOpenapi
   description: >-
     Get Morpheus OpenAPI (Swagger) document as JSON. This is the same document
     that you are reading at this very moment.
   operationId: docOpenapi
-  tags:
-    - Documentation
-  security: []
+  parameters: []
   responses:
     '200':
       description: OpenAPI JSON specification for the Morpheus API
+      headers: {}
       content:
         application/json:
+          schema:
+            $ref: ..\components\schemas\ApiDocOpenapiResponse.yaml
           examples:
             jsonExample:
               summary: OpenAPI (Swagger) JSON
@@ -22,13 +25,28 @@ get:
                   description: Welcome ...
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+  security: []
+parameters: []

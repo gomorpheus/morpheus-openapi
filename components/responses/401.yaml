@@ -1,5 +1,0 @@
-description: User is not authorized.  Access token is invalid or expired.
-content:
-  application/json:
-    schema:
-      $ref: ../schemas/401-error.yaml

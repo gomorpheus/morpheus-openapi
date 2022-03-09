@@ -1,7 +1,0 @@
-name: offset
-in: query
-description: Offset records, the number of records to skip, for paginating requests
-schema:
-  type: integer
-  format: int64
-  default: 0

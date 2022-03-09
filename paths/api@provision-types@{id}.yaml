@@ -1,0 +1,104 @@
+get:
+  tags:
+    - Provisioning
+  summary: getProvisionTypes
+  description: |
+    Retrieves a specific provision type.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-specific-provision-type
+  operationId: getProvisionTypes
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200ProvisionType.yaml
+          examples:
+            Search Response:
+              summary: Provision Type Response
+              value:
+                provisionType:
+                  id: 48
+                  name: AKS
+                  description: 'null'
+                  code: aks
+                  aclEnabled: false
+                  multiTenant: false
+                  managed: true
+                  hostNetwork: true
+                  customSupported: true
+                  mapPorts: false
+                  exportServer: false
+                  viewSet: aks
+                  serverType: service
+                  hostType: vm
+                  addVolumes: false
+                  hasVolumes: false
+                  hasDatastore: false
+                  hasNetworks: false
+                  maxNetworks: 0
+                  customizeVolume: false
+                  rootDiskCustomizable: false
+                  rootDiskSizeKnown: false
+                  rootDiskResizable: false
+                  lvmSupported: false
+                  hostDiskMode: single
+                  minDisk: 1
+                  maxDisk: 'null'
+                  resizeCopiesVolumes: false
+                  supportsAutoDatastore: false
+                  hasZonePools: true
+                  hasSecurityGroups: true
+                  hasParameters: false
+                  canEnforceTags: 'null'
+                  disableRootDatastore: false
+                  hasSnapshots: false
+                  hasSpecTemplates: false
+                  hasPreview: false
+                  zonePoolRequired: true
+                  planRequiresPool: false
+                  hasFolders: 'null'
+                  optionTypes: []
+                  customOptionTypes: []
+                  networkTypes: []
+                  storageTypes: []
+                  rootStorageTypes: []
+                  controllerTypes: []
+                success: true
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

@@ -1,0 +1,26 @@
+title: User4
+required:
+  - roles
+type: object
+properties:
+  firstName:
+    type: string
+    description: First Name
+  lastName:
+    type: string
+    description: Last Name
+  username:
+    type: string
+    description: Username (unique per tenant).
+  email:
+    type: string
+    description: Email address
+  password:
+    type: string
+    description: Password
+  roles:
+    type: array
+    items:
+      $ref: .\ReferenceObject.yaml
+    description: List of Roles
+description: Payload for creating a new user

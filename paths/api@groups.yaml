@@ -1,91 +1,495 @@
 get:
-  summary: Retrieves all Groups
-  description: |
-    Retrieves all groups.
-  operationId: listGroups
   tags:
     - Groups
+  summary: listGroups
+  description: |
+    Retrieves all groups.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-groups
+  operationId: listGroups
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/direction.yaml
-    - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/name.yaml
+    - name: max
+      in: query
+      description: Maximum number of records to return
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 25
+    - name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 0
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      style: form
+      explode: true
+      schema:
+        type: string
+        default: name
+    - name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: Filter by name, wildcard may be specified as %, eg. example-%
+      style: form
+      explode: true
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/groups.yaml
+            $ref: ..\components\schemas\200Groups.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/groups.yaml 
+              summary: Groups Response
+              value:
+                groups:
+                  - id: 23
+                    uuid: 7e3a0b47-8299-4458-8eef-63d179078587
+                    name: Ansible
+                    code: ans
+                    location: Defaults to Ansible Dev
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: ''
+                      configCmdbId: ''
+                      _configCmdbDiscovery: ''
+                      configCmId: ''
+                      serviceRegistryId: ''
+                      configManagementId: ''
+                      configCmdbDiscovery: false
+                    dateCreated: '2017-04-20T17:58:14Z'
+                    lastUpdated: '2021-12-09T22:43:41Z'
+                    zones:
+                      - id: 12
+                        name: AWS
+                      - id: 141
+                        name: AWS Labs
+                      - id: 124
+                        name: Azure UK
+                      - id: 121
+                        name: Azure US
+                      - id: 138
+                        name: VMware Demo Cluster
+                    stats:
+                      instanceCounts:
+                        all: 0
+                      serverCounts:
+                        all: 23
+                        host: 23
+                        hypervisor: 6
+                        containerHost: 17
+                        vm: 635
+                        baremetal: 0
+                        unmanaged: 319
+                    serverCount: 23
+                  - id: 19
+                    uuid: 58257423-d21a-478c-9064-4a193c864b05
+                    name: Chef
+                    code: chef
+                    location: Defaults to Chef Demo bootstrap
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: ''
+                      configCmdbId: ''
+                      serviceRegistryId: ''
+                      configManagementId: ''
+                    dateCreated: '2017-03-22T22:50:46Z'
+                    lastUpdated: '2021-12-08T23:24:27Z'
+                    zones:
+                      - id: 121
+                        name: Azure US
+                      - id: 138
+                        name: VMware Demo Cluster
+                    stats:
+                      instanceCounts:
+                        all: 0
+                      serverCounts:
+                        all: 17
+                        host: 17
+                        hypervisor: 6
+                        containerHost: 11
+                        vm: 207
+                        baremetal: 0
+                        unmanaged: 211
+                    serverCount: 17
+                  - id: 2
+                    uuid: 8d0bcaab-1c61-46e2-b88c-155a369d318a
+                    name: Demo
+                    code: demo
+                    location: 24 hour expiration policy
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: '11'
+                      configCmdbId: '12'
+                      serviceRegistryId: '-1'
+                      configManagementId: ''
+                    dateCreated: '2017-02-24T16:56:55Z'
+                    lastUpdated: '2021-11-17T17:14:14Z'
+                    zones:
+                      - id: 12
+                        name: AWS
+                      - id: 141
+                        name: AWS Labs
+                      - id: 176
+                        name: AWS US Channels West
+                      - id: 175
+                        name: AliCloud
+                      - id: 124
+                        name: Azure UK
+                      - id: 121
+                        name: Azure US
+                      - id: 143
+                        name: Google Labs
+                      - id: 173
+                        name: H5 Demo HyperV
+                      - id: 111
+                        name: HPE OneView
+                      - id: 53
+                        name: Hyper-V Demo
+                      - id: 134
+                        name: MacStadium
+                      - id: 127
+                        name: Morpheus
+                      - id: 137
+                        name: Nutanix Cluster 1
+                      - id: 106
+                        name: Nutanix Cluster 2
+                      - id: 92
+                        name: Openstack
+                      - id: 157
+                        name: QA NSX-T
+                      - id: 27
+                        name: Softlayer
+                      - id: 22
+                        name: UCS Docker & KVM
+                      - id: 138
+                        name: VMware Demo Cluster
+                      - id: 172
+                        name: VMware Demo Cluster H5
+                      - id: 164
+                        name: VMware Den2 ACI
+                      - id: 174
+                        name: VMware ESXi
+                      - id: 171
+                        name: Xen Server Labs
+                    stats:
+                      instanceCounts:
+                        all: 12
+                      serverCounts:
+                        all: 79
+                        host: 79
+                        hypervisor: 28
+                        containerHost: 54
+                        vm: 930
+                        baremetal: 14
+                        unmanaged: 600
+                    serverCount: 79
+                  - id: 371
+                    uuid: d157ffef-aaee-4040-9b23-b571680bb3e5
+                    name: DevTest
+                    code: dev
+                    location: 2 day Shutdown, 7 day expiration
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: ''
+                      configCmdbId: ''
+                      _configCmdbDiscovery: ''
+                      configCmId: ''
+                      serviceRegistryId: ''
+                      configManagementId: ''
+                    dateCreated: '2017-11-01T18:46:04Z'
+                    lastUpdated: '2021-10-20T23:45:35Z'
+                    zones:
+                      - id: 12
+                        name: AWS
+                      - id: 141
+                        name: AWS Labs
+                      - id: 124
+                        name: Azure UK
+                      - id: 121
+                        name: Azure US
+                      - id: 143
+                        name: Google Labs
+                      - id: 53
+                        name: Hyper-V Demo
+                      - id: 127
+                        name: Morpheus
+                      - id: 137
+                        name: Nutanix Cluster 1
+                      - id: 106
+                        name: Nutanix Cluster 2
+                      - id: 92
+                        name: Openstack
+                      - id: 22
+                        name: UCS Docker & KVM
+                      - id: 138
+                        name: VMware Demo Cluster
+                      - id: 174
+                        name: VMware ESXi
+                    stats:
+                      instanceCounts:
+                        all: 2
+                      serverCounts:
+                        all: 39
+                        host: 39
+                        hypervisor: 16
+                        containerHost: 26
+                        vm: 752
+                        baremetal: 13
+                        unmanaged: 428
+                    serverCount: 39
+                  - id: 50
+                    uuid: 5ce19da4-9c06-4de1-8aed-73dc3e01f7ad
+                    name: Production
+                    code: prod
+                    location: Approval Required
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: '30'
+                      configCmdbId: '12'
+                      serviceRegistryId: '-100'
+                      configManagementId: ''
+                    dateCreated: '2017-05-08T10:24:06Z'
+                    lastUpdated: '2021-11-15T16:31:27Z'
+                    zones:
+                      - id: 12
+                        name: AWS
+                      - id: 124
+                        name: Azure UK
+                      - id: 121
+                        name: Azure US
+                      - id: 106
+                        name: Nutanix Cluster 2
+                      - id: 161
+                        name: Qa NSX-T 3.0
+                      - id: 22
+                        name: UCS Docker & KVM
+                      - id: 138
+                        name: VMware Demo Cluster
+                    stats:
+                      instanceCounts:
+                        all: 5
+                      serverCounts:
+                        all: 33
+                        host: 33
+                        hypervisor: 15
+                        containerHost: 21
+                        vm: 607
+                        baremetal: 10
+                        unmanaged: 294
+                    serverCount: 33
+                  - id: 424
+                    uuid: ca6f5f34-8837-4977-b10f-983f3ad72d5a
+                    name: SaltStack
+                    code: salt
+                    location: Defaults to Salt Master prod
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: ''
+                      configCmdbId: ''
+                      serviceRegistryId: ''
+                      configManagementId: '13'
+                    dateCreated: '2018-05-09T02:57:23Z'
+                    lastUpdated: '2020-04-24T16:39:14Z'
+                    zones:
+                      - id: 138
+                        name: VMware Demo Cluster
+                    stats:
+                      instanceCounts:
+                        all: 0
+                      serverCounts:
+                        all: 7
+                        host: 7
+                        hypervisor: 6
+                        containerHost: 1
+                        vm: 201
+                        baremetal: 0
+                        unmanaged: 199
+                    serverCount: 7
+                  - id: 443
+                    uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                    name: ServiceNow
+                    code: snow
+                    location: ServiceNow Approval, CMDB
+                    accountId: 3
+                    active: true
+                    config:
+                      dnsIntegrationId: ''
+                      configCmdbId: '12'
+                      serviceRegistryId: ''
+                      configManagementId: '3'
+                    dateCreated: '2018-07-20T05:24:25Z'
+                    lastUpdated: '2022-01-13T00:54:57Z'
+                    zones:
+                      - id: 12
+                        name: AWS
+                      - id: 121
+                        name: Azure US
+                      - id: 143
+                        name: Google Labs
+                      - id: 172
+                        name: VMware Demo Cluster H5
+                    stats:
+                      instanceCounts:
+                        all: 0
+                      serverCounts:
+                        all: 45
+                        host: 45
+                        hypervisor: 5
+                        containerHost: 40
+                        vm: 555
+                        baremetal: 0
+                        unmanaged: 243
+                    serverCount: 45
+                meta:
+                  offset: 0
+                  max: 25
+                  size: 7
+                  total: 7
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
 post:
-  summary: Creates a Group
-  description: |
-    Creates a group.
-  operationId: addGroups
   tags:
     - Groups
+  summary: addGroups
+  description: |
+    Creates a group.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#create-a-group
+  operationId: addGroups
+  parameters: []
   requestBody:
+    description: ''
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - group
-          properties:
-            group:
-              type: object
-              required:
-                - name
-              properties:
-                name: 
-                  type: string
-                  description: A unique name scoped to your account for the group
-                code:
-                  type: string
-                  description: Optional code for use with policies
-                location:
-                  type: string
-                  description: Optional location argument for your group
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#create-a-group
+          $ref: ..\components\schemas\ApiGroupsRequest.yaml
+    required: false
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/group.yaml
+            $ref: ..\components\schemas\200Group.yaml
           examples:
             Report Types Response:
-              $ref: ../components/examples/group.yaml
+              summary: Group Response
+              value:
+                group:
+                  id: 443
+                  uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                  name: ServiceNow
+                  code: snow
+                  location: ServiceNow Approval, CMDB
+                  accountId: 3
+                  active: true
+                  config:
+                    dnsIntegrationId: ''
+                    configCmdbId: '12'
+                    serviceRegistryId: ''
+                    configManagementId: '3'
+                  dateCreated: '2018-07-20T05:24:25Z'
+                  lastUpdated: '2022-01-13T00:54:57Z'
+                  zones:
+                    - id: 12
+                      name: AWS
+                    - id: 121
+                      name: Azure US
+                    - id: 143
+                      name: Google Labs
+                    - id: 172
+                      name: VMware Demo Cluster H5
+                  stats:
+                    instanceCounts:
+                      all: 0
+                    serverCounts:
+                      all: 45
+                      host: 45
+                      hypervisor: 5
+                      containerHost: 40
+                      vm: 555
+                      baremetal: 0
+                      unmanaged: 243
+                  serverCount: 45
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

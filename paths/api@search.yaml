@@ -1,38 +1,117 @@
 get:
-  summary: Provides global search for all types of objects
-  description: |
-    This endpoint provides global search for all types of objects, with the results sorted in order of relevance.
-
-    The `phrase` parameter can be specified as part of the URL or as a query parameter. If phrase is not specified, then 0 results (hits) will be returned.
-  operationId: search
   tags:
     - Search
+  summary: search
+  description: >
+    This endpoint provides global search for all types of objects, with the
+    results sorted in order of relevance.
+
+
+    The `phrase` parameter can be specified as part of the URL or as a query
+    parameter. If phrase is not specified, then 0 results (hits) will be
+    returned.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#search
+  operationId: search
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/query.yaml
+    - name: max
+      in: query
+      description: Maximum number of records to return
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 25
+    - name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 0
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: query
+      in: query
+      description: Alias for phrase
+      style: form
+      explode: true
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/search.yaml
+            $ref: ..\components\schemas\200Search.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/search.yaml
+              summary: Search Response
+              value:
+                hits:
+                  - id: '18157'
+                    uuid: 4e33c2ef-5b70-45c0-9700-939e3162e42b
+                    name: EC2Instance
+                    description: 'null'
+                    type: Instance
+                    dateCreated: '2022-02-22T19:49:28Z'
+                    score: 20
+                  - id: '218195'
+                    uuid: aef509cc-8727-4691-bfdd-55b4b6d06941
+                    name: EC2Instance
+                    description: 'null'
+                    type: ComputeServer
+                    dateCreated: '2022-02-22T19:49:28Z'
+                    score: 3
+                  - id: '4'
+                    uuid: fca933d0-5105-4e63-aa8b-6c381f25bf95
+                    name: EC2 Instance
+                    description: >-
+                      Easily provision any Amazon AMI tied to your Amazon cloud
+                      account just as if it were any other instance type.
+                    type: InstanceType
+                    dateCreated: null
+                    score: 1.5
+                query: ec2
+                took: 2964
+                meta:
+                  offset: 0
+                  max: 25
+                  size: 3
+                  total: 3
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

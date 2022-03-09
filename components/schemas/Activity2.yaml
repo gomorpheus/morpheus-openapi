@@ -1,0 +1,23 @@
+title: Activity2
+type: object
+properties:
+  _id:
+    type: string
+  success:
+    type: boolean
+  activityType:
+    type: string
+  name:
+    type: string
+  message:
+    type: string
+  objectType:
+    type: string
+  objectId:
+    type: integer
+    contentEncoding: int64
+  user:
+    $ref: .\User.yaml
+  ts:
+    type: string
+    contentEncoding: date-time

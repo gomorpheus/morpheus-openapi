@@ -1,0 +1,7 @@
+title: ApiWikiPagesRequest
+required:
+  - page
+type: object
+properties:
+  page:
+    $ref: .\Page8.yaml

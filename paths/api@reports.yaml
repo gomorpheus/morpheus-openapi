@@ -1,109 +1,163 @@
 get:
-  summary: Returns all reports
-  description: |
-    This endpoint returns all reports. This is results of reports that have been executed in the past.
-  operationId: listReports
   tags:
     - Reports
+  summary: listReports
+  description: >
+    This endpoint returns all reports. This is results of reports that have been
+    executed in the past.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-reports
+  operationId: listReports
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/direction.yaml
-    - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/name.yaml
-    - name: reportType
+    - name: max
       in: query
-      description: If specified will return an exact match on report type code, accepts multiple values
+      description: Maximum number of records to return
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 25
+    - name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 0
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      style: form
+      explode: true
       schema:
         type: string
-    - $ref: ../components/parameters/category.yaml
+        default: name
+    - name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: Filter by name, wildcard may be specified as %, eg. example-%
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: reportType
+      in: query
+      description: >-
+        If specified will return an exact match on report type code, accepts
+        multiple values
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: category
+      in: query
+      description: If specified will return an exact match on category
+      style: form
+      explode: true
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\reports.yaml
-          examples:
-            Reports Response:
-              $ref: ..\components\schemas\reports.yaml
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
 post:
-  summary: Run specified report
-  description: |
-    This endpoint execute the specified report type and create a new report result.
-
-    The available parameters vary by report type. Refer to the defined `inputs` for each report.
-  operationId: runReports
   tags:
     - Reports
+  summary: runReports
+  description: >
+    This endpoint execute the specified report type and create a new report
+    result.
+
+
+    The available parameters vary by report type. Refer to the defined `inputs`
+    for each report.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#run-a-report
+  operationId: runReports
+  parameters: []
   requestBody:
+    description: ''
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - report
-          properties:
-            report:
-              type: object
-              required:
-                - type
-              properties: 
-                type: 
-                  type: string
-                  example: appCost
-                startDate: 
-                  type: string
-                  format: date
-                  example: 2019-01-01
-                endDate: 
-                  type: string
-                  format: date
-                  example: 2020-01-01
-                groupId:
-                  description: The Group ID filter for the report
-                  type: number
-                  example: 1
-                cloudId:
-                  description: The Cloud ID filter for the report
-                  type: number
-                  example: 7
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#run-a-report
+          $ref: ..\components\schemas\ApiReportsRequest.yaml
+    required: false
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\reports.yaml
-          examples:
-            Reports Response:
-              $ref: ..\components\schemas\reports.yaml
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

@@ -1,0 +1,39 @@
+title: Approval2
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int32
+  name:
+    type: string
+  internalId:
+    type: string
+  externalId:
+    type: string
+  externalName:
+    type: string
+  requestType:
+    type: string
+  account:
+    $ref: .\Account2.yaml
+  approver:
+    $ref: .\Approver.yaml
+  accountIntegration:
+    type: string
+  status:
+    type: string
+  errorMessage:
+    type: string
+  dateCreated:
+    type: string
+    contentEncoding: date-time
+  lastUpdated:
+    type: string
+    contentEncoding: date-time
+  requestBy:
+    type: string
+  approvalItems:
+    type: array
+    items:
+      $ref: .\ApprovalItem.yaml
+    description: ''

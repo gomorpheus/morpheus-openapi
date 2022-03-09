@@ -1,0 +1,12 @@
+title: Type
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  code:
+    type: string
+  name:
+    type: string
+  category:
+    type: string

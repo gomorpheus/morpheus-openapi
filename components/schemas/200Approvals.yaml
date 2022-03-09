@@ -1,0 +1,10 @@
+title: 200Approvals
+type: object
+properties:
+  approvals:
+    type: array
+    items:
+      $ref: .\Approval1.yaml
+    description: ''
+  meta:
+    $ref: .\MetaObject.yaml

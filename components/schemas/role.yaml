@@ -1,179 +1,64 @@
+title: role
 type: object
-properties: 
-  role: 
-    type: object
-    properties: 
-      id: 
-        type: integer
-        format: int64
-      authority: 
-        type: string
-      description: 
-        type: string
-        format: nullable
-      scope: 
-        type: string
-      roleType: 
-        type: string
-      multitenant: 
-        type: boolean
-      multitenantLocked: 
-        type: boolean
-      parentRoleId: 
-        type: string
-        format: nullable
-      diverged: 
-        type: boolean
-      ownerId: 
-        type: integer
-        format: int64
-      owner: 
-        type: object
-        properties: 
-          id: 
-            type: integer
-            format: int64
-          name: 
-            type: string
-      defaultPersona: 
-        type: string
-        format: nullable
-      dateCreated: 
-        type: string
-        format: date-time
-      lastUpdated: 
-        type: string
-        format: date-time
-  featurePermissions: 
+properties:
+  role:
+    $ref: .\Role4.yaml
+  featurePermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        code: 
-          type: string
-        name: 
-          type: string
-        access: 
-          type: string
-  globalSiteAccess: 
+    items:
+      $ref: .\FeaturePermission.yaml
+    description: ''
+  globalSiteAccess:
     type: string
-  sites: 
+  sites:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        name: 
-          type: string
-        access: 
-          type: string
-  globalZoneAccess: 
+    items:
+      $ref: .\Site.yaml
+    description: ''
+  globalZoneAccess:
     type: string
-  zones: 
+  zones:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        name: 
-          type: string
-        access: 
-          type: string
-  globalInstanceTypeAccess: 
+    items:
+      $ref: .\Zone2.yaml
+    description: ''
+  globalInstanceTypeAccess:
     type: string
-  instanceTypePermissions: 
+  instanceTypePermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        code: 
-          type: string
-        name: 
-          type: string
-        access: 
-          type: string
-  globalAppTemplateAccess: 
+    items:
+      $ref: .\InstanceTypePermission.yaml
+    description: ''
+  globalAppTemplateAccess:
     type: string
-  appTemplatePermissions: 
+  appTemplatePermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        code: 
-          type: string
-          format: nullable
-        name: 
-          type: string
-        access: 
-          type: string
-  globalCatalogItemTypeAccess: 
+    items:
+      $ref: .\AppTemplatePermission.yaml
+    description: ''
+  globalCatalogItemTypeAccess:
     type: string
-  catalogItemTypePermissions: 
+  catalogItemTypePermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        name: 
-          type: string
-        access: 
-          type: string
-  personaPermissions: 
+    items:
+      $ref: .\CatalogItemTypePermission.yaml
+    description: ''
+  personaPermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        code: 
-          type: string
-        name: 
-          type: string
-        access: 
-          type: string
-  globalVdiPoolAccess: 
+    items:
+      $ref: .\PersonaPermission.yaml
+    description: ''
+  globalVdiPoolAccess:
     type: string
-  vdiPoolPermissions: 
+  vdiPoolPermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        name: 
-          type: string
-        access: 
-          type: string
-  globalReportTypeAccess: 
+    items:
+      $ref: .\VdiPoolPermission.yaml
+    description: ''
+  globalReportTypeAccess:
     type: string
-  reportTypePermissions: 
+  reportTypePermissions:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        code: 
-          type: string
-        name: 
-          type: string
-        access: 
-          type: string
+    items:
+      $ref: .\ReportTypePermission.yaml
+    description: ''

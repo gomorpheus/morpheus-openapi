@@ -1,0 +1,31 @@
+title: Meta2
+type: object
+properties:
+  size:
+    type: integer
+    description: Number of records returned in the response
+    contentEncoding: int64
+    default: 0
+  total:
+    type: integer
+    description: Total number of records found
+    contentEncoding: int64
+    default: 0
+  offset:
+    type: integer
+    description: >-
+      Offset records, the number of records to skip, can be used to paginate
+      over results.
+    contentEncoding: int64
+    default: 0
+  max:
+    type: integer
+    description: Max size, the maximum number of records to include in the response.
+    contentEncoding: int64
+    default: 25
+  startDate:
+    type: string
+    contentEncoding: date-time
+  endDate:
+    type: string
+    contentEncoding: date-time

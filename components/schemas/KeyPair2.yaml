@@ -1,0 +1,14 @@
+title: KeyPair2
+required:
+  - name
+  - publicKey
+type: object
+properties:
+  name:
+    type: string
+  publicKey:
+    type: string
+  privateKey:
+    type: string
+  passphrase:
+    type: string

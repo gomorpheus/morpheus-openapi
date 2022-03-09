@@ -1,3 +1,4 @@
+title: setup
 type: object
 properties:
   success:
@@ -11,6 +12,5 @@ properties:
   setupNeeded:
     type: boolean
     description: >-
-      Flag to determine if the appliance has been setup, only true
-      when appliance is a fresh install and has not been
-      initialized.
+      Flag to determine if the appliance has been setup, only true when
+      appliance is a fresh install and has not been initialized.

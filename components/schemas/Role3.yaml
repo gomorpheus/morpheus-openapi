@@ -1,0 +1,9 @@
+title: Role3
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+description: >-
+  Tenant Base Role. This restricts the access available to this tenant's roles
+  and users.

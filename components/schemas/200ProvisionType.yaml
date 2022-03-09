@@ -1,0 +1,7 @@
+title: 200ProvisionType
+type: object
+properties:
+  provisionType:
+    $ref: .\ProvisionType1.yaml
+  success:
+    type: boolean

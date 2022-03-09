@@ -1,0 +1,10 @@
+title: Provisioning
+type: object
+properties:
+  instanceCount:
+    type: number
+  favoriteInstances:
+    type: array
+    items:
+      type: object
+    description: ''

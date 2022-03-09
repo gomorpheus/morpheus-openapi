@@ -1,8 +1,9 @@
+title: MetaObjectDates
 type: object
 properties:
   startDate:
-      type: string
-      format: date-time
+    type: string
+    contentEncoding: date-time
   endDate:
     type: string
-    format: date-time
+    contentEncoding: date-time

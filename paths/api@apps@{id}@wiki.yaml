@@ -1,0 +1,163 @@
+get:
+  tags:
+    - Wiki
+    - Apps
+  summary: getWikiApp
+  description: |
+    This endpoint retrieves an app Wiki page.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-app
+  operationId: getWikiApp
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200WikiPage.yaml
+          examples:
+            Wiki Response:
+              summary: Wiki Response
+              value:
+                page:
+                  id: 130
+                  name: Sample Doc
+                  urlName: info/sample-doc
+                  category: info
+                  refId: 'null'
+                  refType: 'null'
+                  format: markdown
+                  content: A sample document in **markdown**.`
+                  createdBy:
+                    id: 127
+                    username: cbunge
+                  updatedBy:
+                    id: 127
+                    username: cbunge
+                  dateCreated: '2022-03-04T02:39:34Z'
+                  lastUpdated: '2022-03-04T02:39:34Z'
+            Blank Wiki Response:
+              summary: Empty Wiki Page Response
+              value:
+                page: {}
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+put:
+  tags:
+    - Wiki
+    - Apps
+  summary: updateWikiApp
+  description: |
+    Updates an app Wiki page.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-app
+  operationId: updateWikiApp
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  requestBody:
+    description: ''
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\ApiAppsWikiRequest.yaml
+    required: false
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200WikiCreatePage.yaml
+          examples:
+            Wiki Response:
+              summary: Add Wiki Response
+              value:
+                page:
+                  id: 130
+                  name: Sample Doc
+                  urlName: info/sample-doc
+                  category: info
+                  refId: 'null'
+                  refType: 'null'
+                  format: markdown
+                  content: A sample document in **markdown**.`
+                  createdBy:
+                    id: 127
+                    username: cbunge
+                  updatedBy:
+                    id: 127
+                    username: cbunge
+                  dateCreated: '2022-03-04T02:39:34Z'
+                  lastUpdated: '2022-03-04T02:39:34Z'
+                success: true
+            Blank Wiki Response:
+              summary: Empty Wiki Page Response
+              value:
+                page: {}
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

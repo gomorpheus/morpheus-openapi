@@ -1,0 +1,12 @@
+title: Reference
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int32
+  type:
+    type: string
+  name:
+    type: string
+  displayName:
+    type: string

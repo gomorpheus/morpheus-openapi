@@ -1,0 +1,23 @@
+title: Account9
+type: object
+properties:
+  name:
+    type: string
+    description: Name
+  description:
+    type:
+      - string
+      - 'null'
+    description: Description
+  role:
+    $ref: .\Role3.yaml
+  subdomain:
+    type:
+      - string
+      - 'null'
+    description: >-
+      The subdomain. This will be part of the login URL and username for sub
+      tenant users.
+  currency:
+    $ref: .\CurrencyCode.yaml
+description: Payload for updating an existing tenant

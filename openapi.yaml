@@ -1,17 +1,18 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: Morpheus API
-  description: |-
-    Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
+  description: >-
+    Morpheus is a powerful cloud management tool that provides provisioning,
+    monitoring, logging, backups, and application deployment strategies.
 
-    This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 5.4.4
-  termsOfService: https://morpheusdata.com/terms-and-conditions/
+
+    This document describes the Morpheus API protocol and the available
+    endpoints. Sections are organized in the same manner as they appear in the
+    Morpheus UI.
   contact:
     email: dev@morpheusdata.com
-  license:
-    name: Apache 2.0
-    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 5.4.4
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
 servers:
   - url: https://{api_url}
     description: Morpheus API
@@ -19,30 +20,28 @@ servers:
       api_url:
         default: localhost
 paths:
-  /api/accounts:
-    $ref: paths/api@accounts.yaml
-  /api/accounts/{id}:
-    $ref: paths/api@accounts@id.yaml
   /api/activity:
     $ref: paths/api@activity.yaml
-  /api/accounts/available-roles:
-    $ref: paths/api@accounts@available-roles.yaml
   /api/approval-items/{id}:
-    $ref: paths/api@approval-items@id.yaml
+    $ref: paths/api@approval-items@{id}.yaml
   /api/approval-items/{id}/{action}:
-    $ref: paths/api@approval-items@id@action.yaml
+    $ref: paths/api@approval-items@{id}@{action}.yaml
   /api/approvals:
     $ref: paths/api@approvals.yaml
   /api/approvals/{id}:
-    $ref: paths/api@approvals@id.yaml
-  /api/apps/{id}/wiki:
-    $ref: paths/api@apps@id@wiki.yaml
+    $ref: paths/api@approvals@{id}.yaml
+  /api/forgot/reset-password:
+    $ref: paths/api@forgot@reset-password.yaml
+  /api/forgot/send-email:
+    $ref: paths/api@forgot@send-email.yaml
+  /api/whoami:
+    $ref: paths/api@whoami.yaml
+  /oauth/token:
+    $ref: paths/oauth@token.yaml
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
-    $ref: paths/api@budgets@id.yaml
-  /api/clusters/{id}/wiki:
-    $ref: paths/api@clusters@id@wiki.yaml
+    $ref: paths/api@budgets@{id}.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/doc:
@@ -51,88 +50,88 @@ paths:
     $ref: paths/api@doc@openapi.yaml
   /api/doc/openapi.yaml:
     $ref: paths/api@doc@openapi.yaml.yaml
-  /api/forgot/reset-password:
-    $ref: paths/api@forgot@reset-password.yaml
-  /api/forgot/send-email:
-    $ref: paths/api@forgot@send-email.yaml
   /api/groups:
     $ref: paths/api@groups.yaml
   /api/groups/{id}:
-    $ref: paths/api@groups@id.yaml
+    $ref: paths/api@groups@{id}.yaml
   /api/groups/{id}/update-zones:
-    $ref: paths/api@groups@id@update-zones.yaml
-  /api/groups/{id}/wiki:
-    $ref: paths/api@groups@id@wiki.yaml
-  /api/instances/{id}/wiki:
-    $ref: paths/api@instances@id@wiki.yaml
-  /api/license:
-    $ref: paths/api@license.yaml
+    $ref: paths/api@groups@{id}@update-zones.yaml
+  /api/processes:
+    $ref: paths/api@processes.yaml
+  /api/processes/{id}:
+    $ref: paths/api@processes@{id}.yaml
+  /api/processes/events/{id}:
+    $ref: paths/api@processes@events@{id}.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
-    $ref: paths/api@key-pairs@id.yaml
+    $ref: paths/api@key-pairs@{id}.yaml
+  /api/license:
+    $ref: paths/api@license.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
-  /api/processes:
-    $ref: paths/api@processes.yaml
-  /api/processes/{id}:
-    $ref: paths/api@processes@id.yaml
-  /api/processes/events/{id}:
-    $ref: paths/api@processes@events@id.yaml
   /api/provision-types:
     $ref: paths/api@provision-types.yaml
   /api/provision-types/{id}:
-    $ref: paths/api@provision-types@id.yaml
+    $ref: paths/api@provision-types@{id}.yaml
   /api/report-types:
     $ref: paths/api@report-types.yaml
   /api/reports:
     $ref: paths/api@reports.yaml
   /api/reports/{id}:
-    $ref: paths/api@reports@id.yaml
+    $ref: paths/api@reports@{id}.yaml
   /api/reports/download/{id}{format}:
-    $ref: paths/api@reports@download@id.yaml
+    $ref: paths/api@reports@download@{id}{format}.yaml
   /api/roles:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
-    $ref: paths/api@roles@id.yaml
+    $ref: paths/api@roles@{id}.yaml
   /api/search:
     $ref: paths/api@search.yaml
-  /api/servers/{id}/wiki:
-    $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
+  /api/accounts:
+    $ref: paths/api@accounts.yaml
+  /api/accounts/{id}:
+    $ref: paths/api@accounts@{id}.yaml
+  /api/accounts/available-roles:
+    $ref: paths/api@accounts@available-roles.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
-    $ref: paths/api@users@id.yaml
+    $ref: paths/api@users@{id}.yaml
   /api/users/available-roles:
     $ref: paths/api@users@available-roles.yaml
-  /api/whoami:
-    $ref: paths/api@whoami.yaml
+  /api/apps/{id}/wiki:
+    $ref: paths/api@apps@{id}@wiki.yaml
+  /api/clusters/{id}/wiki:
+    $ref: paths/api@clusters@{id}@wiki.yaml
+  /api/groups/{id}/wiki:
+    $ref: paths/api@groups@{id}@wiki.yaml
+  /api/instances/{id}/wiki:
+    $ref: paths/api@instances@{id}@wiki.yaml
+  /api/servers/{id}/wiki:
+    $ref: paths/api@servers@{id}@wiki.yaml
   /api/wiki/categories:
     $ref: paths/api@wiki@categories.yaml
   /api/wiki/pages:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
-    $ref: paths/api@wiki@pages@id.yaml
+    $ref: paths/api@wiki@pages@{id}.yaml
   /api/zones/{id}/wiki:
-    $ref: paths/api@zones@id@wiki.yaml
-  /oauth/token:
-    $ref: paths/oauth@token.yaml
+    $ref: paths/api@zones@{id}@wiki.yaml
 components:
   securitySchemes:
     bearerAuth:
-      description: Populate a bearer token for the Morpheus appliance you are testing
       type: http
+      description: Populate a bearer token for the Morpheus appliance you are testing
       scheme: bearer
 security:
   - bearerAuth: []
-externalDocs:
-  url: https://docs.morpheusdata.com
 tags:
   - name: Activity
     description: Manage Appliance Activity Logs
@@ -292,3 +291,5 @@ tags:
     description: Manage Whitelabelling
   - name: Wiki
     description: Manage Wiki
+externalDocs:
+  url: https://docs.morpheusdata.com

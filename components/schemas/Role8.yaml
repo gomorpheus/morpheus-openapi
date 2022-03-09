@@ -1,0 +1,12 @@
+title: Role8
+type: object
+properties:
+  authority:
+    type: string
+    description: Authority (Name)
+  description:
+    type:
+      - string
+      - 'null'
+    description: Description
+description: Payload for updating an existing role

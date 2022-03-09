@@ -1,0 +1,10 @@
+title: 200WikiPages
+type: object
+properties:
+  pages:
+    type: array
+    items:
+      $ref: .\Page2.yaml
+    description: ''
+  meta:
+    $ref: .\MetaObject.yaml

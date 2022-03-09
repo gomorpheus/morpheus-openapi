@@ -1,0 +1,15 @@
+title: Stats2
+type: object
+properties:
+  currency:
+    type: string
+  conversionRate:
+    type: integer
+    contentEncoding: int64
+  intervals:
+    type: array
+    items:
+      $ref: .\Interval.yaml
+    description: ''
+  current:
+    $ref: .\Current.yaml

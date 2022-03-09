@@ -1,0 +1,7 @@
+title: 200WikiCreatePage
+type: object
+properties:
+  page:
+    $ref: .\Page1.yaml
+  success:
+    type: boolean

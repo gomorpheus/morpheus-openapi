@@ -1,6 +1,0 @@
-name: startDate
-in: query
-description: Filter by startDate greater than or equal to a specified date
-schema:
-  type: string
-  format: date-time

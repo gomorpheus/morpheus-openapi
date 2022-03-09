@@ -1,0 +1,7 @@
+title: 200KeyPairs
+type: object
+properties:
+  keyPair:
+    $ref: .\KeyPair.yaml
+  success:
+    type: boolean

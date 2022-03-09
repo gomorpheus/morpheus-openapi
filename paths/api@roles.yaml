@@ -1,127 +1,142 @@
 get:
-  summary: List roles
-  description: Get a list of roles.
-  operationId: listRoles
   tags:
     - Roles
+  summary: listRoles
+  description: Get a list of roles.
+  operationId: listRoles
   parameters:
-    - $ref: ..\components\parameters\phrase.yaml
-    - $ref: ..\components\parameters\max.yaml
-    - $ref: ..\components\parameters\offset.yaml
-    - $ref: ..\components\parameters\sort.yaml
-    - $ref: ..\components\parameters\direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description
+      style: form
+      explode: true
+      schema:
+        type: string
+    - name: max
+      in: query
+      description: Maximum number of records to return
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 25
+    - name: offset
+      in: query
+      description: Offset records, the number of records to skip, for paginating requests
+      style: form
+      explode: true
+      schema:
+        type: integer
+        contentEncoding: int64
+        default: 0
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      style: form
+      explode: true
+      schema:
+        type: string
+        default: name
+    - name: direction
+      in: query
+      description: Sort direction, use 'desc' to reverse sort
+      style: form
+      explode: true
+      schema:
+        $ref: ..\components\schemas\direction.yaml
     - name: authority
       in: query
       description: Filter by authority
+      style: form
+      explode: true
       schema:
         type: string
     - name: roleType
       in: query
       description: Filter by roleType
+      style: form
+      explode: true
       schema:
-        type: string
-        enum:
-          - user
-          - account
+        $ref: ..\components\schemas\roleType.yaml
   responses:
     '200':
       description: Successful Request
+      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\roles.yaml
-          examples:
-            List Roles Response:
-              $ref: ..\components\examples\roles.yaml
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
 post:
-  summary: Create role
-  description: Create a new role.
-  operationId: addRoles
   tags:
     - Roles
+  summary: addRoles
+  description: Create a new role.
+  operationId: addRoles
+  parameters: []
   requestBody:
+    description: ''
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - role
-          properties:
-            role:
-              type: object
-              description: Payload for creating a new role
-              required:
-                - authority
-              properties:
-                authority:
-                  type: string
-                  description: Authority (Name)
-                description:
-                  type: string
-                  description: Description
-                  nullable: true
-                roleType:
-                  type: string
-                  description: Role type
-                  enum:
-                    - user
-                    - account
-                  default: user
-                baseRoleId:
-                  type: integer
-                  format: int64
-                  description: >-
-                    Base Role ID. Create the new role with the same permissions
-                    and access levels that the specified base role has. If this
-                    is not passed, the role is create without any permissions.
-                multitenant:
-                  type: boolean
-                  default: false
-                  description: >-
-                    Multitenant roles are copied to all tenant accounts and kept
-                    in sync until a sub-tenant user modifies their copy of the
-                    role. *Only available to master tenant*
-                multitenantLocked:
-                  type: boolean
-                  default: false
-                  description: >-
-                    Multitenant Locked, prevents sub-tenant users from modifying
-                    their copy of multienant roles. *Only available to master
-                    tenant*
-        examples:
-          CreateRoleRequest:
-            $ref: ..\components\examples\roles.yaml
+          $ref: ..\components\schemas\ApiRolesRequest.yaml
+    required: false
   responses:
     '200':
       description: Role Object
+      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\roles.yaml
-          examples:
-            CreateRoleResponse:
-              $ref: ..\components\examples\roles.yaml
     '400':
       description: Bad Request.
+      headers: {}
+      content: {}
     '401':
       description: Unauthorized.
+      headers: {}
+      content: {}
     '403':
       description: Forbidden.
+      headers: {}
+      content: {}
     '404':
       description: Object Not Found.
+      headers: {}
+      content: {}
     '500':
       description: Internal Server Error.
+      headers: {}
+      content: {}
     '503':
       description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

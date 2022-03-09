@@ -1,0 +1,7 @@
+title: ApiGroupsUpdateZonesRequest
+required:
+  - group
+type: object
+properties:
+  group:
+    $ref: .\Group4.yaml

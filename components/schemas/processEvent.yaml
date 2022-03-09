@@ -1,106 +1,80 @@
-title: 200 Process Events
+title: ProcessEvent
 type: object
-properties: 
-  processEvent: 
-    type: object
-    properties: 
-      id: 
-        type: integer
-        format: int64
-      processId: 
-        type: integer
-        format: int64
-      accountId: 
-        type: integer
-        format: int64
-      uniqueId: 
-        type: string
-      processType: 
-        type: object
-        properties: 
-          code: 
-            type: string
-          name: 
-            type: string
-      description: 
-        type: string
-        format: nullable
-      refType: 
-        type: string
-      refId: 
-        type: integer
-        format: int64
-      subType: 
-        type: string
-        format: nullable
-      subId: 
-        type: string
-        format: nullable
-      zoneId: 
-        type: integer
-        format: int64
-      integrationId: 
-        type: string
-        format: nullable
-      instanceId: 
-        type: integer
-        format: int64
-      containerId: 
-        type: integer
-        format: int64
-      serverId: 
-        type: integer
-        format: int64
-      containerName: 
-        type: string
-      displayName: 
-        type: string
-      status: 
-        type: string
-      reason: 
-        type: string
-        format: nullable
-      percent: 
-        type: integer
-        format: int64
-      statusEta: 
-        type: integer
-        format: int64
-      message: 
-        type: string
-        format: nullable
-      output: 
-        type: string
-        format: nullable
-      error: 
-        type: string
-        format: nullable
-      startDate: 
-        type: string
-        format: date-time
-      endDate: 
-        type: string
-        format: date-time
-      duration: 
-        type: integer
-        format: int64
-      dateCreated: 
-        type: string
-        format: date-time
-      lastUpdated: 
-        type: string
-        format: date-time
-      createdBy: 
-        type: object
-        properties: 
-          username: 
-            type: string
-          displayName: 
-            type: string
-      updatedBy: 
-        type: object
-        properties: 
-          username: 
-            type: string
-          displayName: 
-            type: string
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  processId:
+    type: integer
+    contentEncoding: int64
+  accountId:
+    type: integer
+    contentEncoding: int64
+  uniqueId:
+    type: string
+  processType:
+    $ref: .\ProcessType.yaml
+  description:
+    type: string
+  refType:
+    type: string
+  refId:
+    type: integer
+    contentEncoding: int64
+  subType:
+    type: string
+  subId:
+    type: string
+  zoneId:
+    type: integer
+    contentEncoding: int64
+  integrationId:
+    type: string
+  instanceId:
+    type: integer
+    contentEncoding: int64
+  containerId:
+    type: integer
+    contentEncoding: int64
+  serverId:
+    type: integer
+    contentEncoding: int64
+  containerName:
+    type: string
+  displayName:
+    type: string
+  status:
+    type: string
+  reason:
+    type: string
+  percent:
+    type: integer
+    contentEncoding: int64
+  statusEta:
+    type: integer
+    contentEncoding: int64
+  message:
+    type: string
+  output:
+    type: string
+  error:
+    type: string
+  startDate:
+    type: string
+    contentEncoding: date-time
+  endDate:
+    type: string
+    contentEncoding: date-time
+  duration:
+    type: integer
+    contentEncoding: int64
+  dateCreated:
+    type: string
+    contentEncoding: date-time
+  lastUpdated:
+    type: string
+    contentEncoding: date-time
+  createdBy:
+    $ref: .\CreatedBy2.yaml
+  updatedBy:
+    $ref: .\UpdatedBy2.yaml

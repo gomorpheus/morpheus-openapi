@@ -1,0 +1,42 @@
+title: AccountStats
+type: object
+properties:
+  totalSizeByDay:
+    type: array
+    items:
+      type: number
+    description: ''
+  totalSizeByDay7Days:
+    type: array
+    items:
+      type: number
+    description: ''
+  formattedTotalSize:
+    $ref: .\FormattedTotalSize.yaml
+  backupCount:
+    type: number
+  totalSize:
+    type: number
+  success:
+    type: number
+  failed:
+    type: number
+  totalCompleted:
+    type: number
+  lastSevenDays:
+    $ref: .\LastSevenDays.yaml
+  avgSize:
+    type: number
+  failedRate:
+    type: number
+  successRate:
+    type: number
+  nextFireTotal:
+    type: number
+  backupDayCount:
+    type: array
+    items:
+      type: number
+    description: ''
+  backupDayCountTotal:
+    type: number

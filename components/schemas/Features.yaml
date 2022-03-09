@@ -1,0 +1,107 @@
+title: Features
+type: object
+properties:
+  dashboard:
+    type: boolean
+  guidance:
+    type: boolean
+  discovery:
+    type: boolean
+  analytics:
+    type: boolean
+  scheduling:
+    type: boolean
+  approvals:
+    type: boolean
+  usage:
+    type: boolean
+  activity:
+    type: boolean
+  instances:
+    type: boolean
+  apps:
+    type: boolean
+  templates:
+    type: boolean
+  automation:
+    type: boolean
+  virtualImages:
+    type: boolean
+  library:
+    type: boolean
+  migrations:
+    type: boolean
+  deployments:
+    type: boolean
+  groups:
+    type: boolean
+  clouds:
+    type: boolean
+  hosts:
+    type: boolean
+  network:
+    type: boolean
+  loadBalancers:
+    type: boolean
+  storage:
+    type: boolean
+  keyPairs:
+    type: boolean
+  sslCertificates:
+    type: boolean
+  boot:
+    type: boolean
+  backups:
+    type: boolean
+  cypher:
+    type: boolean
+  archives:
+    type: boolean
+  imageBuilder:
+    type: boolean
+  tenants:
+    type: boolean
+  plans:
+    type: boolean
+  pricing:
+    type: boolean
+  users:
+    type: boolean
+  userGroups:
+    type: boolean
+  monitoring:
+    type: boolean
+  logging:
+    type: boolean
+  monitoringServices:
+    type: boolean
+  loggingServices:
+    type: boolean
+  backupServices:
+    type: boolean
+  dnsServices:
+    type: boolean
+  codeService:
+    type: boolean
+  buildServices:
+    type: boolean
+  loadBalancerServices:
+    type: boolean
+  ipamServices:
+    type: boolean
+  approvalServices:
+    type: boolean
+  cmdbServices:
+    type: boolean
+  deploymentServices:
+    type: boolean
+  automationServices:
+    type: boolean
+  serviceDiscoveryServices:
+    type: boolean
+  identityServices:
+    type: boolean
+  trustServices:
+    type: boolean
+  securityServices:
+    type: boolean

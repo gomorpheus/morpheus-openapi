@@ -1,0 +1,7 @@
+title: 200Budget
+type: object
+properties:
+  success:
+    type: boolean
+  budget:
+    $ref: .\Budget.yaml

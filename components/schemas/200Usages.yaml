@@ -1,0 +1,10 @@
+title: 200Usages
+type: object
+properties:
+  activity:
+    type: array
+    items:
+      $ref: .\Activity2.yaml
+    description: ''
+  meta:
+    $ref: .\Meta2.yaml

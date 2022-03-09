@@ -1,0 +1,7 @@
+title: ApiUsersRequest1
+required:
+  - user
+type: object
+properties:
+  user:
+    $ref: .\User5.yaml

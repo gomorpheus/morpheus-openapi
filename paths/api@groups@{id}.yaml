@@ -1,0 +1,241 @@
+get:
+  tags:
+    - Groups
+  summary: getGroups
+  description: |
+    Retrieves a specific group.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-a-specific-group
+  operationId: getGroups
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200Group.yaml
+          examples:
+            Search Response:
+              summary: Group Response
+              value:
+                group:
+                  id: 443
+                  uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                  name: ServiceNow
+                  code: snow
+                  location: ServiceNow Approval, CMDB
+                  accountId: 3
+                  active: true
+                  config:
+                    dnsIntegrationId: ''
+                    configCmdbId: '12'
+                    serviceRegistryId: ''
+                    configManagementId: '3'
+                  dateCreated: '2018-07-20T05:24:25Z'
+                  lastUpdated: '2022-01-13T00:54:57Z'
+                  zones:
+                    - id: 12
+                      name: AWS
+                    - id: 121
+                      name: Azure US
+                    - id: 143
+                      name: Google Labs
+                    - id: 172
+                      name: VMware Demo Cluster H5
+                  stats:
+                    instanceCounts:
+                      all: 0
+                    serverCounts:
+                      all: 45
+                      host: 45
+                      hypervisor: 5
+                      containerHost: 40
+                      vm: 555
+                      baremetal: 0
+                      unmanaged: 243
+                  serverCount: 45
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+put:
+  tags:
+    - Groups
+  summary: updateGroups
+  description: |
+    Updates a group.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#updating-a-group
+  operationId: updateGroups
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  requestBody:
+    description: ''
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\ApiGroupsRequest.yaml
+    required: false
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200Group.yaml
+          examples:
+            Report Types Response:
+              summary: Group Response
+              value:
+                group:
+                  id: 443
+                  uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                  name: ServiceNow
+                  code: snow
+                  location: ServiceNow Approval, CMDB
+                  accountId: 3
+                  active: true
+                  config:
+                    dnsIntegrationId: ''
+                    configCmdbId: '12'
+                    serviceRegistryId: ''
+                    configManagementId: '3'
+                  dateCreated: '2018-07-20T05:24:25Z'
+                  lastUpdated: '2022-01-13T00:54:57Z'
+                  zones:
+                    - id: 12
+                      name: AWS
+                    - id: 121
+                      name: Azure US
+                    - id: 143
+                      name: Google Labs
+                    - id: 172
+                      name: VMware Demo Cluster H5
+                  stats:
+                    instanceCounts:
+                      all: 0
+                    serverCounts:
+                      all: 45
+                      host: 45
+                      hypervisor: 5
+                      containerHost: 40
+                      vm: 555
+                      baremetal: 0
+                      unmanaged: 243
+                  serverCount: 45
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+delete:
+  tags:
+    - Groups
+  summary: removeGroups
+  description: |
+    Deletes a specified Group.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#delete-a-group
+  operationId: removeGroups
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200Success.yaml
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

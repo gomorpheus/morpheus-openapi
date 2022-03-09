@@ -1,61 +1,10 @@
+title: tenants
 type: object
-properties: 
-  accounts: 
+properties:
+  accounts:
     type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        name: 
-          type: string
-        description: 
-          type: string
-        subdomain: 
-          type: string
-        currency: 
-          type: string
-        externalId: 
-          type: string
-          format: nullable
-        customerNumber: 
-          type: string
-          format: nullable
-        accountNumber: 
-          type: string
-          format: nullable
-        accountName: 
-          type: string
-        active: 
-          type: boolean
-        master: 
-          type: boolean
-        role: 
-          type: object
-          properties: 
-            id: 
-              type: integer
-              format: int64
-            authority: 
-              type: string
-            description: 
-              type: string
-              format: nullable
-        stats: 
-          type: object
-          properties: 
-            instanceCount: 
-              type: integer
-              format: int64
-            userCount: 
-              type: integer
-              format: int64
-        dateCreated: 
-          type: string
-          format: date-time
-        lastUpdated: 
-          type: string
-          format: date-time
-  meta: 
-    $ref: MetaObject.yaml
+    items:
+      $ref: .\Account.yaml
+    description: ''
+  meta:
+    $ref: .\MetaObject.yaml

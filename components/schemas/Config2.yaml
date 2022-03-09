@@ -1,0 +1,34 @@
+title: Config2
+type: object
+properties:
+  reportType:
+    type: string
+  startDate:
+    type:
+      - string
+      - 'null'
+    contentEncoding: date-time
+  endDate:
+    type:
+      - string
+      - 'null'
+    contentEncoding: date-time
+  name:
+    type: string
+  scheduleMode:
+    type:
+      - string
+      - 'null'
+  dateTime:
+    type:
+      - string
+      - 'null'
+    contentEncoding: date-time
+  cloudId:
+    type: string
+  config:
+    $ref: .\Config3.yaml
+  metadata:
+    type: string
+  metadataExclude:
+    type: string

@@ -1,0 +1,15 @@
+title: Meta1
+type: object
+properties:
+  offset:
+    type: integer
+    contentEncoding: int64
+  max:
+    type: integer
+    contentEncoding: int64
+  size:
+    type: integer
+    contentEncoding: int64
+  total:
+    type: integer
+    contentEncoding: int64

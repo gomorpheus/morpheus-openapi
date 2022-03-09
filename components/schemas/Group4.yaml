@@ -1,0 +1,12 @@
+title: Group4
+required:
+  - zones
+type: object
+properties:
+  zones:
+    type: array
+    items: {}
+    description: An array of all the zones assigned to this group.
+    examples:
+      - - id: 1
+        - id: 5

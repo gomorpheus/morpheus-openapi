@@ -1,0 +1,37 @@
+title: Group1
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  uuid:
+    type: string
+  name:
+    type: string
+  code:
+    type: string
+  location:
+    type: string
+  accountId:
+    type: integer
+    contentEncoding: int64
+  active:
+    type: boolean
+  config:
+    $ref: .\Config1.yaml
+  dateCreated:
+    type: string
+    contentEncoding: date-time
+  lastUpdated:
+    type: string
+    contentEncoding: date-time
+  zones:
+    type: array
+    items:
+      $ref: .\Zone.yaml
+    description: ''
+  stats:
+    $ref: .\Stats3.yaml
+  serverCount:
+    type: integer
+    contentEncoding: int64

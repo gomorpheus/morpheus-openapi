@@ -1,0 +1,14 @@
+title: Roles4
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  authority:
+    type: string
+  description:
+    type: string
+  roleType:
+    type: string
+  owner:
+    $ref: .\Owner.yaml

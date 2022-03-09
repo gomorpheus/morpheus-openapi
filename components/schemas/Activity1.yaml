@@ -1,0 +1,21 @@
+title: Activity1
+type: object
+properties:
+  _id:
+    type: string
+  success:
+    type: boolean
+  activityType:
+    type: string
+  name:
+    type: string
+  message:
+    type: string
+  objectType:
+    type: string
+  objectId:
+    type: number
+  user:
+    $ref: .\User1.yaml
+  ts:
+    type: string

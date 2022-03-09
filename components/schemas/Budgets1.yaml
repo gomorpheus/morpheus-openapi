@@ -1,0 +1,77 @@
+title: Budgets1
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  name:
+    type: string
+  description:
+    type: string
+  account:
+    $ref: .\Account4.yaml
+  enabled:
+    type: boolean
+  refScope:
+    type: string
+  refType:
+    type: string
+  refId:
+    type: integer
+    contentEncoding: int64
+  refName:
+    type: string
+  period:
+    type: string
+  year:
+    type: string
+  resourceType:
+    type: string
+  timezone:
+    type: string
+  startDate:
+    type: string
+    contentEncoding: date-time
+  endDate:
+    type: string
+    contentEncoding: date-time
+  interval:
+    type: string
+  costs:
+    type: array
+    items:
+      type: number
+    description: ''
+  isFiscal:
+    type: boolean
+  averageCost:
+    type: number
+  totalCost:
+    type: number
+  currency:
+    type: string
+  rollover:
+    type: boolean
+  warningLimit:
+    type: string
+  overLimit:
+    type: string
+  externalId:
+    type: string
+  internalId:
+    type: string
+  createdById:
+    type: integer
+    contentEncoding: int64
+  createdByName:
+    type: string
+  updatedById:
+    type: string
+  updatedByName:
+    type: string
+  dateCreated:
+    type: string
+    contentEncoding: date-time
+  lastUpdated:
+    type: string
+    contentEncoding: date-time

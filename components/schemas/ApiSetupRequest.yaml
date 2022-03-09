@@ -1,0 +1,39 @@
+title: ApiSetupRequest
+required:
+  - applianceName
+  - accountName
+  - username
+  - email
+  - password
+type: object
+properties:
+  applianceName:
+    type: string
+    description: >-
+      Appliance Name. Choose a name for your Morpheus Appliance.  This is stored
+      in the Appliance Settings.
+  applianceUrl:
+    type: string
+    description: >-
+      Appliance URL. Specify the full URL for your Morpheus Appliance. This is
+      stored in the Appliance Settings.
+  accountName:
+    type: string
+    description: Name of the Master Tenant account being created.
+  firstName:
+    type: string
+    description: First Name for the System Admin user being created.
+  lastName:
+    type: string
+    description: Last Name for the System Admin user being created.
+  username:
+    type: string
+    description: Username for the System Admin user being created.
+  email:
+    type: string
+    description: Email for the System Admin user being created.
+  password:
+    type: string
+    description: Password for the System Admin user being created.
+  hubmode:
+    $ref: .\Hubmode.yaml

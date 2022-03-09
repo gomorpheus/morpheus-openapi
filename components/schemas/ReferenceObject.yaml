@@ -1,15 +1,16 @@
+title: ReferenceObject
+required:
+  - id
 type: object
-description: A simple object to represent a specific resource, typically an id and name.
 properties:
   id:
     type: integer
-    format: int64
     description: Resource ID
+    contentEncoding: int64
   name:
     type: string
     description: Resource name
   code:
     type: string
     description: Resource code
-required:
-  - id
+description: A simple object to represent a specific resource, typically an id and name.

@@ -1,0 +1,17 @@
+title: Config
+type: object
+properties:
+  dnsIntegrationId:
+    type: string
+  configCmdbId:
+    type: string
+  _configCmdbDiscovery:
+    type: string
+  configCmId:
+    type: string
+  serviceRegistryId:
+    type: string
+  configManagementId:
+    type: string
+  configCmdbDiscovery:
+    type: boolean

@@ -1,0 +1,21 @@
+title: Meta
+type: object
+properties:
+  size:
+    type: integer
+    contentEncoding: int64
+  total:
+    type: integer
+    contentEncoding: int64
+  max:
+    type: integer
+    contentEncoding: int64
+  offset:
+    type: integer
+    contentEncoding: int64
+  startDate:
+    type: string
+    contentEncoding: date-time
+  endDate:
+    type: string
+    contentEncoding: date-time

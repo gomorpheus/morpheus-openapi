@@ -1,0 +1,60 @@
+get:
+  tags:
+    - Reports
+  summary: downloadReports
+  description: >
+    This endpoint downloads a specific report result as a file attachment. The
+    default file format is `.json`.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#download-a-specific-report
+  operationId: downloadReports
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+    - name: format
+      in: path
+      description: Format of the rendered report file, `.json` or `.csv`.
+      required: true
+      style: simple
+      schema:
+        $ref: ..\components\schemas\format.yaml
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200Success.yaml
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []

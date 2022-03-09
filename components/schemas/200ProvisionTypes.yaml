@@ -1,0 +1,10 @@
+title: 200ProvisionTypes
+type: object
+properties:
+  provisionTypes:
+    type: array
+    items:
+      $ref: .\ProvisionType.yaml
+    description: ''
+  meta:
+    $ref: .\MetaObject.yaml

@@ -1,0 +1,27 @@
+title: InstanceStats
+type: object
+properties:
+  maxCpu:
+    type: number
+  maxCores:
+    type: number
+  cpuUsage:
+    type: number
+  cpuUsageAverage:
+    type: number
+  cpuUsagePeak:
+    type: number
+  usedMemory:
+    type: number
+  maxMemory:
+    type: number
+  usedStorage:
+    type: number
+  maxStorage:
+    type: number
+  running:
+    type: number
+  total:
+    type: number
+  totalContainers:
+    type: number

@@ -1,0 +1,28 @@
+title: ReportResult
+type: object
+properties:
+  id:
+    type: integer
+    contentEncoding: int64
+  type:
+    $ref: .\Type.yaml
+  reportTitle:
+    type: string
+  filterTitle:
+    type: string
+  status:
+    type: string
+  dateCreated:
+    type: string
+    contentEncoding: date-time
+  lastUpdated:
+    type: string
+    contentEncoding: date-time
+  startDate:
+    type: string
+  endDate:
+    type: string
+  config:
+    $ref: .\Config2.yaml
+  createdBy:
+    $ref: .\CreatedBy1.yaml

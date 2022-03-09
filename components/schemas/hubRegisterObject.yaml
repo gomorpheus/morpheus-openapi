@@ -1,38 +1,12 @@
-title: Hub Register Object
-description: >-
-  Object for registering with the [Morpheus
-  Hub](https://morpheushub.com). This is only required for
-  `hubmode=register`.
-type: object
-required:
-  - hub
-properties:
-  hub:
+title: HubRegisterObject
+allOf:
+  - $ref: .\BaseType.yaml
+  - required:
+      - hub
     type: object
-    required:
-      - companyName
-      - firstName
-      - lastName
-      - email
-      - password
-      - jobTitle
     properties:
-      companyName:
-        type: string
-        description: Company Name for new Morpheus Hub organization
-      firstName:
-        type: string
-        description: First Name for new Morpheus Hub user
-      lastName:
-        type: string
-        description: Last Name for new Morpheus Hub user
-      email:
-        type: string
-        description: Email for new Morpheus Hub user
-      password:
-        type: string
-        format: password
-        description: Password for new Morpheus Hub user
-      jobTitle:
-        type: string
-        description: Job title of new Morpheus Hub user
+      hub:
+        $ref: .\Hub1.yaml
+description: >-
+  Object for registering with the [Morpheus Hub](https://morpheushub.com). This
+  is only required for `hubmode=register`.

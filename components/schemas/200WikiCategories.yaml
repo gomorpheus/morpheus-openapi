@@ -1,0 +1,8 @@
+title: 200WikiCategories
+type: object
+properties:
+  categories:
+    type: array
+    items:
+      $ref: .\Category.yaml
+    description: ''

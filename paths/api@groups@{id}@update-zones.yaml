@@ -1,0 +1,59 @@
+put:
+  tags:
+    - Groups
+  summary: updateGroupsZones
+  description: |
+    Updates a group.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#updating-group-zones
+  operationId: updateGroupsZones
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Object being created or referenced
+      required: true
+      style: simple
+      schema:
+        type: number
+        contentEncoding: double
+  requestBody:
+    description: ''
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\ApiGroupsUpdateZonesRequest.yaml
+    required: false
+  responses:
+    '200':
+      description: Successful Request
+      headers: {}
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200Success.yaml
+    '400':
+      description: Bad Request.
+      headers: {}
+      content: {}
+    '401':
+      description: Unauthorized.
+      headers: {}
+      content: {}
+    '403':
+      description: Forbidden.
+      headers: {}
+      content: {}
+    '404':
+      description: Object Not Found.
+      headers: {}
+      content: {}
+    '500':
+      description: Internal Server Error.
+      headers: {}
+      content: {}
+    '503':
+      description: Service Unavailable.
+      headers: {}
+      content: {}
+  deprecated: false
+parameters: []
