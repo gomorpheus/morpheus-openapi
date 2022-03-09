@@ -63,6 +63,12 @@ paths:
     $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:
     $ref: paths/api@forgot@send-email.yaml
+  /api/groups:
+    $ref: paths/api@groups.yaml
+  /api/groups/{id}:
+    $ref: paths/api@groups@id.yaml
+  /api/groups/{id}/update-zones:
+    $ref: paths/api@groups@id@update-zones.yaml
   /api/groups/{id}/wiki:
     $ref: paths/api@groups@id@wiki.yaml
   /api/instances/{id}/wiki:
