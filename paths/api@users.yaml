@@ -59,12 +59,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              users:
-                type: array
-                items:
-                  $ref: ..\components\schemas\users.yaml
+            $ref: ..\components\schemas\users.yaml
           examples:
             Users Response:
               $ref: ..\components\examples\users.yaml
@@ -138,10 +133,7 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              user:
-                $ref: ..\components\schemas\user.yaml
+            $ref: ..\components\schemas\user.yaml
           examples:
             Create User Response:
               $ref: ..\components\examples\user.yaml

@@ -23,9 +23,10 @@ properties:
         dateCreated: 
           type: string
           format: date-time
+          nullable: true
         score: 
-          type: integer
-          format: int64
+          type: number
+          format: nullable
   query: 
     type: string
   took: 

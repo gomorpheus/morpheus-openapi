@@ -12,10 +12,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              role:
-                $ref: ..\components\schemas\role.yaml
+            $ref: ..\components\schemas\role.yaml
           examples:
             GetRoleResponse:
               $ref: ..\components\examples\role.yaml
@@ -62,10 +59,7 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              role:
-                $ref: ..\components\schemas\role.yaml
+            $ref: ..\components\schemas\role.yaml
           examples:
             UpdateRoleResponse:
               $ref: ..\components\examples\role.yaml

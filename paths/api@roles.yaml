@@ -29,12 +29,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              roles:
-                type: array
-                items:
-                  $ref: ..\components\schemas\roles.yaml
+            $ref: ..\components\schemas\roles.yaml
           examples:
             List Roles Response:
               $ref: ..\components\examples\roles.yaml
@@ -114,10 +109,7 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              role:
-                $ref: ..\components\schemas\roles.yaml
+            $ref: ..\components\schemas\roles.yaml
           examples:
             CreateRoleResponse:
               $ref: ..\components\examples\roles.yaml

@@ -23,6 +23,7 @@ properties:
           format: int64
         user: 
           type: object
+          nullable: true
           properties: 
             id: 
               type: integer

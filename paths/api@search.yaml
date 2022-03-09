@@ -24,7 +24,6 @@ get:
           examples:
             Search Response:
               $ref: ../components/examples/search.yaml
-          
     '400':
       description: Bad Request.
     '401':

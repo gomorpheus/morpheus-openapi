@@ -94,32 +94,26 @@ properties:
       optionTypes: 
         type: array
         items:
-          type: string
-        default: []
+          type: object
       customOptionTypes: 
         type: array
         items:
-          type: string
-        default: []
+          type: object
       networkTypes: 
         type: array
         items:
-          type: string
-        default: []
+          type: object
       storageTypes: 
         type: array
         items:
-          type: string
-        default: []
+          type: object
       rootStorageTypes: 
         type: array
         items:
-          type: string
-        default: []
+          type: object
       controllerTypes: 
         type: array
         items:
-          type: string
-        default: []
+          type: object
   success: 
     type: boolean
