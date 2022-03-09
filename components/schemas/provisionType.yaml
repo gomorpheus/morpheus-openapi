@@ -93,21 +93,33 @@ properties:
         format: nullable
       optionTypes: 
         type: array
-        items: []
+        items:
+          type: string
+        default: []
       customOptionTypes: 
         type: array
-        items: []
+        items:
+          type: string
+        default: []
       networkTypes: 
         type: array
-        items: []
+        items:
+          type: string
+        default: []
       storageTypes: 
         type: array
-        items: []
+        items:
+          type: string
+        default: []
       rootStorageTypes: 
         type: array
-        items: []
+        items:
+          type: string
+        default: []
       controllerTypes: 
         type: array
-        items: []
+        items:
+          type: string
+        default: []
   success: 
     type: boolean

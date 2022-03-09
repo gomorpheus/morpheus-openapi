@@ -17,7 +17,7 @@ servers:
     description: Morpheus API
     variables:
       api_url:
-        default: ""
+        default: localhost
       application_name:
         default: Morpheus
       company_name:
@@ -92,7 +92,7 @@ paths:
   /api/provision-types:
     $ref: paths/api@provision-types.yaml
   /api/provision-types/{id}:
-    $ref: paths/api@provision-types.yaml
+    $ref: paths/api@provision-types@id.yaml
   /api/report-types:
     $ref: paths/api@report@types.yaml
   /api/reports:

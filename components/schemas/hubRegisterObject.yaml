@@ -1,42 +1,45 @@
 title: Hub Register Object
+description: >-
+  Object for registering with the [Morpheus
+  Hub](https://morpheushub.com). This is only required for
+  `hubmode=register`.
 type: object
+required:
+  - hub
 properties:
-  description: >-
-    Object for registering with the [Morpheus
-    Hub](https://morpheushub.com). This is only required for
-    `hubmode=register`.
-  type: object
-  required:
-    - companyName
-    - firstName
-    - lastName
-    - email
-    - password
-    - jobTitle
-  properties:
-    companyName:
-      type: string
-      description: Company Name for new Morpheus Hub organization
-    firstName:
-      type: string
-      description: First Name for new Morpheus Hub user
-    lastName:
-      type: string
-      description: Last Name for new Morpheus Hub user
-    email:
-      type: string
-      description: Email for new Morpheus Hub user
-    password:
-      type: string
-      format: password
-      description: Password for new Morpheus Hub user
-    jobTitle:
-      type: string
-      description: Job title of new Morpheus Hub user
-  example:
-    companyName: Meta Cortex Corporation
-    firstName: Thomas
-    lastName: Anderson
-    email: tanderson@mccorp.com
-    password: AGoodPasswordForNewHubAccount
-    jobTitle: The One
+  hub:
+    type: object
+    required:
+      - companyName
+      - firstName
+      - lastName
+      - email
+      - password
+      - jobTitle
+    properties:
+      companyName:
+        type: string
+        description: Company Name for new Morpheus Hub organization
+      firstName:
+        type: string
+        description: First Name for new Morpheus Hub user
+      lastName:
+        type: string
+        description: Last Name for new Morpheus Hub user
+      email:
+        type: string
+        description: Email for new Morpheus Hub user
+      password:
+        type: string
+        format: password
+        description: Password for new Morpheus Hub user
+      jobTitle:
+        type: string
+        description: Job title of new Morpheus Hub user
+    example:
+      companyName: Meta Cortex Corporation
+      firstName: Thomas
+      lastName: Anderson
+      email: tanderson@mccorp.com
+      password: AGoodPasswordForNewHubAccount
+      jobTitle: The One
