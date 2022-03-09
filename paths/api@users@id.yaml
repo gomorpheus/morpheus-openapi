@@ -17,8 +17,8 @@ get:
               user:
                 $ref: ..\components\schemas\User.yaml
           examples:
-            GetUserResponse:
-              $ref: ..\components\examples\GetUserResponse.yaml
+            Get User Response:
+              $ref: ..\components\examples\user.yaml
     '400':
       description: Bad Request.
     '401':
@@ -74,8 +74,8 @@ put:
                   items:
                     $ref: ..\components\schemas\ReferenceObject.yaml
         examples:
-          updateUserResponse:
-            $ref: ..\components\examples\UpdateUserResponse.yaml
+          Update User Response:
+            $ref: ..\components\examples\user.yaml
   responses:
     '200':
       description: User Object
@@ -85,10 +85,10 @@ put:
             type: object
             properties:
               user:
-                $ref: ..\components\schemas\User.yaml
+                $ref: ..\components\schemas\user.yaml
           examples:
-            updateUserResponse:
-              $ref: ..\components\examples\UpdateUserResponse.yaml
+            Update User Response:
+              $ref: ..\components\examples\user.yaml
     '400':
       description: Bad Request.
     '401':
@@ -113,7 +113,7 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Success.yaml
+            $ref: ..\components\schemas\200-success.yaml
     '400':
       description: User still has managed resources
       content:

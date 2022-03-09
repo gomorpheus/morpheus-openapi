@@ -34,12 +34,10 @@ get:
               roles:
                 type: array
                 items:
-                  $ref: ..\components\schemas\Role.yaml
-              meta:
-                $ref: ..\components\schemas\MetaObject.yaml
+                  $ref: ..\components\schemas\roles.yaml
           examples:
-            ListRolesResponse:
-              $ref: ..\components\examples\ListRolesResponse.yaml
+            List Roles Response:
+              $ref: ..\components\examples\roles.yaml
     '400':
       description: Bad Request.
     '401':
@@ -119,7 +117,7 @@ post:
             type: object
             properties:
               role:
-                $ref: ..\components\schemas\Role.yaml
+                $ref: ..\components\schemas\roles.yaml
           examples:
             CreateRoleResponse:
               $ref: ..\components\examples\CreateRoleResponse.yaml

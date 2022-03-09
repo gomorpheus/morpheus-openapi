@@ -7,132 +7,77 @@ properties:
       id: 
         type: integer
         format: int64
-        description: ID
       accountId: 
         type: integer
         format: int64
-        description: Tenant ID
       username: 
         type: string
-        description: Username
       displayName: 
         type: string
-        description: Display Name, firstName + lastName or username
       email: 
         type: string
-        description: email
       firstName: 
         type: string
-        description: Fist Name
       lastName: 
         type: string
-        description: Last Name
       enabled: 
         type: boolean
-        description: Flag that can be used to disable a user
       receiveNotifications: 
         type: boolean
-        description: Flag that indicates a user wishes to receive notifications
       isUsing2FA: 
         type: boolean
-        description: Flag that indicates a user is utilizing local 2fa
       accountExpired: 
         type: boolean
-        description: Flag that indicates user account is expired
       accountLocked: 
         type: boolean
-        description: Flag that indicates user account is locked
       passwordExpired: 
         type: boolean
-        description: Flag that indicates user password is expired
       loginCount: 
         type: integer
         format: int64
-        description: Number of times user has logged in
       loginAttempts: 
         type: integer
         format: int64
-        description: Number of invalid login attempts. This resets to 0 after successful login.
       lastLoginDate: 
         type: string
         format: date-time
-        description: Last successful login date
       roles: 
         type: array
-        description: User roles
         items: 
           type: object
           properties: 
             id: 
               type: integer
               format: int64
-              description: Role ID
             authority: 
               type: string
-              description: Unique name for a role
             description: 
               type: string
       account: 
         type: object
-        description: Tenant the user belongs to
         properties: 
           id: 
             type: integer
             format: int64
-            description: Tenant ID
           name: 
             type: string
-            description: Tenant Name
       linuxUsername: 
         type: string
-        description: Linux username/user settings for provisioning
-        nullable: true
       linuxPassword: 
         type: string
-        description: Linux password/user settings for provisioning
-        nullable: true
       linuxKeyPairId: 
-        type: string
-        description: SSH Key (Key Pair ID)/user settings for provisioning
+        type: integer
         format: int64
-        nullable: true
       windowsUsername: 
         type: string
-        description: Windows username/user settings for provisioning
-        nullable: true
       windowsPassword: 
         type: string
-        description: Windows password/user settings for provisioning
-        nullable: true
       defaultPersona: 
         type: string
-        description: Default person selected when user logs in
-        format: int64
+        format: nullable
       dateCreated: 
         type: string
-        description: Date created timestamp
         format: date-time
       lastUpdated: 
         type: string
-        description: Date last updated timestamp
         format: date-time
-  isMasterAccount: 
-    type: boolean
-    description: Flag for master administrative account
-  permissions: 
-    type: array
-    description: Applied permissions
-    items: 
-      type: object
-      properties: 
-        name: 
-          type: string
-        code: 
-          type: string
-        access: 
-          type: string
-  appliance: 
-    type: object
-    properties: 
-      buildVersion: 
-        type: string

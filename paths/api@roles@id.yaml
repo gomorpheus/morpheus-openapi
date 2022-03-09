@@ -15,7 +15,7 @@ get:
             type: object
             properties:
               role:
-                $ref: ..\components\schemas\Role.yaml
+                $ref: ..\components\schemas\roles.yaml
           examples:
             GetRoleResponse:
               $ref: ..\components\examples\GetRoleResponse.yaml
@@ -68,7 +68,7 @@ put:
             type: object
             properties:
               role:
-                $ref: ..\components\schemas\Role.yaml
+                $ref: ..\components\schemas\roles.yaml
           examples:
             UpdateRoleResponse:
               $ref: ..\components\examples\UpdateRoleResponse.yaml
@@ -96,7 +96,7 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Success.yaml
+            $ref: ..\components\schemas\200-success.yaml
     '400':
       description: Role still has managed resources
       content:

@@ -64,12 +64,10 @@ get:
               users:
                 type: array
                 items:
-                  $ref: ..\components\schemas\User.yaml
-              meta:
-                $ref: ..\components\schemas\MetaObject.yaml
+                  $ref: ..\components\schemas\users.yaml
           examples:
-            getUser:
-              $ref: ..\components\examples\ListUsersResponse.yaml
+            Users Response:
+              $ref: ..\components\examples\users.yaml
     '400':
       description: Bad Request.
     '401':
@@ -143,10 +141,10 @@ post:
             type: object
             properties:
               user:
-                $ref: ..\components\schemas\User.yaml
+                $ref: ..\components\schemas\user.yaml
           examples:
-            createUserResponse:
-              $ref: ..\components\examples\CreateUserResponse.yaml
+            Create User Response:
+              $ref: ..\components\examples\user.yaml
     '400':
       description: Bad Request.
     '401':

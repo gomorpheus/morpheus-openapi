@@ -1930,7 +1930,7 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
-  /api/key-pairs/id:
+  /api/key-pairs/{id}:
     get:
       summary: Retrieves a Specific Key Pair
       description: |
@@ -2567,12 +2567,10 @@ paths:
                   roles:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Role'
-                  meta:
-                    $ref: '#/components/schemas/MetaObject'
+                      $ref: '#/components/schemas/roles'
               examples:
-                ListRolesResponse:
-                  $ref: '#/components/examples/ListRolesResponse'
+                List Roles Response:
+                  $ref: '#/components/examples/roles'
         '400':
           description: Bad Request.
         '401':
@@ -2653,7 +2651,7 @@ paths:
                 type: object
                 properties:
                   role:
-                    $ref: '#/components/schemas/Role'
+                    $ref: '#/components/schemas/roles'
               examples:
                 CreateRoleResponse:
                   $ref: '#/components/examples/CreateRoleResponse'
@@ -2687,7 +2685,7 @@ paths:
                 type: object
                 properties:
                   role:
-                    $ref: '#/components/schemas/Role'
+                    $ref: '#/components/schemas/roles'
               examples:
                 GetRoleResponse:
                   $ref: '#/components/examples/GetRoleResponse'
@@ -2740,7 +2738,7 @@ paths:
                 type: object
                 properties:
                   role:
-                    $ref: '#/components/schemas/Role'
+                    $ref: '#/components/schemas/roles'
               examples:
                 UpdateRoleResponse:
                   $ref: '#/components/examples/UpdateRoleResponse'
@@ -2770,7 +2768,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Success'
+                $ref: '#/components/schemas/200-success'
         '400':
           description: Role still has managed resources
           content:
@@ -3194,12 +3192,10 @@ paths:
                   users:
                     type: array
                     items:
-                      $ref: '#/components/schemas/User'
-                  meta:
-                    $ref: '#/components/schemas/MetaObject'
+                      $ref: '#/components/schemas/users'
               examples:
-                getUser:
-                  $ref: '#/components/examples/ListUsersResponse'
+                Users Response:
+                  $ref: '#/components/examples/users'
         '400':
           description: Bad Request.
         '401':
@@ -3273,10 +3269,10 @@ paths:
                 type: object
                 properties:
                   user:
-                    $ref: '#/components/schemas/User'
+                    $ref: '#/components/schemas/user'
               examples:
-                createUserResponse:
-                  $ref: '#/components/examples/GetUserResponse'
+                Create User Response:
+                  $ref: '#/components/examples/user'
         '400':
           description: Bad Request.
         '401':
@@ -3309,8 +3305,8 @@ paths:
                   user:
                     $ref: '#/components/schemas/User'
               examples:
-                GetUserResponse:
-                  $ref: '#/components/examples/GetUserResponse'
+                Get User Response:
+                  $ref: '#/components/examples/user'
         '400':
           description: Bad Request.
         '401':
@@ -3366,8 +3362,8 @@ paths:
                       items:
                         $ref: '#/components/schemas/ReferenceObject'
             examples:
-              updateUserResponse:
-                $ref: '#/components/examples/GetUserResponse'
+              Update User Response:
+                $ref: '#/components/examples/user'
       responses:
         '200':
           description: User Object
@@ -3377,10 +3373,10 @@ paths:
                 type: object
                 properties:
                   user:
-                    $ref: '#/components/schemas/User'
+                    $ref: '#/components/schemas/user'
               examples:
-                updateUserResponse:
-                  $ref: '#/components/examples/GetUserResponse'
+                Update User Response:
+                  $ref: '#/components/examples/user'
         '400':
           description: Bad Request.
         '401':
@@ -3405,7 +3401,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Success'
+                $ref: '#/components/schemas/200-success'
         '400':
           description: User still has managed resources
           content:
@@ -4735,7 +4731,6 @@ components:
         success:
           type: boolean
     budgets:
-      title: 200 Budgets
       type: object
       properties:
         budgets:
@@ -6569,51 +6564,58 @@ components:
                     type: string
         meta:
           $ref: '#/components/schemas/MetaObject'
-    DateCreated:
-      type: string
-      format: date-time
-      description: Date Created timestamp (ISO 8601)
-      example: 2019-03-06T17:52:29+0000
-    LastUpdated:
-      type: string
-      format: date-time
-      description: Last Updated timestamp (ISO 8601)
-      example: 2019-03-06T17:52:29+0000
-    Role:
+    roles:
       type: object
       description: Role Object
       properties:
-        id:
-          type: integer
-          format: int64
-          description: ID
-        authority:
-          type: string
-          description: Authority, a unique name for the role
-        description:
-          type: string
-          description: Description
-          nullable: true
-        roleType:
-          type: string
-          description: Role type
-          enum:
-            - user
-            - account
-            - admin
-          default: user
-        multitenant:
-          type: boolean
-          default: false
-          description: Multitenant
-        multitenantLocked:
-          type: boolean
-          default: false
-          description: Multitenant Locked
-        dateCreated:
-          $ref: '#/components/schemas/DateCreated'
-        lastUpdated:
-          $ref: '#/components/schemas/LastUpdated'
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              authority:
+                type: string
+              description:
+                type: string
+                format: nullable
+              scope:
+                type: string
+              roleType:
+                type: string
+              multitenant:
+                type: boolean
+              multitenantLocked:
+                type: boolean
+              parentRoleId:
+                type: string
+                format: nullable
+              diverged:
+                type: boolean
+              ownerId:
+                type: integer
+                format: int64
+              owner:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  name:
+                    type: string
+              defaultPersona:
+                type: string
+                format: nullable
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+        meta:
+          $ref: '#/components/schemas/MetaObject'
     search:
       title: 200 Search
       type: object
@@ -6757,147 +6759,98 @@ components:
                 format: date-time
         meta:
           $ref: '#/components/schemas/MetaObject'
-    User:
-      title: 200 User
+    users:
       type: object
       properties:
-        user:
-          type: object
-          properties:
-            id:
-              type: integer
-              format: int64
-              description: ID
-            accountId:
-              type: integer
-              format: int64
-              description: Tenant ID
-            username:
-              type: string
-              description: Username
-            displayName:
-              type: string
-              description: Display Name, firstName + lastName or username
-            email:
-              type: string
-              description: email
-            firstName:
-              type: string
-              description: Fist Name
-            lastName:
-              type: string
-              description: Last Name
-            enabled:
-              type: boolean
-              description: Flag that can be used to disable a user
-            receiveNotifications:
-              type: boolean
-              description: Flag that indicates a user wishes to receive notifications
-            isUsing2FA:
-              type: boolean
-              description: Flag that indicates a user is utilizing local 2fa
-            accountExpired:
-              type: boolean
-              description: Flag that indicates user account is expired
-            accountLocked:
-              type: boolean
-              description: Flag that indicates user account is locked
-            passwordExpired:
-              type: boolean
-              description: Flag that indicates user password is expired
-            loginCount:
-              type: integer
-              format: int64
-              description: Number of times user has logged in
-            loginAttempts:
-              type: integer
-              format: int64
-              description: >-
-                Number of invalid login attempts. This resets to 0 after
-                successful login.
-            lastLoginDate:
-              type: string
-              format: date-time
-              description: Last successful login date
-            roles:
-              type: array
-              description: User roles
-              items:
+        users:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              accountId:
+                type: integer
+                format: int64
+              username:
+                type: string
+              displayName:
+                type: string
+              email:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+              enabled:
+                type: boolean
+              receiveNotifications:
+                type: boolean
+              isUsing2FA:
+                type: boolean
+              accountExpired:
+                type: boolean
+              accountLocked:
+                type: boolean
+              passwordExpired:
+                type: boolean
+              loginCount:
+                type: integer
+                format: int64
+              loginAttempts:
+                type: integer
+                format: int64
+              lastLoginDate:
+                type: string
+                format: date-time
+              roles:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                    authority:
+                      type: string
+                    description:
+                      type: string
+              account:
                 type: object
                 properties:
                   id:
                     type: integer
                     format: int64
-                    description: Role ID
-                  authority:
+                  name:
                     type: string
-                    description: Unique name for a role
-                  description:
-                    type: string
-            account:
-              type: object
-              description: Tenant the user belongs to
-              properties:
-                id:
-                  type: integer
-                  format: int64
-                  description: Tenant ID
-                name:
-                  type: string
-                  description: Tenant Name
-            linuxUsername:
-              type: string
-              description: Linux username/user settings for provisioning
-              nullable: true
-            linuxPassword:
-              type: string
-              description: Linux password/user settings for provisioning
-              nullable: true
-            linuxKeyPairId:
-              type: string
-              description: SSH Key (Key Pair ID)/user settings for provisioning
-              format: int64
-              nullable: true
-            windowsUsername:
-              type: string
-              description: Windows username/user settings for provisioning
-              nullable: true
-            windowsPassword:
-              type: string
-              description: Windows password/user settings for provisioning
-              nullable: true
-            defaultPersona:
-              type: string
-              description: Default person selected when user logs in
-              format: int64
-            dateCreated:
-              type: string
-              description: Date created timestamp
-              format: date-time
-            lastUpdated:
-              type: string
-              description: Date last updated timestamp
-              format: date-time
-        isMasterAccount:
+              linuxUsername:
+                type: string
+                format: nullable
+              linuxPassword:
+                type: string
+              linuxKeyPairId:
+                type: string
+                format: nullable
+              windowsUsername:
+                type: string
+                format: nullable
+              windowsPassword:
+                type: string
+                format: nullable
+              defaultPersona:
+                type: string
+                format: nullable
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+        meta:
+          $ref: '#/components/schemas/MetaObject'
+        global:
           type: boolean
-          description: Flag for master administrative account
-        permissions:
-          type: array
-          description: Applied permissions
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              code:
-                type: string
-              access:
-                type: string
-        appliance:
-          type: object
-          properties:
-            buildVersion:
-              type: string
     ReferenceObject:
       type: object
       description: >-
@@ -6926,137 +6879,164 @@ components:
             id:
               type: integer
               format: int64
-              description: ID
             accountId:
               type: integer
               format: int64
-              description: Tenant ID
             username:
               type: string
-              description: Username
             displayName:
               type: string
-              description: Display Name, firstName + lastName or username
             email:
               type: string
-              description: email
             firstName:
               type: string
-              description: Fist Name
             lastName:
               type: string
-              description: Last Name
             enabled:
               type: boolean
-              description: Flag that can be used to disable a user
             receiveNotifications:
               type: boolean
-              description: Flag that indicates a user wishes to receive notifications
             isUsing2FA:
               type: boolean
-              description: Flag that indicates a user is utilizing local 2fa
             accountExpired:
               type: boolean
-              description: Flag that indicates user account is expired
             accountLocked:
               type: boolean
-              description: Flag that indicates user account is locked
             passwordExpired:
               type: boolean
-              description: Flag that indicates user password is expired
             loginCount:
               type: integer
               format: int64
-              description: Number of times user has logged in
             loginAttempts:
               type: integer
               format: int64
-              description: >-
-                Number of invalid login attempts. This resets to 0 after
-                successful login.
             lastLoginDate:
               type: string
               format: date-time
-              description: Last successful login date
             roles:
               type: array
-              description: User roles
               items:
                 type: object
                 properties:
                   id:
                     type: integer
                     format: int64
-                    description: Role ID
                   authority:
                     type: string
-                    description: Unique name for a role
                   description:
                     type: string
             account:
               type: object
-              description: Tenant the user belongs to
               properties:
                 id:
                   type: integer
                   format: int64
-                  description: Tenant ID
                 name:
                   type: string
-                  description: Tenant Name
             linuxUsername:
               type: string
-              description: Linux username/user settings for provisioning
-              nullable: true
             linuxPassword:
               type: string
-              description: Linux password/user settings for provisioning
-              nullable: true
             linuxKeyPairId:
-              type: string
-              description: SSH Key (Key Pair ID)/user settings for provisioning
+              type: integer
               format: int64
-              nullable: true
             windowsUsername:
               type: string
-              description: Windows username/user settings for provisioning
-              nullable: true
             windowsPassword:
               type: string
-              description: Windows password/user settings for provisioning
-              nullable: true
             defaultPersona:
               type: string
-              description: Default person selected when user logs in
-              format: int64
+              format: nullable
             dateCreated:
               type: string
-              description: Date created timestamp
               format: date-time
             lastUpdated:
               type: string
-              description: Date last updated timestamp
               format: date-time
-        isMasterAccount:
-          type: boolean
-          description: Flag for master administrative account
-        permissions:
-          type: array
-          description: Applied permissions
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              code:
-                type: string
-              access:
-                type: string
-        appliance:
+    User:
+      title: 200 User
+      type: object
+      properties:
+        user:
           type: object
           properties:
-            buildVersion:
+            id:
+              type: integer
+              format: int64
+            accountId:
+              type: integer
+              format: int64
+            username:
               type: string
+            displayName:
+              type: string
+            email:
+              type: string
+            firstName:
+              type: string
+            lastName:
+              type: string
+            enabled:
+              type: boolean
+            receiveNotifications:
+              type: boolean
+            isUsing2FA:
+              type: boolean
+            accountExpired:
+              type: boolean
+            accountLocked:
+              type: boolean
+            passwordExpired:
+              type: boolean
+            loginCount:
+              type: integer
+              format: int64
+            loginAttempts:
+              type: integer
+              format: int64
+            lastLoginDate:
+              type: string
+              format: date-time
+            roles:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  authority:
+                    type: string
+                  description:
+                    type: string
+            account:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+            linuxUsername:
+              type: string
+            linuxPassword:
+              type: string
+            linuxKeyPairId:
+              type: integer
+              format: int64
+            windowsUsername:
+              type: string
+            windowsPassword:
+              type: string
+            defaultPersona:
+              type: string
+              format: nullable
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
     wikiCategories:
       title: 200 Wiki Categories
       type: object
@@ -10202,45 +10182,50 @@ components:
           total: 1162
           offset: 0
           max: 25
-    ListRolesResponse:
-      summary: List Roles Response Example
-      value:
-        roles:
-          - id: 1
-            authority: System Admin
-            description: Super User
-            scope: Admin
-            roleType: null
-            multitenant: false
-            multitenantLocked: null
-            owner: null
-            dateCreated: 2016-08-27T19:26:19+0000
-            lastUpdated: 2016-08-27T19:26:19+0000
-          - id: 2
-            authority: Tenant Admin
-            description: Tenant Role Template
-            scope: AppSystem
-            roleType: account
-            multitenant: false
-            multitenantLocked: null
-            owner: null
-            dateCreated: 2016-12-13T16:38:16+0000
-            lastUpdated: 2016-12-14T23:39:05+0000
-          - id: 3
-            authority: User Admin
-            description: Sub Tenant User Template
-            scope: AppSystem
-            roleType: user
-            multitenant: false
-            multitenantLocked: null
-            owner: null
-            dateCreated: 2016-12-02T15:01:17+0000
-            lastUpdated: 2016-12-02T15:01:17+0000
-        meta:
-          size: 3
-          total: 3
-          offset: 0
-          max: 25
+    roles:
+      summary: Roles Response
+      value: null
+      roles:
+        - id: 425
+          authority: A Tenant Role
+          description: null
+          scope: Account
+          roleType: account
+          multitenant: false
+          multitenantLocked: false
+          parentRoleId: null
+          diverged: true
+          ownerId: 3
+          owner:
+            id: 3
+            name: Morpheus
+          defaultPersona: null
+          dateCreated: '2020-06-18T23:12:28Z'
+          lastUpdated: '2021-11-18T06:59:15Z'
+        - id: 17
+          authority: ah-admin
+          description: Adam Hicks Role
+          scope: Account
+          roleType: user
+          multitenant: false
+          multitenantLocked: false
+          parentRoleId: null
+          diverged: true
+          ownerId: 3
+          owner:
+            id: 3
+            name: Morpheus
+          defaultPersona:
+            id: 2
+            code: serviceCatalog
+            name: Service Catalog
+          dateCreated: '2017-04-10T23:07:14Z'
+          lastUpdated: '2022-01-24T19:32:42Z'
+      meta:
+        offset: 0
+        max: 2
+        size: 2
+        total: 41
     CreateRoleRequest:
       summary: Create Role Request Example
       value:
@@ -10642,41 +10627,77 @@ components:
           offset: 0
           startDate: '2022-02-07T00:00:00Z'
           endDate: '2022-03-07T03:38:50Z'
-    ListUsersResponse:
-      summary: List of users
+    users:
+      summary: Users Response
       value:
         users:
-          - id: 1
-            accountId: 1
-            username: root
-            displayName: root
-            email: root@acmecorp.com
-            firstName: ''
-            lastName: ''
-            enabled: true
+          - id: 238
+            accountId: 3
+            username: Aaron Reid
+            displayName: Aaron Reid
+            email: areid@morpheusdata.com
+            firstName: Aaron
+            lastName: Reid
+            enabled: false
             receiveNotifications: true
+            isUsing2FA: false
             accountExpired: false
             accountLocked: false
             passwordExpired: false
-            loginCount: 27
+            loginCount: 0
             loginAttempts: 0
-            lastLoginDate: 2019-03-05T06:00:05+0000
+            lastLoginDate: '2022-01-06T20:47:47Z'
             roles:
-              - id: 1
-                authority: System Admin
-                description: Super User
+              - id: 294
+                authority: Morpheus Engineer
+                description: Morpheus Engineer
             account:
-              id: 1
-              name: Acme
-            windowsUsername: null
+              id: 3
+              name: Morpheus
             linuxUsername: null
-            dateCreated: 2017-09-14T13:57:16+0000
-            lastUpdated: 2019-10-09T00:35:13+0000
+            linuxPassword: '************'
+            linuxKeyPairId: null
+            windowsUsername: null
+            windowsPassword: null
+            defaultPersona: null
+            dateCreated: '2020-10-14T15:15:36Z'
+            lastUpdated: '2022-03-01T02:09:16Z'
+          - id: 4
+            accountId: 3
+            username: ahicks
+            displayName: Adam Hicks
+            email: ahicks@morpheusdata.com
+            firstName: Adam
+            lastName: Hicks
+            enabled: false
+            receiveNotifications: true
+            isUsing2FA: false
+            accountExpired: false
+            accountLocked: false
+            passwordExpired: false
+            loginCount: 1576
+            loginAttempts: 0
+            lastLoginDate: '2021-08-17T17:12:08Z'
+            roles:
+              - id: 16
+                authority: Morpheus Admin
+                description: Morpheus Administrator Role
+            account:
+              id: 3
+              name: Morpheus
+            linuxUsername: ahicks
+            linuxPassword: '************'
+            linuxKeyPairId: 13
+            windowsUsername: ahicks
+            windowsPassword: '************'
+            defaultPersona: null
+            dateCreated: '2017-02-17T06:47:17Z'
+            lastUpdated: '2021-08-26T18:58:09Z'
         meta:
           offset: 0
-          max: 1
-          size: 1
-          total: 1
+          max: 2
+          size: 2
+          total: 118
         global: false
     CreateUserRequest:
       summary: Create User Request Example
@@ -10692,36 +10713,41 @@ components:
           linuxUsername: morpheusadmin
           roles:
             - id: 1
-    GetUserResponse:
-      summary: Get User Response Example
+    user:
+      summary: User Response
       value:
         user:
-          id: 2
-          accountId: 1
-          username: admin
-          displayName: Morpheus Admin
-          email: admin@morpheusdata.com
-          firstName: Morpheus
-          lastName: Admin
-          enabled: true
+          id: 4
+          accountId: 3
+          username: ahicks
+          displayName: Adam Hicks
+          email: ahicks@morpheusdata.com
+          firstName: Adam
+          lastName: Hicks
+          enabled: false
           receiveNotifications: true
+          isUsing2FA: false
           accountExpired: false
           accountLocked: false
           passwordExpired: false
-          loginCount: 1822
+          loginCount: 1576
           loginAttempts: 0
-          lastLoginDate: 2020-06-30T15:58:28+0000
+          lastLoginDate: '2021-08-17T17:12:08Z'
           roles:
-            - id: 1
-              authority: System Admin
-              description: Super User
+            - id: 16
+              authority: Morpheus Admin
+              description: Morpheus Administrator Role
           account:
-            id: 1
-            name: root
-          windowsUsername: morpheusadmin
-          linuxUsername: morpheusadmin
-          dateCreated: 2016-08-27T19:28:09+0000
-          lastUpdated: 2020-06-30T15:58:28+0000
+            id: 3
+            name: Morpheus
+          linuxUsername: ahicks
+          linuxPassword: '************'
+          linuxKeyPairId: 13
+          windowsUsername: ahicks
+          windowsPassword: '************'
+          defaultPersona: null
+          dateCreated: '2017-02-17T06:47:17Z'
+          lastUpdated: '2021-08-26T18:58:09Z'
     ListUsersAvailableRoles:
       summary: List of available roles for a user
       value:
@@ -10732,456 +10758,6 @@ components:
             description: Super User
             roleType: null
             owner: null
-    user:
-      summary: User Response
-      value:
-        user:
-          id: 127
-          accountId: 3
-          username: morpheusUser
-          displayName: morpheusUser
-          email: morpheusUser@morpheusdata.com
-          firstName: Morpheus
-          lastName: User
-          enabled: true
-          receiveNotifications: true
-          isUsing2FA: false
-          accountExpired: false
-          accountLocked: false
-          passwordExpired: false
-          loginCount: 228
-          loginAttempts: 0
-          lastLoginDate: '2022-02-24T14:37:58Z'
-          roles:
-            - id: 294
-              authority: Morpheus Engineer
-              description: Morpheus Engineer
-          account:
-            id: 3
-            name: Morpheus
-          linuxUsername: morpheusUser
-          linuxPassword: '************'
-          linuxKeyPairId: null
-          windowsUsername: morpheusUser
-          windowsPassword: '************'
-          defaultPersona: null
-          dateCreated: '2018-08-06T13:22:13Z'
-          lastUpdated: '2022-02-24T14:38:03Z'
-        isMasterAccount: true
-        permissions:
-          - name: AppTemplate
-            code: AppTemplate
-            access: full
-          - name: CatalogItemType
-            code: CatalogItemType
-            access: full
-          - name: ComputeSite-full
-            code: ComputeSite
-            access: custom
-          - name: ComputeZone-full
-            code: ComputeZone
-            access: full
-          - name: InstanceType
-            code: InstanceType
-            access: custom
-          - name: ReportTypes
-            code: ReportTypes
-            access: full
-          - name: VdiPools
-            code: VdiPools
-            access: full
-          - name: 'Operations: Usage'
-            code: account-usage
-            access: full
-          - name: 'Operations: Activity'
-            code: activity
-            access: read
-          - name: 'Admin: Tenant - Impersonate Users'
-            code: admin-accounts-users
-            access: full
-          - name: 'Admin: Tenant'
-            code: admin-accounts
-            access: full
-          - name: 'Admin: Appliance Settings'
-            code: admin-appliance
-            access: full
-          - name: 'Admin: Backup Settings'
-            code: admin-backupSettings
-            access: full
-          - name: 'Infrastructure: Certificates'
-            code: admin-certificates
-            access: full
-          - name: 'Admin: Integrations'
-            code: admin-cm
-            access: full
-          - name: 'Library: Instance Types'
-            code: admin-containers
-            access: full
-          - name: 'Admin: Distributed Workers'
-            code: admin-distributed-workers
-            access: full
-          - name: 'Admin: Environment Settings'
-            code: admin-environments
-            access: full
-          - name: 'Admin: Policies'
-            code: admin-global-policies
-            access: full
-          - name: 'Infrastructure: Groups'
-            code: admin-groups
-            access: full
-          - name: 'Admin: Guidance Settings'
-            code: admin-guidanceSettings
-            access: full
-          - name: 'Admin: Health'
-            code: admin-health
-            access: read
-          - name: 'Admin: Identity Source'
-            code: admin-identity-sources
-            access: full
-          - name: 'Infrastructure: Keypairs'
-            code: admin-keypairs
-            access: full
-          - name: 'Admin: License Settings'
-            code: admin-licenses
-            access: full
-          - name: 'Admin: Log Settings'
-            code: admin-logSettings
-            access: full
-          - name: 'Admin: Monitoring Settings'
-            code: admin-monitorSettings
-            access: full
-          - name: 'Admin: Message of the day'
-            code: admin-motd
-            access: full
-          - name: 'Admin: Packages'
-            code: admin-packages
-            access: full
-          - name: 'Admin: Plugins'
-            code: admin-plugins
-            access: full
-          - name: 'Infrastructure: Policies'
-            code: admin-policies
-            access: full
-          - name: 'Admin: Profiles'
-            code: admin-profiles
-            access: read
-          - name: 'Admin: Provisioning Settings'
-            code: admin-provisioningSettings
-            access: full
-          - name: 'Admin: Roles'
-            code: admin-roles
-            access: full
-          - name: 'Infrastructure: Compute'
-            code: admin-servers
-            access: full
-          - name: 'Admin: Service Plans'
-            code: admin-servicePlans
-            access: full
-          - name: 'Admin: Users'
-            code: admin-users
-            access: full
-          - name: 'Admin: Whitelabel Settings'
-            code: admin-whitelabel
-            access: full
-          - name: 'Infrastructure: Clouds'
-            code: admin-zones
-            access: full
-          - name: 'Library: App Blueprints'
-            code: app-templates
-            access: full
-          - name: 'Provisioning: Apps'
-            code: apps
-            access: full
-          - name: 'Library: Blueprints - ARM'
-            code: arm-template
-            access: full
-          - name: 'Library: Integrations'
-            code: automation-services
-            access: full
-          - name: 'Backups: Integrations'
-            code: backup-services
-            access: full
-          - name: Backups
-            code: backups
-            access: full
-          - name: 'API: Billing'
-            code: billing
-            access: full
-          - name: 'Library: Catalog Items'
-            code: catalog
-            access: full
-          - name: 'Library: Blueprints - CloudFormation'
-            code: cloudFormation-template
-            access: full
-          - name: 'Provisioning: Code Repositories'
-            code: code-repositories
-            access: full
-          - name: 'Infrastructure: Credentials'
-            code: credentials
-            access: full
-          - name: Custom Instance Tab
-            code: custom-instance-tab
-            access: full
-          - name: Custom Server Tab
-            code: custom-server-tab
-            access: full
-          - name: 'Operations: Dashboard'
-            code: dashboard
-            access: read
-          - name: DataDog Instance Tab
-            code: datadog-instance-tab
-            access: full
-          - name: 'Provisioning: Code Integrations'
-            code: deployment-services
-            access: full
-          - name: 'Provisioning: Code Deployments'
-            code: deployments
-            access: full
-          - name: Example Catalog Layout
-            code: example-catalog-view
-            access: none
-          - name: 'API: Execution Request'
-            code: execution-request
-            access: full
-          - name: 'Provisioning: Executions'
-            code: executions
-            access: read
-          - name: 'Operations: Guidance'
-            code: guidance
-            access: full
-          - name: 'Library: Blueprints - Helm'
-            code: helm-template
-            access: full
-          - name: 'Infrastructure: Boot'
-            code: infrastructure-boot
-            access: full
-          - name: 'Infrastructure: Clusters'
-            code: infrastructure-cluster
-            access: full
-          - name: 'Infrastructure: Network Router DHCP Pool'
-            code: infrastructure-dhcp-pool
-            access: full
-          - name: 'Infrastructure: Network Domains'
-            code: infrastructure-domains
-            access: full
-          - name: 'Infrastructure: Network IP Pools'
-            code: infrastructure-ippools
-            access: full
-          - name: 'Infrastructure: Kubernetes Control'
-            code: infrastructure-kube-cntl
-            access: full
-          - name: 'Infrastructure: Load Balancers'
-            code: infrastructure-loadbalancer
-            access: full
-          - name: 'Infrastructure: Network Router NAT'
-            code: infrastructure-nat
-            access: full
-          - name: 'Infrastructure: DHCP Relays'
-            code: infrastructure-network-dhcp-relay
-            access: full
-          - name: 'Infrastructure: Network Static Routes'
-            code: infrastructure-network-dhcp-routes
-            access: full
-          - name: 'Infrastructure: DHCP Servers'
-            code: infrastructure-network-dhcp-server
-            access: full
-          - name: 'Infrastructure: Network Firewalls'
-            code: infrastructure-network-firewalls
-            access: full
-          - name: 'Infrastructure: Network Integration'
-            code: infrastructure-network-integrations
-            access: full
-          - name: 'Infrastructure: Network Router Firewalls'
-            code: infrastructure-network-router-firewalls
-            access: full
-          - name: 'Infrastructure: Network Router Interfaces'
-            code: infrastructure-network-router-interfaces
-            access: full
-          - name: 'Infrastructure: Network Router Redistribution'
-            code: infrastructure-network-router-redistribution
-            access: full
-          - name: 'Infrastructure: Network Router Routes'
-            code: infrastructure-network-router-routes
-            access: full
-          - name: 'Infrastructure: Network Server Groups'
-            code: infrastructure-network-server-groups
-            access: full
-          - name: 'Infrastructure: Networks'
-            code: infrastructure-networks
-            access: full
-          - name: 'Infrastructure: Network Proxies'
-            code: infrastructure-proxies
-            access: full
-          - name: 'Infrastructure: Network Router DHCP Binding'
-            code: infrastructure-router-dhcp-binding
-            access: full
-          - name: 'Infrastructure: Network Router DHCP Relay'
-            code: infrastructure-router-dhcp-relay
-            access: full
-          - name: 'Infrastructure: Network Routers'
-            code: infrastructure-routers
-            access: full
-          - name: 'Infrastructure: Security Groups'
-            code: infrastructure-securityGroups
-            access: full
-          - name: 'Infrastructure: State'
-            code: infrastructure-state
-            access: full
-          - name: 'Infrastructure: Storage Browser'
-            code: infrastructure-storage-browser
-            access: full
-          - name: 'Infrastructure: Storage'
-            code: infrastructure-storage
-            access: full
-          - name: 'Integrations: Ansible'
-            code: integrations-ansible
-            access: full
-          - name: 'Provisioning: Job Executions'
-            code: job-executions
-            access: read
-          - name: 'Provisioning: Jobs'
-            code: job-templates
-            access: full
-          - name: 'Library: Blueprints - Kubernetes'
-            code: kubernetes-template
-            access: full
-          - name: 'Provisioning: Advanced Node Type Options'
-            code: library-advanced-node-type-options
-            access: full
-          - name: 'Library: Options'
-            code: library-options
-            access: full
-          - name: 'Library: Templates'
-            code: library-templates
-            access: full
-          - name: 'Monitoring: Logs'
-            code: logs
-            access: full
-          - name: Monitoring
-            code: monitoring
-            access: full
-          - name: 'Operations: Alarms'
-            code: operations-alarms
-            access: full
-          - name: 'Operations: Approvals'
-            code: operations-approvals
-            access: full
-          - name: 'Operations: Budgets'
-            code: operations-budgets
-            access: full
-          - name: 'Operations: Invoices'
-            code: operations-invoices
-            access: full
-          - name: 'Operations: Wiki'
-            code: operations-wiki
-            access: full
-          - name: Projects
-            code: projects
-            access: full
-          - name: Provisioning Administrator
-            code: provisioning-admin
-            access: full
-          - name: 'Provisioning: Clone Instance'
-            code: provisioning-clone
-            access: full
-          - name: 'Provisioning: Execute Script'
-            code: provisioning-execute-script
-            access: full
-          - name: 'Provisioning: Execute Task'
-            code: provisioning-execute-task
-            access: full
-          - name: 'Provisioning: Execute Workflow'
-            code: provisioning-execute-workflow
-            access: full
-          - name: 'Provisioning: Allow Force Delete'
-            code: provisioning-force-delete
-            access: full
-          - name: 'Provisioning: Import Image'
-            code: provisioning-import-image
-            access: full
-          - name: Reconfigure Servers
-            code: provisioning-reconfigure
-            access: full
-          - name: 'Provisioning: Instances'
-            code: provisioning
-            access: full
-          - name: 'Operations: Analytics'
-            code: reports-analytics
-            access: full
-          - name: 'Operations: Reports'
-            code: reports
-            access: full
-          - name: 'Library: Scheduling - Execute'
-            code: scheduling-execute
-            access: full
-          - name: 'Library: Scheduling - Power'
-            code: scheduling-power
-            access: full
-          - name: 'Security: Scanning'
-            code: security-scan
-            access: full
-          - name: 'Catalog: Dashboard'
-            code: service-catalog-dashboard
-            access: read
-          - name: 'Catalog: Inventory'
-            code: service-catalog-inventory
-            access: full
-          - name: Catalog
-            code: service-catalog
-            access: full
-          - name: 'Tools: Archives'
-            code: services-archives
-            access: full
-          - name: 'Tools: Cypher'
-            code: services-cypher
-            access: user
-          - name: 'Tools: Image Builder'
-            code: services-image-builder
-            access: full
-          - name: 'Tools: Kubernetes'
-            code: services-kubernetes
-            access: full
-          - name: 'Provisioning: Service Mesh'
-            code: services-network-registry
-            access: full
-          - name: 'VDI: Copy/Paste'
-            code: services-vdi-copy
-            access: full
-          - name: 'Tools: VDI Pools'
-            code: services-vdi-pools
-            access: full
-          - name: 'VDI: Local Printer'
-            code: services-vdi-printer
-            access: full
-          - name: Snapshots
-            code: snapshots
-            access: full
-          - name: 'Library: Tasks - Script Engines'
-            code: task-scripts
-            access: full
-          - name: 'Library: Tasks'
-            code: tasks
-            access: full
-          - name: 'Remote Console: Auto Login'
-            code: terminal-access
-            access: 'yes'
-          - name: Remote Console
-            code: terminal
-            access: full
-          - name: 'Library: Blueprints - Terraform'
-            code: terraform-template
-            access: full
-          - name: 'Library: Thresholds'
-            code: thresholds
-            access: full
-          - name: 'Infrastructure: Trust Integrations'
-            code: trust-services
-            access: full
-          - name: 'Library: Virtual Images'
-            code: virtual-images
-            access: full
-        appliance:
-          buildVersion: 5.4.4
     wikiCategories:
       summary: Wiki Categories Response
       value:

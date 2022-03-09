@@ -18,14 +18,6 @@ servers:
     variables:
       api_url:
         default: localhost
-      application_name:
-        default: Morpheus
-      company_name:
-        default: Morpheus Data
-      company_website:
-        default: https://www.morpheusdata.com
-      company_domain:
-        default: morpheusdata.com
 paths:
   /api/accounts:
     $ref: paths/api@accounts.yaml
@@ -77,7 +69,7 @@ paths:
     $ref: paths/api@license.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
-  /api/key-pairs/id:
+  /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
