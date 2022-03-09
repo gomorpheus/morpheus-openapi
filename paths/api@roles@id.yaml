@@ -15,10 +15,10 @@ get:
             type: object
             properties:
               role:
-                $ref: ..\components\schemas\roles.yaml
+                $ref: ..\components\schemas\role.yaml
           examples:
             GetRoleResponse:
-              $ref: ..\components\examples\GetRoleResponse.yaml
+              $ref: ..\components\examples\role.yaml
     '400':
       description: Bad Request.
     '401':
@@ -56,9 +56,6 @@ put:
                   type: string
                   description: Description
                   nullable: true
-        examples:
-          UpdateRoleRequest:
-            $ref: ..\components\examples\UpdateRoleRequest.yaml
   responses:
     '200':
       description: Role Object
@@ -68,10 +65,10 @@ put:
             type: object
             properties:
               role:
-                $ref: ..\components\schemas\roles.yaml
+                $ref: ..\components\schemas\role.yaml
           examples:
             UpdateRoleResponse:
-              $ref: ..\components\examples\UpdateRoleResponse.yaml
+              $ref: ..\components\examples\role.yaml
     '400':
       description: Bad Request.
     '401':

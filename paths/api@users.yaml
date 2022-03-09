@@ -131,7 +131,7 @@ post:
                     $ref: ..\components\schemas\ReferenceObject.yaml
         examples:
           createUserRequest:
-            $ref: ..\components\examples\CreateUserRequest.yaml
+            $ref: ..\components\examples\user.yaml
   responses:
     '200':
       description: User Object

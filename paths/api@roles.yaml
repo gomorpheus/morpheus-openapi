@@ -53,7 +53,7 @@ get:
 post:
   summary: Create role
   description: Create a new role.
-  operationId: createRole
+  operationId: addRoles
   tags:
     - Roles
   requestBody:
@@ -107,7 +107,7 @@ post:
                     tenant*
         examples:
           CreateRoleRequest:
-            $ref: ..\components\examples\CreateRoleRequest.yaml
+            $ref: ..\components\examples\roles.yaml
   responses:
     '200':
       description: Role Object
@@ -120,7 +120,7 @@ post:
                 $ref: ..\components\schemas\roles.yaml
           examples:
             CreateRoleResponse:
-              $ref: ..\components\examples\CreateRoleResponse.yaml
+              $ref: ..\components\examples\roles.yaml
     '400':
       description: Bad Request.
     '401':

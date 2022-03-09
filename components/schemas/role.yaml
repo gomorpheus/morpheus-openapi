@@ -1,0 +1,179 @@
+type: object
+properties: 
+  role: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      authority: 
+        type: string
+      description: 
+        type: string
+        format: nullable
+      scope: 
+        type: string
+      roleType: 
+        type: string
+      multitenant: 
+        type: boolean
+      multitenantLocked: 
+        type: boolean
+      parentRoleId: 
+        type: string
+        format: nullable
+      diverged: 
+        type: boolean
+      ownerId: 
+        type: integer
+        format: int64
+      owner: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+      defaultPersona: 
+        type: string
+        format: nullable
+      dateCreated: 
+        type: string
+        format: date-time
+      lastUpdated: 
+        type: string
+        format: date-time
+  featurePermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+        access: 
+          type: string
+  globalSiteAccess: 
+    type: string
+  sites: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        access: 
+          type: string
+  globalZoneAccess: 
+    type: string
+  zones: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        access: 
+          type: string
+  globalInstanceTypeAccess: 
+    type: string
+  instanceTypePermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+        access: 
+          type: string
+  globalAppTemplateAccess: 
+    type: string
+  appTemplatePermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+          format: nullable
+        name: 
+          type: string
+        access: 
+          type: string
+  globalCatalogItemTypeAccess: 
+    type: string
+  catalogItemTypePermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        access: 
+          type: string
+  personaPermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+        access: 
+          type: string
+  globalVdiPoolAccess: 
+    type: string
+  vdiPoolPermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        access: 
+          type: string
+  globalReportTypeAccess: 
+    type: string
+  reportTypePermissions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+        access: 
+          type: string
