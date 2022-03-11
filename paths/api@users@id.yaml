@@ -3,39 +3,41 @@ get:
   description: Get details about a specific user.
   operationId: getUsers
   tags:
+    - Administration
     - Users
   parameters:
-  - $ref: ..\components\parameters\id-path.yaml
+  - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: User Object
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\user.yaml
+            $ref: ../components/schemas/user.yaml
           examples:
             Get User Response:
-              $ref: ..\components\examples\user.yaml
+              $ref: ../components/examples/user.yaml
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml
 put:
   summary: Update user
   description: Update an existing user.
-  operationId: updateUser
+  operationId: updateUsers
   tags:
+    - Administration
     - Users
   parameters:
-  - $ref: ..\components\parameters\id-path.yaml
+  - $ref: ../components/parameters/id-path.yaml
   requestBody:
     content:
       application/json:
@@ -67,51 +69,56 @@ put:
                   type: array
                   description: List of Roles
                   items:
-                    $ref: ..\components\schemas\ReferenceObject.yaml
+                    $ref: ../components/schemas/ReferenceObject.yaml
   responses:
     '200':
       description: User Object
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\user.yaml
+            allOf:
+              - $ref: ../components/examples/user.yaml
+              - $ref: ../components/examples/200-success.yaml
           examples:
             Update User Response:
-              $ref: ..\components\examples\user.yaml
+              allOf:
+              - $ref: ../components/schemas/user.yaml
+              - $ref: ../components/schemas/200-success.yaml
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml
 delete:
   summary: Delete user
   description: Delete an existing user.
-  operationId: deleteUser
+  operationId: deleteUsers
   tags:
+    - Administration
     - Users
   responses:
     '200':
-      description: User was deleted successfully
+      description: Success Object
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200-success.yaml
+            $ref: ../components/schemas/200-success.yaml
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml

@@ -1,26 +1,26 @@
 get:
-  summary: List users
+  summary: List All Users
   description: Get a list of users.
   operationId: listUsers
   tags:
     - Administration
     - Users
   parameters:
-    - $ref: ..\components\parameters\phrase.yaml
-    - $ref: ..\components\parameters\max.yaml
-    - $ref: ..\components\parameters\offset.yaml
-    - $ref: ..\components\parameters\sort.yaml
-    - $ref: ..\components\parameters\direction.yaml
-    - $ref: ..\components\parameters\username.yaml
-    - $ref: ..\components\parameters\email.yaml
-    - $ref: ..\components\parameters\firstName.yaml
-    - $ref: ..\components\parameters\roleId.yaml
-    - $ref: ..\components\parameters\role.yaml
-    - $ref: ..\components\parameters\accountId.yaml
-    - $ref: ..\components\parameters\global.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/username.yaml
+    - $ref: ../components/parameters/email.yaml
+    - $ref: ../components/parameters/firstName.yaml
+    - $ref: ../components/parameters/roleId.yaml
+    - $ref: ../components/parameters/role.yaml
+    - $ref: ../components/parameters/accountId.yaml
+    - $ref: ../components/parameters/global.yaml
   responses:
     '200':
-      description: Array of users
+      description: Array of Users
       content:
         application/json:
           schema:
@@ -29,27 +29,28 @@ get:
               users:
                 type: array
                 items:
-                  $ref: ..\components\schemas\user.yaml
+                  $ref: ../components/schemas/user.yaml
           examples:
             Users Response:
-              $ref: ..\components\examples\users.yaml
+              $ref: ../components/examples/users.yaml
     '400':
-      $ref: ..\components\responses\400.yaml
+      $ref: ../components/responses/400.yaml
     '401':
-      $ref: ..\components\responses\401.yaml
+      $ref: ../components/responses/401.yaml
     '403':
-      $ref: ..\components\responses\403.yaml
+      $ref: ../components/responses/403.yaml
     '404':
-      $ref: ..\components\responses\404.yaml
+      $ref: ../components/responses/404.yaml
     '500':
-      $ref: ..\components\responses\500.yaml
+      $ref: ../components/responses/500.yaml
     '503':
-      $ref: ..\components\responses\503.yaml
+      $ref: ../components/responses/503.yaml
 post:
-  summary: Create user
+  summary: Create a New User
   description: Create a new user.
-  operationId: createUser
+  operationId: addUsers
   tags:
+    - Administration
     - Users
   parameters:
     - name: accountId
@@ -93,7 +94,7 @@ post:
                   type: array
                   description: List of Roles
                   items:
-                    $ref: ..\components\schemas\ReferenceObject.yaml
+                    $ref: ../components/schemas/ReferenceObject.yaml
   responses:
     '200':
       description: User Object
@@ -101,22 +102,22 @@ post:
         application/json:
           schema:
             allOf:
-              - $ref: ..\components\schemas\user.yaml
-              - $ref: ..\components\schemas\200-success.yaml
+              - $ref: ../components/schemas/user.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Create User Response:
               allOf:
-              - $ref: ..\components\examples\user.yaml
-              - $ref: ..\components\examples\200-success.yaml
+              - $ref: ../components/examples/user.yaml
+              - $ref: ../components/examples/200-success.yaml
     '400':
-      $ref: ..\components\responses\400.yaml
+      $ref: ../components/responses/400.yaml
     '401':
-      $ref: ..\components\responses\401.yaml
+      $ref: ../components/responses/401.yaml
     '403':
-      $ref: ..\components\responses\403.yaml
+      $ref: ../components/responses/403.yaml
     '404':
-      $ref: ..\components\responses\404.yaml
+      $ref: ../components/responses/404.yaml
     '500':
-      $ref: ..\components\responses\500.yaml
+      $ref: ../components/responses/500.yaml
     '503':
-      $ref: ..\components\responses\503.yaml
+      $ref: ../components/responses/503.yaml
