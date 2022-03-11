@@ -29,6 +29,7 @@ paths:
       description: Get a list of tenants. A tenant is also referred to as an account.
       operationId: listTenants
       tags:
+        - Administration
         - Tenants
       parameters:
         - $ref: '#/components/parameters/max'
@@ -40,26 +41,31 @@ paths:
         - $ref: '#/components/parameters/lastUpdated'
       responses:
         '200':
-          description: Array of tenants
+          description: Array of Tenants
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/tenants'
+                type: object
+                properties:
+                  accounts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/tenant'
               examples:
                 Tenants Response:
                   $ref: '#/components/examples/tenants'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Create a Tenant
       description: >-
@@ -67,6 +73,7 @@ paths:
         master tenant as its parent.
       operationId: addTenant
       tags:
+        - Administration
         - Tenants
       requestBody:
         content:
@@ -112,22 +119,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/tenant'
+                allOf:
+                  - $ref: '#/components/schemas/tenant'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Tenant Response:
-                  $ref: '#/components/examples/tenant'
+                  allOf:
+                    - $ref: ../components/examples/tenant.yaml
+                    - $ref: ../components/examples/200-success.yaml
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/accounts/{id}:
     parameters:
       - $ref: '#/components/parameters/id-path'
@@ -136,6 +147,7 @@ paths:
       description: Get details about a tenant
       operationId: getTenant
       tags:
+        - Administration
         - Tenants
       responses:
         '200':
@@ -148,22 +160,23 @@ paths:
                 Tenant Response:
                   $ref: '#/components/examples/tenant'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update tenant
       description: Update an existing tenant.
       operationId: updateTenant
       tags:
+        - Administration
         - Tenants
       requestBody:
         content:
@@ -206,22 +219,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/tenant'
+                allOf:
+                  - $ref: '#/components/schemas/tenant'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Tenant Response:
-                  $ref: '#/components/examples/tenant'
+                  allOf:
+                    - $ref: ../components/examples/tenant.yaml
+                    - $ref: ../components/examples/200-success.yaml
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Delete tenant
       description: >-
@@ -230,6 +247,7 @@ paths:
         `removeResources=true`.
       operationId: removeTenant
       tags:
+        - Administration
         - Tenants
       parameters:
         - name: removeResources
@@ -260,15 +278,15 @@ paths:
                   Unable to delete an account without removing resources when
                   managed instances exist.
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/activity:
     get:
       summary: Retrieves Activity
@@ -340,6 +358,7 @@ paths:
         role for a sub tenant account.
       operationId: listTenantsAvailableRoles
       tags:
+        - Administration
         - Tenants
       parameters:
         - name: accountId
@@ -359,17 +378,17 @@ paths:
                 Tenants Available Roles Response:
                   $ref: '#/components/examples/tenantsAvailableRoles'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/approval-items/{id}:
     get:
       summary: Retrieves a Specific Approval Item
@@ -3028,10 +3047,11 @@ paths:
           description: Service Unavailable.
   /api/users:
     get:
-      summary: List users
+      summary: List All Users
       description: Get a list of users.
       operationId: listUsers
       tags:
+        - Administration
         - Users
       parameters:
         - $ref: '#/components/parameters/phrase'
@@ -3039,76 +3059,46 @@ paths:
         - $ref: '#/components/parameters/offset'
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/direction'
-        - name: username
-          in: query
-          description: Filter by username
-          schema:
-            type: string
-        - name: email
-          in: query
-          description: Filter by email
-          schema:
-            type: string
-        - name: firstName
-          in: query
-          description: Filter by firstName
-          schema:
-            type: string
-        - name: roleId
-          in: query
-          description: Filter by Role ID (supports multiple values)
-          schema:
-            type: integer
-            format: int64
-        - name: role
-          in: query
-          description: Filter by Role authority (supports multiple values)
-          schema:
-            type: string
-        - name: accountId
-          in: query
-          description: >-
-            Filter by Tenant ID. This is only available to master tenant users
-            with permission to manage tenants and users.
-          schema:
-            type: integer
-            format: int64
-        - name: global
-          in: query
-          description: >-
-            Global (All Tenants), load users from all tenants. The default is to
-            only see your own tenant. This is only available to master tenant
-            users with permission to manage tenants and users.
-          schema:
-            type: boolean
-            default: false
+        - $ref: '#/components/parameters/username'
+        - $ref: '#/components/parameters/email'
+        - $ref: '#/components/parameters/firstName'
+        - $ref: '#/components/parameters/roleId'
+        - $ref: '#/components/parameters/role'
+        - $ref: '#/components/parameters/accountId'
+        - $ref: '#/components/parameters/global'
       responses:
         '200':
-          description: Array of users
+          description: Array of Users
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/users'
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/user'
               examples:
                 Users Response:
                   $ref: '#/components/examples/users'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
-      summary: Create user
+      summary: Create a New User
       description: Create a new user.
-      operationId: createUser
+      operationId: addUsers
       tags:
+        - Administration
         - Users
       parameters:
         - name: accountId
@@ -3159,28 +3149,33 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/user'
+                allOf:
+                  - $ref: '#/components/schemas/user'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Create User Response:
-                  $ref: '#/components/examples/user'
+                  allOf:
+                    - $ref: ../components/examples/user.yaml
+                    - $ref: ../components/examples/200-success.yaml
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/users/{id}:
     get:
       summary: Get a Specific User
       description: Get details about a specific user.
       operationId: getUsers
       tags:
+        - Administration
         - Users
       parameters:
         - $ref: '#/components/parameters/id-path'
@@ -3195,22 +3190,23 @@ paths:
                 Get User Response:
                   $ref: '#/components/examples/user'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update user
       description: Update an existing user.
-      operationId: updateUser
+      operationId: updateUsers
       tags:
+        - Administration
         - Users
       parameters:
         - $ref: '#/components/parameters/id-path'
@@ -3252,53 +3248,59 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/user'
+                allOf:
+                  - $ref: '#/components/schemas/user'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Update User Response:
-                  $ref: '#/components/examples/user'
+                  allOf:
+                    - $ref: ../components/examples/user.yaml
+                    - $ref: ../components/examples/200-success.yaml
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Delete user
       description: Delete an existing user.
-      operationId: deleteUser
+      operationId: deleteUsers
       tags:
+        - Administration
         - Users
       responses:
         '200':
-          description: User was deleted successfully
+          description: Success Object
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/users/available-roles:
     get:
       summary: List available roles for a user
       description: Get a list of roles that can be assigned to a user.
       operationId: listUsersAvailableRoles
       tags:
+        - Administration
         - Users
       parameters:
         - name: accountId
@@ -3318,17 +3320,17 @@ paths:
                 Users Available Roles Response:
                   $ref: '#/components/examples/usersAvailableRoles'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/whoami:
     get:
       summary: Retrieves information about current user roles and permissions
@@ -3984,6 +3986,56 @@ components:
       schema:
         type: string
         format: date-time
+    username:
+      name: username
+      in: query
+      description: Username
+      schema:
+        type: string
+    email:
+      name: email
+      in: query
+      description: E-Mail Address
+      schema:
+        type: string
+    firstName:
+      name: firstName
+      in: query
+      description: First Name
+      schema:
+        type: string
+    roleId:
+      name: roleId
+      in: query
+      description: Filter by Role ID (supports multiple values)
+      schema:
+        type: integer
+        format: int64
+    role:
+      name: role
+      in: query
+      description: Filter by Role authority (supports multiple values)
+      schema:
+        type: string
+    accountId:
+      name: accountId
+      in: query
+      description: >-
+        Filter by Tenant ID. This is only available to master tenant users with
+        permission to manage tenants and users.
+      schema:
+        type: integer
+        format: int64
+    global:
+      name: global
+      in: query
+      description: >-
+        Global (All Tenants), load users from all tenants. The default is to
+        only see your own tenant. This is only available to master tenant users
+        with permission to manage tenants and users.
+      schema:
+        type: boolean
+        default: false
     pagePhrase:
       name: pagePhrase
       in: query
@@ -3991,136 +4043,6 @@ components:
       schema:
         type: string
   schemas:
-    MetaObject:
-      type: object
-      description: >-
-        Metadata about the returned array of results, provides pagination
-        information.
-      properties:
-        size:
-          type: integer
-          format: int64
-          description: Number of records returned in the response
-          default: 0
-        total:
-          type: integer
-          format: int64
-          description: Total number of records found
-          default: 0
-        offset:
-          type: integer
-          format: int64
-          description: >-
-            Offset records, the number of records to skip, can be used to
-            paginate over results.
-          default: 0
-        max:
-          type: integer
-          format: int64
-          description: Max size, the maximum number of records to include in the response.
-          default: 25
-    tenants:
-      type: object
-      properties:
-        accounts:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-                format: int64
-              name:
-                type: string
-              description:
-                type: string
-              subdomain:
-                type: string
-              currency:
-                type: string
-              externalId:
-                type: string
-                format: nullable
-              customerNumber:
-                type: string
-                format: nullable
-              accountNumber:
-                type: string
-                format: nullable
-              accountName:
-                type: string
-              active:
-                type: boolean
-              master:
-                type: boolean
-              role:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int64
-                  authority:
-                    type: string
-                  description:
-                    type: string
-                    format: nullable
-              stats:
-                type: object
-                properties:
-                  instanceCount:
-                    type: integer
-                    format: int64
-                  userCount:
-                    type: integer
-                    format: int64
-              dateCreated:
-                type: string
-                format: date-time
-              lastUpdated:
-                type: string
-                format: date-time
-        meta:
-          $ref: '#/components/schemas/MetaObject'
-    CurrencyCode:
-      type: string
-      description: Currency Code (ISO 4217)
-      enum:
-        - AUD
-        - AUD
-        - BGN
-        - BRL
-        - CAD
-        - CHF
-        - CLF
-        - CLP
-        - CNY
-        - CZK
-        - DKK
-        - EUR
-        - GBP
-        - HKD
-        - HRK
-        - HUF
-        - IDR
-        - ILS
-        - INR
-        - JPY
-        - KRW
-        - MXN
-        - MYR
-        - NOK
-        - NZD
-        - PHP
-        - PLN
-        - RON
-        - RUB
-        - SEK
-        - SGD
-        - THB
-        - TRY
-        - USD
-        - ZAR
-      default: USD
     tenant:
       type: object
       properties:
@@ -4179,8 +4101,47 @@ components:
             lastUpdated:
               type: string
               format: date-time
+    CurrencyCode:
+      type: string
+      description: Currency Code (ISO 4217)
+      enum:
+        - AUD
+        - AUD
+        - BGN
+        - BRL
+        - CAD
+        - CHF
+        - CLF
+        - CLP
+        - CNY
+        - CZK
+        - DKK
+        - EUR
+        - GBP
+        - HKD
+        - HRK
+        - HUF
+        - IDR
+        - ILS
+        - INR
+        - JPY
+        - KRW
+        - MXN
+        - MYR
+        - NOK
+        - NZD
+        - PHP
+        - PLN
+        - RON
+        - RUB
+        - SEK
+        - SGD
+        - THB
+        - TRY
+        - USD
+        - ZAR
+      default: USD
     200-success:
-      title: 200 Success
       type: object
       properties:
         success:
@@ -4210,7 +4171,6 @@ components:
             for each invalid parameter (key)
           nullable: true
     activity:
-      title: 200 Activity
       type: object
       properties:
         activity:
@@ -4288,7 +4248,6 @@ components:
                 type: string
                 format: nullable
     approvalItem:
-      title: 200 Approval Item
       type: object
       properties:
         approvalItem:
@@ -4348,8 +4307,35 @@ components:
                   type: string
                 displayName:
                   type: string
+    MetaObject:
+      type: object
+      description: >-
+        Metadata about the returned array of results, provides pagination
+        information.
+      properties:
+        size:
+          type: integer
+          format: int64
+          description: Number of records returned in the response
+          default: 0
+        total:
+          type: integer
+          format: int64
+          description: Total number of records found
+          default: 0
+        offset:
+          type: integer
+          format: int64
+          description: >-
+            Offset records, the number of records to skip, can be used to
+            paginate over results.
+          default: 0
+        max:
+          type: integer
+          format: int64
+          description: Max size, the maximum number of records to include in the response.
+          default: 25
     approvals:
-      title: 200 Approvals
       type: object
       properties:
         approvals:
@@ -4408,7 +4394,6 @@ components:
         meta:
           $ref: '#/components/schemas/MetaObject'
     approval:
-      title: 200 Approval
       type: object
       properties:
         approval:
@@ -4522,7 +4507,6 @@ components:
                       displayName:
                         type: string
     wikiPage:
-      title: 200 Wiki Page
       type: object
       properties:
         page:
@@ -4570,7 +4554,6 @@ components:
               type: string
               format: date-time
     wikiAdd:
-      title: 200 Wiki Create Page
       type: object
       properties:
         page:
@@ -4719,7 +4702,6 @@ components:
         meta:
           $ref: '#/components/schemas/MetaObject'
     budget:
-      title: 200 Budget
       type: object
       properties:
         success:
@@ -4859,7 +4841,6 @@ components:
                       type: string
                       format: nullable
     dashboard:
-      title: 200 Dashboard
       type: object
       properties:
         success:
@@ -5042,7 +5023,6 @@ components:
               type:
                 type: string
     groups:
-      title: 200 Groups
       type: object
       properties:
         groups:
@@ -5151,7 +5131,6 @@ components:
               type: integer
               format: int64
     group:
-      title: 200 Group
       type: object
       properties:
         group:
@@ -5411,7 +5390,6 @@ components:
               type: integer
               format: int64
     key-pairs:
-      title: 200 Key Pairs
       type: object
       properties:
         keyPair:
@@ -5440,7 +5418,6 @@ components:
         success:
           type: boolean
     key-pair:
-      title: 200 Key Pair
       type: object
       properties:
         keyPair:
@@ -5469,7 +5446,6 @@ components:
               type: string
               format: date-time
     ping:
-      title: 200 Ping
       type: object
       properties:
         success:
@@ -5477,7 +5453,6 @@ components:
         buildVersion:
           type: string
     processes:
-      title: 200 Processes
       type: object
       properties:
         processes:
@@ -5688,7 +5663,6 @@ components:
         meta:
           $ref: '#/components/schemas/MetaObject'
     process:
-      title: 200 Process
       type: object
       properties:
         process:
@@ -5895,7 +5869,6 @@ components:
                       displayName:
                         type: string
     processEvent:
-      title: 200 Process Events
       type: object
       properties:
         processEvent:
@@ -6002,7 +5975,6 @@ components:
                 displayName:
                   type: string
     provisionTypes:
-      title: 200 Provision Types
       type: object
       properties:
         provisionTypes:
@@ -6124,7 +6096,6 @@ components:
         meta:
           $ref: '#/components/schemas/MetaObject'
     provisionType:
-      title: 200 Provision Type
       type: object
       properties:
         provisionType:
@@ -6244,7 +6215,6 @@ components:
         success:
           type: boolean
     reportTypes:
-      title: 200 Report Types
       type: object
       properties:
         reportTypes:
@@ -6722,7 +6692,6 @@ components:
               access:
                 type: string
     search:
-      title: 200 Search
       type: object
       properties:
         hits:
@@ -6759,7 +6728,6 @@ components:
         meta:
           $ref: '#/components/schemas/MetaObject'
     hubLoginObject:
-      title: Hub Login Object
       description: >-
         Object for logging in to the [Morpheus Hub](https://morpheushub.com)
         with existing credentials. This is only required for `hubmode=login`.
@@ -6781,7 +6749,6 @@ components:
               format: password
               description: Password for existing Morpheus Hub user
     hubRegisterObject:
-      title: Hub Register Object
       description: >-
         Object for registering with the [Morpheus Hub](https://morpheushub.com).
         This is only required for `hubmode=register`.
@@ -6844,7 +6811,6 @@ components:
           type: string
           format: date-time
     usages:
-      title: 200 Usages
       type: object
       properties:
         activity:
@@ -6883,118 +6849,7 @@ components:
           allOf:
             - $ref: '#/components/schemas/MetaObject'
             - $ref: '#/components/schemas/MetaObjectDates'
-    users:
-      type: object
-      properties:
-        users:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-                format: int64
-              accountId:
-                type: integer
-                format: int64
-              username:
-                type: string
-              displayName:
-                type: string
-              email:
-                type: string
-              firstName:
-                type: string
-              lastName:
-                type: string
-              enabled:
-                type: boolean
-              receiveNotifications:
-                type: boolean
-              isUsing2FA:
-                type: boolean
-              accountExpired:
-                type: boolean
-              accountLocked:
-                type: boolean
-              passwordExpired:
-                type: boolean
-              loginCount:
-                type: integer
-                format: int64
-              loginAttempts:
-                type: integer
-                format: int64
-              lastLoginDate:
-                type: string
-                format: date-time
-              roles:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      format: int64
-                    authority:
-                      type: string
-                    description:
-                      type: string
-              account:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int64
-                  name:
-                    type: string
-              linuxUsername:
-                type: string
-                format: nullable
-              linuxPassword:
-                type: string
-              linuxKeyPairId:
-                type: string
-                format: nullable
-              windowsUsername:
-                type: string
-                format: nullable
-              windowsPassword:
-                type: string
-                format: nullable
-              defaultPersona:
-                type: string
-                format: nullable
-              dateCreated:
-                type: string
-                format: date-time
-              lastUpdated:
-                type: string
-                format: date-time
-        meta:
-          $ref: '#/components/schemas/MetaObject'
-        global:
-          type: boolean
-    ReferenceObject:
-      type: object
-      description: >-
-        A simple object to represent a specific resource, typically an id and
-        name.
-      properties:
-        id:
-          type: integer
-          format: int64
-          description: Resource ID
-        name:
-          type: string
-          description: Resource name
-        code:
-          type: string
-          description: Resource code
-      required:
-        - id
     user:
-      title: 200 User
       type: object
       properties:
         user:
@@ -7077,6 +6932,24 @@ components:
             lastUpdated:
               type: string
               format: date-time
+    ReferenceObject:
+      type: object
+      description: >-
+        A simple object to represent a specific resource, typically an id and
+        name.
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Resource ID
+        name:
+          type: string
+          description: Resource name
+        code:
+          type: string
+          description: Resource code
+      required:
+        - id
     usersAvailableRoles:
       type: object
       properties:
@@ -7103,7 +6976,6 @@ components:
                   name:
                     type: string
     wikiCategories:
-      title: 200 Wiki Categories
       type: object
       properties:
         categories:
@@ -7117,7 +6989,6 @@ components:
                 type: integer
                 format: int64
     wikiPages:
-      title: 200 Wiki Pages
       type: object
       properties:
         pages:
@@ -7172,7 +7043,6 @@ components:
         meta:
           $ref: '#/components/schemas/MetaObject'
     accessToken:
-      title: 200 Access Token
       type: object
       properties:
         access_token:
@@ -12571,11 +12441,26 @@ components:
         expires_in: 30463819
         token_type: bearer
         scope: write
+  responses:
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 security:
   - bearerAuth: []
 externalDocs:
   url: https://docs.morpheusdata.com
 tags:
+  - name: Administration
+    description: All Endpoints Under the Administration Tab
   - name: Activity
     description: Manage Appliance Activity Logs
   - name: Alerts
@@ -12640,6 +12525,8 @@ tags:
     description: Manage Image Builds
   - name: Incidents
     description: Manage Ticket Incidents
+  - name: Infrastructure
+    description: All Endpoints Under the Infrastructure Tab
   - name: Inputs
     description: Manage Inputs (Option Types)
   - name: Instance Types
@@ -12656,6 +12543,8 @@ tags:
     description: Manage Key Pairs
   - name: Layouts
     description: Manage Layouts
+  - name: Library
+    description: All Endpoints Under the Library Tab
   - name: License
     description: Manage Appliance License
   - name: Load Balancers
@@ -12665,17 +12554,21 @@ tags:
   - name: Logs
     description: View Logs
   - name: Monitoring
-    description: Manage Monitoring
+    description: All Endpoints Under the Monitoring Tab
+  - name: Morpheus API
+    description: All Endpoints Specific to Morpheus API
   - name: Networks
     description: Manage Networks
   - name: Node Types
     description: Manage Node/VM Types
+  - name: Operations
+    description: All Endpoints Under the Operations Tab
   - name: Option Lists
     description: Manage Option Lists
   - name: Options
     description: Manage Options
   - name: Personas
-    description: Manage Personas
+    description: All Endpoints Pertaining to Personas
   - name: Ping
     description: Ping Appliance
   - name: Policies
@@ -12687,7 +12580,7 @@ tags:
   - name: Projects
     description: Manage Projects
   - name: Provisioning
-    description: Manage Provisioning
+    description: All Endpoints Under the Provisioning Tab
   - name: Provisioning Settings
     description: Manage Provisioning Settings
   - name: Provisioning Licenses
@@ -12720,6 +12613,8 @@ tags:
     description: Manage Storage
   - name: Tenants
     description: Manage Tenants (Accounts)
+  - name: Tools
+    description: All Endpoints Under the Tools Tab
   - name: Usage
     description: View Usage
   - name: Users

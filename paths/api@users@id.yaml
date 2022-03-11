@@ -77,13 +77,13 @@ put:
         application/json:
           schema:
             allOf:
-              - $ref: ../components/examples/user.yaml
-              - $ref: ../components/examples/200-success.yaml
+              - $ref: ../components/schemas/user.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Update User Response:
               allOf:
-              - $ref: ../components/schemas/user.yaml
-              - $ref: ../components/schemas/200-success.yaml
+              - $ref: ../components/examples/user.yaml
+              - $ref: ../components/examples/200-success.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
