@@ -1,67 +1,53 @@
 post:
-  tags:
-    - Key Pairs
-  summary: addKeyPairs
+  summary: Creates a Key Pair
   description: |
     Creates a Key Pair.  Private keys are typically optional.
+  operationId: addKeyPairs
+  tags:
+    - Key Pairs
   externalDocs:
     url: https://apidocs.morpheusdata.com/#create-a-keypair
-  operationId: addKeyPairs
-  parameters: []
   requestBody:
-    description: ''
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\ApiKeyPairsRequest.yaml
-    required: false
+          type: object
+          required:
+            - keyPair
+          properties:
+            keyPair:
+              type: object
+              required:
+                - name
+                - publicKey
+              properties:
+                name: 
+                  type: string
+                publicKey:
+                  type: string
+                privateKey:
+                  type: string
+                passphrase:
+                  type: string
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200KeyPairs.yaml
+            $ref: ../components/schemas/key-pairs.yaml
           examples:
             Report Types Response:
-              summary: Key Pairs Response
-              value:
-                keyPair:
-                  id: '55'
-                  name: testKey
-                  accountId: 3
-                  publicKey: >-
-                    ssh-rsa
-                    +baNlUQG4Q69oQ4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2BgGql0aGk0E592rRmaMDcZcDQ4MyT6iPgxpRiNWzx4wVEldbCrE6FtYhSLy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAvDVO17v/GDR95nTiomV33mVwm5Ziky2/doJTk+WszcrmXZv4kV7eXb2LlpZ+X0ZmcCQy3zt9jLNYQHj4HLKqH/aA2cpdiSQqnSqcRukIBPEF+lJasbMiXMVfw==9zwjFp4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2
-                  hasPrivateKey: true
-                  fingerprint: ab:cd:ef:12:34:56:a1:b2:c3:d4:e5:f6:aa:bc:ff:ee
-                  dateCreated: '2021-01-01T00:00:00Z'
-                  lastUpdated: '2021-01-01T00:00:00Z'
-                success: true
+              $ref: ../components/examples/key-pairs.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

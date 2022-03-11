@@ -1,0 +1,5 @@
+name: phrase
+in: query
+description: Search phrase for partial matches on name or description
+schema:
+  type: string

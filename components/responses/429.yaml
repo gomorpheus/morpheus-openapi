@@ -1,0 +1,5 @@
+description: Too Many Requests. You're asking too much of the server. Slow down!
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/429-error.yaml

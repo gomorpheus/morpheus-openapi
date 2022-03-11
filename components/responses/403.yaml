@@ -1,0 +1,5 @@
+description: User does not have the required permissions to fulfill the request.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/403-error.yaml

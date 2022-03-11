@@ -1,67 +1,54 @@
 post:
+  summary: Request a reset password email
+  description: |
+    This endpoint will trigger the Reset your password email to be sent to the specified user.
+
+    The User is identified by `username` and, if they exist, will be notified via their configured email address. The email notification will indicate a Reset Password Request was made and it will include a token.
+
+    Once you obtain the token from the email, it may be used to reset the password of your user.
+
+    **Note**: This is an unauthorized endpoint and the response will always appear successful, it is not possible determine from the response whether the user exists or if an email was sent.
+  operationId: forgotPassword
   tags:
     - Authentication
-  summary: forgotPassword
-  description: >
-    This endpoint will trigger the Reset your password email to be sent to the
-    specified user.
-
-
-    The User is identified by `username` and, if they exist, will be notified
-    via their configured email address. The email notification will indicate a
-    Reset Password Request was made and it will include a token.
-
-
-    Once you obtain the token from the email, it may be used to reset the
-    password of your user.
-
-
-    **Note**: This is an unauthorized endpoint and the response will always
-    appear successful, it is not possible determine from the response whether
-    the user exists or if an email was sent.
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#forgot-password
-  operationId: forgotPassword
-  parameters: []
+  security: []
   requestBody:
-    description: ''
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\ApiForgotSendEmailRequest.yaml
-    required: false
+          type: object
+          required:
+            - username
+          properties:
+            username:
+              type: string
+              description: |
+                Specified as "username" or "tenantId\username" with proper HTML encoding and used in conjunction with `password`.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#forgot-password
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ApiForgotSendEmailResponse.yaml
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: true
+              msg:
+                type: string
+                example: Reset password instructions have been sent to the user 'jsmith', if they exist.
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-  security: []
-parameters: []

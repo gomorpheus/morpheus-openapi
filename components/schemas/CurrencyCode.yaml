@@ -1,5 +1,7 @@
-title: CurrencyCode
+type: string
+description: Currency Code (ISO 4217)
 enum:
+  - AUD
   - AUD
   - BGN
   - BRL
@@ -34,7 +36,4 @@ enum:
   - TRY
   - USD
   - ZAR
-type: string
-description: Currency Code (ISO 4217)
-examples:
-  - AUD
+default: USD

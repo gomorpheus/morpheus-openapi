@@ -1,0 +1,5 @@
+description: Service Unavailable. We're temporarily offline for maintanance. Please try again later.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/503-error.yaml

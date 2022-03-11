@@ -1,8 +1,24 @@
-title: usersAvailableRoles
 type: object
 properties:
-  roles:
+  roles: 
     type: array
-    items:
-      $ref: .\Roles4.yaml
-    description: ''
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        authority: 
+          type: string
+        description: 
+          type: string
+        roleType: 
+          type: string
+        owner: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            name: 
+              type: string

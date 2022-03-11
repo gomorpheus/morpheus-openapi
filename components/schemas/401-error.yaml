@@ -1,0 +1,6 @@
+title: 401 Error
+type: object
+properties:
+  msg:
+    type: string
+    example: Unauthorized to Perform this Action. Check your Authorization Header.

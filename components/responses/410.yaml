@@ -1,0 +1,5 @@
+description: Gone. The entity requested has been removed.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/410-error.yaml

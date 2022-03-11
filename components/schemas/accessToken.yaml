@@ -1,0 +1,18 @@
+title: 200 Access Token
+type: object
+properties:
+  access_token:
+    type: string
+    description: Token that grants API Access
+  refresh_token: 
+    type: string
+    description: Token that can request an new API access_token
+  expires_in:
+    type: number
+    description: Epoch time when token expires
+  token_type:
+    type: string
+    description: Token type granted
+  scope:
+    type: string
+    description: Scope granted

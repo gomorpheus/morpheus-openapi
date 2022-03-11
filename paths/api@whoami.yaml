@@ -1,85 +1,34 @@
 get:
+  summary: Retrieves information about current user roles and permissions
+  description: |
+    Provides API to retrieve information about yourself, including your roles and permissions.
+
+    The appliance build version is also returned.
+  operationId: whoami
   tags:
     - Authentication
     - Users
-  summary: whoami
-  description: >
-    Provides API to retrieve information about yourself, including your roles
-    and permissions.
-
-
-    The appliance build version is also returned.
   externalDocs:
     url: https://apidocs.morpheusdata.com/#whoami
-  operationId: whoami
-  parameters: []
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200User.yaml
+            $ref: ../components/schemas/user.yaml
           examples:
             Whoami Response:
-              summary: User Response
-              value:
-                user:
-                  id: 4
-                  accountId: 3
-                  username: ahicks
-                  displayName: Adam Hicks
-                  email: ahicks@morpheusdata.com
-                  firstName: Adam
-                  lastName: Hicks
-                  enabled: false
-                  receiveNotifications: true
-                  isUsing2FA: false
-                  accountExpired: false
-                  accountLocked: false
-                  passwordExpired: false
-                  loginCount: 1576
-                  loginAttempts: 0
-                  lastLoginDate: '2021-08-17T17:12:08Z'
-                  roles:
-                    - id: 16
-                      authority: Morpheus Admin
-                      description: Morpheus Administrator Role
-                  account:
-                    id: 3
-                    name: Morpheus
-                  linuxUsername: ahicks
-                  linuxPassword: '************'
-                  linuxKeyPairId: 13
-                  windowsUsername: ahicks
-                  windowsPassword: '************'
-                  defaultPersona: 'null'
-                  dateCreated: '2017-02-17T06:47:17Z'
-                  lastUpdated: '2021-08-26T18:58:09Z'
+              $ref: ../components/examples/user.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

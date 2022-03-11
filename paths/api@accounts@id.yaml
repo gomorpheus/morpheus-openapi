@@ -1,0 +1,140 @@
+parameters:
+  - $ref: ..\components\parameters\id-path.yaml
+get:
+  summary: Get tenant
+  description: Get details about a tenant
+  operationId: getTenant
+  tags:
+    - Tenants
+  responses:
+    '200':
+      description: Tenant Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/tenant.yaml
+          examples:
+            Tenant Response:
+              $ref: ../components/examples/tenant.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+put:
+  summary: Update tenant
+  description: Update an existing tenant.
+  operationId: updateTenant
+  tags:
+    - Tenants
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - account
+          properties:
+            account:
+              description: Payload for updating an existing tenant
+              properties:
+                name:
+                  type: string
+                  description: Name
+                description:
+                  type: string
+                  description: Description
+                  nullable: true
+                role:
+                  type: object
+                  description: >-
+                    Tenant Base Role. This restricts the access available to
+                    this tenant's roles and users.
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                subdomain:
+                  type: string
+                  description: >-
+                    The subdomain. This will be part of the login URL and
+                    username for sub tenant users.
+                  nullable: true
+                currency:
+                  $ref: ..\components\schemas\CurrencyCode.yaml
+  responses:
+    '200':
+      description: Tenant Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/tenant.yaml
+          examples:
+            Tenant Response:
+              $ref: ../components/examples/tenant.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+delete:
+  summary: Delete tenant
+  description: >-
+    Delete an existing tenant. This deletes everything under the tenant. An
+    error will occur if the tenant still has managed resources, unless
+    `removeResources=true`.
+  operationId: removeTenant
+  tags:
+    - Tenants
+  parameters:
+    - name: removeResources
+      in: query
+      description: >-
+        Remove Resources. This will delete all the managed resources under the
+        account instead of erroring.
+      required: false
+      schema:
+        type: boolean
+        default: false
+  responses:
+    '200':
+      description: Tenant Object
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200-success.yaml
+    '400':
+      description: Tenant still has managed resources
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+          example:
+            success: false
+            msg: >-
+              Unable to delete an account without removing resources when
+              managed instances exist.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

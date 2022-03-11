@@ -1,26 +1,25 @@
-title: MetaObject
 type: object
+description: Metadata about the returned array of results, provides pagination information.
 properties:
   size:
     type: integer
+    format: int64
     description: Number of records returned in the response
-    contentEncoding: int64
     default: 0
   total:
     type: integer
+    format: int64
     description: Total number of records found
-    contentEncoding: int64
     default: 0
   offset:
     type: integer
+    format: int64
     description: >-
       Offset records, the number of records to skip, can be used to paginate
       over results.
-    contentEncoding: int64
     default: 0
   max:
     type: integer
+    format: int64
     description: Max size, the maximum number of records to include in the response.
-    contentEncoding: int64
     default: 25
-description: Metadata about the returned array of results, provides pagination information.

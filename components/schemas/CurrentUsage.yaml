@@ -1,12 +1,15 @@
-title: CurrentUsage
 type: object
+description: Current usage totals for appliance
 properties:
   memory:
     type: integer
-    contentEncoding: int64
+    format: int64
+    description: Total Used Memory (bytes)
   storage:
     type: integer
-    contentEncoding: int64
+    format: int64
+    description: Total Used Storage (bytes)
   workloads:
     type: integer
-    contentEncoding: int64
+    format: int64
+    description: Total Workloads

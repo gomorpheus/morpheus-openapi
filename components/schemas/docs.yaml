@@ -1,8 +1,16 @@
-title: docs
 type: object
-properties:
-  links:
+properties: 
+  links: 
     type: array
-    items:
-      $ref: .\Link.yaml
-    description: ''
+    items: 
+      type: object
+      properties: 
+        name: 
+          type: string
+        url: 
+          type: string
+        description: 
+          type: string
+          format: nullable
+        type: 
+          type: string

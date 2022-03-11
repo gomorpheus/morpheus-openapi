@@ -1,0 +1,71 @@
+summary: Users Response
+value:
+  users:
+  - id: 238
+    accountId: 3
+    username: Aaron Reid
+    displayName: Aaron Reid
+    email: areid@morpheusdata.com
+    firstName: Aaron
+    lastName: Reid
+    enabled: false
+    receiveNotifications: true
+    isUsing2FA: false
+    accountExpired: false
+    accountLocked: false
+    passwordExpired: false
+    loginCount: 0
+    loginAttempts: 0
+    lastLoginDate: '2022-01-06T20:47:47Z'
+    roles:
+    - id: 294
+      authority: Morpheus Engineer
+      description: Morpheus Engineer
+    account:
+      id: 3
+      name: Morpheus
+    linuxUsername:
+    linuxPassword: "************"
+    linuxKeyPairId:
+    windowsUsername:
+    windowsPassword:
+    defaultPersona:
+    dateCreated: '2020-10-14T15:15:36Z'
+    lastUpdated: '2022-03-01T02:09:16Z'
+  - id: 4
+    accountId: 3
+    username: ahicks
+    displayName: Adam Hicks
+    email: ahicks@morpheusdata.com
+    firstName: Adam
+    lastName: Hicks
+    enabled: false
+    receiveNotifications: true
+    isUsing2FA: false
+    accountExpired: false
+    accountLocked: false
+    passwordExpired: false
+    loginCount: 1576
+    loginAttempts: 0
+    lastLoginDate: '2021-08-17T17:12:08Z'
+    roles:
+    - id: 16
+      authority: Morpheus Admin
+      description: Morpheus Administrator Role
+    account:
+      id: 3
+      name: Morpheus
+    linuxUsername: ahicks
+    linuxPassword: "************"
+    linuxKeyPairId: 13
+    windowsUsername: ahicks
+    windowsPassword: "************"
+    defaultPersona:
+    dateCreated: '2017-02-17T06:47:17Z'
+    lastUpdated: '2021-08-26T18:58:09Z'
+  meta:
+    offset: 0
+    max: 2
+    size: 2
+    total: 118
+  global: false

@@ -1,758 +1,147 @@
 get:
-  tags:
-    - Budgets
-  summary: listBudgets
+  summary: Retrieves all Budgets
   description: |
     Retrieves all budgets.
+  operationId: listBudgets
+  tags:
+    - Budgets
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-budgets
-  operationId: listBudgets
   parameters:
-    - name: max
-      in: query
-      description: Maximum number of records to return
-      style: form
-      explode: true
-      schema:
-        type: integer
-        contentEncoding: int64
-        default: 25
-    - name: offset
-      in: query
-      description: Offset records, the number of records to skip, for paginating requests
-      style: form
-      explode: true
-      schema:
-        type: integer
-        contentEncoding: int64
-        default: 0
-    - name: sort
-      in: query
-      description: Sort order, the name of the property to sort by
-      style: form
-      explode: true
-      schema:
-        type: string
-        default: name
-    - name: direction
-      in: query
-      description: Sort direction, use 'desc' to reverse sort
-      style: form
-      explode: true
-      schema:
-        $ref: ..\components\schemas\direction.yaml
-    - name: phrase
-      in: query
-      description: Search phrase for partial matches on name or description
-      style: form
-      explode: true
-      schema:
-        type: string
-    - name: name
-      in: query
-      description: Filter by name, wildcard may be specified as %, eg. example-%
-      style: form
-      explode: true
-      schema:
-        type: string
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\budgets.yaml
+            $ref: ../components/schemas/budgets.yaml
           examples:
             Search Response:
-              summary: Budgets Response
-              value:
-                budgets:
-                  - id: 8
-                    name: Adam H
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: user
-                    refType: User
-                    refId: 4
-                    refName: ahicks
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                    isFiscal: false
-                    averageCost: 1000
-                    totalCost: 12000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 4
-                    createdByName: Adam Hicks
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2021-03-05T19:54:00Z'
-                    lastUpdated: '2021-03-05T19:54:00Z'
-                  - id: 9
-                    name: AWS monthly spend
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: cloud
-                    refType: ComputeZone
-                    refId: 12
-                    refName: AWS
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                      - 1000
-                    isFiscal: false
-                    averageCost: 1000
-                    totalCost: 12000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 253
-                    createdByName: Anish Abraham
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2021-04-08T14:30:29Z'
-                    lastUpdated: '2021-04-08T14:30:29Z'
-                  - id: 3
-                    name: AWS Spend
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: cloud
-                    refType: ComputeZone
-                    refId: 12
-                    refName: AWS
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                      - 10000
-                    isFiscal: false
-                    averageCost: 10000
-                    totalCost: 120000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 5
-                    createdByName: David Estes
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2019-04-17T16:34:52Z'
-                    lastUpdated: '2021-03-25T20:49:37Z'
-                  - id: 5
-                    name: Azure Spend
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: cloud
-                    refType: ComputeZone
-                    refId: 121
-                    refName: Azure US
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                      - 2500
-                    isFiscal: false
-                    averageCost: 2500
-                    totalCost: 30000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 2
-                    createdByName: Jeff Wheeler
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2020-07-24T04:42:42Z'
-                    lastUpdated: '2021-06-15T17:46:24Z'
-                  - id: 1
-                    name: Demo Budget
-                    description: Demo Budget
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: account
-                    refType: 'null'
-                    refId: 13
-                    refName: Morpheus
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                      - 25000
-                    isFiscal: false
-                    averageCost: 25000
-                    totalCost: 300000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 2
-                    createdByName: Jeff Wheeler
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2019-04-09T09:21:16Z'
-                    lastUpdated: '2021-03-25T20:50:46Z'
-                  - id: 10
-                    name: DZ-VMware Budget
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: cloud
-                    refType: ComputeZone
-                    refId: 138
-                    refName: VMware Demo Cluster
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                    isFiscal: false
-                    averageCost: 5000
-                    totalCost: 60000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 219
-                    createdByName: Dave Zenz
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2021-04-16T02:07:56Z'
-                    lastUpdated: '2021-04-16T02:07:56Z'
-                  - id: 7
-                    name: Google Spend
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: cloud
-                    refType: ComputeZone
-                    refId: 143
-                    refName: Google Labs
-                    period: year
-                    year: '2020'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2020-01-01T00:00:00Z'
-                    endDate: '2020-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                    isFiscal: false
-                    averageCost: 0
-                    totalCost: 0
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 212
-                    createdByName: Karl Rabe
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2020-12-01T20:34:45Z'
-                    lastUpdated: '2020-12-01T20:34:59Z'
-                  - id: 11
-                    name: hank-test-budget
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: user
-                    refType: User
-                    refId: 275
-                    refName: Hank Pike
-                    period: year
-                    year: '2021'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2021-01-01T00:00:00Z'
-                    endDate: '2021-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 0
-                      - 5
-                      - 0
-                      - 0.01
-                      - 0
-                      - 0
-                      - 0
-                    isFiscal: false
-                    averageCost: 0.4175
-                    totalCost: 5.01
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 275
-                    createdByName: Hank Pike
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2021-09-14T02:18:47Z'
-                    lastUpdated: '2021-09-14T02:18:47Z'
-                  - id: 4
-                    name: Pied Piper
-                    description: 'null'
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: tenant
-                    refType: Account
-                    refId: 5
-                    refName: Pied Piper
-                    period: year
-                    year: '2020'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2020-01-01T00:00:00Z'
-                    endDate: '2020-12-31T23:59:59Z'
-                    interval: month
-                    costs:
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                      - 100
-                    isFiscal: false
-                    averageCost: 100
-                    totalCost: 1200
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 2
-                    createdByName: Jeff Wheeler
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2020-03-31T15:52:37Z'
-                    lastUpdated: '2020-03-31T15:52:37Z'
-                  - id: 2
-                    name: Production Group
-                    description: Production Group
-                    account:
-                      id: 3
-                      name: Morpheus
-                    enabled: true
-                    refScope: group
-                    refType: ComputeSite
-                    refId: 50
-                    refName: Production
-                    period: year
-                    year: '2020'
-                    resourceType: all
-                    timezone: UTC
-                    startDate: '2020-01-01T00:00:00Z'
-                    endDate: '2020-12-31T23:59:59Z'
-                    interval: quarter
-                    costs:
-                      - 5000
-                      - 5000
-                      - 5000
-                      - 5000
-                    isFiscal: false
-                    averageCost: 5000
-                    totalCost: 20000
-                    currency: USD
-                    rollover: false
-                    warningLimit: 'null'
-                    overLimit: 'null'
-                    externalId: 'null'
-                    internalId: 'null'
-                    createdById: 2
-                    createdByName: Jeff Wheeler
-                    updatedById: 'null'
-                    updatedByName: 'null'
-                    dateCreated: '2019-04-12T18:33:17Z'
-                    lastUpdated: '2020-06-02T22:17:29Z'
-                meta:
-                  size: 10
-                  total: 10
-                  offset: 0
-                  max: 25
+              $ref: ../components/examples/budgets.yaml 
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
 post:
-  tags:
-    - Budgets
-  summary: addBudgets
+  summary: Creates a Budget
   description: |
     Creates a budget.
+  operationId: addBudgets
+  tags:
+    - Budgets
   externalDocs:
     url: https://apidocs.morpheusdata.com/#create-a-budget
-  operationId: addBudgets
-  parameters: []
   requestBody:
-    description: ''
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\ApiBudgetsRequest.yaml
-    required: false
+          type: object
+          required:
+            - budget
+          properties:
+            budget:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                description:
+                  type: string
+                scope:
+                  type: string
+                  default: account
+                  enum:
+                    - account
+                    - group
+                    - cloud
+                    - user
+                period:
+                  type: string
+                  default: year
+                year:
+                  type: integer
+                  format: int64
+                  example: 2020
+                startDate:
+                  type: string
+                  format: date-time
+                endDate:
+                  type: string
+                  format: date-time
+                interval:
+                  type: string
+                  default: year
+                  enum:
+                    - year
+                    - quarter
+                    - month
+                scopeTenantId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=tenant
+                scopeGroupId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=group 
+                scopeCloudId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=cloud
+                scopeUserId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The Tenant ID to scope to, for use with ``scope``=user
+                costs:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+                  example:
+                    - 100
+                    - 100
+                    - 110
+                    - 120
+                enabled:
+                  type: boolean
+                  default: true
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200Budget.yaml
+            $ref: ../components/schemas/budget.yaml
           examples:
             Report Types Response:
-              summary: Budgets Response
-              value:
-                success: true
-                budget:
-                  id: 8
-                  name: Adam H
-                  description: 'null'
-                  account:
-                    id: 3
-                    name: Morpheus
-                  enabled: true
-                  refScope: user
-                  refType: User
-                  refId: 4
-                  refName: ahicks
-                  period: year
-                  year: '2021'
-                  resourceType: all
-                  timezone: UTC
-                  startDate: '2021-01-01T00:00:00Z'
-                  endDate: '2021-12-31T23:59:59Z'
-                  interval: month
-                  costs:
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                    - 1000
-                  isFiscal: false
-                  averageCost: 1000
-                  totalCost: 12000
-                  currency: USD
-                  rollover: false
-                  warningLimit: 'null'
-                  overLimit: 'null'
-                  externalId: 'null'
-                  internalId: 'null'
-                  createdById: 4
-                  createdByName: Adam Hicks
-                  updatedById: 'null'
-                  updatedByName: 'null'
-                  dateCreated: '2021-03-05T19:54:00Z'
-                  lastUpdated: '2021-03-05T19:54:00Z'
-                  stats:
-                    currency: USD
-                    conversionRate: 1
-                    intervals:
-                      - index: 1
-                        month: january
-                        shortName: jan
-                        chartName: jan
-                        budget: 1000
-                        cost: 884.773840967118
-                        startDate: '2021-01-01T00:00:00Z'
-                        endDate: '2021-01-31T23:59:59Z'
-                      - index: 2
-                        month: february
-                        shortName: feb
-                        chartName: feb
-                        budget: 1000
-                        cost: 1240.84967661248
-                        startDate: '2021-02-01T00:00:00Z'
-                        endDate: '2021-02-28T23:59:59Z'
-                      - index: 3
-                        month: march
-                        shortName: mar
-                        chartName: mar
-                        budget: 1000
-                        cost: 1565.73235740725
-                        startDate: '2021-03-01T00:00:00Z'
-                        endDate: '2021-03-31T23:59:59Z'
-                      - index: 4
-                        month: april
-                        shortName: apr
-                        chartName: apr
-                        budget: 1000
-                        cost: 1677.09899758031
-                        startDate: '2021-04-01T00:00:00Z'
-                        endDate: '2021-04-30T23:59:59Z'
-                      - index: 5
-                        month: may
-                        shortName: may
-                        chartName: may
-                        budget: 1000
-                        cost: 1419.69609172668
-                        startDate: '2021-05-01T00:00:00Z'
-                        endDate: '2021-05-31T23:59:59Z'
-                      - index: 6
-                        month: june
-                        shortName: jun
-                        chartName: jun
-                        budget: 1000
-                        cost: 1679.31128080453
-                        startDate: '2021-06-01T00:00:00Z'
-                        endDate: '2021-06-30T23:59:59Z'
-                      - index: 7
-                        month: july
-                        shortName: jul
-                        chartName: jul
-                        budget: 1000
-                        cost: 435.971142838987
-                        startDate: '2021-07-01T00:00:00Z'
-                        endDate: '2021-07-31T23:59:59Z'
-                      - index: 8
-                        month: august
-                        shortName: aug
-                        chartName: aug
-                        budget: 1000
-                        cost: 582.182244657313
-                        startDate: '2021-08-01T00:00:00Z'
-                        endDate: '2021-08-31T23:59:59Z'
-                      - index: 9
-                        month: september
-                        shortName: sep
-                        chartName: sep
-                        budget: 1000
-                        cost: 0
-                        startDate: '2021-09-01T00:00:00Z'
-                        endDate: '2021-09-30T23:59:59Z'
-                      - index: 10
-                        month: october
-                        shortName: oct
-                        chartName: oct
-                        budget: 1000
-                        cost: 0
-                        startDate: '2021-10-01T00:00:00Z'
-                        endDate: '2021-10-31T23:59:59Z'
-                      - index: 11
-                        month: november
-                        shortName: nov
-                        chartName: nov
-                        budget: 1000
-                        cost: 0
-                        startDate: '2021-11-01T00:00:00Z'
-                        endDate: '2021-11-30T23:59:59Z'
-                      - index: 12
-                        month: december
-                        shortName: dec
-                        chartName: dec
-                        budget: 1000
-                        cost: 0
-                        startDate: '2021-12-01T00:00:00Z'
-                        endDate: '2021-12-31T23:59:59Z'
-                    current:
-                      estimatedCost: 'null'
-                      lastCost: 'null'
+              $ref: ../components/examples/budget.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

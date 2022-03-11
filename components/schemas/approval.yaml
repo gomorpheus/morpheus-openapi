@@ -1,6 +1,113 @@
-title: Approval
+title: 200 Approval
 type: object
-properties:
-  id:
-    type: integer
-    contentEncoding: int32
+properties: 
+  approval: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+      name: 
+        type: string
+      internalId: 
+        type: string
+        format: nullable
+      externalId: 
+        type: string
+        format: nullable
+      externalName: 
+        type: string
+        format: nullable
+      requestType: 
+        type: string
+      account: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int32
+          name: 
+            type: string
+      approver: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int32
+          name: 
+            type: string
+      accountIntegration: 
+        type: string
+        format: nullable
+      status: 
+        type: string
+      errorMessage: 
+        type: string
+        format: nullable
+      dateCreated: 
+        type: string
+        format: date-time
+      lastUpdated: 
+        type: string
+        format: date-time
+      requestBy: 
+        type: string
+      approvalItems: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int32
+            name: 
+              type: string
+            externalId: 
+              type: string
+              format: nullable
+            externalName: 
+              type: string
+              format: nullable
+            internalId: 
+              type: string
+              format: nullable
+            approvedBy: 
+              type: string
+            deniedBy: 
+              type: string
+              format: nullable
+            status: 
+              type: string
+            errorMessage: 
+              type: string
+              format: nullable
+            dateCreated: 
+              type: string
+              format: date-time
+            lastUpdated: 
+              type: string
+              format: date-time
+            dateApproved: 
+              type: string
+              format: date-time
+            dateDenied: 
+              type: string
+              format: nullable
+            approval: 
+              type: object
+              properties: 
+                id: 
+                  type: integer
+                  format: int32
+            reference: 
+              type: object
+              properties: 
+                id: 
+                  type: integer
+                  format: int32
+                type: 
+                  type: string
+                name: 
+                  type: string
+                displayName: 
+                  type: string

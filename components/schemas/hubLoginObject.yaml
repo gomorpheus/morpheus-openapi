@@ -1,12 +1,22 @@
-title: HubLoginObject
-allOf:
-  - $ref: .\BaseType.yaml
-  - required:
-      - hub
-    type: object
-    properties:
-      hub:
-        $ref: .\Hub.yaml
+title: Hub Login Object
 description: >-
-  Object for logging in to the [Morpheus Hub](https://morpheushub.com) with
-  existing credentials. This is only required for `hubmode=login`.
+        Object for logging in to the [Morpheus
+        Hub](https://morpheushub.com) with existing credentials.
+        This is only required for `hubmode=login`.
+type: object
+required:
+  - hub
+properties:
+  hub:
+    type: object
+    required:
+        - email
+        - password
+    properties:
+      email:
+        type: string
+        description: Email for existing Morpheus Hub user
+      password:
+        type: string
+        format: password
+        description: Password for existing Morpheus Hub user

@@ -1,7 +1,0 @@
-title: ApiKeyPairsRequest
-required:
-  - keyPair
-type: object
-properties:
-  keyPair:
-    $ref: .\KeyPair2.yaml

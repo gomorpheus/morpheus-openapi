@@ -1,236 +1,71 @@
 get:
-  tags:
-    - License
-  summary: getLicense
+  summary: Get license
   description: >-
     Get details about the license that is currently installed on the appliance.
     This returns the license details, but not the key itself. Your license key
     will never be returned and should always be kept secret.
   operationId: getLicense
-  parameters: []
+  tags:
+    - License
   responses:
     '200':
       description: Get details about the currently installed license
-      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\license.yaml
           examples:
             getLicense:
-              summary: License Response
-              value:
-                license:
-                  productTier: enterprise
-                  startDate: '2021-10-07T00:00:00Z'
-                  endDate: '2022-10-07T00:00:00Z'
-                  maxInstances: 5000
-                  maxMemory: 0
-                  maxStorage: 0
-                  hardLimit: false
-                  freeTrial: false
-                  multiTenant: true
-                  whitelabel: true
-                  reportStatus: true
-                  supportLevel: standard
-                  accountName: Morpheus
-                  config: {}
-                  amazonProductCodes: 'null'
-                  features:
-                    dashboard: true
-                    guidance: true
-                    discovery: true
-                    analytics: true
-                    scheduling: true
-                    approvals: true
-                    usage: true
-                    activity: true
-                    instances: true
-                    apps: true
-                    templates: true
-                    automation: true
-                    virtualImages: true
-                    library: true
-                    migrations: true
-                    deployments: true
-                    groups: true
-                    clouds: true
-                    hosts: true
-                    network: true
-                    loadBalancers: true
-                    storage: true
-                    keyPairs: true
-                    sslCertificates: true
-                    boot: true
-                    backups: true
-                    cypher: true
-                    archives: true
-                    imageBuilder: true
-                    tenants: true
-                    plans: true
-                    pricing: true
-                    users: true
-                    userGroups: true
-                    monitoring: true
-                    logging: true
-                    monitoringServices: true
-                    loggingServices: true
-                    backupServices: true
-                    dnsServices: true
-                    codeService: true
-                    buildServices: true
-                    loadBalancerServices: true
-                    ipamServices: true
-                    approvalServices: true
-                    cmdbServices: true
-                    deploymentServices: true
-                    automationServices: true
-                    serviceDiscoveryServices: true
-                    identityServices: true
-                    trustServices: true
-                    securityServices: true
-                  zoneTypes: 'null'
-                  lastUpdated: '2021-10-07T14:36:08Z'
-                  dateCreated: '2021-10-07T14:36:08Z'
-                currentUsage:
-                  memory: 531366034976
-                  storage: 6017299099648
-                  workloads: 631
+              $ref: ..\components\examples\license.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
 post:
-  tags:
-    - License
-  summary: installLicense
+  summary: Install license key
   description: >-
     Install a new license key. This will potentially change the enabled features
     and capabilities of your Morpheus appliance.
   operationId: installLicense
-  parameters: []
+  tags:
+    - License
   requestBody:
-    description: ''
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\ApiLicenseRequest.yaml
+          type: object
+          required:
+            - license
+          properties:
+            license:
+              type: string
+              description: >-
+                License Key. This is a long and unique string of your Morpheus
+                license. License keys can be requested from the [Morpheus
+                Hub](https://morpheushub.com).
         example:
           license: >-
             4704270b94ab7713e8eaca4c82917d27b5b2a1cc95a1818d71b4648c3f821a18a20b78ba9623f8609cbc3712b96fb4c68bbef1880c16a5946a198c1ff6943badef07458898df99b83cddca7bc33e883a54b6025fbd5b8e84d83c419d2ca5b7ec847227b2b63d1ccbcf6a91fcc9dc4e9bd26321166bb04e54983fc858c5c2f7c7893741f435f4921ba33a9778ec714a6a95054a074ff6969dda1b4
-    required: false
   responses:
     '200':
       description: License installed successfully.
-      headers: {}
       content:
         application/json:
           schema:
             $ref: ..\components\schemas\license.yaml
           examples:
             installLicense:
-              summary: License Response
-              value:
-                license:
-                  productTier: enterprise
-                  startDate: '2021-10-07T00:00:00Z'
-                  endDate: '2022-10-07T00:00:00Z'
-                  maxInstances: 5000
-                  maxMemory: 0
-                  maxStorage: 0
-                  hardLimit: false
-                  freeTrial: false
-                  multiTenant: true
-                  whitelabel: true
-                  reportStatus: true
-                  supportLevel: standard
-                  accountName: Morpheus
-                  config: {}
-                  amazonProductCodes: 'null'
-                  features:
-                    dashboard: true
-                    guidance: true
-                    discovery: true
-                    analytics: true
-                    scheduling: true
-                    approvals: true
-                    usage: true
-                    activity: true
-                    instances: true
-                    apps: true
-                    templates: true
-                    automation: true
-                    virtualImages: true
-                    library: true
-                    migrations: true
-                    deployments: true
-                    groups: true
-                    clouds: true
-                    hosts: true
-                    network: true
-                    loadBalancers: true
-                    storage: true
-                    keyPairs: true
-                    sslCertificates: true
-                    boot: true
-                    backups: true
-                    cypher: true
-                    archives: true
-                    imageBuilder: true
-                    tenants: true
-                    plans: true
-                    pricing: true
-                    users: true
-                    userGroups: true
-                    monitoring: true
-                    logging: true
-                    monitoringServices: true
-                    loggingServices: true
-                    backupServices: true
-                    dnsServices: true
-                    codeService: true
-                    buildServices: true
-                    loadBalancerServices: true
-                    ipamServices: true
-                    approvalServices: true
-                    cmdbServices: true
-                    deploymentServices: true
-                    automationServices: true
-                    serviceDiscoveryServices: true
-                    identityServices: true
-                    trustServices: true
-                    securityServices: true
-                  zoneTypes: 'null'
-                  lastUpdated: '2021-10-07T14:36:08Z'
-                  dateCreated: '2021-10-07T14:36:08Z'
-                currentUsage:
-                  memory: 531366034976
-                  storage: 6017299099648
-                  workloads: 631
+              $ref: ..\components\examples\license.yaml
     '400':
       description: License install failed
-      headers: {}
       content:
         application/json:
           schema:
@@ -240,66 +75,39 @@ post:
             msg: Unable to decode license content
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
 delete:
-  tags:
-    - License
-  summary: uninstallLicense
+  summary: Uninstall license key
   description: >-
     Uninstall your appliance license, leaving the appliance with no license
     installed. This will change the enabled features and capabilities of your
     Morpheus appliance.
   operationId: uninstallLicense
-  parameters: []
+  tags:
+    - License
   responses:
     '200':
       description: License uninstalled successfully.
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200Success.yaml
+            $ref: ..\components\schemas\200-success.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

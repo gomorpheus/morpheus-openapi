@@ -1,0 +1,63 @@
+get:
+  summary: Retrieves a Specific Key Pair
+  description: |
+    Retrieves a specific key pair.
+  operationId: getKeyPairs
+  tags:
+    - Key Pairs
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#get-a-specific-key-pair
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/key-pair.yaml
+          examples:
+            Search Response:
+              $ref: ../components/examples/key-pair.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+delete:
+  summary: Deletes a Key Pair
+  description: |
+    Deletes a specified key pair.
+  operationId: removeKeyPairs
+  tags:
+    - Key Pairs
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#delete-a-key-pair
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

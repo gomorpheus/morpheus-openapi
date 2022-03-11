@@ -1,8 +1,21 @@
-title: tenantsAvailableRoles
 type: object
 properties:
-  roles:
+  roles: 
     type: array
-    items:
-      $ref: .\Role2.yaml
-    description: ''
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        authority: 
+          type: string
+        description: 
+          type: string
+          format: nullable
+        roleType: 
+          type: string
+          format: nullable
+        owner: 
+          type: string
+          format: nullable

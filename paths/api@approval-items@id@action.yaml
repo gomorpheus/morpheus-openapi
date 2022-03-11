@@ -1,0 +1,31 @@
+get:
+  summary: Updates a Specific Approval Item
+  description: |
+    Updates a specific approval item.
+  operationId: updateApprovalsItem
+  tags:
+    - Approvals
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#update-an-approval-item
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/action-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.

@@ -1,0 +1,5 @@
+description: Internal Server Error. We had a problem with our server. Try again later.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/500-error.yaml

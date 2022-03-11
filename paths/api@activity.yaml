@@ -1,176 +1,58 @@
 get:
-  tags:
-    - Activity
-  summary: listActivity
+  summary: Retrieves Activity
   description: |
     Retrieves activity.
+  operationId: listActivity
+  tags:
+    - Activity
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-activity
-  operationId: listActivity
   parameters:
-    - name: max
-      in: query
-      description: Maximum number of records to return
-      style: form
-      explode: true
-      schema:
-        type: integer
-        contentEncoding: int64
-        default: 25
-    - name: offset
-      in: query
-      description: Offset records, the number of records to skip, for paginating requests
-      style: form
-      explode: true
-      schema:
-        type: integer
-        contentEncoding: int64
-        default: 0
-    - name: sort
-      in: query
-      description: Sort order, the name of the property to sort by
-      style: form
-      explode: true
-      schema:
-        type: string
-        default: name
-    - name: order
-      in: query
-      description: Sort direction, use 'desc' to reverse sort
-      style: form
-      explode: true
-      schema:
-        $ref: ..\components\schemas\order.yaml
-    - name: phrase
-      in: query
-      description: Search phrase for partial matches on name or description
-      style: form
-      explode: true
-      schema:
-        type: string
-    - name: name
-      in: query
-      description: Filter by name, wildcard may be specified as %, eg. example-%
-      style: form
-      explode: true
-      schema:
-        type: string
-    - name: userId
-      in: query
-      description: Filter by User ID
-      style: form
-      explode: true
-      schema:
-        type: number
-        contentEncoding: double
-    - name: tenantId
-      in: query
-      description: Filter by Tenant ID. Only available to the master account.
-      style: form
-      explode: true
-      schema:
-        type: number
-        contentEncoding: double
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/order.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/userId.yaml
+    - $ref: ../components/parameters/tenantId.yaml
     - name: timeframe
       in: query
       description: Filter by a timeframe (ex - today, yesterday, week, month, 3months)
-      style: form
-      explode: true
       schema:
         type: string
         default: month
     - name: start
       in: query
       description: Filter by activity on or after a date(time). Default is 1 month prior
-      style: form
-      explode: true
       schema:
         type: string
-        contentEncoding: date-time
+        format: date-time
     - name: end
       in: query
       description: Filter by activity on or before a date(time). Default is current date
-      style: form
-      explode: true
       schema:
         type: string
-        contentEncoding: date-time
+        format: date-time
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200Activity.yaml
+            $ref: ../components/schemas/activity.yaml
           examples:
             Search Response:
-              summary: Activity Response
-              value:
-                activity:
-                  - _id: a1f0e20c-8d56-4b53-8dd0-a8444d7bc875
-                    success: true
-                    activityType: Alert
-                    name: MRDMMON1014
-                    message: Instance has successfully been deleted by 'Morpheus'.
-                    objectType: Instance
-                    objectId: 18217
-                    user:
-                      id: 263
-                      username: Martez Reed
-                    ts: '2022-03-07T03:27:06Z'
-                  - _id: 1782bcbc-a5b3-4ca8-8d40-de5d9f52c6ab
-                    success: true
-                    activityType: Alert
-                    name: MRDMMON1013
-                    message: Instance has successfully been deleted by 'Morpheus'.
-                    objectType: Instance
-                    objectId: 18216
-                    user:
-                      id: 263
-                      username: Martez Reed
-                    ts: '2022-03-07T02:03:34Z'
-                  - _id: ca165d7c-7e9c-4d1f-9d66-58a3a17760d2
-                    success: true
-                    activityType: Alert
-                    name: MRDMMON1012
-                    message: Instance has successfully been deleted by 'Morpheus'.
-                    objectType: Instance
-                    objectId: 18215
-                    user:
-                      id: 263
-                      username: Martez Reed
-                    ts: '2022-03-07T01:35:26Z'
-                meta:
-                  size: 3
-                  total: 999
-                  max: 3
-                  offset: 0
-                  startDate: '2022-02-07T00:00:00Z'
-                  endDate: '2022-03-07T03:38:50Z'
+              $ref: ../components/examples/activity.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

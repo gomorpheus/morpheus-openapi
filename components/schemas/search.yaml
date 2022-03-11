@@ -1,0 +1,36 @@
+title: 200 Search
+type: object
+properties: 
+  hits: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: string
+          description: ID
+        uuid: 
+          type: string
+          description: UUID
+        name: 
+          type: string
+          description: Name
+        description: 
+          type: string
+          format: nullable
+        type: 
+          type: string
+        dateCreated: 
+          type: string
+          format: date-time
+          nullable: true
+        score: 
+          type: number
+          format: nullable
+  query: 
+    type: string
+  took: 
+    type: integer
+    format: int64
+  meta: 
+    $ref: MetaObject.yaml

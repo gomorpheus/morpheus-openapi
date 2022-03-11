@@ -1,60 +1,34 @@
 get:
+  summary: Basic information about current Morpheus Installation
+  description: |
+    This endpoint can be used to check the remote appliance build version and some other basic information.
+
+    This is an unsecured endpoint and does not require authorization. However, build version will not be returned unless you are authenticated with a valid access token.
+  operationId: ping
   tags:
     - Ping
     - Health
-  summary: ping
-  description: >
-    This endpoint can be used to check the remote appliance build version and
-    some other basic information.
-
-
-    This is an unsecured endpoint and does not require authorization. However,
-    build version will not be returned unless you are authenticated with a valid
-    access token.
-  operationId: ping
-  parameters: []
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200Ping.yaml
+            $ref: ../components/schemas/ping.yaml
           examples:
             Authenticated Ping Response:
-              summary: Authenticated Ping Response
-              value:
-                success: true
-                buildVersion: 5.4.4
+              $ref: ../components/examples/ping-authenticated.yaml
             Unauthenticated Ping Response:
-              summary: Unauthenticated Ping Response
-              value:
-                success: true
-                buildVersion: ''
+              $ref: ../components/examples/ping-unauthenticated.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

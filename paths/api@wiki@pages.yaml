@@ -1,130 +1,90 @@
 get:
-  tags:
-    - Wiki
-  summary: listWiki
+  summary: Retrieves wiki pages associated with the account.
   description: |
     This endpoint retrieves wiki pages associated with the account.
+  operationId: listWiki
+  tags:
+    - Wiki
   externalDocs:
     url: https://apidocs.morpheusdata.com/#get-all-wiki-pages
-  operationId: listWiki
   parameters:
-    - name: name
-      in: query
-      description: Filter by name, wildcard may be specified as %, eg. example-%
-      style: form
-      explode: true
-      schema:
-        type: string
-    - name: phrase
-      in: query
-      description: Search phrase for partial matches on name or description
-      style: form
-      explode: true
-      schema:
-        type: string
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200WikiPages.yaml
+            $ref: ../components/schemas/wikiPages.yaml
+          examples:
+            Wiki Response:
+              $ref: ../components/examples/wikiPages.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
 post:
-  tags:
-    - Wiki
-  summary: addWiki
+  summary: Create a Wiki Page
   description: |
     Creates a Wiki Page
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#create-a-wiki-page
   operationId: addWiki
-  parameters: []
+  tags:
+    - Wiki
   requestBody:
-    description: ''
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\ApiWikiPagesRequest.yaml
-    required: false
+          type: object
+          required:
+            - page
+          properties:
+            page:
+              type: object
+              required:
+                - name
+                - category
+                - content
+              properties:
+                name: 
+                  type: string
+                  example: Sample Doc
+                category: 
+                  type: string
+                  example: info
+                content: 
+                  type: string
+                  example: #Sample Doc
+                    A sample document in **markdown**.
+  externalDocs:
+    url: https://apidocs.morpheusdata.com/#create-a-wiki-page
   responses:
     '200':
       description: Successful Request
-      headers: {}
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200WikiCreatePage.yaml
+            $ref: ../components/schemas/wikiAdd.yaml
           examples:
             Report Types Response:
-              summary: Add Wiki Response
-              value:
-                page:
-                  id: 130
-                  name: Sample Doc
-                  urlName: info/sample-doc
-                  category: info
-                  refId: 'null'
-                  refType: 'null'
-                  format: markdown
-                  content: A sample document in **markdown**.`
-                  createdBy:
-                    id: 127
-                    username: cbunge
-                  updatedBy:
-                    id: 127
-                    username: cbunge
-                  dateCreated: '2022-03-04T02:39:34Z'
-                  lastUpdated: '2022-03-04T02:39:34Z'
-                success: true
+              $ref: ../components/examples/wikiAdd.yaml
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-parameters: []

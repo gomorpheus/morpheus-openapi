@@ -1,0 +1,7 @@
+name: appId
+in: query
+description: The App ID for Filtering
+schema:
+  type: integer
+  format: int64
+  description: App ID

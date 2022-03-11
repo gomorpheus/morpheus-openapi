@@ -1,52 +1,34 @@
 get:
-  tags:
-    - Documentation
-  summary: docOpenapiYaml
+  summary: Get Morpheus OpenAPI (Swagger) document as YAML.
   description: >-
     Get Morpheus OpenAPI (Swagger) document as YAML. This is the same document
     that you are reading at this very moment.
   operationId: docOpenapiYaml
-  parameters: []
+  tags:
+    - Documentation
+  security: []
   responses:
     '200':
       description: OpenAPI YAML specification for the Morpheus API
-      headers: {}
       content:
         text/yaml:
-          schema:
-            $ref: ..\components\schemas\ApiDocOpenapiYamlResponse.yaml
           examples:
             yamlExample:
               summary: OpenApi (Swagger) YAML
               value:
                 openapi: 3.0.3
-                info:
+                info: 
                   title: Morpheus API
                   description: Welcome ...
     '400':
       description: Bad Request.
-      headers: {}
-      content: {}
     '401':
       description: Unauthorized.
-      headers: {}
-      content: {}
     '403':
       description: Forbidden.
-      headers: {}
-      content: {}
     '404':
       description: Object Not Found.
-      headers: {}
-      content: {}
     '500':
       description: Internal Server Error.
-      headers: {}
-      content: {}
     '503':
       description: Service Unavailable.
-      headers: {}
-      content: {}
-  deprecated: false
-  security: []
-parameters: []

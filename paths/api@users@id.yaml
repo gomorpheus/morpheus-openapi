@@ -1,0 +1,117 @@
+get:
+  summary: Get a Specific User
+  description: Get details about a specific user.
+  operationId: getUsers
+  tags:
+    - Users
+  parameters:
+  - $ref: ..\components\parameters\id-path.yaml
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\user.yaml
+          examples:
+            Get User Response:
+              $ref: ..\components\examples\user.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+put:
+  summary: Update user
+  description: Update an existing user.
+  operationId: updateUser
+  tags:
+    - Users
+  parameters:
+  - $ref: ..\components\parameters\id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - user
+          properties:
+            user:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  description: First Name
+                lastName:
+                  type: string
+                  description: Last Name
+                username:
+                  type: string
+                  description: Username (unique per tenant).
+                email:
+                  type: string
+                  description: Email address
+                password:
+                  type: string
+                  format: password
+                  description: Password
+                roles:
+                  type: array
+                  description: List of Roles
+                  items:
+                    $ref: ..\components\schemas\ReferenceObject.yaml
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\user.yaml
+          examples:
+            Update User Response:
+              $ref: ..\components\examples\user.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
+delete:
+  summary: Delete user
+  description: Delete an existing user.
+  operationId: deleteUser
+  tags:
+    - Users
+  responses:
+    '200':
+      description: User was deleted successfully
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\200-success.yaml
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
