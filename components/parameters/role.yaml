@@ -1,0 +1,5 @@
+name: role
+in: query
+description: Filter by Role authority (supports multiple values)
+schema:
+  type: string

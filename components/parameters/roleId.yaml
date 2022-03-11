@@ -1,0 +1,6 @@
+name: roleId
+in: query
+description: Filter by Role ID (supports multiple values)
+schema:
+  type: integer
+  format: int64

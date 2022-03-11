@@ -1,0 +1,8 @@
+name: accountId
+in: query
+description: >-
+  Filter by Tenant ID. This is only available to master tenant users with
+  permission to manage tenants and users.
+schema:
+  type: integer
+  format: int64
