@@ -29,10 +29,13 @@ get:
               users:
                 type: array
                 items:
-                  $ref: ../components/schemas/user.yaml
+                  allOf:
+                  - $ref: ../components/schemas/user.yaml
+                  - $ref: ../components/schemas/meta.yaml
+                  - $ref: ../components/schemas/global.yaml
           examples:
             Users Response:
-              $ref: ../components/examples/users.yaml
+              $ref: ../components/examples/users.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -106,9 +109,7 @@ post:
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Create User Response:
-              allOf:
-              - $ref: ../components/examples/user.yaml
-              - $ref: ../components/examples/200-success.yaml
+              $ref: ../components/examples/userSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -21,7 +21,7 @@ get:
             $ref: ../components/schemas/usersAvailableRoles.yaml
           examples:
             Users Available Roles Response:
-              $ref: ../components/examples/usersAvailableRoles.yaml
+              $ref: ../components/examples/usersAvailableRoles.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

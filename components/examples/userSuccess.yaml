@@ -1,0 +1,40 @@
+{
+    "user": {
+        "id": 4,
+        "accountId": 3,
+        "username": "ahicks",
+        "displayName": "Adam Hicks",
+        "email": "ahicks@morpheusdata.com",
+        "firstName": "Adam",
+        "lastName": "Hicks",
+        "enabled": false,
+        "receiveNotifications": true,
+        "isUsing2FA": false,
+        "accountExpired": false,
+        "accountLocked": false,
+        "passwordExpired": false,
+        "loginCount": 1576,
+        "loginAttempts": 0,
+        "lastLoginDate": "2021-08-17T17:12:08Z",
+        "roles": [
+            {
+                "id": 16,
+                "authority": "Morpheus Admin",
+                "description": "Morpheus Administrator Role"
+            }
+        ],
+        "account": {
+            "id": 3,
+            "name": "Morpheus"
+        },
+        "linuxUsername": "ahicks",
+        "linuxPassword": "************",
+        "linuxKeyPairId": 13,
+        "windowsUsername": "ahicks",
+        "windowsPassword": "************",
+        "defaultPersona": null,
+        "dateCreated": "2017-02-17T06:47:17Z",
+        "lastUpdated": "2021-08-26T18:58:09Z"
+    },
+    "success" : true
+}

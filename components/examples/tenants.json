@@ -1,0 +1,58 @@
+{
+    "accounts": [
+        {
+            "id": 52,
+            "name": "A Tenant",
+            "description": "A subtenant",
+            "subdomain": "atenant",
+            "currency": "USD",
+            "externalId": null,
+            "customerNumber": null,
+            "accountNumber": null,
+            "accountName": "atenant",
+            "active": true,
+            "master": false,
+            "role": {
+                "id": 425,
+                "authority": "A Tenant Role",
+                "description": null
+            },
+            "stats": {
+                "instanceCount": 0,
+                "userCount": 9
+            },
+            "dateCreated": "2020-06-18T23:13:32Z",
+            "lastUpdated": "2022-01-20T21:35:32Z"
+        },
+        {
+            "id": 50,
+            "name": "Gekko & Co",
+            "description": null,
+            "subdomain": "gekko",
+            "currency": "USD",
+            "externalId": null,
+            "customerNumber": null,
+            "accountNumber": null,
+            "accountName": "gekko",
+            "active": true,
+            "master": false,
+            "role": {
+                "id": 84,
+                "authority": "Gekko & Co",
+                "description": "Role for Sub-Tenant: Gekko Tenant Role"
+            },
+            "stats": {
+                "instanceCount": 0,
+                "userCount": 3
+            },
+            "dateCreated": "2017-11-14T14:22:49Z",
+            "lastUpdated": "2021-01-11T15:06:14Z"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 2,
+        "size": 2,
+        "total": 8
+    }
+}

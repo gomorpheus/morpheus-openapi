@@ -16,7 +16,7 @@ get:
             $ref: ../components/schemas/tenant.yaml
           examples:
             Tenant Response:
-              $ref: ../components/examples/tenant.yaml
+              $ref: ../components/examples/tenant.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -82,9 +82,7 @@ put:
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
-              allOf:
-                - $ref: ../components/examples/tenant.yaml
-                - $ref: ../components/examples/200-success.yaml
+              $ref: ../components/examples/tenantSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -98,7 +96,7 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete tenant
+  summary: Delete a Specific Tenant
   description: >-
     Delete an existing tenant. This deletes everything under the tenant. An
     error will occur if the tenant still has managed resources, unless
@@ -119,11 +117,14 @@ delete:
         default: false
   responses:
     '200':
-      description: Tenant Object
+      description: Tenant Deletion Object
       content:
         application/json:
           schema:
             $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Deletion:
+              $ref: ../components/examples/success.json
     '400':
       description: Tenant still has managed resources
       content:

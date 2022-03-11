@@ -16,7 +16,7 @@ get:
             $ref: ../components/schemas/user.yaml
           examples:
             Get User Response:
-              $ref: ../components/examples/user.yaml
+              $ref: ../components/examples/user.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -81,9 +81,7 @@ put:
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Update User Response:
-              allOf:
-              - $ref: ../components/examples/user.yaml
-              - $ref: ../components/examples/200-success.yaml
+              $ref: ../components/examples/userSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -97,7 +95,7 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete user
+  summary: Delete a Specific User
   description: Delete an existing user.
   operationId: deleteUsers
   tags:
@@ -110,6 +108,9 @@ delete:
         application/json:
           schema:
             $ref: ../components/schemas/200-success.yaml
+          examples:
+            Update User Response:
+              $ref: ../components/examples/success.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

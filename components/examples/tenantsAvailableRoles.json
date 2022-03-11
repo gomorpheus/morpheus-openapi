@@ -1,0 +1,101 @@
+{
+    "roles": [
+        {
+            "id": 1,
+            "authority": "System Admin",
+            "description": "Super User",
+            "roleType": null,
+            "owner": null
+        },
+        {
+            "id": 425,
+            "authority": "A Tenant Role",
+            "description": null,
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 299,
+            "authority": "Beatles",
+            "description": "Role for Sub-Tenant:  The Beatles",
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 601,
+            "authority": "Channels Demo",
+            "description": "Base role for Channels Demo Tenants",
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 84,
+            "authority": "Gekko & Co",
+            "description": "Role for Sub-Tenant: Gekko Tenant Role",
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 595,
+            "authority": "k8sdemo-tenant",
+            "description": null,
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 34,
+            "authority": "Pied Piper",
+            "description": "Role for Sub-Tenant: Pied Piper",
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 424,
+            "authority": "Remote Console",
+            "description": "remote console auto login",
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 420,
+            "authority": "Subtenant Tenant Role",
+            "description": null,
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        },
+        {
+            "id": 197,
+            "authority": "Wonka",
+            "description": "Role for Sub-Tenant: Wonka Industries",
+            "roleType": "account",
+            "owner": {
+                "id": 3,
+                "name": "Morpheus"
+            }
+        }
+    ]
+}
