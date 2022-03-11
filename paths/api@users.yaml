@@ -34,17 +34,17 @@ get:
             Users Response:
               $ref: ..\components\examples\users.yaml
     '400':
-      description: Bad Request.
+      $ref: ..\components\responses\400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ..\components\responses\401.yaml
     '403':
-      description: Forbidden.
+      $ref: ..\components\responses\403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ..\components\responses\404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ..\components\responses\500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ..\components\responses\503.yaml
 post:
   summary: Create user
   description: Create a new user.
@@ -109,14 +109,14 @@ post:
               - $ref: ..\components\examples\user.yaml
               - $ref: ..\components\examples\200-success.yaml
     '400':
-      description: Bad Request.
+      $ref: ..\components\responses\400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ..\components\responses\401.yaml
     '403':
-      description: Forbidden.
+      $ref: ..\components\responses\403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ..\components\responses\404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ..\components\responses\500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ..\components\responses\503.yaml
