@@ -1,10 +1,11 @@
 parameters:
-  - $ref: ..\components\parameters\id-path.yaml
+  - $ref: ../components/parameters/id-path.yaml
 get:
   summary: Get tenant
   description: Get details about a tenant
   operationId: getTenant
   tags:
+    - Administration
     - Tenants
   responses:
     '200':
@@ -17,22 +18,23 @@ get:
             Tenant Response:
               $ref: ../components/examples/tenant.yaml
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml
 put:
   summary: Update tenant
   description: Update an existing tenant.
   operationId: updateTenant
   tags:
+    - Administration
     - Tenants
   requestBody:
     content:
@@ -68,29 +70,33 @@ put:
                     username for sub tenant users.
                   nullable: true
                 currency:
-                  $ref: ..\components\schemas\CurrencyCode.yaml
+                  $ref: ../components/schemas/CurrencyCode.yaml
   responses:
     '200':
       description: Tenant Object
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/tenant.yaml
+            allOf:
+              - $ref: ../components/schemas/tenant.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
-              $ref: ../components/examples/tenant.yaml
+              allOf:
+                - $ref: ../components/examples/tenant.yaml
+                - $ref: ../components/examples/200-success.yaml
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml
 delete:
   summary: Delete tenant
   description: >-
@@ -99,6 +105,7 @@ delete:
     `removeResources=true`.
   operationId: removeTenant
   tags:
+    - Administration
     - Tenants
   parameters:
     - name: removeResources
@@ -116,25 +123,25 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200-success.yaml
+            $ref: ../components/schemas/200-success.yaml
     '400':
       description: Tenant still has managed resources
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
           example:
             success: false
             msg: >-
               Unable to delete an account without removing resources when
               managed instances exist.
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml

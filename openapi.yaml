@@ -134,6 +134,8 @@ security:
 externalDocs:
   url: https://docs.morpheusdata.com
 tags:
+  - name: Administration
+    description: All Endpoints Under the Administration Tab
   - name: Activity
     description: Manage Appliance Activity Logs
   - name: Alerts
@@ -198,6 +200,8 @@ tags:
     description: Manage Image Builds
   - name: Incidents
     description: Manage Ticket Incidents
+  - name: Infrastructure
+    description: All Endpoints Under the Infrastructure Tab
   - name: Inputs
     description: Manage Inputs (Option Types)
   - name: Instance Types
@@ -214,6 +218,8 @@ tags:
     description: Manage Key Pairs
   - name: Layouts
     description: Manage Layouts
+  - name: Library
+    description: All Endpoints Under the Library Tab
   - name: License
     description: Manage Appliance License
   - name: Load Balancers
@@ -223,17 +229,21 @@ tags:
   - name: Logs
     description: View Logs
   - name: Monitoring
-    description: Manage Monitoring
+    description: All Endpoints Under the Monitoring Tab
+  - name: Morpheus API
+    description: All Endpoints Specific to Morpheus API
   - name: Networks
     description: Manage Networks
   - name: Node Types
     description: Manage Node/VM Types
+  - name: Operations
+    description: All Endpoints Under the Operations Tab
   - name: Option Lists
     description: Manage Option Lists
   - name: Options
     description: Manage Options
   - name: Personas
-    description: Manage Personas
+    description: All Endpoints Pertaining to Personas
   - name: Ping
     description: Ping Appliance
   - name: Policies
@@ -245,7 +255,7 @@ tags:
   - name: Projects
     description: Manage Projects
   - name: Provisioning
-    description: Manage Provisioning
+    description: All Endpoints Under the Provisioning Tab
   - name: Provisioning Settings
     description: Manage Provisioning Settings
   - name: Provisioning Licenses
@@ -278,6 +288,8 @@ tags:
     description: Manage Storage
   - name: Tenants
     description: Manage Tenants (Accounts)
+  - name: Tools
+    description: All Endpoints Under the Tools Tab
   - name: Usage
     description: View Usage
   - name: Users
