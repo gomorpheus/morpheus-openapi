@@ -55,9 +55,7 @@ paths:
                         - $ref: '#/components/schemas/meta'
               examples:
                 Tenants Response:
-                  allOf:
-                    - $ref: ../components/examples/tenants.yaml
-                    - $ref: ../components/examples/meta.yaml
+                  $ref: '#/components/examples/tenants'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -226,9 +224,7 @@ paths:
                   - $ref: '#/components/schemas/200-success'
               examples:
                 Tenant Response:
-                  allOf:
-                    - $ref: ../components/examples/tenant.yaml
-                    - $ref: ../components/examples/200-success.yaml
+                  $ref: '#/components/examples/tenantSuccess'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -242,7 +238,7 @@ paths:
         '503':
           $ref: '#/components/responses/503'
     delete:
-      summary: Delete tenant
+      summary: Delete a Specific Tenant
       description: >-
         Delete an existing tenant. This deletes everything under the tenant. An
         error will occur if the tenant still has managed resources, unless
@@ -263,11 +259,14 @@ paths:
             default: false
       responses:
         '200':
-          description: Tenant Object
+          description: Tenant Deletion Object
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/200-success'
+              examples:
+                Successful Deletion:
+                  $ref: '#/components/examples/success'
         '400':
           description: Tenant still has managed resources
           content:
@@ -7102,69 +7101,101 @@ components:
         scope:
           type: string
           description: Scope granted
-  responses:
-    '400':
-      description: Bad Request.
-    '401':
-      description: Unauthorized.
-    '403':
-      description: Forbidden.
-    '404':
-      description: Object Not Found.
-    '500':
-      description: Internal Server Error.
-    '503':
-      description: Service Unavailable.
   examples:
+    tenants:
+      accounts:
+        - id: 52
+          name: A Tenant
+          description: A subtenant
+          subdomain: atenant
+          currency: USD
+          externalId: null
+          customerNumber: null
+          accountNumber: null
+          accountName: atenant
+          active: true
+          master: false
+          role:
+            id: 425
+            authority: A Tenant Role
+            description: null
+          stats:
+            instanceCount: 0
+            userCount: 9
+          dateCreated: '2020-06-18T23:13:32Z'
+          lastUpdated: '2022-01-20T21:35:32Z'
+        - id: 50
+          name: Gekko & Co
+          description: null
+          subdomain: gekko
+          currency: USD
+          externalId: null
+          customerNumber: null
+          accountNumber: null
+          accountName: gekko
+          active: true
+          master: false
+          role:
+            id: 84
+            authority: Gekko & Co
+            description: 'Role for Sub-Tenant: Gekko Tenant Role'
+          stats:
+            instanceCount: 0
+            userCount: 3
+          dateCreated: '2017-11-14T14:22:49Z'
+          lastUpdated: '2021-01-11T15:06:14Z'
+      meta:
+        offset: 0
+        max: 2
+        size: 2
+        total: 8
     tenantSuccess:
-      summary: Tenant Response
-      value:
-        account:
-          id: 52
-          name: A Tenant
-          description: A subtenant
-          subdomain: atenant
-          currency: USD
-          externalId: null
-          customerNumber: null
-          accountNumber: null
-          accountName: atenant
-          active: true
-          master: false
-          role:
-            id: 425
-            authority: A Tenant Role
-            description: null
-          stats:
-            instanceCount: 0
-            userCount: 9
-          dateCreated: '2020-06-18T23:13:32Z'
-          lastUpdated: '2022-01-20T21:35:32Z'
-        success: true
+      account:
+        id: 52
+        name: A Tenant
+        description: A subtenant
+        subdomain: atenant
+        currency: USD
+        externalId: null
+        customerNumber: null
+        accountNumber: null
+        accountName: atenant
+        active: true
+        master: false
+        role:
+          id: 425
+          authority: A Tenant Role
+          description: null
+        stats:
+          instanceCount: 0
+          userCount: 9
+        dateCreated: '2020-06-18T23:13:32Z'
+        lastUpdated: '2022-01-20T21:35:32Z'
+      succes: true
     tenant:
-      summary: Tenant Response
-      value:
-        account:
-          id: 52
-          name: A Tenant
-          description: A subtenant
-          subdomain: atenant
-          currency: USD
-          externalId: null
-          customerNumber: null
-          accountNumber: null
-          accountName: atenant
-          active: true
-          master: false
-          role:
-            id: 425
-            authority: A Tenant Role
-            description: null
-          stats:
-            instanceCount: 0
-            userCount: 9
-          dateCreated: '2020-06-18T23:13:32Z'
-          lastUpdated: '2022-01-20T21:35:32Z'
+      account:
+        id: 52
+        name: A Tenant
+        description: A subtenant
+        subdomain: atenant
+        currency: USD
+        externalId: null
+        customerNumber: null
+        accountNumber: null
+        accountName: atenant
+        active: true
+        master: false
+        role:
+          id: 425
+          authority: A Tenant Role
+          description: null
+        stats:
+          instanceCount: 0
+          userCount: 9
+        dateCreated: '2020-06-18T23:13:32Z'
+        lastUpdated: '2022-01-20T21:35:32Z'
+    success:
+      success: true
     activity:
       summary: Activity Response
       value:
@@ -7210,77 +7241,75 @@ components:
           startDate: '2022-02-07T00:00:00Z'
           endDate: '2022-03-07T03:38:50Z'
     tenantsAvailableRoles:
-      summary: Tenants Available Roles Response
-      value:
-        roles:
-          - id: 1
-            authority: System Admin
-            description: Super User
-            roleType: null
-            owner: null
-          - id: 425
-            authority: A Tenant Role
-            description: null
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 299
-            authority: Beatles
-            description: 'Role for Sub-Tenant:  The Beatles'
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 601
-            authority: Channels Demo
-            description: Base role for Channels Demo Tenants
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 84
-            authority: Gekko & Co
-            description: 'Role for Sub-Tenant: Gekko Tenant Role'
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 595
-            authority: k8sdemo-tenant
-            description: null
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 34
-            authority: Pied Piper
-            description: 'Role for Sub-Tenant: Pied Piper'
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 424
-            authority: Remote Console
-            description: remote console auto login
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 420
-            authority: Subtenant Tenant Role
-            description: null
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 197
-            authority: Wonka
-            description: 'Role for Sub-Tenant: Wonka Industries'
-            roleType: account
-            owner:
-              id: 3
-              name: Morpheus
+      roles:
+        - id: 1
+          authority: System Admin
+          description: Super User
+          roleType: null
+          owner: null
+        - id: 425
+          authority: A Tenant Role
+          description: null
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 299
+          authority: Beatles
+          description: 'Role for Sub-Tenant:  The Beatles'
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 601
+          authority: Channels Demo
+          description: Base role for Channels Demo Tenants
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 84
+          authority: Gekko & Co
+          description: 'Role for Sub-Tenant: Gekko Tenant Role'
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 595
+          authority: k8sdemo-tenant
+          description: null
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 34
+          authority: Pied Piper
+          description: 'Role for Sub-Tenant: Pied Piper'
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 424
+          authority: Remote Console
+          description: remote console auto login
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 420
+          authority: Subtenant Tenant Role
+          description: null
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 197
+          authority: Wonka
+          description: 'Role for Sub-Tenant: Wonka Industries'
+          roleType: account
+          owner:
+            id: 3
+            name: Morpheus
     approvalItem:
       summary: Approval Items Response
       value:
@@ -12205,238 +12234,234 @@ components:
         defaultPersona: null
         dateCreated: '2017-02-17T06:47:17Z'
         lastUpdated: '2021-08-26T18:58:09Z'
-    success:
-      success: true
     usersAvailableRoles:
-      summary: Users Available Roles Response
-      value:
-        roles:
-          - id: 17
-            authority: ah-admin
-            description: Adam Hicks Role
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 296
-            authority: al-admin
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 593
-            authority: Archives
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 609
-            authority: Channels West Demo Role 1
-            description: User permissions
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 254
-            authority: chef-user
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 491
-            authority: CT Admin
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 224
-            authority: Dashboard
-            description: Dashboard Read Access Only
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 62
-            authority: Demo
-            description: Role for Demo use
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 273
-            authority: Dev Limited
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 26
-            authority: Developer
-            description: Developer Access Role
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 285
-            authority: End User Basic
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 594
-            authority: gp-admin
-            description: Greg Pietro Admin
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 384
-            authority: Irresponsible Developer
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 223
-            authority: js-admin
-            description: James Smith Role
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 15
-            authority: jw-admin
-            description: Jeff Wheeler Role
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 619
-            authority: lockout instance types
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 293
-            authority: Marketing
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 260
-            authority: Monitoring Admin
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 16
-            authority: Morpheus Admin
-            description: Morpheus Administrator Role
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 294
-            authority: Morpheus Engineer
-            description: Morpheus Engineer
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 378
-            authority: multi-tenant user locked
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 67
-            authority: Provisioning User
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 328
-            authority: ProvisionOnly
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 19
-            authority: QA
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 336
-            authority: ReadOnly
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 63
-            authority: Sales
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 421
-            authority: Service Catalog Access
-            description: >-
-              This Role only grants access to Service Catalog Persona. No other
-              permissions
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 335
-            authority: Space Developer
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 21
-            authority: Sub Account Admin
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 415
-            authority: Subtenant Multirole
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 620
-            authority: thuan - test
-            description: null
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
-          - id: 585
-            authority: Web Tour
-            description: Tourial User to limit options
-            roleType: user
-            owner:
-              id: 3
-              name: Morpheus
+      roles:
+        - id: 17
+          authority: ah-admin
+          description: Adam Hicks Role
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 296
+          authority: al-admin
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 593
+          authority: Archives
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 609
+          authority: Channels West Demo Role 1
+          description: User permissions
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 254
+          authority: chef-user
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 491
+          authority: CT Admin
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 224
+          authority: Dashboard
+          description: Dashboard Read Access Only
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 62
+          authority: Demo
+          description: Role for Demo use
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 273
+          authority: Dev Limited
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 26
+          authority: Developer
+          description: Developer Access Role
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 285
+          authority: End User Basic
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 594
+          authority: gp-admin
+          description: Greg Pietro Admin
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 384
+          authority: Irresponsible Developer
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 223
+          authority: js-admin
+          description: James Smith Role
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 15
+          authority: jw-admin
+          description: Jeff Wheeler Role
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 619
+          authority: lockout instance types
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 293
+          authority: Marketing
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 260
+          authority: Monitoring Admin
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 16
+          authority: Morpheus Admin
+          description: Morpheus Administrator Role
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 294
+          authority: Morpheus Engineer
+          description: Morpheus Engineer
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 378
+          authority: multi-tenant user locked
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 67
+          authority: Provisioning User
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 328
+          authority: ProvisionOnly
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 19
+          authority: QA
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 336
+          authority: ReadOnly
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 63
+          authority: Sales
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 421
+          authority: Service Catalog Access
+          description: >-
+            This Role only grants access to Service Catalog Persona. No other
+            permissions
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 335
+          authority: Space Developer
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 21
+          authority: Sub Account Admin
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 415
+          authority: Subtenant Multirole
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 620
+          authority: thuan - test
+          description: null
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
+        - id: 585
+          authority: Web Tour
+          description: Tourial User to limit options
+          roleType: user
+          owner:
+            id: 3
+            name: Morpheus
     wikiCategories:
       summary: Wiki Categories Response
       value:
@@ -12504,6 +12529,19 @@ components:
         expires_in: 30463819
         token_type: bearer
         scope: write
+  responses:
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
 security:
   - bearerAuth: []
 externalDocs:
