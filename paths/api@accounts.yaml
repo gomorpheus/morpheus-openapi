@@ -103,9 +103,7 @@ post:
             - type: object
               properties:
                 account:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/tenant.yaml
+                  $ref: ../components/schemas/tenant.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
