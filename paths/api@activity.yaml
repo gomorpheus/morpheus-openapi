@@ -40,10 +40,18 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/activity.yaml
+            allOf:
+            - type: object
+              properties:
+                activity:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/activity.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/activity.yaml
+              value:
+                $ref: ../components/examples/activity.json
     '400':
       description: Bad Request.
     '401':

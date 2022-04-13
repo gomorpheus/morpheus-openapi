@@ -1,0 +1,53 @@
+{
+  "summary": "Approval Response",
+  "value": {
+    "approval": {
+      "id": 45,
+      "name": "APPROVAL-0000045",
+      "internalId": null,
+      "externalId": null,
+      "externalName": null,
+      "requestType": "Instance Approval",
+      "account": {
+        "id": 3,
+        "name": "Morpheus"
+      },
+      "approver": {
+        "id": 3,
+        "name": "Morpheus"
+      },
+      "accountIntegration": null,
+      "status": "1 approved",
+      "errorMessage": null,
+      "dateCreated": "2022-01-25T21:43:35Z",
+      "lastUpdated": "2022-01-27T00:14:27Z",
+      "requestBy": "Aaron Reid",
+      "approvalItems": [
+        {
+          "id": 13,
+          "name": "ITEM-0000013",
+          "externalId": null,
+          "externalName": null,
+          "internalId": null,
+          "approvedBy": "Aaron Reid",
+          "deniedBy": null,
+          "status": "approved",
+          "errorMessage": null,
+          "dateCreated": "2022-01-25T21:43:35Z",
+          "lastUpdated": "2022-01-25T21:44:01Z",
+          "dateApproved": "2022-01-25T21:44:01Z",
+          "dateDenied": null,
+          "approval": {
+            "id": 45
+          },
+          "reference": {
+            "id": 17901,
+            "type": "instance",
+            "name": "ARDMCEN1280",
+            "displayName": "ARDMCEN1280"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -18,7 +18,7 @@ get:
             $ref: ../components/schemas/approvalItem.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/approvalItem.yaml
+              $ref: ../components/examples/approvalItem.json
     '400':
       description: Bad Request.
     '401':

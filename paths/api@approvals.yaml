@@ -20,11 +20,17 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/approvals.yaml
+            allOf:
+            - type: object
+              properties:
+                approvals:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/approval.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/approvals.yaml
-          
+              $ref: ../components/examples/approvals.json  
     '400':
       description: Bad Request.
     '401':

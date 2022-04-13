@@ -232,7 +232,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/tenant'
+                type: object
+                properties:
+                  account:
+                    $ref: '#/components/schemas/tenant'
               examples:
                 Tenant Response:
                   value:
@@ -319,9 +322,12 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - $ref: '#/components/schemas/tenant'
-                  - $ref: '#/components/schemas/200-success'
+                type: object
+                properties:
+                  account:
+                    allOf:
+                      - $ref: '#/components/schemas/tenant'
+                      - $ref: '#/components/schemas/200-success'
               examples:
                 Tenant Response:
                   value:
@@ -458,10 +464,43 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/activity'
+                allOf:
+                  - type: object
+                    properties:
+                      activity:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/activity'
+                  - $ref: '#/components/schemas/meta'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/activity'
+                  value:
+                    activity:
+                      - _id: 2471ed0e-bf19-40af-affa-8d210fe0228c
+                        success: true
+                        activityType: Alert
+                        name: ABDMWIN2282
+                        message: Instance has successfully been deleted by 'Morpheus'.
+                        objectType: Instance
+                        objectId: 19027
+                        user: null
+                        ts: '2022-04-13T21:58:01Z'
+                      - _id: ef263cb3-0403-4763-aa65-50fec82ef840
+                        success: true
+                        activityType: Alert
+                        name: ABDMWIN2282
+                        message: Server has successfully been deleted by 'Morpheus'.
+                        objectType: ComputeServer
+                        objectId: 224203
+                        user: null
+                        ts: '2022-04-13T21:58:01Z'
+                    meta:
+                      size: 2
+                      total: 1000
+                      max: 2
+                      offset: 0
+                      startDate: '2022-03-13T00:00:00Z'
+                      endDate: '2022-04-13T22:06:14Z'
         '400':
           description: Bad Request.
         '401':
@@ -671,7 +710,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/approvals'
+                allOf:
+                  - type: object
+                    properties:
+                      approvals:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/approval'
+                  - $ref: '#/components/schemas/meta'
               examples:
                 Search Response:
                   $ref: '#/components/examples/approvals'
@@ -705,10 +751,55 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/approval'
+                type: object
+                properties:
+                  approval:
+                    $ref: '#/components/schemas/approval'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/approval'
+                  value:
+                    summary: Approval Response
+                    value:
+                      approval:
+                        id: 45
+                        name: APPROVAL-0000045
+                        internalId: null
+                        externalId: null
+                        externalName: null
+                        requestType: Instance Approval
+                        account:
+                          id: 3
+                          name: Morpheus
+                        approver:
+                          id: 3
+                          name: Morpheus
+                        accountIntegration: null
+                        status: 1 approved
+                        errorMessage: null
+                        dateCreated: '2022-01-25T21:43:35Z'
+                        lastUpdated: '2022-01-27T00:14:27Z'
+                        requestBy: Aaron Reid
+                        approvalItems:
+                          - id: 13
+                            name: ITEM-0000013
+                            externalId: null
+                            externalName: null
+                            internalId: null
+                            approvedBy: Aaron Reid
+                            deniedBy: null
+                            status: approved
+                            errorMessage: null
+                            dateCreated: '2022-01-25T21:43:35Z'
+                            lastUpdated: '2022-01-25T21:44:01Z'
+                            dateApproved: '2022-01-25T21:44:01Z'
+                            dateDenied: null
+                            approval:
+                              id: 45
+                            reference:
+                              id: 17901
+                              type: instance
+                              name: ARDMCEN1280
+                              displayName: ARDMCEN1280
         '400':
           description: Bad Request.
         '401':
@@ -4877,27 +4968,6 @@ components:
               ts:
                 type: string
                 format: date-time
-        meta:
-          type: object
-          properties:
-            size:
-              type: integer
-              format: int64
-            total:
-              type: integer
-              format: int64
-            max:
-              type: integer
-              format: int64
-            offset:
-              type: integer
-              format: int64
-            startDate:
-              type: string
-              format: date-time
-            endDate:
-              type: string
-              format: date-time
     tenantsAvailableRoles:
       type: object
       properties:
@@ -4928,7 +4998,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
             externalId:
@@ -4967,88 +5037,92 @@ components:
               properties:
                 id:
                   type: integer
-                  format: int32
+                  format: int64
             reference:
               type: object
               properties:
                 id:
                   type: integer
-                  format: int32
+                  format: int64
                 type:
                   type: string
                 name:
                   type: string
                 displayName:
                   type: string
-    MetaObject:
-      type: object
-      description: >-
-        Metadata about the returned array of results, provides pagination
-        information.
-      properties:
-        offset:
-          type: integer
-          format: int64
-          description: >-
-            Offset records, the number of records to skip, can be used to
-            paginate over results.
-          default: 0
-        max:
-          type: integer
-          format: int64
-          description: Max size, the maximum number of records to include in the response.
-          default: 25
-        size:
-          type: integer
-          format: int64
-          description: Number of records returned in the response
-          default: 0
-        total:
-          type: integer
-          format: int64
-          description: Total number of records found
-          default: 0
-    approvals:
+    approval:
       type: object
       properties:
-        approvals:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        internalId:
+          type: string
+          format: nullable
+        externalId:
+          type: string
+          format: nullable
+        externalName:
+          type: string
+          format: nullable
+        requestType:
+          type: string
+        account:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        approver:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        accountIntegration:
+          type: string
+          format: nullable
+        status:
+          type: string
+        errorMessage:
+          type: string
+          format: nullable
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+        requestBy:
+          type: string
+        approvalItems:
           type: array
           items:
             type: object
             properties:
               id:
                 type: integer
-                format: int32
+                format: int64
               name:
                 type: string
-              internalId:
-                type: string
-                format: nullable
               externalId:
                 type: string
                 format: nullable
               externalName:
                 type: string
                 format: nullable
-              requestType:
+              internalId:
                 type: string
-              account:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int32
-                  name:
-                    type: string
-              approver:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int32
-                  name:
-                    type: string
-              accountIntegration:
+                format: nullable
+              approvedBy:
+                type: string
+              deniedBy:
                 type: string
                 format: nullable
               status:
@@ -5062,123 +5136,30 @@ components:
               lastUpdated:
                 type: string
                 format: date-time
-              requestBy:
+              dateApproved:
                 type: string
-        meta:
-          $ref: '#/components/schemas/MetaObject'
-    approval:
-      type: object
-      properties:
-        approval:
-          type: object
-          properties:
-            id:
-              type: integer
-              format: int32
-            name:
-              type: string
-            internalId:
-              type: string
-              format: nullable
-            externalId:
-              type: string
-              format: nullable
-            externalName:
-              type: string
-              format: nullable
-            requestType:
-              type: string
-            account:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int32
-                name:
-                  type: string
-            approver:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int32
-                name:
-                  type: string
-            accountIntegration:
-              type: string
-              format: nullable
-            status:
-              type: string
-            errorMessage:
-              type: string
-              format: nullable
-            dateCreated:
-              type: string
-              format: date-time
-            lastUpdated:
-              type: string
-              format: date-time
-            requestBy:
-              type: string
-            approvalItems:
-              type: array
-              items:
+                format: date-time
+              dateDenied:
+                type: string
+                format: nullable
+              approval:
                 type: object
                 properties:
                   id:
                     type: integer
-                    format: int32
+                    format: int64
+              reference:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                  type:
+                    type: string
                   name:
                     type: string
-                  externalId:
+                  displayName:
                     type: string
-                    format: nullable
-                  externalName:
-                    type: string
-                    format: nullable
-                  internalId:
-                    type: string
-                    format: nullable
-                  approvedBy:
-                    type: string
-                  deniedBy:
-                    type: string
-                    format: nullable
-                  status:
-                    type: string
-                  errorMessage:
-                    type: string
-                    format: nullable
-                  dateCreated:
-                    type: string
-                    format: date-time
-                  lastUpdated:
-                    type: string
-                    format: date-time
-                  dateApproved:
-                    type: string
-                    format: date-time
-                  dateDenied:
-                    type: string
-                    format: nullable
-                  approval:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        format: int32
-                  reference:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        format: int32
-                      type:
-                        type: string
-                      name:
-                        type: string
-                      displayName:
-                        type: string
     wikiPage:
       type: object
       properties:
@@ -5275,6 +5256,34 @@ components:
               format: date-time
         success:
           type: boolean
+    MetaObject:
+      type: object
+      description: >-
+        Metadata about the returned array of results, provides pagination
+        information.
+      properties:
+        offset:
+          type: integer
+          format: int64
+          description: >-
+            Offset records, the number of records to skip, can be used to
+            paginate over results.
+          default: 0
+        max:
+          type: integer
+          format: int64
+          description: Max size, the maximum number of records to include in the response.
+          default: 25
+        size:
+          type: integer
+          format: int64
+          description: Number of records returned in the response
+          default: 0
+        total:
+          type: integer
+          format: int64
+          description: Total number of records found
+          default: 0
     budgets:
       type: object
       properties:
@@ -7778,50 +7787,6 @@ components:
     '503':
       description: Service Unavailable.
   examples:
-    activity:
-      summary: Activity Response
-      value:
-        activity:
-          - _id: a1f0e20c-8d56-4b53-8dd0-a8444d7bc875
-            success: true
-            activityType: Alert
-            name: MRDMMON1014
-            message: Instance has successfully been deleted by 'Morpheus'.
-            objectType: Instance
-            objectId: 18217
-            user:
-              id: 263
-              username: Martez Reed
-            ts: '2022-03-07T03:27:06Z'
-          - _id: 1782bcbc-a5b3-4ca8-8d40-de5d9f52c6ab
-            success: true
-            activityType: Alert
-            name: MRDMMON1013
-            message: Instance has successfully been deleted by 'Morpheus'.
-            objectType: Instance
-            objectId: 18216
-            user:
-              id: 263
-              username: Martez Reed
-            ts: '2022-03-07T02:03:34Z'
-          - _id: ca165d7c-7e9c-4d1f-9d66-58a3a17760d2
-            success: true
-            activityType: Alert
-            name: MRDMMON1012
-            message: Instance has successfully been deleted by 'Morpheus'.
-            objectType: Instance
-            objectId: 18215
-            user:
-              id: 263
-              username: Martez Reed
-            ts: '2022-03-07T01:35:26Z'
-        meta:
-          size: 3
-          total: 999
-          max: 3
-          offset: 0
-          startDate: '2022-02-07T00:00:00Z'
-          endDate: '2022-03-07T03:38:50Z'
     approvalItem:
       summary: Approval Items Response
       value:
@@ -7873,49 +7838,6 @@ components:
           total: 1
           max: 25
           offset: 0
-    approval:
-      summary: Approval Response
-      value:
-        approval:
-          id: 45
-          name: APPROVAL-0000045
-          internalId: null
-          externalId: null
-          externalName: null
-          requestType: Instance Approval
-          account:
-            id: 3
-            name: Morpheus
-          approver:
-            id: 3
-            name: Morpheus
-          accountIntegration: null
-          status: 1 approved
-          errorMessage: null
-          dateCreated: '2022-01-25T21:43:35Z'
-          lastUpdated: '2022-01-27T00:14:27Z'
-          requestBy: Aaron Reid
-          approvalItems:
-            - id: 13
-              name: ITEM-0000013
-              externalId: null
-              externalName: null
-              internalId: null
-              approvedBy: Aaron Reid
-              deniedBy: null
-              status: approved
-              errorMessage: null
-              dateCreated: '2022-01-25T21:43:35Z'
-              lastUpdated: '2022-01-25T21:44:01Z'
-              dateApproved: '2022-01-25T21:44:01Z'
-              dateDenied: null
-              approval:
-                id: 45
-              reference:
-                id: 17901
-                type: instance
-                name: ARDMCEN1280
-                displayName: ARDMCEN1280
     wikiPage:
       summary: Wiki Response
       value:

@@ -1,0 +1,35 @@
+{
+  "summary": "Approvals Response",
+  "value": {
+    "approvals": [
+      {
+        "id": 45,
+        "name": "APPROVAL-0000045",
+        "internalId": null,
+        "externalId": null,
+        "externalName": null,
+        "requestType": "Instance Approval",
+        "account": {
+          "id": 3,
+          "name": "Morpheus"
+        },
+        "approver": {
+          "id": 3,
+          "name": "Morpheus"
+        },
+        "accountIntegration": null,
+        "status": "1 approved",
+        "errorMessage": null,
+        "dateCreated": "2022-01-25T21:43:35Z",
+        "lastUpdated": "2022-01-27T00:14:27Z",
+        "requestBy": "Aaron Reid"
+      }
+    ],
+    "meta": {
+      "size": 1,
+      "total": 1,
+      "max": 25,
+      "offset": 0
+    }
+  }
+}

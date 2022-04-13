@@ -1,0 +1,34 @@
+{
+    "activity": [
+        {
+            "_id": "2471ed0e-bf19-40af-affa-8d210fe0228c",
+            "success": true,
+            "activityType": "Alert",
+            "name": "ABDMWIN2282",
+            "message": "Instance has successfully been deleted by 'Morpheus'.",
+            "objectType": "Instance",
+            "objectId": 19027,
+            "user": null,
+            "ts": "2022-04-13T21:58:01Z"
+        },
+        {
+            "_id": "ef263cb3-0403-4763-aa65-50fec82ef840",
+            "success": true,
+            "activityType": "Alert",
+            "name": "ABDMWIN2282",
+            "message": "Server has successfully been deleted by 'Morpheus'.",
+            "objectType": "ComputeServer",
+            "objectId": 224203,
+            "user": null,
+            "ts": "2022-04-13T21:58:01Z"
+        }
+    ],
+    "meta": {
+        "size": 2,
+        "total": 1000,
+        "max": 2,
+        "offset": 0,
+        "startDate": "2022-03-13T00:00:00Z",
+        "endDate": "2022-04-13T22:06:14Z"
+    }
+}

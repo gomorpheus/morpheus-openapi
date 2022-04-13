@@ -5,7 +5,7 @@ properties:
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
       name: 
         type: string
       externalId: 
@@ -44,13 +44,13 @@ properties:
         properties: 
           id: 
             type: integer
-            format: int32
+            format: int64
       reference: 
         type: object
         properties: 
           id: 
             type: integer
-            format: int32
+            format: int64
           type: 
             type: string
           name: 

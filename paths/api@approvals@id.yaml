@@ -15,10 +15,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/approval.yaml
+            type: object
+            properties:
+              approval:
+                $ref: ../components/schemas/approval.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/approval.yaml
+              value:
+                $ref: ../components/examples/approval.json
     '400':
       description: Bad Request.
     '401':

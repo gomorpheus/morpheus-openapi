@@ -31,24 +31,3 @@ properties:
         ts: 
           type: string
           format: date-time
-  meta: 
-    type: object
-    properties: 
-      size: 
-        type: integer
-        format: int64
-      total: 
-        type: integer
-        format: int64
-      max: 
-        type: integer
-        format: int64
-      offset: 
-        type: integer
-        format: int64
-      startDate: 
-        type: string
-        format: date-time
-      endDate: 
-        type: string
-        format: date-time
