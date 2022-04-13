@@ -96,8 +96,13 @@ post:
         application/json:
           schema:
             allOf:
-              - $ref: ../components/schemas/tenant.yaml
-              - $ref: ../components/schemas/200-success.yaml
+            - type: object
+              properties:
+                accounts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/tenant.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
                 $ref: ../components/examples/tenantSuccess.json
