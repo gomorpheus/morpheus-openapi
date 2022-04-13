@@ -29,7 +29,8 @@ get:
             - $ref: ../components/schemas/meta.yaml
           examples:
             Tenants Response:
-              $ref: ../components/examples/tenants.json
+              value:
+                $ref: ../components/examples/tenants.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -107,6 +108,7 @@ post:
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
+              value:
                 $ref: ../components/examples/tenantSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
