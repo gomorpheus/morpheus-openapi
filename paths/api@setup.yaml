@@ -96,7 +96,7 @@ post:
         application/json:
           schema:
             allOf:
-              - $ref: ..\components\schemas\Error.yaml
+              - $ref: ../components/schemas/Error.yaml
               - example:
                   success: false
                   msg: Appliance has already been setup

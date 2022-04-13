@@ -13,10 +13,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\docs.yaml
+            $ref: ../components/schemas/docs.yaml
           examples:
             Docs Response:
-              $ref: ..\components\examples\docs.yaml
+              $ref: ../components/examples/docs.yaml
     '400':
       description: Bad Request.
     '401':

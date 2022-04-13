@@ -5,11 +5,11 @@ get:
   tags:
     - Roles
   parameters:
-    - $ref: ..\components\parameters\phrase.yaml
-    - $ref: ..\components\parameters\max.yaml
-    - $ref: ..\components\parameters\offset.yaml
-    - $ref: ..\components\parameters\sort.yaml
-    - $ref: ..\components\parameters\direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
     - name: authority
       in: query
       description: Filter by authority
@@ -29,10 +29,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\roles.yaml
+            $ref: ../components/schemas/roles.yaml
           examples:
             List Roles Response:
-              $ref: ..\components\examples\roles.yaml
+              $ref: ../components/examples/roles.yaml
     '400':
       description: Bad Request.
     '401':
@@ -102,17 +102,17 @@ post:
                     tenant*
         examples:
           CreateRoleRequest:
-            $ref: ..\components\examples\roles.yaml
+            $ref: ../components/examples/roles.yaml
   responses:
     '200':
       description: Role Object
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\roles.yaml
+            $ref: ../components/schemas/roles.yaml
           examples:
             CreateRoleResponse:
-              $ref: ..\components\examples\roles.yaml
+              $ref: ../components/examples/roles.yaml
     '400':
       description: Bad Request.
     '401':

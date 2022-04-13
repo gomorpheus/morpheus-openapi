@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ..\components\parameters\id-path.yaml
+  - $ref: ../components/parameters/id-path.yaml
 get:
   summary: Get role
   description: Get details about a role
@@ -12,10 +12,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\role.yaml
+            $ref: ../components/schemas/role.yaml
           examples:
             GetRoleResponse:
-              $ref: ..\components\examples\role.yaml
+              $ref: ../components/examples/role.yaml
     '400':
       description: Bad Request.
     '401':
@@ -59,10 +59,10 @@ put:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\role.yaml
+            $ref: ../components/schemas/role.yaml
           examples:
             UpdateRoleResponse:
-              $ref: ..\components\examples\role.yaml
+              $ref: ../components/examples/role.yaml
     '400':
       description: Bad Request.
     '401':
@@ -87,13 +87,13 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200-success.yaml
+            $ref: ../components/schemas/200-success.yaml
     '400':
       description: Role still has managed resources
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
           examples:
             roleInUse:
               summary: Role is assigned to a user or tenant

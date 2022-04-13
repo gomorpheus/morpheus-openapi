@@ -13,10 +13,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\license.yaml
+            $ref: ../components/schemas/license.yaml
           examples:
             getLicense:
-              $ref: ..\components\examples\license.yaml
+              $ref: ../components/examples/license.yaml
     '400':
       description: Bad Request.
     '401':
@@ -60,16 +60,16 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\license.yaml
+            $ref: ../components/schemas/license.yaml
           examples:
             installLicense:
-              $ref: ..\components\examples\license.yaml
+              $ref: ../components/examples/license.yaml
     '400':
       description: License install failed
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
           example:
             success: false
             msg: Unable to decode license content
@@ -98,7 +98,7 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\200-success.yaml
+            $ref: ../components/schemas/200-success.yaml
     '400':
       description: Bad Request.
     '401':
