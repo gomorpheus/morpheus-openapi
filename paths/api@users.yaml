@@ -35,7 +35,8 @@ get:
             - $ref: ../components/schemas/global.yaml
           examples:
             Users Response:
-              $ref: ../components/examples/users.json
+              value:
+                $ref: ../components/examples/users.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -109,7 +110,8 @@ post:
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Create User Response:
-              $ref: ../components/examples/userSuccess.json
+              value:
+                $ref: ../components/examples/userSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

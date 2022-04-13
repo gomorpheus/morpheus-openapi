@@ -16,7 +16,8 @@ get:
             $ref: ../components/schemas/tenant.yaml
           examples:
             Tenant Response:
-              $ref: ../components/examples/tenant.json
+              value:
+                $ref: ../components/examples/tenant.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -82,7 +83,8 @@ put:
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
-              $ref: ../components/examples/tenantSuccess.json
+              value:
+                $ref: ../components/examples/tenantSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -124,7 +126,8 @@ delete:
             $ref: ../components/schemas/200-success.yaml
           examples:
             Successful Deletion:
-              $ref: ../components/examples/success.json
+              value:
+                $ref: ../components/examples/success.json
     '400':
       description: Tenant still has managed resources
       content:
