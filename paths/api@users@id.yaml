@@ -16,7 +16,8 @@ get:
             $ref: ../components/schemas/user.yaml
           examples:
             Get User Response:
-              $ref: ../components/examples/user.json
+              value:
+                $ref: ../components/examples/user.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -81,7 +82,8 @@ put:
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Update User Response:
-              $ref: ../components/examples/userSuccess.json
+              value:
+                $ref: ../components/examples/userSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -110,7 +112,8 @@ delete:
             $ref: ../components/schemas/200-success.yaml
           examples:
             Update User Response:
-              $ref: ../components/examples/success.json
+              value:
+                $ref: ../components/examples/success.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
