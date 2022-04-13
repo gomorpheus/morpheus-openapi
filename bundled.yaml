@@ -55,7 +55,53 @@ paths:
                   - $ref: '#/components/schemas/meta'
               examples:
                 Tenants Response:
-                  $ref: '#/components/examples/tenants'
+                  value:
+                    accounts:
+                      - id: 52
+                        name: A Tenant
+                        description: A subtenant
+                        subdomain: atenant
+                        currency: USD
+                        externalId: null
+                        customerNumber: null
+                        accountNumber: null
+                        accountName: atenant
+                        active: true
+                        master: false
+                        role:
+                          id: 425
+                          authority: A Tenant Role
+                          description: null
+                        stats:
+                          instanceCount: 0
+                          userCount: 9
+                        dateCreated: '2020-06-18T23:13:32Z'
+                        lastUpdated: '2022-01-20T21:35:32Z'
+                      - id: 50
+                        name: Gekko & Co
+                        description: null
+                        subdomain: gekko
+                        currency: USD
+                        externalId: null
+                        customerNumber: null
+                        accountNumber: null
+                        accountName: gekko
+                        active: true
+                        master: false
+                        role:
+                          id: 84
+                          authority: Gekko & Co
+                          description: 'Role for Sub-Tenant: Gekko Tenant Role'
+                        stats:
+                          instanceCount: 0
+                          userCount: 3
+                        dateCreated: '2017-11-14T14:22:49Z'
+                        lastUpdated: '2021-01-11T15:06:14Z'
+                    meta:
+                      offset: 0
+                      max: 2
+                      size: 2
+                      total: 8
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -133,7 +179,29 @@ paths:
                   - $ref: '#/components/schemas/200-success'
               examples:
                 Tenant Response:
-                  $ref: '#/components/examples/tenantSuccess'
+                  value:
+                    account:
+                      id: 52
+                      name: A Tenant
+                      description: A subtenant
+                      subdomain: atenant
+                      currency: USD
+                      externalId: null
+                      customerNumber: null
+                      accountNumber: null
+                      accountName: atenant
+                      active: true
+                      master: false
+                      role:
+                        id: 425
+                        authority: A Tenant Role
+                        description: null
+                      stats:
+                        instanceCount: 0
+                        userCount: 9
+                      dateCreated: '2020-06-18T23:13:32Z'
+                      lastUpdated: '2022-01-20T21:35:32Z'
+                    success: true
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -7124,54 +7192,42 @@ components:
         scope:
           type: string
           description: Scope granted
+  responses:
+    '400':
+      description: Bad Request.
+    '401':
+      description: Unauthorized.
+    '403':
+      description: Forbidden.
+    '404':
+      description: Object Not Found.
+    '500':
+      description: Internal Server Error.
+    '503':
+      description: Service Unavailable.
   examples:
-    tenants:
-      accounts:
-        - id: 52
-          name: A Tenant
-          description: A subtenant
-          subdomain: atenant
-          currency: USD
-          externalId: null
-          customerNumber: null
-          accountNumber: null
-          accountName: atenant
-          active: true
-          master: false
-          role:
-            id: 425
-            authority: A Tenant Role
-            description: null
-          stats:
-            instanceCount: 0
-            userCount: 9
-          dateCreated: '2020-06-18T23:13:32Z'
-          lastUpdated: '2022-01-20T21:35:32Z'
-        - id: 50
-          name: Gekko & Co
+    tenant:
+      account:
+        id: 52
+        name: A Tenant
+        description: A subtenant
+        subdomain: atenant
+        currency: USD
+        externalId: null
+        customerNumber: null
+        accountNumber: null
+        accountName: atenant
+        active: true
+        master: false
+        role:
+          id: 425
+          authority: A Tenant Role
           description: null
-          subdomain: gekko
-          currency: USD
-          externalId: null
-          customerNumber: null
-          accountNumber: null
-          accountName: gekko
-          active: true
-          master: false
-          role:
-            id: 84
-            authority: Gekko & Co
-            description: 'Role for Sub-Tenant: Gekko Tenant Role'
-          stats:
-            instanceCount: 0
-            userCount: 3
-          dateCreated: '2017-11-14T14:22:49Z'
-          lastUpdated: '2021-01-11T15:06:14Z'
-      meta:
-        offset: 0
-        max: 2
-        size: 2
-        total: 8
+        stats:
+          instanceCount: 0
+          userCount: 9
+        dateCreated: '2020-06-18T23:13:32Z'
+        lastUpdated: '2022-01-20T21:35:32Z'
     tenantSuccess:
       account:
         id: 52
@@ -7195,28 +7251,6 @@ components:
         dateCreated: '2020-06-18T23:13:32Z'
         lastUpdated: '2022-01-20T21:35:32Z'
       success: true
-    tenant:
-      account:
-        id: 52
-        name: A Tenant
-        description: A subtenant
-        subdomain: atenant
-        currency: USD
-        externalId: null
-        customerNumber: null
-        accountNumber: null
-        accountName: atenant
-        active: true
-        master: false
-        role:
-          id: 425
-          authority: A Tenant Role
-          description: null
-        stats:
-          instanceCount: 0
-          userCount: 9
-        dateCreated: '2020-06-18T23:13:32Z'
-        lastUpdated: '2022-01-20T21:35:32Z'
     success:
       success: true
     activity:
@@ -12552,19 +12586,6 @@ components:
         expires_in: 30463819
         token_type: bearer
         scope: write
-  responses:
-    '400':
-      description: Bad Request.
-    '401':
-      description: Unauthorized.
-    '403':
-      description: Forbidden.
-    '404':
-      description: Object Not Found.
-    '500':
-      description: Internal Server Error.
-    '503':
-      description: Service Unavailable.
 security:
   - bearerAuth: []
 externalDocs:
