@@ -18,9 +18,9 @@ get:
           schema:
             $ref: ../components/schemas/wikiPage.yaml
           examples:
-            Wiki Response:
+            wikiResponse:
               $ref: ../components/examples/wikiPage.yaml
-            Blank Wiki Response:
+            emptyWikiResponse:
               $ref: ../components/examples/wikiEmpty.yaml
     '400':
       description: Bad Request.

@@ -19,14 +19,14 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties: 
-              accounts:
-                type: array
-                items:
-                  allOf:
-                    - $ref: ../components/schemas/tenant.yaml
-                    - $ref: ../components/schemas/meta.yaml
+            allOf:
+            - type: object
+              properties:
+                accounts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/tenant.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
             Tenants Response:
               $ref: ../components/examples/tenants.json

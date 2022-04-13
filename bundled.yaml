@@ -45,14 +45,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  accounts:
-                    type: array
-                    items:
-                      allOf:
-                        - $ref: '#/components/schemas/tenant'
-                        - $ref: '#/components/schemas/meta'
+                allOf:
+                  - type: object
+                    properties:
+                      accounts:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/tenant'
+                  - $ref: '#/components/schemas/meta'
               examples:
                 Tenants Response:
                   $ref: '#/components/examples/tenants'
@@ -964,9 +964,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/wikiPage'
               examples:
-                Wiki Response:
+                wikiResponse:
                   $ref: '#/components/examples/wikiPage'
-                Blank Wiki Response:
+                emptyWikiResponse:
                   $ref: '#/components/examples/wikiEmpty'
         '400':
           description: Bad Request.
@@ -4106,32 +4106,34 @@ components:
               format: date-time
     meta:
       type: object
-      description: >-
-        Metadata about the returned array of results, provides pagination
-        information.
       properties:
-        offset:
-          type: integer
-          format: int64
-          description: >-
-            Offset records, the number of records to skip, can be used to
-            paginate over results.
-          default: 0
-        max:
-          type: integer
-          format: int64
-          description: Max size, the maximum number of records to include in the response.
-          default: 25
-        size:
-          type: integer
-          format: int64
-          description: Number of records returned in the response
-          default: 0
-        total:
-          type: integer
-          format: int64
-          description: Total number of records found
-          default: 0
+        meta:
+          type: object
+          properties:
+            offset:
+              type: integer
+              format: int64
+              description: >-
+                Offset records, the number of records to skip, can be used to
+                paginate over results.
+              default: 0
+            max:
+              type: integer
+              format: int64
+              description: >-
+                Max size, the maximum number of records to include in the
+                response.
+              default: 25
+            size:
+              type: integer
+              format: int64
+              description: Number of records returned in the response
+              default: 0
+            total:
+              type: integer
+              format: int64
+              description: Total number of records found
+              default: 0
     CurrencyCode:
       type: string
       description: Currency Code (ISO 4217)
@@ -9839,48 +9841,48 @@ components:
           $ref: '#/components/schemas/MetaObject'
     roles:
       summary: Roles Response
-      value: null
-      roles:
-        - id: 425
-          authority: A Tenant Role
-          description: null
-          scope: Account
-          roleType: account
-          multitenant: false
-          multitenantLocked: false
-          parentRoleId: null
-          diverged: true
-          ownerId: 3
-          owner:
-            id: 3
-            name: Morpheus
-          defaultPersona: null
-          dateCreated: '2020-06-18T23:12:28Z'
-          lastUpdated: '2021-11-18T06:59:15Z'
-        - id: 17
-          authority: ah-admin
-          description: Adam Hicks Role
-          scope: Account
-          roleType: user
-          multitenant: false
-          multitenantLocked: false
-          parentRoleId: null
-          diverged: true
-          ownerId: 3
-          owner:
-            id: 3
-            name: Morpheus
-          defaultPersona:
-            id: 2
-            code: serviceCatalog
-            name: Service Catalog
-          dateCreated: '2017-04-10T23:07:14Z'
-          lastUpdated: '2022-01-24T19:32:42Z'
-      meta:
-        offset: 0
-        max: 2
-        size: 2
-        total: 41
+      value:
+        roles:
+          - id: 425
+            authority: A Tenant Role
+            description: null
+            scope: Account
+            roleType: account
+            multitenant: false
+            multitenantLocked: false
+            parentRoleId: null
+            diverged: true
+            ownerId: 3
+            owner:
+              id: 3
+              name: Morpheus
+            defaultPersona: null
+            dateCreated: '2020-06-18T23:12:28Z'
+            lastUpdated: '2021-11-18T06:59:15Z'
+          - id: 17
+            authority: ah-admin
+            description: Adam Hicks Role
+            scope: Account
+            roleType: user
+            multitenant: false
+            multitenantLocked: false
+            parentRoleId: null
+            diverged: true
+            ownerId: 3
+            owner:
+              id: 3
+              name: Morpheus
+            defaultPersona:
+              id: 2
+              code: serviceCatalog
+              name: Service Catalog
+            dateCreated: '2017-04-10T23:07:14Z'
+            lastUpdated: '2022-01-24T19:32:42Z'
+        meta:
+          offset: 0
+          max: 2
+          size: 2
+          total: 41
     role:
       summary: Role Response
       value:
