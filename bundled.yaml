@@ -94,10 +94,12 @@ paths:
                     name:
                       type: string
                       description: Name
+                      example: Test Tenant
                     description:
                       type: string
                       description: Description
                       nullable: true
+                      example: Testing Tenant Creation
                     role:
                       type: object
                       description: >-
@@ -107,12 +109,14 @@ paths:
                         id:
                           type: integer
                           format: int64
+                          example: 3
                     subdomain:
                       type: string
                       description: >-
                         The subdomain. This will be part of the login URL and
                         username for sub tenant users.
                       nullable: true
+                      example: tt
                     currency:
                       $ref: '#/components/schemas/CurrencyCode'
       responses:
@@ -3844,6 +3848,7 @@ components:
         enum:
           - asc
           - desc
+      example: asc
     phrase:
       name: phrase
       in: query
@@ -3856,6 +3861,7 @@ components:
       description: Filter by name, wildcard may be specified as %, eg. example-%
       schema:
         type: string
+      example: example%
     lastUpdated:
       name: lastUpdated
       in: query
@@ -3873,6 +3879,7 @@ components:
       required: true
       schema:
         type: number
+      example: 7
     order:
       name: order
       in: query
@@ -3889,12 +3896,14 @@ components:
       description: Filter by User ID
       schema:
         type: number
+      example: 6
     tenantId:
       name: tenantId
       in: query
       description: Filter by Tenant ID. Only available to the master account.
       schema:
         type: number
+      example: 3
     action-path:
       name: action
       in: path
@@ -3906,6 +3915,7 @@ components:
           - approve
           - deny
           - cancel
+      example: approve
     instanceId:
       name: instanceId
       in: query
@@ -3914,6 +3924,7 @@ components:
         type: integer
         format: int64
         description: Instance ID
+      example: 94
     containerId:
       name: containerId
       in: query
@@ -3922,6 +3933,7 @@ components:
         type: integer
         format: int64
         description: Container ID
+      example: 135
     serverId:
       name: serverId
       in: query
@@ -3930,6 +3942,7 @@ components:
         type: integer
         format: int64
         description: Server ID
+      example: 97
     zoneId:
       name: zoneId
       in: query
@@ -3938,6 +3951,7 @@ components:
         type: integer
         format: int64
         description: Zone ID
+      example: 3
     appId:
       name: appId
       in: query
@@ -3946,12 +3960,14 @@ components:
         type: integer
         format: int64
         description: App ID
+      example: 5
     code:
       name: code
       in: query
       description: If specified will return an exact match on code
       schema:
         type: string
+      example: azr
     category:
       name: category
       in: query
@@ -3982,6 +3998,7 @@ components:
       schema:
         type: string
         format: date-time
+      example: '2019-01-01'
     endDate:
       name: endDate
       in: query
@@ -3989,24 +4006,28 @@ components:
       schema:
         type: string
         format: date-time
+      example: '2020-01-01'
     username:
       name: username
       in: query
       description: Username
       schema:
         type: string
+      example: administrator
     email:
       name: email
       in: query
       description: E-Mail Address
       schema:
         type: string
+      example: mytest@email.com
     firstName:
       name: firstName
       in: query
       description: First Name
       schema:
         type: string
+      example: Thomas
     roleId:
       name: roleId
       in: query
@@ -4014,12 +4035,14 @@ components:
       schema:
         type: integer
         format: int64
+      example: 13
     role:
       name: role
       in: query
       description: Filter by Role authority (supports multiple values)
       schema:
         type: string
+      example: Morpheus Admins
     accountId:
       name: accountId
       in: query
@@ -4029,6 +4052,7 @@ components:
       schema:
         type: integer
         format: int64
+      example: 3
     global:
       name: global
       in: query

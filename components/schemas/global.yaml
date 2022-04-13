@@ -1,6 +1,6 @@
 type: object
 properties:
-  offset:
+  global:
     type: boolean
     description: >-
       Global (All Tenants), load users from all tenants. The default is to only see your own tenant.

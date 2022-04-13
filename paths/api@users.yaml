@@ -24,15 +24,15 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties: 
-              users:
-                type: array
-                items:
-                  allOf:
-                  - $ref: ../components/schemas/user.yaml
-                  - $ref: ../components/schemas/meta.yaml
-                  - $ref: ../components/schemas/global.yaml
+            allOf:
+            - type: object
+              properties:
+                users:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/user.yaml
+            - $ref: ../components/schemas/meta.yaml
+            - $ref: ../components/schemas/global.yaml
           examples:
             Users Response:
               $ref: ../components/examples/users.json
