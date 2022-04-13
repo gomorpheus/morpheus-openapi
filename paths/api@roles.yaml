@@ -69,9 +69,10 @@ post:
                   type: string
                   description: Authority (Name)
                 description:
-                  type: string
+                  type:
+                  - "string"
+                  - "null"
                   description: Description
-                  nullable: true
                 roleType:
                   type: string
                   description: Role type

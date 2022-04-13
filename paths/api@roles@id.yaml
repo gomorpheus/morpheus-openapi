@@ -50,9 +50,10 @@ put:
                   type: string
                   description: Authority (Name)
                 description:
-                  type: string
+                  type:
+                  - "string"
+                  - "null"
                   description: Description
-                  nullable: true
   responses:
     '200':
       description: Role Object
