@@ -19,7 +19,8 @@ get:
             $ref: ../components/schemas/user.yaml
           examples:
             Whoami Response:
-              $ref: ../components/examples/user.json
+              value:
+                $ref: ../components/examples/user.json
     '400':
       description: Bad Request.
     '401':

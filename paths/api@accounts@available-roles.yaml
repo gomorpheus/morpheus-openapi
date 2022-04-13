@@ -23,7 +23,8 @@ get:
             $ref: ../components/schemas/tenantsAvailableRoles.yaml
           examples:
             Tenants Available Roles Response:
-              $ref: ../components/examples/tenantsAvailableRoles.json
+              value:
+                $ref: ../components/examples/tenantsAvailableRoles.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

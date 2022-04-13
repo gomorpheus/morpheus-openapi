@@ -39,7 +39,7 @@ properties:
         type: string
       config: 
         type: object
-        properties:  
+        format: nullable
       amazonProductCodes: 
         type: string
         format: nullable

@@ -29,7 +29,7 @@ get:
             $ref: ../components/schemas/reports.yaml
           examples:
             Reports Response:
-              $ref: ../components/schemas/reports.yaml
+              $ref: ../components/examples/reports.yaml
     '400':
       description: Bad Request.
     '401':
