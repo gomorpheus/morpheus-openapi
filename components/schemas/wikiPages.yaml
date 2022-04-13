@@ -15,18 +15,21 @@ properties:
         category: 
           type: string
         refId: 
-          type: integer
+          type: 
+          - "integer"
+          - "null"
           format: int64
-          nullable: true
         refType: 
-          type: integer
+          type:
+          - "integer"
+          - "null"
           format: int64
-          nullable: true
         format: 
           type: string
         content: 
-          type: string
-          format: nullable
+          type:
+          - "string"
+          - "null"
         createdBy: 
           type: object
           properties: 

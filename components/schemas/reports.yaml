@@ -23,8 +23,9 @@ properties:
         reportTitle: 
           type: string
         filterTitle: 
-          type: string
-          format: nullable
+          type: 
+          - "string"
+          - "null"
         status: 
           type: string
         dateCreated: 
@@ -34,55 +35,69 @@ properties:
           type: string
           format: date-time
         startDate: 
-          type: string
-          format: nullable
+          type:
+          - "string"
+          - "null"
         endDate: 
-          type: string
-          format: nullable
+          type:
+          - "string"
+          - "null"
         config: 
           type: object
           properties: 
             reportType: 
-              type: string
-              format: nullable
+              type:
+              - "string"
+              - "null"
             startDate:
-              type: string
+              type:
+              - "string"
+              - "null"
               format: date-time
-              nullable: true
             endDate:
-              type: string
+              type:
+              - "string"
+              - "null"
               format: date-time
-              nullable: true
             name:
-              type: string
-              format: nullable
+              type:
+              - "string"
+              - "null"
             scheduleMode:
-              type: string
-              nullable: true
+              type:
+              - "string"
+              - "null"
             dateTime:
-              type: string
+              type:
+              - "string"
+              - "null"
               format: date-time
-              nullable: true
             cloudId:
-              type: string
-              format: nullable
+              type:
+              - "string"
+              - "null"
             config:
-              type: object
-              nullable: true
+              type:
+              - "object"
+              - "null"
               properties:
                 dateTime:
-                  type: string
+                  type:
+                  - "string"
+                  - "null"
                   format: date-time
-                  nullable: true
                 cloudId:
-                  type: string
-                  format: nullable
+                  type:
+                  - "string"
+                  - "null"
             metadata: 
-              type: string
-              format: nullable
+              type:
+              - "string"
+              - "null"
             metadataExclude: 
-              type: string
-              format: nullable
+              type:
+              - "string"
+              - "null"
         createdBy: 
           type: object
           properties: 
