@@ -68,10 +68,12 @@ post:
                 name:
                   type: string
                   description: Name
+                  example: Test Tenant
                 description:
                   type: string
                   description: Description
                   nullable: true
+                  example: Testing Tenant Creation
                 role:
                   type: object
                   description: >-
@@ -81,12 +83,14 @@ post:
                     id:
                       type: integer
                       format: int64
+                      example: 3
                 subdomain:
                   type: string
                   description: >-
                     The subdomain. This will be part of the login URL and
                     username for sub tenant users.
                   nullable: true
+                  example: tt
                 currency:
                   $ref: ../components/schemas/CurrencyCode.yaml
   responses:
@@ -96,12 +100,7 @@ post:
         application/json:
           schema:
             allOf:
-            - type: object
-              properties:
-                accounts:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/tenant.yaml
+            - $ref: ../components/schemas/tenant.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Tenant Response:
