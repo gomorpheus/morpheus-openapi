@@ -656,7 +656,7 @@ paths:
         '503':
           description: Service Unavailable.
   /api/approval-items/{id}/{action}:
-    get:
+    put:
       summary: Updates a Specific Approval Item
       description: |
         Updates a specific approval item.
