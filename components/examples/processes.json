@@ -1,0 +1,220 @@
+{
+  "processes": [
+    {
+      "id": 47650,
+      "accountId": 3,
+      "uniqueId": "5ebfd015-db2c-4cdc-9c03-782829c10c24",
+      "processType": {
+        "code": "provision",
+        "name": "provision"
+      },
+      "displayName": "apache_578815",
+      "description": null,
+      "subType": null,
+      "subId": null,
+      "zoneId": 141,
+      "integrationId": null,
+      "appId": null,
+      "instanceId": 18221,
+      "containerId": 578815,
+      "serverId": 219545,
+      "containerName": "apache_578815",
+      "status": "complete",
+      "reason": null,
+      "percent": 100,
+      "statusEta": 0,
+      "message": null,
+      "output": null,
+      "error": null,
+      "startDate": "2022-03-07T14:48:26Z",
+      "endDate": "2022-03-07T14:48:54Z",
+      "duration": 28086,
+      "dateCreated": "2022-03-07T14:48:26Z",
+      "lastUpdated": "2022-03-07T14:48:54Z",
+      "createdBy": {
+        "username": "jsmith",
+        "displayName": "James Smith"
+      },
+      "updatedBy": {
+        "username": "jsmith",
+        "displayName": "James Smith"
+      },
+      "events": [
+        {
+          "id": 126666,
+          "processId": 47650,
+          "accountId": 3,
+          "uniqueId": "3325776e-5f1b-43d6-b6fa-aa593b9a9840",
+          "processType": {
+            "code": "provisionResources",
+            "name": "prepare resources"
+          },
+          "description": null,
+          "refType": "container",
+          "refId": 578815,
+          "subType": null,
+          "subId": null,
+          "zoneId": 141,
+          "integrationId": null,
+          "instanceId": 18221,
+          "containerId": 578815,
+          "serverId": 219545,
+          "containerName": "apache_578815",
+          "displayName": "apache_578815",
+          "status": "complete",
+          "reason": null,
+          "percent": 100,
+          "statusEta": 32921,
+          "message": null,
+          "output": null,
+          "error": null,
+          "startDate": "2022-03-07T14:48:26Z",
+          "endDate": "2022-03-07T14:48:26Z",
+          "duration": 39,
+          "dateCreated": "2022-03-07T14:48:26Z",
+          "lastUpdated": "2022-03-07T14:48:26Z",
+          "createdBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          },
+          "updatedBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          }
+        },
+        {
+          "id": 126667,
+          "processId": 47650,
+          "accountId": 3,
+          "uniqueId": "432c27d5-ef4d-48f4-a0e7-b944fddd3be7",
+          "processType": {
+            "code": "provisionConfig",
+            "name": "configure instance"
+          },
+          "description": null,
+          "refType": "container",
+          "refId": 578815,
+          "subType": null,
+          "subId": null,
+          "zoneId": 141,
+          "integrationId": null,
+          "instanceId": 18221,
+          "containerId": 578815,
+          "serverId": 219545,
+          "containerName": "apache_578815",
+          "displayName": "apache_578815",
+          "status": "complete",
+          "reason": null,
+          "percent": 100,
+          "statusEta": 32921,
+          "message": null,
+          "output": null,
+          "error": null,
+          "startDate": "2022-03-07T14:48:26Z",
+          "endDate": "2022-03-07T14:48:27Z",
+          "duration": 233,
+          "dateCreated": "2022-03-07T14:48:26Z",
+          "lastUpdated": "2022-03-07T14:48:27Z",
+          "createdBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          },
+          "updatedBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          }
+        },
+        {
+          "id": 126668,
+          "processId": 47650,
+          "accountId": 3,
+          "uniqueId": "1979ef27-51a0-470e-81c3-49a5f409ae1b",
+          "processType": {
+            "code": "provisionDeploy",
+            "name": "deploy instance"
+          },
+          "description": null,
+          "refType": "container",
+          "refId": 578815,
+          "subType": null,
+          "subId": null,
+          "zoneId": 141,
+          "integrationId": null,
+          "instanceId": 18221,
+          "containerId": 578815,
+          "serverId": 219545,
+          "containerName": "apache_578815",
+          "displayName": "apache_578815",
+          "status": "complete",
+          "reason": null,
+          "percent": 100,
+          "statusEta": 32921,
+          "message": null,
+          "output": null,
+          "error": null,
+          "startDate": "2022-03-07T14:48:27Z",
+          "endDate": "2022-03-07T14:48:54Z",
+          "duration": 27258,
+          "dateCreated": "2022-03-07T14:48:27Z",
+          "lastUpdated": "2022-03-07T14:48:54Z",
+          "createdBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          },
+          "updatedBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          }
+        },
+        {
+          "id": 126669,
+          "processId": 47650,
+          "accountId": 3,
+          "uniqueId": "7ba0be9a-fdb9-4d73-8dc8-ac072efdd9c7",
+          "processType": {
+            "code": "provisionFinalize",
+            "name": "finalize"
+          },
+          "description": null,
+          "refType": "container",
+          "refId": 578815,
+          "subType": null,
+          "subId": null,
+          "zoneId": 141,
+          "integrationId": null,
+          "instanceId": 18221,
+          "containerId": 578815,
+          "serverId": 219545,
+          "containerName": "apache_578815",
+          "displayName": "apache_578815",
+          "status": "complete",
+          "reason": null,
+          "percent": 100,
+          "statusEta": 32921,
+          "message": null,
+          "output": null,
+          "error": null,
+          "startDate": "2022-03-07T14:48:54Z",
+          "endDate": "2022-03-07T14:48:54Z",
+          "duration": 69,
+          "dateCreated": "2022-03-07T14:48:54Z",
+          "lastUpdated": "2022-03-07T14:48:54Z",
+          "createdBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          },
+          "updatedBy": {
+            "username": "jsmith",
+            "displayName": "James Smith"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1544,
+    "offset": 0,
+    "max": 1
+  }
+}

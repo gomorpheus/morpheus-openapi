@@ -31,7 +31,8 @@ post:
             $ref: ../components/schemas/license.yaml
           examples:
             Successful Test License Response:
-              $ref: ../components/examples/license.yaml
+              value:
+                $ref: ../components/examples/license.json
     '400':
       description: License test failed
       content:

@@ -16,7 +16,8 @@ get:
             $ref: ../components/schemas/license.yaml
           examples:
             getLicense:
-              $ref: ../components/examples/license.yaml
+              value:
+                $ref: ../components/examples/license.json
     '400':
       description: Bad Request.
     '401':
@@ -63,7 +64,8 @@ post:
             $ref: ../components/schemas/license.yaml
           examples:
             installLicense:
-              $ref: ../components/examples/license.yaml
+              value:
+                $ref: ../components/examples/license.json
     '400':
       description: License install failed
       content:

@@ -1,0 +1,70 @@
+{
+  "reportResults": [
+    {
+      "id": 1380,
+      "type": {
+        "id": 59,
+        "code": "automation-overview-report",
+        "name": "Automation Overview",
+        "category": "inventory"
+      },
+      "reportTitle": "Automation Overview Mar 02, 2022 16:06:36",
+      "filterTitle": null,
+      "status": "ready",
+      "dateCreated": "2022-03-02T16:06:36Z",
+      "lastUpdated": "2022-03-02T16:06:37Z",
+      "startDate": null,
+      "endDate": null,
+      "config": {
+        "reportType": null,
+        "metadata": {},
+        "metadataExclude": {}
+      },
+      "createdBy": {
+        "id": 263,
+        "username": "Martez Reed"
+      }
+    },
+    {
+      "id": 1378,
+      "type": {
+        "id": 31,
+        "code": "amazonReservationUtilization",
+        "name": "Amazon Reservation Utilization",
+        "category": "cost"
+      },
+      "reportTitle": "Amazon Reservation Utilization Mar 01, 2022 00:00:07",
+      "filterTitle": "Mar 10, 2021 - Mar 12, 2022 | AWS Labs | Mar 01, 2022",
+      "status": "ready",
+      "dateCreated": "2022-03-01T00:00:07Z",
+      "lastUpdated": "2022-03-01T00:00:08Z",
+      "startDate": "2021-03-10T00:00:00Z",
+      "endDate": "2022-03-12T23:59:00Z",
+      "config": {
+        "reportType": null,
+        "startDate": "03/10/2021 00:00:00",
+        "endDate": "03/12/2022 23:59:59",
+        "name": "AWS Labs Reservation Utilization",
+        "scheduleMode": "7",
+        "dateTime": "2021-03-12 21:38:42",
+        "cloudId": "141",
+        "config": {
+          "dateTime": "2021-03-12 21:38:42",
+          "cloudId": "141"
+        },
+        "metadata": {},
+        "metadataExclude": {}
+      },
+      "createdBy": {
+        "id": 2,
+        "username": "jwheeler"
+      }
+    }
+  ],
+  "meta": {
+    "size": 2,
+    "total": 1162,
+    "offset": 0,
+    "max": 2
+  }
+}
