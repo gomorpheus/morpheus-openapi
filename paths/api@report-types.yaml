@@ -22,10 +22,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/reportTypes.yaml
+            type: object
+            properties:
+              reportTypes:
+                $ref: ../components/schemas/reportTypes.yaml
           examples:
             Report Types Response:
-              $ref: ../components/examples/reportTypes.yaml
+              value:
+                $ref: ../components/examples/reportTypes.json
     '400':
       description: Bad Request.
     '401':

@@ -20,10 +20,18 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/processes.yaml
+            allOf:
+            - type: object
+              properties:
+                processes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/process.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/processes.yaml 
+              value:
+                $ref: ../components/examples/processes.json 
     '400':
       description: Bad Request.
     '401':

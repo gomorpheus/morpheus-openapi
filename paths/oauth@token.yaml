@@ -65,7 +65,8 @@ post:
             $ref: ../components/schemas/accessToken.yaml
           examples:
             Access Token responses:
-              $ref: ../components/examples/accessToken.yaml
+              value:
+                $ref: ../components/examples/accessToken.json
     '400':
       description: Bad Request.
     '401':

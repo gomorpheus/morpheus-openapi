@@ -21,10 +21,18 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/provisionTypes.yaml
+            allOf:
+            - type: object
+              properties:
+                provisionTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/provisionType.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/provisionTypes.yaml 
+              value:
+                $ref: ../components/examples/provisionTypes.json 
     '400':
       description: Bad Request.
     '401':

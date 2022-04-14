@@ -15,11 +15,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/processEvent.yaml
+            type: object
+            properties:
+              processEvent:
+                $ref: ../components/schemas/processEvent.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/processEvent.yaml
-          
+              value:
+                $ref: ../components/examples/processEvent.json
     '400':
       description: Bad Request.
     '401':

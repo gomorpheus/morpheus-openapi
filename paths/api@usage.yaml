@@ -24,7 +24,8 @@ get:
             $ref: ../components/schemas/usages.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/usages.yaml
+              value:
+                $ref: ../components/examples/usages.json
     '400':
       description: Bad Request.
     '401':

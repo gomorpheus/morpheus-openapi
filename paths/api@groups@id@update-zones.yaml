@@ -13,9 +13,9 @@ put:
     content:
       application/json:
         schema:
-          type: object
           required:
             - group
+          type: object
           properties:
             group:
               type: object

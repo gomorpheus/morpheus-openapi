@@ -12,10 +12,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/role.yaml
+            type: object
+            properties:
+              role:
+                $ref: ../components/schemas/role.yaml
           examples:
-            GetRoleResponse:
-              $ref: ../components/examples/role.yaml
+            Role Response:
+              value:
+                $ref: ../components/examples/role.json
     '400':
       description: Bad Request.
     '401':
@@ -60,10 +64,16 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/role.yaml
+            type: object
+            properties:
+              role:
+                allOf:
+                  - $ref: ../components/schemas/role.yaml
+                  - $ref: ../components/schemas/200-success.yaml
           examples:
-            UpdateRoleResponse:
-              $ref: ../components/examples/role.yaml
+            Role Response:
+              value:
+                $ref: ../components/examples/role.json
     '400':
       description: Bad Request.
     '401':

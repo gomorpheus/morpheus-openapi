@@ -23,7 +23,8 @@ get:
             $ref: ../components/schemas/search.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/search.yaml
+              value:
+                $ref: ../components/examples/search.json
     '400':
       description: Bad Request.
     '401':

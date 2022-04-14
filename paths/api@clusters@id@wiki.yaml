@@ -16,12 +16,17 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/wikiPage.yaml
+            type: object
+            properties:
+              page:
+                $ref: ../components/schemas/wikiPage.yaml
           examples:
             wikiResponse:
-              $ref: ../components/examples/wikiPage.yaml
+              value:
+                $ref: ../components/examples/wikiPage.json
             emptyWikiResponse:
-              $ref: ../components/examples/wikiEmpty.yaml
+              value:
+                $ref: ../components/examples/wikiEmpty.json
     '400':
       description: Bad Request.
     '401':
@@ -71,12 +76,19 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/wikiAdd.yaml
+            allOf:
+            - type: object
+              properties:
+                page:
+                  $ref: ../components/schemas/wikiPage.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
             Wiki Response:
-              $ref: ../components/examples/wikiAdd.yaml
+              value:
+                $ref: ../components/examples/wikiAdd.json
             Blank Wiki Response:
-              $ref: ../components/examples/wikiEmpty.yaml
+              value:
+                $ref: ../components/examples/wikiEmpty.json
     '400':
       description: Bad Request.
     '401':

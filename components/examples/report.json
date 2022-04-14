@@ -1,0 +1,2334 @@
+{
+    "reportResult": {
+        "id": 1,
+        "type": {
+            "id": 2,
+            "code": "cloudCapacity",
+            "name": "All Cloud Capacity",
+            "category": "cloudCapacity"
+        },
+        "reportTitle": null,
+        "filterTitle": null,
+        "status": "ready",
+        "dateCreated": "2017-06-14T00:33:25Z",
+        "lastUpdated": "2017-06-14T00:33:25Z",
+        "startDate": "2017-02-15T00:00:00Z",
+        "endDate": "2017-06-14T00:00:00Z",
+        "config": {
+            "reportType": null,
+            "startDate": "02/15/2017",
+            "endDate": "06/14/2017",
+            "cloudId": ""
+        },
+        "createdBy": {
+            "id": 2,
+            "username": "jwheeler"
+        },
+        "rows": [
+            {
+                "id": 333,
+                "section": "computeTrends",
+                "data": "{\"date\":1495065600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 160,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Azure (Public)\",\"code\":\"azure\"},\"name\":\"Azure EU\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":0,\"utilization\":0.0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 325,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493683200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 213,
+                "section": "storageTrends",
+                "data": "{\"date\":1494633600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 265,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"XenServer\",\"code\":\"xenserver\"},\"name\":\"Denver Xen\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":0,\"utilization\":0.0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 197,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496534400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 381,
+                "section": "computeTrends",
+                "data": "{\"date\":1489104000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 74,
+                "section": "storageTrends",
+                "data": "{\"date\":1497225600000,\"value\":6.229630945282021E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 244,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496880000000,\"value\":6.847536195818792E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 35,
+                "section": "computeTrends",
+                "data": "{\"date\":1492041600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 183,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488931200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 243,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490918400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 310,
+                "section": "storageTrends",
+                "data": "{\"date\":1489104000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 161,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487289600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 324,
+                "section": "storageTrends",
+                "data": "{\"date\":1496016000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 335,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490054400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 204,
+                "section": "computeTrends",
+                "data": "{\"date\":1494806400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 219,
+                "section": "computeTrends",
+                "data": "{\"date\":1492300800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 226,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492128000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 122,
+                "section": "computeTrends",
+                "data": "{\"date\":1488758400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 311,
+                "section": "storageTrends",
+                "data": "{\"date\":1494892800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 279,
+                "section": "computeTrends",
+                "data": "{\"date\":1490832000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 346,
+                "section": "storageTrends",
+                "data": "{\"date\":1495497600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 86,
+                "section": "storageTrends",
+                "data": "{\"date\":1494547200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 315,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490832000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 96,
+                "section": "computeTrends",
+                "data": "{\"date\":1495584000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 139,
+                "section": "computeTrends",
+                "data": "{\"date\":1495756800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 198,
+                "section": "computeTrends",
+                "data": "{\"date\":1493596800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 231,
+                "section": "computeTrends",
+                "data": "{\"date\":1491091200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 274,
+                "section": "storageTrends",
+                "data": "{\"date\":1487548800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 78,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489449600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 350,
+                "section": "storageTrends",
+                "data": "{\"date\":1489449600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 134,
+                "section": "computeTrends",
+                "data": "{\"date\":1492992000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 40,
+                "section": "storageTrends",
+                "data": "{\"date\":1488499200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 224,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492560000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 296,
+                "section": "storageTrends",
+                "data": "{\"date\":1493424000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 146,
+                "section": "storageTrends",
+                "data": "{\"date\":1496793600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 247,
+                "section": "computeTrends",
+                "data": "{\"date\":1497225600000,\"value\":6.118132310831055}",
+                "displayOrder": null
+            },
+            {
+                "id": 126,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489104000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 295,
+                "section": "overallUtilization",
+                "data": "{\"code\":\"avgUtilization\",\"name\":\"Avg Utilization\",\"value\":0.2500969811578788}",
+                "displayOrder": null
+            },
+            {
+                "id": 7,
+                "section": "storageTrends",
+                "data": "{\"date\":1491177600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 52,
+                "section": "storageTrends",
+                "data": "{\"date\":1489190400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 207,
+                "section": "storageTrends",
+                "data": "{\"date\":1489622400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 269,
+                "section": "computeTrends",
+                "data": "{\"date\":1492387200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 306,
+                "section": "storageTrends",
+                "data": "{\"date\":1496620800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 87,
+                "section": "computeTrends",
+                "data": "{\"date\":1497139200000,\"value\":6.118026085493725}",
+                "displayOrder": null
+            },
+            {
+                "id": 188,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496620800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 353,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Google Cloud\",\"code\":\"googlecloud\"},\"name\":\"AdamGoogle\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":0,\"utilization\":0.0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 266,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487980800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 112,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488672000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 167,
+                "section": "computeTrends",
+                "data": "{\"date\":1493251200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 246,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495152000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 64,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489968000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 27,
+                "section": "computeTrends",
+                "data": "{\"date\":1490227200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 379,
+                "section": "storageTrends",
+                "data": "{\"date\":1495324800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 143,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495065600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 285,
+                "section": "storageTrends",
+                "data": "{\"date\":1490140800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 2,
+                "section": "storageTrends",
+                "data": "{\"date\":1490313600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 41,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489190400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 94,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487203200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 168,
+                "section": "storageTrends",
+                "data": "{\"date\":1487289600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 337,
+                "section": "storageTrends",
+                "data": "{\"date\":1487116800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 89,
+                "section": "computeTrends",
+                "data": "{\"date\":1493424000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 130,
+                "section": "storageTrends",
+                "data": "{\"date\":1493251200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 16,
+                "section": "storageTrends",
+                "data": "{\"date\":1488672000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 32,
+                "section": "storageTrends",
+                "data": "{\"date\":1496275200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 212,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494115200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 351,
+                "section": "storageTrends",
+                "data": "{\"date\":1494115200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 47,
+                "section": "storageTrends",
+                "data": "{\"date\":1491004800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 187,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495756800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 57,
+                "section": "computeTrends",
+                "data": "{\"date\":1487721600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 9,
+                "section": "computeTrends",
+                "data": "{\"date\":1493337600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 361,
+                "section": "computeTrends",
+                "data": "{\"date\":1493942400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 234,
+                "section": "computeTrends",
+                "data": "{\"date\":1492819200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 254,
+                "section": "storageTrends",
+                "data": "{\"date\":1492646400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 344,
+                "section": "computeTrends",
+                "data": "{\"date\":1495411200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 175,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495843200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 4,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490313600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 11,
+                "section": "computeTrends",
+                "data": "{\"date\":1494892800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 278,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490227200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 289,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487116800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 332,
+                "section": "computeTrends",
+                "data": "{\"date\":1489968000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 225,
+                "section": "storageTrends",
+                "data": "{\"date\":1487376000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 25,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492732800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 300,
+                "section": "computeTrends",
+                "data": "{\"date\":1491609600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 100,
+                "section": "storageTrends",
+                "data": "{\"date\":1490918400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 71,
+                "section": "storageTrends",
+                "data": "{\"date\":1494374400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 223,
+                "section": "storageTrends",
+                "data": "{\"date\":1493596800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 149,
+                "section": "computeTrends",
+                "data": "{\"date\":1493683200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 257,
+                "section": "computeTrends",
+                "data": "{\"date\":1488153600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 62,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491696000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 115,
+                "section": "computeTrends",
+                "data": "{\"date\":1487548800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 230,
+                "section": "computeTrends",
+                "data": "{\"date\":1488067200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 251,
+                "section": "storageTrends",
+                "data": "{\"date\":1491955200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 128,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491782400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 340,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488585600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 88,
+                "section": "storageTrends",
+                "data": "{\"date\":1491436800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 286,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489017600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 59,
+                "section": "overallStats",
+                "data": "{\"code\":\"memory\",\"name\":\"Total Memory\",\"value\":318902687072,\"displayOrder\":4}",
+                "displayOrder": null
+            },
+            {
+                "id": 339,
+                "section": "computeTrends",
+                "data": "{\"date\":1491523200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 203,
+                "section": "computeTrends",
+                "data": "{\"date\":1494979200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 42,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494892800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 319,
+                "section": "memoryTrends",
+                "data": "{\"date\":1497398400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 336,
+                "section": "computeTrends",
+                "data": "{\"date\":1488844800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 348,
+                "section": "storageTrends",
+                "data": "{\"date\":1490572800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 241,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Nutanix\",\"code\":\"nutanix\"},\"name\":\"nutanix\",\"utilization\":0.3299497148,\"cpu\":{\"used\":0.3501772880554199,\"max\":100,\"utilization\":0.3501772880554199},\"memory\":{\"used\":542520000,\"max\":4514708000,\"utilization\":0.1201672401},\"storage\":{\"used\":11681939456,\"max\":74448744448,\"utilization\":0.1569125113}}",
+                "displayOrder": null
+            },
+            {
+                "id": 382,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493164800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 268,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493942400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 364,
+                "section": "storageTrends",
+                "data": "{\"date\":1494288000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 220,
+                "section": "storageTrends",
+                "data": "{\"date\":1489276800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 326,
+                "section": "storageTrends",
+                "data": "{\"date\":1494806400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 365,
+                "section": "storageTrends",
+                "data": "{\"date\":1487635200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 34,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"VMware vCenter\",\"code\":\"vmware\"},\"name\":\"Labs Denver VCenter demo\",\"utilization\":0.3641933663,\"cpu\":{\"used\":9.466463327407837,\"max\":100,\"utilization\":9.466463327407837},\"memory\":{\"used\":31332294528,\"max\":75461738112,\"utilization\":0.4152076975},\"storage\":{\"used\":251248930816,\"max\":1062634254336,\"utilization\":0.2364397061}}",
+                "displayOrder": null
+            },
+            {
+                "id": 136,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493769600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 211,
+                "section": "storageTrends",
+                "data": "{\"date\":1490832000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 323,
+                "section": "computeTrends",
+                "data": "{\"date\":1494374400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 181,
+                "section": "computeTrends",
+                "data": "{\"date\":1496016000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 70,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493337600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 164,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495929600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 307,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Morpheus\",\"code\":\"standard\"},\"name\":\"My Zone3\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":0,\"utilization\":0.0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 342,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494460800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 37,
+                "section": "storageTrends",
+                "data": "{\"date\":1494201600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 250,
+                "section": "computeTrends",
+                "data": "{\"date\":1490313600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 283,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494374400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 356,
+                "section": "storageTrends",
+                "data": "{\"date\":1489708800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 8,
+                "section": "storageTrends",
+                "data": "{\"date\":1497139200000,\"value\":6.416606703219824E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 113,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490659200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 363,
+                "section": "computeTrends",
+                "data": "{\"date\":1489449600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 17,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491177600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 145,
+                "section": "computeTrends",
+                "data": "{\"date\":1494028800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 102,
+                "section": "computeTrends",
+                "data": "{\"date\":1494115200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 177,
+                "section": "computeTrends",
+                "data": "{\"date\":1495670400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 184,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495497600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 368,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493078400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 293,
+                "section": "computeTrends",
+                "data": "{\"date\":1493164800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 217,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489622400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 58,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492041600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 79,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494288000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 240,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492646400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 242,
+                "section": "storageTrends",
+                "data": "{\"date\":1494720000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 374,
+                "section": "computeTrends",
+                "data": "{\"date\":1494201600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 228,
+                "section": "storageTrends",
+                "data": "{\"date\":1495584000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 264,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Morpheus\",\"code\":\"standard\"},\"name\":\"Labs Denver UCS\",\"utilization\":0.0732887236,\"cpu\":{\"used\":0.08755922317504883,\"max\":100,\"utilization\":0.08755922317504883},\"memory\":{\"used\":7196240000,\"max\":98190276000,\"utilization\":0.0732887236},\"storage\":{\"used\":757678080,\"max\":193273528320,\"utilization\":0.0039202372}}",
+                "displayOrder": null
+            },
+            {
+                "id": 316,
+                "section": "computeTrends",
+                "data": "{\"date\":1487808000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 309,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Hyper-V\",\"code\":\"hyperv\"},\"name\":\"demo hyperv\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":429496729600,\"utilization\":0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 275,
+                "section": "computeTrends",
+                "data": "{\"date\":1488585600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 341,
+                "section": "storageTrends",
+                "data": "{\"date\":1491868800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 26,
+                "section": "computeTrends",
+                "data": "{\"date\":1496880000000,\"value\":4.600248890335128}",
+                "displayOrder": null
+            },
+            {
+                "id": 6,
+                "section": "storageTrends",
+                "data": "{\"date\":1489017600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 320,
+                "section": "storageTrends",
+                "data": "{\"date\":1487894400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 343,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488240000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 282,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488499200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 124,
+                "section": "computeTrends",
+                "data": "{\"date\":1491782400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 260,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490572800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 301,
+                "section": "computeTrends",
+                "data": "{\"date\":1494460800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 298,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496016000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 77,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496793600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 132,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Azure (Public)\",\"code\":\"azure\"},\"name\":\"Azure Support\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":13958643712,\"utilization\":0},\"storage\":{\"used\":0,\"max\":137438953472,\"utilization\":0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 162,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488326400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 193,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493596800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 229,
+                "section": "computeTrends",
+                "data": "{\"date\":1488499200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 81,
+                "section": "storageTrends",
+                "data": "{\"date\":1493164800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 36,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493510400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 384,
+                "section": "storageTrends",
+                "data": "{\"date\":1490659200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 179,
+                "section": "computeTrends",
+                "data": "{\"date\":1494547200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 49,
+                "section": "storageTrends",
+                "data": "{\"date\":1487808000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 192,
+                "section": "computeTrends",
+                "data": "{\"date\":1490140800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 119,
+                "section": "storageTrends",
+                "data": "{\"date\":1497052800000,\"value\":6.1883205260720415E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 189,
+                "section": "computeTrends",
+                "data": "{\"date\":1491696000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 170,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491004800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 239,
+                "section": "storageTrends",
+                "data": "{\"date\":1496361600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 375,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491436800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 51,
+                "section": "storageTrends",
+                "data": "{\"date\":1493683200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 277,
+                "section": "computeTrends",
+                "data": "{\"date\":1496188800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 133,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Google Cloud\",\"code\":\"googlecloud\"},\"name\":\"Google West\",\"utilization\":0.0115652103,\"cpu\":{\"used\":0.18346905708312988,\"max\":100,\"utilization\":0.18346905708312988},\"memory\":{\"used\":1206216000,\"max\":7660172000,\"utilization\":0.1574659159},\"storage\":{\"used\":0,\"max\":118111600640,\"utilization\":0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 210,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496102400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 194,
+                "section": "computeTrends",
+                "data": "{\"date\":1490572800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 56,
+                "section": "storageTrends",
+                "data": "{\"date\":1494460800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 98,
+                "section": "computeTrends",
+                "data": "{\"date\":1492560000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 114,
+                "section": "computeTrends",
+                "data": "{\"date\":1493856000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 31,
+                "section": "storageTrends",
+                "data": "{\"date\":1493337600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 369,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487548800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 68,
+                "section": "overallStats",
+                "data": "{\"code\":\"hosts\",\"name\":\"Hosts\",\"value\":18,\"displayOrder\":1}",
+                "displayOrder": null
+            },
+            {
+                "id": 154,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495238400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 152,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489708800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 208,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489881600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 84,
+                "section": "storageTrends",
+                "data": "{\"date\":1489881600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 218,
+                "section": "storageTrends",
+                "data": "{\"date\":1495238400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 238,
+                "section": "computeTrends",
+                "data": "{\"date\":1488240000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 328,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488412800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 135,
+                "section": "computeTrends",
+                "data": "{\"date\":1493769600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 205,
+                "section": "computeTrends",
+                "data": "{\"date\":1489622400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 191,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487376000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 82,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494028800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 190,
+                "section": "computeTrends",
+                "data": "{\"date\":1495152000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 174,
+                "section": "computeTrends",
+                "data": "{\"date\":1496793600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 287,
+                "section": "storageTrends",
+                "data": "{\"date\":1496966400000,\"value\":6.226333327897406E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 253,
+                "section": "storageTrends",
+                "data": "{\"date\":1488931200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 294,
+                "section": "storageTrends",
+                "data": "{\"date\":1491782400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 304,
+                "section": "storageTrends",
+                "data": "{\"date\":1490054400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 129,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495670400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 92,
+                "section": "computeTrends",
+                "data": "{\"date\":1491177600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 101,
+                "section": "storageTrends",
+                "data": "{\"date\":1488067200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 288,
+                "section": "computeTrends",
+                "data": "{\"date\":1487116800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 173,
+                "section": "storageTrends",
+                "data": "{\"date\":1495411200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 317,
+                "section": "computeTrends",
+                "data": "{\"date\":1495843200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 345,
+                "section": "storageTrends",
+                "data": "{\"date\":1496102400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 43,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487462400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 252,
+                "section": "computeTrends",
+                "data": "{\"date\":1496534400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 347,
+                "section": "computeTrends",
+                "data": "{\"date\":1494633600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 159,
+                "section": "storageTrends",
+                "data": "{\"date\":1487462400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 376,
+                "section": "storageTrends",
+                "data": "{\"date\":1492905600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 349,
+                "section": "computeTrends",
+                "data": "{\"date\":1496361600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 153,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495411200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 195,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491264000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 21,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491091200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 377,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489276800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 280,
+                "section": "computeTrends",
+                "data": "{\"date\":1496102400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 28,
+                "section": "computeTrends",
+                "data": "{\"date\":1496448000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 182,
+                "section": "storageTrends",
+                "data": "{\"date\":1493078400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 272,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493251200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 318,
+                "section": "computeTrends",
+                "data": "{\"date\":1487462400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 137,
+                "section": "storageTrends",
+                "data": "{\"date\":1496880000000,\"value\":6.094249540926964E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 292,
+                "section": "computeTrends",
+                "data": "{\"date\":1493078400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 95,
+                "section": "computeTrends",
+                "data": "{\"date\":1494288000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 1,
+                "section": "computeTrends",
+                "data": "{\"date\":1489017600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 355,
+                "section": "storageTrends",
+                "data": "{\"date\":1495152000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 359,
+                "section": "computeTrends",
+                "data": "{\"date\":1490486400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 372,
+                "section": "computeTrends",
+                "data": "{\"date\":1489363200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 99,
+                "section": "storageTrends",
+                "data": "{\"date\":1494028800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 65,
+                "section": "computeTrends",
+                "data": "{\"date\":1490659200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 314,
+                "section": "storageTrends",
+                "data": "{\"date\":1487980800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 200,
+                "section": "storageTrends",
+                "data": "{\"date\":1491523200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 322,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492214400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 13,
+                "section": "storageTrends",
+                "data": "{\"date\":1497398400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 166,
+                "section": "computeTrends",
+                "data": "{\"date\":1494720000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 116,
+                "section": "computeTrends",
+                "data": "{\"date\":1491350400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 117,
+                "section": "computeTrends",
+                "data": "{\"date\":1493510400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 91,
+                "section": "memoryTrends",
+                "data": "{\"date\":1497139200000,\"value\":7.365488751788702E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 73,
+                "section": "storageTrends",
+                "data": "{\"date\":1492387200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 222,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493424000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 23,
+                "section": "computeTrends",
+                "data": "{\"date\":1487203200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 85,
+                "section": "storageTrends",
+                "data": "{\"date\":1493769600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 29,
+                "section": "storageTrends",
+                "data": "{\"date\":1489363200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 362,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490486400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 303,
+                "section": "storageTrends",
+                "data": "{\"date\":1488153600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 271,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487721600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 366,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489536000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 327,
+                "section": "computeTrends",
+                "data": "{\"date\":1491436800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 270,
+                "section": "storageTrends",
+                "data": "{\"date\":1492819200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 118,
+                "section": "storageTrends",
+                "data": "{\"date\":1492214400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 148,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494201600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 140,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Azure (Public)\",\"code\":\"azure\"},\"name\":\"Azure Demo\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":13958643712,\"utilization\":0},\"storage\":{\"used\":0,\"max\":137438953472,\"utilization\":0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 245,
+                "section": "storageTrends",
+                "data": "{\"date\":1491264000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 15,
+                "section": "computeTrends",
+                "data": "{\"date\":1495238400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 48,
+                "section": "storageTrends",
+                "data": "{\"date\":1488585600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 248,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487894400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 44,
+                "section": "memoryTrends",
+                "data": "{\"date\":1497225600000,\"value\":5.6969351603378725E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 83,
+                "section": "computeTrends",
+                "data": "{\"date\":1489795200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 110,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488067200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 202,
+                "section": "storageTrends",
+                "data": "{\"date\":1491350400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 284,
+                "section": "storageTrends",
+                "data": "{\"date\":1495756800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 378,
+                "section": "memoryTrends",
+                "data": "{\"date\":1497312000000,\"value\":5.661549741386482E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 180,
+                "section": "computeTrends",
+                "data": "{\"date\":1497312000000,\"value\":3.5876562058087575}",
+                "displayOrder": null
+            },
+            {
+                "id": 302,
+                "section": "storageTrends",
+                "data": "{\"date\":1492992000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 321,
+                "section": "computeTrends",
+                "data": "{\"date\":1487980800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 14,
+                "section": "computeTrends",
+                "data": "{\"date\":1490054400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 263,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489795200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 3,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496448000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 237,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496966400000,\"value\":7.254328388922265E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 69,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492819200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 199,
+                "section": "memoryTrends",
+                "data": "{\"date\":1489363200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 109,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491523200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 141,
+                "section": "computeTrends",
+                "data": "{\"date\":1491264000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 144,
+                "section": "overallStats",
+                "data": "{\"code\":\"instances\",\"name\":\"Instances\",\"value\":21,\"displayOrder\":2}",
+                "displayOrder": null
+            },
+            {
+                "id": 61,
+                "section": "storageTrends",
+                "data": "{\"date\":1492473600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 276,
+                "section": "overallUtilization",
+                "data": "{\"code\":\"peakUtilization\",\"name\":\"Peak Utilization\",\"value\":0.44221068177332257}",
+                "displayOrder": null
+            },
+            {
+                "id": 150,
+                "section": "computeTrends",
+                "data": "{\"date\":1492646400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 338,
+                "section": "computeTrends",
+                "data": "{\"date\":1487894400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 33,
+                "section": "computeTrends",
+                "data": "{\"date\":1497052800000,\"value\":5.489159775851721}",
+                "displayOrder": null
+            },
+            {
+                "id": 138,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490745600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 151,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494547200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 38,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Azure (Public)\",\"code\":\"azure\"},\"name\":\"Azure\",\"utilization\":0.0062000629,\"cpu\":{\"used\":0.19172430038452148,\"max\":100,\"utilization\":0.19172430038452148},\"memory\":{\"used\":683340000,\"max\":13578246944,\"utilization\":0.0503260843},\"storage\":{\"used\":0,\"max\":137438953472,\"utilization\":0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 329,
+                "section": "storageTrends",
+                "data": "{\"date\":1488758400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 178,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487635200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 227,
+                "section": "storageTrends",
+                "data": "{\"date\":1492560000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 127,
+                "section": "computeTrends",
+                "data": "{\"date\":1489276800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 380,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"VMware vCenter\",\"code\":\"vmware\"},\"name\":\"vcenter demo pool\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":0,\"utilization\":0.0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 19,
+                "section": "computeTrends",
+                "data": "{\"date\":1491868800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 108,
+                "section": "storageTrends",
+                "data": "{\"date\":1487721600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 261,
+                "section": "computeTrends",
+                "data": "{\"date\":1496707200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 331,
+                "section": "storageTrends",
+                "data": "{\"date\":1494979200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 176,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491955200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 67,
+                "section": "computeTrends",
+                "data": "{\"date\":1497398400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 20,
+                "section": "storageTrends",
+                "data": "{\"date\":1496534400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 357,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491868800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 120,
+                "section": "storageTrends",
+                "data": "{\"date\":1488326400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 30,
+                "section": "storageTrends",
+                "data": "{\"date\":1492041600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 354,
+                "section": "computeTrends",
+                "data": "{\"date\":1490745600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 290,
+                "section": "storageTrends",
+                "data": "{\"date\":1488844800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 352,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492473600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 142,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492905600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 258,
+                "section": "computeTrends",
+                "data": "{\"date\":1488326400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 206,
+                "section": "storageTrends",
+                "data": "{\"date\":1493856000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 281,
+                "section": "storageTrends",
+                "data": "{\"date\":1488412800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 22,
+                "section": "storageTrends",
+                "data": "{\"date\":1491696000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 236,
+                "section": "computeTrends",
+                "data": "{\"date\":1488931200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 45,
+                "section": "computeTrends",
+                "data": "{\"date\":1491004800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 46,
+                "section": "overallStats",
+                "data": "{\"code\":\"clouds\",\"name\":\"Clouds\",\"value\":17,\"displayOrder\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 63,
+                "section": "storageTrends",
+                "data": "{\"date\":1490486400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 233,
+                "section": "computeTrends",
+                "data": "{\"date\":1487376000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 66,
+                "section": "storageTrends",
+                "data": "{\"date\":1492128000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 123,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495584000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 53,
+                "section": "computeTrends",
+                "data": "{\"date\":1490400000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 171,
+                "section": "memoryTrends",
+                "data": "{\"date\":1497052800000,\"value\":7.98950975716767E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 158,
+                "section": "computeTrends",
+                "data": "{\"date\":1495324800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 10,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491609600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 156,
+                "section": "computeTrends",
+                "data": "{\"date\":1489536000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 209,
+                "section": "computeTrends",
+                "data": "{\"date\":1489190400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 299,
+                "section": "storageTrends",
+                "data": "{\"date\":1496448000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 75,
+                "section": "storageTrends",
+                "data": "{\"date\":1490227200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 121,
+                "section": "storageTrends",
+                "data": "{\"date\":1496707200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 55,
+                "section": "computeTrends",
+                "data": "{\"date\":1492128000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 155,
+                "section": "storageTrends",
+                "data": "{\"date\":1488240000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 214,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490140800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 39,
+                "section": "storageTrends",
+                "data": "{\"date\":1496188800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 358,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494979200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 80,
+                "section": "memoryTrends",
+                "data": "{\"date\":1495324800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 371,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492387200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 147,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492300800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 104,
+                "section": "storageTrends",
+                "data": "{\"date\":1491609600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 157,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Morpheus\",\"code\":\"standard\"},\"name\":\"Appliance KVM & Docker\",\"utilization\":0.4963679157,\"cpu\":{\"used\":1.7902255058288574,\"max\":100,\"utilization\":1.7902255058288574},\"memory\":{\"used\":15891540000,\"max\":66751120000,\"utilization\":0.2380715110},\"storage\":{\"used\":35000299520,\"max\":1045684379648,\"utilization\":0.0334711890}}",
+                "displayOrder": null
+            },
+            {
+                "id": 373,
+                "section": "memoryTrends",
+                "data": "{\"date\":1493856000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 186,
+                "section": "computeTrends",
+                "data": "{\"date\":1495929600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 196,
+                "section": "computeTrends",
+                "data": "{\"date\":1492473600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 256,
+                "section": "memoryTrends",
+                "data": "{\"date\":1491350400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 334,
+                "section": "computeTrends",
+                "data": "{\"date\":1488412800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 163,
+                "section": "computeTrends",
+                "data": "{\"date\":1491955200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 169,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496361600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 305,
+                "section": "computeTrends",
+                "data": "{\"date\":1490918400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 308,
+                "section": "storageTrends",
+                "data": "{\"date\":1495843200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 106,
+                "section": "storageTrends",
+                "data": "{\"date\":1497312000000,\"value\":6.569614800260484E9}",
+                "displayOrder": null
+            },
+            {
+                "id": 165,
+                "section": "storageTrends",
+                "data": "{\"date\":1487203200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 24,
+                "section": "computeTrends",
+                "data": "{\"date\":1492732800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 313,
+                "section": "computeTrends",
+                "data": "{\"date\":1492214400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 330,
+                "section": "memoryTrends",
+                "data": "{\"date\":1490400000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 93,
+                "section": "storageTrends",
+                "data": "{\"date\":1489968000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 221,
+                "section": "storageTrends",
+                "data": "{\"date\":1491091200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 291,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"OpenStack\",\"code\":\"openstack\"},\"name\":\"Labs Denver Openstack\",\"utilization\":0.2934896221,\"cpu\":{\"used\":0.2168118953704834,\"max\":100,\"utilization\":0.2168118953704834},\"memory\":{\"used\":1623540000,\"max\":18733814592,\"utilization\":0.0866636099},\"storage\":{\"used\":30297980928,\"max\":289910292480,\"utilization\":0.1045081245}}",
+                "displayOrder": null
+            },
+            {
+                "id": 259,
+                "section": "storageTrends",
+                "data": "{\"date\":1495929600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 18,
+                "section": "computeTrends",
+                "data": "{\"date\":1489881600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 90,
+                "section": "computeTrends",
+                "data": "{\"date\":1487289600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 262,
+                "section": "storageTrends",
+                "data": "{\"date\":1489795200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 273,
+                "section": "storageTrends",
+                "data": "{\"date\":1493942400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 383,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496275200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 215,
+                "section": "storageTrends",
+                "data": "{\"date\":1495065600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 267,
+                "section": "computeTrends",
+                "data": "{\"date\":1492905600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 54,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488758400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 97,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488153600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 105,
+                "section": "storageTrends",
+                "data": "{\"date\":1492300800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 111,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"Amazon\",\"code\":\"amazon\"},\"name\":\"AWS West\",\"utilization\":0.4703513710,\"cpu\":{\"used\":0.21713972091674805,\"max\":100,\"utilization\":0.21713972091674805},\"memory\":{\"used\":2866944000,\"max\":6095324000,\"utilization\":0.4703513710},\"storage\":{\"used\":142639104,\"max\":64424509440,\"utilization\":0.00221405029296875}}",
+                "displayOrder": null
+            },
+            {
+                "id": 201,
+                "section": "computeTrends",
+                "data": "{\"date\":1488672000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 232,
+                "section": "storageTrends",
+                "data": "{\"date\":1490745600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 60,
+                "section": "computeTrends",
+                "data": "{\"date\":1489708800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 125,
+                "section": "computeTrends",
+                "data": "{\"date\":1487635200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 235,
+                "section": "memoryTrends",
+                "data": "{\"date\":1488844800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 249,
+                "section": "computeTrends",
+                "data": "{\"date\":1496620800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 297,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496707200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 255,
+                "section": "overallStats",
+                "data": "{\"code\":\"storage\",\"name\":\"Total Storage\",\"value\":3690300899328,\"displayOrder\":5}",
+                "displayOrder": null
+            },
+            {
+                "id": 72,
+                "section": "storageTrends",
+                "data": "{\"date\":1489536000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 131,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494806400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 216,
+                "section": "storageTrends",
+                "data": "{\"date\":1490400000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 12,
+                "section": "computeTrends",
+                "data": "{\"date\":1496275200000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 360,
+                "section": "main",
+                "data": "{\"cloud\":{\"name\":\"SoftLayer\",\"code\":\"softlayer\"},\"name\":\"Softlayer Labs\",\"utilization\":0,\"cpu\":{\"used\":0.0,\"max\":100,\"utilization\":0.0},\"memory\":{\"used\":0,\"max\":0,\"utilization\":0.0},\"storage\":{\"used\":0,\"max\":0,\"utilization\":0.0}}",
+                "displayOrder": null
+            },
+            {
+                "id": 312,
+                "section": "memoryTrends",
+                "data": "{\"date\":1487808000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 370,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494633600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 107,
+                "section": "storageTrends",
+                "data": "{\"date\":1493510400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 367,
+                "section": "storageTrends",
+                "data": "{\"date\":1495670400000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 5,
+                "section": "computeTrends",
+                "data": "{\"date\":1495497600000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 103,
+                "section": "computeTrends",
+                "data": "{\"date\":1496966400000,\"value\":3.8072981899414025}",
+                "displayOrder": null
+            },
+            {
+                "id": 172,
+                "section": "memoryTrends",
+                "data": "{\"date\":1492992000000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 50,
+                "section": "memoryTrends",
+                "data": "{\"date\":1496188800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 185,
+                "section": "storageTrends",
+                "data": "{\"date\":1492732800000,\"value\":0}",
+                "displayOrder": null
+            },
+            {
+                "id": 76,
+                "section": "memoryTrends",
+                "data": "{\"date\":1494720000000,\"value\":0}",
+                "displayOrder": null
+            }
+        ]
+    }
+}

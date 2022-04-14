@@ -76,11 +76,14 @@ post:
                   register: ../components/schemas/hubRegisterObject.yaml
         examples:
           setup:
-            $ref: ../components/examples/setup.yaml
+            value:
+              $ref: ../components/examples/setup.json
           setupWithHubRegistration:
-            $ref: ../components/examples/hubRegisterObject.yaml
+            value:
+              $ref: ../components/examples/hubRegisterObject.json
           setupWithHubLogin:
-            $ref: ../components/examples/hubLoginObject.yaml
+            value:
+              $ref: ../components/examples/hubLoginObject.json
   responses:
     '200':
       description: >-

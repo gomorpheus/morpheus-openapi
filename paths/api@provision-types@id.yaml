@@ -15,10 +15,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/provisionType.yaml
+            type: object
+            properties:
+              provisionType:
+                $ref: ../components/schemas/provisionType.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/provisionType.yaml
+              value:
+                $ref: ../components/examples/provisionType.json
     '400':
       description: Bad Request.
     '401':

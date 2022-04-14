@@ -29,10 +29,18 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/roles.yaml
+            allOf:
+            - type: object
+              properties:
+                roles:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/role.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
-            List Roles Response:
-              $ref: ../components/examples/roles.yaml
+            Roles Response:
+              value:
+                $ref: ../components/examples/roles.json
     '400':
       description: Bad Request.
     '401':
@@ -101,19 +109,22 @@ post:
                     Multitenant Locked, prevents sub-tenant users from modifying
                     their copy of multienant roles. *Only available to master
                     tenant*
-        examples:
-          CreateRoleRequest:
-            $ref: ../components/examples/roles.yaml
   responses:
     '200':
       description: Role Object
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/roles.yaml
+            allOf:
+            - type: object
+              properties:
+                role:
+                  $ref: ../components/schemas/role.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
-            CreateRoleResponse:
-              $ref: ../components/examples/roles.yaml
+            Role Response:
+              value:
+                $ref: ../components/examples/role.json
     '400':
       description: Bad Request.
     '401':
