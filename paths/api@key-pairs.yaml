@@ -35,10 +35,16 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/key-pairs.yaml
+            allOf:
+            - type: object
+              properties:
+                account:
+                  $ref: ../components/schemas/key-pair.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
             Report Types Response:
-              $ref: ../components/examples/key-pairs.yaml
+              value:
+                $ref: ../components/examples/key-pairs.json
     '400':
       description: Bad Request.
     '401':

@@ -15,10 +15,14 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/group.yaml
+            type: object
+            properties:
+              group:
+                $ref: ../components/schemas/group.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/group.yaml
+              value:
+                $ref: ../components/examples/group.json
     '400':
       description: Bad Request.
     '401':
@@ -70,10 +74,16 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/group.yaml
+            type: object
+            properties:
+              group:
+                allOf:
+                  - $ref: ../components/schemas/group.yaml
+                  - $ref: ../components/schemas/200-success.yaml
           examples:
             Report Types Response:
-              $ref: ../components/examples/group.yaml
+              value:
+                $ref: ../components/examples/group.json
     '400':
       description: Bad Request.
     '401':

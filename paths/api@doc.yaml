@@ -16,7 +16,8 @@ get:
             $ref: ../components/schemas/docs.yaml
           examples:
             Docs Response:
-              $ref: ../components/examples/docs.yaml
+              value:
+                $ref: ../components/examples/docs.json
     '400':
       description: Bad Request.
     '401':

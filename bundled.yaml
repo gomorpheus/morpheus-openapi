@@ -926,10 +926,115 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/budgets'
+                allOf:
+                  - type: object
+                    properties:
+                      budgets:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/budget'
+                  - $ref: '#/components/schemas/meta'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/budgets'
+                  value:
+                    budgets:
+                      - id: 12
+                        name: 300 monthly budget
+                        description: 300 monthly budget
+                        account:
+                          id: 3
+                          name: Morpheus
+                        enabled: true
+                        refScope: tenant
+                        refType: Account
+                        refId: 56
+                        refName: tenant A
+                        period: year
+                        year: '2022'
+                        resourceType: all
+                        timezone: UTC
+                        startDate: '2022-01-01T00:00:00Z'
+                        endDate: '2022-12-31T23:59:59Z'
+                        interval: month
+                        costs:
+                          - 0
+                          - 0
+                          - 0
+                          - 300
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                        isFiscal: false
+                        averageCost: 25
+                        totalCost: 300
+                        currency: USD
+                        rollover: false
+                        warningLimit: null
+                        overLimit: null
+                        externalId: null
+                        internalId: null
+                        createdById: 342
+                        createdByName: Mihai Popa
+                        updatedById: null
+                        updatedByName: null
+                        dateCreated: '2022-04-07T20:44:40Z'
+                        lastUpdated: '2022-04-07T20:44:40Z'
+                      - id: 8
+                        name: Adam H
+                        description: null
+                        account:
+                          id: 3
+                          name: Morpheus
+                        enabled: true
+                        refScope: user
+                        refType: User
+                        refId: 126
+                        refName: aabraham
+                        period: year
+                        year: custom
+                        resourceType: all
+                        timezone: UTC
+                        startDate: '2021-01-01T00:00:00Z'
+                        endDate: '2021-12-31T23:59:59Z'
+                        interval: month
+                        costs:
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                        isFiscal: false
+                        averageCost: 0
+                        totalCost: 0
+                        currency: USD
+                        rollover: false
+                        warningLimit: null
+                        overLimit: null
+                        externalId: null
+                        internalId: null
+                        createdById: 4
+                        createdByName: Adam Hicks
+                        updatedById: null
+                        updatedByName: null
+                        dateCreated: '2021-03-05T19:54:00Z'
+                        lastUpdated: '2022-04-11T17:44:05Z'
+                    meta:
+                      size: 2
+                      total: 11
+                      offset: 0
+                      max: 2
         '400':
           description: Bad Request.
         '401':
@@ -1035,10 +1140,166 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/budget'
+                allOf:
+                  - type: object
+                    properties:
+                      budget:
+                        $ref: '#/components/schemas/budget'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Report Types Response:
-                  $ref: '#/components/examples/budget'
+                  value:
+                    success: true
+                    budget:
+                      id: 12
+                      name: 300 monthly budget
+                      description: 300 monthly budget
+                      account:
+                        id: 3
+                        name: Morpheus
+                      enabled: true
+                      refScope: tenant
+                      refType: Account
+                      refId: 56
+                      refName: tenant A
+                      period: year
+                      year: '2022'
+                      resourceType: all
+                      timezone: UTC
+                      startDate: '2022-01-01T00:00:00Z'
+                      endDate: '2022-12-31T23:59:59Z'
+                      interval: month
+                      costs:
+                        - 0
+                        - 0
+                        - 0
+                        - 300
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                      isFiscal: false
+                      averageCost: 25
+                      totalCost: 300
+                      currency: USD
+                      rollover: false
+                      warningLimit: null
+                      overLimit: null
+                      externalId: null
+                      internalId: null
+                      createdById: 342
+                      createdByName: Mihai Popa
+                      updatedById: null
+                      updatedByName: null
+                      dateCreated: '2022-04-07T20:44:40Z'
+                      lastUpdated: '2022-04-07T20:44:40Z'
+                      stats:
+                        currency: USD
+                        conversionRate: 1
+                        intervals:
+                          - index: 1
+                            month: january
+                            shortName: jan
+                            chartName: jan
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-01-01T00:00:00Z'
+                            endDate: '2022-01-31T23:59:59Z'
+                          - index: 2
+                            month: february
+                            shortName: feb
+                            chartName: feb
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-02-01T00:00:00Z'
+                            endDate: '2022-02-28T23:59:59Z'
+                          - index: 3
+                            month: march
+                            shortName: mar
+                            chartName: mar
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-03-01T00:00:00Z'
+                            endDate: '2022-03-31T23:59:59Z'
+                          - index: 4
+                            month: april
+                            shortName: apr
+                            chartName: apr
+                            budget: 300
+                            cost: 0
+                            startDate: '2022-04-01T00:00:00Z'
+                            endDate: '2022-04-30T23:59:59Z'
+                          - index: 5
+                            month: may
+                            shortName: may
+                            chartName: may
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-05-01T00:00:00Z'
+                            endDate: '2022-05-31T23:59:59Z'
+                          - index: 6
+                            month: june
+                            shortName: jun
+                            chartName: jun
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-06-01T00:00:00Z'
+                            endDate: '2022-06-30T23:59:59Z'
+                          - index: 7
+                            month: july
+                            shortName: jul
+                            chartName: jul
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-07-01T00:00:00Z'
+                            endDate: '2022-07-31T23:59:59Z'
+                          - index: 8
+                            month: august
+                            shortName: aug
+                            chartName: aug
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-08-01T00:00:00Z'
+                            endDate: '2022-08-31T23:59:59Z'
+                          - index: 9
+                            month: september
+                            shortName: sep
+                            chartName: sep
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-09-01T00:00:00Z'
+                            endDate: '2022-09-30T23:59:59Z'
+                          - index: 10
+                            month: october
+                            shortName: oct
+                            chartName: oct
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-10-01T00:00:00Z'
+                            endDate: '2022-10-31T23:59:59Z'
+                          - index: 11
+                            month: november
+                            shortName: nov
+                            chartName: nov
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-11-01T00:00:00Z'
+                            endDate: '2022-11-30T23:59:59Z'
+                          - index: 12
+                            month: december
+                            shortName: dec
+                            chartName: dec
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-12-01T00:00:00Z'
+                            endDate: '2022-12-31T23:59:59Z'
+                        current:
+                          estimatedCost: null
+                          lastCost: null
         '400':
           description: Bad Request.
         '401':
@@ -1069,10 +1330,164 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/budget'
+                type: object
+                properties:
+                  budget:
+                    $ref: '#/components/schemas/budget'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/budget'
+                  value:
+                    success: true
+                    budget:
+                      id: 12
+                      name: 300 monthly budget
+                      description: 300 monthly budget
+                      account:
+                        id: 3
+                        name: Morpheus
+                      enabled: true
+                      refScope: tenant
+                      refType: Account
+                      refId: 56
+                      refName: tenant A
+                      period: year
+                      year: '2022'
+                      resourceType: all
+                      timezone: UTC
+                      startDate: '2022-01-01T00:00:00Z'
+                      endDate: '2022-12-31T23:59:59Z'
+                      interval: month
+                      costs:
+                        - 0
+                        - 0
+                        - 0
+                        - 300
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                      isFiscal: false
+                      averageCost: 25
+                      totalCost: 300
+                      currency: USD
+                      rollover: false
+                      warningLimit: null
+                      overLimit: null
+                      externalId: null
+                      internalId: null
+                      createdById: 342
+                      createdByName: Mihai Popa
+                      updatedById: null
+                      updatedByName: null
+                      dateCreated: '2022-04-07T20:44:40Z'
+                      lastUpdated: '2022-04-07T20:44:40Z'
+                      stats:
+                        currency: USD
+                        conversionRate: 1
+                        intervals:
+                          - index: 1
+                            month: january
+                            shortName: jan
+                            chartName: jan
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-01-01T00:00:00Z'
+                            endDate: '2022-01-31T23:59:59Z'
+                          - index: 2
+                            month: february
+                            shortName: feb
+                            chartName: feb
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-02-01T00:00:00Z'
+                            endDate: '2022-02-28T23:59:59Z'
+                          - index: 3
+                            month: march
+                            shortName: mar
+                            chartName: mar
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-03-01T00:00:00Z'
+                            endDate: '2022-03-31T23:59:59Z'
+                          - index: 4
+                            month: april
+                            shortName: apr
+                            chartName: apr
+                            budget: 300
+                            cost: 0
+                            startDate: '2022-04-01T00:00:00Z'
+                            endDate: '2022-04-30T23:59:59Z'
+                          - index: 5
+                            month: may
+                            shortName: may
+                            chartName: may
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-05-01T00:00:00Z'
+                            endDate: '2022-05-31T23:59:59Z'
+                          - index: 6
+                            month: june
+                            shortName: jun
+                            chartName: jun
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-06-01T00:00:00Z'
+                            endDate: '2022-06-30T23:59:59Z'
+                          - index: 7
+                            month: july
+                            shortName: jul
+                            chartName: jul
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-07-01T00:00:00Z'
+                            endDate: '2022-07-31T23:59:59Z'
+                          - index: 8
+                            month: august
+                            shortName: aug
+                            chartName: aug
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-08-01T00:00:00Z'
+                            endDate: '2022-08-31T23:59:59Z'
+                          - index: 9
+                            month: september
+                            shortName: sep
+                            chartName: sep
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-09-01T00:00:00Z'
+                            endDate: '2022-09-30T23:59:59Z'
+                          - index: 10
+                            month: october
+                            shortName: oct
+                            chartName: oct
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-10-01T00:00:00Z'
+                            endDate: '2022-10-31T23:59:59Z'
+                          - index: 11
+                            month: november
+                            shortName: nov
+                            chartName: nov
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-11-01T00:00:00Z'
+                            endDate: '2022-11-30T23:59:59Z'
+                          - index: 12
+                            month: december
+                            shortName: dec
+                            chartName: dec
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-12-01T00:00:00Z'
+                            endDate: '2022-12-31T23:59:59Z'
+                        current:
+                          estimatedCost: null
+                          lastCost: null
         '400':
           description: Bad Request.
         '401':
@@ -1180,10 +1595,164 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/budget'
+                type: object
+                properties:
+                  budget:
+                    $ref: '#/components/schemas/budget'
               examples:
                 Report Types Response:
-                  $ref: '#/components/examples/budget'
+                  value:
+                    success: true
+                    budget:
+                      id: 12
+                      name: 300 monthly budget
+                      description: 300 monthly budget
+                      account:
+                        id: 3
+                        name: Morpheus
+                      enabled: true
+                      refScope: tenant
+                      refType: Account
+                      refId: 56
+                      refName: tenant A
+                      period: year
+                      year: '2022'
+                      resourceType: all
+                      timezone: UTC
+                      startDate: '2022-01-01T00:00:00Z'
+                      endDate: '2022-12-31T23:59:59Z'
+                      interval: month
+                      costs:
+                        - 0
+                        - 0
+                        - 0
+                        - 300
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                      isFiscal: false
+                      averageCost: 25
+                      totalCost: 300
+                      currency: USD
+                      rollover: false
+                      warningLimit: null
+                      overLimit: null
+                      externalId: null
+                      internalId: null
+                      createdById: 342
+                      createdByName: Mihai Popa
+                      updatedById: null
+                      updatedByName: null
+                      dateCreated: '2022-04-07T20:44:40Z'
+                      lastUpdated: '2022-04-07T20:44:40Z'
+                      stats:
+                        currency: USD
+                        conversionRate: 1
+                        intervals:
+                          - index: 1
+                            month: january
+                            shortName: jan
+                            chartName: jan
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-01-01T00:00:00Z'
+                            endDate: '2022-01-31T23:59:59Z'
+                          - index: 2
+                            month: february
+                            shortName: feb
+                            chartName: feb
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-02-01T00:00:00Z'
+                            endDate: '2022-02-28T23:59:59Z'
+                          - index: 3
+                            month: march
+                            shortName: mar
+                            chartName: mar
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-03-01T00:00:00Z'
+                            endDate: '2022-03-31T23:59:59Z'
+                          - index: 4
+                            month: april
+                            shortName: apr
+                            chartName: apr
+                            budget: 300
+                            cost: 0
+                            startDate: '2022-04-01T00:00:00Z'
+                            endDate: '2022-04-30T23:59:59Z'
+                          - index: 5
+                            month: may
+                            shortName: may
+                            chartName: may
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-05-01T00:00:00Z'
+                            endDate: '2022-05-31T23:59:59Z'
+                          - index: 6
+                            month: june
+                            shortName: jun
+                            chartName: jun
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-06-01T00:00:00Z'
+                            endDate: '2022-06-30T23:59:59Z'
+                          - index: 7
+                            month: july
+                            shortName: jul
+                            chartName: jul
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-07-01T00:00:00Z'
+                            endDate: '2022-07-31T23:59:59Z'
+                          - index: 8
+                            month: august
+                            shortName: aug
+                            chartName: aug
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-08-01T00:00:00Z'
+                            endDate: '2022-08-31T23:59:59Z'
+                          - index: 9
+                            month: september
+                            shortName: sep
+                            chartName: sep
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-09-01T00:00:00Z'
+                            endDate: '2022-09-30T23:59:59Z'
+                          - index: 10
+                            month: october
+                            shortName: oct
+                            chartName: oct
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-10-01T00:00:00Z'
+                            endDate: '2022-10-31T23:59:59Z'
+                          - index: 11
+                            month: november
+                            shortName: nov
+                            chartName: nov
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-11-01T00:00:00Z'
+                            endDate: '2022-11-30T23:59:59Z'
+                          - index: 12
+                            month: december
+                            shortName: dec
+                            chartName: dec
+                            budget: 0
+                            cost: 0
+                            startDate: '2022-12-01T00:00:00Z'
+                            endDate: '2022-12-31T23:59:59Z'
+                        current:
+                          estimatedCost: null
+                          lastCost: null
         '400':
           description: Bad Request.
         '401':
@@ -1212,8 +1781,10 @@ paths:
           description: Successful Request
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/200-success'
+              type: object
+              properties:
+                success:
+                  type: boolean
         '400':
           description: Bad Request.
         '401':
@@ -1338,7 +1909,125 @@ paths:
                 $ref: '#/components/schemas/dashboard'
               examples:
                 Dashboard Response:
-                  $ref: '#/components/examples/dashboard'
+                  value:
+                    success: true
+                    instanceStats:
+                      maxCpu: 18
+                      maxCores: 35
+                      cpuUsage: 0
+                      cpuUsageAverage: 7.213778379417601
+                      cpuUsagePeak: 34.55673
+                      usedMemory: 55459662848
+                      maxMemory: 106568876032
+                      usedStorage: 173983399936
+                      maxStorage: 1113470271488
+                      running: 13
+                      total: 18
+                      totalContainers: 24
+                    provisioning:
+                      instanceCount: 18
+                      favoriteInstances: []
+                    monitoring:
+                      avgHealth: 8.4444444444
+                      avgResponseTime: 915.5555555556
+                      warningApps: 4
+                      warningChecks: 2
+                      failApps: 0
+                      totalApps: 5
+                      failChecks: 4
+                      successApps: 0
+                      mutedApps: 1
+                      successChecks: 21
+                      totalChecks: 30
+                      mutedChecks: 4
+                      responseTimes:
+                        - 0
+                        - 0
+                        - 10
+                        - 0
+                        - 0
+                        - 0
+                        - 0
+                      allSuccess: false
+                      openIncidents: 5
+                    backups:
+                      accountStats:
+                        totalSizeByDay:
+                          - 1883
+                          - 1883
+                          - 71515
+                          - 134532
+                          - 134532
+                        totalSizeByDay7Days:
+                          - 134532
+                          - 134532
+                          - 134532
+                          - 134532
+                          - 134532
+                          - 134532
+                          - 134532
+                        formattedTotalSize:
+                          value: '132'
+                          units: GB
+                        backupCount: 10
+                        totalSize: 134532
+                        success: 11
+                        failed: 0
+                        totalCompleted: 11
+                        lastSevenDays:
+                          failed: 0
+                          successful: 6
+                          completed: 6
+                        avgSize: 12230.1818181818
+                        failedRate: 0
+                        successRate: 1
+                        nextFireTotal: 1
+                        backupDayCount:
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                          - 0
+                        backupDayCountTotal: 0
+                    activity:
+                      - _id: 5a6e90e3-b7fa-4105-ba17-46999c2a0ebd
+                        success: true
+                        activityType: Admin
+                        name: areid
+                        message: User 'areid' updated.
+                        objectType: User
+                        objectId: 189
+                        user:
+                          id: 240
+                          username: Greg Willis
+                        ts: '2022-03-01T02:09:21Z'
+                      - _id: 98d7f835-002a-4800-8f5c-8b24501a3690
+                        success: true
+                        activityType: Admin
+                        name: Aaron Reid
+                        message: User 'Aaron Reid' updated.
+                        objectType: User
+                        objectId: 238
+                        user:
+                          id: 240
+                          username: Greg Willis
+                        ts: '2022-03-01T02:09:15Z'
+                      - _id: cb01fcf7-b2a8-4f42-9cbe-4402e4c86b9b
+                        success: true
+                        activityType: Alert
+                        name: MRDMMON1010
+                        message: Instance has successfully been deleted by 'Morpheus'.
+                        objectType: Instance
+                        objectId: 18182
+                        user:
+                          id: 263
+                          username: Martez Reed
+                        ts: '2022-02-28T22:37:18Z'
+                    logStats:
+                      success: false
+                      msg: Found no scope objects for user
         '400':
           description: Bad Request.
         '401':
@@ -1370,7 +2059,37 @@ paths:
                 $ref: '#/components/schemas/docs'
               examples:
                 Docs Response:
-                  $ref: '#/components/examples/docs'
+                  value:
+                    links:
+                      - name: Morpheus API Swagger Documentation
+                        url: https://demo.morpheusdata.com/api/doc/openapi.json
+                        description: >-
+                          Morpheus API Documentation in the OpenAPI 3.0 format.
+                          Default format is JSON, use extension .yaml for YAML
+                          instead.
+                        type: openapi
+                      - name: Morpheus API Documentation
+                        url: https://apidocs.morpheusdata.com
+                        description: >-
+                          The Morpheus API Documentation is the main resource
+                          for learning about the Morpheus API endpoints. It
+                          contains a definition and example of each api
+                          endpoint.
+                        type: external
+                      - name: Morpheus Documentation
+                        url: https://docs.morpheusdata.com/
+                        description: >-
+                          The Morpheus Documentation site is the main resource
+                          for documentation on the Morpheus appliance and its
+                          features.
+                        type: external
+                      - name: Morpheus Homepage
+                        url: https://morpheusdata.com
+                        description: >-
+                          The Morpheus Data homepage is a good place to start
+                          learning about Morpheus and what is is capable of. It
+                          also contains links to support.
+                        type: external
         '400':
           description: Bad Request.
         '401':
@@ -1402,7 +2121,7 @@ paths:
                 jsonExample:
                   summary: OpenAPI (Swagger) JSON
                   value:
-                    openapi: 3.0.3
+                    openapi: 3.1.0
                     info:
                       title: Morpheus API
                       description: Welcome ...
@@ -1437,7 +2156,7 @@ paths:
                 yamlExample:
                   summary: OpenApi (Swagger) YAML
                   value:
-                    openapi: 3.0.3
+                    openapi: 3.1.0
                     info:
                       title: Morpheus API
                       description: Welcome ...
@@ -1604,10 +2323,327 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/groups'
+                allOf:
+                  - type: object
+                    properties:
+                      groups:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/group'
+                  - $ref: '#/components/schemas/meta'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/groups'
+                  value:
+                    groups:
+                      - id: 23
+                        uuid: 7e3a0b47-8299-4458-8eef-63d179078587
+                        name: Ansible
+                        code: ans
+                        location: Defaults to Ansible Dev
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: ''
+                          configCmdbId: ''
+                          _configCmdbDiscovery: ''
+                          configCmId: ''
+                          serviceRegistryId: ''
+                          configManagementId: ''
+                          configCmdbDiscovery: false
+                        dateCreated: '2017-04-20T17:58:14Z'
+                        lastUpdated: '2021-12-09T22:43:41Z'
+                        zones:
+                          - id: 12
+                            name: AWS
+                          - id: 141
+                            name: AWS Labs
+                          - id: 124
+                            name: Azure UK
+                          - id: 121
+                            name: Azure US
+                          - id: 138
+                            name: VMware Demo Cluster
+                        stats:
+                          instanceCounts:
+                            all: 0
+                          serverCounts:
+                            all: 23
+                            host: 23
+                            hypervisor: 6
+                            containerHost: 17
+                            vm: 635
+                            baremetal: 0
+                            unmanaged: 319
+                        serverCount: 23
+                      - id: 19
+                        uuid: 58257423-d21a-478c-9064-4a193c864b05
+                        name: Chef
+                        code: chef
+                        location: Defaults to Chef Demo bootstrap
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: ''
+                          configCmdbId: ''
+                          serviceRegistryId: ''
+                          configManagementId: ''
+                        dateCreated: '2017-03-22T22:50:46Z'
+                        lastUpdated: '2021-12-08T23:24:27Z'
+                        zones:
+                          - id: 121
+                            name: Azure US
+                          - id: 138
+                            name: VMware Demo Cluster
+                        stats:
+                          instanceCounts:
+                            all: 0
+                          serverCounts:
+                            all: 17
+                            host: 17
+                            hypervisor: 6
+                            containerHost: 11
+                            vm: 207
+                            baremetal: 0
+                            unmanaged: 211
+                        serverCount: 17
+                      - id: 2
+                        uuid: 8d0bcaab-1c61-46e2-b88c-155a369d318a
+                        name: Demo
+                        code: demo
+                        location: 24 hour expiration policy
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: '11'
+                          configCmdbId: '12'
+                          serviceRegistryId: '-1'
+                          configManagementId: ''
+                        dateCreated: '2017-02-24T16:56:55Z'
+                        lastUpdated: '2021-11-17T17:14:14Z'
+                        zones:
+                          - id: 12
+                            name: AWS
+                          - id: 141
+                            name: AWS Labs
+                          - id: 176
+                            name: AWS US Channels West
+                          - id: 175
+                            name: AliCloud
+                          - id: 124
+                            name: Azure UK
+                          - id: 121
+                            name: Azure US
+                          - id: 143
+                            name: Google Labs
+                          - id: 173
+                            name: H5 Demo HyperV
+                          - id: 111
+                            name: HPE OneView
+                          - id: 53
+                            name: Hyper-V Demo
+                          - id: 134
+                            name: MacStadium
+                          - id: 127
+                            name: Morpheus
+                          - id: 137
+                            name: Nutanix Cluster 1
+                          - id: 106
+                            name: Nutanix Cluster 2
+                          - id: 92
+                            name: Openstack
+                          - id: 157
+                            name: QA NSX-T
+                          - id: 27
+                            name: Softlayer
+                          - id: 22
+                            name: UCS Docker & KVM
+                          - id: 138
+                            name: VMware Demo Cluster
+                          - id: 172
+                            name: VMware Demo Cluster H5
+                          - id: 164
+                            name: VMware Den2 ACI
+                          - id: 174
+                            name: VMware ESXi
+                          - id: 171
+                            name: Xen Server Labs
+                        stats:
+                          instanceCounts:
+                            all: 12
+                          serverCounts:
+                            all: 79
+                            host: 79
+                            hypervisor: 28
+                            containerHost: 54
+                            vm: 930
+                            baremetal: 14
+                            unmanaged: 600
+                        serverCount: 79
+                      - id: 371
+                        uuid: d157ffef-aaee-4040-9b23-b571680bb3e5
+                        name: DevTest
+                        code: dev
+                        location: 2 day Shutdown, 7 day expiration
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: ''
+                          configCmdbId: ''
+                          _configCmdbDiscovery: ''
+                          configCmId: ''
+                          serviceRegistryId: ''
+                          configManagementId: ''
+                        dateCreated: '2017-11-01T18:46:04Z'
+                        lastUpdated: '2021-10-20T23:45:35Z'
+                        zones:
+                          - id: 12
+                            name: AWS
+                          - id: 141
+                            name: AWS Labs
+                          - id: 124
+                            name: Azure UK
+                          - id: 121
+                            name: Azure US
+                          - id: 143
+                            name: Google Labs
+                          - id: 53
+                            name: Hyper-V Demo
+                          - id: 127
+                            name: Morpheus
+                          - id: 137
+                            name: Nutanix Cluster 1
+                          - id: 106
+                            name: Nutanix Cluster 2
+                          - id: 92
+                            name: Openstack
+                          - id: 22
+                            name: UCS Docker & KVM
+                          - id: 138
+                            name: VMware Demo Cluster
+                          - id: 174
+                            name: VMware ESXi
+                        stats:
+                          instanceCounts:
+                            all: 2
+                          serverCounts:
+                            all: 39
+                            host: 39
+                            hypervisor: 16
+                            containerHost: 26
+                            vm: 752
+                            baremetal: 13
+                            unmanaged: 428
+                        serverCount: 39
+                      - id: 50
+                        uuid: 5ce19da4-9c06-4de1-8aed-73dc3e01f7ad
+                        name: Production
+                        code: prod
+                        location: Approval Required
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: '30'
+                          configCmdbId: '12'
+                          serviceRegistryId: '-100'
+                          configManagementId: ''
+                        dateCreated: '2017-05-08T10:24:06Z'
+                        lastUpdated: '2021-11-15T16:31:27Z'
+                        zones:
+                          - id: 12
+                            name: AWS
+                          - id: 124
+                            name: Azure UK
+                          - id: 121
+                            name: Azure US
+                          - id: 106
+                            name: Nutanix Cluster 2
+                          - id: 161
+                            name: Qa NSX-T 3.0
+                          - id: 22
+                            name: UCS Docker & KVM
+                          - id: 138
+                            name: VMware Demo Cluster
+                        stats:
+                          instanceCounts:
+                            all: 5
+                          serverCounts:
+                            all: 33
+                            host: 33
+                            hypervisor: 15
+                            containerHost: 21
+                            vm: 607
+                            baremetal: 10
+                            unmanaged: 294
+                        serverCount: 33
+                      - id: 424
+                        uuid: ca6f5f34-8837-4977-b10f-983f3ad72d5a
+                        name: SaltStack
+                        code: salt
+                        location: Defaults to Salt Master prod
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: ''
+                          configCmdbId: ''
+                          serviceRegistryId: ''
+                          configManagementId: '13'
+                        dateCreated: '2018-05-09T02:57:23Z'
+                        lastUpdated: '2020-04-24T16:39:14Z'
+                        zones:
+                          - id: 138
+                            name: VMware Demo Cluster
+                        stats:
+                          instanceCounts:
+                            all: 0
+                          serverCounts:
+                            all: 7
+                            host: 7
+                            hypervisor: 6
+                            containerHost: 1
+                            vm: 201
+                            baremetal: 0
+                            unmanaged: 199
+                        serverCount: 7
+                      - id: 443
+                        uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                        name: ServiceNow
+                        code: snow
+                        location: ServiceNow Approval, CMDB
+                        accountId: 3
+                        active: true
+                        config:
+                          dnsIntegrationId: ''
+                          configCmdbId: '12'
+                          serviceRegistryId: ''
+                          configManagementId: '3'
+                        dateCreated: '2018-07-20T05:24:25Z'
+                        lastUpdated: '2022-01-13T00:54:57Z'
+                        zones:
+                          - id: 12
+                            name: AWS
+                          - id: 121
+                            name: Azure US
+                          - id: 143
+                            name: Google Labs
+                          - id: 172
+                            name: VMware Demo Cluster H5
+                        stats:
+                          instanceCounts:
+                            all: 0
+                          serverCounts:
+                            all: 45
+                            host: 45
+                            hypervisor: 5
+                            containerHost: 40
+                            vm: 555
+                            baremetal: 0
+                            unmanaged: 243
+                        serverCount: 45
+                    meta:
+                      offset: 0
+                      max: 25
+                      size: 7
+                      total: 7
         '400':
           description: Bad Request.
         '401':
@@ -1657,10 +2693,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/group'
+                allOf:
+                  - type: object
+                    properties:
+                      group:
+                        $ref: '#/components/schemas/group'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Report Types Response:
-                  $ref: '#/components/examples/group'
+                  value:
+                    group:
+                      id: 443
+                      uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                      name: ServiceNow
+                      code: snow
+                      location: ServiceNow Approval, CMDB
+                      accountId: 3
+                      active: true
+                      config:
+                        dnsIntegrationId: ''
+                        configCmdbId: '12'
+                        serviceRegistryId: ''
+                        configManagementId: '3'
+                      dateCreated: '2018-07-20T05:24:25Z'
+                      lastUpdated: '2022-01-13T00:54:57Z'
+                      zones:
+                        - id: 12
+                          name: AWS
+                        - id: 121
+                          name: Azure US
+                        - id: 143
+                          name: Google Labs
+                        - id: 172
+                          name: VMware Demo Cluster H5
+                      stats:
+                        instanceCounts:
+                          all: 0
+                        serverCounts:
+                          all: 45
+                          host: 45
+                          hypervisor: 5
+                          containerHost: 40
+                          vm: 555
+                          baremetal: 0
+                          unmanaged: 243
+                      serverCount: 45
         '400':
           description: Bad Request.
         '401':
@@ -1691,10 +2768,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/group'
+                type: object
+                properties:
+                  group:
+                    $ref: '#/components/schemas/group'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/group'
+                  value:
+                    group:
+                      id: 443
+                      uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                      name: ServiceNow
+                      code: snow
+                      location: ServiceNow Approval, CMDB
+                      accountId: 3
+                      active: true
+                      config:
+                        dnsIntegrationId: ''
+                        configCmdbId: '12'
+                        serviceRegistryId: ''
+                        configManagementId: '3'
+                      dateCreated: '2018-07-20T05:24:25Z'
+                      lastUpdated: '2022-01-13T00:54:57Z'
+                      zones:
+                        - id: 12
+                          name: AWS
+                        - id: 121
+                          name: Azure US
+                        - id: 143
+                          name: Google Labs
+                        - id: 172
+                          name: VMware Demo Cluster H5
+                      stats:
+                        instanceCounts:
+                          all: 0
+                        serverCounts:
+                          all: 45
+                          host: 45
+                          hypervisor: 5
+                          containerHost: 40
+                          vm: 555
+                          baremetal: 0
+                          unmanaged: 243
+                      serverCount: 45
         '400':
           description: Bad Request.
         '401':
@@ -1746,10 +2862,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/group'
+                type: object
+                properties:
+                  group:
+                    allOf:
+                      - $ref: '#/components/schemas/group'
+                      - $ref: '#/components/schemas/200-success'
               examples:
                 Report Types Response:
-                  $ref: '#/components/examples/group'
+                  value:
+                    group:
+                      id: 443
+                      uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
+                      name: ServiceNow
+                      code: snow
+                      location: ServiceNow Approval, CMDB
+                      accountId: 3
+                      active: true
+                      config:
+                        dnsIntegrationId: ''
+                        configCmdbId: '12'
+                        serviceRegistryId: ''
+                        configManagementId: '3'
+                      dateCreated: '2018-07-20T05:24:25Z'
+                      lastUpdated: '2022-01-13T00:54:57Z'
+                      zones:
+                        - id: 12
+                          name: AWS
+                        - id: 121
+                          name: Azure US
+                        - id: 143
+                          name: Google Labs
+                        - id: 172
+                          name: VMware Demo Cluster H5
+                      stats:
+                        instanceCounts:
+                          all: 0
+                        serverCounts:
+                          all: 45
+                          host: 45
+                          hypervisor: 5
+                          containerHost: 40
+                          vm: 555
+                          baremetal: 0
+                          unmanaged: 243
+                      serverCount: 45
         '400':
           description: Bad Request.
         '401':
@@ -2177,10 +3334,27 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/key-pairs'
+                allOf:
+                  - type: object
+                    properties:
+                      account:
+                        $ref: '#/components/schemas/key-pair'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Report Types Response:
-                  $ref: '#/components/examples/key-pairs'
+                  value:
+                    keyPair:
+                      id: 55
+                      name: testKey
+                      accountId: 3
+                      publicKey: >-
+                        ssh-rsa
+                        +baNlUQG4Q69oQ4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2BgGql0aGk0E592rRmaMDcZcDQ4MyT6iPgxpRiNWzx4wVEldbCrE6FtYhSLy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAvDVO17v/GDR95nTiomV33mVwm5Ziky2/doJTk+WszcrmXZv4kV7eXb2LlpZ+X0ZmcCQy3zt9jLNYQHj4HLKqH/aA2cpdiSQqnSqcRukIBPEF+lJasbMiXMVfw==9zwjFp4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2
+                      hasPrivateKey: true
+                      fingerprint: ab:cd:ef:12:34:56:a1:b2:c3:d4:e5:f6:aa:bc:ff:ee
+                      dateCreated: '2021-01-01T00:00:00Z'
+                      lastUpdated: '2021-01-01T00:00:00Z'
+                    success: true
         '400':
           description: Bad Request.
         '401':
@@ -2211,10 +3385,22 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/key-pair'
+                type: object
+                properties:
+                  account:
+                    $ref: '#/components/schemas/key-pair'
               examples:
                 Search Response:
-                  $ref: '#/components/examples/key-pair'
+                  value:
+                    keyPair:
+                      id: 61
+                      name: ahicks
+                      accountId: 3
+                      publicKey: null
+                      hasPrivateKey: false
+                      fingerprint: null
+                      dateCreated: '2019-11-08T09:03:45Z'
+                      lastUpdated: '2020-12-24T06:38:20Z'
         '400':
           description: Bad Request.
         '401':
@@ -5256,139 +6442,18 @@ components:
               format: date-time
         success:
           type: boolean
-    MetaObject:
-      type: object
-      description: >-
-        Metadata about the returned array of results, provides pagination
-        information.
-      properties:
-        offset:
-          type: integer
-          format: int64
-          description: >-
-            Offset records, the number of records to skip, can be used to
-            paginate over results.
-          default: 0
-        max:
-          type: integer
-          format: int64
-          description: Max size, the maximum number of records to include in the response.
-          default: 25
-        size:
-          type: integer
-          format: int64
-          description: Number of records returned in the response
-          default: 0
-        total:
-          type: integer
-          format: int64
-          description: Total number of records found
-          default: 0
-    budgets:
-      type: object
-      properties:
-        budgets:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-                format: int64
-              name:
-                type: string
-              description:
-                type: string
-                format: nullable
-              account:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int64
-                  name:
-                    type: string
-              enabled:
-                type: boolean
-              refScope:
-                type: string
-              refType:
-                type: string
-              refId:
-                type: integer
-                format: int64
-              refName:
-                type: string
-              period:
-                type: string
-              year:
-                type: string
-              resourceType:
-                type: string
-              timezone:
-                type: string
-              startDate:
-                type: string
-                format: date-time
-              endDate:
-                type: string
-                format: date-time
-              interval:
-                type: string
-              costs:
-                type: array
-                items:
-                  type: number
-                  format: nullable
-              isFiscal:
-                type: boolean
-              averageCost:
-                type: number
-                format: nullable
-              totalCost:
-                type: number
-                format: nullable
-              currency:
-                type: string
-              rollover:
-                type: boolean
-              warningLimit:
-                type: string
-                format: nullable
-              overLimit:
-                type: string
-                format: nullable
-              externalId:
-                type: string
-                format: nullable
-              internalId:
-                type: string
-                format: nullable
-              createdById:
-                type: integer
-                format: int64
-              createdByName:
-                type: string
-              updatedById:
-                type: string
-                format: nullable
-              updatedByName:
-                type: string
-                format: nullable
-              dateCreated:
-                type: string
-                format: date-time
-              lastUpdated:
-                type: string
-                format: date-time
-        meta:
-          $ref: '#/components/schemas/MetaObject'
     budget:
       type: object
       properties:
-        success:
-          type: boolean
-        budget:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+          format: nullable
+        account:
           type: object
           properties:
             id:
@@ -5396,132 +6461,121 @@ components:
               format: int64
             name:
               type: string
-            description:
-              type: string
-              format: nullable
-            account:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int64
-                name:
-                  type: string
-            enabled:
-              type: boolean
-            refScope:
-              type: string
-            refType:
-              type: string
-            refId:
-              type: integer
-              format: int64
-            refName:
-              type: string
-            period:
-              type: string
-            year:
-              type: string
-            resourceType:
-              type: string
-            timezone:
-              type: string
-            startDate:
-              type: string
-              format: date-time
-            endDate:
-              type: string
-              format: date-time
-            interval:
-              type: string
-            costs:
-              type: array
-              items:
-                type: integer
-                format: int64
-            isFiscal:
-              type: boolean
-            averageCost:
-              type: integer
-              format: int64
-            totalCost:
-              type: integer
-              format: int64
+        enabled:
+          type: boolean
+        refScope:
+          type: string
+        refType:
+          type: string
+        refId:
+          type: integer
+          format: int64
+        refName:
+          type: string
+        period:
+          type: string
+        year:
+          type: string
+        resourceType:
+          type: string
+        timezone:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        interval:
+          type: string
+        costs:
+          type: array
+          items:
+            type: integer
+            format: int64
+        isFiscal:
+          type: boolean
+        averageCost:
+          type: integer
+          format: int64
+        totalCost:
+          type: integer
+          format: int64
+        currency:
+          type: string
+        rollover:
+          type: boolean
+        warningLimit:
+          type: string
+          format: nullable
+        overLimit:
+          type: string
+          format: nullable
+        externalId:
+          type: string
+          format: nullable
+        internalId:
+          type: string
+          format: nullable
+        createdById:
+          type: integer
+          format: int64
+        createdByName:
+          type: string
+        updatedById:
+          type: string
+          format: nullable
+        updatedByName:
+          type: string
+          format: nullable
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+        stats:
+          type: object
+          properties:
             currency:
               type: string
-            rollover:
-              type: boolean
-            warningLimit:
-              type: string
-              format: nullable
-            overLimit:
-              type: string
-              format: nullable
-            externalId:
-              type: string
-              format: nullable
-            internalId:
-              type: string
-              format: nullable
-            createdById:
+            conversionRate:
               type: integer
               format: int64
-            createdByName:
-              type: string
-            updatedById:
-              type: string
-              format: nullable
-            updatedByName:
-              type: string
-              format: nullable
-            dateCreated:
-              type: string
-              format: date-time
-            lastUpdated:
-              type: string
-              format: date-time
-            stats:
+            intervals:
+              type: array
+              items:
+                type: object
+                properties:
+                  index:
+                    type: integer
+                    format: int64
+                  month:
+                    type: string
+                  shortName:
+                    type: string
+                  chartName:
+                    type: string
+                  budget:
+                    type: integer
+                    format: int64
+                  cost:
+                    type: number
+                  startDate:
+                    type: string
+                    format: date-time
+                  endDate:
+                    type: string
+                    format: date-time
+            current:
               type: object
               properties:
-                currency:
+                estimatedCost:
                   type: string
-                conversionRate:
-                  type: integer
-                  format: int64
-                intervals:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      index:
-                        type: integer
-                        format: int64
-                      month:
-                        type: string
-                      shortName:
-                        type: string
-                      chartName:
-                        type: string
-                      budget:
-                        type: integer
-                        format: int64
-                      cost:
-                        type: number
-                      startDate:
-                        type: string
-                        format: date-time
-                      endDate:
-                        type: string
-                        format: date-time
-                current:
-                  type: object
-                  properties:
-                    estimatedCost:
-                      type: string
-                      format: nullable
-                    lastCost:
-                      type: string
-                      format: nullable
+                  format: nullable
+                lastCost:
+                  type: string
+                  format: nullable
     dashboard:
       type: object
       properties:
@@ -5704,114 +6758,6 @@ components:
                 format: nullable
               type:
                 type: string
-    groups:
-      type: object
-      properties:
-        groups:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-                format: int64
-              uuid:
-                type: string
-              name:
-                type: string
-              code:
-                type: string
-              location:
-                type: string
-              accountId:
-                type: integer
-                format: int64
-              active:
-                type: boolean
-              config:
-                type: object
-                properties:
-                  dnsIntegrationId:
-                    type: string
-                  configCmdbId:
-                    type: string
-                  _configCmdbDiscovery:
-                    type: string
-                  configCmId:
-                    type: string
-                  serviceRegistryId:
-                    type: string
-                  configManagementId:
-                    type: string
-                  configCmdbDiscovery:
-                    type: boolean
-              dateCreated:
-                type: string
-                format: date-time
-              lastUpdated:
-                type: string
-                format: date-time
-              zones:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      format: int64
-                    name:
-                      type: string
-              stats:
-                type: object
-                properties:
-                  instanceCounts:
-                    type: object
-                    properties:
-                      all:
-                        type: integer
-                        format: int64
-                  serverCounts:
-                    type: object
-                    properties:
-                      all:
-                        type: integer
-                        format: int64
-                      host:
-                        type: integer
-                        format: int64
-                      hypervisor:
-                        type: integer
-                        format: int64
-                      containerHost:
-                        type: integer
-                        format: int64
-                      vm:
-                        type: integer
-                        format: int64
-                      baremetal:
-                        type: integer
-                        format: int64
-                      unmanaged:
-                        type: integer
-                        format: int64
-              serverCount:
-                type: integer
-                format: int64
-        meta:
-          type: object
-          properties:
-            offset:
-              type: integer
-              format: int64
-            max:
-              type: integer
-              format: int64
-            size:
-              type: integer
-              format: int64
-            total:
-              type: integer
-              format: int64
     group:
       type: object
       properties:
@@ -6071,62 +7017,31 @@ components:
             workloads:
               type: integer
               format: int64
-    key-pairs:
-      type: object
-      properties:
-        keyPair:
-          type: object
-          properties:
-            id:
-              type: string
-              format: nullable
-            name:
-              type: string
-            accountId:
-              type: integer
-              format: int64
-            publicKey:
-              type: string
-            hasPrivateKey:
-              type: boolean
-            fingerprint:
-              type: string
-            dateCreated:
-              type: string
-              format: nullable
-            lastUpdated:
-              type: string
-              format: nullable
-        success:
-          type: boolean
     key-pair:
       type: object
       properties:
-        keyPair:
-          type: object
-          properties:
-            id:
-              type: integer
-              format: int64
-            name:
-              type: string
-            accountId:
-              type: integer
-              format: int64
-            publicKey:
-              type: string
-              format: nullable
-            hasPrivateKey:
-              type: boolean
-            fingerprint:
-              type: string
-              format: nullable
-            dateCreated:
-              type: string
-              format: date-time
-            lastUpdated:
-              type: string
-              format: date-time
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        accountId:
+          type: integer
+          format: int64
+        publicKey:
+          type: string
+          format: nullable
+        hasPrivateKey:
+          type: boolean
+        fingerprint:
+          type: string
+          format: nullable
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
     ping:
       type: object
       properties:
@@ -6134,6 +7049,34 @@ components:
           type: boolean
         buildVersion:
           type: string
+    MetaObject:
+      type: object
+      description: >-
+        Metadata about the returned array of results, provides pagination
+        information.
+      properties:
+        offset:
+          type: integer
+          format: int64
+          description: >-
+            Offset records, the number of records to skip, can be used to
+            paginate over results.
+          default: 0
+        max:
+          type: integer
+          format: int64
+          description: Max size, the maximum number of records to include in the response.
+          default: 25
+        size:
+          type: integer
+          format: int64
+          description: Number of records returned in the response
+          default: 0
+        total:
+          type: integer
+          format: int64
+          description: Total number of records found
+          default: 0
     processes:
       type: object
       properties:
@@ -7883,1124 +8826,6 @@ components:
           dateCreated: '2022-03-04T02:39:34Z'
           lastUpdated: '2022-03-04T02:39:34Z'
         success: true
-    budgets:
-      summary: Budgets Response
-      value:
-        budgets:
-          - id: 8
-            name: Adam H
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: user
-            refType: User
-            refId: 4
-            refName: ahicks
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-            isFiscal: false
-            averageCost: 1000
-            totalCost: 12000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 4
-            createdByName: Adam Hicks
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2021-03-05T19:54:00Z'
-            lastUpdated: '2021-03-05T19:54:00Z'
-          - id: 9
-            name: AWS monthly spend
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: cloud
-            refType: ComputeZone
-            refId: 12
-            refName: AWS
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-              - 1000
-            isFiscal: false
-            averageCost: 1000
-            totalCost: 12000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 253
-            createdByName: Anish Abraham
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2021-04-08T14:30:29Z'
-            lastUpdated: '2021-04-08T14:30:29Z'
-          - id: 3
-            name: AWS Spend
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: cloud
-            refType: ComputeZone
-            refId: 12
-            refName: AWS
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-              - 10000
-            isFiscal: false
-            averageCost: 10000
-            totalCost: 120000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 5
-            createdByName: David Estes
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2019-04-17T16:34:52Z'
-            lastUpdated: '2021-03-25T20:49:37Z'
-          - id: 5
-            name: Azure Spend
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: cloud
-            refType: ComputeZone
-            refId: 121
-            refName: Azure US
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-              - 2500
-            isFiscal: false
-            averageCost: 2500
-            totalCost: 30000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 2
-            createdByName: Jeff Wheeler
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2020-07-24T04:42:42Z'
-            lastUpdated: '2021-06-15T17:46:24Z'
-          - id: 1
-            name: Demo Budget
-            description: Demo Budget
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: account
-            refType: null
-            refId: 13
-            refName: Morpheus
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-              - 25000
-            isFiscal: false
-            averageCost: 25000
-            totalCost: 300000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 2
-            createdByName: Jeff Wheeler
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2019-04-09T09:21:16Z'
-            lastUpdated: '2021-03-25T20:50:46Z'
-          - id: 10
-            name: DZ-VMware Budget
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: cloud
-            refType: ComputeZone
-            refId: 138
-            refName: VMware Demo Cluster
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-            isFiscal: false
-            averageCost: 5000
-            totalCost: 60000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 219
-            createdByName: Dave Zenz
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2021-04-16T02:07:56Z'
-            lastUpdated: '2021-04-16T02:07:56Z'
-          - id: 7
-            name: Google Spend
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: cloud
-            refType: ComputeZone
-            refId: 143
-            refName: Google Labs
-            period: year
-            year: '2020'
-            resourceType: all
-            timezone: UTC
-            startDate: '2020-01-01T00:00:00Z'
-            endDate: '2020-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-            isFiscal: false
-            averageCost: 0
-            totalCost: 0
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 212
-            createdByName: Karl Rabe
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2020-12-01T20:34:45Z'
-            lastUpdated: '2020-12-01T20:34:59Z'
-          - id: 11
-            name: hank-test-budget
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: user
-            refType: User
-            refId: 275
-            refName: Hank Pike
-            period: year
-            year: '2021'
-            resourceType: all
-            timezone: UTC
-            startDate: '2021-01-01T00:00:00Z'
-            endDate: '2021-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 5
-              - 0
-              - 0.01
-              - 0
-              - 0
-              - 0
-            isFiscal: false
-            averageCost: 0.4175
-            totalCost: 5.01
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 275
-            createdByName: Hank Pike
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2021-09-14T02:18:47Z'
-            lastUpdated: '2021-09-14T02:18:47Z'
-          - id: 4
-            name: Pied Piper
-            description: null
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: tenant
-            refType: Account
-            refId: 5
-            refName: Pied Piper
-            period: year
-            year: '2020'
-            resourceType: all
-            timezone: UTC
-            startDate: '2020-01-01T00:00:00Z'
-            endDate: '2020-12-31T23:59:59Z'
-            interval: month
-            costs:
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-              - 100
-            isFiscal: false
-            averageCost: 100
-            totalCost: 1200
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 2
-            createdByName: Jeff Wheeler
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2020-03-31T15:52:37Z'
-            lastUpdated: '2020-03-31T15:52:37Z'
-          - id: 2
-            name: Production Group
-            description: Production Group
-            account:
-              id: 3
-              name: Morpheus
-            enabled: true
-            refScope: group
-            refType: ComputeSite
-            refId: 50
-            refName: Production
-            period: year
-            year: '2020'
-            resourceType: all
-            timezone: UTC
-            startDate: '2020-01-01T00:00:00Z'
-            endDate: '2020-12-31T23:59:59Z'
-            interval: quarter
-            costs:
-              - 5000
-              - 5000
-              - 5000
-              - 5000
-            isFiscal: false
-            averageCost: 5000
-            totalCost: 20000
-            currency: USD
-            rollover: false
-            warningLimit: null
-            overLimit: null
-            externalId: null
-            internalId: null
-            createdById: 2
-            createdByName: Jeff Wheeler
-            updatedById: null
-            updatedByName: null
-            dateCreated: '2019-04-12T18:33:17Z'
-            lastUpdated: '2020-06-02T22:17:29Z'
-        meta:
-          size: 10
-          total: 10
-          offset: 0
-          max: 25
-    budget:
-      summary: Budgets Response
-      value:
-        success: true
-        budget:
-          id: 8
-          name: Adam H
-          description: null
-          account:
-            id: 3
-            name: Morpheus
-          enabled: true
-          refScope: user
-          refType: User
-          refId: 4
-          refName: ahicks
-          period: year
-          year: '2021'
-          resourceType: all
-          timezone: UTC
-          startDate: '2021-01-01T00:00:00Z'
-          endDate: '2021-12-31T23:59:59Z'
-          interval: month
-          costs:
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-            - 1000
-          isFiscal: false
-          averageCost: 1000
-          totalCost: 12000
-          currency: USD
-          rollover: false
-          warningLimit: null
-          overLimit: null
-          externalId: null
-          internalId: null
-          createdById: 4
-          createdByName: Adam Hicks
-          updatedById: null
-          updatedByName: null
-          dateCreated: '2021-03-05T19:54:00Z'
-          lastUpdated: '2021-03-05T19:54:00Z'
-          stats:
-            currency: USD
-            conversionRate: 1
-            intervals:
-              - index: 1
-                month: january
-                shortName: jan
-                chartName: jan
-                budget: 1000
-                cost: 884.773840967118
-                startDate: '2021-01-01T00:00:00Z'
-                endDate: '2021-01-31T23:59:59Z'
-              - index: 2
-                month: february
-                shortName: feb
-                chartName: feb
-                budget: 1000
-                cost: 1240.8496766124817
-                startDate: '2021-02-01T00:00:00Z'
-                endDate: '2021-02-28T23:59:59Z'
-              - index: 3
-                month: march
-                shortName: mar
-                chartName: mar
-                budget: 1000
-                cost: 1565.7323574072502
-                startDate: '2021-03-01T00:00:00Z'
-                endDate: '2021-03-31T23:59:59Z'
-              - index: 4
-                month: april
-                shortName: apr
-                chartName: apr
-                budget: 1000
-                cost: 1677.0989975803122
-                startDate: '2021-04-01T00:00:00Z'
-                endDate: '2021-04-30T23:59:59Z'
-              - index: 5
-                month: may
-                shortName: may
-                chartName: may
-                budget: 1000
-                cost: 1419.696091726683
-                startDate: '2021-05-01T00:00:00Z'
-                endDate: '2021-05-31T23:59:59Z'
-              - index: 6
-                month: june
-                shortName: jun
-                chartName: jun
-                budget: 1000
-                cost: 1679.3112808045264
-                startDate: '2021-06-01T00:00:00Z'
-                endDate: '2021-06-30T23:59:59Z'
-              - index: 7
-                month: july
-                shortName: jul
-                chartName: jul
-                budget: 1000
-                cost: 435.9711428389873
-                startDate: '2021-07-01T00:00:00Z'
-                endDate: '2021-07-31T23:59:59Z'
-              - index: 8
-                month: august
-                shortName: aug
-                chartName: aug
-                budget: 1000
-                cost: 582.1822446573134
-                startDate: '2021-08-01T00:00:00Z'
-                endDate: '2021-08-31T23:59:59Z'
-              - index: 9
-                month: september
-                shortName: sep
-                chartName: sep
-                budget: 1000
-                cost: 0
-                startDate: '2021-09-01T00:00:00Z'
-                endDate: '2021-09-30T23:59:59Z'
-              - index: 10
-                month: october
-                shortName: oct
-                chartName: oct
-                budget: 1000
-                cost: 0
-                startDate: '2021-10-01T00:00:00Z'
-                endDate: '2021-10-31T23:59:59Z'
-              - index: 11
-                month: november
-                shortName: nov
-                chartName: nov
-                budget: 1000
-                cost: 0
-                startDate: '2021-11-01T00:00:00Z'
-                endDate: '2021-11-30T23:59:59Z'
-              - index: 12
-                month: december
-                shortName: dec
-                chartName: dec
-                budget: 1000
-                cost: 0
-                startDate: '2021-12-01T00:00:00Z'
-                endDate: '2021-12-31T23:59:59Z'
-            current:
-              estimatedCost: null
-              lastCost: null
-    dashboard:
-      summary: Dashboard Response
-      value:
-        success: true
-        instanceStats:
-          maxCpu: 18
-          maxCores: 35
-          cpuUsage: 0
-          cpuUsageAverage: 7.213778379417601
-          cpuUsagePeak: 34.55673
-          usedMemory: 55459662848
-          maxMemory: 106568876032
-          usedStorage: 173983399936
-          maxStorage: 1113470271488
-          running: 13
-          total: 18
-          totalContainers: 24
-        provisioning:
-          instanceCount: 18
-          favoriteInstances: []
-        monitoring:
-          avgHealth: 8.4444444444
-          avgResponseTime: 915.5555555556
-          warningApps: 4
-          warningChecks: 2
-          failApps: 0
-          totalApps: 5
-          failChecks: 4
-          successApps: 0
-          mutedApps: 1
-          successChecks: 21
-          totalChecks: 30
-          mutedChecks: 4
-          responseTimes:
-            - 0
-            - 0
-            - 10
-            - 0
-            - 0
-            - 0
-            - 0
-          allSuccess: false
-          openIncidents: 5
-        backups:
-          accountStats:
-            totalSizeByDay:
-              - 1883
-              - 1883
-              - 71515
-              - 134532
-              - 134532
-            totalSizeByDay7Days:
-              - 134532
-              - 134532
-              - 134532
-              - 134532
-              - 134532
-              - 134532
-              - 134532
-            formattedTotalSize:
-              value: '132'
-              units: GB
-            backupCount: 10
-            totalSize: 134532
-            success: 11
-            failed: 0
-            totalCompleted: 11
-            lastSevenDays:
-              failed: 0
-              successful: 6
-              completed: 6
-            avgSize: 12230.1818181818
-            failedRate: 0
-            successRate: 1
-            nextFireTotal: 1
-            backupDayCount:
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-              - 0
-            backupDayCountTotal: 0
-        activity:
-          - _id: 5a6e90e3-b7fa-4105-ba17-46999c2a0ebd
-            success: true
-            activityType: Admin
-            name: areid
-            message: User 'areid' updated.
-            objectType: User
-            objectId: 189
-            user:
-              id: 240
-              username: Greg Willis
-            ts: '2022-03-01T02:09:21Z'
-          - _id: 98d7f835-002a-4800-8f5c-8b24501a3690
-            success: true
-            activityType: Admin
-            name: Aaron Reid
-            message: User 'Aaron Reid' updated.
-            objectType: User
-            objectId: 238
-            user:
-              id: 240
-              username: Greg Willis
-            ts: '2022-03-01T02:09:15Z'
-          - _id: cb01fcf7-b2a8-4f42-9cbe-4402e4c86b9b
-            success: true
-            activityType: Alert
-            name: MRDMMON1010
-            message: Instance has successfully been deleted by 'Morpheus'.
-            objectType: Instance
-            objectId: 18182
-            user:
-              id: 263
-              username: Martez Reed
-            ts: '2022-02-28T22:37:18Z'
-        logStats:
-          success: false
-          msg: Found no scope objects for user
-    docs:
-      summary: Docs Response
-      value:
-        links:
-          - name: Morpheus API Swagger Documentation
-            url: https://demo.morpheusdata.com/api/doc/openapi.json
-            description: >-
-              Morpheus API Documentation in the OpenAPI 3.0 format. Default
-              format is JSON, use extension .yaml for YAML instead.
-            type: openapi
-          - name: Morpheus API Documentation
-            url: https://apidocs.morpheusdata.com
-            description: >-
-              The Morpheus API Documentation is the main resource for learning
-              about the Morpheus API endpoints. It contains a definition and
-              example of each api endpoint.
-            type: external
-          - name: Morpheus Documentation
-            url: https://docs.morpheusdata.com/
-            description: >-
-              The Morpheus Documentation site is the main resource for
-              documentation on the Morpheus appliance and its features.
-            type: external
-          - name: Morpheus Homepage
-            url: https://morpheusdata.com
-            description: >-
-              The Morpheus Data homepage is a good place to start learning about
-              Morpheus and what is is capable of. It also contains links to
-              support.
-            type: external
-    groups:
-      summary: Groups Response
-      value:
-        groups:
-          - id: 23
-            uuid: 7e3a0b47-8299-4458-8eef-63d179078587
-            name: Ansible
-            code: ans
-            location: Defaults to Ansible Dev
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: ''
-              configCmdbId: ''
-              _configCmdbDiscovery: ''
-              configCmId: ''
-              serviceRegistryId: ''
-              configManagementId: ''
-              configCmdbDiscovery: false
-            dateCreated: '2017-04-20T17:58:14Z'
-            lastUpdated: '2021-12-09T22:43:41Z'
-            zones:
-              - id: 12
-                name: AWS
-              - id: 141
-                name: AWS Labs
-              - id: 124
-                name: Azure UK
-              - id: 121
-                name: Azure US
-              - id: 138
-                name: VMware Demo Cluster
-            stats:
-              instanceCounts:
-                all: 0
-              serverCounts:
-                all: 23
-                host: 23
-                hypervisor: 6
-                containerHost: 17
-                vm: 635
-                baremetal: 0
-                unmanaged: 319
-            serverCount: 23
-          - id: 19
-            uuid: 58257423-d21a-478c-9064-4a193c864b05
-            name: Chef
-            code: chef
-            location: Defaults to Chef Demo bootstrap
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: ''
-              configCmdbId: ''
-              serviceRegistryId: ''
-              configManagementId: ''
-            dateCreated: '2017-03-22T22:50:46Z'
-            lastUpdated: '2021-12-08T23:24:27Z'
-            zones:
-              - id: 121
-                name: Azure US
-              - id: 138
-                name: VMware Demo Cluster
-            stats:
-              instanceCounts:
-                all: 0
-              serverCounts:
-                all: 17
-                host: 17
-                hypervisor: 6
-                containerHost: 11
-                vm: 207
-                baremetal: 0
-                unmanaged: 211
-            serverCount: 17
-          - id: 2
-            uuid: 8d0bcaab-1c61-46e2-b88c-155a369d318a
-            name: Demo
-            code: demo
-            location: 24 hour expiration policy
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: '11'
-              configCmdbId: '12'
-              serviceRegistryId: '-1'
-              configManagementId: ''
-            dateCreated: '2017-02-24T16:56:55Z'
-            lastUpdated: '2021-11-17T17:14:14Z'
-            zones:
-              - id: 12
-                name: AWS
-              - id: 141
-                name: AWS Labs
-              - id: 176
-                name: AWS US Channels West
-              - id: 175
-                name: AliCloud
-              - id: 124
-                name: Azure UK
-              - id: 121
-                name: Azure US
-              - id: 143
-                name: Google Labs
-              - id: 173
-                name: H5 Demo HyperV
-              - id: 111
-                name: HPE OneView
-              - id: 53
-                name: Hyper-V Demo
-              - id: 134
-                name: MacStadium
-              - id: 127
-                name: Morpheus
-              - id: 137
-                name: Nutanix Cluster 1
-              - id: 106
-                name: Nutanix Cluster 2
-              - id: 92
-                name: Openstack
-              - id: 157
-                name: QA NSX-T
-              - id: 27
-                name: Softlayer
-              - id: 22
-                name: UCS Docker & KVM
-              - id: 138
-                name: VMware Demo Cluster
-              - id: 172
-                name: VMware Demo Cluster H5
-              - id: 164
-                name: VMware Den2 ACI
-              - id: 174
-                name: VMware ESXi
-              - id: 171
-                name: Xen Server Labs
-            stats:
-              instanceCounts:
-                all: 12
-              serverCounts:
-                all: 79
-                host: 79
-                hypervisor: 28
-                containerHost: 54
-                vm: 930
-                baremetal: 14
-                unmanaged: 600
-            serverCount: 79
-          - id: 371
-            uuid: d157ffef-aaee-4040-9b23-b571680bb3e5
-            name: DevTest
-            code: dev
-            location: 2 day Shutdown, 7 day expiration
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: ''
-              configCmdbId: ''
-              _configCmdbDiscovery: ''
-              configCmId: ''
-              serviceRegistryId: ''
-              configManagementId: ''
-            dateCreated: '2017-11-01T18:46:04Z'
-            lastUpdated: '2021-10-20T23:45:35Z'
-            zones:
-              - id: 12
-                name: AWS
-              - id: 141
-                name: AWS Labs
-              - id: 124
-                name: Azure UK
-              - id: 121
-                name: Azure US
-              - id: 143
-                name: Google Labs
-              - id: 53
-                name: Hyper-V Demo
-              - id: 127
-                name: Morpheus
-              - id: 137
-                name: Nutanix Cluster 1
-              - id: 106
-                name: Nutanix Cluster 2
-              - id: 92
-                name: Openstack
-              - id: 22
-                name: UCS Docker & KVM
-              - id: 138
-                name: VMware Demo Cluster
-              - id: 174
-                name: VMware ESXi
-            stats:
-              instanceCounts:
-                all: 2
-              serverCounts:
-                all: 39
-                host: 39
-                hypervisor: 16
-                containerHost: 26
-                vm: 752
-                baremetal: 13
-                unmanaged: 428
-            serverCount: 39
-          - id: 50
-            uuid: 5ce19da4-9c06-4de1-8aed-73dc3e01f7ad
-            name: Production
-            code: prod
-            location: Approval Required
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: '30'
-              configCmdbId: '12'
-              serviceRegistryId: '-100'
-              configManagementId: ''
-            dateCreated: '2017-05-08T10:24:06Z'
-            lastUpdated: '2021-11-15T16:31:27Z'
-            zones:
-              - id: 12
-                name: AWS
-              - id: 124
-                name: Azure UK
-              - id: 121
-                name: Azure US
-              - id: 106
-                name: Nutanix Cluster 2
-              - id: 161
-                name: Qa NSX-T 3.0
-              - id: 22
-                name: UCS Docker & KVM
-              - id: 138
-                name: VMware Demo Cluster
-            stats:
-              instanceCounts:
-                all: 5
-              serverCounts:
-                all: 33
-                host: 33
-                hypervisor: 15
-                containerHost: 21
-                vm: 607
-                baremetal: 10
-                unmanaged: 294
-            serverCount: 33
-          - id: 424
-            uuid: ca6f5f34-8837-4977-b10f-983f3ad72d5a
-            name: SaltStack
-            code: salt
-            location: Defaults to Salt Master prod
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: ''
-              configCmdbId: ''
-              serviceRegistryId: ''
-              configManagementId: '13'
-            dateCreated: '2018-05-09T02:57:23Z'
-            lastUpdated: '2020-04-24T16:39:14Z'
-            zones:
-              - id: 138
-                name: VMware Demo Cluster
-            stats:
-              instanceCounts:
-                all: 0
-              serverCounts:
-                all: 7
-                host: 7
-                hypervisor: 6
-                containerHost: 1
-                vm: 201
-                baremetal: 0
-                unmanaged: 199
-            serverCount: 7
-          - id: 443
-            uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
-            name: ServiceNow
-            code: snow
-            location: ServiceNow Approval, CMDB
-            accountId: 3
-            active: true
-            config:
-              dnsIntegrationId: ''
-              configCmdbId: '12'
-              serviceRegistryId: ''
-              configManagementId: '3'
-            dateCreated: '2018-07-20T05:24:25Z'
-            lastUpdated: '2022-01-13T00:54:57Z'
-            zones:
-              - id: 12
-                name: AWS
-              - id: 121
-                name: Azure US
-              - id: 143
-                name: Google Labs
-              - id: 172
-                name: VMware Demo Cluster H5
-            stats:
-              instanceCounts:
-                all: 0
-              serverCounts:
-                all: 45
-                host: 45
-                hypervisor: 5
-                containerHost: 40
-                vm: 555
-                baremetal: 0
-                unmanaged: 243
-            serverCount: 45
-        meta:
-          offset: 0
-          max: 25
-          size: 7
-          total: 7
-    group:
-      summary: Group Response
-      value:
-        group:
-          id: 443
-          uuid: 13bd7838-b900-46e8-b24e-725c45f79b60
-          name: ServiceNow
-          code: snow
-          location: ServiceNow Approval, CMDB
-          accountId: 3
-          active: true
-          config:
-            dnsIntegrationId: ''
-            configCmdbId: '12'
-            serviceRegistryId: ''
-            configManagementId: '3'
-          dateCreated: '2018-07-20T05:24:25Z'
-          lastUpdated: '2022-01-13T00:54:57Z'
-          zones:
-            - id: 12
-              name: AWS
-            - id: 121
-              name: Azure US
-            - id: 143
-              name: Google Labs
-            - id: 172
-              name: VMware Demo Cluster H5
-          stats:
-            instanceCounts:
-              all: 0
-            serverCounts:
-              all: 45
-              host: 45
-              hypervisor: 5
-              containerHost: 40
-              vm: 555
-              baremetal: 0
-              unmanaged: 243
-          serverCount: 45
     license:
       summary: License Response
       value:
@@ -9080,33 +8905,6 @@ components:
           memory: 531366034976
           storage: 6017299099648
           workloads: 631
-    key-pairs:
-      summary: Key Pairs Response
-      value:
-        keyPair:
-          id: 55
-          name: testKey
-          accountId: 3
-          publicKey: >-
-            ssh-rsa
-            +baNlUQG4Q69oQ4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2BgGql0aGk0E592rRmaMDcZcDQ4MyT6iPgxpRiNWzx4wVEldbCrE6FtYhSLy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAy9VQs/QswEWshBXmp1RYPWXzGEVd+yHAvDVO17v/GDR95nTiomV33mVwm5Ziky2/doJTk+WszcrmXZv4kV7eXb2LlpZ+X0ZmcCQy3zt9jLNYQHj4HLKqH/aA2cpdiSQqnSqcRukIBPEF+lJasbMiXMVfw==9zwjFp4Q69oQR5pFz371com2BgGql0aNlUQG4Q69oQR5pFz371com2
-          hasPrivateKey: true
-          fingerprint: ab:cd:ef:12:34:56:a1:b2:c3:d4:e5:f6:aa:bc:ff:ee
-          dateCreated: '2021-01-01T00:00:00Z'
-          lastUpdated: '2021-01-01T00:00:00Z'
-        success: true
-    key-pair:
-      summary: Key Pair Response
-      value:
-        keyPair:
-          id: 61
-          name: ahicks
-          accountId: 3
-          publicKey: null
-          hasPrivateKey: false
-          fingerprint: null
-          dateCreated: '2019-11-08T09:03:45Z'
-          lastUpdated: '2020-12-24T06:38:20Z'
     ping-authenticated:
       summary: Authenticated Ping Response
       value:

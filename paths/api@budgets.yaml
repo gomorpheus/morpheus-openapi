@@ -20,10 +20,18 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/budgets.yaml
+            allOf:
+            - type: object
+              properties:
+                budgets:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/budget.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
             Search Response:
-              $ref: ../components/examples/budgets.yaml 
+              value:
+                $ref: ../components/examples/budgets.json 
     '400':
       description: Bad Request.
     '401':
@@ -129,10 +137,16 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/budget.yaml
+            allOf:
+            - type: object
+              properties:
+                budget:
+                  $ref: ../components/schemas/budget.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
             Report Types Response:
-              $ref: ../components/examples/budget.yaml
+              value:
+                $ref: ../components/examples/budget.json
     '400':
       description: Bad Request.
     '401':

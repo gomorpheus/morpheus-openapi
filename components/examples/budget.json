@@ -1,0 +1,183 @@
+{
+  "success": true,
+  "budget": {
+      "id": 12,
+      "name": "300 monthly budget",
+      "description": "300 monthly budget",
+      "account": {
+          "id": 3,
+          "name": "Morpheus"
+      },
+      "enabled": true,
+      "refScope": "tenant",
+      "refType": "Account",
+      "refId": 56,
+      "refName": "tenant A",
+      "period": "year",
+      "year": "2022",
+      "resourceType": "all",
+      "timezone": "UTC",
+      "startDate": "2022-01-01T00:00:00Z",
+      "endDate": "2022-12-31T23:59:59Z",
+      "interval": "month",
+      "costs": [
+          0.0,
+          0.0,
+          0.0,
+          300.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+      ],
+      "isFiscal": false,
+      "averageCost": 25.0,
+      "totalCost": 300.0,
+      "currency": "USD",
+      "rollover": false,
+      "warningLimit": null,
+      "overLimit": null,
+      "externalId": null,
+      "internalId": null,
+      "createdById": 342,
+      "createdByName": "Mihai Popa",
+      "updatedById": null,
+      "updatedByName": null,
+      "dateCreated": "2022-04-07T20:44:40Z",
+      "lastUpdated": "2022-04-07T20:44:40Z",
+      "stats": {
+          "currency": "USD",
+          "conversionRate": 1.0,
+          "intervals": [
+              {
+                  "index": 1,
+                  "month": "january",
+                  "shortName": "jan",
+                  "chartName": "jan",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-01-01T00:00:00Z",
+                  "endDate": "2022-01-31T23:59:59Z"
+              },
+              {
+                  "index": 2,
+                  "month": "february",
+                  "shortName": "feb",
+                  "chartName": "feb",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-02-01T00:00:00Z",
+                  "endDate": "2022-02-28T23:59:59Z"
+              },
+              {
+                  "index": 3,
+                  "month": "march",
+                  "shortName": "mar",
+                  "chartName": "mar",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-03-01T00:00:00Z",
+                  "endDate": "2022-03-31T23:59:59Z"
+              },
+              {
+                  "index": 4,
+                  "month": "april",
+                  "shortName": "apr",
+                  "chartName": "apr",
+                  "budget": 300.0,
+                  "cost": 0,
+                  "startDate": "2022-04-01T00:00:00Z",
+                  "endDate": "2022-04-30T23:59:59Z"
+              },
+              {
+                  "index": 5,
+                  "month": "may",
+                  "shortName": "may",
+                  "chartName": "may",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-05-01T00:00:00Z",
+                  "endDate": "2022-05-31T23:59:59Z"
+              },
+              {
+                  "index": 6,
+                  "month": "june",
+                  "shortName": "jun",
+                  "chartName": "jun",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-06-01T00:00:00Z",
+                  "endDate": "2022-06-30T23:59:59Z"
+              },
+              {
+                  "index": 7,
+                  "month": "july",
+                  "shortName": "jul",
+                  "chartName": "jul",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-07-01T00:00:00Z",
+                  "endDate": "2022-07-31T23:59:59Z"
+              },
+              {
+                  "index": 8,
+                  "month": "august",
+                  "shortName": "aug",
+                  "chartName": "aug",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-08-01T00:00:00Z",
+                  "endDate": "2022-08-31T23:59:59Z"
+              },
+              {
+                  "index": 9,
+                  "month": "september",
+                  "shortName": "sep",
+                  "chartName": "sep",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-09-01T00:00:00Z",
+                  "endDate": "2022-09-30T23:59:59Z"
+              },
+              {
+                  "index": 10,
+                  "month": "october",
+                  "shortName": "oct",
+                  "chartName": "oct",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-10-01T00:00:00Z",
+                  "endDate": "2022-10-31T23:59:59Z"
+              },
+              {
+                  "index": 11,
+                  "month": "november",
+                  "shortName": "nov",
+                  "chartName": "nov",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-11-01T00:00:00Z",
+                  "endDate": "2022-11-30T23:59:59Z"
+              },
+              {
+                  "index": 12,
+                  "month": "december",
+                  "shortName": "dec",
+                  "chartName": "dec",
+                  "budget": 0.0,
+                  "cost": 0,
+                  "startDate": "2022-12-01T00:00:00Z",
+                  "endDate": "2022-12-31T23:59:59Z"
+              }
+          ],
+          "current": {
+              "estimatedCost": null,
+              "lastCost": null
+          }
+      }
+  }
+}

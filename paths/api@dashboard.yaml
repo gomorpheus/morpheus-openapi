@@ -16,7 +16,8 @@ get:
             $ref: ../components/schemas/dashboard.yaml
           examples:
             Dashboard Response:
-              $ref: ../components/examples/dashboard.yaml
+              value:
+                $ref: ../components/examples/dashboard.json
     '400':
       description: Bad Request.
     '401':
