@@ -1,0 +1,53 @@
+post:
+  summary: Create a New Syslog Rule
+  description: Creates a new syslog rule. This command will also update existing syslog rule by specified name if already exists
+  operationId: addLogSettingsSyslogRules
+  tags:
+    - Administration
+    - Log Settings
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - syslogRule
+          properties:
+            syslogRule:
+              type: object
+              description: Payload for creating a new syslog rule
+              required:
+                - name
+                - rule
+              properties:
+                name:
+                  type: string
+                  description: Name of rule
+                  example: foo
+                rule:
+                  type: string
+                  description: Rule configuration
+                  example: "*.* @@bar.com:8080"
+  responses:
+    '200':
+      description: Syslog Rule Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Create User Response:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

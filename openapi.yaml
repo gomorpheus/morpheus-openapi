@@ -67,6 +67,12 @@ paths:
     $ref: paths/api@instances@id@wiki.yaml
   /api/license:
     $ref: paths/api@license.yaml
+  /api/log-settings:
+    $ref: paths/api@log-settings.yaml
+  /api/log-settings@syslog-rules:
+    $ref: paths/api@log-settings@syslog-rules.yaml
+  /api/log-settings@syslog-rules@{id}:
+    $ref: paths/api@log-settings@syslog-rules@id.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:

@@ -4,10 +4,10 @@ properties:
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
       accountId: 
         type: integer
-        format: int32
+        format: int64
       username: 
         type: string
       displayName: 
@@ -32,10 +32,10 @@ properties:
         type: boolean
       loginCount: 
         type: integer
-        format: int32
+        format: int64
       loginAttempts: 
         type: integer
-        format: int32
+        format: int64
       lastLoginDate: 
         type: string
         format: date-time
@@ -46,7 +46,7 @@ properties:
           properties: 
             id: 
               type: integer
-              format: int32
+              format: int64
             authority: 
               type: string
             description: 
@@ -56,7 +56,7 @@ properties:
         properties: 
           id: 
             type: integer
-            format: int32
+            format: int64
           name: 
             type: string
       linuxUsername: 
@@ -65,7 +65,7 @@ properties:
         type: string
       linuxKeyPairId: 
         type: integer
-        format: int32
+        format: int64
       windowsUsername: 
         type: string
       windowsPassword: 

@@ -1,0 +1,15 @@
+type: object
+properties: 
+  enabled: 
+    type: boolean
+  retentionDays: 
+    type: string
+  syslogRules: 
+    type:
+    - "array"
+    - "null"
+    example: '{"name": "foo","rule":"*.* @@localhost:4567"}'
+  integrations: 
+    type:
+    - "array"
+    - "null"
