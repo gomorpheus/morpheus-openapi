@@ -1,84 +1,81 @@
 type: object
 properties: 
-  group: 
+  id: 
+    type: integer
+    format: int64
+  uuid: 
+    type: string
+  name: 
+    type: string
+  code: 
+    type: string
+  location: 
+    type: string
+  accountId: 
+    type: integer
+    format: int64
+  active: 
+    type: boolean
+  config: 
     type: object
     properties: 
-      id: 
-        type: integer
-        format: int64
-      uuid: 
+      dnsIntegrationId: 
         type: string
-      name: 
+      configCmdbId: 
         type: string
-      code: 
+      serviceRegistryId: 
         type: string
-      location: 
+      configManagementId: 
         type: string
-      accountId: 
-        type: integer
-        format: int64
-      active: 
-        type: boolean
-      config: 
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  zones: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  stats: 
+    type: object
+    properties: 
+      instanceCounts: 
         type: object
         properties: 
-          dnsIntegrationId: 
-            type: string
-          configCmdbId: 
-            type: string
-          serviceRegistryId: 
-            type: string
-          configManagementId: 
-            type: string
-      dateCreated: 
-        type: string
-        format: date-time
-      lastUpdated: 
-        type: string
-        format: date-time
-      zones: 
-        type: array
-        items: 
-          type: object
-          properties: 
-            id: 
-              type: integer
-              format: int64
-            name: 
-              type: string
-      stats: 
+          all: 
+            type: integer
+            format: int64
+      serverCounts: 
         type: object
         properties: 
-          instanceCounts: 
-            type: object
-            properties: 
-              all: 
-                type: integer
-                format: int64
-          serverCounts: 
-            type: object
-            properties: 
-              all: 
-                type: integer
-                format: int64
-              host: 
-                type: integer
-                format: int64
-              hypervisor: 
-                type: integer
-                format: int64
-              containerHost: 
-                type: integer
-                format: int64
-              vm: 
-                type: integer
-                format: int64
-              baremetal: 
-                type: integer
-                format: int64
-              unmanaged: 
-                type: integer
-                format: int64
-      serverCount: 
-        type: integer
-        format: int64
+          all: 
+            type: integer
+            format: int64
+          host: 
+            type: integer
+            format: int64
+          hypervisor: 
+            type: integer
+            format: int64
+          containerHost: 
+            type: integer
+            format: int64
+          vm: 
+            type: integer
+            format: int64
+          baremetal: 
+            type: integer
+            format: int64
+          unmanaged: 
+            type: integer
+            format: int64
+  serverCount: 
+    type: integer
+    format: int64
