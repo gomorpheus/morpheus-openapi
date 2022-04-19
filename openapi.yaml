@@ -117,6 +117,10 @@ paths:
     $ref: paths/api@users@id.yaml
   /api/users/available-roles:
     $ref: paths/api@users@available-roles.yaml
+  /api/vdi:
+    $ref: paths/api@vdi.yaml
+  /api/vdi/{id}:
+    $ref: paths/api@vdi@id.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
   /api/wiki/categories:

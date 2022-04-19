@@ -1,0 +1,72 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  logo: 
+    type: string
+  name: 
+    type: string
+  description: 
+    type: string
+  status: 
+    type: string
+  allocationStatus: 
+    type: string
+  allocation: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      poolId: 
+        type: integer
+        format: int64
+      pool: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+      instance: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+          status: 
+            type: string
+      user: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+          username: 
+            type: string
+      localUserCreated: 
+        type: boolean
+      persistent: 
+        type: boolean
+      recyclable: 
+        type: boolean
+      status: 
+        type: string
+      dateCreated: 
+        type: string
+        format: date-time
+      lastUpdated: 
+        type: string
+        format: date-time
+      lastReserved: 
+        type: string
+        format: date-time
+      releaseDate: 
+        type: string
+        format: date-time

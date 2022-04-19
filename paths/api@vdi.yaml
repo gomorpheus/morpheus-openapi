@@ -1,0 +1,46 @@
+get:
+  summary: List All VDI
+  description: >
+    This endpoint retrieves all virtual desktops (VDI pools) along with the allocation
+    for your user if one exists.
+  operationId: listVdi
+  tags:
+    - VDI Pools
+  parameters:
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/description.yaml
+  responses:
+    '200':
+      description: Array of VDI
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                desktops:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/vdi.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            VDI Response:
+              value:
+                $ref: ../components/examples/vdis.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

@@ -3645,7 +3645,7 @@ paths:
                   logSettings:
                     $ref: '#/components/schemas/logSettings'
               examples:
-                Users Response:
+                Log Settings Response:
                   value:
                     logSettings:
                       enabled: true
@@ -3681,7 +3681,7 @@ paths:
                   $ref: '#/components/schemas/logSettings'
       responses:
         '200':
-          description: User Object
+          description: Update Log Settings Object
           content:
             application/json:
               schema:
@@ -14659,6 +14659,161 @@ paths:
           $ref: '#/components/responses/500'
         '503':
           $ref: '#/components/responses/503'
+  /api/vdi:
+    get:
+      summary: List All VDI
+      description: >
+        This endpoint retrieves all virtual desktops (VDI pools) along with the
+        allocation for your user if one exists.
+      operationId: listVdi
+      tags:
+        - VDI Pools
+      parameters:
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/description'
+      responses:
+        '200':
+          description: Array of VDI
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      desktops:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/vdi'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                VDI Response:
+                  value:
+                    desktops:
+                      - id: 2
+                        logo: >-
+                          https://demo.morpheusdata.com/storage/logos/uploads/InstanceType/227/logo/centos-1-logo-png-transparent1_medium.png
+                        name: CentOS
+                        description: null
+                        status: available
+                        allocationStatus: preparing
+                        allocation: null
+                      - id: 7
+                        logo: >-
+                          https://demo.morpheusdata.com/storage/logos/uploads/VdiPool/7/logo/centos-persist_original.png
+                        name: CentOS Desktop
+                        description: Persistent CentOS Desktop
+                        status: available
+                        allocationStatus: preparing
+                        allocation:
+                          id: 706
+                          poolId: 7
+                          pool:
+                            id: 7
+                            name: CentOS Desktop
+                          instance:
+                            id: 2425
+                            name: VDI-Cent-1021
+                            status: stopped
+                          user:
+                            id: 1
+                            name: Admin Admin
+                            username: Admin
+                          localUserCreated: true
+                          persistent: true
+                          recyclable: false
+                          status: shutdown
+                          dateCreated: '2021-04-28T15:56:08Z'
+                          lastUpdated: '2022-01-20T20:25:01Z'
+                          lastReserved: '2021-10-12T15:41:00Z'
+                          releaseDate: '2022-01-20T20:30:01Z'
+                    meta:
+                      offset: 0
+                      max: 2
+                      size: 2
+                      total: 4
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/vdi/{id}:
+    get:
+      summary: Get a Specific VDI Pool
+      description: >
+        This endpoint retrieves a specific virtual desktop (VDI pool) along with
+        the allocation for your user if one exists.
+      operationId: getVdi
+      tags:
+        - VDI Pools
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: VDI Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  desktop:
+                    $ref: '#/components/schemas/vdi'
+              examples:
+                Get VDI Response:
+                  value:
+                    desktop:
+                      id: 7
+                      logo: >-
+                        https://demo.morpheusdata.com/storage/logos/uploads/VdiPool/7/logo/centos-persist_original.png
+                      name: CentOS Desktop
+                      description: Persistent CentOS Desktop
+                      status: available
+                      allocationStatus: preparing
+                      allocation:
+                        id: 706
+                        poolId: 7
+                        pool:
+                          id: 7
+                          name: CentOS Desktop
+                        instance:
+                          id: 2425
+                          name: VDI-Cent-1021
+                          status: stopped
+                        user:
+                          id: 1
+                          name: Admin Admin
+                          username: Admin
+                        localUserCreated: true
+                        persistent: true
+                        recyclable: false
+                        status: shutdown
+                        dateCreated: '2021-04-28T15:56:08Z'
+                        lastUpdated: '2022-01-20T20:25:01Z'
+                        lastReserved: '2021-10-12T15:41:00Z'
+                        releaseDate: '2022-01-20T20:30:01Z'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
   /api/whoami:
     get:
       summary: Retrieves information about current user roles and permissions
@@ -15582,6 +15737,13 @@ components:
       schema:
         type: boolean
         default: false
+    description:
+      name: description
+      in: query
+      description: Filter by description, wildcard may be specified as %. eg. example-%
+      schema:
+        type: string
+      example: The desription of my cool object
     pagePhrase:
       name: pagePhrase
       in: query
@@ -17780,6 +17942,79 @@ components:
                     format: int64
                   name:
                     type: string
+    vdi:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        logo:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+        allocationStatus:
+          type: string
+        allocation:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            poolId:
+              type: integer
+              format: int64
+            pool:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+            instance:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+                status:
+                  type: string
+            user:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                name:
+                  type: string
+                username:
+                  type: string
+            localUserCreated:
+              type: boolean
+            persistent:
+              type: boolean
+            recyclable:
+              type: boolean
+            status:
+              type: string
+            dateCreated:
+              type: string
+              format: date-time
+            lastUpdated:
+              type: string
+              format: date-time
+            lastReserved:
+              type: string
+              format: date-time
+            releaseDate:
+              type: string
+              format: date-time
     wikiCategories:
       type: array
       items:

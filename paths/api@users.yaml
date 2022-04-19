@@ -106,8 +106,11 @@ post:
         application/json:
           schema:
             allOf:
-              - $ref: ../components/schemas/user.yaml
-              - $ref: ../components/schemas/200-success.yaml
+            - type: object
+              properties:
+                user:
+                - $ref: ../components/schemas/user.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
             Create User Response:
               value:

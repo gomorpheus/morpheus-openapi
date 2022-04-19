@@ -1,0 +1,36 @@
+{
+    "desktop": {
+        "id": 7,
+        "logo": "https://demo.morpheusdata.com/storage/logos/uploads/VdiPool/7/logo/centos-persist_original.png",
+        "name": "CentOS Desktop",
+        "description": "Persistent CentOS Desktop",
+        "status": "available",
+        "allocationStatus": "preparing",
+        "allocation": {
+            "id": 706,
+            "poolId": 7,
+            "pool": {
+                "id": 7,
+                "name": "CentOS Desktop"
+            },
+            "instance": {
+                "id": 2425,
+                "name": "VDI-Cent-1021",
+                "status": "stopped"
+            },
+            "user": {
+                "id": 1,
+                "name": "Admin Admin",
+                "username": "Admin"
+            },
+            "localUserCreated": true,
+            "persistent": true,
+            "recyclable": false,
+            "status": "shutdown",
+            "dateCreated": "2021-04-28T15:56:08Z",
+            "lastUpdated": "2022-01-20T20:25:01Z",
+            "lastReserved": "2021-10-12T15:41:00Z",
+            "releaseDate": "2022-01-20T20:30:01Z"
+        }
+    }
+}
