@@ -16,7 +16,7 @@ get:
               logSettings:
                 $ref: ../components/schemas/logSettings.yaml
           examples:
-            Users Response:
+            Log Settings Response:
               value:
                 $ref: ../components/examples/logSettings.json
     '400':
@@ -48,7 +48,7 @@ put:
                 $ref: ../components/schemas/logSettings.yaml
   responses:
     '200':
-      description: User Object
+      description: Update Log Settings Object
       content:
         application/json:
           schema:
