@@ -5,7 +5,7 @@ get:
     for your user if one exists.
   operationId: listVdi
   tags:
-    - VDI Pools
+    - VDI
   parameters:
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/max.yaml

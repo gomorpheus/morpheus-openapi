@@ -12,10 +12,7 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              role:
-                $ref: ../components/schemas/role.yaml
+            $ref: ../components/schemas/role.yaml
           examples:
             Role Response:
               value:
@@ -64,12 +61,9 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              role:
-                allOf:
-                  - $ref: ../components/schemas/role.yaml
-                  - $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - $ref: ../components/schemas/role.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Role Response:
               value:

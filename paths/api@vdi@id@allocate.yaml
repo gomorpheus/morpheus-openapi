@@ -1,0 +1,40 @@
+post:
+  summary: Allocate Virtual Desktop
+  description: >
+    This endpoint allocates a specific virtual desktop (VDI pool) for use by your user.
+    It will return the desktop and its allocation for your user, or an error if allocation fails,
+    which will occur if the desktop is fully allocated already. If your user already has an allocation,
+    the desktop and allocation will still be returned succesfully and the server does not make any changes.
+  operationId: addVdiAllocation
+  tags:
+    - VDI
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: VDI Allocate Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                desktop:
+                  $ref: ../components/schemas/vdi.yaml
+              $ref: ../components/schemas/200-success.yaml
+          examples:
+            Create VDI Allocation Response:
+              value:
+                $ref: ../components/examples/vdiSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

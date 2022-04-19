@@ -121,6 +121,8 @@ paths:
     $ref: paths/api@vdi.yaml
   /api/vdi/{id}:
     $ref: paths/api@vdi@id.yaml
+  /api/vdi/{id}/allocate:
+    $ref: paths/api@vdi@id@allocate.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
   /api/wiki/categories:
@@ -304,10 +306,8 @@ tags:
     description: View Usage
   - name: Users
     description: Manage Users
-  - name: VDI Pools
-    description: Manage VDI Pools
-  - name: Virtual Desktop
-    description: Manage Virtual Desktops
+  - name: VDI
+    description: Manage VDI Pools & Desktops
   - name: Virtual Images
     description: Manage Virtual Images
   - name: Whitelabel Settings

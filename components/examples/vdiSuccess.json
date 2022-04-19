@@ -1,0 +1,37 @@
+{
+    "success": true,
+    "desktop": {
+        "id": 2,
+        "logo": "https://demo.morpheusdata.com/storage/logos/uploads/InstanceType/227/logo/centos-1-logo-png-transparent1_medium.png",
+        "name": "CentOS",
+        "description": null,
+        "status": "available",
+        "allocationStatus": "preparing",
+        "allocation": {
+            "id": 1453,
+            "poolId": 2,
+            "pool": {
+                "id": 2,
+                "name": "CentOS"
+            },
+            "instance": {
+                "id": 3727,
+                "name": "VDI-CENT-1029",
+                "status": "provisioning"
+            },
+            "user": {
+                "id": 1,
+                "name": "Admin Admin",
+                "username": "Admin"
+            },
+            "localUserCreated": false,
+            "persistent": false,
+            "recyclable": false,
+            "status": "preparing",
+            "dateCreated": "2022-04-19T15:42:00Z",
+            "lastUpdated": "2022-04-19T15:42:00Z",
+            "lastReserved": null,
+            "releaseDate": "2022-04-19T15:47:00Z"
+        }
+    }
+}

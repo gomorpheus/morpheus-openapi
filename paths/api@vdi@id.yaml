@@ -5,7 +5,7 @@ get:
     with the allocation for your user if one exists.
   operationId: getVdi
   tags:
-    - VDI Pools
+    - VDI
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:

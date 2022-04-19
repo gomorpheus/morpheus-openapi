@@ -1,52 +1,48 @@
 {
   "roles": [
-    {
-      "id": 425,
-      "authority": "A Tenant Role",
-      "description": null,
-      "scope": "Account",
-      "roleType": "account",
-      "multitenant": false,
-      "multitenantLocked": false,
-      "parentRoleId": null,
-      "diverged": true,
-      "ownerId": 3,
-      "owner": {
-        "id": 3,
-        "name": "Morpheus"
+      {
+          "id": 14,
+          "authority": "Default Tenant",
+          "description": null,
+          "scope": "Account",
+          "roleType": "account",
+          "multitenant": false,
+          "multitenantLocked": false,
+          "parentRoleId": null,
+          "diverged": true,
+          "ownerId": 1,
+          "owner": {
+              "id": 1,
+              "name": "Home"
+          },
+          "defaultPersona": null,
+          "dateCreated": "2019-02-19T20:20:02Z",
+          "lastUpdated": "2021-12-24T14:49:06Z"
       },
-      "defaultPersona": null,
-      "dateCreated": "2020-06-18T23:12:28Z",
-      "lastUpdated": "2021-11-18T06:59:15Z"
-    },
-    {
-      "id": 17,
-      "authority": "ah-admin",
-      "description": "Adam Hicks Role",
-      "scope": "Account",
-      "roleType": "user",
-      "multitenant": false,
-      "multitenantLocked": false,
-      "parentRoleId": null,
-      "diverged": true,
-      "ownerId": 3,
-      "owner": {
-        "id": 3,
-        "name": "Morpheus"
-      },
-      "defaultPersona": {
-        "id": 2,
-        "code": "serviceCatalog",
-        "name": "Service Catalog"
-      },
-      "dateCreated": "2017-04-10T23:07:14Z",
-      "lastUpdated": "2022-01-24T19:32:42Z"
-    }
+      {
+          "id": 345,
+          "authority": "Morpheus Engineer",
+          "description": null,
+          "scope": "Account",
+          "roleType": "user",
+          "multitenant": true,
+          "multitenantLocked": true,
+          "parentRoleId": null,
+          "diverged": false,
+          "ownerId": 1,
+          "owner": {
+              "id": 1,
+              "name": "Home"
+          },
+          "defaultPersona": null,
+          "dateCreated": "2021-02-26T20:01:51Z",
+          "lastUpdated": "2021-10-29T12:58:00Z"
+      }
   ],
   "meta": {
-    "offset": 0,
-    "max": 2,
-    "size": 2,
-    "total": 41
+      "offset": 0,
+      "max": 2,
+      "size": 2,
+      "total": 11
   }
 }

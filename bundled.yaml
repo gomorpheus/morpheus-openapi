@@ -7429,14 +7429,14 @@ paths:
                       roles:
                         type: array
                         items:
-                          $ref: '#/components/schemas/role'
+                          $ref: '#/components/schemas/roles'
                   - $ref: '#/components/schemas/meta'
               examples:
                 Roles Response:
                   value:
                     roles:
-                      - id: 425
-                        authority: A Tenant Role
+                      - id: 14
+                        authority: Default Tenant
                         description: null
                         scope: Account
                         roleType: account
@@ -7444,37 +7444,34 @@ paths:
                         multitenantLocked: false
                         parentRoleId: null
                         diverged: true
-                        ownerId: 3
+                        ownerId: 1
                         owner:
-                          id: 3
-                          name: Morpheus
+                          id: 1
+                          name: Home
                         defaultPersona: null
-                        dateCreated: '2020-06-18T23:12:28Z'
-                        lastUpdated: '2021-11-18T06:59:15Z'
-                      - id: 17
-                        authority: ah-admin
-                        description: Adam Hicks Role
+                        dateCreated: '2019-02-19T20:20:02Z'
+                        lastUpdated: '2021-12-24T14:49:06Z'
+                      - id: 345
+                        authority: Morpheus Engineer
+                        description: null
                         scope: Account
                         roleType: user
-                        multitenant: false
-                        multitenantLocked: false
+                        multitenant: true
+                        multitenantLocked: true
                         parentRoleId: null
-                        diverged: true
-                        ownerId: 3
+                        diverged: false
+                        ownerId: 1
                         owner:
-                          id: 3
-                          name: Morpheus
-                        defaultPersona:
-                          id: 2
-                          code: serviceCatalog
-                          name: Service Catalog
-                        dateCreated: '2017-04-10T23:07:14Z'
-                        lastUpdated: '2022-01-24T19:32:42Z'
+                          id: 1
+                          name: Home
+                        defaultPersona: null
+                        dateCreated: '2021-02-26T20:01:51Z'
+                        lastUpdated: '2021-10-29T12:58:00Z'
                     meta:
                       offset: 0
                       max: 2
                       size: 2
-                      total: 41
+                      total: 11
         '400':
           description: Bad Request.
         '401':
@@ -7551,10 +7548,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - type: object
-                    properties:
-                      role:
-                        $ref: '#/components/schemas/role'
+                  - $ref: '#/components/schemas/role'
                   - $ref: '#/components/schemas/200-success'
               examples:
                 Role Response:
@@ -9458,10 +9452,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  role:
-                    $ref: '#/components/schemas/role'
+                $ref: '#/components/schemas/role'
               examples:
                 Role Response:
                   value:
@@ -11381,12 +11372,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  role:
-                    allOf:
-                      - $ref: '#/components/schemas/role'
-                      - $ref: '#/components/schemas/200-success'
+                allOf:
+                  - $ref: '#/components/schemas/role'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Role Response:
                   value:
@@ -14153,7 +14141,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/user'
+                  - type: object
+                    properties:
+                      user:
+                        $ref: '#/components/schemas/user'
                   - $ref: '#/components/schemas/200-success'
               examples:
                 Create User Response:
@@ -14219,7 +14210,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/user'
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/user'
               examples:
                 Get User Response:
                   value:
@@ -14315,7 +14309,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/user'
+                  - type: object
+                    properties:
+                      user:
+                        $ref: '#/components/schemas/user'
                   - $ref: '#/components/schemas/200-success'
               examples:
                 Update User Response:
@@ -14667,7 +14664,7 @@ paths:
         allocation for your user if one exists.
       operationId: listVdi
       tags:
-        - VDI Pools
+        - VDI
       parameters:
         - $ref: '#/components/parameters/phrase'
         - $ref: '#/components/parameters/max'
@@ -14756,7 +14753,7 @@ paths:
         the allocation for your user if one exists.
       operationId: getVdi
       tags:
-        - VDI Pools
+        - VDI
       parameters:
         - $ref: '#/components/parameters/id-path'
       responses:
@@ -14802,6 +14799,79 @@ paths:
                         lastUpdated: '2022-01-20T20:25:01Z'
                         lastReserved: '2021-10-12T15:41:00Z'
                         releaseDate: '2022-01-20T20:30:01Z'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/vdi/{id}/allocate:
+    post:
+      summary: Allocate Virtual Desktop
+      description: >
+        This endpoint allocates a specific virtual desktop (VDI pool) for use by
+        your user. It will return the desktop and its allocation for your user,
+        or an error if allocation fails, which will occur if the desktop is
+        fully allocated already. If your user already has an allocation, the
+        desktop and allocation will still be returned succesfully and the server
+        does not make any changes.
+      operationId: addVdiAllocation
+      tags:
+        - VDI
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: VDI Allocate Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      desktop:
+                        $ref: ../components/schemas/vdi.yaml
+                    $ref: '#/components/schemas/200-success'
+              examples:
+                Create VDI Allocation Response:
+                  value:
+                    success: true
+                    desktop:
+                      id: 2
+                      logo: >-
+                        https://demo.morpheusdata.com/storage/logos/uploads/InstanceType/227/logo/centos-1-logo-png-transparent1_medium.png
+                      name: CentOS
+                      description: null
+                      status: available
+                      allocationStatus: preparing
+                      allocation:
+                        id: 1453
+                        poolId: 2
+                        pool:
+                          id: 2
+                          name: CentOS
+                        instance:
+                          id: 3727
+                          name: VDI-CENT-1029
+                          status: provisioning
+                        user:
+                          id: 1
+                          name: Admin Admin
+                          username: Admin
+                        localUserCreated: false
+                        persistent: false
+                        recyclable: false
+                        status: preparing
+                        dateCreated: '2022-04-19T15:42:00Z'
+                        lastUpdated: '2022-04-19T15:42:00Z'
+                        lastReserved: null
+                        releaseDate: '2022-04-19T15:47:00Z'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -16769,87 +16839,85 @@ components:
             - array
             - 'null'
     user:
+      type: object
       properties:
-        user:
+        id:
+          type: integer
+          format: int64
+        accountId:
+          type: integer
+          format: int64
+        username:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        enabled:
+          type: boolean
+        receiveNotifications:
+          type: boolean
+        isUsing2FA:
+          type: boolean
+        accountExpired:
+          type: boolean
+        accountLocked:
+          type: boolean
+        passwordExpired:
+          type: boolean
+        loginCount:
+          type: integer
+          format: int64
+        loginAttempts:
+          type: integer
+          format: int64
+        lastLoginDate:
+          type: string
+          format: date-time
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              authority:
+                type: string
+              description:
+                type: string
+        account:
           type: object
           properties:
             id:
               type: integer
               format: int64
-            accountId:
-              type: integer
-              format: int64
-            username:
+            name:
               type: string
-            displayName:
-              type: string
-            email:
-              type: string
-            firstName:
-              type: string
-            lastName:
-              type: string
-            enabled:
-              type: boolean
-            receiveNotifications:
-              type: boolean
-            isUsing2FA:
-              type: boolean
-            accountExpired:
-              type: boolean
-            accountLocked:
-              type: boolean
-            passwordExpired:
-              type: boolean
-            loginCount:
-              type: integer
-              format: int64
-            loginAttempts:
-              type: integer
-              format: int64
-            lastLoginDate:
-              type: string
-              format: date-time
-            roles:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    format: int64
-                  authority:
-                    type: string
-                  description:
-                    type: string
-            account:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  format: int64
-                name:
-                  type: string
-            linuxUsername:
-              type: string
-            linuxPassword:
-              type: string
-            linuxKeyPairId:
-              type: integer
-              format: int64
-            windowsUsername:
-              type: string
-            windowsPassword:
-              type: string
-            defaultPersona:
-              type: string
-              format: nullable
-            dateCreated:
-              type: string
-              format: date-time
-            lastUpdated:
-              type: string
-              format: date-time
+        linuxUsername:
+          type: string
+        linuxPassword:
+          type: string
+        linuxKeyPairId:
+          type: integer
+          format: int64
+        windowsUsername:
+          type: string
+        windowsPassword:
+          type: string
+        defaultPersona:
+          type: string
+          format: nullable
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
     key-pair:
       type: object
       properties:
@@ -17519,6 +17587,50 @@ components:
               displayOrder:
                 type: string
                 format: nullable
+    roles:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        authority:
+          type: string
+        description:
+          type: string
+          format: nullable
+        scope:
+          type: string
+        roleType:
+          type: string
+        multitenant:
+          type: boolean
+        multitenantLocked:
+          type: boolean
+        parentRoleId:
+          type: string
+          format: nullable
+        diverged:
+          type: boolean
+        ownerId:
+          type: integer
+          format: int64
+        owner:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        defaultPersona:
+          type: string
+          format: nullable
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
     role:
       type: object
       properties:
@@ -18273,10 +18385,8 @@ tags:
     description: View Usage
   - name: Users
     description: Manage Users
-  - name: VDI Pools
-    description: Manage VDI Pools
-  - name: Virtual Desktop
-    description: Manage Virtual Desktops
+  - name: VDI
+    description: Manage VDI Pools & Desktops
   - name: Virtual Images
     description: Manage Virtual Images
   - name: Whitelabel Settings

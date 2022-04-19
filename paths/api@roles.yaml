@@ -35,7 +35,7 @@ get:
                 roles:
                   type: array
                   items:
-                    $ref: ../components/schemas/role.yaml
+                    $ref: ../components/schemas/roles.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Roles Response:
@@ -116,10 +116,7 @@ post:
         application/json:
           schema:
             allOf:
-            - type: object
-              properties:
-                role:
-                  $ref: ../components/schemas/role.yaml
+            - $ref: ../components/schemas/role.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Role Response:
