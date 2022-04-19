@@ -1,26 +1,25 @@
 get:
-  summary: Get a Specific User
-  description: Get details about a specific user.
-  operationId: getUsers
+  summary: Get a Specific Environment
+  description: This endpoint will retrieve a specific environment by id.
+  operationId: getEnvironments
   tags:
-    - Administration
-    - Users
+    - Environments
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: User Object
+      description: Environment Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              user:
-                $ref: ../components/schemas/user.yaml
+              environment:
+                $ref: ../components/schemas/environment.yaml
           examples:
-            Get User Response:
+            Get Environment Response:
               value:
-                $ref: ../components/examples/user.json
+                $ref: ../components/examples/environment.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -34,12 +33,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update user
-  description: Update an existing user.
-  operationId: updateUsers
+  summary: Update Environment
+  description: Update an existing environment.
+  operationId: updateEnvironments
   tags:
-    - Administration
-    - Users
+    - Environments
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -48,48 +46,49 @@ put:
         schema:
           type: object
           required:
-            - user
+            - environment
           properties:
-            user:
+            environment:
               type: object
+              description: Payload for updating a new environment
               properties:
-                firstName:
+                name:
                   type: string
-                  description: First Name
-                lastName:
+                  description: A unique name for the environment
+                  example: "Production"
+                description:
                   type: string
-                  description: Last Name
-                username:
+                  description: A description of the environment
+                  example: "Tag used for Production environments"
+                visibility:
                   type: string
-                  description: Username (unique per tenant).
-                email:
-                  type: string
-                  description: Email address
-                password:
-                  type: string
-                  format: password
-                  description: Password
-                roles:
-                  type: array
-                  description: List of Roles
-                  items:
-                    $ref: ../components/schemas/ReferenceObject.yaml
+                  description: private or public
+                  default: "private"
+                sortOrder:
+                  type: integer
+                  format: int64
+                  description: Sort order
+                  default: 0
+                active:
+                  type: boolean
+                  description: Set to false to deactivate the environment
+                  example: true
   responses:
     '200':
-      description: User Object
+      description: Environment Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                user:
-                  $ref: ../components/schemas/user.yaml
+                environment:
+                  $ref: ../components/schemas/environment.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Update User Response:
               value:
-                $ref: ../components/examples/userSuccess.json
+                $ref: ../components/examples/environmentSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -103,23 +102,22 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific User
-  description: Delete an existing user.
-  operationId: deleteUsers
+  summary: Delete a Specific Environment
+  description: Delete an existing environment.
+  operationId: deleteEnvironments
   tags:
-    - Administration
-    - Users
+    - Environments
   responses:
     '200':
       description: Success Object
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            $ref: ../components/schemas/successError.yaml
           examples:
-            Delete User Response:
+            Delete Environment Response:
               value:
-                $ref: ../components/examples/success.json
+                $ref: ../components/examples/successError.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -51,6 +51,12 @@ paths:
     $ref: paths/api@doc@openapi.yaml
   /api/doc/openapi.yaml:
     $ref: paths/api@doc@openapi.yaml.yaml
+  /api/environments:
+    $ref: paths/api@environments.yaml
+  /api/environments/{id}:
+    $ref: paths/api@environments@id.yaml
+  /api/environments/{id}/toggle-active:
+    $ref: paths/api@environments@id@toggle-active.yaml
   /api/forgot/reset-password:
     $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:

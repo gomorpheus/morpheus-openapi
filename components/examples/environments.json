@@ -1,0 +1,40 @@
+{
+    "environments": [
+        {
+            "id": 5,
+            "account": {
+                "id": 3,
+                "name": "Morpheus"
+            },
+            "code": "demo",
+            "name": "Demo",
+            "description": "Demonstration Environment",
+            "visibility": "private",
+            "active": true,
+            "sortOrder": 0,
+            "dateCreated": "2017-06-28T02:35:46Z",
+            "lastUpdated": "2020-06-02T21:23:40Z"
+        },
+        {
+            "id": 1,
+            "account": {
+                "id": 3,
+                "name": "Morpheus"
+            },
+            "code": "dev",
+            "name": "Dev",
+            "description": "Development Environment",
+            "visibility": "public",
+            "active": true,
+            "sortOrder": 1,
+            "dateCreated": "2017-02-17T05:53:12Z",
+            "lastUpdated": "2020-06-02T21:23:53Z"
+        }
+    ],
+    "meta": {
+        "size": 2,
+        "total": 5,
+        "max": 2,
+        "offset": 0
+    }
+}

@@ -2260,6 +2260,375 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/environments:
+    get:
+      summary: List All Environments
+      description: This endpoint retrieves all environments.
+      operationId: listEnvironments
+      tags:
+        - Environments
+      parameters:
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/code'
+      responses:
+        '200':
+          description: Array of Environments
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      environments:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/environment'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Users Response:
+                  value:
+                    environments:
+                      - id: 5
+                        account:
+                          id: 3
+                          name: Morpheus
+                        code: demo
+                        name: Demo
+                        description: Demonstration Environment
+                        visibility: private
+                        active: true
+                        sortOrder: 0
+                        dateCreated: '2017-06-28T02:35:46Z'
+                        lastUpdated: '2020-06-02T21:23:40Z'
+                      - id: 1
+                        account:
+                          id: 3
+                          name: Morpheus
+                        code: dev
+                        name: Dev
+                        description: Development Environment
+                        visibility: public
+                        active: true
+                        sortOrder: 1
+                        dateCreated: '2017-02-17T05:53:12Z'
+                        lastUpdated: '2020-06-02T21:23:53Z'
+                    meta:
+                      size: 2
+                      total: 5
+                      max: 2
+                      offset: 0
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    post:
+      summary: Create a New Environment
+      description: Create a new environment.
+      operationId: addEnvironments
+      tags:
+        - Environments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - environment
+              properties:
+                environment:
+                  type: object
+                  description: Payload for creating a new environment
+                  required:
+                    - name
+                    - code
+                  properties:
+                    name:
+                      type: string
+                      description: A unique name for the environment
+                      example: Production
+                    code:
+                      type: string
+                      description: A unique code for the environment
+                      example: prod
+                    description:
+                      type: string
+                      description: A description of the environment
+                      example: Tag used for Production environments
+                    visibility:
+                      type: string
+                      description: private or public
+                      default: private
+                    sortOrder:
+                      type: integer
+                      format: int64
+                      description: Sort order
+                      default: 0
+      responses:
+        '200':
+          description: Environment Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      environment:
+                        $ref: '#/components/schemas/environment'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Create Environment Response:
+                  value:
+                    environment:
+                      id: 5
+                      account:
+                        id: 3
+                        name: Morpheus
+                      code: demo
+                      name: Demo
+                      description: Demonstration Environment
+                      visibility: private
+                      active: true
+                      sortOrder: 0
+                      dateCreated: '2017-06-28T02:35:46Z'
+                      lastUpdated: '2020-06-02T21:23:40Z'
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/environments/{id}:
+    get:
+      summary: Get a Specific Environment
+      description: This endpoint will retrieve a specific environment by id.
+      operationId: getEnvironments
+      tags:
+        - Environments
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Environment Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  environment:
+                    $ref: '#/components/schemas/environment'
+              examples:
+                Get Environment Response:
+                  value:
+                    environment:
+                      id: 5
+                      account:
+                        id: 3
+                        name: Morpheus
+                      code: demo
+                      name: Demo
+                      description: Demonstration Environment
+                      visibility: private
+                      active: true
+                      sortOrder: 0
+                      dateCreated: '2017-06-28T02:35:46Z'
+                      lastUpdated: '2020-06-02T21:23:40Z'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    put:
+      summary: Update Environment
+      description: Update an existing environment.
+      operationId: updateEnvironments
+      tags:
+        - Environments
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - environment
+              properties:
+                environment:
+                  type: object
+                  description: Payload for updating a new environment
+                  properties:
+                    name:
+                      type: string
+                      description: A unique name for the environment
+                      example: Production
+                    description:
+                      type: string
+                      description: A description of the environment
+                      example: Tag used for Production environments
+                    visibility:
+                      type: string
+                      description: private or public
+                      default: private
+                    sortOrder:
+                      type: integer
+                      format: int64
+                      description: Sort order
+                      default: 0
+                    active:
+                      type: boolean
+                      description: Set to false to deactivate the environment
+                      example: true
+      responses:
+        '200':
+          description: Environment Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      environment:
+                        $ref: '#/components/schemas/environment'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Update User Response:
+                  value:
+                    environment:
+                      id: 5
+                      account:
+                        id: 3
+                        name: Morpheus
+                      code: demo
+                      name: Demo
+                      description: Demonstration Environment
+                      visibility: private
+                      active: true
+                      sortOrder: 0
+                      dateCreated: '2017-06-28T02:35:46Z'
+                      lastUpdated: '2020-06-02T21:23:40Z'
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    delete:
+      summary: Delete a Specific Environment
+      description: Delete an existing environment.
+      operationId: deleteEnvironments
+      tags:
+        - Environments
+      responses:
+        '200':
+          description: Success Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/successError'
+              examples:
+                Delete Environment Response:
+                  value:
+                    success: true
+                    errors: {}
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/environments/{id}/toggle-active:
+    put:
+      summary: Toggle Active State of Environment
+      description: >-
+        Toggle Active State of Environment. Default is to toggle the current
+        value.
+      operationId: updateEnvironmentsActive
+      tags:
+        - Environments
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+        - $ref: '#/components/parameters/active'
+      responses:
+        '200':
+          description: Environment Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      environment:
+                        $ref: '#/components/schemas/environment'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Update Environment Response:
+                  value:
+                    environment:
+                      id: 5
+                      account:
+                        id: 3
+                        name: Morpheus
+                      code: demo
+                      name: Demo
+                      description: Demonstration Environment
+                      visibility: private
+                      active: true
+                      sortOrder: 0
+                      dateCreated: '2017-06-28T02:35:46Z'
+                      lastUpdated: '2020-06-02T21:23:40Z'
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
   /api/forgot/reset-password:
     post:
       summary: Reset user password
@@ -14377,7 +14746,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
               examples:
-                Update User Response:
+                Delete User Response:
                   value:
                     success: true
         '400':
@@ -15660,6 +16029,20 @@ components:
           - deny
           - cancel
       example: approve
+    code:
+      name: code
+      in: query
+      description: If specified will return an exact match on code
+      schema:
+        type: string
+      example: azr
+    active:
+      name: active
+      in: query
+      description: True or False flag for Active
+      schema:
+        type: boolean
+      example: false
     instanceId:
       name: instanceId
       in: query
@@ -15705,13 +16088,6 @@ components:
         format: int64
         description: App ID
       example: 5
-    code:
-      name: code
-      in: query
-      description: If specified will return an exact match on code
-      schema:
-        type: string
-      example: azr
     category:
       name: category
       in: query
@@ -16563,6 +16939,48 @@ components:
                 format: nullable
               type:
                 type: string
+    environment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        account:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        visibility:
+          type: string
+        active:
+          type: boolean
+        sortOrder:
+          type: integer
+          format: int64
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+    successError:
+      type: object
+      properties:
+        success:
+          type: boolean
+        errors:
+          type:
+            - object
+            - 'null'
     group:
       type: object
       properties:
