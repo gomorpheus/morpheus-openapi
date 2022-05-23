@@ -1,0 +1,8 @@
+name: includeTotals
+in: query
+description: >
+  Pass true to include the summed totals (cost/price values) for all the invoices found in the query.
+  The returned property is called `invoiceTotals`.
+schema:
+  type: boolean
+  default: false

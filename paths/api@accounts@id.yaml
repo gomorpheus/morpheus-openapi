@@ -5,7 +5,6 @@ get:
   description: Get details about a tenant
   operationId: getTenant
   tags:
-    - Administration
     - Tenants
   responses:
     '200':
@@ -38,7 +37,6 @@ put:
   description: Update an existing tenant.
   operationId: updateTenant
   tags:
-    - Administration
     - Tenants
   requestBody:
     content:
@@ -113,7 +111,6 @@ delete:
     `removeResources=true`.
   operationId: removeTenant
   tags:
-    - Administration
     - Tenants
   parameters:
     - name: removeResources

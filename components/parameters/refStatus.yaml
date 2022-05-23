@@ -1,0 +1,14 @@
+name: refStatus
+in: query
+description: >
+  If specified, will filter on the associated StorageVolume status.
+  This is only applicable whn `refType=StorageVolume`.
+schema:
+  type: string
+examples: 
+  Provisioned:
+    value: provisioned
+    summary: Provisioned
+  Unallocated:
+    value: unallocated
+    summary: Unallocated

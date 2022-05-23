@@ -3,14 +3,13 @@ get:
   description: Get a list of users.
   operationId: listUsers
   tags:
-    - Administration
     - Users
   parameters:
-    - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/sort.yaml
     - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/username.yaml
     - $ref: ../components/parameters/email.yaml
     - $ref: ../components/parameters/firstName.yaml
@@ -54,7 +53,6 @@ post:
   description: Create a new user.
   operationId: addUsers
   tags:
-    - Administration
     - Users
   parameters:
     - name: accountId
@@ -81,19 +79,24 @@ post:
                 firstName:
                   type: string
                   description: First Name
+                  example: John
                 lastName:
                   type: string
                   description: Last Name
+                  example: Smith
                 username:
                   type: string
                   description: Username (unique per tenant).
+                  example: jsmith
                 email:
                   type: string
                   description: Email address
+                  example: jsmith@email.com
                 password:
                   type: string
                   format: password
                   description: Password
+                  example: Passw0rd!
                 roles:
                   type: array
                   description: List of Roles

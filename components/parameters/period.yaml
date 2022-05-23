@@ -1,0 +1,8 @@
+name: period
+in: query
+description: >
+  Only return records for period that matches with the specified value.
+  This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM.
+schema:
+  type: string
+example: 201901

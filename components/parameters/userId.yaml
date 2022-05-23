@@ -2,5 +2,7 @@ name: userId
 in: query
 description: Filter by User ID
 schema:
-  type: number
+  type: integer
+  format: int64
+  description: User ID
 example: 6

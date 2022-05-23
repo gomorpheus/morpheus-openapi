@@ -3,7 +3,6 @@ get:
   description: Get a list of tenants. A tenant is also referred to as an account.
   operationId: listTenants
   tags:
-    - Administration
     - Tenants
   parameters:
     - $ref: ../components/parameters/max.yaml
@@ -50,7 +49,6 @@ post:
     tenant as its parent.
   operationId: addTenant
   tags:
-    - Administration
     - Tenants
   requestBody:
     content:

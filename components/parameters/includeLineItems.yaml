@@ -1,0 +1,8 @@
+name: includeLineItems
+in: query
+description: >
+  Pass true to include the list of `lineItems` for each invoice.
+  Only `lineItemCount` is returned by default.
+schema:
+  type: boolean
+  default: false

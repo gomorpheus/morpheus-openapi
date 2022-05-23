@@ -3,7 +3,6 @@ get:
   description: Get details about a specific user.
   operationId: getUsers
   tags:
-    - Administration
     - Users
   parameters:
   - $ref: ../components/parameters/id-path.yaml
@@ -38,7 +37,6 @@ put:
   description: Update an existing user.
   operationId: updateUsers
   tags:
-    - Administration
     - Users
   parameters:
   - $ref: ../components/parameters/id-path.yaml
@@ -107,7 +105,6 @@ delete:
   description: Delete an existing user.
   operationId: deleteUsers
   tags:
-    - Administration
     - Users
   responses:
     '200':

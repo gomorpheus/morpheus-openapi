@@ -1,0 +1,25 @@
+name: refType
+in: query
+description: >
+  If specified will return an exact match on refType.
+schema:
+  type: string
+examples:
+  Group:
+    value: ComputeSite
+    summary: Group
+  Cloud:
+    value: ComputeZone
+    summary: Cloud
+  Server:
+    value: ComputeServer
+    summary: Server
+  Instance:
+    value: Instance
+    summary: Instance
+  Container:
+    value: Container
+    summary: Container
+  User:
+    value: User
+    summary: User

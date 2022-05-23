@@ -1,0 +1,37 @@
+get:
+  summary: Get a Specific Invoice Line Item
+  description: Get details about a specific invoice line item.
+  operationId: getInvoiceLineItems
+  tags:
+    - Invoices
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Invoice Line Item Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                lineItem:
+                  $ref: ../components/schemas/lineItem.yaml
+                masterAccount:
+                  type: boolean
+          examples:
+            Get Invoice Line Item Response:
+              value:
+                $ref: ../components/examples/lineItem.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

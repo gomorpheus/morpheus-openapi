@@ -9,7 +9,7 @@ info:
     This document describes the Morpheus API protocol and the available
     endpoints. Sections are organized in the same manner as they appear in the
     Morpheus UI.
-  version: 5.4.5
+  version: 5.4.6
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -2268,11 +2268,11 @@ paths:
       tags:
         - Environments
       parameters:
-        - $ref: '#/components/parameters/phrase'
         - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/offset'
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
         - $ref: '#/components/parameters/name'
         - $ref: '#/components/parameters/code'
       responses:
@@ -3728,6 +3728,771 @@ paths:
           description: Internal Server Error.
         '503':
           description: Service Unavailable.
+  /api/invoices:
+    get:
+      summary: List All Invoices
+      description: This endpoint retrieves a list of invoices for the specified parameters.
+      operationId: listInvoices
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/startDate'
+        - $ref: '#/components/parameters/endDate'
+        - $ref: '#/components/parameters/period'
+        - $ref: '#/components/parameters/refType'
+        - $ref: '#/components/parameters/refId'
+        - $ref: '#/components/parameters/refStatus'
+        - $ref: '#/components/parameters/zoneId'
+        - $ref: '#/components/parameters/siteId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/containerId'
+        - $ref: '#/components/parameters/serverId'
+        - $ref: '#/components/parameters/userId'
+        - $ref: '#/components/parameters/projectId'
+        - $ref: '#/components/parameters/active'
+        - $ref: '#/components/parameters/accountId'
+        - $ref: '#/components/parameters/includeLineItems'
+        - $ref: '#/components/parameters/includeTotals'
+        - $ref: '#/components/parameters/tags'
+      responses:
+        '200':
+          description: Array of Invoices
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      invoices:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/invoice'
+                      masterAccount:
+                        type: boolean
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Invoices Response:
+                  value:
+                    invoices:
+                      - id: 305991
+                        ownerId: 3
+                        account:
+                          id: 3
+                          name: Morpheus
+                        group: null
+                        cloud:
+                          id: 121
+                          name: Azure US
+                          uuid: 110c628d-c2de-4651-b2c2-cbaad658d8ea
+                        instance: null
+                        server: null
+                        cluster: null
+                        user: null
+                        plan: null
+                        tags: []
+                        project: null
+                        refType: AccountResource
+                        refId: 54002
+                        refUuid: 39965a0b-de2a-4ba0-9a48-ea1b7a9c8361
+                        refName: 1.0.0
+                        refCategory: invoice
+                        resourceId: null
+                        resourceUuid: 39965a0b-de2a-4ba0-9a48-ea1b7a9c8361
+                        resourceType: null
+                        resourceName: 1.0.0
+                        resourceExternalId: >-
+                          /subscriptions/88213e1e-d4c5-467f-b029-fa3072281a98/resourceGroups/BOBSTESTRESOURCEG/providers/Microsoft.Compute/galleries/bobGallery/images/bobImage/versions/1.0.0
+                        resourceInternalId: null
+                        interval: month
+                        period: '202204'
+                        estimate: false
+                        summaryInvoice: false
+                        active: true
+                        startDate: '2022-04-01T00:00:00Z'
+                        endDate: '2022-04-30T23:59:59Z'
+                        refStart: '2022-04-01T00:00:00Z'
+                        refEnd: '2022-04-30T23:59:59Z'
+                        estimatedComputePrice: 0
+                        estimatedComputeCost: 0
+                        estimatedMemoryPrice: 0
+                        estimatedMemoryCost: 0
+                        estimatedStoragePrice: 0
+                        estimatedStorageCost: 0
+                        estimatedNetworkPrice: 0
+                        estimatedNetworkCost: 0
+                        estimatedLicensePrice: 0
+                        estimatedLicenseCost: 0
+                        estimatedExtraPrice: 0
+                        estimatedExtraCost: 0
+                        estimatedTotalPrice: 0
+                        estimatedTotalCost: 0
+                        estimatedRunningPrice: 0
+                        estimatedRunningCost: 0
+                        estimatedCurrency: USD
+                        estimatedConversionRate: 1
+                        actualComputePrice: 0
+                        actualComputeCost: 0
+                        actualMemoryPrice: 0
+                        actualMemoryCost: 0
+                        actualStoragePrice: 0.08970336759388997
+                        actualStorageCost: 0.08970336759388997
+                        actualNetworkPrice: 0
+                        actualNetworkCost: 0
+                        actualLicensePrice: 0
+                        actualLicenseCost: 0
+                        actualExtraPrice: 0
+                        actualExtraCost: 0
+                        actualTotalPrice: 0.14950565110633676
+                        actualTotalCost: 0.14950565110633676
+                        actualRunningPrice: 0.08970336759388997
+                        actualRunningCost: 0.08970336759388997
+                        actualCurrency: USD
+                        actualConversionRate: 1
+                        computePrice: 0
+                        computeCost: 0
+                        memoryPrice: 0
+                        memoryCost: 0
+                        storagePrice: 0.08970336759388997
+                        storageCost: 0.08970336759388997
+                        networkPrice: 0
+                        networkCost: 0
+                        licensePrice: 0
+                        licenseCost: 0
+                        extraPrice: 0
+                        extraCost: 0
+                        totalPrice: 0.14950565110633676
+                        totalCost: 0.14950565110633676
+                        runningPrice: 0.08970336759388997
+                        runningCost: 0.08970336759388997
+                        currency: USD
+                        conversionRate: 1
+                        costType: actual
+                        offTime: 0
+                        powerState: null
+                        powerDate: '2022-04-01T00:00:00Z'
+                        runningMultiplier: 0
+                        usageType: null
+                        usageCategory: null
+                        lastCostDate: null
+                        lastActualDate: '2022-04-19T01:30:01Z'
+                        dateCreated: '2022-04-02T01:30:06Z'
+                        lastUpdated: '2022-04-19T01:30:45Z'
+                        lineItemCount: 1
+                      - id: 310678
+                        ownerId: 3
+                        account:
+                          id: 3
+                          name: Morpheus
+                        group: null
+                        cloud:
+                          id: 121
+                          name: Azure US
+                          uuid: 110c628d-c2de-4651-b2c2-cbaad658d8ea
+                        instance: null
+                        server: null
+                        cluster: null
+                        user: null
+                        plan: null
+                        tags:
+                          - id: 13729185
+                            name: aks-managed-type
+                            value: aks-slb-managed-outbound-ip
+                        project: null
+                        refType: AccountResource
+                        refId: 236345
+                        refUuid: d8f9d465-3724-40a9-9fda-d954be782232
+                        refName: 11873805-745c-49ad-945b-ccb59e1b5f0e
+                        refCategory: invoice
+                        resourceId: null
+                        resourceUuid: d8f9d465-3724-40a9-9fda-d954be782232
+                        resourceType: null
+                        resourceName: 11873805-745c-49ad-945b-ccb59e1b5f0e
+                        resourceExternalId: >-
+                          /subscriptions/88213e1e-d4c5-467f-b029-fa3072281a98/resourceGroups/MC_morph-qa_db-azure-aks-host-0412_westus/providers/Microsoft.Network/publicIPAddresses/11873805-745c-49ad-945b-ccb59e1b5f0e
+                        resourceInternalId: null
+                        interval: month
+                        period: '202204'
+                        estimate: false
+                        summaryInvoice: false
+                        active: true
+                        startDate: '2022-04-01T00:00:00Z'
+                        endDate: '2022-04-30T23:59:59Z'
+                        refStart: '2022-04-01T00:00:00Z'
+                        refEnd: '2022-04-30T23:59:59Z'
+                        estimatedComputePrice: 0
+                        estimatedComputeCost: 0
+                        estimatedMemoryPrice: 0
+                        estimatedMemoryCost: 0
+                        estimatedStoragePrice: 0
+                        estimatedStorageCost: 0
+                        estimatedNetworkPrice: 0
+                        estimatedNetworkCost: 0
+                        estimatedLicensePrice: 0
+                        estimatedLicenseCost: 0
+                        estimatedExtraPrice: 0
+                        estimatedExtraCost: 0
+                        estimatedTotalPrice: 0
+                        estimatedTotalCost: 0
+                        estimatedRunningPrice: 0
+                        estimatedRunningCost: 0
+                        estimatedCurrency: USD
+                        estimatedConversionRate: 1
+                        actualComputePrice: 0
+                        actualComputeCost: 0
+                        actualMemoryPrice: 0
+                        actualMemoryCost: 0
+                        actualStoragePrice: 0
+                        actualStorageCost: 0
+                        actualNetworkPrice: 0.000833333333333
+                        actualNetworkCost: 0.000833333333333
+                        actualLicensePrice: 0
+                        actualLicenseCost: 0
+                        actualExtraPrice: 0
+                        actualExtraCost: 0
+                        actualTotalPrice: 0.000833333333333
+                        actualTotalCost: 0.000833333333333
+                        actualRunningPrice: 0.000833333333333
+                        actualRunningCost: 0.000833333333333
+                        actualCurrency: USD
+                        actualConversionRate: 1
+                        computePrice: 0
+                        computeCost: 0
+                        memoryPrice: 0
+                        memoryCost: 0
+                        storagePrice: 0
+                        storageCost: 0
+                        networkPrice: 0.000833333333333
+                        networkCost: 0.000833333333333
+                        licensePrice: 0
+                        licenseCost: 0
+                        extraPrice: 0
+                        extraCost: 0
+                        totalPrice: 0.000833333333333
+                        totalCost: 0.000833333333333
+                        runningPrice: 0.000833333333333
+                        runningCost: 0.000833333333333
+                        currency: USD
+                        conversionRate: 1
+                        costType: actual
+                        offTime: 0
+                        powerState: null
+                        powerDate: '2022-04-01T00:00:00Z'
+                        runningMultiplier: 0
+                        usageType: null
+                        usageCategory: null
+                        lastCostDate: null
+                        lastActualDate: '2022-04-14T01:30:05Z'
+                        dateCreated: '2022-04-14T01:30:19Z'
+                        lastUpdated: '2022-04-19T01:30:31Z'
+                        lineItemCount: 1
+                    masterAccount: true
+                    meta:
+                      size: 2
+                      total: 306887
+                      offset: 0
+                      max: 2
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/invoices/{id}:
+    get:
+      summary: Get a Specific Invoice
+      description: Get details about a specific invoice.
+      operationId: getInvoices
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Invoice Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      invoice:
+                        $ref: '#/components/schemas/invoice'
+                      masterAccount:
+                        type: boolean
+              examples:
+                Get Invoice Response:
+                  value:
+                    invoice:
+                      id: 36454
+                      ownerId: 1
+                      account:
+                        id: 1
+                        name: Home
+                      group:
+                        id: 7
+                        name: All Clouds
+                      cloud:
+                        id: 1
+                        name: vCenter
+                        uuid: 3acedd6b-1010-47e7-b8da-79d7892f4eb0
+                      instance:
+                        id: 3775
+                        name: ' ''Breakfast'''
+                      server: null
+                      cluster: null
+                      user:
+                        id: 4
+                        name: cbunge
+                      plan:
+                        id: 889
+                        name: 1 CPU, 512MB Memory
+                      tags: []
+                      project: null
+                      refType: Instance
+                      refId: 3775
+                      refUuid: null
+                      refName: ' ''Breakfast'''
+                      refCategory: vm
+                      resourceId: null
+                      resourceUuid: null
+                      resourceType: null
+                      resourceName: null
+                      resourceExternalId: null
+                      resourceInternalId: null
+                      interval: month
+                      period: '202205'
+                      estimate: true
+                      summaryInvoice: true
+                      active: false
+                      startDate: '2022-05-01T00:00:00Z'
+                      endDate: '2022-05-31T23:59:59Z'
+                      refStart: '2022-05-02T14:46:18Z'
+                      refEnd: '2022-05-02T15:08:43Z'
+                      estimatedComputePrice: 0
+                      estimatedComputeCost: 0
+                      estimatedMemoryPrice: 0
+                      estimatedMemoryCost: 0
+                      estimatedStoragePrice: 0
+                      estimatedStorageCost: 0
+                      estimatedNetworkPrice: 0
+                      estimatedNetworkCost: 0
+                      estimatedLicensePrice: 0
+                      estimatedLicenseCost: 0
+                      estimatedSoftwareOrServicePrice: 0
+                      estimatedSoftwareOrServiceCost: 0
+                      estimatedExtraPrice: 0
+                      estimatedExtraCost: 0
+                      estimatedTotalPrice: 0
+                      estimatedTotalCost: 0
+                      estimatedRunningPrice: 0
+                      estimatedRunningCost: 0
+                      estimatedCurrency: USD
+                      estimatedConversionRate: 1
+                      actualComputePrice: 0
+                      actualComputeCost: 0
+                      actualMemoryPrice: 0
+                      actualMemoryCost: 0
+                      actualStoragePrice: 0
+                      actualStorageCost: 0
+                      actualNetworkPrice: 0
+                      actualNetworkCost: 0
+                      actualLicensePrice: 0
+                      actualLicenseCost: 0
+                      actualSoftwareOrServicePrice: 0
+                      actualSoftwareOrServiceCost: 0
+                      actualExtraPrice: 0
+                      actualExtraCost: 0
+                      actualTotalPrice: 0
+                      actualTotalCost: 0
+                      actualRunningPrice: 0
+                      actualRunningCost: 0
+                      actualCurrency: USD
+                      actualConversionRate: 1
+                      computePrice: 0
+                      computeCost: 0
+                      memoryPrice: 0
+                      memoryCost: 0
+                      storagePrice: 0
+                      storageCost: 0
+                      networkPrice: 0
+                      networkCost: 0
+                      licensePrice: 0
+                      licenseCost: 0
+                      softwareOrServicePrice: 0
+                      softwareOrServiceCost: 0
+                      extraPrice: 0
+                      extraCost: 0
+                      totalPrice: 0
+                      totalCost: 0
+                      runningPrice: 0
+                      runningCost: 0
+                      currency: USD
+                      conversionRate: 1
+                      costType: estimated
+                      offTime: 524131
+                      powerState: 'on'
+                      powerDate: '2022-05-02T15:08:43Z'
+                      runningMultiplier: 0.0003065156
+                      usageType: null
+                      usageCategory: null
+                      lastCostDate: '2022-05-02T15:08:43Z'
+                      lastActualDate: null
+                      dateCreated: '2022-05-02T14:50:07Z'
+                      lastUpdated: '2022-05-02T15:08:43Z'
+                      lineItemCount: 0
+                      lineItems: []
+                    masterAccount: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    put:
+      summary: Update Invoice Tags
+      description: Update, Add, or Remove invoice tag(s).
+      operationId: updateInvoices
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoice:
+                  type: object
+                  properties:
+                    tags:
+                      type: string
+                      description: >
+                        This adds or updates the specified Metadata tags and
+                        removes any tags not specified. Array of objects having
+                        a name and value.
+                      example:
+                        - name: hello
+                          value: world
+                        - name: foo
+                          value: bar
+                    addTags:
+                      type: string
+                      description: >
+                        Add or update value of Metadata tags. Array of objects
+                        having a name and value.
+                      example:
+                        - name: hello
+                          value: world
+                        - name: foo
+                          value: bar
+                    removeTags:
+                      type: string
+                      description: >
+                        This removes the specified Metadata tags matching name
+                        and optionally value (if provided). Array of objects
+                        having a name and value.
+                      example:
+                        - name: hello
+                        - name: foo
+                          value: bar
+      responses:
+        '200':
+          description: Invoice Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      user:
+                        $ref: '#/components/schemas/invoice'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Update Invoice Response:
+                  value:
+                    user:
+                      id: 4
+                      accountId: 3
+                      username: ahicks
+                      displayName: Adam Hicks
+                      email: ahicks@morpheusdata.com
+                      firstName: Adam
+                      lastName: Hicks
+                      enabled: false
+                      receiveNotifications: true
+                      isUsing2FA: false
+                      accountExpired: false
+                      accountLocked: false
+                      passwordExpired: false
+                      loginCount: 1576
+                      loginAttempts: 0
+                      lastLoginDate: '2021-08-17T17:12:08Z'
+                      roles:
+                        - id: 16
+                          authority: Morpheus Admin
+                          description: Morpheus Administrator Role
+                      account:
+                        id: 3
+                        name: Morpheus
+                      linuxUsername: ahicks
+                      linuxPassword: '************'
+                      linuxKeyPairId: 13
+                      windowsUsername: ahicks
+                      windowsPassword: '************'
+                      defaultPersona: null
+                      dateCreated: '2017-02-17T06:47:17Z'
+                      lastUpdated: '2021-08-26T18:58:09Z'
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/invoice-line-items:
+    get:
+      summary: List All Invoice Line Items
+      description: >-
+        This endpoint retrieves a list of all invoice line items for the
+        specified parameters.
+      operationId: listInvoiceLineItems
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/startDate'
+        - $ref: '#/components/parameters/endDate'
+        - $ref: '#/components/parameters/period'
+        - $ref: '#/components/parameters/refType'
+        - $ref: '#/components/parameters/refId'
+        - $ref: '#/components/parameters/zoneId'
+        - $ref: '#/components/parameters/siteId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/containerId'
+        - $ref: '#/components/parameters/serverId'
+        - $ref: '#/components/parameters/userId'
+        - $ref: '#/components/parameters/projectId'
+        - $ref: '#/components/parameters/active'
+        - $ref: '#/components/parameters/accountId'
+        - $ref: '#/components/parameters/includeTotals'
+      responses:
+        '200':
+          description: Array of Invoice Line Items
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      lineItems:
+                        type: array
+                        items:
+                          $ref: ../components/schemas/lineItem.yaml
+                      masterAccount:
+                        type: boolean
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Invoice Line Items Response:
+                  value:
+                    lineItems:
+                      - id: 234082
+                        invoiceId: 36871
+                        refType: ComputeServer
+                        refId: 25048
+                        refName: VDI-Win10-1496
+                        startDate: '2022-05-17T23:13:35Z'
+                        endDate: '2022-05-23T01:30:01Z'
+                        itemId: null
+                        itemType: null
+                        itemName: null
+                        itemDescription: null
+                        productId: null
+                        productCode: null
+                        productName: null
+                        itemSeller: null
+                        itemAction: null
+                        externalId: 162328_container_32023_memory_0.0016666624133332992
+                        rateId: null
+                        rateClass: null
+                        rateUnit: hour
+                        rateTerm: null
+                        usageType: Memory Usage
+                        usageCategory: memory
+                        usageService: null
+                        itemUsage: 123
+                        itemRate: 0.0016666624133332992
+                        itemCost: 0.2049994768399958
+                        itemPriceRate: 0.0016666624133332992
+                        itemPrice: 0.2049994768399958
+                        itemTax: 0
+                        itemTerm: null
+                        taxType: null
+                        regionCode: null
+                        currency: USD
+                        conversionRate: 1
+                        dateCreated: '2022-05-18T01:30:06Z'
+                        lastUpdated: '2022-05-23T01:30:03Z'
+                      - id: 234085
+                        invoiceId: 36871
+                        refType: ComputeServer
+                        refId: 25048
+                        refName: VDI-Win10-1496
+                        startDate: '2022-05-17T23:13:35Z'
+                        endDate: '2022-05-23T01:30:01Z'
+                        itemId: null
+                        itemType: null
+                        itemName: null
+                        itemDescription: null
+                        productId: null
+                        productCode: null
+                        productName: null
+                        itemSeller: null
+                        itemAction: null
+                        externalId: 162328_container_32023_compute_0.01350000010800000000
+                        rateId: null
+                        rateClass: null
+                        rateUnit: hour
+                        rateTerm: null
+                        usageType: Compute Usage
+                        usageCategory: compute
+                        usageService: null
+                        itemUsage: 123
+                        itemRate: 0.013500000108
+                        itemCost: 1.660500013284
+                        itemPriceRate: 0.013500000108
+                        itemPrice: 1.660500013284
+                        itemTax: 0
+                        itemTerm: null
+                        taxType: null
+                        regionCode: null
+                        currency: USD
+                        conversionRate: 1
+                        dateCreated: '2022-05-18T01:30:06Z'
+                        lastUpdated: '2022-05-23T01:30:03Z'
+                    masterAccount: true
+                    meta:
+                      size: 2
+                      total: 77512
+                      offset: 0
+                      max: 2
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/invoice-line-items/{id}:
+    get:
+      summary: Get a Specific Invoice Line Item
+      description: Get details about a specific invoice line item.
+      operationId: getInvoiceLineItems
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Invoice Line Item Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      lineItem:
+                        $ref: ../components/schemas/lineItem.yaml
+                      masterAccount:
+                        type: boolean
+              examples:
+                Get Invoice Line Item Response:
+                  value:
+                    lineItem:
+                      id: 234082
+                      invoiceId: 36871
+                      refType: ComputeServer
+                      refId: 25048
+                      refName: VDI-Win10-1496
+                      startDate: '2022-05-17T23:13:35Z'
+                      endDate: '2022-05-23T01:30:01Z'
+                      itemId: null
+                      itemType: null
+                      itemName: null
+                      itemDescription: null
+                      productId: null
+                      productCode: null
+                      productName: null
+                      itemSeller: null
+                      itemAction: null
+                      externalId: 162328_container_32023_memory_0.0016666624133332992
+                      rateId: null
+                      rateClass: null
+                      rateUnit: hour
+                      rateTerm: null
+                      usageType: Memory Usage
+                      usageCategory: memory
+                      usageService: null
+                      itemUsage: 123
+                      itemRate: 0.0016666624133332992
+                      itemCost: 0.2049994768399958
+                      itemPriceRate: 0.0016666624133332992
+                      itemPrice: 0.2049994768399958
+                      itemTax: 0
+                      itemTerm: null
+                      taxType: null
+                      regionCode: null
+                      currency: USD
+                      conversionRate: 1
+                      dateCreated: '2022-05-18T01:30:06Z'
+                      lastUpdated: '2022-05-23T01:30:03Z'
+                    masterAccount: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
   /api/license:
     get:
       summary: Get license
@@ -14339,14 +15104,13 @@ paths:
       description: Get a list of users.
       operationId: listUsers
       tags:
-        - Administration
         - Users
       parameters:
-        - $ref: '#/components/parameters/phrase'
         - $ref: '#/components/parameters/max'
         - $ref: '#/components/parameters/offset'
         - $ref: '#/components/parameters/sort'
         - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
         - $ref: '#/components/parameters/username'
         - $ref: '#/components/parameters/email'
         - $ref: '#/components/parameters/firstName'
@@ -14458,7 +15222,6 @@ paths:
       description: Create a new user.
       operationId: addUsers
       tags:
-        - Administration
         - Users
       parameters:
         - name: accountId
@@ -14485,19 +15248,24 @@ paths:
                     firstName:
                       type: string
                       description: First Name
+                      example: John
                     lastName:
                       type: string
                       description: Last Name
+                      example: Smith
                     username:
                       type: string
                       description: Username (unique per tenant).
+                      example: jsmith
                     email:
                       type: string
                       description: Email address
+                      example: jsmith@email.com
                     password:
                       type: string
                       format: password
                       description: Password
+                      example: Passw0rd!
                     roles:
                       type: array
                       description: List of Roles
@@ -14569,7 +15337,6 @@ paths:
       description: Get details about a specific user.
       operationId: getUsers
       tags:
-        - Administration
         - Users
       parameters:
         - $ref: '#/components/parameters/id-path'
@@ -14635,7 +15402,6 @@ paths:
       description: Update an existing user.
       operationId: updateUsers
       tags:
-        - Administration
         - Users
       parameters:
         - $ref: '#/components/parameters/id-path'
@@ -14736,7 +15502,6 @@ paths:
       description: Delete an existing user.
       operationId: deleteUsers
       tags:
-        - Administration
         - Users
       responses:
         '200':
@@ -16008,7 +16773,9 @@ components:
       in: query
       description: Filter by User ID
       schema:
-        type: number
+        type: integer
+        format: int64
+        description: User ID
       example: 6
     tenantId:
       name: tenantId
@@ -16043,6 +16810,97 @@ components:
       schema:
         type: boolean
       example: false
+    startDate:
+      name: startDate
+      in: query
+      description: Filter by startDate greater than or equal to a specified date
+      schema:
+        type: string
+        format: date-time
+      example: '2019-01-01'
+    endDate:
+      name: endDate
+      in: query
+      description: Filter by endDate less than or equal to a specified date
+      schema:
+        type: string
+        format: date-time
+      example: '2020-01-01'
+    period:
+      name: period
+      in: query
+      description: >
+        Only return records for period that matches with the specified value.
+        This is an alternative to using startDate/endDate. Format is YYYY or
+        YYYYMM.
+      schema:
+        type: string
+      example: 201901
+    refType:
+      name: refType
+      in: query
+      description: |
+        If specified will return an exact match on refType.
+      schema:
+        type: string
+      examples:
+        Group:
+          value: ComputeSite
+          summary: Group
+        Cloud:
+          value: ComputeZone
+          summary: Cloud
+        Server:
+          value: ComputeServer
+          summary: Server
+        Instance:
+          value: Instance
+          summary: Instance
+        Container:
+          value: Container
+          summary: Container
+        User:
+          value: User
+          summary: User
+    refId:
+      name: refId
+      in: query
+      description: If specified will return an exact match on refId
+      schema:
+        type: integer
+        format: int64
+      example: 3
+    refStatus:
+      name: refStatus
+      in: query
+      description: >
+        If specified, will filter on the associated StorageVolume status. This
+        is only applicable whn `refType=StorageVolume`.
+      schema:
+        type: string
+      examples:
+        Provisioned:
+          value: provisioned
+          summary: Provisioned
+        Unallocated:
+          value: unallocated
+          summary: Unallocated
+    zoneId:
+      name: zoneId
+      in: query
+      description: The Zone ID for Filtering
+      schema:
+        type: integer
+        format: int64
+      example: 3
+    siteId:
+      name: siteId
+      in: query
+      description: The Site ID for Filtering
+      schema:
+        type: integer
+        format: int64
+      example: 7
     instanceId:
       name: instanceId
       in: query
@@ -16070,15 +16928,52 @@ components:
         format: int64
         description: Server ID
       example: 97
-    zoneId:
-      name: zoneId
+    projectId:
+      name: projectId
       in: query
-      description: The Zone ID for Filtering
+      description: The Project ID for Filtering
       schema:
         type: integer
         format: int64
-        description: Zone ID
+      example: 1
+    accountId:
+      name: accountId
+      in: query
+      description: >-
+        Filter by Tenant ID. This is only available to master tenant users with
+        permission to manage tenants and users.
+      schema:
+        type: integer
+        format: int64
       example: 3
+    includeLineItems:
+      name: includeLineItems
+      in: query
+      description: >
+        Pass true to include the list of `lineItems` for each invoice. Only
+        `lineItemCount` is returned by default.
+      schema:
+        type: boolean
+        default: false
+    includeTotals:
+      name: includeTotals
+      in: query
+      description: >
+        Pass true to include the summed totals (cost/price values) for all the
+        invoices found in the query. The returned property is called
+        `invoiceTotals`.
+      schema:
+        type: boolean
+        default: false
+    tags:
+      name: tags
+      in: query
+      description: >
+        Filter by tags (metadata). This allows filtering by a tag name and
+        value(s)
+      schema:
+        type: string
+      example: tags.env=qa&tags.env=test
     appId:
       name: appId
       in: query
@@ -16111,22 +17006,6 @@ components:
       description: Alias for phrase
       schema:
         type: string
-    startDate:
-      name: startDate
-      in: query
-      description: Filter by startDate greater than or equal to a specified date
-      schema:
-        type: string
-        format: date-time
-      example: '2019-01-01'
-    endDate:
-      name: endDate
-      in: query
-      description: Filter by endDate less than or equal to a specified date
-      schema:
-        type: string
-        format: date-time
-      example: '2020-01-01'
     username:
       name: username
       in: query
@@ -16163,16 +17042,6 @@ components:
       schema:
         type: string
       example: Morpheus Admins
-    accountId:
-      name: accountId
-      in: query
-      description: >-
-        Filter by Tenant ID. This is only available to master tenant users with
-        permission to manage tenants and users.
-      schema:
-        type: integer
-        format: int64
-      example: 3
     global:
       name: global
       in: query
@@ -17063,6 +17932,382 @@ components:
         serverCount:
           type: integer
           format: int64
+    invoice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        ownerId:
+          type: integer
+          format: int64
+        account:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        group:
+          type: string
+          format: nullable
+        cloud:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            uuid:
+              type: string
+        instance:
+          type: string
+          format: nullable
+        server:
+          type: string
+          format: nullable
+        cluster:
+          type: string
+          format: nullable
+        user:
+          type: string
+          format: nullable
+        plan:
+          type: string
+          format: nullable
+        tags:
+          type:
+            - array
+            - 'null'
+        project:
+          type: string
+          format: nullable
+        refType:
+          type: string
+        refId:
+          type: integer
+          format: int64
+        refUuid:
+          type: string
+        refName:
+          type: string
+        refCategory:
+          type: string
+        resourceId:
+          type: string
+          format: nullable
+        resourceUuid:
+          type: string
+        resourceType:
+          type: string
+          format: nullable
+        resourceName:
+          type: string
+        resourceExternalId:
+          type: string
+        resourceInternalId:
+          type: string
+          format: nullable
+        interval:
+          type: string
+        period:
+          type: string
+        estimate:
+          type: boolean
+        summaryInvoice:
+          type: boolean
+        active:
+          type: boolean
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        refStart:
+          type: string
+          format: date-time
+        refEnd:
+          type: string
+          format: date-time
+        estimatedComputePrice:
+          type: integer
+          format: int64
+        estimatedComputeCost:
+          type: integer
+          format: int64
+        estimatedMemoryPrice:
+          type: integer
+          format: int64
+        estimatedMemoryCost:
+          type: integer
+          format: int64
+        estimatedStoragePrice:
+          type: integer
+          format: int64
+        estimatedStorageCost:
+          type: integer
+          format: int64
+        estimatedNetworkPrice:
+          type: integer
+          format: int64
+        estimatedNetworkCost:
+          type: integer
+          format: int64
+        estimatedLicensePrice:
+          type: integer
+          format: int64
+        estimatedLicenseCost:
+          type: integer
+          format: int64
+        estimatedExtraPrice:
+          type: integer
+          format: int64
+        estimatedExtraCost:
+          type: integer
+          format: int64
+        estimatedTotalPrice:
+          type: integer
+          format: int64
+        estimatedTotalCost:
+          type: integer
+          format: int64
+        estimatedRunningPrice:
+          type: integer
+          format: int64
+        estimatedRunningCost:
+          type: integer
+          format: int64
+        estimatedCurrency:
+          type: string
+        estimatedConversionRate:
+          type: integer
+          format: int64
+        actualComputePrice:
+          type: integer
+          format: int64
+        actualComputeCost:
+          type: integer
+          format: int64
+        actualMemoryPrice:
+          type: integer
+          format: int64
+        actualMemoryCost:
+          type: integer
+          format: int64
+        actualStoragePrice:
+          type: number
+        actualStorageCost:
+          type: number
+        actualNetworkPrice:
+          type: integer
+          format: int64
+        actualNetworkCost:
+          type: integer
+          format: int64
+        actualLicensePrice:
+          type: integer
+          format: int64
+        actualLicenseCost:
+          type: integer
+          format: int64
+        actualExtraPrice:
+          type: integer
+          format: int64
+        actualExtraCost:
+          type: integer
+          format: int64
+        actualTotalPrice:
+          type: number
+        actualTotalCost:
+          type: number
+        actualRunningPrice:
+          type: number
+        actualRunningCost:
+          type: number
+        actualCurrency:
+          type: string
+        actualConversionRate:
+          type: integer
+          format: int64
+        computePrice:
+          type: integer
+          format: int64
+        computeCost:
+          type: integer
+          format: int64
+        memoryPrice:
+          type: integer
+          format: int64
+        memoryCost:
+          type: integer
+          format: int64
+        storagePrice:
+          type: number
+        storageCost:
+          type: number
+        networkPrice:
+          type: integer
+          format: int64
+        networkCost:
+          type: integer
+          format: int64
+        licensePrice:
+          type: integer
+          format: int64
+        licenseCost:
+          type: integer
+          format: int64
+        extraPrice:
+          type: integer
+          format: int64
+        extraCost:
+          type: integer
+          format: int64
+        totalPrice:
+          type: number
+        totalCost:
+          type: number
+        runningPrice:
+          type: number
+        runningCost:
+          type: number
+        currency:
+          type: string
+        conversionRate:
+          type: integer
+          format: int64
+        costType:
+          type: string
+        offTime:
+          type: integer
+          format: int64
+        powerState:
+          type: string
+          format: nullable
+        powerDate:
+          type: string
+          format: date-time
+        runningMultiplier:
+          type: integer
+          format: int64
+        usageType:
+          type: string
+          format: nullable
+        usageCategory:
+          type: string
+          format: nullable
+        lastCostDate:
+          type: string
+          format: nullable
+        lastActualDate:
+          type: string
+          format: date-time
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+        lineItemCount:
+          type: integer
+          format: int64
+        lineItems:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              invoiceId:
+                type: integer
+                format: int64
+              refType:
+                type: string
+              refId:
+                type: integer
+                format: int64
+              refName:
+                type: string
+              startDate:
+                type: string
+                format: date-time
+              endDate:
+                type: string
+                format: date-time
+              itemId:
+                type: string
+              itemType:
+                type: string
+                format: nullable
+              itemName:
+                type: string
+              itemDescription:
+                type: string
+              productId:
+                type: string
+                format: nullable
+              productCode:
+                type: string
+              productName:
+                type: string
+              itemSeller:
+                type: string
+                format: nullable
+              itemAction:
+                type: string
+                format: nullable
+              externalId:
+                type: string
+              rateId:
+                type: string
+              rateClass:
+                type: string
+                format: nullable
+              rateUnit:
+                type: string
+              rateTerm:
+                type: string
+                format: nullable
+              usageType:
+                type: string
+              usageCategory:
+                type: string
+              usageService:
+                type: string
+              itemUsage:
+                type: number
+              itemRate:
+                type: number
+              itemCost:
+                type: number
+              itemPrice:
+                type: number
+              itemTax:
+                type: integer
+                format: int64
+              itemTerm:
+                type: string
+                format: nullable
+              taxType:
+                type: string
+                format: nullable
+              regionCode:
+                type: string
+              currency:
+                type: string
+              conversionRate:
+                type: integer
+                format: int64
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
     license:
       description: >-
         Object for logging in to the [Morpheus Hub](https://morpheushub.com)

@@ -1,0 +1,63 @@
+get:
+  summary: List All Invoices
+  description: This endpoint retrieves a list of invoices for the specified parameters.
+  operationId: listInvoices
+  tags:
+    - Invoices
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/startDate.yaml
+    - $ref: ../components/parameters/endDate.yaml
+    - $ref: ../components/parameters/period.yaml
+    - $ref: ../components/parameters/refType.yaml
+    - $ref: ../components/parameters/refId.yaml
+    - $ref: ../components/parameters/refStatus.yaml
+    - $ref: ../components/parameters/zoneId.yaml
+    - $ref: ../components/parameters/siteId.yaml
+    - $ref: ../components/parameters/instanceId.yaml
+    - $ref: ../components/parameters/containerId.yaml
+    - $ref: ../components/parameters/serverId.yaml
+    - $ref: ../components/parameters/userId.yaml
+    - $ref: ../components/parameters/projectId.yaml
+    - $ref: ../components/parameters/active.yaml
+    - $ref: ../components/parameters/accountId.yaml
+    - $ref: ../components/parameters/includeLineItems.yaml
+    - $ref: ../components/parameters/includeTotals.yaml
+    - $ref: ../components/parameters/tags.yaml
+  responses:
+    '200':
+      description: Array of Invoices
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                invoices:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/invoice.yaml
+                masterAccount:
+                  type: boolean
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Invoices Response:
+              value:
+                $ref: ../components/examples/invoices.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

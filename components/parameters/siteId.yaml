@@ -1,0 +1,7 @@
+name: siteId
+in: query
+description: The Site ID for Filtering
+schema:
+  type: integer
+  format: int64
+example: 7

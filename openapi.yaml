@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 5.4.5
+  version: 5.4.6
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -71,6 +71,14 @@ paths:
     $ref: paths/api@groups@id@wiki.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
+  /api/invoices:
+    $ref: paths/api@invoices.yaml
+  /api/invoices/{id}:
+    $ref: paths/api@invoices@id.yaml
+  /api/invoice-line-items:
+    $ref: paths/api@invoice-line-items.yaml
+  /api/invoice-line-items/{id}:
+    $ref: paths/api@invoice-line-items@id.yaml
   /api/license:
     $ref: paths/api@license.yaml
   /api/log-settings:
@@ -188,6 +196,8 @@ tags:
     description: Manage Kubernetes Clusters
   - name: Contacts
     description: Manage Monitoring Contacts
+  - name: Credentials
+    description: Manage Credentials
   - name: Cypher
     description: Manage Cypher
   - name: Dashboard

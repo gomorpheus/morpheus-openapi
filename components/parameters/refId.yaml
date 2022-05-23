@@ -1,0 +1,7 @@
+name: refId
+in: query
+description: If specified will return an exact match on refId
+schema:
+  type: integer
+  format: int64
+example: 3

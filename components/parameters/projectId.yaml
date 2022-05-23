@@ -1,0 +1,7 @@
+name: projectId
+in: query
+description: The Project ID for Filtering
+schema:
+  type: integer
+  format: int64
+example: 1

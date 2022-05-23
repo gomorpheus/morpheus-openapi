@@ -1,0 +1,7 @@
+name: tags
+in: query
+description: >
+  Filter by tags (metadata). This allows filtering by a tag name and value(s)
+schema:
+  type: string
+example: tags.env=qa&tags.env=test

@@ -3,7 +3,6 @@ get:
   description: Get a list of roles that can be assigned to a user.
   operationId: listUsersAvailableRoles
   tags:
-    - Administration
     - Users
   parameters:
     - name: accountId

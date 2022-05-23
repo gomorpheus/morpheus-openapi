@@ -1,0 +1,100 @@
+get:
+  summary: Get a Specific Invoice
+  description: Get details about a specific invoice.
+  operationId: getInvoices
+  tags:
+    - Invoices
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Invoice Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                invoice:
+                  $ref: ../components/schemas/invoice.yaml
+                masterAccount:
+                  type: boolean
+          examples:
+            Get Invoice Response:
+              value:
+                $ref: ../components/examples/invoice.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Update Invoice Tags
+  description: Update, Add, or Remove invoice tag(s).
+  operationId: updateInvoices
+  tags:
+    - Invoices
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            invoice:
+              type: object
+              properties:
+                tags:
+                  type: string
+                  description: >
+                    This adds or updates the specified Metadata tags and removes any tags not specified.
+                    Array of objects having a name and value.
+                  example: [{"name": "hello", "value": "world"},{"name": "foo", "value": "bar"}]
+                addTags:
+                  type: string
+                  description: >
+                    Add or update value of Metadata tags.
+                    Array of objects having a name and value.
+                  example: [{"name": "hello", "value": "world"},{"name": "foo", "value": "bar"}]
+                removeTags:
+                  type: string
+                  description: >
+                    This removes the specified Metadata tags matching name and optionally value (if provided).
+                    Array of objects having a name and value.
+                  example: [{"name": "hello"},{"name": "foo", "value": "bar"}]
+  responses:
+    '200':
+      description: Invoice Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                user:
+                  $ref: ../components/schemas/invoice.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Update Invoice Response:
+              value:
+                $ref: ../components/examples/userSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
