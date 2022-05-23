@@ -1,0 +1,102 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  invoiceId: 
+    type: integer
+    format: int64
+  refType: 
+    type: string
+  refId: 
+    type: integer
+    format: int64
+  refName: 
+    type: string
+  startDate: 
+    type: string
+    format: date-time
+  endDate: 
+    type: string
+    format: date-time
+  itemId: 
+    type: string
+    format: nullable
+  itemType: 
+    type: string
+    format: nullable
+  itemName: 
+    type: string
+    format: nullable
+  itemDescription: 
+    type: string
+    format: nullable
+  productId: 
+    type: string
+    format: nullable
+  productCode: 
+    type: string
+    format: nullable
+  productName: 
+    type: string
+    format: nullable
+  itemSeller: 
+    type: string
+    format: nullable
+  itemAction: 
+    type: string
+    format: nullable
+  externalId: 
+    type: string
+  rateId: 
+    type: string
+    format: nullable
+  rateClass: 
+    type: string
+    format: nullable
+  rateUnit: 
+    type: string
+  rateTerm: 
+    type: string
+    format: nullable
+  usageType: 
+    type: string
+  usageCategory: 
+    type: string
+  usageService: 
+    type: string
+    format: nullable
+  itemUsage: 
+    type: integer
+    format: int64
+  itemRate: 
+    type: number
+  itemCost: 
+    type: number
+  itemPriceRate: 
+    type: number
+  itemPrice: 
+    type: number
+  itemTax: 
+    type: integer
+    format: int64
+  itemTerm: 
+    type: string
+    format: nullable
+  taxType: 
+    type: string
+    format: nullable
+  regionCode: 
+    type: string
+    format: nullable
+  currency: 
+    type: string
+  conversionRate: 
+    type: integer
+    format: int64
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
