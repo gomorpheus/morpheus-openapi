@@ -18,17 +18,25 @@ get:
               value:
                 $ref: ../components/examples/role.json
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml
 put:
   summary: Update role
   description: Update an existing role.
@@ -69,17 +77,25 @@ put:
               value:
                 $ref: ../components/examples/role.json
     '400':
-      description: Bad Request.
+      $ref: ../components/responses/400.yaml
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml
 delete:
   summary: Delete role
   description: Delete an existing role. A role cannot be deleted while it is still in use.
@@ -115,12 +131,20 @@ delete:
                   Role is assigned as a default account role for a configured
                   Identity Source.
     '401':
-      description: Unauthorized.
+      $ref: ../components/responses/401.yaml
     '403':
-      description: Forbidden.
+      $ref: ../components/responses/403.yaml
     '404':
-      description: Object Not Found.
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
     '500':
-      description: Internal Server Error.
+      $ref: ../components/responses/500.yaml
     '503':
-      description: Service Unavailable.
+      $ref: ../components/responses/503.yaml

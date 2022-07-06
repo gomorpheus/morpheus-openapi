@@ -2,4 +2,4 @@ type: object
 properties:
   msg:
     type: string
-    example: Unauthorized to Perform this Action. Check your Authorization Header.
+    example: Unauthorized – Your API key is invalid. Check your Authorization header.
