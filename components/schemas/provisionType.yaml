@@ -88,26 +88,20 @@ properties:
     type: string
     format: nullable
   optionTypes: 
-    type: 
-      - "array"
-      - "null" 
+    type: array
+    nullable: true
   customOptionTypes: 
-    type: 
-      - "array"
-      - "null"
+    type: array
+    nullable: true
   networkTypes: 
-    type: 
-      - "array"
-      - "null" 
+    type: array
+    nullable: true 
   storageTypes: 
-    type: 
-      - "array"
-      - "null"
+    type: array
+    nullable: true
   rootStorageTypes: 
-    type: 
-      - "array"
-      - "null" 
+    type: array
+    nullable: true 
   controllerTypes: 
-    type: 
-      - "array"
-      - "null"
+    type: array
+    nullable: true

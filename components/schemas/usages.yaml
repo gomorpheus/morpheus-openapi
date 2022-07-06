@@ -21,9 +21,8 @@ properties:
           type: integer
           format: int64
         user: 
-          type:
-          - "object"
-          - "null"
+          type: object
+          nullable: true
           properties: 
             id: 
               type: integer

@@ -3,6 +3,5 @@ properties:
   success: 
     type: boolean
   errors: 
-    type:
-    - "object"
-    - "null"
+    type: object
+    nullable: true
