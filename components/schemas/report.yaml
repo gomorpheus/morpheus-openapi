@@ -17,10 +17,10 @@ properties:
         type: string
   reportTitle: 
     type: string
-    format: nullable
+    nullable: true
   filterTitle: 
     type: string
-    format: nullable
+    nullable: true
   status: 
     type: string
   dateCreated: 
@@ -40,7 +40,7 @@ properties:
     properties: 
       reportType: 
         type: string
-        format: nullable
+        nullable: true
       startDate: 
         type: string
       endDate: 
@@ -69,4 +69,4 @@ properties:
           type: string
         displayOrder: 
           type: string
-          format: nullable
+          nullable: true

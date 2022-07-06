@@ -7,7 +7,7 @@ properties:
     type: string
   description: 
     type: string
-    format: nullable
+    nullable: true
   code: 
     type: string
   aclEnabled: 
@@ -58,7 +58,7 @@ properties:
     format: int64
   maxDisk: 
     type: string
-    format: nullable
+    nullable: true
   resizeCopiesVolumes: 
     type: boolean
   supportsAutoDatastore: 
@@ -71,7 +71,7 @@ properties:
     type: boolean
   canEnforceTags: 
     type: string
-    format: nullable
+    nullable: true
   disableRootDatastore: 
     type: boolean
   hasSnapshots: 
@@ -86,7 +86,7 @@ properties:
     type: boolean
   hasFolders: 
     type: string
-    format: nullable
+    nullable: true
   optionTypes: 
     type: array
     nullable: true

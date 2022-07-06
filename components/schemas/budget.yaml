@@ -7,7 +7,7 @@ properties:
     type: string
   description: 
     type: string
-    format: nullable
+    nullable: true
   account: 
     type: object
     properties: 
@@ -62,16 +62,16 @@ properties:
     type: boolean
   warningLimit: 
     type: string
-    format: nullable
+    nullable: true
   overLimit: 
     type: string
-    format: nullable
+    nullable: true
   externalId: 
     type: string
-    format: nullable
+    nullable: true
   internalId: 
     type: string
-    format: nullable
+    nullable: true
   createdById: 
     type: integer
     format: int64
@@ -79,10 +79,10 @@ properties:
     type: string
   updatedById: 
     type: string
-    format: nullable
+    nullable: true
   updatedByName: 
     type: string
-    format: nullable
+    nullable: true
   dateCreated: 
     type: string
     format: date-time
@@ -127,7 +127,7 @@ properties:
         properties: 
           estimatedCost: 
             type: string
-            format: nullable
+            nullable: true
           lastCost: 
             type: string
-            format: nullable
+            nullable: true

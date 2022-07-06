@@ -19,22 +19,22 @@ properties:
     type: string
   description: 
     type: string
-    format: nullable
+    nullable: true
   subType: 
     type: string
-    format: nullable
+    nullable: true
   subId: 
     type: string
-    format: nullable
+    nullable: true
   zoneId: 
     type: integer
     format: int64
   integrationId: 
     type: string
-    format: nullable
+    nullable: true
   appId: 
     type: string
-    format: nullable
+    nullable: true
   instanceId: 
     type: integer
     format: int64
@@ -50,7 +50,7 @@ properties:
     type: string
   reason: 
     type: string
-    format: nullable
+    nullable: true
   percent: 
     type: integer
     format: int64
@@ -59,13 +59,13 @@ properties:
     format: int64
   message: 
     type: string
-    format: nullable
+    nullable: true
   output: 
     type: string
-    format: nullable
+    nullable: true
   error: 
     type: string
-    format: nullable
+    nullable: true
   startDate: 
     type: string
     format: date-time
@@ -120,7 +120,7 @@ properties:
               type: string
         description: 
           type: string
-          format: nullable
+          nullable: true
         refType: 
           type: string
         refId: 
@@ -128,16 +128,16 @@ properties:
           format: int64
         subType: 
           type: string
-          format: nullable
+          nullable: true
         subId: 
           type: string
-          format: nullable
+          nullable: true
         zoneId: 
           type: integer
           format: int64
         integrationId: 
           type: string
-          format: nullable
+          nullable: true
         instanceId: 
           type: integer
           format: int64
@@ -155,7 +155,7 @@ properties:
           type: string
         reason: 
           type: string
-          format: nullable
+          nullable: true
         percent: 
           type: integer
           format: int64
@@ -164,13 +164,13 @@ properties:
           format: int64
         message: 
           type: string
-          format: nullable
+          nullable: true
         output: 
           type: string
-          format: nullable
+          nullable: true
         error: 
           type: string
-          format: nullable
+          nullable: true
         startDate: 
           type: string
           format: date-time

@@ -23,7 +23,7 @@ items:
       type: boolean
     isPlugin: 
       type: string
-      format: nullable
+      nullable: true
     dateCreated: 
       type: string
       format: date-time
@@ -39,7 +39,7 @@ items:
             type: string
           description: 
             type: string
-            format: nullable
+            nullable: true
           code: 
             type: string
           fieldName: 
@@ -52,41 +52,41 @@ items:
             type: string
           fieldGroup: 
             type: string
-            format: nullable
+            nullable: true
           fieldClass: 
             type: string
-            format: nullable
+            nullable: true
           fieldAddOn: 
             type: string
-            format: nullable
+            nullable: true
           fieldComponent: 
             type: string
-            format: nullable
+            nullable: true
           fieldInput: 
             type: string
-            format: nullable
+            nullable: true
           placeHolder: 
             type: string
-            format: nullable
+            nullable: true
           verifyPattern: 
             type: string
-            format: nullable
+            nullable: true
           helpBlock: 
             type: string
           helpBlockFieldCode: 
             type: string
-            format: nullable
+            nullable: true
           defaultValue: 
             type: string
-            format: nullable
+            nullable: true
           optionSource: 
             type: string
           optionSourceType: 
             type: string
-            format: nullable
+            nullable: true
           optionList: 
             type: string
-            format: nullable
+            nullable: true
           type: 
             type: string
           advanced: 
@@ -101,26 +101,26 @@ items:
             type: boolean
           config: 
             type: string
-            format: nullable  
+            nullable: true  
           displayOrder: 
             type: integer
             format: int64
           wrapperClass: 
             type: string
-            format: nullable
+            nullable: true
           enabled: 
             type: boolean
           noBlank: 
             type: boolean
           dependsOnCode: 
             type: string
-            format: nullable
+            nullable: true
           visibleOnCode: 
             type: string
-            format: nullable
+            nullable: true
           requireOnCode: 
             type: string
-            format: nullable
+            nullable: true
           contextualDefault: 
             type: boolean
           displayValueOnDetails: 

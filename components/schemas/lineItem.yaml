@@ -21,51 +21,51 @@ properties:
     format: date-time
   itemId: 
     type: string
-    format: nullable
+    nullable: true
   itemType: 
     type: string
-    format: nullable
+    nullable: true
   itemName: 
     type: string
-    format: nullable
+    nullable: true
   itemDescription: 
     type: string
-    format: nullable
+    nullable: true
   productId: 
     type: string
-    format: nullable
+    nullable: true
   productCode: 
     type: string
-    format: nullable
+    nullable: true
   productName: 
     type: string
-    format: nullable
+    nullable: true
   itemSeller: 
     type: string
-    format: nullable
+    nullable: true
   itemAction: 
     type: string
-    format: nullable
+    nullable: true
   externalId: 
     type: string
   rateId: 
     type: string
-    format: nullable
+    nullable: true
   rateClass: 
     type: string
-    format: nullable
+    nullable: true
   rateUnit: 
     type: string
   rateTerm: 
     type: string
-    format: nullable
+    nullable: true
   usageType: 
     type: string
   usageCategory: 
     type: string
   usageService: 
     type: string
-    format: nullable
+    nullable: true
   itemUsage: 
     type: integer
     format: int64
@@ -82,13 +82,13 @@ properties:
     format: int64
   itemTerm: 
     type: string
-    format: nullable
+    nullable: true
   taxType: 
     type: string
-    format: nullable
+    nullable: true
   regionCode: 
     type: string
-    format: nullable
+    nullable: true
   currency: 
     type: string
   conversionRate: 

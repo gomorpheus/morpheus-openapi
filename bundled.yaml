@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: Morpheus API
   description: >-
@@ -109,6 +109,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -140,9 +148,8 @@ paths:
                       description: Name
                       example: Test Tenant
                     description:
-                      type:
-                        - string
-                        - 'null'
+                      type: string
+                      nullable: true
                       description: Description
                       example: Testing Tenant Creation
                     role:
@@ -156,9 +163,8 @@ paths:
                           format: int64
                           example: 3
                     subdomain:
-                      type:
-                        - string
-                        - 'null'
+                      type: string
+                      nullable: true
                       description: >-
                         The subdomain. This will be part of the login URL and
                         username for sub tenant users.
@@ -210,6 +216,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -265,6 +279,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -290,9 +312,8 @@ paths:
                       type: string
                       description: Name
                     description:
-                      type:
-                        - string
-                        - 'null'
+                      type: string
+                      nullable: true
                       description: Description
                     role:
                       type: object
@@ -304,9 +325,8 @@ paths:
                           type: integer
                           format: int64
                     subdomain:
-                      type:
-                        - string
-                        - 'null'
+                      type: string
+                      nullable: true
                       description: >-
                         The subdomain. This will be part of the login URL and
                         username for sub tenant users.
@@ -357,6 +377,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -408,6 +436,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -497,17 +533,25 @@ paths:
                       startDate: '2022-03-13T00:00:00Z'
                       endDate: '2022-04-13T22:06:14Z'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/accounts/available-roles:
     get:
       summary: List available roles for a tenant
@@ -611,6 +655,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -638,17 +690,25 @@ paths:
                 Search Response:
                   $ref: '#/components/examples/approvalItem'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/approval-items/{id}/{action}:
     put:
       summary: Updates a Specific Approval Item
@@ -670,17 +730,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/approvals:
     get:
       summary: Retrieves all Approvals
@@ -716,17 +784,25 @@ paths:
                 Search Response:
                   $ref: '#/components/examples/approvals'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/approvals/{id}:
     get:
       summary: Retrieves a Specific Approval
@@ -795,17 +871,25 @@ paths:
                               name: ARDMCEN1280
                               displayName: ARDMCEN1280
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/apps/{id}/wiki:
     get:
       summary: Retrieves an App Wiki Page
@@ -853,17 +937,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update an App Wiki Page
       description: |
@@ -931,17 +1023,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/budgets:
     get:
       summary: Retrieves all Budgets
@@ -1075,17 +1175,25 @@ paths:
                       offset: 0
                       max: 2
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Creates a Budget
       description: |
@@ -1340,17 +1448,25 @@ paths:
                           estimatedCost: null
                           lastCost: null
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/budgets/{id}:
     get:
       summary: Retrieves a Specific Budget
@@ -1528,17 +1644,25 @@ paths:
                           estimatedCost: null
                           lastCost: null
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Updates a Budget
       description: |
@@ -1793,17 +1917,25 @@ paths:
                           estimatedCost: null
                           lastCost: null
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Deletes a Budget
       description: |
@@ -1823,17 +1955,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/clusters/{id}/wiki:
     get:
       summary: Retrieves a Cluster Wiki Page
@@ -1881,17 +2021,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update a Cluster Wiki Page
       description: |
@@ -1959,17 +2107,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/dashboard:
     get:
       summary: Overview of Dashboard information
@@ -2111,17 +2267,25 @@ paths:
                       success: false
                       msg: Found no scope objects for user
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/doc:
     get:
       summary: List documentation links.
@@ -2173,17 +2337,25 @@ paths:
                           also contains links to support.
                         type: external
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/doc/openapi:
     get:
       summary: Get Morpheus OpenAPI (Swagger) document as JSON.
@@ -2208,17 +2380,25 @@ paths:
                       title: Morpheus API
                       description: Welcome ...
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/doc/openapi.yaml:
     get:
       summary: Get Morpheus OpenAPI (Swagger) document as YAML.
@@ -2243,17 +2423,25 @@ paths:
                       title: Morpheus API
                       description: Welcome ...
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/environments:
     get:
       summary: List All Environments
@@ -2324,6 +2512,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -2407,6 +2603,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -2454,6 +2658,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -2536,6 +2748,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -2566,6 +2786,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -2619,6 +2847,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -2673,17 +2909,25 @@ paths:
                     type: string
                     example: Password has been updated and account unlocked
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/forgot/send-email:
     post:
       summary: Request a reset password email
@@ -2740,17 +2984,25 @@ paths:
                       Reset password instructions have been sent to the user
                       'jsmith', if they exist.
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/groups:
     get:
       summary: Retrieves all Groups
@@ -3096,17 +3348,25 @@ paths:
                       size: 7
                       total: 7
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Creates a Group
       description: |
@@ -3190,17 +3450,25 @@ paths:
                           unmanaged: 243
                       serverCount: 45
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/groups/{id}:
     get:
       summary: Retrieves a Specific Group
@@ -3263,17 +3531,25 @@ paths:
                           unmanaged: 243
                       serverCount: 45
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Updates a Group
       description: |
@@ -3359,17 +3635,25 @@ paths:
                           unmanaged: 243
                       serverCount: 45
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Deletes a Group
       description: |
@@ -3389,17 +3673,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/groups/{id}/update-zones:
     put:
       summary: Updates a Groups Zones
@@ -3439,17 +3731,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/groups/{id}/wiki:
     get:
       summary: Retrieves a Group Wiki Page
@@ -3497,17 +3797,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update a Group Wiki Page
       description: |
@@ -3575,17 +3883,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/instances/{id}/wiki:
     get:
       summary: Retrieves an Instance Wiki Page
@@ -3633,17 +3949,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update an Instance Wiki Page
       description: |
@@ -3711,17 +4035,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/invoices:
     get:
       summary: List All Invoices
@@ -3999,6 +4331,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4156,6 +4496,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4264,6 +4612,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4407,6 +4763,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4483,6 +4847,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4585,17 +4957,25 @@ paths:
                       storage: 6017299099648
                       workloads: 631
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Install license key
       description: >-
@@ -4743,17 +5123,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/log-settings:
     get:
       summary: List All Log Settings
@@ -4788,6 +5176,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4860,6 +5256,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4916,6 +5320,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -4949,6 +5361,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -5013,17 +5433,25 @@ paths:
                       lastUpdated: '2021-01-01T00:00:00Z'
                     success: true
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/key-pairs/{id}:
     get:
       summary: Retrieves a Specific Key Pair
@@ -5059,17 +5487,25 @@ paths:
                       dateCreated: '2019-11-08T09:03:45Z'
                       lastUpdated: '2020-12-24T06:38:20Z'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Deletes a Key Pair
       description: |
@@ -5089,17 +5525,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/license/test:
     post:
       summary: Test license key
@@ -5221,15 +5665,23 @@ paths:
                 success: false
                 msg: Unable to decode license content
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/ping:
     get:
       summary: Basic information about current Morpheus Installation
@@ -5262,17 +5714,25 @@ paths:
                     success: true
                     buildVersion: ''
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/processes:
     get:
       summary: Retrieves Process History for Instances
@@ -5498,17 +5958,25 @@ paths:
                       offset: 0
                       max: 1
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/processes/{id}:
     get:
       summary: Retrieves a Specific Process
@@ -5720,17 +6188,25 @@ paths:
                             username: jsmith
                             displayName: James Smith
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/processes/events/{id}:
     get:
       summary: Retrieves a Specific Process Event
@@ -5795,17 +6271,25 @@ paths:
                         username: jsmith
                         displayName: James Smith
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/provision-types:
     get:
       summary: Retrieves all Provision Types
@@ -6147,17 +6631,25 @@ paths:
                       size: 2
                       total: 54
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/provision-types/{id}:
     get:
       summary: Retrieves a Specific Provision Type
@@ -6232,17 +6724,25 @@ paths:
                       controllerTypes: []
                     success: true
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/report-types:
     get:
       summary: This endpoint retrieves all available report types
@@ -6554,17 +7054,25 @@ paths:
                       offset: 0
                       max: 2
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/reports:
     get:
       summary: Returns all reports
@@ -6664,17 +7172,25 @@ paths:
                       offset: 0
                       max: 2
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Run specified report
       description: >
@@ -6792,17 +7308,25 @@ paths:
                       offset: 0
                       max: 2
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/reports/{id}:
     get:
       summary: This endpoint returns a specific report result
@@ -8445,17 +8969,25 @@ paths:
                           data: '{"date":1494720000000,"value":0}'
                           displayOrder: null
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: This endpoint will delete a report result
       description: |
@@ -8475,17 +9007,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/reports/download/{id}{format}:
     get:
       summary: Downloads a specific report result as a file attachment
@@ -8508,17 +9048,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/roles:
     get:
       summary: List roles
@@ -8601,17 +9149,25 @@ paths:
                       size: 2
                       total: 11
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Create role
       description: Create a new role.
@@ -8636,9 +9192,8 @@ paths:
                       type: string
                       description: Authority (Name)
                     description:
-                      type:
-                        - string
-                        - 'null'
+                      type: string
+                      nullable: true
                       description: Description
                     roleType:
                       type: string
@@ -10554,17 +11109,25 @@ paths:
                         name: Workload Summary
                         access: none
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/roles/{id}:
     parameters:
       - $ref: '#/components/parameters/id-path'
@@ -12457,17 +13020,25 @@ paths:
                         name: Workload Summary
                         access: none
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update role
       description: Update an existing role.
@@ -12490,9 +13061,8 @@ paths:
                       type: string
                       description: Authority (Name)
                     description:
-                      type:
-                        - string
-                        - 'null'
+                      type: string
+                      nullable: true
                       description: Description
       responses:
         '200':
@@ -14379,17 +14949,25 @@ paths:
                         name: Workload Summary
                         access: none
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Delete role
       description: >-
@@ -14427,15 +15005,23 @@ paths:
                       Role is assigned as a default account role for a
                       configured Identity Source.
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/search:
     get:
       summary: Provides global search for all types of objects
@@ -14500,17 +15086,25 @@ paths:
                       size: 3
                       total: 3
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/servers/{id}/wiki:
     get:
       summary: Retrieves a Server Wiki Page
@@ -14558,17 +15152,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update a Server Wiki Page
       description: |
@@ -14636,17 +15238,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/setup:
     post:
       summary: Setup appliance
@@ -14785,15 +15395,23 @@ paths:
                       success: false
                       msg: Appliance has already been setup
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/usage:
     get:
       summary: Retrieves Usage Records
@@ -15081,17 +15699,25 @@ paths:
                       startDate: '2022-02-07T00:00:00Z'
                       endDate: '2022-03-07T03:38:50Z'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/users:
     get:
       summary: List All Users
@@ -15207,6 +15833,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15321,6 +15955,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15387,6 +16029,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15487,6 +16137,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15516,6 +16174,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15779,6 +16445,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15868,6 +16542,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -15934,6 +16616,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -16007,6 +16697,14 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
         '503':
@@ -16069,17 +16767,25 @@ paths:
                       dateCreated: '2017-02-17T06:47:17Z'
                       lastUpdated: '2021-08-26T18:58:09Z'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/wiki/categories:
     get:
       summary: Retrieves all Wiki categories associated with the account
@@ -16124,17 +16830,25 @@ paths:
                       - name: servers
                         pageCount: 10
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/wiki/pages:
     get:
       summary: Retrieves wiki pages associated with the account.
@@ -16182,17 +16896,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     post:
       summary: Create a Wiki Page
       description: |
@@ -16263,17 +16985,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/wiki/pages/{id}:
     get:
       summary: Retrieves a specific Wiki page
@@ -16320,17 +17050,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Updates a Wiki Page
       description: |
@@ -16397,17 +17135,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     delete:
       summary: Deletes a Wiki Page
       description: |
@@ -16427,17 +17173,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/200-success'
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /api/zones/{id}/wiki:
     get:
       summary: Retrieves a Cloud Wiki Page
@@ -16485,17 +17239,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
     put:
       summary: Update a Cloud Wiki Page
       description: |
@@ -16563,17 +17325,25 @@ paths:
                   value:
                     page: {}
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
   /oauth/token:
     post:
       summary: Provides authentication via username and password
@@ -16668,17 +17438,25 @@ paths:
                     token_type: bearer
                     scope: write
         '400':
-          description: Bad Request.
+          $ref: '#/components/responses/400'
         '401':
-          description: Unauthorized.
+          $ref: '#/components/responses/401'
         '403':
-          description: Forbidden.
+          $ref: '#/components/responses/403'
         '404':
-          description: Object Not Found.
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
         '500':
-          description: Internal Server Error.
+          $ref: '#/components/responses/500'
         '503':
-          description: Service Unavailable.
+          $ref: '#/components/responses/503'
 components:
   securitySchemes:
     bearerAuth:
@@ -17075,13 +17853,13 @@ components:
           type: string
         externalId:
           type: string
-          format: nullable
+          nullable: true
         customerNumber:
           type: string
-          format: nullable
+          nullable: true
         accountNumber:
           type: string
-          format: nullable
+          nullable: true
         accountName:
           type: string
         active:
@@ -17098,7 +17876,7 @@ components:
               type: string
             description:
               type: string
-              format: nullable
+              nullable: true
         stats:
           type: object
           properties:
@@ -17144,6 +17922,32 @@ components:
               format: int64
               description: Total number of records found
               default: 0
+    405-error:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: >-
+            Method Not Allowed - You tried to access a resource with an invalid
+            method.
+    406-error:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Not Acceptable - You requested a format that isn’t json.
+    410-error:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Gone - The entity requested has been removed from our servers.
+    429-error:
+      type: object
+      properties:
+        msg:
+          type: string
+          example: Too Many Requests - You're asking too much of the server. Slow down!
     CurrencyCode:
       type: string
       description: Currency Code (ISO 4217)
@@ -17202,16 +18006,14 @@ components:
             error occurred
           default: true
         msg:
-          type:
-            - string
-            - 'null'
+          type: string
+          nullable: true
           description: >-
             Message containing a description of the result, usually a message
             about the error that occurred
         errors:
-          type:
-            - object
-            - 'null'
+          type: object
+          nullable: true
           description: >-
             Validation errors, with a key for Object containing error messages
             for each invalid parameter (key)
@@ -17264,13 +18066,13 @@ components:
                 type: string
               description:
                 type: string
-                format: nullable
+                nullable: true
               roleType:
                 type: string
-                format: nullable
+                nullable: true
               owner:
                 type: string
-                format: nullable
+                nullable: true
     approvalItem:
       type: object
       properties:
@@ -17284,23 +18086,23 @@ components:
               type: string
             externalId:
               type: string
-              format: nullable
+              nullable: true
             externalName:
               type: string
-              format: nullable
+              nullable: true
             internalId:
               type: string
-              format: nullable
+              nullable: true
             approvedBy:
               type: string
             deniedBy:
               type: string
-              format: nullable
+              nullable: true
             status:
               type: string
             errorMessage:
               type: string
-              format: nullable
+              nullable: true
             dateCreated:
               type: string
               format: date-time
@@ -17312,7 +18114,7 @@ components:
               format: date-time
             dateDenied:
               type: string
-              format: nullable
+              nullable: true
             approval:
               type: object
               properties:
@@ -17341,13 +18143,13 @@ components:
           type: string
         internalId:
           type: string
-          format: nullable
+          nullable: true
         externalId:
           type: string
-          format: nullable
+          nullable: true
         externalName:
           type: string
-          format: nullable
+          nullable: true
         requestType:
           type: string
         account:
@@ -17368,12 +18170,12 @@ components:
               type: string
         accountIntegration:
           type: string
-          format: nullable
+          nullable: true
         status:
           type: string
         errorMessage:
           type: string
-          format: nullable
+          nullable: true
         dateCreated:
           type: string
           format: date-time
@@ -17394,23 +18196,23 @@ components:
                 type: string
               externalId:
                 type: string
-                format: nullable
+                nullable: true
               externalName:
                 type: string
-                format: nullable
+                nullable: true
               internalId:
                 type: string
-                format: nullable
+                nullable: true
               approvedBy:
                 type: string
               deniedBy:
                 type: string
-                format: nullable
+                nullable: true
               status:
                 type: string
               errorMessage:
                 type: string
-                format: nullable
+                nullable: true
               dateCreated:
                 type: string
                 format: date-time
@@ -17422,7 +18224,7 @@ components:
                 format: date-time
               dateDenied:
                 type: string
-                format: nullable
+                nullable: true
               approval:
                 type: object
                 properties:
@@ -17455,10 +18257,10 @@ components:
           type: string
         refId:
           type: string
-          format: nullable
+          nullable: true
         refType:
           type: string
-          format: nullable
+          nullable: true
         format:
           type: string
         content:
@@ -17495,7 +18297,7 @@ components:
           type: string
         description:
           type: string
-          format: nullable
+          nullable: true
         account:
           type: object
           properties:
@@ -17550,16 +18352,16 @@ components:
           type: boolean
         warningLimit:
           type: string
-          format: nullable
+          nullable: true
         overLimit:
           type: string
-          format: nullable
+          nullable: true
         externalId:
           type: string
-          format: nullable
+          nullable: true
         internalId:
           type: string
-          format: nullable
+          nullable: true
         createdById:
           type: integer
           format: int64
@@ -17567,10 +18369,10 @@ components:
           type: string
         updatedById:
           type: string
-          format: nullable
+          nullable: true
         updatedByName:
           type: string
-          format: nullable
+          nullable: true
         dateCreated:
           type: string
           format: date-time
@@ -17615,10 +18417,10 @@ components:
               properties:
                 estimatedCost:
                   type: string
-                  format: nullable
+                  nullable: true
                 lastCost:
                   type: string
-                  format: nullable
+                  nullable: true
     dashboard:
       type: object
       properties:
@@ -17798,7 +18600,7 @@ components:
                 type: string
               description:
                 type: string
-                format: nullable
+                nullable: true
               type:
                 type: string
     environment:
@@ -17840,9 +18642,8 @@ components:
         success:
           type: boolean
         errors:
-          type:
-            - object
-            - 'null'
+          type: object
+          nullable: true
     group:
       type: object
       properties:
@@ -17944,7 +18745,7 @@ components:
               type: string
         group:
           type: string
-          format: nullable
+          nullable: true
         cloud:
           type: object
           properties:
@@ -17957,26 +18758,25 @@ components:
               type: string
         instance:
           type: string
-          format: nullable
+          nullable: true
         server:
           type: string
-          format: nullable
+          nullable: true
         cluster:
           type: string
-          format: nullable
+          nullable: true
         user:
           type: string
-          format: nullable
+          nullable: true
         plan:
           type: string
-          format: nullable
+          nullable: true
         tags:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
         project:
           type: string
-          format: nullable
+          nullable: true
         refType:
           type: string
         refId:
@@ -17990,19 +18790,19 @@ components:
           type: string
         resourceId:
           type: string
-          format: nullable
+          nullable: true
         resourceUuid:
           type: string
         resourceType:
           type: string
-          format: nullable
+          nullable: true
         resourceName:
           type: string
         resourceExternalId:
           type: string
         resourceInternalId:
           type: string
-          format: nullable
+          nullable: true
         interval:
           type: string
         period:
@@ -18179,7 +18979,7 @@ components:
           format: int64
         powerState:
           type: string
-          format: nullable
+          nullable: true
         powerDate:
           type: string
           format: date-time
@@ -18188,13 +18988,13 @@ components:
           format: int64
         usageType:
           type: string
-          format: nullable
+          nullable: true
         usageCategory:
           type: string
-          format: nullable
+          nullable: true
         lastCostDate:
           type: string
-          format: nullable
+          nullable: true
         lastActualDate:
           type: string
           format: date-time
@@ -18235,36 +19035,36 @@ components:
                 type: string
               itemType:
                 type: string
-                format: nullable
+                nullable: true
               itemName:
                 type: string
               itemDescription:
                 type: string
               productId:
                 type: string
-                format: nullable
+                nullable: true
               productCode:
                 type: string
               productName:
                 type: string
               itemSeller:
                 type: string
-                format: nullable
+                nullable: true
               itemAction:
                 type: string
-                format: nullable
+                nullable: true
               externalId:
                 type: string
               rateId:
                 type: string
               rateClass:
                 type: string
-                format: nullable
+                nullable: true
               rateUnit:
                 type: string
               rateTerm:
                 type: string
-                format: nullable
+                nullable: true
               usageType:
                 type: string
               usageCategory:
@@ -18284,10 +19084,10 @@ components:
                 format: int64
               itemTerm:
                 type: string
-                format: nullable
+                nullable: true
               taxType:
                 type: string
-                format: nullable
+                nullable: true
               regionCode:
                 type: string
               currency:
@@ -18325,51 +19125,51 @@ components:
           format: date-time
         itemId:
           type: string
-          format: nullable
+          nullable: true
         itemType:
           type: string
-          format: nullable
+          nullable: true
         itemName:
           type: string
-          format: nullable
+          nullable: true
         itemDescription:
           type: string
-          format: nullable
+          nullable: true
         productId:
           type: string
-          format: nullable
+          nullable: true
         productCode:
           type: string
-          format: nullable
+          nullable: true
         productName:
           type: string
-          format: nullable
+          nullable: true
         itemSeller:
           type: string
-          format: nullable
+          nullable: true
         itemAction:
           type: string
-          format: nullable
+          nullable: true
         externalId:
           type: string
         rateId:
           type: string
-          format: nullable
+          nullable: true
         rateClass:
           type: string
-          format: nullable
+          nullable: true
         rateUnit:
           type: string
         rateTerm:
           type: string
-          format: nullable
+          nullable: true
         usageType:
           type: string
         usageCategory:
           type: string
         usageService:
           type: string
-          format: nullable
+          nullable: true
         itemUsage:
           type: integer
           format: int64
@@ -18386,13 +19186,13 @@ components:
           format: int64
         itemTerm:
           type: string
-          format: nullable
+          nullable: true
         taxType:
           type: string
-          format: nullable
+          nullable: true
         regionCode:
           type: string
-          format: nullable
+          nullable: true
         currency:
           type: string
         conversionRate:
@@ -18446,10 +19246,10 @@ components:
               type: string
             config:
               type: object
-              format: nullable
+              nullable: true
             amazonProductCodes:
               type: string
-              format: nullable
+              nullable: true
             features:
               type: object
               properties:
@@ -18559,7 +19359,7 @@ components:
                   type: boolean
             zoneTypes:
               type: string
-              format: nullable
+              nullable: true
             lastUpdated:
               type: string
               format: date-time
@@ -18586,14 +19386,12 @@ components:
         retentionDays:
           type: string
         syslogRules:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
           example: '{"name": "foo","rule":"*.* @@localhost:4567"}'
         integrations:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
     user:
       type: object
       properties:
@@ -18667,7 +19465,7 @@ components:
           type: string
         defaultPersona:
           type: string
-          format: nullable
+          nullable: true
         dateCreated:
           type: string
           format: date-time
@@ -18687,12 +19485,12 @@ components:
           format: int64
         publicKey:
           type: string
-          format: nullable
+          nullable: true
         hasPrivateKey:
           type: boolean
         fingerprint:
           type: string
-          format: nullable
+          nullable: true
         dateCreated:
           type: string
           format: date-time
@@ -18728,22 +19526,22 @@ components:
           type: string
         description:
           type: string
-          format: nullable
+          nullable: true
         subType:
           type: string
-          format: nullable
+          nullable: true
         subId:
           type: string
-          format: nullable
+          nullable: true
         zoneId:
           type: integer
           format: int64
         integrationId:
           type: string
-          format: nullable
+          nullable: true
         appId:
           type: string
-          format: nullable
+          nullable: true
         instanceId:
           type: integer
           format: int64
@@ -18759,7 +19557,7 @@ components:
           type: string
         reason:
           type: string
-          format: nullable
+          nullable: true
         percent:
           type: integer
           format: int64
@@ -18768,13 +19566,13 @@ components:
           format: int64
         message:
           type: string
-          format: nullable
+          nullable: true
         output:
           type: string
-          format: nullable
+          nullable: true
         error:
           type: string
-          format: nullable
+          nullable: true
         startDate:
           type: string
           format: date-time
@@ -18829,7 +19627,7 @@ components:
                     type: string
               description:
                 type: string
-                format: nullable
+                nullable: true
               refType:
                 type: string
               refId:
@@ -18837,16 +19635,16 @@ components:
                 format: int64
               subType:
                 type: string
-                format: nullable
+                nullable: true
               subId:
                 type: string
-                format: nullable
+                nullable: true
               zoneId:
                 type: integer
                 format: int64
               integrationId:
                 type: string
-                format: nullable
+                nullable: true
               instanceId:
                 type: integer
                 format: int64
@@ -18864,7 +19662,7 @@ components:
                 type: string
               reason:
                 type: string
-                format: nullable
+                nullable: true
               percent:
                 type: integer
                 format: int64
@@ -18873,13 +19671,13 @@ components:
                 format: int64
               message:
                 type: string
-                format: nullable
+                nullable: true
               output:
                 type: string
-                format: nullable
+                nullable: true
               error:
                 type: string
-                format: nullable
+                nullable: true
               startDate:
                 type: string
                 format: date-time
@@ -18932,7 +19730,7 @@ components:
               type: string
         description:
           type: string
-          format: nullable
+          nullable: true
         refType:
           type: string
         refId:
@@ -18940,16 +19738,16 @@ components:
           format: int64
         subType:
           type: string
-          format: nullable
+          nullable: true
         subId:
           type: string
-          format: nullable
+          nullable: true
         zoneId:
           type: integer
           format: int64
         integrationId:
           type: string
-          format: nullable
+          nullable: true
         instanceId:
           type: integer
           format: int64
@@ -18967,7 +19765,7 @@ components:
           type: string
         reason:
           type: string
-          format: nullable
+          nullable: true
         percent:
           type: integer
           format: int64
@@ -18976,13 +19774,13 @@ components:
           format: int64
         message:
           type: string
-          format: nullable
+          nullable: true
         output:
           type: string
-          format: nullable
+          nullable: true
         error:
           type: string
-          format: nullable
+          nullable: true
         startDate:
           type: string
           format: date-time
@@ -19022,7 +19820,7 @@ components:
           type: string
         description:
           type: string
-          format: nullable
+          nullable: true
         code:
           type: string
         aclEnabled:
@@ -19073,7 +19871,7 @@ components:
           format: int64
         maxDisk:
           type: string
-          format: nullable
+          nullable: true
         resizeCopiesVolumes:
           type: boolean
         supportsAutoDatastore:
@@ -19086,7 +19884,7 @@ components:
           type: boolean
         canEnforceTags:
           type: string
-          format: nullable
+          nullable: true
         disableRootDatastore:
           type: boolean
         hasSnapshots:
@@ -19101,31 +19899,25 @@ components:
           type: boolean
         hasFolders:
           type: string
-          format: nullable
+          nullable: true
         optionTypes:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
         customOptionTypes:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
         networkTypes:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
         storageTypes:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
         rootStorageTypes:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
         controllerTypes:
-          type:
-            - array
-            - 'null'
+          type: array
+          nullable: true
     reportTypes:
       type: array
       items:
@@ -19152,7 +19944,7 @@ components:
             type: boolean
           isPlugin:
             type: string
-            format: nullable
+            nullable: true
           dateCreated:
             type: string
             format: date-time
@@ -19168,7 +19960,7 @@ components:
                   type: string
                 description:
                   type: string
-                  format: nullable
+                  nullable: true
                 code:
                   type: string
                 fieldName:
@@ -19181,41 +19973,41 @@ components:
                   type: string
                 fieldGroup:
                   type: string
-                  format: nullable
+                  nullable: true
                 fieldClass:
                   type: string
-                  format: nullable
+                  nullable: true
                 fieldAddOn:
                   type: string
-                  format: nullable
+                  nullable: true
                 fieldComponent:
                   type: string
-                  format: nullable
+                  nullable: true
                 fieldInput:
                   type: string
-                  format: nullable
+                  nullable: true
                 placeHolder:
                   type: string
-                  format: nullable
+                  nullable: true
                 verifyPattern:
                   type: string
-                  format: nullable
+                  nullable: true
                 helpBlock:
                   type: string
                 helpBlockFieldCode:
                   type: string
-                  format: nullable
+                  nullable: true
                 defaultValue:
                   type: string
-                  format: nullable
+                  nullable: true
                 optionSource:
                   type: string
                 optionSourceType:
                   type: string
-                  format: nullable
+                  nullable: true
                 optionList:
                   type: string
-                  format: nullable
+                  nullable: true
                 type:
                   type: string
                 advanced:
@@ -19230,26 +20022,26 @@ components:
                   type: boolean
                 config:
                   type: string
-                  format: nullable
+                  nullable: true
                 displayOrder:
                   type: integer
                   format: int64
                 wrapperClass:
                   type: string
-                  format: nullable
+                  nullable: true
                 enabled:
                   type: boolean
                 noBlank:
                   type: boolean
                 dependsOnCode:
                   type: string
-                  format: nullable
+                  nullable: true
                 visibleOnCode:
                   type: string
-                  format: nullable
+                  nullable: true
                 requireOnCode:
                   type: string
-                  format: nullable
+                  nullable: true
                 contextualDefault:
                   type: boolean
                 displayValueOnDetails:
@@ -19290,10 +20082,10 @@ components:
               type: string
         reportTitle:
           type: string
-          format: nullable
+          nullable: true
         filterTitle:
           type: string
-          format: nullable
+          nullable: true
         status:
           type: string
         dateCreated:
@@ -19313,7 +20105,7 @@ components:
           properties:
             reportType:
               type: string
-              format: nullable
+              nullable: true
             startDate:
               type: string
             endDate:
@@ -19342,7 +20134,7 @@ components:
                 type: string
               displayOrder:
                 type: string
-                format: nullable
+                nullable: true
     roles:
       type: object
       properties:
@@ -19353,7 +20145,7 @@ components:
           type: string
         description:
           type: string
-          format: nullable
+          nullable: true
         scope:
           type: string
         roleType:
@@ -19364,7 +20156,7 @@ components:
           type: boolean
         parentRoleId:
           type: string
-          format: nullable
+          nullable: true
         diverged:
           type: boolean
         ownerId:
@@ -19380,7 +20172,7 @@ components:
               type: string
         defaultPersona:
           type: string
-          format: nullable
+          nullable: true
         dateCreated:
           type: string
           format: date-time
@@ -19400,7 +20192,7 @@ components:
               type: string
             description:
               type: string
-              format: nullable
+              nullable: true
             scope:
               type: string
             roleType:
@@ -19411,7 +20203,7 @@ components:
               type: boolean
             parentRoleId:
               type: string
-              format: nullable
+              nullable: true
             diverged:
               type: boolean
             ownerId:
@@ -19427,7 +20219,7 @@ components:
                   type: string
             defaultPersona:
               type: string
-              format: nullable
+              nullable: true
             dateCreated:
               type: string
               format: date-time
@@ -19504,7 +20296,7 @@ components:
                 format: int64
               code:
                 type: string
-                format: nullable
+                nullable: true
               name:
                 type: string
               access:
@@ -19613,20 +20405,17 @@ components:
                 type: string
                 description: Name
               description:
-                type:
-                  - string
-                  - 'null'
+                type: string
+                nullable: true
               type:
                 type: string
               dateCreated:
-                type:
-                  - string
-                  - 'null'
+                type: string
+                nullable: true
                 format: date-time
               score:
-                type:
-                  - number
-                  - 'null'
+                type: number
+                nullable: true
         query:
           type: string
         took:
@@ -19741,9 +20530,8 @@ components:
                 type: integer
                 format: int64
               user:
-                type:
-                  - object
-                  - 'null'
+                type: object
+                nullable: true
                 properties:
                   id:
                     type: integer
@@ -19920,6 +20708,32 @@ components:
       description: Forbidden.
     '404':
       description: Object Not Found.
+    '405':
+      description: >-
+        Method Not Allowed. You tried to access a resource with an invalid
+        method.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/405-error'
+    '406':
+      description: Not Acceptable. You requested a format that is not json.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/406-error'
+    '410':
+      description: Gone. The entity requested has been removed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/410-error'
+    '429':
+      description: Too Many Requests. You're asking too much of the server. Slow down!
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/429-error'
     '500':
       description: Internal Server Error.
     '503':

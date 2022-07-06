@@ -13,13 +13,13 @@ properties:
     type: string
   externalId: 
     type: string
-    format: nullable
+    nullable: true
   customerNumber: 
     type: string
-    format: nullable
+    nullable: true
   accountNumber: 
     type: string
-    format: nullable
+    nullable: true
   accountName: 
     type: string
   active: 
@@ -36,7 +36,7 @@ properties:
         type: string
       description: 
         type: string
-        format: nullable
+        nullable: true
   stats: 
     type: object
     properties: 

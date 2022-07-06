@@ -39,10 +39,10 @@ properties:
         type: string
       config: 
         type: object
-        format: nullable
+        nullable: true
       amazonProductCodes: 
         type: string
-        format: nullable
+        nullable: true
       features: 
         type: object
         properties: 
@@ -152,7 +152,7 @@ properties:
             type: boolean
       zoneTypes: 
         type: string
-        format: nullable
+        nullable: true
       lastUpdated: 
         type: string
         format: date-time

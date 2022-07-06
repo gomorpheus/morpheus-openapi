@@ -10,7 +10,7 @@ properties:
         type: string
       description: 
         type: string
-        format: nullable
+        nullable: true
       scope: 
         type: string
       roleType: 
@@ -21,7 +21,7 @@ properties:
         type: boolean
       parentRoleId: 
         type: string
-        format: nullable
+        nullable: true
       diverged: 
         type: boolean
       ownerId: 
@@ -37,7 +37,7 @@ properties:
             type: string
       defaultPersona: 
         type: string
-        format: nullable
+        nullable: true
       dateCreated: 
         type: string
         format: date-time
@@ -114,7 +114,7 @@ properties:
           format: int64
         code: 
           type: string
-          format: nullable
+          nullable: true
         name: 
           type: string
         access: 

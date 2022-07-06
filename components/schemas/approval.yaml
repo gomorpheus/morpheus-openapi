@@ -7,13 +7,13 @@ properties:
     type: string
   internalId: 
     type: string
-    format: nullable
+    nullable: true
   externalId: 
     type: string
-    format: nullable
+    nullable: true
   externalName: 
     type: string
-    format: nullable
+    nullable: true
   requestType: 
     type: string
   account: 
@@ -34,12 +34,12 @@ properties:
         type: string
   accountIntegration: 
     type: string
-    format: nullable
+    nullable: true
   status: 
     type: string
   errorMessage: 
     type: string
-    format: nullable
+    nullable: true
   dateCreated: 
     type: string
     format: date-time
@@ -60,23 +60,23 @@ properties:
           type: string
         externalId: 
           type: string
-          format: nullable
+          nullable: true
         externalName: 
           type: string
-          format: nullable
+          nullable: true
         internalId: 
           type: string
-          format: nullable
+          nullable: true
         approvedBy: 
           type: string
         deniedBy: 
           type: string
-          format: nullable
+          nullable: true
         status: 
           type: string
         errorMessage: 
           type: string
-          format: nullable
+          nullable: true
         dateCreated: 
           type: string
           format: date-time
@@ -88,7 +88,7 @@ properties:
           format: date-time
         dateDenied: 
           type: string
-          format: nullable
+          nullable: true
         approval: 
           type: object
           properties: 

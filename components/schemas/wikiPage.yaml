@@ -11,10 +11,10 @@ properties:
     type: string
   refId: 
     type: string
-    format: nullable
+    nullable: true
   refType: 
     type: string
-    format: nullable
+    nullable: true
   format: 
     type: string
   content: 

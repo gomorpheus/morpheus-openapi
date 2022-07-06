@@ -70,7 +70,7 @@ properties:
     type: string
   defaultPersona: 
     type: string
-    format: nullable
+    nullable: true
   dateCreated: 
     type: string
     format: date-time
