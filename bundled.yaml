@@ -229,14 +229,14 @@ paths:
         '503':
           $ref: '#/components/responses/503'
   /api/accounts/{id}:
-    parameters:
-      - $ref: '#/components/parameters/id-path'
     get:
       summary: Get tenant
       description: Get details about a tenant
       operationId: getTenant
       tags:
         - Tenants
+      parameters:
+        - $ref: '#/components/parameters/id-path'
       responses:
         '200':
           description: Tenant Object
@@ -297,6 +297,8 @@ paths:
       operationId: updateTenant
       tags:
         - Tenants
+      parameters:
+        - $ref: '#/components/parameters/id-path'
       requestBody:
         content:
           application/json:
@@ -408,6 +410,7 @@ paths:
           schema:
             type: boolean
             default: false
+        - $ref: '#/components/parameters/id-path'
       responses:
         '200':
           description: Tenant Deletion Object
