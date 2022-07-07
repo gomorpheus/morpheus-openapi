@@ -70,7 +70,7 @@ properties:
   hasParameters: 
     type: boolean
   canEnforceTags: 
-    type: string
+    type: boolean
     nullable: true
   disableRootDatastore: 
     type: boolean
@@ -85,7 +85,7 @@ properties:
   planRequiresPool: 
     type: boolean
   hasFolders: 
-    type: string
+    type: boolean
     nullable: true
   optionTypes: 
     type: array

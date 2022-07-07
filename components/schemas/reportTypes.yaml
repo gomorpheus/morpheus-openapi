@@ -22,7 +22,7 @@ items:
     supportsAllZoneTypes: 
       type: boolean
     isPlugin: 
-      type: string
+      type: boolean
       nullable: true
     dateCreated: 
       type: string
@@ -73,6 +73,7 @@ items:
             nullable: true
           helpBlock: 
             type: string
+            nullable: true
           helpBlockFieldCode: 
             type: string
             nullable: true
@@ -81,6 +82,7 @@ items:
             nullable: true
           optionSource: 
             type: string
+            nullable: true
           optionSourceType: 
             type: string
             nullable: true
@@ -100,7 +102,7 @@ items:
           creatable: 
             type: boolean
           config: 
-            type: string
+            type: object
             nullable: true  
           displayOrder: 
             type: integer

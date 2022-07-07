@@ -3,5 +3,4 @@ in: query
 description: Filter by endDate less than or equal to a specified date
 schema:
   type: string
-  format: date-time
 example: 2020-01-01

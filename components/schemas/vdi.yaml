@@ -9,12 +9,14 @@ properties:
     type: string
   description: 
     type: string
+    nullable: true
   status: 
     type: string
   allocationStatus: 
     type: string
   allocation: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -67,6 +69,7 @@ properties:
       lastReserved: 
         type: string
         format: date-time
+        nullable: true
       releaseDate: 
         type: string
         format: date-time

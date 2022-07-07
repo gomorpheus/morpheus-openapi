@@ -15,7 +15,7 @@ properties:
       name: 
         type: string
   group: 
-    type: string
+    type: object
     nullable: true
   cloud: 
     type: object
@@ -28,7 +28,7 @@ properties:
       uuid: 
         type: string
   instance: 
-    type: string
+    type: object
     nullable: true
   server: 
     type: string
@@ -37,10 +37,10 @@ properties:
     type: string
     nullable: true
   user: 
-    type: string
+    type: object
     nullable: true
   plan: 
-    type: string
+    type: object
     nullable: true
   tags: 
     type: array
@@ -57,6 +57,7 @@ properties:
     format: int64
   refUuid: 
     type: string
+    nullable: true
   refName: 
     type: string
   refCategory: 
@@ -66,13 +67,16 @@ properties:
     nullable: true
   resourceUuid: 
     type: string
+    nullable: true
   resourceType: 
     type: string
     nullable: true
   resourceName: 
     type: string
+    nullable: true
   resourceExternalId: 
     type: string
+    nullable: true
   resourceInternalId: 
     type: string
     nullable: true
@@ -99,92 +103,65 @@ properties:
     type: string
     format: date-time
   estimatedComputePrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedComputeCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedMemoryPrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedMemoryCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedStoragePrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedStorageCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedNetworkPrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedNetworkCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedLicensePrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedLicenseCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedExtraPrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedExtraCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedTotalPrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedTotalCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedRunningPrice: 
-    type: integer
-    format: int64
+    type: number
   estimatedRunningCost: 
-    type: integer
-    format: int64
+    type: number
   estimatedCurrency: 
     type: string
   estimatedConversionRate: 
-    type: integer
-    format: int64
+    type: number
   actualComputePrice: 
-    type: integer
-    format: int64
+    type: number
   actualComputeCost: 
-    type: integer
-    format: int64
+    type: number
   actualMemoryPrice: 
-    type: integer
-    format: int64
+    type: number
   actualMemoryCost: 
-    type: integer
-    format: int64
+    type: number
   actualStoragePrice: 
     type: number
   actualStorageCost: 
     type: number
   actualNetworkPrice: 
-    type: integer
-    format: int64
+    type: number
   actualNetworkCost: 
-    type: integer
-    format: int64
+    type: number
   actualLicensePrice: 
-    type: integer
-    format: int64
+    type: number
   actualLicenseCost: 
-    type: integer
-    format: int64
+    type: number
   actualExtraPrice: 
-    type: integer
-    format: int64
+    type: number
   actualExtraCost: 
-    type: integer
-    format: int64
+    type: number
   actualTotalPrice: 
     type: number
   actualTotalCost: 
@@ -196,42 +173,31 @@ properties:
   actualCurrency: 
     type: string
   actualConversionRate: 
-    type: integer
-    format: int64
+    type: number
   computePrice: 
-    type: integer
-    format: int64
+    type: number
   computeCost: 
-    type: integer
-    format: int64
+    type: number
   memoryPrice: 
-    type: integer
-    format: int64
+    type: number
   memoryCost: 
-    type: integer
-    format: int64
+    type: number
   storagePrice: 
     type: number
   storageCost: 
     type: number
   networkPrice: 
-    type: integer
-    format: int64
+    type: number
   networkCost: 
-    type: integer
-    format: int64
+    type: number
   licensePrice: 
-    type: integer
-    format: int64
+    type: number
   licenseCost: 
-    type: integer
-    format: int64
+    type: number
   extraPrice: 
-    type: integer
-    format: int64
+    type: number
   extraCost: 
-    type: integer
-    format: int64
+    type: number
   totalPrice: 
     type: number
   totalCost: 
@@ -243,8 +209,7 @@ properties:
   currency: 
     type: string
   conversionRate: 
-    type: integer
-    format: int64
+    type: number
   costType: 
     type: string
   offTime: 
@@ -257,8 +222,7 @@ properties:
     type: string
     format: date-time
   runningMultiplier: 
-    type: integer
-    format: int64
+    type: number
   usageType: 
     type: string
     nullable: true
@@ -271,6 +235,7 @@ properties:
   lastActualDate: 
     type: string
     format: date-time
+    nullable: true
   dateCreated: 
     type: string
     format: date-time
