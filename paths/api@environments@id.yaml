@@ -123,6 +123,8 @@ delete:
   operationId: deleteEnvironments
   tags:
     - Environments
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Success Object

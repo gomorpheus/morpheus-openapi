@@ -2769,6 +2769,8 @@ paths:
       operationId: deleteEnvironments
       tags:
         - Environments
+      parameters:
+        - $ref: '#/components/parameters/id-path'
       responses:
         '200':
           description: Success Object
@@ -16158,6 +16160,8 @@ paths:
       operationId: deleteUsers
       tags:
         - Users
+      parameters:
+        - $ref: '#/components/parameters/id-path'
       responses:
         '200':
           description: Success Object

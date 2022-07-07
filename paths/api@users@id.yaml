@@ -122,6 +122,8 @@ delete:
   operationId: deleteUsers
   tags:
     - Users
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Success Object
