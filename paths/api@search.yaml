@@ -7,8 +7,6 @@ get:
   operationId: search
   tags:
     - Search
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#search
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml

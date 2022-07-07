@@ -5,8 +5,6 @@ get:
   operationId: getReports
   tags:
     - Reports
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -50,8 +48,6 @@ delete:
   operationId: removeReports
   tags:
     - Reports
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#delete-a-report
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

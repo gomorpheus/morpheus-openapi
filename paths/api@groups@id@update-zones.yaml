@@ -5,8 +5,6 @@ put:
   operationId: updateGroupsZones
   tags:
     - Groups
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#updating-group-zones
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:

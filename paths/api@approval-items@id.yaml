@@ -5,8 +5,6 @@ get:
   operationId: getApprovalsItem
   tags:
     - Approvals
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-specific-approval-item
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

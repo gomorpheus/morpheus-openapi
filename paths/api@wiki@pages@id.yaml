@@ -5,8 +5,6 @@ get:
   operationId: getWiki
   tags:
     - Wiki
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-specific-wiki-page
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -74,8 +72,6 @@ put:
                   type: string
                   example: #Sample Doc
                     A sample document in **markdown**.`
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#update-a-wiki-page
   responses:
     '200':
       description: Successful Request
@@ -122,8 +118,6 @@ delete:
   operationId: removeWiki
   tags:
     - Wiki
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#delete-a-wiki-page
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

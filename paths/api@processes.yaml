@@ -5,8 +5,6 @@ get:
   operationId: listHistory
   tags:
     - History
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#history
   parameters:
     - $ref: ../components/parameters/instanceId.yaml
     - $ref: ../components/parameters/containerId.yaml

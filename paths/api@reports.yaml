@@ -5,8 +5,6 @@ get:
   operationId: listReports
   tags:
     - Reports
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-reports
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
@@ -99,8 +97,6 @@ post:
                   description: The Cloud ID filter for the report
                   type: number
                   example: 7
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#run-a-report
   responses:
     '200':
       description: Successful Request

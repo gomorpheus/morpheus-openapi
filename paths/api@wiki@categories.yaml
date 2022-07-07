@@ -5,8 +5,6 @@ get:
   operationId: getWikiCategories
   tags:
     - Wiki
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-wiki-categories
   parameters:
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/pagePhrase.yaml

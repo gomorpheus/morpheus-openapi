@@ -5,8 +5,6 @@ get:
   operationId: getReportTypes
   tags:
     - Reports
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-report-types
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml

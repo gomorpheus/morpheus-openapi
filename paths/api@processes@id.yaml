@@ -5,8 +5,6 @@ get:
   operationId: getHistory
   tags:
     - History
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-specific-process
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

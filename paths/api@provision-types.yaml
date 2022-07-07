@@ -5,8 +5,6 @@ get:
   operationId: listProvisionTypes
   tags:
     - Provisioning
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-provision-types
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml

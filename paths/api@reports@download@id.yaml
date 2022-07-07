@@ -5,8 +5,6 @@ get:
   operationId: downloadReports
   tags:
     - Reports
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#download-a-specific-report
   parameters:
     - $ref: ../components/parameters/id-path.yaml
     - $ref: ../components/parameters/format-path.yaml
