@@ -1,1 +1,5 @@
 description: Unauthorized.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/401-error.yaml

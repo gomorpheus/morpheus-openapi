@@ -1,1 +1,5 @@
 description: Bad Request.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/400-error.yaml

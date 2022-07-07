@@ -1,1 +1,5 @@
 description: Forbidden.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/403-error.yaml
