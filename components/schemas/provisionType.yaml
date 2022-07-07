@@ -90,18 +90,30 @@ properties:
   optionTypes: 
     type: array
     nullable: true
+    items:
+      type: object
   customOptionTypes: 
     type: array
     nullable: true
+    items:
+      type: object
   networkTypes: 
     type: array
-    nullable: true 
+    nullable: true
+    items:
+      type: object
   storageTypes: 
     type: array
     nullable: true
+    items:
+      type: object
   rootStorageTypes: 
     type: array
-    nullable: true 
+    nullable: true
+    items:
+      type: object
   controllerTypes: 
     type: array
     nullable: true
+    items:
+      type: object

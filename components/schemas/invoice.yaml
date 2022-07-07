@@ -45,6 +45,8 @@ properties:
   tags: 
     type: array
     nullable: true
+    items:
+      type: object
   project: 
     type: string
     nullable: true

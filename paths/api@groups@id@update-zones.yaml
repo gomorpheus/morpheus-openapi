@@ -24,6 +24,8 @@ put:
               properties:
                 zones: 
                   type: array
+                  items:
+                    type: object
                   description: An array of all the zones assigned to this group.
                   example: [{"id": 1}, {"id": 5}]
   responses:

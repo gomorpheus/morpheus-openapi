@@ -3724,6 +3724,8 @@ paths:
                   properties:
                     zones:
                       type: array
+                      items:
+                        type: object
                       description: An array of all the zones assigned to this group.
                       example:
                         - id: 1
@@ -16660,8 +16662,8 @@ paths:
                   - type: object
                     properties:
                       desktop:
-                        $ref: ../components/schemas/vdi.yaml
-                    $ref: '#/components/schemas/200-success'
+                        $ref: '#/components/schemas/vdi'
+                  - $ref: '#/components/schemas/200-success'
               examples:
                 Create VDI Allocation Response:
                   value:
@@ -18780,6 +18782,8 @@ components:
         tags:
           type: array
           nullable: true
+          items:
+            type: object
         project:
           type: string
           nullable: true
@@ -19394,10 +19398,14 @@ components:
         syslogRules:
           type: array
           nullable: true
+          items:
+            type: object
           example: '{"name": "foo","rule":"*.* @@localhost:4567"}'
         integrations:
           type: array
           nullable: true
+          items:
+            type: object
     user:
       type: object
       properties:
@@ -19909,21 +19917,33 @@ components:
         optionTypes:
           type: array
           nullable: true
+          items:
+            type: object
         customOptionTypes:
           type: array
           nullable: true
+          items:
+            type: object
         networkTypes:
           type: array
           nullable: true
+          items:
+            type: object
         storageTypes:
           type: array
           nullable: true
+          items:
+            type: object
         rootStorageTypes:
           type: array
           nullable: true
+          items:
+            type: object
         controllerTypes:
           type: array
           nullable: true
+          items:
+            type: object
     reportTypes:
       type: array
       items:
