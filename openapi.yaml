@@ -69,6 +69,16 @@ paths:
     $ref: paths/api@groups@id@update-zones.yaml
   /api/groups/{id}/wiki:
     $ref: paths/api@groups@id@wiki.yaml
+  /api/instances:
+    $ref: paths/api@instances.yaml
+  /api/instances/{id}:
+    $ref: paths/api@instances@id.yaml
+  /api/instances/{id}/containers:
+    $ref: paths/api@instances@id@containers.yaml
+  /api/instances/{id}/envs:
+    $ref: paths/api@instances@id@envs.yaml
+  /api/instances/{id}/history:
+    $ref: paths/api@instances@id@history.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
   /api/invoices:

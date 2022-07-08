@@ -1,25 +1,29 @@
 get:
-  summary: Get Env Variables
-  description: This gets all the environment variables associated with the instance.
-  operationId: getEnvVariables
+  summary: Get Container Details
+  description: This can be valuable for evaluating the details of the compute server(s) running on an instance
+  operationId: getInstanceContainers
   tags:
     - Instances
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Successful Request
+      description: Instance Containers Request
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              instance:
-                $ref: ../components/schemas/instanceEnvs.yaml
+            allOf:
+            - type: object
+              properties:
+                containers:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/container.yaml
+            - $ref: ../components/schemas/meta.yaml
           examples:
-            Instance Env Response:
+            Containers Response:
               value:
-                $ref: ../components/examples/instanceEnvs.json 
+                $ref: ../components/examples/instanceContainers.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -45,7 +45,7 @@ get:
                     $ref: ../components/schemas/instance.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Search Response:
+            Instances Response:
               value:
                 $ref: ../components/examples/instances.json 
     '400':
