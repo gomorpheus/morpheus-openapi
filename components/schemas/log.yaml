@@ -7,7 +7,7 @@ properties:
         type: string
   offset: 
     type: integer
-    format: int32
+    format: int64
   start: 
     type: string
     format: date-time
@@ -38,22 +38,22 @@ properties:
           type: string
         seq: 
           type: integer
-          format: int32
+          format: int64
         _id: 
           type: string
         signatureVerified: 
           type: boolean
   max: 
     type: integer
-    format: int32
+    format: int64
   grandTotal: 
     type: integer
-    format: int32
+    format: int64
   total: 
     type: integer
-    format: int32
+    format: int64
   success: 
     type: boolean
   count: 
     type: integer
-    format: int32
+    format: int64
