@@ -1,635 +1,554 @@
 {
     "instance": {
-        "id": 392,
-        "uuid": "6ccf1fa9-da1f-4318-841e-7bf30c4522c6",
-        "accountId": 1,
+        "id": 55046,
+        "uuid": "14825b19-0060-4d12-89a3-b53712798e42",
+        "accountId": 3,
         "tenant": {
-        "id": 1,
-        "name": "Morpheus Data"
+            "id": 3,
+            "name": "Morpheus"
         },
         "instanceType": {
-        "id": 6,
-        "code": "apache",
-        "category": "web",
-        "name": "Apache"
+            "id": 278,
+            "code": "mongodb",
+            "category": "nosql",
+            "name": "MongoDB"
         },
         "group": {
-        "id": 1,
-        "name": "dev"
+            "id": 2,
+            "name": "Demo"
         },
         "cloud": {
-        "id": 39,
-        "name": "amazon"
+            "id": 172,
+            "name": "VMware Demo Cluster H5"
         },
         "containers": [
-        945
+            753159
         ],
         "servers": [
-        4002
+            269539
         ],
         "connectionInfo": [
-        {
-            "ip": "10.100.1.8",
-            "port": 80
-        }
-        ],
-        "layout": {
-        "id": 31,
-        "name": "Amazon Apache on Ubuntu 14.04",
-        "provisionTypeCode": "amazon"
-        },
-        "plan": {
-        "id": 1,
-        "code": "amazon-t2.nano",
-        "name": "Amazon T2 Nano - 1 Core, 0.5GB Memory"
-        },
-        "name": "sa-apache-1",
-        "description": "new description",
-        "environment": null,
-        "config": {
-        "createUser": true,
-        "isEC2": false,
-        "isVpcSelectable": true,
-        "noAgent": null,
-        "availabilityId": null,
-        "securityId": null,
-        "publicIpType": "subnet",
-        "instanceProfile": null,
-        "resourcePoolId": "173",
-        "poolProviderType": null,
-        "name": "${userInitials}-apache-${sequence}",
-        "hostName": "${userInitials}-apache-${sequence}",
-        "instanceType": {
-            "code": null
-        },
-        "site": {
-            "id": 1,
-            "name": "dev"
-        },
-        "environmentPrefix": null,
-        "layout": {
-            "id": 31,
-            "code": "apache-amazon-2.4-single"
-        },
-        "type": "apache",
-        "memoryDisplay": "MB",
-        "securityGroups": [
             {
-            "id": "sg-21dd8144"
+                "ip": "10.32.21.58",
+                "port": null
             }
         ],
-        "customOptions": {
-            "isPrimary": "on",
-            "inventoryName": "DB12"
+        "layout": {
+            "id": 2357,
+            "name": "MongoDB",
+            "provisionTypeId": 5,
+            "provisionTypeCode": "vmware"
         },
-        "createBackup": true,
-        "backup": {
+        "plan": {
+            "id": 149,
+            "code": "vm-8192",
+            "name": "2 CPU, 8GB Memory"
+        },
+        "name": "admmon1004",
+        "description": null,
+        "environment": "demo",
+        "config": {
+            "createUser": true,
+            "isEC2": false,
+            "isVpcSelectable": true,
+            "noAgent": false,
+            "smbiosAssetTag": null,
+            "nestedVirtualization": null,
+            "vmwareFolderId": "/",
+            "customOptions": {
+                "mongodb_username": "root",
+                "mongodb_password": "************",
+                "environment": "3",
+                "mongodb_version": "4.2",
+                "mongodb_passwordHash": "27722dfd03d0749dbd6aefbf21cc6a018f7876b6e6f821b8541356c15101abce"
+            },
+            "resourcePoolId": 4080,
+            "poolProviderType": null,
+            "userGroup": {
+                "id": ""
+            },
+            "expireDays": "2",
+            "shutdownDays": "1",
+            "name": "${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}",
+            "hostName": "${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}",
+            "instanceType": {
+                "code": null
+            },
+            "site": {
+                "id": 2
+            },
+            "environmentPrefix": null,
+            "layout": {
+                "id": 2357,
+                "code": "68ed64b3-e18f-4214-8f21-021e794cd9a3"
+            },
+            "type": "mongodb",
+            "instanceContext": "demo",
+            "memoryDisplay": "MB",
+            "expose": [],
             "createBackup": true,
-            "jobAction": "new",
-            "jobRetentionCount": "3",
-            "veeamManagedServer": "",
-            "backupRepository": 1,
-            "jobSchedule": 2,
-            "target": 37006
-        },
-        "layoutSize": 1,
-        "lbInstances": [
-
-        ]
+            "backup": {
+                "createBackup": true,
+                "jobAction": "new",
+                "jobRetentionCount": "1",
+                "providerBackupType": -1
+            },
+            "replicationGroup": {
+                "providerMethod": "new"
+            },
+            "layoutSize": 1,
+            "lbInstances": []
         },
         "configGroup": null,
         "configId": null,
         "configRole": null,
         "volumes": [
-        {
-            "controllerId": null,
-            "datastoreId": null,
-            "displayOrder": 0,
-            "id": 177034,
-            "maxIOPS": null,
-            "maxStorage": 10737418240,
-            "name": "root",
-            "shortName": "root",
-            "resizeable": true,
-            "rootVolume": true,
-            "size": 10,
-            "storageType": 5,
-            "unitNumber": null,
-            "controllerMountPoint": null
-        }
+            {
+                "controllerId": 2144270,
+                "datastoreId": "autoCluster",
+                "displayOrder": 0,
+                "id": 2618586,
+                "uuid": "3076a8e3-1256-4d23-acaa-be313ecbe88e",
+                "maxIOPS": null,
+                "maxStorage": 85899345920,
+                "name": "root",
+                "shortName": "root",
+                "resizeable": true,
+                "planResizable": true,
+                "rootVolume": true,
+                "size": 80,
+                "storageType": 1,
+                "unitNumber": "0",
+                "controllerMountPoint": "2144270:0:4:0"
+            }
         ],
         "controllers": [
-
+            {
+                "id": 2144270,
+                "name": "SCSI controller 0",
+                "type": {
+                    "id": 4,
+                    "code": "vmware-lsiLogic",
+                    "name": "SCSI LSI Logic Parallel"
+                },
+                "maxDevices": 15,
+                "reservedUnitNumber": 7
+            },
+            {
+                "id": 2144271,
+                "name": "IDE 0",
+                "type": {
+                    "id": 2,
+                    "code": "vmware-ide",
+                    "name": "IDE"
+                },
+                "maxDevices": 2,
+                "reservedUnitNumber": -1
+            },
+            {
+                "id": 2144272,
+                "name": "IDE 1",
+                "type": {
+                    "id": 2,
+                    "code": "vmware-ide",
+                    "name": "IDE"
+                },
+                "maxDevices": 2,
+                "reservedUnitNumber": -1
+            }
         ],
         "interfaces": [
-        {
-            "id": "365",
-            "network": {
-            "id": 365,
-            "group": null,
-            "subnet": null,
-            "dhcpServer": true,
-            "name": "labs1",
-            "pool": null
-            },
-            "ipAddress": null,
-            "networkInterfaceTypeId": null,
-            "ipMode": ""
-        }
+            {
+                "id": "network-135357",
+                "network": {
+                    "id": 135357,
+                    "group": null,
+                    "subnet": null,
+                    "dhcpServer": true,
+                    "name": "VLAN0002 - Internal Server 2",
+                    "pool": {
+                        "id": 281,
+                        "name": "10.32.20.0 /22"
+                    }
+                },
+                "ipAddress": null,
+                "networkInterfaceTypeId": 4,
+                "ipMode": ""
+            }
         ],
         "customOptions": {
-        "isPrimary": "on",
-        "inventoryName": "DB12"
+            "mongodb_username": "root",
+            "mongodb_password": "*********",
+            "environment": "3",
+            "mongodb_version": "4.2"
         },
-        "instanceVersion": "2.4",
-        "labels": [
-        "foo",
-        "bar"
-        ],
-        "tags": [
-        {
-            "id": 70539,
-            "name": "Morpheus Id",
-            "value": "945"
-        },
-        {
-            "id": 70541,
-            "name": "Morpheus Instance Id",
-            "value": "392"
-        },
-        {
-            "id": 70538,
-            "name": "Morpheus Labels",
-            "value": "foo,bar"
-        },
-        {
-            "id": 70540,
-            "name": "Morpheus Server Id",
-            "value": "4002"
-        },
-        {
-            "id": 70530,
-            "name": "abc",
-            "value": "123"
-        }
-        ],
+        "instanceVersion": "1.0",
+        "labels": [],
+        "tags": [],
         "evars": [
-        {
-            "name": "APACHE_IP",
-            "value": "10.100.1.8",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_HOST",
-            "value": "container945",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_HTTP",
-            "value": 80,
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_80_TCP_PORT",
-            "value": 80,
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_80_TCP_PROTO",
-            "value": "tcp",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_80_TCP_ADDR",
-            "value": "10.100.1.8",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_80_TCP",
-            "value": "tcp://10.100.1.8:80",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_HTTPS",
-            "value": 443,
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_443_TCP_PORT",
-            "value": 443,
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_443_TCP_PROTO",
-            "value": "tcp",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_443_TCP_ADDR",
-            "value": "10.100.1.8",
-            "export": true,
-            "masked": false
-        },
-        {
-            "name": "APACHE_PORT_443_TCP",
-            "value": "tcp://10.100.1.8:443",
-            "export": true,
-            "masked": false
-        }
+            {
+                "name": "MONGODB_IP",
+                "value": "10.32.21.58",
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "MONGODB_HOST",
+                "value": "container753159",
+                "export": true,
+                "masked": false
+            }
         ],
-        "maxMemory": 536870912,
-        "maxStorage": 10737418240,
-        "maxCores": 1,
+        "maxMemory": 8589934592,
+        "maxStorage": 85899345920,
+        "maxCores": 2,
         "coresPerSocket": 1,
-        "maxCpu": 1,
-        "hourlyCost": 0.0086816667,
-        "hourlyPrice": 0.0086816667,
+        "maxCpu": null,
+        "hourlyCost": 0.0,
+        "hourlyPrice": 0.0,
         "instancePrice": {
-        "price": 6.2508,
-        "cost": 6.2508,
-        "currency": "USD",
-        "unit": "month"
+            "price": 43.999979520,
+            "cost": 43.999979520,
+            "currency": "USD",
+            "unit": "month"
         },
-        "dateCreated": "2020-11-02T16:36:32Z",
-        "lastUpdated": "2021-06-21T21:00:01Z",
-        "hostName": "sa-apache-1",
+        "dateCreated": "2022-07-08T05:11:07Z",
+        "lastUpdated": "2022-07-08T20:00:05Z",
+        "hostName": "admmon1004",
         "domainName": null,
         "environmentPrefix": null,
         "firewallEnabled": true,
         "networkLevel": "container",
         "autoScale": false,
-        "instanceContext": null,
+        "instanceContext": "demo",
         "currentDeployId": null,
         "locked": false,
         "status": "running",
         "statusMessage": null,
         "errorMessage": null,
-        "statusDate": "2020-11-02T16:38:12Z",
+        "statusDate": "2022-07-08T05:15:48Z",
         "statusPercent": null,
         "statusEta": null,
         "userStatus": null,
-        "expireDays": null,
-        "renewDays": null,
+        "expireDays": 2,
+        "renewDays": 4,
         "expireCount": 0,
-        "expireDate": null,
-        "expireWarningDate": null,
+        "expireDate": "2022-07-10T05:11:07Z",
+        "expireWarningDate": "2022-07-09T05:11:07Z",
         "expireWarningSent": false,
-        "shutdownDays": null,
-        "shutdownRenewDays": null,
+        "shutdownDays": 1,
+        "shutdownRenewDays": 1,
         "shutdownCount": 0,
-        "shutdownDate": null,
-        "shutdownWarningDate": null,
-        "shutdownWarningSent": false,
+        "shutdownDate": "2022-07-09T05:11:07Z",
+        "shutdownWarningDate": "2022-07-08T05:11:07Z",
+        "shutdownWarningSent": true,
         "removalDate": null,
         "createdBy": {
-        "id": 1,
-        "username": "admin"
+            "id": 286,
+            "username": "svcservicenow"
         },
         "owner": {
-        "id": 1,
-        "username": "admin"
+            "id": 286,
+            "username": "svcservicenow"
         },
         "notes": null,
         "stats": {
-        "usedStorage": 0,
-        "maxStorage": 10737418240,
-        "usedMemory": 233500000,
-        "maxMemory": 500212000,
-        "usedCpu": 0.0667445352,
-        "cpuUsage": 0.0667445352,
-        "cpuUsagePeak": 0.0667445352,
-        "cpuUsageAvg": 0.0667445352
+            "usedStorage": 3030441984,
+            "maxStorage": 85899345920,
+            "usedMemory": 689520000,
+            "maxMemory": 8009268000,
+            "usedCpu": 0.3340292275,
+            "cpuUsage": 0.3340292275,
+            "cpuUsagePeak": 0.3340292275,
+            "cpuUsageAvg": 0.3340292275
         },
         "powerSchedule": null,
-        "isScalable": true,
+        "isScalable": false,
         "instanceThreshold": null,
         "isBusy": false,
-        "apps": [
-
-        ],
-        "currentLoadBalancerInstances": [
-
-        ],
+        "apps": [],
+        "currentLoadBalancerInstances": [],
         "currentLoadBalancerContainersIn": 0,
         "currentLoadBalancerContainersOut": 0,
         "lastDeploy": null,
         "containerDetails": [
-        {
-            "id": 945,
-            "uuid": "c19f7209-df3a-443c-93a8-ccefacb3783c",
-            "name": "sa-apache-1_945",
-            "ip": "10.100.1.8",
-            "internalIp": "10.100.1.8",
-            "internalHostname": "container945",
-            "externalHostname": "sa-apache-1",
-            "externalDomain": "localdomain",
-            "externalFqdn": "sa-apache-1.localdomain",
-            "accountId": 1,
-            "instance": {
-            "id": 392,
-            "name": "sa-apache-1"
-            },
-            "containerType": {
-            "id": 31,
-            "code": "apache-amazon-2.4",
-            "category": "apache",
-            "name": "Apache 2.4"
-            },
-            "containerTypeSet": {
-            "id": 31,
-            "code": "apache-amazon-2.4-set",
-            "category": "apache"
-            },
-            "server": {
-            "id": 4002,
-            "uuid": "fbf4234d-cd25-47b5-bdd1-49a9132d2871",
-            "externalId": "i-033fbb2f1a9c2c225",
-            "internalId": null,
-            "externalUniqueId": null,
-            "name": "sa-apache-1",
-            "externalName": "sa-apache-1",
-            "hostname": "sa-apache-1",
-            "accountId": 1,
-            "account": {
-                "id": 1,
-                "name": "Morpheus Data"
-            },
-            "owner": {
-                "id": 1,
-                "username": "admin"
-            },
-            "zone": {
-                "id": 39,
-                "name": "amazon"
-            },
-            "plan": {
-                "id": 1,
-                "code": "amazon-t2.nano",
-                "name": "Amazon T2 Nano - 1 Core, 0.5GB Memory"
-            },
-            "computeServerType": {
-                "id": 45,
-                "code": "amazonVm",
-                "name": "Amazon Instance",
-                "managed": true,
-                "externalDelete": true
-            },
-            "visibility": "private",
-            "description": null,
-            "zoneId": 39,
-            "siteId": 1,
-            "resourcePoolId": 173,
-            "folderId": null,
-            "sshHost": null,
-            "sshPort": 22,
-            "externalIp": null,
-            "internalIp": "10.100.1.8",
-            "platform": "ubuntu",
-            "platformVersion": "14.04",
-            "dateCreated": "2020-11-02T16:36:32Z",
-            "lastUpdated": "2021-06-22T18:06:32Z",
-            "stats": {
-                "ts": "2021-06-22T18:06:28+0000",
-                "freeMemory": 266712000,
-                "usedMemory": 233500000,
-                "freeSwap": 0,
-                "usedSwap": 0,
-                "cpuIdleTime": 692815380,
-                "cpuSystemTime": 224850,
-                "cpuUserTime": 382640,
-                "cpuTotalTime": 693422870,
-                "cpuUsage": 0.06674528121948242,
-                "maxStorage": 10737418240,
-                "usedStorage": 1568661504,
-                "reservedStorage": 10423046144,
-                "netTxUsage": 27,
-                "netRxUsage": 23,
-                "networkBandwidth": 0
-            },
-            "status": "provisioned",
-            "statusMessage": null,
-            "errorMessage": null,
-            "statusDate": "2020-11-02T16:36:50Z",
-            "statusPercent": null,
-            "statusEta": null,
-            "powerState": "on",
-            "agentInstalled": true,
-            "lastAgentUpdate": "2021-06-22T18:06:32Z",
-            "agentVersion": "2.0.0",
-            "maxCores": 1,
-            "coresPerSocket": 1,
-            "maxMemory": 536870912,
-            "maxStorage": 10737418240,
-            "maxCpu": null,
-            "hourlyCost": 0.0086816667,
-            "hourlyPrice": 0.0086816667,
-            "sourceImage": {
-                "id": 22,
-                "code": "amazon.ec2.image.morpheus.apache.2.4",
-                "name": "ubuntu-14_04-apache-2_4-morph.0.1"
-            },
-            "serverOs": {
-                "id": 5,
-                "code": "ubuntu.14.04.64",
-                "name": "ubuntu 14 64-bit",
-                "description": null,
-                "vendor": "canonical",
-                "category": "ubuntu",
-                "osFamily": "debian",
-                "osVersion": "14.04",
-                "bitCount": 64,
-                "platform": "linux"
-            },
-            "volumes": [
-                {
-                "id": 177034,
-                "name": "root",
-                "controllerId": null,
-                "controllerMountPoint": null,
-                "resizeable": true,
-                "rootVolume": true,
-                "unitNumber": null,
-                "typeId": 5,
-                "configurableIOPS": false,
-                "datastoreId": null,
-                "maxStorage": 10737418240,
-                "displayOrder": 0,
-                "maxIOPS": null
-                }
-            ],
-            "controllers": [
-
-            ],
-            "interfaces": [
-                {
-                "id": 297842,
-                "refType": null,
-                "refId": null,
-                "name": "eth0",
-                "internalId": null,
-                "externalId": "eni-0689d61ea999db573",
-                "uniqueId": "morpheus-nic-392-945-0",
-                "publicIpAddress": null,
-                "publicIpv6Address": null,
-                "ipAddress": "10.100.1.8",
-                "ipv6Address": null,
-                "ipSubnet": null,
-                "ipv6Subnet": null,
-                "description": "",
-                "dhcp": true,
-                "active": true,
-                "poolAssigned": false,
-                "primaryInterface": true,
-                "network": {
-                    "id": 365,
-                    "name": "labs1"
-                },
-                "subnet": null,
-                "networkGroup": null,
-                "networkPosition": null,
-                "networkPool": null,
-                "networkDomain": null,
-                "type": {
-                    "id": 1,
-                    "code": "standard",
-                    "name": "standard"
-                },
-                "ipMode": "",
-                "macAddress": "06:92:59:62:73:a3"
-                }
-            ],
-            "labels": [
-
-            ],
-            "tags": [
-                {
-                "id": 70536,
-                "name": "Morpheus Id",
-                "value": "945"
-                },
-                {
-                "id": 70535,
-                "name": "Morpheus Instance Id",
-                "value": "392"
-                },
-                {
-                "id": 70537,
-                "name": "Morpheus Labels",
-                "value": "foo,bar"
-                },
-                {
-                "id": 70534,
-                "name": "Morpheus Server Id",
-                "value": "4002"
-                },
-                {
-                "id": 70531,
-                "name": "abc",
-                "value": "123"
-                }
-            ],
-            "enabled": true,
-            "tagCompliant": null
-            },
-            "cloud": {
-            "id": 39,
-            "name": "amazon"
-            },
-            "ports": [
             {
-                "id": 192,
-                "index": 0,
-                "external": 80,
-                "internal": 80,
-                "displayName": "Http",
-                "primaryPort": false,
-                "export": true,
-                "visible": true,
-                "exportName": "HTTP",
-                "loadBalanceProtocol": null,
-                "loadBalance": true,
-                "protocol": "http",
-                "link": true,
-                "externalIp": null,
-                "internalIp": null
-            },
-            {
-                "id": 193,
-                "index": 1,
-                "external": 443,
-                "internal": 443,
-                "displayName": "Https",
-                "primaryPort": false,
-                "export": true,
-                "visible": true,
-                "exportName": "HTTPS",
-                "loadBalanceProtocol": null,
-                "loadBalance": true,
-                "protocol": "https",
-                "link": true,
-                "externalIp": null,
-                "internalIp": null
+                "id": 753159,
+                "uuid": "d09a4d6c-d956-414b-8be7-db1a1d568dc1",
+                "name": "admmon1004_753159",
+                "ip": "10.32.21.58",
+                "internalIp": "10.32.21.58",
+                "internalHostname": "container753159",
+                "externalHostname": "admmon1004",
+                "externalDomain": "localdomain",
+                "externalFqdn": "admmon1004.localdomain",
+                "accountId": 3,
+                "instance": {
+                    "id": 55046,
+                    "name": "admmon1004"
+                },
+                "containerType": {
+                    "id": 2503,
+                    "code": "cf78c63e-f2c3-48aa-9c20-760ada3a1b5c",
+                    "category": null,
+                    "name": "MongoDB"
+                },
+                "containerTypeSet": {
+                    "id": 2442,
+                    "code": "cf78c63e-f2c3-48aa-9c20-760ada3a1b5c",
+                    "category": null
+                },
+                "server": {
+                    "id": 269539,
+                    "uuid": "5398d7f5-bfa1-4a56-b693-cce20efc61f9",
+                    "externalId": "vm-80191",
+                    "internalId": "502ded94-de1a-7aab-da41-06ee9f056d43",
+                    "externalUniqueId": "422d20f7-bea9-1ece-2073-eabb23dccdc0",
+                    "name": "admmon1004",
+                    "externalName": "admmon1004",
+                    "hostname": "admmon1004",
+                    "accountId": 3,
+                    "account": {
+                        "id": 3,
+                        "name": "Morpheus"
+                    },
+                    "owner": {
+                        "id": 286,
+                        "username": "svcservicenow"
+                    },
+                    "zone": {
+                        "id": 172,
+                        "name": "VMware Demo Cluster H5"
+                    },
+                    "plan": {
+                        "id": 149,
+                        "code": "vm-8192",
+                        "name": "2 CPU, 8GB Memory"
+                    },
+                    "computeServerType": {
+                        "id": 75,
+                        "code": "vmwareVm",
+                        "name": "VMware Linux VM",
+                        "managed": true,
+                        "externalDelete": true
+                    },
+                    "visibility": "private",
+                    "description": null,
+                    "zoneId": 172,
+                    "siteId": 2,
+                    "resourcePoolId": 4080,
+                    "folderId": null,
+                    "sshHost": "10.32.21.58",
+                    "sshPort": 22,
+                    "externalIp": "10.32.21.58",
+                    "internalIp": "10.32.21.58",
+                    "platform": "centos",
+                    "platformVersion": "3.10.0-1160.31.1.el7.x86_64",
+                    "dateCreated": "2022-07-08T05:11:07Z",
+                    "lastUpdated": "2022-07-08T20:18:21Z",
+                    "stats": {
+                        "ts": "2022-07-08T20:18:19+0000",
+                        "freeMemory": 7319828000,
+                        "usedMemory": 689440000,
+                        "freeSwap": 536866816,
+                        "usedSwap": 0,
+                        "cpuIdleTime": 107915060,
+                        "cpuSystemTime": 215030,
+                        "cpuUserTime": 337090,
+                        "cpuTotalTime": 108467180,
+                        "cpuUsage": 0.35067200660705566,
+                        "maxStorage": 85899345920,
+                        "usedStorage": 3030441984,
+                        "reservedStorage": 85340434432,
+                        "netTxUsage": 31,
+                        "netRxUsage": 566,
+                        "networkBandwidth": 1310720000
+                    },
+                    "status": "provisioned",
+                    "statusMessage": null,
+                    "errorMessage": null,
+                    "statusDate": "2022-07-08T05:14:08Z",
+                    "statusPercent": null,
+                    "statusEta": null,
+                    "powerState": "on",
+                    "agentInstalled": true,
+                    "lastAgentUpdate": "2022-07-08T20:18:21Z",
+                    "agentVersion": "2.3.2",
+                    "maxCores": 2,
+                    "maxMemory": 8589934592,
+                    "maxStorage": 85899345920,
+                    "maxCpu": null,
+                    "hourlyCost": 0.0611110827,
+                    "hourlyPrice": 0.0611110827,
+                    "sourceImage": {
+                        "id": 526230,
+                        "code": "vmware.vsphere.image.morpheus.centos.7.9",
+                        "name": "Morpheus CentOS 7.9 v2"
+                    },
+                    "serverOs": {
+                        "id": 27,
+                        "code": "cent.64",
+                        "name": "centOS 64-bit",
+                        "description": null,
+                        "vendor": "centos",
+                        "category": "centos",
+                        "osFamily": "rhel",
+                        "osVersion": "all",
+                        "bitCount": 64,
+                        "platform": "linux"
+                    },
+                    "volumes": [
+                        {
+                            "id": 2618586,
+                            "name": "root",
+                            "controllerId": 2144270,
+                            "controllerMountPoint": "2144270:0:4:0",
+                            "resizeable": true,
+                            "planResizable": true,
+                            "rootVolume": true,
+                            "unitNumber": "0",
+                            "typeId": 1,
+                            "configurableIOPS": false,
+                            "datastoreId": 21179,
+                            "maxStorage": 85899345920,
+                            "displayOrder": 0,
+                            "maxIOPS": null,
+                            "uuid": "3076a8e3-1256-4d23-acaa-be313ecbe88e"
+                        }
+                    ],
+                    "controllers": [
+                        {
+                            "id": 2144270,
+                            "name": "SCSI controller 0",
+                            "type": {
+                                "id": 4,
+                                "code": "vmware-lsiLogic",
+                                "name": "SCSI LSI Logic Parallel"
+                            },
+                            "maxDevices": 15,
+                            "reservedUnitNumber": 7
+                        },
+                        {
+                            "id": 2144271,
+                            "name": "IDE 0",
+                            "type": {
+                                "id": 2,
+                                "code": "vmware-ide",
+                                "name": "IDE"
+                            },
+                            "maxDevices": 2,
+                            "reservedUnitNumber": -1
+                        },
+                        {
+                            "id": 2144272,
+                            "name": "IDE 1",
+                            "type": {
+                                "id": 2,
+                                "code": "vmware-ide",
+                                "name": "IDE"
+                            },
+                            "maxDevices": 2,
+                            "reservedUnitNumber": -1
+                        }
+                    ],
+                    "interfaces": [
+                        {
+                            "id": 658086,
+                            "refType": null,
+                            "refId": null,
+                            "name": "eth0",
+                            "internalId": "7",
+                            "externalId": "4000",
+                            "uniqueId": "morpheus-nic-55046-753159-0",
+                            "publicIpAddress": "10.32.21.58",
+                            "publicIpv6Address": null,
+                            "ipAddress": "10.32.21.58",
+                            "ipv6Address": "fe80::250:56ff:fead:d491",
+                            "ipSubnet": null,
+                            "ipv6Subnet": null,
+                            "description": null,
+                            "dhcp": true,
+                            "active": true,
+                            "poolAssigned": false,
+                            "primaryInterface": true,
+                            "network": {
+                                "id": 135357,
+                                "name": "VLAN0002 - Internal Server 2"
+                            },
+                            "subnet": null,
+                            "networkGroup": null,
+                            "networkPosition": null,
+                            "networkPool": {
+                                "id": 281,
+                                "name": "10.32.20.0 /22"
+                            },
+                            "networkDomain": null,
+                            "type": {
+                                "id": 4,
+                                "code": "vmxNet3",
+                                "name": "VMXNET 3"
+                            },
+                            "ipMode": "",
+                            "macAddress": "00:50:56:ad:d4:91"
+                        }
+                    ],
+                    "labels": [],
+                    "tags": [],
+                    "enabled": true,
+                    "tagCompliant": false
+                },
+                "cloud": {
+                    "id": 172,
+                    "name": "VMware Demo Cluster H5"
+                },
+                "ports": [],
+                "plan": {
+                    "id": 149,
+                    "code": "vm-8192",
+                    "name": "2 CPU, 8GB Memory"
+                },
+                "configGroup": null,
+                "configId": null,
+                "configRole": null,
+                "dateCreated": "2022-07-08T05:11:07Z",
+                "lastUpdated": "2022-07-08T20:17:56Z",
+                "statsEnabled": true,
+                "status": "running",
+                "userStatus": "running",
+                "environmentPrefix": null,
+                "stats": {
+                    "ts": "2022-07-08T20:17:56+0000",
+                    "running": true,
+                    "userCpuUsage": 0.1920668058,
+                    "systemCpuUsage": 0.1419624217,
+                    "usedMemory": 689520000,
+                    "maxMemory": 8009268000,
+                    "cacheMemory": 1335936000,
+                    "maxStorage": 85899345920,
+                    "usedStorage": 3030441984,
+                    "readIOPS": 0,
+                    "writeIOPS": 0.1833333333,
+                    "totalIOPS": 0.1833333333,
+                    "iops": {},
+                    "netTxUsage": 26,
+                    "netRxUsage": 531
+                },
+                "runtimeInfo": {},
+                "containerVersion": null,
+                "repositoryImage": null,
+                "planCategory": null,
+                "hostname": "admmon1004",
+                "domainName": null,
+                "volumeCreated": false,
+                "containerCreated": true,
+                "maxStorage": 85899345920,
+                "maxMemory": 8589934592,
+                "maxCores": 2,
+                "coresPerSocket": 1,
+                "maxCpu": 0,
+                "hourlyCost": 0.0,
+                "hourlyPrice": 0.061111084
             }
-            ],
-            "plan": {
-            "id": 1,
-            "code": "amazon-t2.nano",
-            "name": "Amazon T2 Nano - 1 Core, 0.5GB Memory"
-            },
-            "configGroup": null,
-            "configId": null,
-            "configRole": null,
-            "dateCreated": "2020-11-02T16:36:32Z",
-            "lastUpdated": "2021-06-22T18:06:32Z",
-            "statsEnabled": true,
-            "status": "running",
-            "userStatus": "running",
-            "environmentPrefix": null,
-            "stats": {
-            "ts": "2021-06-22T18:06:28+0000",
-            "running": true,
-            "userCpuUsage": 0.0333722676,
-            "systemCpuUsage": 0.0333722676,
-            "usedMemory": 233500000,
-            "maxMemory": 500212000,
-            "cacheMemory": 190968000,
-            "maxStorage": null,
-            "usedStorage": 0,
-            "readIOPS": 0,
-            "writeIOPS": 0.2333333333,
-            "totalIOPS": 0.2333333333,
-            "iops": {
-            },
-            "netTxUsage": 27,
-            "netRxUsage": 23
-            },
-            "runtimeInfo": {
-            },
-            "containerVersion": null,
-            "repositoryImage": null,
-            "planCategory": null,
-            "hostname": "sa-apache-1",
-            "domainName": null,
-            "volumeCreated": false,
-            "containerCreated": true,
-            "maxStorage": 10737418240,
-            "maxMemory": 536870912,
-            "maxCores": 1,
-            "coresPerSocket": 1,
-            "maxCpu": 1,
-            "hourlyCost": 0.0086816667,
-            "hourlyPrice": 0.0086816667
-        }
         ]
     }
 }
