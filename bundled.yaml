@@ -3859,6 +3859,1237 @@ paths:
           $ref: '#/components/responses/500'
         '503':
           $ref: '#/components/responses/503'
+  /api/instances:
+    get:
+      summary: Get All Instances
+      description: |
+        This endpoint retrieves a paginated list of instances.
+      operationId: listInstances
+      tags:
+        - Instances
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/instanceType'
+        - $ref: '#/components/parameters/lastUpdated'
+        - $ref: '#/components/parameters/createdBy'
+        - $ref: '#/components/parameters/agentInstalled'
+        - $ref: '#/components/parameters/status'
+        - $ref: '#/components/parameters/environment'
+        - $ref: '#/components/parameters/showDeleted'
+        - $ref: '#/components/parameters/deleted'
+        - $ref: '#/components/parameters/expireDate'
+        - $ref: '#/components/parameters/expireDateMin'
+        - $ref: '#/components/parameters/expireDays'
+        - $ref: '#/components/parameters/expireDaysMin'
+        - $ref: '#/components/parameters/shutdownDate'
+        - $ref: '#/components/parameters/shutdownDateMin'
+        - $ref: '#/components/parameters/shutdownDays'
+        - $ref: '#/components/parameters/shutdownDaysMin'
+        - $ref: '#/components/parameters/labels'
+        - $ref: '#/components/parameters/tags'
+        - $ref: '#/components/parameters/metadata'
+        - $ref: '#/components/parameters/detailsFalse'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      instances:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/instance'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Instances Response:
+                  value:
+                    instances:
+                      - id: 1530
+                        accountId: 1
+                        instanceType:
+                          id: 35
+                          code: ubuntu
+                          category: os
+                          name: Ubuntu
+                        group:
+                          id: 3
+                          name: Demo
+                        cloud:
+                          id: 6
+                          name: San Mateo VMware
+                        containers:
+                          - 1798
+                        servers:
+                          - 2
+                        connectionInfo:
+                          - ip: 192.168.162.59
+                            port: 22
+                        layout:
+                          id: 105
+                        plan:
+                          id: 12
+                          code: vm-2048
+                        name: ah-San Mateo VMware-ubuntu
+                        description: null
+                        instanceVersion: null
+                        dateCreated: 2017-01-31T21:30:49+0000
+                        lastUpdated: 2017-02-07T22:58:26+0000
+                        hostName: ah-San-Mateo-VMware-ubuntu
+                        domainName: null
+                        environmentPrefix: null
+                        firewallEnabled: true
+                        networkLevel: container
+                        autoScale: false
+                        instanceContext: production
+                        currentDeployId: null
+                        status: running
+                        statusMessage: null
+                        errorMessage: null
+                        statusDate: 2017-01-31T21:34:07+0000
+                        statusPercent: null
+                        statusEta: null
+                        userStatus: null
+                        createdBy:
+                          id: 38
+                      - id: 1653
+                        accountId: 1
+                        instanceType:
+                          id: 35
+                          code: ubuntu
+                          category: os
+                          name: Ubuntu
+                        group:
+                          id: 3
+                          name: Demo
+                        cloud:
+                          id: 6
+                          name: San Mateo VMware
+                        containers:
+                          - 1945
+                        servers:
+                          - 2
+                        connectionInfo:
+                          - ip: 192.168.163.55
+                            port: 22
+                        layout:
+                          id: 105
+                        plan:
+                          id: 11
+                          code: vm-1024
+                        name: ah-San Mateo VMware-ubuntu-PDNStest
+                        description: null
+                        instanceVersion: null
+                        dateCreated: 2017-02-10T14:27:42+0000
+                        lastUpdated: 2017-02-10T14:31:19+0000
+                        hostName: ah-san-mateo-vmware-ubuntu-pdnstest
+                        domainName: null
+                        environmentPrefix: null
+                        firewallEnabled: true
+                        networkLevel: container
+                        autoScale: false
+                        instanceContext: dev
+                        currentDeployId: null
+                        status: running
+                        statusMessage: null
+                        errorMessage: null
+                        statusDate: 2017-02-10T14:30:43+0000
+                        statusPercent: null
+                        statusEta: null
+                        userStatus: null
+                        createdBy:
+                          id: 38
+                      - id: 1624
+                        accountId: 1
+                        instanceType:
+                          id: 21
+                          code: apache
+                          category: web
+                          name: Apache
+                        group:
+                          id: 163
+                          name: snow-approvals
+                        cloud:
+                          id: 6
+                          name: San Mateo VMware
+                        containers:
+                          - 1912
+                        servers:
+                          - 3
+                        connectionInfo:
+                          - ip: 192.168.163.28
+                            port: 10009
+                        layout:
+                          id: 48
+                        plan:
+                          id: 3
+                          code: container-256
+                        name: approval-snow-test
+                        description: null
+                        instanceVersion: null
+                        dateCreated: 2017-02-09T06:45:30+0000
+                        lastUpdated: 2017-02-09T06:53:20+0000
+                        hostName: approval-snow-test
+                        domainName: null
+                        environmentPrefix: null
+                        firewallEnabled: true
+                        networkLevel: container
+                        autoScale: false
+                        instanceContext: null
+                        currentDeployId: null
+                        status: running
+                        statusMessage: null
+                        errorMessage: null
+                        statusDate: 2017-02-09T06:53:20+0000
+                        statusPercent: null
+                        statusEta: null
+                        userStatus: null
+                        owner:
+                          id: 1
+                          username: admin
+                    stats:
+                      '1530':
+                        usedStorage: 6776664064
+                        maxStorage: 21067075584
+                        usedMemory: 1909739520
+                        maxMemory: 2098315264
+                        usedCpu: 1.0926682792
+                      '1624':
+                        usedStorage: 4829184
+                        maxStorage: 3103539200
+                        usedMemory: 9113600
+                        maxMemory: 268435456
+                        usedCpu: 0
+                      '1653':
+                        usedStorage: 2662801408
+                        maxStorage: 10499452928
+                        usedMemory: 935444480
+                        maxMemory: 1041350656
+                        usedCpu: 0.1501000667
+                    loadBalancers: []
+                    meta:
+                      offset: 0
+                      max: 25
+                      size: 3
+                      total: 21
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/instances/{id}:
+    get:
+      summary: Retrieves a Specific Instance
+      description: Retrieves a specific instance.
+      operationId: getInstance
+      tags:
+        - Instances
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+        - $ref: '#/components/parameters/detailsTrue'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  instance:
+                    $ref: '#/components/schemas/instance'
+              examples:
+                Instance Response:
+                  value:
+                    instance:
+                      id: 392
+                      uuid: 6ccf1fa9-da1f-4318-841e-7bf30c4522c6
+                      accountId: 1
+                      tenant:
+                        id: 1
+                        name: Morpheus Data
+                      instanceType:
+                        id: 6
+                        code: apache
+                        category: web
+                        name: Apache
+                      group:
+                        id: 1
+                        name: dev
+                      cloud:
+                        id: 39
+                        name: amazon
+                      containers:
+                        - 945
+                      servers:
+                        - 4002
+                      connectionInfo:
+                        - ip: 10.100.1.8
+                          port: 80
+                      layout:
+                        id: 31
+                        name: Amazon Apache on Ubuntu 14.04
+                        provisionTypeCode: amazon
+                      plan:
+                        id: 1
+                        code: amazon-t2.nano
+                        name: Amazon T2 Nano - 1 Core, 0.5GB Memory
+                      name: sa-apache-1
+                      description: new description
+                      environment: null
+                      config:
+                        createUser: true
+                        isEC2: false
+                        isVpcSelectable: true
+                        noAgent: null
+                        availabilityId: null
+                        securityId: null
+                        publicIpType: subnet
+                        instanceProfile: null
+                        resourcePoolId: '173'
+                        poolProviderType: null
+                        name: ${userInitials}-apache-${sequence}
+                        hostName: ${userInitials}-apache-${sequence}
+                        instanceType:
+                          code: null
+                        site:
+                          id: 1
+                          name: dev
+                        environmentPrefix: null
+                        layout:
+                          id: 31
+                          code: apache-amazon-2.4-single
+                        type: apache
+                        memoryDisplay: MB
+                        securityGroups:
+                          - id: sg-21dd8144
+                        customOptions:
+                          isPrimary: 'on'
+                          inventoryName: DB12
+                        createBackup: true
+                        backup:
+                          createBackup: true
+                          jobAction: new
+                          jobRetentionCount: '3'
+                          veeamManagedServer: ''
+                          backupRepository: 1
+                          jobSchedule: 2
+                          target: 37006
+                        layoutSize: 1
+                        lbInstances: []
+                      configGroup: null
+                      configId: null
+                      configRole: null
+                      volumes:
+                        - controllerId: null
+                          datastoreId: null
+                          displayOrder: 0
+                          id: 177034
+                          maxIOPS: null
+                          maxStorage: 10737418240
+                          name: root
+                          shortName: root
+                          resizeable: true
+                          rootVolume: true
+                          size: 10
+                          storageType: 5
+                          unitNumber: null
+                          controllerMountPoint: null
+                      controllers: []
+                      interfaces:
+                        - id: '365'
+                          network:
+                            id: 365
+                            group: null
+                            subnet: null
+                            dhcpServer: true
+                            name: labs1
+                            pool: null
+                          ipAddress: null
+                          networkInterfaceTypeId: null
+                          ipMode: ''
+                      customOptions:
+                        isPrimary: 'on'
+                        inventoryName: DB12
+                      instanceVersion: '2.4'
+                      labels:
+                        - foo
+                        - bar
+                      tags:
+                        - id: 70539
+                          name: Morpheus Id
+                          value: '945'
+                        - id: 70541
+                          name: Morpheus Instance Id
+                          value: '392'
+                        - id: 70538
+                          name: Morpheus Labels
+                          value: foo,bar
+                        - id: 70540
+                          name: Morpheus Server Id
+                          value: '4002'
+                        - id: 70530
+                          name: abc
+                          value: '123'
+                      evars:
+                        - name: APACHE_IP
+                          value: 10.100.1.8
+                          export: true
+                          masked: false
+                        - name: APACHE_HOST
+                          value: container945
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_HTTP
+                          value: 80
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_80_TCP_PORT
+                          value: 80
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_80_TCP_PROTO
+                          value: tcp
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_80_TCP_ADDR
+                          value: 10.100.1.8
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_80_TCP
+                          value: tcp://10.100.1.8:80
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_HTTPS
+                          value: 443
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_443_TCP_PORT
+                          value: 443
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_443_TCP_PROTO
+                          value: tcp
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_443_TCP_ADDR
+                          value: 10.100.1.8
+                          export: true
+                          masked: false
+                        - name: APACHE_PORT_443_TCP
+                          value: tcp://10.100.1.8:443
+                          export: true
+                          masked: false
+                      maxMemory: 536870912
+                      maxStorage: 10737418240
+                      maxCores: 1
+                      coresPerSocket: 1
+                      maxCpu: 1
+                      hourlyCost: 0.0086816667
+                      hourlyPrice: 0.0086816667
+                      instancePrice:
+                        price: 6.2508
+                        cost: 6.2508
+                        currency: USD
+                        unit: month
+                      dateCreated: '2020-11-02T16:36:32Z'
+                      lastUpdated: '2021-06-21T21:00:01Z'
+                      hostName: sa-apache-1
+                      domainName: null
+                      environmentPrefix: null
+                      firewallEnabled: true
+                      networkLevel: container
+                      autoScale: false
+                      instanceContext: null
+                      currentDeployId: null
+                      locked: false
+                      status: running
+                      statusMessage: null
+                      errorMessage: null
+                      statusDate: '2020-11-02T16:38:12Z'
+                      statusPercent: null
+                      statusEta: null
+                      userStatus: null
+                      expireDays: null
+                      renewDays: null
+                      expireCount: 0
+                      expireDate: null
+                      expireWarningDate: null
+                      expireWarningSent: false
+                      shutdownDays: null
+                      shutdownRenewDays: null
+                      shutdownCount: 0
+                      shutdownDate: null
+                      shutdownWarningDate: null
+                      shutdownWarningSent: false
+                      removalDate: null
+                      createdBy:
+                        id: 1
+                        username: admin
+                      owner:
+                        id: 1
+                        username: admin
+                      notes: null
+                      stats:
+                        usedStorage: 0
+                        maxStorage: 10737418240
+                        usedMemory: 233500000
+                        maxMemory: 500212000
+                        usedCpu: 0.0667445352
+                        cpuUsage: 0.0667445352
+                        cpuUsagePeak: 0.0667445352
+                        cpuUsageAvg: 0.0667445352
+                      powerSchedule: null
+                      isScalable: true
+                      instanceThreshold: null
+                      isBusy: false
+                      apps: []
+                      currentLoadBalancerInstances: []
+                      currentLoadBalancerContainersIn: 0
+                      currentLoadBalancerContainersOut: 0
+                      lastDeploy: null
+                      containerDetails:
+                        - id: 945
+                          uuid: c19f7209-df3a-443c-93a8-ccefacb3783c
+                          name: sa-apache-1_945
+                          ip: 10.100.1.8
+                          internalIp: 10.100.1.8
+                          internalHostname: container945
+                          externalHostname: sa-apache-1
+                          externalDomain: localdomain
+                          externalFqdn: sa-apache-1.localdomain
+                          accountId: 1
+                          instance:
+                            id: 392
+                            name: sa-apache-1
+                          containerType:
+                            id: 31
+                            code: apache-amazon-2.4
+                            category: apache
+                            name: Apache 2.4
+                          containerTypeSet:
+                            id: 31
+                            code: apache-amazon-2.4-set
+                            category: apache
+                          server:
+                            id: 4002
+                            uuid: fbf4234d-cd25-47b5-bdd1-49a9132d2871
+                            externalId: i-033fbb2f1a9c2c225
+                            internalId: null
+                            externalUniqueId: null
+                            name: sa-apache-1
+                            externalName: sa-apache-1
+                            hostname: sa-apache-1
+                            accountId: 1
+                            account:
+                              id: 1
+                              name: Morpheus Data
+                            owner:
+                              id: 1
+                              username: admin
+                            zone:
+                              id: 39
+                              name: amazon
+                            plan:
+                              id: 1
+                              code: amazon-t2.nano
+                              name: Amazon T2 Nano - 1 Core, 0.5GB Memory
+                            computeServerType:
+                              id: 45
+                              code: amazonVm
+                              name: Amazon Instance
+                              managed: true
+                              externalDelete: true
+                            visibility: private
+                            description: null
+                            zoneId: 39
+                            siteId: 1
+                            resourcePoolId: 173
+                            folderId: null
+                            sshHost: null
+                            sshPort: 22
+                            externalIp: null
+                            internalIp: 10.100.1.8
+                            platform: ubuntu
+                            platformVersion: '14.04'
+                            dateCreated: '2020-11-02T16:36:32Z'
+                            lastUpdated: '2021-06-22T18:06:32Z'
+                            stats:
+                              ts: 2021-06-22T18:06:28+0000
+                              freeMemory: 266712000
+                              usedMemory: 233500000
+                              freeSwap: 0
+                              usedSwap: 0
+                              cpuIdleTime: 692815380
+                              cpuSystemTime: 224850
+                              cpuUserTime: 382640
+                              cpuTotalTime: 693422870
+                              cpuUsage: 0.06674528121948242
+                              maxStorage: 10737418240
+                              usedStorage: 1568661504
+                              reservedStorage: 10423046144
+                              netTxUsage: 27
+                              netRxUsage: 23
+                              networkBandwidth: 0
+                            status: provisioned
+                            statusMessage: null
+                            errorMessage: null
+                            statusDate: '2020-11-02T16:36:50Z'
+                            statusPercent: null
+                            statusEta: null
+                            powerState: 'on'
+                            agentInstalled: true
+                            lastAgentUpdate: '2021-06-22T18:06:32Z'
+                            agentVersion: 2.0.0
+                            maxCores: 1
+                            coresPerSocket: 1
+                            maxMemory: 536870912
+                            maxStorage: 10737418240
+                            maxCpu: null
+                            hourlyCost: 0.0086816667
+                            hourlyPrice: 0.0086816667
+                            sourceImage:
+                              id: 22
+                              code: amazon.ec2.image.morpheus.apache.2.4
+                              name: ubuntu-14_04-apache-2_4-morph.0.1
+                            serverOs:
+                              id: 5
+                              code: ubuntu.14.04.64
+                              name: ubuntu 14 64-bit
+                              description: null
+                              vendor: canonical
+                              category: ubuntu
+                              osFamily: debian
+                              osVersion: '14.04'
+                              bitCount: 64
+                              platform: linux
+                            volumes:
+                              - id: 177034
+                                name: root
+                                controllerId: null
+                                controllerMountPoint: null
+                                resizeable: true
+                                rootVolume: true
+                                unitNumber: null
+                                typeId: 5
+                                configurableIOPS: false
+                                datastoreId: null
+                                maxStorage: 10737418240
+                                displayOrder: 0
+                                maxIOPS: null
+                            controllers: []
+                            interfaces:
+                              - id: 297842
+                                refType: null
+                                refId: null
+                                name: eth0
+                                internalId: null
+                                externalId: eni-0689d61ea999db573
+                                uniqueId: morpheus-nic-392-945-0
+                                publicIpAddress: null
+                                publicIpv6Address: null
+                                ipAddress: 10.100.1.8
+                                ipv6Address: null
+                                ipSubnet: null
+                                ipv6Subnet: null
+                                description: ''
+                                dhcp: true
+                                active: true
+                                poolAssigned: false
+                                primaryInterface: true
+                                network:
+                                  id: 365
+                                  name: labs1
+                                subnet: null
+                                networkGroup: null
+                                networkPosition: null
+                                networkPool: null
+                                networkDomain: null
+                                type:
+                                  id: 1
+                                  code: standard
+                                  name: standard
+                                ipMode: ''
+                                macAddress: 06:92:59:62:73:a3
+                            labels: []
+                            tags:
+                              - id: 70536
+                                name: Morpheus Id
+                                value: '945'
+                              - id: 70535
+                                name: Morpheus Instance Id
+                                value: '392'
+                              - id: 70537
+                                name: Morpheus Labels
+                                value: foo,bar
+                              - id: 70534
+                                name: Morpheus Server Id
+                                value: '4002'
+                              - id: 70531
+                                name: abc
+                                value: '123'
+                            enabled: true
+                            tagCompliant: null
+                          cloud:
+                            id: 39
+                            name: amazon
+                          ports:
+                            - id: 192
+                              index: 0
+                              external: 80
+                              internal: 80
+                              displayName: Http
+                              primaryPort: false
+                              export: true
+                              visible: true
+                              exportName: HTTP
+                              loadBalanceProtocol: null
+                              loadBalance: true
+                              protocol: http
+                              link: true
+                              externalIp: null
+                              internalIp: null
+                            - id: 193
+                              index: 1
+                              external: 443
+                              internal: 443
+                              displayName: Https
+                              primaryPort: false
+                              export: true
+                              visible: true
+                              exportName: HTTPS
+                              loadBalanceProtocol: null
+                              loadBalance: true
+                              protocol: https
+                              link: true
+                              externalIp: null
+                              internalIp: null
+                          plan:
+                            id: 1
+                            code: amazon-t2.nano
+                            name: Amazon T2 Nano - 1 Core, 0.5GB Memory
+                          configGroup: null
+                          configId: null
+                          configRole: null
+                          dateCreated: '2020-11-02T16:36:32Z'
+                          lastUpdated: '2021-06-22T18:06:32Z'
+                          statsEnabled: true
+                          status: running
+                          userStatus: running
+                          environmentPrefix: null
+                          stats:
+                            ts: 2021-06-22T18:06:28+0000
+                            running: true
+                            userCpuUsage: 0.0333722676
+                            systemCpuUsage: 0.0333722676
+                            usedMemory: 233500000
+                            maxMemory: 500212000
+                            cacheMemory: 190968000
+                            maxStorage: null
+                            usedStorage: 0
+                            readIOPS: 0
+                            writeIOPS: 0.2333333333
+                            totalIOPS: 0.2333333333
+                            iops: {}
+                            netTxUsage: 27
+                            netRxUsage: 23
+                          runtimeInfo: {}
+                          containerVersion: null
+                          repositoryImage: null
+                          planCategory: null
+                          hostname: sa-apache-1
+                          domainName: null
+                          volumeCreated: false
+                          containerCreated: true
+                          maxStorage: 10737418240
+                          maxMemory: 536870912
+                          maxCores: 1
+                          coresPerSocket: 1
+                          maxCpu: 1
+                          hourlyCost: 0.0086816667
+                          hourlyPrice: 0.0086816667
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/instances/{id}/containers:
+    get:
+      summary: Get Container Details
+      description: >-
+        This can be valuable for evaluating the details of the compute server(s)
+        running on an instance
+      operationId: getInstanceContainers
+      tags:
+        - Instances
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Instance Containers Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      containers:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/container'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Containers Response:
+                  value:
+                    containers:
+                      - id: 292
+                        accountId: 1
+                        instance:
+                          id: 294
+                          name: nginxtest
+                        containerType:
+                          id: 187
+                          code: nginx-vmware-1.9
+                          category: nginx
+                          name: NGINX 1.9
+                        containerTypeSet:
+                          id: 193
+                          code: nginx-vmware-1.9-set
+                          category: nginx
+                        server:
+                          id: 653
+                          name: nginxtest
+                        cloud:
+                          id: 34
+                          name: myvmware
+                        name: nginxtest_292
+                        ip: 10.30.20.50
+                        internalIp: 10.30.20.50
+                        internalHostname: container292
+                        externalHostname: nginxtest
+                        externalDomain: localdomain
+                        externalFqdn: nginxtest.localdomain
+                        ports:
+                          - index: 0
+                            external: 80
+                            internal: 80
+                            primaryPort: true
+                            displayName: Http
+                            export: true
+                            visible: true
+                            loadBalance: true
+                            link: true
+                            exportName: HTTP
+                            protocol: http
+                            code: nginx.80
+                          - index: 1
+                            external: 443
+                            internal: 443
+                            primaryPort: false
+                            displayName: Https
+                            export: true
+                            visible: true
+                            loadBalance: true
+                            link: true
+                            exportName: HTTPS
+                            protocol: https
+                            code: nginx.443
+                        plan:
+                          id: 76
+                          code: vm-1024
+                          name: 1 CPU, 1GB Memory
+                        dateCreated: 2019-02-20T18:29:05+0000
+                        lastUpdated: 2019-02-27T21:07:35+0000
+                        statsEnabled: true
+                        status: running
+                        userStatus: running
+                        environmentPrefix: null
+                        stats:
+                          ts: 2019-02-27T21:07:31+0000
+                          running: true
+                          userCpuUsage: 0.1504010695
+                          systemCpuUsage: 0.1838235294
+                          usedMemory: 317256000
+                          maxMemory: 1017032000
+                          cacheMemory: 404236000
+                          maxStorage: 10499452928
+                          usedStorage: 3700285440
+                          readIOPS: 0
+                          writeIOPS: 0.35
+                          totalIOPS: 0.35
+                          iops: {}
+                          netTxUsage: 114
+                          netRxUsage: 2198
+                        runtimeInfo: {}
+                        containerVersion: null
+                        repositoryImage: null
+                        planCategory: null
+                        hostname: nginxtest
+                        domainName: null
+                        volumeCreated: true
+                        containerCreated: false
+                        maxStorage: 10737418240
+                        maxMemory: 1073741824
+                        maxCores: 1
+                        coresPerSocket: 1
+                        maxCpu: 1
+                        availableActions:
+                          - code: nginx-1.9-remove-node
+                            name: Remove Nginx Node
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/instances/{id}/envs:
+    get:
+      summary: Get Env Variables
+      description: This gets all the environment variables associated with the instance.
+      operationId: getEnvVariables
+      tags:
+        - Instances
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  instance:
+                    $ref: '#/components/schemas/instanceEnvs'
+              examples:
+                Instance Env Response:
+                  value:
+                    envs:
+                      - export: false
+                        masked: false
+                        name: DATABASE_NAME
+                        value: spud_marketing
+                    readOnlyEnvs:
+                      TOMCAT_HOST:
+                        export: true
+                        masked: false
+                        name: TOMCAT_HOST
+                        value: container1414
+                      TOMCAT_HOST_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_HOST_2
+                        value: container1759
+                      TOMCAT_IP:
+                        export: true
+                        masked: false
+                        name: TOMCAT_IP
+                        value: 192.168.163.232
+                      TOMCAT_IP_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_IP_2
+                        value: 192.168.163.233
+                      TOMCAT_PORT:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT
+                        value: 10017
+                      TOMCAT_PORT_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_2
+                        value: 10017
+                      TOMCAT_PORT_8080_TCP:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP
+                        value: tcp://192.168.163.232:10017
+                      TOMCAT_PORT_8080_TCP_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_2
+                        value: tcp://192.168.163.233:10017
+                      TOMCAT_PORT_8080_TCP_ADDR:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_ADDR
+                        value: 192.168.163.232
+                      TOMCAT_PORT_8080_TCP_ADDR_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_ADDR_2
+                        value: 192.168.163.233
+                      TOMCAT_PORT_8080_TCP_PORT:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_PORT
+                        value: 10017
+                      TOMCAT_PORT_8080_TCP_PORT_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_PORT_2
+                        value: 10017
+                      TOMCAT_PORT_8080_TCP_PROTO:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_PROTO
+                        value: tcp
+                      TOMCAT_PORT_8080_TCP_PROTO_2:
+                        export: true
+                        masked: false
+                        name: TOMCAT_PORT_8080_TCP_PROTO_2
+                        value: tcp
+                    importedEnvs:
+                      MYSQL_HOST:
+                        export: true
+                        masked: false
+                        name: MYSQL_HOST
+                        value: container1413
+                      MYSQL_HOST_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_HOST_2
+                        value: container1756
+                      MYSQL_IP:
+                        export: true
+                        masked: false
+                        name: MYSQL_IP
+                        value: 192.168.163.232
+                      MYSQL_IP_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_IP_2
+                        value: 192.168.163.233
+                      MYSQL_MASTER:
+                        export: true
+                        masked: false
+                        name: MYSQL_HOST
+                        value: container1413
+                      MYSQL_PASSWORD:
+                        export: true
+                        masked: true
+                        name: MYSQL_PASSWORD
+                        value: '************'
+                      MYSQL_PASSWORD_2:
+                        export: true
+                        masked: true
+                        name: MYSQL_PASSWORD
+                        value: '************'
+                      MYSQL_PORT:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT
+                        value: 10016
+                      MYSQL_PORT_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_2
+                        value: 10016
+                      MYSQL_PORT_3306_TCP:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP
+                        value: tcp://192.168.163.232:10016
+                      MYSQL_PORT_3306_TCP_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_2
+                        value: tcp://192.168.163.233:10016
+                      MYSQL_PORT_3306_TCP_ADDR:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_ADDR
+                        value: 192.168.163.232
+                      MYSQL_PORT_3306_TCP_ADDR_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_ADDR_2
+                        value: 192.168.163.233
+                      MYSQL_PORT_3306_TCP_PORT:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_PORT
+                        value: 10016
+                      MYSQL_PORT_3306_TCP_PORT_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_PORT_2
+                        value: 10016
+                      MYSQL_PORT_3306_TCP_PROTO:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_PROTO
+                        value: tcp
+                      MYSQL_PORT_3306_TCP_PROTO_2:
+                        export: true
+                        masked: false
+                        name: MYSQL_PORT_3306_TCP_PROTO_2
+                        value: tcp
+                      MYSQL_USERNAME: root
+                      MYSQL_USERNAME_2: root
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/instances/{id}/history:
+    get:
+      summary: Get Instance History
+      description: |
+        This endpoint retrieves the process history for a specific instance.
+      operationId: getInstanceHistory
+      tags:
+        - Instances
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/containerId'
+        - $ref: '#/components/parameters/serverId'
+        - $ref: '#/components/parameters/zoneId'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      processes:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/process'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Instance History Response:
+                  value:
+                    processes:
+                      - id: 250
+                        accountId: 1
+                        uniqueId: cebc47ec-cb2f-417a-886e-dd60cf81db26
+                        processType:
+                          code: provision
+                          name: provision
+                        description: null
+                        subType: null
+                        subId: null
+                        zoneId: 34
+                        integrationId: null
+                        instanceId: 238
+                        containerId: 240
+                        serverId: 601
+                        containerName: apachetest
+                        displayName: apachetest
+                        timerCategory: vmware
+                        timerSubCategory: '28'
+                        status: failed
+                        reason: null
+                        percent: 100
+                        statusEta: 348246
+                        message: null
+                        output: null
+                        error: null
+                        startDate: 2018-09-28T19:10:56+0000
+                        endDate: 2018-09-28T20:21:49+0000
+                        duration: 4253127
+                        dateCreated: 2018-09-28T19:10:56+0000
+                        lastUpdated: 2018-09-28T20:21:49+0000
+                        createdBy:
+                          username: admin
+                          displayName: Admin
+                        updatedBy:
+                          username: admin
+                          displayName: Admin
+                        events: []
+                    meta:
+                      size: 1
+                      total: 1
+                      offset: 0
+                      max: 25
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
   /api/instances/{id}/wiki:
     get:
       summary: Retrieves an Instance Wiki Page
@@ -5313,6 +6544,153 @@ paths:
                 Delete Syslog Rule Response:
                   value:
                     success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/logs:
+    get:
+      summary: Retrieves Logs
+      description: |
+        Retrieves logs based on filters provided.
+      operationId: listLogs
+      tags:
+        - Logs
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/order'
+        - $ref: '#/components/parameters/query'
+        - $ref: '#/components/parameters/message'
+        - $ref: '#/components/parameters/sourceType'
+        - $ref: '#/components/parameters/typeCode'
+        - $ref: '#/components/parameters/objectId'
+        - $ref: '#/components/parameters/token'
+        - $ref: '#/components/parameters/level'
+        - $ref: '#/components/parameters/startMs'
+        - $ref: '#/components/parameters/endMs'
+        - $ref: '#/components/parameters/startDateTime'
+        - $ref: '#/components/parameters/endDateTime'
+        - $ref: '#/components/parameters/containers'
+        - $ref: '#/components/parameters/servers'
+        - $ref: '#/components/parameters/clusterId'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/log'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Search Response:
+                  value:
+                    sort:
+                      ts: desc
+                    offset: 0
+                    start: '2022-07-01T19:37:24Z'
+                    end: '2022-07-08T19:37:24Z'
+                    data:
+                      - typeCode: vm
+                        message: >-
+                          The description for Event ID '-2147481631' in Source
+                          'PerfOS' cannot be found.  The local computer may not
+                          have the necessary registry information or message DLL
+                          files to display the message, or you may not have
+                          permission to access them.  The following information
+                          is part of the event:
+                        level: WARN
+                        ts: '2022-07-08T19:32:36Z'
+                        sourceType: PerfOS
+                        title: >-
+                          The description for Event ID '-2147481631' in Source
+                          'PerfOS' cannot be found.  The local computer may not
+                          have the necessary registry information or message DLL
+                          files to display the message, or you may not have
+                          permission to access them.  The following information
+                          is part of the event:
+                        logSignature: >-
+                          a9969cc17600bf8e2076c460cdff1f3532da2c200cf7bb58eda3d39b6e296ce7
+                        objectId: '16'
+                        seq: 2866958
+                        _id: cc7b7784-4653-4ce0-84da-fb30f2aa56c3
+                        signatureVerified: true
+                      - typeCode: vm
+                        message: >-
+                          The description for Event ID '-2147481631' in Source
+                          'PerfOS' cannot be found.  The local computer may not
+                          have the necessary registry information or message DLL
+                          files to display the message, or you may not have
+                          permission to access them.  The following information
+                          is part of the event:
+                        level: WARN
+                        ts: '2022-07-08T19:15:16Z'
+                        sourceType: PerfOS
+                        title: >-
+                          The description for Event ID '-2147481631' in Source
+                          'PerfOS' cannot be found.  The local computer may not
+                          have the necessary registry information or message DLL
+                          files to display the message, or you may not have
+                          permission to access them.  The following information
+                          is part of the event:
+                        logSignature: >-
+                          a9969cc17600bf8e2076c460cdff1f3532da2c200cf7bb58eda3d39b6e296ce7
+                        objectId: '16'
+                        seq: 2689620
+                        _id: ec2e8830-33a4-4d54-bc2f-5d17247f974a
+                        signatureVerified: true
+                      - typeCode: vm
+                        message: >-
+                          The description for Event ID '-2147481631' in Source
+                          'PerfOS' cannot be found.  The local computer may not
+                          have the necessary registry information or message DLL
+                          files to display the message, or you may not have
+                          permission to access them.  The following information
+                          is part of the event:
+                        level: WARN
+                        ts: '2022-07-08T18:57:16Z'
+                        sourceType: PerfOS
+                        title: >-
+                          The description for Event ID '-2147481631' in Source
+                          'PerfOS' cannot be found.  The local computer may not
+                          have the necessary registry information or message DLL
+                          files to display the message, or you may not have
+                          permission to access them.  The following information
+                          is part of the event:
+                        logSignature: >-
+                          a9969cc17600bf8e2076c460cdff1f3532da2c200cf7bb58eda3d39b6e296ce7
+                        objectId: '16'
+                        seq: 2516128
+                        _id: 6f5f9b02-9409-4c3c-a1b6-05c52d327833
+                        signatureVerified: true
+                    max: 3
+                    grandTotal: 10000
+                    total: 10000
+                    success: true
+                    count: 3
+                    meta:
+                      offset: 0
+                      max: 3
+                      size: 3
+                      total: 10000
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -17487,6 +18865,201 @@ components:
       schema:
         type: boolean
       example: false
+    instanceType:
+      name: instanceType
+      in: query
+      description: The Instance Type Code for Filtering
+      schema:
+        type: string
+        description: Instance Type
+      example: ubuntu
+    createdBy:
+      name: createdBy
+      in: query
+      description: The User ID for Filtering
+      schema:
+        type: integer
+        format: int64
+        description: User ID
+      example: 63
+    agentInstalled:
+      name: agentInstalled
+      in: query
+      description: >-
+        Filter instances by if agent is installed or not on the associated
+        servers.
+      schema:
+        type: boolean
+        description: Agent installed status
+      example: true
+    status:
+      name: status
+      in: query
+      description: The instance status for filtering.
+      schema:
+        type: string
+        description: Instance status
+      example: running
+    environment:
+      name: environment
+      in: query
+      description: The environment for filtering.
+      schema:
+        type: string
+        description: Environment
+      example: lab
+    showDeleted:
+      name: showDeleted
+      in: query
+      description: If true, includes instances in pending removal status.
+      schema:
+        type: boolean
+        description: Show instances in pending removal status
+        default: false
+      example: true
+    deleted:
+      name: deleted
+      in: query
+      description: If true, only instances in pending removal status are returned.
+      schema:
+        type: boolean
+        description: Show only instances in pending removal status
+      example: true
+    expireDate:
+      name: expireDate
+      in: query
+      description: Filter by expireDate less than or equal to specified date
+      schema:
+        type: string
+        description: Expire date
+      example: '2019-01-01'
+    expireDateMin:
+      name: expireDateMin
+      in: query
+      description: Filter expireDate greater than or equal to the specified date
+      schema:
+        type: string
+        description: Expire date
+      example: '2019-01-01'
+    expireDays:
+      name: expireDays
+      in: query
+      description: Filter by expireDays less than or equal to the specified value
+      schema:
+        type: string
+        description: Expire days
+      example: '20'
+    expireDaysMin:
+      name: expireDaysMin
+      in: query
+      description: Filter by expireDays greater than or equal to the specified value
+      schema:
+        type: string
+        description: Expire days
+      example: '20'
+    shutdownDate:
+      name: shutdownDate
+      in: query
+      description: Filter by shutdownDate less than equal to the specified date
+      schema:
+        type: string
+        description: Shutdown date
+      example: '2019-01-01'
+    shutdownDateMin:
+      name: shutdownDateMin
+      in: query
+      description: Filter by shutdownDate greater than or equal to the specified date
+      schema:
+        type: string
+        description: Shutdown date
+      example: '2019-01-01'
+    shutdownDays:
+      name: shutdownDays
+      in: query
+      description: Filter by shutdownDays less than or equal to the specified value
+      schema:
+        type: string
+        description: Shutdown days
+      example: '20'
+    shutdownDaysMin:
+      name: shutdownDaysMin
+      in: query
+      description: Filter by shutdownDays greater than or equal to the specified value
+      schema:
+        type: string
+        description: Shutdown days
+      example: '20'
+    labels:
+      name: labels
+      in: query
+      description: Filter by label(s)
+      schema:
+        type: string
+      example: applabel
+    tags:
+      name: tags
+      in: query
+      description: >
+        Filter by tags (metadata). This allows filtering by a tag name and
+        value(s)
+      schema:
+        type: string
+      example: tags.env=qa&tags.env=test
+    metadata:
+      name: metadata
+      in: query
+      description: Alias for tags
+      schema:
+        type: string
+      example: tags.env=qa&tags.env=test
+    detailsFalse:
+      name: details
+      in: query
+      description: >-
+        Include details=true to return more details about the instance, ie.
+        containerDetails. Available in api version 5.2.8/5.3.2.
+      schema:
+        type: boolean
+        description: Instance details
+        default: false
+      example: true
+    detailsTrue:
+      name: details
+      in: query
+      description: >-
+        Include details=true to return more details about the instance, ie.
+        containerDetails. Available in api version 5.2.8/5.3.2.
+      schema:
+        type: boolean
+        description: Instance details
+        default: false
+      example: true
+    containerId:
+      name: containerId
+      in: query
+      description: The Container ID for Filtering
+      schema:
+        type: integer
+        format: int64
+        description: Container ID
+      example: 135
+    serverId:
+      name: serverId
+      in: query
+      description: The Server ID for Filtering
+      schema:
+        type: integer
+        format: int64
+        description: Server ID
+      example: 97
+    zoneId:
+      name: zoneId
+      in: query
+      description: The Zone ID for Filtering
+      schema:
+        type: integer
+        format: int64
+      example: 3
     startDate:
       name: startDate
       in: query
@@ -17560,14 +19133,6 @@ components:
         Unallocated:
           value: unallocated
           summary: Unallocated
-    zoneId:
-      name: zoneId
-      in: query
-      description: The Zone ID for Filtering
-      schema:
-        type: integer
-        format: int64
-      example: 3
     siteId:
       name: siteId
       in: query
@@ -17585,24 +19150,6 @@ components:
         format: int64
         description: Instance ID
       example: 94
-    containerId:
-      name: containerId
-      in: query
-      description: The Container ID for Filtering
-      schema:
-        type: integer
-        format: int64
-        description: Container ID
-      example: 135
-    serverId:
-      name: serverId
-      in: query
-      description: The Server ID for Filtering
-      schema:
-        type: integer
-        format: int64
-        description: Server ID
-      example: 97
     projectId:
       name: projectId
       in: query
@@ -17640,15 +19187,115 @@ components:
       schema:
         type: boolean
         default: false
-    tags:
-      name: tags
+    query:
+      name: query
       in: query
-      description: >
-        Filter by tags (metadata). This allows filtering by a tag name and
-        value(s)
+      description: Alias for phrase
       schema:
         type: string
-      example: tags.env=qa&tags.env=test
+    message:
+      name: message
+      in: query
+      description: Filter by message
+      schema:
+        type: string
+    sourceType:
+      name: sourceType
+      in: query
+      description: Filter by source type
+      schema:
+        type: string
+    typeCode:
+      name: typeCode
+      in: query
+      description: Filter by code type
+      schema:
+        type: string
+    objectId:
+      name: objectId
+      in: query
+      description: Filter by objectId
+      schema:
+        type: integer
+        format: int64
+      example: 15
+    token:
+      name: token
+      in: query
+      description: Filter by token
+      schema:
+        type: string
+    level:
+      name: level
+      in: query
+      description: Filter by log level. Multiple values can be passed pipe delimited.
+      schema:
+        type: string
+        enum:
+          - DEBUG
+          - INFO
+          - ERROR
+      example: ERROR
+    startMs:
+      name: startMs
+      in: query
+      description: >-
+        Date filter in milliseconds (unix epoch), restricts query to only load
+        logs updated more recently than the time specified.
+      schema:
+        type: integer
+        format: int64
+      example: 1657309873
+    endMs:
+      name: endMs
+      in: query
+      description: >-
+        Date filter in milliseconds (unix epoch), restricts query to only load
+        logs updated before the time specified.
+      schema:
+        type: integer
+        format: int64
+      example: 1657309873
+    startDateTime:
+      name: startDateTime
+      in: query
+      schema:
+        type: string
+        format: date-time
+      description: Start Date timestamp (ISO 8601)
+      example: 2019-03-06T17:52:29+0000
+    endDateTime:
+      name: endDateTime
+      in: query
+      schema:
+        type: string
+        format: date-time
+      description: End Date timestamp (ISO 8601)
+      example: 2019-03-06T17:52:29+0000
+    containers:
+      name: containers
+      in: query
+      description: The Container ID(s) for filtering. Accepts multiple values.
+      schema:
+        type: integer
+        format: int64
+      example: 135
+    servers:
+      name: servers
+      in: query
+      description: The Server ID(s) for filtering. Accepts multiple values.
+      schema:
+        type: integer
+        format: int64
+      example: 135
+    clusterId:
+      name: clusterId
+      in: query
+      description: The Cluster ID(s) for filtering. Accepts multiple values.
+      schema:
+        type: integer
+        format: int64
+      example: 135
     appId:
       name: appId
       in: query
@@ -17675,12 +19322,6 @@ components:
         enum:
           - .json
           - .csv
-    query:
-      name: query
-      in: query
-      description: Alias for phrase
-      schema:
-        type: string
     username:
       name: username
       in: query
@@ -18676,6 +20317,2176 @@ components:
         serverCount:
           type: integer
           format: int64
+    instance:
+      type: object
+      properties:
+        instance:
+          type: object
+          properties:
+            id:
+              type: integer
+            uuid:
+              type: string
+            accountId:
+              type: integer
+            tenant:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+              required:
+                - id
+                - name
+            instanceType:
+              type: object
+              properties:
+                id:
+                  type: integer
+                code:
+                  type: string
+                category:
+                  type: string
+                name:
+                  type: string
+              required:
+                - id
+                - code
+                - category
+                - name
+            group:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+              required:
+                - id
+                - name
+            cloud:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+              required:
+                - id
+                - name
+            containers:
+              type: array
+              items:
+                - type: integer
+            servers:
+              type: array
+              items:
+                - type: integer
+            connectionInfo:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    ip:
+                      type: string
+                    port:
+                      type: integer
+                  required:
+                    - ip
+                    - port
+            layout:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                provisionTypeCode:
+                  type: string
+              required:
+                - id
+                - name
+                - provisionTypeCode
+            plan:
+              type: object
+              properties:
+                id:
+                  type: integer
+                code:
+                  type: string
+                name:
+                  type: string
+              required:
+                - id
+                - code
+                - name
+            name:
+              type: string
+            description:
+              type: string
+            environment:
+              type: 'null'
+            config:
+              type: object
+              properties:
+                createUser:
+                  type: boolean
+                isEC2:
+                  type: boolean
+                isVpcSelectable:
+                  type: boolean
+                noAgent:
+                  type: 'null'
+                availabilityId:
+                  type: 'null'
+                securityId:
+                  type: 'null'
+                publicIpType:
+                  type: string
+                instanceProfile:
+                  type: 'null'
+                resourcePoolId:
+                  type: string
+                poolProviderType:
+                  type: 'null'
+                name:
+                  type: string
+                hostName:
+                  type: string
+                instanceType:
+                  type: object
+                  properties:
+                    code:
+                      type: 'null'
+                  required:
+                    - code
+                site:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                  required:
+                    - id
+                    - name
+                environmentPrefix:
+                  type: 'null'
+                layout:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    code:
+                      type: string
+                  required:
+                    - id
+                    - code
+                type:
+                  type: string
+                memoryDisplay:
+                  type: string
+                securityGroups:
+                  type: array
+                  items:
+                    - type: object
+                      properties:
+                        id:
+                          type: string
+                      required:
+                        - id
+                customOptions:
+                  type: object
+                  properties:
+                    isPrimary:
+                      type: string
+                    inventoryName:
+                      type: string
+                  required:
+                    - isPrimary
+                    - inventoryName
+                createBackup:
+                  type: boolean
+                backup:
+                  type: object
+                  properties:
+                    createBackup:
+                      type: boolean
+                    jobAction:
+                      type: string
+                    jobRetentionCount:
+                      type: string
+                    veeamManagedServer:
+                      type: string
+                    backupRepository:
+                      type: integer
+                    jobSchedule:
+                      type: integer
+                    target:
+                      type: integer
+                  required:
+                    - createBackup
+                    - jobAction
+                    - jobRetentionCount
+                    - veeamManagedServer
+                    - backupRepository
+                    - jobSchedule
+                    - target
+                layoutSize:
+                  type: integer
+                lbInstances:
+                  type: array
+                  items: {}
+              required:
+                - createUser
+                - isEC2
+                - isVpcSelectable
+                - noAgent
+                - availabilityId
+                - securityId
+                - publicIpType
+                - instanceProfile
+                - resourcePoolId
+                - poolProviderType
+                - name
+                - hostName
+                - instanceType
+                - site
+                - environmentPrefix
+                - layout
+                - type
+                - memoryDisplay
+                - securityGroups
+                - customOptions
+                - createBackup
+                - backup
+                - layoutSize
+                - lbInstances
+            configGroup:
+              type: 'null'
+            configId:
+              type: 'null'
+            configRole:
+              type: 'null'
+            volumes:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    controllerId:
+                      type: 'null'
+                    datastoreId:
+                      type: 'null'
+                    displayOrder:
+                      type: integer
+                    id:
+                      type: integer
+                    maxIOPS:
+                      type: 'null'
+                    maxStorage:
+                      type: integer
+                    name:
+                      type: string
+                    shortName:
+                      type: string
+                    resizeable:
+                      type: boolean
+                    rootVolume:
+                      type: boolean
+                    size:
+                      type: integer
+                    storageType:
+                      type: integer
+                    unitNumber:
+                      type: 'null'
+                    controllerMountPoint:
+                      type: 'null'
+                  required:
+                    - controllerId
+                    - datastoreId
+                    - displayOrder
+                    - id
+                    - maxIOPS
+                    - maxStorage
+                    - name
+                    - shortName
+                    - resizeable
+                    - rootVolume
+                    - size
+                    - storageType
+                    - unitNumber
+                    - controllerMountPoint
+            controllers:
+              type: array
+              items: {}
+            interfaces:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    id:
+                      type: string
+                    network:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        group:
+                          type: 'null'
+                        subnet:
+                          type: 'null'
+                        dhcpServer:
+                          type: boolean
+                        name:
+                          type: string
+                        pool:
+                          type: 'null'
+                      required:
+                        - id
+                        - group
+                        - subnet
+                        - dhcpServer
+                        - name
+                        - pool
+                    ipAddress:
+                      type: 'null'
+                    networkInterfaceTypeId:
+                      type: 'null'
+                    ipMode:
+                      type: string
+                  required:
+                    - id
+                    - network
+                    - ipAddress
+                    - networkInterfaceTypeId
+                    - ipMode
+            customOptions:
+              type: object
+              properties:
+                isPrimary:
+                  type: string
+                inventoryName:
+                  type: string
+              required:
+                - isPrimary
+                - inventoryName
+            instanceVersion:
+              type: string
+            labels:
+              type: array
+              items:
+                - type: string
+                - type: string
+            tags:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    value:
+                      type: string
+                  required:
+                    - id
+                    - name
+                    - value
+                - type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    value:
+                      type: string
+                  required:
+                    - id
+                    - name
+                    - value
+                - type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    value:
+                      type: string
+                  required:
+                    - id
+                    - name
+                    - value
+                - type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    value:
+                      type: string
+                  required:
+                    - id
+                    - name
+                    - value
+                - type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    value:
+                      type: string
+                  required:
+                    - id
+                    - name
+                    - value
+            evars:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: integer
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: integer
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: integer
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: integer
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+                    export:
+                      type: boolean
+                    masked:
+                      type: boolean
+                  required:
+                    - name
+                    - value
+                    - export
+                    - masked
+            maxMemory:
+              type: integer
+            maxStorage:
+              type: integer
+            maxCores:
+              type: integer
+            coresPerSocket:
+              type: integer
+            maxCpu:
+              type: integer
+            hourlyCost:
+              type: number
+            hourlyPrice:
+              type: number
+            instancePrice:
+              type: object
+              properties:
+                price:
+                  type: number
+                cost:
+                  type: number
+                currency:
+                  type: string
+                unit:
+                  type: string
+              required:
+                - price
+                - cost
+                - currency
+                - unit
+            dateCreated:
+              type: string
+            lastUpdated:
+              type: string
+            hostName:
+              type: string
+            domainName:
+              type: 'null'
+            environmentPrefix:
+              type: 'null'
+            firewallEnabled:
+              type: boolean
+            networkLevel:
+              type: string
+            autoScale:
+              type: boolean
+            instanceContext:
+              type: 'null'
+            currentDeployId:
+              type: 'null'
+            locked:
+              type: boolean
+            status:
+              type: string
+            statusMessage:
+              type: 'null'
+            errorMessage:
+              type: 'null'
+            statusDate:
+              type: string
+            statusPercent:
+              type: 'null'
+            statusEta:
+              type: 'null'
+            userStatus:
+              type: 'null'
+            expireDays:
+              type: 'null'
+            renewDays:
+              type: 'null'
+            expireCount:
+              type: integer
+            expireDate:
+              type: 'null'
+            expireWarningDate:
+              type: 'null'
+            expireWarningSent:
+              type: boolean
+            shutdownDays:
+              type: 'null'
+            shutdownRenewDays:
+              type: 'null'
+            shutdownCount:
+              type: integer
+            shutdownDate:
+              type: 'null'
+            shutdownWarningDate:
+              type: 'null'
+            shutdownWarningSent:
+              type: boolean
+            removalDate:
+              type: 'null'
+            createdBy:
+              type: object
+              properties:
+                id:
+                  type: integer
+                username:
+                  type: string
+              required:
+                - id
+                - username
+            owner:
+              type: object
+              properties:
+                id:
+                  type: integer
+                username:
+                  type: string
+              required:
+                - id
+                - username
+            notes:
+              type: 'null'
+            stats:
+              type: object
+              properties:
+                usedStorage:
+                  type: integer
+                maxStorage:
+                  type: integer
+                usedMemory:
+                  type: integer
+                maxMemory:
+                  type: integer
+                usedCpu:
+                  type: number
+                cpuUsage:
+                  type: number
+                cpuUsagePeak:
+                  type: number
+                cpuUsageAvg:
+                  type: number
+              required:
+                - usedStorage
+                - maxStorage
+                - usedMemory
+                - maxMemory
+                - usedCpu
+                - cpuUsage
+                - cpuUsagePeak
+                - cpuUsageAvg
+            powerSchedule:
+              type: 'null'
+            isScalable:
+              type: boolean
+            instanceThreshold:
+              type: 'null'
+            isBusy:
+              type: boolean
+            apps:
+              type: array
+              items: {}
+            currentLoadBalancerInstances:
+              type: array
+              items: {}
+            currentLoadBalancerContainersIn:
+              type: integer
+            currentLoadBalancerContainersOut:
+              type: integer
+            lastDeploy:
+              type: 'null'
+            containerDetails:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    id:
+                      type: integer
+                    uuid:
+                      type: string
+                    name:
+                      type: string
+                    ip:
+                      type: string
+                    internalIp:
+                      type: string
+                    internalHostname:
+                      type: string
+                    externalHostname:
+                      type: string
+                    externalDomain:
+                      type: string
+                    externalFqdn:
+                      type: string
+                    accountId:
+                      type: integer
+                    instance:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                        - id
+                        - name
+                    containerType:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        code:
+                          type: string
+                        category:
+                          type: string
+                        name:
+                          type: string
+                      required:
+                        - id
+                        - code
+                        - category
+                        - name
+                    containerTypeSet:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        code:
+                          type: string
+                        category:
+                          type: string
+                      required:
+                        - id
+                        - code
+                        - category
+                    server:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        uuid:
+                          type: string
+                        externalId:
+                          type: string
+                        internalId:
+                          type: 'null'
+                        externalUniqueId:
+                          type: 'null'
+                        name:
+                          type: string
+                        externalName:
+                          type: string
+                        hostname:
+                          type: string
+                        accountId:
+                          type: integer
+                        account:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                          required:
+                            - id
+                            - name
+                        owner:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            username:
+                              type: string
+                          required:
+                            - id
+                            - username
+                        zone:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                          required:
+                            - id
+                            - name
+                        plan:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            code:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                            - id
+                            - code
+                            - name
+                        computeServerType:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            code:
+                              type: string
+                            name:
+                              type: string
+                            managed:
+                              type: boolean
+                            externalDelete:
+                              type: boolean
+                          required:
+                            - id
+                            - code
+                            - name
+                            - managed
+                            - externalDelete
+                        visibility:
+                          type: string
+                        description:
+                          type: 'null'
+                        zoneId:
+                          type: integer
+                        siteId:
+                          type: integer
+                        resourcePoolId:
+                          type: integer
+                        folderId:
+                          type: 'null'
+                        sshHost:
+                          type: 'null'
+                        sshPort:
+                          type: integer
+                        externalIp:
+                          type: 'null'
+                        internalIp:
+                          type: string
+                        platform:
+                          type: string
+                        platformVersion:
+                          type: string
+                        dateCreated:
+                          type: string
+                        lastUpdated:
+                          type: string
+                        stats:
+                          type: object
+                          properties:
+                            ts:
+                              type: string
+                            freeMemory:
+                              type: integer
+                            usedMemory:
+                              type: integer
+                            freeSwap:
+                              type: integer
+                            usedSwap:
+                              type: integer
+                            cpuIdleTime:
+                              type: integer
+                            cpuSystemTime:
+                              type: integer
+                            cpuUserTime:
+                              type: integer
+                            cpuTotalTime:
+                              type: integer
+                            cpuUsage:
+                              type: number
+                            maxStorage:
+                              type: integer
+                            usedStorage:
+                              type: integer
+                            reservedStorage:
+                              type: integer
+                            netTxUsage:
+                              type: integer
+                            netRxUsage:
+                              type: integer
+                            networkBandwidth:
+                              type: integer
+                          required:
+                            - ts
+                            - freeMemory
+                            - usedMemory
+                            - freeSwap
+                            - usedSwap
+                            - cpuIdleTime
+                            - cpuSystemTime
+                            - cpuUserTime
+                            - cpuTotalTime
+                            - cpuUsage
+                            - maxStorage
+                            - usedStorage
+                            - reservedStorage
+                            - netTxUsage
+                            - netRxUsage
+                            - networkBandwidth
+                        status:
+                          type: string
+                        statusMessage:
+                          type: 'null'
+                        errorMessage:
+                          type: 'null'
+                        statusDate:
+                          type: string
+                        statusPercent:
+                          type: 'null'
+                        statusEta:
+                          type: 'null'
+                        powerState:
+                          type: string
+                        agentInstalled:
+                          type: boolean
+                        lastAgentUpdate:
+                          type: string
+                        agentVersion:
+                          type: string
+                        maxCores:
+                          type: integer
+                        coresPerSocket:
+                          type: integer
+                        maxMemory:
+                          type: integer
+                        maxStorage:
+                          type: integer
+                        maxCpu:
+                          type: 'null'
+                        hourlyCost:
+                          type: number
+                        hourlyPrice:
+                          type: number
+                        sourceImage:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            code:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                            - id
+                            - code
+                            - name
+                        serverOs:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            code:
+                              type: string
+                            name:
+                              type: string
+                            description:
+                              type: 'null'
+                            vendor:
+                              type: string
+                            category:
+                              type: string
+                            osFamily:
+                              type: string
+                            osVersion:
+                              type: string
+                            bitCount:
+                              type: integer
+                            platform:
+                              type: string
+                          required:
+                            - id
+                            - code
+                            - name
+                            - description
+                            - vendor
+                            - category
+                            - osFamily
+                            - osVersion
+                            - bitCount
+                            - platform
+                        volumes:
+                          type: array
+                          items:
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                                controllerId:
+                                  type: 'null'
+                                controllerMountPoint:
+                                  type: 'null'
+                                resizeable:
+                                  type: boolean
+                                rootVolume:
+                                  type: boolean
+                                unitNumber:
+                                  type: 'null'
+                                typeId:
+                                  type: integer
+                                configurableIOPS:
+                                  type: boolean
+                                datastoreId:
+                                  type: 'null'
+                                maxStorage:
+                                  type: integer
+                                displayOrder:
+                                  type: integer
+                                maxIOPS:
+                                  type: 'null'
+                              required:
+                                - id
+                                - name
+                                - controllerId
+                                - controllerMountPoint
+                                - resizeable
+                                - rootVolume
+                                - unitNumber
+                                - typeId
+                                - configurableIOPS
+                                - datastoreId
+                                - maxStorage
+                                - displayOrder
+                                - maxIOPS
+                        controllers:
+                          type: array
+                          items: {}
+                        interfaces:
+                          type: array
+                          items:
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                refType:
+                                  type: 'null'
+                                refId:
+                                  type: 'null'
+                                name:
+                                  type: string
+                                internalId:
+                                  type: 'null'
+                                externalId:
+                                  type: string
+                                uniqueId:
+                                  type: string
+                                publicIpAddress:
+                                  type: 'null'
+                                publicIpv6Address:
+                                  type: 'null'
+                                ipAddress:
+                                  type: string
+                                ipv6Address:
+                                  type: 'null'
+                                ipSubnet:
+                                  type: 'null'
+                                ipv6Subnet:
+                                  type: 'null'
+                                description:
+                                  type: string
+                                dhcp:
+                                  type: boolean
+                                active:
+                                  type: boolean
+                                poolAssigned:
+                                  type: boolean
+                                primaryInterface:
+                                  type: boolean
+                                network:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    name:
+                                      type: string
+                                  required:
+                                    - id
+                                    - name
+                                subnet:
+                                  type: 'null'
+                                networkGroup:
+                                  type: 'null'
+                                networkPosition:
+                                  type: 'null'
+                                networkPool:
+                                  type: 'null'
+                                networkDomain:
+                                  type: 'null'
+                                type:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    code:
+                                      type: string
+                                    name:
+                                      type: string
+                                  required:
+                                    - id
+                                    - code
+                                    - name
+                                ipMode:
+                                  type: string
+                                macAddress:
+                                  type: string
+                              required:
+                                - id
+                                - refType
+                                - refId
+                                - name
+                                - internalId
+                                - externalId
+                                - uniqueId
+                                - publicIpAddress
+                                - publicIpv6Address
+                                - ipAddress
+                                - ipv6Address
+                                - ipSubnet
+                                - ipv6Subnet
+                                - description
+                                - dhcp
+                                - active
+                                - poolAssigned
+                                - primaryInterface
+                                - network
+                                - subnet
+                                - networkGroup
+                                - networkPosition
+                                - networkPool
+                                - networkDomain
+                                - type
+                                - ipMode
+                                - macAddress
+                        labels:
+                          type: array
+                          items: {}
+                        tags:
+                          type: array
+                          items:
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - value
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - value
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - value
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - value
+                            - type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                              required:
+                                - id
+                                - name
+                                - value
+                        enabled:
+                          type: boolean
+                        tagCompliant:
+                          type: 'null'
+                      required:
+                        - id
+                        - uuid
+                        - externalId
+                        - internalId
+                        - externalUniqueId
+                        - name
+                        - externalName
+                        - hostname
+                        - accountId
+                        - account
+                        - owner
+                        - zone
+                        - plan
+                        - computeServerType
+                        - visibility
+                        - description
+                        - zoneId
+                        - siteId
+                        - resourcePoolId
+                        - folderId
+                        - sshHost
+                        - sshPort
+                        - externalIp
+                        - internalIp
+                        - platform
+                        - platformVersion
+                        - dateCreated
+                        - lastUpdated
+                        - stats
+                        - status
+                        - statusMessage
+                        - errorMessage
+                        - statusDate
+                        - statusPercent
+                        - statusEta
+                        - powerState
+                        - agentInstalled
+                        - lastAgentUpdate
+                        - agentVersion
+                        - maxCores
+                        - coresPerSocket
+                        - maxMemory
+                        - maxStorage
+                        - maxCpu
+                        - hourlyCost
+                        - hourlyPrice
+                        - sourceImage
+                        - serverOs
+                        - volumes
+                        - controllers
+                        - interfaces
+                        - labels
+                        - tags
+                        - enabled
+                        - tagCompliant
+                    cloud:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                        - id
+                        - name
+                    ports:
+                      type: array
+                      items:
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            index:
+                              type: integer
+                            external:
+                              type: integer
+                            internal:
+                              type: integer
+                            displayName:
+                              type: string
+                            primaryPort:
+                              type: boolean
+                            export:
+                              type: boolean
+                            visible:
+                              type: boolean
+                            exportName:
+                              type: string
+                            loadBalanceProtocol:
+                              type: 'null'
+                            loadBalance:
+                              type: boolean
+                            protocol:
+                              type: string
+                            link:
+                              type: boolean
+                            externalIp:
+                              type: 'null'
+                            internalIp:
+                              type: 'null'
+                          required:
+                            - id
+                            - index
+                            - external
+                            - internal
+                            - displayName
+                            - primaryPort
+                            - export
+                            - visible
+                            - exportName
+                            - loadBalanceProtocol
+                            - loadBalance
+                            - protocol
+                            - link
+                            - externalIp
+                            - internalIp
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                            index:
+                              type: integer
+                            external:
+                              type: integer
+                            internal:
+                              type: integer
+                            displayName:
+                              type: string
+                            primaryPort:
+                              type: boolean
+                            export:
+                              type: boolean
+                            visible:
+                              type: boolean
+                            exportName:
+                              type: string
+                            loadBalanceProtocol:
+                              type: 'null'
+                            loadBalance:
+                              type: boolean
+                            protocol:
+                              type: string
+                            link:
+                              type: boolean
+                            externalIp:
+                              type: 'null'
+                            internalIp:
+                              type: 'null'
+                          required:
+                            - id
+                            - index
+                            - external
+                            - internal
+                            - displayName
+                            - primaryPort
+                            - export
+                            - visible
+                            - exportName
+                            - loadBalanceProtocol
+                            - loadBalance
+                            - protocol
+                            - link
+                            - externalIp
+                            - internalIp
+                    plan:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        code:
+                          type: string
+                        name:
+                          type: string
+                      required:
+                        - id
+                        - code
+                        - name
+                    configGroup:
+                      type: 'null'
+                    configId:
+                      type: 'null'
+                    configRole:
+                      type: 'null'
+                    dateCreated:
+                      type: string
+                    lastUpdated:
+                      type: string
+                    statsEnabled:
+                      type: boolean
+                    status:
+                      type: string
+                    userStatus:
+                      type: string
+                    environmentPrefix:
+                      type: 'null'
+                    stats:
+                      type: object
+                      properties:
+                        ts:
+                          type: string
+                        running:
+                          type: boolean
+                        userCpuUsage:
+                          type: number
+                        systemCpuUsage:
+                          type: number
+                        usedMemory:
+                          type: integer
+                        maxMemory:
+                          type: integer
+                        cacheMemory:
+                          type: integer
+                        maxStorage:
+                          type: 'null'
+                        usedStorage:
+                          type: integer
+                        readIOPS:
+                          type: integer
+                        writeIOPS:
+                          type: number
+                        totalIOPS:
+                          type: number
+                        iops:
+                          type: object
+                        netTxUsage:
+                          type: integer
+                        netRxUsage:
+                          type: integer
+                      required:
+                        - ts
+                        - running
+                        - userCpuUsage
+                        - systemCpuUsage
+                        - usedMemory
+                        - maxMemory
+                        - cacheMemory
+                        - maxStorage
+                        - usedStorage
+                        - readIOPS
+                        - writeIOPS
+                        - totalIOPS
+                        - iops
+                        - netTxUsage
+                        - netRxUsage
+                    runtimeInfo:
+                      type: object
+                    containerVersion:
+                      type: 'null'
+                    repositoryImage:
+                      type: 'null'
+                    planCategory:
+                      type: 'null'
+                    hostname:
+                      type: string
+                    domainName:
+                      type: 'null'
+                    volumeCreated:
+                      type: boolean
+                    containerCreated:
+                      type: boolean
+                    maxStorage:
+                      type: integer
+                    maxMemory:
+                      type: integer
+                    maxCores:
+                      type: integer
+                    coresPerSocket:
+                      type: integer
+                    maxCpu:
+                      type: integer
+                    hourlyCost:
+                      type: number
+                    hourlyPrice:
+                      type: number
+                  required:
+                    - id
+                    - uuid
+                    - name
+                    - ip
+                    - internalIp
+                    - internalHostname
+                    - externalHostname
+                    - externalDomain
+                    - externalFqdn
+                    - accountId
+                    - instance
+                    - containerType
+                    - containerTypeSet
+                    - server
+                    - cloud
+                    - ports
+                    - plan
+                    - configGroup
+                    - configId
+                    - configRole
+                    - dateCreated
+                    - lastUpdated
+                    - statsEnabled
+                    - status
+                    - userStatus
+                    - environmentPrefix
+                    - stats
+                    - runtimeInfo
+                    - containerVersion
+                    - repositoryImage
+                    - planCategory
+                    - hostname
+                    - domainName
+                    - volumeCreated
+                    - containerCreated
+                    - maxStorage
+                    - maxMemory
+                    - maxCores
+                    - coresPerSocket
+                    - maxCpu
+                    - hourlyCost
+                    - hourlyPrice
+          required:
+            - id
+            - uuid
+            - accountId
+            - tenant
+            - instanceType
+            - group
+            - cloud
+            - containers
+            - servers
+            - connectionInfo
+            - layout
+            - plan
+            - name
+            - description
+            - environment
+            - config
+            - configGroup
+            - configId
+            - configRole
+            - volumes
+            - controllers
+            - interfaces
+            - customOptions
+            - instanceVersion
+            - labels
+            - tags
+            - evars
+            - maxMemory
+            - maxStorage
+            - maxCores
+            - coresPerSocket
+            - maxCpu
+            - hourlyCost
+            - hourlyPrice
+            - instancePrice
+            - dateCreated
+            - lastUpdated
+            - hostName
+            - domainName
+            - environmentPrefix
+            - firewallEnabled
+            - networkLevel
+            - autoScale
+            - instanceContext
+            - currentDeployId
+            - locked
+            - status
+            - statusMessage
+            - errorMessage
+            - statusDate
+            - statusPercent
+            - statusEta
+            - userStatus
+            - expireDays
+            - renewDays
+            - expireCount
+            - expireDate
+            - expireWarningDate
+            - expireWarningSent
+            - shutdownDays
+            - shutdownRenewDays
+            - shutdownCount
+            - shutdownDate
+            - shutdownWarningDate
+            - shutdownWarningSent
+            - removalDate
+            - createdBy
+            - owner
+            - notes
+            - stats
+            - powerSchedule
+            - isScalable
+            - instanceThreshold
+            - isBusy
+            - apps
+            - currentLoadBalancerInstances
+            - currentLoadBalancerContainersIn
+            - currentLoadBalancerContainersOut
+            - lastDeploy
+            - containerDetails
+      required:
+        - instance
+    container:
+      type: object
+      properties:
+        id:
+          type: integer
+        accountId:
+          type: integer
+        instance:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        containerType:
+          type: object
+          properties:
+            id:
+              type: integer
+            code:
+              type: string
+            category:
+              type: string
+            name:
+              type: string
+        containerTypeSet:
+          type: object
+          properties:
+            id:
+              type: integer
+            code:
+              type: string
+            category:
+              type: string
+        server:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        cloud:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        name:
+          type: string
+        ip:
+          type: string
+        internalIp:
+          type: string
+        internalHostname:
+          type: string
+        externalHostname:
+          type: string
+        externalDomain:
+          type: string
+        externalFqdn:
+          type: string
+        ports:
+          type: array
+          items:
+            - type: object
+              properties:
+                index:
+                  type: integer
+                external:
+                  type: integer
+                internal:
+                  type: integer
+                primaryPort:
+                  type: boolean
+                displayName:
+                  type: string
+                export:
+                  type: boolean
+                visible:
+                  type: boolean
+                loadBalance:
+                  type: boolean
+                link:
+                  type: boolean
+                exportName:
+                  type: string
+                protocol:
+                  type: string
+                code:
+                  type: string
+            - type: object
+              properties:
+                index:
+                  type: integer
+                external:
+                  type: integer
+                internal:
+                  type: integer
+                primaryPort:
+                  type: boolean
+                displayName:
+                  type: string
+                export:
+                  type: boolean
+                visible:
+                  type: boolean
+                loadBalance:
+                  type: boolean
+                link:
+                  type: boolean
+                exportName:
+                  type: string
+                protocol:
+                  type: string
+                code:
+                  type: string
+        plan:
+          type: object
+          properties:
+            id:
+              type: integer
+            code:
+              type: string
+            name:
+              type: string
+        dateCreated:
+          type: string
+        lastUpdated:
+          type: string
+        statsEnabled:
+          type: boolean
+        status:
+          type: string
+        userStatus:
+          type: string
+        environmentPrefix:
+          type: string
+          nullable: true
+        stats:
+          type: object
+          properties:
+            ts:
+              type: string
+            running:
+              type: boolean
+            userCpuUsage:
+              type: number
+            systemCpuUsage:
+              type: number
+            usedMemory:
+              type: integer
+            maxMemory:
+              type: integer
+            cacheMemory:
+              type: integer
+            maxStorage:
+              type: integer
+            usedStorage:
+              type: integer
+            readIOPS:
+              type: integer
+            writeIOPS:
+              type: number
+            totalIOPS:
+              type: number
+            iops:
+              type: object
+            netTxUsage:
+              type: integer
+            netRxUsage:
+              type: integer
+        runtimeInfo:
+          type: object
+        containerVersion:
+          type: string
+          nullable: true
+        repositoryImage:
+          type: string
+          nullable: true
+        planCategory:
+          type: string
+          nullable: true
+        hostname:
+          type: string
+        domainName:
+          type: string
+          nullable: true
+        volumeCreated:
+          type: boolean
+        containerCreated:
+          type: boolean
+        maxStorage:
+          type: integer
+        maxMemory:
+          type: integer
+        maxCores:
+          type: integer
+        coresPerSocket:
+          type: integer
+        maxCpu:
+          type: integer
+        availableActions:
+          type: array
+          items:
+            - type: object
+              properties:
+                code:
+                  type: string
+                name:
+                  type: string
+    instanceEnvs:
+      type: object
+      properties:
+        envs:
+          type: array
+          nullable: true
+          properties:
+            export:
+              type: boolean
+            masked:
+              type: boolean
+            name:
+              type: string
+            value:
+              type: string
+          required:
+            - export
+            - masked
+            - name
+            - value
+        readOnlyEnvs:
+          type: array
+          nullable: true
+          properties:
+            export:
+              type: boolean
+            masked:
+              type: boolean
+            name:
+              type: string
+            value:
+              type: string
+          required:
+            - export
+            - masked
+            - name
+            - value
+        importedEnvs:
+          type: array
+          nullable: true
+          properties:
+            export:
+              type: boolean
+            masked:
+              type: boolean
+            name:
+              type: string
+            value:
+              type: string
+          required:
+            - export
+            - masked
+            - name
+            - value
+    process:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        accountId:
+          type: integer
+          format: int64
+        uniqueId:
+          type: string
+        processType:
+          type: object
+          properties:
+            code:
+              type: string
+            name:
+              type: string
+        displayName:
+          type: string
+        description:
+          type: string
+          nullable: true
+        subType:
+          type: string
+          nullable: true
+        subId:
+          type: string
+          nullable: true
+        zoneId:
+          type: integer
+          format: int64
+        integrationId:
+          type: string
+          nullable: true
+        appId:
+          type: string
+          nullable: true
+        instanceId:
+          type: integer
+          format: int64
+        containerId:
+          type: integer
+          format: int64
+        serverId:
+          type: integer
+          format: int64
+        containerName:
+          type: string
+        status:
+          type: string
+        reason:
+          type: string
+          nullable: true
+        percent:
+          type: integer
+          format: int64
+        statusEta:
+          type: integer
+          format: int64
+        message:
+          type: string
+          nullable: true
+        output:
+          type: string
+          nullable: true
+        error:
+          type: string
+          nullable: true
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int64
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+        createdBy:
+          type: object
+          properties:
+            username:
+              type: string
+            displayName:
+              type: string
+        updatedBy:
+          type: object
+          properties:
+            username:
+              type: string
+            displayName:
+              type: string
+        events:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              processId:
+                type: integer
+                format: int64
+              accountId:
+                type: integer
+                format: int64
+              uniqueId:
+                type: string
+              processType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  name:
+                    type: string
+              description:
+                type: string
+                nullable: true
+              refType:
+                type: string
+              refId:
+                type: integer
+                format: int64
+              subType:
+                type: string
+                nullable: true
+              subId:
+                type: string
+                nullable: true
+              zoneId:
+                type: integer
+                format: int64
+              integrationId:
+                type: string
+                nullable: true
+              instanceId:
+                type: integer
+                format: int64
+              containerId:
+                type: integer
+                format: int64
+              serverId:
+                type: integer
+                format: int64
+              containerName:
+                type: string
+              displayName:
+                type: string
+              status:
+                type: string
+              reason:
+                type: string
+                nullable: true
+              percent:
+                type: integer
+                format: int64
+              statusEta:
+                type: integer
+                format: int64
+              message:
+                type: string
+                nullable: true
+              output:
+                type: string
+                nullable: true
+              error:
+                type: string
+                nullable: true
+              startDate:
+                type: string
+                format: date-time
+              endDate:
+                type: string
+                format: date-time
+              duration:
+                type: integer
+                format: int64
+              dateCreated:
+                type: string
+                format: date-time
+              lastUpdated:
+                type: string
+                format: date-time
+              createdBy:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  displayName:
+                    type: string
+              updatedBy:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  displayName:
+                    type: string
     invoice:
       type: object
       properties:
@@ -19400,6 +23211,66 @@ components:
         lastUpdated:
           type: string
           format: date-time
+    log:
+      type: object
+      properties:
+        sort:
+          type: object
+          properties:
+            ts:
+              type: string
+        offset:
+          type: integer
+          format: int32
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              typeCode:
+                type: string
+              message:
+                type: string
+              level:
+                type: string
+              ts:
+                type: string
+                format: date-time
+              sourceType:
+                type: string
+              title:
+                type: string
+              logSignature:
+                type: string
+              objectId:
+                type: string
+              seq:
+                type: integer
+                format: int32
+              _id:
+                type: string
+              signatureVerified:
+                type: boolean
+        max:
+          type: integer
+          format: int32
+        grandTotal:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+        success:
+          type: boolean
+        count:
+          type: integer
+          format: int32
     key-pair:
       type: object
       properties:
@@ -19432,209 +23303,6 @@ components:
           type: boolean
         buildVersion:
           type: string
-    process:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        accountId:
-          type: integer
-          format: int64
-        uniqueId:
-          type: string
-        processType:
-          type: object
-          properties:
-            code:
-              type: string
-            name:
-              type: string
-        displayName:
-          type: string
-        description:
-          type: string
-          nullable: true
-        subType:
-          type: string
-          nullable: true
-        subId:
-          type: string
-          nullable: true
-        zoneId:
-          type: integer
-          format: int64
-        integrationId:
-          type: string
-          nullable: true
-        appId:
-          type: string
-          nullable: true
-        instanceId:
-          type: integer
-          format: int64
-        containerId:
-          type: integer
-          format: int64
-        serverId:
-          type: integer
-          format: int64
-        containerName:
-          type: string
-        status:
-          type: string
-        reason:
-          type: string
-          nullable: true
-        percent:
-          type: integer
-          format: int64
-        statusEta:
-          type: integer
-          format: int64
-        message:
-          type: string
-          nullable: true
-        output:
-          type: string
-          nullable: true
-        error:
-          type: string
-          nullable: true
-        startDate:
-          type: string
-          format: date-time
-        endDate:
-          type: string
-          format: date-time
-        duration:
-          type: integer
-          format: int64
-        dateCreated:
-          type: string
-          format: date-time
-        lastUpdated:
-          type: string
-          format: date-time
-        createdBy:
-          type: object
-          properties:
-            username:
-              type: string
-            displayName:
-              type: string
-        updatedBy:
-          type: object
-          properties:
-            username:
-              type: string
-            displayName:
-              type: string
-        events:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-                format: int64
-              processId:
-                type: integer
-                format: int64
-              accountId:
-                type: integer
-                format: int64
-              uniqueId:
-                type: string
-              processType:
-                type: object
-                properties:
-                  code:
-                    type: string
-                  name:
-                    type: string
-              description:
-                type: string
-                nullable: true
-              refType:
-                type: string
-              refId:
-                type: integer
-                format: int64
-              subType:
-                type: string
-                nullable: true
-              subId:
-                type: string
-                nullable: true
-              zoneId:
-                type: integer
-                format: int64
-              integrationId:
-                type: string
-                nullable: true
-              instanceId:
-                type: integer
-                format: int64
-              containerId:
-                type: integer
-                format: int64
-              serverId:
-                type: integer
-                format: int64
-              containerName:
-                type: string
-              displayName:
-                type: string
-              status:
-                type: string
-              reason:
-                type: string
-                nullable: true
-              percent:
-                type: integer
-                format: int64
-              statusEta:
-                type: integer
-                format: int64
-              message:
-                type: string
-                nullable: true
-              output:
-                type: string
-                nullable: true
-              error:
-                type: string
-                nullable: true
-              startDate:
-                type: string
-                format: date-time
-              endDate:
-                type: string
-                format: date-time
-              duration:
-                type: integer
-                format: int64
-              dateCreated:
-                type: string
-                format: date-time
-              lastUpdated:
-                type: string
-                format: date-time
-              createdBy:
-                type: object
-                properties:
-                  username:
-                    type: string
-                  displayName:
-                    type: string
-              updatedBy:
-                type: object
-                properties:
-                  username:
-                    type: string
-                  displayName:
-                    type: string
     processEvent:
       type: object
       properties:

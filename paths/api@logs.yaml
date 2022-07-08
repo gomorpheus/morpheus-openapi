@@ -1,0 +1,59 @@
+get:
+  summary: Retrieves Logs
+  description: |
+    Retrieves logs based on filters provided.
+  operationId: listLogs
+  tags:
+    - Logs
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/order.yaml
+    - $ref: ../components/parameters/query.yaml
+    - $ref: ../components/parameters/message.yaml
+    - $ref: ../components/parameters/sourceType.yaml
+    - $ref: ../components/parameters/typeCode.yaml
+    - $ref: ../components/parameters/objectId.yaml
+    - $ref: ../components/parameters/token.yaml
+    - $ref: ../components/parameters/level.yaml
+    - $ref: ../components/parameters/startMs.yaml
+    - $ref: ../components/parameters/endMs.yaml
+    - $ref: ../components/parameters/startDateTime.yaml
+    - $ref: ../components/parameters/endDateTime.yaml
+    - $ref: ../components/parameters/containers.yaml
+    - $ref: ../components/parameters/servers.yaml
+    - $ref: ../components/parameters/clusterId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: ../components/schemas/log.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Search Response:
+              value:
+                $ref: ../components/examples/logs.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

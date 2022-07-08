@@ -1,0 +1,7 @@
+name: endMs
+in: query
+description: Date filter in milliseconds (unix epoch), restricts query to only load logs updated before the time specified.
+schema:
+  type: integer
+  format: int64
+example: 1657309873

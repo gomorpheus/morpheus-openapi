@@ -97,6 +97,8 @@ paths:
     $ref: paths/api@log-settings@syslog-rules.yaml
   /api/log-settings@syslog-rules@{id}:
     $ref: paths/api@log-settings@syslog-rules@id.yaml
+  /api/logs:
+    $ref: paths/api@logs.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
