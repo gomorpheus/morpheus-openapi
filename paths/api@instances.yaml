@@ -1,0 +1,70 @@
+get:
+  summary: Get All Instances
+  description: |
+    This endpoint retrieves a paginated list of instances.
+  operationId: listInstances
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/instanceType.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/createdBy.yaml
+    - $ref: ../components/parameters/agentInstalled.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/environment.yaml
+    - $ref: ../components/parameters/showDeleted.yaml
+    - $ref: ../components/parameters/deleted.yaml
+    - $ref: ../components/parameters/expireDate.yaml
+    - $ref: ../components/parameters/expireDateMin.yaml
+    - $ref: ../components/parameters/expireDays.yaml
+    - $ref: ../components/parameters/expireDaysMin.yaml
+    - $ref: ../components/parameters/shutdownDate.yaml
+    - $ref: ../components/parameters/shutdownDateMin.yaml
+    - $ref: ../components/parameters/shutdownDays.yaml
+    - $ref: ../components/parameters/shutdownDaysMin.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/tags.yaml
+    - $ref: ../components/parameters/metadata.yaml
+    - $ref: ../components/parameters/detailsFalse.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instances:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/instance.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Search Response:
+              value:
+                $ref: ../components/examples/instances.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

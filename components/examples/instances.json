@@ -1,0 +1,216 @@
+{
+    "instances": [
+      {
+        "id": 1530,
+        "accountId": 1,
+        "instanceType": {
+          "id": 35,
+          "code": "ubuntu",
+          "category": "os",
+          "name": "Ubuntu"
+        },
+        "group": {
+          "id": 3,
+          "name": "Demo"
+        },
+        "cloud": {
+          "id": 6,
+          "name": "San Mateo VMware"
+        },
+        "containers": [
+          1798
+        ],
+        "servers": [
+          2
+        ],
+        "connectionInfo": [
+          {
+            "ip": "192.168.162.59",
+            "port": 22
+          }
+        ],
+        "layout": {
+          "id": 105
+        },
+        "plan": {
+          "id": 12,
+          "code": "vm-2048"
+        },
+        "name": "ah-San Mateo VMware-ubuntu",
+        "description": null,
+        "instanceVersion": null,
+        "dateCreated": "2017-01-31T21:30:49+0000",
+        "lastUpdated": "2017-02-07T22:58:26+0000",
+        "hostName": "ah-San-Mateo-VMware-ubuntu",
+        "domainName": null,
+        "environmentPrefix": null,
+        "firewallEnabled": true,
+        "networkLevel": "container",
+        "autoScale": false,
+        "instanceContext": "production",
+        "currentDeployId": null,
+        "status": "running",
+        "statusMessage": null,
+        "errorMessage": null,
+        "statusDate": "2017-01-31T21:34:07+0000",
+        "statusPercent": null,
+        "statusEta": null,
+        "userStatus": null,
+        "createdBy": {
+          "id": 38
+        }
+      },
+      {
+        "id": 1653,
+        "accountId": 1,
+        "instanceType": {
+          "id": 35,
+          "code": "ubuntu",
+          "category": "os",
+          "name": "Ubuntu"
+        },
+        "group": {
+          "id": 3,
+          "name": "Demo"
+        },
+        "cloud": {
+          "id": 6,
+          "name": "San Mateo VMware"
+        },
+        "containers": [
+          1945
+        ],
+        "servers": [
+          2
+        ],
+        "connectionInfo": [
+          {
+            "ip": "192.168.163.55",
+            "port": 22
+          }
+        ],
+        "layout": {
+          "id": 105
+        },
+        "plan": {
+          "id": 11,
+          "code": "vm-1024"
+        },
+        "name": "ah-San Mateo VMware-ubuntu-PDNStest",
+        "description": null,
+        "instanceVersion": null,
+        "dateCreated": "2017-02-10T14:27:42+0000",
+        "lastUpdated": "2017-02-10T14:31:19+0000",
+        "hostName": "ah-san-mateo-vmware-ubuntu-pdnstest",
+        "domainName": null,
+        "environmentPrefix": null,
+        "firewallEnabled": true,
+        "networkLevel": "container",
+        "autoScale": false,
+        "instanceContext": "dev",
+        "currentDeployId": null,
+        "status": "running",
+        "statusMessage": null,
+        "errorMessage": null,
+        "statusDate": "2017-02-10T14:30:43+0000",
+        "statusPercent": null,
+        "statusEta": null,
+        "userStatus": null,
+        "createdBy": {
+          "id": 38
+        }
+      },
+      {
+        "id": 1624,
+        "accountId": 1,
+        "instanceType": {
+          "id": 21,
+          "code": "apache",
+          "category": "web",
+          "name": "Apache"
+        },
+        "group": {
+          "id": 163,
+          "name": "snow-approvals"
+        },
+        "cloud": {
+          "id": 6,
+          "name": "San Mateo VMware"
+        },
+        "containers": [
+          1912
+        ],
+        "servers": [
+          3
+        ],
+        "connectionInfo": [
+          {
+            "ip": "192.168.163.28",
+            "port": 10009
+          }
+        ],
+        "layout": {
+          "id": 48
+        },
+        "plan": {
+          "id": 3,
+          "code": "container-256"
+        },
+        "name": "approval-snow-test",
+        "description": null,
+        "instanceVersion": null,
+        "dateCreated": "2017-02-09T06:45:30+0000",
+        "lastUpdated": "2017-02-09T06:53:20+0000",
+        "hostName": "approval-snow-test",
+        "domainName": null,
+        "environmentPrefix": null,
+        "firewallEnabled": true,
+        "networkLevel": "container",
+        "autoScale": false,
+        "instanceContext": null,
+        "currentDeployId": null,
+        "status": "running",
+        "statusMessage": null,
+        "errorMessage": null,
+        "statusDate": "2017-02-09T06:53:20+0000",
+        "statusPercent": null,
+        "statusEta": null,
+        "userStatus": null,
+        "owner": {
+          "id": 1,
+          "username": "admin"
+        }
+      }
+    ],
+    "stats": {
+      "1530": {
+        "usedStorage": 6776664064,
+        "maxStorage": 21067075584,
+        "usedMemory": 1909739520,
+        "maxMemory": 2098315264,
+        "usedCpu": 1.0926682792
+      },
+      "1653": {
+        "usedStorage": 2662801408,
+        "maxStorage": 10499452928,
+        "usedMemory": 935444480,
+        "maxMemory": 1041350656,
+        "usedCpu": 0.1501000667
+      },
+      "1624": {
+        "usedStorage": 4829184,
+        "maxStorage": 3103539200,
+        "usedMemory": 9113600,
+        "maxMemory": 268435456,
+        "usedCpu": 0
+      }
+    },
+    "loadBalancers": [],
+    "meta": {
+      "offset": 0,
+      "max": 25,
+      "size": 3,
+      "total": 21
+    }
+}
+  

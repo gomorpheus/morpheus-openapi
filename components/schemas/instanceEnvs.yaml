@@ -1,0 +1,55 @@
+---
+type: object
+properties:
+  envs:
+    type: array
+    nullable: true
+    properties:
+      export:
+        type: boolean
+      masked:
+        type: boolean
+      name:
+        type: string
+      value:
+        type: string
+    required:
+    - export
+    - masked
+    - name
+    - value
+  readOnlyEnvs:
+    type: array
+    nullable: true
+    properties:
+      export:
+        type: boolean
+      masked:
+        type: boolean
+      name:
+        type: string
+      value:
+        type: string
+    required:
+    - export
+    - masked
+    - name
+    - value
+  importedEnvs:
+    type: array
+    nullable: true
+    properties:
+      export:
+        type: boolean
+      masked:
+        type: boolean
+      name:
+        type: string
+      value:
+        type: string
+    required:
+    - export
+    - masked
+    - name
+    - value
+  

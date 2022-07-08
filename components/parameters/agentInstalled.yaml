@@ -1,0 +1,7 @@
+name: agentInstalled
+in: query
+description: Filter instances by if agent is installed or not on the associated servers.
+schema:
+  type: boolean
+  description: Agent installed status
+example: true

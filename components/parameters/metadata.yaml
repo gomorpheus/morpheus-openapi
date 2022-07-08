@@ -1,0 +1,6 @@
+name: metadata
+in: query
+description: Alias for tags
+schema:
+  type: string
+example: tags.env=qa&tags.env=test

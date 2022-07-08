@@ -1,0 +1,1702 @@
+---
+type: object
+properties:
+  instance:
+    type: object
+    properties:
+      id:
+        type: integer
+      uuid:
+        type: string
+      accountId:
+        type: integer
+      tenant:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+        required:
+        - id
+        - name
+      instanceType:
+        type: object
+        properties:
+          id:
+            type: integer
+          code:
+            type: string
+          category:
+            type: string
+          name:
+            type: string
+        required:
+        - id
+        - code
+        - category
+        - name
+      group:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+        required:
+        - id
+        - name
+      cloud:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+        required:
+        - id
+        - name
+      containers:
+        type: array
+        items:
+        - type: integer
+      servers:
+        type: array
+        items:
+        - type: integer
+      connectionInfo:
+        type: array
+        items:
+        - type: object
+          properties:
+            ip:
+              type: string
+            port:
+              type: integer
+          required:
+          - ip
+          - port
+      layout:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          provisionTypeCode:
+            type: string
+        required:
+        - id
+        - name
+        - provisionTypeCode
+      plan:
+        type: object
+        properties:
+          id:
+            type: integer
+          code:
+            type: string
+          name:
+            type: string
+        required:
+        - id
+        - code
+        - name
+      name:
+        type: string
+      description:
+        type: string
+      environment:
+        type: 'null'
+      config:
+        type: object
+        properties:
+          createUser:
+            type: boolean
+          isEC2:
+            type: boolean
+          isVpcSelectable:
+            type: boolean
+          noAgent:
+            type: 'null'
+          availabilityId:
+            type: 'null'
+          securityId:
+            type: 'null'
+          publicIpType:
+            type: string
+          instanceProfile:
+            type: 'null'
+          resourcePoolId:
+            type: string
+          poolProviderType:
+            type: 'null'
+          name:
+            type: string
+          hostName:
+            type: string
+          instanceType:
+            type: object
+            properties:
+              code:
+                type: 'null'
+            required:
+            - code
+          site:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+            required:
+            - id
+            - name
+          environmentPrefix:
+            type: 'null'
+          layout:
+            type: object
+            properties:
+              id:
+                type: integer
+              code:
+                type: string
+            required:
+            - id
+            - code
+          type:
+            type: string
+          memoryDisplay:
+            type: string
+          securityGroups:
+            type: array
+            items:
+            - type: object
+              properties:
+                id:
+                  type: string
+              required:
+              - id
+          customOptions:
+            type: object
+            properties:
+              isPrimary:
+                type: string
+              inventoryName:
+                type: string
+            required:
+            - isPrimary
+            - inventoryName
+          createBackup:
+            type: boolean
+          backup:
+            type: object
+            properties:
+              createBackup:
+                type: boolean
+              jobAction:
+                type: string
+              jobRetentionCount:
+                type: string
+              veeamManagedServer:
+                type: string
+              backupRepository:
+                type: integer
+              jobSchedule:
+                type: integer
+              target:
+                type: integer
+            required:
+            - createBackup
+            - jobAction
+            - jobRetentionCount
+            - veeamManagedServer
+            - backupRepository
+            - jobSchedule
+            - target
+          layoutSize:
+            type: integer
+          lbInstances:
+            type: array
+            items: {}
+        required:
+        - createUser
+        - isEC2
+        - isVpcSelectable
+        - noAgent
+        - availabilityId
+        - securityId
+        - publicIpType
+        - instanceProfile
+        - resourcePoolId
+        - poolProviderType
+        - name
+        - hostName
+        - instanceType
+        - site
+        - environmentPrefix
+        - layout
+        - type
+        - memoryDisplay
+        - securityGroups
+        - customOptions
+        - createBackup
+        - backup
+        - layoutSize
+        - lbInstances
+      configGroup:
+        type: 'null'
+      configId:
+        type: 'null'
+      configRole:
+        type: 'null'
+      volumes:
+        type: array
+        items:
+        - type: object
+          properties:
+            controllerId:
+              type: 'null'
+            datastoreId:
+              type: 'null'
+            displayOrder:
+              type: integer
+            id:
+              type: integer
+            maxIOPS:
+              type: 'null'
+            maxStorage:
+              type: integer
+            name:
+              type: string
+            shortName:
+              type: string
+            resizeable:
+              type: boolean
+            rootVolume:
+              type: boolean
+            size:
+              type: integer
+            storageType:
+              type: integer
+            unitNumber:
+              type: 'null'
+            controllerMountPoint:
+              type: 'null'
+          required:
+          - controllerId
+          - datastoreId
+          - displayOrder
+          - id
+          - maxIOPS
+          - maxStorage
+          - name
+          - shortName
+          - resizeable
+          - rootVolume
+          - size
+          - storageType
+          - unitNumber
+          - controllerMountPoint
+      controllers:
+        type: array
+        items: {}
+      interfaces:
+        type: array
+        items:
+        - type: object
+          properties:
+            id:
+              type: string
+            network:
+              type: object
+              properties:
+                id:
+                  type: integer
+                group:
+                  type: 'null'
+                subnet:
+                  type: 'null'
+                dhcpServer:
+                  type: boolean
+                name:
+                  type: string
+                pool:
+                  type: 'null'
+              required:
+              - id
+              - group
+              - subnet
+              - dhcpServer
+              - name
+              - pool
+            ipAddress:
+              type: 'null'
+            networkInterfaceTypeId:
+              type: 'null'
+            ipMode:
+              type: string
+          required:
+          - id
+          - network
+          - ipAddress
+          - networkInterfaceTypeId
+          - ipMode
+      customOptions:
+        type: object
+        properties:
+          isPrimary:
+            type: string
+          inventoryName:
+            type: string
+        required:
+        - isPrimary
+        - inventoryName
+      instanceVersion:
+        type: string
+      labels:
+        type: array
+        items:
+        - type: string
+        - type: string
+      tags:
+        type: array
+        items:
+        - type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            value:
+              type: string
+          required:
+          - id
+          - name
+          - value
+        - type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            value:
+              type: string
+          required:
+          - id
+          - name
+          - value
+        - type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            value:
+              type: string
+          required:
+          - id
+          - name
+          - value
+        - type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            value:
+              type: string
+          required:
+          - id
+          - name
+          - value
+        - type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            value:
+              type: string
+          required:
+          - id
+          - name
+          - value
+      evars:
+        type: array
+        items:
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: integer
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: integer
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: integer
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: integer
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+        - type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+            export:
+              type: boolean
+            masked:
+              type: boolean
+          required:
+          - name
+          - value
+          - export
+          - masked
+      maxMemory:
+        type: integer
+      maxStorage:
+        type: integer
+      maxCores:
+        type: integer
+      coresPerSocket:
+        type: integer
+      maxCpu:
+        type: integer
+      hourlyCost:
+        type: number
+      hourlyPrice:
+        type: number
+      instancePrice:
+        type: object
+        properties:
+          price:
+            type: number
+          cost:
+            type: number
+          currency:
+            type: string
+          unit:
+            type: string
+        required:
+        - price
+        - cost
+        - currency
+        - unit
+      dateCreated:
+        type: string
+      lastUpdated:
+        type: string
+      hostName:
+        type: string
+      domainName:
+        type: 'null'
+      environmentPrefix:
+        type: 'null'
+      firewallEnabled:
+        type: boolean
+      networkLevel:
+        type: string
+      autoScale:
+        type: boolean
+      instanceContext:
+        type: 'null'
+      currentDeployId:
+        type: 'null'
+      locked:
+        type: boolean
+      status:
+        type: string
+      statusMessage:
+        type: 'null'
+      errorMessage:
+        type: 'null'
+      statusDate:
+        type: string
+      statusPercent:
+        type: 'null'
+      statusEta:
+        type: 'null'
+      userStatus:
+        type: 'null'
+      expireDays:
+        type: 'null'
+      renewDays:
+        type: 'null'
+      expireCount:
+        type: integer
+      expireDate:
+        type: 'null'
+      expireWarningDate:
+        type: 'null'
+      expireWarningSent:
+        type: boolean
+      shutdownDays:
+        type: 'null'
+      shutdownRenewDays:
+        type: 'null'
+      shutdownCount:
+        type: integer
+      shutdownDate:
+        type: 'null'
+      shutdownWarningDate:
+        type: 'null'
+      shutdownWarningSent:
+        type: boolean
+      removalDate:
+        type: 'null'
+      createdBy:
+        type: object
+        properties:
+          id:
+            type: integer
+          username:
+            type: string
+        required:
+        - id
+        - username
+      owner:
+        type: object
+        properties:
+          id:
+            type: integer
+          username:
+            type: string
+        required:
+        - id
+        - username
+      notes:
+        type: 'null'
+      stats:
+        type: object
+        properties:
+          usedStorage:
+            type: integer
+          maxStorage:
+            type: integer
+          usedMemory:
+            type: integer
+          maxMemory:
+            type: integer
+          usedCpu:
+            type: number
+          cpuUsage:
+            type: number
+          cpuUsagePeak:
+            type: number
+          cpuUsageAvg:
+            type: number
+        required:
+        - usedStorage
+        - maxStorage
+        - usedMemory
+        - maxMemory
+        - usedCpu
+        - cpuUsage
+        - cpuUsagePeak
+        - cpuUsageAvg
+      powerSchedule:
+        type: 'null'
+      isScalable:
+        type: boolean
+      instanceThreshold:
+        type: 'null'
+      isBusy:
+        type: boolean
+      apps:
+        type: array
+        items: {}
+      currentLoadBalancerInstances:
+        type: array
+        items: {}
+      currentLoadBalancerContainersIn:
+        type: integer
+      currentLoadBalancerContainersOut:
+        type: integer
+      lastDeploy:
+        type: 'null'
+      containerDetails:
+        type: array
+        items:
+        - type: object
+          properties:
+            id:
+              type: integer
+            uuid:
+              type: string
+            name:
+              type: string
+            ip:
+              type: string
+            internalIp:
+              type: string
+            internalHostname:
+              type: string
+            externalHostname:
+              type: string
+            externalDomain:
+              type: string
+            externalFqdn:
+              type: string
+            accountId:
+              type: integer
+            instance:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+              required:
+              - id
+              - name
+            containerType:
+              type: object
+              properties:
+                id:
+                  type: integer
+                code:
+                  type: string
+                category:
+                  type: string
+                name:
+                  type: string
+              required:
+              - id
+              - code
+              - category
+              - name
+            containerTypeSet:
+              type: object
+              properties:
+                id:
+                  type: integer
+                code:
+                  type: string
+                category:
+                  type: string
+              required:
+              - id
+              - code
+              - category
+            server:
+              type: object
+              properties:
+                id:
+                  type: integer
+                uuid:
+                  type: string
+                externalId:
+                  type: string
+                internalId:
+                  type: 'null'
+                externalUniqueId:
+                  type: 'null'
+                name:
+                  type: string
+                externalName:
+                  type: string
+                hostname:
+                  type: string
+                accountId:
+                  type: integer
+                account:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                  required:
+                  - id
+                  - name
+                owner:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    username:
+                      type: string
+                  required:
+                  - id
+                  - username
+                zone:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                  required:
+                  - id
+                  - name
+                plan:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    code:
+                      type: string
+                    name:
+                      type: string
+                  required:
+                  - id
+                  - code
+                  - name
+                computeServerType:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    code:
+                      type: string
+                    name:
+                      type: string
+                    managed:
+                      type: boolean
+                    externalDelete:
+                      type: boolean
+                  required:
+                  - id
+                  - code
+                  - name
+                  - managed
+                  - externalDelete
+                visibility:
+                  type: string
+                description:
+                  type: 'null'
+                zoneId:
+                  type: integer
+                siteId:
+                  type: integer
+                resourcePoolId:
+                  type: integer
+                folderId:
+                  type: 'null'
+                sshHost:
+                  type: 'null'
+                sshPort:
+                  type: integer
+                externalIp:
+                  type: 'null'
+                internalIp:
+                  type: string
+                platform:
+                  type: string
+                platformVersion:
+                  type: string
+                dateCreated:
+                  type: string
+                lastUpdated:
+                  type: string
+                stats:
+                  type: object
+                  properties:
+                    ts:
+                      type: string
+                    freeMemory:
+                      type: integer
+                    usedMemory:
+                      type: integer
+                    freeSwap:
+                      type: integer
+                    usedSwap:
+                      type: integer
+                    cpuIdleTime:
+                      type: integer
+                    cpuSystemTime:
+                      type: integer
+                    cpuUserTime:
+                      type: integer
+                    cpuTotalTime:
+                      type: integer
+                    cpuUsage:
+                      type: number
+                    maxStorage:
+                      type: integer
+                    usedStorage:
+                      type: integer
+                    reservedStorage:
+                      type: integer
+                    netTxUsage:
+                      type: integer
+                    netRxUsage:
+                      type: integer
+                    networkBandwidth:
+                      type: integer
+                  required:
+                  - ts
+                  - freeMemory
+                  - usedMemory
+                  - freeSwap
+                  - usedSwap
+                  - cpuIdleTime
+                  - cpuSystemTime
+                  - cpuUserTime
+                  - cpuTotalTime
+                  - cpuUsage
+                  - maxStorage
+                  - usedStorage
+                  - reservedStorage
+                  - netTxUsage
+                  - netRxUsage
+                  - networkBandwidth
+                status:
+                  type: string
+                statusMessage:
+                  type: 'null'
+                errorMessage:
+                  type: 'null'
+                statusDate:
+                  type: string
+                statusPercent:
+                  type: 'null'
+                statusEta:
+                  type: 'null'
+                powerState:
+                  type: string
+                agentInstalled:
+                  type: boolean
+                lastAgentUpdate:
+                  type: string
+                agentVersion:
+                  type: string
+                maxCores:
+                  type: integer
+                coresPerSocket:
+                  type: integer
+                maxMemory:
+                  type: integer
+                maxStorage:
+                  type: integer
+                maxCpu:
+                  type: 'null'
+                hourlyCost:
+                  type: number
+                hourlyPrice:
+                  type: number
+                sourceImage:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    code:
+                      type: string
+                    name:
+                      type: string
+                  required:
+                  - id
+                  - code
+                  - name
+                serverOs:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    code:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: 'null'
+                    vendor:
+                      type: string
+                    category:
+                      type: string
+                    osFamily:
+                      type: string
+                    osVersion:
+                      type: string
+                    bitCount:
+                      type: integer
+                    platform:
+                      type: string
+                  required:
+                  - id
+                  - code
+                  - name
+                  - description
+                  - vendor
+                  - category
+                  - osFamily
+                  - osVersion
+                  - bitCount
+                  - platform
+                volumes:
+                  type: array
+                  items:
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      controllerId:
+                        type: 'null'
+                      controllerMountPoint:
+                        type: 'null'
+                      resizeable:
+                        type: boolean
+                      rootVolume:
+                        type: boolean
+                      unitNumber:
+                        type: 'null'
+                      typeId:
+                        type: integer
+                      configurableIOPS:
+                        type: boolean
+                      datastoreId:
+                        type: 'null'
+                      maxStorage:
+                        type: integer
+                      displayOrder:
+                        type: integer
+                      maxIOPS:
+                        type: 'null'
+                    required:
+                    - id
+                    - name
+                    - controllerId
+                    - controllerMountPoint
+                    - resizeable
+                    - rootVolume
+                    - unitNumber
+                    - typeId
+                    - configurableIOPS
+                    - datastoreId
+                    - maxStorage
+                    - displayOrder
+                    - maxIOPS
+                controllers:
+                  type: array
+                  items: {}
+                interfaces:
+                  type: array
+                  items:
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      refType:
+                        type: 'null'
+                      refId:
+                        type: 'null'
+                      name:
+                        type: string
+                      internalId:
+                        type: 'null'
+                      externalId:
+                        type: string
+                      uniqueId:
+                        type: string
+                      publicIpAddress:
+                        type: 'null'
+                      publicIpv6Address:
+                        type: 'null'
+                      ipAddress:
+                        type: string
+                      ipv6Address:
+                        type: 'null'
+                      ipSubnet:
+                        type: 'null'
+                      ipv6Subnet:
+                        type: 'null'
+                      description:
+                        type: string
+                      dhcp:
+                        type: boolean
+                      active:
+                        type: boolean
+                      poolAssigned:
+                        type: boolean
+                      primaryInterface:
+                        type: boolean
+                      network:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                        required:
+                        - id
+                        - name
+                      subnet:
+                        type: 'null'
+                      networkGroup:
+                        type: 'null'
+                      networkPosition:
+                        type: 'null'
+                      networkPool:
+                        type: 'null'
+                      networkDomain:
+                        type: 'null'
+                      type:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          code:
+                            type: string
+                          name:
+                            type: string
+                        required:
+                        - id
+                        - code
+                        - name
+                      ipMode:
+                        type: string
+                      macAddress:
+                        type: string
+                    required:
+                    - id
+                    - refType
+                    - refId
+                    - name
+                    - internalId
+                    - externalId
+                    - uniqueId
+                    - publicIpAddress
+                    - publicIpv6Address
+                    - ipAddress
+                    - ipv6Address
+                    - ipSubnet
+                    - ipv6Subnet
+                    - description
+                    - dhcp
+                    - active
+                    - poolAssigned
+                    - primaryInterface
+                    - network
+                    - subnet
+                    - networkGroup
+                    - networkPosition
+                    - networkPool
+                    - networkDomain
+                    - type
+                    - ipMode
+                    - macAddress
+                labels:
+                  type: array
+                  items: {}
+                tags:
+                  type: array
+                  items:
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                    - id
+                    - name
+                    - value
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                    - id
+                    - name
+                    - value
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                    - id
+                    - name
+                    - value
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                    - id
+                    - name
+                    - value
+                  - type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      value:
+                        type: string
+                    required:
+                    - id
+                    - name
+                    - value
+                enabled:
+                  type: boolean
+                tagCompliant:
+                  type: 'null'
+              required:
+              - id
+              - uuid
+              - externalId
+              - internalId
+              - externalUniqueId
+              - name
+              - externalName
+              - hostname
+              - accountId
+              - account
+              - owner
+              - zone
+              - plan
+              - computeServerType
+              - visibility
+              - description
+              - zoneId
+              - siteId
+              - resourcePoolId
+              - folderId
+              - sshHost
+              - sshPort
+              - externalIp
+              - internalIp
+              - platform
+              - platformVersion
+              - dateCreated
+              - lastUpdated
+              - stats
+              - status
+              - statusMessage
+              - errorMessage
+              - statusDate
+              - statusPercent
+              - statusEta
+              - powerState
+              - agentInstalled
+              - lastAgentUpdate
+              - agentVersion
+              - maxCores
+              - coresPerSocket
+              - maxMemory
+              - maxStorage
+              - maxCpu
+              - hourlyCost
+              - hourlyPrice
+              - sourceImage
+              - serverOs
+              - volumes
+              - controllers
+              - interfaces
+              - labels
+              - tags
+              - enabled
+              - tagCompliant
+            cloud:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+              required:
+              - id
+              - name
+            ports:
+              type: array
+              items:
+              - type: object
+                properties:
+                  id:
+                    type: integer
+                  index:
+                    type: integer
+                  external:
+                    type: integer
+                  internal:
+                    type: integer
+                  displayName:
+                    type: string
+                  primaryPort:
+                    type: boolean
+                  export:
+                    type: boolean
+                  visible:
+                    type: boolean
+                  exportName:
+                    type: string
+                  loadBalanceProtocol:
+                    type: 'null'
+                  loadBalance:
+                    type: boolean
+                  protocol:
+                    type: string
+                  link:
+                    type: boolean
+                  externalIp:
+                    type: 'null'
+                  internalIp:
+                    type: 'null'
+                required:
+                - id
+                - index
+                - external
+                - internal
+                - displayName
+                - primaryPort
+                - export
+                - visible
+                - exportName
+                - loadBalanceProtocol
+                - loadBalance
+                - protocol
+                - link
+                - externalIp
+                - internalIp
+              - type: object
+                properties:
+                  id:
+                    type: integer
+                  index:
+                    type: integer
+                  external:
+                    type: integer
+                  internal:
+                    type: integer
+                  displayName:
+                    type: string
+                  primaryPort:
+                    type: boolean
+                  export:
+                    type: boolean
+                  visible:
+                    type: boolean
+                  exportName:
+                    type: string
+                  loadBalanceProtocol:
+                    type: 'null'
+                  loadBalance:
+                    type: boolean
+                  protocol:
+                    type: string
+                  link:
+                    type: boolean
+                  externalIp:
+                    type: 'null'
+                  internalIp:
+                    type: 'null'
+                required:
+                - id
+                - index
+                - external
+                - internal
+                - displayName
+                - primaryPort
+                - export
+                - visible
+                - exportName
+                - loadBalanceProtocol
+                - loadBalance
+                - protocol
+                - link
+                - externalIp
+                - internalIp
+            plan:
+              type: object
+              properties:
+                id:
+                  type: integer
+                code:
+                  type: string
+                name:
+                  type: string
+              required:
+              - id
+              - code
+              - name
+            configGroup:
+              type: 'null'
+            configId:
+              type: 'null'
+            configRole:
+              type: 'null'
+            dateCreated:
+              type: string
+            lastUpdated:
+              type: string
+            statsEnabled:
+              type: boolean
+            status:
+              type: string
+            userStatus:
+              type: string
+            environmentPrefix:
+              type: 'null'
+            stats:
+              type: object
+              properties:
+                ts:
+                  type: string
+                running:
+                  type: boolean
+                userCpuUsage:
+                  type: number
+                systemCpuUsage:
+                  type: number
+                usedMemory:
+                  type: integer
+                maxMemory:
+                  type: integer
+                cacheMemory:
+                  type: integer
+                maxStorage:
+                  type: 'null'
+                usedStorage:
+                  type: integer
+                readIOPS:
+                  type: integer
+                writeIOPS:
+                  type: number
+                totalIOPS:
+                  type: number
+                iops:
+                  type: object
+                netTxUsage:
+                  type: integer
+                netRxUsage:
+                  type: integer
+              required:
+              - ts
+              - running
+              - userCpuUsage
+              - systemCpuUsage
+              - usedMemory
+              - maxMemory
+              - cacheMemory
+              - maxStorage
+              - usedStorage
+              - readIOPS
+              - writeIOPS
+              - totalIOPS
+              - iops
+              - netTxUsage
+              - netRxUsage
+            runtimeInfo:
+              type: object
+            containerVersion:
+              type: 'null'
+            repositoryImage:
+              type: 'null'
+            planCategory:
+              type: 'null'
+            hostname:
+              type: string
+            domainName:
+              type: 'null'
+            volumeCreated:
+              type: boolean
+            containerCreated:
+              type: boolean
+            maxStorage:
+              type: integer
+            maxMemory:
+              type: integer
+            maxCores:
+              type: integer
+            coresPerSocket:
+              type: integer
+            maxCpu:
+              type: integer
+            hourlyCost:
+              type: number
+            hourlyPrice:
+              type: number
+          required:
+          - id
+          - uuid
+          - name
+          - ip
+          - internalIp
+          - internalHostname
+          - externalHostname
+          - externalDomain
+          - externalFqdn
+          - accountId
+          - instance
+          - containerType
+          - containerTypeSet
+          - server
+          - cloud
+          - ports
+          - plan
+          - configGroup
+          - configId
+          - configRole
+          - dateCreated
+          - lastUpdated
+          - statsEnabled
+          - status
+          - userStatus
+          - environmentPrefix
+          - stats
+          - runtimeInfo
+          - containerVersion
+          - repositoryImage
+          - planCategory
+          - hostname
+          - domainName
+          - volumeCreated
+          - containerCreated
+          - maxStorage
+          - maxMemory
+          - maxCores
+          - coresPerSocket
+          - maxCpu
+          - hourlyCost
+          - hourlyPrice
+    required:
+    - id
+    - uuid
+    - accountId
+    - tenant
+    - instanceType
+    - group
+    - cloud
+    - containers
+    - servers
+    - connectionInfo
+    - layout
+    - plan
+    - name
+    - description
+    - environment
+    - config
+    - configGroup
+    - configId
+    - configRole
+    - volumes
+    - controllers
+    - interfaces
+    - customOptions
+    - instanceVersion
+    - labels
+    - tags
+    - evars
+    - maxMemory
+    - maxStorage
+    - maxCores
+    - coresPerSocket
+    - maxCpu
+    - hourlyCost
+    - hourlyPrice
+    - instancePrice
+    - dateCreated
+    - lastUpdated
+    - hostName
+    - domainName
+    - environmentPrefix
+    - firewallEnabled
+    - networkLevel
+    - autoScale
+    - instanceContext
+    - currentDeployId
+    - locked
+    - status
+    - statusMessage
+    - errorMessage
+    - statusDate
+    - statusPercent
+    - statusEta
+    - userStatus
+    - expireDays
+    - renewDays
+    - expireCount
+    - expireDate
+    - expireWarningDate
+    - expireWarningSent
+    - shutdownDays
+    - shutdownRenewDays
+    - shutdownCount
+    - shutdownDate
+    - shutdownWarningDate
+    - shutdownWarningSent
+    - removalDate
+    - createdBy
+    - owner
+    - notes
+    - stats
+    - powerSchedule
+    - isScalable
+    - instanceThreshold
+    - isBusy
+    - apps
+    - currentLoadBalancerInstances
+    - currentLoadBalancerContainersIn
+    - currentLoadBalancerContainersOut
+    - lastDeploy
+    - containerDetails
+required:
+- instance

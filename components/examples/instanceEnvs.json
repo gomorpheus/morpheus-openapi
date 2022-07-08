@@ -1,0 +1,202 @@
+{
+    "envs": [
+      {
+        "export": false,
+        "masked": false,
+        "name": "DATABASE_NAME",
+        "value": "spud_marketing"
+      }
+    ],
+    "readOnlyEnvs": {
+      "TOMCAT_HOST": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_HOST",
+        "value": "container1414"
+      },
+      "TOMCAT_HOST_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_HOST_2",
+        "value": "container1759"
+      },
+      "TOMCAT_IP": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_IP",
+        "value": "192.168.163.232"
+      },
+      "TOMCAT_IP_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_IP_2",
+        "value": "192.168.163.233"
+      },
+      "TOMCAT_PORT": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT",
+        "value": 10017
+      },
+      "TOMCAT_PORT_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_2",
+        "value": 10017
+      },
+      "TOMCAT_PORT_8080_TCP": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP",
+        "value": "tcp://192.168.163.232:10017"
+      },
+      "TOMCAT_PORT_8080_TCP_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_2",
+        "value": "tcp://192.168.163.233:10017"
+      },
+      "TOMCAT_PORT_8080_TCP_ADDR": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_ADDR",
+        "value": "192.168.163.232"
+      },
+      "TOMCAT_PORT_8080_TCP_ADDR_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_ADDR_2",
+        "value": "192.168.163.233"
+      },
+      "TOMCAT_PORT_8080_TCP_PORT": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_PORT",
+        "value": 10017
+      },
+      "TOMCAT_PORT_8080_TCP_PORT_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_PORT_2",
+        "value": 10017
+      },
+      "TOMCAT_PORT_8080_TCP_PROTO": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_PROTO",
+        "value": "tcp"
+      },
+      "TOMCAT_PORT_8080_TCP_PROTO_2": {
+        "export": true,
+        "masked": false,
+        "name": "TOMCAT_PORT_8080_TCP_PROTO_2",
+        "value": "tcp"
+      }
+    },
+    "importedEnvs": {
+      "MYSQL_HOST": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_HOST",
+        "value": "container1413"
+      },
+      "MYSQL_HOST_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_HOST_2",
+        "value": "container1756"
+      },
+      "MYSQL_IP": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_IP",
+        "value": "192.168.163.232"
+      },
+      "MYSQL_IP_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_IP_2",
+        "value": "192.168.163.233"
+      },
+      "MYSQL_MASTER": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_HOST",
+        "value": "container1413"
+      },
+      "MYSQL_PASSWORD": {
+        "export": true,
+        "masked": true,
+        "name": "MYSQL_PASSWORD",
+        "value": "************"
+      },
+      "MYSQL_PASSWORD_2": {
+        "export": true,
+        "masked": true,
+        "name": "MYSQL_PASSWORD",
+        "value": "************"
+      },
+      "MYSQL_PORT": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT",
+        "value": 10016
+      },
+      "MYSQL_PORT_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_2",
+        "value": 10016
+      },
+      "MYSQL_PORT_3306_TCP": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP",
+        "value": "tcp://192.168.163.232:10016"
+      },
+      "MYSQL_PORT_3306_TCP_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_2",
+        "value": "tcp://192.168.163.233:10016"
+      },
+      "MYSQL_PORT_3306_TCP_ADDR": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_ADDR",
+        "value": "192.168.163.232"
+      },
+      "MYSQL_PORT_3306_TCP_ADDR_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_ADDR_2",
+        "value": "192.168.163.233"
+      },
+      "MYSQL_PORT_3306_TCP_PORT": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_PORT",
+        "value": 10016
+      },
+      "MYSQL_PORT_3306_TCP_PORT_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_PORT_2",
+        "value": 10016
+      },
+      "MYSQL_PORT_3306_TCP_PROTO": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_PROTO",
+        "value": "tcp"
+      },
+      "MYSQL_PORT_3306_TCP_PROTO_2": {
+        "export": true,
+        "masked": false,
+        "name": "MYSQL_PORT_3306_TCP_PROTO_2",
+        "value": "tcp"
+      },
+      "MYSQL_USERNAME": "root",
+      "MYSQL_USERNAME_2": "root"
+    }
+  }

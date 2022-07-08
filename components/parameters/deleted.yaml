@@ -1,0 +1,7 @@
+name: deleted
+in: query
+description: If true, only instances in pending removal status are returned.
+schema:
+  type: boolean
+  description: Show only instances in pending removal status
+example: true
