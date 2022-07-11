@@ -1,4 +1,3 @@
----
 type: object
 properties:
   id:
@@ -62,59 +61,7 @@ properties:
     type: string
   ports:
     type: array
-    items:
-    - type: object
-      properties:
-        index:
-          type: integer
-        external:
-          type: integer
-        internal:
-          type: integer
-        primaryPort:
-          type: boolean
-        displayName:
-          type: string
-        export:
-          type: boolean
-        visible:
-          type: boolean
-        loadBalance:
-          type: boolean
-        link:
-          type: boolean
-        exportName:
-          type: string
-        protocol:
-          type: string
-        code:
-          type: string
-    - type: object
-      properties:
-        index:
-          type: integer
-        external:
-          type: integer
-        internal:
-          type: integer
-        primaryPort:
-          type: boolean
-        displayName:
-          type: string
-        export:
-          type: boolean
-        visible:
-          type: boolean
-        loadBalance:
-          type: boolean
-        link:
-          type: boolean
-        exportName:
-          type: string
-        protocol:
-          type: string
-        code:
-          type: string
+    nullable: true
   plan:
     type: object
     properties:
@@ -202,10 +149,4 @@ properties:
     type: integer
   availableActions:
     type: array
-    items:
-    - type: object
-      properties:
-        code:
-          type: string
-        name:
-          type: string
+    nullable: true

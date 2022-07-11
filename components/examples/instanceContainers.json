@@ -1,117 +1,117 @@
 {
-    "containers": [
-      {
-        "id": 292,
-        "accountId": 1,
-        "instance": {
-          "id": 294,
-          "name": "nginxtest"
+  "containers": [
+    {
+      "id": 292,
+      "accountId": 1,
+      "instance": {
+        "id": 294,
+        "name": "nginxtest"
+      },
+      "containerType": {
+        "id": 187,
+        "code": "nginx-vmware-1.9",
+        "category": "nginx",
+        "name": "NGINX 1.9"
+      },
+      "containerTypeSet": {
+        "id": 193,
+        "code": "nginx-vmware-1.9-set",
+        "category": "nginx"
+      },
+      "server": {
+        "id": 653,
+        "name": "nginxtest"
+      },
+      "cloud": {
+        "id": 34,
+        "name": "myvmware"
+      },
+      "name": "nginxtest_292",
+      "ip": "10.30.20.50",
+      "internalIp": "10.30.20.50",
+      "internalHostname": "container292",
+      "externalHostname": "nginxtest",
+      "externalDomain": "localdomain",
+      "externalFqdn": "nginxtest.localdomain",
+      "ports": [
+        {
+          "index": 0,
+          "external": 80,
+          "internal": 80,
+          "primaryPort": true,
+          "displayName": "Http",
+          "export": true,
+          "visible": true,
+          "loadBalance": true,
+          "link": true,
+          "exportName": "HTTP",
+          "protocol": "http",
+          "code": "nginx.80"
         },
-        "containerType": {
-          "id": 187,
-          "code": "nginx-vmware-1.9",
-          "category": "nginx",
-          "name": "NGINX 1.9"
+        {
+          "index": 1,
+          "external": 443,
+          "internal": 443,
+          "primaryPort": false,
+          "displayName": "Https",
+          "export": true,
+          "visible": true,
+          "loadBalance": true,
+          "link": true,
+          "exportName": "HTTPS",
+          "protocol": "https",
+          "code": "nginx.443"
+        }
+      ],
+      "plan": {
+        "id": 76,
+        "code": "vm-1024",
+        "name": "1 CPU, 1GB Memory"
+      },
+      "dateCreated": "2019-02-20T18:29:05+0000",
+      "lastUpdated": "2019-02-27T21:07:35+0000",
+      "statsEnabled": true,
+      "status": "running",
+      "userStatus": "running",
+      "environmentPrefix": null,
+      "stats": {
+        "ts": "2019-02-27T21:07:31+0000",
+        "running": true,
+        "userCpuUsage": 0.1504010695,
+        "systemCpuUsage": 0.1838235294,
+        "usedMemory": 317256000,
+        "maxMemory": 1017032000,
+        "cacheMemory": 404236000,
+        "maxStorage": 10499452928,
+        "usedStorage": 3700285440,
+        "readIOPS": 0,
+        "writeIOPS": 0.35,
+        "totalIOPS": 0.35,
+        "iops": {
         },
-        "containerTypeSet": {
-          "id": 193,
-          "code": "nginx-vmware-1.9-set",
-          "category": "nginx"
-        },
-        "server": {
-          "id": 653,
-          "name": "nginxtest"
-        },
-        "cloud": {
-          "id": 34,
-          "name": "myvmware"
-        },
-        "name": "nginxtest_292",
-        "ip": "10.30.20.50",
-        "internalIp": "10.30.20.50",
-        "internalHostname": "container292",
-        "externalHostname": "nginxtest",
-        "externalDomain": "localdomain",
-        "externalFqdn": "nginxtest.localdomain",
-        "ports": [
-          {
-            "index": 0,
-            "external": 80,
-            "internal": 80,
-            "primaryPort": true,
-            "displayName": "Http",
-            "export": true,
-            "visible": true,
-            "loadBalance": true,
-            "link": true,
-            "exportName": "HTTP",
-            "protocol": "http",
-            "code": "nginx.80"
-          },
-          {
-            "index": 1,
-            "external": 443,
-            "internal": 443,
-            "primaryPort": false,
-            "displayName": "Https",
-            "export": true,
-            "visible": true,
-            "loadBalance": true,
-            "link": true,
-            "exportName": "HTTPS",
-            "protocol": "https",
-            "code": "nginx.443"
-          }
-        ],
-        "plan": {
-          "id": 76,
-          "code": "vm-1024",
-          "name": "1 CPU, 1GB Memory"
-        },
-        "dateCreated": "2019-02-20T18:29:05+0000",
-        "lastUpdated": "2019-02-27T21:07:35+0000",
-        "statsEnabled": true,
-        "status": "running",
-        "userStatus": "running",
-        "environmentPrefix": null,
-        "stats": {
-          "ts": "2019-02-27T21:07:31+0000",
-          "running": true,
-          "userCpuUsage": 0.1504010695,
-          "systemCpuUsage": 0.1838235294,
-          "usedMemory": 317256000,
-          "maxMemory": 1017032000,
-          "cacheMemory": 404236000,
-          "maxStorage": 10499452928,
-          "usedStorage": 3700285440,
-          "readIOPS": 0,
-          "writeIOPS": 0.35,
-          "totalIOPS": 0.35,
-          "iops": {
-          },
-          "netTxUsage": 114,
-          "netRxUsage": 2198
-        },
-        "runtimeInfo": {
-        },
-        "containerVersion": null,
-        "repositoryImage": null,
-        "planCategory": null,
-        "hostname": "nginxtest",
-        "domainName": null,
-        "volumeCreated": true,
-        "containerCreated": false,
-        "maxStorage": 10737418240,
-        "maxMemory": 1073741824,
-        "maxCores": 1,
-        "coresPerSocket": 1,
-        "maxCpu": 1,
-        "availableActions": [
-          {
-            "code": "nginx-1.9-remove-node",
-            "name": "Remove Nginx Node"
-          }
-        ]
-      }
-    ]
-  }
+        "netTxUsage": 114,
+        "netRxUsage": 2198
+      },
+      "runtimeInfo": {
+      },
+      "containerVersion": null,
+      "repositoryImage": null,
+      "planCategory": null,
+      "hostname": "nginxtest",
+      "domainName": null,
+      "volumeCreated": true,
+      "containerCreated": false,
+      "maxStorage": 10737418240,
+      "maxMemory": 1073741824,
+      "maxCores": 1,
+      "coresPerSocket": 1,
+      "maxCpu": 1,
+      "availableActions": [
+        {
+          "code": "nginx-1.9-remove-node",
+          "name": "Remove Nginx Node"
+        }
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ get:
           examples:
             Containers Response:
               value:
-                $ref: ../components/examples/instanceContainers.json 
+                $ref: ../components/examples/instanceContainers.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
