@@ -93,9 +93,9 @@ paths:
     $ref: paths/api@license.yaml
   /api/log-settings:
     $ref: paths/api@log-settings.yaml
-  /api/log-settings@syslog-rules:
+  /api/log-settings/syslog-rules:
     $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings@syslog-rules@{id}:
+  /api/log-settings/syslog-rules/{id}:
     $ref: paths/api@log-settings@syslog-rules@id.yaml
   /api/logs:
     $ref: paths/api@logs.yaml
@@ -105,6 +105,10 @@ paths:
     $ref: paths/api@key-pairs@id.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
+  /api/monitoring/contacts:
+    $ref: paths/api@monitoring@contacts.yaml
+  /api/monitoring/contacts/{id}:
+    $ref: paths/api@monitoring@contacts@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:

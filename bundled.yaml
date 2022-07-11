@@ -3910,131 +3910,380 @@ paths:
                 Instances Response:
                   value:
                     instances:
-                      - id: 1530
-                        accountId: 1
+                      - id: 55046
+                        uuid: 14825b19-0060-4d12-89a3-b53712798e42
+                        accountId: 3
+                        tenant:
+                          id: 3
+                          name: Morpheus
                         instanceType:
-                          id: 35
+                          id: 278
+                          code: mongodb
+                          category: nosql
+                          name: MongoDB
+                        group:
+                          id: 2
+                          name: Demo
+                        cloud:
+                          id: 172
+                          name: VMware Demo Cluster H5
+                        containers:
+                          - 753159
+                        servers:
+                          - 269539
+                        connectionInfo:
+                          - ip: 10.32.21.58
+                            port: null
+                        layout:
+                          id: 2357
+                          name: MongoDB
+                          provisionTypeId: 5
+                          provisionTypeCode: vmware
+                        plan:
+                          id: 149
+                          code: vm-8192
+                          name: 2 CPU, 8GB Memory
+                        name: admmon1004
+                        description: null
+                        environment: demo
+                        config:
+                          createUser: true
+                          isEC2: false
+                          isVpcSelectable: true
+                          noAgent: false
+                          smbiosAssetTag: null
+                          nestedVirtualization: null
+                          vmwareFolderId: /
+                          customOptions:
+                            mongodb_username: root
+                            mongodb_password: '************'
+                            environment: '3'
+                            mongodb_version: '4.2'
+                            mongodb_passwordHash: >-
+                              27722dfd03d0749dbd6aefbf21cc6a018f7876b6e6f821b8541356c15101abce
+                          resourcePoolId: 4080
+                          poolProviderType: null
+                          userGroup:
+                            id: ''
+                          expireDays: '2'
+                          shutdownDays: '1'
+                          name: >-
+                            ${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}
+                          hostName: >-
+                            ${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}
+                          instanceType:
+                            code: null
+                          site:
+                            id: 2
+                          environmentPrefix: null
+                          layout:
+                            id: 2357
+                            code: 68ed64b3-e18f-4214-8f21-021e794cd9a3
+                          type: mongodb
+                          instanceContext: demo
+                          memoryDisplay: MB
+                          expose: []
+                          createBackup: true
+                          backup:
+                            createBackup: true
+                            jobAction: new
+                            jobRetentionCount: '1'
+                            providerBackupType: -1
+                          replicationGroup:
+                            providerMethod: new
+                          layoutSize: 1
+                          lbInstances: []
+                        configGroup: null
+                        configId: null
+                        configRole: null
+                        volumes:
+                          - controllerId: 2144270
+                            datastoreId: autoCluster
+                            displayOrder: 0
+                            id: 2618586
+                            uuid: 3076a8e3-1256-4d23-acaa-be313ecbe88e
+                            maxIOPS: null
+                            maxStorage: 85899345920
+                            name: root
+                            shortName: root
+                            resizeable: true
+                            planResizable: true
+                            rootVolume: true
+                            size: 80
+                            storageType: 1
+                            unitNumber: '0'
+                            controllerMountPoint: '2144270:0:4:0'
+                        controllers:
+                          - id: 2144270
+                            name: SCSI controller 0
+                            type:
+                              id: 4
+                              code: vmware-lsiLogic
+                              name: SCSI LSI Logic Parallel
+                            maxDevices: 15
+                            reservedUnitNumber: 7
+                          - id: 2144271
+                            name: IDE 0
+                            type:
+                              id: 2
+                              code: vmware-ide
+                              name: IDE
+                            maxDevices: 2
+                            reservedUnitNumber: -1
+                          - id: 2144272
+                            name: IDE 1
+                            type:
+                              id: 2
+                              code: vmware-ide
+                              name: IDE
+                            maxDevices: 2
+                            reservedUnitNumber: -1
+                        interfaces:
+                          - id: network-135357
+                            network:
+                              id: 135357
+                              group: null
+                              subnet: null
+                              dhcpServer: true
+                              name: VLAN0002 - Internal Server 2
+                              pool:
+                                id: 281
+                                name: 10.32.20.0 /22
+                            ipAddress: null
+                            networkInterfaceTypeId: 4
+                            ipMode: ''
+                        customOptions:
+                          mongodb_username: root
+                          mongodb_password: '*********'
+                          environment: '3'
+                          mongodb_version: '4.2'
+                        instanceVersion: '1.0'
+                        labels: []
+                        tags: []
+                        evars:
+                          - name: MONGODB_IP
+                            value: 10.32.21.58
+                            export: true
+                            masked: false
+                          - name: MONGODB_HOST
+                            value: container753159
+                            export: true
+                            masked: false
+                        maxMemory: 8589934592
+                        maxStorage: 85899345920
+                        maxCores: 2
+                        coresPerSocket: 1
+                        maxCpu: null
+                        hourlyCost: 0
+                        hourlyPrice: 0
+                        instancePrice:
+                          price: 43.99997952
+                          cost: 43.99997952
+                          currency: USD
+                          unit: month
+                        dateCreated: '2022-07-08T05:11:07Z'
+                        lastUpdated: '2022-07-08T19:00:03Z'
+                        hostName: admmon1004
+                        domainName: null
+                        environmentPrefix: null
+                        firewallEnabled: true
+                        networkLevel: container
+                        autoScale: false
+                        instanceContext: demo
+                        currentDeployId: null
+                        locked: false
+                        status: running
+                        statusMessage: null
+                        errorMessage: null
+                        statusDate: '2022-07-08T05:15:48Z'
+                        statusPercent: null
+                        statusEta: null
+                        userStatus: null
+                        expireDays: 2
+                        renewDays: 4
+                        expireCount: 0
+                        expireDate: '2022-07-10T05:11:07Z'
+                        expireWarningDate: '2022-07-09T05:11:07Z'
+                        expireWarningSent: false
+                        shutdownDays: 1
+                        shutdownRenewDays: 1
+                        shutdownCount: 0
+                        shutdownDate: '2022-07-09T05:11:07Z'
+                        shutdownWarningDate: '2022-07-08T05:11:07Z'
+                        shutdownWarningSent: true
+                        removalDate: null
+                        createdBy:
+                          id: 286
+                          username: svcservicenow
+                        owner:
+                          id: 286
+                          username: svcservicenow
+                        notes: null
+                        stats:
+                          usedStorage: 3030241280
+                          maxStorage: 85899345920
+                          usedMemory: 695328000
+                          maxMemory: 8009268000
+                          usedCpu: 0.3424371503
+                          cpuUsage: 0.3424371503
+                          cpuUsagePeak: 0.3424371503
+                          cpuUsageAvg: 0.3424371503
+                        powerSchedule: null
+                        isScalable: false
+                        instanceThreshold: null
+                        isBusy: false
+                        apps: []
+                      - id: 51714
+                        uuid: 0aec011b-a599-4fd1-911a-4fcc37c73134
+                        accountId: 3
+                        tenant:
+                          id: 3
+                          name: Morpheus
+                        instanceType:
+                          id: 6
                           code: ubuntu
                           category: os
                           name: Ubuntu
                         group:
-                          id: 3
-                          name: Demo
+                          id: 50
+                          name: Production
                         cloud:
-                          id: 6
-                          name: San Mateo VMware
-                        containers:
-                          - 1798
-                        servers:
-                          - 2
-                        connectionInfo:
-                          - ip: 192.168.162.59
-                            port: 22
-                        layout:
-                          id: 105
-                        plan:
                           id: 12
-                          code: vm-2048
-                        name: ah-San Mateo VMware-ubuntu
-                        description: null
-                        instanceVersion: null
-                        dateCreated: 2017-01-31T21:30:49+0000
-                        lastUpdated: 2017-02-07T22:58:26+0000
-                        hostName: ah-San-Mateo-VMware-ubuntu
-                        domainName: null
-                        environmentPrefix: null
-                        firewallEnabled: true
-                        networkLevel: container
-                        autoScale: false
-                        instanceContext: production
-                        currentDeployId: null
-                        status: running
-                        statusMessage: null
-                        errorMessage: null
-                        statusDate: 2017-01-31T21:34:07+0000
-                        statusPercent: null
-                        statusEta: null
-                        userStatus: null
-                        createdBy:
-                          id: 38
-                      - id: 1653
-                        accountId: 1
-                        instanceType:
-                          id: 35
-                          code: ubuntu
-                          category: os
-                          name: Ubuntu
-                        group:
-                          id: 3
-                          name: Demo
-                        cloud:
-                          id: 6
-                          name: San Mateo VMware
+                          name: AWS
                         containers:
-                          - 1945
+                          - 749153
                         servers:
-                          - 2
+                          - 264223
                         connectionInfo:
-                          - ip: 192.168.163.55
+                          - ip: 0.0.0.0
                             port: 22
                         layout:
-                          id: 105
+                          id: 2136
+                          name: Amazon VM
+                          provisionTypeId: 11
+                          provisionTypeCode: amazon
                         plan:
-                          id: 11
-                          code: vm-1024
-                        name: ah-San Mateo VMware-ubuntu-PDNStest
+                          id: 1205
+                          code: amazon-t2.2xlarge
+                          name: T2 2xlarge - 8 Core, 32GB Memory
+                        name: asdmubu1013
                         description: null
-                        instanceVersion: null
-                        dateCreated: 2017-02-10T14:27:42+0000
-                        lastUpdated: 2017-02-10T14:31:19+0000
-                        hostName: ah-san-mateo-vmware-ubuntu-pdnstest
-                        domainName: null
-                        environmentPrefix: null
-                        firewallEnabled: true
-                        networkLevel: container
-                        autoScale: false
-                        instanceContext: dev
-                        currentDeployId: null
-                        status: running
-                        statusMessage: null
-                        errorMessage: null
-                        statusDate: 2017-02-10T14:30:43+0000
-                        statusPercent: null
-                        statusEta: null
-                        userStatus: null
-                        createdBy:
-                          id: 38
-                      - id: 1624
-                        accountId: 1
-                        instanceType:
-                          id: 21
-                          code: apache
-                          category: web
-                          name: Apache
-                        group:
-                          id: 163
-                          name: snow-approvals
-                        cloud:
-                          id: 6
-                          name: San Mateo VMware
-                        containers:
-                          - 1912
-                        servers:
-                          - 3
-                        connectionInfo:
-                          - ip: 192.168.163.28
-                            port: 10009
-                        layout:
-                          id: 48
-                        plan:
-                          id: 3
-                          code: container-256
-                        name: approval-snow-test
-                        description: null
-                        instanceVersion: null
-                        dateCreated: 2017-02-09T06:45:30+0000
-                        lastUpdated: 2017-02-09T06:53:20+0000
-                        hostName: approval-snow-test
+                        environment: null
+                        config:
+                          poolProviderType: null
+                          isVpcSelectable: false
+                          instanceProfile: null
+                          isEC2: false
+                          resourcePoolId: 129
+                          availabilityId: null
+                          publicIpType: elasticIp
+                          createUser: false
+                          securityId: null
+                          kmsKeyId: null
+                          expose: []
+                          noAgent: false
+                          securityGroups:
+                            - id: sg-06f57058cdfdf0475
+                          customOptions: {}
+                          createBackup: true
+                          memoryDisplay: MB
+                          backup:
+                            backupRepository: 3
+                            veeamManagedServer: ''
+                            jobSchedule: 2
+                            createBackup: true
+                            jobAction: new
+                            jobRetentionCount: '1'
+                            providerBackupType: 11
+                            target: 7
+                          shutdownDays: '1'
+                          expireDays: '2'
+                          layoutSize: 1
+                          lbInstances: []
+                        configGroup: null
+                        configId: null
+                        configRole: null
+                        volumes:
+                          - controllerId: null
+                            datastoreId: null
+                            displayOrder: 0
+                            id: 2610036
+                            uuid: e6bb58cf-ef1e-40c3-8c9b-2aa4eecaec61
+                            maxIOPS: null
+                            maxStorage: 85899345920
+                            name: root
+                            shortName: root
+                            resizeable: true
+                            planResizable: true
+                            rootVolume: true
+                            size: 80
+                            storageType: 6
+                            unitNumber: null
+                            controllerMountPoint: null
+                        controllers: []
+                        interfaces:
+                          - id: networkGroup-2
+                            network:
+                              id: null
+                              group: 2
+                              subnet: null
+                              dhcpServer: null
+                              name: null
+                              pool: null
+                            ipAddress: null
+                            networkInterfaceTypeId: null
+                            ipMode: null
+                        customOptions: {}
+                        instanceVersion: '20.04'
+                        labels: []
+                        tags:
+                          - id: 13824708
+                            name: application
+                            value: null
+                        evars:
+                          - name: UBUNTU_IP
+                            value: 0.0.0.0
+                            export: true
+                            masked: false
+                          - name: UBUNTU_HOST
+                            value: container749153
+                            export: true
+                            masked: false
+                          - name: UBUNTU_PORT_SSH
+                            value: 22
+                            export: true
+                            masked: false
+                          - name: UBUNTU_PORT_22_TCP_PORT
+                            value: 22
+                            export: true
+                            masked: false
+                          - name: UBUNTU_PORT_22_TCP_PROTO
+                            value: tcp
+                            export: true
+                            masked: false
+                          - name: UBUNTU_PORT_22_TCP_ADDR
+                            value: 0.0.0.0
+                            export: true
+                            masked: false
+                          - name: UBUNTU_PORT_22_TCP
+                            value: tcp://0.0.0.0:22
+                            export: true
+                            masked: false
+                        maxMemory: 34359738368
+                        maxStorage: 85899345920
+                        maxCores: 8
+                        coresPerSocket: null
+                        maxCpu: null
+                        hourlyCost: 0
+                        hourlyPrice: 0
+                        instancePrice:
+                          price: 332.8512
+                          cost: 332.8512
+                          currency: USD
+                          unit: month
+                        dateCreated: '2022-06-16T06:58:53Z'
+                        lastUpdated: '2022-06-28T19:28:01Z'
+                        hostName: asdmubu1013
                         domainName: null
                         environmentPrefix: null
                         firewallEnabled: true
@@ -4042,41 +4291,247 @@ paths:
                         autoScale: false
                         instanceContext: null
                         currentDeployId: null
-                        status: running
+                        locked: false
+                        status: denied
                         statusMessage: null
                         errorMessage: null
-                        statusDate: 2017-02-09T06:53:20+0000
+                        statusDate: '2022-06-16T07:17:23Z'
                         statusPercent: null
                         statusEta: null
                         userStatus: null
+                        expireDays: 2
+                        renewDays: 4
+                        expireCount: 0
+                        expireDate: '2022-06-18T06:58:53Z'
+                        expireWarningDate: '2022-06-17T06:58:53Z'
+                        expireWarningSent: false
+                        shutdownDays: 1
+                        shutdownRenewDays: 1
+                        shutdownCount: 0
+                        shutdownDate: '2022-06-17T06:58:53Z'
+                        shutdownWarningDate: '2022-06-16T06:58:53Z'
+                        shutdownWarningSent: false
+                        removalDate: null
+                        createdBy:
+                          id: 336
+                          username: Alexander Schembri
                         owner:
-                          id: 1
-                          username: admin
-                    stats:
-                      '1530':
-                        usedStorage: 6776664064
-                        maxStorage: 21067075584
-                        usedMemory: 1909739520
-                        maxMemory: 2098315264
-                        usedCpu: 1.0926682792
-                      '1624':
-                        usedStorage: 4829184
-                        maxStorage: 3103539200
-                        usedMemory: 9113600
-                        maxMemory: 268435456
-                        usedCpu: 0
-                      '1653':
-                        usedStorage: 2662801408
-                        maxStorage: 10499452928
-                        usedMemory: 935444480
-                        maxMemory: 1041350656
-                        usedCpu: 0.1501000667
-                    loadBalancers: []
+                          id: 336
+                          username: Alexander Schembri
+                        notes: null
+                        stats:
+                          usedStorage: 0
+                          maxStorage: 85899345920
+                          usedMemory: 0
+                          maxMemory: 34359738368
+                          usedCpu: 0
+                          cpuUsage: 0
+                          cpuUsagePeak: 0
+                          cpuUsageAvg: 0
+                        powerSchedule: null
+                        isScalable: true
+                        instanceThreshold:
+                          id: 1419
+                          autoUp: true
+                          autoDown: true
+                          minCount: 1
+                          maxCount: 2
+                          cpuEnabled: false
+                          minCpu: 0
+                          maxCpu: 0
+                          memoryEnabled: true
+                          minMemory: 1
+                          maxMemory: 2
+                          diskEnabled: false
+                          minDisk: 0
+                          maxDisk: 0
+                          minNetwork: null
+                          networkEnabled: false
+                          iopsEnabled: false
+                          minIops: null
+                          maxIops: null
+                          comment: null
+                          zoneId: 12
+                          dateCreated: '2022-06-16T06:58:53Z'
+                          lastUpdated: '2022-06-16T06:58:53Z'
+                        isBusy: false
+                        apps: []
+                      - id: 54967
+                        uuid: f012ac3c-d021-4be7-8b73-ae0a0c7ddc86
+                        accountId: 3
+                        tenant:
+                          id: 3
+                          name: Morpheus
+                        instanceType:
+                          id: 6
+                          code: ubuntu
+                          category: os
+                          name: Ubuntu
+                        group:
+                          id: 2
+                          name: Demo
+                        cloud:
+                          id: 175
+                          name: AliCloud
+                        containers:
+                          - 752572
+                        servers:
+                          - 267872
+                        connectionInfo:
+                          - ip: 0.0.0.0
+                            port: 22
+                        layout:
+                          id: 2555
+                          name: Alibaba Ubuntu 18.04
+                          provisionTypeId: 38
+                          provisionTypeCode: alibaba
+                        plan:
+                          id: 5353
+                          code: alibaba.flavor.175.ecs.s6-c1m2.small
+                          name: ecs.s6-c1m2.small
+                        name: asdmubu1014
+                        description: null
+                        environment: null
+                        config:
+                          poolProviderType: null
+                          alibabaSecurityGroup: 45872
+                          isVpcSelectable: true
+                          internetAccess: elasticIp
+                          isEC2: false
+                          resourcePoolId: 4549
+                          createUser: false
+                          expose: []
+                          noAgent: false
+                          customOptions: {}
+                          createBackup: true
+                          memoryDisplay: MB
+                          backup:
+                            createBackup: true
+                            jobAction: new
+                            jobRetentionCount: '1'
+                            providerBackupType: -1
+                          shutdownDays: '1'
+                          expireDays: '2'
+                          layoutSize: 1
+                          lbInstances: []
+                        configGroup: null
+                        configId: null
+                        configRole: null
+                        volumes:
+                          - controllerId: null
+                            datastoreId: null
+                            displayOrder: 0
+                            id: 2614884
+                            uuid: 3242cacb-e063-4ac3-b444-b14f0d95b5dd
+                            maxIOPS: null
+                            maxStorage: 42949672960
+                            name: root
+                            shortName: root
+                            resizeable: true
+                            planResizable: true
+                            rootVolume: true
+                            size: 40
+                            storageType: 30
+                            unitNumber: null
+                            controllerMountPoint: null
+                        controllers: []
+                        interfaces:
+                          - id: network-135567
+                            network:
+                              id: 135567
+                              group: null
+                              subnet: null
+                              dhcpServer: true
+                              name: labs_us-west-1_app_1a - labs_us-west-1
+                              pool: null
+                            ipAddress: null
+                            networkInterfaceTypeId: null
+                            ipMode: null
+                        customOptions: {}
+                        instanceVersion: '18.04'
+                        labels: []
+                        tags:
+                          - id: 13831399
+                            name: application
+                            value: null
+                        evars:
+                          - name: UBUNTU_IP
+                            value: 0.0.0.0
+                            export: true
+                            masked: false
+                          - name: UBUNTU_HOST
+                            value: container752572
+                            export: true
+                            masked: false
+                        maxMemory: 2147483648
+                        maxStorage: 42949672960
+                        maxCores: 1
+                        coresPerSocket: null
+                        maxCpu: null
+                        hourlyCost: 0
+                        hourlyPrice: 0
+                        instancePrice:
+                          price: 0
+                          cost: 0
+                          currency: null
+                          unit: month
+                        dateCreated: '2022-06-23T07:32:57Z'
+                        lastUpdated: '2022-07-08T19:48:26Z'
+                        hostName: asdmubu1014
+                        domainName: null
+                        environmentPrefix: null
+                        firewallEnabled: true
+                        networkLevel: container
+                        autoScale: false
+                        instanceContext: null
+                        currentDeployId: null
+                        locked: false
+                        status: unknown
+                        statusMessage: "InvalidTagValue.Malformed : The specified Tag.n.Value is not valid.\r\nRequestId : 6166B154-1D21-3B7C-ABE6-C1F9E18B3D69"
+                        errorMessage: null
+                        statusDate: '2022-06-23T07:33:00Z'
+                        statusPercent: null
+                        statusEta: null
+                        userStatus: null
+                        expireDays: 2
+                        renewDays: 4
+                        expireCount: 0
+                        expireDate: '2022-06-25T07:32:56Z'
+                        expireWarningDate: '2022-06-24T07:32:56Z'
+                        expireWarningSent: false
+                        shutdownDays: 1
+                        shutdownRenewDays: 1
+                        shutdownCount: 0
+                        shutdownDate: '2022-06-24T07:32:56Z'
+                        shutdownWarningDate: '2022-06-23T07:32:56Z'
+                        shutdownWarningSent: false
+                        removalDate: null
+                        createdBy:
+                          id: 336
+                          username: Alexander Schembri
+                        owner:
+                          id: 336
+                          username: Alexander Schembri
+                        notes: null
+                        stats:
+                          usedStorage: 0
+                          maxStorage: 42949672960
+                          usedMemory: 0
+                          maxMemory: 2147483648
+                          usedCpu: 0
+                          cpuUsage: 0
+                          cpuUsagePeak: 0
+                          cpuUsageAvg: 0
+                        powerSchedule: null
+                        isScalable: true
+                        instanceThreshold: null
+                        isBusy: false
+                        apps: []
                     meta:
                       offset: 0
-                      max: 25
+                      max: 3
                       size: 3
-                      total: 21
+                      total: 25
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -4121,245 +4576,226 @@ paths:
                 Instance Response:
                   value:
                     instance:
-                      id: 392
-                      uuid: 6ccf1fa9-da1f-4318-841e-7bf30c4522c6
-                      accountId: 1
+                      id: 55046
+                      uuid: 14825b19-0060-4d12-89a3-b53712798e42
+                      accountId: 3
                       tenant:
-                        id: 1
-                        name: Morpheus Data
+                        id: 3
+                        name: Morpheus
                       instanceType:
-                        id: 6
-                        code: apache
-                        category: web
-                        name: Apache
+                        id: 278
+                        code: mongodb
+                        category: nosql
+                        name: MongoDB
                       group:
-                        id: 1
-                        name: dev
+                        id: 2
+                        name: Demo
                       cloud:
-                        id: 39
-                        name: amazon
+                        id: 172
+                        name: VMware Demo Cluster H5
                       containers:
-                        - 945
+                        - 753159
                       servers:
-                        - 4002
+                        - 269539
                       connectionInfo:
-                        - ip: 10.100.1.8
-                          port: 80
+                        - ip: 10.32.21.58
+                          port: null
                       layout:
-                        id: 31
-                        name: Amazon Apache on Ubuntu 14.04
-                        provisionTypeCode: amazon
+                        id: 2357
+                        name: MongoDB
+                        provisionTypeId: 5
+                        provisionTypeCode: vmware
                       plan:
-                        id: 1
-                        code: amazon-t2.nano
-                        name: Amazon T2 Nano - 1 Core, 0.5GB Memory
-                      name: sa-apache-1
-                      description: new description
-                      environment: null
+                        id: 149
+                        code: vm-8192
+                        name: 2 CPU, 8GB Memory
+                      name: admmon1004
+                      description: null
+                      environment: demo
                       config:
                         createUser: true
                         isEC2: false
                         isVpcSelectable: true
-                        noAgent: null
-                        availabilityId: null
-                        securityId: null
-                        publicIpType: subnet
-                        instanceProfile: null
-                        resourcePoolId: '173'
+                        noAgent: false
+                        smbiosAssetTag: null
+                        nestedVirtualization: null
+                        vmwareFolderId: /
+                        customOptions:
+                          mongodb_username: root
+                          mongodb_password: '************'
+                          environment: '3'
+                          mongodb_version: '4.2'
+                          mongodb_passwordHash: >-
+                            27722dfd03d0749dbd6aefbf21cc6a018f7876b6e6f821b8541356c15101abce
+                        resourcePoolId: 4080
                         poolProviderType: null
-                        name: ${userInitials}-apache-${sequence}
-                        hostName: ${userInitials}-apache-${sequence}
+                        userGroup:
+                          id: ''
+                        expireDays: '2'
+                        shutdownDays: '1'
+                        name: >-
+                          ${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}
+                        hostName: >-
+                          ${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}
                         instanceType:
                           code: null
                         site:
-                          id: 1
-                          name: dev
+                          id: 2
                         environmentPrefix: null
                         layout:
-                          id: 31
-                          code: apache-amazon-2.4-single
-                        type: apache
+                          id: 2357
+                          code: 68ed64b3-e18f-4214-8f21-021e794cd9a3
+                        type: mongodb
+                        instanceContext: demo
                         memoryDisplay: MB
-                        securityGroups:
-                          - id: sg-21dd8144
-                        customOptions:
-                          isPrimary: 'on'
-                          inventoryName: DB12
+                        expose: []
                         createBackup: true
                         backup:
                           createBackup: true
                           jobAction: new
-                          jobRetentionCount: '3'
-                          veeamManagedServer: ''
-                          backupRepository: 1
-                          jobSchedule: 2
-                          target: 37006
+                          jobRetentionCount: '1'
+                          providerBackupType: -1
+                        replicationGroup:
+                          providerMethod: new
                         layoutSize: 1
                         lbInstances: []
                       configGroup: null
                       configId: null
                       configRole: null
                       volumes:
-                        - controllerId: null
-                          datastoreId: null
+                        - controllerId: 2144270
+                          datastoreId: autoCluster
                           displayOrder: 0
-                          id: 177034
+                          id: 2618586
+                          uuid: 3076a8e3-1256-4d23-acaa-be313ecbe88e
                           maxIOPS: null
-                          maxStorage: 10737418240
+                          maxStorage: 85899345920
                           name: root
                           shortName: root
                           resizeable: true
+                          planResizable: true
                           rootVolume: true
-                          size: 10
-                          storageType: 5
-                          unitNumber: null
-                          controllerMountPoint: null
-                      controllers: []
+                          size: 80
+                          storageType: 1
+                          unitNumber: '0'
+                          controllerMountPoint: '2144270:0:4:0'
+                      controllers:
+                        - id: 2144270
+                          name: SCSI controller 0
+                          type:
+                            id: 4
+                            code: vmware-lsiLogic
+                            name: SCSI LSI Logic Parallel
+                          maxDevices: 15
+                          reservedUnitNumber: 7
+                        - id: 2144271
+                          name: IDE 0
+                          type:
+                            id: 2
+                            code: vmware-ide
+                            name: IDE
+                          maxDevices: 2
+                          reservedUnitNumber: -1
+                        - id: 2144272
+                          name: IDE 1
+                          type:
+                            id: 2
+                            code: vmware-ide
+                            name: IDE
+                          maxDevices: 2
+                          reservedUnitNumber: -1
                       interfaces:
-                        - id: '365'
+                        - id: network-135357
                           network:
-                            id: 365
+                            id: 135357
                             group: null
                             subnet: null
                             dhcpServer: true
-                            name: labs1
-                            pool: null
+                            name: VLAN0002 - Internal Server 2
+                            pool:
+                              id: 281
+                              name: 10.32.20.0 /22
                           ipAddress: null
-                          networkInterfaceTypeId: null
+                          networkInterfaceTypeId: 4
                           ipMode: ''
                       customOptions:
-                        isPrimary: 'on'
-                        inventoryName: DB12
-                      instanceVersion: '2.4'
-                      labels:
-                        - foo
-                        - bar
-                      tags:
-                        - id: 70539
-                          name: Morpheus Id
-                          value: '945'
-                        - id: 70541
-                          name: Morpheus Instance Id
-                          value: '392'
-                        - id: 70538
-                          name: Morpheus Labels
-                          value: foo,bar
-                        - id: 70540
-                          name: Morpheus Server Id
-                          value: '4002'
-                        - id: 70530
-                          name: abc
-                          value: '123'
+                        mongodb_username: root
+                        mongodb_password: '*********'
+                        environment: '3'
+                        mongodb_version: '4.2'
+                      instanceVersion: '1.0'
+                      labels: []
+                      tags: []
                       evars:
-                        - name: APACHE_IP
-                          value: 10.100.1.8
+                        - name: MONGODB_IP
+                          value: 10.32.21.58
                           export: true
                           masked: false
-                        - name: APACHE_HOST
-                          value: container945
+                        - name: MONGODB_HOST
+                          value: container753159
                           export: true
                           masked: false
-                        - name: APACHE_PORT_HTTP
-                          value: 80
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_80_TCP_PORT
-                          value: 80
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_80_TCP_PROTO
-                          value: tcp
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_80_TCP_ADDR
-                          value: 10.100.1.8
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_80_TCP
-                          value: tcp://10.100.1.8:80
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_HTTPS
-                          value: 443
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_443_TCP_PORT
-                          value: 443
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_443_TCP_PROTO
-                          value: tcp
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_443_TCP_ADDR
-                          value: 10.100.1.8
-                          export: true
-                          masked: false
-                        - name: APACHE_PORT_443_TCP
-                          value: tcp://10.100.1.8:443
-                          export: true
-                          masked: false
-                      maxMemory: 536870912
-                      maxStorage: 10737418240
-                      maxCores: 1
+                      maxMemory: 8589934592
+                      maxStorage: 85899345920
+                      maxCores: 2
                       coresPerSocket: 1
-                      maxCpu: 1
-                      hourlyCost: 0.0086816667
-                      hourlyPrice: 0.0086816667
+                      maxCpu: null
+                      hourlyCost: 0
+                      hourlyPrice: 0
                       instancePrice:
-                        price: 6.2508
-                        cost: 6.2508
+                        price: 43.99997952
+                        cost: 43.99997952
                         currency: USD
                         unit: month
-                      dateCreated: '2020-11-02T16:36:32Z'
-                      lastUpdated: '2021-06-21T21:00:01Z'
-                      hostName: sa-apache-1
+                      dateCreated: '2022-07-08T05:11:07Z'
+                      lastUpdated: '2022-07-08T20:00:05Z'
+                      hostName: admmon1004
                       domainName: null
                       environmentPrefix: null
                       firewallEnabled: true
                       networkLevel: container
                       autoScale: false
-                      instanceContext: null
+                      instanceContext: demo
                       currentDeployId: null
                       locked: false
                       status: running
                       statusMessage: null
                       errorMessage: null
-                      statusDate: '2020-11-02T16:38:12Z'
+                      statusDate: '2022-07-08T05:15:48Z'
                       statusPercent: null
                       statusEta: null
                       userStatus: null
-                      expireDays: null
-                      renewDays: null
+                      expireDays: 2
+                      renewDays: 4
                       expireCount: 0
-                      expireDate: null
-                      expireWarningDate: null
+                      expireDate: '2022-07-10T05:11:07Z'
+                      expireWarningDate: '2022-07-09T05:11:07Z'
                       expireWarningSent: false
-                      shutdownDays: null
-                      shutdownRenewDays: null
+                      shutdownDays: 1
+                      shutdownRenewDays: 1
                       shutdownCount: 0
-                      shutdownDate: null
-                      shutdownWarningDate: null
-                      shutdownWarningSent: false
+                      shutdownDate: '2022-07-09T05:11:07Z'
+                      shutdownWarningDate: '2022-07-08T05:11:07Z'
+                      shutdownWarningSent: true
                       removalDate: null
                       createdBy:
-                        id: 1
-                        username: admin
+                        id: 286
+                        username: svcservicenow
                       owner:
-                        id: 1
-                        username: admin
+                        id: 286
+                        username: svcservicenow
                       notes: null
                       stats:
-                        usedStorage: 0
-                        maxStorage: 10737418240
-                        usedMemory: 233500000
-                        maxMemory: 500212000
-                        usedCpu: 0.0667445352
-                        cpuUsage: 0.0667445352
-                        cpuUsagePeak: 0.0667445352
-                        cpuUsageAvg: 0.0667445352
+                        usedStorage: 3030441984
+                        maxStorage: 85899345920
+                        usedMemory: 689520000
+                        maxMemory: 8009268000
+                        usedCpu: 0.3340292275
+                        cpuUsage: 0.3340292275
+                        cpuUsagePeak: 0.3340292275
+                        cpuUsageAvg: 0.3340292275
                       powerSchedule: null
-                      isScalable: true
+                      isScalable: false
                       instanceThreshold: null
                       isBusy: false
                       apps: []
@@ -4368,265 +4804,247 @@ paths:
                       currentLoadBalancerContainersOut: 0
                       lastDeploy: null
                       containerDetails:
-                        - id: 945
-                          uuid: c19f7209-df3a-443c-93a8-ccefacb3783c
-                          name: sa-apache-1_945
-                          ip: 10.100.1.8
-                          internalIp: 10.100.1.8
-                          internalHostname: container945
-                          externalHostname: sa-apache-1
+                        - id: 753159
+                          uuid: d09a4d6c-d956-414b-8be7-db1a1d568dc1
+                          name: admmon1004_753159
+                          ip: 10.32.21.58
+                          internalIp: 10.32.21.58
+                          internalHostname: container753159
+                          externalHostname: admmon1004
                           externalDomain: localdomain
-                          externalFqdn: sa-apache-1.localdomain
-                          accountId: 1
+                          externalFqdn: admmon1004.localdomain
+                          accountId: 3
                           instance:
-                            id: 392
-                            name: sa-apache-1
+                            id: 55046
+                            name: admmon1004
                           containerType:
-                            id: 31
-                            code: apache-amazon-2.4
-                            category: apache
-                            name: Apache 2.4
+                            id: 2503
+                            code: cf78c63e-f2c3-48aa-9c20-760ada3a1b5c
+                            category: null
+                            name: MongoDB
                           containerTypeSet:
-                            id: 31
-                            code: apache-amazon-2.4-set
-                            category: apache
+                            id: 2442
+                            code: cf78c63e-f2c3-48aa-9c20-760ada3a1b5c
+                            category: null
                           server:
-                            id: 4002
-                            uuid: fbf4234d-cd25-47b5-bdd1-49a9132d2871
-                            externalId: i-033fbb2f1a9c2c225
-                            internalId: null
-                            externalUniqueId: null
-                            name: sa-apache-1
-                            externalName: sa-apache-1
-                            hostname: sa-apache-1
-                            accountId: 1
+                            id: 269539
+                            uuid: 5398d7f5-bfa1-4a56-b693-cce20efc61f9
+                            externalId: vm-80191
+                            internalId: 502ded94-de1a-7aab-da41-06ee9f056d43
+                            externalUniqueId: 422d20f7-bea9-1ece-2073-eabb23dccdc0
+                            name: admmon1004
+                            externalName: admmon1004
+                            hostname: admmon1004
+                            accountId: 3
                             account:
-                              id: 1
-                              name: Morpheus Data
+                              id: 3
+                              name: Morpheus
                             owner:
-                              id: 1
-                              username: admin
+                              id: 286
+                              username: svcservicenow
                             zone:
-                              id: 39
-                              name: amazon
+                              id: 172
+                              name: VMware Demo Cluster H5
                             plan:
-                              id: 1
-                              code: amazon-t2.nano
-                              name: Amazon T2 Nano - 1 Core, 0.5GB Memory
+                              id: 149
+                              code: vm-8192
+                              name: 2 CPU, 8GB Memory
                             computeServerType:
-                              id: 45
-                              code: amazonVm
-                              name: Amazon Instance
+                              id: 75
+                              code: vmwareVm
+                              name: VMware Linux VM
                               managed: true
                               externalDelete: true
                             visibility: private
                             description: null
-                            zoneId: 39
-                            siteId: 1
-                            resourcePoolId: 173
+                            zoneId: 172
+                            siteId: 2
+                            resourcePoolId: 4080
                             folderId: null
-                            sshHost: null
+                            sshHost: 10.32.21.58
                             sshPort: 22
-                            externalIp: null
-                            internalIp: 10.100.1.8
-                            platform: ubuntu
-                            platformVersion: '14.04'
-                            dateCreated: '2020-11-02T16:36:32Z'
-                            lastUpdated: '2021-06-22T18:06:32Z'
+                            externalIp: 10.32.21.58
+                            internalIp: 10.32.21.58
+                            platform: centos
+                            platformVersion: 3.10.0-1160.31.1.el7.x86_64
+                            dateCreated: '2022-07-08T05:11:07Z'
+                            lastUpdated: '2022-07-08T20:18:21Z'
                             stats:
-                              ts: 2021-06-22T18:06:28+0000
-                              freeMemory: 266712000
-                              usedMemory: 233500000
-                              freeSwap: 0
+                              ts: 2022-07-08T20:18:19+0000
+                              freeMemory: 7319828000
+                              usedMemory: 689440000
+                              freeSwap: 536866816
                               usedSwap: 0
-                              cpuIdleTime: 692815380
-                              cpuSystemTime: 224850
-                              cpuUserTime: 382640
-                              cpuTotalTime: 693422870
-                              cpuUsage: 0.06674528121948242
-                              maxStorage: 10737418240
-                              usedStorage: 1568661504
-                              reservedStorage: 10423046144
-                              netTxUsage: 27
-                              netRxUsage: 23
-                              networkBandwidth: 0
+                              cpuIdleTime: 107915060
+                              cpuSystemTime: 215030
+                              cpuUserTime: 337090
+                              cpuTotalTime: 108467180
+                              cpuUsage: 0.35067200660705566
+                              maxStorage: 85899345920
+                              usedStorage: 3030441984
+                              reservedStorage: 85340434432
+                              netTxUsage: 31
+                              netRxUsage: 566
+                              networkBandwidth: 1310720000
                             status: provisioned
                             statusMessage: null
                             errorMessage: null
-                            statusDate: '2020-11-02T16:36:50Z'
+                            statusDate: '2022-07-08T05:14:08Z'
                             statusPercent: null
                             statusEta: null
                             powerState: 'on'
                             agentInstalled: true
-                            lastAgentUpdate: '2021-06-22T18:06:32Z'
-                            agentVersion: 2.0.0
-                            maxCores: 1
-                            coresPerSocket: 1
-                            maxMemory: 536870912
-                            maxStorage: 10737418240
+                            lastAgentUpdate: '2022-07-08T20:18:21Z'
+                            agentVersion: 2.3.2
+                            maxCores: 2
+                            maxMemory: 8589934592
+                            maxStorage: 85899345920
                             maxCpu: null
-                            hourlyCost: 0.0086816667
-                            hourlyPrice: 0.0086816667
+                            hourlyCost: 0.0611110827
+                            hourlyPrice: 0.0611110827
                             sourceImage:
-                              id: 22
-                              code: amazon.ec2.image.morpheus.apache.2.4
-                              name: ubuntu-14_04-apache-2_4-morph.0.1
+                              id: 526230
+                              code: vmware.vsphere.image.morpheus.centos.7.9
+                              name: Morpheus CentOS 7.9 v2
                             serverOs:
-                              id: 5
-                              code: ubuntu.14.04.64
-                              name: ubuntu 14 64-bit
+                              id: 27
+                              code: cent.64
+                              name: centOS 64-bit
                               description: null
-                              vendor: canonical
-                              category: ubuntu
-                              osFamily: debian
-                              osVersion: '14.04'
+                              vendor: centos
+                              category: centos
+                              osFamily: rhel
+                              osVersion: all
                               bitCount: 64
                               platform: linux
                             volumes:
-                              - id: 177034
+                              - id: 2618586
                                 name: root
-                                controllerId: null
-                                controllerMountPoint: null
+                                controllerId: 2144270
+                                controllerMountPoint: '2144270:0:4:0'
                                 resizeable: true
+                                planResizable: true
                                 rootVolume: true
-                                unitNumber: null
-                                typeId: 5
+                                unitNumber: '0'
+                                typeId: 1
                                 configurableIOPS: false
-                                datastoreId: null
-                                maxStorage: 10737418240
+                                datastoreId: 21179
+                                maxStorage: 85899345920
                                 displayOrder: 0
                                 maxIOPS: null
-                            controllers: []
+                                uuid: 3076a8e3-1256-4d23-acaa-be313ecbe88e
+                            controllers:
+                              - id: 2144270
+                                name: SCSI controller 0
+                                type:
+                                  id: 4
+                                  code: vmware-lsiLogic
+                                  name: SCSI LSI Logic Parallel
+                                maxDevices: 15
+                                reservedUnitNumber: 7
+                              - id: 2144271
+                                name: IDE 0
+                                type:
+                                  id: 2
+                                  code: vmware-ide
+                                  name: IDE
+                                maxDevices: 2
+                                reservedUnitNumber: -1
+                              - id: 2144272
+                                name: IDE 1
+                                type:
+                                  id: 2
+                                  code: vmware-ide
+                                  name: IDE
+                                maxDevices: 2
+                                reservedUnitNumber: -1
                             interfaces:
-                              - id: 297842
+                              - id: 658086
                                 refType: null
                                 refId: null
                                 name: eth0
-                                internalId: null
-                                externalId: eni-0689d61ea999db573
-                                uniqueId: morpheus-nic-392-945-0
-                                publicIpAddress: null
+                                internalId: '7'
+                                externalId: '4000'
+                                uniqueId: morpheus-nic-55046-753159-0
+                                publicIpAddress: 10.32.21.58
                                 publicIpv6Address: null
-                                ipAddress: 10.100.1.8
-                                ipv6Address: null
+                                ipAddress: 10.32.21.58
+                                ipv6Address: fe80::250:56ff:fead:d491
                                 ipSubnet: null
                                 ipv6Subnet: null
-                                description: ''
+                                description: null
                                 dhcp: true
                                 active: true
                                 poolAssigned: false
                                 primaryInterface: true
                                 network:
-                                  id: 365
-                                  name: labs1
+                                  id: 135357
+                                  name: VLAN0002 - Internal Server 2
                                 subnet: null
                                 networkGroup: null
                                 networkPosition: null
-                                networkPool: null
+                                networkPool:
+                                  id: 281
+                                  name: 10.32.20.0 /22
                                 networkDomain: null
                                 type:
-                                  id: 1
-                                  code: standard
-                                  name: standard
+                                  id: 4
+                                  code: vmxNet3
+                                  name: VMXNET 3
                                 ipMode: ''
-                                macAddress: 06:92:59:62:73:a3
+                                macAddress: 00:50:56:ad:d4:91
                             labels: []
-                            tags:
-                              - id: 70536
-                                name: Morpheus Id
-                                value: '945'
-                              - id: 70535
-                                name: Morpheus Instance Id
-                                value: '392'
-                              - id: 70537
-                                name: Morpheus Labels
-                                value: foo,bar
-                              - id: 70534
-                                name: Morpheus Server Id
-                                value: '4002'
-                              - id: 70531
-                                name: abc
-                                value: '123'
+                            tags: []
                             enabled: true
-                            tagCompliant: null
+                            tagCompliant: false
                           cloud:
-                            id: 39
-                            name: amazon
-                          ports:
-                            - id: 192
-                              index: 0
-                              external: 80
-                              internal: 80
-                              displayName: Http
-                              primaryPort: false
-                              export: true
-                              visible: true
-                              exportName: HTTP
-                              loadBalanceProtocol: null
-                              loadBalance: true
-                              protocol: http
-                              link: true
-                              externalIp: null
-                              internalIp: null
-                            - id: 193
-                              index: 1
-                              external: 443
-                              internal: 443
-                              displayName: Https
-                              primaryPort: false
-                              export: true
-                              visible: true
-                              exportName: HTTPS
-                              loadBalanceProtocol: null
-                              loadBalance: true
-                              protocol: https
-                              link: true
-                              externalIp: null
-                              internalIp: null
+                            id: 172
+                            name: VMware Demo Cluster H5
+                          ports: []
                           plan:
-                            id: 1
-                            code: amazon-t2.nano
-                            name: Amazon T2 Nano - 1 Core, 0.5GB Memory
+                            id: 149
+                            code: vm-8192
+                            name: 2 CPU, 8GB Memory
                           configGroup: null
                           configId: null
                           configRole: null
-                          dateCreated: '2020-11-02T16:36:32Z'
-                          lastUpdated: '2021-06-22T18:06:32Z'
+                          dateCreated: '2022-07-08T05:11:07Z'
+                          lastUpdated: '2022-07-08T20:17:56Z'
                           statsEnabled: true
                           status: running
                           userStatus: running
                           environmentPrefix: null
                           stats:
-                            ts: 2021-06-22T18:06:28+0000
+                            ts: 2022-07-08T20:17:56+0000
                             running: true
-                            userCpuUsage: 0.0333722676
-                            systemCpuUsage: 0.0333722676
-                            usedMemory: 233500000
-                            maxMemory: 500212000
-                            cacheMemory: 190968000
-                            maxStorage: null
-                            usedStorage: 0
+                            userCpuUsage: 0.1920668058
+                            systemCpuUsage: 0.1419624217
+                            usedMemory: 689520000
+                            maxMemory: 8009268000
+                            cacheMemory: 1335936000
+                            maxStorage: 85899345920
+                            usedStorage: 3030441984
                             readIOPS: 0
-                            writeIOPS: 0.2333333333
-                            totalIOPS: 0.2333333333
+                            writeIOPS: 0.1833333333
+                            totalIOPS: 0.1833333333
                             iops: {}
-                            netTxUsage: 27
-                            netRxUsage: 23
+                            netTxUsage: 26
+                            netRxUsage: 531
                           runtimeInfo: {}
                           containerVersion: null
                           repositoryImage: null
                           planCategory: null
-                          hostname: sa-apache-1
+                          hostname: admmon1004
                           domainName: null
                           volumeCreated: false
                           containerCreated: true
-                          maxStorage: 10737418240
-                          maxMemory: 536870912
-                          maxCores: 1
+                          maxStorage: 85899345920
+                          maxMemory: 8589934592
+                          maxCores: 2
                           coresPerSocket: 1
-                          maxCpu: 1
-                          hourlyCost: 0.0086816667
-                          hourlyPrice: 0.0086816667
+                          maxCpu: 0
+                          hourlyCost: 0
+                          hourlyPrice: 0.061111084
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -6459,7 +6877,7 @@ paths:
           $ref: '#/components/responses/500'
         '503':
           $ref: '#/components/responses/503'
-  /api/log-settings@syslog-rules:
+  /api/log-settings/syslog-rules:
     post:
       summary: Create a New Syslog Rule
       description: >-
@@ -6523,7 +6941,7 @@ paths:
           $ref: '#/components/responses/500'
         '503':
           $ref: '#/components/responses/503'
-  /api/log-settings@syslog-rules@{id}:
+  /api/log-settings/syslog-rules/{id}:
     delete:
       summary: Delete a Specific Syslog Rule
       description: Will delete the syslog rule matching the specified name.
@@ -6996,6 +7414,315 @@ paths:
               example:
                 success: false
                 msg: Unable to decode license content
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/contacts:
+    get:
+      summary: List All Contacts
+      description: Get a list of monitoring contacts.
+      operationId: listContacts
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/phrase'
+      responses:
+        '200':
+          description: Array of Contacts
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      contacts:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/contact'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Users Response:
+                  value:
+                    contacts:
+                      - id: 1464
+                        emailAddress: cbunge@morpheusdata.com
+                        name: Chris
+                        smsAddress: 555-555-5555
+                        slackHook: null
+                    meta:
+                      offset: 0
+                      max: 3
+                      size: 1
+                      total: 1
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    post:
+      summary: Create a New Contact
+      description: Create a new monitoring contact.
+      operationId: addContacts
+      tags:
+        - Contacts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - contact
+              properties:
+                contact:
+                  type: object
+                  description: Payload for creating a new monitoring contact
+                  required:
+                    - name
+                  properties:
+                    name:
+                      type: string
+                      description: Unique name scoped to your account for the contact
+                      example: John Smith
+                    emailAddress:
+                      type: string
+                      description: Email notification address
+                      example: jsmith@email.com
+                    smsAddress:
+                      type: string
+                      description: SMS notification address
+                      example: 555-555-5555
+                    slackHook:
+                      type: string
+                      description: Slack Hook
+                      example: >-
+                        https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+      responses:
+        '200':
+          description: Contact Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      contact:
+                        $ref: '#/components/schemas/contact'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Create Contact Response:
+                  value:
+                    contact:
+                      id: 1470
+                      emailAddress: jsmith@email.com
+                      name: John Smith
+                      smsAddress: 555-555-5555
+                      slackHook: >-
+                        https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/contacts/{id}:
+    get:
+      summary: Get a Specific Contact
+      description: Get details about a specific monitoring contact.
+      operationId: getContacts
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Contact Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contact:
+                    $ref: '#/components/schemas/contact'
+              examples:
+                Get Contact Response:
+                  value:
+                    contact:
+                      id: 1464
+                      emailAddress: cbunge@morpheusdata.com
+                      name: Chris
+                      smsAddress: 555-555-5555
+                      slackHook: null
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    put:
+      summary: Update Contact
+      description: Update an existing monitoring contact.
+      operationId: updateContacts
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - contact
+              properties:
+                contact:
+                  type: object
+                  description: Payload for updating a monitoring contact
+                  required:
+                    - name
+                  properties:
+                    name:
+                      type: string
+                      description: Unique name scoped to your account for the contact
+                      example: John Smith
+                    emailAddress:
+                      type: string
+                      description: Email notification address
+                      example: jsmith@email.com
+                    smsAddress:
+                      type: string
+                      description: SMS notification address
+                      example: 555-555-5555
+                    slackHook:
+                      type: string
+                      description: Slack Hook
+                      example: >-
+                        https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+      responses:
+        '200':
+          description: Contact Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      contact:
+                        $ref: '#/components/schemas/contact'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Update Contact Response:
+                  value:
+                    contact:
+                      id: 1470
+                      emailAddress: jsmith@email.com
+                      name: John Smith
+                      smsAddress: 555-555-5555
+                      slackHook: >-
+                        https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    delete:
+      summary: Delete a Specific Contact
+      description: Delete an existing monitoring contact.
+      operationId: deleteContacts
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Success Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+              examples:
+                Delete User Response:
+                  value:
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
         '401':
           $ref: '#/components/responses/401'
         '403':
@@ -20320,1705 +21047,516 @@ components:
     instance:
       type: object
       properties:
-        instance:
+        id:
+          type: integer
+          format: int32
+        uuid:
+          type: string
+        accountId:
+          type: integer
+          format: int32
+        tenant:
           type: object
           properties:
             id:
               type: integer
-            uuid:
+              format: int32
+            name:
               type: string
-            accountId:
+        instanceType:
+          type: object
+          properties:
+            id:
               type: integer
-            tenant:
+              format: int32
+            code:
+              type: string
+            category:
+              type: string
+            name:
+              type: string
+        group:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+        cloud:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+        containers:
+          type: array
+          items:
+            type: integer
+            format: int32
+        servers:
+          type: array
+          items:
+            type: integer
+            format: int32
+        connectionInfo:
+          type: array
+          items:
+            type: object
+            properties:
+              ip:
+                type: string
+              port:
+                type: integer
+                nullable: true
+        layout:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+            provisionTypeId:
+              type: integer
+              format: int32
+            provisionTypeCode:
+              type: string
+        plan:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            code:
+              type: string
+            name:
+              type: string
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        environment:
+          type: string
+          nullable: true
+        config:
+          type: object
+          properties:
+            createUser:
+              type: boolean
+            isEC2:
+              type: boolean
+            isVpcSelectable:
+              type: boolean
+            noAgent:
+              type: boolean
+            securityGroups:
+              type: array
+              nullable: true
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    nullable: true
+            smbiosAssetTag:
+              type: string
+              nullable: true
+            nestedVirtualization:
+              type: string
+              nullable: true
+            vmwareFolderId:
+              type: string
+            customOptions:
+              type: object
+            resourcePoolId:
+              type: integer
+              format: int32
+            poolProviderType:
+              type: string
+              nullable: true
+            userGroup:
               type: object
               properties:
                 id:
-                  type: integer
-                name:
                   type: string
-              required:
-                - id
-                - name
+                  nullable: true
+            expireDays:
+              type: string
+            shutdownDays:
+              type: string
+            name:
+              type: string
+            hostName:
+              type: string
             instanceType:
               type: object
               properties:
-                id:
-                  type: integer
                 code:
                   type: string
-                category:
-                  type: string
-                name:
-                  type: string
-              required:
-                - id
-                - code
-                - category
-                - name
-            group:
+                  nullable: true
+            site:
               type: object
               properties:
                 id:
                   type: integer
-                name:
-                  type: string
-              required:
-                - id
-                - name
-            cloud:
-              type: object
-              properties:
-                id:
-                  type: integer
-                name:
-                  type: string
-              required:
-                - id
-                - name
-            containers:
-              type: array
-              items:
-                - type: integer
-            servers:
-              type: array
-              items:
-                - type: integer
-            connectionInfo:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    ip:
-                      type: string
-                    port:
-                      type: integer
-                  required:
-                    - ip
-                    - port
+                  format: int32
+            environmentPrefix:
+              type: string
+              nullable: true
             layout:
               type: object
               properties:
                 id:
                   type: integer
-                name:
-                  type: string
-                provisionTypeCode:
-                  type: string
-              required:
-                - id
-                - name
-                - provisionTypeCode
-            plan:
-              type: object
-              properties:
-                id:
-                  type: integer
+                  format: int32
                 code:
                   type: string
-                name:
-                  type: string
-              required:
-                - id
-                - code
-                - name
-            name:
+            type:
               type: string
-            description:
+            instanceContext:
               type: string
-            environment:
-              type: 'null'
-            config:
+            memoryDisplay:
+              type: string
+            expose:
+              type: array
+            createBackup:
+              type: boolean
+            backup:
               type: object
               properties:
-                createUser:
-                  type: boolean
-                isEC2:
-                  type: boolean
-                isVpcSelectable:
-                  type: boolean
-                noAgent:
-                  type: 'null'
-                availabilityId:
-                  type: 'null'
-                securityId:
-                  type: 'null'
-                publicIpType:
-                  type: string
-                instanceProfile:
-                  type: 'null'
-                resourcePoolId:
-                  type: string
-                poolProviderType:
-                  type: 'null'
-                name:
-                  type: string
-                hostName:
-                  type: string
-                instanceType:
-                  type: object
-                  properties:
-                    code:
-                      type: 'null'
-                  required:
-                    - code
-                site:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                  required:
-                    - id
-                    - name
-                environmentPrefix:
-                  type: 'null'
-                layout:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    code:
-                      type: string
-                  required:
-                    - id
-                    - code
-                type:
-                  type: string
-                memoryDisplay:
-                  type: string
-                securityGroups:
-                  type: array
-                  items:
-                    - type: object
-                      properties:
-                        id:
-                          type: string
-                      required:
-                        - id
-                customOptions:
-                  type: object
-                  properties:
-                    isPrimary:
-                      type: string
-                    inventoryName:
-                      type: string
-                  required:
-                    - isPrimary
-                    - inventoryName
                 createBackup:
                   type: boolean
-                backup:
-                  type: object
-                  properties:
-                    createBackup:
-                      type: boolean
-                    jobAction:
-                      type: string
-                    jobRetentionCount:
-                      type: string
-                    veeamManagedServer:
-                      type: string
-                    backupRepository:
-                      type: integer
-                    jobSchedule:
-                      type: integer
-                    target:
-                      type: integer
-                  required:
-                    - createBackup
-                    - jobAction
-                    - jobRetentionCount
-                    - veeamManagedServer
-                    - backupRepository
-                    - jobSchedule
-                    - target
-                layoutSize:
+                jobAction:
+                  type: string
+                jobRetentionCount:
+                  type: string
+                providerBackupType:
                   type: integer
-                lbInstances:
-                  type: array
-                  items: {}
-              required:
-                - createUser
-                - isEC2
-                - isVpcSelectable
-                - noAgent
-                - availabilityId
-                - securityId
-                - publicIpType
-                - instanceProfile
-                - resourcePoolId
-                - poolProviderType
-                - name
-                - hostName
-                - instanceType
-                - site
-                - environmentPrefix
-                - layout
-                - type
-                - memoryDisplay
-                - securityGroups
-                - customOptions
-                - createBackup
-                - backup
-                - layoutSize
-                - lbInstances
-            configGroup:
-              type: 'null'
-            configId:
-              type: 'null'
-            configRole:
-              type: 'null'
-            volumes:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    controllerId:
-                      type: 'null'
-                    datastoreId:
-                      type: 'null'
-                    displayOrder:
-                      type: integer
-                    id:
-                      type: integer
-                    maxIOPS:
-                      type: 'null'
-                    maxStorage:
-                      type: integer
-                    name:
-                      type: string
-                    shortName:
-                      type: string
-                    resizeable:
-                      type: boolean
-                    rootVolume:
-                      type: boolean
-                    size:
-                      type: integer
-                    storageType:
-                      type: integer
-                    unitNumber:
-                      type: 'null'
-                    controllerMountPoint:
-                      type: 'null'
-                  required:
-                    - controllerId
-                    - datastoreId
-                    - displayOrder
-                    - id
-                    - maxIOPS
-                    - maxStorage
-                    - name
-                    - shortName
-                    - resizeable
-                    - rootVolume
-                    - size
-                    - storageType
-                    - unitNumber
-                    - controllerMountPoint
-            controllers:
-              type: array
-              items: {}
-            interfaces:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    id:
-                      type: string
-                    network:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        group:
-                          type: 'null'
-                        subnet:
-                          type: 'null'
-                        dhcpServer:
-                          type: boolean
-                        name:
-                          type: string
-                        pool:
-                          type: 'null'
-                      required:
-                        - id
-                        - group
-                        - subnet
-                        - dhcpServer
-                        - name
-                        - pool
-                    ipAddress:
-                      type: 'null'
-                    networkInterfaceTypeId:
-                      type: 'null'
-                    ipMode:
-                      type: string
-                  required:
-                    - id
-                    - network
-                    - ipAddress
-                    - networkInterfaceTypeId
-                    - ipMode
-            customOptions:
+                  format: int32
+            replicationGroup:
               type: object
               properties:
-                isPrimary:
+                providerMethod:
                   type: string
-                inventoryName:
-                  type: string
-              required:
-                - isPrimary
-                - inventoryName
-            instanceVersion:
-              type: string
-            labels:
-              type: array
-              items:
-                - type: string
-                - type: string
-            tags:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    value:
-                      type: string
-                  required:
-                    - id
-                    - name
-                    - value
-                - type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    value:
-                      type: string
-                  required:
-                    - id
-                    - name
-                    - value
-                - type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    value:
-                      type: string
-                  required:
-                    - id
-                    - name
-                    - value
-                - type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    value:
-                      type: string
-                  required:
-                    - id
-                    - name
-                    - value
-                - type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    value:
-                      type: string
-                  required:
-                    - id
-                    - name
-                    - value
-            evars:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: integer
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: integer
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: integer
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: integer
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-                - type: object
-                  properties:
-                    name:
-                      type: string
-                    value:
-                      type: string
-                    export:
-                      type: boolean
-                    masked:
-                      type: boolean
-                  required:
-                    - name
-                    - value
-                    - export
-                    - masked
-            maxMemory:
+            layoutSize:
               type: integer
+              format: int32
+            lbInstances:
+              type: array
+        configGroup:
+          type: string
+          nullable: true
+        configId:
+          type: string
+          nullable: true
+        configRole:
+          type: string
+          nullable: true
+        volumes:
+          type: array
+          items:
+            type: object
+            properties:
+              controllerId:
+                type: integer
+                format: int32
+                nullable: true
+              datastoreId:
+                type: string
+                nullable: true
+              displayOrder:
+                type: integer
+                format: int32
+              id:
+                type: integer
+                format: int32
+              uuid:
+                type: string
+              maxIOPS:
+                type: string
+                nullable: true
+              maxStorage:
+                type: integer
+                format: int64
+              name:
+                type: string
+              shortName:
+                type: string
+              resizeable:
+                type: boolean
+              planResizable:
+                type: boolean
+              rootVolume:
+                type: boolean
+              size:
+                type: integer
+                format: int32
+              storageType:
+                type: integer
+                format: int32
+              unitNumber:
+                type: string
+                nullable: true
+              controllerMountPoint:
+                type: string
+                nullable: true
+        controllers:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int32
+              name:
+                type: string
+              type:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int32
+                  code:
+                    type: string
+                  name:
+                    type: string
+              maxDevices:
+                type: integer
+                format: int32
+              reservedUnitNumber:
+                type: integer
+                format: int32
+        interfaces:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                nullable: true
+              network:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    nullable: true
+                  group:
+                    type: integer
+                    nullable: true
+                  subnet:
+                    type: string
+                    nullable: true
+                  dhcpServer:
+                    type: boolean
+                    nullable: true
+                  name:
+                    type: string
+                    nullable: true
+                  pool:
+                    type: object
+                    nullable: true
+                    properties:
+                      id:
+                        type: integer
+                        format: int32
+                      name:
+                        type: string
+              ipAddress:
+                type: string
+                nullable: true
+              networkInterfaceTypeId:
+                type: integer
+                format: int32
+                nullable: true
+              ipMode:
+                type: string
+                nullable: true
+        customOptions:
+          type: object
+        instanceVersion:
+          type: string
+        labels:
+          type: array
+        tags:
+          type: array
+        evars:
+          type: array
+        maxMemory:
+          type: integer
+          format: int64
+        maxStorage:
+          type: integer
+          format: int64
+        maxCores:
+          type: integer
+          format: int32
+        coresPerSocket:
+          type: integer
+          format: int32
+          nullable: true
+        maxCpu:
+          type: string
+          nullable: true
+        hourlyCost:
+          type: number
+        hourlyPrice:
+          type: number
+        instancePrice:
+          type: object
+          properties:
+            price:
+              type: number
+            cost:
+              type: number
+            currency:
+              type: string
+              nullable: true
+            unit:
+              type: string
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+        hostName:
+          type: string
+        domainName:
+          type: string
+          nullable: true
+        environmentPrefix:
+          type: string
+          nullable: true
+        firewallEnabled:
+          type: boolean
+        networkLevel:
+          type: string
+        autoScale:
+          type: boolean
+        instanceContext:
+          type: string
+          nullable: true
+        currentDeployId:
+          type: string
+          nullable: true
+        locked:
+          type: boolean
+        status:
+          type: string
+        statusMessage:
+          type: string
+          nullable: true
+        errorMessage:
+          type: string
+          nullable: true
+        statusDate:
+          type: string
+          format: date-time
+        statusPercent:
+          type: string
+          nullable: true
+        statusEta:
+          type: string
+          nullable: true
+        userStatus:
+          type: string
+          nullable: true
+        expireDays:
+          type: integer
+          format: int32
+        renewDays:
+          type: integer
+          format: int32
+        expireCount:
+          type: integer
+          format: int32
+        expireDate:
+          type: string
+          format: date-time
+        expireWarningDate:
+          type: string
+          format: date-time
+        expireWarningSent:
+          type: boolean
+        shutdownDays:
+          type: integer
+          format: int32
+        shutdownRenewDays:
+          type: integer
+          format: int32
+        shutdownCount:
+          type: integer
+          format: int32
+        shutdownDate:
+          type: string
+          format: date-time
+        shutdownWarningDate:
+          type: string
+          format: date-time
+        shutdownWarningSent:
+          type: boolean
+        removalDate:
+          type: string
+          nullable: true
+        createdBy:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            username:
+              type: string
+        owner:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            username:
+              type: string
+        notes:
+          type: string
+          nullable: true
+        stats:
+          type: object
+          properties:
+            usedStorage:
+              type: integer
+              format: int64
             maxStorage:
               type: integer
-            maxCores:
+              format: int64
+            usedMemory:
               type: integer
-            coresPerSocket:
+              format: int32
+            maxMemory:
               type: integer
-            maxCpu:
-              type: integer
-            hourlyCost:
+              format: int64
+            usedCpu:
               type: number
-            hourlyPrice:
+            cpuUsage:
               type: number
-            instancePrice:
-              type: object
-              properties:
-                price:
-                  type: number
-                cost:
-                  type: number
-                currency:
-                  type: string
-                unit:
-                  type: string
-              required:
-                - price
-                - cost
-                - currency
-                - unit
-            dateCreated:
-              type: string
-            lastUpdated:
-              type: string
-            hostName:
-              type: string
-            domainName:
-              type: 'null'
-            environmentPrefix:
-              type: 'null'
-            firewallEnabled:
-              type: boolean
-            networkLevel:
-              type: string
-            autoScale:
-              type: boolean
-            instanceContext:
-              type: 'null'
-            currentDeployId:
-              type: 'null'
-            locked:
-              type: boolean
-            status:
-              type: string
-            statusMessage:
-              type: 'null'
-            errorMessage:
-              type: 'null'
-            statusDate:
-              type: string
-            statusPercent:
-              type: 'null'
-            statusEta:
-              type: 'null'
-            userStatus:
-              type: 'null'
-            expireDays:
-              type: 'null'
-            renewDays:
-              type: 'null'
-            expireCount:
-              type: integer
-            expireDate:
-              type: 'null'
-            expireWarningDate:
-              type: 'null'
-            expireWarningSent:
-              type: boolean
-            shutdownDays:
-              type: 'null'
-            shutdownRenewDays:
-              type: 'null'
-            shutdownCount:
-              type: integer
-            shutdownDate:
-              type: 'null'
-            shutdownWarningDate:
-              type: 'null'
-            shutdownWarningSent:
-              type: boolean
-            removalDate:
-              type: 'null'
-            createdBy:
-              type: object
-              properties:
-                id:
-                  type: integer
-                username:
-                  type: string
-              required:
-                - id
-                - username
-            owner:
-              type: object
-              properties:
-                id:
-                  type: integer
-                username:
-                  type: string
-              required:
-                - id
-                - username
-            notes:
-              type: 'null'
-            stats:
-              type: object
-              properties:
-                usedStorage:
-                  type: integer
-                maxStorage:
-                  type: integer
-                usedMemory:
-                  type: integer
-                maxMemory:
-                  type: integer
-                usedCpu:
-                  type: number
-                cpuUsage:
-                  type: number
-                cpuUsagePeak:
-                  type: number
-                cpuUsageAvg:
-                  type: number
-              required:
-                - usedStorage
-                - maxStorage
-                - usedMemory
-                - maxMemory
-                - usedCpu
-                - cpuUsage
-                - cpuUsagePeak
-                - cpuUsageAvg
-            powerSchedule:
-              type: 'null'
-            isScalable:
-              type: boolean
-            instanceThreshold:
-              type: 'null'
-            isBusy:
-              type: boolean
-            apps:
-              type: array
-              items: {}
-            currentLoadBalancerInstances:
-              type: array
-              items: {}
-            currentLoadBalancerContainersIn:
-              type: integer
-            currentLoadBalancerContainersOut:
-              type: integer
-            lastDeploy:
-              type: 'null'
-            containerDetails:
-              type: array
-              items:
-                - type: object
-                  properties:
-                    id:
-                      type: integer
-                    uuid:
-                      type: string
-                    name:
-                      type: string
-                    ip:
-                      type: string
-                    internalIp:
-                      type: string
-                    internalHostname:
-                      type: string
-                    externalHostname:
-                      type: string
-                    externalDomain:
-                      type: string
-                    externalFqdn:
-                      type: string
-                    accountId:
-                      type: integer
-                    instance:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        name:
-                          type: string
-                      required:
-                        - id
-                        - name
-                    containerType:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        code:
-                          type: string
-                        category:
-                          type: string
-                        name:
-                          type: string
-                      required:
-                        - id
-                        - code
-                        - category
-                        - name
-                    containerTypeSet:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        code:
-                          type: string
-                        category:
-                          type: string
-                      required:
-                        - id
-                        - code
-                        - category
-                    server:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        uuid:
-                          type: string
-                        externalId:
-                          type: string
-                        internalId:
-                          type: 'null'
-                        externalUniqueId:
-                          type: 'null'
-                        name:
-                          type: string
-                        externalName:
-                          type: string
-                        hostname:
-                          type: string
-                        accountId:
-                          type: integer
-                        account:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            name:
-                              type: string
-                          required:
-                            - id
-                            - name
-                        owner:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            username:
-                              type: string
-                          required:
-                            - id
-                            - username
-                        zone:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            name:
-                              type: string
-                          required:
-                            - id
-                            - name
-                        plan:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            code:
-                              type: string
-                            name:
-                              type: string
-                          required:
-                            - id
-                            - code
-                            - name
-                        computeServerType:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            code:
-                              type: string
-                            name:
-                              type: string
-                            managed:
-                              type: boolean
-                            externalDelete:
-                              type: boolean
-                          required:
-                            - id
-                            - code
-                            - name
-                            - managed
-                            - externalDelete
-                        visibility:
-                          type: string
-                        description:
-                          type: 'null'
-                        zoneId:
-                          type: integer
-                        siteId:
-                          type: integer
-                        resourcePoolId:
-                          type: integer
-                        folderId:
-                          type: 'null'
-                        sshHost:
-                          type: 'null'
-                        sshPort:
-                          type: integer
-                        externalIp:
-                          type: 'null'
-                        internalIp:
-                          type: string
-                        platform:
-                          type: string
-                        platformVersion:
-                          type: string
-                        dateCreated:
-                          type: string
-                        lastUpdated:
-                          type: string
-                        stats:
-                          type: object
-                          properties:
-                            ts:
-                              type: string
-                            freeMemory:
-                              type: integer
-                            usedMemory:
-                              type: integer
-                            freeSwap:
-                              type: integer
-                            usedSwap:
-                              type: integer
-                            cpuIdleTime:
-                              type: integer
-                            cpuSystemTime:
-                              type: integer
-                            cpuUserTime:
-                              type: integer
-                            cpuTotalTime:
-                              type: integer
-                            cpuUsage:
-                              type: number
-                            maxStorage:
-                              type: integer
-                            usedStorage:
-                              type: integer
-                            reservedStorage:
-                              type: integer
-                            netTxUsage:
-                              type: integer
-                            netRxUsage:
-                              type: integer
-                            networkBandwidth:
-                              type: integer
-                          required:
-                            - ts
-                            - freeMemory
-                            - usedMemory
-                            - freeSwap
-                            - usedSwap
-                            - cpuIdleTime
-                            - cpuSystemTime
-                            - cpuUserTime
-                            - cpuTotalTime
-                            - cpuUsage
-                            - maxStorage
-                            - usedStorage
-                            - reservedStorage
-                            - netTxUsage
-                            - netRxUsage
-                            - networkBandwidth
-                        status:
-                          type: string
-                        statusMessage:
-                          type: 'null'
-                        errorMessage:
-                          type: 'null'
-                        statusDate:
-                          type: string
-                        statusPercent:
-                          type: 'null'
-                        statusEta:
-                          type: 'null'
-                        powerState:
-                          type: string
-                        agentInstalled:
-                          type: boolean
-                        lastAgentUpdate:
-                          type: string
-                        agentVersion:
-                          type: string
-                        maxCores:
-                          type: integer
-                        coresPerSocket:
-                          type: integer
-                        maxMemory:
-                          type: integer
-                        maxStorage:
-                          type: integer
-                        maxCpu:
-                          type: 'null'
-                        hourlyCost:
-                          type: number
-                        hourlyPrice:
-                          type: number
-                        sourceImage:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            code:
-                              type: string
-                            name:
-                              type: string
-                          required:
-                            - id
-                            - code
-                            - name
-                        serverOs:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            code:
-                              type: string
-                            name:
-                              type: string
-                            description:
-                              type: 'null'
-                            vendor:
-                              type: string
-                            category:
-                              type: string
-                            osFamily:
-                              type: string
-                            osVersion:
-                              type: string
-                            bitCount:
-                              type: integer
-                            platform:
-                              type: string
-                          required:
-                            - id
-                            - code
-                            - name
-                            - description
-                            - vendor
-                            - category
-                            - osFamily
-                            - osVersion
-                            - bitCount
-                            - platform
-                        volumes:
-                          type: array
-                          items:
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                name:
-                                  type: string
-                                controllerId:
-                                  type: 'null'
-                                controllerMountPoint:
-                                  type: 'null'
-                                resizeable:
-                                  type: boolean
-                                rootVolume:
-                                  type: boolean
-                                unitNumber:
-                                  type: 'null'
-                                typeId:
-                                  type: integer
-                                configurableIOPS:
-                                  type: boolean
-                                datastoreId:
-                                  type: 'null'
-                                maxStorage:
-                                  type: integer
-                                displayOrder:
-                                  type: integer
-                                maxIOPS:
-                                  type: 'null'
-                              required:
-                                - id
-                                - name
-                                - controllerId
-                                - controllerMountPoint
-                                - resizeable
-                                - rootVolume
-                                - unitNumber
-                                - typeId
-                                - configurableIOPS
-                                - datastoreId
-                                - maxStorage
-                                - displayOrder
-                                - maxIOPS
-                        controllers:
-                          type: array
-                          items: {}
-                        interfaces:
-                          type: array
-                          items:
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                refType:
-                                  type: 'null'
-                                refId:
-                                  type: 'null'
-                                name:
-                                  type: string
-                                internalId:
-                                  type: 'null'
-                                externalId:
-                                  type: string
-                                uniqueId:
-                                  type: string
-                                publicIpAddress:
-                                  type: 'null'
-                                publicIpv6Address:
-                                  type: 'null'
-                                ipAddress:
-                                  type: string
-                                ipv6Address:
-                                  type: 'null'
-                                ipSubnet:
-                                  type: 'null'
-                                ipv6Subnet:
-                                  type: 'null'
-                                description:
-                                  type: string
-                                dhcp:
-                                  type: boolean
-                                active:
-                                  type: boolean
-                                poolAssigned:
-                                  type: boolean
-                                primaryInterface:
-                                  type: boolean
-                                network:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: integer
-                                    name:
-                                      type: string
-                                  required:
-                                    - id
-                                    - name
-                                subnet:
-                                  type: 'null'
-                                networkGroup:
-                                  type: 'null'
-                                networkPosition:
-                                  type: 'null'
-                                networkPool:
-                                  type: 'null'
-                                networkDomain:
-                                  type: 'null'
-                                type:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: integer
-                                    code:
-                                      type: string
-                                    name:
-                                      type: string
-                                  required:
-                                    - id
-                                    - code
-                                    - name
-                                ipMode:
-                                  type: string
-                                macAddress:
-                                  type: string
-                              required:
-                                - id
-                                - refType
-                                - refId
-                                - name
-                                - internalId
-                                - externalId
-                                - uniqueId
-                                - publicIpAddress
-                                - publicIpv6Address
-                                - ipAddress
-                                - ipv6Address
-                                - ipSubnet
-                                - ipv6Subnet
-                                - description
-                                - dhcp
-                                - active
-                                - poolAssigned
-                                - primaryInterface
-                                - network
-                                - subnet
-                                - networkGroup
-                                - networkPosition
-                                - networkPool
-                                - networkDomain
-                                - type
-                                - ipMode
-                                - macAddress
-                        labels:
-                          type: array
-                          items: {}
-                        tags:
-                          type: array
-                          items:
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                name:
-                                  type: string
-                                value:
-                                  type: string
-                              required:
-                                - id
-                                - name
-                                - value
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                name:
-                                  type: string
-                                value:
-                                  type: string
-                              required:
-                                - id
-                                - name
-                                - value
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                name:
-                                  type: string
-                                value:
-                                  type: string
-                              required:
-                                - id
-                                - name
-                                - value
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                name:
-                                  type: string
-                                value:
-                                  type: string
-                              required:
-                                - id
-                                - name
-                                - value
-                            - type: object
-                              properties:
-                                id:
-                                  type: integer
-                                name:
-                                  type: string
-                                value:
-                                  type: string
-                              required:
-                                - id
-                                - name
-                                - value
-                        enabled:
-                          type: boolean
-                        tagCompliant:
-                          type: 'null'
-                      required:
-                        - id
-                        - uuid
-                        - externalId
-                        - internalId
-                        - externalUniqueId
-                        - name
-                        - externalName
-                        - hostname
-                        - accountId
-                        - account
-                        - owner
-                        - zone
-                        - plan
-                        - computeServerType
-                        - visibility
-                        - description
-                        - zoneId
-                        - siteId
-                        - resourcePoolId
-                        - folderId
-                        - sshHost
-                        - sshPort
-                        - externalIp
-                        - internalIp
-                        - platform
-                        - platformVersion
-                        - dateCreated
-                        - lastUpdated
-                        - stats
-                        - status
-                        - statusMessage
-                        - errorMessage
-                        - statusDate
-                        - statusPercent
-                        - statusEta
-                        - powerState
-                        - agentInstalled
-                        - lastAgentUpdate
-                        - agentVersion
-                        - maxCores
-                        - coresPerSocket
-                        - maxMemory
-                        - maxStorage
-                        - maxCpu
-                        - hourlyCost
-                        - hourlyPrice
-                        - sourceImage
-                        - serverOs
-                        - volumes
-                        - controllers
-                        - interfaces
-                        - labels
-                        - tags
-                        - enabled
-                        - tagCompliant
-                    cloud:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        name:
-                          type: string
-                      required:
-                        - id
-                        - name
-                    ports:
-                      type: array
-                      items:
-                        - type: object
-                          properties:
-                            id:
-                              type: integer
-                            index:
-                              type: integer
-                            external:
-                              type: integer
-                            internal:
-                              type: integer
-                            displayName:
-                              type: string
-                            primaryPort:
-                              type: boolean
-                            export:
-                              type: boolean
-                            visible:
-                              type: boolean
-                            exportName:
-                              type: string
-                            loadBalanceProtocol:
-                              type: 'null'
-                            loadBalance:
-                              type: boolean
-                            protocol:
-                              type: string
-                            link:
-                              type: boolean
-                            externalIp:
-                              type: 'null'
-                            internalIp:
-                              type: 'null'
-                          required:
-                            - id
-                            - index
-                            - external
-                            - internal
-                            - displayName
-                            - primaryPort
-                            - export
-                            - visible
-                            - exportName
-                            - loadBalanceProtocol
-                            - loadBalance
-                            - protocol
-                            - link
-                            - externalIp
-                            - internalIp
-                        - type: object
-                          properties:
-                            id:
-                              type: integer
-                            index:
-                              type: integer
-                            external:
-                              type: integer
-                            internal:
-                              type: integer
-                            displayName:
-                              type: string
-                            primaryPort:
-                              type: boolean
-                            export:
-                              type: boolean
-                            visible:
-                              type: boolean
-                            exportName:
-                              type: string
-                            loadBalanceProtocol:
-                              type: 'null'
-                            loadBalance:
-                              type: boolean
-                            protocol:
-                              type: string
-                            link:
-                              type: boolean
-                            externalIp:
-                              type: 'null'
-                            internalIp:
-                              type: 'null'
-                          required:
-                            - id
-                            - index
-                            - external
-                            - internal
-                            - displayName
-                            - primaryPort
-                            - export
-                            - visible
-                            - exportName
-                            - loadBalanceProtocol
-                            - loadBalance
-                            - protocol
-                            - link
-                            - externalIp
-                            - internalIp
-                    plan:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        code:
-                          type: string
-                        name:
-                          type: string
-                      required:
-                        - id
-                        - code
-                        - name
-                    configGroup:
-                      type: 'null'
-                    configId:
-                      type: 'null'
-                    configRole:
-                      type: 'null'
-                    dateCreated:
-                      type: string
-                    lastUpdated:
-                      type: string
-                    statsEnabled:
-                      type: boolean
-                    status:
-                      type: string
-                    userStatus:
-                      type: string
-                    environmentPrefix:
-                      type: 'null'
-                    stats:
-                      type: object
-                      properties:
-                        ts:
-                          type: string
-                        running:
-                          type: boolean
-                        userCpuUsage:
-                          type: number
-                        systemCpuUsage:
-                          type: number
-                        usedMemory:
-                          type: integer
-                        maxMemory:
-                          type: integer
-                        cacheMemory:
-                          type: integer
-                        maxStorage:
-                          type: 'null'
-                        usedStorage:
-                          type: integer
-                        readIOPS:
-                          type: integer
-                        writeIOPS:
-                          type: number
-                        totalIOPS:
-                          type: number
-                        iops:
-                          type: object
-                        netTxUsage:
-                          type: integer
-                        netRxUsage:
-                          type: integer
-                      required:
-                        - ts
-                        - running
-                        - userCpuUsage
-                        - systemCpuUsage
-                        - usedMemory
-                        - maxMemory
-                        - cacheMemory
-                        - maxStorage
-                        - usedStorage
-                        - readIOPS
-                        - writeIOPS
-                        - totalIOPS
-                        - iops
-                        - netTxUsage
-                        - netRxUsage
-                    runtimeInfo:
-                      type: object
-                    containerVersion:
-                      type: 'null'
-                    repositoryImage:
-                      type: 'null'
-                    planCategory:
-                      type: 'null'
-                    hostname:
-                      type: string
-                    domainName:
-                      type: 'null'
-                    volumeCreated:
-                      type: boolean
-                    containerCreated:
-                      type: boolean
-                    maxStorage:
-                      type: integer
-                    maxMemory:
-                      type: integer
-                    maxCores:
-                      type: integer
-                    coresPerSocket:
-                      type: integer
-                    maxCpu:
-                      type: integer
-                    hourlyCost:
-                      type: number
-                    hourlyPrice:
-                      type: number
-                  required:
-                    - id
-                    - uuid
-                    - name
-                    - ip
-                    - internalIp
-                    - internalHostname
-                    - externalHostname
-                    - externalDomain
-                    - externalFqdn
-                    - accountId
-                    - instance
-                    - containerType
-                    - containerTypeSet
-                    - server
-                    - cloud
-                    - ports
-                    - plan
-                    - configGroup
-                    - configId
-                    - configRole
-                    - dateCreated
-                    - lastUpdated
-                    - statsEnabled
-                    - status
-                    - userStatus
-                    - environmentPrefix
-                    - stats
-                    - runtimeInfo
-                    - containerVersion
-                    - repositoryImage
-                    - planCategory
-                    - hostname
-                    - domainName
-                    - volumeCreated
-                    - containerCreated
-                    - maxStorage
-                    - maxMemory
-                    - maxCores
-                    - coresPerSocket
-                    - maxCpu
-                    - hourlyCost
-                    - hourlyPrice
-          required:
-            - id
-            - uuid
-            - accountId
-            - tenant
-            - instanceType
-            - group
-            - cloud
-            - containers
-            - servers
-            - connectionInfo
-            - layout
-            - plan
-            - name
-            - description
-            - environment
-            - config
-            - configGroup
-            - configId
-            - configRole
-            - volumes
-            - controllers
-            - interfaces
-            - customOptions
-            - instanceVersion
-            - labels
-            - tags
-            - evars
-            - maxMemory
-            - maxStorage
-            - maxCores
-            - coresPerSocket
-            - maxCpu
-            - hourlyCost
-            - hourlyPrice
-            - instancePrice
-            - dateCreated
-            - lastUpdated
-            - hostName
-            - domainName
-            - environmentPrefix
-            - firewallEnabled
-            - networkLevel
-            - autoScale
-            - instanceContext
-            - currentDeployId
-            - locked
-            - status
-            - statusMessage
-            - errorMessage
-            - statusDate
-            - statusPercent
-            - statusEta
-            - userStatus
-            - expireDays
-            - renewDays
-            - expireCount
-            - expireDate
-            - expireWarningDate
-            - expireWarningSent
-            - shutdownDays
-            - shutdownRenewDays
-            - shutdownCount
-            - shutdownDate
-            - shutdownWarningDate
-            - shutdownWarningSent
-            - removalDate
-            - createdBy
-            - owner
-            - notes
-            - stats
-            - powerSchedule
-            - isScalable
-            - instanceThreshold
-            - isBusy
-            - apps
-            - currentLoadBalancerInstances
-            - currentLoadBalancerContainersIn
-            - currentLoadBalancerContainersOut
-            - lastDeploy
-            - containerDetails
-      required:
-        - instance
+            cpuUsagePeak:
+              type: number
+            cpuUsageAvg:
+              type: number
+        powerSchedule:
+          type: string
+          nullable: true
+        isScalable:
+          type: boolean
+        instanceThreshold:
+          type: object
+          nullable: true
+        isBusy:
+          type: boolean
+        apps:
+          type: array
     container:
       type: object
       properties:
@@ -23221,7 +22759,7 @@ components:
               type: string
         offset:
           type: integer
-          format: int32
+          format: int64
         start:
           type: string
           format: date-time
@@ -23252,25 +22790,25 @@ components:
                 type: string
               seq:
                 type: integer
-                format: int32
+                format: int64
               _id:
                 type: string
               signatureVerified:
                 type: boolean
         max:
           type: integer
-          format: int32
+          format: int64
         grandTotal:
           type: integer
-          format: int32
+          format: int64
         total:
           type: integer
-          format: int32
+          format: int64
         success:
           type: boolean
         count:
           type: integer
-          format: int32
+          format: int64
     key-pair:
       type: object
       properties:
@@ -23296,6 +22834,21 @@ components:
         lastUpdated:
           type: string
           format: date-time
+    contact:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        emailAddress:
+          type: string
+        name:
+          type: string
+        smsAddress:
+          type: string
+        slackHook:
+          type: string
+          format: nullable
     ping:
       type: object
       properties:
