@@ -107,6 +107,8 @@ paths:
     $ref: paths/api@key-pairs@id.yaml
   /api/library/option-types:
     $ref: paths/api@library@option-types.yaml
+  /api/library/option-types/{id}:
+    $ref: paths/api@library@option-types@id.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/monitoring/contacts:
