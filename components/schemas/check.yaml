@@ -2,26 +2,26 @@ type: object
 properties: 
   id: 
     type: integer
-    format: int32
+    format: int64
   account: 
     type: object
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
   active: 
     type: boolean
   apiKey: 
     type: string
   availability: 
     type: integer
-    format: int32
+    format: int64
   checkAgent: 
     type: string
     format: nullable
   checkInterval: 
     type: integer
-    format: int32
+    format: int64
   checkSpec: 
     type: string
     format: nullable
@@ -30,7 +30,7 @@ properties:
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
       code: 
         type: string
       name: 
@@ -47,7 +47,7 @@ properties:
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
   createIncident: 
     type: boolean
   muted: 
@@ -57,7 +57,7 @@ properties:
     properties: 
       id: 
         type: integer
-        format: int32
+        format: int64
       username: 
         type: string
   dateCreated: 
@@ -71,7 +71,7 @@ properties:
     format: nullable
   health: 
     type: integer
-    format: int32
+    format: int64
   inUptime: 
     type: boolean
   lastBoxStats: 
@@ -101,7 +101,7 @@ properties:
     format: date-time
   lastTimer: 
     type: integer
-    format: int32
+    format: int64
   lastUpdated: 
     type: string
     format: date-time
@@ -115,7 +115,7 @@ properties:
     format: date-time
   outageTime: 
     type: integer
-    format: int32
+    format: int64
   severity: 
     type: string
   startDate: 
