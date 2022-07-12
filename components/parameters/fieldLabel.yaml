@@ -1,0 +1,6 @@
+name: fieldLabel
+in: query
+description: Field Label filter, restricts query to only load type matching fieldLabel specified
+schema:
+  type: string
+example: "DB Version"
