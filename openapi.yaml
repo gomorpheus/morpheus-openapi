@@ -105,6 +105,10 @@ paths:
     $ref: paths/api@key-pairs@id.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
+  /api/monitoring/alerts:
+    $ref: paths/api@monitoring@alerts.yaml
+  /api/monitoring/alerts/{id}:
+    $ref: paths/api@monitoring@alerts@id.yaml
   /api/monitoring/contacts:
     $ref: paths/api@monitoring@contacts.yaml
   /api/monitoring/contacts/{id}:

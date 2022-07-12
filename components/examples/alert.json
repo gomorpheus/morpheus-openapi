@@ -1,0 +1,32 @@
+{
+    "alert": {
+      "id": 1,
+      "name": "My Alert",
+      "allApps": true,
+      "allChecks": false,
+      "allGroups": false,
+      "active": true,
+      "minSeverity": "critical",
+      "minDuration": 0,
+      "dateCreated": "2019-10-22T19:48:38+0000",
+      "lastUpdated": "2019-10-22T19:48:38+0000",
+      "checks": [
+  
+      ],
+      "checkGroups": [
+  
+      ],
+      "apps": [
+  
+      ],
+      "contacts": [
+        {
+          "id": 1,
+          "name": "admin",
+          "method": "emailAddress",
+          "notify": true,
+          "close": true
+        }
+      ]
+    }
+  }

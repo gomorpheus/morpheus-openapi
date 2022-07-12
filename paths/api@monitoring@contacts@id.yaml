@@ -130,7 +130,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete User Response:
+            Delete Contact Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

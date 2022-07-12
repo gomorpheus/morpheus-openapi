@@ -1,32 +1,25 @@
 get:
-  summary: List All Contacts
-  description: Get a list of monitoring contacts.
-  operationId: listContacts
+  summary: Get a Specific Alert
+  description: Get details about a specific monitoring alert.
+  operationId: getAlerts
   tags:
-    - Contacts
+    - Alerts
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/phrase.yaml
+  - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Array of Contacts
+      description: Alert Object
       content:
         application/json:
           schema:
-            allOf:
-            - type: object
-              properties:
-                contacts:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/contact.yaml
-            - $ref: ../components/schemas/meta.yaml
+            type: object
+            properties:
+              alert:
+                $ref: ../components/schemas/contact.yaml
           examples:
-            Contacts Response:
+            Get Alert Response:
               value:
-                $ref: ../components/examples/contacts.json
+                $ref: ../components/examples/contact.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -47,23 +40,25 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-post:
-  summary: Create a New Contact
-  description: Create a new monitoring contact.
-  operationId: addContacts
+put:
+  summary: Update Alert
+  description: Update an existing monitoring alert.
+  operationId: updateAlerts
   tags:
-    - Contacts
+    - Alerts
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
   requestBody:
     content:
       application/json:
         schema:
           type: object
           required:
-            - contact
+            - alert
           properties:
-            contact:
+            alert:
               type: object
-              description: Payload for creating a new monitoring contact
+              description: Payload for updating a monitoring contact
               required:
                 - name
               properties:
@@ -85,20 +80,59 @@ post:
                   example: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
   responses:
     '200':
-      description: Contact Object
+      description: Alert Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                contact:
+                alert:
                   $ref: ../components/schemas/contact.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Create Contact Response:
+            Update Alert Response:
               value:
                 $ref: ../components/examples/contactSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Delete a Specific Alert
+  description: Delete an existing monitoring alert.
+  operationId: deleteAlerts
+  tags:
+    - Alerts
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Success Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Delete Alert Response:
+              value:
+                $ref: ../components/examples/success.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

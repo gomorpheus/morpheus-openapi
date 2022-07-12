@@ -1,32 +1,31 @@
 get:
-  summary: List All Contacts
-  description: Get a list of monitoring contacts.
-  operationId: listContacts
+  summary: List All Alerts
+  description: Get a list of monitoring alerts.
+  operationId: listAlerts
   tags:
-    - Contacts
+    - Alerts
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
   responses:
     '200':
-      description: Array of Contacts
+      description: Array of Alerts
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                contacts:
+                alerts:
                   type: array
                   items:
-                    $ref: ../components/schemas/contact.yaml
+                    $ref: ../components/schemas/alert.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Contacts Response:
+            Alerts Response:
               value:
-                $ref: ../components/examples/contacts.json
+                $ref: ../components/examples/alerts.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -48,20 +47,20 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 post:
-  summary: Create a New Contact
-  description: Create a new monitoring contact.
-  operationId: addContacts
+  summary: Create a New Alert
+  description: Create a new monitoring alert.
+  operationId: addAlerts
   tags:
-    - Contacts
+    - Alerts
   requestBody:
     content:
       application/json:
         schema:
           type: object
           required:
-            - contact
+            - alert
           properties:
-            contact:
+            alert:
               type: object
               description: Payload for creating a new monitoring contact
               required:
@@ -96,7 +95,7 @@ post:
                   $ref: ../components/schemas/contact.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Create Contact Response:
+            Create Alert Response:
               value:
                 $ref: ../components/examples/contactSuccess.json
     '400':
