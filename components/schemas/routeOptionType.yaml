@@ -1,0 +1,99 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int32
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  code: 
+    type: string
+  fieldName: 
+    type: string
+  fieldLabel: 
+    type: string
+  fieldCode: 
+    type: string
+  fieldContext: 
+    type: string
+  fieldGroup: 
+    type: string
+    nullable: true
+  fieldClass: 
+    type: string
+    nullable: true
+  fieldAddOn: 
+    type: string
+    nullable: true
+  fieldComponent: 
+    type: string
+    nullable: true
+  fieldInput: 
+    type: string
+    nullable: true
+  placeHolder: 
+    type: string
+  verifyPattern: 
+    type: string
+    nullable: true
+  helpBlock: 
+    type: string
+  helpBlockFieldCode: 
+    type: string
+    nullable: true
+  defaultValue: 
+    type: string
+    nullable: true
+  optionSource: 
+    type: string
+    nullable: true
+  optionSourceType: 
+    type: string
+    nullable: true
+  optionList: 
+    type: string
+    nullable: true
+  type: 
+    type: string
+  advanced: 
+    type: boolean
+  required: 
+    type: boolean
+  exportMeta: 
+    type: boolean
+  editable: 
+    type: boolean
+  creatable: 
+    type: boolean
+  config: 
+    type: object
+    nullable: true
+  displayOrder: 
+    type: integer
+    format: int32
+  wrapperClass: 
+    type: string
+    nullable: true
+  enabled: 
+    type: boolean
+  noBlank: 
+    type: boolean
+  dependsOnCode: 
+    type: string
+    nullable: true
+  visibleOnCode: 
+    type: string
+    nullable: true
+  requireOnCode: 
+    type: string
+    nullable: true
+  contextualDefault: 
+    type: boolean
+  displayValueOnDetails: 
+    type: boolean
+  showOnCreate: 
+    type: boolean
+  showOnEdit: 
+    type: boolean

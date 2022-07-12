@@ -83,6 +83,8 @@ paths:
     $ref: paths/api@instances@id@wiki.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
+  /api/instance-types/{id}:
+    $ref: paths/api@instance-types@id.yaml
   /api/invoices:
     $ref: paths/api@invoices.yaml
   /api/invoices/{id}:
@@ -107,6 +109,8 @@ paths:
     $ref: paths/api@key-pairs@id.yaml
   /api/library/option-types:
     $ref: paths/api@library@option-types.yaml
+  /api/library/option-types/{id}:
+    $ref: paths/api@library@option-types@id.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/monitoring/alerts:

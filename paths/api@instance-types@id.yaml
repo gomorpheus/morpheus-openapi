@@ -1,10 +1,12 @@
 get:
-  summary: Get All Instance Types for Provisioning
+  summary: Get Specific Instance Type for Provisioning
   description: |
-    Fetch the list of available instance types. These can vary in range from database containers, to web containers, to custom containers.
-  operationId: listInstanceTypes
+    Fetch an instance type by ID.
+  operationId: getInstanceType
   tags:
     - Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -14,15 +16,12 @@ get:
             allOf:
             - type: object
               properties:
-                instanceTypes:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/instanceTypes.yaml
-            - $ref: ../components/schemas/meta.yaml
+                instanceType:
+                  $ref: ../components/schemas/instanceType.yaml
           examples:
-            Instance Types Response:
+            Instance Type Response:
               value:
-                $ref: ../components/examples/instanceTypes.json 
+                $ref: ../components/examples/instanceType.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':
