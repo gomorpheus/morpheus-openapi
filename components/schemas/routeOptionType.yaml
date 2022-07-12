@@ -1,112 +1,99 @@
 type: object
-properties: 
-  id:
+properties:
+  id: 
     type: integer
-    format: int64
-  name:
+    format: int32
+  name: 
     type: string
-  description:
-    type: string
-    nullable: true
-  code:
-    type: string
-  fieldName:
-    type: string
-  fieldLabel:
-    type: string
-  fieldCode:
+  description: 
     type: string
     nullable: true
-  fieldContext:
+  code: 
     type: string
-  fieldGroup:
+  fieldName: 
     type: string
-    nullable: true
-  fieldClass:
+  fieldLabel: 
     type: string
-    nullable: true
-  fieldAddOn:
+  fieldCode: 
     type: string
-    nullable: true
-  fieldComponent:
+  fieldContext: 
     type: string
-    nullable: true
-  fieldInput:
+  fieldGroup: 
     type: string
     nullable: true
-  placeHolder:
+  fieldClass: 
     type: string
     nullable: true
-  verifyPattern:
+  fieldAddOn: 
     type: string
     nullable: true
-  helpBlock:
+  fieldComponent: 
     type: string
     nullable: true
-  helpBlockFieldCode:
+  fieldInput: 
     type: string
     nullable: true
-  defaultValue:
+  placeHolder: 
+    type: string
+  verifyPattern: 
     type: string
     nullable: true
-  optionSource:
+  helpBlock: 
+    type: string
+  helpBlockFieldCode: 
     type: string
     nullable: true
-  optionSourceType:
+  defaultValue: 
     type: string
     nullable: true
-  optionList:
+  optionSource: 
+    type: string
+    nullable: true
+  optionSourceType: 
+    type: string
+    nullable: true
+  optionList: 
+    type: string
+    nullable: true
+  type: 
+    type: string
+  advanced: 
+    type: boolean
+  required: 
+    type: boolean
+  exportMeta: 
+    type: boolean
+  editable: 
+    type: boolean
+  creatable: 
+    type: boolean
+  config: 
     type: object
     nullable: true
-    properties:
-      id:
-        type: integer
-        format: int64
-      name:
-        type: string
-  type:
-    type: string
-  advanced:
-    type: boolean
-  required:
-    type: boolean
-  exportMeta:
-    type: boolean
-  editable:
-    type: boolean
-  creatable:
-    type: boolean
-  config:
-    type: object
-    nullable: true
-  displayOrder:
+  displayOrder: 
     type: integer
-    format: int64
-  wrapperClass:
+    format: int32
+  wrapperClass: 
     type: string
     nullable: true
-  enabled:
+  enabled: 
     type: boolean
-  noBlank:
+  noBlank: 
     type: boolean
-  dependsOnCode:
+  dependsOnCode: 
     type: string
     nullable: true
-  visibleOnCode:
+  visibleOnCode: 
     type: string
     nullable: true
-  requireOnCode:
+  requireOnCode: 
     type: string
     nullable: true
-  contextualDefault:
+  contextualDefault: 
     type: boolean
-    nullable: true
-  displayValueOnDetails:
+  displayValueOnDetails: 
     type: boolean
-    nullable: true
-  showOnCreate:
+  showOnCreate: 
     type: boolean
-    nullable: true
-  showOnEdit:
+  showOnEdit: 
     type: boolean
-    nullable: true
