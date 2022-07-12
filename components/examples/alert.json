@@ -1,32 +1,134 @@
 {
-    "alert": {
-      "id": 1,
+  "alert": {
+      "id": 6,
       "name": "My Alert",
-      "allApps": true,
+      "allApps": false,
       "allChecks": false,
       "allGroups": false,
       "active": true,
       "minSeverity": "critical",
       "minDuration": 0,
-      "dateCreated": "2019-10-22T19:48:38+0000",
-      "lastUpdated": "2019-10-22T19:48:38+0000",
+      "dateCreated": "2022-07-12T15:17:06Z",
+      "lastUpdated": "2022-07-12T15:17:06Z",
       "checks": [
-  
+          3,
+          1945
       ],
-      "checkGroups": [
-  
-      ],
-      "apps": [
-  
-      ],
+      "checkGroups": [],
+      "apps": [],
       "contacts": [
-        {
-          "id": 1,
-          "name": "admin",
-          "method": "emailAddress",
-          "notify": true,
-          "close": true
-        }
+          {
+              "id": 1470,
+              "name": "John Smith",
+              "method": "emailAddress,smsAddress",
+              "notify": true,
+              "close": true
+          }
       ]
-    }
-  }
+  },
+  "checks": [
+      {
+          "id": 3,
+          "account": {
+              "id": 1
+          },
+          "active": true,
+          "apiKey": "4fa76b1c-b603-47ec-a3ba-ef12067d4e2b",
+          "availability": 99.99903549,
+          "checkAgent": null,
+          "checkInterval": 300000,
+          "checkSpec": null,
+          "checkType": {
+              "id": 37,
+              "code": "vmCheck",
+              "name": "Virtual Machine",
+              "metricName": "result"
+          },
+          "config": {
+              "containerName": "vmcentos_3"
+          },
+          "container": {
+              "id": 3
+          },
+          "createIncident": true,
+          "muted": false,
+          "createdBy": null,
+          "dateCreated": "2018-12-16T00:36:26Z",
+          "description": null,
+          "endDate": null,
+          "health": 0,
+          "inUptime": true,
+          "lastBoxStats": null,
+          "lastCheckStatus": "error",
+          "lastError": "unheard from beyond check interval limit.",
+          "lastErrorDate": "2022-07-04T04:03:00Z",
+          "lastMessage": null,
+          "lastMetric": null,
+          "lastRunDate": "2022-07-04T04:03:00Z",
+          "lastStats": null,
+          "lastSuccessDate": "2022-07-04T01:50:08Z",
+          "lastTimer": 175,
+          "lastUpdated": "2022-07-04T04:03:00Z",
+          "lastWarningDate": null,
+          "name": "HAProxy",
+          "nextRunDate": "2022-07-04T04:08:00Z",
+          "outageTime": 0,
+          "severity": "critical",
+          "startDate": null
+      },
+      {
+          "id": 1945,
+          "account": {
+              "id": 1
+          },
+          "active": true,
+          "apiKey": "8451fa6c-193e-419a-be0f-b6f7897c11b3",
+          "availability": 100.0,
+          "checkAgent": null,
+          "checkInterval": 300000,
+          "checkSpec": null,
+          "checkType": {
+              "id": 37,
+              "code": "vmCheck",
+              "name": "Virtual Machine",
+              "metricName": "result"
+          },
+          "config": {
+              "containerName": "valheim_2581"
+          },
+          "container": {
+              "id": 2581
+          },
+          "createIncident": false,
+          "muted": true,
+          "createdBy": {
+              "id": 1,
+              "username": "Admin"
+          },
+          "dateCreated": "2021-03-31T02:32:59Z",
+          "description": null,
+          "endDate": null,
+          "health": 0,
+          "inUptime": true,
+          "lastBoxStats": null,
+          "lastCheckStatus": "error",
+          "lastError": "unheard from beyond check interval limit.",
+          "lastErrorDate": "2022-04-03T04:01:08Z",
+          "lastMessage": null,
+          "lastMetric": null,
+          "lastRunDate": "2022-04-03T04:01:08Z",
+          "lastStats": null,
+          "lastSuccessDate": "2022-04-03T03:53:54Z",
+          "lastTimer": 14,
+          "lastUpdated": "2022-04-03T04:01:08Z",
+          "lastWarningDate": null,
+          "name": "aa-steam-1002",
+          "nextRunDate": "2022-04-03T04:06:08Z",
+          "outageTime": 0,
+          "severity": "critical",
+          "startDate": null
+      }
+  ],
+  "checkGroups": [],
+  "apps": []
+}

@@ -1,0 +1,45 @@
+{
+    "checkGroup": {
+        "id": 2832,
+        "account": {
+            "id": 1
+        },
+        "instance": null,
+        "name": "My Check Group",
+        "description": "A collection of checks",
+        "inUptime": true,
+        "lastCheckStatus": null,
+        "lastWarningDate": null,
+        "lastErrorDate": null,
+        "lastSuccessDate": null,
+        "lastRunDate": null,
+        "lastError": null,
+        "outageTime": 0,
+        "lastTimer": 0,
+        "health": 9,
+        "history": null,
+        "minHappy": 1,
+        "lastMetric": null,
+        "severity": "critical",
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-12T21:30:01Z",
+        "lastUpdated": "2022-07-12T21:30:01Z",
+        "availability": null,
+        "checkType": {
+            "id": 37,
+            "code": "vmCheck",
+            "name": "Virtual Machine",
+            "metricName": "result"
+        },
+        "checks": [
+            2947,
+            2944
+        ]
+    },
+    "success": true
+}

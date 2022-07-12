@@ -1,25 +1,25 @@
 get:
-  summary: Get a Specific Alert
-  description: Get details about a specific monitoring alert.
-  operationId: getAlerts
+  summary: Get a Specific Check
+  description: Get details about a specific monitoring check.
+  operationId: getChecks
   tags:
-    - Alerts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Alert Object
+      description: Checks Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              alert:
-                $ref: ../components/schemas/alert.yaml
+              check:
+                $ref: ../components/schemas/check.yaml
           examples:
-            Get Alert Response:
+            Get Check Response:
               value:
-                $ref: ../components/examples/alert.json
+                $ref: ../components/examples/check.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -41,11 +41,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Alert
-  description: Update an existing monitoring alert.
-  operationId: updateAlerts
+  summary: Update Check
+  description: Update an existing monitoring check.
+  operationId: updateChecks
   tags:
-    - Alerts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -54,23 +54,39 @@ put:
         schema:
           type: object
           required:
-            - alert
+            - check
           properties:
-            alert:
+            check:
               type: object
-              description: Payload for creating a new monitoring alert
+              description: Payload for creating a new monitoring check
               required:
                 - name
               properties:
                 name:
                   type: string
-                  description: Unique name scoped to your account for the alert
-                  example: My Alert
-                minDuration:
+                  description: Unique name scoped to your account for the check
+                  example: My Check
+                description:
                   type: string
-                  description: Email notification address
-                  default: 0
-                minSeverity:
+                  description: Optional description field
+                  example: This is my awesome check
+                checkType:
+                  type: object
+                  description: Check type you want to create, use code and a valid check type
+                  example: '{"code": "webGetCheck"}'
+                checkInterval:
+                  type: integer
+                  description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+                  default: 300
+                inUptime:
+                  type: boolean
+                  description: Used to determine if check should affect account wide availability calculations
+                  default: true
+                active:
+                  type: boolean
+                  description: Used to determine if check should be scheduled to execute
+                  default: true
+                severity:
                   type: string
                   description: Severity level threshold for sending notifications.
                   default: critical
@@ -78,66 +94,30 @@ put:
                     - info
                     - warning
                     - critical
-                active:
-                  type: boolean
-                  description: Set to false to disable notifications
-                  default: true
-                allChecks:
-                  type: boolean
-                  description: Trigger for all checks
-                  default: false
-                allGroups:
-                  type: boolean
-                  description: Trigger for all check groups
-                  default: false
-                allApps:
-                  type: boolean
-                  description: Trigger for all monitor apps
-                  default: false
-                checks:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/check.yaml
-                groups:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/checkGroup.yaml
-                apps:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/checkApp.yaml
-                contacts: 
-                  type: array
-                  items: 
-                    type: object
-                    properties: 
-                      id: 
-                        type: integer
-                        format: int64
-                      name: 
-                        type: string
-                      method: 
-                        type: string
-                      notify: 
-                        type: boolean
-                      close: 
-                        type: boolean
+                checkAgent:
+                  type: object
+                  description: Specifies agent you want to run the check with
+                  example: '{"id": 1}'
+                config:
+                  type: object
+                  description: JSON encoded list of parameters that varies by check type. See below for more information
+                  example: '{"webMethod": "GET","webUrl": "http://google.com"}'
   responses:
     '200':
-      description: Alert Object
+      description: Check Object
       content:
         application/json:
           schema:
             allOf:
-            - $ref: ../components/schemas/200-success.yaml
             - type: object
               properties:
-                alert:
-                  $ref: ../components/schemas/contact.yaml
+                check:
+                  $ref: ../components/schemas/check.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Alert Response:
+            Update Check Response:
               value:
-                $ref: ../components/examples/alertSuccess.json
+                $ref: ../components/examples/checkSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -159,11 +139,11 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific Alert
-  description: Delete an existing monitoring alert.
-  operationId: deleteAlerts
+  summary: Delete a Specific Check
+  description: Delete an existing monitoring check.
+  operationId: deleteChecks
   tags:
-    - Alerts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -174,7 +154,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Alert Response:
+            Delete Check Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

@@ -1,0 +1,45 @@
+{
+    "monitorApps": [
+        {
+            "id": 267,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "app": null,
+            "name": "My Check App",
+            "description": null,
+            "inUptime": true,
+            "lastCheckStatus": null,
+            "lastWarningDate": null,
+            "lastErrorDate": null,
+            "lastSuccessDate": null,
+            "lastRunDate": null,
+            "lastError": null,
+            "lastTimer": 0,
+            "health": 9,
+            "history": null,
+            "severity": "critical",
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 1,
+                "username": "Admin"
+            },
+            "dateCreated": "2022-07-12T21:44:23Z",
+            "lastUpdated": "2022-07-12T21:44:23Z",
+            "availability": null,
+            "checks": [
+                2947,
+                2944
+            ],
+            "checkGroups": []
+        }
+    ],
+    "meta": {
+        "offset": 2,
+        "max": 1,
+        "size": 1,
+        "total": 3
+    }
+}

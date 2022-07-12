@@ -1,0 +1,102 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int32
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+  instance: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+      name: 
+        type: string
+  name: 
+    type: string
+  description: 
+    type: string
+    format: nullable
+  inUptime: 
+    type: boolean
+  lastCheckStatus: 
+    type: string
+    format: nullable
+  lastWarningDate: 
+    type: string
+    format: nullable
+  lastErrorDate: 
+    type: string
+    format: nullable
+  lastSuccessDate: 
+    type: string
+    format: nullable
+  lastRunDate: 
+    type: string
+    format: date-time
+  lastError: 
+    type: string
+    format: nullable
+  outageTime: 
+    type: integer
+    format: int32
+  lastTimer: 
+    type: integer
+    format: int32
+  health: 
+    type: integer
+    format: int32
+  history: 
+    type: string
+    format: nullable
+  minHappy: 
+    type: integer
+    format: int32
+  lastMetric: 
+    type: string
+    format: nullable
+  severity: 
+    type: string
+  createIncident: 
+    type: boolean
+  muted: 
+    type: boolean
+  createdBy: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+      username: 
+        type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  availability: 
+    type: integer
+    format: int32
+  checkType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+      code: 
+        type: string
+      name: 
+        type: string
+      metricName: 
+        type: string
+  checks: 
+    type: array
+    items: 
+      type: integer
+      format: int32

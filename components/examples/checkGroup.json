@@ -1,0 +1,100 @@
+{
+    "checkGroup": {
+        "id": 1873,
+        "account": {
+            "id": 1
+        },
+        "instance": {
+            "id": 2044,
+            "name": "aa-steam-1002"
+        },
+        "name": "aa-steam-1002",
+        "description": null,
+        "inUptime": true,
+        "lastCheckStatus": null,
+        "lastWarningDate": null,
+        "lastErrorDate": null,
+        "lastSuccessDate": null,
+        "lastRunDate": "2022-04-03T04:01:08Z",
+        "lastError": null,
+        "outageTime": 0,
+        "lastTimer": 14,
+        "health": 0,
+        "history": null,
+        "minHappy": 1,
+        "lastMetric": null,
+        "severity": "critical",
+        "createIncident": false,
+        "muted": true,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2021-03-31T02:32:59Z",
+        "lastUpdated": "2022-04-03T04:01:08Z",
+        "availability": 100.0,
+        "checkType": {
+            "id": 37,
+            "code": "vmCheck",
+            "name": "Virtual Machine",
+            "metricName": "result"
+        },
+        "checks": [
+            1945
+        ]
+    },
+    "checks": [
+        {
+            "id": 1945,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "apiKey": "8451fa6c-193e-419a-be0f-b6f7897c11b3",
+            "availability": 100.0,
+            "checkAgent": null,
+            "checkInterval": 300000,
+            "checkSpec": null,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "config": {
+                "containerName": "valheim_2581"
+            },
+            "container": {
+                "id": 2581
+            },
+            "createIncident": false,
+            "muted": true,
+            "createdBy": {
+                "id": 1,
+                "username": "Admin"
+            },
+            "dateCreated": "2021-03-31T02:32:59Z",
+            "description": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "lastBoxStats": null,
+            "lastCheckStatus": "error",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastErrorDate": "2022-04-03T04:01:08Z",
+            "lastMessage": null,
+            "lastMetric": null,
+            "lastRunDate": "2022-04-03T04:01:08Z",
+            "lastStats": null,
+            "lastSuccessDate": "2022-04-03T03:53:54Z",
+            "lastTimer": 14,
+            "lastUpdated": "2022-04-03T04:01:08Z",
+            "lastWarningDate": null,
+            "name": "aa-steam-1002",
+            "nextRunDate": "2022-04-03T04:06:08Z",
+            "outageTime": 0,
+            "severity": "critical",
+            "startDate": null
+        }
+    ]
+}

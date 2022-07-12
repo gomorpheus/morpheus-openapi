@@ -1,25 +1,25 @@
 get:
-  summary: Get a Specific Alert
-  description: Get details about a specific monitoring alert.
-  operationId: getAlerts
+  summary: Get a Specific Check Group
+  description: Get details about a specific monitoring check group.
+  operationId: getCheckGroups
   tags:
-    - Alerts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Alert Object
+      description: Check Group Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              alert:
-                $ref: ../components/schemas/alert.yaml
+              checkGroup:
+                $ref: ../components/schemas/checkGroup.yaml
           examples:
-            Get Alert Response:
+            Get Check Group Response:
               value:
-                $ref: ../components/examples/alert.json
+                $ref: ../components/examples/checkGroup.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -41,11 +41,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Alert
-  description: Update an existing monitoring alert.
-  operationId: updateAlerts
+  summary: Update Check Group
+  description: Update an existing monitoring check group.
+  operationId: updateCheckGroups
   tags:
-    - Alerts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -54,25 +54,33 @@ put:
         schema:
           type: object
           required:
-            - alert
+            - checkGroup
           properties:
-            alert:
+            checkGroup:
               type: object
-              description: Payload for creating a new monitoring alert
+              description: Payload for creating a new monitoring check group
               required:
                 - name
               properties:
                 name:
                   type: string
-                  description: Unique name scoped to your account for the alert
-                  example: My Alert
-                minDuration:
+                  description: Unique name scoped to your account for the check group
+                  example: My Check Group
+                description:
                   type: string
-                  description: Email notification address
-                  default: 0
-                minSeverity:
+                  description: Optional description field
+                  example: My cool description
+                minHappy:
                   type: string
-                  description: Severity level threshold for sending notifications.
+                  description: This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.
+                  default: 1
+                inUptime:
+                  type: boolean
+                  description: Used to determine if check should affect account wide availability calculations
+                  default: true
+                severity:
+                  type: string
+                  description: Determines the maximum severity level this group can incur on an incident when failing
                   default: critical
                   enum:
                     - info
@@ -80,64 +88,28 @@ put:
                     - critical
                 active:
                   type: boolean
-                  description: Set to false to disable notifications
+                  description: Used to determine if check group is active
                   default: true
-                allChecks:
-                  type: boolean
-                  description: Trigger for all checks
-                  default: false
-                allGroups:
-                  type: boolean
-                  description: Trigger for all check groups
-                  default: false
-                allApps:
-                  type: boolean
-                  description: Trigger for all monitor apps
-                  default: false
                 checks:
                   type: array
                   items:
                     $ref: ../components/schemas/check.yaml
-                groups:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/checkGroup.yaml
-                apps:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/checkApp.yaml
-                contacts: 
-                  type: array
-                  items: 
-                    type: object
-                    properties: 
-                      id: 
-                        type: integer
-                        format: int64
-                      name: 
-                        type: string
-                      method: 
-                        type: string
-                      notify: 
-                        type: boolean
-                      close: 
-                        type: boolean
   responses:
     '200':
-      description: Alert Object
+      description: Check Group Object
       content:
         application/json:
           schema:
             allOf:
-            - $ref: ../components/schemas/200-success.yaml
             - type: object
               properties:
-                alert:
-                  $ref: ../components/schemas/contact.yaml
+                checkGroup:
+                  $ref: ../components/schemas/checkGroup.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Alert Response:
+            Update Check Group Response:
               value:
-                $ref: ../components/examples/alertSuccess.json
+                $ref: ../components/examples/checkGroupSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -159,11 +131,11 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific Alert
-  description: Delete an existing monitoring alert.
-  operationId: deleteAlerts
+  summary: Delete a Specific Check Group
+  description: Delete an existing monitoring check group.
+  operationId: deleteCheckGroups
   tags:
-    - Alerts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -174,7 +146,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Alert Response:
+            Delete Check Group Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

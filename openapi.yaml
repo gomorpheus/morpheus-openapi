@@ -117,10 +117,22 @@ paths:
     $ref: paths/api@monitoring@alerts.yaml
   /api/monitoring/alerts/{id}:
     $ref: paths/api@monitoring@alerts@id.yaml
+  /api/monitoring/apps:
+    $ref: paths/api@monitoring@apps.yaml
+  /api/monitoring/apps/{id}:
+    $ref: paths/api@monitoring@apps@id.yaml
+  /api/monitoring/checks:
+    $ref: paths/api@monitoring@checks.yaml
+  /api/monitoring/checks/{id}:
+    $ref: paths/api@monitoring@checks@id.yaml
   /api/monitoring/contacts:
     $ref: paths/api@monitoring@contacts.yaml
   /api/monitoring/contacts/{id}:
     $ref: paths/api@monitoring@contacts@id.yaml
+  /api/monitoring/groups:
+    $ref: paths/api@monitoring@groups.yaml
+  /api/monitoring/groups/{id}:
+    $ref: paths/api@monitoring@groups@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:

@@ -1,0 +1,145 @@
+{
+    "monitorApp": {
+        "id": 267,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "app": null,
+        "name": "My Check App",
+        "description": null,
+        "inUptime": true,
+        "lastCheckStatus": null,
+        "lastWarningDate": null,
+        "lastErrorDate": null,
+        "lastSuccessDate": null,
+        "lastRunDate": null,
+        "lastError": null,
+        "lastTimer": 0,
+        "health": 9,
+        "history": null,
+        "severity": "critical",
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-12T21:44:23Z",
+        "lastUpdated": "2022-07-12T21:44:23Z",
+        "availability": null,
+        "checks": [
+            2947,
+            2944
+        ],
+        "checkGroups": []
+    },
+    "checks": [
+        {
+            "id": 2947,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "apiKey": "bfb9efd5-22a6-4b55-9fcf-63d71fe36868",
+            "availability": 99.95084877,
+            "checkAgent": null,
+            "checkInterval": 300000,
+            "checkSpec": null,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "config": {
+                "containerName": "ubuntu_32026",
+                "externalId": null
+            },
+            "container": {
+                "id": 32026
+            },
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 4,
+                "username": "cbunge"
+            },
+            "dateCreated": "2022-05-27T16:41:14Z",
+            "description": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "lastBoxStats": null,
+            "lastCheckStatus": "error",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastErrorDate": "2022-07-04T04:03:00Z",
+            "lastMessage": null,
+            "lastMetric": null,
+            "lastRunDate": "2022-07-04T04:03:00Z",
+            "lastStats": null,
+            "lastSuccessDate": "2022-07-04T01:48:28Z",
+            "lastTimer": 305,
+            "lastUpdated": "2022-07-04T04:03:00Z",
+            "lastWarningDate": null,
+            "name": "AnsibleTest-1",
+            "nextRunDate": "2022-07-04T04:08:00Z",
+            "outageTime": 0,
+            "severity": "critical",
+            "startDate": null
+        },
+        {
+            "id": 2944,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "apiKey": "f1d3b0a7-d1e4-4ae4-8627-9edae46cf0d8",
+            "availability": 99.9804784,
+            "checkAgent": null,
+            "checkInterval": 300000,
+            "checkSpec": null,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "config": {
+                "containerName": "ubuntu_32029",
+                "externalId": null
+            },
+            "container": {
+                "id": 32029
+            },
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 4,
+                "username": "cbunge"
+            },
+            "dateCreated": "2022-05-27T16:41:14Z",
+            "description": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "lastBoxStats": null,
+            "lastCheckStatus": "error",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastErrorDate": "2022-07-04T04:03:00Z",
+            "lastMessage": null,
+            "lastMetric": null,
+            "lastRunDate": "2022-07-04T04:03:00Z",
+            "lastStats": null,
+            "lastSuccessDate": "2022-07-04T01:48:28Z",
+            "lastTimer": 284,
+            "lastUpdated": "2022-07-04T04:03:00Z",
+            "lastWarningDate": null,
+            "name": "AnsibleTest-2",
+            "nextRunDate": "2022-07-04T04:08:00Z",
+            "outageTime": 0,
+            "severity": "critical",
+            "startDate": null
+        }
+    ]
+}

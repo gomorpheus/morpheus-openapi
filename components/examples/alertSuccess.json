@@ -1,0 +1,30 @@
+{
+    "success": true,
+    "alert": {
+        "id": 6,
+        "name": "My Alert",
+        "allApps": false,
+        "allChecks": false,
+        "allGroups": false,
+        "active": true,
+        "minSeverity": "critical",
+        "minDuration": 0,
+        "dateCreated": "2022-07-12T15:17:06Z",
+        "lastUpdated": "2022-07-12T15:17:06Z",
+        "checks": [
+            3,
+            1945
+        ],
+        "checkGroups": [],
+        "apps": [],
+        "contacts": [
+            {
+                "id": 1470,
+                "name": "John Smith",
+                "method": "emailAddress,smsAddress",
+                "notify": true,
+                "close": true
+            }
+        ]
+    }
+}

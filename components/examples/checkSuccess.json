@@ -1,0 +1,54 @@
+{
+    "check": {
+        "id": 2970,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "2d5036c5-c2d5-4de1-8ca0-8d5d1625c752",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": 300,
+        "checkSpec": null,
+        "checkType": {
+            "id": 1,
+            "code": "webGetCheck",
+            "name": "Web Check",
+            "metricName": "response"
+        },
+        "config": {
+            "webMethod": "GET",
+            "webUrl": "http://google.com"
+        },
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-12T20:53:00Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-12T20:53:00Z",
+        "lastWarningDate": null,
+        "name": "My Check",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

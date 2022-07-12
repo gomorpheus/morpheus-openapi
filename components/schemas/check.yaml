@@ -1,0 +1,123 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int32
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+  active: 
+    type: boolean
+  apiKey: 
+    type: string
+  availability: 
+    type: integer
+    format: int32
+  checkAgent: 
+    type: string
+    format: nullable
+  checkInterval: 
+    type: integer
+    format: int32
+  checkSpec: 
+    type: string
+    format: nullable
+  checkType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+      code: 
+        type: string
+      name: 
+        type: string
+      metricName: 
+        type: string
+  config: 
+    type: object
+    properties: 
+      containerName: 
+        type: string
+  container: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+  createIncident: 
+    type: boolean
+  muted: 
+    type: boolean
+  createdBy: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int32
+      username: 
+        type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  description: 
+    type: string
+    format: nullable
+  endDate: 
+    type: string
+    format: nullable
+  health: 
+    type: integer
+    format: int32
+  inUptime: 
+    type: boolean
+  lastBoxStats: 
+    type: string
+    format: nullable
+  lastCheckStatus: 
+    type: string
+  lastError: 
+    type: string
+  lastErrorDate: 
+    type: string
+    format: date-time
+  lastMessage: 
+    type: string
+    format: nullable
+  lastMetric: 
+    type: string
+    format: nullable
+  lastRunDate: 
+    type: string
+    format: date-time
+  lastStats: 
+    type: string
+    format: nullable
+  lastSuccessDate: 
+    type: string
+    format: date-time
+  lastTimer: 
+    type: integer
+    format: int32
+  lastUpdated: 
+    type: string
+    format: date-time
+  lastWarningDate: 
+    type: string
+    format: nullable
+  name: 
+    type: string
+  nextRunDate: 
+    type: string
+    format: date-time
+  outageTime: 
+    type: integer
+    format: int32
+  severity: 
+    type: string
+  startDate: 
+    type: string
+    format: nullable
