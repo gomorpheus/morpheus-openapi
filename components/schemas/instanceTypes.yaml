@@ -20,6 +20,7 @@ properties:
     nullable: true
   provisionTypeCode:
     type: string
+    nullable: true
   category:
     type: string
   active:
@@ -46,4 +47,5 @@ properties:
           type: string
         provisionTypeCode:
           type: string
+          nullable: true
   
