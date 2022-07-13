@@ -59,8 +59,6 @@ put:
             contact:
               type: object
               description: Payload for updating a monitoring contact
-              required:
-                - name
               properties:
                 name:
                   type: string

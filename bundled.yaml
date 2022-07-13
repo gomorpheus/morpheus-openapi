@@ -11158,8 +11158,6 @@ paths:
                 alert:
                   type: object
                   description: Payload for creating a new monitoring alert
-                  required:
-                    - name
                   properties:
                     name:
                       type: string
@@ -11725,8 +11723,6 @@ paths:
                 monitorApp:
                   type: object
                   description: Payload for creating a new monitoring check app
-                  required:
-                    - name
                   properties:
                     name:
                       type: string
@@ -12133,10 +12129,6 @@ paths:
                         - info
                         - warning
                         - critical
-                    checkAgent:
-                      type: object
-                      description: Specifies agent you want to run the check with
-                      example: '{"id": 1}'
                     config:
                       type: object
                       description: >-
@@ -12337,8 +12329,6 @@ paths:
                 check:
                   type: object
                   description: Payload for creating a new monitoring check
-                  required:
-                    - name
                   properties:
                     name:
                       type: string
@@ -12381,10 +12371,6 @@ paths:
                         - info
                         - warning
                         - critical
-                    checkAgent:
-                      type: object
-                      description: Specifies agent you want to run the check with
-                      example: '{"id": 1}'
                     config:
                       type: object
                       description: >-
@@ -12721,8 +12707,6 @@ paths:
                 contact:
                   type: object
                   description: Payload for updating a monitoring contact
-                  required:
-                    - name
                   properties:
                     name:
                       type: string
@@ -13272,8 +13256,6 @@ paths:
                 checkGroup:
                   type: object
                   description: Payload for creating a new monitoring check group
-                  required:
-                    - name
                   properties:
                     name:
                       type: string
@@ -13406,6 +13388,725 @@ paths:
                 Delete Check Group Response:
                   value:
                     success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/incidents:
+    get:
+      summary: List All Incidents
+      description: Get a list of monitoring incidents.
+      operationId: listIncidents
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/status'
+        - $ref: '#/components/parameters/severity'
+      responses:
+        '200':
+          description: Array of Incidents
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      incidents:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/incident'
+                  - type: object
+                    properties:
+                      issues:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/issue'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Incidents Response:
+                  value:
+                    incidents:
+                      - id: 6420
+                        account:
+                          id: 1
+                        app: null
+                        autoClose: true
+                        channelId: 719bc097-9734-47fe-9e40-f66ed2b67df0
+                        checkGroups:
+                          - id: 2815
+                            name: AnsibleTest-1
+                        checks: []
+                        comment: null
+                        displayName: AnsibleTest-1
+                        duration: null
+                        endDate: null
+                        inUptime: true
+                        muted: false
+                        lastCheckTime: '2022-07-04T04:03:00Z'
+                        lastError: unheard from beyond check interval limit.
+                        lastMessage: null
+                        name: AnsibleTest-1
+                        resolution: null
+                        severity: critical
+                        severityId: 20
+                        startDate: '2022-07-04T04:03:00Z'
+                        status: open
+                        visibility: private
+                      - id: 6423
+                        account:
+                          id: 1
+                        app: null
+                        autoClose: true
+                        channelId: b8a95d89-05db-48b6-a65a-5e5f8d38a1a9
+                        checkGroups:
+                          - id: 2815
+                            name: AnsibleTest-1
+                        checks: []
+                        comment: null
+                        displayName: AnsibleTest-1
+                        duration: null
+                        endDate: null
+                        inUptime: true
+                        muted: false
+                        lastCheckTime: '2022-07-04T04:03:00Z'
+                        lastError: unheard from beyond check interval limit.
+                        lastMessage: null
+                        name: AnsibleTest-1
+                        resolution: null
+                        severity: critical
+                        severityId: 20
+                        startDate: '2022-07-04T04:03:00Z'
+                        status: open
+                        visibility: private
+                      - id: 6426
+                        account:
+                          id: 1
+                        app: null
+                        autoClose: true
+                        channelId: 87034859-0654-448e-9893-0fe2bb09aff3
+                        checkGroups:
+                          - id: 2779
+                            name: Jamar-Test
+                        checks: []
+                        comment: null
+                        displayName: Jamar-Test
+                        duration: null
+                        endDate: null
+                        inUptime: true
+                        muted: false
+                        lastCheckTime: '2022-07-04T04:03:00Z'
+                        lastError: unheard from beyond check interval limit.
+                        lastMessage: null
+                        name: Jamar-Test
+                        resolution: null
+                        severity: critical
+                        severityId: 20
+                        startDate: '2022-07-04T04:03:00Z'
+                        status: open
+                        visibility: private
+                    meta:
+                      offset: 0
+                      max: 3
+                      size: 3
+                      total: 2445
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    post:
+      summary: Create a New Incident
+      description: Create a new incident.
+      operationId: addIncident
+      tags:
+        - Incidents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - incident
+              properties:
+                incident:
+                  type: object
+                  description: Payload for creating a new incident
+                  required:
+                    - name
+                  properties:
+                    resolution:
+                      type: string
+                      description: Description of the resolution to this incident
+                      example: I plugged it back in
+                    comment:
+                      type: string
+                      description: Comment on this incident, updates summary field
+                      example: This is a summary of the incident
+                    status:
+                      type: string
+                      description: Set status
+                      enum:
+                        - open
+                        - closed
+                    severity:
+                      type: string
+                      description: Set severity
+                      enum:
+                        - info
+                        - warning
+                        - critical
+                    name:
+                      type: string
+                      description: Set display name
+                      example: Incident Name
+                    startDate:
+                      type: string
+                      format: date-time
+                      description: Set start time
+                      example: '2019-10-20T19:42:00Z'
+                    endDate:
+                      type: string
+                      format: date-time
+                      description: Set start time
+                      example: '2019-10-20T19:42:00Z'
+                    inUptime:
+                      type: boolean
+                      description: Set 'In Availability'
+                      example: true
+      responses:
+        '200':
+          description: Incident Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      incident:
+                        $ref: '#/components/schemas/incident'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Create Incident Response:
+                  value:
+                    incident:
+                      id: 6420
+                      account:
+                        id: 1
+                      app: null
+                      autoClose: true
+                      channelId: 719bc097-9734-47fe-9e40-f66ed2b67df0
+                      checkGroups:
+                        - id: 2815
+                          name: AnsibleTest-1
+                      checks: []
+                      comment: null
+                      displayName: AnsibleTest-1
+                      duration: null
+                      endDate: null
+                      inUptime: true
+                      muted: false
+                      lastCheckTime: '2022-07-04T04:03:00Z'
+                      lastError: unheard from beyond check interval limit.
+                      lastMessage: null
+                      name: AnsibleTest-1
+                      resolution: null
+                      severity: critical
+                      severityId: 20
+                      startDate: '2022-07-04T04:03:00Z'
+                      status: open
+                      visibility: private
+                    issues:
+                      - id: 39999
+                        attachmentType: Group
+                        app: null
+                        available: false
+                        check: null
+                        checkGroup:
+                          id: 2815
+                          name: AnsibleTest-1
+                        checkStatus: null
+                        endDate: null
+                        health: 0
+                        inUptime: true
+                        incident:
+                          id: 6420
+                        lastCheckTime: null
+                        lastError: null
+                        lastMessage: null
+                        name: AnsibleTest-1
+                        severity: critical
+                        severityId: 10
+                        startDate: '2022-07-04T04:03:00Z'
+                        status: open
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/incidents/{id}:
+    get:
+      summary: Get a Specific Incident
+      description: Get details about a specific incident.
+      operationId: getIncidents
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Incident Object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  incident:
+                    $ref: '#/components/schemas/incident'
+              examples:
+                Get Incident Response:
+                  value:
+                    incident:
+                      id: 6420
+                      account:
+                        id: 1
+                      app: null
+                      autoClose: true
+                      channelId: 719bc097-9734-47fe-9e40-f66ed2b67df0
+                      checkGroups:
+                        - id: 2815
+                          name: AnsibleTest-1
+                      checks: []
+                      comment: null
+                      displayName: AnsibleTest-1
+                      duration: null
+                      endDate: null
+                      inUptime: true
+                      muted: false
+                      lastCheckTime: '2022-07-04T04:03:00Z'
+                      lastError: unheard from beyond check interval limit.
+                      lastMessage: null
+                      name: AnsibleTest-1
+                      resolution: null
+                      severity: critical
+                      severityId: 20
+                      startDate: '2022-07-04T04:03:00Z'
+                      status: open
+                      visibility: private
+                    issues:
+                      - id: 39999
+                        attachmentType: Group
+                        app: null
+                        available: false
+                        check: null
+                        checkGroup:
+                          id: 2815
+                          name: AnsibleTest-1
+                        checkStatus: null
+                        endDate: null
+                        health: 0
+                        inUptime: true
+                        incident:
+                          id: 6420
+                        lastCheckTime: null
+                        lastError: null
+                        lastMessage: null
+                        name: AnsibleTest-1
+                        severity: critical
+                        severityId: 10
+                        startDate: '2022-07-04T04:03:00Z'
+                        status: open
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    put:
+      summary: Update Incident
+      description: Update an existing incident.
+      operationId: updateIncidents
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - incident
+              properties:
+                incident:
+                  type: object
+                  description: Payload for update an incident
+                  properties:
+                    resolution:
+                      type: string
+                      description: Description of the resolution to this incident
+                      example: I plugged it back in
+                    comment:
+                      type: string
+                      description: Comment on this incident, updates summary field
+                      example: This is a summary of the incident
+                    status:
+                      type: string
+                      description: Set status
+                      enum:
+                        - open
+                        - closed
+                    severity:
+                      type: string
+                      description: Set severity
+                      enum:
+                        - info
+                        - warning
+                        - critical
+                    name:
+                      type: string
+                      description: Set display name
+                      example: Incident Name
+                    startDate:
+                      type: string
+                      format: date-time
+                      description: Set start time
+                      example: '2019-10-20T19:42:00Z'
+                    endDate:
+                      type: string
+                      format: date-time
+                      description: Set start time
+                      example: '2019-10-20T19:42:00Z'
+                    inUptime:
+                      type: boolean
+                      description: Set 'In Availability'
+                      example: true
+      responses:
+        '200':
+          description: Incident Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      incident:
+                        $ref: '#/components/schemas/incident'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Update Incident Response:
+                  value:
+                    incident:
+                      id: 6420
+                      account:
+                        id: 1
+                      app: null
+                      autoClose: true
+                      channelId: 719bc097-9734-47fe-9e40-f66ed2b67df0
+                      checkGroups:
+                        - id: 2815
+                          name: AnsibleTest-1
+                      checks: []
+                      comment: null
+                      displayName: AnsibleTest-1
+                      duration: null
+                      endDate: null
+                      inUptime: true
+                      muted: false
+                      lastCheckTime: '2022-07-04T04:03:00Z'
+                      lastError: unheard from beyond check interval limit.
+                      lastMessage: null
+                      name: AnsibleTest-1
+                      resolution: null
+                      severity: critical
+                      severityId: 20
+                      startDate: '2022-07-04T04:03:00Z'
+                      status: open
+                      visibility: private
+                    issues:
+                      - id: 39999
+                        attachmentType: Group
+                        app: null
+                        available: false
+                        check: null
+                        checkGroup:
+                          id: 2815
+                          name: AnsibleTest-1
+                        checkStatus: null
+                        endDate: null
+                        health: 0
+                        inUptime: true
+                        incident:
+                          id: 6420
+                        lastCheckTime: null
+                        lastError: null
+                        lastMessage: null
+                        name: AnsibleTest-1
+                        severity: critical
+                        severityId: 10
+                        startDate: '2022-07-04T04:03:00Z'
+                        status: open
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    delete:
+      summary: Close a Specific Incident
+      description: Close an existing monitoring incident.
+      operationId: deleteIncidents
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Success Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+              examples:
+                Close Incident Response:
+                  value:
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/incidents/{id}/mute:
+    put:
+      summary: Mute Incident
+      description: Mute an existing incident.
+      operationId: updateMuteIncidents
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - muted
+              properties:
+                muted:
+                  type: boolean
+                  description: Set to false to unmute
+                  default: true
+      responses:
+        '200':
+          description: Incident Mute Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      success:
+                        type: boolean
+                      muted:
+                        type: boolean
+              examples:
+                Incident Mute Response:
+                  value:
+                    success: true
+                    muted: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/incidents/{id}/reopen:
+    get:
+      summary: Reopen a Specific Incident
+      description: Get details about a specific incident.
+      operationId: updateIncidentsReopen
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Incident Object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/successMessage'
+              examples:
+                Reopen Incident Response:
+                  value:
+                    success: true
+                    msg: Incident 1 is closed
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/monitoring/incidents/mute-all:
+    put:
+      summary: Mute All Incidents
+      description: Mute all existing incident.
+      operationId: updateMuteAllIncidents
+      tags:
+        - Incidents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - muted
+              properties:
+                muted:
+                  type: boolean
+                  description: Set to false to unmute
+                  default: true
+      responses:
+        '200':
+          description: Mute All Incidents Object
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      success:
+                        type: boolean
+                      muted:
+                        type: boolean
+                      updated:
+                        type: integer
+                        format: int64
+              examples:
+                Mute All Incidents Response:
+                  value:
+                    success: true
+                    muted: true
+                    updated: 11
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -25735,6 +26436,16 @@ components:
       schema:
         type: string
       example: DB Version
+    severity:
+      name: severity
+      in: query
+      description: Filter by severity
+      schema:
+        type: string
+        enum:
+          - INFO
+          - WARNING
+          - CRITICAL
     appId:
       name: appId
       in: query
@@ -26761,18 +27472,18 @@ components:
       properties:
         id:
           type: integer
-          format: int32
+          format: int64
         uuid:
           type: string
         accountId:
           type: integer
-          format: int32
+          format: int64
         tenant:
           type: object
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
         instanceType:
@@ -26780,7 +27491,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             code:
               type: string
             category:
@@ -26792,7 +27503,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
         cloud:
@@ -26800,19 +27511,19 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
         containers:
           type: array
           items:
             type: integer
-            format: int32
+            format: int64
         servers:
           type: array
           items:
             type: integer
-            format: int32
+            format: int64
         connectionInfo:
           type: array
           items:
@@ -26828,12 +27539,12 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
             provisionTypeId:
               type: integer
-              format: int32
+              format: int64
             provisionTypeCode:
               type: string
         plan:
@@ -26841,7 +27552,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             code:
               type: string
             name:
@@ -26886,7 +27597,7 @@ components:
               type: object
             resourcePoolId:
               type: integer
-              format: int32
+              format: int64
             poolProviderType:
               type: string
               nullable: true
@@ -26915,7 +27626,7 @@ components:
               properties:
                 id:
                   type: integer
-                  format: int32
+                  format: int64
             environmentPrefix:
               type: string
               nullable: true
@@ -26924,7 +27635,7 @@ components:
               properties:
                 id:
                   type: integer
-                  format: int32
+                  format: int64
                 code:
                   type: string
             type:
@@ -26948,7 +27659,7 @@ components:
                   type: string
                 providerBackupType:
                   type: integer
-                  format: int32
+                  format: int64
             replicationGroup:
               type: object
               properties:
@@ -26956,7 +27667,7 @@ components:
                   type: string
             layoutSize:
               type: integer
-              format: int32
+              format: int64
             lbInstances:
               type: array
         configGroup:
@@ -26975,17 +27686,17 @@ components:
             properties:
               controllerId:
                 type: integer
-                format: int32
+                format: int64
                 nullable: true
               datastoreId:
                 type: string
                 nullable: true
               displayOrder:
                 type: integer
-                format: int32
+                format: int64
               id:
                 type: integer
-                format: int32
+                format: int64
               uuid:
                 type: string
               maxIOPS:
@@ -27006,10 +27717,10 @@ components:
                 type: boolean
               size:
                 type: integer
-                format: int32
+                format: int64
               storageType:
                 type: integer
-                format: int32
+                format: int64
               unitNumber:
                 type: string
                 nullable: true
@@ -27023,7 +27734,7 @@ components:
             properties:
               id:
                 type: integer
-                format: int32
+                format: int64
               name:
                 type: string
               type:
@@ -27031,17 +27742,17 @@ components:
                 properties:
                   id:
                     type: integer
-                    format: int32
+                    format: int64
                   code:
                     type: string
                   name:
                     type: string
               maxDevices:
                 type: integer
-                format: int32
+                format: int64
               reservedUnitNumber:
                 type: integer
-                format: int32
+                format: int64
         interfaces:
           type: array
           items:
@@ -27075,7 +27786,7 @@ components:
                     properties:
                       id:
                         type: integer
-                        format: int32
+                        format: int64
                       name:
                         type: string
               ipAddress:
@@ -27083,7 +27794,7 @@ components:
                 nullable: true
               networkInterfaceTypeId:
                 type: integer
-                format: int32
+                format: int64
                 nullable: true
               ipMode:
                 type: string
@@ -27106,10 +27817,10 @@ components:
           format: int64
         maxCores:
           type: integer
-          format: int32
+          format: int64
         coresPerSocket:
           type: integer
-          format: int32
+          format: int64
           nullable: true
         maxCpu:
           type: string
@@ -27180,13 +27891,13 @@ components:
           nullable: true
         expireDays:
           type: integer
-          format: int32
+          format: int64
         renewDays:
           type: integer
-          format: int32
+          format: int64
         expireCount:
           type: integer
-          format: int32
+          format: int64
         expireDate:
           type: string
           format: date-time
@@ -27197,13 +27908,13 @@ components:
           type: boolean
         shutdownDays:
           type: integer
-          format: int32
+          format: int64
         shutdownRenewDays:
           type: integer
-          format: int32
+          format: int64
         shutdownCount:
           type: integer
-          format: int32
+          format: int64
         shutdownDate:
           type: string
           format: date-time
@@ -27220,7 +27931,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             username:
               type: string
         owner:
@@ -27228,7 +27939,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             username:
               type: string
         notes:
@@ -27245,7 +27956,7 @@ components:
               format: int64
             usedMemory:
               type: integer
-              format: int32
+              format: int64
             maxMemory:
               type: integer
               format: int64
@@ -27724,7 +28435,7 @@ components:
             properties:
               id:
                 type: integer
-                format: int32
+                format: int64
               name:
                 type: string
               provisionTypeCode:
@@ -27856,13 +28567,13 @@ components:
       properties:
         id:
           type: integer
-          format: int32
+          format: int64
         instanceType:
           type: object
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
             code:
@@ -27872,7 +28583,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
         code:
@@ -27888,10 +28599,10 @@ components:
           type: boolean
         memoryRequirement:
           type: integer
-          format: int32
+          format: int64
         sortOrder:
           type: integer
-          format: int32
+          format: int64
         supportsConvertToManaged:
           type: boolean
         provisionType:
@@ -27906,13 +28617,13 @@ components:
             properties:
               id:
                 type: integer
-                format: int32
+                format: int64
               account:
                 type: object
                 properties:
                   id:
                     type: integer
-                    format: int32
+                    format: int64
                   name:
                     type: string
               name:
@@ -27928,7 +28639,7 @@ components:
                 properties:
                   id:
                     type: integer
-                    format: int32
+                    format: int64
                   name:
                     type: string
                   code:
@@ -27938,7 +28649,7 @@ components:
                 properties:
                   id:
                     type: integer
-                    format: int32
+                    format: int64
                   name:
                     type: string
               category:
@@ -27998,7 +28709,7 @@ components:
                   properties:
                     id:
                       type: integer
-                      format: int32
+                      format: int64
                 sites:
                   type: array
                   nullable: true
@@ -29167,26 +29878,26 @@ components:
       properties:
         id:
           type: integer
-          format: int32
+          format: int64
         account:
           type: object
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
         active:
           type: boolean
         apiKey:
           type: string
         availability:
           type: integer
-          format: int32
+          format: int64
         checkAgent:
           type: string
           format: nullable
         checkInterval:
           type: integer
-          format: int32
+          format: int64
         checkSpec:
           type: string
           format: nullable
@@ -29195,7 +29906,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             code:
               type: string
             name:
@@ -29212,7 +29923,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
         createIncident:
           type: boolean
         muted:
@@ -29222,7 +29933,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             username:
               type: string
         dateCreated:
@@ -29236,7 +29947,7 @@ components:
           format: nullable
         health:
           type: integer
-          format: int32
+          format: int64
         inUptime:
           type: boolean
         lastBoxStats:
@@ -29266,7 +29977,7 @@ components:
           format: date-time
         lastTimer:
           type: integer
-          format: int32
+          format: int64
         lastUpdated:
           type: string
           format: date-time
@@ -29280,7 +29991,7 @@ components:
           format: date-time
         outageTime:
           type: integer
-          format: int32
+          format: int64
         severity:
           type: string
         startDate:
@@ -29291,19 +30002,19 @@ components:
       properties:
         id:
           type: integer
-          format: int32
+          format: int64
         account:
           type: object
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
         instance:
           type: object
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             name:
               type: string
         name:
@@ -29333,19 +30044,19 @@ components:
           format: nullable
         outageTime:
           type: integer
-          format: int32
+          format: int64
         lastTimer:
           type: integer
-          format: int32
+          format: int64
         health:
           type: integer
-          format: int32
+          format: int64
         history:
           type: string
           format: nullable
         minHappy:
           type: integer
-          format: int32
+          format: int64
         lastMetric:
           type: string
           format: nullable
@@ -29360,7 +30071,7 @@ components:
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             username:
               type: string
         dateCreated:
@@ -29371,13 +30082,13 @@ components:
           format: date-time
         availability:
           type: integer
-          format: int32
+          format: int64
         checkType:
           type: object
           properties:
             id:
               type: integer
-              format: int32
+              format: int64
             code:
               type: string
             name:
@@ -29388,7 +30099,7 @@ components:
           type: array
           items:
             type: integer
-            format: int32
+            format: int64
     checkApp:
       type: object
       properties:
@@ -29488,6 +30199,149 @@ components:
         slackHook:
           type: string
           format: nullable
+    incident:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        account:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+        app:
+          type: string
+          format: nullable
+        autoClose:
+          type: boolean
+        channelId:
+          type: string
+        checkGroups:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+              name:
+                type: string
+        checks:
+          type: array
+          items:
+            $ref: '#/components/schemas/check'
+        comment:
+          type: string
+          format: nullable
+        displayName:
+          type: string
+        duration:
+          type: string
+          format: nullable
+        endDate:
+          type: string
+          format: nullable
+        inUptime:
+          type: boolean
+        muted:
+          type: boolean
+        lastCheckTime:
+          type: string
+          format: date-time
+        lastError:
+          type: string
+        lastMessage:
+          type: string
+          format: nullable
+        name:
+          type: string
+        resolution:
+          type: string
+          format: nullable
+        severity:
+          type: string
+        severityId:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date-time
+        status:
+          type: string
+        visibility:
+          type: string
+    issue:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        attachmentType:
+          type: string
+        app:
+          type: string
+          format: nullable
+        available:
+          type: boolean
+        check:
+          type: string
+          format: nullable
+        checkGroup:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        checkStatus:
+          type: string
+          format: nullable
+        endDate:
+          type: string
+          format: nullable
+        health:
+          type: integer
+          format: int64
+        inUptime:
+          type: boolean
+        incident:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+        lastCheckTime:
+          type: string
+          format: nullable
+        lastError:
+          type: string
+          format: nullable
+        lastMessage:
+          type: string
+          format: nullable
+        name:
+          type: string
+        severity:
+          type: string
+        severityId:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date-time
+        status:
+          type: string
+    successMessage:
+      type: object
+      properties:
+        success:
+          type: boolean
+        msg:
+          type: object
+          nullable: true
     ping:
       type: object
       properties:
@@ -29603,7 +30457,7 @@ components:
       properties:
         id:
           type: integer
-          format: int32
+          format: int64
         name:
           type: string
         description:
@@ -29673,7 +30527,7 @@ components:
           nullable: true
         displayOrder:
           type: integer
-          format: int32
+          format: int64
         wrapperClass:
           type: string
           nullable: true
@@ -29703,7 +30557,7 @@ components:
       properties:
         id:
           type: integer
-          format: int32
+          format: int64
         code:
           type: string
         name:

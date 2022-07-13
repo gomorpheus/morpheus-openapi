@@ -1,25 +1,25 @@
 get:
-  summary: Get a Specific Check Group
-  description: Get details about a specific monitoring check group.
-  operationId: getCheckGroups
+  summary: Get a Specific Incident
+  description: Get details about a specific incident.
+  operationId: getIncidents
   tags:
-    - Checks
+    - Incidents
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Check Group Object
+      description: Incident Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              checkGroup:
-                $ref: ../components/schemas/checkGroup.yaml
+              incident:
+                $ref: ../components/schemas/incident.yaml
           examples:
-            Get Check Group Response:
+            Get Incident Response:
               value:
-                $ref: ../components/examples/checkGroup.json
+                $ref: ../components/examples/incident.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -41,11 +41,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Check Group
-  description: Update an existing monitoring check group.
-  operationId: updateCheckGroups
+  summary: Update Incident
+  description: Update an existing incident.
+  operationId: updateIncidents
   tags:
-    - Checks
+    - Incidents
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -54,60 +54,67 @@ put:
         schema:
           type: object
           required:
-            - checkGroup
+            - incident
           properties:
-            checkGroup:
+            incident:
               type: object
-              description: Payload for creating a new monitoring check group
+              description: Payload for update an incident
               properties:
-                name:
+                resolution:
                   type: string
-                  description: Unique name scoped to your account for the check group
-                  example: My Check Group
-                description:
+                  description: Description of the resolution to this incident
+                  example: I plugged it back in
+                comment:
                   type: string
-                  description: Optional description field
-                  example: My cool description
-                minHappy:
+                  description: Comment on this incident, updates summary field
+                  example: This is a summary of the incident
+                status:
                   type: string
-                  description: This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.
-                  default: 1
-                inUptime:
-                  type: boolean
-                  description: Used to determine if check should affect account wide availability calculations
-                  default: true
+                  description: Set status
+                  enum:
+                    - open
+                    - closed
                 severity:
                   type: string
-                  description: Determines the maximum severity level this group can incur on an incident when failing
-                  default: critical
+                  description: Set severity
                   enum:
                     - info
                     - warning
                     - critical
-                active:
+                name:
+                  type: string
+                  description: Set display name
+                  example: Incident Name
+                startDate:
+                  type: string
+                  format: date-time
+                  description: Set start time
+                  example: '2019-10-20T19:42:00Z'
+                endDate:
+                  type: string
+                  format: date-time
+                  description: Set start time
+                  example: '2019-10-20T19:42:00Z'
+                inUptime:
                   type: boolean
-                  description: Used to determine if check group is active
-                  default: true
-                checks:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/check.yaml
+                  description: Set 'In Availability'
+                  example: true
   responses:
     '200':
-      description: Check Group Object
+      description: Incident Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                checkGroup:
-                  $ref: ../components/schemas/checkGroup.yaml
+                incident:
+                  $ref: ../components/schemas/incident.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Check Group Response:
+            Update Incident Response:
               value:
-                $ref: ../components/examples/checkGroupSuccess.json
+                $ref: ../components/examples/incident.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -129,11 +136,11 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific Check Group
-  description: Delete an existing monitoring check group.
-  operationId: deleteCheckGroups
+  summary: Close a Specific Incident
+  description: Close an existing monitoring incident.
+  operationId: deleteIncidents
   tags:
-    - Checks
+    - Incidents
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -144,7 +151,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Check Group Response:
+            Close Incident Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

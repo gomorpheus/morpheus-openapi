@@ -59,8 +59,6 @@ put:
             alert:
               type: object
               description: Payload for creating a new monitoring alert
-              required:
-                - name
               properties:
                 name:
                   type: string

@@ -133,6 +133,16 @@ paths:
     $ref: paths/api@monitoring@groups.yaml
   /api/monitoring/groups/{id}:
     $ref: paths/api@monitoring@groups@id.yaml
+  /api/monitoring/incidents:
+    $ref: paths/api@monitoring@incidents.yaml
+  /api/monitoring/incidents/{id}:
+    $ref: paths/api@monitoring@incidents@id.yaml
+  /api/monitoring/incidents/{id}/mute:
+    $ref: paths/api@monitoring@incidents@id@mute.yaml
+  /api/monitoring/incidents/{id}/reopen:
+    $ref: paths/api@monitoring@incidents@id@reopen.yaml
+  /api/monitoring/incidents/mute-all:
+    $ref: paths/api@monitoring@incidents@mute-all.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:

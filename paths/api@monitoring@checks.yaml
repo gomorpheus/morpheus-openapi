@@ -103,10 +103,6 @@ post:
                     - info
                     - warning
                     - critical
-                checkAgent:
-                  type: object
-                  description: Specifies agent you want to run the check with
-                  example: '{"id": 1}'
                 config:
                   type: object
                   description: JSON encoded list of parameters that varies by check type. See below for more information
