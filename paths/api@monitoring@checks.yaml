@@ -82,7 +82,8 @@ post:
                 checkType:
                   type: object
                   description: Check type you want to create, use code and a valid check type
-                  example: '{"code": "webGetCheck"}'
+                  example: 
+                    code: "webGetCheck"
                 checkInterval:
                   type: integer
                   description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
@@ -106,7 +107,9 @@ post:
                 config:
                   type: object
                   description: JSON encoded list of parameters that varies by check type. See below for more information
-                  example: '{"webMethod": "GET","webUrl": "http://google.com"}'
+                  example: 
+                    webMethod: "GET"
+                    webUrl: "http://google.com"
   responses:
     '200':
       description: Check Object

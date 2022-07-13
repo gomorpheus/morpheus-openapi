@@ -80,7 +80,7 @@ post:
                   description: Optional description field
                   example: My cool description
                 minHappy:
-                  type: string
+                  type: integer
                   description: This specifies the minimum number of checks within the group that must be happy to keep the group from becoming unhealthy.
                   default: 1
                 inUptime:

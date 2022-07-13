@@ -11,6 +11,7 @@ properties:
         format: int64
   instance: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -21,27 +22,28 @@ properties:
     type: string
   description: 
     type: string
-    format: nullable
+    nullable: true
   inUptime: 
     type: boolean
   lastCheckStatus: 
     type: string
-    format: nullable
+    nullable: true
   lastWarningDate: 
     type: string
-    format: nullable
+    nullable: true
   lastErrorDate: 
     type: string
-    format: nullable
+    nullable: true
   lastSuccessDate: 
     type: string
-    format: nullable
+    nullable: true
   lastRunDate: 
     type: string
     format: date-time
+    nullable: true
   lastError: 
     type: string
-    format: nullable
+    nullable: true
   outageTime: 
     type: integer
     format: int64
@@ -53,13 +55,13 @@ properties:
     format: int64
   history: 
     type: string
-    format: nullable
+    nullable: true
   minHappy: 
     type: integer
     format: int64
   lastMetric: 
     type: string
-    format: nullable
+    nullable: true
   severity: 
     type: string
   createIncident: 
@@ -81,8 +83,8 @@ properties:
     type: string
     format: date-time
   availability: 
-    type: integer
-    format: int64
+    type: number
+    nullable: true
   checkType: 
     type: object
     properties: 

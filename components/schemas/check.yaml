@@ -14,17 +14,16 @@ properties:
   apiKey: 
     type: string
   availability: 
-    type: integer
-    format: int64
+    type: number
   checkAgent: 
     type: string
-    format: nullable
+    nullable: true
   checkInterval: 
     type: integer
     format: int64
   checkSpec: 
     type: string
-    format: nullable
+    nullable: true
   checkType: 
     type: object
     properties: 
@@ -44,6 +43,7 @@ properties:
         type: string
   container: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -54,6 +54,7 @@ properties:
     type: boolean
   createdBy: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -65,10 +66,10 @@ properties:
     format: date-time
   description: 
     type: string
-    format: nullable
+    nullable: true
   endDate: 
     type: string
-    format: nullable
+    nullable: true
   health: 
     type: integer
     format: int64
@@ -76,43 +77,51 @@ properties:
     type: boolean
   lastBoxStats: 
     type: string
-    format: nullable
+    nullable: true
   lastCheckStatus: 
     type: string
+    nullable: true
   lastError: 
     type: string
+    nullable: true
   lastErrorDate: 
     type: string
     format: date-time
+    nullable: true
   lastMessage: 
     type: string
-    format: nullable
+    nullable: true
   lastMetric: 
     type: string
-    format: nullable
+    nullable: true
   lastRunDate: 
     type: string
     format: date-time
+    nullable: true
   lastStats: 
     type: string
-    format: nullable
+    nullable: true
   lastSuccessDate: 
     type: string
     format: date-time
+    nullable: true
   lastTimer: 
     type: integer
     format: int64
+    nullable: true
   lastUpdated: 
     type: string
     format: date-time
+    nullable: true
   lastWarningDate: 
     type: string
-    format: nullable
+    nullable: true
   name: 
     type: string
   nextRunDate: 
     type: string
     format: date-time
+    nullable: true
   outageTime: 
     type: integer
     format: int64
@@ -120,4 +129,4 @@ properties:
     type: string
   startDate: 
     type: string
-    format: nullable
+    nullable: true

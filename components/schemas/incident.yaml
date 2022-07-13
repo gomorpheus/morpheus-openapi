@@ -11,7 +11,7 @@ properties:
         format: int64
   app: 
     type: string
-    format: nullable
+    nullable: true
   autoClose: 
     type: boolean
   channelId: 
@@ -32,15 +32,15 @@ properties:
       $ref: check.yaml
   comment: 
     type: string
-    format: nullable
+    nullable: true
   displayName: 
     type: string
   duration: 
     type: string
-    format: nullable
+    nullable: true
   endDate: 
     type: string
-    format: nullable
+    nullable: true
   inUptime: 
     type: boolean
   muted: 
@@ -52,12 +52,12 @@ properties:
     type: string
   lastMessage: 
     type: string
-    format: nullable
+    nullable: true
   name: 
     type: string
   resolution: 
     type: string
-    format: nullable
+    nullable: true
   severity: 
     type: string
   severityId: 

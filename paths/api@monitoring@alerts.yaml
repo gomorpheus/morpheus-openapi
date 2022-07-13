@@ -71,13 +71,13 @@ post:
                   description: Unique name scoped to your account for the alert
                   example: My Alert
                 minDuration:
-                  type: string
-                  description: Email notification address
+                  type: integer
+                  description: Duration in minutes of the delay before sending notification(s)
                   default: 0
                 minSeverity:
                   type: string
                   description: Severity level threshold for sending notifications.
-                  default: critical
+                  default: "critical"
                   enum:
                     - info
                     - warning
@@ -128,14 +128,14 @@ post:
                         type: boolean
   responses:
     '200':
-      description: Contact Object
+      description: Alert Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                contact:
+                alert:
                   $ref: ../components/schemas/alert.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:

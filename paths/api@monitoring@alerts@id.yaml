@@ -12,10 +12,29 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              alert:
-                $ref: ../components/schemas/alert.yaml
+            allOf: 
+              - type: object
+                properties:
+                  alert:
+                    $ref: ../components/schemas/alert.yaml
+              - type: object
+                properties: 
+                  checks:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/check.yaml
+              - type: object
+                properties:
+                  checkGroups:
+                    type: array
+                    items: 
+                      $ref: ../components/schemas/checkGroup.yaml
+              - type: object
+                properties:
+                  apps:
+                    type: array
+                    items: 
+                      $ref: ../components/schemas/checkApp.yaml 
           examples:
             Get Alert Response:
               value:
@@ -65,8 +84,8 @@ put:
                   description: Unique name scoped to your account for the alert
                   example: My Alert
                 minDuration:
-                  type: string
-                  description: Email notification address
+                  type: integer
+                  description: Duration in minutes of the delay before sending notification(s)
                   default: 0
                 minSeverity:
                   type: string
@@ -131,7 +150,7 @@ put:
             - type: object
               properties:
                 alert:
-                  $ref: ../components/schemas/contact.yaml
+                  $ref: ../components/schemas/alert.yaml
           examples:
             Update Alert Response:
               value:

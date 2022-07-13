@@ -73,7 +73,7 @@ put:
                   description: Optional description field
                   example: My cool description
                 minHappy:
-                  type: string
+                  type: integer
                   description: This specifies the minimum number of checks within inUptime
                   default: 1
                 inUptime:
@@ -83,7 +83,7 @@ put:
                 severity:
                   type: string
                   description: Severity level of incidents that are created when this check fails
-                  default: critical
+                  default: "critical"
                   enum:
                     - info
                     - warning
