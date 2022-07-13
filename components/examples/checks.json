@@ -1,0 +1,168 @@
+{
+    "checks": [
+        {
+            "id": 1945,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "apiKey": "8451fa6c-193e-419a-be0f-b6f7897c11b3",
+            "availability": 100.0,
+            "checkAgent": null,
+            "checkInterval": 300000,
+            "checkSpec": null,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "config": {
+                "containerName": "valheim_2581"
+            },
+            "container": {
+                "id": 2581
+            },
+            "createIncident": false,
+            "muted": true,
+            "createdBy": {
+                "id": 1,
+                "username": "Admin"
+            },
+            "dateCreated": "2021-03-31T02:32:59Z",
+            "description": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "lastBoxStats": null,
+            "lastCheckStatus": "error",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastErrorDate": "2022-04-03T04:01:08Z",
+            "lastMessage": null,
+            "lastMetric": null,
+            "lastRunDate": "2022-04-03T04:01:08Z",
+            "lastStats": null,
+            "lastSuccessDate": "2022-04-03T03:53:54Z",
+            "lastTimer": 14,
+            "lastUpdated": "2022-04-03T04:01:08Z",
+            "lastWarningDate": null,
+            "name": "aa-steam-1002",
+            "nextRunDate": "2022-04-03T04:06:08Z",
+            "outageTime": 0,
+            "severity": "critical",
+            "startDate": null
+        },
+        {
+            "id": 2947,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "apiKey": "bfb9efd5-22a6-4b55-9fcf-63d71fe36868",
+            "availability": 99.95084877,
+            "checkAgent": null,
+            "checkInterval": 300000,
+            "checkSpec": null,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "config": {
+                "containerName": "ubuntu_32026",
+                "externalId": null
+            },
+            "container": {
+                "id": 32026
+            },
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 4,
+                "username": "cbunge"
+            },
+            "dateCreated": "2022-05-27T16:41:14Z",
+            "description": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "lastBoxStats": null,
+            "lastCheckStatus": "error",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastErrorDate": "2022-07-04T04:03:00Z",
+            "lastMessage": null,
+            "lastMetric": null,
+            "lastRunDate": "2022-07-04T04:03:00Z",
+            "lastStats": null,
+            "lastSuccessDate": "2022-07-04T01:48:28Z",
+            "lastTimer": 305,
+            "lastUpdated": "2022-07-04T04:03:00Z",
+            "lastWarningDate": null,
+            "name": "AnsibleTest-1",
+            "nextRunDate": "2022-07-04T04:08:00Z",
+            "outageTime": 0,
+            "severity": "critical",
+            "startDate": null
+        },
+        {
+            "id": 2944,
+            "account": {
+                "id": 1
+            },
+            "active": true,
+            "apiKey": "f1d3b0a7-d1e4-4ae4-8627-9edae46cf0d8",
+            "availability": 99.9804784,
+            "checkAgent": null,
+            "checkInterval": 300000,
+            "checkSpec": null,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "config": {
+                "containerName": "ubuntu_32029",
+                "externalId": null
+            },
+            "container": {
+                "id": 32029
+            },
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 4,
+                "username": "cbunge"
+            },
+            "dateCreated": "2022-05-27T16:41:14Z",
+            "description": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "lastBoxStats": null,
+            "lastCheckStatus": "error",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastErrorDate": "2022-07-04T04:03:00Z",
+            "lastMessage": null,
+            "lastMetric": null,
+            "lastRunDate": "2022-07-04T04:03:00Z",
+            "lastStats": null,
+            "lastSuccessDate": "2022-07-04T01:48:28Z",
+            "lastTimer": 284,
+            "lastUpdated": "2022-07-04T04:03:00Z",
+            "lastWarningDate": null,
+            "name": "AnsibleTest-2",
+            "nextRunDate": "2022-07-04T04:08:00Z",
+            "outageTime": 0,
+            "severity": "critical",
+            "startDate": null
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 38
+    }
+}

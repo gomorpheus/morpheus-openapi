@@ -1,25 +1,25 @@
 get:
-  summary: Get a Specific Contact
-  description: Get details about a specific monitoring contact.
-  operationId: getContacts
+  summary: Get a Specific Check
+  description: Get details about a specific monitoring check.
+  operationId: getChecks
   tags:
-    - Contacts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Contact Object
+      description: Checks Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              contact:
-                $ref: ../components/schemas/contact.yaml
+              check:
+                $ref: ../components/schemas/check.yaml
           examples:
-            Get Contact Response:
+            Get Check Response:
               value:
-                $ref: ../components/examples/contact.json
+                $ref: ../components/examples/check.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -41,11 +41,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Contact
-  description: Update an existing monitoring contact.
-  operationId: updateContacts
+  summary: Update Check
+  description: Update an existing monitoring check.
+  operationId: updateChecks
   tags:
-    - Contacts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -54,44 +54,64 @@ put:
         schema:
           type: object
           required:
-            - contact
+            - check
           properties:
-            contact:
+            check:
               type: object
-              description: Payload for updating a monitoring contact
+              description: Payload for creating a new monitoring check
               properties:
                 name:
                   type: string
-                  description: Unique name scoped to your account for the contact
-                  example: John Smith
-                emailAddress:
+                  description: Unique name scoped to your account for the check
+                  example: My Check
+                description:
                   type: string
-                  description: Email notification address
-                  example: jsmith@email.com
-                smsAddress:
+                  description: Optional description field
+                  example: This is my awesome check
+                checkType:
+                  type: object
+                  description: Check type you want to create, use code and a valid check type
+                  example: '{"code": "webGetCheck"}'
+                checkInterval:
+                  type: integer
+                  description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+                  default: 300
+                inUptime:
+                  type: boolean
+                  description: Used to determine if check should affect account wide availability calculations
+                  default: true
+                active:
+                  type: boolean
+                  description: Used to determine if check should be scheduled to execute
+                  default: true
+                severity:
                   type: string
-                  description: SMS notification address
-                  example: 555-555-5555
-                slackHook:
-                  type: string
-                  description: Slack Hook
-                  example: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+                  description: Severity level threshold for sending notifications.
+                  default: critical
+                  enum:
+                    - info
+                    - warning
+                    - critical
+                config:
+                  type: object
+                  description: JSON encoded list of parameters that varies by check type. See below for more information
+                  example: '{"webMethod": "GET","webUrl": "http://google.com"}'
   responses:
     '200':
-      description: Contact Object
+      description: Check Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                contact:
-                  $ref: ../components/schemas/contact.yaml
+                check:
+                  $ref: ../components/schemas/check.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Contact Response:
+            Update Check Response:
               value:
-                $ref: ../components/examples/contactSuccess.json
+                $ref: ../components/examples/checkSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -113,11 +133,11 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific Contact
-  description: Delete an existing monitoring contact.
-  operationId: deleteContacts
+  summary: Delete a Specific Check
+  description: Delete an existing monitoring check.
+  operationId: deleteChecks
   tags:
-    - Contacts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -128,7 +148,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Contact Response:
+            Delete Check Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

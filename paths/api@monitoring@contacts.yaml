@@ -24,7 +24,7 @@ get:
                     $ref: ../components/schemas/contact.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Users Response:
+            Contacts Response:
               value:
                 $ref: ../components/examples/contacts.json
     '400':

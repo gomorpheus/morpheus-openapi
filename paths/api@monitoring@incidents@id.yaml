@@ -1,25 +1,25 @@
 get:
-  summary: Get a Specific Contact
-  description: Get details about a specific monitoring contact.
-  operationId: getContacts
+  summary: Get a Specific Incident
+  description: Get details about a specific incident.
+  operationId: getIncidents
   tags:
-    - Contacts
+    - Incidents
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Contact Object
+      description: Incident Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              contact:
-                $ref: ../components/schemas/contact.yaml
+              incident:
+                $ref: ../components/schemas/incident.yaml
           examples:
-            Get Contact Response:
+            Get Incident Response:
               value:
-                $ref: ../components/examples/contact.json
+                $ref: ../components/examples/incident.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -41,11 +41,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Contact
-  description: Update an existing monitoring contact.
-  operationId: updateContacts
+  summary: Update Incident
+  description: Update an existing incident.
+  operationId: updateIncidents
   tags:
-    - Contacts
+    - Incidents
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -54,44 +54,67 @@ put:
         schema:
           type: object
           required:
-            - contact
+            - incident
           properties:
-            contact:
+            incident:
               type: object
-              description: Payload for updating a monitoring contact
+              description: Payload for update an incident
               properties:
+                resolution:
+                  type: string
+                  description: Description of the resolution to this incident
+                  example: I plugged it back in
+                comment:
+                  type: string
+                  description: Comment on this incident, updates summary field
+                  example: This is a summary of the incident
+                status:
+                  type: string
+                  description: Set status
+                  enum:
+                    - open
+                    - closed
+                severity:
+                  type: string
+                  description: Set severity
+                  enum:
+                    - info
+                    - warning
+                    - critical
                 name:
                   type: string
-                  description: Unique name scoped to your account for the contact
-                  example: John Smith
-                emailAddress:
+                  description: Set display name
+                  example: Incident Name
+                startDate:
                   type: string
-                  description: Email notification address
-                  example: jsmith@email.com
-                smsAddress:
+                  format: date-time
+                  description: Set start time
+                  example: '2019-10-20T19:42:00Z'
+                endDate:
                   type: string
-                  description: SMS notification address
-                  example: 555-555-5555
-                slackHook:
-                  type: string
-                  description: Slack Hook
-                  example: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+                  format: date-time
+                  description: Set start time
+                  example: '2019-10-20T19:42:00Z'
+                inUptime:
+                  type: boolean
+                  description: Set 'In Availability'
+                  example: true
   responses:
     '200':
-      description: Contact Object
+      description: Incident Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                contact:
-                  $ref: ../components/schemas/contact.yaml
+                incident:
+                  $ref: ../components/schemas/incident.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Contact Response:
+            Update Incident Response:
               value:
-                $ref: ../components/examples/contactSuccess.json
+                $ref: ../components/examples/incident.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -113,11 +136,11 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific Contact
-  description: Delete an existing monitoring contact.
-  operationId: deleteContacts
+  summary: Close a Specific Incident
+  description: Close an existing monitoring incident.
+  operationId: deleteIncidents
   tags:
-    - Contacts
+    - Incidents
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -128,7 +151,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Contact Response:
+            Close Incident Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

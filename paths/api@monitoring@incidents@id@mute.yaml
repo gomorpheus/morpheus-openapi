@@ -1,0 +1,54 @@
+put:
+  summary: Mute Incident
+  description: Mute an existing incident.
+  operationId: updateMuteIncidents
+  tags:
+    - Incidents
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - muted
+          properties:
+            muted:
+              type: boolean
+              description: Set to false to unmute
+              default: true
+  responses:
+    '200':
+      description: Incident Mute Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                $ref: ../components/schemas/muted.yaml
+          examples:
+            Incident Mute Response:
+              value:
+                $ref: ../components/examples/muted.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

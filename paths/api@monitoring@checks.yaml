@@ -1,0 +1,145 @@
+get:
+  summary: List All Checks
+  description: Get a list of monitoring checks.
+  operationId: listChecks
+  tags:
+    - Checks
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/deleted.yaml
+  responses:
+    '200':
+      description: Array of Checks
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                checks:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/check.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Contacts Response:
+              value:
+                $ref: ../components/examples/checks.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Create a New Check
+  description: Create a new monitoring check.
+  operationId: addChecks
+  tags:
+    - Checks
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - check
+          properties:
+            check:
+              type: object
+              description: Payload for creating a new monitoring check
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: Unique name scoped to your account for the check
+                  example: My Check
+                description:
+                  type: string
+                  description: Optional description field
+                  example: This is my awesome check
+                checkType:
+                  type: object
+                  description: Check type you want to create, use code and a valid check type
+                  example: '{"code": "webGetCheck"}'
+                checkInterval:
+                  type: integer
+                  description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+                  default: 300
+                inUptime:
+                  type: boolean
+                  description: Used to determine if check should affect account wide availability calculations
+                  default: true
+                active:
+                  type: boolean
+                  description: Used to determine if check should be scheduled to execute
+                  default: true
+                severity:
+                  type: string
+                  description: Severity level threshold for sending notifications.
+                  default: critical
+                  enum:
+                    - info
+                    - warning
+                    - critical
+                config:
+                  type: object
+                  description: JSON encoded list of parameters that varies by check type. See below for more information
+                  example: '{"webMethod": "GET","webUrl": "http://google.com"}'
+  responses:
+    '200':
+      description: Check Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                check:
+                  $ref: ../components/schemas/check.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Create Check Response:
+              value:
+                $ref: ../components/examples/checkSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

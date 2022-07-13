@@ -1,25 +1,29 @@
 get:
-  summary: Get a Specific Contact
-  description: Get details about a specific monitoring contact.
-  operationId: getContacts
+  summary: Get a Specific Check App
+  description: Get details about a specific monitoring check app.
+  operationId: getCheckApps
   tags:
-    - Contacts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
-      description: Contact Object
+      description: Check App Object
       content:
         application/json:
           schema:
             type: object
             properties:
-              contact:
-                $ref: ../components/schemas/contact.yaml
+              monitorApp:
+                $ref: ../components/schemas/checkApp.yaml
+              checks:
+                type: array
+                items:
+                  $ref: ../components/schemas/check.yaml
           examples:
-            Get Contact Response:
+            Get Check App Response:
               value:
-                $ref: ../components/examples/contact.json
+                $ref: ../components/examples/checkApp.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -41,11 +45,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Contact
-  description: Update an existing monitoring contact.
-  operationId: updateContacts
+  summary: Update Check App
+  description: Update an existing monitoring check app.
+  operationId: updateCheckApps
   tags:
-    - Contacts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -54,44 +58,64 @@ put:
         schema:
           type: object
           required:
-            - contact
+            - monitorApp
           properties:
-            contact:
+            monitorApp:
               type: object
-              description: Payload for updating a monitoring contact
+              description: Payload for creating a new monitoring check app
               properties:
                 name:
                   type: string
-                  description: Unique name scoped to your account for the contact
-                  example: John Smith
-                emailAddress:
+                  description: Unique name scoped to your account for the check app
+                  example: My Check App
+                description:
                   type: string
-                  description: Email notification address
-                  example: jsmith@email.com
-                smsAddress:
+                  description: Optional description field
+                  example: My cool description
+                minHappy:
                   type: string
-                  description: SMS notification address
-                  example: 555-555-5555
-                slackHook:
+                  description: This specifies the minimum number of checks within inUptime
+                  default: 1
+                inUptime:
+                  type: boolean
+                  description: Used to determine if check should affect account wide availability calculations
+                  default: true
+                severity:
                   type: string
-                  description: Slack Hook
-                  example: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+                  description: Severity level of incidents that are created when this check fails
+                  default: critical
+                  enum:
+                    - info
+                    - warning
+                    - critical
+                active:
+                  type: boolean
+                  description: Used to determine if check app is active
+                  default: true
+                checks:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/check.yaml
+                checkGroups:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/checkGroup.yaml
   responses:
     '200':
-      description: Contact Object
+      description: Check App Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                contact:
-                  $ref: ../components/schemas/contact.yaml
+                monitorApp:
+                  $ref: ../components/schemas/checkApp.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Contact Response:
+            Update Check App Response:
               value:
-                $ref: ../components/examples/contactSuccess.json
+                $ref: ../components/examples/checkAppSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -113,11 +137,11 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete a Specific Contact
-  description: Delete an existing monitoring contact.
-  operationId: deleteContacts
+  summary: Delete a Specific Check App
+  description: Delete an existing monitoring check app.
+  operationId: deleteCheckApps
   tags:
-    - Contacts
+    - Checks
   parameters:
   - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -128,7 +152,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Contact Response:
+            Delete Check App Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

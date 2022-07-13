@@ -1,0 +1,106 @@
+{
+    "incidents": [
+        {
+            "id": 6420,
+            "account": {
+                "id": 1
+            },
+            "app": null,
+            "autoClose": true,
+            "channelId": "719bc097-9734-47fe-9e40-f66ed2b67df0",
+            "checkGroups": [
+                {
+                    "id": 2815,
+                    "name": "AnsibleTest-1"
+                }
+            ],
+            "checks": [],
+            "comment": null,
+            "displayName": "AnsibleTest-1",
+            "duration": null,
+            "endDate": null,
+            "inUptime": true,
+            "muted": false,
+            "lastCheckTime": "2022-07-04T04:03:00Z",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastMessage": null,
+            "name": "AnsibleTest-1",
+            "resolution": null,
+            "severity": "critical",
+            "severityId": 20,
+            "startDate": "2022-07-04T04:03:00Z",
+            "status": "open",
+            "visibility": "private"
+        },
+        {
+            "id": 6423,
+            "account": {
+                "id": 1
+            },
+            "app": null,
+            "autoClose": true,
+            "channelId": "b8a95d89-05db-48b6-a65a-5e5f8d38a1a9",
+            "checkGroups": [
+                {
+                    "id": 2815,
+                    "name": "AnsibleTest-1"
+                }
+            ],
+            "checks": [],
+            "comment": null,
+            "displayName": "AnsibleTest-1",
+            "duration": null,
+            "endDate": null,
+            "inUptime": true,
+            "muted": false,
+            "lastCheckTime": "2022-07-04T04:03:00Z",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastMessage": null,
+            "name": "AnsibleTest-1",
+            "resolution": null,
+            "severity": "critical",
+            "severityId": 20,
+            "startDate": "2022-07-04T04:03:00Z",
+            "status": "open",
+            "visibility": "private"
+        },
+        {
+            "id": 6426,
+            "account": {
+                "id": 1
+            },
+            "app": null,
+            "autoClose": true,
+            "channelId": "87034859-0654-448e-9893-0fe2bb09aff3",
+            "checkGroups": [
+                {
+                    "id": 2779,
+                    "name": "Jamar-Test"
+                }
+            ],
+            "checks": [],
+            "comment": null,
+            "displayName": "Jamar-Test",
+            "duration": null,
+            "endDate": null,
+            "inUptime": true,
+            "muted": false,
+            "lastCheckTime": "2022-07-04T04:03:00Z",
+            "lastError": "unheard from beyond check interval limit.",
+            "lastMessage": null,
+            "name": "Jamar-Test",
+            "resolution": null,
+            "severity": "critical",
+            "severityId": 20,
+            "startDate": "2022-07-04T04:03:00Z",
+            "status": "open",
+            "visibility": "private"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 2445
+    }
+}

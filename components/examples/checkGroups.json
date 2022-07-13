@@ -1,0 +1,144 @@
+{
+    "checkGroups": [
+        {
+            "id": 1873,
+            "account": {
+                "id": 1
+            },
+            "instance": {
+                "id": 2044,
+                "name": "aa-steam-1002"
+            },
+            "name": "aa-steam-1002",
+            "description": null,
+            "inUptime": true,
+            "lastCheckStatus": null,
+            "lastWarningDate": null,
+            "lastErrorDate": null,
+            "lastSuccessDate": null,
+            "lastRunDate": "2022-04-03T04:01:08Z",
+            "lastError": null,
+            "outageTime": 0,
+            "lastTimer": 14,
+            "health": 0,
+            "history": null,
+            "minHappy": 1,
+            "lastMetric": null,
+            "severity": "critical",
+            "createIncident": false,
+            "muted": true,
+            "createdBy": {
+                "id": 1,
+                "username": "Admin"
+            },
+            "dateCreated": "2021-03-31T02:32:59Z",
+            "lastUpdated": "2022-04-03T04:01:08Z",
+            "availability": 100.0,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "checks": [
+                1945
+            ]
+        },
+        {
+            "id": 2815,
+            "account": {
+                "id": 1
+            },
+            "instance": {
+                "id": 3835,
+                "name": "AnsibleTest-1"
+            },
+            "name": "AnsibleTest-1",
+            "description": null,
+            "inUptime": true,
+            "lastCheckStatus": null,
+            "lastWarningDate": null,
+            "lastErrorDate": null,
+            "lastSuccessDate": null,
+            "lastRunDate": "2022-07-04T04:03:00Z",
+            "lastError": null,
+            "outageTime": 0,
+            "lastTimer": 299,
+            "health": 0,
+            "history": null,
+            "minHappy": 1,
+            "lastMetric": null,
+            "severity": "critical",
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 4,
+                "username": "cbunge"
+            },
+            "dateCreated": "2022-05-27T16:41:14Z",
+            "lastUpdated": "2022-07-04T04:03:00Z",
+            "availability": 99.98040123,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "checks": [
+                2950,
+                2944,
+                2947
+            ]
+        },
+        {
+            "id": 2551,
+            "account": {
+                "id": 1
+            },
+            "instance": {
+                "id": 3403,
+                "name": "CodetheThings"
+            },
+            "name": "CodetheThings",
+            "description": null,
+            "inUptime": true,
+            "lastCheckStatus": null,
+            "lastWarningDate": null,
+            "lastErrorDate": null,
+            "lastSuccessDate": null,
+            "lastRunDate": "2022-07-04T04:03:00Z",
+            "lastError": null,
+            "outageTime": 0,
+            "lastTimer": 260,
+            "health": 0,
+            "history": null,
+            "minHappy": 1,
+            "lastMetric": null,
+            "severity": "critical",
+            "createIncident": true,
+            "muted": false,
+            "createdBy": {
+                "id": 4,
+                "username": "cbunge"
+            },
+            "dateCreated": "2021-12-08T13:56:08Z",
+            "lastUpdated": "2022-07-04T04:03:00Z",
+            "availability": 99.98935185,
+            "checkType": {
+                "id": 37,
+                "code": "vmCheck",
+                "name": "Virtual Machine",
+                "metricName": "result"
+            },
+            "checks": [
+                2653
+            ]
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 31
+    }
+}

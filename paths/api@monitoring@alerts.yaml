@@ -1,0 +1,164 @@
+get:
+  summary: List All Alerts
+  description: Get a list of monitoring alerts.
+  operationId: listAlerts
+  tags:
+    - Alerts
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+  responses:
+    '200':
+      description: Array of Alerts
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                alerts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/alert.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Alerts Response:
+              value:
+                $ref: ../components/examples/alerts.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Create a New Alert
+  description: Create a new monitoring alert.
+  operationId: addAlerts
+  tags:
+    - Alerts
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - alert
+          properties:
+            alert:
+              type: object
+              description: Payload for creating a new monitoring alert
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: Unique name scoped to your account for the alert
+                  example: My Alert
+                minDuration:
+                  type: string
+                  description: Email notification address
+                  default: 0
+                minSeverity:
+                  type: string
+                  description: Severity level threshold for sending notifications.
+                  default: critical
+                  enum:
+                    - info
+                    - warning
+                    - critical
+                active:
+                  type: boolean
+                  description: Set to false to disable notifications
+                  default: true
+                allChecks:
+                  type: boolean
+                  description: Trigger for all checks
+                  default: false
+                allGroups:
+                  type: boolean
+                  description: Trigger for all check groups
+                  default: false
+                allApps:
+                  type: boolean
+                  description: Trigger for all monitor apps
+                  default: false
+                checks:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/check.yaml
+                groups:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/checkGroup.yaml
+                apps:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/checkApp.yaml
+                contacts: 
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      id: 
+                        type: integer
+                        format: int64
+                      name: 
+                        type: string
+                      method: 
+                        type: string
+                      notify: 
+                        type: boolean
+                      close: 
+                        type: boolean
+  responses:
+    '200':
+      description: Contact Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                contact:
+                  $ref: ../components/schemas/alert.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Create Alert Response:
+              value:
+                $ref: ../components/examples/alertSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

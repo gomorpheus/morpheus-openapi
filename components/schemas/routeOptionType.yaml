@@ -2,7 +2,7 @@ type: object
 properties:
   id: 
     type: integer
-    format: int32
+    format: int64
   name: 
     type: string
   description: 
@@ -72,7 +72,7 @@ properties:
     nullable: true
   displayOrder: 
     type: integer
-    format: int32
+    format: int64
   wrapperClass: 
     type: string
     nullable: true
