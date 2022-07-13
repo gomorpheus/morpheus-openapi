@@ -92,29 +92,29 @@ properties:
     type: array
     nullable: true
     items:
-      type: object
+      $ref: optionType.yaml
   customOptionTypes: 
     type: array
     nullable: true
     items:
-      type: object
+      $ref: optionType.yaml
   networkTypes: 
     type: array
     nullable: true
     items:
-      type: object
+      $ref: networkType.yaml
   storageTypes: 
     type: array
     nullable: true
     items:
-      type: object
+      $ref: storageType.yaml
   rootStorageTypes: 
     type: array
     nullable: true
     items:
-      type: object
+      $ref: storageType.yaml
   controllerTypes: 
     type: array
     nullable: true
     items:
-      type: object
+      $ref: controllerType.yaml

@@ -48,63 +48,7 @@ properties:
   containerTypes: 
     type: array
     items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int32
-        account: 
-          type: object
-          properties: 
-            id: 
-              type: integer
-              format: int32
-            name: 
-              type: string
-        name: 
-          type: string
-        shortName: 
-          type: string
-        code: 
-          type: string
-        containerVersion: 
-          type: string
-        provisionType: 
-          type: object
-          properties: 
-            id: 
-              type: integer
-              format: int32
-            name: 
-              type: string
-            code: 
-              type: string
-        virtualImage: 
-          type: object
-          properties: 
-            id: 
-              type: integer
-              format: int32
-            name: 
-              type: string
-        category: 
-          type: string
-          nullable: true
-        config: 
-          type: object
-          nullable: true
-        containerPorts: 
-          type: array
-          nullable: true
-        containerScripts: 
-          type: array
-          nullable: true
-        containerTemplates: 
-          type: array
-          nullable: true
-        environmentVariables: 
-          type: array
-          nullable: true
+      $ref: containerType.yaml
   mounts: 
     type: array
     nullable: true
