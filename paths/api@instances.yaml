@@ -68,3 +68,61 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create an Instance
+  description: Create an Instance
+  operationId: addInstance
+  tags: 
+    -  Instances
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../components/schemas/instanceCreate.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:   
+              - oneOf: 
+                - $ref: ../components/schemas/instanceCreateSuccess.yaml
+                - type: object
+                  properties:
+                    errors:
+                      type: object
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Instance Creation:
+              value:
+                $ref: ../components/examples/instanceCreate.json
+            Unsuccessful Instance Creation:
+              value:
+                $ref: ../components/examples/instanceCreateFail.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+                    
+
+            
+    
+  
