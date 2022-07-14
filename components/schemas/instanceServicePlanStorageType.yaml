@@ -1,0 +1,70 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int32
+  editable: 
+    type: boolean
+  optionTypes: 
+    type: array
+    nullable: true
+  displayOrder: 
+    type: integer
+    format: int32
+  code: 
+    type: string
+  volumeType: 
+    type: string
+  minStorage: 
+    type: string
+    nullable: true
+  deletable: 
+    type: boolean
+  defaultType: 
+    type: boolean
+  createDatastore: 
+    type: string
+    nullable: true
+  resizable: 
+    type: boolean
+  storageType: 
+    type: string
+    nullable: true
+  allowSearch: 
+    type: boolean
+  volumeOptionSource: 
+    type: string
+    nullable: true
+  displayName: 
+    type: string
+  minIOPS: 
+    type: string
+    nullable: true
+  maxIOPS: 
+    type: string
+    nullable: true
+  hasDatastore: 
+    type: boolean
+  customSize: 
+    type: boolean
+  autoDelete: 
+    type: boolean
+  name: 
+    type: string
+  configurableIOPS: 
+    type: boolean
+  customLabel: 
+    type: boolean
+  enabled: 
+    type: boolean
+  description: 
+    type: string
+    nullable: true
+  volumeCategory: 
+    type: string
+  externalId: 
+    type: string
+    nullable: true
+  maxStorage: 
+    type: string
+    nullable: true

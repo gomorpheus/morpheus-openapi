@@ -81,6 +81,8 @@ paths:
     $ref: paths/api@instances@id@history.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
+  /api/instances/service-plans:
+    $ref: paths/api@instances@service-plans.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:

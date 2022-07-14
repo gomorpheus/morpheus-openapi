@@ -1,0 +1,125 @@
+{
+  "plans": [
+    {
+      "id": 75,
+      "name": "1 CPU, 512MB Memory",
+      "value": 75,
+      "code": "vm-512",
+      "maxStorage": 10737418240,
+      "maxMemory": 536870912,
+      "maxCpu": 1,
+      "maxCores": 1,
+      "customCpu": false,
+      "customMaxMemory": false,
+      "customMaxStorage": true,
+      "customMaxDataStorage": true,
+      "customCoresPerSocket": false,
+      "coresPerSocket": 1,
+      "storageTypes": [
+        {
+          "id": 1,
+          "editable": false,
+          "optionTypes": [],
+          "displayOrder": 1,
+          "code": "standard",
+          "volumeType": "disk",
+          "minStorage": null,
+          "deletable": false,
+          "defaultType": true,
+          "createDatastore": null,
+          "resizable": false,
+          "storageType": null,
+          "allowSearch": true,
+          "volumeOptionSource": null,
+          "displayName": "Disk",
+          "minIOPS": null,
+          "maxIOPS": null,
+          "hasDatastore": true,
+          "customSize": true,
+          "autoDelete": true,
+          "name": "Standard",
+          "configurableIOPS": false,
+          "customLabel": true,
+          "enabled": true,
+          "description": "Standard",
+          "volumeCategory": "disk",
+          "externalId": null,
+          "maxStorage": null
+        }
+      ],
+      "rootStorageTypes": [
+        {
+          "id": 1,
+          "editable": false,
+          "optionTypes": [],
+          "displayOrder": 1,
+          "code": "standard",
+          "volumeType": "disk",
+          "minStorage": null,
+          "deletable": false,
+          "defaultType": true,
+          "createDatastore": null,
+          "resizable": false,
+          "storageType": null,
+          "allowSearch": true,
+          "volumeOptionSource": null,
+          "displayName": "Disk",
+          "minIOPS": null,
+          "maxIOPS": null,
+          "hasDatastore": true,
+          "customSize": true,
+          "autoDelete": true,
+          "name": "Standard",
+          "configurableIOPS": false,
+          "customLabel": true,
+          "enabled": true,
+          "description": "Standard",
+          "volumeCategory": "disk",
+          "externalId": null,
+          "maxStorage": null
+        }
+      ],
+      "addVolumes": true,
+      "customizeVolume": true,
+      "rootDiskCustomizable": true,
+      "noDisks": false,
+      "hasDatastore": true,
+      "minDisk": 0,
+      "maxDisk": null,
+      "lvmSupported": true,
+      "datastores": {
+        "cluster": [
+          {
+            "id": 54,
+            "name": "demo-qnap - 4.3TB Free"
+          }
+        ],
+        "store": [
+          {
+            "id": 50,
+            "name": "datastore1 - 463.4GB Free"
+          }
+        ]
+      },
+      "supportsAutoDatastore": true,
+      "autoOptions": [
+        {
+          "id": "autoCluster",
+          "name": "Auto - Cluster"
+        },
+        {
+          "id": "auto",
+          "name": "Auto - Datastore"
+        }
+      ],
+      "cpuOptions": [],
+      "coreOptions": [],
+      "memoryOptions": [],
+      "rootCustomSizeOptions": {},
+      "customSizeOptions": {},
+      "customCores": false,
+      "maxDisks": null,
+      "memorySizeType": "MB"
+    }
+  ]
+}
