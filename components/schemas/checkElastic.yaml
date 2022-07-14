@@ -1,0 +1,21 @@
+description: |
+  Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health.
+  In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage.
+type: object
+required:
+ - config
+properties:
+  config:
+    type: object
+    required:
+      - esHost
+      - esPort
+    properties:
+      esHost:
+        type: string
+        description: Hostname or IP address of the Elasticsearch server
+        example: "test.example.org"
+      esPort:
+        type: string
+        description: Port to connect to the HTTP service
+        example: '9200'

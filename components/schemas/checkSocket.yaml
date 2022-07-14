@@ -1,0 +1,29 @@
+description: |
+  Socket check confirms a certain TCP port is up and responding in your environment.
+  It can be configured do an initial send upon connect and compare and expected response of the service.
+type: object
+required:
+ - config
+properties:
+  config:
+    type: object
+    required:
+      - host
+      - port
+    properties:
+      host:
+        type: string
+        description: Hostname or IP address of the socket server
+        example: "test.example.org"
+      port:
+        type: number
+        description: TCP port
+        example: '3306'
+      send:
+        type: string
+        description: Connection string you might want to send to the service
+        example: blah
+      responseMatch:
+        type: string
+        description: Response from the service to match against
+        example: OK

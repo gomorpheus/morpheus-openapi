@@ -31,12 +31,12 @@ properties:
     type: array
     nullable: true
     items: 
-      type: object
+      type: integer
   apps: 
     type: array
     nullable: true
     items: 
-      type: object
+      type: integer
   contacts: 
     type: array
     items: 

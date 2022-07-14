@@ -102,11 +102,11 @@ post:
                 checks:
                   type: array
                   items:
-                    $ref: ../components/schemas/check.yaml
+                    type: integer
                 checkGroups:
                   type: array
                   items:
-                    $ref: ../components/schemas/checkGroup.yaml
+                    type: integer
   responses:
     '200':
       description: Check App Object

@@ -91,7 +91,7 @@ put:
                 checks:
                   type: array
                   items:
-                    $ref: ../components/schemas/check.yaml
+                    type: integer
   responses:
     '200':
       description: Check Group Object

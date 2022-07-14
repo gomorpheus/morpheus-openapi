@@ -1,0 +1,39 @@
+description: |
+  Web check type allows you to perform a standard web request and validate the response came back successfully.
+  Additionally, you can check for matching text within the result.
+type: object
+required:
+ - config
+properties:
+  config:
+    type: object
+    required:
+      - webMethod
+      - webUrl
+    properties:
+      webMethod:
+        type: string
+        description: HTTP method to use for testing
+        enum:
+          - GET
+          - POST
+      webUrl:
+        type: string
+        description: Web URL you wish to use to run a check on
+        example: 'https://google.com'
+      checkUser:
+        type: string
+        description: If you want to use HTTP Basic Authentication, populate this field with the username
+        example: basicUser
+      checkPassword:
+        type: string
+        description: If you want to use HTTP basic Authentication, populate this field with the password
+        example: basicPassword
+      textCheckOn:
+        type: boolean
+        description: Set value to `on` if you want to turn on text matching
+        example: on
+      webTextMatch:
+        type: string
+        description: Set the string you want to look for in the page source
+        example: Login

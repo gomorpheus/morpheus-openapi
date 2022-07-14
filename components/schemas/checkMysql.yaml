@@ -1,0 +1,51 @@
+description: |
+  MySQL check allows you to execute a query so that you may validate the value returned in addition to verifying the database is responding.
+  This can be useful for doing a slow query check or just making sure something isn't growing out of control.
+type: object
+required:
+ - config
+properties:
+  config:
+    type: object
+    required:
+      - dbHost
+      - dbPort
+      - dbUser
+      - dbPassword
+      - dbName
+      - dbQuery
+    properties:
+      dbHost:
+        type: string
+        description: Hostname or IP address of the MySQL database
+        example: "db.example.org"
+      dbPort:
+        type: number
+        description: MySQL Port (defaults to 3306)
+        example: 3306
+      dbUser:
+        type: string
+        description: Database username
+        example: basicUser
+      dbPassword:
+        type: string
+        description: Database password, (all check data is encrypted inside the database)
+        example: basicPassword
+      dbName:
+        type: string
+        description: Database name you would like to connect to
+        example: testDb
+      dbQuery:
+        type: string
+        description: Query to test
+        example: select 1
+      checkOperator:
+        type: string
+        description: Can be set to `lt` (less than), `gt` (greater than), `equal` (Equal to) for comparison
+        enum:
+          - lt
+          - gt
+          - equal
+      checkResult:
+        type: number
+        example: 3

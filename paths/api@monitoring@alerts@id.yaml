@@ -114,15 +114,15 @@ put:
                 checks:
                   type: array
                   items:
-                    $ref: ../components/schemas/check.yaml
+                    type: integer
                 groups:
                   type: array
                   items:
-                    $ref: ../components/schemas/checkGroup.yaml
+                    type: integer
                 apps:
                   type: array
                   items:
-                    $ref: ../components/schemas/checkApp.yaml
+                    type: integer
                 contacts: 
                   type: array
                   items: 

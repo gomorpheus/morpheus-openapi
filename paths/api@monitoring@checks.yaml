@@ -61,55 +61,91 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - check
-          properties:
-            check:
-              type: object
-              description: Payload for creating a new monitoring check
-              required:
-                - name
-              properties:
-                name:
-                  type: string
-                  description: Unique name scoped to your account for the check
-                  example: My Check
-                description:
-                  type: string
-                  description: Optional description field
-                  example: This is my awesome check
-                checkType:
-                  type: object
-                  description: Check type you want to create, use code and a valid check type
-                  example: 
-                    code: "webGetCheck"
-                checkInterval:
-                  type: integer
-                  description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
-                  default: 300
-                inUptime:
-                  type: boolean
-                  description: Used to determine if check should affect account wide availability calculations
-                  default: true
-                active:
-                  type: boolean
-                  description: Used to determine if check should be scheduled to execute
-                  default: true
-                severity:
-                  type: string
-                  description: Severity level threshold for sending notifications.
-                  default: critical
-                  enum:
-                    - info
-                    - warning
-                    - critical
-                config:
-                  type: object
-                  description: JSON encoded list of parameters that varies by check type. See below for more information
-                  example: 
-                    webMethod: "GET"
-                    webUrl: "http://google.com"
+          allOf:
+          - type: object
+            required:
+              - check
+            properties:
+              check:
+                type: object
+                description: Payload for creating a new monitoring check
+                required:
+                  - name
+                  - checkType
+                  - config
+                properties:
+                  name:
+                    type: string
+                    description: Unique name scoped to your account for the check
+                    example: My Check
+                  description:
+                    type: string
+                    description: Optional description field
+                    example: This is my awesome check
+                  checkType:
+                    type: object
+                    description: Check type you want to create
+                    properties:
+                      code: 
+                        type: string
+                        enum:
+                          - webGetCheck
+                          - mysqlCheck
+                          - sqlCheck
+                          - postgresCheck
+                          - socketCheck
+                          - elasticSearchCheck
+                          - pushCheck
+                  checkInterval:
+                    type: integer
+                    description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+                    default: 300
+                  inUptime:
+                    type: boolean
+                    description: Used to determine if check should affect account wide availability calculations
+                    default: true
+                  active:
+                    type: boolean
+                    description: Used to determine if check should be scheduled to execute
+                    default: true
+                  severity:
+                    type: string
+                    description: Severity level threshold for sending notifications.
+                    default: critical
+                    enum:
+                      - info
+                      - warning
+                      - critical
+                  tunnelOn:
+                    type: boolean
+                    description: Turn `on` to enable checks through a proxy host
+                    default: off
+          - oneOf:
+            - $ref: ../components/schemas/checkWeb.yaml
+            - $ref: ../components/schemas/checkMysql.yaml
+            - $ref: ../components/schemas/checkSql.yaml
+            - $ref: ../components/schemas/checkPostgres.yaml
+            - $ref: ../components/schemas/checkSocket.yaml
+            - $ref: ../components/schemas/checkElastic.yaml
+            - $ref: ../components/schemas/checkPush.yaml
+            discriminator:
+              propertyName:
+                checkType: code
+                mapping:
+                  webGetCheck: ../components/schemas/checkWeb.yaml
+                  mysqlCheck: ../components/schemas/checkMysql.yaml
+                  sqlCheck: ../components/schemas/checkSql.yaml
+                  postgresCheck: ../components/schemas/checkPostgres.yaml
+                  socketCheck: ../components/schemas/checkSocket.yaml
+                  elasticSearchCheck: ../components/schemas/checkElastic.yaml
+                  pushCheck: ../components/schemas/checkPush.yaml
+          - oneOf:
+            - $ref: ../components/schemas/checkSsh.yaml
+            discriminator:
+              propertyName:
+                config: tunnelOn
+                mapping:
+                  on: ../components/schemas/checkSsh.yaml
   responses:
     '200':
       description: Check Object
