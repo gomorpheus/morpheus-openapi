@@ -1,0 +1,43 @@
+type: object
+required:
+  - name
+  - datastoreId
+properties:
+  id:
+    type: integer
+    format: int64
+    description: The id for the LV configuration being created.
+    example: 1
+    default: -1
+  rootVolume:
+    type: boolean
+    description: If set to false then a non-root LV will be created.
+    default: true
+  name:
+    type: string
+    description: Name/type of the LV being created.
+    example: data
+    default: root
+  size:
+    type: integer
+    format: int64
+    description: Size of the LV to be created in GBs.  Uses default from service plan.
+    example: 5
+  sizeId:
+    type: integer
+    format: int64
+    description: Can be used to select pre-existing LV choices from Morpheus.
+    nullable: true
+  storageType:
+    type: integer
+    format: int64
+    description: Identifier for LV type
+  datastoreId:
+    anyOf:
+      - type: string
+        nullable: true
+      - type: integer
+        format: int64
+        nullable: true
+    description: The ID of the specific datastore. Auto selection can be specified as auto or autoCluster (for clusters).
+    

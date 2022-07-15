@@ -1,0 +1,27 @@
+type: object
+properties:
+  noAgent:
+    type: boolean
+    nullable: true
+    description: Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
+    default: false
+  resourcePoolId:
+    type: integer
+    format: int64
+    description: External ID of the resource group to use for instance
+  hostId:
+    type: string
+    description: Specific host to deploy to if so desired.
+  smbiosAssetTag:
+    type: string
+    description: Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used.
+  nestedVirtualization:
+    type: string
+    description: Enable Nested Virtualization
+    default: "off"
+    enum:
+      - "on"
+      - "off"
+  vmwareFolderId:
+    type: string
+    description: VMWare Folder ID

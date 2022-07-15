@@ -80,6 +80,20 @@ post:
       application/json: 
         schema: 
           $ref: ../components/schemas/instanceCreate.yaml
+        examples:
+          Instance Request - VMWare:
+            value:
+              $ref: ../components/examples/instanceCreateVmwareRequest.json
+          Instance Request - Azure:
+            value:
+              $ref: ../components/examples/instanceCreateAzureRequest.json
+          Instance Request - AWS:
+            value:
+              $ref: ../components/examples/instanceCreateAwsRequest.json
+          Instance Request - GCP:
+            value:
+              $ref: ../components/examples/instanceCreateGcpRequest.json
+
   responses:
     '200':
       description: Successful Response
@@ -89,15 +103,21 @@ post:
             allOf:   
               - oneOf: 
                 - $ref: ../components/schemas/instanceCreateSuccess.yaml
-                - type: object
-                  properties:
-                    errors:
-                      type: object
+                - $ref: ../components/schemas/successError.yaml
               - $ref: ../components/schemas/200-success.yaml
           examples:
-            Successful Instance Creation:
+            Successful Instance Creation - VMWare:
               value:
-                $ref: ../components/examples/instanceCreate.json
+                $ref: ../components/examples/instanceCreateVmwareSuccess.json
+            Successful Instance Creation - Azure:
+              value:
+                $ref: ../components/examples/instanceCreateAzureSuccess.json
+            Successful Instance Creation - AWS:
+              value:
+                $ref: ../components/examples/instanceCreateAwsSuccess.json
+            Successful Instance Creation - GCP:
+              value:
+                $ref: ../components/examples/instanceCreateGcpSuccess.json
             Unsuccessful Instance Creation:
               value:
                 $ref: ../components/examples/instanceCreateFail.json
