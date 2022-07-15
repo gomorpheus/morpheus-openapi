@@ -1,0 +1,51 @@
+{
+    "check": {
+        "id": 2988,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "a9eb5725-5ffb-4c0c-9464-11c3ba085406",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": null,
+        "checkSpec": null,
+        "checkType": {
+            "id": 40,
+            "code": "pushCheck",
+            "name": "Push API Check",
+            "metricName": "result"
+        },
+        "config": {},
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-14T21:47:34Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-14T21:47:34Z",
+        "lastWarningDate": null,
+        "name": "Push Check",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

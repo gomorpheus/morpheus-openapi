@@ -1,0 +1,63 @@
+{
+    "check": {
+        "id": 2991,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "1734db15-a0b9-43b9-a392-5c8e1f41b368",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": null,
+        "checkSpec": null,
+        "checkType": {
+            "id": 1,
+            "code": "webGetCheck",
+            "name": "Web Check",
+            "metricName": "response"
+        },
+        "config": {
+            "sshPort": 22,
+            "checkUser": "basicUser",
+            "tunnelOn": "on",
+            "textCheckOn": "on",
+            "checkPassword": "************",
+            "sshHost": "example.org",
+            "webMethod": "GET",
+            "webUrl": "http://google.com",
+            "sshUser": "happyapps",
+            "webTextMatch": "Login",
+            "checkPasswordHash": "61236d68c76405c9c7b40838a9c5d120c76e4bbffa7efc90ee41943c0f340f10"
+        },
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-14T21:49:07Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-14T21:49:07Z",
+        "lastWarningDate": null,
+        "name": "My Web Check SSH",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

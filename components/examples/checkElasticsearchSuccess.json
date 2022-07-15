@@ -1,0 +1,54 @@
+{
+    "check": {
+        "id": 2985,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "a8f4dae7-09c3-4a75-9e4d-4d577aa63d51",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": null,
+        "checkSpec": null,
+        "checkType": {
+            "id": 10,
+            "code": "elasticSearchCheck",
+            "name": "Elastic Search Check",
+            "metricName": "cluster status"
+        },
+        "config": {
+            "esHost": "test.example.org",
+            "esPort": "9200"
+        },
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-14T21:47:25Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-14T21:47:25Z",
+        "lastWarningDate": null,
+        "name": "ES Check",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

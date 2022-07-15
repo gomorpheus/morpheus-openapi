@@ -1,0 +1,56 @@
+{
+    "check": {
+        "id": 2982,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "f522994c-6faa-47ae-85ef-1718136aa982",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": null,
+        "checkSpec": null,
+        "checkType": {
+            "id": 4,
+            "code": "socketCheck",
+            "name": "Socket Check",
+            "metricName": "response"
+        },
+        "config": {
+            "port": "3306",
+            "host": "test.example.org",
+            "send": "blah",
+            "responseMatch": "OK"
+        },
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-14T21:46:49Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-14T21:46:49Z",
+        "lastWarningDate": null,
+        "name": "Socket Check",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

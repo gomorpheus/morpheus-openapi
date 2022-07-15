@@ -1,0 +1,61 @@
+{
+    "check": {
+        "id": 2973,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "f6e847c6-04b2-4000-996d-6dcc1c5c33f6",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": null,
+        "checkSpec": null,
+        "checkType": {
+            "id": 7,
+            "code": "mysqlCheck",
+            "name": "MySQL Check",
+            "metricName": "result"
+        },
+        "config": {
+            "dbPort": "3306",
+            "dbName": "mydb",
+            "dbUser": "basicUser",
+            "dbHost": "db.example.org",
+            "checkOperator": "lt",
+            "dbQuery": "select 1",
+            "checkResult": 2,
+            "dbPassword": "************",
+            "dbPasswordHash": "61236d68c76405c9c7b40838a9c5d120c76e4bbffa7efc90ee41943c0f340f10"
+        },
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-14T21:46:03Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-14T21:46:03Z",
+        "lastWarningDate": null,
+        "name": "MySql Check",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

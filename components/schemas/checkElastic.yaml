@@ -2,9 +2,43 @@ description: |
   Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health.
   In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage.
 type: object
-required:
- - config
 properties:
+  name:
+    type: string
+    description: Unique name scoped to your account for the check
+    example: My Check
+  description:
+    type: string
+    description: Optional description field
+    example: This is my awesome check
+  checkType:
+    type: object
+    description: Check type you want to create
+    properties:
+      code:
+        type: string
+        enum:
+          - elasticSearchCheck
+  checkInterval:
+    type: integer
+    description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+    default: 300
+  inUptime:
+    type: boolean
+    description: Used to determine if check should affect account wide availability calculations
+    default: true
+  active:
+    type: boolean
+    description: Used to determine if check should be scheduled to execute
+    default: true
+  severity:
+    type: string
+    description: Severity level threshold for sending notifications.
+    default: critical
+    enum:
+      - info
+      - warning
+      - critical
   config:
     type: object
     required:
@@ -19,3 +53,13 @@ properties:
         type: string
         description: Port to connect to the HTTP service
         example: '9200'
+      tunnelOn:
+        type: boolean
+        description: Turn `on` to enable checks through a proxy host
+        default: off
+    oneOf:
+    - $ref: checkSsh.yaml
+    discriminator:
+      propertyName: tunnelOn
+      mapping:
+        off: checkSsh.yaml
