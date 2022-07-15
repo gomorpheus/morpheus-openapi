@@ -62,9 +62,9 @@ properties:
         description: Response from the service to match against
         example: OK
       tunnelOn:
-        type: boolean
+        type: string
         description: Turn `on` to enable checks through a proxy host
-        default: off
+        default: "off"
     oneOf:
     - $ref: checkSsh.yaml
     discriminator:

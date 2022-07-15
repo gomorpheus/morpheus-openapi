@@ -80,27 +80,27 @@ post:
               - $ref: ../components/schemas/checkElastic.yaml
               - $ref: ../components/schemas/checkPush.yaml
         examples:
-          Create Web Check:
+          Check Request - Web:
             value:
-              - $ref: ../components/examples/checkWebSuccess.json
-          Create MySQL Check:
+              $ref: ../components/examples/checkWebSuccess.json
+          Check Request - MySQL:
             value:
-              - $ref: ../components/examples/checkMysqlSuccess.json
-          Create SQL Check:
+              $ref: ../components/examples/checkMysqlSuccess.json
+          Check Request - SQL:
             value:
-              - $ref: ../components/examples/checkSqlSuccess.json
-          Create Postgres Check:
+              $ref: ../components/examples/checkSqlSuccess.json
+          Check Request - Postgres:
             value:
-              - $ref: ../components/examples/checkPostgresqlSuccess.json
-          Create Socket Check:
+              $ref: ../components/examples/checkPostgresqlSuccess.json
+          Check Request - Socket:
             value:
-              - $ref: ../components/examples/checkSocketSuccess.json
-          Create ElasticSearch Check:
+              $ref: ../components/examples/checkSocketSuccess.json
+          Check Request - ElasticSearch:
             value:
-              - $ref: ../components/examples/checkElasticsearchSuccess.json
-          Create Push Check:
+              $ref: ../components/examples/checkElasticsearchSuccess.json
+          Check Request - Push:
             value:
-              - $ref: ../components/examples/checkPushSuccess.json
+              $ref: ../components/examples/checkPushSuccess.json
   responses:
     '200':
       description: Check Object

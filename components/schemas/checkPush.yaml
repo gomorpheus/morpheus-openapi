@@ -72,9 +72,9 @@ properties:
         description: Set the string you want to look for in the page source
         example: Login
       tunnelOn:
-        type: boolean
+        type: string
         description: Turn `on` to enable checks through a proxy host
-        default: off
+        default: "off"
     oneOf:
     - $ref: checkSsh.yaml
     discriminator:

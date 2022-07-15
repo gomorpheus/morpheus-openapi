@@ -54,9 +54,9 @@ properties:
         description: Port to connect to the HTTP service
         example: '9200'
       tunnelOn:
-        type: boolean
+        type: string
         description: Turn `on` to enable checks through a proxy host
-        default: off
+        default: "off"
     oneOf:
     - $ref: checkSsh.yaml
     discriminator:
