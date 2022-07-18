@@ -38,8 +38,18 @@ properties:
       metricName: 
         type: string
   config: 
-    type: object
-  container: 
+    allOf:
+    - oneOf:
+      - $ref: checkWebConfig.yaml
+      - $ref: checkMysqlConfig.yaml
+      - $ref: checkSqlConfig.yaml
+      - $ref: checkPostgresqlConfig.yaml
+      - $ref: checkElasticsearchConfig.yaml
+      - $ref: checkSocketConfig.yaml
+      - $ref: checkPushConfig.yaml
+    - anyOf:
+      - $ref: checkSshConfig.yaml
+  container:
     type: object
     nullable: true
     properties: 
