@@ -108,6 +108,7 @@ properties:
       - $ref: instancesConfigVMWare.yaml
       - $ref: instancesConfigGCP.yaml
       - $ref: instancesConfigAWS.yaml
+      - $ref: instancesConfigGeneric.yaml
   labels:
     type: array
     description: Array of strings (keywords).
