@@ -73,9 +73,7 @@ post:
                 - checkType
               oneOf:
               - $ref: ../components/schemas/checkWeb.yaml
-              # - $ref: ../components/schemas/checkMysql.yaml
               - $ref: ../components/schemas/checkSql.yaml
-              # - $ref: ../components/schemas/checkPostgres.yaml
               - $ref: ../components/schemas/checkSocket.yaml
               - $ref: ../components/schemas/checkElastic.yaml
               - $ref: ../components/schemas/checkPush.yaml
@@ -120,24 +118,24 @@ post:
             Create Web Check with SSH Tunneling Response:
               value:
                 $ref: ../components/examples/checkWebSshTunnelingSuccess.json                
-            # Create MySQL Check Response:
-            #   value:
-            #     $ref: ../components/examples/checkMysqlSuccess.json
-            # Create SQL Check Response:
-            #   value:
-            #     $ref: ../components/examples/checkSqlSuccess.json
-            # Create PostgreSQL Check Response:
-            #   value:
-            #     $ref: ../components/examples/checkPostgresqlSuccess.json
-            # Create Socket Check Response:
-            #   value:
-            #     $ref: ../components/examples/checkSocketSuccess.json
-            # Create ElasticSearch Check Response:
-            #   value:
-            #     $ref: ../components/examples/checkElasticsearchSuccess.json
-            # Create Push Check Response:
-            #   value:
-            #     $ref: ../components/examples/checkPushSuccess.json
+            Create MySQL Check Response:
+              value:
+                $ref: ../components/examples/checkMysqlSuccess.json
+            Create SQL Check Response:
+              value:
+                $ref: ../components/examples/checkSqlSuccess.json
+            Create PostgreSQL Check Response:
+              value:
+                $ref: ../components/examples/checkPostgresqlSuccess.json
+            Create Socket Check Response:
+              value:
+                $ref: ../components/examples/checkSocketSuccess.json
+            Create ElasticSearch Check Response:
+              value:
+                $ref: ../components/examples/checkElasticsearchSuccess.json
+            Create Push Check Response:
+              value:
+                $ref: ../components/examples/checkPushSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
