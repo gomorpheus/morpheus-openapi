@@ -1,10 +1,23 @@
 type: object
+required:
+  - port
+  - host
+  - send
+  - responseMatch
 properties: 
-  port: 
+  host:
     type: string
-  host: 
+    description: Hostname or IP address of the socket server
+    example: "test.example.org"
+  port:
     type: string
-  send: 
+    description: TCP port
+    example: '3306'
+  send:
     type: string
-  responseMatch: 
+    description: Connection string you might want to send to the service
+    example: blah
+  responseMatch:
     type: string
+    description: Response from the service to match against
+    example: OK

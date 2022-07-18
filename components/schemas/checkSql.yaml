@@ -20,6 +20,8 @@ properties:
         type: string
         enum:
           - sqlCheck
+          - mysqlCheck
+          - postgresCheck
   checkInterval:
     type: integer
     description: Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
@@ -41,56 +43,7 @@ properties:
       - warning
       - critical
   config:
-    type: object
-    required:
-      - dbHost
-      - dbPort
-      - dbUser
-      - dbPassword
-      - dbName
-      - dbQuery
-    properties:
-      dbHost:
-        type: string
-        description: Hostname or IP address of the SQL database
-        example: "db.example.org"
-      dbPort:
-        type: number
-        description: SQL Port (defaults to 1433)
-        example: 3306
-      dbUser:
-        type: string
-        description: Database username
-        example: basicUser
-      dbPassword:
-        type: string
-        description: Database password, (all check data is encrypted inside the database)
-        example: basicPassword
-      dbName:
-        type: string
-        description: Database name you would like to connect to
-        example: testDb
-      dbQuery:
-        type: string
-        description: Query to test
-        example: select 1
-      checkOperator:
-        type: string
-        description: Can be set to `lt` (less than), `gt` (greater than), `equal` (Equal to) for comparison
-        enum:
-          - lt
-          - gt
-          - equal
-      checkResult:
-        type: number
-        example: 3
-      tunnelOn:
-        type: string
-        description: Turn `on` to enable checks through a proxy host
-        default: "off"
-    oneOf:
-    - $ref: checkSsh.yaml
-    discriminator:
-      propertyName: tunnelOn
-      mapping:
-        off: checkSsh.yaml
+    allOf:
+      - $ref: checkSqlConfig.yaml
+      - anyOf:
+        - $ref: checkSshConfig.yaml

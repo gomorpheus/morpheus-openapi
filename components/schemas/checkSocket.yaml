@@ -41,34 +41,7 @@ properties:
       - warning
       - critical
   config:
-    type: object
-    required:
-      - host
-      - port
-    properties:
-      host:
-        type: string
-        description: Hostname or IP address of the socket server
-        example: "test.example.org"
-      port:
-        type: number
-        description: TCP port
-        example: '3306'
-      send:
-        type: string
-        description: Connection string you might want to send to the service
-        example: blah
-      responseMatch:
-        type: string
-        description: Response from the service to match against
-        example: OK
-      tunnelOn:
-        type: string
-        description: Turn `on` to enable checks through a proxy host
-        default: "off"
-    oneOf:
-    - $ref: checkSsh.yaml
-    discriminator:
-      propertyName: tunnelOn
-      mapping:
-        off: checkSsh.yaml
+    allOf:
+      - $ref: checkSocketConfig.yaml
+      - anyOf:
+        - $ref: checkSshConfig.yaml

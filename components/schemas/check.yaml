@@ -41,12 +41,13 @@ properties:
     allOf:
     - oneOf:
       - $ref: checkWebConfig.yaml
-      - $ref: checkMysqlConfig.yaml
+      # - $ref: checkMysqlConfig.yaml
       - $ref: checkSqlConfig.yaml
-      - $ref: checkPostgresqlConfig.yaml
+      # - $ref: checkPostgresqlConfig.yaml
       - $ref: checkElasticsearchConfig.yaml
       - $ref: checkSocketConfig.yaml
-      - $ref: checkPushConfig.yaml
+      # - $ref: checkPushConfig.yaml
+      - $ref: checkVmConfig.yaml
     - anyOf:
       - $ref: checkSshConfig.yaml
   container:

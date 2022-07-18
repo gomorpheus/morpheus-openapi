@@ -1,21 +1,43 @@
 type: object
+required:
+  - dbPort
+  - dbName
+  - dbUser
+  - dbHost
+  - dbQuery
+  - dbPassword
 properties: 
-  dbPort: 
+  dbHost:
     type: string
-  dbName: 
+    description: Hostname or IP address of the database
+    example: "db.example.org"
+  dbPort:
     type: string
-  dbUser: 
+    description: Database Port (defaults to default port of DB type selected)
+    example: "3306"
+  dbUser:
     type: string
-  dbHost: 
+    description: Database username
+    example: basicUser
+  dbPassword:
     type: string
-  checkOperator: 
+    description: Database password, (all check data is encrypted inside the database)
+    example: basicPassword
+  dbName:
     type: string
-  dbQuery: 
+    description: Database name you would like to connect to
+    example: testDb
+  dbQuery:
     type: string
-  checkResult: 
-    type: integer
-    format: int64
-  dbPassword: 
+    description: Query to test
+    example: select 1
+  checkOperator:
     type: string
-  dbPasswordHash: 
-    type: string
+    description: Can be set to `lt` (less than), `gt` (greater than), `equal` (Equal to) for comparison
+    enum:
+      - lt
+      - gt
+      - equal
+  checkResult:
+    type: number
+    example: 3

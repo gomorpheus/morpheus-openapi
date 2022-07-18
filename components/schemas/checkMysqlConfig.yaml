@@ -1,4 +1,11 @@
 type: object
+required:
+  - dbPort
+  - dbName
+  - dbUser
+  - dbHost
+  - dbQuery
+  - dbPassword
 properties: 
   dbPort: 
     type: string

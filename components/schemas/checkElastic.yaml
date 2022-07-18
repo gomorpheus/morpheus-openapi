@@ -41,26 +41,7 @@ properties:
       - warning
       - critical
   config:
-    type: object
-    required:
-      - esHost
-      - esPort
-    properties:
-      esHost:
-        type: string
-        description: Hostname or IP address of the Elasticsearch server
-        example: "test.example.org"
-      esPort:
-        type: string
-        description: Port to connect to the HTTP service
-        example: '9200'
-      tunnelOn:
-        type: string
-        description: Turn `on` to enable checks through a proxy host
-        default: "off"
-    oneOf:
-    - $ref: checkSsh.yaml
-    discriminator:
-      propertyName: tunnelOn
-      mapping:
-        off: checkSsh.yaml
+    allOf:
+      - $ref: checkElasticsearchConfig.yaml
+      - anyOf:
+        - $ref: checkSshConfig.yaml
