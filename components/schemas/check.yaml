@@ -21,6 +21,7 @@ properties:
   checkInterval: 
     type: integer
     format: int64
+    nullable: true
   checkSpec: 
     type: string
     nullable: true
@@ -38,9 +39,6 @@ properties:
         type: string
   config: 
     type: object
-    properties: 
-      containerName: 
-        type: string
   container: 
     type: object
     nullable: true
