@@ -3,11 +3,11 @@
 name: Run Spectral OpenAPI linter
 on: [push, workflow_dispatch]
 jobs:
-  spectral-lint-openapi:
+  redocly-lint-openapi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Redocly lint
         uses: docker://redocly/openapi-cli:latest
         with:
-          args: lint /github/workspace/openapi.yaml
+          args: lint openapi.yaml
