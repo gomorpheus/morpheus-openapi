@@ -1,0 +1,42 @@
+get:
+  summary: Get a Specific Check Type
+  description: Get details about a specific monitoring check type.
+  operationId: getCheckTypes
+  tags:
+    - Checks
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Check Types Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              checkType:
+                $ref: ../components/schemas/checkType.yaml
+          examples:
+            Get Check Type Response:
+              value:
+                $ref: ../components/examples/checkType.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

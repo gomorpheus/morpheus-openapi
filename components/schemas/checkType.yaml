@@ -1,0 +1,22 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  name: 
+    type: string
+  defaultInterval: 
+    type: integer
+    format: int64
+  metricName: 
+    type: string
+  inUptime: 
+    type: boolean
+  createIncident: 
+    type: boolean
+  pushOnly: 
+    type: boolean
+  tunnelSupported: 
+    type: boolean

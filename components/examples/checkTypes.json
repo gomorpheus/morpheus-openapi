@@ -1,0 +1,43 @@
+{
+    "checkTypes": [
+        {
+            "id": 43,
+            "code": "cloudFoundryAppCheck",
+            "name": "Cloud Foundry App Check",
+            "defaultInterval": 300000,
+            "metricName": "result",
+            "inUptime": true,
+            "createIncident": true,
+            "pushOnly": false,
+            "tunnelSupported": true
+        },
+        {
+            "id": 34,
+            "code": "containerCheck",
+            "name": "Docker Container",
+            "defaultInterval": 300000,
+            "metricName": "result",
+            "inUptime": true,
+            "createIncident": true,
+            "pushOnly": false,
+            "tunnelSupported": true
+        },
+        {
+            "id": 10,
+            "code": "elasticSearchCheck",
+            "name": "Elastic Search Check",
+            "defaultInterval": 60000,
+            "metricName": "cluster status",
+            "inUptime": true,
+            "createIncident": true,
+            "pushOnly": false,
+            "tunnelSupported": true
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 15
+    }
+}

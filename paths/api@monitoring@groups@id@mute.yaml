@@ -1,33 +1,37 @@
-get:
-  summary: List All Check Types
-  description: Get a list of monitoring check types.
-  operationId: listCheckTypes
+put:
+  summary: Mute Check Group
+  description: Mute an existing check group.
+  operationId: updateMuteCheckGroups
   tags:
     - Checks
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/phrase.yaml
+  - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - muted
+          properties:
+            muted:
+              type: boolean
+              description: Set to false to unmute
+              default: true
   responses:
     '200':
-      description: Array of Check Types
+      description: Mute Check Group Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                checkTypes:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/checkType.yaml
-            - $ref: ../components/schemas/meta.yaml
+                $ref: ../components/schemas/muted.yaml
           examples:
-            Check Types Response:
+            Mute Check Group Response:
               value:
-                $ref: ../components/examples/checkTypes.json
+                $ref: ../components/examples/muted.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -1,33 +1,35 @@
-get:
-  summary: List All Check Types
-  description: Get a list of monitoring check types.
-  operationId: listCheckTypes
+put:
+  summary: Mute All Check Apps
+  description: Mute all existing check apps.
+  operationId: updateMuteAllCheckApps
   tags:
     - Checks
-  parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/phrase.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - muted
+          properties:
+            muted:
+              type: boolean
+              description: Set to false to unmute
+              default: true
   responses:
     '200':
-      description: Array of Check Types
+      description: Mute All Check Apps Object
       content:
         application/json:
           schema:
             allOf:
             - type: object
               properties:
-                checkTypes:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/checkType.yaml
-            - $ref: ../components/schemas/meta.yaml
+                $ref: ../components/schemas/mutedAll.yaml
           examples:
-            Check Types Response:
+            Mute All Check Apps Response:
               value:
-                $ref: ../components/examples/checkTypes.json
+                $ref: ../components/examples/mutedAll.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

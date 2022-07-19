@@ -121,8 +121,12 @@ paths:
     $ref: paths/api@monitoring@alerts@id.yaml
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
+  /api/monitoring/apps/mute-all:
+    $ref: paths/api@monitoring@apps@mute-all.yaml
   /api/monitoring/apps/{id}:
     $ref: paths/api@monitoring@apps@id.yaml
+  /api/monitoring/apps/{id}/mute:
+    $ref: paths/api@monitoring@apps@id@mute.yaml
   /api/monitoring/checks:
     $ref: paths/api@monitoring@checks.yaml
   /api/monitoring/checks/mute-all:
@@ -131,6 +135,10 @@ paths:
     $ref: paths/api@monitoring@checks@id.yaml
   /api/monitoring/checks/{id}/mute:
     $ref: paths/api@monitoring@checks@id@mute.yaml
+  /api/monitoring/check-types:
+    $ref: paths/api@monitoring@check-types.yaml
+  /api/monitoring/check-types/{id}:
+    $ref: paths/api@monitoring@check-types@id.yaml
   /api/monitoring/contacts:
     $ref: paths/api@monitoring@contacts.yaml
   /api/monitoring/contacts/{id}:
@@ -139,6 +147,8 @@ paths:
     $ref: paths/api@monitoring@groups.yaml
   /api/monitoring/groups/{id}:
     $ref: paths/api@monitoring@groups@id.yaml
+  /api/monitoring/groups/{id}/mute:
+    $ref: paths/api@monitoring@groups@id@mute.yaml
   /api/monitoring/incidents:
     $ref: paths/api@monitoring@incidents.yaml
   /api/monitoring/incidents/{id}:
