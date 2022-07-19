@@ -125,8 +125,12 @@ paths:
     $ref: paths/api@monitoring@apps@id.yaml
   /api/monitoring/checks:
     $ref: paths/api@monitoring@checks.yaml
+  /api/monitoring/checks/mute-all:
+    $ref: paths/api@monitoring@checks@mute-all.yaml
   /api/monitoring/checks/{id}:
     $ref: paths/api@monitoring@checks@id.yaml
+  /api/monitoring/checks/{id}/mute:
+    $ref: paths/api@monitoring@checks@id@mute.yaml
   /api/monitoring/contacts:
     $ref: paths/api@monitoring@contacts.yaml
   /api/monitoring/contacts/{id}:

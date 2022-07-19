@@ -41,8 +41,8 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Update Check
-  description: Update an existing monitoring check.
+  summary: Updates a Check
+  description: Updates a monitoring check.
   operationId: updateChecks
   tags:
     - Checks
@@ -52,8 +52,44 @@ put:
     content:
       application/json:
         schema:
-          oneOf:
-          - $ref: ../components/schemas/checkWeb.yaml
+          type: object
+          required:
+            - check
+          properties:
+            check:
+              type: object
+              description: Payload for updating a monitoring check
+              required:
+                - name
+                - checkType
+              oneOf:
+              - $ref: ../components/schemas/checkWeb.yaml
+              - $ref: ../components/schemas/checkSql.yaml
+              - $ref: ../components/schemas/checkSocket.yaml
+              - $ref: ../components/schemas/checkElastic.yaml
+              - $ref: ../components/schemas/checkPush.yaml
+        examples:
+          Check Request - Web:
+            value:
+              $ref: ../components/examples/checkWebRequest.json
+          Check Request - MySQL:
+            value:
+              $ref: ../components/examples/checkMysqlRequest.json
+          Check Request - SQL:
+            value:
+              $ref: ../components/examples/checkSqlRequest.json
+          Check Request - Postgres:
+            value:
+              $ref: ../components/examples/checkPostgresqlRequest.json
+          Check Request - Socket:
+            value:
+              $ref: ../components/examples/checkSocketRequest.json
+          Check Request - ElasticSearch:
+            value:
+              $ref: ../components/examples/checkElasticsearchRequest.json
+          Check Request - Push:
+            value:
+              $ref: ../components/examples/checkPushRequest.json
   responses:
     '200':
       description: Check Object
@@ -90,7 +126,7 @@ put:
                 $ref: ../components/examples/checkElasticsearchSuccess.json
             Update Push Check Response:
               value:
-                $ref: ../components/examples/checkWebSuccess.json
+                $ref: ../components/examples/checkPushSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
