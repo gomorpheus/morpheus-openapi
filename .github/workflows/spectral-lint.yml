@@ -10,5 +10,4 @@ jobs:
       - name: Redocly lint
         uses: docker://redocly/openapi-cli:latest
         with:
-          entrypoint: lint
           args: /github/workspace/openapi.yaml
