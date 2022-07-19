@@ -9,8 +9,10 @@ properties:
     type: string
   code: 
     type: string
+    nullable: true
   location: 
     type: string
+    nullable: true
   accountId: 
     type: integer
     format: int64
