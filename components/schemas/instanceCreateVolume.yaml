@@ -32,6 +32,7 @@ properties:
     type: integer
     format: int64
     description: Identifier for LV type
+    nullable: true
   datastoreId:
     anyOf:
       - type: string

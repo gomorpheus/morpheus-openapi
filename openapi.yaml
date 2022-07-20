@@ -79,6 +79,8 @@ paths:
     $ref: paths/api@instances@id@envs.yaml
   /api/instances/{id}/history:
     $ref: paths/api@instances@id@history.yaml
+  /api/instances/{id}/resize:
+    $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
   /api/instances/service-plans:

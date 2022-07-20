@@ -1,0 +1,52 @@
+put:
+  summary: Resize an Instance
+  description: It is possible to resize containers within an instance by increasing their memory plan or storage limit. This is done by assigning a new service plan to the container. This endpoint also allows for NIC reconfiguration by passing a new array of networkInterfaces
+  operationId: resizeInstance
+  tags: 
+    -  Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          $ref: ../components/schemas/instanceResize.yaml
+        examples:
+          Instance Resize:
+            value:
+              $ref: ../components/examples/instanceResize.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json: 
+          schema:
+            allOf:   
+              - oneOf: 
+                - $ref: ../components/schemas/instanceUpdateSuccess.yaml
+                - $ref: ../components/schemas/successError.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Instance Update - VMWare:
+              value:
+                $ref: ../components/examples/instanceUpdateVmwareSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

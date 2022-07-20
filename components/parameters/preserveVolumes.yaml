@@ -1,0 +1,7 @@
+name: preserveVolumes
+in: query
+description: Preserve Volumes
+schema:
+  type: string
+  default: "off"
+example: "on"
