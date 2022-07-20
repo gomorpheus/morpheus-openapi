@@ -1,0 +1,50 @@
+put:
+  summary: Run Workflow on an Instance
+  description: This will run a provisioning workflow on all containers in an instance. 
+  operationId: runWorkflowInstance
+  tags: 
+    -  Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/workflowId.yaml
+    - $ref: ../components/parameters/workflowName.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          $ref: ../components/schemas/instanceWorkflow.yaml
+        examples:
+          Run Workflow on Instance:
+            value:
+              $ref: ../components/examples/instanceWorkflow.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

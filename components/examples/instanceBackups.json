@@ -1,0 +1,63 @@
+{
+  "instance": {
+    "id": 55077
+  },
+  "backups": [
+    {
+      "id": 3521,
+      "name": "ncdmubu1006",
+      "backupType": {
+        "id": 11,
+        "code": "amazonSnapshot",
+        "name": "Amazon VM Snapshot",
+        "copyToStore": false
+      },
+      "targetPath": "/morpheus/container_789962",
+      "targetUsername": null,
+      "targetName": null,
+      "targetAll": true,
+      "sshHost": null,
+      "sshPort": null,
+      "sshUsername": null,
+      "sshPassword": null,
+      "storageProvider": {
+        "id": 7,
+        "name": "QNAP NFS"
+      },
+      "backupJob": {
+        "id": 1098,
+        "name": "ncdmubu1006",
+        "lastExecution": null
+      },
+      "cronExpression": "0 0 * * 7",
+      "cronDescription": "Sunday at 12:00 AM",
+      "retentionCount": null,
+      "dateCreated": "2022-07-15T19:55:34Z",
+      "lastUpdated": "2022-07-17T00:00:35Z",
+      "backupResults": [
+        {
+          "id": 14329,
+          "durationMillis": 601,
+          "containerId": 789962,
+          "serverId": 270686,
+          "dateCreated": "2022-07-17T00:00:35Z",
+          "lastUpdated": "2022-07-17T00:00:36Z",
+          "startDate": "2022-07-17T00:00:35Z",
+          "endDate": "2022-07-17T00:00:36Z",
+          "backupName": "ncdmubu1006",
+          "status": "SUCCEEDED",
+          "statusMessage": null,
+          "error": false,
+          "errorMessage": null,
+          "sizeInBytes": 0,
+          "sizeInMb": 0,
+          "volumePath": null,
+          "resultArchive": null,
+          "resultPath": "",
+          "snapshotId": null,
+          "snapshotExternalId": null
+        }
+      ]
+    }
+  ]
+}

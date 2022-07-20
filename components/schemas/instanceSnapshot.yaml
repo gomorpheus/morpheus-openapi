@@ -1,0 +1,12 @@
+type: object
+properties:
+  snapshot:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Optional name for the snapshot being created.
+        default: '{serverName}.{timestamp}'
+      description:
+        type: string
+        description: Optional description for the snapshot

@@ -1,0 +1,6 @@
+name: workflowName
+in: query
+description: Name of the workflow to execute
+schema:
+  type: string
+example: "myworkflow"

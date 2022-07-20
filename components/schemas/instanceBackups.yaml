@@ -1,0 +1,12 @@
+type: object
+properties:
+  instance:
+    type: object
+    properties:
+      id: 
+        type: integer
+        format: int64
+        description: ID of the instance
+  backups:
+    type: array
+    description: List of backup objects

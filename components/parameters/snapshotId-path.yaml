@@ -1,0 +1,7 @@
+name: snapshotId
+in: path
+description: Snapshot ID
+required: true
+schema:
+  type: number
+example: 4
