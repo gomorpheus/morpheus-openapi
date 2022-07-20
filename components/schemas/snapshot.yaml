@@ -10,14 +10,14 @@ properties:
         type: string
       description: 
         type: string
-        format: nullable
+        nullable: true
       externalId: 
         type: string
       status: 
         type: string
       state: 
         type: string
-        format: nullable
+        nullable: true
       snapshotType: 
         type: string
       snapshotCreated: 
@@ -33,10 +33,10 @@ properties:
             type: string
       datastore: 
         type: string
-        format: nullable
+        nullable: true
       parentSnapshot: 
         type: string
-        format: nullable
+        nullable: true
       currentlyActive: 
         type: boolean
       dateCreated: 

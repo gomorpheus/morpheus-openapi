@@ -1,0 +1,10 @@
+type: object
+properties:
+  templateName:
+    type: string
+    description: Image Template Name
+    default: '{server.name}-{timestamp}'
+  zoneFolder:
+    type: string
+    description: Zone Folder externalId. This is required for VMware
+    example: "group-v81"

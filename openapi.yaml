@@ -79,14 +79,24 @@ paths:
     $ref: paths/api@instances@id@clone.yaml
   /api/instances/{id}:
     $ref: paths/api@instances@id.yaml
+  /api/instances/{id}/clone-image:
+    $ref: paths/api@instances@id@clone-image.yaml
   /api/instances/{id}/containers:
     $ref: paths/api@instances@id@containers.yaml
+  /api/instances/{id}/delete-container-snapshots/{containerId}:
+    $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
+  /api/instances/{id}/delete-all-snapshots:
+    $ref: paths/api@instances@id@delete-all-snapshots.yaml
   /api/instances/{id}/envs:
     $ref: paths/api@instances@id@envs.yaml
   /api/instances/{id}/history:
     $ref: paths/api@instances@id@history.yaml
   /api/instances/{id}/import-snapshot:
     $ref: paths/api@instances@id@import-snapshot.yaml
+  /api/instances/{id}/linked-clone/{snapshotId}:
+    $ref: paths/api@instances@id@linked-clone@id.yaml
+  /api/instances/{id}/lock:
+    $ref: paths/api@instances@id@lock.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/revert-snapshot/{snapshotId}:
@@ -95,6 +105,8 @@ paths:
     $ref: paths/api@instances@id@snapshot.yaml
   /api/instances/{id}/snapshots:
     $ref: paths/api@instances@id@snapshots.yaml
+  /api/instances/{id}/unlock:
+    $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
   /api/instances/{id}/workflow:
@@ -207,6 +219,8 @@ paths:
     $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
+  /api/snapshots/{id}:
+    $ref: paths/api@snapshots@id.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
   /api/users:

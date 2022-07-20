@@ -1,0 +1,7 @@
+name: containerId
+in: path
+description: Container ID
+required: true
+schema:
+  type: number
+example: 4
