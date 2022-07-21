@@ -81,6 +81,12 @@ paths:
     $ref: paths/api@instances@id.yaml
   /api/instances/{id}/clone-image:
     $ref: paths/api@instances@id@clone-image.yaml
+  /api/instances/{id}/cancel-expiration:
+    $ref: paths/api@instances@id@cancel-expiration.yaml
+  /api/instances/{id}/cancel-removal:
+    $ref: paths/api@instances@id@cancel-removal.yaml
+  /api/instances/{id}/cancel-shutdown:
+    $ref: paths/api@instances@id@cancel-shutdown.yaml
   /api/instances/{id}/containers:
     $ref: paths/api@instances@id@containers.yaml
   /api/instances/{id}/delete-container-snapshots/{containerId}:
@@ -89,6 +95,10 @@ paths:
     $ref: paths/api@instances@id@delete-all-snapshots.yaml
   /api/instances/{id}/envs:
     $ref: paths/api@instances@id@envs.yaml
+  /api/instances/{id}/extend-expiration:
+    $ref: paths/api@instances@id@extend-expiration.yaml
+  /api/instances/{id}/extend-shutdown:
+    $ref: paths/api@instances@id@extend-shutdown.yaml
   /api/instances/{id}/history:
     $ref: paths/api@instances@id@history.yaml
   /api/instances/{id}/import-snapshot:
