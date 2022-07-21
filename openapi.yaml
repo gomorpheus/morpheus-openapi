@@ -113,6 +113,8 @@ paths:
     $ref: paths/api@instances@id@prepare-apply.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
+  /api/instances/{id}/restart:
+    $ref: paths/api@instances@id@restart.yaml
   /api/instances/{id}/revert-snapshot/{snapshotId}:
     $ref: paths/api@instances@id@revert-snapshot@id.yaml
   /api/instances/{id}/security-groups:
@@ -121,8 +123,12 @@ paths:
     $ref: paths/api@instances@id@snapshot.yaml
   /api/instances/{id}/snapshots:
     $ref: paths/api@instances@id@snapshots.yaml
+  /api/instances/{id}/start:
+    $ref: paths/api@instances@id@start.yaml
   /api/instances/{id}/state:
     $ref: paths/api@instances@id@state.yaml
+  /api/instances/{id}/stop:
+    $ref: paths/api@instances@id@stop.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/wiki:
