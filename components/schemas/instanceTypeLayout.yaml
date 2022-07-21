@@ -106,6 +106,10 @@ properties:
           sites: 
             type: array
             nullable: true
+            items:
+              type: object
           plans: 
             type: array
             nullable: true
+            items:
+              type: object
