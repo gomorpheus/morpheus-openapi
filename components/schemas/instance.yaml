@@ -176,6 +176,9 @@ properties:
         type: string
       expose: 
         type: array
+        nullable: true
+        items:
+          type: object
       createBackup: 
         type: boolean
       backup: 
@@ -200,6 +203,9 @@ properties:
         format: int64
       lbInstances: 
         type: array
+        nullable: true
+        items:
+          type: object
   configGroup: 
     type: string
     nullable: true
@@ -335,10 +341,19 @@ properties:
     type: string
   labels: 
     type: array
+    nullable: true
+    items:
+      type: object
   tags: 
     type: array
+    nullable: true
+    items:
+      type: object
   evars: 
     type: array
+    nullable: true
+    items:
+      type: object
   maxMemory: 
     type: integer
     format: int64
@@ -510,3 +525,6 @@ properties:
     type: boolean
   apps: 
     type: array
+    nullable: true
+    items:
+      type: object
