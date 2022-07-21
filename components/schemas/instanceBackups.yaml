@@ -10,3 +10,5 @@ properties:
   backups:
     type: array
     description: List of backup objects
+    items: 
+      type: object

@@ -98,12 +98,18 @@ properties:
   cpuOptions: 
     type: array
     nullable: true
+    items: 
+      type: object
   coreOptions: 
     type: array
     nullable: true
+    items: 
+      type: object
   memoryOptions: 
     type: array
     nullable: true
+    items: 
+      type: object
   rootCustomSizeOptions: 
     type: object
     nullable: true  

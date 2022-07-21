@@ -46,12 +46,20 @@ properties:
   containerPorts: 
     type: array
     nullable: true
+    items:
+      type: object
   containerScripts: 
     type: array
     nullable: true
+    items:
+      type: object
   containerTemplates: 
     type: array
     nullable: true
+    items:
+      type: object
   environmentVariables: 
     type: array
     nullable: true
+    items:
+      type: object

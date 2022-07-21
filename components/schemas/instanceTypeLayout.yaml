@@ -44,7 +44,9 @@ properties:
     $ref: provisionType.yaml
   taskSets: 
     type: array
-    nullable: true 
+    nullable: true
+    items:
+      type: object
   containerTypes: 
     type: array
     items: 
@@ -52,21 +54,33 @@ properties:
   mounts: 
     type: array
     nullable: true
+    items:
+      type: object
   ports: 
     type: array
     nullable: true
+    items:
+      type: object
   optionTypes: 
     type: array
     nullable: true
+    items:
+      type: object
   environmentVariables: 
     type: array
     nullable: true
+    items:
+      type: object
   specTemplates: 
     type: array
     nullable: true
+    items:
+      type: object
   tfvarSecret: 
     type: string
     nullable: true
+    items:
+      type: object
   permissions: 
     type: object
     properties: 

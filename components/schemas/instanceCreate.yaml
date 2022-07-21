@@ -89,6 +89,8 @@ properties:
     type: array
     description: Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
     nullable: true
+    items:
+      type: object
   volumes:
     type: array
     description: The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of

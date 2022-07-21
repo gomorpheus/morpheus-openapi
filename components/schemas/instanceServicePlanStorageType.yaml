@@ -8,6 +8,8 @@ properties:
   optionTypes: 
     type: array
     nullable: true
+    items:
+      type: object
   displayOrder: 
     type: integer
     format: int32

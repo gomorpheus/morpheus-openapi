@@ -71,3 +71,5 @@ properties:
   environmentVariables: 
     type: array
     nullable: true
+    items:
+      type: object
