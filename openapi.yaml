@@ -101,6 +101,8 @@ paths:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/revert-snapshot/{snapshotId}:
     $ref: paths/api@instances@id@revert-snapshot@id.yaml
+  /api/instances/{id}/security-groups:
+    $ref: paths/api@instances@id@security-groups.yaml
   /api/instances/{id}/snapshot:
     $ref: paths/api@instances@id@snapshot.yaml
   /api/instances/{id}/snapshots:
