@@ -1,0 +1,104 @@
+{
+    "zone": {
+        "id": 61,
+        "uuid": "ad62331b-25d5-4726-aa32-844cb5c9e5e5",
+        "externalId": null,
+        "name": "Work GCP",
+        "code": "googlecloud",
+        "location": "Global",
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accountId": 1,
+        "account": {
+            "id": 1,
+            "name": "Home"
+        },
+        "visibility": "private",
+        "enabled": true,
+        "status": "ok",
+        "statusMessage": null,
+        "statusDate": "2022-07-21T14:04:26Z",
+        "costStatus": null,
+        "costStatusMessage": null,
+        "costStatusDate": null,
+        "zoneType": {
+            "id": 49,
+            "code": "googlecloud",
+            "name": "Google Cloud"
+        },
+        "zoneTypeId": 49,
+        "guidanceMode": "manual",
+        "storageMode": "standard",
+        "agentMode": "cloudInit",
+        "userDataLinux": null,
+        "userDataWindows": null,
+        "consoleKeymap": null,
+        "containerMode": "docker",
+        "costingMode": "costing",
+        "serviceVersion": null,
+        "securityMode": "off",
+        "inventoryLevel": "off",
+        "timezone": null,
+        "apiProxy": null,
+        "provisioningProxy": null,
+        "networkDomain": null,
+        "domainName": "localdomain",
+        "regionCode": null,
+        "autoRecoverPowerState": true,
+        "scalePriority": 1,
+        "config": {
+            "privateKey": "************",
+            "clientEmail": "morpheus-qa@qa-project-307421.iam.gserviceaccount.com",
+            "projectId": "all",
+            "googleRegionId": "all",
+            "_importExisting": "",
+            "importExisting": "on",
+            "applianceUrl": "",
+            "datacenterName": "",
+            "networkServer.id": "unmanaged",
+            "networkServer": {
+                "id": "unmanaged"
+            },
+            "securityServer": "off",
+            "certificateProvider": "internal",
+            "backupMode": "internal",
+            "replicationMode": "-1",
+            "dnsIntegrationId": "",
+            "serviceRegistryId": "",
+            "configManagementId": "",
+            "privateKeyHash": "f219a69ae18074c48fa33293266c7e1df802e8975e1dc786f456fb267be96c21"
+        },
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2021-03-17T15:22:08Z",
+        "lastUpdated": "2022-07-21T14:04:27Z",
+        "groups": [
+            {
+                "id": 7,
+                "name": "All Clouds",
+                "accountId": 1
+            },
+            {
+                "id": 6,
+                "name": "Work",
+                "accountId": 1
+            }
+        ],
+        "securityServer": null,
+        "stats": {
+            "serverCounts": {
+                "all": 0,
+                "host": 0,
+                "hypervisor": 0,
+                "containerHost": 0,
+                "vm": 0,
+                "baremetal": 0,
+                "unmanaged": 0
+            }
+        },
+        "serverCount": 0
+    }
+}

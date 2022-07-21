@@ -1,0 +1,37 @@
+name: type
+in: query
+description: If specified will return all zones by cloud type code.
+schema:
+  type: string
+  enum:
+  - alibaba
+  - amazon
+  - azure
+  - azurestack
+  - dell
+  - digitalocean
+  - googlecloud
+  - oneview
+  - huawei
+  - hyperv
+  - bluemix
+  - bluemixCloudFoundry
+  - centurylink-edge
+  - macstadium
+  - standard
+  - nutanix
+  - opentelekom
+  - openstack
+  - oraclecloud
+  - oraclevm
+  - platform9
+  - scvmm
+  - softlayer
+  - ucs
+  - upcloud
+  - vcd
+  - vmwareCloudAws
+  - esxi
+  - fusion
+  - vmware
+  - xenserver

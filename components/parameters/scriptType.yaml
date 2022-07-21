@@ -1,0 +1,5 @@
+name: scriptType
+in: query
+description: Script type code filter, restricts query to only load scripts of specified type
+schema:
+  type: string

@@ -1,23 +1,15 @@
 get:
-  summary: Returns all reports
+  summary: Retrieves all Clouds
   description: |
-    This endpoint returns all reports. This is results of reports that have been executed in the past.
-  operationId: listReports
+    Retrieves all clouds.
+  operationId: listClouds
   tags:
-    - Reports
+    - Clouds
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/direction.yaml
-    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
     - $ref: ../components/parameters/name.yaml
-    - name: reportType
-      in: query
-      description: If specified will return an exact match on report type code, accepts multiple values
-      schema:
-        type: string
-    - $ref: ../components/parameters/category.yaml
+    - $ref: ../components/parameters/type.yaml
+    - $ref: ../components/parameters/groupId.yaml
   responses:
     '200':
       description: Successful Request
@@ -27,15 +19,15 @@ get:
             allOf:
             - type: object
               properties:
-                reportResults:
+                zones:
                   type: array
                   items:
-                    $ref: ../components/schemas/report.yaml
+                    $ref: ../components/schemas/zone.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Reports Response:
+            Get Clouds Response:
               value:
-                $ref: ../components/examples/reports.json
+                $ref: ../components/examples/zones.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -57,47 +49,34 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 post:
-  summary: Run specified report
+  summary: Creates a Group
   description: |
-    This endpoint execute the specified report type and create a new report result.
-
-    The available parameters vary by report type. Refer to the defined `inputs` for each report.
-  operationId: runReports
+    Creates a group.
+  operationId: addGroups
   tags:
-    - Reports
+    - Groups
   requestBody:
     content:
       application/json:
         schema:
           type: object
           required:
-            - report
+            - group
           properties:
-            report:
+            group:
               type: object
               required:
-                - type
-              properties: 
-                type: 
+                - name
+              properties:
+                name: 
                   type: string
-                  description: Code value for the report type you want to run
-                  example: appCost
-                startDate: 
+                  description: A unique name scoped to your account for the group
+                code:
                   type: string
-                  format: date
-                  example: 2019-01-01
-                endDate: 
+                  description: Optional code for use with policies
+                location:
                   type: string
-                  format: date
-                  example: 2020-01-01
-                groupId:
-                  description: The Group ID filter for the report
-                  type: number
-                  example: 1
-                cloudId:
-                  description: The Cloud ID filter for the report
-                  type: number
-                  example: 7
+                  description: Optional location argument for your group
   responses:
     '200':
       description: Successful Request
@@ -107,13 +86,13 @@ post:
             allOf:
             - type: object
               properties:
-                reportResult:
-                  $ref: ../components/schemas/report.yaml
+                group:
+                  $ref: ../components/schemas/group.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Reports Response:
+            Report Types Response:
               value:
-                $ref: ../components/examples/reports.json
+                $ref: ../components/examples/group.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

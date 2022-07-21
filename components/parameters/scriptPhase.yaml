@@ -1,0 +1,5 @@
+name: scriptPhase
+in: query
+description: Script phase filter, restricts query to only load scripts of specified phase
+schema:
+  type: string
