@@ -71,14 +71,16 @@ paths:
     $ref: paths/api@groups@id@wiki.yaml
   /api/instances:
     $ref: paths/api@instances.yaml
+  /api/instances/{id}:
+    $ref: paths/api@instances@id.yaml
+  /api/instances/{id}/apply:
+    $ref: paths/api@instances@id@apply.yaml
   /api/instances/{id}/backup:
     $ref: paths/api@instances@id@backup.yaml
   /api/instances/{id}/backups:
     $ref: paths/api@instances@id@backups.yaml
   /api/instances/{id}/clone:
     $ref: paths/api@instances@id@clone.yaml
-  /api/instances/{id}:
-    $ref: paths/api@instances@id.yaml
   /api/instances/{id}/clone-image:
     $ref: paths/api@instances@id@clone-image.yaml
   /api/instances/{id}/cancel-expiration:
@@ -107,6 +109,8 @@ paths:
     $ref: paths/api@instances@id@linked-clone@id.yaml
   /api/instances/{id}/lock:
     $ref: paths/api@instances@id@lock.yaml
+  /api/instances/{id}/prepare-apply:
+    $ref: paths/api@instances@id@prepare-apply.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/revert-snapshot/{snapshotId}:
@@ -117,6 +121,8 @@ paths:
     $ref: paths/api@instances@id@snapshot.yaml
   /api/instances/{id}/snapshots:
     $ref: paths/api@instances@id@snapshots.yaml
+  /api/instances/{id}/state:
+    $ref: paths/api@instances@id@state.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/wiki:
@@ -125,6 +131,8 @@ paths:
     $ref: paths/api@instances@id@workflow.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
+  /api/instances/{id}/validate-apply:
+    $ref: paths/api@instances@id@validate-apply.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:

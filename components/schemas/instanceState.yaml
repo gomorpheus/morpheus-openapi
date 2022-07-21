@@ -1,0 +1,42 @@
+type: object
+properties:
+  workloads:
+    type: array
+    items:
+      type: object
+  iacDrift:
+    type: boolean
+  planResources:
+    type: array
+    items:
+      type: object
+  specs:
+    type: array
+    items:
+      type: object
+  stateData:
+    type: string
+  planData:
+    type: string
+  input:
+    type: object
+    properties:
+      variables:
+        type: array
+        items:
+          type: object
+      providers:
+        type: array
+        items:
+          type: object
+      data:
+        type: array
+        items:
+          type: object
+  output:
+    type: object
+    properties:
+      outputs:
+        type: array
+        items:
+          type: object
