@@ -43,8 +43,8 @@ paths:
     $ref: paths/api@budgets@id.yaml
   /api/clusters/{id}/wiki:
     $ref: paths/api@clusters@id@wiki.yaml
-  /api/credentials:
-    $ref: paths/api@credentials.yaml
+  # /api/credentials:
+  #   $ref: paths/api@credentials.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/doc:
@@ -217,6 +217,10 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
+  /api/networks:
+    $ref: paths/api@networks.yaml
+  /api/networks/{id}:
+    $ref: paths/api@networks@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:
