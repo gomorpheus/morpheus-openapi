@@ -177,6 +177,8 @@ paths:
     $ref: paths/api@library@instance-types@id.yaml
   /api/library/instance-types/{id}/toggle-featured:
     $ref: paths/api@library@instance-types@id@toggle-featured.yaml
+  /api/library/instance-types/{id}/update-logo:
+    $ref: paths/api@library@instance-types@id@update-logo.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/monitoring/alerts:
