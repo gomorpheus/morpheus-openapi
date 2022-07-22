@@ -5,6 +5,7 @@ properties:
     format: int64
   account:
     type: object
+    nullable: true
     properties:
       id:
         type: integer

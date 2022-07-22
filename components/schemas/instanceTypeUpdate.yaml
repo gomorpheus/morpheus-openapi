@@ -1,0 +1,65 @@
+type: object
+properties:
+  name: 
+    type: string
+    description: Instance type name
+  description: 
+    type: string
+    description: Instance type description
+  code: 
+    type: string
+    description: Instance type code
+  category: 
+    type: string
+    description: Category
+  visibility: 
+    type: string
+    description: Visibility
+    default: private
+    enum:
+      - private
+      - public
+  featured: 
+    type: boolean
+    description: Featured
+  hasSettings: 
+    type: boolean
+    description: Enable Settings
+  hasAutoScale: 
+    type: boolean
+    description: Enable Scaling (Horizontal)
+  hasDeployment: 
+    type: boolean
+    description: Supports Deployments
+  environmentPrefix: 
+    type: string
+    description: Environment Prefix, can be used to make exported evars unique.
+  environmentVariables: 
+    type: array
+    description: Array of instance type env variables.
+    items:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: Environment variable name
+        value:
+          type: string
+          description: Sets fixed value for variable
+        masked:
+          type: boolean
+          description: Can be used to enable / disable masking of variable
+          default: false
+        export:
+          type: boolean
+          description: Can be used to enable / disable export of variable
+          default: false
+  optionTypes: 
+    type: array
+    description: Array of instance type option type IDs
+    items: 
+      type: integer
+      format: int64
+  

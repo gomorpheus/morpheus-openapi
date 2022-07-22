@@ -2,7 +2,7 @@ get:
   summary: Get All Instance Types for Provisioning
   description: |
     Fetch the list of available instance types. These can vary in range from database containers, to web containers, to custom containers.
-  operationId: listInstanceTypes
+  operationId: listInstanceTypesProvisioning
   tags:
     - Instances
   responses:
@@ -22,7 +22,7 @@ get:
           examples:
             Instance Types Response:
               value:
-                $ref: ../components/examples/instanceTypes.json 
+                $ref: ../components/examples/instanceTypesProvisioning.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':

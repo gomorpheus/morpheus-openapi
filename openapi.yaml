@@ -171,6 +171,12 @@ paths:
     $ref: paths/api@library@option-types.yaml
   /api/library/option-types/{id}:
     $ref: paths/api@library@option-types@id.yaml
+  /api/library/instance-types:
+    $ref: paths/api@library@instance-types.yaml
+  /api/library/instance-types/{id}:
+    $ref: paths/api@library@instance-types@id.yaml
+  /api/library/instance-types/{id}/toggle-featured:
+    $ref: paths/api@library@instance-types@id@toggle-featured.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/monitoring/alerts:
