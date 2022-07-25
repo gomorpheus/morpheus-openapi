@@ -45,6 +45,8 @@ paths:
     $ref: paths/api@clusters@id@wiki.yaml
   /api/credentials:
     $ref: paths/api@credentials.yaml
+  /api/credentials/{id}:
+    $ref: paths/api@credentials@id.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/doc:
