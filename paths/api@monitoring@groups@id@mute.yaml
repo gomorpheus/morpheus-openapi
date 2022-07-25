@@ -29,7 +29,7 @@ put:
               properties:
                 $ref: ../components/schemas/muted.yaml
           examples:
-            Mute Check Group Response:
+            Check Group Response - Mute:
               value:
                 $ref: ../components/examples/muted.json
     '400':

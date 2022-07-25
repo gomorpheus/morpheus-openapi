@@ -17,7 +17,7 @@ get:
               contact:
                 $ref: ../components/schemas/contact.yaml
           examples:
-            Get Contact Response:
+            Contact Response:
               value:
                 $ref: ../components/examples/contact.json
     '400':
@@ -89,7 +89,7 @@ put:
                   $ref: ../components/schemas/contact.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Contact Response:
+            Contact Response:
               value:
                 $ref: ../components/examples/contactSuccess.json
     '400':
@@ -128,7 +128,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Contact Response:
+            Contact Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

@@ -17,7 +17,7 @@ get:
               incident:
                 $ref: ../components/schemas/incident.yaml
           examples:
-            Get Incident Response:
+            Incident Response:
               value:
                 $ref: ../components/examples/incident.json
     '400':
@@ -112,7 +112,7 @@ put:
                   $ref: ../components/schemas/incident.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Incident Response:
+            Incident Response:
               value:
                 $ref: ../components/examples/incident.json
     '400':
@@ -151,7 +151,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Close Incident Response:
+            Incident Response - Close:
               value:
                 $ref: ../components/examples/success.json
     '400':

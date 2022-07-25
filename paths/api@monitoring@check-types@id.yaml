@@ -17,7 +17,7 @@ get:
               checkType:
                 $ref: ../components/schemas/checkType.yaml
           examples:
-            Get Check Type Response:
+            Check Type Response:
               value:
                 $ref: ../components/examples/checkType.json
     '400':

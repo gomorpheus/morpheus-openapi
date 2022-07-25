@@ -62,7 +62,7 @@ post:
           schema:
             $ref: ../components/schemas/accessToken.yaml
           examples:
-            Access Token responses:
+            Access Token Response:
               value:
                 $ref: ../components/examples/accessToken.json
     '400':

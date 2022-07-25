@@ -19,7 +19,7 @@ get:
               categories:
                 $ref: ../components/schemas/wikiCategories.yaml
           examples:
-            Report Types Response:
+            Wiki Categories Response:
               value:
                 $ref: ../components/examples/wikiCategories.json
     '400':

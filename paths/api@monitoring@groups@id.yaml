@@ -17,7 +17,7 @@ get:
               checkGroup:
                 $ref: ../components/schemas/checkGroup.yaml
           examples:
-            Get Check Group Response:
+            Check Group Response:
               value:
                 $ref: ../components/examples/checkGroup.json
     '400':
@@ -105,7 +105,7 @@ put:
                   $ref: ../components/schemas/checkGroup.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Check Group Response:
+            Check Group Response:
               value:
                 $ref: ../components/examples/checkGroupSuccess.json
     '400':
@@ -144,7 +144,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Check Group Response:
+            Check Group Response:
               value:
                 $ref: ../components/examples/success.json
     '400':

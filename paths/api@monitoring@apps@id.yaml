@@ -21,7 +21,7 @@ get:
                 items:
                   $ref: ../components/schemas/check.yaml
           examples:
-            Get Check App Response:
+            Check App Response:
               value:
                 $ref: ../components/examples/checkApp.json
     '400':
@@ -113,7 +113,7 @@ put:
                   $ref: ../components/schemas/checkApp.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Check App Response:
+            Check App Response:
               value:
                 $ref: ../components/examples/checkAppSuccess.json
     '400':

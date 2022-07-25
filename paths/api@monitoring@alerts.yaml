@@ -139,7 +139,7 @@ post:
                   $ref: ../components/schemas/alert.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Create Alert Response:
+            Alert Response - Create:
               value:
                 $ref: ../components/examples/alertSuccess.json
     '400':

@@ -125,7 +125,7 @@ post:
                   $ref: ../components/schemas/incident.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Create Incident Response:
+            Incident Response - Create:
               value:
                 $ref: ../components/examples/incident.json
     '400':

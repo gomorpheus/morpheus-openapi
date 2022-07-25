@@ -14,7 +14,7 @@ get:
           schema:
             $ref: ../components/schemas/successMessage.yaml
           examples:
-            Reopen Incident Response:
+            Incident Response - Reopen:
               value:
                 $ref: ../components/examples/successMessage.json
     '400':

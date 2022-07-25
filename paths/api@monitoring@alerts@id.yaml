@@ -36,7 +36,7 @@ get:
                     items: 
                       $ref: ../components/schemas/checkApp.yaml 
           examples:
-            Get Alert Response:
+            Alert Response:
               value:
                 $ref: ../components/examples/alert.json
     '400':
@@ -152,7 +152,7 @@ put:
                 alert:
                   $ref: ../components/schemas/alert.yaml
           examples:
-            Update Alert Response:
+            Alert Response:
               value:
                 $ref: ../components/examples/alertSuccess.json
     '400':

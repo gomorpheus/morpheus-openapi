@@ -96,7 +96,7 @@ post:
                   $ref: ../components/schemas/contact.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Create Contact Response:
+            Contact Response:
               value:
                 $ref: ../components/examples/contactSuccess.json
     '400':

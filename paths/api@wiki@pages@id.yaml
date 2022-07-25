@@ -21,7 +21,7 @@ get:
             Wiki Response:
               value:
                 $ref: ../components/examples/wikiPage.json
-            Blank Wiki Response:
+            Wiki Response - Blank:
               value:
                 $ref: ../components/examples/wikiEmpty.json
     '400':
@@ -88,7 +88,7 @@ put:
             Wiki Response:
               value:
                 $ref: ../components/examples/wikiAdd.json
-            Blank Wiki Response:
+            Wiki Response - Blank:
               value:
                 $ref: ../components/examples/wikiEmpty.json
     '400':

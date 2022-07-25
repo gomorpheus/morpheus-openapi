@@ -17,7 +17,7 @@ get:
               check:
                 $ref: ../components/schemas/check.yaml
           examples:
-            Get Check Response:
+            Check Response:
               value:
                 $ref: ../components/examples/checkWeb.json
     '400':
@@ -103,28 +103,28 @@ put:
                   $ref: ../components/schemas/check.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Update Web Check Response:
+            Check Response - Update Web:
               value:
                 $ref: ../components/examples/checkWebSuccess.json
-            Update Web Check with SSH Tunneling Response:
+            Check Response -  Web Check with SSH Tunneling:
               value:
                 $ref: ../components/examples/checkWebSshTunnelingSuccess.json                
-            Update MySQL Check Response:
+            Check Response - Update MySQL Check:
               value:
                 $ref: ../components/examples/checkMysqlSuccess.json
-            Update SQL Check Response:
+            Check Response - Update SQL Check:
               value:
                 $ref: ../components/examples/checkSqlSuccess.json
-            Update PostgreSQL Check Response:
+            Check Response - Update PostgreSQL Check:
               value:
                 $ref: ../components/examples/checkPostgresqlSuccess.json
-            Update Socket Check Response:
+            Check Response - Update Socket Check:
               value:
                 $ref: ../components/examples/checkSocketSuccess.json
-            Update ElasticSearch Check Response:
+            Check Response - Update ElasticSearch Check:
               value:
                 $ref: ../components/examples/checkElasticsearchSuccess.json
-            Update Push Check Response:
+            Check Response - Update Push Check:
               value:
                 $ref: ../components/examples/checkPushSuccess.json
     '400':
@@ -163,7 +163,7 @@ delete:
           schema:
             $ref: ../components/schemas/200-success.yaml
           examples:
-            Delete Check Response:
+            Check Response - Delete:
               value:
                 $ref: ../components/examples/success.json
     '400':

@@ -112,28 +112,28 @@ post:
                   $ref: ../components/schemas/check.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Create Web Check Response:
+            Check Response - Create Web Check:
               value:
                 $ref: ../components/examples/checkWebSuccess.json
-            Create Web Check with SSH Tunneling Response:
+            Check Response - Create Web Check with SSH Tunneling:
               value:
                 $ref: ../components/examples/checkWebSshTunnelingSuccess.json                
-            Create MySQL Check Response:
+            Check Response - Create MySQL Check:
               value:
                 $ref: ../components/examples/checkMysqlSuccess.json
-            Create SQL Check Response:
+            Check Response - Create SQL Check:
               value:
                 $ref: ../components/examples/checkSqlSuccess.json
-            Create PostgreSQL Check Response:
+            Check Response - Create PostgreSQL Check:
               value:
                 $ref: ../components/examples/checkPostgresqlSuccess.json
-            Create Socket Check Response:
+            Check Response - Create Socket Check:
               value:
                 $ref: ../components/examples/checkSocketSuccess.json
-            Create ElasticSearch Check Response:
+            Check Response - Create ElasticSearch Check:
               value:
                 $ref: ../components/examples/checkElasticsearchSuccess.json
-            Create Push Check Response:
+            Check Response - Create Push Check:
               value:
                 $ref: ../components/examples/checkPushSuccess.json
     '400':
