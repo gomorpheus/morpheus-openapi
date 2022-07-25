@@ -1,0 +1,39 @@
+get:
+  summary: Reopen a Specific Incident
+  description: Get details about a specific incident.
+  operationId: updateIncidentsReopen
+  tags:
+    - Incidents
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Incident Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Incident Response - Reopen:
+              value:
+                $ref: ../components/examples/successMessage.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

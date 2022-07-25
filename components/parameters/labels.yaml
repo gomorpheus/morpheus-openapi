@@ -1,0 +1,6 @@
+name: labels
+in: query
+description: Filter by label(s)
+schema:
+  type: string
+example: "applabel"

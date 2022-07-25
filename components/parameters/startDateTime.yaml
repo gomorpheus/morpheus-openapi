@@ -1,0 +1,7 @@
+name: startDateTime
+in: query
+schema:
+  type: string
+  format: date-time
+description: Start Date timestamp (ISO 8601)
+example: 2019-03-06T17:52:29+0000

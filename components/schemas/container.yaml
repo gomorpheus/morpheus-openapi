@@ -1,0 +1,156 @@
+type: object
+properties:
+  id:
+    type: integer
+  accountId:
+    type: integer
+  instance:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+  containerType:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+      category:
+        type: string
+      name:
+        type: string
+  containerTypeSet:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+      category:
+        type: string
+  server:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+  cloud:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+  name:
+    type: string
+  ip:
+    type: string
+  internalIp:
+    type: string
+  internalHostname:
+    type: string
+  externalHostname:
+    type: string
+  externalDomain:
+    type: string
+  externalFqdn:
+    type: string
+  ports:
+    type: array
+    nullable: true
+    items:
+      type: object
+  plan:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+      name:
+        type: string
+  dateCreated:
+    type: string
+  lastUpdated:
+    type: string
+  statsEnabled:
+    type: boolean
+  status:
+    type: string
+  userStatus:
+    type: string
+  environmentPrefix:
+    type: string
+    nullable: true
+  stats:
+    type: object
+    properties:
+      ts:
+        type: string
+      running:
+        type: boolean
+      userCpuUsage:
+        type: number
+      systemCpuUsage:
+        type: number
+      usedMemory:
+        type: integer
+      maxMemory:
+        type: integer
+      cacheMemory:
+        type: integer
+      maxStorage:
+        type: integer
+      usedStorage:
+        type: integer
+      readIOPS:
+        type: integer
+      writeIOPS:
+        type: number
+      totalIOPS:
+        type: number
+      iops:
+        type: object
+      netTxUsage:
+        type: integer
+      netRxUsage:
+        type: integer
+  runtimeInfo:
+    type: object
+  containerVersion:
+    type: string
+    nullable: true
+  repositoryImage:
+    type: string
+    nullable: true
+  planCategory:
+    type: string
+    nullable: true
+  hostname:
+    type: string
+  domainName:
+    type: string
+    nullable: true
+  volumeCreated:
+    type: boolean
+  containerCreated:
+    type: boolean
+  maxStorage:
+    type: integer
+  maxMemory:
+    type: integer
+  maxCores:
+    type: integer
+  coresPerSocket:
+    type: integer
+  maxCpu:
+    type: integer
+  availableActions:
+    type: array
+    nullable: true
+    items: 
+      type: object

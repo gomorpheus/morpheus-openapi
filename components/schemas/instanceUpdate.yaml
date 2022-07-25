@@ -1,0 +1,84 @@
+type: object
+properties:
+  instance:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Unique name scoped to your account for the instance.
+        example: myinstance
+      description:
+        type: string
+        description: Optional description field.
+        example: "my new instance"
+      instanceContext:
+        type: string
+        description: Environment
+        example: "dev"
+      labels:
+        type: array
+        description: Array of strings (keywords).
+        items:
+          type: string
+      tags:
+        description: Metadata tags, Array of objects having a name and value.
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+        example:
+          - name: hello
+            value: world
+          - name: flash
+            value: bang
+      addTags:
+        description: Add or update value of Metadata tags, Array of objects having a name and value.
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+        example:
+          - name: hello
+            value: world
+          - name: flash
+            value: bang
+      removeTags:
+        description: Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+              nullable: true
+        example:
+          - name: hello
+      powerScheduleType:
+        description: Power schedule ID.
+        type: integer
+        format: int64
+      site:
+        type: object
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: The group ID.
+            example: 2
+      ownerId:
+        type: integer
+        format: int64
+        description: User ID, can be used to change instance owner.
+        example: 5
+  config:
+    $ref: instancesConfigCustomOptions.yaml

@@ -1,0 +1,158 @@
+get:
+  summary: List All Checks
+  description: Get a list of monitoring checks.
+  operationId: listChecks
+  tags:
+    - Checks
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/deleted.yaml
+  responses:
+    '200':
+      description: Array of Checks
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                checks:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/check.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Checks Response:
+              value:
+                $ref: ../components/examples/checks.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Create a New Check
+  description: Create a new monitoring check.
+  operationId: addChecks
+  tags:
+    - Checks
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - check
+          properties:
+            check:
+              type: object
+              description: Payload for creating a new monitoring check
+              required:
+                - name
+                - checkType
+              oneOf:
+              - $ref: ../components/schemas/checkWeb.yaml
+              - $ref: ../components/schemas/checkSql.yaml
+              - $ref: ../components/schemas/checkSocket.yaml
+              - $ref: ../components/schemas/checkElastic.yaml
+              - $ref: ../components/schemas/checkPush.yaml
+        examples:
+          Check Request - Web:
+            value:
+              $ref: ../components/examples/checkWebRequest.json
+          Check Request - MySQL:
+            value:
+              $ref: ../components/examples/checkMysqlRequest.json
+          Check Request - SQL:
+            value:
+              $ref: ../components/examples/checkSqlRequest.json
+          Check Request - Postgres:
+            value:
+              $ref: ../components/examples/checkPostgresqlRequest.json
+          Check Request - Socket:
+            value:
+              $ref: ../components/examples/checkSocketRequest.json
+          Check Request - ElasticSearch:
+            value:
+              $ref: ../components/examples/checkElasticsearchRequest.json
+          Check Request - Push:
+            value:
+              $ref: ../components/examples/checkPushRequest.json
+  responses:
+    '200':
+      description: Check Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                check:
+                  $ref: ../components/schemas/check.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Check Response - Create Web Check:
+              value:
+                $ref: ../components/examples/checkWebSuccess.json
+            Check Response - Create Web Check with SSH Tunneling:
+              value:
+                $ref: ../components/examples/checkWebSshTunnelingSuccess.json                
+            Check Response - Create MySQL Check:
+              value:
+                $ref: ../components/examples/checkMysqlSuccess.json
+            Check Response - Create SQL Check:
+              value:
+                $ref: ../components/examples/checkSqlSuccess.json
+            Check Response - Create PostgreSQL Check:
+              value:
+                $ref: ../components/examples/checkPostgresqlSuccess.json
+            Check Response - Create Socket Check:
+              value:
+                $ref: ../components/examples/checkSocketSuccess.json
+            Check Response - Create ElasticSearch Check:
+              value:
+                $ref: ../components/examples/checkElasticsearchSuccess.json
+            Check Response - Create Push Check:
+              value:
+                $ref: ../components/examples/checkPushSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

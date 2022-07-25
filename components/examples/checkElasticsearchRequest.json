@@ -1,0 +1,7 @@
+{
+    "check": {
+      "name": "ES Check",
+      "checkType": {"code": "elasticSearchCheck"},
+      "config": {"esHost":"test.example.org","esPort": "9200"}
+    }
+  }

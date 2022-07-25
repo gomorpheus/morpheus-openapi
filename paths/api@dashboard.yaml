@@ -5,8 +5,6 @@ get:
   operationId: dashboard
   tags:
     - Dashboard
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#dashboard
   responses:
     '200':
       description: Successful Request

@@ -5,8 +5,6 @@ get:
   operationId: listBudgets
   tags:
     - Budgets
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-budgets
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
@@ -59,8 +57,6 @@ post:
   operationId: addBudgets
   tags:
     - Budgets
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#create-a-budget
   requestBody:
     content:
       application/json:

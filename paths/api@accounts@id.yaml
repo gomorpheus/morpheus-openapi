@@ -1,11 +1,11 @@
-parameters:
-  - $ref: ../components/parameters/id-path.yaml
 get:
   summary: Get tenant
   description: Get details about a tenant
   operationId: getTenant
   tags:
     - Tenants
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Tenant Object
@@ -46,6 +46,8 @@ put:
   operationId: updateTenant
   tags:
     - Tenants
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
   requestBody:
     content:
       application/json:
@@ -61,9 +63,8 @@ put:
                   type: string
                   description: Name
                 description:
-                  type:
-                  - "string"
-                  - "null"
+                  type: string
+                  nullable: true
                   description: Description
                 role:
                   type: object
@@ -75,9 +76,8 @@ put:
                       type: integer
                       format: int64
                 subdomain:
-                  type:
-                  - "string"
-                  - "null"
+                  type: string
+                  nullable: true
                   description: >-
                     The subdomain. This will be part of the login URL and
                     username for sub tenant users.
@@ -138,6 +138,7 @@ delete:
       schema:
         type: boolean
         default: false
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Tenant Deletion Object

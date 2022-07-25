@@ -1,0 +1,188 @@
+get:
+  summary: Get a Specific Check
+  description: Get details about a specific monitoring check.
+  operationId: getChecks
+  tags:
+    - Checks
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Checks Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              check:
+                $ref: ../components/schemas/check.yaml
+          examples:
+            Check Response:
+              value:
+                $ref: ../components/examples/checkWeb.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Updates a Check
+  description: Updates a monitoring check.
+  operationId: updateChecks
+  tags:
+    - Checks
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - check
+          properties:
+            check:
+              type: object
+              description: Payload for updating a monitoring check
+              required:
+                - name
+                - checkType
+              oneOf:
+              - $ref: ../components/schemas/checkWeb.yaml
+              - $ref: ../components/schemas/checkSql.yaml
+              - $ref: ../components/schemas/checkSocket.yaml
+              - $ref: ../components/schemas/checkElastic.yaml
+              - $ref: ../components/schemas/checkPush.yaml
+        examples:
+          Check Request - Web:
+            value:
+              $ref: ../components/examples/checkWebRequest.json
+          Check Request - MySQL:
+            value:
+              $ref: ../components/examples/checkMysqlRequest.json
+          Check Request - SQL:
+            value:
+              $ref: ../components/examples/checkSqlRequest.json
+          Check Request - Postgres:
+            value:
+              $ref: ../components/examples/checkPostgresqlRequest.json
+          Check Request - Socket:
+            value:
+              $ref: ../components/examples/checkSocketRequest.json
+          Check Request - ElasticSearch:
+            value:
+              $ref: ../components/examples/checkElasticsearchRequest.json
+          Check Request - Push:
+            value:
+              $ref: ../components/examples/checkPushRequest.json
+  responses:
+    '200':
+      description: Check Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                check:
+                  $ref: ../components/schemas/check.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Check Response - Update Web:
+              value:
+                $ref: ../components/examples/checkWebSuccess.json
+            Check Response -  Web Check with SSH Tunneling:
+              value:
+                $ref: ../components/examples/checkWebSshTunnelingSuccess.json                
+            Check Response - Update MySQL Check:
+              value:
+                $ref: ../components/examples/checkMysqlSuccess.json
+            Check Response - Update SQL Check:
+              value:
+                $ref: ../components/examples/checkSqlSuccess.json
+            Check Response - Update PostgreSQL Check:
+              value:
+                $ref: ../components/examples/checkPostgresqlSuccess.json
+            Check Response - Update Socket Check:
+              value:
+                $ref: ../components/examples/checkSocketSuccess.json
+            Check Response - Update ElasticSearch Check:
+              value:
+                $ref: ../components/examples/checkElasticsearchSuccess.json
+            Check Response - Update Push Check:
+              value:
+                $ref: ../components/examples/checkPushSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Delete a Specific Check
+  description: Delete an existing monitoring check.
+  operationId: deleteChecks
+  tags:
+    - Checks
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Success Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Check Response - Delete:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

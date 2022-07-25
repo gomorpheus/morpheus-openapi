@@ -1,0 +1,7 @@
+name: objectId
+in: query
+description: Filter by objectId
+schema:
+  type: integer
+  format: int64
+example: 15

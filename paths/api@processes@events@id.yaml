@@ -5,8 +5,6 @@ get:
   operationId: getHistoryEvent
   tags:
     - History
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-specific-process-event
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

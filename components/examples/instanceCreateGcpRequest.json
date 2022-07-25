@@ -1,0 +1,54 @@
+{
+    "zoneId": 143,
+    "instance": {
+      "name": "nctest1",
+      "cloud": "Google Labs",
+      "site": {
+        "id": 2
+      },
+      "type": "ubuntu",
+      "instanceType": {
+        "code": "ubuntu"
+      },
+      "instanceContext": "dev",
+      "labels": [
+        "label1"
+      ],
+      "layout": {
+        "id": 2677,
+        "code": "google.layout.public.template.20.04.ubuntu"
+      },
+      "plan": {
+        "id": 50,
+        "code": "google-standard-1",
+        "name": "n1-standard-1 - 1 vCPU, 3.75GB Memory"
+      }
+    },
+    "config": {
+      "googleZoneId": 71,
+      "resourcePoolId": 3772,
+      "externalIpType": -1,
+      "serviceAccount": "default",
+      "accessScope": "default",
+      "createUser": true
+    },
+    "volumes": [
+      {
+        "id": -1,
+        "rootVolume": true,
+        "name": "root",
+        "size": 100,
+        "sizeId": null,
+        "storageType": 70,
+        "datastoreId": null
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "network": {
+          "id": "subnet-12542"
+        }
+      }
+    ],
+    "layoutSize": 1
+  }

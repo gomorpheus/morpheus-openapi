@@ -1,0 +1,139 @@
+get:
+  summary: Retrieves a Specific Instance
+  description: Retrieves a specific instance.
+  operationId: getInstance
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/detailsTrue.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              instance:
+                $ref: ../components/schemas/instance.yaml
+          examples:
+            Instance Response:
+              value:
+                $ref: ../components/examples/instance.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+put:
+  summary: Updating an Instance
+  description: Updating an Instance
+  operationId: updateInstance
+  tags: 
+    -  Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../components/schemas/instanceUpdate.yaml
+        examples:
+          Instance Update:
+            value:
+              $ref: ../components/examples/instanceUpdate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json: 
+          schema:
+            allOf:   
+              - oneOf: 
+                - $ref: ../components/schemas/instanceUpdateSuccess.yaml
+                - $ref: ../components/schemas/successError.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Instance Update - VMWare:
+              value:
+                $ref: ../components/examples/instanceUpdateVmwareSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Delete an instance
+  description: Will delete an instance and all associated monitors and backups.
+  operationId: deleteInstance
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/preserveVolumes.yaml
+    - $ref: ../components/parameters/keepBackups.yaml
+    - $ref: ../components/parameters/releaseEIPs.yaml
+    - $ref: ../components/parameters/force.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

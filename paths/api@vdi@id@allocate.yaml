@@ -21,7 +21,7 @@ post:
               properties:
                 desktop:
                   $ref: ../components/schemas/vdi.yaml
-              $ref: ../components/schemas/200-success.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
             Create VDI Allocation Response:
               value:

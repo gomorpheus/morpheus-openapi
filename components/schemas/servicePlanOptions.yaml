@@ -1,0 +1,18 @@
+type: object
+description: Map of custom options depending on selected service plan.
+properties:
+  maxCores:
+    type: integer
+    format: int64
+    description: Core Count
+    example: 2
+  coresPerSocket:
+    type: integer
+    format: int64
+    description: Cores Per Socket
+    example: 1
+  maxMemory:
+    type: integer
+    format: int64
+    description: Memory in bytes For backwards compatability, values less than 1048576 are treated as being in MB and will be converted to bytes
+    example: 536870912

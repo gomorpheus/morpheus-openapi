@@ -1,0 +1,150 @@
+get:
+  summary: List All Incidents
+  description: Get a list of monitoring incidents.
+  operationId: listIncidents
+  tags:
+    - Incidents
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/severity.yaml
+  responses:
+    '200':
+      description: Array of Incidents
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                incidents:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/incident.yaml
+            - type: object
+              properties:
+                issues:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/issue.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Incidents Response:
+              value:
+                $ref: ../components/examples/incidents.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Create a New Incident
+  description: Create a new incident.
+  operationId: addIncident
+  tags:
+    - Incidents
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - incident
+          properties:
+            incident:
+              type: object
+              description: Payload for creating a new incident
+              required:
+                - name
+              properties:
+                resolution:
+                  type: string
+                  description: Description of the resolution to this incident
+                  example: I plugged it back in
+                comment:
+                  type: string
+                  description: Comment on this incident, updates summary field
+                  example: This is a summary of the incident
+                status:
+                  type: string
+                  description: Set status
+                  enum:
+                    - open
+                    - closed
+                severity:
+                  type: string
+                  description: Set severity
+                  enum:
+                    - info
+                    - warning
+                    - critical
+                name:
+                  type: string
+                  description: Set display name
+                  example: Incident Name
+                startDate:
+                  type: string
+                  format: date-time
+                  description: Set start time
+                  example: '2019-10-20T19:42:00Z'
+                endDate:
+                  type: string
+                  format: date-time
+                  description: Set start time
+                  example: '2019-10-20T19:42:00Z'
+                inUptime:
+                  type: boolean
+                  description: Set 'In Availability'
+                  example: true
+  responses:
+    '200':
+      description: Incident Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                incident:
+                  $ref: ../components/schemas/incident.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Incident Response - Create:
+              value:
+                $ref: ../components/examples/incident.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

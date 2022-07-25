@@ -1,0 +1,57 @@
+{
+    "zoneId": 15,
+    "instance": {
+      "name": "test2",
+      "cloud": "vcenter1 - homelab",
+      "site": {
+        "id": 1
+      },
+      "type": "ubuntu",
+      "instanceType": {
+        "code": "ubuntu"
+      },
+      "instanceContext": "dev",
+      "labels": [
+        "ubuntuserver"
+      ],
+      "layout": {
+        "id": 1399,
+        "code": "vmware-ubuntu-20.04-single"
+      },
+      "plan": {
+        "id": 361,
+        "code": "vm-512",
+        "name": "1 CPU, 512MB Memory"
+      },
+      "userGroup": {
+        "id": 1
+      }
+    },
+    "config": {
+      "resourcePoolId": 75,
+      "hostId": "",
+      "vmwareFolderId": "group-v90002",
+      "nestedVirtualization": "off",
+      "createUser": true
+    },
+    "volumes": [
+      {
+        "id": -1,
+        "rootVolume": true,
+        "name": "root",
+        "size": 10,
+        "sizeId": null,
+        "storageType": 1,
+        "datastoreId": 59
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "network": {
+          "id": "network-110"
+        },
+        "networkInterfaceTypeId": 4
+      }
+    ],
+    "layoutSize": 1
+  }

@@ -1,0 +1,52 @@
+put:
+  summary: Mute All Check Apps
+  description: Mute all existing check apps.
+  operationId: updateMuteAllCheckApps
+  tags:
+    - Checks
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - muted
+          properties:
+            muted:
+              type: boolean
+              description: Set to false to unmute
+              default: true
+  responses:
+    '200':
+      description: Mute All Check Apps Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                $ref: ../components/schemas/mutedAll.yaml
+          examples:
+            Check Apps Response - Mute All:
+              value:
+                $ref: ../components/examples/mutedAll.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

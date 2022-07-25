@@ -1,0 +1,125 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int32
+  name: 
+    type: string
+  value: 
+    type: integer
+    format: int32
+  code: 
+    type: string
+  maxStorage: 
+    type: integer
+    format: int64
+  maxMemory: 
+    type: integer
+    format: int32
+  maxCpu: 
+    type: integer
+    format: int32
+  maxCores: 
+    type: integer
+    format: int32
+  customCpu: 
+    type: boolean
+  customMaxMemory: 
+    type: boolean
+  customMaxStorage: 
+    type: boolean
+  customMaxDataStorage: 
+    type: boolean
+  customCoresPerSocket: 
+    type: boolean
+  coresPerSocket: 
+    type: integer
+    format: int32
+  storageTypes: 
+    type: array
+    items: 
+      $ref: instanceServicePlanStorageType.yaml
+  rootStorageTypes: 
+    type: array
+    items: 
+      $ref: instanceServicePlanStorageType.yaml
+  addVolumes: 
+    type: boolean
+  customizeVolume: 
+    type: boolean
+  rootDiskCustomizable: 
+    type: boolean
+  noDisks: 
+    type: boolean
+  hasDatastore: 
+    type: boolean
+  minDisk: 
+    type: integer
+    format: int32
+  maxDisk: 
+    type: string
+    nullable: true
+  lvmSupported: 
+    type: boolean
+  datastores: 
+    type: object
+    properties: 
+      cluster: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int32
+            name: 
+              type: string
+      store: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int32
+            name: 
+              type: string
+  supportsAutoDatastore: 
+    type: boolean
+  autoOptions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: string
+        name: 
+          type: string
+  cpuOptions: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+  coreOptions: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+  memoryOptions: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+  rootCustomSizeOptions: 
+    type: object
+    nullable: true  
+  customSizeOptions: 
+    type: object
+    nullable: true  
+  customCores: 
+    type: boolean
+  maxDisks: 
+    type: string
+    nullable: true
+  memorySizeType: 
+    type: string

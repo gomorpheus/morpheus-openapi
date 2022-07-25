@@ -1,0 +1,7 @@
+name: releaseEIPs
+in: query
+description: Release EIPs
+schema:
+  type: string
+  default: "on"
+example: "off"

@@ -1,0 +1,755 @@
+{
+  "instances": [
+      {
+          "id": 55046,
+          "uuid": "14825b19-0060-4d12-89a3-b53712798e42",
+          "accountId": 3,
+          "tenant": {
+              "id": 3,
+              "name": "Morpheus"
+          },
+          "instanceType": {
+              "id": 278,
+              "code": "mongodb",
+              "category": "nosql",
+              "name": "MongoDB"
+          },
+          "group": {
+              "id": 2,
+              "name": "Demo"
+          },
+          "cloud": {
+              "id": 172,
+              "name": "VMware Demo Cluster H5"
+          },
+          "containers": [
+              753159
+          ],
+          "servers": [
+              269539
+          ],
+          "connectionInfo": [
+              {
+                  "ip": "10.32.21.58",
+                  "port": null
+              }
+          ],
+          "layout": {
+              "id": 2357,
+              "name": "MongoDB",
+              "provisionTypeId": 5,
+              "provisionTypeCode": "vmware"
+          },
+          "plan": {
+              "id": 149,
+              "code": "vm-8192",
+              "name": "2 CPU, 8GB Memory"
+          },
+          "name": "admmon1004",
+          "description": null,
+          "environment": "demo",
+          "config": {
+              "createUser": true,
+              "isEC2": false,
+              "isVpcSelectable": true,
+              "noAgent": false,
+              "smbiosAssetTag": null,
+              "nestedVirtualization": null,
+              "vmwareFolderId": "/",
+              "customOptions": {
+                  "mongodb_username": "root",
+                  "mongodb_password": "************",
+                  "environment": "3",
+                  "mongodb_version": "4.2",
+                  "mongodb_passwordHash": "27722dfd03d0749dbd6aefbf21cc6a018f7876b6e6f821b8541356c15101abce"
+              },
+              "resourcePoolId": 4080,
+              "poolProviderType": null,
+              "userGroup": {
+                  "id": ""
+              },
+              "expireDays": "2",
+              "shutdownDays": "1",
+              "name": "${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}",
+              "hostName": "${userInitials.toLowerCase()}dm${type.take(3).toLowerCase()}${sequence+1000}",
+              "instanceType": {
+                  "code": null
+              },
+              "site": {
+                  "id": 2
+              },
+              "environmentPrefix": null,
+              "layout": {
+                  "id": 2357,
+                  "code": "68ed64b3-e18f-4214-8f21-021e794cd9a3"
+              },
+              "type": "mongodb",
+              "instanceContext": "demo",
+              "memoryDisplay": "MB",
+              "expose": [],
+              "createBackup": true,
+              "backup": {
+                  "createBackup": true,
+                  "jobAction": "new",
+                  "jobRetentionCount": "1",
+                  "providerBackupType": -1
+              },
+              "replicationGroup": {
+                  "providerMethod": "new"
+              },
+              "layoutSize": 1,
+              "lbInstances": []
+          },
+          "configGroup": null,
+          "configId": null,
+          "configRole": null,
+          "volumes": [
+              {
+                  "controllerId": 2144270,
+                  "datastoreId": "autoCluster",
+                  "displayOrder": 0,
+                  "id": 2618586,
+                  "uuid": "3076a8e3-1256-4d23-acaa-be313ecbe88e",
+                  "maxIOPS": null,
+                  "maxStorage": 85899345920,
+                  "name": "root",
+                  "shortName": "root",
+                  "resizeable": true,
+                  "planResizable": true,
+                  "rootVolume": true,
+                  "size": 80,
+                  "storageType": 1,
+                  "unitNumber": "0",
+                  "controllerMountPoint": "2144270:0:4:0"
+              }
+          ],
+          "controllers": [
+              {
+                  "id": 2144270,
+                  "name": "SCSI controller 0",
+                  "type": {
+                      "id": 4,
+                      "code": "vmware-lsiLogic",
+                      "name": "SCSI LSI Logic Parallel"
+                  },
+                  "maxDevices": 15,
+                  "reservedUnitNumber": 7
+              },
+              {
+                  "id": 2144271,
+                  "name": "IDE 0",
+                  "type": {
+                      "id": 2,
+                      "code": "vmware-ide",
+                      "name": "IDE"
+                  },
+                  "maxDevices": 2,
+                  "reservedUnitNumber": -1
+              },
+              {
+                  "id": 2144272,
+                  "name": "IDE 1",
+                  "type": {
+                      "id": 2,
+                      "code": "vmware-ide",
+                      "name": "IDE"
+                  },
+                  "maxDevices": 2,
+                  "reservedUnitNumber": -1
+              }
+          ],
+          "interfaces": [
+              {
+                  "id": "network-135357",
+                  "network": {
+                      "id": 135357,
+                      "group": null,
+                      "subnet": null,
+                      "dhcpServer": true,
+                      "name": "VLAN0002 - Internal Server 2",
+                      "pool": {
+                          "id": 281,
+                          "name": "10.32.20.0 /22"
+                      }
+                  },
+                  "ipAddress": null,
+                  "networkInterfaceTypeId": 4,
+                  "ipMode": ""
+              }
+          ],
+          "customOptions": {
+              "mongodb_username": "root",
+              "mongodb_password": "*********",
+              "environment": "3",
+              "mongodb_version": "4.2"
+          },
+          "instanceVersion": "1.0",
+          "labels": [],
+          "tags": [],
+          "evars": [
+              {
+                  "name": "MONGODB_IP",
+                  "value": "10.32.21.58",
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "MONGODB_HOST",
+                  "value": "container753159",
+                  "export": true,
+                  "masked": false
+              }
+          ],
+          "maxMemory": 8589934592,
+          "maxStorage": 85899345920,
+          "maxCores": 2,
+          "coresPerSocket": 1,
+          "maxCpu": null,
+          "hourlyCost": 0.0,
+          "hourlyPrice": 0.0,
+          "instancePrice": {
+              "price": 43.999979520,
+              "cost": 43.999979520,
+              "currency": "USD",
+              "unit": "month"
+          },
+          "dateCreated": "2022-07-08T05:11:07Z",
+          "lastUpdated": "2022-07-08T19:00:03Z",
+          "hostName": "admmon1004",
+          "domainName": null,
+          "environmentPrefix": null,
+          "firewallEnabled": true,
+          "networkLevel": "container",
+          "autoScale": false,
+          "instanceContext": "demo",
+          "currentDeployId": null,
+          "locked": false,
+          "status": "running",
+          "statusMessage": null,
+          "errorMessage": null,
+          "statusDate": "2022-07-08T05:15:48Z",
+          "statusPercent": null,
+          "statusEta": null,
+          "userStatus": null,
+          "expireDays": 2,
+          "renewDays": 4,
+          "expireCount": 0,
+          "expireDate": "2022-07-10T05:11:07Z",
+          "expireWarningDate": "2022-07-09T05:11:07Z",
+          "expireWarningSent": false,
+          "shutdownDays": 1,
+          "shutdownRenewDays": 1,
+          "shutdownCount": 0,
+          "shutdownDate": "2022-07-09T05:11:07Z",
+          "shutdownWarningDate": "2022-07-08T05:11:07Z",
+          "shutdownWarningSent": true,
+          "removalDate": null,
+          "createdBy": {
+              "id": 286,
+              "username": "svcservicenow"
+          },
+          "owner": {
+              "id": 286,
+              "username": "svcservicenow"
+          },
+          "notes": null,
+          "stats": {
+              "usedStorage": 3030241280,
+              "maxStorage": 85899345920,
+              "usedMemory": 695328000,
+              "maxMemory": 8009268000,
+              "usedCpu": 0.3424371503,
+              "cpuUsage": 0.3424371503,
+              "cpuUsagePeak": 0.3424371503,
+              "cpuUsageAvg": 0.3424371503
+          },
+          "powerSchedule": null,
+          "isScalable": false,
+          "instanceThreshold": null,
+          "isBusy": false,
+          "apps": []
+      },
+      {
+          "id": 51714,
+          "uuid": "0aec011b-a599-4fd1-911a-4fcc37c73134",
+          "accountId": 3,
+          "tenant": {
+              "id": 3,
+              "name": "Morpheus"
+          },
+          "instanceType": {
+              "id": 6,
+              "code": "ubuntu",
+              "category": "os",
+              "name": "Ubuntu"
+          },
+          "group": {
+              "id": 50,
+              "name": "Production"
+          },
+          "cloud": {
+              "id": 12,
+              "name": "AWS"
+          },
+          "containers": [
+              749153
+          ],
+          "servers": [
+              264223
+          ],
+          "connectionInfo": [
+              {
+                  "ip": "0.0.0.0",
+                  "port": 22
+              }
+          ],
+          "layout": {
+              "id": 2136,
+              "name": "Amazon VM",
+              "provisionTypeId": 11,
+              "provisionTypeCode": "amazon"
+          },
+          "plan": {
+              "id": 1205,
+              "code": "amazon-t2.2xlarge",
+              "name": "T2 2xlarge - 8 Core, 32GB Memory"
+          },
+          "name": "asdmubu1013",
+          "description": null,
+          "environment": null,
+          "config": {
+              "poolProviderType": null,
+              "isVpcSelectable": false,
+              "instanceProfile": null,
+              "isEC2": false,
+              "resourcePoolId": 129,
+              "availabilityId": null,
+              "publicIpType": "elasticIp",
+              "createUser": false,
+              "securityId": null,
+              "kmsKeyId": null,
+              "expose": [],
+              "noAgent": false,
+              "securityGroups": [
+                  {
+                      "id": "sg-06f57058cdfdf0475"
+                  }
+              ],
+              "customOptions": {},
+              "createBackup": true,
+              "memoryDisplay": "MB",
+              "backup": {
+                  "backupRepository": 3,
+                  "veeamManagedServer": "",
+                  "jobSchedule": 2,
+                  "createBackup": true,
+                  "jobAction": "new",
+                  "jobRetentionCount": "1",
+                  "providerBackupType": 11,
+                  "target": 7
+              },
+              "shutdownDays": "1",
+              "expireDays": "2",
+              "layoutSize": 1,
+              "lbInstances": []
+          },
+          "configGroup": null,
+          "configId": null,
+          "configRole": null,
+          "volumes": [
+              {
+                  "controllerId": null,
+                  "datastoreId": null,
+                  "displayOrder": 0,
+                  "id": 2610036,
+                  "uuid": "e6bb58cf-ef1e-40c3-8c9b-2aa4eecaec61",
+                  "maxIOPS": null,
+                  "maxStorage": 85899345920,
+                  "name": "root",
+                  "shortName": "root",
+                  "resizeable": true,
+                  "planResizable": true,
+                  "rootVolume": true,
+                  "size": 80,
+                  "storageType": 6,
+                  "unitNumber": null,
+                  "controllerMountPoint": null
+              }
+          ],
+          "controllers": [],
+          "interfaces": [
+              {
+                  "id": "networkGroup-2",
+                  "network": {
+                      "id": null,
+                      "group": 2,
+                      "subnet": null,
+                      "dhcpServer": null,
+                      "name": null,
+                      "pool": null
+                  },
+                  "ipAddress": null,
+                  "networkInterfaceTypeId": null,
+                  "ipMode": null
+              }
+          ],
+          "customOptions": {},
+          "instanceVersion": "20.04",
+          "labels": [],
+          "tags": [
+              {
+                  "id": 13824708,
+                  "name": "application",
+                  "value": null
+              }
+          ],
+          "evars": [
+              {
+                  "name": "UBUNTU_IP",
+                  "value": "0.0.0.0",
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_HOST",
+                  "value": "container749153",
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_PORT_SSH",
+                  "value": 22,
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_PORT_22_TCP_PORT",
+                  "value": 22,
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_PORT_22_TCP_PROTO",
+                  "value": "tcp",
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_PORT_22_TCP_ADDR",
+                  "value": "0.0.0.0",
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_PORT_22_TCP",
+                  "value": "tcp://0.0.0.0:22",
+                  "export": true,
+                  "masked": false
+              }
+          ],
+          "maxMemory": 34359738368,
+          "maxStorage": 85899345920,
+          "maxCores": 8,
+          "coresPerSocket": null,
+          "maxCpu": null,
+          "hourlyCost": 0.0,
+          "hourlyPrice": 0.0,
+          "instancePrice": {
+              "price": 332.851200000,
+              "cost": 332.851200000,
+              "currency": "USD",
+              "unit": "month"
+          },
+          "dateCreated": "2022-06-16T06:58:53Z",
+          "lastUpdated": "2022-06-28T19:28:01Z",
+          "hostName": "asdmubu1013",
+          "domainName": null,
+          "environmentPrefix": null,
+          "firewallEnabled": true,
+          "networkLevel": "container",
+          "autoScale": false,
+          "instanceContext": null,
+          "currentDeployId": null,
+          "locked": false,
+          "status": "denied",
+          "statusMessage": null,
+          "errorMessage": null,
+          "statusDate": "2022-06-16T07:17:23Z",
+          "statusPercent": null,
+          "statusEta": null,
+          "userStatus": null,
+          "expireDays": 2,
+          "renewDays": 4,
+          "expireCount": 0,
+          "expireDate": "2022-06-18T06:58:53Z",
+          "expireWarningDate": "2022-06-17T06:58:53Z",
+          "expireWarningSent": false,
+          "shutdownDays": 1,
+          "shutdownRenewDays": 1,
+          "shutdownCount": 0,
+          "shutdownDate": "2022-06-17T06:58:53Z",
+          "shutdownWarningDate": "2022-06-16T06:58:53Z",
+          "shutdownWarningSent": false,
+          "removalDate": null,
+          "createdBy": {
+              "id": 336,
+              "username": "Alexander Schembri"
+          },
+          "owner": {
+              "id": 336,
+              "username": "Alexander Schembri"
+          },
+          "notes": null,
+          "stats": {
+              "usedStorage": 0,
+              "maxStorage": 85899345920,
+              "usedMemory": 0,
+              "maxMemory": 34359738368,
+              "usedCpu": 0.0,
+              "cpuUsage": 0,
+              "cpuUsagePeak": 0.0,
+              "cpuUsageAvg": 0
+          },
+          "powerSchedule": null,
+          "isScalable": true,
+          "instanceThreshold": {
+              "id": 1419,
+              "autoUp": true,
+              "autoDown": true,
+              "minCount": 1,
+              "maxCount": 2,
+              "cpuEnabled": false,
+              "minCpu": 0.0,
+              "maxCpu": 0.0,
+              "memoryEnabled": true,
+              "minMemory": 1.0,
+              "maxMemory": 2.0,
+              "diskEnabled": false,
+              "minDisk": 0.0,
+              "maxDisk": 0.0,
+              "minNetwork": null,
+              "networkEnabled": false,
+              "iopsEnabled": false,
+              "minIops": null,
+              "maxIops": null,
+              "comment": null,
+              "zoneId": 12,
+              "dateCreated": "2022-06-16T06:58:53Z",
+              "lastUpdated": "2022-06-16T06:58:53Z"
+          },
+          "isBusy": false,
+          "apps": []
+      },
+      {
+          "id": 54967,
+          "uuid": "f012ac3c-d021-4be7-8b73-ae0a0c7ddc86",
+          "accountId": 3,
+          "tenant": {
+              "id": 3,
+              "name": "Morpheus"
+          },
+          "instanceType": {
+              "id": 6,
+              "code": "ubuntu",
+              "category": "os",
+              "name": "Ubuntu"
+          },
+          "group": {
+              "id": 2,
+              "name": "Demo"
+          },
+          "cloud": {
+              "id": 175,
+              "name": "AliCloud"
+          },
+          "containers": [
+              752572
+          ],
+          "servers": [
+              267872
+          ],
+          "connectionInfo": [
+              {
+                  "ip": "0.0.0.0",
+                  "port": 22
+              }
+          ],
+          "layout": {
+              "id": 2555,
+              "name": "Alibaba Ubuntu 18.04",
+              "provisionTypeId": 38,
+              "provisionTypeCode": "alibaba"
+          },
+          "plan": {
+              "id": 5353,
+              "code": "alibaba.flavor.175.ecs.s6-c1m2.small",
+              "name": "ecs.s6-c1m2.small"
+          },
+          "name": "asdmubu1014",
+          "description": null,
+          "environment": null,
+          "config": {
+              "poolProviderType": null,
+              "alibabaSecurityGroup": 45872,
+              "isVpcSelectable": true,
+              "internetAccess": "elasticIp",
+              "isEC2": false,
+              "resourcePoolId": 4549,
+              "createUser": false,
+              "expose": [],
+              "noAgent": false,
+              "customOptions": {},
+              "createBackup": true,
+              "memoryDisplay": "MB",
+              "backup": {
+                  "createBackup": true,
+                  "jobAction": "new",
+                  "jobRetentionCount": "1",
+                  "providerBackupType": -1
+              },
+              "shutdownDays": "1",
+              "expireDays": "2",
+              "layoutSize": 1,
+              "lbInstances": []
+          },
+          "configGroup": null,
+          "configId": null,
+          "configRole": null,
+          "volumes": [
+              {
+                  "controllerId": null,
+                  "datastoreId": null,
+                  "displayOrder": 0,
+                  "id": 2614884,
+                  "uuid": "3242cacb-e063-4ac3-b444-b14f0d95b5dd",
+                  "maxIOPS": null,
+                  "maxStorage": 42949672960,
+                  "name": "root",
+                  "shortName": "root",
+                  "resizeable": true,
+                  "planResizable": true,
+                  "rootVolume": true,
+                  "size": 40,
+                  "storageType": 30,
+                  "unitNumber": null,
+                  "controllerMountPoint": null
+              }
+          ],
+          "controllers": [],
+          "interfaces": [
+              {
+                  "id": "network-135567",
+                  "network": {
+                      "id": 135567,
+                      "group": null,
+                      "subnet": null,
+                      "dhcpServer": true,
+                      "name": "labs_us-west-1_app_1a - labs_us-west-1",
+                      "pool": null
+                  },
+                  "ipAddress": null,
+                  "networkInterfaceTypeId": null,
+                  "ipMode": null
+              }
+          ],
+          "customOptions": {},
+          "instanceVersion": "18.04",
+          "labels": [],
+          "tags": [
+              {
+                  "id": 13831399,
+                  "name": "application",
+                  "value": null
+              }
+          ],
+          "evars": [
+              {
+                  "name": "UBUNTU_IP",
+                  "value": "0.0.0.0",
+                  "export": true,
+                  "masked": false
+              },
+              {
+                  "name": "UBUNTU_HOST",
+                  "value": "container752572",
+                  "export": true,
+                  "masked": false
+              }
+          ],
+          "maxMemory": 2147483648,
+          "maxStorage": 42949672960,
+          "maxCores": 1,
+          "coresPerSocket": null,
+          "maxCpu": null,
+          "hourlyCost": 0.0,
+          "hourlyPrice": 0.0,
+          "instancePrice": {
+              "price": 0.0,
+              "cost": 0.0,
+              "currency": null,
+              "unit": "month"
+          },
+          "dateCreated": "2022-06-23T07:32:57Z",
+          "lastUpdated": "2022-07-08T19:48:26Z",
+          "hostName": "asdmubu1014",
+          "domainName": null,
+          "environmentPrefix": null,
+          "firewallEnabled": true,
+          "networkLevel": "container",
+          "autoScale": false,
+          "instanceContext": null,
+          "currentDeployId": null,
+          "locked": false,
+          "status": "unknown",
+          "statusMessage": "InvalidTagValue.Malformed : The specified Tag.n.Value is not valid.\r\nRequestId : 6166B154-1D21-3B7C-ABE6-C1F9E18B3D69",
+          "errorMessage": null,
+          "statusDate": "2022-06-23T07:33:00Z",
+          "statusPercent": null,
+          "statusEta": null,
+          "userStatus": null,
+          "expireDays": 2,
+          "renewDays": 4,
+          "expireCount": 0,
+          "expireDate": "2022-06-25T07:32:56Z",
+          "expireWarningDate": "2022-06-24T07:32:56Z",
+          "expireWarningSent": false,
+          "shutdownDays": 1,
+          "shutdownRenewDays": 1,
+          "shutdownCount": 0,
+          "shutdownDate": "2022-06-24T07:32:56Z",
+          "shutdownWarningDate": "2022-06-23T07:32:56Z",
+          "shutdownWarningSent": false,
+          "removalDate": null,
+          "createdBy": {
+              "id": 336,
+              "username": "Alexander Schembri"
+          },
+          "owner": {
+              "id": 336,
+              "username": "Alexander Schembri"
+          },
+          "notes": null,
+          "stats": {
+              "usedStorage": 0,
+              "maxStorage": 42949672960,
+              "usedMemory": 0,
+              "maxMemory": 2147483648,
+              "usedCpu": 0.0,
+              "cpuUsage": 0,
+              "cpuUsagePeak": 0.0,
+              "cpuUsageAvg": 0
+          },
+          "powerSchedule": null,
+          "isScalable": true,
+          "instanceThreshold": null,
+          "isBusy": false,
+          "apps": []
+      }
+  ],
+  "meta": {
+      "offset": 0,
+      "max": 3,
+      "size": 3,
+      "total": 25
+  }
+}

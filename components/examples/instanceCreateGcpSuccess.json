@@ -1,0 +1,173 @@
+{
+  "instance": {
+      "id": 55076,
+      "uuid": "79bb067d-fd81-4d52-974b-3f4325464592",
+      "accountId": 3,
+      "tenant": {
+          "id": 3,
+          "name": "Morpheus"
+      },
+      "instanceType": {
+          "id": 6,
+          "code": "ubuntu",
+          "category": "os",
+          "name": "Ubuntu"
+      },
+      "group": {
+          "id": 2,
+          "name": "Demo"
+      },
+      "cloud": {
+          "id": 143,
+          "name": "Google Labs"
+      },
+      "containers": [
+          789961
+      ],
+      "servers": [
+          270685
+      ],
+      "connectionInfo": [
+          {
+              "ip": "0.0.0.0",
+              "port": 22
+          }
+      ],
+      "layout": {
+          "id": 2677,
+          "name": "Google Ubuntu 20.04",
+          "provisionTypeId": 20,
+          "provisionTypeCode": "google"
+      },
+      "plan": {
+          "id": 50,
+          "code": "google-standard-1",
+          "name": "n1-standard-1 - 1 vCPU, 3.75GB Memory"
+      },
+      "name": "ncdmubu1005",
+      "description": null,
+      "environment": "dev",
+      "config": {
+          "externalIpType": -1,
+          "resourcePoolId": 3772,
+          "accessScope": "default",
+          "serviceAccount": "default",
+          "createUser": true,
+          "googleZoneId": 71,
+          "customOptions": {},
+          "createBackup": true,
+          "memoryDisplay": "MB",
+          "layoutSize": 1,
+          "lbInstances": null
+      },
+      "configGroup": null,
+      "configId": null,
+      "configRole": null,
+      "volumes": [
+          {
+              "id": -1,
+              "name": "root",
+              "size": 100,
+              "sizeId": null,
+              "datastoreId": null,
+              "rootVolume": true,
+              "storageType": 70,
+              "maxIOPS": null,
+              "resizeable": null,
+              "controllerMountPoint": null
+          }
+      ],
+      "controllers": [],
+      "interfaces": [
+          {
+              "id": null,
+              "row": 0,
+              "network": {
+                  "id": 119532,
+                  "subnet": 12542,
+                  "group": null,
+                  "dhcpServer": true,
+                  "name": "default - default (10.162.0.0/20)",
+                  "pool": null
+              },
+              "ipAddress": null,
+              "ipMode": null,
+              "networkInterfaceTypeId": null
+          }
+      ],
+      "customOptions": {},
+      "instanceVersion": "20.04",
+      "labels": [
+          "label1"
+      ],
+      "tags": [],
+      "evars": [
+          {
+              "name": "UBUNTU_IP",
+              "value": "0.0.0.0",
+              "export": true,
+              "masked": false
+          },
+          {
+              "name": "UBUNTU_HOST",
+              "value": "container789961",
+              "export": true,
+              "masked": false
+          }
+      ],
+      "maxMemory": 3932160000,
+      "maxStorage": 107374182400,
+      "maxCores": 1,
+      "coresPerSocket": null,
+      "maxCpu": 1,
+      "hourlyCost": 0.0,
+      "hourlyPrice": 0.0,
+      "instancePrice": null,
+      "dateCreated": "2022-07-15T19:20:10Z",
+      "lastUpdated": "2022-07-15T19:20:11Z",
+      "hostName": "ncdmubu1005",
+      "domainName": null,
+      "environmentPrefix": null,
+      "firewallEnabled": true,
+      "networkLevel": "container",
+      "autoScale": false,
+      "instanceContext": "dev",
+      "currentDeployId": null,
+      "locked": false,
+      "status": "provisioning",
+      "statusMessage": null,
+      "errorMessage": null,
+      "statusDate": null,
+      "statusPercent": null,
+      "statusEta": null,
+      "userStatus": null,
+      "expireDays": 2,
+      "renewDays": 4,
+      "expireCount": 0,
+      "expireDate": "2022-07-17T19:20:10Z",
+      "expireWarningDate": "2022-07-16T19:20:10Z",
+      "expireWarningSent": false,
+      "shutdownDays": 1,
+      "shutdownRenewDays": 1,
+      "shutdownCount": 0,
+      "shutdownDate": "2022-07-16T19:20:10Z",
+      "shutdownWarningDate": "2022-07-15T19:20:10Z",
+      "shutdownWarningSent": false,
+      "removalDate": null,
+      "createdBy": {
+          "id": 28,
+          "username": "Nick C"
+      },
+      "owner": {
+          "id": 28,
+          "username": "Nick C"
+      },
+      "notes": null,
+      "powerSchedule": null,
+      "isScalable": null,
+      "instanceThreshold": null,
+      "isBusy": null,
+      "apps": []
+  },
+  "success": true
+}

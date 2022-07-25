@@ -1,0 +1,62 @@
+{
+    "incident": {
+        "id": 6420,
+        "account": {
+            "id": 1
+        },
+        "app": null,
+        "autoClose": true,
+        "channelId": "719bc097-9734-47fe-9e40-f66ed2b67df0",
+        "checkGroups": [
+            {
+                "id": 2815,
+                "name": "AnsibleTest-1"
+            }
+        ],
+        "checks": [],
+        "comment": null,
+        "displayName": "AnsibleTest-1",
+        "duration": null,
+        "endDate": null,
+        "inUptime": true,
+        "muted": false,
+        "lastCheckTime": "2022-07-04T04:03:00Z",
+        "lastError": "unheard from beyond check interval limit.",
+        "lastMessage": null,
+        "name": "AnsibleTest-1",
+        "resolution": null,
+        "severity": "critical",
+        "severityId": 20,
+        "startDate": "2022-07-04T04:03:00Z",
+        "status": "open",
+        "visibility": "private"
+    },
+    "issues": [
+        {
+            "id": 39999,
+            "attachmentType": "Group",
+            "app": null,
+            "available": false,
+            "check": null,
+            "checkGroup": {
+                "id": 2815,
+                "name": "AnsibleTest-1"
+            },
+            "checkStatus": null,
+            "endDate": null,
+            "health": 0,
+            "inUptime": true,
+            "incident": {
+                "id": 6420
+            },
+            "lastCheckTime": null,
+            "lastError": null,
+            "lastMessage": null,
+            "name": "AnsibleTest-1",
+            "severity": "critical",
+            "severityId": 10,
+            "startDate": "2022-07-04T04:03:00Z",
+            "status": "open"
+        }
+    ]
+}

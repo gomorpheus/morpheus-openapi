@@ -1,0 +1,121 @@
+get:
+  summary: List All Contacts
+  description: Get a list of monitoring contacts.
+  operationId: listContacts
+  tags:
+    - Contacts
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Array of Contacts
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                contacts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/contact.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Contacts Response:
+              value:
+                $ref: ../components/examples/contacts.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Create a New Contact
+  description: Create a new monitoring contact.
+  operationId: addContacts
+  tags:
+    - Contacts
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - contact
+          properties:
+            contact:
+              type: object
+              description: Payload for creating a new monitoring contact
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: Unique name scoped to your account for the contact
+                  example: John Smith
+                emailAddress:
+                  type: string
+                  description: Email notification address
+                  example: jsmith@email.com
+                smsAddress:
+                  type: string
+                  description: SMS notification address
+                  example: 555-555-5555
+                slackHook:
+                  type: string
+                  description: Slack Hook
+                  example: https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+  responses:
+    '200':
+      description: Contact Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                contact:
+                  $ref: ../components/schemas/contact.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Contact Response:
+              value:
+                $ref: ../components/examples/contactSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

@@ -1,1 +1,5 @@
 description: Object Not Found.
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/404-error.yaml

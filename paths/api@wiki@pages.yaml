@@ -5,8 +5,6 @@ get:
   operationId: listWiki
   tags:
     - Wiki
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-wiki-pages
   parameters:
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/phrase.yaml
@@ -24,7 +22,7 @@ get:
             Wiki Response:
               value:
                 $ref: ../components/examples/wikiPage.json
-            Blank Wiki Response:
+            Wiki Response - Blank:
               value:
                 $ref: ../components/examples/wikiEmpty.json
     '400':
@@ -79,8 +77,6 @@ post:
                   type: string
                   example: #Sample Doc
                     A sample document in **markdown**.
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#create-a-wiki-page
   responses:
     '200':
       description: Successful Request
@@ -97,7 +93,7 @@ post:
             Wiki Response:
               value:
                 $ref: ../components/examples/wikiAdd.json
-            Blank Wiki Response:
+            Wiki Response - Blank:
               value:
                 $ref: ../components/examples/wikiEmpty.json
     '400':

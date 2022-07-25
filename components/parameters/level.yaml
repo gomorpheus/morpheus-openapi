@@ -1,0 +1,10 @@
+name: level
+in: query
+description: Filter by log level. Multiple values can be passed pipe delimited.
+schema:
+  type: string
+  enum:
+    - DEBUG
+    - INFO
+    - ERROR
+example: ERROR

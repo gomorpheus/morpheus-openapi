@@ -1,0 +1,7 @@
+name: shutdownDate
+in: query
+description: Filter by shutdownDate less than equal to the specified date
+schema:
+  type: string
+  description: Shutdown date
+example: "2019-01-01"

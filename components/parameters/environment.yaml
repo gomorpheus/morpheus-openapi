@@ -1,0 +1,7 @@
+name: environment
+in: query
+description: The environment for filtering.
+schema:
+  type: string
+  description: Environment
+example: "lab"

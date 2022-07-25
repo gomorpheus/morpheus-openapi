@@ -5,8 +5,6 @@ get:
   operationId: getWikiCategories
   tags:
     - Wiki
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-all-wiki-categories
   parameters:
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/pagePhrase.yaml
@@ -21,7 +19,7 @@ get:
               categories:
                 $ref: ../components/schemas/wikiCategories.yaml
           examples:
-            Report Types Response:
+            Wiki Categories Response:
               value:
                 $ref: ../components/examples/wikiCategories.json
     '400':

@@ -19,7 +19,7 @@ get:
               desktop:
                 $ref: ../components/schemas/vdi.yaml
           examples:
-            Get VDI Response:
+            VDI Response:
               value:
                 $ref: ../components/examples/vdi.json
     '400':

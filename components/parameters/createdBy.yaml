@@ -1,0 +1,8 @@
+name: createdBy
+in: query
+description: The User ID for Filtering
+schema:
+  type: integer
+  format: int64
+  description: User ID
+example: 63

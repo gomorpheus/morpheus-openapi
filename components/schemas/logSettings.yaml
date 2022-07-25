@@ -5,11 +5,15 @@ properties:
   retentionDays: 
     type: string
   syslogRules: 
-    type:
-    - "array"
-    - "null"
-    example: '{"name": "foo","rule":"*.* @@localhost:4567"}'
+    type: array
+    nullable: true
+    items:
+      type: object
+    example: 
+      - name: "foo"
+        rule: "*.* @@localhost:4567"
   integrations: 
-    type:
-    - "array"
-    - "null"
+    type: array
+    nullable: true
+    items:
+      type: object

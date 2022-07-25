@@ -1,0 +1,44 @@
+type: object
+properties:
+  resourcePoolId:
+    type: integer
+    format: int64
+    description: External ID of the resource group to use for instance
+  availabilityOptions:
+    type: string
+    description: Availability Options
+    enum:
+      - "zone"
+      - "set"
+  availabilitySet:
+    type: string
+    description: Availability Set
+  availabilityZone:
+    type: integer
+    format: int64
+    description: Availability Zone
+  azurefloatingIp:
+    type: string
+    description: Assign Public IP
+    enum:
+      - "on"
+      - "off"
+  bootDiagnostics:
+    type: string
+    description: Boot Diagnostics
+    enum:
+      - "on"
+      - "off"
+  osGuestDiagnostics:
+    type: string
+    description: OS Guest Diagnostics
+    enum:
+      - "on"
+      - "off"
+  diagnosticsStorageAccount:
+    type: string
+    description: Diagnostics Storage Account
+  createUser:
+    type: boolean
+    description: Create User
+    default: true

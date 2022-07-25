@@ -24,8 +24,6 @@ post:
               type: string
               description: |
                 Specified as "username" or "tenantId\username" with proper HTML encoding and used in conjunction with `password`.
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#forgot-password
   responses:
     '200':
       description: Successful Request

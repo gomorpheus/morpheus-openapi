@@ -1,0 +1,7 @@
+name: expireDateMin
+in: query
+description: Filter expireDate greater than or equal to the specified date
+schema:
+  type: string
+  description: Expire date
+example: "2019-01-01"

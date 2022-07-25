@@ -1,0 +1,51 @@
+{
+    "zoneId": 26,
+    "instance": {
+      "name": "sadf",
+      "cloud": "azpersonal",
+      "site": {
+        "id": 1
+      },
+      "type": "ubuntu",
+      "instanceType": {
+        "code": "ubuntu"
+      },
+      "layout": {
+        "id": 1532,
+        "code": "ubuntu-azure-20.04-single"
+      },
+      "plan": {
+        "id": 821,
+        "code": "azure.plan.eastus.Standard_A1_v2",
+        "name": "Standard_A1_v2 (1 Core, 2GB Memory)"
+      }
+    },
+    "config": {
+      "resourcePoolId": 95,
+      "availabilityOptions": "",
+      "azurefloatingIp": "off",
+      "bootDiagnostics": "off",
+      "osGuestDiagnostics": "off",
+      "diagnosticsStorageAccount": "fece1b52b93a1490f835960",
+      "createUser": true
+    },
+    "volumes": [
+      {
+        "id": -1,
+        "rootVolume": true,
+        "name": "root",
+        "size": 32,
+        "sizeId": null,
+        "storageType": 27,
+        "datastoreId": 85
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "network": {
+          "id": "subnet-28"
+        }
+      }
+    ],
+    "layoutSize": 1
+  }

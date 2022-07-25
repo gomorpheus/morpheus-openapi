@@ -1,0 +1,22 @@
+# .github/workflows/spectral-lint.yml
+
+name: Run OpenAPI linters
+on: [push, workflow_dispatch]
+jobs:
+  redocly-lint-openapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Redocly Lint
+        uses: docker://redocly/openapi-cli:latest
+        with:
+          args: lint openapi.yaml
+
+  spectral-lint-openapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Spectral Lint
+        uses: docker://stoplight/spectral:latest
+        with:
+          args: lint -v -F hint "openapi.yaml" --ruleset ".spectral.json"

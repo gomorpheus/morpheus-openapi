@@ -1,0 +1,148 @@
+get:
+  summary: Get All Instances
+  description: |
+    This endpoint retrieves a paginated list of instances.
+  operationId: listInstances
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/instanceType.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/createdBy.yaml
+    - $ref: ../components/parameters/agentInstalled.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/environment.yaml
+    - $ref: ../components/parameters/showDeleted.yaml
+    - $ref: ../components/parameters/deleted.yaml
+    - $ref: ../components/parameters/expireDate.yaml
+    - $ref: ../components/parameters/expireDateMin.yaml
+    - $ref: ../components/parameters/expireDays.yaml
+    - $ref: ../components/parameters/expireDaysMin.yaml
+    - $ref: ../components/parameters/shutdownDate.yaml
+    - $ref: ../components/parameters/shutdownDateMin.yaml
+    - $ref: ../components/parameters/shutdownDays.yaml
+    - $ref: ../components/parameters/shutdownDaysMin.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/tags.yaml
+    - $ref: ../components/parameters/metadata.yaml
+    - $ref: ../components/parameters/detailsFalse.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instances:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/instance.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Instances Response:
+              value:
+                $ref: ../components/examples/instances.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create an Instance
+  description: Create an Instance
+  operationId: addInstance
+  tags: 
+    -  Instances
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../components/schemas/instanceCreate.yaml
+        examples:
+          Instance Request - VMWare:
+            value:
+              $ref: ../components/examples/instanceCreateVmwareRequest.json
+          Instance Request - Azure:
+            value:
+              $ref: ../components/examples/instanceCreateAzureRequest.json
+          Instance Request - AWS:
+            value:
+              $ref: ../components/examples/instanceCreateAwsRequest.json
+          Instance Request - GCP:
+            value:
+              $ref: ../components/examples/instanceCreateGcpRequest.json
+
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:   
+              - oneOf: 
+                - $ref: ../components/schemas/instanceCreateSuccess.yaml
+                - $ref: ../components/schemas/successError.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Instance Creation - VMWare:
+              value:
+                $ref: ../components/examples/instanceCreateVmwareSuccess.json
+            Successful Instance Creation - Azure:
+              value:
+                $ref: ../components/examples/instanceCreateAzureSuccess.json
+            Successful Instance Creation - AWS:
+              value:
+                $ref: ../components/examples/instanceCreateAwsSuccess.json
+            Successful Instance Creation - GCP:
+              value:
+                $ref: ../components/examples/instanceCreateGcpSuccess.json
+            Unsuccessful Instance Creation:
+              value:
+                $ref: ../components/examples/instanceCreateFail.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+                    
+
+            
+    
+  

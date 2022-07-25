@@ -5,8 +5,6 @@ get:
   operationId: getKeyPairs
   tags:
     - Key Pairs
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-specific-key-pair
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -50,8 +48,6 @@ delete:
   operationId: removeKeyPairs
   tags:
     - Key Pairs
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#delete-a-key-pair
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

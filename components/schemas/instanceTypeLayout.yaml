@@ -1,0 +1,115 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  instanceType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  code: 
+    type: string
+  name: 
+    type: string
+  instanceVersion: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  creatable: 
+    type: boolean
+  memoryRequirement: 
+    type: integer
+    format: int64
+  sortOrder: 
+    type: integer
+    format: int64
+  supportsConvertToManaged: 
+    type: boolean
+  provisionType: 
+    $ref: provisionType.yaml
+  taskSets: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  containerTypes: 
+    type: array
+    items: 
+      $ref: containerType.yaml
+  mounts: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  ports: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  optionTypes: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  environmentVariables: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  specTemplates: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  tfvarSecret: 
+    type: string
+    nullable: true
+    items:
+      type: object
+  permissions: 
+    type: object
+    properties: 
+      resourcePermissions: 
+        type: object
+        properties: 
+          defaultStore: 
+            type: boolean
+          allPlans: 
+            type: boolean
+          defaultTarget: 
+            type: boolean
+          canManage: 
+            type: boolean
+          all: 
+            type: boolean
+          account: 
+            type: object
+            properties: 
+              id: 
+                type: integer
+                format: int64
+          sites: 
+            type: array
+            nullable: true
+            items:
+              type: object
+          plans: 
+            type: array
+            nullable: true
+            items:
+              type: object

@@ -1,0 +1,7 @@
+name: groupId
+in: query
+description: If specified will return all zones assigned to a server group by id. Accepts multiple values.
+schema:
+  type: integer
+  format: int64
+example: 13

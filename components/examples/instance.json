@@ -1,0 +1,503 @@
+{
+    "instance": {
+        "id": 51714,
+        "uuid": "0aec011b-a599-4fd1-911a-4fcc37c73134",
+        "accountId": 3,
+        "tenant": {
+            "id": 3,
+            "name": "Morpheus"
+        },
+        "instanceType": {
+            "id": 6,
+            "code": "ubuntu",
+            "category": "os",
+            "name": "Ubuntu"
+        },
+        "group": {
+            "id": 50,
+            "name": "Production"
+        },
+        "cloud": {
+            "id": 12,
+            "name": "AWS"
+        },
+        "containers": [
+            749153
+        ],
+        "servers": [
+            264223
+        ],
+        "connectionInfo": [
+            {
+                "ip": "0.0.0.0",
+                "port": 22
+            }
+        ],
+        "layout": {
+            "id": 2136,
+            "name": "Amazon VM",
+            "provisionTypeId": 11,
+            "provisionTypeCode": "amazon"
+        },
+        "plan": {
+            "id": 1205,
+            "code": "amazon-t2.2xlarge",
+            "name": "T2 2xlarge - 8 Core, 32GB Memory"
+        },
+        "name": "asdmubu1013",
+        "description": null,
+        "environment": null,
+        "config": {
+            "poolProviderType": null,
+            "isVpcSelectable": false,
+            "instanceProfile": null,
+            "isEC2": false,
+            "resourcePoolId": 129,
+            "availabilityId": null,
+            "publicIpType": "elasticIp",
+            "createUser": false,
+            "securityId": null,
+            "kmsKeyId": null,
+            "expose": [],
+            "noAgent": false,
+            "securityGroups": [
+                {
+                    "id": "sg-06f57058cdfdf0475"
+                }
+            ],
+            "customOptions": {},
+            "createBackup": true,
+            "memoryDisplay": "MB",
+            "backup": {
+                "backupRepository": 3,
+                "veeamManagedServer": "",
+                "jobSchedule": 2,
+                "createBackup": true,
+                "jobAction": "new",
+                "jobRetentionCount": "1",
+                "providerBackupType": 11,
+                "target": 7
+            },
+            "shutdownDays": "1",
+            "expireDays": "2",
+            "layoutSize": 1,
+            "lbInstances": []
+        },
+        "configGroup": null,
+        "configId": null,
+        "configRole": null,
+        "volumes": [
+            {
+                "controllerId": null,
+                "datastoreId": null,
+                "displayOrder": 0,
+                "id": 2610036,
+                "uuid": "e6bb58cf-ef1e-40c3-8c9b-2aa4eecaec61",
+                "maxIOPS": null,
+                "maxStorage": 85899345920,
+                "name": "root",
+                "shortName": "root",
+                "resizeable": true,
+                "planResizable": true,
+                "rootVolume": true,
+                "size": 80,
+                "storageType": 6,
+                "unitNumber": null,
+                "controllerMountPoint": null
+            }
+        ],
+        "controllers": [],
+        "interfaces": [
+            {
+                "id": "networkGroup-2",
+                "network": {
+                    "id": null,
+                    "group": 2,
+                    "subnet": null,
+                    "dhcpServer": null,
+                    "name": null,
+                    "pool": null
+                },
+                "ipAddress": null,
+                "networkInterfaceTypeId": null,
+                "ipMode": null
+            }
+        ],
+        "customOptions": {},
+        "instanceVersion": "20.04",
+        "labels": [],
+        "tags": [
+            {
+                "id": 13824708,
+                "name": "application",
+                "value": null
+            }
+        ],
+        "evars": [
+            {
+                "name": "UBUNTU_IP",
+                "value": "0.0.0.0",
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "UBUNTU_HOST",
+                "value": "container749153",
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "UBUNTU_PORT_SSH",
+                "value": 22,
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "UBUNTU_PORT_22_TCP_PORT",
+                "value": 22,
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "UBUNTU_PORT_22_TCP_PROTO",
+                "value": "tcp",
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "UBUNTU_PORT_22_TCP_ADDR",
+                "value": "0.0.0.0",
+                "export": true,
+                "masked": false
+            },
+            {
+                "name": "UBUNTU_PORT_22_TCP",
+                "value": "tcp://0.0.0.0:22",
+                "export": true,
+                "masked": false
+            }
+        ],
+        "maxMemory": 34359738368,
+        "maxStorage": 85899345920,
+        "maxCores": 8,
+        "coresPerSocket": null,
+        "maxCpu": null,
+        "hourlyCost": 0.0,
+        "hourlyPrice": 0.0,
+        "instancePrice": {
+            "price": 332.851200000,
+            "cost": 332.851200000,
+            "currency": "USD",
+            "unit": "month"
+        },
+        "dateCreated": "2022-06-16T06:58:53Z",
+        "lastUpdated": "2022-06-28T19:28:01Z",
+        "hostName": "asdmubu1013",
+        "domainName": null,
+        "environmentPrefix": null,
+        "firewallEnabled": true,
+        "networkLevel": "container",
+        "autoScale": false,
+        "instanceContext": null,
+        "currentDeployId": null,
+        "locked": false,
+        "status": "denied",
+        "statusMessage": null,
+        "errorMessage": null,
+        "statusDate": "2022-06-16T07:17:23Z",
+        "statusPercent": null,
+        "statusEta": null,
+        "userStatus": null,
+        "expireDays": 2,
+        "renewDays": 4,
+        "expireCount": 0,
+        "expireDate": "2022-06-18T06:58:53Z",
+        "expireWarningDate": "2022-06-17T06:58:53Z",
+        "expireWarningSent": false,
+        "shutdownDays": 1,
+        "shutdownRenewDays": 1,
+        "shutdownCount": 0,
+        "shutdownDate": "2022-06-17T06:58:53Z",
+        "shutdownWarningDate": "2022-06-16T06:58:53Z",
+        "shutdownWarningSent": false,
+        "removalDate": null,
+        "createdBy": {
+            "id": 336,
+            "username": "Alex"
+        },
+        "owner": {
+            "id": 336,
+            "username": "Alex"
+        },
+        "notes": null,
+        "stats": {
+            "usedStorage": 0,
+            "maxStorage": 85899345920,
+            "usedMemory": 0,
+            "maxMemory": 34359738368,
+            "usedCpu": 0.0,
+            "cpuUsage": 0,
+            "cpuUsagePeak": 0.0,
+            "cpuUsageAvg": 0
+        },
+        "powerSchedule": null,
+        "isScalable": true,
+        "instanceThreshold": {
+            "id": 1419,
+            "autoUp": true,
+            "autoDown": true,
+            "minCount": 1,
+            "maxCount": 2,
+            "cpuEnabled": false,
+            "minCpu": 0.0,
+            "maxCpu": 0.0,
+            "memoryEnabled": true,
+            "minMemory": 1.0,
+            "maxMemory": 2.0,
+            "diskEnabled": false,
+            "minDisk": 0.0,
+            "maxDisk": 0.0,
+            "minNetwork": null,
+            "networkEnabled": false,
+            "iopsEnabled": false,
+            "minIops": null,
+            "maxIops": null,
+            "comment": null,
+            "zoneId": 12,
+            "dateCreated": "2022-06-16T06:58:53Z",
+            "lastUpdated": "2022-06-16T06:58:53Z"
+        },
+        "isBusy": false,
+        "apps": [],
+        "currentLoadBalancerInstances": [],
+        "currentLoadBalancerContainersIn": 0,
+        "currentLoadBalancerContainersOut": 0,
+        "lastDeploy": null,
+        "containerDetails": [
+            {
+                "id": 749153,
+                "uuid": "047d68d1-990d-4f73-9952-8ca38f193863",
+                "name": "asdmubu1013_749153",
+                "ip": "0.0.0.0",
+                "internalIp": "0.0.0.0",
+                "internalHostname": "container749153",
+                "externalHostname": "asdmubu1013",
+                "externalDomain": "bw.morpheusdata.com",
+                "externalFqdn": "asdmubu1013.bw.morpheusdata.com",
+                "accountId": 3,
+                "instance": {
+                    "id": 51714,
+                    "name": "asdmubu1013"
+                },
+                "containerType": {
+                    "id": 2251,
+                    "code": "ubuntu-amazon-20.04",
+                    "category": null,
+                    "name": "Ubuntu 20.04"
+                },
+                "containerTypeSet": {
+                    "id": 2227,
+                    "code": "ubuntu-amazon-20.04-set",
+                    "category": null
+                },
+                "server": {
+                    "id": 264223,
+                    "uuid": "898e372c-5d06-401b-aa58-b5a165de4098",
+                    "externalId": null,
+                    "internalId": null,
+                    "externalUniqueId": null,
+                    "name": "asdmubu1013",
+                    "externalName": "asdmubu1013",
+                    "hostname": "asdmubu1013",
+                    "accountId": 3,
+                    "account": {
+                        "id": 3,
+                        "name": "Morpheus"
+                    },
+                    "owner": {
+                        "id": 336,
+                        "username": "Alex"
+                    },
+                    "zone": {
+                        "id": 12,
+                        "name": "AWS"
+                    },
+                    "plan": {
+                        "id": 1205,
+                        "code": "amazon-t2.2xlarge",
+                        "name": "T2 2xlarge - 8 Core, 32GB Memory"
+                    },
+                    "computeServerType": {
+                        "id": null,
+                        "code": null,
+                        "name": null,
+                        "managed": null,
+                        "externalDelete": null
+                    },
+                    "visibility": "private",
+                    "description": null,
+                    "zoneId": 12,
+                    "siteId": 50,
+                    "resourcePoolId": 129,
+                    "folderId": null,
+                    "sshHost": null,
+                    "sshPort": 22,
+                    "externalIp": null,
+                    "internalIp": null,
+                    "platform": "linux",
+                    "platformVersion": null,
+                    "dateCreated": "2022-06-16T06:58:53Z",
+                    "lastUpdated": "2022-06-16T07:17:23Z",
+                    "stats": {},
+                    "status": "denied",
+                    "statusMessage": null,
+                    "errorMessage": null,
+                    "statusDate": "2022-06-16T06:58:53Z",
+                    "statusPercent": null,
+                    "statusEta": null,
+                    "powerState": "unknown",
+                    "agentInstalled": false,
+                    "lastAgentUpdate": null,
+                    "agentVersion": null,
+                    "maxCores": 8,
+                    "maxMemory": 34359738368,
+                    "maxStorage": 85899345920,
+                    "maxCpu": null,
+                    "hourlyCost": 0.0,
+                    "hourlyPrice": 0.0,
+                    "sourceImage": {
+                        "id": 585963,
+                        "code": "amazon.ec2.image.morpheus.ubuntu.20.04.4-v1.ubuntu.20.04.4.amd64",
+                        "name": "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20220419"
+                    },
+                    "serverOs": {
+                        "id": 83,
+                        "code": "ubuntu.20.04.64",
+                        "name": "ubuntu 20.04 64-bit",
+                        "description": null,
+                        "vendor": "canonical",
+                        "category": "ubuntu",
+                        "osFamily": "debian",
+                        "osVersion": "20.04",
+                        "bitCount": 64,
+                        "platform": "linux"
+                    },
+                    "volumes": [
+                        {
+                            "id": 2610036,
+                            "name": "root",
+                            "controllerId": null,
+                            "controllerMountPoint": null,
+                            "resizeable": true,
+                            "planResizable": true,
+                            "rootVolume": true,
+                            "unitNumber": null,
+                            "typeId": 6,
+                            "configurableIOPS": false,
+                            "datastoreId": null,
+                            "maxStorage": 85899345920,
+                            "displayOrder": 0,
+                            "maxIOPS": null,
+                            "uuid": "e6bb58cf-ef1e-40c3-8c9b-2aa4eecaec61"
+                        }
+                    ],
+                    "controllers": [],
+                    "interfaces": [
+                        {
+                            "id": 652869,
+                            "refType": null,
+                            "refId": null,
+                            "name": "eth0",
+                            "internalId": null,
+                            "externalId": null,
+                            "uniqueId": "morpheus-nic-51714-749153-0",
+                            "publicIpAddress": null,
+                            "publicIpv6Address": null,
+                            "ipAddress": null,
+                            "ipv6Address": null,
+                            "ipSubnet": null,
+                            "ipv6Subnet": null,
+                            "description": null,
+                            "dhcp": true,
+                            "active": true,
+                            "poolAssigned": false,
+                            "primaryInterface": true,
+                            "network": {
+                                "id": 57802,
+                                "name": "labs_public_1a (subnet-25a65d40)"
+                            },
+                            "subnet": null,
+                            "networkGroup": {
+                                "id": 2,
+                                "name": "Demo Preferred"
+                            },
+                            "networkPosition": null,
+                            "networkPool": null,
+                            "networkDomain": null,
+                            "type": null,
+                            "ipMode": null,
+                            "macAddress": null
+                        }
+                    ],
+                    "labels": [],
+                    "tags": [],
+                    "enabled": true,
+                    "tagCompliant": null
+                },
+                "cloud": {
+                    "id": 12,
+                    "name": "AWS"
+                },
+                "ports": [
+                    {
+                        "id": 15694,
+                        "index": 0,
+                        "external": 22,
+                        "internal": 22,
+                        "displayName": "SSH",
+                        "primaryPort": false,
+                        "export": true,
+                        "visible": true,
+                        "exportName": "SSH",
+                        "loadBalanceProtocol": null,
+                        "loadBalance": false,
+                        "protocol": null,
+                        "link": false,
+                        "externalIp": null,
+                        "internalIp": null
+                    }
+                ],
+                "plan": {
+                    "id": 1205,
+                    "code": "amazon-t2.2xlarge",
+                    "name": "T2 2xlarge - 8 Core, 32GB Memory"
+                },
+                "configGroup": null,
+                "configId": null,
+                "configRole": null,
+                "dateCreated": "2022-06-16T06:58:53Z",
+                "lastUpdated": "2022-06-16T07:17:23Z",
+                "statsEnabled": true,
+                "status": "failed",
+                "userStatus": "stopped",
+                "environmentPrefix": null,
+                "stats": {},
+                "runtimeInfo": {},
+                "containerVersion": null,
+                "repositoryImage": null,
+                "planCategory": null,
+                "hostname": "asdmubu1013",
+                "domainName": null,
+                "volumeCreated": false,
+                "containerCreated": false,
+                "maxStorage": 85899345920,
+                "maxMemory": 34359738368,
+                "maxCores": 8,
+                "coresPerSocket": null,
+                "maxCpu": null,
+                "hourlyCost": 0.0,
+                "hourlyPrice": 0.0
+            }
+        ]
+    }
+}

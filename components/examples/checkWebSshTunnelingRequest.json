@@ -1,0 +1,7 @@
+{
+    "check": {
+      "name": "My Web Check",
+      "checkType": {"code": "webGetCheck"},
+      "config": {"webMethod":"GET","webUrl": "http://google.com", "checkUser":"basicUser","checkPassword":"basicPassword", "webTextMatch": "Login", "textCheckOn": "on", "tunnelOn": "on", "sshHost": "example.org", "sshPort": 22, "sshUser": "happyapps"}
+    }
+  }

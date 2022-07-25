@@ -1,0 +1,13 @@
+{
+    "checkType": {
+        "id": 43,
+        "code": "cloudFoundryAppCheck",
+        "name": "Cloud Foundry App Check",
+        "defaultInterval": 300000,
+        "metricName": "result",
+        "inUptime": true,
+        "createIncident": true,
+        "pushOnly": false,
+        "tunnelSupported": true
+    }
+}

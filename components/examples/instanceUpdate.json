@@ -1,0 +1,25 @@
+{
+    "instance": {
+        "description": "my new redis",
+        "addTags": [
+            {
+                "name": "hello",
+                "value": "world"
+            },
+            {
+                "name": "flash",
+                "value": "bang"
+            }
+        ],
+        "removeTags": [
+            {
+                "name": "oldTag"
+            }
+        ]
+    },
+    "config": {
+        "customOptions": {
+            "dbfoldername": "data"
+        }
+    }
+}

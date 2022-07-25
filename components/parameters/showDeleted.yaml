@@ -1,0 +1,8 @@
+name: showDeleted
+in: query
+description: If true, includes instances in pending removal status.
+schema:
+  type: boolean
+  description: Show instances in pending removal status
+  default: false
+example: true

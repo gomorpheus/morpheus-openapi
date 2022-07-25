@@ -6,8 +6,6 @@ get:
   tags:
     - Wiki
     - Groups
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-a-wiki-page-for-group
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -76,8 +74,6 @@ put:
                   type: string
                   example: #Sample Doc
                     A sample document in **markdown**.`
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#update-a-wiki-page-for-group
   responses:
     '200':
       description: Successful Request

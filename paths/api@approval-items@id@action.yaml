@@ -5,8 +5,6 @@ put:
   operationId: updateApprovalsItem
   tags:
     - Approvals
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#update-an-approval-item
   parameters:
     - $ref: ../components/parameters/id-path.yaml
     - $ref: ../components/parameters/action-path.yaml

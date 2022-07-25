@@ -1,0 +1,530 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  uuid: 
+    type: string
+  accountId: 
+    type: integer
+    format: int64
+  tenant: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  instanceType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      category: 
+        type: string
+      name: 
+        type: string
+  group: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  cloud: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  containers: 
+    type: array
+    items: 
+      type: integer
+      format: int64
+  servers: 
+    type: array
+    items: 
+      type: integer
+      format: int64
+  connectionInfo: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        ip: 
+          type: string
+        port: 
+          type: integer
+          nullable: true
+  layout: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      provisionTypeId: 
+        type: integer
+        format: int64
+      provisionTypeCode: 
+        type: string
+  plan: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  environment: 
+    type: string
+    nullable: true
+  config: 
+    type: object
+    properties: 
+      createUser: 
+        type: boolean
+      isEC2: 
+        type: boolean
+      isVpcSelectable: 
+        type: boolean
+      noAgent: 
+        type: boolean
+      securityGroups:
+        type: array
+        nullable: true
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true  
+      smbiosAssetTag: 
+        type: string
+        nullable: true
+      nestedVirtualization: 
+        type: string
+        nullable: true
+      vmwareFolderId: 
+        type: string
+      customOptions: 
+        type: object
+      resourcePoolId: 
+        type: integer
+        format: int64
+      poolProviderType: 
+        type: string
+        nullable: true
+      userGroup: 
+        type: object
+        properties: 
+          id: 
+            type: string
+            nullable: true
+      expireDays: 
+        type: string
+      shutdownDays: 
+        type: string
+      name: 
+        type: string
+      hostName: 
+        type: string
+      instanceType: 
+        type: object
+        properties: 
+          code: 
+            type: string
+            nullable: true
+      site: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+      environmentPrefix: 
+        type: string
+        nullable: true
+      layout: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          code: 
+            type: string
+      type: 
+        type: string
+      instanceContext: 
+        type: string
+      memoryDisplay: 
+        type: string
+      expose: 
+        type: array
+        nullable: true
+        items:
+          type: object
+      createBackup: 
+        type: boolean
+      backup: 
+        type: object
+        properties: 
+          createBackup: 
+            type: boolean
+          jobAction: 
+            type: string
+          jobRetentionCount: 
+            type: string
+          providerBackupType: 
+            type: integer
+            format: int64
+      replicationGroup: 
+        type: object
+        properties: 
+          providerMethod: 
+            type: string
+      layoutSize: 
+        type: integer
+        format: int64
+      lbInstances: 
+        type: array
+        nullable: true
+        items:
+          type: object
+  configGroup: 
+    type: string
+    nullable: true
+  configId: 
+    type: string
+    nullable: true
+  configRole: 
+    type: string
+    nullable: true
+  volumes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        controllerId: 
+          type: integer
+          format: int64
+          nullable: true
+        datastoreId: 
+          type: string
+          nullable: true
+        displayOrder: 
+          type: integer
+          format: int64
+        id: 
+          type: integer
+          format: int64
+        uuid: 
+          type: string
+        maxIOPS: 
+          type: string
+          nullable: true
+        maxStorage: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        shortName: 
+          type: string
+        resizeable: 
+          type: boolean
+        planResizable: 
+          type: boolean
+        rootVolume: 
+          type: boolean
+        size: 
+          type: integer
+          format: int64
+        storageType: 
+          type: integer
+          format: int64
+        unitNumber: 
+          type: string
+          nullable: true
+        controllerMountPoint: 
+          type: string
+          nullable: true
+  controllers: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        type: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            code: 
+              type: string
+            name: 
+              type: string
+        maxDevices: 
+          type: integer
+          format: int64
+        reservedUnitNumber: 
+          type: integer
+          format: int64
+  interfaces: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: string
+          nullable: true
+        network: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+              nullable: true
+            group: 
+              type: integer
+              nullable: true
+            subnet: 
+              type: string
+              nullable: true
+            dhcpServer: 
+              type: boolean
+              nullable: true
+            name: 
+              type: string
+              nullable: true
+            pool: 
+              type: object
+              nullable: true
+              properties: 
+                id: 
+                  type: integer
+                  format: int64
+                name: 
+                  type: string
+        ipAddress: 
+          type: string
+          nullable: true
+        networkInterfaceTypeId: 
+          type: integer
+          format: int64
+          nullable: true
+        ipMode: 
+          type: string
+          nullable: true
+  customOptions: 
+    type: object
+  instanceVersion: 
+    type: string
+  labels: 
+    type: array
+    nullable: true
+    items:
+      type: string
+  tags: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  evars: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  maxMemory: 
+    type: integer
+    format: int64
+  maxStorage: 
+    type: integer
+    format: int64
+  maxCores: 
+    type: integer
+    format: int64
+  coresPerSocket: 
+    type: integer
+    format: int64
+    nullable: true
+  maxCpu: 
+    type: string
+    nullable: true
+  hourlyCost: 
+    type: number
+  hourlyPrice: 
+    type: number
+  instancePrice: 
+    type: object
+    properties: 
+      price: 
+        type: number
+      cost: 
+        type: number
+      currency: 
+        type: string
+        nullable: true
+      unit: 
+        type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  hostName: 
+    type: string
+  domainName: 
+    type: string
+    nullable: true
+  environmentPrefix: 
+    type: string
+    nullable: true
+  firewallEnabled: 
+    type: boolean
+  networkLevel: 
+    type: string
+  autoScale: 
+    type: boolean
+  instanceContext: 
+    type: string
+    nullable: true
+  currentDeployId: 
+    type: string
+    nullable: true
+  locked: 
+    type: boolean
+  status: 
+    type: string
+  statusMessage: 
+    type: string
+    nullable: true
+  errorMessage: 
+    type: string
+    nullable: true
+  statusDate: 
+    type: string
+    format: date-time
+  statusPercent: 
+    type: string
+    nullable: true
+  statusEta: 
+    type: string
+    nullable: true
+  userStatus: 
+    type: string
+    nullable: true
+  expireDays: 
+    type: integer
+    format: int64
+  renewDays: 
+    type: integer
+    format: int64
+  expireCount: 
+    type: integer
+    format: int64
+  expireDate: 
+    type: string
+    format: date-time
+  expireWarningDate: 
+    type: string
+    format: date-time
+  expireWarningSent: 
+    type: boolean
+  shutdownDays: 
+    type: integer
+    format: int64
+  shutdownRenewDays: 
+    type: integer
+    format: int64
+  shutdownCount: 
+    type: integer
+    format: int64
+  shutdownDate: 
+    type: string
+    format: date-time
+  shutdownWarningDate: 
+    type: string
+    format: date-time
+  shutdownWarningSent: 
+    type: boolean
+  removalDate: 
+    type: string
+    nullable: true
+  createdBy: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  notes: 
+    type: string
+    nullable: true
+  stats: 
+    type: object
+    properties: 
+      usedStorage: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      usedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      usedCpu: 
+        type: number
+      cpuUsage: 
+        type: number
+      cpuUsagePeak: 
+        type: number
+      cpuUsageAvg: 
+        type: number
+  powerSchedule: 
+    type: string
+    nullable: true
+  isScalable: 
+    type: boolean
+  instanceThreshold: 
+    type: object
+    nullable: true
+  isBusy: 
+    type: boolean
+  apps: 
+    type: array
+    nullable: true
+    items:
+      type: object

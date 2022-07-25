@@ -1,0 +1,7 @@
+type: object
+properties:
+  snapshots:
+    type: array
+    description: List of snapshot objects
+    items:
+      $ref: snapshot.yaml

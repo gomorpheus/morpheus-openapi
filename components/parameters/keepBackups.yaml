@@ -1,0 +1,7 @@
+name: keepBackups
+in: query
+description: Preserve copy of backups
+schema:
+  type: string
+  default: "off"
+example: "on"

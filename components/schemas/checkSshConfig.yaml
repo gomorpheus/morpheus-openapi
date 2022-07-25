@@ -1,0 +1,21 @@
+type: object
+properties: 
+  sshPort: 
+    type: integer
+    format: int64
+  checkUser: 
+    type: string
+  tunnelOn: 
+    type: string
+  textCheckOn: 
+    type: string
+  checkPassword: 
+    type: string
+  sshHost: 
+    type: string
+  sshUser: 
+    type: string
+  webTextMatch: 
+    type: string
+  checkPasswordHash: 
+    type: string

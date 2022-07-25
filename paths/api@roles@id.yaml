@@ -59,9 +59,8 @@ put:
                   type: string
                   description: Authority (Name)
                 description:
-                  type:
-                  - "string"
-                  - "null"
+                  type: string
+                  nullable: true
                   description: Description
   responses:
     '200':

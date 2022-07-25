@@ -1,0 +1,139 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  active: 
+    type: boolean
+  apiKey: 
+    type: string
+  availability: 
+    type: number
+  checkAgent: 
+    type: string
+    nullable: true
+  checkInterval: 
+    type: integer
+    format: int64
+    nullable: true
+  checkSpec: 
+    type: string
+    nullable: true
+  checkType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+      metricName: 
+        type: string
+  config:
+    allOf:
+    - oneOf:
+      - $ref: checkWebConfig.yaml
+      - $ref: checkSqlConfig.yaml
+      - $ref: checkElasticsearchConfig.yaml
+      - $ref: checkSocketConfig.yaml
+      - $ref: checkPushConfig.yaml
+      - $ref: checkVmConfig.yaml
+    - anyOf:
+      - $ref: checkSshConfig.yaml
+  container:
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  createIncident: 
+    type: boolean
+  muted: 
+    type: boolean
+  createdBy: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  description: 
+    type: string
+    nullable: true
+  endDate: 
+    type: string
+    nullable: true
+  health: 
+    type: integer
+    format: int64
+  inUptime: 
+    type: boolean
+  lastBoxStats: 
+    type: string
+    nullable: true
+  lastCheckStatus: 
+    type: string
+    nullable: true
+  lastError: 
+    type: string
+    nullable: true
+  lastErrorDate: 
+    type: string
+    format: date-time
+    nullable: true
+  lastMessage: 
+    type: string
+    nullable: true
+  lastMetric: 
+    type: string
+    nullable: true
+  lastRunDate: 
+    type: string
+    format: date-time
+    nullable: true
+  lastStats: 
+    type: string
+    nullable: true
+  lastSuccessDate: 
+    type: string
+    format: date-time
+    nullable: true
+  lastTimer: 
+    type: integer
+    format: int64
+    nullable: true
+  lastUpdated: 
+    type: string
+    format: date-time
+    nullable: true
+  lastWarningDate: 
+    type: string
+    nullable: true
+  name: 
+    type: string
+  nextRunDate: 
+    type: string
+    format: date-time
+    nullable: true
+  outageTime: 
+    type: integer
+    format: int64
+  severity: 
+    type: string
+  startDate: 
+    type: string
+    nullable: true

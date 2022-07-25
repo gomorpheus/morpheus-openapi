@@ -1,0 +1,7 @@
+name: status
+in: query
+description: The instance status for filtering.
+schema:
+  type: string
+  description: Instance status
+example: "running"

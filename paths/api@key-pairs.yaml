@@ -5,8 +5,6 @@ post:
   operationId: addKeyPairs
   tags:
     - Key Pairs
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#create-a-keypair
   requestBody:
     content:
       application/json:

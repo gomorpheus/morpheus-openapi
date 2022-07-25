@@ -1,0 +1,6 @@
+name: fieldName
+in: query
+description: Field Name filter, restricts query to only load type matching fieldName specified
+schema:
+  type: string
+example: cloudName

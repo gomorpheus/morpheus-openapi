@@ -1,0 +1,168 @@
+type: object
+required:
+  - instance
+  - zoneId
+  - config
+properties:
+  instance:
+    type: object
+    description: Key for name, site, instanceType layout, and plan.
+    required:
+      - name
+      - site
+      - instanceType
+      - layout
+      - plan
+    properties:
+      name:
+        type: string
+        description: Name of the instance to be created.
+        example: myinstance
+      site:
+        type: object
+        required:
+          - id
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: The Group ID to provision the instance into.
+            example: 2
+      instanceType:
+        type: object
+        required:
+          - code
+        properties:
+          code:
+            type: string
+            description: The type of instance by code we want to fetch.
+            example: "Ubuntu"
+      layout:
+        type: object
+        required:
+          - id
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: The layout id for the instance type that you want to provision. i.e. single process or cluster
+            example: 105
+      plan:
+        type: object
+        required:
+          - id
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: The id for the memory and storage option pre-configured within Morpheus.
+            example: 75
+  zoneId:
+    type: integer
+    format: int64
+    description: The Cloud ID to provision the instance onto.
+    example: 6
+  evars:
+    type: array
+    description: Environment Variables, an array of objects that have name and value.
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+  copies:
+    type: integer
+    format: int64
+    description: Number of copies to provision.
+    default: 1
+  layoutSize:
+    type: integer
+    format: int64
+    description: Apply a multiply factor of containers/vms within the instance.
+    default: 1
+  servicePlanOptions:
+    type: object
+    description: Map of custom options depending on selected service plan.
+  securityGroups:
+    type: array
+    description: Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
+    nullable: true
+    items:
+      type: object
+  volumes:
+    type: array
+    description: The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
+    items:
+      $ref: instanceCreateVolume.yaml
+  networkInterfaces:
+    type: array
+    description: |
+      The networkInterfaces parameter is for network configuration.
+      
+      The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
+    items:
+      $ref: instanceCreateNetwork.yaml
+  config:
+    anyOf:
+      - $ref: instancesConfigAzure.yaml
+      - $ref: instancesConfigVMWare.yaml
+      - $ref: instancesConfigGCP.yaml
+      - $ref: instancesConfigAWS.yaml
+      - $ref: instancesConfigGeneric.yaml
+  labels:
+    type: array
+    description: Array of strings (keywords).
+    items:
+      type: string
+  tags:
+    description: Metadata tags, Array of objects having a name and value.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+  metadata:
+    description: Alias for `tags`.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+  ports:
+    description: |
+      The ports parameter is for port configuration.
+
+      The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
+    type: array
+    items:
+      type: object
+      required:
+        - port
+      properties:
+        port:
+          description: Port number.
+          type: integer
+          format: int64
+          example: 8080
+        name:
+          description: A name for the port.
+          type: string
+        lb:
+          description: The load balancer protocol. HTTP, HTTPS, or TCP.
+          type: string
+          nullable: true
+  taskSetId:
+    description: The Workflow ID to execute.
+    type: integer
+    format: int64
+  taskSetName:
+    description: The Workflow Name to execute.
+    type: string

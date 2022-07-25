@@ -1,0 +1,38 @@
+{
+    "instanceTypes": [
+      {
+        "id": 6,
+        "account": null,
+        "name": "Apache",
+        "code": "apache",
+        "description": "An open-source modern web server common on many websites today. A secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards.",
+        "provisionTypeCode": "mixed",
+        "category": "web",
+        "active": true,
+        "environmentPrefix": "APACHE",
+        "visibility": "public",
+        "featured": false,
+        "versions": [
+          "2.4"
+        ],
+        "instanceTypeLayouts": [
+          {
+            "id": 574,
+            "name": "Amazon Apache on CentOS 7.3",
+            "provisionTypeCode": "amazon"
+          },
+          {
+            "id": 30,
+            "name": "Fusion Apache on Ubuntu 14.04",
+            "provisionTypeCode": "fusion"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "size": 25,
+      "total": 122,
+      "max": 25,
+      "offset": 0
+    }
+  }

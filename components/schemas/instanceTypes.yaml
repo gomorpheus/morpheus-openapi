@@ -1,0 +1,52 @@
+type: object
+properties: 
+  id:
+    type: integer
+    format: int64
+  account:
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  name:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+    nullable: true
+  provisionTypeCode:
+    type: string
+    nullable: true
+  category:
+    type: string
+  active:
+    type: boolean
+  environmentPrefix:
+    type: string
+  visibility:
+    type: string
+  featured:
+    type: boolean
+  versions:
+    type: array
+    items:
+      type: string
+  instanceTypeLayouts:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        provisionTypeCode:
+          type: string
+          nullable: true
+  

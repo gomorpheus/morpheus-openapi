@@ -12,10 +12,10 @@ properties:
           type: string
         description: 
           type: string
-          format: nullable
+          nullable: true
         roleType: 
           type: string
-          format: nullable
+          nullable: true
         owner: 
-          type: string
-          format: nullable
+          type: object
+          nullable: true

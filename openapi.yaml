@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   title: Morpheus API
   description: |-
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 5.4.6
+  version: 5.5.2
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -43,6 +43,10 @@ paths:
     $ref: paths/api@budgets@id.yaml
   /api/clusters/{id}/wiki:
     $ref: paths/api@clusters@id@wiki.yaml
+  /api/credentials:
+    $ref: paths/api@credentials.yaml
+  /api/credentials/{id}:
+    $ref: paths/api@credentials@id.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/doc:
@@ -69,8 +73,80 @@ paths:
     $ref: paths/api@groups@id@update-zones.yaml
   /api/groups/{id}/wiki:
     $ref: paths/api@groups@id@wiki.yaml
+  /api/instances:
+    $ref: paths/api@instances.yaml
+  /api/instances/{id}:
+    $ref: paths/api@instances@id.yaml
+  /api/instances/{id}/apply:
+    $ref: paths/api@instances@id@apply.yaml
+  /api/instances/{id}/backup:
+    $ref: paths/api@instances@id@backup.yaml
+  /api/instances/{id}/backups:
+    $ref: paths/api@instances@id@backups.yaml
+  /api/instances/{id}/clone:
+    $ref: paths/api@instances@id@clone.yaml
+  /api/instances/{id}/clone-image:
+    $ref: paths/api@instances@id@clone-image.yaml
+  /api/instances/{id}/cancel-expiration:
+    $ref: paths/api@instances@id@cancel-expiration.yaml
+  /api/instances/{id}/cancel-removal:
+    $ref: paths/api@instances@id@cancel-removal.yaml
+  /api/instances/{id}/cancel-shutdown:
+    $ref: paths/api@instances@id@cancel-shutdown.yaml
+  /api/instances/{id}/containers:
+    $ref: paths/api@instances@id@containers.yaml
+  /api/instances/{id}/delete-container-snapshots/{containerId}:
+    $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
+  /api/instances/{id}/delete-all-snapshots:
+    $ref: paths/api@instances@id@delete-all-snapshots.yaml
+  /api/instances/{id}/envs:
+    $ref: paths/api@instances@id@envs.yaml
+  /api/instances/{id}/extend-expiration:
+    $ref: paths/api@instances@id@extend-expiration.yaml
+  /api/instances/{id}/extend-shutdown:
+    $ref: paths/api@instances@id@extend-shutdown.yaml
+  /api/instances/{id}/history:
+    $ref: paths/api@instances@id@history.yaml
+  /api/instances/{id}/import-snapshot:
+    $ref: paths/api@instances@id@import-snapshot.yaml
+  /api/instances/{id}/linked-clone/{snapshotId}:
+    $ref: paths/api@instances@id@linked-clone@id.yaml
+  /api/instances/{id}/lock:
+    $ref: paths/api@instances@id@lock.yaml
+  /api/instances/{id}/prepare-apply:
+    $ref: paths/api@instances@id@prepare-apply.yaml
+  /api/instances/{id}/resize:
+    $ref: paths/api@instances@id@resize.yaml
+  /api/instances/{id}/restart:
+    $ref: paths/api@instances@id@restart.yaml
+  /api/instances/{id}/revert-snapshot/{snapshotId}:
+    $ref: paths/api@instances@id@revert-snapshot@id.yaml
+  /api/instances/{id}/security-groups:
+    $ref: paths/api@instances@id@security-groups.yaml
+  /api/instances/{id}/snapshot:
+    $ref: paths/api@instances@id@snapshot.yaml
+  /api/instances/{id}/snapshots:
+    $ref: paths/api@instances@id@snapshots.yaml
+  /api/instances/{id}/start:
+    $ref: paths/api@instances@id@start.yaml
+  /api/instances/{id}/state:
+    $ref: paths/api@instances@id@state.yaml
+  /api/instances/{id}/stop:
+    $ref: paths/api@instances@id@stop.yaml
+  /api/instances/{id}/unlock:
+    $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
+  /api/instances/{id}/workflow:
+    $ref: paths/api@instances@id@workflow.yaml
+  /api/instances/service-plans:
+    $ref: paths/api@instances@service-plans.yaml
+  /api/instances/{id}/validate-apply:
+    $ref: paths/api@instances@id@validate-apply.yaml
+  /api/instance-types:
+    $ref: paths/api@instance-types.yaml
+  /api/instance-types/{id}:
+    $ref: paths/api@instance-types@id.yaml
   /api/invoices:
     $ref: paths/api@invoices.yaml
   /api/invoices/{id}:
@@ -83,16 +159,78 @@ paths:
     $ref: paths/api@license.yaml
   /api/log-settings:
     $ref: paths/api@log-settings.yaml
-  /api/log-settings@syslog-rules:
+  /api/log-settings/syslog-rules:
     $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings@syslog-rules@{id}:
+  /api/log-settings/syslog-rules/{id}:
     $ref: paths/api@log-settings@syslog-rules@id.yaml
+  /api/logs:
+    $ref: paths/api@logs.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
+  /api/library/option-types:
+    $ref: paths/api@library@option-types.yaml
+  /api/library/option-types/{id}:
+    $ref: paths/api@library@option-types@id.yaml
+  /api/library/instance-types:
+    $ref: paths/api@library@instance-types.yaml
+  /api/library/instance-types/{id}:
+    $ref: paths/api@library@instance-types@id.yaml
+  /api/library/instance-types/{id}/toggle-featured:
+    $ref: paths/api@library@instance-types@id@toggle-featured.yaml
+  /api/library/instance-types/{id}/update-logo:
+    $ref: paths/api@library@instance-types@id@update-logo.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
+  /api/monitoring/alerts:
+    $ref: paths/api@monitoring@alerts.yaml
+  /api/monitoring/alerts/{id}:
+    $ref: paths/api@monitoring@alerts@id.yaml
+  /api/monitoring/apps:
+    $ref: paths/api@monitoring@apps.yaml
+  /api/monitoring/apps/mute-all:
+    $ref: paths/api@monitoring@apps@mute-all.yaml
+  /api/monitoring/apps/{id}:
+    $ref: paths/api@monitoring@apps@id.yaml
+  /api/monitoring/apps/{id}/mute:
+    $ref: paths/api@monitoring@apps@id@mute.yaml
+  /api/monitoring/checks:
+    $ref: paths/api@monitoring@checks.yaml
+  /api/monitoring/checks/mute-all:
+    $ref: paths/api@monitoring@checks@mute-all.yaml
+  /api/monitoring/checks/{id}:
+    $ref: paths/api@monitoring@checks@id.yaml
+  /api/monitoring/checks/{id}/mute:
+    $ref: paths/api@monitoring@checks@id@mute.yaml
+  /api/monitoring/check-types:
+    $ref: paths/api@monitoring@check-types.yaml
+  /api/monitoring/check-types/{id}:
+    $ref: paths/api@monitoring@check-types@id.yaml
+  /api/monitoring/contacts:
+    $ref: paths/api@monitoring@contacts.yaml
+  /api/monitoring/contacts/{id}:
+    $ref: paths/api@monitoring@contacts@id.yaml
+  /api/monitoring/groups:
+    $ref: paths/api@monitoring@groups.yaml
+  /api/monitoring/groups/{id}:
+    $ref: paths/api@monitoring@groups@id.yaml
+  /api/monitoring/groups/{id}/mute:
+    $ref: paths/api@monitoring@groups@id@mute.yaml
+  /api/monitoring/incidents:
+    $ref: paths/api@monitoring@incidents.yaml
+  /api/monitoring/incidents/{id}:
+    $ref: paths/api@monitoring@incidents@id.yaml
+  /api/monitoring/incidents/{id}/mute:
+    $ref: paths/api@monitoring@incidents@id@mute.yaml
+  /api/monitoring/incidents/{id}/reopen:
+    $ref: paths/api@monitoring@incidents@id@reopen.yaml
+  /api/monitoring/incidents/mute-all:
+    $ref: paths/api@monitoring@incidents@mute-all.yaml
+  /api/networks:
+    $ref: paths/api@networks.yaml
+  /api/networks/{id}:
+    $ref: paths/api@networks@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:
@@ -123,6 +261,8 @@ paths:
     $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
+  /api/snapshots/{id}:
+    $ref: paths/api@snapshots@id.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
   /api/users:

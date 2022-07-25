@@ -1,0 +1,28 @@
+type: object
+required:
+  - dbPort
+  - dbName
+  - dbUser
+  - dbHost
+  - dbQuery
+  - dbPassword
+properties: 
+  dbPort: 
+    type: string
+  dbName: 
+    type: string
+  dbUser: 
+    type: string
+  dbHost: 
+    type: string
+  checkOperator: 
+    type: string
+  dbQuery: 
+    type: string
+  checkResult: 
+    type: integer
+    format: int64
+  dbPassword: 
+    type: string
+  dbPasswordHash: 
+    type: string

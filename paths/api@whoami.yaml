@@ -8,8 +8,6 @@ get:
   tags:
     - Authentication
     - Users
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#whoami
   responses:
     '200':
       description: Successful Request

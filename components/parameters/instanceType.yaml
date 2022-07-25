@@ -1,0 +1,7 @@
+name: instanceType
+in: query
+description: The Instance Type Code for Filtering
+schema:
+  type: string
+  description: Instance Type
+example: "ubuntu"

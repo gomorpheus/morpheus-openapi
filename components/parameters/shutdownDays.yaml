@@ -1,0 +1,7 @@
+name: shutdownDays
+in: query
+description: Filter by shutdownDays less than or equal to the specified value
+schema:
+  type: string
+  description: Shutdown days
+example: "20"

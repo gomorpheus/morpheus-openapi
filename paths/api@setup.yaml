@@ -15,7 +15,7 @@ post:
     content:
       application/json:
         schema:
-          allOf:
+          anyOf:
             - type: object
               required:
                 - applianceName
@@ -75,13 +75,13 @@ post:
                   login: ../components/schemas/hubLoginObject.yaml
                   register: ../components/schemas/hubRegisterObject.yaml
         examples:
-          setup:
+          Setup Response:
             value:
               $ref: ../components/examples/setup.json
-          setupWithHubRegistration:
+          Setup Response - Hub Registration:
             value:
               $ref: ../components/examples/hubRegisterObject.json
-          setupWithHubLogin:
+          Setup Response - Hub Login:
             value:
               $ref: ../components/examples/hubLoginObject.json
   responses:

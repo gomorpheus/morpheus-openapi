@@ -1,0 +1,24 @@
+{
+  "instanceType": {
+    "name": "Foobar",
+    "code": "foobar",
+    "description": "An example instance type",
+    "category": "web",
+    "visibility": "private",
+    "environmentPrefix": "FOOBAR_",
+    "hasSettings": true,
+    "hasAutoScale": true,
+    "hasDeployment": true,
+    "optionTypes": [
+      100
+    ],
+    "environmentVariables": [
+      {
+        "name": "foo",
+        "value": "bar",
+        "masked": false,
+        "export": false
+      }
+    ]
+  }
+}

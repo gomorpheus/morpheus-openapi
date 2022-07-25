@@ -1,0 +1,59 @@
+type: object
+properties: 
+  sort: 
+    type: object
+    properties: 
+      ts: 
+        type: string
+  offset: 
+    type: integer
+    format: int64
+  start: 
+    type: string
+    format: date-time
+  end: 
+    type: string
+    format: date-time
+  data: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        typeCode: 
+          type: string
+        message: 
+          type: string
+        level: 
+          type: string
+        ts: 
+          type: string
+          format: date-time
+        sourceType: 
+          type: string
+        title: 
+          type: string
+        logSignature: 
+          type: string
+        objectId: 
+          type: string
+        seq: 
+          type: integer
+          format: int64
+        _id: 
+          type: string
+        signatureVerified: 
+          type: boolean
+  max: 
+    type: integer
+    format: int64
+  grandTotal: 
+    type: integer
+    format: int64
+  total: 
+    type: integer
+    format: int64
+  success: 
+    type: boolean
+  count: 
+    type: integer
+    format: int64

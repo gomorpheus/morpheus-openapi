@@ -1,0 +1,7 @@
+name: expireDays
+in: query
+description: Filter by expireDays less than or equal to the specified value
+schema:
+  type: string
+  description: Expire days
+example: "20"

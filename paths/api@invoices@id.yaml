@@ -61,23 +61,41 @@ put:
               type: object
               properties:
                 tags:
-                  type: string
+                  type: array
                   description: >
                     This adds or updates the specified Metadata tags and removes any tags not specified.
                     Array of objects having a name and value.
-                  example: [{"name": "hello", "value": "world"},{"name": "foo", "value": "bar"}]
+                  items:
+                    type: object
+                  example: 
+                    - name: "hello"
+                      value: "world"
+                    - name: "foo"
+                      value: "bar"
                 addTags:
-                  type: string
+                  type: array
                   description: >
                     Add or update value of Metadata tags.
                     Array of objects having a name and value.
-                  example: [{"name": "hello", "value": "world"},{"name": "foo", "value": "bar"}]
+                  items:
+                    type: object
+                  example: 
+                    - name: "hello"
+                      value: "world"
+                    - name: "foo"
+                      value: "bar"
                 removeTags:
-                  type: string
+                  type: array
                   description: >
                     This removes the specified Metadata tags matching name and optionally value (if provided).
                     Array of objects having a name and value.
-                  example: [{"name": "hello"},{"name": "foo", "value": "bar"}]
+                  items:
+                    type: object
+                  example: 
+                    - name: "hello"
+                      value: "world"
+                    - name: "foo"
+                      value: "bar"
   responses:
     '200':
       description: Invoice Object

@@ -1,0 +1,61 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  attachmentType: 
+    type: string
+  app: 
+    type: string
+    format: nullable
+  available: 
+    type: boolean
+  check: 
+    type: string
+    format: nullable
+  checkGroup: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  checkStatus: 
+    type: string
+    format: nullable
+  endDate: 
+    type: string
+    format: nullable
+  health: 
+    type: integer
+    format: int64
+  inUptime: 
+    type: boolean
+  incident: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  lastCheckTime: 
+    type: string
+    format: nullable
+  lastError: 
+    type: string
+    format: nullable
+  lastMessage: 
+    type: string
+    format: nullable
+  name: 
+    type: string
+  severity: 
+    type: string
+  severityId: 
+    type: integer
+    format: int64
+  startDate: 
+    type: string
+    format: date-time
+  status: 
+    type: string

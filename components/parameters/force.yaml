@@ -1,0 +1,7 @@
+name: force
+in: query
+description: Force Delete
+schema:
+  type: string
+  default: "off"
+example: "on"

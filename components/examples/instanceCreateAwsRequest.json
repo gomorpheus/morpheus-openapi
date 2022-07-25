@@ -1,0 +1,57 @@
+{
+    "zoneId": 12,
+    "instance": {
+      "name": "nctest3",
+      "cloud": "AWS",
+      "site": {
+        "id": 2
+      },
+      "type": "ubuntu",
+      "instanceType": {
+        "code": "ubuntu"
+      },
+      "layout": {
+        "id": 2136,
+        "code": "ubuntu-amazon-20.04"
+      },
+      "plan": {
+        "id": 3,
+        "code": "amazon-t2.small",
+        "name": "T2 Small - 1 Core, 2GB Memory"
+      }
+    },
+    "config": {
+      "resourcePoolId": 129,
+      "isEC2": "false",
+      "publicIpType": "elasticIp",
+      "kmsKeyId": "asf",
+      "createUser": true
+    },
+    "volumes": [
+      {
+        "id": -1,
+        "rootVolume": true,
+        "name": "root",
+        "size": 20,
+        "sizeId": null,
+        "storageType": 68,
+        "datastoreId": null
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "network": {
+          "id": "network-57802"
+        }
+      }
+    ],
+    "securityGroups": [
+      {
+        "id": "sg-d58a6eba"
+      },
+      {
+        "id": "sg-43572f26"
+      }
+    ],
+    "layoutSize": 1
+  }

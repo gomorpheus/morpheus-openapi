@@ -1,0 +1,6 @@
+name: fieldContext
+in: query
+description: Field Context filter, restricts query to only load type matching fieldContext specified
+schema:
+  type: string
+example: config.customOptions

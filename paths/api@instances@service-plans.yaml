@@ -1,0 +1,47 @@
+get:
+  summary: Get Available Service Plans for an Instance
+  description: |
+    This endpoint retrieves all the Service Plans available for the specified cloud and instance layout. The response includes details about the plans and their configuration options. It may be used to get the list of available plans when creating a new instance or resizing an existing instance.
+  operationId: listInstanceServicePlans
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/zoneId.yaml
+    - $ref: ../components/parameters/layoutId.yaml
+    - $ref: ../components/parameters/siteId.yaml
+  responses: 
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              plans:
+                type: array
+                items:
+                  $ref: ../components/schemas/instanceServicePlan.yaml
+          examples:
+            Service Plans Response:
+              value:
+                $ref: ../components/examples/instancesServicePlans.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

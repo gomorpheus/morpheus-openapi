@@ -1,0 +1,61 @@
+{
+    "check": {
+        "id": 2976,
+        "account": {
+            "id": 1
+        },
+        "active": true,
+        "apiKey": "6a54ce29-3b5f-4bc1-b016-ed427b449969",
+        "availability": 0.0,
+        "checkAgent": null,
+        "checkInterval": null,
+        "checkSpec": null,
+        "checkType": {
+            "id": 28,
+            "code": "sqlCheck",
+            "name": "Microsoft SQL Server",
+            "metricName": "result"
+        },
+        "config": {
+            "dbPort": "3306",
+            "dbName": "mydb",
+            "dbUser": "basicUser",
+            "dbHost": "db.example.org",
+            "checkOperator": "lt",
+            "dbQuery": "select 1",
+            "checkResult": 2,
+            "dbPassword": "************",
+            "dbPasswordHash": "61236d68c76405c9c7b40838a9c5d120c76e4bbffa7efc90ee41943c0f340f10"
+        },
+        "container": null,
+        "createIncident": true,
+        "muted": false,
+        "createdBy": {
+            "id": 1,
+            "username": "Admin"
+        },
+        "dateCreated": "2022-07-14T21:46:24Z",
+        "description": null,
+        "endDate": null,
+        "health": 9,
+        "inUptime": true,
+        "lastBoxStats": null,
+        "lastCheckStatus": null,
+        "lastError": null,
+        "lastErrorDate": null,
+        "lastMessage": null,
+        "lastMetric": null,
+        "lastRunDate": null,
+        "lastStats": null,
+        "lastSuccessDate": null,
+        "lastTimer": 0,
+        "lastUpdated": "2022-07-14T21:46:24Z",
+        "lastWarningDate": null,
+        "name": "SQL Server Check",
+        "nextRunDate": null,
+        "outageTime": 0,
+        "severity": "critical",
+        "startDate": null
+    },
+    "success": true
+}

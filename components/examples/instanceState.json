@@ -1,0 +1,77 @@
+{
+  "success": true,
+  "workloads": [
+    {
+      "refType": "Instance",
+      "refId": 19324,
+      "refName": "dev-tf",
+      "subRefName": null,
+      "stateDate": "2022-04-04T17:35:01Z",
+      "status": "ok",
+      "iacDrift": false
+    }
+  ],
+  "iacDrift": false,
+  "planResources": [],
+  "specs": [
+    {
+      "id": 9,
+      "name": "tf-example",
+      "template": null,
+      "isolated": false
+    }
+  ],
+  "stateData": "{\n    \"format_version\": \"1.0\",\n    \"terraform_version\": \"1.1.7\",\n    ....",
+  "planData": "vsphere_virtual_machine.vm: Refreshing state... [id=422da4c7-2fdb-cb01-e65c-0c07e17903a8]\n\nNo changes. Your infrastructure matches the configuration.\n\nTerraform has compared your real infrastructure against your configuration\nand found no differences, so no changes are needed.\n",
+  "input": {
+    "variables": [
+      {
+        "name": "environment",
+        "value": "dev",
+        "sensitive": false,
+        "type": "string"
+      },
+      {
+        "name": "instanceName",
+        "value": "tf-example",
+        "sensitive": false,
+        "type": "string"
+      }
+    ],
+    "providers": [
+      {
+        "name": "vsphere"
+      }
+    ],
+    "data": [
+      {
+        "key": "dc",
+        "name": "labs-qa",
+        "type": "vsphere_datacenter"
+      },
+      {
+        "key": "datastore",
+        "name": "ESXi-LUN1",
+        "type": "vsphere_datastore"
+      },
+      {
+        "key": "pool",
+        "name": "QA",
+        "type": "vsphere_resource_pool"
+      },
+      {
+        "key": "network",
+        "name": "VLAN0002",
+        "type": "vsphere_network"
+      },
+      {
+        "key": "template",
+        "name": "Morpheus Ubuntu 20.04.1 v1",
+        "type": "vsphere_virtual_machine"
+      }
+    ]
+  },
+  "output": {
+    "outputs": []
+  }
+}

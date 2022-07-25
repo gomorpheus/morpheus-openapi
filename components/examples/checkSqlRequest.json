@@ -1,0 +1,7 @@
+{
+    "check": {
+      "name": "SQL Server Check",
+      "checkType": {"code": "sqlCheck"},
+      "config": {"dbHost":"db.example.org","dbPort": "3306", "dbUser":"basicUser","dbPassword":"basicPassword", "dbName": "mydb", "dbQuery": "select 1", "checkOperator": "lt", "checkResult": 2}
+    }
+  }

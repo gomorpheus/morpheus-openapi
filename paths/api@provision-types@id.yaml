@@ -5,8 +5,6 @@ get:
   operationId: getProvisionTypes
   tags:
     - Provisioning
-  externalDocs:
-    url: https://apidocs.morpheusdata.com/#get-specific-provision-type
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

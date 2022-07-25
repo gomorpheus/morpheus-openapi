@@ -1,0 +1,165 @@
+{
+    "instanceTypes": [
+        {
+            "id": 98,
+            "account": {
+                "id": 1,
+                "name": "mastertenant"
+            },
+            "name": "Amazon Custom",
+            "code": "awscustom",
+            "description": null,
+            "provisionTypeCode": "amazon",
+            "category": "web",
+            "active": true,
+            "environmentPrefix": "AMAZON_CUSTOM",
+            "visibility": "private",
+            "featured": false,
+            "versions": [
+                "7.3",
+                "1.0",
+                "7.9",
+                "2019"
+            ],
+            "instanceTypeLayouts": [
+                {
+                    "id": 1175,
+                    "name": "CentOS",
+                    "provisionTypeCode": "amazon"
+                },
+                {
+                    "id": 1427,
+                    "name": "New VPC Sample",
+                    "provisionTypeCode": "terraform"
+                },
+                {
+                    "id": 1590,
+                    "name": "CentOS",
+                    "provisionTypeCode": "amazon"
+                },
+                {
+                    "id": 1591,
+                    "name": "Windows",
+                    "provisionTypeCode": "amazon"
+                }
+            ]
+        },
+        {
+            "id": 96,
+            "account": {
+                "id": 1,
+                "name": "mastertenant"
+            },
+            "name": "AzureSpecTemplate",
+            "code": "AzureSpecTemplate",
+            "description": null,
+            "provisionTypeCode": null,
+            "category": "web",
+            "active": true,
+            "environmentPrefix": "AZURESPECTEMPLATE",
+            "visibility": "private",
+            "featured": false,
+            "versions": [
+                "1"
+            ],
+            "instanceTypeLayouts": [
+                {
+                    "id": 1161,
+                    "name": "AzureSpecLayout",
+                    "provisionTypeCode": "azure"
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "account": {
+                "id": 1,
+                "name": "mastertenant"
+            },
+            "name": "Morpheus Builds",
+            "code": "morphbuilds",
+            "description": null,
+            "provisionTypeCode": "mixed",
+            "category": "web",
+            "active": true,
+            "environmentPrefix": "MORPHEUS_BUILDS",
+            "visibility": "private",
+            "featured": true,
+            "versions": [
+                "7.9-v1",
+                "8.3-v1",
+                "9.13-v1",
+                "10.9-v1",
+                "18.04-v1",
+                "2",
+                "18.04 v1",
+                "20.04 v1",
+                "8.4-v1",
+                "2019"
+            ],
+            "instanceTypeLayouts": [
+                {
+                    "id": 1313,
+                    "name": "Morpheus Debian",
+                    "provisionTypeCode": "vmware"
+                },
+                {
+                    "id": 1315,
+                    "name": "Morpheus Ubuntu",
+                    "provisionTypeCode": "vmware"
+                },
+                {
+                    "id": 1312,
+                    "name": "Morpheus CentOS",
+                    "provisionTypeCode": "vmware"
+                },
+                {
+                    "id": 1361,
+                    "name": "Morpheus CentOS",
+                    "provisionTypeCode": "vmware"
+                },
+                {
+                    "id": 1311,
+                    "name": "Morpheus CentOS",
+                    "provisionTypeCode": "vmware"
+                },
+                {
+                    "id": 1357,
+                    "name": "Morpheus Ubuntu",
+                    "provisionTypeCode": "amazon"
+                },
+                {
+                    "id": 1570,
+                    "name": "Morpheus Win 2019",
+                    "provisionTypeCode": "vmware"
+                },
+                {
+                    "id": 1317,
+                    "name": "Morpheus Test AMI",
+                    "provisionTypeCode": "amazon"
+                },
+                {
+                    "id": 1358,
+                    "name": "Morpheus Ubuntu",
+                    "provisionTypeCode": "amazon"
+                },
+                {
+                    "id": 1320,
+                    "name": "Morpheus CentOS",
+                    "provisionTypeCode": "xen"
+                },
+                {
+                    "id": 1314,
+                    "name": "Morpheus Debian",
+                    "provisionTypeCode": "vmware"
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "size": 3,
+        "total": 3,
+        "max": 25,
+        "offset": 0
+    }
+}

@@ -10,12 +10,12 @@ properties:
     format: int64
   publicKey: 
     type: string
-    format: nullable
+    nullable: true
   hasPrivateKey: 
     type: boolean
   fingerprint: 
     type: string
-    format: nullable
+    nullable: true
   dateCreated: 
     type: string
     format: date-time

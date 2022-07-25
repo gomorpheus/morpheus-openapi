@@ -1,0 +1,13 @@
+type: object
+required:
+  - esHost
+  - esPort
+properties: 
+  esHost:
+    type: string
+    description: Hostname or IP address of the Elasticsearch server
+    example: "test.example.org"
+  esPort:
+    type: string
+    description: Port to connect to the HTTP service
+    example: "9200"

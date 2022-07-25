@@ -1,0 +1,7 @@
+{
+    "check": {
+      "name": "Socket Check",
+      "checkType": {"code": "socketCheck"},
+      "config": {"host":"test.example.org","port": "3306", "send":"blah","responseMatch":"OK"}
+    }
+  }

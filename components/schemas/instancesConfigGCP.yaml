@@ -1,0 +1,25 @@
+type: object
+properties:
+  noAgent:
+    type: boolean
+    nullable: true
+    description: Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
+    default: false
+  googleZoneId:
+    type: integer
+    format: int64
+    description: External ID of the Google zone to use for instance.
+  externalIpType:
+    type: integer
+    format: int64
+    description: External IP Type.  `-1` for ephemeral IP.
+    example: -1
+  networkTags:
+    type: string
+    description: Network Tags
+  serviceAccount:
+    type: string
+    description: Service Account
+  accessScope:
+    type: string
+    description: Access Scope

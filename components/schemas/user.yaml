@@ -59,18 +59,23 @@ properties:
         type: string
   linuxUsername: 
     type: string
+    nullable: true
   linuxPassword: 
     type: string
+    nullable: true
   linuxKeyPairId: 
     type: integer
     format: int64
+    nullable: true
   windowsUsername: 
     type: string
+    nullable: true
   windowsPassword: 
     type: string
+    nullable: true
   defaultPersona: 
     type: string
-    format: nullable
+    nullable: true
   dateCreated: 
     type: string
     format: date-time

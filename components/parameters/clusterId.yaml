@@ -1,0 +1,7 @@
+name: clusterId
+in: query
+description: The Cluster ID(s) for filtering. Accepts multiple values.
+schema:
+  type: integer
+  format: int64
+example: 135
