@@ -1,0 +1,7 @@
+name: zoneId
+in: path
+description: The ID of the cloud
+required: true
+schema:
+  type: number
+example: 7
