@@ -1,0 +1,55 @@
+post:
+  summary: Refreshes a Cloud
+  description: |
+    Refreshes a cloud.
+  operationId: refreshClouds
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            mode: 
+              type: string
+              description: Refresh Mode. Run the `daily` or `costing` job instead of the default `hourly` refresh job.
+            rebuild:
+              type: string
+              description: Rebuild. Pass `true` to purge existing invoices for the period before refreshing. Only applies to mode `costing`.
+            period:
+              type: string
+              description: Period. Invoice billing period to refresh in the format `YYYYMM`. The default period is the current month. Only applies to mode `costing`.
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Refresh Cloud Response:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
