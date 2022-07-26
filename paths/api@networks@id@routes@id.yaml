@@ -1,12 +1,13 @@
 get:
-  summary: Get a Specific Network
+  summary: Get a Static Route for a Network
   description: |
-    This endpoint retrieves a specific Network.
-  operationId: getNetwork
+    This endpoint retrieves a network static route for specified network.
+  operationId: getStaticRoute
   tags:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/routeId-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -15,12 +16,14 @@ get:
           schema:
             type: object
             properties:
-              network:
-                $ref: ../components/schemas/network.yaml
+              networkRoute:
+                type: object
+                properties:
+                  $ref: ../components/schemas/networkStaticRoute.yaml
           examples:
             Networks Response:
               value:
-                $ref: ../components/examples/network.json 
+                $ref: ../components/examples/networkStaticRoute.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,46 +45,39 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 
-put: 
-  summary: Update a Network
+put:
+  summary: Update a Network Static Route
   description: |
-    This endpoint allows updating a Network. Configuration options vary by Network Types.
-  operationId: updateNetwork
+    Use this command to update a route.
+  operationId: updateStaticRoute
   tags:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/routeId-path.yaml
   requestBody: 
     content: 
       application/json: 
         schema: 
           type: object
           properties: 
-            network:
-              $ref: ../components/schemas/networkUpdate.yaml
+            networkRoute:
+              $ref: ../components/schemas/networkStaticRouteCreate.yaml
         examples: 
-          Network Update Request:
-            value:
-              $ref: ../components/examples/networkUpdate.json
+          Successful Request:
+            value: 
+              $ref: ../components/examples/networkStaticRouteCreate.json
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              anyOf:
-                network:
-                  $ref: ../components/schemas/network.yaml
-                errors:
-                  type: object
-                $ref: ../components/schemas/successMessage.yaml
-          examples: 
-            Network Update Success:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Networks Response:
               value:
-                $ref: ../components/examples/networkUpdateSuccess.json
-
+                $ref: ../components/examples/networkStaticRouteCreateSuccess.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -101,16 +97,17 @@ put:
     '500':
       $ref: ../components/responses/500.yaml
     '503':
-      $ref: ../components/responses/503.yaml
+      $ref: ../components/responses/503.yaml  
 
-delete: 
-  summary: Delete a Network
-  description: Will delete a Network from the system and make it no longer usable.
-  operationId: deleteNetwork
+delete:
+  summary: Delete a Network Static Route
+  description: Will delete a route from a network.
+  operationId: deleteStaticRoute
   tags:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/routeId-path.yaml
   responses:
     '200':
       description: Successful Request

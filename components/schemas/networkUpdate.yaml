@@ -1,0 +1,100 @@
+type: object
+properties:
+  displayName: 
+    type: string
+    description: Display Name
+  description: 
+    type: string
+    nullable: true
+    description: Description
+  cidr: 
+    type: string
+    description: CIDR Network
+  gateway: 
+    type: string
+    description: Network Gateway
+  dnsPrimary: 
+    type: string
+    description: Primary DNS Server
+  dnsSecondary: 
+    type: string
+    description: Secondary DNS Server
+  vlanId:
+    type: integer
+    format: int64
+  pool: 
+    type: integer
+    format: int64
+    description: Network Pool ID
+    nullable: true
+  allowStaticOverride: 
+    type: boolean
+    description: Allow IP Override
+  assignPublicIp: 
+    type: boolean  
+    description: Assign Public IP
+  active: 
+    type: boolean
+    description: Activate (true) or disable (false) the network
+  dhcpServer: 
+    type: boolean
+    description: DHCP Server enabled network
+  networkDomain: 
+    type: object
+    properties: 
+      id:
+        type: integer
+        format: int64
+        description: Network Domain ID
+  searchDomains:
+    type: string
+    description: Search Domains
+  scanNetwork:
+    type: boolean
+    description: Scan Network
+    default: false
+  networkProxy: 
+    type: object
+    properties: 
+      id:
+        type: integer
+        format: int64
+        description: Network Proxy ID
+  applianceUrlProxyBypass: 
+    type: boolean
+    description: Bypass Proxy for Appliance URL
+  noProxy: 
+    type: string
+    description: Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
+    nullable: true
+  visibility: 
+    type: string
+    description: Visibility, private or public.
+    default: "private"
+    enum: 
+      - "private"
+      - "public"
+  config: 
+    type: object
+    description: Configuration object. Settings vary by type.
+  tenants: 
+    type: array
+    description: Array of tenant account ids that are allowed access
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+  resourcePermissions:
+    type: object
+    properties: 
+      all:
+        type: boolean
+        description: Pass true to allow access all groups
+      sites:
+        type: array
+        description: Array of groups that are allowed access
+        items: 
+          type: integer
+          format: int64

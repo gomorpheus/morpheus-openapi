@@ -1,0 +1,22 @@
+{
+  "networkRoute": {
+    "id": 59,
+    "name": "api-test-route3",
+    "code": null,
+    "description": null,
+    "priority": null,
+    "routeType": "static",
+    "source": "10.10.0.0/24",
+    "sourceType": "cidr",
+    "destination": "10.20.0.0",
+    "destinationType": "address",
+    "defaultRoute": false,
+    "networkMtu": null,
+    "externalInterface": null,
+    "internalId": null,
+    "uniqueId": null,
+    "externalType": null,
+    "enabled": true,
+    "visible": true
+  }
+}
