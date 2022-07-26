@@ -293,6 +293,8 @@ paths:
     $ref: paths/api@zones.yaml
   /api/zones/{id}:
     $ref: paths/api@zones@id.yaml
+  /api/zones/{id}/refresh:
+    $ref: paths/api@zones@id@refresh.yaml
   /api/zones/{id}/wiki:
     $ref: paths/api@zones@id@wiki.yaml
   /oauth/token:
