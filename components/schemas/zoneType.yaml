@@ -1,0 +1,361 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+  enabled: 
+    type: boolean
+  provision: 
+    type: boolean
+  autoCapacity: 
+    type: boolean
+  migrationTarget: 
+    type: boolean
+  hasDatastores: 
+    type: boolean
+  hasNetworks: 
+    type: boolean
+  hasResourcePools: 
+    type: boolean
+  hasSecurityGroups: 
+    type: boolean
+  hasContainers: 
+    type: boolean
+  hasBareMetal: 
+    type: boolean
+  hasServices: 
+    type: boolean
+  hasFunctions: 
+    type: boolean
+  hasJobs: 
+    type: boolean
+  hasDiscovery: 
+    type: boolean
+  hasCloudInit: 
+    type: boolean
+  hasFolders: 
+    type: boolean
+  hasFloatingIps: 
+    type: boolean
+  hasMarketplace: 
+    type: boolean
+  canCreateResourcePools: 
+    type: boolean
+  canDeleteResourcePools: 
+    type: boolean
+  canCreateDatastores: 
+    type: boolean
+  canCreateNetworks: 
+    type: boolean
+  canChooseContainerMode: 
+    type: boolean
+  provisionRequiresResourcePool: 
+    type: boolean
+  supportsDistributedWorker: 
+    type: boolean
+  cloud: 
+    type: string
+  provisionTypes: 
+    type: array
+    items: 
+      type: integer
+      format: int64
+  zoneInstanceTypeLayoutId: 
+    type: integer
+    format: int64
+  serverTypes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+        description: 
+          type: string
+        nodeType: 
+          type: string
+        platform: 
+          type: string
+        enabled: 
+          type: boolean
+        selectable: 
+          type: boolean
+        externalDelete: 
+          type: boolean
+        managed: 
+          type: boolean
+        controlPower: 
+          type: boolean
+        controlSuspend: 
+          type: boolean
+        creatable: 
+          type: boolean
+        hasAgent: 
+          type: boolean
+        vmHypervisor: 
+          type: boolean
+        containerHypervisor: 
+          type: boolean
+        bareMetalHost: 
+          type: boolean
+        guestVm: 
+          type: boolean
+        hasAutomation: 
+          type: boolean
+        provisionType: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            code: 
+              type: string
+            name: 
+              type: string
+            hasNetworks: 
+              type: boolean
+            hasZonePools: 
+              type: boolean
+        optionTypes: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              id: 
+                type: integer
+                format: int64
+              name: 
+                type: string
+              description: 
+                type: string
+                nullable: true
+              code: 
+                type: string
+                nullable: true
+              fieldName: 
+                type: string
+                nullable: true
+              fieldLabel: 
+                type: string
+                nullable: true
+              fieldCode: 
+                type: string
+                nullable: true
+              fieldContext: 
+                type: string
+                nullable: true
+              fieldGroup: 
+                type: string
+                nullable: true
+              fieldClass: 
+                type: string
+                nullable: true
+              fieldAddOn: 
+                type: string
+                nullable: true
+              fieldComponent: 
+                type: string
+                nullable: true
+              fieldInput: 
+                type: string
+                nullable: true
+              placeHolder: 
+                type: string
+                nullable: true
+              verifyPattern: 
+                type: string
+                nullable: true
+              helpBlock: 
+                type: string
+              helpBlockFieldCode: 
+                type: string
+                nullable: true
+              defaultValue: 
+                type: string
+                nullable: true
+              optionSource: 
+                type: string
+                nullable: true
+              optionSourceType: 
+                type: string
+                nullable: true
+              optionList: 
+                type: string
+                nullable: true
+              type: 
+                type: string
+              advanced: 
+                type: boolean
+              required: 
+                type: boolean
+              exportMeta: 
+                type: boolean
+              editable: 
+                type: boolean
+              creatable: 
+                type: boolean
+              config: 
+                type: object
+              displayOrder: 
+                type: integer
+                format: int64
+              wrapperClass: 
+                type: string
+                nullable: true
+              enabled: 
+                type: boolean
+              noBlank: 
+                type: boolean
+              dependsOnCode: 
+                type: string
+                nullable: true
+              visibleOnCode: 
+                type: string
+                nullable: true
+              requireOnCode: 
+                type: string
+                nullable: true
+              contextualDefault: 
+                type: boolean
+              displayValueOnDetails: 
+                type: boolean
+                nullable: true
+              showOnCreate: 
+                type: boolean
+                nullable: true
+              showOnEdit: 
+                type: boolean
+                nullable: true
+              localCredential: 
+                type: boolean
+                nullable: true
+        displayOrder: 
+          type: integer
+          format: int64
+  optionTypes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        description: 
+          type: string
+          nullable: true
+        code: 
+          type: string
+          nullable: true
+        fieldName: 
+          type: string
+          nullable: true
+        fieldLabel: 
+          type: string
+          nullable: true
+        fieldCode: 
+          type: string
+        fieldContext: 
+          type: string
+          nullable: true
+        fieldGroup: 
+          type: string
+          nullable: true
+        fieldClass: 
+          type: string
+          nullable: true
+        fieldAddOn: 
+          type: string
+          nullable: true
+        fieldComponent: 
+          type: string
+          nullable: true
+        fieldInput: 
+          type: string
+          nullable: true
+        placeHolder: 
+          type: string
+          nullable: true
+        verifyPattern: 
+          type: string
+          nullable: true
+        helpBlock: 
+          type: string
+          nullable: true
+        helpBlockFieldCode: 
+          type: string
+          nullable: true
+        defaultValue: 
+          type: string
+          nullable: true
+        optionSource: 
+          type: string
+          nullable: true
+        optionSourceType: 
+          type: string
+          nullable: true
+        optionList: 
+          type: string
+          nullable: true
+        type: 
+          type: string
+        advanced: 
+          type: boolean
+        required: 
+          type: boolean
+        exportMeta: 
+          type: boolean
+        editable: 
+          type: boolean
+        creatable: 
+          type: boolean
+        config: 
+          type: object
+          properties: 
+            credentialTypes: 
+              type: array
+              items: 
+                type: string
+        displayOrder: 
+          type: integer
+          format: int64
+        wrapperClass: 
+          type: string
+          nullable: true
+        enabled: 
+          type: boolean
+        noBlank: 
+          type: boolean
+        dependsOnCode: 
+          type: string
+          nullable: true
+        visibleOnCode: 
+          type: string
+          nullable: true
+        requireOnCode: 
+          type: string
+          nullable: true
+        contextualDefault: 
+          type: boolean
+        displayValueOnDetails: 
+          type: boolean
+          nullable: true
+        showOnCreate: 
+          type: boolean
+          nullable: true
+        showOnEdit: 
+          type: boolean
+          nullable: true
+        localCredential: 
+          type: boolean
+          nullable: true

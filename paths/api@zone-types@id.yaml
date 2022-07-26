@@ -1,0 +1,43 @@
+get:
+  summary: Retrieves a Specific Cloud Type
+  description: |
+    Retrieves a specific cloud type.
+  operationId: getCloudTypes
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              zoneType:
+                $ref: ../components/schemas/zoneType.yaml
+          examples:
+            Zone Type Response:
+              value:
+                $ref: ../components/examples/zoneType.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
