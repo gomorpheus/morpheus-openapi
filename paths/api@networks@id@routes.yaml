@@ -77,7 +77,7 @@ put:
           examples:
             Networks Response:
               value:
-                $ref: ../components/examples/networkStaticRouteCreateSuccess.json 
+                $ref: ../components/examples/successId.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':

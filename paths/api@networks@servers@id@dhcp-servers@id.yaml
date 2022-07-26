@@ -1,13 +1,13 @@
 get:
-  summary: Get a Static Route for a Network
+  summary: Get a Specific Network DHCP Server
   description: |
-    This endpoint retrieves a network static route for specified network.
-  operationId: getStaticRoute
+    This endpoint retrieves a specific Network DHCP Server.
+  operationId: getNetworkDhcpServer
   tags:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/routeId-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -16,14 +16,13 @@ get:
           schema:
             type: object
             properties:
-              networkRoute:
-                type: object
+              networkDhcpServer:
                 properties:
-                  $ref: ../components/schemas/networkStaticRoute.yaml
+                  $ref: ../components/schemas/networkDhcpServer.yaml
           examples:
             Networks Response:
               value:
-                $ref: ../components/examples/networkStaticRoute.json 
+                $ref: ../components/examples/networkDhcpServer.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -45,39 +44,41 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 
-put:
-  summary: Update a Network Static Route
+put: 
+  summary: Update a Network DHCP Server
   description: |
-    Use this command to update a route.
-  operationId: updateStaticRoute
+    Use this command to update an existing Network DHCP Server.
+  operationId: updateNetworkDhcpServer
   tags:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/routeId-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
   requestBody: 
     content: 
       application/json: 
         schema: 
           type: object
+          description: |
+            The parameters for update a Network DHCP Server is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network server type.
           properties: 
-            networkRoute:
-              $ref: ../components/schemas/networkStaticRouteCreate.yaml
+            networkDhcpServer:
+              type: object
         examples: 
-          Successful Request:
-            value: 
-              $ref: ../components/examples/networkStaticRouteCreate.json
+          Network DHCP Server Request:
+            value:
+              $ref: ../components/examples/networkDhcpServerCreate.json
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/successId.yaml
-          examples:
-            Networks Response:
+            $ref: ../components/schemas/200-success.yaml
+          examples: 
+            Successful Request:
               value:
-                $ref: ../components/examples/successId.json 
+                $ref: ../components/examples/success.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -97,17 +98,17 @@ put:
     '500':
       $ref: ../components/responses/500.yaml
     '503':
-      $ref: ../components/responses/503.yaml  
+      $ref: ../components/responses/503.yaml
 
-delete:
-  summary: Delete a Network Static Route
-  description: Will delete a route from a network.
-  operationId: deleteStaticRoute
+delete: 
+  summary: Delete a Network DHCP Server
+  description: Will delete a Network DHCP Server from the system and make it no longer usable.
+  operationId: deleteNetworkDhcpServer
   tags:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/routeId-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
   responses:
     '200':
       description: Successful Request

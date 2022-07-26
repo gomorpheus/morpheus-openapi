@@ -239,6 +239,10 @@ paths:
     $ref: paths/api@networks@id@routes.yaml
   /api/networks/{id}/routes/{routeId}:
     $ref: paths/api@networks@id@routes@id.yaml
+  /api/networks/servers/{id}/dhcp-servers:
+    $ref: paths/api@networks@servers@id@dhcp-servers.yaml
+  /api/networks/servers/{id}/dhcp-servers/{serverId}:
+    $ref: paths/api@networks@servers@id@dhcp-servers@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:

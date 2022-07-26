@@ -1,0 +1,23 @@
+{
+  "networkDhcpServer": {
+      "id": 1,
+      "dateCreated": "2021-11-18T06:59:29Z",
+      "providerId": "/infra/dhcp-server-configs/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "serverIpAddress": "10.11.12.14/30",
+      "lastUpdated": "2021-11-18T06:59:29Z",
+      "leaseTime": 85000,
+      "name": "test9",
+      "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "config": {
+          "edgeCluster": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "preferredEdgeNode1": "/infra/sites/default/enforcement-points/default/edge-clusters/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "preferredEdgeNode2": "/infra/sites/default/enforcement-points/default/edge-clusters/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      },
+      "owner": {
+          "id": 3
+      },
+      "networkServer": {
+          "id": 22
+      }
+  }
+}
