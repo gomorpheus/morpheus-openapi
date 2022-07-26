@@ -247,6 +247,10 @@ paths:
     $ref: paths/api@networks@servers@id@dhcp-servers.yaml
   /api/networks/servers/{serverId}/dhcp-servers/{id}:
     $ref: paths/api@networks@servers@id@dhcp-servers@id.yaml
+  /api/networks/servers/{serverId}/edge-clusters:
+    $ref: paths/api@networks@servers@id@edge-clusters.yaml
+  /api/networks/servers/{serverId}/edge-clusters/{id}:
+    $ref: paths/api@networks@servers@id@edge-clusters@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:
