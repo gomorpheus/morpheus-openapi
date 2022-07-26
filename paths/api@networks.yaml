@@ -57,11 +57,23 @@ post:
     content: 
       application/json: 
         schema: 
-          $ref: ../components/schemas/networkCreate.yaml
+          type: object
+          properties:
+            network:
+              $ref: ../components/schemas/networkCreate.yaml
         examples:
-          Network Request - Morpheus:
+          Network Request - Generic:
             value: 
-              $ref: ../components/examples/networkCreateRequestMorpheus.json
+              $ref: ../components/examples/networkCreateRequestGeneric.json
+          Network Request - AWS:
+            value: 
+              $ref: ../components/examples/networkCreateRequestAws.json
+          Network Request - Azure:
+            value: 
+              $ref: ../components/examples/networkCreateRequestAzure.json
+          Network Request - GCP:
+            value: 
+              $ref: ../components/examples/networkCreateRequestGcp.json
   responses:
     '200':
       description: Successful Response
@@ -70,8 +82,25 @@ post:
           schema:
             type: object
             properties:
-              network:
-                $ref: ../components/schemas/network.yaml
+              anyOf:
+                network:
+                  $ref: ../components/schemas/network.yaml
+                errors:
+                  type: object
+                $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Network Request Success - Generic:
+              value:
+                $ref: ../components/examples/networkCreateSuccessGeneric.json
+            Network Request - AWS:
+              value: 
+                $ref: ../components/examples/networkCreateSuccessAws.json
+            Network Request - Azure:
+              value: 
+                $ref: ../components/examples/networkCreateSuccessAzure.json
+            Network Request - GCP:
+              value: 
+                $ref: ../components/examples/networkCreateSuccessGcp.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -1,0 +1,87 @@
+{
+    "network": {
+        "id": 326,
+        "name": "test-net",
+        "displayName": "test-net",
+        "group": {
+            "id": 1,
+            "name": "admin"
+        },
+        "zone": {
+            "id": 27,
+            "name": "aws-morpheus-nc"
+        },
+        "type": {
+            "id": 35,
+            "name": "Amazon Subnet",
+            "code": "amazonSubnet"
+        },
+        "owner": {
+            "id": 1,
+            "name": "mastertenant"
+        },
+        "code": null,
+        "category": null,
+        "interfaceName": null,
+        "bridgeName": null,
+        "bridgeInterface": null,
+        "description": "Test Network",
+        "externalId": null,
+        "internalId": null,
+        "uniqueId": null,
+        "externalType": "Network",
+        "refUrl": null,
+        "refType": "ComputeZone",
+        "refId": 27,
+        "vlanId": 0,
+        "vswitchName": null,
+        "dhcpServer": true,
+        "dhcpIp": null,
+        "gateway": "192.168.12.1",
+        "netmask": null,
+        "broadcast": "192.168.12.255",
+        "subnetAddress": null,
+        "dnsPrimary": "1.1.1.1",
+        "dnsSecondary": "1.1.1.2",
+        "cidr": "192.168.12.0/24",
+        "tftpServer": null,
+        "bootFile": null,
+        "switchId": null,
+        "fabricId": null,
+        "networkRole": null,
+        "status": "failed",
+        "availabilityZone": null,
+        "pool": null,
+        "networkProxy": null,
+        "networkDomain": {
+            "id": 3,
+            "name": "tld.xyz"
+        },
+        "prefixLength": null,
+        "visibility": "private",
+        "enableAdmin": false,
+        "scanNetwork": false,
+        "active": true,
+        "defaultNetwork": false,
+        "assignPublicIp": false,
+        "noProxy": null,
+        "applianceUrlProxyBypass": true,
+        "zonePool": null,
+        "allowStaticOverride": true,
+        "subnets": [],
+        "tenants": [
+            {
+                "id": 2,
+                "name": "tentest"
+            }
+        ],
+        "resourcePermission": null
+    },
+    "nodes": {
+        "containers": [],
+        "instances": [],
+        "apps": []
+    },
+    "instanceStats": {},
+    "instanceClusters": []
+}

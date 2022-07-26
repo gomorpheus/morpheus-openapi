@@ -227,6 +227,10 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
+  /api/network-types:
+    $ref: paths/api@network-types.yaml
+  /api/network-types/{id}:
+    $ref: paths/api@network-types@id.yaml
   /api/networks:
     $ref: paths/api@networks.yaml
   /api/networks/{id}:

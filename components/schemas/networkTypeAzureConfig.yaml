@@ -1,0 +1,15 @@
+type: object
+required:
+  - resourceGroupId
+  - subnetName
+  - subnetCidr
+properties: 
+  resourceGroupId:
+    type: string
+    description: Resource Group Name
+  subnetName:
+    type: string
+    description: Subnet Name
+  subnetCidr:
+    type: string
+    description: The subnet's address range in CIDR notation (e.g. 192.168.1.0/24). It must be contained by the address space of the virtual network.
