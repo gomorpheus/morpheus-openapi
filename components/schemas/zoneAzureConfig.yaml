@@ -1,0 +1,84 @@
+type: object
+additionalProperties: false
+properties: 
+  subscriberId: 
+    type: string
+  tenantId: 
+    type: string
+  clientId: 
+    type: string
+  clientSecret: 
+    type: string
+  resourceGroup: 
+    type: string
+  _importExisting: 
+    type: string
+  importExisting: 
+    type: string
+  inventoryLevel: 
+    type: string
+  applianceUrl: 
+    type: string
+  datacenterName: 
+    type: string
+  networkServer.id: 
+    oneOf:
+    - type: string
+    - type: integer
+      format: int64
+  networkServer: 
+    type: object
+    properties: 
+      id:
+        oneOf:
+        - type: string
+        - type: integer
+          format: int64
+  securityMode: 
+    type: string
+  certificateProvider: 
+    type: string
+  backupMode: 
+    type: string
+  replicationMode: 
+    type: string
+  dnsIntegrationId: 
+    type: string
+  configManagementId: 
+    type: string
+  configCmdbId: 
+    type: string
+  securityServer: 
+    type: string
+    nullable: true
+  accountType: 
+    type: string
+  serviceRegistryId: 
+    type: string
+  cloudType: 
+    type: string
+  rpcMode: 
+    type: string
+  diskEncryption: 
+    type: string
+  encryptionSet: 
+    type: string
+  cspTenantId: 
+    type: string
+  cspClientId: 
+    type: string
+  cspClientSecret: 
+    type: string
+    nullable: true
+  cspCustomer: 
+    type: string
+    nullable: true
+  configCmdbDiscovery: 
+    type: boolean
+  azureCostingMode: 
+    type: string
+  clientSecretHash: 
+    type: string
+  cspClientSecretHash: 
+    type: string
+    nullable: true

@@ -1,0 +1,116 @@
+{
+    "zone": {
+        "id": 67,
+        "uuid": "3c54a033-c730-49c9-83df-9ba295f4abcb",
+        "externalId": "602411630141",
+        "name": "Work AWS",
+        "code": "waws",
+        "location": "US East",
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accountId": 1,
+        "account": {
+            "id": 1,
+            "name": "Home"
+        },
+        "visibility": "private",
+        "enabled": true,
+        "status": "ok",
+        "statusMessage": null,
+        "statusDate": "2022-07-21T14:14:26Z",
+        "costStatus": null,
+        "costStatusMessage": null,
+        "costStatusDate": null,
+        "zoneType": {
+            "id": 31,
+            "code": "amazon",
+            "name": "Amazon"
+        },
+        "zoneTypeId": 31,
+        "guidanceMode": "manual",
+        "storageMode": "standard",
+        "agentMode": "cloudInit",
+        "userDataLinux": null,
+        "userDataWindows": null,
+        "consoleKeymap": null,
+        "containerMode": "docker",
+        "costingMode": "off",
+        "serviceVersion": null,
+        "securityMode": "off",
+        "inventoryLevel": "full",
+        "timezone": null,
+        "apiProxy": null,
+        "provisioningProxy": null,
+        "networkDomain": null,
+        "domainName": "localdomain",
+        "regionCode": "ec2.us-east-1.amazonaws.com",
+        "autoRecoverPowerState": true,
+        "scalePriority": 1,
+        "config": {
+            "endpoint": "ec2.us-east-1.amazonaws.com",
+            "accessKey": "AKIAYYQUH7Y6TBUZTES4",
+            "secretKey": "************",
+            "_useHostCredentials": "",
+            "stsAssumeRole": "",
+            "isVpc": "true",
+            "vpc": "",
+            "imageStoreId": "",
+            "ebsEncryption": "off",
+            "costingReport": "example-costing",
+            "costingFolder": "",
+            "costingBucket": "example-morpheus",
+            "costingRegion": "us-east-1",
+            "costingAccessKey": "",
+            "costingSecretKey": null,
+            "applianceUrl": "",
+            "datacenterName": "",
+            "networkServer.id": "52",
+            "networkServer": {
+                "id": "52"
+            },
+            "securityServer": "null",
+            "certificateProvider": "internal",
+            "backupMode": "internal",
+            "replicationMode": "-1",
+            "dnsIntegrationId": "",
+            "serviceRegistryId": "",
+            "configManagementId": "",
+            "configCmdbDiscovery": false,
+            "secretKeyHash": "f4716cfe8d162c8c69f4a1d895f239e10b3e334338b2a4cf77d693f2fb7c9444",
+            "costingSecretKeyHash": null
+        },
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2021-06-25T14:12:17Z",
+        "lastUpdated": "2022-07-21T14:14:26Z",
+        "groups": [
+            {
+                "id": 7,
+                "name": "All Clouds",
+                "accountId": 1
+            },
+            {
+                "id": 6,
+                "name": "Work",
+                "accountId": 1
+            }
+        ],
+        "securityServer": null,
+        "stats": {
+            "serverCounts": {
+                "all": 0,
+                "host": 0,
+                "hypervisor": 0,
+                "containerHost": 0,
+                "vm": 0,
+                "baremetal": 0,
+                "unmanaged": 0
+            }
+        },
+        "serverCount": 0
+    },
+    "success": true
+}
