@@ -1,0 +1,55 @@
+type: object
+properties: 
+  privateKey: 
+    type: string
+  clientEmail: 
+    type: string
+  projectId: 
+    type: string
+  googleRegionId: 
+    type: string
+  _importExisting: 
+    type: string
+  importExisting: 
+    type: string
+  applianceUrl: 
+    type: string
+  datacenterName: 
+    type: string
+  networkServer.id: 
+    oneOf:
+    - type: string
+    - type: integer
+      format: int64
+  networkServer: 
+    type: object
+    properties: 
+      id:
+        oneOf:
+        - type: string
+        - type: integer
+          format: int64
+  securityServer: 
+    type: string
+    nullable: true
+  certificateProvider: 
+    type: string
+    nullable: true
+  backupMode: 
+    type: string
+    nullable: true
+  replicationMode: 
+    type: string
+    nullable: true
+  dnsIntegrationId: 
+    type: string
+    nullable: true
+  serviceRegistryId: 
+    type: string
+    nullable: true
+  configManagementId: 
+    type: string
+    nullable: true
+  privateKeyHash: 
+    type: string
+    nullable: true

@@ -1,0 +1,107 @@
+type: object
+additionalProperties: false
+properties: 
+  apiUrl: 
+    type: string
+  username: 
+    type: string
+  password: 
+    type: string
+    nullable: true
+  datacenter: 
+    type: string
+  cluster: 
+    type: string
+  resourcePoolId: 
+    type: string
+  resourcePool: 
+    type: string
+  rpcMode: 
+    type: string
+  _hideHostSelection: 
+    type: string
+  hideHostSelection: 
+    type: string
+  _importExisting: 
+    type: string
+  importExisting: 
+    type: string
+  _enableVnc: 
+    type: string
+  enableVnc: 
+    type: string
+  _enableDiskTypeSelection: 
+    type: string
+  _enableNetworkTypeSelection: 
+    type: string
+  diskStorageType: 
+    type: string
+    nullable: true
+  applianceUrl: 
+    type: string
+    nullable: true
+  datacenterName: 
+    type: string
+    nullable: true
+  networkServer.id: 
+    oneOf:
+    - type: string
+    - type: integer
+      format: int64
+  networkServer: 
+    type: object
+    properties: 
+      id:
+        oneOf:
+        - type: string
+        - type: integer
+          format: int64
+  securityMode: 
+    type: string
+  certificateProvider: 
+    type: string
+    nullable: true
+  backupMode: 
+    type: string
+    nullable: true
+  replicationMode: 
+    type: string
+    nullable: true
+  dnsIntegrationId: 
+    type: string
+    nullable: true
+  configCmdbId: 
+    type: string
+    nullable: true
+  configManagementId: 
+    type: string
+    nullable: true
+  configCmId: 
+    type: string
+    nullable: true
+  securityServer: 
+    type: string
+    nullable: true
+  serviceRegistryId: 
+    type: string
+    nullable: true
+  enableDiskTypeSelection: 
+    type: string
+    nullable: true
+  kubeUrl: 
+    type: string
+    nullable: true
+  apiVersion: 
+    type: string
+    nullable: true
+  datacenterId: 
+    type: string
+    nullable: true
+  configCmdbDiscovery: 
+    type: boolean
+  distributedWorkerId: 
+    type: string
+    nullable: true
+  passwordHash: 
+    type: string
+    nullable: true

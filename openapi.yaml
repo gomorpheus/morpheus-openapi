@@ -289,6 +289,10 @@ paths:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
     $ref: paths/api@wiki@pages@id.yaml
+  /api/zones:
+    $ref: paths/api@zones.yaml
+  /api/zones/{id}:
+    $ref: paths/api@zones@id.yaml
   /api/zones/{id}/wiki:
     $ref: paths/api@zones@id@wiki.yaml
   /oauth/token:
