@@ -1,8 +1,8 @@
 get:
-  summary: Get all Network DHCP Servers for Network Server
+  summary: Get all Network DHCP Relays for Network Relay
   description: |
-    This endpoint retrieves all Network DHCP Servers for a specified Network Service.
-  operationId: getNetworkDhcpServers
+    This endpoint retrieves all Network DHCP Relays for a specified Network Service.
+  operationId: getNetworkDhcpRelays
   tags:
     - Networks
   parameters:
@@ -21,16 +21,16 @@ get:
             allOf:
             - type: object
               properties:
-                networkDhcpServers:
+                networkDhcpRelays:
                   items:
                     type: object
                     properties:
-                      $ref: ../components/schemas/networkDhcpServer.yaml
+                      $ref: ../components/schemas/networkDhcpRelay.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Networks Response:
               value:
-                $ref: ../components/examples/networkDhcpServers.json
+                $ref: ../components/examples/networkDhcpRelays.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -53,10 +53,10 @@ get:
       $ref: ../components/responses/503.yaml
 
 post: 
-  summary: Create a Network DHCP Server
+  summary: Create a Network DHCP Relay
   description: |
-    Create a Network DHCP Server.
-  operationId: createNetworkDhcpServer
+    Create a Network DHCP Relay.
+  operationId: createNetworkDhcpRelay
   tags:
     - Networks
   parameters:
@@ -67,12 +67,12 @@ post:
         schema: 
           type: object
           properties: 
-            networkDhcpServer:
-              $ref: ../components/schemas/networkDhcpServerCreate.yaml
+            networkDhcpRelay:
+              $ref: ../components/schemas/networkDhcpRelayCreate.yaml
         examples: 
-          Network DHCP Server Request:
+          Network DHCP Relay Request:
             value:
-              $ref: ../components/examples/networkDhcpServerCreate.json
+              $ref: ../components/examples/networkDhcpRelayCreate.json
   responses:
     '200':
       description: Successful Request
@@ -104,4 +104,3 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-

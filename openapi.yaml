@@ -239,9 +239,13 @@ paths:
     $ref: paths/api@networks@id@routes.yaml
   /api/networks/{id}/routes/{routeId}:
     $ref: paths/api@networks@id@routes@id.yaml
-  /api/networks/servers/{id}/dhcp-servers:
+  /api/networks/servers/{serverId}/dhcp-relays:
+    $ref: paths/api@networks@servers@id@dhcp-relays.yaml
+  /api/networks/servers/{serverId}/dhcp-relays/{id}:
+    $ref: paths/api@networks@servers@id@dhcp-relays@id.yaml
+  /api/networks/servers/{serverId}/dhcp-servers:
     $ref: paths/api@networks@servers@id@dhcp-servers.yaml
-  /api/networks/servers/{id}/dhcp-servers/{serverId}:
+  /api/networks/servers/{serverId}/dhcp-servers/{id}:
     $ref: paths/api@networks@servers@id@dhcp-servers@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
