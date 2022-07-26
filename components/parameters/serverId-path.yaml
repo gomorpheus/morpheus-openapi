@@ -1,0 +1,7 @@
+name: serverId
+in: path
+description: Server ID
+required: true
+schema:
+  type: number
+example: 4
