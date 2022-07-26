@@ -1,0 +1,72 @@
+{
+  "ruleGroups": [
+    {
+      "id": 1,
+      "name": "stubby-toes-group",
+      "description": null,
+      "priority": 0,
+      "groupLayer": "Infrastructure",
+      "rules": [
+        {
+          "id": 1,
+          "direction": "ingress",
+          "sourceType": "cidr",
+          "destinationType": "instance",
+          "name": "stubby-toes-rule-1",
+          "policy": "accept",
+          "priority": 0,
+          "enabled": true,
+          "ruleGroup": {
+            "id": 1,
+            "name": "stubby-toes-group"
+          },
+          "groupName": "stubby-toes-group",
+          "config": {},
+          "sources": [
+            {
+              "id": "/infra/domains/default/groups/DB",
+              "name": "DB"
+            },
+            {
+              "id": "/infra/domains/default/groups/stubby-toes-group",
+              "name": "stubby-toes-group"
+            }
+          ],
+          "destinations": [
+            {
+              "id": "/infra/domains/default/groups/stubby-toes-group",
+              "name": "stubby-toes-group"
+            },
+            {
+              "id": "/infra/domains/default/groups/DB",
+              "name": "DB"
+            }
+          ],
+          "applications": [
+            {
+              "id": "/infra/services/ICMP-ALL",
+              "name": "ICMP-ALL"
+            }
+          ],
+          "scopes": [
+            {
+              "id": "/infra/domains/default/groups/DB",
+              "name": "DB"
+            },
+            {
+              "id": "/infra/domains/default/groups/stubby-toes-group",
+              "name": "stubby-toes-group"
+            }
+          ],
+          "profiles": [
+            {
+              "id": "ANY",
+              "name": "ANY"
+            }
+          ],
+          "appliedTargets": []
+        }
+      ]
+    }
+  ]
+}

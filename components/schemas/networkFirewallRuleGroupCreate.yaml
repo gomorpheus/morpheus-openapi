@@ -1,0 +1,22 @@
+type: object
+required:
+  - name
+  - externalType
+description: |
+  The parameters for creating a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
+properties: 
+  name: 
+    type: string
+    description: Network firewall rule group name
+  description: 
+    type: string
+    description: Network firewall rule group description
+  priority: 
+    type: integer
+    format: int64
+    description: Network firewall rule group priority
+  externalType: 
+    type: string
+    description: Use SecurityPolicy
+  groupLayer: 
+    type: string
