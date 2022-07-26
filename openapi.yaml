@@ -251,6 +251,10 @@ paths:
     $ref: paths/api@networks@servers@id@edge-clusters.yaml
   /api/networks/servers/{serverId}/edge-clusters/{id}:
     $ref: paths/api@networks@servers@id@edge-clusters@id.yaml
+  /api/networks/servers/{serverId}/firewall-rules:
+    $ref: paths/api@networks@servers@id@firewall-rules.yaml
+  /api/networks/servers/{serverId}/firewall-rules/{id}:
+    $ref: paths/api@networks@servers@id@firewall-rules@id.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:
