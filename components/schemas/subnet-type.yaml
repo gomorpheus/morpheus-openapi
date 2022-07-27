@@ -1,0 +1,23 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  name: 
+    type: string
+  description: 
+    type: string
+  creatable: 
+    type: boolean
+  deletable: 
+    type: boolean
+  dhcpServerEditable: 
+    type: boolean
+  canAssignPool: 
+    type: boolean
+  optionTypes: 
+    type: array
+    items:
+      $ref: optionType.yaml

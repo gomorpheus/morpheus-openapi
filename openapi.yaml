@@ -295,6 +295,12 @@ paths:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:
     $ref: paths/api@snapshots@id.yaml
+  /api/subnet-types:
+    $ref: paths/api@subnet-types.yaml
+  /api/subnets:
+    $ref: paths/api@subnets.yaml
+  /api/subnets/{id}:
+    $ref: paths/api@subnets@id.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
   /api/users:
