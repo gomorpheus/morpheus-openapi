@@ -28,6 +28,7 @@ properties:
     type: boolean
   zone: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -54,6 +55,7 @@ properties:
           nullable: true
         zone: 
           type: object
+          nullable: true
           properties: 
             id: 
               type: integer

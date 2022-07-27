@@ -29,7 +29,7 @@ get:
           examples:
             Security Groups Response:
               value:
-                $ref: ../components/examples/securityGroups.json 
+                $ref: ../components/examples/securityGroups.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
