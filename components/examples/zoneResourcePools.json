@@ -1,0 +1,398 @@
+{
+    "resourcePools": [
+        {
+            "id": 1054,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": null,
+            "type": "Cluster",
+            "externalId": "resgroup-12",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "Auto-Deploy",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 0
+        },
+        {
+            "id": 1072,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1054,
+                "name": "Auto-Deploy"
+            },
+            "type": "default",
+            "externalId": "resgroup-1029",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": false,
+            "config": {},
+            "name": "Hosts",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 1057,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": null,
+            "type": "Cluster",
+            "externalId": "resgroup-9",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "VSAN",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 0
+        },
+        {
+            "id": 1060,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1057,
+                "name": "VSAN"
+            },
+            "type": "default",
+            "externalId": "resgroup-66",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "Desktops",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 1075,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1057,
+                "name": "VSAN"
+            },
+            "type": "default",
+            "externalId": "resgroup-1030",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": false,
+            "status": "available",
+            "inventory": false,
+            "config": {},
+            "name": "ESX Agents",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 1063,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1057,
+                "name": "VSAN"
+            },
+            "type": "default",
+            "externalId": "resgroup-89",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "Home",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 12,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1057,
+                "name": "VSAN"
+            },
+            "type": "default",
+            "externalId": "resgroup-67",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "Infrastructure",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [
+                    {
+                        "id": 6,
+                        "name": "Work",
+                        "default": false
+                    },
+                    {
+                        "id": 1,
+                        "name": "Personal",
+                        "default": false
+                    },
+                    {
+                        "id": 7,
+                        "name": "All Clouds",
+                        "default": false
+                    }
+                ],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 1066,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1057,
+                "name": "VSAN"
+            },
+            "type": "default",
+            "externalId": "resgroup-68",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": true,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "Work",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 1306,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1066,
+                "name": "Work"
+            },
+            "type": "default",
+            "externalId": "resgroup-9009",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "123",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                },
+                {
+                    "id": 94,
+                    "name": "Customer 123"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 2
+        },
+        {
+            "id": 1459,
+            "description": null,
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 1066,
+                "name": "Work"
+            },
+            "type": "default",
+            "externalId": "resgroup-9011",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "private",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {},
+            "name": "456",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home"
+                },
+                {
+                    "id": 55,
+                    "name": "Customer 456"
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 2
+        }
+    ],
+    "meta": {
+        "size": 10,
+        "total": 10,
+        "max": 25,
+        "offset": 0
+    }
+}

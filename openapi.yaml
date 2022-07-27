@@ -335,6 +335,10 @@ paths:
     $ref: paths/api@zones@zoneId@data-stores.yaml
   /api/zones/{zoneId}/data-stores/{id}:
     $ref: paths/api@zones@zoneId@data-stores@id.yaml
+  /api/zones/{zoneId}/resource-pools:
+    $ref: paths/api@zones@zoneId@resource-pools.yaml
+  /api/zones/{zoneId}/resource-pools/{id}:
+    $ref: paths/api@zones@zoneId@resource-pools@id.yaml
   /api/zones/{id}/refresh:
     $ref: paths/api@zones@id@refresh.yaml
   /api/zones/{id}/security-groups:

@@ -3,8 +3,9 @@ properties:
   id: 
     type: integer
     format: int64
-  name: 
+  description: 
     type: string
+    nullable: true
   zone: 
     type: object
     properties: 
@@ -13,20 +14,45 @@ properties:
         format: int64
       name: 
         type: string
+  parent: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
   type: 
     type: string
-  freeSpace: 
-    type: integer
-    format: int64
-  online: 
+  externalId: 
+    type: string
+  regionCode: 
+    type: string
+    nullable: true
+  iacId: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+  readOnly: 
+    type: boolean
+  defaultPool: 
     type: boolean
   active: 
     type: boolean
-  visibility: 
+  status: 
+    type: string
+  inventory: 
+    type: boolean
+  config: 
+    type: object
+  name: 
+    type: string
+  displayName: 
     type: string
   tenants: 
     type: array
-    nullable: true
     items: 
       type: object
       properties: 
@@ -35,9 +61,5 @@ properties:
           format: int64
         name: 
           type: string
-        defaultStore: 
-          type: boolean
-        defaultTarget: 
-          type: boolean
   resourcePermission: 
     $ref: resourcePermissions.yaml
