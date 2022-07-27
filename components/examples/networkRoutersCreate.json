@@ -1,0 +1,30 @@
+{
+  "networkRouter": {
+    "type": {
+      "id": 9
+    },
+    "enabled": true,
+    "site": {
+      "id": "shared"
+    },
+    "networkServer": {
+      "id": 8
+    },
+    "name": "dand-0217",
+    "description": null,
+    "hostname": "dand",
+    "tenantName": null,
+    "sizeId": "compact",
+    "datastoreId": "datastore-58601",
+    "poolId": 9,
+    "folderId": "group-v58681",
+    "managementNetwork": {
+      "id": 86
+    },
+    "managementIp": "172.16.30.10",
+    "externalNetwork": null,
+    "internalNetwork": null,
+    "sshUsername": "stubbytoes",
+    "sshPassword": "supersecret"
+  }
+}

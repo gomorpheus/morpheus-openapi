@@ -1,0 +1,131 @@
+id:
+  type: integer
+  format: int64
+code:
+  type: string
+name:
+  type: string
+description:
+  type: string
+  nullable: true
+category:
+  type: string
+dateCreated:
+  type: string
+lastUpdated:
+  type: string
+routerType:
+  type: string
+status:
+  type: string
+enabled:
+  type: boolean
+externalIp:
+  type: string
+  nullable: true
+externalId:
+  type: string
+providerId:
+  type: string
+  nullable: true
+type:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    code:
+      type: string
+    name:
+      type: string
+    description:
+      type: string
+    enabled:
+      type: boolean
+    creatable:
+      type: boolean
+    selectable:
+      type: boolean
+    hasFirewall:
+      type: boolean
+    hasDhcp:
+      type: boolean
+    hasRouting:
+      type: boolean
+    hasNetworkServer:
+      type: boolean
+    optionTypes:
+      type: array
+      items:
+        type: object
+    ruleOptionTypes:
+      type: array
+      items:
+        type: object
+networkServer:
+  type: string
+  nullable: true
+zone:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    code:
+      type: string
+    name:
+      type: string
+instance:
+  type: string
+  nullable: true
+externalNetwork:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    code:
+      type: string
+    name:
+      type: string
+site:
+  type: string
+  nullable: true
+interfaces:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      code:
+        type: string
+        nullable: true
+      interfaceType:
+        type: string
+        nullable: true
+      networkPosition:
+        type: string
+        nullable: true
+      ipAddress:
+        type: string
+      cidr:
+        type: string
+      externalLink:
+        type: string
+        nullable: true
+      enabled:
+        type: boolean
+      network:
+        type: object
+        properties:
+          id:
+            type: integer
+            format: int64
+          name:
+            type: string
+          code:
+            type: string

@@ -1,0 +1,100 @@
+get:
+  summary: Get all Network Routers
+  description: |
+    This endpoint retrieves all Network Routers
+  operationId: getNetworkRouters
+  tags:
+    - Networks
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkRouters:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    $ref: ../components/schemas/networkRouters.yaml
+          examples:
+            Network Routers Response:
+              value:
+                $ref: ../components/examples/networkRouters.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post:
+  summary: Create a Network Router
+  description: |
+    Use this command to create a network router.
+  operationId: createNetworkRouter
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          description: |
+            The parameters for creating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type.
+            Note: when creating a router on NSX-T v3.0+ some BGP configuration settings require BGP to be disabled during initial creation. The BGP feature can be enabled in a subsequent router update API call.
+          properties: 
+            networkRouter:
+              $ref: ../components/schemas/networkRoutersCreate.yaml
+        examples: 
+          Successful Request:
+            value: 
+              $ref: ../components/examples/networkRoutersCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/successId.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml  
+
