@@ -20,9 +20,15 @@ get:
                 resourcePool:
                   $ref: ../components/schemas/zoneResourcePool.yaml
           examples:
-            Resource Pool Response:
+            Resource Pool Response - VMware:
               value:
-                $ref: ../components/examples/zoneResourcePool.json 
+                $ref: ../components/examples/zoneResourcePoolVcenter.json
+            Resource Pool Response - AWS:
+              value:
+                $ref: ../components/examples/zoneResourcePoolAws.json
+            Resource Pool Response - GCP:
+              value:
+                $ref: ../components/examples/zoneResourcePoolGcp.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':
