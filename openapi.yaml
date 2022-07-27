@@ -259,6 +259,10 @@ paths:
     $ref: paths/api@networks@routers.yaml
   /api/networks/routers/{id}:
     $ref: paths/api@networks@routers@id.yaml
+  /api/networks/routers/{routerId}/firewall-rules:
+    $ref: paths/api@networks@routers@id@firewall-rules.yaml
+  /api/networks/routers/{routerId}/firewall-rules/{id}:
+    $ref: paths/api@networks@routers@id@firewall-rules@id.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:
