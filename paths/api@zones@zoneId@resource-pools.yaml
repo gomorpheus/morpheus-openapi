@@ -52,7 +52,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-put:
+post:
   summary: Creates a Specified Resource Pool for Specified Cloud
   description: |
     Creates a resource pool for specified cloud.
@@ -72,9 +72,21 @@ put:
             resourcePool:
               type: object
               properties:
+                name:
+                  type: string
+                  description: Name of Resource Pool
+                defaultPool:
+                  type: boolean
+                  description: Set as the Default Pool
+                  default: false
+                defaultImage:
+                  type: boolean
+                  description: Set as the Default Image Target
+                  default: false
                 active: 
                   type: boolean
                   description: Activate `true` or disable `false` the datastore
+                  default: true
                 visibility:
                   type: string
                   description: Setting `private` or `public`
@@ -88,6 +100,7 @@ put:
                 inventory:
                   type: boolean
                   description: Enable `True` or disable `False` inventory sync for resource pool during cloud refresh
+                  default: true
                 tenantPermissions:
                   type: array
                   items:
@@ -108,6 +121,7 @@ put:
                       all:
                         type: boolean
                         description: Pass `true` to allow access all groups
+                        default: true
                       sites:
                         type: array
                         description: Array of groups that are allowed access
@@ -121,6 +135,7 @@ put:
                       allPlans:
                         type: boolean
                         description: Pass true to allow access all plans
+                        default: true
                       plans:
                         type: array
                         description: Array of plans that are allowed access
@@ -146,7 +161,7 @@ put:
           examples:
             Create Resource Pool Response:
               value:
-                $ref: ../components/examples/zoneResourcePool.json
+                $ref: ../components/examples/zoneResourcePoolSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

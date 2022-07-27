@@ -133,12 +133,12 @@ put:
             properties:
               resourcePool:
                 allOf:
-                - $ref: ../components/schemas/zoneResourcePool.yaml
-                - $ref: ../components/schemas/200-success.yaml
+                  - $ref: ../components/schemas/zoneResourcePool.yaml
+                  - $ref: ../components/schemas/200-success.yaml
           examples:
             Update Resource Pool Response:
               value:
-                $ref: ../components/examples/zoneResourcePool.json
+                $ref: ../components/examples/zoneResourcePoolSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
