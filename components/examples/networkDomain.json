@@ -1,0 +1,31 @@
+{
+  "networkDomain": {
+    "id": 1,
+    "name": "testdomain.xyz",
+    "active": true,
+    "fqdn": "testdomain.xyz.",
+    "description": "an example domain",
+    "visibility": "private",
+    "domainController": false,
+    "publicZone": false,
+    "domainUsername": null,
+    "domainPassword": null,
+    "refType": "AccountIntegration",
+    "refId": 18,
+    "refSource": "integration",
+    "internalId": null,
+    "ouPath": null,
+    "dcServer": null,
+    "zoneType": "Authoritative",
+    "dnssec": null,
+    "domainSerial": null,
+    "account": {
+      "id": 1,
+      "name": "root"
+    },
+    "owner": {
+      "id": 1,
+      "name": "root"
+    }
+  }
+}

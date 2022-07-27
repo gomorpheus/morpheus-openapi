@@ -1,8 +1,8 @@
 get:
-  summary: Get a Specific Network Group
+  summary: Get a Specific Network Domain
   description: |
-    This endpoint retrieves a specific Network Group.
-  operationId: getNetworkGroup
+    This endpoint retrieves a specific Network Domain.
+  operationId: getNetworkDomain
   tags:
     - Networks
   parameters:
@@ -15,13 +15,12 @@ get:
           schema:
             type: object
             properties:
-              networkGroup:
-                properties:
-                  $ref: ../components/schemas/networkGroup.yaml
+              networkDomain:
+                $ref: ../components/schemas/networkDomain.yaml
           examples:
-            Networks Response:
+            Successful Response:
               value:
-                $ref: ../components/examples/networkGroup.json
+                $ref: ../components/examples/networkDomain.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -43,11 +42,11 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 
-put: 
-  summary: Update a Network Group
+put:
+  summary: Update a Network Domain
   description: |
-    Use this command to update an existing network Group.
-  operationId: updateNetworkGroup
+    Update a Network Domain.
+  operationId: updateNetworkDomain
   tags:
     - Networks
   parameters:
@@ -58,23 +57,26 @@ put:
         schema: 
           type: object
           properties: 
-            networkGroup:
-              $ref: ../components/schemas/networkGroupsCreate.yaml
+            networkDomain:
+              $ref: ../components/schemas/networkDomainCreate.yaml
         examples: 
-          Network Group Request:
-            value:
-              $ref: ../components/examples/networkGroupsCreate.json
+          Successful Request:
+            value: 
+              $ref: ../components/examples/networkDomainCreate.json
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
-          examples: 
-            Successful Request:
+            type: object
+            properties:
+              networkDomain:
+                $ref: ../components/schemas/networkDomain.yaml
+          examples:
+            Successful Response:
               value:
-                $ref: ../components/examples/success.json
+                $ref: ../components/examples/networkDomain.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -94,12 +96,12 @@ put:
     '500':
       $ref: ../components/responses/500.yaml
     '503':
-      $ref: ../components/responses/503.yaml
+      $ref: ../components/responses/503.yaml  
 
-delete: 
-  summary: Delete a Network Group
-  description: Will delete a Network Group from the system and make it no longer usable.
-  operationId: deleteNetworkGroup
+delete:
+  summary: Delete a Network Domain
+  description: Will delete a Network Domain from the system and make it no longer usable.
+  operationId: deleteNetworkDomain
   tags:
     - Networks
   parameters:

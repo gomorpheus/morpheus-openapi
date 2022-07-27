@@ -239,6 +239,10 @@ paths:
     $ref: paths/api@networks@id@routes.yaml
   /api/networks/{id}/routes/{routeId}:
     $ref: paths/api@networks@id@routes@id.yaml
+  /api/networks/domains:
+    $ref: paths/api@networks@domains.yaml
+  /api/networks/domains/{id}:
+    $ref: paths/api@networks@domains@id.yaml
   /api/networks/groups:
     $ref: paths/api@networks@groups.yaml
   /api/networks/groups/{id}:
