@@ -1,0 +1,45 @@
+get:
+  summary: Get All Network Services
+  description: This endpoint retrieves all Network Services associated with the account.
+  operationId: listNetworkServices
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkServices:
+                type: array
+                items:
+                  $ref: ../components/schemas/networkService.yaml
+          examples:
+            Network Services Response:
+              value:
+                $ref: ../components/examples/networkServices.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

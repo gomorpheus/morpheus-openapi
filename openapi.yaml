@@ -305,6 +305,12 @@ paths:
     $ref: paths/api@networks@servers@id@firewall-rule-groups.yaml
   /api/networks/servers/{serverId}/firewall-rule-groups/{id}:
     $ref: paths/api@networks@servers@id@firewall-rule-groups@id.yaml
+  /api/networks/servers/{serverId}/scopes:
+    $ref: paths/api@networks@servers@id@scopes.yaml
+  /api/networks/servers/{serverId}/scopes/{id}:
+    $ref: paths/api@networks@servers@id@scopes@id.yaml
+  /api/networks/services:
+    $ref: paths/api@networks@services.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/processes:

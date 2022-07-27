@@ -1,0 +1,22 @@
+{
+  "networkServices": [
+    {
+      "serviceType": "networkPool",
+      "serviceTypeName": "Network Pool",
+      "type": "phpipam",
+      "typeName": "phpIPAM",
+      "name": "phpIPAM",
+      "id": 30,
+      "integrationId": 26
+    },
+    {
+      "serviceType": "dns",
+      "serviceTypeName": "DNS",
+      "type": "amazonDns",
+      "name": "aws-cloud",
+      "id": 31,
+      "integrationId": 31,
+      "typeName": "Route 53"
+    }
+  ]
+}
