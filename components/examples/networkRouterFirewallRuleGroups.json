@@ -1,0 +1,52 @@
+{
+  "ruleGroups": [
+    {
+      "id": 321,
+      "name": "Policy_Default_Infra",
+      "description": null,
+      "externalId": "Policy_Default_Infra",
+      "iacId": null,
+      "zone": null,
+      "zonePool": null,
+      "status": "available",
+      "priority": 20,
+      "groupLayer": "Default",
+      "rules": [
+        {
+          "id": 1056,
+          "name": "dand-nsxt-t0-0425.1",
+          "code": null,
+          "enabled": true,
+          "groupName": "Policy_Default_Infra",
+          "direction": "any",
+          "ruleType": "custom",
+          "policy": "accept",
+          "source": [
+            "ANY"
+          ],
+          "sourceType": "cidr",
+          "destination": [
+            "ANY"
+          ],
+          "destinationType": "instance",
+          "profiles": [
+            "ANY"
+          ],
+          "protocol": null,
+          "application": null,
+          "applicationType": "port",
+          "portRange": null,
+          "sourcePortRange": null,
+          "sourceGroup": null,
+          "sourceTier": null,
+          "applications": [
+            {
+              "id": 432,
+              "name": "ANY"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
