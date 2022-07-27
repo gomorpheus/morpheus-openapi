@@ -1,0 +1,74 @@
+id:
+  type: integer
+  format: int64
+ipAddress:
+  type: string
+forwardingAddress:
+  type: string
+  nullable: true
+protocolAddress:
+  type: string
+  nullable: true
+remoteAs:
+  type: string
+weight:
+  type: integer
+  format: int64
+keepAlive:
+  type: integer
+  format: int64
+holdDown:
+  type: integer
+  format: int64
+password:
+  type: string
+  nullable: true
+routeFilteringType:
+  type: string
+routeFilteringIn:
+  type: string
+routeFilteringOut:
+  type: string
+bfdEnabled:
+  type: boolean
+bfdInterval:
+  type: integer
+  format: int64
+bfdMultiple:
+  type: integer
+  format: int64
+allowAsIn:
+  type: boolean
+hopLimit:
+  type: integer
+  format: int64
+restartMode:
+  type: string
+providerId:
+  type: string
+syncSource:
+  type: string
+internalId:
+  type: string
+  nullable: true
+externalId:
+  type: string
+refType:
+  type: string
+  nullable: true
+refId:
+  type: string
+  nullable: true
+config:
+  type: object
+  properties:
+    sourceAddresses:
+      type: array
+      items:
+        type: string
+dateCreated:
+  type: string
+  format: date-time
+lastUpdated:
+  type: string
+  format: date-time

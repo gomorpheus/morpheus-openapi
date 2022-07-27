@@ -263,6 +263,10 @@ paths:
     $ref: paths/api@networks@routers.yaml
   /api/networks/routers/{id}:
     $ref: paths/api@networks@routers@id.yaml
+  /api/networks/routers/{routerId}/bgp-neighbors:
+    $ref: paths/api@networks@routers@id@bgp-neighbors.yaml
+  /api/networks/routers/{routerId}/bgp-neighbors/{id}:
+    $ref: paths/api@networks@routers@id@bgp-neighbors@id.yaml
   /api/networks/routers/{routerId}/firewall-rules:
     $ref: paths/api@networks@routers@id@firewall-rules.yaml
   /api/networks/routers/{routerId}/firewall-rules/{id}:

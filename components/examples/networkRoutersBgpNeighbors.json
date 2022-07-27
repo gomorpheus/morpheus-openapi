@@ -1,0 +1,38 @@
+{
+  "networkRouterBgpNeighbors": [
+    {
+      "id": 15,
+      "ipAddress": "172.16.2.22",
+      "forwardingAddress": null,
+      "protocolAddress": null,
+      "remoteAs": "12345",
+      "weight": 60,
+      "keepAlive": 60,
+      "holdDown": 180,
+      "password": null,
+      "routeFilteringType": "IPV4",
+      "routeFilteringIn": "prefixlist-out-default",
+      "routeFilteringOut": "prefixlist-out-default",
+      "bfdEnabled": false,
+      "bfdInterval": 1000,
+      "bfdMultiple": 3,
+      "allowAsIn": false,
+      "hopLimit": 1,
+      "restartMode": "HELPER_ONLY",
+      "providerId": "/infra/tier-0s/b05d6532-2742-4dbd-98f2-a62aa8a62ae0/locale-services/default/bgp/neighbors/d20fc560-35e3-11ec-b68f-c788e632ae30",
+      "syncSource": "external",
+      "internalId": null,
+      "externalId": "d20fc560-35e3-11ec-b68f-c788e632ae30",
+      "refType": null,
+      "refId": null,
+      "config": {
+        "sourceAddresses": [
+          "12.12.22.22",
+          "10.22.12.2"
+        ]
+      },
+      "dateCreated": "2021-10-25T22:37:54Z",
+      "lastUpdated": "2021-10-27T15:08:12Z"
+    }
+  ]
+}
