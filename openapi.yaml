@@ -243,6 +243,10 @@ paths:
     $ref: paths/api@networks@groups.yaml
   /api/networks/groups/{id}:
     $ref: paths/api@networks@groups@id.yaml
+  /api/networks/pools:
+    $ref: paths/api@networks@pools.yaml
+  /api/networks/pools/{id}:
+    $ref: paths/api@networks@pools@id.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:
