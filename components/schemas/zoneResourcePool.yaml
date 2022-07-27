@@ -90,6 +90,7 @@ properties:
     type: string
   displayName: 
     type: string
+    nullable: true
   tenants: 
     type: array
     items: 
