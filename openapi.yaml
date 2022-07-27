@@ -331,6 +331,10 @@ paths:
     $ref: paths/api@roles@id.yaml
   /api/search:
     $ref: paths/api@search.yaml
+  /api/security-groups:
+    $ref: paths/api@security-groups.yaml
+  /api/security-groups/{id}:
+    $ref: paths/api@security-groups@id.yaml
   /api/servers/{id}/wiki:
     $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
