@@ -2,7 +2,7 @@ get:
   summary: Retrieves a Datastore for Specified Cloud
   description: |
     Data Stores can be managed for each Compute Zone (Cloud) in your infrastructure.
-    This endpoint retrieves all data stores under a cloud.
+    This endpoint retrieves a specific datastore under a cloud.
   operationId: getCloudDatastores
   tags:
     - Clouds
