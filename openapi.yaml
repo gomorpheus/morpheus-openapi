@@ -271,6 +271,10 @@ paths:
     $ref: paths/api@networks@routers@id@firewall-rule-groups.yaml
   /api/networks/routers/{routerId}/firewall-rule-groups/{id}:
     $ref: paths/api@networks@routers@id@firewall-rule-groups@id.yaml
+  /api/networks/routers/{routerId}/nats:
+    $ref: paths/api@networks@routers@id@nats.yaml
+  /api/networks/routers/{routerId}/nats/{id}:
+    $ref: paths/api@networks@routers@id@nats@id.yaml
   /api/networks/routers/{routerId}/permissions:
     $ref: paths/api@networks@routers@id@permissions.yaml
   /api/networks/routers/{routerId}/routes:

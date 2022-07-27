@@ -1,8 +1,8 @@
 get:
-  summary: Get all Routes for Network Router
+  summary: Get all Network Router NATs for Network Router
   description: |
-    This endpoint retrieves all Routes for specified network router.
-  operationId: getNetworkRoutersRoutes
+    This endpoint retrieves all NATs for specified network router.
+  operationId: getNetworkRoutersNats
   tags:
     - Networks
   parameters:
@@ -15,14 +15,14 @@ get:
           schema:
             type: object
             properties:
-              networkRoutes:
+              networkRouterNATs:
                 type: array
                 items:
-                  $ref: ../components/schemas/networkRouterRoute.yaml
+                  $ref: ../components/schemas/networkRouterNat.yaml
           examples:
-            Network Router Routes Response:
+            Network Router NATs Response:
               value:
-                $ref: ../components/examples/networkRoutersRoutes.json
+                $ref: ../components/examples/networkRoutersNats.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -45,9 +45,9 @@ get:
       $ref: ../components/responses/503.yaml
 
 post: 
-  summary: Create a Network Router Route
-  description: Use this command to create a route for an existing network router.
-  operationId: createNetworkRouterRoute
+  summary: Create a Network Router NAT
+  description: Use this command to create a NAT for an existing network router.
+  operationId: createNetworkRouterNat
   tags:
     - Networks
   parameters:
@@ -58,12 +58,18 @@ post:
         schema: 
           type: object
           properties: 
-            networkRoute:
-              $ref: ../components/schemas/networkRouterRouteCreate.yaml
+            networkRouterNAT:
+              type: object
+              description: For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
+              required:
+                - name
+              properties:
+                name:
+                  description: NAT name
         examples: 
-          Network  Router Request:
+          Network Router NAT Request:
             value:
-              $ref: ../components/examples/networkRouterRouteCreate.json
+              $ref: ../components/examples/networkRouterNatCreate.json
   responses:
     '200':
       description: Successful Request

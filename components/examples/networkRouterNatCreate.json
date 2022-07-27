@@ -1,0 +1,19 @@
+{
+  "networkRouterNAT": {
+    "name": "Name of NAT",
+    "description": "Description of NAT",
+    "enabled": "on",
+    "config": {
+      "action": "SNAT",
+      "service": "/infra/services/TELNET",
+      "firewall": "MATCH_INTERNAL_ADDRESS",
+      "scope": null,
+      "logging": "off"
+    },
+    "sourceNetwork": "1.1.1.1",
+    "destinationNetwork": "1.2.3.4",
+    "translatedNetwork": "2.2.2.2",
+    "translatedPorts": "2222",
+    "priority": 100
+  }
+}

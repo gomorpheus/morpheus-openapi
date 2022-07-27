@@ -1,0 +1,28 @@
+{
+  "networkRouterNATs": [
+    {
+      "id": 11,
+      "name": "api-test-nat",
+      "description": "description",
+      "enabled": true,
+      "sourceNetwork": "1.1.1.1",
+      "destinationNetwork": null,
+      "translatedNetwork": "2.2.2.2",
+      "sourcePorts": null,
+      "destinationPorts": null,
+      "translatedPorts": null,
+      "priority": 100,
+      "protocol": null,
+      "matchIpv6DestinationPrefix": null,
+      "translatedIpv4SourcePrefix": null,
+      "refType": null,
+      "refId": null,
+      "syncSource": "external",
+      "internalId": null,
+      "externalId": "15efe516-af3a-4e37-af7b-dff5a62c6faa",
+      "providerId": "/infra/tier-0s/b05d6532-2742-4dbd-98f2-a62aa8a62ae0/nat/USER/nat-rules/15efe516-af3a-4e37-af7b-dff5a62c6faa",
+      "dateCreated": "2021-07-20T12:54:46Z",
+      "lastUpdated": "2021-07-20T12:56:11Z"
+    }
+  ]
+}
