@@ -1,10 +1,10 @@
 get:
-  summary: Retrieves a Specific Group
+  summary: Retrieves a Specific Security Group
   description: |
-    Retrieves a specific group.
-  operationId: getGroups
+    Retrieves a specific security group.
+  operationId: getSecurityGroups
   tags:
-    - Groups
+    - SecurityGroups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -15,12 +15,12 @@ get:
           schema:
             type: object
             properties:
-              group:
-                $ref: ../components/schemas/group.yaml
+              securityGroup:
+                $ref: ../components/schemas/securityGroup.yaml
           examples:
-            Search Response:
+            Security Group Response:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/securityGroup.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,12 +42,12 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Updates a Group
+  summary: Creates a Security Group
   description: |
-    Updates a group.
-  operationId: updateGroups
+    Creates a security group.
+  operationId: updateSecurityGroups
   tags:
-    - Groups
+    - Security Groups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -56,20 +56,57 @@ put:
         schema:
           type: object
           required:
-            - group
+            - securityGroup
           properties:
-            group:
+            securityGroup:
               type: object
               properties:
                 name: 
                   type: string
-                  description: A unique name scoped to your account for the group
-                code:
+                  description: Name for your security group
+                description:
                   type: string
-                  description: Optional code for use with policies
-                location:
-                  type: string
-                  description: Optional location argument for your group
+                  description: Optional description field
+                active:
+                  type: boolean
+                  description: Set to `false` to disable a security group.
+                tenantPermissions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      accounts:
+                        type: array
+                        description: Array of tenant account ids that are allowed access
+                        items:
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                      canManageAccounts:
+                        type: array
+                        description: Array of tenant account ids that can manage
+                        items:
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                resourcePermissions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      all:
+                        type: boolean
+                        description: Pass `true` to allow access all groups
+                      sites:
+                        type: array
+                        description: Array of groups that are allowed access
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 1
   responses:
     '200':
       description: Successful Request
@@ -78,14 +115,14 @@ put:
           schema:
             type: object
             properties:
-              group:
+              securityGroup:
                 allOf:
-                  - $ref: ../components/schemas/group.yaml
+                  - $ref: ../components/schemas/securityGroup.yaml
                   - $ref: ../components/schemas/200-success.yaml
           examples:
-            Report Types Response:
+            Security Group Response:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/securityGroup.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -107,12 +144,12 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Deletes a Group
+  summary: Deletes a Security Group
   description: |
-    Deletes a specified Group.
-  operationId: removeGroups
+    Deletes a specified security group.
+  operationId: removeSecurityGroups
   tags:
-    - Groups
+    - Security Groups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
