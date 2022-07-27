@@ -7,6 +7,7 @@ properties:
     type: string
   description: 
     type: string
+    nullable: true
   accountId: 
     type: integer
     format: int64
@@ -117,6 +118,7 @@ properties:
           type: string
         destination: 
           type: string
+          nullable: true
         destinationGroup: 
           type: string
           nullable: true

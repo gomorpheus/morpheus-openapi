@@ -4,7 +4,7 @@ get:
     Retrieves a specific security group.
   operationId: getSecurityGroups
   tags:
-    - SecurityGroups
+    - Security Groups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
