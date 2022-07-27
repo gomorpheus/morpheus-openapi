@@ -1,0 +1,32 @@
+name: 
+  type: string
+  description: Name
+proxyHost: 
+  type: string
+  description: Proxy Host
+proxyPort: 
+  type: string
+  description: Proxy Port
+proxyUser: 
+  type: string
+  description: Proxy Username
+proxyPassword: 
+  type: string
+  description: Proxy Password
+proxyDomain: 
+  type: string
+  description: Proxy Domain
+proxyWorkstation: 
+  type: string
+  description: Proxy Workstation
+visibility: 
+  type: string
+  description: Visibility
+  default: "private"
+account: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+      description: Tenant Account ID
