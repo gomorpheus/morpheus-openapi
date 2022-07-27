@@ -1,0 +1,29 @@
+type: object
+required:
+  - source
+  - destination
+  - networkMtu
+properties:
+  name:
+    type: string
+    description: Route name
+  description:
+    type: string
+    description: Route description
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the route (true, false). Default is off
+    default: false
+  defaultRoute:
+    type: boolean
+    description: Can be used to set as default route (true, false). Default is off
+    default: false
+  source:
+    type: string
+    description: Source address or range
+  destination:
+    type: string
+    description: Destination address or range
+  networkMtu:
+    type: string
+    description: MTU
