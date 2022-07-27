@@ -1,0 +1,60 @@
+{
+  "networkRouterTypes": [
+    {
+      "id": 2,
+      "code": "opentelekomNeutronRouter",
+      "name": "Open Telekom Router",
+      "description": "Neutron Router",
+      "enabled": true,
+      "creatable": true,
+      "selectable": true,
+      "hasFirewall": false,
+      "hasDhcp": false,
+      "hasRouting": false,
+      "hasNetworkServer": false,
+      "optionTypes": [
+        {
+          "id": 471,
+          "name": "networkSubnet",
+          "description": null,
+          "code": "networkRouter.neutron.internalSubnet",
+          "fieldName": "interfaces.networkSubnet.id",
+          "fieldLabel": "Internal Subnet",
+          "fieldContext": "domain",
+          "fieldGroup": null,
+          "fieldClass": null,
+          "fieldAddOn": null,
+          "fieldComponent": null,
+          "fieldInput": "ipAddress",
+          "placeHolder": null,
+          "helpBlock": "",
+          "defaultValue": null,
+          "optionSource": "openstackInternalSubnets",
+          "optionList": null,
+          "type": "multiSelect",
+          "advanced": false,
+          "required": true,
+          "editable": true,
+          "creatable": true,
+          "config": {
+          },
+          "displayOrder": 120,
+          "wrapperClass": null,
+          "enabled": true,
+          "noBlank": false,
+          "dependsOnCode": "router.zone.id",
+          "contextualDefault": false
+        }
+      ],
+      "ruleOptionTypes": [
+
+      ],
+      "natOptionTypes": [
+
+      ],
+      "ruleGroupOptionTypes": [
+
+      ]
+    }
+  ]
+}

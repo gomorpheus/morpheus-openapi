@@ -1,0 +1,52 @@
+put: 
+  summary: Update Network Router Permissions
+  description: |
+    Update Network Router Permissions
+  operationId: updateNetworkRouterPermissions
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/routerId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            permissions:
+              $ref: ../components/schemas/networkRouterPermissionsUpdate.yaml
+        examples: 
+          Network Router Permissions Request:
+            value:
+              $ref: ../components/examples/networkRouterPermissionsUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/successId.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

@@ -1,0 +1,45 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  code:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  enabled:
+    type: boolean
+  creatable:
+    type: boolean
+  selectable:
+    type: boolean
+  hasFirewall:
+    type: boolean
+  hasDhcp:
+    type: boolean
+  hasRouting:
+    type: boolean
+  hasNetworkServer:
+    type: boolean
+  optionTypes:
+    type: array
+    items:
+      $ref: optionType.yaml
+  ruleOptionTypes:
+    type: array
+    items:
+      $ref: optionType.yaml
+  ruleGroupOptionTypes:
+    type: array
+    items:
+      $ref: optionType.yaml
+  natOptionTypes:
+    type: array
+    items:
+      $ref: optionType.yaml
+  bgpOptionTypes:
+    type: array
+    items:
+      $ref: optionType.yaml
