@@ -1,0 +1,39 @@
+{
+    "resourcePool": {
+        "id": 2137,
+        "description": null,
+        "zone": {
+            "id": 61,
+            "name": "Work GCP"
+        },
+        "parent": null,
+        "type": "Project",
+        "externalId": "morpheus-discourse",
+        "regionCode": null,
+        "iacId": null,
+        "visibility": "private",
+        "readOnly": false,
+        "defaultPool": false,
+        "active": true,
+        "status": "failed",
+        "inventory": true,
+        "config": {
+            "parent": 244,
+            "billingAccount": "billingAccounts/013A63-C7EF98-E59664"
+        },
+        "name": "morpheus-discourse",
+        "displayName": null,
+        "tenants": [
+            {
+                "id": 1,
+                "name": "Home"
+            }
+        ],
+        "resourcePermission": {
+            "all": true,
+            "sites": [],
+            "allPlans": true,
+            "plans": []
+        }
+    }
+}
