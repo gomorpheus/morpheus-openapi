@@ -1,6 +1,8 @@
 name: provisionType
 in: query
-description: Filter by `Provision Type` code
+description: |
+  Filter by `Provision Type` code.
+  Refer to `Provision Types` API for up to date listings.
 schema:
   type: string
   enum:
