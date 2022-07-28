@@ -1,0 +1,24 @@
+{
+    "rule": {
+        "id": 22570,
+        "name": null,
+        "ruleType": "custom",
+        "customRule": true,
+        "instanceTypeId": null,
+        "direction": "egress",
+        "policy": "accept",
+        "sourceType": "all",
+        "source": null,
+        "sourceGroup": null,
+        "sourceTier": null,
+        "portRange": null,
+        "protocol": "all",
+        "destinationType": "cidr",
+        "destination": "0.0.0.0/0",
+        "destinationGroup": null,
+        "destinationTier": null,
+        "externalId": "null",
+        "enabled": null
+    },
+    "success": true
+}

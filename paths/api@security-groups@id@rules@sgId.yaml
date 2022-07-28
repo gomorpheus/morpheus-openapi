@@ -1,12 +1,13 @@
 get:
-  summary: Retrieves a Specific Group
+  summary: Retrieves a Specific Security Group Rule
   description: |
-    Retrieves a specific group.
-  operationId: getGroups
+    Retrieves a specific security group rule.
+  operationId: getSecurityGroupRules
   tags:
-    - Groups
+    - Security Groups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/sgId-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -15,12 +16,12 @@ get:
           schema:
             type: object
             properties:
-              group:
-                $ref: ../components/schemas/group.yaml
+              rule:
+                $ref: ../components/schemas/securityGroupRule.yaml
           examples:
-            Search Response:
+            Security Group Rule Response:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/securityGroupRule.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,50 +43,144 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Updates a Group
+  summary: Updates a Security Group Rule
   description: |
-    Updates a group.
-  operationId: updateGroups
+    Updates a security group rule.
+  operationId: updateSecurityGroupRules
   tags:
-    - Groups
+    - Security Groups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/sgId-path.yaml
   requestBody:
     content:
       application/json:
         schema:
           type: object
           required:
-            - group
+            - rule
           properties:
-            group:
+            rule:
               type: object
+              required:
+                - ruleType
+                - protocol
               properties:
                 name: 
                   type: string
-                  description: A unique name scoped to your account for the group
-                code:
+                  description: A name for the rule
+                direction:
                   type: string
-                  description: Optional code for use with policies
-                location:
+                  description: Either `ingress` or `egress`
+                  enum:
+                    - ingress
+                    - egress
+                  default: ingress
+                sourceType:
                   type: string
-                  description: Optional location argument for your group
+                  description: Either `cidr`, `group`, `tier`, `all`.
+                  enum:
+                    - cidr
+                    - group
+                    - tier
+                    - all
+                  default: cidr
+                source:
+                  type: string
+                  description: CIDR representing the source IP(s) which should receive access. Required for `sourceType`=cidr
+                  example: '50.22.10.10/32'
+                sourceGroup:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: The source Security Group ID. Required for `sourceType`=group
+                      example: 56496
+                sourceTier:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: The source Tier ID. Required for `soureType`=tier
+                      example: 56496
+                portRange:
+                  type: string
+                  description: |
+                    Either a single value (i.e. 55) or a port range (i.e. 1-65535) for which to open access to the source.
+                    Required if customRule is true, otherwise, ignored.
+                  example: "55-72"
+                protocol:
+                  type: string
+                  description: Either tcp, udp, icmp. Required if customRule is true, otherwise, ignored.
+                  enum:
+                    - tcp
+                    - udp
+                    - icmp
+                destinationType:
+                  type: string
+                  description: Either cidr, group, tier, instance.
+                  default: cidr
+                  enum:
+                    - cidr
+                    - group
+                    - tier
+                    - instance
+                destination:
+                  type: string
+                  description: CIDR representing the destination IP(s) which should receive access. Required for `destinationType`=cidr.
+                  example: '50.22.10.10/32'
+                destinationGroup:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: The destination Security Group ID. Required for `destinationType`=group.
+                      example: 56496
+                destinationTier:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: The destination Tier ID. Required for `destinationType`=tier.
+                      example: 56496
+                ruleType:
+                  type: string
+                  description: Either `customRule` or an `instance type` code.
+                  default: customRule
+                policy:
+                  type: string
+                  description: Either `accept` or `deny`.
+                  enum:
+                    - accept
+                    - deny
+                instanceTypeId:
+                  type: integer
+                  format: int64
+                  description: |
+                    The id of an Instance Type.
+                    If specified, the source CIDR will have access to all ports exposed by the particular instance in the cloud, app, or instance.
+                    Required if customRule is false, otherwise ignored.
+                  example: 54568
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              group:
-                allOf:
-                  - $ref: ../components/schemas/group.yaml
-                  - $ref: ../components/schemas/200-success.yaml
+            allOf:
+            - type: object
+              properties:
+                rule:
+                  $ref: ../components/schemas/SecurityGroupRule.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
-            Report Types Response:
+            Security Group Rule Response:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/SecurityGroupRuleSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -107,14 +202,15 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Deletes a Group
+  summary: Deletes a Security Group Rule
   description: |
-    Deletes a specified Group.
-  operationId: removeGroups
+    Deletes a security group rule.
+  operationId: removeSecurityGroupRules
   tags:
-    - Groups
+    - Security Groups
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/sgId-path.yaml
   responses:
     '200':
       description: Successful Request

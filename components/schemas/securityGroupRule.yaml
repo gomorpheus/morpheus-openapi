@@ -23,11 +23,23 @@ properties:
     type: string
     nullable: true
   sourceGroup: 
-    type: string
+    type: object
     nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
   sourceTier: 
-    type: string
+    type: object
     nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
   portRange: 
     type: string
     nullable: true
@@ -37,12 +49,25 @@ properties:
     type: string
   destination: 
     type: string
+    nullable: true
   destinationGroup: 
-    type: string
+    type: object
     nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
   destinationTier: 
-    type: string
+    type: object
     nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
   externalId: 
     type: string
     nullable: true

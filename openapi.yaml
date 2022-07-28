@@ -355,10 +355,10 @@ paths:
   #   $ref: paths/api@security-groups@id@locations.yaml
   # /api/security-groups/{id}/locations/{locationId}:
   #   $ref: paths/api@security-groups@id@locations@locationId.yaml
-  # /api/security-groups/{id}/rules:
-  #   $ref: paths/api@security-groups@id@rules.yaml
-  # /api/security-groups/{id}/rules/{sgId}:
-  #   $ref: paths/api@security-groups@id@rules@sgId.yaml
+  /api/security-groups/{id}/rules:
+    $ref: paths/api@security-groups@id@rules.yaml
+  /api/security-groups/{id}/rules/{sgId}:
+    $ref: paths/api@security-groups@id@rules@sgId.yaml
   /api/servers/{id}/wiki:
     $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
