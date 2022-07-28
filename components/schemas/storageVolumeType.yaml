@@ -61,6 +61,7 @@ properties:
           nullable: true
         fieldAddOn: 
           type: string
+          nullable: true
         fieldComponent: 
           type: string
           nullable: true
@@ -104,7 +105,7 @@ properties:
           type: boolean
         config: 
           type: object
-          properties:  
+          nullable: true
         displayOrder: 
           type: integer
           format: int64
@@ -127,14 +128,14 @@ properties:
         contextualDefault: 
           type: boolean
         displayValueOnDetails: 
-          type: string
+          type: boolean
           nullable: true
         showOnCreate: 
-          type: string
+          type: boolean
           nullable: true
         showOnEdit: 
-          type: string
+          type: boolean
           nullable: true
         localCredential: 
-          type: string
+          type: boolean
           nullable: true
