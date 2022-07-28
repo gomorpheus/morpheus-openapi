@@ -365,6 +365,14 @@ paths:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:
     $ref: paths/api@snapshots@id.yaml
+  /api/storage-server-types:
+    $ref: paths/api@storage-server-types.yaml
+  /api/storage-server-types/{id}:
+    $ref: paths/api@storage-server-types@id.yaml
+  /api/storage-volume-types:
+    $ref: paths/api@storage-volume-types.yaml
+  /api/storage-volume-types/{id}:
+    $ref: paths/api@storage-volume-types@id.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:

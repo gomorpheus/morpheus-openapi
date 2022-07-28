@@ -1,0 +1,140 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  name: 
+    type: string
+  description: 
+    type: string
+  displayOrder: 
+    type: integer
+    format: int64
+  defaultType: 
+    type: boolean
+  customLabel: 
+    type: boolean
+  customSize: 
+    type: boolean
+  customSizeOptions: 
+    type: string
+    nullable: true
+  configurableIOPS: 
+    type: boolean
+  hasDatastore: 
+    type: boolean
+  category: 
+    type: string
+  enabled: 
+    type: boolean
+  optionTypes: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        description: 
+          type: string
+          nullable: true
+        code: 
+          type: string
+        fieldName: 
+          type: string
+        fieldLabel: 
+          type: string
+        fieldCode: 
+          type: string
+        fieldContext: 
+          type: string
+        fieldGroup: 
+          type: string
+          nullable: true
+        fieldClass: 
+          type: string
+          nullable: true
+        fieldAddOn: 
+          type: string
+        fieldComponent: 
+          type: string
+          nullable: true
+        fieldInput: 
+          type: string
+          nullable: true
+        placeHolder: 
+          type: string
+          nullable: true
+        verifyPattern: 
+          type: string
+          nullable: true
+        helpBlock: 
+          type: string
+        helpBlockFieldCode: 
+          type: string
+          nullable: true
+        defaultValue: 
+          type: string
+          nullable: true
+        optionSource: 
+          type: string
+          nullable: true
+        optionSourceType: 
+          type: string
+          nullable: true
+        optionList: 
+          type: string
+          nullable: true
+        type: 
+          type: string
+        advanced: 
+          type: boolean
+        required: 
+          type: boolean
+        exportMeta: 
+          type: boolean
+        editable: 
+          type: boolean
+        creatable: 
+          type: boolean
+        config: 
+          type: object
+          properties:  
+        displayOrder: 
+          type: integer
+          format: int64
+        wrapperClass: 
+          type: string
+          nullable: true
+        enabled: 
+          type: boolean
+        noBlank: 
+          type: boolean
+        dependsOnCode: 
+          type: string
+          nullable: true
+        visibleOnCode: 
+          type: string
+          nullable: true
+        requireOnCode: 
+          type: string
+          nullable: true
+        contextualDefault: 
+          type: boolean
+        displayValueOnDetails: 
+          type: string
+          nullable: true
+        showOnCreate: 
+          type: string
+          nullable: true
+        showOnEdit: 
+          type: string
+          nullable: true
+        localCredential: 
+          type: string
+          nullable: true
