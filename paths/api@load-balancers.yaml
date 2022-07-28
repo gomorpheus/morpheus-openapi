@@ -1,0 +1,120 @@
+get:
+  summary: Get All Load Balancers
+  description: This endpoint retrieves all load balancers associated with the account.
+  operationId: listLoadBalancers
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                loadBalancers:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/loadBalancer.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Load Balancers Response:
+              value:
+                $ref: ../components/examples/loadBalancers.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      
+post: 
+  summary: Create a Load Balancer
+  description: |
+    Available for NSX-T load balancers only
+
+    Use this command to create a load balancer.
+  operationId: createLoadBalancer
+  tags:
+    - Load Balancers
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            loadBalancer:
+              $ref: ../components/schemas/loadBalancerCreate.yaml
+        examples:
+          Load Balancer Request:
+            value: 
+              $ref: ../components/examples/loadBalancerCreate.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            type: object
+            properties:
+              anyOf:
+                network:
+                  $ref: ../components/schemas/network.yaml
+                errors:
+                  type: object
+                $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Network Request Success - Generic:
+              value:
+                $ref: ../components/examples/networkCreateSuccessGeneric.json
+            Network Request - AWS:
+              value: 
+                $ref: ../components/examples/networkCreateSuccessAws.json
+            Network Request - Azure:
+              value: 
+                $ref: ../components/examples/networkCreateSuccessAzure.json
+            Network Request - GCP:
+              value: 
+                $ref: ../components/examples/networkCreateSuccessGcp.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

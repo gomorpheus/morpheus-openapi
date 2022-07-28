@@ -1,0 +1,25 @@
+{
+  "loadBalancer": {
+    "type": "nsx-t",
+    "networkServerId": 23,
+    "name": "lab-nsxt",
+    "enabled": true,
+    "config": {
+      "adminState": true,
+      "size": "SMALL",
+      "loglevel": "INFO"
+    },
+    "resourcePermission": {
+      "all": true
+    },
+    "tenants": [
+      {
+        "id": 2
+      },
+      {
+        "id": 1
+      }
+    ],
+    "visibility": "private"
+  }
+}

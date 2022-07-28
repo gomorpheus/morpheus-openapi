@@ -183,6 +183,12 @@ paths:
     $ref: paths/api@library@instance-types@id@update-logo.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
+  /api/load-balancers:
+    $ref: paths/api@load-balancers.yaml
+  /api/load-balancers/{id}:
+    $ref: paths/api@load-balancers@id.yaml
+  /api/load-balancers/{id}/refresh:
+    $ref: paths/api@load-balancers@id@refresh.yaml
   /api/monitoring/alerts:
     $ref: paths/api@monitoring@alerts.yaml
   /api/monitoring/alerts/{id}:
