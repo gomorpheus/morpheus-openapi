@@ -18,7 +18,7 @@ get:
               group:
                 $ref: ../components/schemas/group.yaml
           examples:
-            Search Response:
+            Groups Response:
               value:
                 $ref: ../components/examples/group.json
     '400':
@@ -83,7 +83,7 @@ put:
                   - $ref: ../components/schemas/group.yaml
                   - $ref: ../components/schemas/200-success.yaml
           examples:
-            Report Types Response:
+            Group Response:
               value:
                 $ref: ../components/examples/group.json
     '400':
