@@ -1,0 +1,117 @@
+get:
+  summary: Retrieves all Security Group Rules
+  description: |
+    Retrieves all security group rules for specified security group.
+  operationId: listSecurityGroupRules
+  tags:
+    - Security Groups
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                rules:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/securityGroupRule.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Security Group Rules Response:
+              value:
+                $ref: ../components/examples/securityGroupRules.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Creates a Group
+  description: |
+    Creates a group.
+  operationId: addGroups
+  tags:
+    - Groups
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - group
+          properties:
+            group:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                  description: A unique name scoped to your account for the group
+                code:
+                  type: string
+                  description: Optional code for use with policies
+                location:
+                  type: string
+                  description: Optional location argument for your group
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                group:
+                  $ref: ../components/schemas/group.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Report Types Response:
+              value:
+                $ref: ../components/examples/group.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
