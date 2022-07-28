@@ -1,0 +1,23 @@
+id: 
+  type: integer
+  format: int64
+name: 
+  type: string
+code: 
+  type: string
+enabled: 
+  type: boolean
+internal: 
+  type: boolean
+creatable: 
+  type: boolean
+createType: 
+  type: string
+optionTypes: 
+  type: array
+  items: 
+    $ref: optionType.yaml
+vipOptionTypes: 
+  type: array
+  items: 
+    $ref: optionType.yaml

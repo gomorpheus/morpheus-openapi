@@ -187,6 +187,10 @@ paths:
     $ref: paths/api@load-balancers.yaml
   /api/load-balancers/{id}:
     $ref: paths/api@load-balancers@id.yaml
+  /api/load-balancer-types:
+    $ref: paths/api@load-balancer-types.yaml
+  /api/load-balancer-types/{id}:
+    $ref: paths/api@load-balancer-types@id.yaml
   /api/load-balancers/{id}/refresh:
     $ref: paths/api@load-balancers@id@refresh.yaml
   /api/monitoring/alerts:
@@ -351,10 +355,10 @@ paths:
   #   $ref: paths/api@security-groups@id@locations.yaml
   # /api/security-groups/{id}/locations/{locationId}:
   #   $ref: paths/api@security-groups@id@locations@locationId.yaml
-  /api/security-groups/{id}/rules:
-    $ref: paths/api@security-groups@id@rules.yaml
-  /api/security-groups/{id}/rules/{sgId}:
-    $ref: paths/api@security-groups@id@rules@sgId.yaml
+  # /api/security-groups/{id}/rules:
+  #   $ref: paths/api@security-groups@id@rules.yaml
+  # /api/security-groups/{id}/rules/{sgId}:
+  #   $ref: paths/api@security-groups@id@rules@sgId.yaml
   /api/servers/{id}/wiki:
     $ref: paths/api@servers@id@wiki.yaml
   /api/setup:
