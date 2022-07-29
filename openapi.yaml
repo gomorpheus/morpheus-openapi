@@ -185,14 +185,18 @@ paths:
     $ref: paths/api@license@test.yaml
   /api/load-balancers:
     $ref: paths/api@load-balancers.yaml
-  /api/load-balancers/{id}:
+  /api/load-balancers/{loadBalancerId}:
     $ref: paths/api@load-balancers@id.yaml
+  /api/load-balancers/{loadBalancerId}/refresh:
+    $ref: paths/api@load-balancers@id@refresh.yaml
+  /api/load-balancers/{loadBalancerId}/virtual-servers:
+    $ref: paths/api@load-balancers@id@virtual-servers.yaml
+  /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
+    $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
   /api/load-balancer-types:
     $ref: paths/api@load-balancer-types.yaml
   /api/load-balancer-types/{id}:
     $ref: paths/api@load-balancer-types@id.yaml
-  /api/load-balancers/{id}/refresh:
-    $ref: paths/api@load-balancers@id@refresh.yaml
   /api/monitoring/alerts:
     $ref: paths/api@monitoring@alerts.yaml
   /api/monitoring/alerts/{id}:

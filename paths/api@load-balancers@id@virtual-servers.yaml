@@ -1,0 +1,118 @@
+get:
+  summary: Get All Load Balancer Virtual Servers For Load Balancer
+  description: This endpoint retrieves load balancer virtual servers associated with a specified load balancer.
+  operationId: listLoadBalancerVirtualServers
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/vipName.yaml
+    - $ref: ../components/parameters/vipAddress.yaml
+    - $ref: ../components/parameters/vipHostname.yaml    
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                loadBalancerInstances:
+                  type: array
+                  items:
+                    type: object
+                    properties: 
+                      $ref: ../components/schemas/loadBalancerInstance.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Load Balancers Response:
+              value:
+                $ref: ../components/examples/loadBalancerInstances.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      
+post: 
+  summary: Create a Load Balancer Virtual Server
+  description: |
+    Use this command to create a load balancer virtual server.
+
+    This endpoint allows creating a Load Balancer Virtual Server. Configuration options vary by Load Balancer Type.
+  operationId: createLoadBalancerVirtualServer
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            loadBalancer:
+              type: object
+              properties:
+                $ref: ../components/schemas/loadBalancerInstanceCreate.yaml
+        examples:
+          Load Balancer Request:
+            value: 
+              $ref: ../components/examples/loadBalancerInstanceCreate.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            type: object
+            properties:
+              loadBalancerInstance:
+                type: object
+                properties: 
+                  $ref: ../components/schemas/loadBalancerInstance.yaml
+          examples:
+            Load Balancers Response:
+              value:
+                $ref: ../components/examples/loadBalancerInstance.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
