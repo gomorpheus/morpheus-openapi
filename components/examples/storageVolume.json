@@ -1,0 +1,47 @@
+{
+    "storageVolume": {
+        "id": 284946,
+        "name": "Ceph",
+        "description": null,
+        "controllerId": 19131,
+        "controllerMountPoint": "19131:0:10:1",
+        "resizeable": true,
+        "rootVolume": false,
+        "unitNumber": "1",
+        "deviceName": "/dev/sdb",
+        "deviceDisplayName": "sdb",
+        "type": {
+            "id": 1,
+            "code": "standard",
+            "name": "Disk"
+        },
+        "typeId": 1,
+        "category": "disk",
+        "status": "provisioned",
+        "statusMessage": null,
+        "configurableIOPS": false,
+        "maxStorage": 1073741824000,
+        "displayOrder": 1,
+        "maxIOPS": null,
+        "uuid": "90998cf1-e47a-454e-a105-9864c92d70eb",
+        "active": true,
+        "zone": {
+            "id": 1,
+            "name": "vCenter"
+        },
+        "zoneId": 1,
+        "datastore": {
+            "id": 7,
+            "name": "vsanDatastore"
+        },
+        "datastoreId": 7,
+        "storageGroup": null,
+        "namespace": null,
+        "storageServer": null,
+        "source": "vCenter",
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        }
+    }
+}
