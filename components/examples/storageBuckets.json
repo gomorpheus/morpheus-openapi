@@ -1,0 +1,78 @@
+{
+    "storageBuckets": [
+        {
+            "id": 316,
+            "name": "bunge-morpheus",
+            "active": true,
+            "accountId": 1,
+            "providerType": "s3",
+            "config": {
+                "region": "us-east-1",
+                "endpoint": "s3.us-east-1.amazonaws.com",
+                "accessKey": "AKIAYYQUH7Y6TBUZTES4",
+                "secretKey": "************",
+                "stsAssumeRole": "",
+                "useHostCredentials": false,
+                "secretKeyHash": "f4716cfe8d162c8c69f4a1d895f239e10b3e334338b2a4cf77d693f2fb7c9444"
+            },
+            "bucketName": "bunge-morpheus",
+            "readOnly": false,
+            "defaultBackupTarget": false,
+            "defaultDeploymentTarget": false,
+            "defaultVirtualImageTarget": false,
+            "copyToStore": true,
+            "retentionPolicyType": null,
+            "retentionPolicyDays": null,
+            "retentionProvider": null
+        },
+        {
+            "id": 334,
+            "name": "cb-s3bucket-1001",
+            "active": true,
+            "accountId": 1,
+            "providerType": "s3",
+            "config": {
+                "accessKey": "AKIAYYQUH7Y6TBUZTES4",
+                "secretKey": "************",
+                "stsAssumeRole": "",
+                "useHostCredentials": false,
+                "endpoint": "s3.us-east-1.amazonaws.com",
+                "secretKeyHash": "f4716cfe8d162c8c69f4a1d895f239e10b3e334338b2a4cf77d693f2fb7c9444"
+            },
+            "bucketName": "cb-s3bucket-1001",
+            "readOnly": false,
+            "defaultBackupTarget": false,
+            "defaultDeploymentTarget": false,
+            "defaultVirtualImageTarget": false,
+            "copyToStore": true,
+            "retentionPolicyType": null,
+            "retentionPolicyDays": null,
+            "retentionProvider": null
+        },
+        {
+            "id": 108,
+            "name": "local",
+            "active": true,
+            "accountId": 1,
+            "providerType": "local",
+            "config": {
+                "basePath": "/var/opt/morpheus/morpheus-ui/localstorage"
+            },
+            "bucketName": ".",
+            "readOnly": false,
+            "defaultBackupTarget": true,
+            "defaultDeploymentTarget": true,
+            "defaultVirtualImageTarget": false,
+            "copyToStore": true,
+            "retentionPolicyType": null,
+            "retentionPolicyDays": null,
+            "retentionProvider": null
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 4
+    }
+}

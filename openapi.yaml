@@ -365,6 +365,8 @@ paths:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:
     $ref: paths/api@snapshots@id.yaml
+  /api/storage-buckets:
+    $ref: paths/api@storage-buckets.yaml
   /api/storage-server-types:
     $ref: paths/api@storage-server-types.yaml
   /api/storage-server-types/{id}:
