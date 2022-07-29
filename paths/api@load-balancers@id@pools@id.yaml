@@ -1,7 +1,7 @@
 get:
-  summary: Get a Specific Load Balancer Virtual Server
-  description: This endpoint retrieves a specific Load Balancer Virtual Server.
-  operationId: getLoadBalancerVirtualServer
+  summary: Get a Specific Load Balancer Pool
+  description: This endpoint retrieves a specific Load Balancer Pool.
+  operationId: getLoadBalancerPool
   tags:
     - Load Balancers
   parameters:
@@ -15,14 +15,14 @@ get:
           schema:
             type: object
             properties:
-              loadBalancerInstance:
+              loadBalancerPool:
                 type: object
                 properties: 
-                  $ref: ../components/schemas/loadBalancerInstance.yaml
+                  $ref: ../components/schemas/loadBalancerPool.yaml
           examples:
-            Load Balancer Virtual Server Response:
+            Load Balancer Pool Response:
               value:
-                $ref: ../components/examples/loadBalancerInstance.json
+                $ref: ../components/examples/loadBalancerPool.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -45,9 +45,9 @@ get:
       $ref: ../components/responses/503.yaml
 
 put: 
-  summary: Update a Load Balancer Virtual Server
-  description: Use this command to update an exiting load balancer virtual server.
-  operationId: updateLoadBalancerVirtualServer
+  summary: Update a Load Balancer Pool
+  description: Use this command to update an exiting load balancer pool.
+  operationId: updateLoadBalancerPool
   tags:
     - Load Balancers
   parameters:
@@ -59,28 +59,32 @@ put:
         schema: 
           type: object
           properties: 
-            loadBalancerInstance:
-              $ref: ../components/schemas/loadBalancerInstanceUpdate.yaml
+            loadBalancerPool:
+              type: object
+              properties: 
+                $ref: ../components/schemas/loadBalancerPoolCreate.yaml
         examples: 
           Load Balancer Update Request:
             value:
-              $ref: ../components/examples/loadBalancerInstanceUpdate.json
+              $ref: ../components/examples/loadBalancerPoolUpdate.json
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              loadBalancerInstance:
-                type: object
-                properties: 
-                  $ref: ../components/schemas/loadBalancerInstance.yaml
+            allOf:
+              - type: object
+                properties:
+                  loadBalancerPool:
+                    type: object
+                    properties: 
+                      $ref: ../components/schemas/loadBalancerPool.yaml
+              - $ref: ../components/schemas/successMessage.yaml
           examples: 
-            Load Balancers Instance Update Success:
+            Load Balancers Pool Update Success:
               value:
-                $ref: ../components/examples/loadBalancerInstance.json
+                $ref: ../components/examples/loadBalancerPoolCreate.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -103,9 +107,9 @@ put:
       $ref: ../components/responses/503.yaml
 
 delete: 
-  summary: Delete a Load Balancer Virtual Server
-  description: Will delete a Load Balancer Virtual Server from the system and make it no longer usable.
-  operationId: deleteLoadBalancerVirtualServer
+  summary: Delete a Load Balancer Pool
+  description: Will delete a Load Balancer Pool from the system and make it no longer usable.
+  operationId: deleteLoadBalancerPool
   tags:
     - Load Balancers
   parameters:

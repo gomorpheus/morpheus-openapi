@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "loadBalancerPool": {
+    "id": 63,
+    "loadBalancer": {
+      "id": 80,
+      "type": {
+        "id": 19,
+        "code": "nsx-t",
+        "name": "NSX-T"
+      },
+      "name": "dand-nsxt",
+      "ip": "10.32.23.7"
+    },
+    "name": "bob-test-pool",
+    "category": null,
+    "visibility": "public",
+    "description": "",
+    "internalId": "/infra/lb-pools/7d971e87-4e99-4a5a-a00f-0636f3431bdc",
+    "externalId": "7d971e87-4e99-4a5a-a00f-0636f3431bdc",
+    "enabled": true,
+    "vipSticky": null,
+    "vipBalance": "ROUND_ROBIN",
+    "allowNat": null,
+    "allowSnat": null,
+    "vipClientIpMode": null,
+    "vipServerIpMode": null,
+    "minActive": 2,
+    "minInService": null,
+    "minUpMonitor": null,
+    "minUpAction": null,
+    "maxQueueDepth": null,
+    "maxQueueTime": null,
+    "numberActive": 0,
+    "numberInService": 0,
+    "healthScore": 100.0,
+    "performanceScore": 100.0,
+    "healthPenalty": 0.0,
+    "securityPenalty": 0.0,
+    "errorPenalty": 0.0,
+    "downAction": null,
+    "rampTime": null,
+    "port": null,
+    "portType": null,
+    "status": "online",
+    "nodes": [
+      {
+        "id": 69,
+        "name": "db-apache"
+      },
+      {
+        "id": 74,
+        "name": "bob-apache"
+      }
+    ],
+    "monitors": [
+      {
+        "id": 64,
+        "name": "bob-test"
+      },
+      {
+        "id": 69,
+        "name": "default-passive-lb-monitor"
+      }
+    ],
+    "members": [
+
+    ],
+    "config": {
+      "snatTranslationType": "LBSnatDisabled",
+      "tcpMultiplexing": false,
+      "tcpMultiplexingNumber": 6,
+      "activeMonitorPaths": 64,
+      "memberGroup": null,
+      "passiveMonitorPath": 69
+    },
+    "createdBy": null,
+    "dateCreated": "2021-10-19T17:39:34Z",
+    "lastUpdated": "2021-12-02T18:08:36Z"
+  }
+}

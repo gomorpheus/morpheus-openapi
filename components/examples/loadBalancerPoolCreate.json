@@ -1,0 +1,13 @@
+{
+  "loadBalancerPool": {
+    "name": "test-pool",
+    "description": "a test pool",
+    "vipBalance": "ROUND_ROBIN",
+    "minActive": 1,
+    "config": {
+      "snatTranslationType": "LBSnatDisabled",
+      "tcpMultiplexing": true,
+      "tcpMultiplexingNumber": 6
+    }
+  }
+}

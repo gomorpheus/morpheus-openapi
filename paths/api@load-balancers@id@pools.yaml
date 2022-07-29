@@ -1,7 +1,7 @@
 get:
-  summary: Get All Load Balancer Virtual Servers For Load Balancer
-  description: This endpoint retrieves load balancer virtual servers associated with a specified load balancer.
-  operationId: listLoadBalancerVirtualServers
+  summary: Get All Load Balancer Pools For Load Balancer
+  description: This endpoint retrieves all load balancer pools associated with a specified load balancer.
+  operationId: listLoadBalancerPools
   tags:
     - Load Balancers
   parameters:
@@ -10,10 +10,8 @@ get:
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/sort.yaml
     - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/vipName.yaml
-    - $ref: ../components/parameters/vipAddress.yaml
-    - $ref: ../components/parameters/vipHostname.yaml    
   responses:
     '200':
       description: Successful Request
@@ -21,19 +19,19 @@ get:
         application/json:
           schema:
             allOf:
-            - type: object
-              properties:
-                loadBalancerInstances:
-                  type: array
-                  items:
-                    type: object
-                    properties: 
-                      $ref: ../components/schemas/loadBalancerInstance.yaml
-            - $ref: ../components/schemas/meta.yaml
+              - type: object
+                properties:
+                  loadBalancerPools:
+                    type: array
+                    items:
+                      type: object
+                      properties: 
+                        $ref: ../components/schemas/loadBalancerPool.yaml
+              - $ref: ../components/schemas/meta.yaml
           examples:
-            Load Balancers Virtual Servers Response:
+            Load Balancer Pools Response:
               value:
-                $ref: ../components/examples/loadBalancerInstances.json
+                $ref: ../components/examples/loadBalancerPools.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -56,12 +54,12 @@ get:
       $ref: ../components/responses/503.yaml
       
 post: 
-  summary: Create a Load Balancer Virtual Server
+  summary: Create a Load Balancer Pool
   description: |
-    Use this command to create a load balancer virtual server.
+    Use this command to create a load balancer pool.
 
-    This endpoint allows creating a Load Balancer Virtual Server. Configuration options vary by Load Balancer Type.
-  operationId: createLoadBalancerVirtualServer
+    This endpoint allows creating a Load Balancer Pool. Configuration options vary by Load Balancer Type.
+  operationId: createLoadBalancerPool
   tags:
     - Load Balancers
   parameters:
@@ -72,30 +70,32 @@ post:
         schema: 
           type: object
           properties:
-            loadBalancerInstance:
+            loadBalancerPool:
               type: object
-              properties:
-                $ref: ../components/schemas/loadBalancerInstanceCreate.yaml
+              properties: 
+                $ref: ../components/schemas/loadBalancerPoolCreate.yaml
         examples:
-          Load Balancer Request:
+          Load Balancer Pool Request:
             value: 
-              $ref: ../components/examples/loadBalancerInstanceCreate.json
+              $ref: ../components/examples/loadBalancerPoolCreate.json
   responses:
     '200':
       description: Successful Response
       content: 
         application/json: 
           schema:
-            type: object
-            properties:
-              loadBalancerInstance:
-                type: object
-                properties: 
-                  $ref: ../components/schemas/loadBalancerInstance.yaml
+            allOf:
+            - type: object
+              properties:
+                loadBalancerPool:
+                  type: object
+                  properties: 
+                    $ref: ../components/schemas/loadBalancerPool.yaml
+            - $ref: ../components/schemas/successMessage.yaml
           examples:
             Load Balancers Response:
               value:
-                $ref: ../components/examples/loadBalancerInstance.json
+                $ref: ../components/examples/loadBalancerPool.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

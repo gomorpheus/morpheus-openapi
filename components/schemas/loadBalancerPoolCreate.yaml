@@ -1,0 +1,16 @@
+name:
+  type: string
+  description: Name
+description:
+  type: string
+  description: Description
+vipBalance:
+  type: string
+  description: Balance Algorithm
+minActive:
+  type: integer
+  format: int64
+  description: Min Active Members
+config:
+  type: object
+  description: Configuration object with parameters that vary by type.
