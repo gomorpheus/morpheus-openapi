@@ -183,12 +183,12 @@ post:
             - type: object
               properties:
                 rule:
-                  $ref: ../components/schemas/SecurityGroupRule.yaml
+                  $ref: ../components/schemas/securityGroupRule.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Security Group Rule Response:
               value:
-                $ref: ../components/examples/SecurityGroupRuleSuccess.json
+                $ref: ../components/examples/securityGroupRuleSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
