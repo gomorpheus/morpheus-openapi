@@ -381,6 +381,10 @@ paths:
     $ref: paths/api@storage-volume-types.yaml
   /api/storage-volume-types/{id}:
     $ref: paths/api@storage-volume-types@id.yaml
+  /api/storage-volumes:
+    $ref: paths/api@storage-volumes.yaml
+  /api/storage-volumes/{id}:
+    $ref: paths/api@storage-volumes@id.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:

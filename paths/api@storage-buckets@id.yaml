@@ -1,7 +1,7 @@
 get:
-  summary: Retrieves a Specific Group
+  summary: Retrieves a Specific Storage Bucket
   description: |
-    Retrieves a specific group.
+    Retrieves a specific storage bucket.
   operationId: getStorageBuckets
   tags:
     - Storage
