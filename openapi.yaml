@@ -41,6 +41,10 @@ paths:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
+  /api/certificates:
+    $ref: paths/api@certificates.yaml
+  /api/certificates/{id}:
+    $ref: paths/api@certificates@id.yaml
   /api/clusters/{id}/wiki:
     $ref: paths/api@clusters@id@wiki.yaml
   /api/credentials:
@@ -201,10 +205,10 @@ paths:
     $ref: paths/api@load-balancers@id.yaml
   /api/load-balancers/{loadBalancerId}/refresh:
     $ref: paths/api@load-balancers@id@refresh.yaml
-  /api/load-balancers/{loadBalancerId}/virtual-servers:
-    $ref: paths/api@load-balancers@id@virtual-servers.yaml
-  /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
-    $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
+  /api/load-balancers/{loadBalancerId}/monitors:
+    $ref: paths/api@load-balancers@id@monitors.yaml
+  /api/load-balancers/{loadBalancerId}/monitors/{id}:
+    $ref: paths/api@load-balancers@id@monitors@id.yaml
   /api/load-balancers/{loadBalancerId}/pools:
     $ref: paths/api@load-balancers@id@pools.yaml
   /api/load-balancers/{loadBalancerId}/pools/{id}:
@@ -213,6 +217,10 @@ paths:
     $ref: paths/api@load-balancers@id@profiles.yaml
   /api/load-balancers/{loadBalancerId}/profiles/{id}:
     $ref: paths/api@load-balancers@id@profiles@id.yaml
+  /api/load-balancers/{loadBalancerId}/virtual-servers:
+    $ref: paths/api@load-balancers@id@virtual-servers.yaml
+  /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
+    $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
   /api/load-balancer-types:
     $ref: paths/api@load-balancer-types.yaml
   /api/load-balancer-types/{id}:

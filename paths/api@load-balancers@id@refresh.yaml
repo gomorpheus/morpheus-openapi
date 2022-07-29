@@ -16,7 +16,9 @@ put:
             properties:
               anyOf:
                 loadBalancer:
-                  $ref: ../components/schemas/loadBalancer.yaml
+                  type: object
+                  properties:
+                    $ref: ../components/schemas/loadBalancer.yaml
                 $ref: ../components/schemas/successMessage.yaml
           examples: 
             Load Balancers Update Success:

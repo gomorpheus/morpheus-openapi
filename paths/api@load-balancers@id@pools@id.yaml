@@ -46,7 +46,7 @@ get:
 
 put: 
   summary: Update a Load Balancer Pool
-  description: Use this command to update an exiting load balancer pool.
+  description: Use this command to update an existing load balancer pool.
   operationId: updateLoadBalancerPool
   tags:
     - Load Balancers

@@ -1,36 +1,32 @@
 get:
-  summary: Get All Load Balancers
-  description: This endpoint retrieves all load balancers associated with the account.
-  operationId: listLoadBalancers
+  summary: Get All SSL Certificates
+  description: This endpoint retrieves all SSL certificates associated with the account.
+  operationId: listCertificates
   tags:
-    - Load Balancers
+    - SSL Certificates
   parameters:
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/phrase.yaml
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            allOf:
-            - type: object
-              properties:
-                loadBalancers:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      $ref: ../components/schemas/loadBalancer.yaml
-            - $ref: ../components/schemas/meta.yaml
+            type: object
+            properties:
+              certificates:
+                type: array
+                items:
+                  type: object
+                  properties: 
+                    $ref: ../components/schemas/certificate.yaml
+              certificateCount:
+                type: integer
+                format: int64
           examples:
-            Load Balancers Response:
+            Certificates Response:
               value:
-                $ref: ../components/examples/loadBalancers.json
+                $ref: ../components/examples/certificates.json 
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -51,44 +47,46 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-      
-post: 
-  summary: Create a Load Balancer
-  description: |
-    Available for NSX-T load balancers only
 
-    Use this command to create a load balancer.
-  operationId: createLoadBalancer
-  tags:
-    - Load Balancers
+post: 
+  summary: Create a Certificate
+  description: Create a Certificate
+  operationId: addCertificate
+  tags: 
+    - SSL Certificates
   requestBody: 
     content: 
       application/json: 
         schema: 
           type: object
           properties:
-            loadBalancer:
-              $ref: ../components/schemas/loadBalancerCreate.yaml
+            certificate:
+              type: object
+              properties: 
+                $ref: ../components/schemas/certificateCreate.yaml
         examples:
-          Load Balancer Request:
-            value: 
-              $ref: ../components/examples/loadBalancerCreate.json
+          Certificate Request:
+            value:
+              $ref: ../components/examples/certificateCreate.json
+
   responses:
     '200':
       description: Successful Response
       content: 
         application/json: 
           schema:
-            type: object
-            properties:
-              loadBalancer:
-                type: object
-                properties: 
-                  $ref: ../components/schemas/loadBalancer.yaml
-          examples: 
-            Load Balancers Update Success:
+            allOf:   
+              - type: object
+                properties:
+                  certificate:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/certificate.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Certificate Creation:
               value:
-                $ref: ../components/examples/loadBalancer.json
+                $ref: ../components/examples/instanceCreateVmwareSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -109,3 +107,8 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+                    
+
+            
+    
+  

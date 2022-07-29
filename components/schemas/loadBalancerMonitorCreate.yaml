@@ -1,0 +1,15 @@
+name:
+  type: string
+  description: Name
+description:
+  type: string
+  description: Description
+monitorType: 
+  type: string
+monitorTimeout: 
+  type: integer
+  format: int64
+config:
+  type: object
+  nullable: true
+  description: Configuration object with parameters that vary by type.

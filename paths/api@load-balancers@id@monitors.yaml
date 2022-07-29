@@ -1,10 +1,11 @@
 get:
-  summary: Get All Load Balancers
-  description: This endpoint retrieves all load balancers associated with the account.
-  operationId: listLoadBalancers
+  summary: Get All Load Balancer Monitors For Load Balancer
+  description: This endpoint retrieves all load balancer monitors associated with a specified load balancer.
+  operationId: listLoadBalancerMonitors
   tags:
     - Load Balancers
   parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/sort.yaml
@@ -18,19 +19,19 @@ get:
         application/json:
           schema:
             allOf:
-            - type: object
-              properties:
-                loadBalancers:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      $ref: ../components/schemas/loadBalancer.yaml
-            - $ref: ../components/schemas/meta.yaml
+              - type: object
+                properties:
+                  loadBalancerMonitors:
+                    type: array
+                    items:
+                      type: object
+                      properties: 
+                        $ref: ../components/schemas/loadBalancerMonitor.yaml
+              - $ref: ../components/schemas/meta.yaml
           examples:
-            Load Balancers Response:
+            Load Balancer Monitors Response:
               value:
-                $ref: ../components/examples/loadBalancers.json
+                $ref: ../components/examples/loadBalancerMonitors.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -53,42 +54,48 @@ get:
       $ref: ../components/responses/503.yaml
       
 post: 
-  summary: Create a Load Balancer
+  summary: Create a Load Balancer Monitor
   description: |
-    Available for NSX-T load balancers only
+    Use this command to create a load balancer Monitor.
 
-    Use this command to create a load balancer.
-  operationId: createLoadBalancer
+    This endpoint allows creating a Load Balancer Monitor. Configuration options vary by Load Balancer Type.
+  operationId: createLoadBalancerMonitor
   tags:
     - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
   requestBody: 
     content: 
       application/json: 
         schema: 
           type: object
           properties:
-            loadBalancer:
-              $ref: ../components/schemas/loadBalancerCreate.yaml
+            loadBalancerMonitor:
+              type: object
+              properties: 
+                $ref: ../components/schemas/loadBalancerMonitorCreate.yaml
         examples:
-          Load Balancer Request:
+          Load Balancer Monitor Request:
             value: 
-              $ref: ../components/examples/loadBalancerCreate.json
+              $ref: ../components/examples/loadBalancerMonitorCreate.json
   responses:
     '200':
       description: Successful Response
       content: 
         application/json: 
           schema:
-            type: object
-            properties:
-              loadBalancer:
-                type: object
-                properties: 
-                  $ref: ../components/schemas/loadBalancer.yaml
-          examples: 
-            Load Balancers Update Success:
+            allOf:
+            - type: object
+              properties:
+                loadBalancerMonitor:
+                  type: object
+                  properties: 
+                    $ref: ../components/schemas/loadBalancerMonitor.yaml
+            - $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Load Balancers Response:
               value:
-                $ref: ../components/examples/loadBalancer.json
+                $ref: ../components/examples/loadBalancerMonitor.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

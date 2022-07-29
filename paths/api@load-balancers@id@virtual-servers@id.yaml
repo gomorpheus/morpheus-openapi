@@ -46,7 +46,7 @@ get:
 
 put: 
   summary: Update a Load Balancer Virtual Server
-  description: Use this command to update an exiting load balancer virtual server.
+  description: Use this command to update an existing load balancer virtual server.
   operationId: updateLoadBalancerVirtualServer
   tags:
     - Load Balancers
