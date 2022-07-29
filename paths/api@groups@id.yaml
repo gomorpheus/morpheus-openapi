@@ -1,10 +1,10 @@
 get:
-  summary: Retrieves a Specific Group
+  summary: Retrieves a Specific Storage Bucket
   description: |
-    Retrieves a specific group.
-  operationId: getGroups
+    Retrieves a specific storage bucket.
+  operationId: getStorageBuckets
   tags:
-    - Groups
+    - Storage
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -15,12 +15,12 @@ get:
           schema:
             type: object
             properties:
-              group:
-                $ref: ../components/schemas/group.yaml
+              storageBucket:
+                $ref: ../components/schemas/storageBucket.yaml
           examples:
-            Groups Response:
+            Storage Bucket Response:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/storageBucket.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,12 +42,12 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Updates a Group
+  summary: Updates a Storage Bucket
   description: |
-    Updates a group.
-  operationId: updateGroups
+    Updates a storage bucket.
+  operationId: updateStorageBuckets
   tags:
-    - Groups
+    - Storage
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -56,56 +56,147 @@ put:
         schema:
           type: object
           required:
-            - group
+            - storageBucket
           properties:
-            group:
+            storageBucket:
               type: object
+              required:
+                - name
+                - providerType
+                - config
               properties:
                 name: 
                   type: string
-                  description: A unique name scoped to your account for the group
-                code:
+                  description: A unique name scoped to your account for the storage bucket
+                providerType:
                   type: string
-                  description: Optional code for use with policies
-                location:
+                  description: The type of storage bucket
+                  enum:
+                    - s3
+                    - azure
+                    - cifs
+                    - local
+                    - nfs
+                    - openstack
+                    - rackspace
+                defaultBackupTarget:
+                  type: boolean
+                  description: Default Backup Target
+                  default: false
+                copyToStore:
+                  type: boolean
+                  description: Archive Snapshots
+                defaultDeploymentTarget:
+                  type: boolean
+                  description: Default Deployment Target
+                  default: false
+                defaultVirtualImageTarget:
+                  type: boolean
+                  description: Default Virtual Image Store
+                  default: false
+                retentionPolicyType:
                   type: string
-                  description: Optional location argument for your group
-  responses:
-    '200':
-      description: Successful Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              group:
-                allOf:
-                  - $ref: ../components/schemas/group.yaml
-                  - $ref: ../components/schemas/200-success.yaml
-          examples:
-            Group Response:
-              value:
-                $ref: ../components/examples/group.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+                  description: Cleanup mode. `backup` - Move old files to a backup provider. `delete` - Delete old files. `none` - Keep all files.
+                  enum:
+                    - backup
+                    - delete
+                    - none
+                  default: none
+                retentionPolicyDays:
+                  type: integer
+                  format: int64
+                  description: The number of days old a file must be before it is deleted.
+                retentionProvider:
+                  type: string
+                  description: The backup Storage Bucket where old files are moved to.
+                bucketName:
+                    type: string
+                    description: The name of the bucket. Only applies to `Amazon`, `Azure`, `CIFS`, `NFSv3`, `Openstack Swift`, and `Rackspace CDN`.
+                    example: myBucket
+                createBucket: 
+                  type: boolean
+                  description: Create the bucket if it does not exist. Only applies to `Amazon`, `Azure`, `Openstack Swift`, and `Rackspace CDN`.
+                  default: false
+                config:
+                  oneOf:
+                  - type: object
+                    description: Amazon S3
+                    properties:
+                      accessKey:
+                        type: string
+                        description: Access Key
+                      secretKey:
+                        type: string
+                        description: Secret Key
+                      region:
+                        type: string
+                        description: Optional Amazon region if creating a new bucket
+                      endpoint:
+                        type: string
+                        description: Optional endpoint URL if pointing to an object store other than amazon that mimics the Amazon S3 APIs.
+                  - type: object
+                    description: Azure
+                    properties:
+                      storageAccount:
+                        type: string
+                        description: Storage Account
+                      storageKey:
+                        type: string
+                        description: Storage Key
+                  - type: object
+                    description: CIFS
+                    properties:
+                      host:
+                        type: string
+                        description: host
+                      username:
+                        type: string
+                        description: username
+                      password:
+                        type: string
+                        description: password
+                  - type: object
+                    description: Local Storage
+                    properties:
+                      basePath:
+                        type: string
+                        description: Storage Path
+                  - type: object
+                    description: NFSv3
+                    properties:
+                      host:
+                        type: string
+                        description: Host
+                      exportFolder:
+                        type: string
+                        description: Export Folder
+                  - type: object
+                    description: Openstack Swift
+                    properties:
+                      username:
+                        type: string
+                        description: Username
+                      apiKey:
+                        type: string
+                        description: API Key
+                      region:
+                        type: string
+                        description: Region
+                      identityUrl:
+                        type: string
+                        description: Identity URL
+                  - type: object
+                    description: Rackspace CDN
+                    properties: 
+                      username:
+                        type: string
+                        description: username
+                      apiKey:
+                        type: string
+                        description: API Key
+                      region:
+                        type: string
+                        description: Region
 delete:
   summary: Deletes a Group
   description: |
