@@ -70,7 +70,6 @@ properties:
     nullable: true
   config: 
     type: object
-    properties:  
   refType: 
     type: string
   refId: 
@@ -118,16 +117,20 @@ properties:
     type: boolean
   groups: 
     type: array
-    items: 
+    items:
+      type: object
   hostGroups: 
     type: array
     items: 
+      type: object
   hosts: 
     type: array
     items: 
+      type: object
   tenants: 
     type: array
     items: 
+      type: object
   owner: 
     type: object
     properties: 
@@ -138,6 +141,3 @@ properties:
         type: string
   credential: 
     type: object
-    properties: 
-      type: 
-        type: string
