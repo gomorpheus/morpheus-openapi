@@ -1,0 +1,12 @@
+name: 
+  type: string
+  description: Name
+description: 
+  type: string
+  description: Description
+serviceType: 
+  type: string
+  description: Service Type
+config: 
+  type: object
+  description: Configuration object with parameters that vary by type.

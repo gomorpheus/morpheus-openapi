@@ -197,6 +197,10 @@ paths:
     $ref: paths/api@load-balancers@id@pools.yaml
   /api/load-balancers/{loadBalancerId}/pools/{id}:
     $ref: paths/api@load-balancers@id@pools@id.yaml
+  /api/load-balancers/{loadBalancerId}/profiles:
+    $ref: paths/api@load-balancers@id@profiles.yaml
+  /api/load-balancers/{loadBalancerId}/profiles/{id}:
+    $ref: paths/api@load-balancers@id@profiles@id.yaml
   /api/load-balancer-types:
     $ref: paths/api@load-balancer-types.yaml
   /api/load-balancer-types/{id}:
