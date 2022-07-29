@@ -34,6 +34,7 @@ properties:
     nullable: true
   siteId: 
     type: integer
+    nullable: true
     format: int64
   zone: 
     type: object
@@ -232,38 +233,50 @@ properties:
             type: string
           freeMemory: 
             type: integer
+            nullable: true
             format: int64
           usedMemory: 
             type: integer
+            nullable: true
             format: int64
           freeSwap: 
             type: integer
+            nullable: true
             format: int64
           usedSwap: 
             type: integer
+            nullable: true
             format: int64
           cpuIdleTime: 
             type: integer
+            nullable: true
             format: int64
           cpuSystemTime: 
             type: integer
+            nullable: true
             format: int64
           cpuUserTime: 
             type: integer
+            nullable: true
             format: int64
           cpuTotalTime: 
             type: integer
+            nullable: true
             format: int64
           cpuUsage: 
             type: number
+            nullable: true
           usedStorage: 
             type: integer
+            nullable: true
             format: int64
           reservedStorage: 
             type: integer
+            nullable: true
             format: int64
           maxStorage: 
             type: integer
+            nullable: true
             format: int64
           netTxUsage: 
             type: integer
@@ -784,113 +797,121 @@ properties:
         type: integer
         format: int64
       cpuTotalTimeCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuTotalTimeMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuTotalTimeMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuTotalTimeAvg: 
         type: number
+        nullable: true
       cpuTotalTimeSum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuIdleTimeCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuIdleTimeMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuIdleTimeMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuIdleTimeAvg: 
         type: number
+        nullable: true
       cpuIdleTimeSum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUsageCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUsageMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUsageMax: 
         type: number
+        nullable: true
       cpuUsageAvg: 
         type: number
+        nullable: true
       cpuUsageSum: 
         type: number
+        nullable: true
       maxMemoryCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       maxMemoryMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       maxMemoryMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       maxMemoryAvg: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       maxMemorySum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUserTimeCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUserTimeMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUserTimeMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuUserTimeAvg: 
         type: number
+        nullable: true
       cpuUserTimeSum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuSystemTimeCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuSystemTimeMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuSystemTimeMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       cpuSystemTimeAvg: 
         type: number
       cpuSystemTimeSum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       usedMemoryCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       usedMemoryMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       usedMemoryMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       usedMemoryAvg: 
         type: number
+        nullable: true
       usedMemorySum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       freeMemoryCount: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       freeMemoryMin: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       freeMemoryMax: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
       freeMemoryAvg: 
         type: number
+        nullable: true
       freeMemorySum: 
-        type: integer
-        format: int64
+        type: number
+        nullable: true
