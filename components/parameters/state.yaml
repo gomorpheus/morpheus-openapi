@@ -1,0 +1,9 @@
+name: state
+in: query
+description: Filter by state, restricts query to only load discoveries by state
+schema:
+  type: string
+  enum:
+    - any
+    - processed
+    - ignored

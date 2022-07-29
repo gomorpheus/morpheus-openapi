@@ -1,0 +1,12 @@
+name: type
+in: query
+description: Filter by Guidance Type
+schema:
+  type: string
+  enum:
+    - Shutdown
+    - Sizing
+    - Host Capacity
+    - Host Balancing
+    - Datastore Capacity
+    - Reservation Recommendation

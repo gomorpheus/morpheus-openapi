@@ -73,6 +73,18 @@ paths:
     $ref: paths/api@groups@id@update-zones.yaml
   /api/groups/{id}/wiki:
     $ref: paths/api@groups@id@wiki.yaml
+  /api/guidance:
+    $ref: paths/api@guidance.yaml
+  /api/guidance/{id}:
+    $ref: paths/api@guidance@id.yaml
+  /api/guidance/{id}/execute:
+    $ref: paths/api@guidance@id@execute.yaml
+  /api/guidance/{id}/ignore:
+    $ref: paths/api@guidance@id@ignore.yaml
+  /api/guidance/stats:
+    $ref: paths/api@guidance@stats.yaml
+  /api/guidance/types:
+    $ref: paths/api@guidance@types.yaml
   /api/instances:
     $ref: paths/api@instances.yaml
   /api/instances/{id}:

@@ -1,0 +1,42 @@
+type: object
+properties: 
+  total: 
+    type: integer
+    format: int64
+  savings: 
+    type: object
+    properties: 
+      amount: 
+        type: number
+      currency: 
+        type: string
+  severity: 
+    type: object
+    properties: 
+      low: 
+        type: integer
+        format: int64
+      info: 
+        type: integer
+        format: int64
+      warning: 
+        type: integer
+        format: int64
+      critical: 
+        type: integer
+        format: int64
+  type: 
+    type: object
+    properties: 
+      size: 
+        type: integer
+        format: int64
+      shutdown: 
+        type: integer
+        format: int64
+      move: 
+        type: integer
+        format: int64
+      schedule: 
+        type: integer
+        format: int64
