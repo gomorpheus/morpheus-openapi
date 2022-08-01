@@ -1,26 +1,25 @@
 get:
-  summary: Get a Specific Instance Type
-  description: This endpoint retrieves a specific instance type.
-  operationId: getInstanceType
+  summary: Get a Specific Layout
+  description: This endpoint retrieves a specific layout.
+  operationId: getLayout
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/instanceTypeId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            allOf:
-            - type: object
-              properties:
-                instanceType:
-                  $ref: ../components/schemas/instanceType.yaml
+            type: object
+            properties:
+              instanceTypeLayout:
+                $ref: ../components/schemas/instanceTypeLayout.yaml
           examples:
-            Instance Type Response:
+            Layouts Response:
               value:
-                $ref: ../components/examples/instanceType.json 
+                $ref: ../components/examples/instanceTypeLayout.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -43,25 +42,25 @@ get:
       $ref: ../components/responses/503.yaml
 
 put: 
-  summary: Update an Instance Type
-  description: Use this command to update an existing instance type.
-  operationId: updateInstanceType
+  summary: Update a Layout
+  description: Use this command to update an existing layout.
+  operationId: updateLayout
   tags: 
     -  Library
   parameters: 
-    - $ref: ../components/parameters/instanceTypeId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   requestBody: 
     content: 
       application/json: 
         schema: 
           type: object
           properties: 
-            instanceType:
-              $ref: ../components/schemas/instanceTypeUpdate.yaml
+            instanceTypeLayout:
+              $ref: ../components/schemas/instanceTypeLayoutUpdate.yaml
         examples:
-          Instance Type Request:
+          Layout Request:
             value: 
-              $ref: ../components/examples/instanceTypeUpdate.json
+              $ref: ../components/examples/instanceTypeLayoutUpdate.json
   responses: 
     '200':
       description: Successful Response
@@ -93,15 +92,15 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  
+
 delete:
-  summary: Delete an Instance Type
-  description: Will delete an instance type
-  operationId: deleteInstanceType
+  summary: Delete a Layout
+  description: Will delete a layout
+  operationId: deleteLayout
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/instanceTypeId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Successful Request

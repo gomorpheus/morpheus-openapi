@@ -5,6 +5,7 @@ properties:
     format: int32
   account: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -31,6 +32,7 @@ properties:
         type: string
   virtualImage: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer

@@ -1,0 +1,19 @@
+permissions: 
+  type: object
+  description: Permissions object for upgrading group access
+  properties: 
+    resourcePermissions: 
+      type: object
+      properties: 
+        all: 
+          type: boolean
+          description: Set to true to grant access to all groups
+        sites:
+          type: array
+          description: Array of objects identifying groups with access
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64

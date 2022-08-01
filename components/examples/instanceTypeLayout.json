@@ -1,0 +1,193 @@
+{
+  "instanceTypeLayout": {
+    "id": 1,
+    "instanceType": {
+      "id": 1,
+      "name": "ActiveMQ",
+      "code": "activemq"
+    },
+    "account": null,
+    "code": "activemq-5.11",
+    "name": "Docker ActiveMQ",
+    "instanceVersion": "5.11",
+    "description": "This will provision a single process with no redundancy",
+    "creatable": true,
+    "memoryRequirement": null,
+    "sortOrder": 0,
+    "supportsConvertToManaged": null,
+    "provisionType": {
+      "id": 1,
+      "code": "docker",
+      "name": "Docker"
+    },
+    "taskSets": [],
+    "containerTypes": [
+      {
+        "id": 1,
+        "account": null,
+        "name": "ActiveMQ 5.11",
+        "shortName": "activemq",
+        "code": "activemq-5.11",
+        "containerVersion": "5.11-morph.0.1",
+        "provisionType": {
+          "id": 1,
+          "name": "Docker",
+          "code": "docker"
+        },
+        "virtualImage": null,
+        "category": null,
+        "config": {},
+        "containerPorts": [
+          {
+            "id": 1,
+            "name": "Console",
+            "port": 8161,
+            "loadBalanceProtocol": null,
+            "exportName": "CONSOLE"
+          },
+          {
+            "id": 2,
+            "name": "JMS Port",
+            "port": 61616,
+            "loadBalanceProtocol": null,
+            "exportName": "JMS"
+          },
+          {
+            "id": 3,
+            "name": "AMQP Port",
+            "port": 5672,
+            "loadBalanceProtocol": null,
+            "exportName": "AMQP"
+          },
+          {
+            "id": 4,
+            "name": "STOMP Port",
+            "port": 61613,
+            "loadBalanceProtocol": null,
+            "exportName": "STOMP"
+          },
+          {
+            "id": 5,
+            "name": "MQTT Port",
+            "port": 1883,
+            "loadBalanceProtocol": null,
+            "exportName": "MQTT"
+          },
+          {
+            "id": 6,
+            "name": "Websocket Port",
+            "port": 61614,
+            "loadBalanceProtocol": null,
+            "exportName": "WEBSOCKET"
+          }
+        ],
+        "containerScripts": [],
+        "containerTemplates": [
+          {
+            "id": 1,
+            "name": "morpheus activemq config"
+          }
+        ],
+        "environmentVariables": []
+      }
+    ],
+    "mounts": [
+      {
+        "id": 2,
+        "code": "mount.data",
+        "name": "data",
+        "shortName": "data",
+        "mountType": "volume",
+        "sortOrder": 1,
+        "required": false,
+        "visible": true,
+        "deployable": true,
+        "canPersist": true
+      }
+    ],
+    "ports": [
+      {
+        "id": 1,
+        "code": "activemq.8161",
+        "name": "Console",
+        "shortName": "http",
+        "internalPort": 8161,
+        "externalPort": 8161,
+        "loadBalancePort": null,
+        "sortOrder": 0,
+        "loadBalanceProtocol": null,
+        "loadBalance": false,
+        "visible": true
+      },
+      {
+        "id": 2,
+        "code": "activemq.61616",
+        "name": "JMS Port",
+        "shortName": "jms",
+        "internalPort": 61616,
+        "externalPort": 61616,
+        "loadBalancePort": null,
+        "sortOrder": 1,
+        "loadBalanceProtocol": null,
+        "loadBalance": false,
+        "visible": true
+      },
+      {
+        "id": 3,
+        "code": "activemq.5672",
+        "name": "AMQP Port",
+        "shortName": "amqp",
+        "internalPort": 5672,
+        "externalPort": 5672,
+        "loadBalancePort": null,
+        "sortOrder": 2,
+        "loadBalanceProtocol": null,
+        "loadBalance": false,
+        "visible": false
+      },
+      {
+        "id": 4,
+        "code": "activemq.61613",
+        "name": "STOMP Port",
+        "shortName": "stomp",
+        "internalPort": 61613,
+        "externalPort": 61613,
+        "loadBalancePort": null,
+        "sortOrder": 3,
+        "loadBalanceProtocol": null,
+        "loadBalance": false,
+        "visible": false
+      },
+      {
+        "id": 5,
+        "code": "activemq.1883",
+        "name": "MQTT Port",
+        "shortName": "mqtt",
+        "internalPort": 1883,
+        "externalPort": 1883,
+        "loadBalancePort": null,
+        "sortOrder": 4,
+        "loadBalanceProtocol": null,
+        "loadBalance": false,
+        "visible": false
+      },
+      {
+        "id": 6,
+        "code": "activemq.61614",
+        "name": "Websocket Port",
+        "shortName": "websocket",
+        "internalPort": 61614,
+        "externalPort": 61614,
+        "loadBalancePort": null,
+        "sortOrder": 5,
+        "loadBalanceProtocol": null,
+        "loadBalance": false,
+        "visible": false
+      }
+    ],
+    "optionTypes": [],
+    "environmentVariables": [],
+    "specTemplates": [],
+    "tfvarSecret": null
+  }
+}

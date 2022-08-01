@@ -1,0 +1,137 @@
+{
+  "instanceTypeLayouts": [
+    {
+      "id": 574,
+      "instanceType": {
+        "id": 6,
+        "name": "Apache",
+        "code": "apache"
+      },
+      "account": null,
+      "code": "apache-amazon-2.4-centos-7.3-single",
+      "name": "Amazon Apache on CentOS 7.3",
+      "instanceVersion": "2.4",
+      "description": "This will provision a single process with no redundancy",
+      "creatable": true,
+      "memoryRequirement": null,
+      "sortOrder": 100,
+      "supportsConvertToManaged": null,
+      "provisionType": {
+        "id": 10,
+        "code": "amazon",
+        "name": "Amazon"
+      },
+      "taskSets": [],
+      "containerTypes": [
+        {
+          "id": 582,
+          "account": null,
+          "name": "Apache 2.4",
+          "shortName": "apache",
+          "code": "apache-amazon-2.4-centos-7.3",
+          "containerVersion": "2.4",
+          "provisionType": {
+            "id": 10,
+            "name": "Amazon",
+            "code": "amazon"
+          },
+          "virtualImage": {
+            "id": 2020,
+            "name": "Morpheus Apache 2.4 on CentOS 7.3"
+          },
+          "category": "apache",
+          "config": {},
+          "containerPorts": [
+            {
+              "id": 8,
+              "name": "Http",
+              "port": 80,
+              "loadBalanceProtocol": "http",
+              "exportName": "HTTP"
+            },
+            {
+              "id": 9,
+              "name": "Https",
+              "port": 443,
+              "loadBalanceProtocol": "https",
+              "exportName": "HTTPS"
+            }
+          ],
+          "containerScripts": [
+            {
+              "id": 90,
+              "name": "apache folder config"
+            },
+            {
+              "id": 4,
+              "name": "apache vm entrypoint"
+            },
+            {
+              "id": 88,
+              "name": "apache stop"
+            },
+            {
+              "id": 89,
+              "name": "apache start"
+            }
+          ],
+          "containerTemplates": [],
+          "environmentVariables": []
+        }
+      ],
+      "mounts": [],
+      "ports": [
+        {
+          "id": 8,
+          "code": "apache.80",
+          "name": "Http",
+          "shortName": "http",
+          "internalPort": 80,
+          "externalPort": 80,
+          "loadBalancePort": null,
+          "sortOrder": 0,
+          "loadBalanceProtocol": "http",
+          "loadBalance": true,
+          "visible": true
+        },
+        {
+          "id": 9,
+          "code": "apache.443",
+          "name": "Https",
+          "shortName": "https",
+          "internalPort": 443,
+          "externalPort": 443,
+          "loadBalancePort": null,
+          "sortOrder": 1,
+          "loadBalanceProtocol": "https",
+          "loadBalance": true,
+          "visible": true
+        }
+      ],
+      "optionTypes": [],
+      "environmentVariables": [],
+      "specTemplates": [],
+      "tfvarSecret": null,
+      "permissions": {
+        "resourcePermissions": {
+          "defaultStore": false,
+          "allPlans": true,
+          "defaultTarget": false,
+          "canManage": false,
+          "all": true,
+          "account": {
+            "id": 1
+          },
+          "sites": [],
+          "plans": []
+        }
+      }
+    }
+  ],
+  "meta": {
+    "size": 25,
+    "total": 1241,
+    "max": 25,
+    "offset": 0
+  }
+}

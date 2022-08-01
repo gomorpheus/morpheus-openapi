@@ -191,12 +191,20 @@ paths:
     $ref: paths/api@library@option-types@id.yaml
   /api/library/instance-types:
     $ref: paths/api@library@instance-types.yaml
-  /api/library/instance-types/{id}:
+  /api/library/instance-types/{instanceTypeId}:
     $ref: paths/api@library@instance-types@id.yaml
-  /api/library/instance-types/{id}/toggle-featured:
+  /api/library/instance-types/{instanceTypeId}/layouts:
+    $ref: paths/api@library@instance-types@id@layouts.yaml
+  /api/library/instance-types/{instanceTypeId}/toggle-featured:
     $ref: paths/api@library@instance-types@id@toggle-featured.yaml
-  /api/library/instance-types/{id}/update-logo:
+  /api/library/instance-types/{instanceTypeId}/update-logo:
     $ref: paths/api@library@instance-types@id@update-logo.yaml
+  /api/library/layouts:
+    $ref: paths/api@library@layouts.yaml
+  /api/library/layouts@{id}:
+    $ref: paths/api@library@layouts@id.yaml
+  /api/library/layouts@{id}@permissions:
+    $ref: paths/api@library@layouts@id@permissions.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/load-balancers:
