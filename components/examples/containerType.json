@@ -1,0 +1,70 @@
+{
+  "containerType": {
+    "id": 1,
+    "account": null,
+    "name": "ActiveMQ 5.11",
+    "shortName": "activemq",
+    "code": "activemq-5.11",
+    "containerVersion": "5.11-morph.0.1",
+    "provisionType": {
+      "id": 1,
+      "name": "Docker",
+      "code": "docker"
+    },
+    "virtualImage": null,
+    "category": null,
+    "config": {},
+    "containerPorts": [
+      {
+        "id": 1,
+        "name": "Console",
+        "port": 8161,
+        "loadBalanceProtocol": null,
+        "exportName": "CONSOLE"
+      },
+      {
+        "id": 2,
+        "name": "JMS Port",
+        "port": 61616,
+        "loadBalanceProtocol": null,
+        "exportName": "JMS"
+      },
+      {
+        "id": 3,
+        "name": "AMQP Port",
+        "port": 5672,
+        "loadBalanceProtocol": null,
+        "exportName": "AMQP"
+      },
+      {
+        "id": 4,
+        "name": "STOMP Port",
+        "port": 61613,
+        "loadBalanceProtocol": null,
+        "exportName": "STOMP"
+      },
+      {
+        "id": 5,
+        "name": "MQTT Port",
+        "port": 1883,
+        "loadBalanceProtocol": null,
+        "exportName": "MQTT"
+      },
+      {
+        "id": 6,
+        "name": "Websocket Port",
+        "port": 61614,
+        "loadBalanceProtocol": null,
+        "exportName": "WEBSOCKET"
+      }
+    ],
+    "containerScripts": [],
+    "containerTemplates": [
+      {
+        "id": 1,
+        "name": "Morpheus activemq config"
+      }
+    ],
+    "environmentVariables": []
+  }
+}

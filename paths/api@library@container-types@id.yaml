@@ -1,11 +1,11 @@
 get:
-  summary: Get a Specific Instance Type
-  description: This endpoint retrieves a specific instance type.
-  operationId: getInstanceType
+  summary: Get a Specific Node Type
+  description: This endpoint retrieves a specific node type.
+  operationId: getNodeType
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/instanceTypeId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -14,12 +14,12 @@ get:
           schema:
             type: object
             properties:
-              instanceType:
-                $ref: ../components/schemas/instanceType.yaml
+              containerType:
+                $ref: ../components/schemas/containerType.yaml
           examples:
-            Instance Type Response:
+            Node Type Response:
               value:
-                $ref: ../components/examples/instanceType.json 
+                $ref: ../components/examples/containerType.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,25 +42,25 @@ get:
       $ref: ../components/responses/503.yaml
 
 put: 
-  summary: Update an Instance Type
-  description: Use this command to update an existing instance type.
-  operationId: updateInstanceType
+  summary: Update a Node Type
+  description: Use this command to update an existing node type.
+  operationId: updateNodeType
   tags: 
     -  Library
   parameters: 
-    - $ref: ../components/parameters/instanceTypeId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   requestBody: 
     content: 
       application/json: 
         schema: 
           type: object
           properties: 
-            instanceType:
-              $ref: ../components/schemas/instanceTypeUpdate.yaml
+            containerType:
+              $ref: ../components/schemas/containerTypeUpdate.yaml
         examples:
-          Instance Type Request:
+          Node Type Request:
             value: 
-              $ref: ../components/examples/instanceTypeUpdate.json
+              $ref: ../components/examples/containerTypeUpdate.json
   responses: 
     '200':
       description: Successful Response
@@ -94,13 +94,13 @@ put:
       $ref: ../components/responses/503.yaml
   
 delete:
-  summary: Delete an Instance Type
-  description: Will delete an instance type
-  operationId: deleteInstanceType
+  summary: Delete a Node Type
+  description: Will delete a node type 
+  operationId: deleteNodeType
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/instanceTypeId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Successful Request

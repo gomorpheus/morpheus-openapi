@@ -1,0 +1,61 @@
+{
+  "containerTypes": [
+    {
+      "id": 1283,
+      "account": null,
+      "name": "Apache 2.4",
+      "shortName": "apache",
+      "code": "apache-upcloud-2.4-ubuntu-16.04",
+      "containerVersion": "2.4",
+      "provisionType": {
+        "id": 30,
+        "name": "UpCloud",
+        "code": "upcloud"
+      },
+      "virtualImage": {
+        "id": 6640,
+        "name": "Morpheus ubuntu 16.04"
+      },
+      "category": "apache",
+      "config": {},
+      "containerPorts": [
+        {
+          "id": 8,
+          "name": "Http",
+          "port": 80,
+          "loadBalanceProtocol": "http",
+          "exportName": "HTTP"
+        },
+        {
+          "id": 9,
+          "name": "Https",
+          "port": 443,
+          "loadBalanceProtocol": "https",
+          "exportName": "HTTPS"
+        }
+      ],
+      "containerScripts": [
+        {
+          "id": 4,
+          "name": "apache vm entrypoint"
+        },
+        {
+          "id": 5,
+          "name": "apache stop"
+        },
+        {
+          "id": 6,
+          "name": "apache start"
+        }
+      ],
+      "containerTemplates": [],
+      "environmentVariables": []
+    }
+  ],
+  "meta": {
+    "size": 25,
+    "total": 1285,
+    "max": 25,
+    "offset": 0
+  }
+}
