@@ -80,14 +80,16 @@ post:
       content: 
         application/json: 
           schema:
-            type: object
-            properties:
-              anyOf:
-                network:
-                  $ref: ../components/schemas/network.yaml
-                errors:
-                  type: object
-                $ref: ../components/schemas/successMessage.yaml
+            allOf:
+              - type: object
+                properties:
+                  network:
+                    $ref: ../components/schemas/network.yaml
+              - type: object
+                properties: 
+                  errors:
+                    type: object
+              - $ref: ../components/schemas/successMessage.yaml
           examples:
             Network Request Success - Generic:
               value:

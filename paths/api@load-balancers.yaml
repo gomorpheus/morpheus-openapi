@@ -23,9 +23,7 @@ get:
                 loadBalancers:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      $ref: ../components/schemas/loadBalancer.yaml
+                    $ref: ../components/schemas/loadBalancer.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Load Balancers Response:
@@ -82,9 +80,7 @@ post:
             type: object
             properties:
               loadBalancer:
-                type: object
-                properties: 
-                  $ref: ../components/schemas/loadBalancer.yaml
+                $ref: ../components/schemas/loadBalancer.yaml
           examples: 
             Load Balancers Update Success:
               value:

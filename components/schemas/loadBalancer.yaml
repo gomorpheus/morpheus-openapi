@@ -1,66 +1,68 @@
-id:
-  type: integer
-  format: int64
-name:
-  type: string
-accountId:
-  type: integer
-  format: int64
-cloud:
-  type: object
-  properties:
-    id:
-      type: integer
-      format: int64
-    name:
-      type: string
-type:
-  type: object
-  properties:
-    id:
-      type: integer
-      format: int64
-    name:
-      type: string
-    code:
-      type: string
-visibility:
-  type: string
-description:
-  type: string
-host:
-  type: string
-port:
-  type: integer
-  format: int64
-username:
-  type: string
-  nullable: true
-ip:
-  type: string
-internalIp:
-  type: string
-  nullable: true
-externalIp:
-  type: string
-  nullable: true
-apiPort:
-  type: string
-  nullable: true
-adminPort:
-  type: string
-  nullable: true
-sslEnabled:
-  type: boolean
-  nullable: true
-sslCert:
-  type: string
-  nullable: true
-config:
-  type: object
-dateCreated:
-  type: string
-  format: date-time
-lastUpdated:
-  type: string
-  format: date-time
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+  accountId:
+    type: integer
+    format: int64
+  cloud:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  type:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      code:
+        type: string
+  visibility:
+    type: string
+  description:
+    type: string
+  host:
+    type: string
+  port:
+    type: integer
+    format: int64
+  username:
+    type: string
+    nullable: true
+  ip:
+    type: string
+  internalIp:
+    type: string
+    nullable: true
+  externalIp:
+    type: string
+    nullable: true
+  apiPort:
+    type: string
+    nullable: true
+  adminPort:
+    type: string
+    nullable: true
+  sslEnabled:
+    type: boolean
+    nullable: true
+  sslCert:
+    type: string
+    nullable: true
+  config:
+    type: object
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time

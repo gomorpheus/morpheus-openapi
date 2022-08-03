@@ -12,14 +12,12 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              anyOf:
-                loadBalancer:
-                  type: object
-                  properties:
+            allOf:
+              - type: object
+                properties:
+                  loadBalancer:
                     $ref: ../components/schemas/loadBalancer.yaml
-                $ref: ../components/schemas/successMessage.yaml
+              - $ref: ../components/schemas/successMessage.yaml
           examples: 
             Load Balancers Update Success:
               value:
