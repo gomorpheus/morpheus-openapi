@@ -16626,6 +16626,386 @@ paths:
           $ref: '#/components/responses/500'
         '503':
           $ref: '#/components/responses/503'
+  /api/library/container-types:
+    get:
+      summary: Get All Node Types
+      description: This endpoint retrieves all node types.
+      operationId: listNodeTypes
+      tags:
+        - Library
+      parameters:
+        - $ref: '#/components/parameters/max'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/direction'
+        - $ref: '#/components/parameters/phrase'
+        - $ref: '#/components/parameters/name'
+        - $ref: '#/components/parameters/code'
+        - $ref: '#/components/parameters/provisionType'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      containerTypes:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/containerType'
+                  - $ref: '#/components/schemas/meta'
+              examples:
+                Node Types Response:
+                  value:
+                    containerTypes:
+                      - id: 1283
+                        account: null
+                        name: Apache 2.4
+                        shortName: apache
+                        code: apache-upcloud-2.4-ubuntu-16.04
+                        containerVersion: '2.4'
+                        provisionType:
+                          id: 30
+                          name: UpCloud
+                          code: upcloud
+                        virtualImage:
+                          id: 6640
+                          name: Morpheus ubuntu 16.04
+                        category: apache
+                        config: {}
+                        containerPorts:
+                          - id: 8
+                            name: Http
+                            port: 80
+                            loadBalanceProtocol: http
+                            exportName: HTTP
+                          - id: 9
+                            name: Https
+                            port: 443
+                            loadBalanceProtocol: https
+                            exportName: HTTPS
+                        containerScripts:
+                          - id: 4
+                            name: apache vm entrypoint
+                          - id: 5
+                            name: apache stop
+                          - id: 6
+                            name: apache start
+                        containerTemplates: []
+                        environmentVariables: []
+                    meta:
+                      size: 25
+                      total: 1285
+                      max: 25
+                      offset: 0
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    post:
+      summary: Create a Node Type
+      description: Use this command to create a node type.
+      operationId: addNodeType
+      tags:
+        - Library
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                containerType:
+                  $ref: '#/components/schemas/containerTypeCreate'
+            examples:
+              Node Type Request - AWS:
+                value:
+                  containerType:
+                    name: awstest
+                    shortName: awstest
+                    containerVersion: '1'
+                    provisionTypeCode: amazon
+                    virtualImageId: 522493
+                    statTypeCode: amazon
+                    logTypeCode: amazon
+                    serverType: vm
+                    config: {}
+              Node Type Request - Azure:
+                value:
+                  containerType:
+                    name: azuretest
+                    shortName: azuretest
+                    containerVersion: '1'
+                    provisionTypeCode: azure
+                    virtualImageId: 586409
+                    statTypeCode: azure
+                    logTypeCode: azure
+                    serverType: vm
+                    config: {}
+              Node Type Request - Google GCP:
+                value:
+                  containerType:
+                    name: gcptest
+                    shortName: gcptest
+                    containerVersion: '1'
+                    provisionTypeCode: google
+                    virtualImageId: 441884
+                    statTypeCode: vm
+                    logTypeCode: google
+                    serverType: vm
+                    config: {}
+              Node Type Request - VMWare:
+                value:
+                  containerType:
+                    name: vmwaretest
+                    shortName: vmwaretest
+                    containerVersion: '1'
+                    provisionTypeCode: vmware
+                    virtualImageId: 526610
+                    statTypeCode: vmware
+                    logTypeCode: vmware
+                    serverType: vm
+                    config: {}
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      containerType:
+                        $ref: '#/components/schemas/containerType'
+                  - $ref: '#/components/schemas/200-success'
+              examples:
+                Response:
+                  value:
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+  /api/library/container-types/{id}:
+    get:
+      summary: Get a Specific Node Type
+      description: This endpoint retrieves a specific node type.
+      operationId: getNodeType
+      tags:
+        - Library
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  containerType:
+                    $ref: '#/components/schemas/containerType'
+              examples:
+                Node Type Response:
+                  value:
+                    containerType:
+                      id: 1
+                      account: null
+                      name: ActiveMQ 5.11
+                      shortName: activemq
+                      code: activemq-5.11
+                      containerVersion: 5.11-morph.0.1
+                      provisionType:
+                        id: 1
+                        name: Docker
+                        code: docker
+                      virtualImage: null
+                      category: null
+                      config: {}
+                      containerPorts:
+                        - id: 1
+                          name: Console
+                          port: 8161
+                          loadBalanceProtocol: null
+                          exportName: CONSOLE
+                        - id: 2
+                          name: JMS Port
+                          port: 61616
+                          loadBalanceProtocol: null
+                          exportName: JMS
+                        - id: 3
+                          name: AMQP Port
+                          port: 5672
+                          loadBalanceProtocol: null
+                          exportName: AMQP
+                        - id: 4
+                          name: STOMP Port
+                          port: 61613
+                          loadBalanceProtocol: null
+                          exportName: STOMP
+                        - id: 5
+                          name: MQTT Port
+                          port: 1883
+                          loadBalanceProtocol: null
+                          exportName: MQTT
+                        - id: 6
+                          name: Websocket Port
+                          port: 61614
+                          loadBalanceProtocol: null
+                          exportName: WEBSOCKET
+                      containerScripts: []
+                      containerTemplates:
+                        - id: 1
+                          name: Morpheus activemq config
+                      environmentVariables: []
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    put:
+      summary: Update a Node Type
+      description: Use this command to update an existing node type.
+      operationId: updateNodeType
+      tags:
+        - Library
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                containerType:
+                  $ref: '#/components/schemas/containerTypeUpdate'
+            examples:
+              Node Type Request:
+                value:
+                  layout:
+                    name: Custom Node Name
+                    containerVersion: '1.2'
+                    environmentVariables:
+                      - name: foo
+                        value: bar
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+              examples:
+                Response:
+                  value:
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
+    delete:
+      summary: Delete a Node Type
+      description: Will delete a node type
+      operationId: deleteNodeType
+      tags:
+        - Library
+      parameters:
+        - $ref: '#/components/parameters/id-path'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200-success'
+              examples:
+                Response:
+                  value:
+                    success: true
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '405':
+          $ref: '#/components/responses/405'
+        '406':
+          $ref: '#/components/responses/406'
+        '410':
+          $ref: '#/components/responses/410'
+        '429':
+          $ref: '#/components/responses/429'
+        '500':
+          $ref: '#/components/responses/500'
+        '503':
+          $ref: '#/components/responses/503'
   /api/library/option-types:
     get:
       summary: Get All Inputs
@@ -17231,11 +17611,10 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - type: object
-                    properties:
-                      instanceType:
-                        $ref: '#/components/schemas/instanceType'
+                type: object
+                properties:
+                  instanceType:
+                    $ref: '#/components/schemas/instanceType'
               examples:
                 Instance Type Response:
                   value:
@@ -21092,74 +21471,7 @@ paths:
                       loadBalancers:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                            name:
-                              type: string
-                            accountId:
-                              type: integer
-                              format: int64
-                            cloud:
-                              type: object
-                              properties:
-                                id:
-                                  type: integer
-                                  format: int64
-                                name:
-                                  type: string
-                            type:
-                              type: object
-                              properties:
-                                id:
-                                  type: integer
-                                  format: int64
-                                name:
-                                  type: string
-                                code:
-                                  type: string
-                            visibility:
-                              type: string
-                            description:
-                              type: string
-                            host:
-                              type: string
-                            port:
-                              type: integer
-                              format: int64
-                            username:
-                              type: string
-                              nullable: true
-                            ip:
-                              type: string
-                            internalIp:
-                              type: string
-                              nullable: true
-                            externalIp:
-                              type: string
-                              nullable: true
-                            apiPort:
-                              type: string
-                              nullable: true
-                            adminPort:
-                              type: string
-                              nullable: true
-                            sslEnabled:
-                              type: boolean
-                              nullable: true
-                            sslCert:
-                              type: string
-                              nullable: true
-                            config:
-                              type: object
-                            dateCreated:
-                              type: string
-                              format: date-time
-                            lastUpdated:
-                              type: string
-                              format: date-time
+                          $ref: '#/components/schemas/loadBalancer'
                   - $ref: '#/components/schemas/meta'
               examples:
                 Load Balancers Response:
@@ -21295,74 +21607,7 @@ paths:
                 type: object
                 properties:
                   loadBalancer:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        format: int64
-                      name:
-                        type: string
-                      accountId:
-                        type: integer
-                        format: int64
-                      cloud:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            format: int64
-                          name:
-                            type: string
-                      type:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            format: int64
-                          name:
-                            type: string
-                          code:
-                            type: string
-                      visibility:
-                        type: string
-                      description:
-                        type: string
-                      host:
-                        type: string
-                      port:
-                        type: integer
-                        format: int64
-                      username:
-                        type: string
-                        nullable: true
-                      ip:
-                        type: string
-                      internalIp:
-                        type: string
-                        nullable: true
-                      externalIp:
-                        type: string
-                        nullable: true
-                      apiPort:
-                        type: string
-                        nullable: true
-                      adminPort:
-                        type: string
-                        nullable: true
-                      sslEnabled:
-                        type: boolean
-                        nullable: true
-                      sslCert:
-                        type: string
-                        nullable: true
-                      config:
-                        type: object
-                      dateCreated:
-                        type: string
-                        format: date-time
-                      lastUpdated:
-                        type: string
-                        format: date-time
+                    $ref: '#/components/schemas/loadBalancer'
               examples:
                 Load Balancers Update Success:
                   value:
@@ -21433,74 +21678,7 @@ paths:
                 type: object
                 properties:
                   loadBalancer:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        format: int64
-                      name:
-                        type: string
-                      accountId:
-                        type: integer
-                        format: int64
-                      cloud:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            format: int64
-                          name:
-                            type: string
-                      type:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            format: int64
-                          name:
-                            type: string
-                          code:
-                            type: string
-                      visibility:
-                        type: string
-                      description:
-                        type: string
-                      host:
-                        type: string
-                      port:
-                        type: integer
-                        format: int64
-                      username:
-                        type: string
-                        nullable: true
-                      ip:
-                        type: string
-                      internalIp:
-                        type: string
-                        nullable: true
-                      externalIp:
-                        type: string
-                        nullable: true
-                      apiPort:
-                        type: string
-                        nullable: true
-                      adminPort:
-                        type: string
-                        nullable: true
-                      sslEnabled:
-                        type: boolean
-                        nullable: true
-                      sslCert:
-                        type: string
-                        nullable: true
-                      config:
-                        type: object
-                      dateCreated:
-                        type: string
-                        format: date-time
-                      lastUpdated:
-                        type: string
-                        format: date-time
+                    $ref: '#/components/schemas/loadBalancer'
               examples:
                 Load Balancers Response:
                   value:
@@ -21586,74 +21764,7 @@ paths:
                 type: object
                 properties:
                   loadBalancer:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        format: int64
-                      name:
-                        type: string
-                      accountId:
-                        type: integer
-                        format: int64
-                      cloud:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            format: int64
-                          name:
-                            type: string
-                      type:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                            format: int64
-                          name:
-                            type: string
-                          code:
-                            type: string
-                      visibility:
-                        type: string
-                      description:
-                        type: string
-                      host:
-                        type: string
-                      port:
-                        type: integer
-                        format: int64
-                      username:
-                        type: string
-                        nullable: true
-                      ip:
-                        type: string
-                      internalIp:
-                        type: string
-                        nullable: true
-                      externalIp:
-                        type: string
-                        nullable: true
-                      apiPort:
-                        type: string
-                        nullable: true
-                      adminPort:
-                        type: string
-                        nullable: true
-                      sslEnabled:
-                        type: boolean
-                        nullable: true
-                      sslCert:
-                        type: string
-                        nullable: true
-                      config:
-                        type: object
-                      dateCreated:
-                        type: string
-                        format: date-time
-                      lastUpdated:
-                        type: string
-                        format: date-time
+                    $ref: '#/components/schemas/loadBalancer'
               examples:
                 Load Balancers Update Success:
                   value:
@@ -21762,14 +21873,12 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  anyOf:
-                    loadBalancer:
-                      type: object
-                      properties:
-                        $ref: ../components/schemas/loadBalancer.yaml
-                    $ref: '#/components/schemas/successMessage'
+                allOf:
+                  - type: object
+                    properties:
+                      loadBalancer:
+                        $ref: '#/components/schemas/loadBalancer'
+                  - $ref: '#/components/schemas/successMessage'
               examples:
                 Load Balancers Update Success:
                   value:
@@ -32166,14 +32275,16 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  anyOf:
-                    network:
-                      $ref: ../components/schemas/network.yaml
-                    errors:
-                      type: object
-                    $ref: '#/components/schemas/successMessage'
+                allOf:
+                  - type: object
+                    properties:
+                      network:
+                        $ref: '#/components/schemas/network'
+                  - type: object
+                    properties:
+                      errors:
+                        type: object
+                  - $ref: '#/components/schemas/successMessage'
               examples:
                 Network Request Success - Generic:
                   value:
@@ -32250,6 +32361,8 @@ paths:
                       resourcePermission: null
                 Network Request - AWS:
                   value:
+                    success: true
+                    errors: {}
                     network:
                       id: 326
                       name: test-net
@@ -32634,14 +32747,16 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  anyOf:
-                    network:
-                      $ref: ../components/schemas/network.yaml
-                    errors:
-                      type: object
-                    $ref: '#/components/schemas/successMessage'
+                allOf:
+                  - type: object
+                    properties:
+                      network:
+                        $ref: '#/components/schemas/network'
+                  - type: object
+                    properties:
+                      errors:
+                        type: object
+                  - $ref: '#/components/schemas/successMessage'
               examples:
                 Network Update Success:
                   value:
@@ -74464,48 +74579,6 @@ components:
         type: integer
         format: int64
       example: 135
-    fieldName:
-      name: fieldName
-      in: query
-      description: >-
-        Field Name filter, restricts query to only load type matching fieldName
-        specified
-      schema:
-        type: string
-      example: cloudName
-    fieldContext:
-      name: fieldContext
-      in: query
-      description: >-
-        Field Context filter, restricts query to only load type matching
-        fieldContext specified
-      schema:
-        type: string
-      example: config.customOptions
-    fieldLabel:
-      name: fieldLabel
-      in: query
-      description: >-
-        Field Label filter, restricts query to only load type matching
-        fieldLabel specified
-      schema:
-        type: string
-      example: DB Version
-    featured:
-      name: featured
-      in: query
-      description: Filter by featured
-      schema:
-        type: boolean
-      example: false
-    instanceTypeId-path:
-      name: instanceTypeId
-      in: path
-      description: The ID of the instance type
-      required: true
-      schema:
-        type: number
-      example: 2
     provisionType:
       name: provisionType
       in: query
@@ -74570,6 +74643,48 @@ components:
           - VMware
           - Workflow
           - Xen
+    fieldName:
+      name: fieldName
+      in: query
+      description: >-
+        Field Name filter, restricts query to only load type matching fieldName
+        specified
+      schema:
+        type: string
+      example: cloudName
+    fieldContext:
+      name: fieldContext
+      in: query
+      description: >-
+        Field Context filter, restricts query to only load type matching
+        fieldContext specified
+      schema:
+        type: string
+      example: config.customOptions
+    fieldLabel:
+      name: fieldLabel
+      in: query
+      description: >-
+        Field Label filter, restricts query to only load type matching
+        fieldLabel specified
+      schema:
+        type: string
+      example: DB Version
+    featured:
+      name: featured
+      in: query
+      description: Filter by featured
+      schema:
+        type: boolean
+      example: false
+    instanceTypeId-path:
+      name: instanceTypeId
+      in: path
+      description: The ID of the instance type
+      required: true
+      schema:
+        type: number
+      example: 2
     loadBalancerId-path:
       name: loadBalancerId
       in: path
@@ -79753,6 +79868,15 @@ components:
           nullable: true
           items:
             type: object
+            properties:
+              name:
+                type: string
+              port:
+                type: integer
+                format: int64
+              loadBalanceProtocol:
+                type: string
+                nullable: true
         containerScripts:
           type: array
           nullable: true
@@ -80773,6 +80897,211 @@ components:
         lastUpdated:
           type: string
           format: date-time
+    containerTypeCreate:
+      type: object
+      required:
+        - name
+        - shortName
+        - containerVersion
+        - provisionTypeCode
+      properties:
+        name:
+          type: string
+          description: Node type name
+        shortName:
+          type: string
+          description: >-
+            The short name is a name with no spaces used for display in your
+            container list.
+        description:
+          type: string
+          description: Node type description
+        containerVersion:
+          type: string
+          description: Version of the node type
+        provisionTypeCode:
+          type: string
+          description: Provision type code, eg. `amazon`, etc.
+        scripts:
+          type: array
+          description: Array of script IDs.
+          items:
+            type: integer
+            format: int64
+        templates:
+          type: array
+          description: Array of file template IDs.
+          items:
+            type: integer
+            format: int64
+        virtualImageId:
+          type: integer
+          format: int64
+          description: Virtual image ID
+        statTypeCode:
+          type: string
+          description: >-
+            Stat type code.  Varies with node type, see Provision Types
+            (customOptionTypes) for allowed values within selected type.
+        logTypeCode:
+          type: string
+          description: >-
+            Log type code.  Varies with node type, see Provision Types
+            (customOptionTypes) for allowed values within selected type.
+        serverType:
+          type: string
+          description: Server type.  Always pass "vm".
+        containerPorts:
+          type: array
+          description: List of exposed port definitions in the format NAME=PORT|PROTOCOL
+          example:
+            - name: WEB
+              port: 80
+              loadBalanceProtocol: HTTP
+            - name: SECURE
+              port: 443
+              loadBalanceProtocol: HTTPS
+          items:
+            type: object
+            required:
+              - name
+              - port
+            properties:
+              name:
+                type: string
+              port:
+                type: integer
+                format: int64
+              loadBalanceProtocol:
+                type: string
+        environmentVariables:
+          type: array
+          description: The environmentVariables parameter is array of env objects.
+          items:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+                description: Environment variable name
+              value:
+                type: string
+                description: Sets fixed value for variable
+              masked:
+                type: boolean
+                description: Can be used to enable / disable masking of variable
+                default: false
+              export:
+                type: boolean
+                description: Can be used to enable / disable export of variable
+                default: false
+        config:
+          type: object
+          description: >-
+            Config object varies with node type.  If using docker, scvmm, ARM,
+            hyperv, or cloudformation, look up provision type details
+            (customOptionTypes) for information.
+    containerTypeUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Node type name
+        shortName:
+          type: string
+          description: >-
+            The short name is a name with no spaces used for display in your
+            container list.
+        description:
+          type: string
+          description: Node type description
+        containerVersion:
+          type: string
+          description: Version of the node type
+        provisionTypeCode:
+          type: string
+          description: Provision type code, eg. `amazon`, etc.
+        scripts:
+          type: array
+          description: Array of script IDs.
+          items:
+            type: integer
+            format: int64
+        templates:
+          type: array
+          description: Array of file template IDs.
+          items:
+            type: integer
+            format: int64
+        virtualImageId:
+          type: integer
+          format: int64
+          description: Virtual image ID
+        statTypeCode:
+          type: string
+          description: >-
+            Stat type code.  Varies with node type, see Provision Types
+            (customOptionTypes) for allowed values within selected type.
+        logTypeCode:
+          type: string
+          description: >-
+            Log type code.  Varies with node type, see Provision Types
+            (customOptionTypes) for allowed values within selected type.
+        serverType:
+          type: string
+          description: Server type.  Always pass "vm".
+        containerPorts:
+          type: array
+          description: List of exposed port definitions in the format NAME=PORT|PROTOCOL
+          example:
+            - name: WEB
+              port: 80
+              loadBalanceProtocol: HTTP
+            - name: SECURE
+              port: 443
+              loadBalanceProtocol: HTTPS
+          items:
+            type: object
+            required:
+              - name
+              - port
+            properties:
+              name:
+                type: string
+              port:
+                type: integer
+                format: int64
+              loadBalanceProtocol:
+                type: string
+        environmentVariables:
+          type: array
+          description: The environmentVariables parameter is array of env objects.
+          items:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+                description: Environment variable name
+              value:
+                type: string
+                description: Sets fixed value for variable
+              masked:
+                type: boolean
+                description: Can be used to enable / disable masking of variable
+                default: false
+              export:
+                type: boolean
+                description: Can be used to enable / disable export of variable
+                default: false
+        config:
+          type: object
+          description: >-
+            Config object varies with node type.  If using docker, scvmm, ARM,
+            hyperv, or cloudformation, look up provision type details
+            (customOptionTypes) for information.
     instanceTypeCreate:
       type: object
       required:
@@ -81095,6 +81424,75 @@ components:
                       id:
                         type: integer
                         format: int64
+    loadBalancer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        accountId:
+          type: integer
+          format: int64
+        cloud:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        type:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            code:
+              type: string
+        visibility:
+          type: string
+        description:
+          type: string
+        host:
+          type: string
+        port:
+          type: integer
+          format: int64
+        username:
+          type: string
+          nullable: true
+        ip:
+          type: string
+        internalIp:
+          type: string
+          nullable: true
+        externalIp:
+          type: string
+          nullable: true
+        apiPort:
+          type: string
+          nullable: true
+        adminPort:
+          type: string
+          nullable: true
+        sslEnabled:
+          type: boolean
+          nullable: true
+        sslCert:
+          type: string
+          nullable: true
+        config:
+          type: object
+        dateCreated:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
     loadBalancerCreate:
       type: object
       properties:
@@ -82416,6 +82814,7 @@ components:
         category:
           type: string
           description: Network Category
+          nullable: true
         interfaceName:
           type: string
           nullable: true
@@ -82431,6 +82830,7 @@ components:
           description: Description
         externalId:
           type: string
+          nullable: true
         internalId:
           type: string
           nullable: true
@@ -82448,7 +82848,8 @@ components:
           type: integer
           format: int64
         vlanId:
-          type: string
+          type: integer
+          format: int64
           nullable: true
         vswitchName:
           type: string
