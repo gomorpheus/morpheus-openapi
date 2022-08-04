@@ -35,6 +35,28 @@ paths:
     $ref: paths/api@approvals.yaml
   /api/approvals/{id}:
     $ref: paths/api@approvals@id.yaml
+  /api/apps:
+    $ref: paths/api@apps.yaml
+  /api/apps/{id}:
+    $ref: paths/api@apps@id.yaml
+  /api/apps/{id}/add-instance:
+    $ref: paths/api@apps@id@add-instance.yaml
+  /api/apps/{id}/apply:
+    $ref: paths/api@apps@id@apply.yaml
+  /api/apps/{id}/cancel-removal:
+    $ref: paths/api@apps@id@cancel-removal.yaml
+  /api/apps/{id}/refresh:
+    $ref: paths/api@apps@id@refresh.yaml
+  /api/apps/{id}/prepare-apply:
+    $ref: paths/api@apps@id@prepare-apply.yaml
+  /api/apps/{id}/remove-instance:
+    $ref: paths/api@apps@id@remove-instance.yaml
+  /api/apps/{id}/security-groups:
+    $ref: paths/api@apps@id@security-groups.yaml
+  /api/apps/{id}/state:
+    $ref: paths/api@apps@id@state.yaml
+  /api/apps/{id}/validate-apply:
+    $ref: paths/api@apps@id@validate-apply.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@id@wiki.yaml
   /api/blueprints:

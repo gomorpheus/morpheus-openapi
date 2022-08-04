@@ -1,0 +1,29 @@
+type: object
+properties:
+  data: 
+    type: object
+    properties: 
+      image: 
+        type: string
+      name: 
+        type: string
+      terraform: 
+        type: object
+        properties: 
+          tf: 
+            type: string
+          tfvarSecret: 
+            type: string
+          configType: 
+            type: string
+      type: 
+        type: string
+      executionId: 
+        type: string
+      templateParameter: 
+        type: object
+        properties: 
+          environment: 
+            type: string
+          instanceName: 
+            type: string

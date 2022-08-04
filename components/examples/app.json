@@ -1,0 +1,63 @@
+{
+  "app": {
+      "id": 2034,
+      "name": "AWSUbuntuAA",
+      "description": "Deploy Ubuntu Server 20 latest on AWS",
+      "environment": "dev",
+      "accountId": 3,
+      "account": {
+          "id": 3,
+          "name": "Morpheus"
+      },
+      "owner": {
+          "id": 336,
+          "username": "Test User"
+      },
+      "siteId": 2,
+      "group": {
+          "id": 2,
+          "name": "Demo"
+      },
+      "blueprint": {
+          "id": 405,
+          "name": "AWS Ubuntu",
+          "type": "terraform"
+      },
+      "type": "terraform",
+      "dateCreated": "2022-06-16T07:01:39Z",
+      "lastUpdated": "2022-06-17T15:45:55Z",
+      "removalDate": null,
+      "appContext": "dev",
+      "status": "running",
+      "appStatus": "completed",
+      "instanceCount": 1,
+      "containerCount": 1,
+      "appTiers": [],
+      "instances": [
+          {
+              "id": 51718,
+              "name": "morph_tf_ec2"
+          }
+      ],
+      "stats": {
+          "usedMemory": 0,
+          "maxMemory": 1073741824,
+          "usedStorage": 0,
+          "maxStorage": 8589934592,
+          "running": 1,
+          "total": 0,
+          "cpuUsage": 0.0,
+          "instanceCount": 1,
+          "instanceDayCount": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+          ],
+          "instanceDayCountTotal": 0
+      }
+  }
+}

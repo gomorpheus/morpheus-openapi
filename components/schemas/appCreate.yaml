@@ -1,0 +1,30 @@
+type: object
+properties:
+  templateId:
+    type: integer
+    format: int64
+  blueprintId: 
+    oneOf: 
+      - type: integer
+        format: int64
+      - type: string
+    description: The ID of the Blueprint. Use "existing" to create a blank app.
+  name: 
+    type: string
+    description: A unique name for the app
+  description: 
+    type: string
+    description: Description
+  group: 
+    type: object
+    description: A Map containing the id of the Group
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  environment:
+    type: string
+    description: Environment code (appContext)
+  tiers:
+    type: object
+    description: Configuration of app elements

@@ -1,0 +1,7 @@
+name: removeInstances
+in: query
+description: Remove Instances
+schema:
+  type: string
+  default: "off"
+example: "on"

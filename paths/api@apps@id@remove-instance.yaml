@@ -1,0 +1,58 @@
+post:
+  summary: Remove Instance from App
+  description: Remove Instance from App
+  operationId: removeAppInstance
+  tags:
+    - Apps
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          required:
+            - instanceId
+          properties:
+            instanceId:
+              type: integer
+              format: int64
+              description: The ID of the instance being removed
+        examples:
+          App Update:
+            value:
+              $ref: ../components/examples/appRemoveInstance.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              app:
+                $ref: ../components/schemas/app.yaml
+          examples:
+            Apps Response:
+              value:
+                $ref: ../components/examples/app.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
