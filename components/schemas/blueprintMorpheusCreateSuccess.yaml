@@ -1,0 +1,43 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: A name for the blueprint
+  type: 
+    type: string
+    description: Blueprint Type
+    enum:
+      - morpheus
+  config:
+    type: object
+    properties:
+      image: 
+        type: string
+        description: Path to display image. Defaults to an internal Morpheus image.
+      name: 
+        type: string
+        description: A name for the blueprint
+      type: 
+        type: string
+        description: Blueprint Type
+        enum:
+          - morpheus
+      tiers:
+        type: object
+        description: Tier definitions - Create in UI to view a baseline for object
+  visibility:
+    type: string
+    description: Private or Public Access
+    enum: 
+      - private
+      - public
+    default: private
+  resourcePermission:
+    type: object
+    description: Resource Permission Block
+  owner:
+    type: object
+    description: Owner
+  tenant:
+    type: object
+    description: Tenant

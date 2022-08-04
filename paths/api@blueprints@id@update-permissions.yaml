@@ -1,0 +1,71 @@
+put: 
+  summary: Update Blueprint Permissions
+  description: Update Blueprint Permissions
+  operationId: updateBlueprintPermissions
+  tags: 
+    -  Blueprints
+  parameters: 
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            resourcePermission: 
+              type: object
+              properties: 
+                all: 
+                  type: boolean
+                  description: Set to true to grant access to all groups
+                sites:
+                  type: array
+                  description: Array of objects identifying groups with access
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                ownerId:
+                  type: integer
+                  format: int64
+                  description: User ID, can be used to change blueprint owner.
+        examples:
+          Blueprint Request:
+            value: 
+              $ref: ../components/examples/instanceTypeLayoutPermissionsUpdate.json
+  responses: 
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              blueprint:
+                $ref: ../components/schemas/blueprint.yaml
+          examples:
+            Blueprint Response:
+              value:
+                $ref: ../components/examples/blueprint.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

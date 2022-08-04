@@ -1,0 +1,27 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: Blueprint ID
+  name: 
+    type: string
+    description: A name for the blueprint
+  description:
+    type: string
+    description: A description for the blueprint
+    example: Basic Template Description
+    nullable: true
+  category:
+    type: string
+    description: Category
+    example: web, utility, app
+    nullable: true
+  config:
+    oneOf:
+      -  $ref: blueprintARMCreateSuccess.yaml
+      -  $ref: blueprintCFTCreateSuccess.yaml
+      -  $ref: blueprintHelmCreateSuccess.yaml
+      -  $ref: blueprintKubernetesCreateSuccess.yaml
+      -  $ref: blueprintMorpheusCreateSuccess.yaml
+      -  $ref: blueprintTerraformCreateSuccess.yaml

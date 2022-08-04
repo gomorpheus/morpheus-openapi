@@ -1,0 +1,61 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: A name for the blueprint
+  image: 
+    type: string
+    description: Path to display image. Defaults to an internal Morpheus image.
+  type: 
+    type: string
+    description: Blueprint Type
+    enum:
+      - helm
+  helm: 
+    type: object
+    required:
+      - configType
+    properties: 
+      configType: 
+        type: string
+        description: Configuration Type
+        enum: 
+          - git
+      git:
+        type: object
+        required: 
+          - repoId
+          - path
+          - integrationId
+          - branch
+        properties:
+          repoId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Repository ID
+          path:
+            type: string
+            description: Path to Helm Files in the Repository
+          integrationId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Integration ID
+          branch:
+            type: string
+            description: Branch Name
+  visibility:
+    type: string
+    description: Private or Public Access
+    enum: 
+      - private
+      - public
+    default: private
+  resourcePermission:
+    type: object
+    description: Resource Permission Block
+  owner:
+    type: object
+    description: Owner
+  tenant:
+    type: object
+    description: Tenant

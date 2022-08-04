@@ -37,6 +37,14 @@ paths:
     $ref: paths/api@approvals@id.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@id@wiki.yaml
+  /api/blueprints:
+    $ref: paths/api@blueprints.yaml
+  /api/blueprints/{id}:
+    $ref: paths/api@blueprints@id.yaml
+  /api/blueprints/{id}/image:
+    $ref: paths/api@blueprints@id@image.yaml
+  /api/blueprints/{id}/update-permissions:
+    $ref: paths/api@blueprints@id@update-permissions.yaml
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:

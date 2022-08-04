@@ -1,0 +1,66 @@
+type: object
+required: 
+  - name
+  - type
+  - kubernetes
+properties: 
+  name: 
+    type: string
+    description: A name for the blueprint
+  image: 
+    type: string
+    description: Path to display image. Defaults to an internal Morpheus image.
+  type: 
+    type: string
+    description: Blueprint Type
+    enum:
+      - kubernetes
+  kubernetes: 
+    type: object
+    required:
+      - configType
+    properties: 
+      configType: 
+        type: string
+        description: Configuration Type
+        enum: 
+          - yaml
+          - spec
+          - git
+      yaml:
+        type: string
+        description: Kubernetes Spec in YAML
+      git:
+        type: object
+        properties:
+          repoId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Repository ID
+          path:
+            type: string
+            description: Path to kubernetes Files in the Repository
+          integrationId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Integration ID
+          branch:
+            type: string
+            description: Branch Name
+  config:
+    type: object
+    properties:
+      specs:
+        type: array
+        description: Array of Kubernetes specs in Morpheus
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            value:
+              type: integer
+              format: int64
+            name:
+              type: string

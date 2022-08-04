@@ -1,0 +1,90 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: A name for the blueprint
+  image: 
+    type: string
+    description: Path to display image. Defaults to an internal Morpheus image.
+  type: 
+    type: string
+    description: Blueprint Type
+    enum:
+      - terraform
+  terraform: 
+    type: object
+    required:
+      - configType
+    properties: 
+      configType: 
+        type: string
+        description: Configuration Type
+        enum: 
+          - tf
+          - spec
+          - git
+          - json
+      json: 
+        type: string
+        description: Terraform definition in JSON for `configType` `json`
+      tf:
+        type: string
+        description: Terraform definition for `configType` `tf`
+      git:
+        type: object
+        required: 
+          - repoId
+          - path
+          - integrationId
+          - branch
+        properties:
+          repoId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Repository ID
+          path:
+            type: string
+            description: Path to terraform Files in the Repository
+          integrationId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Integration ID
+          branch:
+            type: string
+            description: Branch Name
+      tfvarSecret:
+        type: string
+        description: tfvar secret from Morpheus Cypher
+  config:
+    type: object
+    properties:
+      specs:
+        type: array
+        description: Array of Terraform specs in Morpheus
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            value:
+              type: integer
+              format: int64
+            name:
+              type: string
+  visibility:
+    type: string
+    description: Private or Public Access
+    enum: 
+      - private
+      - public
+    default: private
+  resourcePermission:
+    type: object
+    description: Resource Permission Block
+  owner:
+    type: object
+    description: Owner
+  tenant:
+    type: object
+    description: Tenant
