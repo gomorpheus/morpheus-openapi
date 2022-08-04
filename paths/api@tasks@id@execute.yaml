@@ -1,0 +1,75 @@
+post:
+  summary: Executes a Task
+  description: |
+    Executes a task.
+  operationId: executeTasks
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - job
+          properties:
+            job:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: A name for the execution job. Can be used to find execution results with `/api/processes?name=`
+                targetType:
+                  type: string
+                  description: The target context for task execution. This is required for tasks with `executeTarget` set to `resource`.
+                  enum:
+                    - instance
+                    - server
+                    - appliance
+                instances:
+                  type: array
+                  description: Array of Instance IDs. Only applicable for `targetType` is instance.
+                  items:
+                    type: integer
+                    format: int64
+                servers:
+                  type: array
+                  description: Array of Server IDs. Only applicable for `targetType` is `server`.
+                  items:
+                    type: integer
+                    format: int64
+                customOptions:
+                  type: object
+                  description: Map of options to be used as values in the task. These correspond to option types.
+                customConfig:
+                  type: string
+                  description: String of custom configuration values as JSON.
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
