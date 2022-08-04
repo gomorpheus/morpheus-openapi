@@ -19,10 +19,13 @@ properties:
         format: int64
       code: 
         type: string
+        enum: 
+          - email
       name: 
         type: string
   taskOptions: 
     type: object
+    additionalProperties: false
     properties: 
       localScriptGitId: 
         type: string
@@ -59,12 +62,15 @@ properties:
         nullable: true
   file: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
         format: int64
+        nullable: true
       sourceType: 
         type: string
+        nullable: true
       contentRef: 
         type: string
         nullable: true
@@ -72,8 +78,14 @@ properties:
         type: string
         nullable: true
       repository: 
-        type: string
+        type: object
         nullable: true
+        properties:
+          id:
+            type: integer
+            format: int64
+          name:
+            type: string
       content: 
         type: string
         nullable: true

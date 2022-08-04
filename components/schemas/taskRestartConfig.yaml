@@ -19,10 +19,13 @@ properties:
         format: int64
       code: 
         type: string
+        enum: 
+          - restartTask
       name: 
         type: string
   taskOptions: 
     type: object
+    additionalProperties: false
     properties: 
       password: 
         type: string
@@ -49,8 +52,34 @@ properties:
         type: string
         nullable: true
   file: 
-    type: string
+    type: object
     nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        nullable: true
+      sourceType: 
+        type: string
+        nullable: true
+      contentRef: 
+        type: string
+        nullable: true
+      contentPath: 
+        type: string
+        nullable: true
+      repository: 
+        type: object
+        nullable: true
+        properties:
+          id:
+            type: integer
+            format: int64
+          name:
+            type: string
+      content: 
+        type: string
+        nullable: true
   resultType: 
     type: string
     nullable: true
