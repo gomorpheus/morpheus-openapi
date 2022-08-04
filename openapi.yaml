@@ -445,6 +445,8 @@ paths:
     $ref: paths/api@subnets@id.yaml
   /api/tasks:
     $ref: paths/api@tasks.yaml
+  /api/tasks/{id}:
+    $ref: paths/api@tasks@id.yaml
   /api/task-types:
     $ref: paths/api@task-types.yaml
   /api/task-types/{id}:
