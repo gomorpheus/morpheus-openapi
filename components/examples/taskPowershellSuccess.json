@@ -1,0 +1,43 @@
+{
+    "task": {
+        "id": 897,
+        "accountId": 1,
+        "name": "11. powershell",
+        "code": null,
+        "taskType": {
+            "id": 13,
+            "code": "winrmTask",
+            "name": "Powershell Script"
+        },
+        "taskOptions": {
+            "host": null,
+            "localScriptGitId": null,
+            "username": null,
+            "port": null,
+            "localScriptGitRef": null,
+            "password": null,
+            "passwordHash": null,
+            "sshKey": null
+        },
+        "file": {
+            "id": 1068,
+            "sourceType": "local",
+            "contentRef": null,
+            "contentPath": null,
+            "repository": null,
+            "content": null
+        },
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:54:13Z",
+        "lastUpdated": "2022-08-04T13:54:13Z"
+    },
+    "success": true
+}

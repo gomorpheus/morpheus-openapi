@@ -1,0 +1,37 @@
+{
+    "task": {
+        "id": 894,
+        "accountId": 1,
+        "name": "10. library template",
+        "code": null,
+        "taskType": {
+            "id": 7,
+            "code": "containerTemplate",
+            "name": "Library Template"
+        },
+        "taskOptions": {
+            "username": null,
+            "localScriptGitId": null,
+            "sshKey": null,
+            "port": null,
+            "password": null,
+            "passwordHash": null,
+            "containerTemplateId": null,
+            "containerTemplate": null,
+            "localScriptGitRef": null,
+            "host": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:53:58Z",
+        "lastUpdated": "2022-08-04T13:53:58Z"
+    }
+}

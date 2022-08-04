@@ -1,0 +1,43 @@
+{
+    "task": {
+        "id": 909,
+        "accountId": 1,
+        "name": "15. shell",
+        "code": null,
+        "taskType": {
+            "id": 1,
+            "code": "script",
+            "name": "Shell Script"
+        },
+        "taskOptions": {
+            "localScriptGitRef": null,
+            "port": null,
+            "password": null,
+            "passwordHash": null,
+            "username": null,
+            "host": null,
+            "sshKey": null,
+            "localScriptGitId": null
+        },
+        "file": {
+            "id": 1074,
+            "sourceType": "local",
+            "contentRef": null,
+            "contentPath": null,
+            "repository": null,
+            "content": null
+        },
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:54:56Z",
+        "lastUpdated": "2022-08-04T13:54:56Z"
+    },
+    "success": true
+}

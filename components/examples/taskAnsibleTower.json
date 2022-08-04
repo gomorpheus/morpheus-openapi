@@ -1,0 +1,38 @@
+{
+    "task": {
+        "id": 870,
+        "accountId": 1,
+        "name": "2. Ansible Tower",
+        "code": null,
+        "taskType": {
+            "id": 43,
+            "code": "ansibleTowerTask",
+            "name": "Ansible Tower Job"
+        },
+        "taskOptions": {
+            "password": null,
+            "passwordHash": null,
+            "ansibleTowerGitRef": null,
+            "localScriptGitId": null,
+            "host": null,
+            "username": null,
+            "sshKey": null,
+            "ansibleGroup": null,
+            "ansibleTowerExecuteMode": "executeHost",
+            "localScriptGitRef": null,
+            "port": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:52:14Z",
+        "lastUpdated": "2022-08-04T13:52:14Z"
+    }
+}

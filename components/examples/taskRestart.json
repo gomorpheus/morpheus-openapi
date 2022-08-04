@@ -1,0 +1,35 @@
+{
+    "task": {
+        "id": 906,
+        "accountId": 1,
+        "name": "14. restart",
+        "code": null,
+        "taskType": {
+            "id": 40,
+            "code": "restartTask",
+            "name": "Restart"
+        },
+        "taskOptions": {
+            "password": null,
+            "passwordHash": null,
+            "localScriptGitRef": null,
+            "host": null,
+            "username": null,
+            "localScriptGitId": null,
+            "sshKey": null,
+            "port": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:54:46Z",
+        "lastUpdated": "2022-08-04T13:54:46Z"
+    }
+}

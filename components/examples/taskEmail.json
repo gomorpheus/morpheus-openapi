@@ -1,0 +1,45 @@
+{
+    "task": {
+        "id": 876,
+        "accountId": 1,
+        "name": "4. email",
+        "code": null,
+        "taskType": {
+            "id": 49,
+            "code": "email",
+            "name": "Email"
+        },
+        "taskOptions": {
+            "localScriptGitId": null,
+            "emailSkipTemplate": null,
+            "username": null,
+            "emailSubject": null,
+            "host": null,
+            "password": null,
+            "passwordHash": null,
+            "emailAddress": null,
+            "port": null,
+            "sshKey": null,
+            "localScriptGitRef": null
+        },
+        "file": {
+            "id": 1059,
+            "sourceType": "local",
+            "contentRef": null,
+            "contentPath": null,
+            "repository": null,
+            "content": null
+        },
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:52:32Z",
+        "lastUpdated": "2022-08-04T13:52:32Z"
+    }
+}

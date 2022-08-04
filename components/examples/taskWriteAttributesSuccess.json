@@ -1,0 +1,37 @@
+{
+    "task": {
+        "id": 915,
+        "accountId": 1,
+        "name": "17. Write Attributes",
+        "code": null,
+        "taskType": {
+            "id": 52,
+            "code": "writeAttributes",
+            "name": "Write Attributes"
+        },
+        "taskOptions": {
+            "host": null,
+            "sshKey": null,
+            "localScriptGitRef": null,
+            "port": null,
+            "localScriptGitId": null,
+            "password": null,
+            "passwordHash": null,
+            "writeAttributes.attributes": null,
+            "username": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:55:25Z",
+        "lastUpdated": "2022-08-04T13:55:25Z"
+    },
+    "success": true
+}
