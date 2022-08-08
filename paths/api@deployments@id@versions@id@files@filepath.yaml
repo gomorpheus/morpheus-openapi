@@ -1,0 +1,111 @@
+get:
+  summary: List Deployment Files
+  description: |
+    This endpoint returns a list of files for a specific deployment version. This only applies to deploy type file. Files are sorted alphabetically, with directories appearing at the beginning of the list.
+    
+    The filepath parameter can be specified to search for specific files or directories.
+  operationId: listDeploymentFiles
+  tags:
+    - Deployments
+  parameters:
+    - $ref: ../components/parameters/deploymentId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/version.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                versions:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/deploymentVersion.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/deploymentVersions.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a new Deployment Version
+  description: This endpoint will create a new deployment version that is ready to have files uploaded to it. The default type is file, which has files directly uploaded via Morpheus. Alternatively, the type git or fetch can be used to just point to a repository or remote url.
+  operationId: addDeploymentVersion
+  tags: 
+    -  Deployments
+  parameters:
+    - $ref: ../components/parameters/deploymentId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            version:
+              $ref: ../components/schemas/deploymentVersionCreate.yaml
+        examples:
+          Deployment Request:
+            value:
+              $ref: ../components/examples/deploymentVersionRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                version:
+                  $ref: ../components/schemas/deploymentVersion.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deployments Version Response:
+              value:
+                $ref: ../components/examples/deploymentVersionCreate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

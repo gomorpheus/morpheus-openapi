@@ -1,0 +1,10 @@
+name: deployType
+in: query
+description: Filter by type (deployType), file, git, fetch
+schema:
+  type: string
+  example: file
+  enum:
+    - file
+    - git
+    - fetch

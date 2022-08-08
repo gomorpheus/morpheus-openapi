@@ -1,0 +1,125 @@
+get:
+  summary: Get all Deploys for an Instance
+  description: This endpoint retrieves all deploys for a specific instance.
+  operationId: getInstanceDeploys
+  tags:
+    - Deploys
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/deploymentId.yaml
+    - $ref: ../components/parameters/instanceName.yaml
+    - $ref: ../components/parameters/instanceId.yaml
+    - $ref: ../components/parameters/version.yaml
+    - $ref: ../components/parameters/versionId.yaml
+    - $ref: ../components/parameters/createdById.yaml
+    - $ref: ../components/parameters/deployType.yaml
+    - $ref: ../components/parameters/dateCreated.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/deployDate.yaml
+    - $ref: ../components/parameters/deployStatus.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                appDeploys:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/deploy.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Deploys Response:
+              value:
+                $ref: ../components/examples/instanceDeploys.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Deploy to an Instance
+  description: |
+    This endpoint will deploy the specified deployment version to specified instance. The version to deploy can be identified with deploymentId and version or with versionId alone.
+
+    By default, the deployment is executed right away. To prevent this so that it can be run manually later on.
+  operationId: addInstanceDeploy
+  tags: 
+    -  Deploys
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            appDeploy:
+              type: object
+              properties: 
+                $ref: ../components/schemas/deployCreate.yaml
+        examples:
+          Deploy Request:
+            value:
+              $ref: ../components/examples/deployRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                appDeploy:
+                  $ref: ../components/schemas/deploy.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deploy Response:
+              value:
+                $ref: ../components/examples/deployCreate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

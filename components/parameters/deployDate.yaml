@@ -1,0 +1,6 @@
+name: deployDate
+in: query
+description: Filter by deployDate, deployment completion timestamp is more recent or equal to the date specified
+schema:
+  type: string
+example: 2020-01-01

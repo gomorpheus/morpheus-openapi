@@ -1,0 +1,58 @@
+post:
+  summary: Run a Deploy
+  description: This endpoint will run an existing instance deploy. This is for running a new staged deploy or to rollback to previous version by re-running a deploy that is archived.
+  operationId: runDeploy
+  tags:
+    - Deploys
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            appDeploy:
+              type: object
+              properties: 
+                $ref: ../components/schemas/deployUpdate.yaml
+        examples:
+          Deploy Request:
+            value:
+              $ref: ../components/examples/deployUpdateRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              appDeploy:
+                type: object
+                properties:
+                  $ref: ../components/schemas/deploy.yaml
+          examples:
+            Deploys Response:
+              value:
+                $ref: ../components/examples/deployUpdate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

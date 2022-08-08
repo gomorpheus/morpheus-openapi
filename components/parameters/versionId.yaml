@@ -1,0 +1,7 @@
+name: versionId
+in: query
+description: Filter by deployment version id
+schema:
+  type: integer
+  format: int64
+example: 5

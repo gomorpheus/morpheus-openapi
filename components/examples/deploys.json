@@ -1,0 +1,82 @@
+{
+  "appDeploys": [
+    {
+      "id": 28,
+      "instanceId": 347,
+      "instance": {
+        "id": 347,
+        "name": "testsite-2"
+      },
+      "deployment": {
+        "id": 17,
+        "name": "testsite",
+        "deployType": "file"
+      },
+      "deploymentVersionId": 58,
+      "deploymentVersion": {
+        "id": 58,
+        "userVersion": "5.0.9",
+        "deployType": "file"
+      },
+      "config": {},
+      "status": "committed",
+      "deployDate": "2020-10-03T00:33:35+0000",
+      "dateCreated": "2020-10-03T00:33:30+0000",
+      "lastUpdated": "2020-10-03T00:33:35+0000"
+    },
+    {
+      "id": 27,
+      "instanceId": 346,
+      "instance": {
+        "id": 346,
+        "name": "testsite-1"
+      },
+      "deployment": {
+        "id": 17,
+        "name": "testsite",
+        "deployType": "file"
+      },
+      "deploymentVersionId": 58,
+      "deploymentVersion": {
+        "id": 58,
+        "userVersion": "5.0.9",
+        "deployType": "file"
+      },
+      "config": {},
+      "status": "committed",
+      "deployDate": "2020-10-03T00:33:35+0000",
+      "dateCreated": "2020-10-03T00:33:30+0000",
+      "lastUpdated": "2020-10-03T00:33:35+0000"
+    },
+    {
+      "id": 26,
+      "instanceId": 346,
+      "instance": {
+        "id": 346,
+        "name": "testsite-1"
+      },
+      "deployment": {
+        "id": 17,
+        "name": "testsite",
+        "deployType": "file"
+      },
+      "deploymentVersionId": 57,
+      "deploymentVersion": {
+        "id": 57,
+        "userVersion": "5.0.8",
+        "deployType": "file"
+      },
+      "config": {},
+      "status": "archived",
+      "deployDate": "2020-10-03T00:30:44+0000",
+      "dateCreated": "2020-10-03T00:30:41+0000",
+      "lastUpdated": "2020-10-03T00:33:35+0000"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

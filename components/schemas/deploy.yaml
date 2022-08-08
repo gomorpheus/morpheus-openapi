@@ -1,0 +1,47 @@
+id: 
+  type: integer
+  format: int64
+instanceId: 
+  type: integer
+  format: int64
+instance: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    name: 
+      type: string
+deployment: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    name: 
+      type: string
+    deployType: 
+      type: string
+deploymentVersionId: 
+  type: integer
+  format: int64
+deploymentVersion: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    userVersion: 
+      type: string
+    deployType: 
+      type: string
+config: 
+  type: object
+status: 
+  type: string
+deployDate: 
+  type: string
+dateCreated: 
+  type: string
+lastUpdated: 
+  type: string

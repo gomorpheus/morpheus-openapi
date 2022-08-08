@@ -83,6 +83,20 @@ paths:
     $ref: paths/api@credentials@id.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
+  /api/deployments:
+    $ref: paths/api@deployments.yaml
+  /api/deployments/{deploymentId}:
+    $ref: paths/api@deployments@id.yaml
+  /api/deployments/{deploymentId}/versions:
+    $ref: paths/api@deployments@id@versions.yaml
+  /api/deployments/{deploymentId}/versions/{id}:
+    $ref: paths/api@deployments@id@versions@id.yaml
+  /api/deploys:
+    $ref: paths/api@deploys.yaml
+  /api/deploys/{id}:
+    $ref: paths/api@deploys@id.yaml
+  /api/deploys/{id}/deploy:
+    $ref: paths/api@deploys@id@deploy.yaml
   /api/doc:
     $ref: paths/api@doc.yaml
   /api/doc/openapi:
@@ -145,6 +159,8 @@ paths:
     $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
   /api/instances/{id}/delete-all-snapshots:
     $ref: paths/api@instances@id@delete-all-snapshots.yaml
+  /api/instances/{id}/deploys:
+    $ref: paths/api@instances@id@deploys.yaml
   /api/instances/{id}/envs:
     $ref: paths/api@instances@id@envs.yaml
   /api/instances/{id}/extend-expiration:
