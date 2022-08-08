@@ -93,12 +93,12 @@ post:
       content:
         application/json:
           schema:
-            allOf: 
-            - type: object
-              properties:
-                appDeploy:
+            type: object
+            properties:
+              appDeploy:
+                type: object
+                properties: 
                   $ref: ../components/schemas/deploy.yaml
-            - $ref: ../components/schemas/200-success.yaml
           examples:
             Deploy Response:
               value:
