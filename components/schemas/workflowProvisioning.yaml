@@ -1,0 +1,149 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  type: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  accountId: 
+    type: integer
+    format: int64
+  platform: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+  allowCustomConfig: 
+    type: boolean
+  tasks: 
+    type: array
+    items: 
+      type: integer
+      format: int64
+  optionTypes: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  taskSetTasks: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        taskPhase: 
+          type: string
+        taskOrder: 
+          type: integer
+          format: int64
+        task: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            accountId: 
+              type: integer
+              format: int64
+            name: 
+              type: string
+            code: 
+              type: string
+              nullable: true
+            taskType: 
+              type: object
+              properties: 
+                id: 
+                  type: integer
+                  format: int64
+                code: 
+                  type: string
+                name: 
+                  type: string
+            taskOptions: 
+              type: object
+              properties: 
+                port: 
+                  type: string
+                  nullable: true
+                sshKey: 
+                  type: string
+                  nullable: true
+                password: 
+                  type: string
+                  nullable: true
+                passwordHash: 
+                  type: string
+                  nullable: true
+                host: 
+                  type: string
+                  nullable: true
+                localScriptGitId: 
+                  type: string
+                  nullable: true
+                localScriptGitRef: 
+                  type: string
+                  nullable: true
+                username: 
+                  type: string
+                  nullable: true
+            file: 
+              type: object
+              properties: 
+                id: 
+                  type: integer
+                  format: int64
+                sourceType: 
+                  type: string
+                contentRef: 
+                  type: string
+                  nullable: true
+                contentPath: 
+                  type: string
+                  nullable: true
+                repository: 
+                  type: object
+                  nullable: true
+                  properties: 
+                    id:
+                      type: integer
+                      format: int64
+                    name:
+                      type: string
+                content: 
+                  type: string
+                  nullable: true
+            resultType: 
+              type: string
+              nullable: true
+            executeTarget: 
+              type: string
+            retryable: 
+              type: boolean
+            retryCount: 
+              type: integer
+              format: int64
+            retryDelaySeconds: 
+              type: integer
+              format: int64
+            allowCustomConfig: 
+              type: boolean
+            dateCreated: 
+              type: string
+              format: date-time
+            lastUpdated: 
+              type: string
+              format: date-time
