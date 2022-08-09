@@ -91,6 +91,8 @@ paths:
     $ref: paths/api@deployments@id@versions.yaml
   /api/deployments/{deploymentId}/versions/{id}:
     $ref: paths/api@deployments@id@versions@id.yaml
+  /api/deployments/{deploymentId}/versions/{id}/files{filepath}:
+    $ref: paths/api@deployments@id@versions@id@files.yaml
   /api/deploys:
     $ref: paths/api@deploys.yaml
   /api/deploys/{id}:
