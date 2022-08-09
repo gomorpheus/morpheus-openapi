@@ -5,6 +5,8 @@ post:
   operationId: addSecurityGroupLocations
   tags:
     - Security Groups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
   requestBody:
     content:
       application/json:

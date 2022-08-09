@@ -443,10 +443,10 @@ paths:
     $ref: paths/api@security-groups.yaml
   /api/security-groups/{id}:
     $ref: paths/api@security-groups@id.yaml
-  # /api/security-groups/{id}/locations:
-  #   $ref: paths/api@security-groups@id@locations.yaml
-  # /api/security-groups/{id}/locations/{locationId}:
-  #   $ref: paths/api@security-groups@id@locations@locationId.yaml
+  /api/security-groups/{id}/locations:
+    $ref: paths/api@security-groups@id@locations.yaml
+  /api/security-groups/{id}/locations/{locationId}:
+    $ref: paths/api@security-groups@id@locations@locationId.yaml
   /api/security-groups/{id}/rules:
     $ref: paths/api@security-groups@id@rules.yaml
   /api/security-groups/{id}/rules/{sgId}:
