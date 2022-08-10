@@ -24,9 +24,7 @@ get:
                 taskSets:
                   type: array
                   items:
-                    anyOf:
-                    - $ref: ../components/schemas/workflowProvisioning.yaml
-                    - $ref: ../components/schemas/workflowOperational.yaml
+                    $ref: ../components/schemas/workflow.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Workflows Response:
@@ -114,9 +112,7 @@ post:
             - type: object
               properties:
                 taskSet:
-                  oneOf:
-                  - $ref: ../components/schemas/taskAnsiblePlaybookConfig.yaml
-                  - $ref: ../components/schemas/taskAnsibleTowerConfig.yaml
+                  $ref: ../components/schemas/workflow.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Workflow Response - Create Provisioning:
