@@ -52,3 +52,96 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+post:
+  summary: Creates a Workflow
+  description: |
+    Creates a workflow.
+  operationId: addWorkflows
+  tags:
+    - Automation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - taskSet
+          properties:
+            taskSet:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                  description: A unique name for the workflow
+                  example: Sample Workflow
+                description:
+                  type: string
+                  description: A description of the workflow
+                type:
+                  type: string
+                  description: Workflow type
+                  default: provision
+                  enum: 
+                    - provision
+                    - operation
+                optionTypes:
+                  type: array
+                  description: List of option type IDs for use with operational workflow configuration.
+                  items:
+                    type: integer
+                    format: int64
+                tasks:
+                  type: object
+                  description: List of task objects in order
+                  properties:
+                    taskId:
+                      type: integer
+                      format: int64
+                      description: Task ID
+                    taskPhase:
+                      type: string
+                      description: Task Phase. Pass operation for `operational` workflows.
+                      default: provision
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                taskSet:
+                  oneOf:
+                  - $ref: ../components/schemas/taskAnsiblePlaybookConfig.yaml
+                  - $ref: ../components/schemas/taskAnsibleTowerConfig.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Workflow Response - Create Provisioning:
+              value:
+                $ref: ../components/examples/workflowProvisioningSuccess.json
+            Workflow Response - Create Operational:
+              value:
+                $ref: ../components/examples/workflowOperationalSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
