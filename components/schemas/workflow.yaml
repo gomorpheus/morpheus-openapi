@@ -93,8 +93,14 @@ properties:
           type: string
           nullable: true
         optionList: 
-          type: string
+          type: object
           nullable: true
+          properties: 
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
         type: 
           type: string
         advanced: 
@@ -131,13 +137,13 @@ properties:
         contextualDefault: 
           type: boolean
         displayValueOnDetails: 
-          type: string
+          type: boolean
           nullable: true
         showOnCreate: 
-          type: string
+          type: boolean
           nullable: true
         showOnEdit: 
-          type: string
+          type: boolean
           nullable: true
         localCredential: 
           type: string
@@ -186,6 +192,7 @@ properties:
               properties: 
                 localScriptGitRef: 
                   type: string
+                  nullable: true
                 username: 
                   type: string
                   nullable: true
@@ -212,6 +219,7 @@ properties:
                   nullable: true
             file: 
               type: object
+              nullable: true
               properties: 
                 id: 
                   type: integer
