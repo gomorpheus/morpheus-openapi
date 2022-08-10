@@ -1,0 +1,72 @@
+{
+  "virtualImage": {
+    "id": 1246,
+    "name": "aaaatest",
+    "description": null,
+    "ownerId": 1,
+    "tenant": {
+      "id": 1,
+      "name": "mastertenant"
+    },
+    "imageType": "vmdk",
+    "userUploaded": true,
+    "userDefined": false,
+    "systemImage": false,
+    "isCloudInit": true,
+    "sshUsername": null,
+    "sshPassword": null,
+    "sshPasswordHash": null,
+    "sshKey": null,
+    "osType": {
+      "id": 28,
+      "code": "cent.7.64",
+      "name": "centOS 7 64-bit",
+      "description": null,
+      "vendor": "centos",
+      "category": "centos",
+      "osFamily": "rhel",
+      "osVersion": "7",
+      "bitCount": 64,
+      "platform": "linux"
+    },
+    "minRam": 0,
+    "minRamGB": 0,
+    "minDisk": null,
+    "minDiskGB": null,
+    "rawSize": 849779918,
+    "rawSizeGB": 0.7914192210882902,
+    "trialVersion": false,
+    "virtioSupported": true,
+    "uefi": null,
+    "isAutoJoinDomain": false,
+    "vmToolsInstalled": true,
+    "installAgent": true,
+    "isForceCustomization": false,
+    "isSysprep": false,
+    "fipsEnabled": false,
+    "userData": null,
+    "consoleKeymap": "us",
+    "storageProvider": null,
+    "externalId": null,
+    "visibility": "private",
+    "accounts": [
+      {
+        "id": 1,
+        "name": "mastertenant"
+      }
+    ],
+    "config": {
+      "memorySizeType": "mb"
+    },
+    "volumes": [],
+    "storageControllers": [],
+    "networkInterfaces": [],
+    "tags": [],
+    "locations": [],
+    "dateCreated": "2021-06-24T15:40:16Z",
+    "lastUpdated": "2021-06-24T15:41:35Z",
+    "status": "Active"
+  },
+  "cloudFiles": [],
+  "success": true
+}

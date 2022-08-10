@@ -1,0 +1,6 @@
+name: imageType
+in: query
+description: Filter by image type code, "vmware", "ami", etc
+schema:
+  type: string
+example: "vmware"

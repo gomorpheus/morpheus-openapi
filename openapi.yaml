@@ -511,6 +511,18 @@ paths:
     $ref: paths/api@vdi@id.yaml
   /api/vdi/{id}/allocate:
     $ref: paths/api@vdi@id@allocate.yaml
+  /api/virtual-images:
+    $ref: paths/api@virtual-images.yaml
+  /api/virtual-images/{virtualImageId}:
+    $ref: paths/api@virtual-images@id.yaml
+  /api/virtual-images/{virtualImageId}/files:
+    $ref: paths/api@virtual-images@id@files.yaml
+  /api/virtual-images/{virtualImageId}/locations:
+    $ref: paths/api@virtual-images@id@locations.yaml
+  /api/virtual-images/{virtualImageId}/locations/{id}:
+    $ref: paths/api@virtual-images@id@locations@id.yaml
+  /api/virtual-images/{virtualImageId}/upload:
+    $ref: paths/api@virtual-images@id@upload.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
   /api/wiki/categories:

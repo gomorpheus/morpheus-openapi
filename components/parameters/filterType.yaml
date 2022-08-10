@@ -1,0 +1,12 @@
+name: filterType
+in: query
+description: Filter by type, "User", "System", "Synced", or "All"
+schema:
+  type: string
+  default: "User"
+  enum:
+    - "User"
+    - "System"
+    - "Synced"
+    - "All"
+example: "System"

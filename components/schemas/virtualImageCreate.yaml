@@ -1,0 +1,122 @@
+type: object
+properties:
+  name: 
+    type: string
+    description: A name for the virtual image
+  imageType: 
+    type: string
+    description: Code of image type. eg. vmware, ami, etc.
+  storageProvider: 
+    type: object
+    description: A Map containing the id of the Storage Provider
+    nullable: true
+    properties: 
+      id:
+        type: integer
+        format: int64
+  isCloudInit: 
+    type: boolean
+    description: Cloud Init Enabled?
+    default: false
+  userData: 
+    type: string
+    description: Cloud-Init User Data, a bash script
+    nullable: true
+  installAgent: 
+    type: boolean
+    description: Install Agent?
+    default: false
+  sshUsername: 
+    type: string
+    description: SSH Username
+    nullable: true
+  sshPassword: 
+    type: string
+    description: SSH Password
+    nullable: true
+  sshKey: 
+    type: string
+    description: SSH Key
+    nullable: true
+  osType: 
+    description: A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
+    oneOf:
+      - type: object
+        nullable: true
+        properties: 
+          id: 
+            type: integer
+            format: int64
+      - type: string
+        nullable: true
+  visibility: 
+    type: string
+    description: private or public
+    default: private
+  accounts: 
+    type: array
+    items: 
+      type: integer
+      format: int64
+  isAutoJoinDomain: 
+    type: boolean  
+    description: Auto Join Domain?
+    default: false
+  virtioSupported: 
+    type: boolean
+    description: VirtIO Drivers Loaded?
+    default: true
+  vmToolsInstalled: 
+    type: boolean
+    description: VM Tools Installed?
+    default: true
+  isForceCustomization: 
+    type: boolean
+    description: Force Guest Customization?
+    default: false
+  trialVersion:
+    type: boolean
+    description: Trial Version
+    default: false
+  isSysprep: 
+    type: boolean
+    description: Sysprep Enabled?
+    default: false
+  config: 
+    description: Map of configuration properties, varies by image type.
+    oneOf: 
+      - type: object
+        description: Azure Reference Virtual Image Parameters
+        required: 
+          - publisher
+          - offer
+          - sku
+          - version
+        properties: 
+          publisher:
+            type: string
+            description: The name of the publisher in the Azure Marketplace
+          offer:
+            type: string
+            description: The name of the offer in the Azure Marketplace
+          sku:
+            type: string
+            description: The name of the sku in the Azure Marketplace
+          version:
+            type: string
+            description: The name of the version in the Azure Marketplace
+      - type : object
+  tags: 
+    type: array
+    description: Metadata tags, Array of objects having a name and value
+    items:
+      type: object
+      required:
+        - name
+        - value
+      properties: 
+        name:
+          type: string
+        value:
+          type: string
+
