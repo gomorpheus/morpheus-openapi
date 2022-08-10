@@ -171,6 +171,7 @@ properties:
               nullable: true
             taskType: 
               type: object
+              nullable: true
               properties: 
                 id: 
                   type: integer
@@ -181,6 +182,7 @@ properties:
                   type: string
             taskOptions: 
               type: object
+              nullable: true
               properties: 
                 localScriptGitRef: 
                   type: string
