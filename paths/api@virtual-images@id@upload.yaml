@@ -6,19 +6,14 @@ post:
     - Library
   parameters:
     - $ref: ../components/parameters/virtualImageId-path.yaml
+    - $ref: ../components/parameters/filename.yaml
+    - $ref: ../components/parameters/url.yaml
   requestBody:
     content:
       application/octet-stream: 
         schema: 
-          type: object
-          properties: 
-            filename:
-              type: string
-              format: binary
-              description: Specify a filename for new file.
-            url:
-              type: string
-              description: Download the file from a remote url. This can be used instead of uploading a local file.
+          type: string
+          format: binary
   responses:
     '200':
       description: Successful Request
