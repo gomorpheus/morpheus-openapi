@@ -443,6 +443,8 @@ paths:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
     $ref: paths/api@roles@id.yaml
+  /api/scale-thresholds:
+    $ref: paths/api@scale-thresholds.yaml
   /api/search:
     $ref: paths/api@search.yaml
   /api/security-groups:
