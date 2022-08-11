@@ -445,6 +445,8 @@ paths:
     $ref: paths/api@roles@id.yaml
   /api/scale-thresholds:
     $ref: paths/api@scale-thresholds.yaml
+  /api/scale-thresholds/{id}:
+    $ref: paths/api@scale-thresholds@id.yaml
   /api/search:
     $ref: paths/api@search.yaml
   /api/security-groups:
