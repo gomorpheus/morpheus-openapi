@@ -233,6 +233,10 @@ paths:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
+  /api/library/container-scripts:
+    $ref: paths/api@library@container-scripts.yaml
+  /api/library/container-scripts/{id}:
+    $ref: paths/api@library@container-scripts@id.yaml
   /api/library/container-types:
     $ref: paths/api@library@container-types.yaml
   /api/library/container-types/{id}:

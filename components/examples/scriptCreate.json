@@ -1,0 +1,8 @@
+{
+  "containerScript": {
+    "scriptType": "bash",
+    "scriptPhase": "provision",
+    "script": "echo hello > /tmp/hello.txt",
+    "name": "hello"
+  }
+}
