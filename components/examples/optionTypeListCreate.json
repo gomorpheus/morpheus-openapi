@@ -1,0 +1,23 @@
+{
+  "optionTypeList": {
+    "name": "resty",
+    "description": "A resty list",
+    "type": "rest",
+    "sourceUrl": "$serverUrl/api/options/mydata",
+    "sourceMethod": "GET",
+    "ignoreSSLErrors": true,
+    "realTime": false,
+    "visibility": "private",
+    "initialDataset": null,
+    "translationScript": null,
+    "config": {
+      "sourceHeaders": [
+        {
+          "name": "Authorization",
+          "value": "Bearer foobar-key",
+          "masked": true
+        }
+      ]
+    }
+  }
+}
