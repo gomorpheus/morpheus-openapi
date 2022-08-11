@@ -1,0 +1,24 @@
+{
+  "containerTemplate": {
+    "id": 27,
+    "code": "nginx-1.9",
+    "account": null,
+    "name": "Nginx Config",
+    "fileName": "default.conf",
+    "filePath": "/etc/nginx/conf.d",
+    "templateType": null,
+    "templatePhase": "preProvision",
+    "template": "************",
+    "category": null,
+    "settingCategory": "nginx",
+    "settingName": "siteConf",
+    "autoRun": true,
+    "runOnScale": null,
+    "runOnDeploy": null,
+    "fileOwner": null,
+    "fileGroup": null,
+    "permissions": null,
+    "dateCreated": "2016-08-27T19:26:15Z",
+    "lastUpdated": "2019-10-02T00:31:54Z"
+  }
+}

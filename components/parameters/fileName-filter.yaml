@@ -1,0 +1,6 @@
+name: fileName
+in: query
+description: Filename filter, restricts query to only load file template matching fileName specified
+schema:
+  type: string
+example: "testtext.txt"

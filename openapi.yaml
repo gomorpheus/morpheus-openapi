@@ -237,6 +237,10 @@ paths:
     $ref: paths/api@library@container-types.yaml
   /api/library/container-types/{id}:
     $ref: paths/api@library@container-types@id.yaml
+  /api/library/file-templates:
+    $ref: paths/api@library@file-templates.yaml
+  /api/library/file-templates/{id}:
+    $ref: paths/api@library@file-templates@id.yaml
   /api/library/instance-types:
     $ref: paths/api@library@instance-types.yaml
   /api/library/instance-types/{instanceTypeId}:

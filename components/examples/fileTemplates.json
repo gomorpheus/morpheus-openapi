@@ -1,0 +1,35 @@
+{
+  "containerTemplates": [
+    {
+      "id": 83,
+      "code": "b94bb003-31c4-418a-a067-562fa58d0dea",
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "name": "testfile.txt",
+      "fileName": "testfile.txt",
+      "filePath": "/tmp",
+      "templateType": null,
+      "templatePhase": "preProvision",
+      "template": "# this is a test file template\ntest:",
+      "category": null,
+      "settingCategory": null,
+      "settingName": null,
+      "autoRun": true,
+      "runOnScale": false,
+      "runOnDeploy": false,
+      "fileOwner": null,
+      "fileGroup": null,
+      "permissions": null,
+      "dateCreated": "2018-05-23T09:42:51Z",
+      "lastUpdated": "2018-05-23T09:46:56Z"
+    }
+  ],
+  "meta": {
+    "size": 25,
+    "total": 119,
+    "max": 25,
+    "offset": 0
+  }
+}

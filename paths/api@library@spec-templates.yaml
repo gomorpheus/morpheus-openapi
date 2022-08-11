@@ -50,8 +50,8 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 post: 
-  summary: Create an Input
-  description: Use this command to create an option type.
+  summary: Create a Spec Template
+  description: Use this command to create a spec template.
   operationId: addSpecTemplate
   tags: 
     -  Library
@@ -75,7 +75,7 @@ post:
           schema:
             $ref: ../components/schemas/successId.yaml
           examples:
-            Networks Response:
+            Spec Templates Response:
               value:
                 $ref: ../components/examples/successId.json 
     '400':
