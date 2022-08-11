@@ -4,7 +4,7 @@ put:
     Remove Servers to a Power Schedule.
   operationId: deletePowerScheduleServers
   tags:
-    - Approvals
+    - Automation
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
