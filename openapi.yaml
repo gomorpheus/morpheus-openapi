@@ -497,6 +497,8 @@ paths:
     $ref: paths/api@task-sets.yaml
   /api/task-sets/{id}:
     $ref: paths/api@task-sets@id.yaml
+  /api/task-sets/{id}/execute:
+    $ref: paths/api@task-sets@id@execute.yaml
   /api/tasks/{id}/execute:
     $ref: paths/api@tasks@id@execute.yaml
   /api/task-types:
