@@ -263,6 +263,10 @@ paths:
     $ref: paths/api@library@option-type-lists@id.yaml
   /api/library/option-type-lists/{id}/items:
     $ref: paths/api@library@option-type-lists@id@items.yaml
+  /api/library/spec-templates:
+    $ref: paths/api@library@spec-templates.yaml
+  /api/library/spec-templates/{id}:
+    $ref: paths/api@library@spec-templates@id.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
   /api/load-balancers:

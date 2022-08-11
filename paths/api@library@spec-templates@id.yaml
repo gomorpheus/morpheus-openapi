@@ -1,8 +1,7 @@
 get:
-  summary: Get A Specific Input
-  description: |
-    This endpoint retrieves a specific option type.
-  operationId: getInput
+  summary: Get a Specific Spec Template
+  description: This endpoint retrieves a specific spec template.
+  operationId: getSpecTemplate
   tags:
     - Library
   parameters:
@@ -15,12 +14,12 @@ get:
           schema:
             type: object
             properties:
-              optionType:
-                $ref: ../components/schemas/optionType.yaml
+              specTemplate:
+                $ref: ../components/schemas/specTemplate.yaml
           examples: 
-            Option Types Response:
+            Spec Template Response:
               value: 
-                $ref: ../components/examples/optionType.json
+                $ref: ../components/examples/specTemplate.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,9 +41,9 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put: 
-  summary: Update an Input
-  description: Use this command to update an existing option type.
-  operationId: updateOptionType
+  summary: Update a Spec Template
+  description: Use this command to update an existing spec template.
+  operationId: updateSpecTemplate
   tags: 
     -  Library
   parameters:
@@ -55,12 +54,12 @@ put:
         schema: 
           type: object
           properties: 
-            optionType:
-              $ref: ../components/schemas/optionTypeUpdate.yaml
+            specTemplate:
+              $ref: ../components/schemas/specTemplateUpdate.yaml
         examples:
-          Option Type Request:
+          Spec Template Request:
             value: 
-              $ref: ../components/examples/optionTypeUpdate.json
+              $ref: ../components/examples/specTemplateUpdate.json
   responses: 
     '200':
       description: Successful Response
@@ -93,9 +92,9 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Delete an Input
-  description: Will delete an option type.
-  operationId: deleteOptionType
+  summary: Delete a Spec Template
+  description: Will delete a spec template
+  operationId: deleteSpecTemplate
   tags:
     - Library
   parameters:
