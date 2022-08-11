@@ -437,6 +437,14 @@ paths:
     $ref: paths/api@power-schedules.yaml
   /api/power-schedules/{id}:
     $ref: paths/api@power-schedules@id.yaml
+  /api/power-schedules/{id}/add-instances:
+    $ref: paths/api@power-schedules@id@add-instances.yaml
+  /api/power-schedules/{id}/add-servers:
+    $ref: paths/api@power-schedules@id@add-servers.yaml
+  /api/power-schedules/{id}/remove-instances:
+    $ref: paths/api@power-schedules@id@remove-instances.yaml
+  /api/power-schedules/{id}/remove-servers:
+    $ref: paths/api@power-schedules@id@remove-servers.yaml
   /api/processes:
     $ref: paths/api@processes.yaml
   /api/processes/{id}:
