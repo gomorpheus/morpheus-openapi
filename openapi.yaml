@@ -421,6 +421,10 @@ paths:
     $ref: paths/api@networks@services.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
+  /api/power-schedules:
+    $ref: paths/api@power-schedules.yaml
+  /api/power-schedules/{id}:
+    $ref: paths/api@power-schedules@id.yaml
   /api/processes:
     $ref: paths/api@processes.yaml
   /api/processes/{id}:
