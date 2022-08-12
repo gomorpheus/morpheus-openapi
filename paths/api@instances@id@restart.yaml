@@ -12,7 +12,12 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - type: object
+                properties:
+                  results:
+                    type: object
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Response:
               value:
