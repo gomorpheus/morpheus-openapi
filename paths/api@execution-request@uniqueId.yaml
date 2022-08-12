@@ -6,7 +6,7 @@ get:
   tags:
     - Automation
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/uniqueId-path.yaml
   responses:
     '200':
       description: Successful Request

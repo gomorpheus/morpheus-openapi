@@ -117,8 +117,8 @@ paths:
     $ref: paths/api@execute-schedules@id.yaml
   /api/execution-request/execute:
     $ref: paths/api@execution-request@execute.yaml
-  /api/execution-request/{id}:
-    $ref: paths/api@execution-request@id.yaml
+  /api/execution-request/{uniqueId}:
+    $ref: paths/api@execution-request@uniqueId.yaml
   /api/forgot/reset-password:
     $ref: paths/api@forgot@reset-password.yaml
   /api/forgot/send-email:
