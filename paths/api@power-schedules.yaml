@@ -27,7 +27,7 @@ get:
                     $ref: ../components/schemas/powerSchedule.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Power Schedule Response:
+            Power Schedules Response:
               value:
                 $ref: ../components/examples/powerSchedules.json
     '400':
