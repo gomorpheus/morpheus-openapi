@@ -102,7 +102,7 @@ post:
               type: string
               description: The secret value to be stored. This is only parsed if type is passed as `string`.
         examples:
-          Deployment Request:
+          Cypher Create Request:
             value:
               $ref: ../components/examples/cypherCreateRequest.json
   responses:
@@ -118,7 +118,7 @@ post:
                   $ref: ../components/schemas/deployment.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Deployments Response:
+            Cypher Response:
               value:
                 $ref: ../components/examples/deploymentCreate.json
     '400':
