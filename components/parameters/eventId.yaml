@@ -1,0 +1,8 @@
+name: eventId
+in: query
+description: >-
+  ID of the job execution event
+schema:
+  type: integer
+  format: int64
+example: 323

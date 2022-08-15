@@ -1,0 +1,44 @@
+get:
+  summary: Retrieves a Specific Job Execution
+  description: |
+    Retrieves a specific job execution.
+  operationId: getJobExecutions
+  tags:
+    - Jobs
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                jobExecution:
+                  $ref: ../components/schemas/jobExecution.yaml
+          examples:
+            Jobs Execution Response:
+              value:
+                $ref: ../components/examples/jobExecution.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
