@@ -1,0 +1,130 @@
+type: object
+properties:
+  applianceUrl: 
+    type: string
+    description: Appliance URL
+  internalApplianceUrl: 
+    type: string
+    nullable: true
+    description: Internal Appliance URL (PXE)
+  corsAllowed: 
+    type: string
+    description: API Allowed Origins
+    nullable: true
+  registrationEnabled: 
+    type: boolean
+    description: Registration enabled (true, false)
+  defaultRoleId: 
+    type: integer
+    format: int64
+    description: Default tenant role ID
+  defaultUserRoleId: 
+    type: integer
+    format: int64
+    description: Default user role ID
+  dockerPrivilegedMode: 
+    type: boolean
+    description: Docker privileged mode (true, false)
+  passwordMinLength: 
+    type: string
+    description: Min Password Length
+  passwordMinUpperCase: 
+    type: string
+    description: Min Password Uppercase
+  passwordMinNumbers: 
+    type: string
+    description: Min Password Numbers
+  passwordMinSymbols: 
+    type: string
+    description: Min Password Symbols
+  userBrowserSessionTimeout: 
+    type: string
+    description: User Browser Session Timeout (Minutes)
+  userBrowserSessionWarning: 
+    type: string
+    description: User Browser Session Warning (Minutes)
+  expirePwdDays: 
+    type: integer
+    format: int64
+    description: Expire password after days. Setting to 0 disabled this feature
+  disableAfterAttempts: 
+    type: integer
+    format: int64
+    description: Disable user after number of attempts. Set to 0 to disable this feature
+  disableAfterDaysInactive: 
+    type: integer
+    format: int64
+    description: Disable user if inactive for specified days. Set to 0 to disable this feature
+  warnUserDaysBefore: 
+    type: integer
+    format: int64
+    description: Send warning email number of days in advance before deactivating. Set to 0 to disable this feature
+  smtpMailFrom: 
+    type: string
+    description: From email address
+  smtpServer: 
+    type: string
+    description: SMTP server / host
+  smtpPort: 
+    type: integer
+    format: int64
+    description: SMTP port
+  smtpSSL: 
+    type: boolean
+    description: Use SSL for SMTP connection
+  smtpTLS: 
+    type: boolean
+    description: Use TLS for SMTP connections
+  smtpUser: 
+    type: string
+    description: SMTP username
+  smtpPassword: 
+    type: string
+    description: SMTP password
+  proxyHost: 
+    type: string
+    nullable: true
+    description: Proxy host
+  proxyPort: 
+    type: string
+    nullable: true
+    description: Proxy port
+  proxyUser: 
+    type: string
+    description: Proxy username
+  proxyPassword: 
+    type: string
+    description: Proxy password
+  proxyDomain: 
+    type: string
+    nullable: true
+    description: Proxy domain
+  proxyWorkstation: 
+    type: string
+    nullable: true
+    description: Proxy workstation
+  currencyProvider: 
+    type: string
+    description: Currency provider
+  currencyKey: 
+    type: string
+    nullable: true
+    description: Currency provider API key
+  enableAllZoneTypes: 
+    type: boolean
+    description: Set all cloud types enabled status on, overrides enableZoneTypes and disableZoneTypes parameters
+  enableZoneTypes: 
+    type: array
+    description: List of cloud type IDs to set enabled status on
+    items: 
+      type: integer
+      format: int64
+  disableZoneTypes: 
+    type: array
+    description: List of cloud type IDs to set enabled status off
+    items: 
+      type: integer
+      format: int64
+  disableAllZoneTypes: 
+    type: boolean
+    description: Set all cloud types enabled status off, can be used in conjunction with enableZoneTypes

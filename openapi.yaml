@@ -27,6 +27,10 @@ paths:
     $ref: paths/api@activity.yaml
   /api/accounts/available-roles:
     $ref: paths/api@accounts@available-roles.yaml
+  /api/appliance-settings:
+    $ref: paths/api@appliance-settings.yaml
+  /api/appliance-settings/maintenance:
+    $ref: paths/api@appliance-settings@maintenance.yaml
   /api/approval-items/{id}:
     $ref: paths/api@approval-items@id.yaml
   /api/approval-items/{id}/{action}:

@@ -1,0 +1,42 @@
+{
+  "applianceSettings": {
+    "applianceUrl": "http://foo.com",
+    "internalApplianceUrl": "172.16.0.1",
+    "corsAllowed": "bar.com",
+    "registrationEnabled": true,
+    "defaultRoleId": "2",
+    "defaultUserRoleId": "4",
+    "dockerPrivilegedMode": true,
+    "passwordMinLength": "8",
+    "passwordMinUpperCase": "1",
+    "passwordMinNumbers": "1",
+    "passwordMinSymbols": "1",
+    "userBrowserSessionTimeout": "20",
+    "userBrowserSessionWarning": "15",
+    "expirePwdDays": "1000",
+    "disableAfterAttempts": "100",
+    "disableAfterDaysInactive": "2000",
+    "warnUserDaysBefore": "10",
+    "smtpMailFrom": "dan.devilbiss@gmail.com",
+    "smtpServer": "smtp.gmail.com",
+    "smtpPort": "465",
+    "smtpSSL": true,
+    "smtpTLS": true,
+    "smtpUser": "dan.devilbiss@gmail.com",
+    "smtpPassword": "************",
+    "proxyHost": "proxy.com",
+    "proxyPort": "8080",
+    "proxyUser": "ddevilbiss",
+    "proxyPassword": "************",
+    "proxyDomain": "proxy.com",
+    "proxyWorkstation": "work",
+    "currencyProvider": "openexchange",
+    "currencyKey": "1234",
+    "enabledZoneTypes": [
+      {
+        "id": 12,
+        "name": "Amazon"
+      }
+    ]
+  }
+}

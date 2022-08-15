@@ -1,0 +1,76 @@
+type: object
+properties:
+  applianceUrl: 
+    type: string
+  internalApplianceUrl: 
+    type: string
+  corsAllowed: 
+    type: string
+  registrationEnabled: 
+    type: boolean
+  defaultRoleId: 
+    type: string
+  defaultUserRoleId: 
+    type: string
+  dockerPrivilegedMode: 
+    type: boolean
+  passwordMinLength: 
+    type: string
+  passwordMinUpperCase: 
+    type: string
+  passwordMinNumbers: 
+    type: string
+  passwordMinSymbols: 
+    type: string
+  userBrowserSessionTimeout: 
+    type: string
+  userBrowserSessionWarning: 
+    type: string
+  expirePwdDays: 
+    type: string
+  disableAfterAttempts: 
+    type: string
+  disableAfterDaysInactive: 
+    type: string
+  warnUserDaysBefore: 
+    type: string
+  smtpMailFrom: 
+    type: string
+  smtpServer: 
+    type: string
+  smtpPort: 
+    type: string
+  smtpSSL: 
+    type: boolean
+  smtpTLS: 
+    type: boolean
+  smtpUser: 
+    type: string
+  smtpPassword: 
+    type: string
+  proxyHost: 
+    type: string
+  proxyPort: 
+    type: string
+  proxyUser: 
+    type: string
+  proxyPassword: 
+    type: string
+  proxyDomain: 
+    type: string
+  proxyWorkstation: 
+    type: string
+  currencyProvider: 
+    type: string
+  currencyKey: 
+    type: string
+  enabledZoneTypes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
