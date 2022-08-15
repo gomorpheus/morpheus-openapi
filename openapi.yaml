@@ -81,6 +81,8 @@ paths:
     $ref: paths/api@credentials.yaml
   /api/credentials/{id}:
     $ref: paths/api@credentials@id.yaml
+  /api/cypher:
+    $ref: paths/api@cypher.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/deployments:
@@ -609,6 +611,21 @@ components:
       description: Populate a bearer token for the Morpheus appliance you are testing
       type: http
       scheme: bearer
+    cypherAuth-XCToken:
+      description: An access token or an execution lease token.
+      type: apiKey
+      in: header
+      name: X-Cypher-Token
+    cypherAuth-XVToken:
+      description: An access token or an execution lease token.
+      type: apiKey
+      in: header
+      name: X-Vault-Token
+    cypherAuth-XMLease:
+      description: An execution lease token.
+      type: apiKey
+      in: header
+      name: X-Morpheus-Lease
 security:
   - bearerAuth: []
 externalDocs:
@@ -653,7 +670,10 @@ tags:
   - name: Credentials
     description: Manage Credentials
   - name: Cypher
-    description: Manage Cypher
+    description: >-
+      Cypher at its core is a secure Key/Value store. But what makes cypher useful is the ability to securely store or generate credentials to connect to your instances. Not only are these credentials encrypted but by using a cypher you don't have to burn in connection credentials between instances into your apps.
+
+      Cypher keys can be revoked, either through lease timeouts or manually. So even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
   - name: Dashboard
     description: View Dashboard Details
   - name: Deployments

@@ -1,0 +1,6 @@
+name: leaseToken
+in: query
+description: An execution lease token.
+schema:
+  type: string
+example: 5bd808dc-82bb-4974-b699-5f1cdd3cc503

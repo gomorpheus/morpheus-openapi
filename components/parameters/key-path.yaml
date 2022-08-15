@@ -1,0 +1,7 @@
+name: key
+in: path
+description: If specified will return an exact match of key
+required: true
+schema:
+  type: number
+example: 4

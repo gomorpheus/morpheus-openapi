@@ -1,0 +1,67 @@
+get:
+  summary: List Cypher Keys
+  description: This endpoint retrieves all cypher keys associated with the account, or user.  This method can be used to list keys as well, by passing the query parameter list=true.
+  operationId: getCypherKeys
+  tags:
+    - Cypher
+  parameters:
+    - $ref: ../components/parameters/leaseToken.yaml
+    - $ref: ../components/parameters/list.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+  security:
+    - bearerAuth: []
+    - cypherAuth-XCToken: []
+    - cypherAuth-XVToken: []
+    - cypherAuth-XMLease: []
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    keys:
+                      type: array
+                      items:
+                        type: string
+            - type: object
+              properties:
+                cyphers:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/cypher.yaml
+            - $ref: ../components/schemas/meta.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Cyphers Response:
+              value:
+                $ref: ../components/examples/cyphers.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
