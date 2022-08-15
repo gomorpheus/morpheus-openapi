@@ -2,12 +2,12 @@ get:
   summary: Retrieves a Specific Job Execution
   description: |
     Retrieves a specific job execution.
-  operationId: getJobExecutions
+  operationId: getJobExecutionEvents
   tags:
     - Jobs
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/eventId.yaml
+    - $ref: ../components/parameters/eventId-path.yaml
   responses:
     '200':
       description: Successful Request

@@ -227,6 +227,10 @@ paths:
     $ref: paths/api@invoices@id.yaml
   /api/job-executions:
     $ref: paths/api@job-executions.yaml
+  /api/job-executions/{id}:
+    $ref: paths/api@job-executions@id.yaml
+  /api/job-executions/{id}/events/{eventId}:
+    $ref: paths/api@job-executions@id@events@eventId.yaml
   /api/jobs:
     $ref: paths/api@jobs.yaml
   /api/jobs/{id}:
