@@ -21,18 +21,15 @@ get:
             allOf:
             - type: object
               properties:
-                jobs:
+                jobExecutions:
                   type: array
                   items:
-                    anyOf:
-                    - $ref: ../components/schemas/job.yaml
-                    - $ref: ../components/schemas/jobTask.yaml
-                    - $ref: ../components/schemas/jobWorkflow.yaml
+                    $ref: ../components/schemas/jobExecution.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Jobs Response:
+            Job Executions Response:
               value:
-                $ref: ../components/examples/jobs.json
+                $ref: ../components/examples/jobExecutions.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

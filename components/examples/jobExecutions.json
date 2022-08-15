@@ -1,0 +1,82 @@
+{
+    "jobExecutions": [
+        {
+            "id": 7477,
+            "name": "rook-ceph-osd-prepare-mks-k8s-worker-3",
+            "process": null,
+            "job": {
+                "id": 6844,
+                "name": "rook-ceph-osd-prepare-mks-k8s-worker-3",
+                "description": null,
+                "type": {
+                    "id": 11,
+                    "code": "kubernetes.job",
+                    "name": "Kubernetes Job"
+                }
+            },
+            "description": null,
+            "dateCreated": "2022-08-15T16:44:40Z",
+            "startDate": "2022-08-15T16:39:44Z",
+            "endDate": "2022-08-15T16:39:50Z",
+            "duration": 6000,
+            "resultData": null,
+            "status": "success",
+            "statusMessage": null,
+            "createdBy": null
+        },
+        {
+            "id": 7474,
+            "name": "rook-ceph-osd-prepare-mks-k8s-worker-2",
+            "process": null,
+            "job": {
+                "id": 6841,
+                "name": "rook-ceph-osd-prepare-mks-k8s-worker-2",
+                "description": null,
+                "type": {
+                    "id": 11,
+                    "code": "kubernetes.job",
+                    "name": "Kubernetes Job"
+                }
+            },
+            "description": null,
+            "dateCreated": "2022-08-15T16:44:40Z",
+            "startDate": "2022-08-15T16:39:41Z",
+            "endDate": "2022-08-15T16:39:47Z",
+            "duration": 6000,
+            "resultData": null,
+            "status": "success",
+            "statusMessage": null,
+            "createdBy": null
+        },
+        {
+            "id": 7471,
+            "name": "rook-ceph-osd-prepare-mks-k8s-worker-1",
+            "process": null,
+            "job": {
+                "id": 6838,
+                "name": "rook-ceph-osd-prepare-mks-k8s-worker-1",
+                "description": null,
+                "type": {
+                    "id": 11,
+                    "code": "kubernetes.job",
+                    "name": "Kubernetes Job"
+                }
+            },
+            "description": null,
+            "dateCreated": "2022-08-15T16:44:40Z",
+            "startDate": "2022-08-15T16:39:37Z",
+            "endDate": "2022-08-15T16:39:41Z",
+            "duration": 4000,
+            "resultData": null,
+            "status": "success",
+            "statusMessage": null,
+            "createdBy": null
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 1361
+    }
+}
