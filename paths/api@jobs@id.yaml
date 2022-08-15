@@ -13,7 +13,7 @@ get:
       content:
         application/json:
           schema:
-            anyOf:
+            allOf:
             - type: object
               properties:
                 job:
