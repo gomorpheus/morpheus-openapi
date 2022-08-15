@@ -1,7 +1,7 @@
 get:
   summary: List Cypher Keys
   description: This endpoint retrieves all cypher keys associated with the account, or user.  This method can be used to list keys as well, by passing the query parameter list=true.
-  operationId: getCypherKeys
+  operationId: listCypherKeys
   tags:
     - Cypher
   parameters:

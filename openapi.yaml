@@ -83,6 +83,8 @@ paths:
     $ref: paths/api@credentials@id.yaml
   /api/cypher:
     $ref: paths/api@cypher.yaml
+  /api/cypher/{cypherPath}:
+    $ref: paths/api@cypher@id.yaml
   /api/dashboard:
     $ref: paths/api@dashboard.yaml
   /api/deployments:

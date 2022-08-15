@@ -1,0 +1,180 @@
+get:
+  summary: Read or Create a Cypher Key
+  description: |
+    This endpoint retrieves a specific cypher key. The value of the key is decrypted and returned as data. It may be a String or an object with many {"key":"value"} pairs. 
+    The type depends on the cypher mount's capabilities and what type of data was written to the key. 
+    For example the `secret/` mount allows either a string or an object, while the `password/` mount will always store and return a string.
+    This endpoint can also create a key. This only applies to mount types `uuid`, `key`, `password`.  Refer to the `POST` endpoint for more information.
+  operationId: getCypherKey
+  tags:
+    - Cypher
+  parameters:
+    - $ref: ../components/parameters/cypher-path.yaml
+    - $ref: ../components/parameters/leaseToken.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+  security:
+    - bearerAuth: []
+    - cypherAuth-XCToken: []
+    - cypherAuth-XVToken: []
+    - cypherAuth-XMLease: []
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: ../components/schemas/200-success.yaml
+            - type: object
+              properties:
+                data:
+                  oneOf:
+                    - type: object
+                    - type: string
+                  description:  Data that was written to the key
+                type:
+                  type: string
+                  description:  Type of data that was written to the key
+                lease_duration:
+                  type: integer
+                  description: Lease duration in seconds, 0 means no expiry.
+            - type: object
+              properties:
+                cypher:
+                  $ref: ../components/schemas/cypher.yaml
+          examples:
+            Cyphers Response:
+              value:
+                $ref: ../components/examples/cyphers.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Write a Cypher
+  description: This endpoint will create or update a cypher key.
+  operationId: addCypherKey
+  parameters:
+    - $ref: ../components/parameters/cypherCreate-path.yaml
+    - $ref: ../components/parameters/ttl.yaml
+    - $ref: ../components/parameters/value.yaml
+  tags: 
+    -  Cypher
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          description: |
+            The following parameters are available under the root context of the JSON body.
+            The secret mount is capable of storing the entire JSON object as key=value pairs, or just a single string. To store a string instead, use the value query parameter instead of JSON, or pass type=string.
+            There are a couple of special keys that the API will look for in the payload.
+            The ttl key is a special key that if present in the payload will be parsed and used as the ttl parameter (lease duration in seconds).
+            The value key is a special key that if present in the payload will be parsed and used as the secret data (instead of the entire payload). This is true when type=string.
+          properties:
+            ttl:
+              oneOf:
+                - type: string
+                - type: integer
+                  format: int64
+              description: |
+                Time to Live. The lease duration in seconds, or a human readable format eg. 15m, 8h, 7d. The default is 0 meaning Never expires. This only is applied if the cypher does not yet exist and is created.
+              default: 0
+            value:
+              type: string
+              description: The secret value to be stored. This is only parsed if type is passed as `string`.
+        examples:
+          Deployment Request:
+            value:
+              $ref: ../components/examples/cypherCreateRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                deployment:
+                  $ref: ../components/schemas/deployment.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/deploymentCreate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+delete:
+  summary: Delete a Cypher
+  description: |
+    Will delete a cypher from the system and make it no longer usable.
+  operationId: removeCypher
+  tags:
+    - Cypher
+  parameters:
+    - $ref: ../components/parameters/cypher-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

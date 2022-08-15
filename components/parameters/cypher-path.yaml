@@ -1,0 +1,7 @@
+name: cypherPath
+in: path
+description: The cypher key including the mount prefix.
+required: true
+schema:
+  type: string
+example: 'password/15/mypass'
