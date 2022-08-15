@@ -4,7 +4,7 @@ get:
     Retrieves all jobs.
   operationId: listJobs
   tags:
-    - Automation
+    - Jobs
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
@@ -60,7 +60,7 @@ post:
     Creates a job.
   operationId: addJobs
   tags:
-    - Automation
+    - Jobs
   requestBody:
     content:
       application/json:

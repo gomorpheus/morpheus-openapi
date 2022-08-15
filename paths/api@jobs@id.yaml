@@ -4,7 +4,7 @@ get:
     Retrieves a specific job.
   operationId: getJobs
   tags:
-    - Automation
+    - Jobs
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -57,7 +57,7 @@ put:
     Updates a job.
   operationId: updateJobs
   tags:
-    - Automation
+    - Jobs
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -185,7 +185,7 @@ delete:
     Deletes a specified job.
   operationId: removeJobs
   tags:
-    - Automation
+    - Jobs
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

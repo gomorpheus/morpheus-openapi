@@ -1,0 +1,6 @@
+name: customConfig
+in: query
+description: Optional custom config
+schema:
+  type: string
+example: 'customConfig=%7Bfoo%3Abar%7D'
