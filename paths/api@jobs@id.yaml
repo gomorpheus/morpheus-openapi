@@ -17,7 +17,7 @@ get:
             - type: object
               properties:
                 job:
-                  oneOf:
+                  anyOf:
                   - $ref: ../components/schemas/job.yaml
                   - $ref: ../components/schemas/jobTask.yaml
                   - $ref: ../components/schemas/jobWorkflow.yaml
