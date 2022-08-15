@@ -1,0 +1,186 @@
+get:
+  summary: Retrieves all Jobs
+  description: |
+    Retrieves all jobs.
+  operationId: listJobs
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/itemSource.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                jobs:
+                  type: array
+                  items:
+                    anyOf:
+                    - $ref: ../components/schemas/job.yaml
+                    - $ref: ../components/schemas/jobTask.yaml
+                    - $ref: ../components/schemas/jobWorkflow.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Jobs Response:
+              value:
+                $ref: ../components/examples/jobs.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Creates a Job
+  description: |
+    Creates a job.
+  operationId: addJobs
+  tags:
+    - Automation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - job
+          properties:
+            job:
+              type: object
+              oneOf:
+              - required: [name,workflow,targetType,scheduleMode]
+              - required: [name,task,targetType,scheduleMode]
+              - required: [name,targetType,scheduleMode]
+              properties:
+                name: 
+                  type: string
+                  description: A name for the Job
+                  example: Sample Job Name
+                enabled:
+                  type: boolean
+                  description: Use this to set enabled state
+                  default: true
+                task:
+                  type: object
+                  nullable: true
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      example: 123
+                workflow:
+                  type: object
+                  nullable: true
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      example: 123
+                targetType:
+                  type: string
+                  description: Target type where job will execute
+                  enum:
+                    - appliance
+                    - instance
+                    - server
+                targets:
+                  type: array
+                  nullable: true
+                  items:
+                    type: object
+                    properties:
+                      refId:
+                        type: integer
+                        format: int64
+                scheduleMode:
+                  oneOf:
+                  - type: string
+                    description: Job execution schedule type. Schedule `id`, `manual`, or `dateTime`
+                    enum:
+                      - manual
+                      - dateTime
+                  - type: integer
+                    format: int64
+                    example: 123
+                customOptions:
+                  type: array
+                  description: Map of options to be used as values in the workflow tasks. These correspond to option types.
+                  items:
+                    type: object
+                customConfig:
+                  type: string
+                  description: Job custom configuration (String in JSON format)
+                dateTime:
+                  type: string
+                  format: date-time
+                  description: Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is 'dateTime'.
+                  example: '2020-02-15T05:00:00Z'
+                run:
+                  type: boolean
+                  description: If true, executes job
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                job:
+                  $ref: ../components/schemas/job.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Jobs Response - Generic:
+              value:
+                $ref: ../components/examples/jobSuccess.json
+            Jobs Response - Task Type:
+              value:
+                $ref: ../components/examples/jobTaskSuccess.json
+            Jobs Response - Workflow Type:
+              value:
+                $ref: ../components/examples/jobWorkflowSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

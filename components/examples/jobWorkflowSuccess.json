@@ -1,0 +1,38 @@
+{
+    "job": {
+        "id": 3880,
+        "name": "Approvals Check",
+        "type": {
+            "id": 4,
+            "name": "Workflow Job",
+            "code": "morpheus.workflow"
+        },
+        "workflow": {
+            "id": 71
+        },
+        "jobSummary": "Approvals - Approvals Email",
+        "scheduleMode": "manual",
+        "dateTime": null,
+        "status": null,
+        "namespace": null,
+        "category": null,
+        "description": null,
+        "enabled": true,
+        "dateCreated": "2022-04-18T14:50:33Z",
+        "lastUpdated": "2022-04-18T14:50:57Z",
+        "lastRun": "2022-04-18T14:50:55Z",
+        "lastResult": "error",
+        "createdBy": {
+            "id": 4,
+            "username": "cbunge",
+            "displayName": "Chris Bunge"
+        },
+        "targetType": "appliance",
+        "targets": [],
+        "customConfig": null,
+        "customOptions": {
+            "checkTime": 10
+        }
+    },
+    "success": true
+}

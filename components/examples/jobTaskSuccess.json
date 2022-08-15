@@ -1,0 +1,36 @@
+{
+    "job": {
+        "id": 3877,
+        "name": "Quota",
+        "type": {
+            "id": 7,
+            "name": "Task Job",
+            "code": "morpheus.task"
+        },
+        "task": {
+            "id": 805
+        },
+        "jobSummary": "Policies - Get Quota Consumption",
+        "scheduleMode": "manual",
+        "dateTime": null,
+        "status": null,
+        "namespace": null,
+        "category": null,
+        "description": null,
+        "enabled": true,
+        "dateCreated": "2022-04-18T14:42:16Z",
+        "lastUpdated": "2022-04-18T14:42:32Z",
+        "lastRun": "2022-04-18T14:42:21Z",
+        "lastResult": "success",
+        "createdBy": {
+            "id": 4,
+            "username": "cbunge",
+            "displayName": "Chris Bunge"
+        },
+        "targetType": "appliance",
+        "targets": [],
+        "customConfig": null,
+        "customOptions": null
+    },
+    "success": true
+}

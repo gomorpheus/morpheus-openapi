@@ -225,6 +225,10 @@ paths:
     $ref: paths/api@invoices.yaml
   /api/invoices/{id}:
     $ref: paths/api@invoices@id.yaml
+  /api/jobs:
+    $ref: paths/api@jobs.yaml
+  /api/jobs/{id}:
+    $ref: paths/api@jobs@id.yaml
   /api/invoice-line-items:
     $ref: paths/api@invoice-line-items.yaml
   /api/invoice-line-items/{id}:
