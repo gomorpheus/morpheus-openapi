@@ -15,7 +15,7 @@ get:
               applianceSettings:
                 $ref: ../components/schemas/applianceSettings.yaml
           examples:
-            Tenants Response:
+            Successful Response:
               value:
                 $ref: ../components/examples/applianceSettings.json
     '400':
