@@ -591,6 +591,12 @@ paths:
     $ref: paths/api@virtual-images@id@locations@id.yaml
   /api/virtual-images/{virtualImageId}/upload:
     $ref: paths/api@virtual-images@id@upload.yaml
+  /api/whitelabel-settings:
+    $ref: paths/api@whitelabel-settings.yaml
+  /api/whitelabel-settings/images:
+    $ref: paths/api@whitelabel-settings@images.yaml
+  /api/whitelabel-settings/images/{imageType}:
+    $ref: paths/api@whitelabel-settings@images@imageType.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
   /api/wiki/categories:

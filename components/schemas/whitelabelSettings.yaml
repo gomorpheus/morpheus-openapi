@@ -1,0 +1,59 @@
+type: object
+properties: 
+  enabled: 
+    type: boolean
+  applianceName: 
+    type: string
+  disableSupportMenu: 
+    type: boolean
+  headerLogo: 
+    type: string
+  footerLogo: 
+    type: string
+  loginLogo: 
+    type: string
+  favicon: 
+    type: string
+  headerBgColor: 
+    type: string
+  headerFgColor: 
+    type: string
+  navBgColor: 
+    type: string
+  navFgColor: 
+    type: string
+  navHoverColor: 
+    type: string
+  primaryButtonBgColor: 
+    type: string
+  primaryButtonFgColor: 
+    type: string
+  primaryButtonHoverBgColor: 
+    type: string
+  primaryButtonHoverFgColor: 
+    type: string
+  footerBgColor: 
+    type: string
+  footerFgColor: 
+    type: string
+  loginBgColor: 
+    type: string
+  overrideCss: 
+    type: string
+  copyrightString: 
+    type: string
+  termsOfUse: 
+    type: string
+  privacyPolicy: 
+    type: string
+  supportMenuLinks: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        url: 
+          type: string
+        label: 
+          type: string
+        labelCode: 
+          type: string
