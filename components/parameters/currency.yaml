@@ -1,0 +1,6 @@
+name: currency
+in: query
+description: Restricts query to only load only prices with specified currency
+schema:
+  type: string
+example: USD

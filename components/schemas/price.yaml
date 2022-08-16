@@ -1,0 +1,66 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+  active: 
+    type: boolean
+  priceType: 
+    type: string
+  priceUnit: 
+    type: string
+  additionalPriceUnit: 
+    type: string
+    nullable: true
+  price: 
+    type: number
+    nullable: true
+  customPrice: 
+    type: number
+    nullable: true
+  markupType: 
+    type: string
+    nullable: true
+  markup: 
+    type: number
+    nullable: true
+  markupPercent: 
+    type: number
+    nullable: true
+  cost: 
+    type: number
+    nullable: true
+  currency: 
+    type: string
+  incurCharges: 
+    type: string
+  platform: 
+    type: string
+    nullable: true
+  software: 
+    type: string
+    nullable: true
+  volumeType: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  datastore: 
+    type: string
+    nullable: true
+  crossCloudApply: 
+    type: boolean
+    nullable: true
+  account: 
+    type: string
+    nullable: true

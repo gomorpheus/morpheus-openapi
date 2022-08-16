@@ -475,6 +475,12 @@ paths:
     $ref: paths/api@power-schedules@id@remove-instances.yaml
   /api/power-schedules/{id}/remove-servers:
     $ref: paths/api@power-schedules@id@remove-servers.yaml
+  /api/prices:
+    $ref: paths/api@prices.yaml
+  /api/prices/{id}:
+    $ref: paths/api@prices@id.yaml
+  /api/prices/{id}/deactivate:
+    $ref: paths/api@prices@id@deactivate.yaml
   /api/processes:
     $ref: paths/api@processes.yaml
   /api/processes/{id}:
