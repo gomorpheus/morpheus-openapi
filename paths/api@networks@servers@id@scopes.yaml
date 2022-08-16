@@ -1,0 +1,105 @@
+get:
+  summary: Get all Network Transport Zones for Network Server
+  description: This endpoint retrieves all Network Transport Zones for a specified Network Service.
+  operationId: getNetworkTransportZones
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/serverId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkScopes:
+                  items:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/networkTransportZone.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkTransportZones.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Network Transport Zone
+  description: Use this command to create a network transport zone.
+  operationId: createNetworkTransportZone
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/serverId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          description: The parameters for creating a network transport zone is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
+          properties: 
+            networkScope:
+              $ref: ../components/schemas/networkTransportZoneCreate.yaml
+        examples: 
+          Network DHCP Relay Request:
+            value:
+              $ref: ../components/examples/networkTransportZoneCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/successId.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

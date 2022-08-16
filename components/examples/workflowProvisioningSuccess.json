@@ -1,0 +1,106 @@
+{
+    "taskSet": {
+        "id": 268,
+        "name": "a.Example Write Attributes",
+        "type": "provision",
+        "description": null,
+        "dateCreated": "2022-01-12T13:01:14Z",
+        "lastUpdated": "2022-01-12T13:01:14Z",
+        "accountId": 1,
+        "platform": null,
+        "visibility": "private",
+        "allowCustomConfig": false,
+        "tasks": [
+            808,
+            808
+        ],
+        "optionTypes": [],
+        "taskSetTasks": [
+            {
+                "id": 877,
+                "taskPhase": "provision",
+                "taskOrder": 0,
+                "task": {
+                    "id": 808,
+                    "accountId": 1,
+                    "name": "a.Example Write Attributes",
+                    "code": null,
+                    "taskType": {
+                        "id": 1,
+                        "code": "script",
+                        "name": "Shell Script"
+                    },
+                    "taskOptions": {
+                        "port": null,
+                        "sshKey": null,
+                        "password": null,
+                        "passwordHash": null,
+                        "host": null,
+                        "localScriptGitId": null,
+                        "localScriptGitRef": null,
+                        "username": null
+                    },
+                    "file": {
+                        "id": 901,
+                        "sourceType": "local",
+                        "contentRef": null,
+                        "contentPath": null,
+                        "repository": null,
+                        "content": "{\r\n\"testAttribute\": \"<%=instance.customOptions.name%>\"\r\n}"
+                    },
+                    "resultType": null,
+                    "executeTarget": "local",
+                    "retryable": false,
+                    "retryCount": 5,
+                    "retryDelaySeconds": 10,
+                    "allowCustomConfig": false,
+                    "dateCreated": "2022-01-12T10:55:00Z",
+                    "lastUpdated": "2022-01-12T10:55:00Z"
+                }
+            },
+            {
+                "id": 880,
+                "taskPhase": "reconfigure",
+                "taskOrder": 1,
+                "task": {
+                    "id": 808,
+                    "accountId": 1,
+                    "name": "a.Example Write Attributes",
+                    "code": null,
+                    "taskType": {
+                        "id": 1,
+                        "code": "script",
+                        "name": "Shell Script"
+                    },
+                    "taskOptions": {
+                        "port": null,
+                        "sshKey": null,
+                        "password": null,
+                        "passwordHash": null,
+                        "host": null,
+                        "localScriptGitId": null,
+                        "localScriptGitRef": null,
+                        "username": null
+                    },
+                    "file": {
+                        "id": 901,
+                        "sourceType": "local",
+                        "contentRef": null,
+                        "contentPath": null,
+                        "repository": null,
+                        "content": "{\r\n\"testAttribute\": \"<%=instance.customOptions.name%>\"\r\n}"
+                    },
+                    "resultType": null,
+                    "executeTarget": "local",
+                    "retryable": false,
+                    "retryCount": 5,
+                    "retryDelaySeconds": 10,
+                    "allowCustomConfig": false,
+                    "dateCreated": "2022-01-12T10:55:00Z",
+                    "lastUpdated": "2022-01-12T10:55:00Z"
+                }
+            }
+        ]
+    },
+    "success": true
+}

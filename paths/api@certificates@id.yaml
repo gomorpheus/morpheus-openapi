@@ -1,0 +1,148 @@
+get:
+  summary: Get a Specific Certificate
+  description: This endpoint retrieves a specific certificate.
+  operationId: getCertificate
+  tags:
+    - SSL Certificates
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              certificate:
+                type: object
+                properties:
+                  $ref: ../components/schemas/certificate.yaml
+          examples:
+            Certificate Response:
+              value:
+                $ref: ../components/examples/certificate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      
+put: 
+  summary: Update a Certificate
+  description: Update a Certificate.
+  operationId: updateCertificate
+  tags:
+    - SSL Certificates
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            certificate:
+              type: object
+              properties: 
+                $ref: ../components/schemas/certificateCreate.yaml
+        examples: 
+          Certificate Update Request:
+            value:
+              $ref: ../components/examples/certificateCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              certificate:
+                type: object
+                properties: 
+                  $ref: ../components/schemas/certificate.yaml
+          examples: 
+            Certificate Update Success:
+              value:
+                $ref: ../components/examples/certificateCreateSuccess.json
+
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+delete: 
+  summary: Delete a Certificate
+  description: |
+    Will delete a certificate from the system and make it no longer usable.
+
+    If a certificate is actively in use, a delete will fail. 
+  operationId: deleteCertificate
+  tags:
+    - SSL Certificates
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      

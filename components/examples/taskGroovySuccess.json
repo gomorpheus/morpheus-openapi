@@ -1,0 +1,43 @@
+{
+    "task": {
+        "id": 879,
+        "accountId": 1,
+        "name": "5. groovy",
+        "code": null,
+        "taskType": {
+            "id": 31,
+            "code": "groovyTask",
+            "name": "Groovy Script"
+        },
+        "taskOptions": {
+            "localScriptGitRef": null,
+            "password": null,
+            "passwordHash": null,
+            "host": null,
+            "localScriptGitId": null,
+            "sshKey": null,
+            "port": null,
+            "username": null
+        },
+        "file": {
+            "id": 1062,
+            "sourceType": "local",
+            "contentRef": null,
+            "contentPath": null,
+            "repository": null,
+            "content": null
+        },
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:52:44Z",
+        "lastUpdated": "2022-08-04T13:52:44Z"
+    },
+    "success": true
+}

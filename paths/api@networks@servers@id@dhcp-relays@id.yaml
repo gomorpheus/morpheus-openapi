@@ -1,0 +1,142 @@
+get:
+  summary: Get a Specific Network DHCP Relay
+  description: |
+    This endpoint retrieves a specific Network DHCP Relay.
+  operationId: getNetworkDhcpRelay
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkDhcpRelay:
+                properties:
+                  $ref: ../components/schemas/networkDhcpRelay.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkDhcpRelay.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+put: 
+  summary: Update a Network DHCP Relay
+  description: |
+    Use this command to update an existing Network DHCP Relay.
+  operationId: updateNetworkDhcpRelay
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          description: |
+            The parameters for update a Network DHCP Relay is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type.
+          properties: 
+            networkDhcpRelay:
+              type: object
+        examples: 
+          Network DHCP Relay Request:
+            value:
+              $ref: ../components/examples/networkDhcpRelayCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+delete: 
+  summary: Delete a Network DHCP Relay
+  description: Will delete a Network DHCP Relay from the system and make it no longer usable.
+  operationId: deleteNetworkDhcpRelay
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

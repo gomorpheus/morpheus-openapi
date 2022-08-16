@@ -1,0 +1,110 @@
+get:
+  summary: Get List of Virtual Images
+  description: This endpoint retrieves a list of virtual images for the specified filter.
+  operationId: listVirtualImages
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/filterType.yaml
+    - $ref: ../components/parameters/imageType.yaml
+    - $ref: ../components/parameters/tags.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                virtualImages:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/virtualImage.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Virtual Images Response:
+              value:
+                $ref: ../components/examples/virtualImages.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post:
+  summary: Create a Virtual Image
+  description: This endpoint creates a new virtual image, without any files yet.
+  operationId: addVirtualImage
+  tags:
+    - Library
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - virtualImage
+          properties:
+            virtualImage:
+              $ref: ../components/schemas/virtualImageCreate.yaml
+        examples: 
+          Virtual Image Request:
+            value: 
+              $ref: ../components/examples/virtualImageRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                virtualImage:
+                  $ref: ../components/schemas/virtualImage.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Virtual Image Create Response:
+              value:
+                $ref: ../components/examples/virtualImageCreateSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

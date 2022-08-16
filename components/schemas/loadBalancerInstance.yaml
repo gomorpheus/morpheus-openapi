@@ -1,0 +1,133 @@
+id:
+  type: integer
+  format: int64
+loadBalancer:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    type:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        code:
+          type: string
+        name:
+          type: string
+    name:
+      type: string
+    ip:
+      type: string
+instance:
+  type: string
+  nullable: true
+description:
+  type: string
+  nullable: true
+internalId:
+  type: string
+externalId:
+  type: string
+dateCreated:
+  type: string
+  format: date-time
+lastUpdated:
+  type: string
+  format: date-time
+active:
+  type: boolean
+sticky:
+  type: boolean
+sslEnabled:
+  type: string
+  nullable: true
+externalAddress:
+  type: boolean
+backendPort:
+  type: string
+  nullable: true
+vipType:
+  type: string
+  nullable: true
+vipAddress:
+  type: string
+vipHostname:
+  type: string
+  nullable: true
+vipProtocol:
+  type: string
+vipScheme:
+  type: string
+  nullable: true
+vipMode:
+  type: string
+  nullable: true
+vipName:
+  type: string
+vipPort:
+  type: integer
+  format: int64
+vipSticky:
+  type: string
+  nullable: true
+vipBalance:
+  type: string
+  nullable: true
+servicePort:
+  type: string
+  nullable: true
+sourceAddress:
+  type: string
+  nullable: true
+sslCert:
+  type: object
+  nullable: true
+  properties:
+    id:
+      type: integer
+      format: int64
+    name:
+      type: string
+sslMode:
+  type: string
+  nullable: true
+sslRedirectMode:
+  type: string
+  nullable: true
+vipShared:
+  type: boolean
+vipDirectAddress:
+  type: string
+  nullable: true
+serverName:
+  type: string
+  nullable: true
+poolName:
+  type: string
+  nullable: true
+removing:
+  type: boolean
+vipSource:
+  type: string
+extraConfig:
+  type: string
+  nullable: true
+serviceAccess:
+  type: string
+  nullable: true
+networkId:
+  type: string
+  nullable: true
+subnetId:
+  type: string
+  nullable: true
+externalPortId:
+  type: string
+  nullable: true
+status:
+  type: string
+vipStatus:
+  type: string

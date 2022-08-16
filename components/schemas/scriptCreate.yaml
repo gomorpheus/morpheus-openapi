@@ -1,0 +1,34 @@
+type: object
+required:
+  - name
+properties: 
+  name: 
+    type: string
+    description: Script name
+  category: 
+    type: string
+    description: Script category
+  scriptVersion: 
+    type: string
+    description: Version of the script
+    default: "1"
+  scriptPhase: 
+    type: string
+    description: Phase for the script, provision, start, etc.
+  scriptType: 
+    type: string
+    description: Type for the script
+    default: bash
+    enum:
+      - bash
+      - powershell
+  script: 
+    type: string
+    description: Script content, that is, the code itself.
+  runAsUser:
+    type: string
+    description: Run as a specific user.
+  sudoUser:
+    type: boolean
+    description: Sudo, whether or not to run with sudo.
+    default: false

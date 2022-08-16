@@ -1,0 +1,11 @@
+name: status
+in: query
+description: Filter by status
+schema:
+  type: string
+  enum:
+    - staged
+    - deploying
+    - commited
+    - archived
+example: "deploying"

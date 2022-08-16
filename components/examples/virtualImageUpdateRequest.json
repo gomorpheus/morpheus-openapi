@@ -1,0 +1,18 @@
+{
+  "virtualImage": {
+    "installAgent": true,
+    "sshUsername": "root",
+    "sshPassword": "aGreatpassword12345!",
+    "addTags": [
+      {
+        "name": "Category",
+        "value": "Cache"
+      }
+    ],
+    "removeTags": [
+      {
+        "name": "OldThing"
+      }
+    ]
+  }
+}

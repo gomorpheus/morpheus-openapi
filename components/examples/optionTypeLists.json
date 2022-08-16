@@ -1,0 +1,69 @@
+{
+  "optionTypeLists": [
+    {
+      "id": 32,
+      "name": "mylist",
+      "description": "My List",
+      "type": "manual",
+      "sourceUrl": null,
+      "sourceMethod": "GET",
+      "apiType": null,
+      "ignoreSSLErrors": false,
+      "realTime": false,
+      "visibility": "private",
+      "config": {
+      },
+      "credential": {
+        "type": "local"
+      },
+      "serviceUsername": null,
+      "servicePassword": null,
+      "initialDataset": "foo,Foo\nbar,Bar\nbaz,Baz\nhello,world",
+      "translationScript": null,
+      "requestScript": null,
+      "account": {
+        "id": 1,
+        "name": "morpheusdata.com"
+      }
+    },
+    {
+      "id": 56,
+      "name": "group1 clouds",
+      "description": null,
+      "type": "rest",
+      "sourceUrl": "http://10.0.2.2:8080/api/options/clouds?groupId=1",
+      "sourceMethod": "GET",
+      "apiType": null,
+      "ignoreSSLErrors": false,
+      "realTime": false,
+      "visibility": "private",
+      "config": {
+        "sourceHeaders": [
+          {
+            "name": "Authorization",
+            "value": "************",
+            "masked": "on"
+          }
+        ]
+      },
+      "credential": {
+        "type": "local"
+      },
+      "serviceUsername": null,
+      "servicePassword": null,
+      "initialDataset": null,
+      "translationScript": "for(var x=0;x < data.data.length; x++) {\n    results.push(data.data[x]);\n}",
+      "requestScript": null,
+      "account": {
+        "id": 1,
+        "name": "morpheusdata.com"
+      }
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

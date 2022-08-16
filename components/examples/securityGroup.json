@@ -1,0 +1,101 @@
+{
+    "securityGroup": {
+        "id": 29800,
+        "name": "Any",
+        "description": "Any",
+        "accountId": 1,
+        "groupSource": null,
+        "externalId": null,
+        "enabled": null,
+        "syncSource": "external",
+        "visibility": "private",
+        "active": true,
+        "zone": {
+            "id": 67,
+            "name": "Work AWS"
+        },
+        "locations": [
+            {
+                "id": 28762,
+                "name": "Any",
+                "description": "Any",
+                "externalId": "sg-082ae6cd1de7ca444",
+                "iacId": null,
+                "zone": {
+                    "id": 67,
+                    "name": "Work AWS"
+                },
+                "zonePool": {
+                    "id": 1297,
+                    "name": "vpc-1c079e61"
+                },
+                "status": "available",
+                "priority": null,
+                "groupLayer": null
+            }
+        ],
+        "rules": [
+            {
+                "id": 23260,
+                "name": null,
+                "ruleType": "custom",
+                "customRule": true,
+                "instanceTypeId": null,
+                "direction": "egress",
+                "policy": "accept",
+                "sourceType": "all",
+                "source": null,
+                "sourceGroup": null,
+                "sourceTier": null,
+                "portRange": null,
+                "protocol": "all",
+                "destinationType": "cidr",
+                "destination": "0.0.0.0/0",
+                "destinationGroup": null,
+                "destinationTier": null,
+                "externalId": "null",
+                "enabled": null
+            },
+            {
+                "id": 23257,
+                "name": null,
+                "ruleType": "custom",
+                "customRule": true,
+                "instanceTypeId": null,
+                "direction": "ingress",
+                "policy": "accept",
+                "sourceType": "cidr",
+                "source": "0.0.0.0/0",
+                "sourceGroup": null,
+                "sourceTier": null,
+                "portRange": null,
+                "protocol": "all",
+                "destinationType": "instance",
+                "destination": null,
+                "destinationGroup": null,
+                "destinationTier": null,
+                "externalId": "null",
+                "enabled": null
+            }
+        ],
+        "tenants": [
+            {
+                "id": 1,
+                "name": "Home",
+                "canManage": true
+            }
+        ],
+        "resourcePermission": {
+            "defaultStore": false,
+            "allPlans": true,
+            "defaultTarget": false,
+            "canManage": true,
+            "all": true,
+            "account": {
+                "id": 1
+            },
+            "sites": [],
+            "plans": []
+        }
+    }
+}

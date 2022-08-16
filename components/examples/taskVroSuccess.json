@@ -1,0 +1,37 @@
+{
+    "task": {
+        "id": 912,
+        "accountId": 1,
+        "name": "16. vRO",
+        "code": null,
+        "taskType": {
+            "id": 46,
+            "code": "vro",
+            "name": "vRealize Orchestrator Workflow"
+        },
+        "taskOptions": {
+            "sshKey": null,
+            "localScriptGitRef": null,
+            "port": null,
+            "vroBody": null,
+            "password": null,
+            "passwordHash": null,
+            "host": null,
+            "localScriptGitId": null,
+            "username": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:55:07Z",
+        "lastUpdated": "2022-08-04T13:55:07Z"
+    },
+    "success": true
+}

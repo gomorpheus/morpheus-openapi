@@ -1,0 +1,54 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  parent: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  type: 
+    type: string
+  externalId: 
+    type: string
+  visibility: 
+    type: string
+  readOnly: 
+    type: boolean
+  defaultFolder: 
+    type: boolean
+  defaultStore: 
+    type: boolean
+  active: 
+    type: boolean
+  tenants: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        defaultStore: 
+          type: boolean
+        defaultTarget: 
+          type: boolean
+  resourcePermission: 
+    $ref: resourcePermissions.yaml

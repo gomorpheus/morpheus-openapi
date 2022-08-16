@@ -1,0 +1,115 @@
+get:
+  summary: Get Security Groups for an App
+  description: This returns a list of all of the security groups applied to an app and whether the firewall is enabled.
+  operationId: getAppSecurityGroups
+  tags:
+    - Apps
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  securityGroups:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/appSecurityGroups.yaml
+              - type: object
+                properties:
+                  firewallEnabled:
+                    type: boolean
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Apps Security Groups Response:
+              value:
+                $ref: ../components/examples/appSecurityGroups.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Set Security Groups for an App
+  description: Set Security Groups for an App
+  operationId: setAppSecurityGroups
+  tags: 
+    -  Apps
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          allOf:
+            - type: object
+              properties:
+                securityGroupIds:
+                  type: array
+                  items: 
+                    type: integer
+        examples:
+          App Update:
+            value:
+              $ref: ../components/examples/appUpdateSecurityGroups.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  securityGroups:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/appSecurityGroups.yaml
+              - type: object
+                properties:
+                  firewallEnabled:
+                    type: boolean
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Apps Security Groups Response:
+              value:
+                $ref: ../components/examples/appSecurityGroups.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

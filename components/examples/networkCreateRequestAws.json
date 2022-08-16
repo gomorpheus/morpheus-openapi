@@ -1,0 +1,49 @@
+{
+  "network": {
+    "name": "test-net",
+    "displayName": "test-net",
+    "description": "Test Network",
+    "site": {
+      "id": 1
+    },
+    "type": {
+      "id": 35
+    },
+    "zone": {
+      "id": 27
+    },
+    "config": {
+        "availabilityZone": "us-east-1b",
+        "cidr": "192.168.12.0/24",
+        "assignPublicIp": true,
+        "zonePool": {
+          "id": 242
+        }
+    },
+    "cidr": "192.168.12.0/24",
+    "gateway": "192.168.12.1",
+    "dnsPrimary": "1.1.1.1",
+    "dnsSecondary": "1.1.1.2",
+    "vlanId": 0,
+    "active": true,
+    "dhcpServer": true,
+    "allowStaticOverride": true,
+    "pool": null,
+    "networkDomain": {
+      "id": 3
+    },
+    "searchDomains": "abc.xyz",
+    "scanNetwork": false,
+    "applianceUrlProxyBypass": true,
+    "noProxy": null,
+    "resourcePermission": {
+      "all": true
+    },
+    "tenants": [
+      {
+        "id": 2
+      }
+    ],
+    "visibility": "private"
+  }
+}

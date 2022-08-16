@@ -1,0 +1,39 @@
+{
+  "networkDomains": [
+    {
+      "id": 2,
+      "name": "mydomain.local",
+      "active": true,
+      "fqdn": null,
+      "description": null,
+      "visibility": "private",
+      "domainController": false,
+      "publicZone": false,
+      "domainUsername": null,
+      "domainPassword": null,
+      "refType": null,
+      "refId": null,
+      "refSource": null,
+      "internalId": null,
+      "ouPath": null,
+      "dcServer": null,
+      "zoneType": null,
+      "dnssec": null,
+      "domainSerial": null,
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "owner": {
+        "id": 1,
+        "name": "root"
+      }
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

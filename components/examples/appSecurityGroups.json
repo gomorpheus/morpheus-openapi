@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "firewallEnabled": true,
+  "securityGroups": [
+    {
+      "id": 19,
+      "accountId": 1,
+      "name": "All Tomcat Access",
+      "description": "Allow everyone to access Tomcat"
+    }
+  ]
+}

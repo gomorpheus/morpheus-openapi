@@ -6,7 +6,7 @@ post:
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/instanceTypeId-path.yaml
   requestBody:
     content:
       multipart/form-data: 

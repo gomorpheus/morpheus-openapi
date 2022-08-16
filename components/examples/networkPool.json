@@ -1,0 +1,55 @@
+{
+  "networkPool": {
+    "id": 9,
+    "type": {
+      "id": 2,
+      "name": "Morpheus",
+      "code": "morpheus"
+    },
+    "account": {
+      "id": 1,
+      "name": "root"
+    },
+    "category": null,
+    "code": null,
+    "name": "test pool",
+    "displayName": null,
+    "internalId": null,
+    "externalId": null,
+    "dnsDomain": null,
+    "dnsSearchPath": null,
+    "hostPrefix": null,
+    "httpProxy": null,
+    "dnsServers": [],
+    "dnsSuffixList": [],
+    "dhcpServer": false,
+    "dhcpIp": null,
+    "gateway": null,
+    "netmask": null,
+    "subnetAddress": null,
+    "ipCount": 41,
+    "freeCount": 41,
+    "poolEnabled": true,
+    "tftpServer": null,
+    "bootFile": null,
+    "refType": null,
+    "refId": null,
+    "parentType": null,
+    "parentId": null,
+    "poolGroup": null,
+    "ipRanges": [
+      {
+        "id": 8,
+        "startAddress": "192.168.15.10",
+        "endAddress": "192.168.15.50",
+        "internalId": null,
+        "externalId": null,
+        "description": null,
+        "addressCount": 0,
+        "active": true,
+        "dateCreated": "2017-11-29T04:47:33Z",
+        "lastUpdated": "2017-11-29T04:47:33Z"
+      }
+    ]
+  }
+}

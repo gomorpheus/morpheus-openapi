@@ -1,0 +1,29 @@
+{
+    "price": {
+        "id": 1,
+        "name": "Amazon - EBS (gp2) - US East (N. Virginia)",
+        "code": "amazon.storage.ebs.ec2.us-east-1.amazonaws.com",
+        "active": false,
+        "priceType": "storage",
+        "priceUnit": "month",
+        "additionalPriceUnit": "GB",
+        "price": 0.100000000,
+        "customPrice": 0E-9,
+        "markupType": null,
+        "markup": 0E-9,
+        "markupPercent": 0.0,
+        "cost": 0.100000000,
+        "currency": "USD",
+        "incurCharges": "always",
+        "platform": null,
+        "software": null,
+        "volumeType": {
+            "id": 25,
+            "code": "amazon-gp2",
+            "name": "gp2"
+        },
+        "datastore": null,
+        "crossCloudApply": null,
+        "account": null
+    }
+}

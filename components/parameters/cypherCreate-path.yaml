@@ -1,0 +1,42 @@
+name: cypherPath
+in: path
+description: |
+  The key includes a mount prefix separated by a /. For example, the key secret/foo uses the secret mount.
+
+  Available Mounts
+
+  <table>
+    <tr>
+      <th>Mount</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td>Generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).</td>
+      <td>password/15/mypass</td>
+    </tr>
+    <tr>
+      <td>tfvars</td>
+      <td>This is a module to store a tfvars file for terraform.</td>
+      <td>tfvars/mytfvar</td>
+    </tr>
+    <tr>
+      <td>secret</td>
+      <td>This is the standard secret module that stores a key/value in encrypted form. Capable of storing entire JSON object or a String.</td>
+      <td>secret/foo</td>
+    </tr>
+    <tr>
+      <td>uuid</td>
+      <td>Returns a new UUID by key name when requested and stores the generated UUID by key name for a given lease timeout period.</td>
+      <td>uuid/autoMac1</td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>Generates a Base 64 encoded AES Key of specified bit length in the key pattern (i.e. key/128/mykey generates a 128-bit key)</td>
+      <td>key/128/mykey</td>
+    </tr>
+  </table>
+required: true
+schema:
+  type: string

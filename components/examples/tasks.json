@@ -1,0 +1,601 @@
+{
+    "tasks": [
+        {
+            "id": 867,
+            "accountId": 1,
+            "name": "1.ansible playbook",
+            "code": null,
+            "taskType": {
+                "id": 22,
+                "code": "ansibleTask",
+                "name": "Ansible Playbook"
+            },
+            "taskOptions": {
+                "localScriptGitRef": null,
+                "ansiblePlaybook": null,
+                "password": null,
+                "passwordHash": null,
+                "ansibleOptions": null,
+                "ansibleSkipTags": null,
+                "localScriptGitId": null,
+                "ansibleGitRef": null,
+                "host": null,
+                "port": null,
+                "sshKey": null,
+                "username": null,
+                "ansibleTags": null,
+                "ansibleGitId": "226"
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:52:02Z",
+            "lastUpdated": "2022-08-04T13:52:02Z"
+        },
+        {
+            "id": 894,
+            "accountId": 1,
+            "name": "10. library template",
+            "code": null,
+            "taskType": {
+                "id": 7,
+                "code": "containerTemplate",
+                "name": "Library Template"
+            },
+            "taskOptions": {
+                "port": null,
+                "host": null,
+                "sshKey": null,
+                "containerTemplate": null,
+                "containerTemplateId": null,
+                "localScriptGitId": null,
+                "localScriptGitRef": null,
+                "username": null,
+                "password": null,
+                "passwordHash": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:53:58Z",
+            "lastUpdated": "2022-08-04T13:53:58Z"
+        },
+        {
+            "id": 897,
+            "accountId": 1,
+            "name": "11. powershell",
+            "code": null,
+            "taskType": {
+                "id": 13,
+                "code": "winrmTask",
+                "name": "Powershell Script"
+            },
+            "taskOptions": {
+                "localScriptGitRef": null,
+                "host": null,
+                "localScriptGitId": null,
+                "port": null,
+                "sshKey": null,
+                "password": null,
+                "passwordHash": null,
+                "username": null
+            },
+            "file": {
+                "id": 1068,
+                "sourceType": "local",
+                "contentRef": null,
+                "contentPath": null,
+                "repository": null,
+                "content": null
+            },
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:54:13Z",
+            "lastUpdated": "2022-08-04T13:54:13Z"
+        },
+        {
+            "id": 900,
+            "accountId": 1,
+            "name": "12. puppet",
+            "code": null,
+            "taskType": {
+                "id": 19,
+                "code": "puppetTask",
+                "name": "Puppet Agent Install"
+            },
+            "taskOptions": {
+                "password": null,
+                "passwordHash": null,
+                "port": null,
+                "host": null,
+                "puppetNodeName": null,
+                "username": null,
+                "sshKey": null,
+                "puppetEnvironment": null,
+                "localScriptGitId": null,
+                "localScriptGitRef": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:54:29Z",
+            "lastUpdated": "2022-08-04T13:54:29Z"
+        },
+        {
+            "id": 903,
+            "accountId": 1,
+            "name": "13. Python",
+            "code": null,
+            "taskType": {
+                "id": 28,
+                "code": "jythonTask",
+                "name": "Python Script"
+            },
+            "taskOptions": {
+                "sshKey": null,
+                "pythonArgs": null,
+                "localScriptGitRef": null,
+                "pythonBinary": null,
+                "pythonAdditionalPackages": null,
+                "password": null,
+                "passwordHash": null,
+                "host": null,
+                "username": null,
+                "port": null,
+                "localScriptGitId": null
+            },
+            "file": {
+                "id": 1071,
+                "sourceType": "local",
+                "contentRef": null,
+                "contentPath": null,
+                "repository": null,
+                "content": null
+            },
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:54:38Z",
+            "lastUpdated": "2022-08-04T13:54:38Z"
+        },
+        {
+            "id": 906,
+            "accountId": 1,
+            "name": "14. restart",
+            "code": null,
+            "taskType": {
+                "id": 40,
+                "code": "restartTask",
+                "name": "Restart"
+            },
+            "taskOptions": {
+                "localScriptGitId": null,
+                "username": null,
+                "localScriptGitRef": null,
+                "port": null,
+                "password": null,
+                "passwordHash": null,
+                "host": null,
+                "sshKey": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:54:46Z",
+            "lastUpdated": "2022-08-04T13:54:46Z"
+        },
+        {
+            "id": 909,
+            "accountId": 1,
+            "name": "15. shell",
+            "code": null,
+            "taskType": {
+                "id": 1,
+                "code": "script",
+                "name": "Shell Script"
+            },
+            "taskOptions": {
+                "username": null,
+                "localScriptGitRef": null,
+                "port": null,
+                "host": null,
+                "localScriptGitId": null,
+                "sshKey": null,
+                "password": null,
+                "passwordHash": null
+            },
+            "file": {
+                "id": 1074,
+                "sourceType": "local",
+                "contentRef": null,
+                "contentPath": null,
+                "repository": null,
+                "content": null
+            },
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:54:56Z",
+            "lastUpdated": "2022-08-04T13:54:56Z"
+        },
+        {
+            "id": 912,
+            "accountId": 1,
+            "name": "16. vRO",
+            "code": null,
+            "taskType": {
+                "id": 46,
+                "code": "vro",
+                "name": "vRealize Orchestrator Workflow"
+            },
+            "taskOptions": {
+                "sshKey": null,
+                "port": null,
+                "localScriptGitRef": null,
+                "host": null,
+                "username": null,
+                "localScriptGitId": null,
+                "vroBody": null,
+                "password": null,
+                "passwordHash": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:55:07Z",
+            "lastUpdated": "2022-08-04T13:55:07Z"
+        },
+        {
+            "id": 915,
+            "accountId": 1,
+            "name": "17. Write Attributes",
+            "code": null,
+            "taskType": {
+                "id": 52,
+                "code": "writeAttributes",
+                "name": "Write Attributes"
+            },
+            "taskOptions": {
+                "writeAttributes.attributes": null,
+                "username": null,
+                "password": null,
+                "passwordHash": null,
+                "host": null,
+                "sshKey": null,
+                "localScriptGitRef": null,
+                "localScriptGitId": null,
+                "port": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:55:25Z",
+            "lastUpdated": "2022-08-04T13:55:25Z"
+        },
+        {
+            "id": 870,
+            "accountId": 1,
+            "name": "2. Ansible Tower",
+            "code": null,
+            "taskType": {
+                "id": 43,
+                "code": "ansibleTowerTask",
+                "name": "Ansible Tower Job"
+            },
+            "taskOptions": {
+                "ansibleTowerGitRef": null,
+                "ansibleTowerExecuteMode": "executeHost",
+                "host": null,
+                "username": null,
+                "sshKey": null,
+                "localScriptGitId": null,
+                "ansibleGroup": null,
+                "password": null,
+                "passwordHash": null,
+                "localScriptGitRef": null,
+                "port": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:52:14Z",
+            "lastUpdated": "2022-08-04T13:52:14Z"
+        },
+        {
+            "id": 873,
+            "accountId": 1,
+            "name": "3. Chef bootstrap",
+            "code": null,
+            "taskType": {
+                "id": 16,
+                "code": "chefTask",
+                "name": "Chef bootstrap"
+            },
+            "taskOptions": {
+                "password": null,
+                "passwordHash": null,
+                "chefNodeName": null,
+                "chefAttributes": "{}",
+                "localScriptGitRef": null,
+                "port": null,
+                "chefDataKeyPath": null,
+                "chefDataKey": null,
+                "chefDataKeyHash": null,
+                "username": null,
+                "host": null,
+                "sshKey": null,
+                "chefRunList": null,
+                "chefEnv": null,
+                "localScriptGitId": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:52:25Z",
+            "lastUpdated": "2022-08-04T13:52:25Z"
+        },
+        {
+            "id": 876,
+            "accountId": 1,
+            "name": "4. email",
+            "code": null,
+            "taskType": {
+                "id": 49,
+                "code": "email",
+                "name": "Email"
+            },
+            "taskOptions": {
+                "emailSkipTemplate": null,
+                "username": null,
+                "emailSubject": null,
+                "emailAddress": null,
+                "localScriptGitRef": null,
+                "host": null,
+                "password": null,
+                "passwordHash": null,
+                "sshKey": null,
+                "localScriptGitId": null,
+                "port": null
+            },
+            "file": {
+                "id": 1059,
+                "sourceType": "local",
+                "contentRef": null,
+                "contentPath": null,
+                "repository": null,
+                "content": null
+            },
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:52:32Z",
+            "lastUpdated": "2022-08-04T13:52:32Z"
+        },
+        {
+            "id": 879,
+            "accountId": 1,
+            "name": "5. groovy",
+            "code": null,
+            "taskType": {
+                "id": 31,
+                "code": "groovyTask",
+                "name": "Groovy Script"
+            },
+            "taskOptions": {
+                "username": null,
+                "localScriptGitId": null,
+                "sshKey": null,
+                "password": null,
+                "passwordHash": null,
+                "localScriptGitRef": null,
+                "port": null,
+                "host": null
+            },
+            "file": {
+                "id": 1062,
+                "sourceType": "local",
+                "contentRef": null,
+                "contentPath": null,
+                "repository": null,
+                "content": null
+            },
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:52:44Z",
+            "lastUpdated": "2022-08-04T13:52:44Z"
+        },
+        {
+            "id": 882,
+            "accountId": 1,
+            "name": "6. http",
+            "code": null,
+            "taskType": {
+                "id": 37,
+                "code": "httpTask",
+                "name": "HTTP"
+            },
+            "taskOptions": {
+                "localScriptGitRef": null,
+                "port": null,
+                "username": null,
+                "webUrl": null,
+                "webBody": null,
+                "webHeaders": "[]",
+                "host": null,
+                "password": null,
+                "passwordHash": null,
+                "webMethod": null,
+                "sshKey": null,
+                "ignoreSSL": null,
+                "webPassword": null,
+                "webPasswordHash": null,
+                "localScriptGitId": null,
+                "webUser": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:52:53Z",
+            "lastUpdated": "2022-08-04T13:52:53Z"
+        },
+        {
+            "id": 885,
+            "accountId": 1,
+            "name": "7. java",
+            "code": null,
+            "taskType": {
+                "id": 34,
+                "code": "javascriptTask",
+                "name": "Javascript"
+            },
+            "taskOptions": {
+                "sshKey": null,
+                "localScriptGitRef": null,
+                "host": null,
+                "port": null,
+                "username": null,
+                "localScriptGitId": null,
+                "jsScript": null,
+                "password": null,
+                "passwordHash": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:53:03Z",
+            "lastUpdated": "2022-08-04T13:53:03Z"
+        },
+        {
+            "id": 888,
+            "accountId": 1,
+            "name": "8. jruby",
+            "code": null,
+            "taskType": {
+                "id": 25,
+                "code": "jrubyTask",
+                "name": "jRuby Script"
+            },
+            "taskOptions": {
+                "localScriptGitRef": null,
+                "port": null,
+                "host": null,
+                "sshKey": null,
+                "localScriptGitId": null,
+                "username": null,
+                "password": null,
+                "passwordHash": null
+            },
+            "file": {
+                "id": 1065,
+                "sourceType": "local",
+                "contentRef": null,
+                "contentPath": null,
+                "repository": null,
+                "content": null
+            },
+            "resultType": null,
+            "executeTarget": "local",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:53:15Z",
+            "lastUpdated": "2022-08-04T13:53:15Z"
+        },
+        {
+            "id": 891,
+            "accountId": 1,
+            "name": "9. library script",
+            "code": null,
+            "taskType": {
+                "id": 4,
+                "code": "containerScript",
+                "name": "Library Script"
+            },
+            "taskOptions": {
+                "containerScriptId": null,
+                "localScriptGitId": null,
+                "localScriptGitRef": null,
+                "host": null,
+                "sshKey": null,
+                "password": null,
+                "passwordHash": null,
+                "containerScript": null,
+                "username": null,
+                "port": null
+            },
+            "file": null,
+            "resultType": null,
+            "executeTarget": "resource",
+            "retryable": false,
+            "retryCount": 5,
+            "retryDelaySeconds": 10,
+            "allowCustomConfig": false,
+            "dateCreated": "2022-08-04T13:53:27Z",
+            "lastUpdated": "2022-08-04T13:53:27Z"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 17,
+        "size": 17,
+        "total": 62
+    }
+}

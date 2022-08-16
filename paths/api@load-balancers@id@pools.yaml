@@ -1,0 +1,118 @@
+get:
+  summary: Get All Load Balancer Pools For Load Balancer
+  description: This endpoint retrieves all load balancer pools associated with a specified load balancer.
+  operationId: listLoadBalancerPools
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  loadBalancerPools:
+                    type: array
+                    items:
+                      type: object
+                      properties: 
+                        $ref: ../components/schemas/loadBalancerPool.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Load Balancer Pools Response:
+              value:
+                $ref: ../components/examples/loadBalancerPools.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      
+post: 
+  summary: Create a Load Balancer Pool
+  description: |
+    Use this command to create a load balancer pool.
+
+    This endpoint allows creating a Load Balancer Pool. Configuration options vary by Load Balancer Type.
+  operationId: createLoadBalancerPool
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            loadBalancerPool:
+              type: object
+              properties: 
+                $ref: ../components/schemas/loadBalancerPoolCreate.yaml
+        examples:
+          Load Balancer Pool Request:
+            value: 
+              $ref: ../components/examples/loadBalancerPoolCreate.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:
+            - type: object
+              properties:
+                loadBalancerPool:
+                  type: object
+                  properties: 
+                    $ref: ../components/schemas/loadBalancerPool.yaml
+            - $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Load Balancers Response:
+              value:
+                $ref: ../components/examples/loadBalancerPool.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

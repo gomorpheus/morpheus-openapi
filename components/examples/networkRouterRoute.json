@@ -1,0 +1,24 @@
+{
+  "networkRoute": {
+    "id": 59,
+    "name": "api-test-route3",
+    "code": "nsxt.router.static.route.13.99.58ee0c3a-9223-4d01-a1bb-517f48e7b04e.10.20.0.0",
+    "description": null,
+    "priority": null,
+    "routeType": "static",
+    "source": "10.10.0.0/24",
+    "sourceType": "cidr",
+    "destination": "10.20.0.0",
+    "destinationType": "cidr",
+    "defaultRoute": false,
+    "networkMtu": null,
+    "externalInterface": null,
+    "internalId": null,
+    "externalId": "58ee0c3a-9223-4d01-a1bb-517f48e7b04e.10.20.0.0",
+    "uniqueId": null,
+    "providerId": "/infra/tier-0s/b05d6532-2742-4dbd-98f2-a62aa8a62ae0/static-routes/58ee0c3a-9223-4d01-a1bb-517f48e7b04e",
+    "externalType": null,
+    "enabled": true,
+    "visible": true
+  }
+}

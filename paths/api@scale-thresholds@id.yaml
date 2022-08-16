@@ -1,0 +1,192 @@
+get:
+  summary: Retrieves a Specific Scale Threshold
+  description: |
+    Retrieves a specific scale threshold.
+  operationId: getScaleThresholds
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                scaleThreshold:
+                  $ref: ../components/schemas/scaleThreshold.yaml
+          examples:
+            Scale Threshold Response:
+              value:
+                $ref: ../components/examples/scaleThreshold.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Updates a Scale Threshold
+  description: |
+    Updates a scale threshold.
+  operationId: updateScaleThresholds
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - scaleThreshold
+          properties:
+            scaleThreshold:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: A name for the scale threshold
+                  example: Sample Threshold
+                autoUp:
+                  type: boolean
+                  description: Auto Upscale
+                  default: false
+                autoDown:
+                  type: boolean
+                  description: Auto Downscale
+                  default: false
+                minCount:
+                  type: integer
+                  description: The minimum number of nodes to scale down to
+                  example: 1
+                maxCount:
+                  type: integer
+                  description: The maximum number of nodes to scale up to
+                  example: 3
+                cpuEnabled:
+                  type: boolean
+                  description: Enable CPU Threshold
+                  default: false
+                minCpu:
+                  type: number
+                  description: Min CPU (%)
+                  default: 0.0
+                maxCpu:
+                  type: number
+                  description: Max CPU (%)
+                  default: 0.0
+                memoryEnabled:
+                  type: boolean
+                  description: Enable Memory Threshold
+                  default: false
+                minMemory:
+                  type: number
+                  description: Min Memory (%)
+                  default: 0.0
+                maxMemory:
+                  type: number
+                  description: Max Memory (%)
+                  default: 0.0
+                diskEnabled:
+                  type: boolean
+                  description: Enable Disk Threshold
+                  default: false
+                minDisk:
+                  type: number
+                  description: Min Disk (%)
+                  default: 0.0
+                maxDisk:
+                  type: number
+                  description: Max Disk (%)
+                  default: 0.0
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                scaleThreshold:
+                  $ref: ../components/schemas/scaleThreshold.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Scale Threshold Response:
+              value:
+                $ref: ../components/examples/scaleThresholdSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Deletes a Scale Threshold
+  description: |
+    Deletes a specified scale threshold.
+  operationId: removeScaleThresholds
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

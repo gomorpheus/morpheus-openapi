@@ -1,0 +1,55 @@
+get:
+  summary: Get All Layouts
+  description: |
+    This endpoint retrieves all layouts.
+  operationId: listLayouts
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+    - $ref: ../components/parameters/provisionType.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instanceTypeLayouts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/instanceTypeLayout.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Layouts Response:
+              value:
+                $ref: ../components/examples/instanceTypeLayouts.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+

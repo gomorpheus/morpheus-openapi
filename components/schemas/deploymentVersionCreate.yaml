@@ -1,0 +1,24 @@
+type: object
+properties:
+  version: 
+    type: string
+    description: Version number (userVersion), a unique version identifier for the deployment version.
+  userVersion: 
+    type: string
+    description: Alias for version
+  deployType: 
+    type: string
+    description: Deploy Type, eg. file, git, fetch
+    enum:
+      - file
+      - git
+      - fetch
+  gitUrl: 
+    type: string
+    nullable: true
+  gitRef: 
+    type: string
+    nullable: true
+  fetchUrl: 
+    type: string
+    nullable: true

@@ -1,0 +1,7 @@
+name: virtualImageId
+in: path
+description: Virtual Image ID
+required: true
+schema:
+  type: number
+example: 4

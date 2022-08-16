@@ -1,0 +1,12 @@
+name: imageType
+in: path
+description: Valid image types
+required: true
+schema:
+  type: string
+  enum:
+    - headerLogo
+    - footerLogo
+    - loginLogo
+    - favicon
+example: "headerLogo"

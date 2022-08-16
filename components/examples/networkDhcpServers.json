@@ -1,0 +1,52 @@
+{
+  "networkDhcpServers": [
+    {
+      "id": 1,
+      "dateCreated": "2021-11-18T06:59:29Z",
+      "providerId": "/infra/dhcp-server-configs/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "serverIpAddress": "10.11.12.14/30",
+      "lastUpdated": "2021-11-18T06:59:29Z",
+      "leaseTime": 85000,
+      "name": "test9",
+      "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "config": {
+        "edgeCluster": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "preferredEdgeNode1": "/infra/sites/default/enforcement-points/default/edge-clusters/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "preferredEdgeNode2": "/infra/sites/default/enforcement-points/default/edge-clusters/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      },
+      "owner": {
+        "id": 3
+      },
+      "networkServer": {
+        "id": 22
+      }
+    },
+    {
+      "id": 3,
+      "dateCreated": "2021-11-18T06:59:29Z",
+      "providerId": "/infra/dhcp-server-configs/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "serverIpAddress": "192.168.123.100/24",
+      "lastUpdated": "2021-11-18T06:59:29Z",
+      "leaseTime": 86400,
+      "name": "test-dhcp-4",
+      "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "config": {
+        "edgeCluster": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "preferredEdgeNode1": "/infra/sites/default/enforcement-points/default/edge-clusters/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "preferredEdgeNode2": "/infra/sites/default/enforcement-points/default/edge-clusters/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      },
+      "owner": {
+        "id": 3
+      },
+      "networkServer": {
+        "id": 22
+      }
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

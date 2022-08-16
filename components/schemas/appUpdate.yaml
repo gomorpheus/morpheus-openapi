@@ -1,0 +1,15 @@
+type: object
+properties:
+  name: 
+    type: string
+    description: A unique name for the app
+  description: 
+    type: string
+    description: Description
+  environment:
+    type: string
+    description: Environment code (appContext)
+  ownerId:
+    type: integer
+    format: int64
+    description: User ID, can be used to change app owner. This also changes the owner for each instance in the app.

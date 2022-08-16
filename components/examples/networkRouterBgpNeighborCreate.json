@@ -1,0 +1,22 @@
+{
+  "networkRouterBgpNeighbor": {
+    "ipAddress": "172.16.2.23",
+    "config": {
+        "sourceAddresses": [
+            "10.22.12.2"
+        ]
+    },
+    "remoteAs": "21346",
+    "keepAlive": 60,
+    "holdDown": 180,
+    "routeFilteringType": "IPV4",
+    "routeFilteringIn": "prefixlist-out-default",
+    "routeFilteringOut": "prefixlist-out-default",
+    "bfdEnabled": "off",
+    "bfdInterval": 1000,
+    "bfdMultiple": 3,
+    "allowAsIn": "off",
+    "hopLimit": 1,
+    "restartMode": "HELPER_ONLY"
+  }
+}

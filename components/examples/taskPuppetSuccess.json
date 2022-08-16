@@ -1,0 +1,38 @@
+{
+    "task": {
+        "id": 900,
+        "accountId": 1,
+        "name": "12. puppet",
+        "code": null,
+        "taskType": {
+            "id": 19,
+            "code": "puppetTask",
+            "name": "Puppet Agent Install"
+        },
+        "taskOptions": {
+            "port": null,
+            "host": null,
+            "username": null,
+            "puppetEnvironment": null,
+            "puppetNodeName": null,
+            "sshKey": null,
+            "localScriptGitId": null,
+            "localScriptGitRef": null,
+            "password": null,
+            "passwordHash": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:54:29Z",
+        "lastUpdated": "2022-08-04T13:54:29Z"
+    },
+    "success": true
+}

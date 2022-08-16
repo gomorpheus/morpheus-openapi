@@ -1,0 +1,107 @@
+get:
+  summary: Get All Deployments
+  description: This endpoint returns a paginated list of deployments.
+  operationId: listDeployments
+  tags:
+    - Deployments
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/description.yaml
+    - $ref: ../components/parameters/dateCreated.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                deployments:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/deployments.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/deployments.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a new Deployment
+  description: This endpoint will create a new deployment that is ready to have versions added to it.
+  operationId: addDeployments
+  tags: 
+    -  Deployments
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            deployment:
+              $ref: ../components/schemas/deploymentCreate.yaml
+        examples:
+          Deployment Request:
+            value:
+              $ref: ../components/examples/deploymentRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                deployment:
+                  $ref: ../components/schemas/deployment.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/deploymentCreate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

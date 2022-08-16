@@ -1,0 +1,6 @@
+name: optionTypes
+in: query
+description: Pass true to include optionTypes in the response for each entry.
+schema:
+  type: boolean
+  default: false

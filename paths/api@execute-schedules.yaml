@@ -1,0 +1,132 @@
+get:
+  summary: Retrieves all Execute Schedules
+  description: |
+    Retrieves all execute schedules.
+  operationId: listExecuteSchedules
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                schedules:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/executeSchedule.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Execute Schedules Response:
+              value:
+                $ref: ../components/examples/executeSchedules.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Creates a Execute Schedule
+  description: |
+    Creates a execute schedule.
+  operationId: addExecuteSchedules
+  tags:
+    - Automation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - schedule
+          properties:
+            schedule:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                  description: A name for the execute schedule
+                  example: Sample Execution
+                description:
+                  type: string
+                  description: A description for the execute schedule
+                scheduleType:
+                  type: string
+                  description: Type of schedule
+                  enum:
+                    - execute
+                scheduleTimezone:
+                  type: string
+                  description: Time Zone eg. America/New_York, Europe/Amsterdam, etc.
+                  default: UTC
+                cron:
+                  type: string
+                  description: Cron Expression. The default is daily at midnight
+                  default: 0 0 * * *
+                enabled:
+                  type: boolean
+                  description: Is enabled
+                  default: true
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                schedule:
+                  $ref: ../components/schemas/executeSchedule.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Execute Schedule Response:
+              value:
+                $ref: ../components/examples/executeScheduleSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

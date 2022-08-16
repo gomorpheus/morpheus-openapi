@@ -1,0 +1,86 @@
+type: object
+properties: 
+  enabled: 
+    type: boolean
+    description: Can be used to enable / disable whitelabel feature
+  applianceName: 
+    type: string
+    description: Appliance name. Master account only
+  disableSupportMenu: 
+    type: boolean
+    description: Can be used to disable support menu
+  resetHeaderLogo: 
+    type: boolean
+    description: Resets header logo to default header logo
+  resetFooterLogo: 
+    type: boolean
+    description: Resets footer logo to default footer logo
+  resetLoginLogo: 
+    type: boolean
+    description: Resets login logo to default login logo
+  resetFavicon: 
+    type: boolean
+    description: Resets favicon to default favicon
+  headerBgColor: 
+    type: string
+    description: Header background color
+  headerFgColor: 
+    type: string
+    description: Header foreground color
+  navBgColor: 
+    type: string
+    description: Nav background color
+  navFgColor: 
+    type: string
+    description: Nav foreground color
+  navHoverColor: 
+    type: string
+    description: Nav hover color
+  primaryButtonBgColor: 
+    type: string
+    description: Primary button background color
+  primaryButtonFgColor: 
+    type: string
+    description: Primary button foreground color
+  primaryButtonHoverBgColor: 
+    type: string
+    description: Primary button hover background color
+  primaryButtonHoverFgColor: 
+    type: string
+    description: Primary button hover foreground color
+  footerBgColor: 
+    type: string
+    description: Footer background color
+  footerFgColor: 
+    type: string
+    description: Footer foreground color
+  loginBgColor: 
+    type: string
+    description: Login background color
+  copyrightString: 
+    type: string
+    description: Copyright String
+  overrideCss: 
+    type: string
+    description: Override CSS
+  termsOfUse: 
+    type: string
+    description: Terms of use content
+  privacyPolicy: 
+    type: string
+    description: Privacy policy content
+  supportMenuLinks: 
+    type: array
+    items: 
+      type: object
+      required:
+        - url
+        - label
+        - labelCode
+      properties: 
+        url: 
+          type: string
+        label: 
+          type: string
+        labelCode: 
+          type: string

@@ -1,0 +1,118 @@
+get:
+  summary: Get All Node Types
+  description: This endpoint retrieves all node types.
+  operationId: listNodeTypes
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+    - $ref: ../components/parameters/provisionType.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                containerTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/containerType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Node Types Response:
+              value:
+                $ref: ../components/examples/containerTypes.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Node Type
+  description: Use this command to create a node type.
+  operationId: addNodeType
+  tags: 
+    -  Library
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            containerType:
+              $ref: ../components/schemas/containerTypeCreate.yaml
+        examples:
+          Node Type Request - AWS:
+            value: 
+              $ref: ../components/examples/containerTypeAWSCreate.json
+          Node Type Request - Azure:
+            value: 
+              $ref: ../components/examples/containerTypeAzureCreate.json
+          Node Type Request - Google GCP:
+            value: 
+              $ref: ../components/examples/containerTypeGCPCreate.json
+          Node Type Request - VMWare:
+            value: 
+              $ref: ../components/examples/containerTypeVMWareCreate.json
+  responses: 
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema: 
+            allOf:
+              - type: object
+                properties:
+                  containerType:
+                      $ref: ../components/schemas/containerType.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  

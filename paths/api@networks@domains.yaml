@@ -1,0 +1,101 @@
+get:
+  summary: Get all Network Domains 
+  description: |
+    This endpoint retrieves all Network Domains associated with the account.
+  operationId: getNetworkDomains
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkDomains:
+                  items:
+                    $ref: ../components/schemas/networkDomain.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Network Domains Response:
+              value:
+                $ref: ../components/examples/networkDomains.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Network Domain
+  description: |
+    Create a Network Domain.
+  operationId: createNetworkDomain
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            networkDomain:
+              $ref: ../components/schemas/networkDomainCreate.yaml
+        examples: 
+          Network Domain Request:
+            value:
+              $ref: ../components/examples/networkDomainCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkDomain:
+                $ref: ../components/schemas/networkDomain.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/networkDomain.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

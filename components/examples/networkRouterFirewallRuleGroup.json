@@ -1,0 +1,50 @@
+{
+  "ruleGroup": {
+    "id": 488,
+    "name": "Test Group",
+    "description": "foo2",
+    "externalId": "c85ab668-9de2-4e6b-a460-6a376f61e0f5",
+    "iacId": null,
+    "zone": null,
+    "zonePool": null,
+    "status": "available",
+    "priority": 10,
+    "groupLayer": "LocalGatewayRules",
+    "rules": [
+      {
+        "id": 1444,
+        "name": "api-test-rule-2",
+        "code": null,
+        "enabled": true,
+        "groupName": "Test Group",
+        "direction": "any",
+        "ruleType": "custom",
+        "policy": "accept",
+        "source": [
+          "ANY"
+        ],
+        "sourceType": "cidr",
+        "destination": [
+          "ANY"
+        ],
+        "destinationType": "instance",
+        "profiles": [
+          "ANY"
+        ],
+        "protocol": null,
+        "application": null,
+        "applicationType": "port",
+        "portRange": null,
+        "sourcePortRange": null,
+        "sourceGroup": null,
+        "sourceTier": null,
+        "applications": [
+          {
+            "id": 466,
+            "name": "ANY"
+          }
+        ]
+      }
+    ]
+  }
+}

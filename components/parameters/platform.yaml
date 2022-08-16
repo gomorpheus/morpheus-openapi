@@ -1,0 +1,6 @@
+name: platform
+in: query
+description: Restricts query to only load only prices with specified platform
+schema:
+  type: string
+example: linux

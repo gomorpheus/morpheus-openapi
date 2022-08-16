@@ -1,10 +1,10 @@
 get:
-  summary: Retrieves a Specific Group
+  summary: Retrieves a Specific Cloud
   description: |
-    Retrieves a specific group.
-  operationId: getGroups
+    Retrieves a specific cloud.
+  operationId: getClouds
   tags:
-    - Groups
+    - Clouds
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -15,12 +15,21 @@ get:
           schema:
             type: object
             properties:
-              group:
-                $ref: ../components/schemas/group.yaml
+              zone:
+                $ref: ../components/schemas/zone.yaml
           examples:
-            Search Response:
+            Clouds Response - vCenter:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/zoneVcenter.json
+            Clouds Response - AWS:
+              value:
+                $ref: ../components/examples/zoneAws.json
+            Clouds Response - Azure:
+              value:
+                $ref: ../components/examples/zoneAzure.json
+            Clouds Response - GCP:
+              value:
+                $ref: ../components/examples/zoneGcp.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -42,12 +51,12 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 put:
-  summary: Updates a Group
+  summary: Updates a Cloud
   description: |
-    Updates a group.
-  operationId: updateGroups
+    Updates a cloud.
+  operationId: updateClouds
   tags:
-    - Groups
+    - Clouds
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -56,38 +65,108 @@ put:
         schema:
           type: object
           required:
-            - group
+            - zone
           properties:
-            group:
+            zone:
               type: object
               required:
                 - name
+                - zoneType
+                - groupId
+                - credential
               properties:
                 name: 
                   type: string
-                  description: A unique name scoped to your account for the group
+                  description: A unique name scoped to your account for the cloud
+                  example: My Cloud
+                description:
+                  type: string
+                  description: Optional description field if you want to put more info there
                 code:
                   type: string
                   description: Optional code for use with policies
+                  example: mycloud
                 location:
                   type: string
-                  description: Optional location argument for your group
+                  description: Optional location for your cloud
+                  example: US East
+                visibility:
+                  type: string
+                  description: private or public
+                  enum:
+                   - private
+                   - public
+                  default: private
+                zoneType:
+                  type: string
+                  default: standard
+                  description: Map containing code or id of the cloud type
+                groupId:
+                  type: integer
+                  format: int64
+                  description: Specifies which Server group this cloud should be assigned to
+                  example: 3
+                accountId:
+                  type: integer
+                  format: int64
+                  description: Specifies which Tenant this cloud should be assigned to
+                  example: 1
+                enabled:
+                  type: boolean
+                  description: Can be used to disable the cloud
+                  default: true
+                autoRecoverPowerState:
+                  type: boolean
+                  description: Automatically Power on VMs
+                  default: false
+                scalePriority:
+                  type: integer
+                  format: int64
+                  description: Scale Priority
+                  default: 1
+                linkedAccountId:
+                  type: integer
+                  format: int64
+                  description: Linked Account ID (enter commercial ID to get costing for AWS Govcloud)
+                config:
+                  type: object
+                  description: Map containing zone configuration settings. See the section on specific zone types for details.
+                securityMode:
+                  type: string
+                  description: host firewall. `off` or `internal`. a.k.a. "local firewall"
+                  default: "off"
+                credential:
+                  type: object
+                  description: Map containing Credential ID. `local` means use the values set in the local cloud config instead of associating a credential.
+                  example:
+                    id: 1
+                  default:
+                    type: local
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              group:
-                allOf:
-                  - $ref: ../components/schemas/group.yaml
-                  - $ref: ../components/schemas/200-success.yaml
+            allOf:
+            - type: object
+              properties:
+                zone:
+                  $ref: ../components/schemas/zone.yaml
+            - $ref: ../components/schemas/200-success.yaml
           examples:
-            Report Types Response:
+            Clouds Response - Update vCenter:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/zoneVcenterSuccess.json
+            Clouds Response - Update AWS:
+              value:
+                $ref: ../components/examples/zoneAwsSuccess.json
+            Clouds Response - Update Azure:
+              value:
+                $ref: ../components/examples/zoneAzureSuccess.json
+            Clouds Response - Update GCP:
+              value:
+                $ref: ../components/examples/zoneGcpSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -109,12 +188,12 @@ put:
     '503':
       $ref: ../components/responses/503.yaml
 delete:
-  summary: Deletes a Group
+  summary: Deletes a Cloud
   description: |
-    Deletes a specified Group.
-  operationId: removeGroups
+    Deletes a specified Cloud.
+  operationId: removeClouds
   tags:
-    - Groups
+    - Clouds
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

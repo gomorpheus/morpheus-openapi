@@ -1,0 +1,27 @@
+{
+  "networkDhcpRelays": [
+    {
+      "id": 5,
+      "dateCreated": "2021-11-02T20:06:02Z",
+      "providerId": "/infra/dhcp-relay-configs/test-dhcp-repay",
+      "lastUpdated": "2021-11-08T21:30:07Z",
+      "name": "test-dhcp-relay",
+      "externalId": "test-dhcp-repay",
+      "serverIpAddresses": [
+        "192.168.127.128"
+      ],
+      "owner": {
+        "id": 1
+      },
+      "networkServer": {
+        "id": 5
+      }
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 1,
+    "total": 1
+  }
+}

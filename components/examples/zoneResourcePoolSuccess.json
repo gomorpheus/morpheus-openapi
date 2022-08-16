@@ -1,0 +1,76 @@
+{
+    "resourcePool": {
+        "id": 12,
+        "description": null,
+        "zone": {
+            "id": 1,
+            "name": "vCenter"
+        },
+        "parent": {
+            "id": 1057,
+            "name": "VSAN"
+        },
+        "type": "default",
+        "externalId": "resgroup-67",
+        "regionCode": null,
+        "iacId": null,
+        "visibility": "private",
+        "readOnly": false,
+        "defaultPool": false,
+        "active": true,
+        "status": "available",
+        "inventory": true,
+        "config": {},
+        "name": "Infrastructure",
+        "displayName": "",
+        "tenants": [
+            {
+                "id": 1,
+                "name": "Home"
+            },
+            {
+                "id": 94,
+                "name": "Customer 123"
+            }
+        ],
+        "resourcePermission": {
+            "all": true,
+            "sites": [
+                {
+                    "id": 6,
+                    "name": "Work",
+                    "default": false
+                },
+                {
+                    "id": 7,
+                    "name": "All Clouds",
+                    "default": false
+                },
+                {
+                    "id": 1,
+                    "name": "Personal",
+                    "default": false
+                }
+            ],
+            "allPlans": true,
+            "plans": [
+                {
+                    "id": 892,
+                    "name": "1 CPU, 1GB Memory",
+                    "default": false
+                },
+                {
+                    "id": 895,
+                    "name": "1 CPU, 2GB Memory",
+                    "default": false
+                },
+                {
+                    "id": 889,
+                    "name": "1 CPU, 512MB Memory",
+                    "default": true
+                }
+            ]
+        }
+    },
+    "success": true
+}

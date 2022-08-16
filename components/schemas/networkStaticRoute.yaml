@@ -1,0 +1,45 @@
+id:
+  type: integer
+  format: int32
+name:
+  type: string
+code:
+  type: string
+  nullable: true
+description:
+  type: string
+  nullable: true
+priority:
+  type: string
+  nullable: true
+routeType:
+  type: string
+source:
+  type: string
+sourceType:
+  type: string
+destination:
+  type: string
+destinationType:
+  type: string
+defaultRoute:
+  type: boolean
+networkMtu:
+  type: string
+  nullable: true
+externalInterface:
+  type: string
+  nullable: true
+internalId:
+  type: string
+  nullable: true
+uniqueId:
+  type: string
+  nullable: true
+externalType:
+  type: string
+  nullable: true
+enabled:
+  type: boolean
+visible:
+  type: boolean

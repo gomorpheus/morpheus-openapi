@@ -1,0 +1,61 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  account: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  name: 
+    type: string
+  fileName: 
+    type: string
+  filePath: 
+    type: string
+  templateType: 
+    type: string
+    nullable: true
+  templatePhase: 
+    type: string
+  template: 
+    type: string
+  category: 
+    type: string
+    nullable: true
+  settingCategory: 
+    type: string
+    nullable: true
+  settingName: 
+    type: string
+    nullable: true
+  autoRun: 
+    type: boolean
+  runOnScale: 
+    type: boolean
+    nullable: true
+  runOnDeploy: 
+    type: boolean
+    nullable: true
+  fileOwner: 
+    type: string
+    nullable: true
+  fileGroup: 
+    type: string
+    nullable: true
+  permissions: 
+    type: string
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

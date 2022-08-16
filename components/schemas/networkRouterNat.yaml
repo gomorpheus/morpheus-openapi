@@ -1,0 +1,60 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int32
+  name: 
+    type: string
+  description: 
+    type: string
+  enabled: 
+    type: boolean
+  sourceNetwork: 
+    type: string
+  destinationNetwork: 
+    type: string
+    nullable: true
+  translatedNetwork: 
+    type: string
+  sourcePorts: 
+    type: string
+    nullable: true
+  destinationPorts: 
+    type: string
+    nullable: true
+  translatedPorts: 
+    type: string
+    nullable: true
+  priority: 
+    type: integer
+    format: int32
+  protocol: 
+    type: string
+    nullable: true
+  matchIpv6DestinationPrefix: 
+    type: string
+    nullable: true
+  translatedIpv4SourcePrefix: 
+    type: string
+    nullable: true
+  refType: 
+    type: string
+    nullable: true
+  refId: 
+    type: string
+    nullable: true
+  syncSource: 
+    type: string
+  internalId: 
+    type: string
+    nullable: true
+  externalId: 
+    type: string
+  providerId: 
+    type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

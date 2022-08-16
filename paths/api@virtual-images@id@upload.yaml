@@ -1,0 +1,43 @@
+post:
+  summary: Upload Virtual Image File
+  description: This will upload the file and associate it to the Virtual Image.
+  operationId: addVirtualImageFile
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/virtualImageId-path.yaml
+    - $ref: ../components/parameters/filename.yaml
+    - $ref: ../components/parameters/url.yaml
+  requestBody:
+    content:
+      application/octet-stream: 
+        schema: 
+          type: string
+          format: binary
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

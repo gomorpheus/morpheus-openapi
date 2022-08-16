@@ -1,0 +1,50 @@
+{
+    "schedules": [
+        {
+            "id": 1,
+            "name": "Weekday",
+            "description": null,
+            "visibility": "public",
+            "enabled": true,
+            "scheduleType": "power",
+            "scheduleTimezone": "America/Chicago",
+            "mondayOn": 7.0,
+            "mondayOnTime": "07:00",
+            "mondayOff": 19.0,
+            "mondayOffTime": "19:00",
+            "tuesdayOn": 7.0,
+            "tuesdayOnTime": "07:00",
+            "tuesdayOff": 19.0,
+            "tuesdayOffTime": "19:00",
+            "wednesdayOn": 7.0,
+            "wednesdayOnTime": "07:00",
+            "wednesdayOff": 19.0,
+            "wednesdayOffTime": "19:00",
+            "thursdayOn": 7.0,
+            "thursdayOnTime": "07:00",
+            "thursdayOff": 19.0,
+            "thursdayOffTime": "19:00",
+            "fridayOn": 7.0,
+            "fridayOnTime": "07:00",
+            "fridayOff": 19.0,
+            "fridayOffTime": "19:00",
+            "saturdayOn": 0.0,
+            "saturdayOnTime": "00:00",
+            "saturdayOff": 0.0,
+            "saturdayOffTime": "00:00",
+            "sundayOn": 0.0,
+            "sundayOnTime": "00:00",
+            "sundayOff": 0.0,
+            "sundayOffTime": "00:00",
+            "totalMonthlyHoursSaved": 463.32,
+            "dateCreated": "2019-01-09T19:56:09Z",
+            "lastUpdated": "2021-11-30T13:58:33Z"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 1,
+        "total": 1
+    }
+}

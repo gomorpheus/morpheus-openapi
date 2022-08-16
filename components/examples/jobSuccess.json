@@ -1,0 +1,40 @@
+{
+    "job": {
+        "id": 1877,
+        "name": "scap security bundle 0.1.53",
+        "type": {
+            "id": 14,
+            "name": "Security Scan Job",
+            "code": "morpheus.securityScan"
+        },
+        "jobSummary": null,
+        "scheduleMode": "manual",
+        "dateTime": null,
+        "status": null,
+        "namespace": null,
+        "category": null,
+        "description": null,
+        "enabled": false,
+        "dateCreated": "2020-11-03T20:56:33Z",
+        "lastUpdated": "2021-06-21T15:03:09Z",
+        "lastRun": "2021-06-21T15:02:39Z",
+        "lastResult": "error",
+        "createdBy": {
+            "id": 1,
+            "username": "Admin",
+            "displayName": "Admin Admin"
+        },
+        "targetType": "instance",
+        "targets": [
+            {
+                "id": 86,
+                "name": "Ansible",
+                "targetType": "instance",
+                "refId": 90
+            }
+        ],
+        "customConfig": null,
+        "customOptions": null
+    },
+    "success": true
+}

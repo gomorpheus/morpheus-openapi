@@ -1,0 +1,8 @@
+{
+  "loadBalancerMonitor": {
+    "name": "test monitor",
+    "description": "a test monitor",
+    "monitorType": "LBHttpMonitorProfile",
+    "monitorTimeout": 15
+  }
+}

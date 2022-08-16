@@ -1,0 +1,88 @@
+post:
+  summary: Creates a Security Group Location
+  description: |
+    Creates a security group location.
+  operationId: addSecurityGroupLocations
+  tags:
+    - Security Groups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - securityGroupLocation
+          properties:
+            securityGroupLocation:
+              type: object
+              required:
+                - name
+                - customOptions
+                - zoneId
+              properties:
+                zoneId: 
+                  type: integer
+                  format: int64
+                  description: The ID of the Zone (Cloud)
+                  example: 1
+                customOptions:
+                  type: array
+                  items:
+                    anyOf:
+                    - type: object
+                      required:
+                       - vpc
+                      properties:
+                        vpc:
+                          type: integer
+                          format: int64
+                          description: External ID of Amazon VPC
+                          example: 3
+                    - type: object
+                      required:
+                        - resourceGroup
+                      properties:
+                        resourceGroup:
+                          type: integer
+                          format: int64
+                          description: External ID of the Azure Resource Group to scope to
+                          example: 5
+                    - type: object
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                securityGroupLocation:
+                  $ref: ../components/schemas/securityGroupLocation.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Security Group Location Response:
+              value:
+                $ref: ../components/examples/securityGroupLocation.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

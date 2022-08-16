@@ -1,0 +1,71 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+  active:
+    type: boolean
+  fqdn:
+    type: string
+    nullable: true
+  description:
+    type: string
+    nullable: true
+  visibility:
+    type: string
+  domainController:
+    type: boolean
+  publicZone:
+    type: boolean
+  domainUsername:
+    type: string
+    nullable: true
+  domainPassword:
+    type: string
+    nullable: true
+  refType:
+    type: string
+    nullable: true
+  refId:
+    type: integer
+    format: int64
+    nullable: true
+  refSource:
+    type: string
+    nullable: true
+  internalId:
+    type: string
+    nullable: true
+  ouPath:
+    type: string
+    nullable: true
+  dcServer:
+    type: string
+    nullable: true
+  zoneType:
+    type: string
+    nullable: true
+  dnssec:
+    type: string
+    nullable: true
+  domainSerial:
+    type: string
+    nullable: true
+  account:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  owner:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string

@@ -1,0 +1,10 @@
+name: value
+in: query
+description: |
+  The type of data being stored, string or object. The data type depends on the cypher mount being used. Most mounts use string as their data type, but secret uses object by default. 
+  You can store a string instead by passing `type=string`. This means the data value returned by the API will be a string instead of an object.
+schema:
+  type: string
+enum:
+  - string
+  - object

@@ -1,0 +1,244 @@
+get:
+  summary: Retrieves a Specific Power Schedule
+  description: |
+    Retrieves a specific power schedule.
+  operationId: getPowerSchedules
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                schedule:
+                  $ref: ../components/schemas/powerSchedule.yaml
+          examples:
+            Power Schedule Response:
+              value:
+                $ref: ../components/examples/powerSchedule.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Updates a Power Schedule
+  description: |
+    Updates a power schedule.
+  operationId: updatePowerSchedules
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - schedule
+          properties:
+            schedule:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: A name for the power schedule
+                  example: Sample Threshold
+                description:
+                  type: string
+                  description: A description for the power schedule
+                scheduleType:
+                  type: string
+                  description: Type of schedule `power` on or `power off`
+                  enum:
+                    - power
+                    - power off
+                scheduleTimezone:
+                  type: string
+                  description: Time Zone eg. America/New_York, Europe/Amsterdam, etc.
+                  default: UTC
+                enabled:
+                  type: boolean
+                  description: Is the power schedule enabled
+                  default: true
+                mondayOnTime:
+                  type: string
+                  description: Monday Start time of the day in 24-hour format
+                  default: "00:00"
+                mondayOffTime:
+                  type: string
+                  description: Monday Off time of the day in 24-hour format
+                  default: "24:00"
+                tuesdayOnTime:
+                  type: string
+                  description: Tuesday Start time of the day in 24-hour format
+                  default: "00:00"
+                tuesdayOffTime:
+                  type: string
+                  description: Tuesday Off time of the day in 24-hour format
+                  default: "24:00"
+                wednesdayOnTime:
+                  type: string
+                  description: Wednesday Start time of the day in 24-hour format
+                  default: "00:00"
+                wednesdayOffTime:
+                  type: string
+                  description: Wednesday Off time of the day in 24-hour format
+                  default: "24:00"
+                thursdayOnTime:
+                  type: string
+                  description: Thursday Start time of the day in 24-hour format
+                  default: "00:00"
+                thursdayOffTime:
+                  type: string
+                  description: Thursday Off time of the day in 24-hour format
+                  default: "24:00"
+                fridayOnTime:
+                  type: string
+                  description: Friday Start time of the day in 24-hour format
+                  default: "00:00"
+                fridayOffTime:
+                  type: string
+                  description: Friday Off time of the day in 24-hour format
+                  default: "24:00"
+                saturdayOnTime:
+                  type: string
+                  description: Saturday Start time of the day in 24-hour format
+                  default: "00:00"
+                saturdayOffTime:
+                  type: string
+                  description: Saturday Off time of the day in 24-hour format
+                  default: "24:00"
+                sundayOnTime:
+                  type: string
+                  description: Sunday Start time of the day in 24-hour format
+                  default: "00:00"
+                sundayOffTime:
+                  type: string
+                  description: Sunday Off time of the day in 24-hour format
+                  default: "24:00"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                schedule:
+                  allOf:
+                  - $ref: ../components/schemas/powerSchedule.yaml
+                  - type: object
+                    properties:
+                      instances:
+                        type: array
+                        nullable: true
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 123
+                            name:
+                              type: string
+                              example: "test"
+                  - type: object
+                    properties:
+                      servers:
+                        type: array
+                        nullable: true
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 123
+                            name:
+                              type: string
+                              example: "test"
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Power Schedule Response:
+              value:
+                $ref: ../components/examples/powerScheduleSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Deletes a Power Schedule
+  description: |
+    Deletes a specified power schedule.
+  operationId: removePowerSchedules
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

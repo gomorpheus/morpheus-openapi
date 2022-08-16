@@ -1,0 +1,11 @@
+type: object
+required:
+  - source
+  - destination
+properties: 
+  source:
+    type: string
+    description: Source CIDR
+  destination:
+    type: string
+    description: Destination address

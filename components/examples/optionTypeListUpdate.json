@@ -1,0 +1,15 @@
+{
+  "optionTypeList": {
+    "name": "resty things",
+    "description": " resty list",
+    "sourceUrl": "http://myapp/api/options/things",
+    "sourceMethod": "GET",
+    "type": "rest",
+    "config": {
+      "sourceHeaders": []
+    },
+    "credential": {
+      "id": 42
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "loadBalancerProfile": {
+    "name": "test profile",
+    "description": "a test profile",
+    "serviceType": "LBHttpProfile",
+    "config": {
+      "profileType": "application-profile"
+    }
+  }
+}

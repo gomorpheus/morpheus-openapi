@@ -1,0 +1,14 @@
+type: object
+properties:
+  visibility:
+    type: string
+    description: Sets visibility - public, private
+  tenantPermissions:
+    type: object
+    properties:
+      accounts:
+        type: array
+        description: Array of tenant account IDs
+        items:
+          type: integer
+          format: int64

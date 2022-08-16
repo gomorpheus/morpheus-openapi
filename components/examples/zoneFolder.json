@@ -1,0 +1,35 @@
+{
+    "folder": {
+        "id": 208,
+        "name": ".Templates",
+        "zone": {
+            "id": 1,
+            "name": "vCenter"
+        },
+        "parent": {
+            "id": 273,
+            "name": "/"
+        },
+        "type": "default",
+        "externalId": "group-v1002",
+        "visibility": "public",
+        "readOnly": false,
+        "defaultFolder": false,
+        "defaultStore": false,
+        "active": false,
+        "tenants": [
+            {
+                "id": 1,
+                "name": "Home",
+                "defaultStore": false,
+                "defaultTarget": false
+            }
+        ],
+        "resourcePermission": {
+            "all": true,
+            "sites": [],
+            "allPlans": true,
+            "plans": []
+        }
+    }
+}

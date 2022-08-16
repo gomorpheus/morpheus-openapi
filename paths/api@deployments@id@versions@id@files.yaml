@@ -1,0 +1,149 @@
+get:
+  summary: List Deployment Files
+  description: |
+    This endpoint returns a list of files for a specific deployment version. This only applies to deploy type file. Files are sorted alphabetically, with directories appearing at the beginning of the list.
+    
+    The filepath parameter can be specified to search for specific files or directories. To list files under a directory, use a trailing / in the filepath parameter.  To list a specific file, provide it's full path.
+  operationId: listDeploymentFiles
+  tags:
+    - Deployments
+  parameters:
+    - $ref: ../components/parameters/deploymentId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/filepath-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/version.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                versions:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/deploymentVersion.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/deploymentVersions.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Upload a Deployment File
+  description: This endpoint will upload a file for a specific deployment version. This will overwrite the file if one with the same name exists already.
+  operationId: addDeploymentFile
+  tags: 
+    -  Deployments
+  parameters:
+    - $ref: ../components/parameters/deploymentId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/filepath-path.yaml
+  requestBody:
+    content:
+      multipart/form-data: 
+        schema: 
+          type: object
+          properties: 
+            file:
+              type: string
+              format: binary
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deployments Version Response:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+delete:
+  summary: Delete a Deployment File
+  description: This endpoint will delete an existing deployment file. To recursively delete a directory and all of its contents, the force parameter must be specified.
+  operationId: deleteDeploymentFile
+  tags:
+    - Deployments
+  parameters:
+    - $ref: ../components/parameters/deploymentId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/filepath-path.yaml
+    - $ref: ../components/parameters/force.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

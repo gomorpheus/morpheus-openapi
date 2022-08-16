@@ -1,0 +1,100 @@
+get:
+  summary: Get all Network Firewall Rule Groups for Network Router
+  description: |
+    This endpoint retrieves all Network Firewall Rule Groups for a specified Network Service.
+  operationId: getNetworkRouterFirewallRuleGroups
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/routerId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ruleGroups:
+                items:
+                  type: object
+                  properties:
+                    $ref: ../components/schemas/networkRouterFirewallRuleGroup.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkRouterFirewallRuleGroups.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Network Router Firewall Rule Group
+  description: |
+    Use this command to create a network firewall rule group.
+  operationId: createNetworkRouterFirewallRuleGroup
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/routerId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            ruleGroup:
+              $ref: ../components/schemas/networkFirewallRuleGroupCreate.yaml
+        examples: 
+          Network Firewall Group Request:
+            value:
+              $ref: ../components/examples/networkFirewallRuleGroupCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/successId.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+

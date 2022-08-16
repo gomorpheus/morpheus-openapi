@@ -1,0 +1,97 @@
+get:
+  summary: Get all Network Groups
+  description: |
+    This endpoint retrieves all Network Groups associated with the account.
+  operationId: getNetworkGroups
+  tags:
+    - Networks
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkGroups:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    $ref: ../components/schemas/networkGroup.yaml
+          examples:
+            Network Groups Response:
+              value:
+                $ref: ../components/examples/networkGroups.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post:
+  summary: Create a Network Group
+  description: |
+    Use this command to create a network group.
+  operationId: createNetworkGroup
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            networkGroup:
+              $ref: ../components/schemas/networkGroupsCreate.yaml
+        examples: 
+          Successful Request:
+            value: 
+              $ref: ../components/examples/networkGroupsCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/successId.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml  
+

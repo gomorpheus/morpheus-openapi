@@ -1,0 +1,138 @@
+get:
+  summary: Get a Specific Blueprint
+  description: This endpoint retrieves a specific blueprint.
+  operationId: getBlueprint
+  tags:
+    - Blueprints
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              blueprint:
+                $ref: ../components/schemas/blueprint.yaml
+          examples:
+            Blueprint Response:
+              value:
+                $ref: ../components/examples/blueprint.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Updating a Blueprint
+  description: Update a Blueprint. This overwrites the entire config, so the entire blueprint config should be passed.
+  operationId: updateBlueprint
+  tags: 
+    -  Blueprints
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          oneOf:
+            - $ref: ../components/schemas/blueprintARMCreate.yaml
+            - $ref: ../components/schemas/blueprintCFTCreate.yaml
+            - $ref: ../components/schemas/blueprintHelmCreate.yaml
+            - $ref: ../components/schemas/blueprintKubernetesCreate.yaml
+            - $ref: ../components/schemas/blueprintMorpheusCreate.yaml
+            - $ref: ../components/schemas/blueprintTerraformCreate.yaml
+        examples:
+          Blueprint Update:
+            value:
+              $ref: ../components/examples/blueprintUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              blueprint:
+                $ref: ../components/schemas/blueprint.yaml
+          examples:
+            Blueprint Response:
+              value:
+                $ref: ../components/examples/blueprint.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Delete a blueprint
+  description: Delete a Blueprint
+  operationId: deleteBlueprint
+  tags:
+    - Blueprints
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

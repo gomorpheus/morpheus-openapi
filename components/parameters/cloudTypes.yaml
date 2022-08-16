@@ -1,6 +1,8 @@
 name: type
 in: query
-description: If specified will return all zones by cloud type code.
+description: |
+  If specified will return all zones by cloud type code.
+  Refer to `Zone Types` API for up to date listings.
 schema:
   type: string
   enum:

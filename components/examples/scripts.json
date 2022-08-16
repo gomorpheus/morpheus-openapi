@@ -1,0 +1,46 @@
+{
+  "containerScripts": [
+    {
+      "id": 10,
+      "code": "cassandra-2.1-vm-start",
+      "account": null,
+      "name": "cassandra start",
+      "category": null,
+      "sortOrder": 1,
+      "scriptVersion": "1.0",
+      "scriptPhase": "start",
+      "scriptType": "bash",
+      "script": "************",
+      "scriptService": null,
+      "scriptMethod": null,
+      "runAsUser": null,
+      "runAsPassword": null,
+      "sudoUser": true,
+      "failOnError": true
+    },
+    {
+      "id": 9,
+      "code": "cassandra-2.1-vm-stop",
+      "account": null,
+      "name": "cassandra stop",
+      "category": null,
+      "sortOrder": 1,
+      "scriptVersion": "1.0",
+      "scriptPhase": "stop",
+      "scriptType": "bash",
+      "script": "************",
+      "scriptService": null,
+      "scriptMethod": null,
+      "runAsUser": null,
+      "runAsPassword": null,
+      "sudoUser": true,
+      "failOnError": true
+    }
+  ],
+  "meta": {
+    "size": 25,
+    "total": 200,
+    "max": 25,
+    "offset": 0
+  }
+}

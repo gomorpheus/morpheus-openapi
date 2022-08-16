@@ -1,0 +1,74 @@
+type: object
+required: 
+  - name
+  - type
+  - cloudFormation
+properties: 
+  name: 
+    type: string
+    description: A name for the blueprint
+  type: 
+    type: string
+    description: Blueprint Type
+    enum:
+      - cloudFormation
+  cloudFormation: 
+    type: object
+    required:
+      - configType
+    properties: 
+      configType: 
+        type: string
+        description: Configuration Type
+        enum: 
+          - json
+          - yaml
+          - git
+      json: 
+        type: string
+        description: CloudFormation Template in JSON
+      yaml:
+        type: string
+        description: CloudFormation Template in YAML
+      git:
+        type: object
+        required: 
+          - repoId
+          - path
+          - integrationId
+          - branch
+        properties:
+          repoId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Repository ID
+          path:
+            type: string
+            description: Path to CloudFormation Files in the Repository
+          integrationId:
+            type: integer
+            format: int64
+            description: Morpheus SCM Integration ID
+          branch:
+            type: string
+            description: Branch Name
+      IAM: 
+        type: boolean
+        description: CloudFormation Attribute CAPABILITY_IAM
+        default: false
+      CAPABILITY_NAMED_IAM: 
+        type: boolean
+        description: CloudFormation Attribute CAPABILITY_NAMED_IAM
+        default: false
+      CAPABILITY_AUTO_EXPAND: 
+        type: boolean
+        description: CloudFormation Attribute CAPABILITY_AUTO_EXPAND
+        default: false
+      installAgent: 
+        type: boolean
+        description: Install Morpheus Agent
+        default: false
+      cloudInitEnabled: 
+        type: boolean
+        description: Cloud Init Enabled
+        default: false

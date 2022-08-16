@@ -1,0 +1,96 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+  enabled: 
+    type: boolean
+  scheduleType: 
+    type: string
+  scheduleTimezone: 
+    type: string
+  mondayOn: 
+    type: integer
+    format: int64
+  mondayOnTime: 
+    type: string
+  mondayOff: 
+    type: integer
+    format: int64
+  mondayOffTime: 
+    type: string
+  tuesdayOn: 
+    type: integer
+    format: int64
+  tuesdayOnTime: 
+    type: string
+  tuesdayOff: 
+    type: integer
+    format: int64
+  tuesdayOffTime: 
+    type: string
+  wednesdayOn: 
+    type: integer
+    format: int64
+  wednesdayOnTime: 
+    type: string
+  wednesdayOff: 
+    type: integer
+    format: int64
+  wednesdayOffTime: 
+    type: string
+  thursdayOn: 
+    type: integer
+    format: int64
+  thursdayOnTime: 
+    type: string
+  thursdayOff: 
+    type: integer
+    format: int64
+  thursdayOffTime: 
+    type: string
+  fridayOn: 
+    type: integer
+    format: int64
+  fridayOnTime: 
+    type: string
+  fridayOff: 
+    type: integer
+    format: int64
+  fridayOffTime: 
+    type: string
+  saturdayOn: 
+    type: integer
+    format: int64
+  saturdayOnTime: 
+    type: string
+  saturdayOff: 
+    type: integer
+    format: int64
+  saturdayOffTime: 
+    type: string
+  sundayOn: 
+    type: integer
+    format: int64
+  sundayOnTime: 
+    type: string
+  sundayOff: 
+    type: integer
+    format: int64
+  sundayOffTime: 
+    type: string
+  totalMonthlyHoursSaved: 
+    type: number
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

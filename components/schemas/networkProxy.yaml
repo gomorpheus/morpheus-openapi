@@ -1,0 +1,39 @@
+id: 
+  type: integer
+  format: int64
+name: 
+  type: string
+proxyHost: 
+  type: string
+proxyPort: 
+  type: integer
+  format: int64
+proxyUser: 
+  type: string
+  nullable: true
+proxyPassword: 
+  type: string
+  nullable: true
+proxyDomain: 
+  type: string
+proxyWorkstation: 
+  type: string
+  nullable: true
+visibility: 
+  type: string
+account: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    name: 
+      type: string
+owner: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    name: 
+      type: string

@@ -1,0 +1,7 @@
+name: uniqueId
+in: path
+description: The Unique ID of the execution request
+required: true
+schema:
+  type: string
+example: c56f75d0-a59a-4566-92e3-4dc716c5d076

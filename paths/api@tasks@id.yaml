@@ -1,0 +1,257 @@
+get:
+  summary: Retrieves a Specific Task
+  description: |
+    Retrieves a specific task.
+  operationId: getTasks
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                task:
+                  oneOf:
+                  - $ref: ../components/schemas/taskAnsiblePlaybookConfig.yaml
+                  - $ref: ../components/schemas/taskAnsibleTowerConfig.yaml
+                  - $ref: ../components/schemas/taskChefBootstrapConfig.yaml
+                  - $ref: ../components/schemas/taskEmailConfig.yaml
+                  - $ref: ../components/schemas/taskGroovyConfig.yaml
+                  - $ref: ../components/schemas/taskHttpConfig.yaml
+                  - $ref: ../components/schemas/taskJavaConfig.yaml
+                  - $ref: ../components/schemas/taskJrubyConfig.yaml
+                  - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
+                  - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
+                  - $ref: ../components/schemas/taskPowershellConfig.yaml
+                  - $ref: ../components/schemas/taskPuppetConfig.yaml
+                  - $ref: ../components/schemas/taskPythonConfig.yaml
+                  - $ref: ../components/schemas/taskRestartConfig.yaml
+                  - $ref: ../components/schemas/taskShellConfig.yaml
+                  - $ref: ../components/schemas/taskVroConfig.yaml
+                  - $ref: ../components/schemas/taskWriteAttributesConfig.yaml
+          examples:
+            Task Response - Get Ansible Playbook:
+              value:
+                $ref: ../components/examples/taskAnsiblePlaybook.json
+            Task Response - Get Ansible Tower:
+              value:
+                $ref: ../components/examples/taskAnsibleTower.json
+            Task Response - Get Chef Bootstrap:
+              value:
+                $ref: ../components/examples/taskChefBootstrap.json
+            Task Response - Get Email:
+              value:
+                $ref: ../components/examples/taskEmail.json
+            Task Response - Get Groovy:
+              value:
+                $ref: ../components/examples/taskGroovy.json
+            Task Response - Get HTTP:
+              value:
+                $ref: ../components/examples/taskHttp.json
+            Task Response - Get Java:
+              value:
+                $ref: ../components/examples/taskJava.json
+            Task Response - Get JRuby:
+              value:
+                $ref: ../components/examples/taskJruby.json
+            Task Response - Get Library Script:
+              value:
+                $ref: ../components/examples/taskLibraryScript.json
+            Task Response - Get Library Template:
+              value:
+                $ref: ../components/examples/taskLibraryTemplate.json
+            Task Response - Get PowerShell:
+              value:
+                $ref: ../components/examples/taskPowershell.json
+            Task Response - Get Puppet:
+              value:
+                $ref: ../components/examples/taskPuppet.json
+            Task Response - Get Python:
+              value:
+                $ref: ../components/examples/taskPython.json
+            Task Response - Get Restart:
+              value:
+                $ref: ../components/examples/taskRestart.json
+            Task Response - Get Shell:
+              value:
+                $ref: ../components/examples/taskShell.json
+            Task Response - Get vRO:
+              value:
+                $ref: ../components/examples/taskVro.json
+            Task Response - Get Write Attributes:
+              value:
+                $ref: ../components/examples/taskWriteAttributes.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Updates a Task
+  description: |
+    Updates a task.
+  operationId: updateTasks
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - scaleThreshold
+          properties:
+            scaleThreshold:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: A name for the scale threshold
+                  example: Sample Threshold
+                autoUp:
+                  type: boolean
+                  description: Auto Upscale
+                  default: false
+                autoDown:
+                  type: boolean
+                  description: Auto Downscale
+                  default: false
+                minCount:
+                  type: integer
+                  description: The minimum number of nodes to scale down to
+                  example: 1
+                maxCount:
+                  type: integer
+                  description: The maximum number of nodes to scale up to
+                  example: 3
+                cpuEnabled:
+                  type: boolean
+                  description: Enable CPU Threshold
+                  default: false
+                minCpu:
+                  type: number
+                  description: Min CPU (%)
+                  default: 0.0
+                maxCpu:
+                  type: number
+                  description: Max CPU (%)
+                  default: 0.0
+                memoryEnabled:
+                  type: boolean
+                  description: Enable Memory Threshold
+                  default: false
+                minMemory:
+                  type: number
+                  description: Min Memory (%)
+                  default: 0.0
+                maxMemory:
+                  type: number
+                  description: Max Memory (%)
+                  default: 0.0
+                diskEnabled:
+                  type: boolean
+                  description: Enable Disk Threshold
+                  default: false
+                minDisk:
+                  type: number
+                  description: Min Disk (%)
+                  default: 0.0
+                maxDisk:
+                  type: number
+                  description: Max Disk (%)
+                  default: 0.0
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                scaleThreshold:
+                  $ref: ../components/schemas/scaleThreshold.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Scale Threshold Response:
+              value:
+                $ref: ../components/examples/scaleThresholdSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Deletes a Task
+  description: |
+    Deletes a specified task.
+  operationId: removeTasks
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

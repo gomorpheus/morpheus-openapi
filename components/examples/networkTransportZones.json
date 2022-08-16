@@ -1,0 +1,44 @@
+{
+  "networkScopes": [
+    {
+      "id": 1,
+      "internalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "visibility": "private",
+      "dateCreated": "2021-11-03T14:23:17Z",
+      "providerId": "/xxxx/xx/xxxx/xxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "lastUpdated": "2021-11-03T14:25:05Z",
+      "active": true,
+      "streamType": "OVERLAY",
+      "displayName": "transport-zone-a",
+      "name": "transport-zone-a",
+      "status": "ok",
+      "enabled": true,
+      "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "config": {
+        "nvdsName": "transport-zone-a",
+        "hostMembershipCriteria": "STANDARD"
+      },
+      "owner": {
+        "id": 1
+      },
+      "networkServer": {
+        "id": 13
+      },
+      "zone": {
+        "id": 20
+      },
+      "tenants": [
+        {
+          "id": 1,
+          "name": "Stubby Toes Inc."
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 1,
+    "size": 1,
+    "total": 5
+  }
+}

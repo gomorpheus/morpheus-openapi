@@ -1,0 +1,74 @@
+{
+  "networkRouters": [
+    {
+      "id": 32,
+      "code": "openstack.router.10.93126dd8-023b-44f5-8100-be2980439419",
+      "name": "dand-0218",
+      "description": null,
+      "category": "openstack.router.10",
+      "dateCreated": "2020-02-19T03:08:34+0000",
+      "lastUpdated": "2020-02-19T04:13:47+0000",
+      "routerType": "neutron",
+      "status": "ok",
+      "enabled": true,
+      "externalIp": null,
+      "externalId": "93126dd8-023b-44f5-8100-be2980439419",
+      "providerId": null,
+      "type": {
+        "id": 3,
+        "code": "huaweiNeutronRouter",
+        "name": "Huawei Router",
+        "description": "Neutron Router",
+        "enabled": true,
+        "creatable": true,
+        "selectable": true,
+        "hasFirewall": false,
+        "hasDhcp": false,
+        "hasRouting": false,
+        "hasNetworkServer": false,
+        "optionTypes": [
+        ],
+        "ruleOptionTypes": [
+
+        ]
+      },
+      "networkServer": null,
+      "zone": {
+        "id": 10,
+        "code": "huawei",
+        "name": "huawei"
+      },
+      "instance": null,
+      "externalNetwork": {
+        "id": 76,
+        "code": "openstack.network.10.0a2228f2-7f8a-45f1-8e09-9039e1d09975",
+        "name": "admin_external_net"
+      },
+      "site": null,
+      "interfaces": [
+        {
+          "id": 202,
+          "name": "93126dd8-023b-44f5-8100-be2980439419",
+          "code": null,
+          "interfaceType": null,
+          "networkPosition": null,
+          "ipAddress": "10.1.0.1",
+          "cidr": "10.0.0.0/24",
+          "externalLink": null,
+          "enabled": true,
+          "network": {
+            "id": 97,
+            "name": "1666113f-e399-44a5-8559-20bee838b83a",
+            "code": "openstack.network.10.815f77ba-e5fa-410e-b633-17bb620dd99b"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

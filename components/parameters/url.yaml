@@ -1,0 +1,6 @@
+name: url
+in: query
+description: Download the file from a remote url. This can be used instead of uploading a local file.
+schema:
+  type: string
+example: "https://example.com/testimage.ovf"

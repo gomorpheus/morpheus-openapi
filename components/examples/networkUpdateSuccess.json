@@ -1,0 +1,104 @@
+{
+  "success": true,
+  "errors": {},
+  "network": {
+    "id": 327,
+    "name": "test-net",
+    "displayName": "test-net",
+    "group": {
+      "id": 1,
+      "name": "admin"
+    },
+    "zone": {
+      "id": 26,
+      "name": "azpersonal"
+    },
+    "type": {
+      "id": 34,
+      "name": "Azure Network",
+      "code": "azureNetwork"
+    },
+    "owner": {
+      "id": 1,
+      "name": "mastertenant"
+    },
+    "code": null,
+    "category": "azure.network.26",
+    "interfaceName": null,
+    "bridgeName": null,
+    "bridgeInterface": null,
+    "description": "Test Network for Lab Access",
+    "externalId": "/subscriptions/698e9883-286d-4914-a1a6-000000000000/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/test-net",
+    "internalId": null,
+    "uniqueId": null,
+    "externalType": "Network",
+    "refUrl": null,
+    "refType": "ComputeZone",
+    "refId": 26,
+    "vlanId": 0,
+    "vswitchName": null,
+    "dhcpServer": true,
+    "dhcpIp": null,
+    "gateway": "192.168.12.1",
+    "netmask": null,
+    "broadcast": null,
+    "subnetAddress": null,
+    "dnsPrimary": "1.1.1.1",
+    "dnsSecondary": "1.1.1.2",
+    "cidr": "192.168.12.0/24",
+    "tftpServer": null,
+    "bootFile": null,
+    "switchId": null,
+    "fabricId": null,
+    "networkRole": null,
+    "status": "provisioning",
+    "availabilityZone": null,
+    "pool": null,
+    "networkProxy": null,
+    "networkDomain": {
+      "id": 3,
+      "name": "tldtrash.xyz"
+    },
+    "prefixLength": null,
+    "visibility": "private",
+    "enableAdmin": false,
+    "scanNetwork": false,
+    "active": true,
+    "defaultNetwork": false,
+    "assignPublicIp": false,
+    "noProxy": null,
+    "applianceUrlProxyBypass": true,
+    "zonePool": {
+      "id": 95,
+      "name": "TestRG"
+    },
+    "allowStaticOverride": true,
+    "subnets": [
+      {
+        "id": 30,
+        "name": "testnet-1",
+        "cidr": "192.168.12.0/24",
+        "dhcpServer": true,
+        "visibility": "private",
+        "active": true,
+        "pool": null
+      }
+    ],
+    "tenants": [
+      {
+        "id": 2,
+        "name": "tentest"
+      },
+      {
+        "id": 1,
+        "name": "mastertenant"
+      }
+    ],
+    "resourcePermission": {
+      "all": false,
+      "sites": [],
+      "allPlans": false,
+      "plans": []
+    }
+  }
+}

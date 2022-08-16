@@ -1,0 +1,43 @@
+{
+    "task": {
+        "id": 873,
+        "accountId": 1,
+        "name": "3. Chef bootstrap",
+        "code": null,
+        "taskType": {
+            "id": 16,
+            "code": "chefTask",
+            "name": "Chef bootstrap"
+        },
+        "taskOptions": {
+            "chefDataKey": null,
+            "chefDataKeyHash": null,
+            "chefRunList": null,
+            "localScriptGitRef": null,
+            "chefDataKeyPath": null,
+            "localScriptGitId": null,
+            "port": null,
+            "chefEnv": null,
+            "chefNodeName": null,
+            "host": null,
+            "sshKey": null,
+            "username": null,
+            "password": null,
+            "passwordHash": null,
+            "chefAttributes": "{}"
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:52:25Z",
+        "lastUpdated": "2022-08-04T13:52:25Z"
+    },
+    "success": true
+}

@@ -1,0 +1,37 @@
+{
+    "task": {
+        "id": 885,
+        "accountId": 1,
+        "name": "7. java",
+        "code": null,
+        "taskType": {
+            "id": 34,
+            "code": "javascriptTask",
+            "name": "Javascript"
+        },
+        "taskOptions": {
+            "username": null,
+            "port": null,
+            "jsScript": null,
+            "host": null,
+            "localScriptGitRef": null,
+            "password": null,
+            "passwordHash": null,
+            "sshKey": null,
+            "localScriptGitId": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:53:03Z",
+        "lastUpdated": "2022-08-04T13:53:03Z"
+    },
+    "success": true
+}

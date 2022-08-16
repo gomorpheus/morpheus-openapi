@@ -1,0 +1,9 @@
+name: itemSource
+in: query
+description: Source filter, restricts query to only load jobs of specified source.
+schema:
+  type: string
+  enum:
+  - all
+  - user
+  - sync

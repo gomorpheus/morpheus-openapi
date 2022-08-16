@@ -1,0 +1,109 @@
+{
+  "loadBalancerTypes": [
+    {
+      "id": 7,
+      "name": "A10 (aXAPI v3)",
+      "code": "a10AXvThunder",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 10,
+      "name": "Amazon ALB",
+      "code": "amazon-alb",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 8,
+      "name": "AVI",
+      "code": "avi",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 9,
+      "name": "Azure Load Balancer",
+      "code": "azure",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 13,
+      "name": "Citrix NetScaler",
+      "code": "netScaler",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 5,
+      "name": "F5 BigIP (v11.4+)",
+      "code": "bigip",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 14,
+      "name": "FortiADC",
+      "code": "fortiadc",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 11,
+      "name": "HAProxy Container",
+      "code": "haproxyContainer",
+      "enabled": true,
+      "internal": true,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    },
+    {
+      "id": 19,
+      "name": "NSX-T",
+      "code": "nsx-t",
+      "enabled": true,
+      "internal": false,
+      "creatable": true,
+      "createType": "multi",
+      "optionTypes": [],
+      "vipOptionTypes": []
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 9,
+    "total": 9
+  }
+}

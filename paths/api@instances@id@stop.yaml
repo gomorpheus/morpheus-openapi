@@ -12,11 +12,16 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - type: object
+                properties:
+                  results:
+                    type: object
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/success.json 
+                $ref: ../components/examples/success.json  
     '400':
       $ref: ../components/responses/400.yaml
     '401':

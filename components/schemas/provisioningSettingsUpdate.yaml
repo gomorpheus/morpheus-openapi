@@ -1,0 +1,56 @@
+type: object
+properties:
+  allowZoneSelection: 
+    type: boolean
+    description: Use this to enable / disable allowing cloud selection
+  allowServerSelection: 
+    type: boolean
+    description: Use this to enable / disable allowing host selection
+  requireEnvironments: 
+    type: boolean
+    description: Use this to enable / disable requiring environment selection
+  showPricing: 
+    type: boolean
+    description: Use this to enable / disable showing pricing
+  hideDatastoreStats: 
+    type: boolean
+    description: Use this to enable / disable hiding datastore stats
+  crossTenantNamingPolicies: 
+    type: boolean
+    description: Use this to enable / disable cross-tenant naming policies
+  reuseSequence: 
+    type: boolean
+    description: Use this to enable / disable reusing naming sequence numbers
+  cloudInitUsername: 
+    type: string
+    description: Cloud-init username
+  cloudInitPassword: 
+    type: string
+    description: Cloud-init password
+  cloudInitKeyPair:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: Cloud-init key pair ID
+  deployStorageProvider: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Deployment archive storage provider ID
+  windowsPassword:
+    type: string
+    description: Windows administrator password
+  pxeRootPassword:
+    type: string
+    description: PXE Boot default root password
+  defaultTemplateType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Default blueprint type ID

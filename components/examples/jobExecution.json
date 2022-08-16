@@ -1,0 +1,26 @@
+{
+    "jobExecution": {
+        "id": 7477,
+        "name": "rook-ceph-osd-prepare-mks-k8s-worker-3",
+        "process": null,
+        "job": {
+            "id": 6844,
+            "name": "rook-ceph-osd-prepare-mks-k8s-worker-3",
+            "description": null,
+            "type": {
+                "id": 11,
+                "code": "kubernetes.job",
+                "name": "Kubernetes Job"
+            }
+        },
+        "description": null,
+        "dateCreated": "2022-08-15T16:44:40Z",
+        "startDate": "2022-08-15T16:39:44Z",
+        "endDate": "2022-08-15T16:39:50Z",
+        "duration": 6000,
+        "resultData": null,
+        "status": "success",
+        "statusMessage": null,
+        "createdBy": null
+    }
+}

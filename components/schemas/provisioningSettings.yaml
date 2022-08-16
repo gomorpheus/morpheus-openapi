@@ -1,0 +1,52 @@
+type: object
+properties:
+  allowZoneSelection: 
+    type: boolean
+  allowServerSelection: 
+    type: boolean
+  requireEnvironments: 
+    type: boolean
+  showPricing: 
+    type: boolean
+  hideDatastoreStats: 
+    type: boolean
+  crossTenantNamingPolicies: 
+    type: boolean
+  reuseSequence: 
+    type: boolean
+  cloudInitUsername: 
+    type: string
+  cloudInitPassword: 
+    type: string
+  cloudInitKeyPair: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  windowsPassword: 
+    type: string
+    nullable: true
+  pxeRootPassword: 
+    type: string
+    nullable: true
+  defaultTemplateType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+  deployStorageProvider: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string

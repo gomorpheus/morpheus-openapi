@@ -1,0 +1,7 @@
+name: routerId
+in: path
+description: Router ID
+required: true
+schema:
+  type: number
+example: 4

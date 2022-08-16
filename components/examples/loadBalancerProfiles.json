@@ -1,0 +1,113 @@
+{
+  "loadBalancerProfiles": [
+    {
+      "id": 160,
+      "loadBalancer": {
+        "id": 80,
+        "type": {
+          "id": 19,
+          "code": "nsx-t",
+          "name": "NSX-T"
+        },
+        "name": "dand-nsxt",
+        "ip": "10.32.23.7"
+      },
+      "name": "bob-test",
+      "category": "loadBalancer.nsxt.profile.ssl.applicationProfile",
+      "serviceType": "LBHttpProfile",
+      "serviceTypeDisplay": "HTTP",
+      "visibility": "public",
+      "description": "",
+      "internalId": "/infra/lb-app-profiles/bob-test",
+      "externalId": "bob-test",
+      "proxyType": null,
+      "redirectRewrite": null,
+      "persistenceType": null,
+      "sslEnabled": null,
+      "sslCert": null,
+      "accountCertificate": null,
+      "enabled": true,
+      "redirectUrl": null,
+      "insertXforwardedFor": false,
+      "persistenceCookieName": null,
+      "persistenceExpiresIn": null,
+      "editable": true,
+      "config": {
+        "tags": [
+
+        ],
+        "httpsRedirect": null,
+        "httpIdleTimeout": 16,
+        "ntlmAuthentication": false,
+        "requestHeaderSize": 1024,
+        "responseHeaderSize": 4096,
+        "responseTimeout": 60,
+        "xForwardedFor": "INSERT",
+        "profileType": "application-profile",
+        "resource_type": "LBHttpProfile"
+      },
+      "createdBy": null,
+      "dateCreated": "2021-10-19T17:39:31Z",
+      "lastUpdated": "2021-10-19T17:49:32Z"
+    },
+    {
+      "id": 171,
+      "loadBalancer": {
+        "id": 80,
+        "type": {
+          "id": 19,
+          "code": "nsx-t",
+          "name": "NSX-T"
+        },
+        "name": "dand-nsxt",
+        "ip": "10.32.23.7"
+      },
+      "name": "dd-test-ssl-cipher",
+      "category": "loadBalancer.nsxt.profile.ssl.clientSslProfile",
+      "serviceType": "LBClientSslProfile",
+      "serviceTypeDisplay": "Client SSL Profile",
+      "visibility": "public",
+      "description": "",
+      "internalId": "/infra/lb-client-ssl-profiles/acb68f77-6b77-4e82-acf9-3cca7aa6b81c",
+      "externalId": "acb68f77-6b77-4e82-acf9-3cca7aa6b81c",
+      "proxyType": null,
+      "redirectRewrite": null,
+      "persistenceType": null,
+      "sslEnabled": null,
+      "sslCert": null,
+      "accountCertificate": null,
+      "enabled": true,
+      "redirectUrl": null,
+      "insertXforwardedFor": false,
+      "persistenceCookieName": null,
+      "persistenceExpiresIn": null,
+      "editable": true,
+      "config": {
+        "tags": [
+
+        ],
+        "sslSuite": "CUSTOM",
+        "supportedSslCiphers": [
+          "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
+        ],
+        "supportedSslProtocols": [
+          "TLS_V1"
+        ],
+        "preferServerCipher": true,
+        "sessionCache": true,
+        "sessionCacheTimeout": 300,
+        "profileType": "ssl-profile",
+        "resource_type": "LBClientSslProfile"
+      },
+      "createdBy": null,
+      "dateCreated": "2021-10-19T17:39:32Z",
+      "lastUpdated": "2021-10-19T17:49:33Z"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

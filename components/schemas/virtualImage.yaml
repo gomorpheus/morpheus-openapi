@@ -1,0 +1,167 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  ownerId: 
+    type: integer
+    format: int64
+  tenant: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  imageType: 
+    type: string
+  userUploaded: 
+    type: boolean
+  userDefined: 
+    type: boolean
+  systemImage: 
+    type: boolean
+  isCloudInit: 
+    type: boolean
+  sshUsername: 
+    type: string
+    nullable: true
+  sshPassword: 
+    type: string
+    nullable: true
+  sshPasswordHash: 
+    type: string
+    nullable: true
+  sshKey: 
+    type: string
+    nullable: true
+  osType: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+      description: 
+        type: string
+        nullable: true
+      vendor: 
+        type: string
+      category: 
+        type: string
+      osFamily: 
+        type: string
+      osVersion: 
+        type: string
+      bitCount: 
+        type: integer
+        format: int64
+      platform: 
+        type: string
+  minRam: 
+    type: integer
+    format: int64
+    nullable: true
+  minRamGB: 
+    type: integer
+    format: int64
+    nullable: true
+  minDisk: 
+    type: string
+    nullable: true
+  minDiskGB: 
+    type: string
+    nullable: true
+  rawSize: 
+    type: integer
+    format: int64
+    nullable: true
+  rawSizeGB: 
+    type: number
+    nullable: true
+  trialVersion: 
+    type: boolean
+  virtioSupported: 
+    type: boolean
+  uefi: 
+    type: string
+    nullable: true
+  isAutoJoinDomain: 
+    type: boolean
+  vmToolsInstalled: 
+    type: boolean
+  installAgent: 
+    type: boolean
+  isForceCustomization: 
+    type: boolean
+  isSysprep: 
+    type: boolean
+  fipsEnabled: 
+    type: boolean
+  userData: 
+    type: string
+    nullable: true
+  consoleKeymap: 
+    type: string
+    nullable: true
+  storageProvider: 
+    type: string
+    nullable: true
+  externalId: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+  accounts: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  config: 
+    type: object
+    properties: 
+      memorySizeType: 
+        type: string
+  volumes: 
+    type: array
+    items:
+      type: object
+  storageControllers: 
+    type: array
+    items:
+      type: object
+  networkInterfaces: 
+    type: array
+    items:
+      type: object
+  tags: 
+    type: array
+    items:
+      type: object
+  locations: 
+    type: array
+    items:
+      type: object
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  status: 
+    type: string

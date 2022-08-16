@@ -1,0 +1,151 @@
+get:
+  summary: Get a Specific Load Balancer Monitor
+  description: This endpoint retrieves a specific Load Balancer Monitor.
+  operationId: getLoadBalancerMonitor
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              loadBalancerMonitor:
+                type: object
+                properties: 
+                  $ref: ../components/schemas/loadBalancerMonitor.yaml
+          examples:
+            Load Balancer Monitor Response:
+              value:
+                $ref: ../components/examples/loadBalancerMonitor.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+put: 
+  summary: Update a Load Balancer Monitor
+  description: |
+    Use this command to update an existing load balancer monitor.
+
+    This endpoint allows updating a Load Balancer Monitor. Configuration options vary by Load Balancer Type.
+  operationId: updateLoadBalancerMonitor
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            loadBalancerMonitor:
+              type: object
+              properties: 
+                $ref: ../components/schemas/loadBalancerMonitorCreate.yaml
+        examples: 
+          Load Balancer Update Request:
+            value:
+              $ref: ../components/examples/loadBalancerMonitorUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  loadBalancerMonitor:
+                    type: object
+                    properties: 
+                      $ref: ../components/schemas/loadBalancerMonitor.yaml
+              - $ref: ../components/schemas/successMessage.yaml
+          examples: 
+            Load Balancers Monitor Update Success:
+              value:
+                $ref: ../components/examples/loadBalancerMonitorCreate.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+delete: 
+  summary: Delete a Load Balancer Monitor
+  description: Will delete a Load Balancer Monitor from the system and make it no longer usable.
+  operationId: deleteLoadBalancerMonitor
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

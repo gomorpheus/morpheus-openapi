@@ -1,0 +1,60 @@
+{
+  "networkRouterType": {
+    "id": 2,
+    "code": "opentelekomNeutronRouter",
+    "name": "Open Telekom Router",
+    "description": "Neutron Router",
+    "enabled": true,
+    "creatable": true,
+    "selectable": true,
+    "hasFirewall": false,
+    "hasDhcp": false,
+    "hasRouting": false,
+    "hasNetworkServer": false,
+    "optionTypes": [
+      {
+        "id": 1023,
+        "name": "enableSnat",
+        "description": null,
+        "code": "networkRouter.opentelekom.enableSnat",
+        "fieldName": "enableSnat",
+        "fieldLabel": "Enable SNAT",
+        "fieldContext": "config",
+        "fieldGroup": null,
+        "fieldClass": null,
+        "fieldAddOn": null,
+        "fieldComponent": null,
+        "fieldInput": null,
+        "placeHolder": null,
+        "helpBlock": "",
+        "defaultValue": null,
+        "optionSource": "yesNo",
+        "optionList": null,
+        "type": "select",
+        "advanced": false,
+        "required": true,
+        "editable": false,
+        "creatable": true,
+        "config": {
+        },
+        "displayOrder": 18,
+        "wrapperClass": null,
+        "enabled": true,
+        "noBlank": false,
+        "dependsOnCode": null,
+        "contextualDefault": false
+      }
+    ],
+    "ruleOptionTypes": [
+
+    ],
+    "ruleGroupOptionTypes": [
+
+    ],
+    "natOptionTypes": [
+
+    ],
+    "bgpOptionTypes": [
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+accountId: 
+  type: integer
+  format: int64
+certFile: 
+  type: string
+domainName: 
+  type: string
+generated: 
+  type: boolean
+id: 
+  type: integer
+  format: int64
+keyFile: 
+  type: string
+name: 
+  type: string
+wildcard: 
+  type: boolean

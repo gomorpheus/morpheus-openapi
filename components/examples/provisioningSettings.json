@@ -1,0 +1,28 @@
+{
+  "provisioningSettings": {
+    "allowZoneSelection": true,
+    "allowServerSelection": true,
+    "requireEnvironments": true,
+    "showPricing": true,
+    "hideDatastoreStats": true,
+    "crossTenantNamingPolicies": false,
+    "reuseSequence": true,
+    "cloudInitUsername": "root",
+    "cloudInitPassword": "****",
+    "cloudInitKeyPair": {
+      "id": 3,
+      "name": "stubby.toes"
+    },
+    "windowsPassword": null,
+    "pxeRootPassword": null,
+    "defaultTemplateType": {
+      "id": 1,
+      "name": "morpheus",
+      "code": "morpheus"
+    },
+    "deployStorageProvider": {
+      "id": 42,
+      "name": "default-storage"
+    }
+  }
+}

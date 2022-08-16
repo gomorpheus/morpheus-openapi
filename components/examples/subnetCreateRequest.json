@@ -1,0 +1,23 @@
+{
+  "subnet": {
+    "type": {
+      "id": 6
+    },
+    "config": {
+      "subnetName": "My Subnet",
+      "subnetCidr": "192.168.2.0/24"
+    },
+    "tenants": [
+      {
+        "id": 2
+      },
+      {
+        "id": 1
+      }
+    ],
+    "visibility": "private"
+  },
+  "resourcePermissions": {
+    "all": true
+  }
+}

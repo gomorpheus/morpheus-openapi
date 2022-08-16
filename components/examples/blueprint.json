@@ -1,0 +1,103 @@
+{
+  "blueprint": {
+    "id": 135,
+    "name": "test",
+    "type": "morpheus",
+    "description": null,
+    "category": null,
+    "config": {
+      "image": "/assets/apps/template.png",
+      "tiers": {
+        "Web": {
+          "linkedTiers": [
+
+          ],
+          "tierIndex": 1,
+          "instances": [
+            {
+              "instance": {
+                "type": "nginx"
+              },
+              "groups": {
+                "My Group": {
+                  "clouds": {
+                    "My Cloud": {
+                      "instance": {
+                        "layout": {
+                          "code": "nginx-vmware-1.9-single",
+                          "id": 179
+                        },
+                        "name": "test-nginx-${sequence}",
+                        "allowExisting": false,
+                        "createUser": "on",
+                        "type": "nginx",
+                        "userGroup": {
+                          "id": ""
+                        }
+                      },
+                      "networkInterfaces": [
+                        {
+                          "ipMode": "",
+                          "primaryInterface": true,
+                          "network": {
+                            "id": "",
+                            "hasPool": false
+                          },
+                          "networkInterfaceTypeId": 4,
+                          "networkInterfaceTypeIdName": "VMXNET 3"
+                        }
+                      ],
+                      "volumes": [
+                        {
+                          "vId": 255,
+                          "controllerMountPoint": "46:0:4:0",
+                          "size": 10,
+                          "maxIOPS": null,
+                          "name": "root",
+                          "rootVolume": true,
+                          "storageType": 1,
+                          "datastoreId": "autoCluster",
+                          "maxStorage": 0
+                        }
+                      ],
+                      "config": {
+                        "resourcePoolId": "resgroup-123",
+                        "createUser": true
+                      },
+                      "plan": {
+                        "code": "vm-1024",
+                        "id": 76
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "name": "test",
+      "templateImage": "",
+      "type": "morpheus",
+      "config": {
+        "isVpcSelectable": true,
+        "isEC2": false
+      }
+    },
+    "visibility": "private",
+    "resourcePermission": {
+      "all": true,
+      "sites": [
+
+      ]
+    },
+    "owner": {
+        "id": 1,
+        "username": "admin"
+      },
+      "tenant": {
+        "id": 1,
+        "name": "root"
+      }
+  }
+}

@@ -1,0 +1,101 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  controllerId: 
+    type: integer
+    format: int64
+  controllerMountPoint: 
+    type: string
+  resizeable: 
+    type: boolean
+  rootVolume: 
+    type: boolean
+  unitNumber: 
+    type: string
+  deviceName: 
+    type: string
+  deviceDisplayName: 
+    type: string
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  typeId: 
+    type: integer
+    format: int64
+  category: 
+    type: string
+  status: 
+    type: string
+  statusMessage: 
+    type: string
+    nullable: true
+  configurableIOPS: 
+    type: boolean
+  maxStorage: 
+    type: integer
+    format: int64
+  displayOrder: 
+    type: integer
+    format: int64
+  maxIOPS: 
+    type: string
+    nullable: true
+  uuid: 
+    type: string
+  active: 
+    type: boolean
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  zoneId: 
+    type: integer
+    format: int64
+  datastore: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  datastoreId: 
+    type: integer
+    format: int64
+  storageGroup: 
+    type: string
+    nullable: true
+  namespace: 
+    type: string
+    nullable: true
+  storageServer: 
+    type: string
+    nullable: true
+  source: 
+    type: string
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string

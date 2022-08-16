@@ -1,0 +1,18 @@
+type: object
+properties: 
+  serviceType: 
+    type: string
+  serviceTypeName: 
+    type: string
+  type: 
+    type: string
+  typeName: 
+    type: string
+  name: 
+    type: string
+  id: 
+    type: integer
+    format: int64
+  integrationId: 
+    type: integer
+    format: int64

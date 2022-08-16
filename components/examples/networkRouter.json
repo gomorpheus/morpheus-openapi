@@ -1,0 +1,319 @@
+{
+  "networkRouter": {
+    "id": 99,
+    "code": "nsxt.router.13.b05d6532-2742-4dbd-98f2-a62aa8a62ae0",
+    "name": "dand-nsxt-t0-0425.1",
+    "description": null,
+    "category": "nsxt.router.13",
+    "dateCreated": "2021-04-25T16:19:27Z",
+    "lastUpdated": "2021-07-14T19:12:16Z",
+    "routerType": "internal",
+    "status": "ok",
+    "enabled": true,
+    "externalIp": null,
+    "externalId": "b05d6532-2742-4dbd-98f2-a62aa8a62ae0",
+    "providerId": "/infra/tier-0s/b05d6532-2742-4dbd-98f2-a62aa8a62ae0",
+    "type": {
+      "id": 5,
+      "code": "nsx-t-tier0-gateway",
+      "name": "NSX-T Tier-0 Gateway",
+      "description": "NSX-T Tier-0 Gateway",
+      "enabled": true,
+      "creatable": true,
+      "selectable": true,
+      "hasFirewall": true,
+      "hasDhcp": false,
+      "hasRouting": true,
+      "hasNat": true,
+      "hasNetworkServer": true,
+      "hasFirewallGroups": true,
+      "hasSecurityGroupPriority": true,
+      "optionTypes": [
+        {
+          "id": 1220,
+          "name": "TIER0_IPSEC_LOCAL_IP",
+          "description": null,
+          "code": "networkRouter.nsxt.edge.tier0.route.redist.TIER0_IPSEC_LOCAL_IP",
+          "fieldName": "TIER0_IPSEC_LOCAL_IP",
+          "fieldLabel": "IP Sec Local IP",
+          "fieldCode": "gomorpheus.label.nsxt.tier0.route.redist.TIER0_IPSEC_LOCAL_IP",
+          "fieldContext": "config",
+          "fieldGroup": "Route Re-distribution - Tier-0",
+          "fieldClass": null,
+          "fieldAddOn": null,
+          "fieldComponent": null,
+          "fieldInput": null,
+          "placeHolder": null,
+          "verifyPattern": null,
+          "helpBlock": null,
+          "helpBlockFieldCode": null,
+          "defaultValue": null,
+          "optionSource": null,
+          "optionSourceType": null,
+          "optionList": null,
+          "type": "checkbox",
+          "advanced": false,
+          "required": false,
+          "exportMeta": false,
+          "editable": true,
+          "creatable": true,
+          "config": {
+          },
+          "displayOrder": 2030,
+          "wrapperClass": null,
+          "enabled": true,
+          "noBlank": false,
+          "dependsOnCode": null,
+          "visibleOnCode": null,
+          "requireOnCode": null,
+          "contextualDefault": false,
+          "displayValueOnDetails": null,
+          "showOnCreate": true,
+          "showOnEdit": true
+        }
+      ],
+      "ruleOptionTypes": [
+        {
+          "id": 1186,
+          "name": "profile",
+          "description": null,
+          "code": "networkRouter.nsxt.firewall.rule.profiles",
+          "fieldName": "profile",
+          "fieldLabel": "Profiles",
+          "fieldCode": "gomorpheus.label.profiles",
+          "fieldContext": "config",
+          "fieldGroup": null,
+          "fieldClass": null,
+          "fieldAddOn": null,
+          "fieldComponent": null,
+          "fieldInput": null,
+          "placeHolder": "Any",
+          "verifyPattern": null,
+          "helpBlock": "",
+          "helpBlockFieldCode": null,
+          "defaultValue": null,
+          "optionSource": "nsxtFirewallRuleProfiles",
+          "optionSourceType": null,
+          "optionList": null,
+          "type": "multiTypeahead",
+          "advanced": false,
+          "required": false,
+          "exportMeta": false,
+          "editable": true,
+          "creatable": true,
+          "config": {
+          },
+          "displayOrder": 400,
+          "wrapperClass": null,
+          "enabled": true,
+          "noBlank": false,
+          "dependsOnCode": null,
+          "visibleOnCode": null,
+          "requireOnCode": null,
+          "contextualDefault": false,
+          "displayValueOnDetails": null,
+          "showOnCreate": true,
+          "showOnEdit": true
+        }
+      ],
+      "firewallGroupOptionTypes": [
+        {
+          "id": 1548,
+          "name": "externalType",
+          "description": null,
+          "code": "networkRouter.nsxt.firewall.externalType",
+          "fieldName": "externalType",
+          "fieldLabel": "externalType",
+          "fieldCode": null,
+          "fieldContext": "group",
+          "fieldGroup": null,
+          "fieldClass": null,
+          "fieldAddOn": null,
+          "fieldComponent": null,
+          "fieldInput": null,
+          "placeHolder": null,
+          "verifyPattern": null,
+          "helpBlock": "",
+          "helpBlockFieldCode": null,
+          "defaultValue": "GatewayPolicy",
+          "optionSource": null,
+          "optionSourceType": null,
+          "optionList": null,
+          "type": "hidden",
+          "advanced": false,
+          "required": true,
+          "exportMeta": false,
+          "editable": false,
+          "creatable": true,
+          "config": {
+          },
+          "displayOrder": 0,
+          "wrapperClass": null,
+          "enabled": true,
+          "noBlank": false,
+          "dependsOnCode": null,
+          "visibleOnCode": null,
+          "requireOnCode": null,
+          "contextualDefault": false,
+          "displayValueOnDetails": false,
+          "showOnCreate": true,
+          "showOnEdit": true
+        }
+      ],
+      "natOptionTypes": [
+        {
+          "id": 1038,
+          "name": "description",
+          "description": null,
+          "code": "networkRouter.global.description",
+          "fieldName": "description",
+          "fieldLabel": "Description",
+          "fieldCode": "gomorpheus.optiontype.Description",
+          "fieldContext": "nat",
+          "fieldGroup": null,
+          "fieldClass": null,
+          "fieldAddOn": null,
+          "fieldComponent": null,
+          "fieldInput": null,
+          "placeHolder": null,
+          "verifyPattern": null,
+          "helpBlock": "",
+          "helpBlockFieldCode": null,
+          "defaultValue": null,
+          "optionSource": null,
+          "optionSourceType": null,
+          "optionList": null,
+          "type": "text",
+          "advanced": false,
+          "required": false,
+          "exportMeta": false,
+          "editable": true,
+          "creatable": true,
+          "config": {
+          },
+          "displayOrder": 10,
+          "wrapperClass": null,
+          "enabled": true,
+          "noBlank": false,
+          "dependsOnCode": null,
+          "visibleOnCode": null,
+          "requireOnCode": null,
+          "contextualDefault": false,
+          "displayValueOnDetails": null,
+          "showOnCreate": null,
+          "showOnEdit": null
+        }
+      ]
+    },
+    "networkServer": {
+      "id": 13,
+      "name": "Labs NSX-T",
+      "integration": {
+        "id": 14,
+        "name": "Labs NSX-T",
+        "enabled": true,
+        "type": "nsx-t",
+        "integrationType": {
+          "id": 28,
+          "code": "nsx-t",
+          "name": "NSX-T"
+        },
+        "url": "https://10.32.23.7",
+        "port": "22",
+        "username": "admin",
+        "password": "************",
+        "refType": "NetworkServer",
+        "refId": "13",
+        "isPlugin": false,
+        "config": {
+        },
+        "status": "error",
+        "statusDate": "2021-07-15T11:48:33Z",
+        "statusMessage": "nsx-t api not reachable",
+        "lastSync": "2021-07-14T19:10:59Z",
+        "lastSyncDuration": 108394
+      }
+    },
+    "zone": {
+      "id": 20,
+      "code": "nsxt",
+      "name": "QA VMware NSX-T"
+    },
+    "instance": null,
+    "externalNetwork": null,
+    "site": null,
+    "interfaces": [
+
+    ],
+    "firewall": {
+      "enabled": true,
+      "version": null,
+      "defaultPolicy": null,
+      "global": null,
+      "ruleGroups": [
+        {
+          "id": 321,
+          "name": "Policy_Default_Infra",
+          "description": null,
+          "externalId": "Policy_Default_Infra",
+          "iacId": null,
+          "zone": null,
+          "zonePool": null,
+          "status": "available",
+          "priority": 10,
+          "groupLayer": "Default",
+          "rules": [
+            {
+              "id": 1056,
+              "name": "dand-nsxt-t0-0425.1",
+              "code": null,
+              "enabled": true,
+              "groupName": "Policy_Default_Infra",
+              "direction": "any",
+              "ruleType": "custom",
+              "policy": "accept",
+              "source": [
+                "ANY"
+              ],
+              "sourceType": "cidr",
+              "destination": [
+                "ANY"
+              ],
+              "destinationType": "instance",
+              "profiles": [
+                "ANY"
+              ],
+              "protocol": null,
+              "application": null,
+              "applicationType": "port",
+              "portRange": null,
+              "sourcePortRange": null,
+              "sourceGroup": null,
+              "sourceTier": null,
+              "applications": [
+                {
+                  "id": 432,
+                  "name": "ANY"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "routes": [
+
+    ],
+    "nats": [
+
+    ],
+    "permissions": {
+      "visibility": "private",
+      "tenantPermissions": {
+        "accounts": [
+          1
+        ]
+      }
+    }
+  }
+}

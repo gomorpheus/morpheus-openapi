@@ -1,0 +1,33 @@
+{
+  "specTemplate": {
+    "id": 13,
+    "account": {
+      "id": 1,
+      "name": "root"
+    },
+    "name": "cache-cluster",
+    "code": null,
+    "type": {
+      "id": 5,
+      "name": "CloudFormation Template",
+      "code": "cloudFormation"
+    },
+    "externalId": null,
+    "externalType": null,
+    "deploymentId": null,
+    "status": null,
+    "file": {
+      "id": 13,
+      "sourceType": "local",
+      "contentRef": null,
+      "contentPath": null,
+      "repository": null,
+      "content": "{\n  \"AWSTemplateFormatVersion\" : \"2010-09-09\",\n\n  \"Description\" : \"AWS CloudFormation Sample Template ElastiCache: Sample template showing how to create an Amazon ElastiCache Cache Cluster with Auto Discovery. **WARNING** This template creates an Amazon ElastiCache Cluster. You will be billed for the AWS resources used if you create a stack from this template.\",\n\n  \"Parameters\" : {\n\n    \"CacheNodeType\" : {\n      \"Description\" : \"The compute and memory capacity of the nodes in the Cache Cluster\",\n      \"Type\" : \"String\",\n      \"Default\" : \"cache.t2.small\",\n      \"AllowedValues\" : [ \"cache.m1.small\", \"cache.m1.large\", \"cache.m1.xlarge\", \"cache.m2.xlarge\", \"cache.m2.2xlarge\", \"cache.m2.4xlarge\", \"cache.c1.xlarge\", \"cache.t2.micro\", \"cache.t2.small\", \"cache.t2.medium\", \"cache.m3.medium\", \"cache.m3.large\", \"cache.m3.xlarge\", \"cache.m3.2xlarge\", \"cache.r3.large\", \"cache.r3.xlarge\", \"cache.r3.2xlarge\", \"cache.r3.4xlarge\", \"cache.r3.8xlarge\" ]\n,\n      \"ConstraintDescription\" : \"must select a valid Cache Node type.\"\n    },\n\n    \"NumberOfCacheNodes\" : {\n      \"Default\": \"1\",\n      \"Description\" : \"The number of Cache Nodes the Cache Cluster should have\",\n      \"Type\": \"Number\",\n      \"MinValue\": \"1\",\n      \"MaxValue\": \"10\",\n      \"ConstraintDescription\" : \"must be between 5 and 10.\"\n    }\n  },\n\n  \"Resources\" : {\n\n    \"CacheCluster\" : {\n      \"Type\": \"AWS::ElastiCache::CacheCluster\",\n      \"Properties\": {\n        \"CacheNodeType\"           : { \"Ref\" : \"CacheNodeType\" },\n        \"CacheSecurityGroupNames\" : [ { \"Ref\" : \"CacheSecurityGroup\" } ],\n        \"Engine\"                  : \"memcached\",\n        \"NumCacheNodes\"           : { \"Ref\" : \"NumberOfCacheNodes\" }\n      }\n    },\n\n    \"CacheSecurityGroup\": {\n      \"Type\": \"AWS::ElastiCache::SecurityGroup\",\n      \"Properties\": {\n        \"Description\"  : \"Lock cache down to Web Server access only\"\n      }\n    }\n  }\n}\n"
+    },
+    "config": {},
+    "createdBy": "admin",
+    "updatedBy": "admin",
+    "dateCreated": "2020-01-11T15:47:18+0000",
+    "lastUpdated": "2020-01-11T15:47:18+0000"
+  }
+}

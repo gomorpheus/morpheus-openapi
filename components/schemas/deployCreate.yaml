@@ -1,0 +1,18 @@
+deploymentId:
+  type: integer
+  format: int64
+  description: Deployment ID.
+version:
+  type: string
+  description: Deployment Version number identifier (userVersion). Can be passed along with deploymentId to identify the version
+versionId:
+  type: integer
+  format: int64
+  description: Deployment Version ID. This can be passed instead of deploymentId and version.
+config:
+  type: object
+  description: Map of configuration properties that vary by instance type.
+stageOnly:
+  type: boolean
+  description: Stage Only, do not run the deploy right away and instead set status to staged so it can be deployed later on.
+  default: false

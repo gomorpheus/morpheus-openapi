@@ -1,0 +1,17 @@
+{
+  "rule": {
+    "name": "stubbytoes-rule",
+    "config": {
+      "source": null,
+      "destination": null,
+      "application": [
+        "TELNET"
+      ],
+      "profile": null
+    },
+    "enabled": true,
+    "priority": 10,
+    "direction": "egress",
+    "policy": "accept"
+  }
+}

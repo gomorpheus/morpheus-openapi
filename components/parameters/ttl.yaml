@@ -1,0 +1,10 @@
+name: ttl
+in: query
+description: Time to Live. The lease duration in seconds, or a human readable format eg. '15m', 8h, '7d'.  0 means no expiry.
+schema:
+  oneOf:
+    - type: string
+    - type: integer
+      format: int64
+      default: 0
+example: '30d'

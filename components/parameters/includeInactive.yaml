@@ -1,0 +1,6 @@
+name: includeInactive
+in: query
+description: If true, include inactive prices in the results
+schema:
+  type: boolean
+example: true

@@ -1,0 +1,7 @@
+name: maxVersions
+in: query
+description: Max number of recent versions to return.
+schema:
+  type: integer
+  format: int64
+example: 6

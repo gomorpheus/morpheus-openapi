@@ -1,0 +1,44 @@
+{
+    "task": {
+        "id": 882,
+        "accountId": 1,
+        "name": "6. http",
+        "code": null,
+        "taskType": {
+            "id": 37,
+            "code": "httpTask",
+            "name": "HTTP"
+        },
+        "taskOptions": {
+            "webPassword": null,
+            "webPasswordHash": null,
+            "localScriptGitId": null,
+            "localScriptGitRef": null,
+            "webUser": null,
+            "webBody": null,
+            "webHeaders": "[]",
+            "password": null,
+            "passwordHash": null,
+            "username": null,
+            "ignoreSSL": null,
+            "webMethod": null,
+            "webUrl": null,
+            "host": null,
+            "port": null,
+            "sshKey": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:52:53Z",
+        "lastUpdated": "2022-08-04T13:52:53Z"
+    },
+    "success": true
+}

@@ -1,0 +1,21 @@
+{
+  "networkProxy": {
+    "id": 1,
+    "name": "myproxy",
+    "proxyHost": "10.30.50.100",
+    "proxyPort": 9091,
+    "proxyUser": null,
+    "proxyPassword": null,
+    "proxyDomain": "myproxy.com",
+    "proxyWorkstation": null,
+    "visibility": "private",
+    "account": {
+      "id": 1,
+      "name": "root"
+    },
+    "owner": {
+      "id": 1,
+      "name": "root"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+id:
+  type: integer
+  format: int32
+internalId:
+  type: string
+visibility:
+  type: string
+dateCreated:
+  type: string
+  format: date-time
+providerId:
+  type: string
+lastUpdated:
+  type: string
+  format: date-time
+active:
+  type: boolean
+displayName:
+  type: string
+name:
+  type: string
+enabled:
+  type: boolean
+externalId:
+  type: string
+config:
+  type: object
+  properties:
+    clusterProfileBindings:
+      type: string
+    members:
+      type: integer
+      format: int32
+    deploymentType:
+      type: string
+    memberNodeType:
+      type: string
+owner:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int32
+networkServer:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int32
+zone:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int32
+tenants:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      name:
+        type: string

@@ -1,0 +1,101 @@
+get:
+  summary: Get a Specific Network Edge Cluster
+  description: |
+    This endpoint retrieves a specific network Edge Cluster.
+  operationId: getNetworkEdgeCluster
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkEdgeCluster:
+                properties:
+                  $ref: ../components/schemas/networkEdgeCluster.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkEdgeCluster.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+put: 
+  summary: Update a Network Edge Cluster
+  description: |
+    Use this command to update an existing network Edge Cluster.
+  operationId: updateNetworkEdgeCluster
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          description: |
+            The parameters for update a network Edge Cluster is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
+          properties: 
+            networkEdgeCluster:
+              type: object
+        examples: 
+          Network Edge Cluster Request:
+            value:
+              $ref: ../components/examples/networkEdgeClusterUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
