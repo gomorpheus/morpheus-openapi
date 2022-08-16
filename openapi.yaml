@@ -483,6 +483,8 @@ paths:
     $ref: paths/api@provision-types.yaml
   /api/provision-types/{id}:
     $ref: paths/api@provision-types@id.yaml
+  /api/provisioning-settings:
+    $ref: paths/api@provisioning-settings.yaml
   /api/report-types:
     $ref: paths/api@report-types.yaml
   /api/reports:
