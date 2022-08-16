@@ -1,0 +1,17 @@
+{
+  "backupSettings": {
+    "backupsEnabled": true,
+    "createBackups": true,
+    "backupAppliance": true,
+    "defaultStorageBucket": {
+      "id": 42,
+      "name": "backups"
+    },
+    "defaultSchedule": {
+      "id": 1,
+      "code": "dailyAtMidnight",
+      "name": "Daily at Midnight"
+    },
+    "retentionCount": 12
+  }
+}

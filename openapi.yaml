@@ -63,6 +63,8 @@ paths:
     $ref: paths/api@apps@id@validate-apply.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@id@wiki.yaml
+  /api/backup-settings:
+    $ref: paths/api@backup-settings.yaml
   /api/blueprints:
     $ref: paths/api@blueprints.yaml
   /api/blueprints/{id}:

@@ -1,0 +1,38 @@
+type: object
+properties:
+  backupsEnabled: 
+    type: boolean
+    description: Use this to enable / disable scheduled backups
+  retentionCount: 
+    type: integer
+    format: int64
+    description: Maximum number of successful backups to retain
+  createBackups: 
+    type: boolean
+    description: Use this to enable / disable create backups
+  backupAppliance: 
+    type: boolean
+    description: When enabled, a Backup will be created to backup the Morpheus appliance database
+  updateExisting: 
+    type: boolean
+    description: Use this to update existing backups with new settings
+  defaultSchedule: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: ID of default backup schedule type
+  clearDefaultSchedule:
+    type: boolean
+    description: Use this to clear existing default backup schedule
+  defaultStorageBucket: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: ID of default storage bucket
+  clearDefaultStorageBucket:
+    type: boolean
+    description: Use this to clear default store bucket
