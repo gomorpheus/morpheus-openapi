@@ -1,0 +1,6 @@
+name: licenseType
+in: query
+description: If specified will return an exact match on licenseType code
+schema:
+  type: string
+example: win

@@ -1,0 +1,114 @@
+get:
+  summary: Get All Licenses
+  description: This endpoint retrieves all licenses.
+  operationId: listProvisioningLicenses
+  tags:
+    - Provisioning Licenses
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/licenseType.yaml
+    - $ref: ../components/parameters/licenseVersion.yaml
+    - $ref: ../components/parameters/orgName.yaml
+    - $ref: ../components/parameters/fullName.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  licenses:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/provisioningLicense.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/provisioningLicenses.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post:
+  summary: Create a License
+  description: Use this command to create a new license.
+  operationId: addProvisioningLicense
+  tags:
+    - Provisioning Licenses
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            license:
+              $ref: ../components/schemas/provisioningLicensesCreate.yaml
+        examples:
+          License Create Request:
+            value:
+              $ref: ../components/examples/provisioningLicensesCreate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  license:
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                        format: int64
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/provisioningLicensesCreateSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

@@ -1,0 +1,7 @@
+type: object
+properties:
+  resourceId:
+    type: integer
+    format: int64
+  resourceType:
+    type: string

@@ -491,6 +491,12 @@ paths:
     $ref: paths/api@provision-types.yaml
   /api/provision-types/{id}:
     $ref: paths/api@provision-types@id.yaml
+  /api/provisioning-licenses:
+    $ref: paths/api@provisioning-licenses.yaml
+  /api/provisioning-licenses/{id}:
+    $ref: paths/api@provisioning-licenses@id.yaml
+  /api/provisioning-licenses/{id}/reservations:
+    $ref: paths/api@provisioning-licenses@id@reservations.yaml
   /api/provisioning-settings:
     $ref: paths/api@provisioning-settings.yaml
   /api/report-types:
@@ -795,7 +801,8 @@ tags:
   - name: Provisioning Settings
     description: Manage Provisioning Settings
   - name: Provisioning Licenses
-    description: Manage Provisioning Licenses
+    description: |
+      Provides API interfaces for managing provisioning licenses within Morpheus. This allows configuration of which Windows license keys should be installed when provisioning your virtual images.
   - name: Reports
     description: Manage Reports
   - name: Roles
