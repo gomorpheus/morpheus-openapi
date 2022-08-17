@@ -21,12 +21,12 @@ servers:
 paths:
   /api/accounts:
     $ref: paths/api@accounts.yaml
+  /api/accounts/available-roles:
+    $ref: paths/api@accounts@available-roles.yaml
   /api/accounts/{id}:
     $ref: paths/api@accounts@id.yaml
   /api/activity:
     $ref: paths/api@activity.yaml
-  /api/accounts/available-roles:
-    $ref: paths/api@accounts@available-roles.yaml
   /api/appliance-settings:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
@@ -49,10 +49,10 @@ paths:
     $ref: paths/api@apps@id@apply.yaml
   /api/apps/{id}/cancel-removal:
     $ref: paths/api@apps@id@cancel-removal.yaml
-  /api/apps/{id}/refresh:
-    $ref: paths/api@apps@id@refresh.yaml
   /api/apps/{id}/prepare-apply:
     $ref: paths/api@apps@id@prepare-apply.yaml
+  /api/apps/{id}/refresh:
+    $ref: paths/api@apps@id@refresh.yaml
   /api/apps/{id}/remove-instance:
     $ref: paths/api@apps@id@remove-instance.yaml
   /api/apps/{id}/security-groups:
@@ -153,6 +153,10 @@ paths:
     $ref: paths/api@guidance@stats.yaml
   /api/guidance/types:
     $ref: paths/api@guidance@types.yaml
+  /api/instance-types:
+    $ref: paths/api@instance-types.yaml
+  /api/instance-types/{id}:
+    $ref: paths/api@instance-types@id.yaml
   /api/instances:
     $ref: paths/api@instances.yaml
   /api/instances/{id}:
@@ -163,24 +167,26 @@ paths:
     $ref: paths/api@instances@id@backup.yaml
   /api/instances/{id}/backups:
     $ref: paths/api@instances@id@backups.yaml
-  /api/instances/{id}/clone:
-    $ref: paths/api@instances@id@clone.yaml
-  /api/instances/{id}/clone-image:
-    $ref: paths/api@instances@id@clone-image.yaml
   /api/instances/{id}/cancel-expiration:
     $ref: paths/api@instances@id@cancel-expiration.yaml
   /api/instances/{id}/cancel-removal:
     $ref: paths/api@instances@id@cancel-removal.yaml
   /api/instances/{id}/cancel-shutdown:
     $ref: paths/api@instances@id@cancel-shutdown.yaml
+  /api/instances/{id}/clone-image:
+    $ref: paths/api@instances@id@clone-image.yaml
+  /api/instances/{id}/clone:
+    $ref: paths/api@instances@id@clone.yaml
   /api/instances/{id}/containers:
     $ref: paths/api@instances@id@containers.yaml
-  /api/instances/{id}/delete-container-snapshots/{containerId}:
-    $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
   /api/instances/{id}/delete-all-snapshots:
     $ref: paths/api@instances@id@delete-all-snapshots.yaml
+  /api/instances/{id}/delete-container-snapshots/{containerId}:
+    $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
   /api/instances/{id}/deploys:
     $ref: paths/api@instances@id@deploys.yaml
+  /api/instances/{id}/eject:
+    $ref: paths/api@instances@id@eject.yaml
   /api/instances/{id}/envs:
     $ref: paths/api@instances@id@envs.yaml
   /api/instances/{id}/extend-expiration:
@@ -215,20 +221,22 @@ paths:
     $ref: paths/api@instances@id@state.yaml
   /api/instances/{id}/stop:
     $ref: paths/api@instances@id@stop.yaml
+  /api/instances/{id}/suspend:
+    $ref: paths/api@instances@id@suspend.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
+  /api/instances/{id}/validate-apply:
+    $ref: paths/api@instances@id@validate-apply.yaml
   /api/instances/{id}/wiki:
     $ref: paths/api@instances@id@wiki.yaml
   /api/instances/{id}/workflow:
     $ref: paths/api@instances@id@workflow.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
-  /api/instances/{id}/validate-apply:
-    $ref: paths/api@instances@id@validate-apply.yaml
-  /api/instance-types:
-    $ref: paths/api@instance-types.yaml
-  /api/instance-types/{id}:
-    $ref: paths/api@instance-types@id.yaml
+  /api/invoice-line-items:
+    $ref: paths/api@invoice-line-items.yaml
+  /api/invoice-line-items/{id}:
+    $ref: paths/api@invoice-line-items@id.yaml
   /api/invoices:
     $ref: paths/api@invoices.yaml
   /api/invoices/{id}:
@@ -245,20 +253,6 @@ paths:
     $ref: paths/api@jobs@id.yaml
   /api/jobs/{id}/execute:
     $ref: paths/api@jobs@id@execute.yaml
-  /api/invoice-line-items:
-    $ref: paths/api@invoice-line-items.yaml
-  /api/invoice-line-items/{id}:
-    $ref: paths/api@invoice-line-items@id.yaml
-  /api/license:
-    $ref: paths/api@license.yaml
-  /api/log-settings:
-    $ref: paths/api@log-settings.yaml
-  /api/log-settings/syslog-rules:
-    $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings/syslog-rules/{id}:
-    $ref: paths/api@log-settings@syslog-rules@id.yaml
-  /api/logs:
-    $ref: paths/api@logs.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
@@ -291,28 +285,32 @@ paths:
     $ref: paths/api@library@layouts@id.yaml
   /api/library/layouts@{id}@permissions:
     $ref: paths/api@library@layouts@id@permissions.yaml
-  /api/library/option-types:
-    $ref: paths/api@library@option-types.yaml
-  /api/library/option-types/{id}:
-    $ref: paths/api@library@option-types@id.yaml
   /api/library/option-type-lists:
     $ref: paths/api@library@option-type-lists.yaml
   /api/library/option-type-lists/{id}:
     $ref: paths/api@library@option-type-lists@id.yaml
   /api/library/option-type-lists/{id}/items:
     $ref: paths/api@library@option-type-lists@id@items.yaml
+  /api/library/option-types:
+    $ref: paths/api@library@option-types.yaml
+  /api/library/option-types/{id}:
+    $ref: paths/api@library@option-types@id.yaml
   /api/library/spec-templates:
     $ref: paths/api@library@spec-templates.yaml
   /api/library/spec-templates/{id}:
     $ref: paths/api@library@spec-templates@id.yaml
+  /api/license:
+    $ref: paths/api@license.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
+  /api/load-balancer-types:
+    $ref: paths/api@load-balancer-types.yaml
+  /api/load-balancer-types/{id}:
+    $ref: paths/api@load-balancer-types@id.yaml
   /api/load-balancers:
     $ref: paths/api@load-balancers.yaml
   /api/load-balancers/{loadBalancerId}:
     $ref: paths/api@load-balancers@id.yaml
-  /api/load-balancers/{loadBalancerId}/refresh:
-    $ref: paths/api@load-balancers@id@refresh.yaml
   /api/load-balancers/{loadBalancerId}/monitors:
     $ref: paths/api@load-balancers@id@monitors.yaml
   /api/load-balancers/{loadBalancerId}/monitors/{id}:
@@ -325,14 +323,20 @@ paths:
     $ref: paths/api@load-balancers@id@profiles.yaml
   /api/load-balancers/{loadBalancerId}/profiles/{id}:
     $ref: paths/api@load-balancers@id@profiles@id.yaml
+  /api/load-balancers/{loadBalancerId}/refresh:
+    $ref: paths/api@load-balancers@id@refresh.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers:
     $ref: paths/api@load-balancers@id@virtual-servers.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
-  /api/load-balancer-types:
-    $ref: paths/api@load-balancer-types.yaml
-  /api/load-balancer-types/{id}:
-    $ref: paths/api@load-balancer-types@id.yaml
+  /api/log-settings:
+    $ref: paths/api@log-settings.yaml
+  /api/log-settings/syslog-rules:
+    $ref: paths/api@log-settings@syslog-rules.yaml
+  /api/log-settings/syslog-rules/{id}:
+    $ref: paths/api@log-settings@syslog-rules@id.yaml
+  /api/logs:
+    $ref: paths/api@logs.yaml
   /api/monitoring/alerts:
     $ref: paths/api@monitoring@alerts.yaml
   /api/monitoring/alerts/{id}:
@@ -367,6 +371,8 @@ paths:
     $ref: paths/api@monitoring@groups@id.yaml
   /api/monitoring/groups/{id}/mute:
     $ref: paths/api@monitoring@groups@id@mute.yaml
+  /api/monitoring/groups/mute-all:
+    $ref: paths/api@monitoring@groups@mute-all.yaml
   /api/monitoring/incidents:
     $ref: paths/api@monitoring@incidents.yaml
   /api/monitoring/incidents/{id}:

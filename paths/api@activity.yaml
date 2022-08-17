@@ -50,7 +50,7 @@ get:
             Search Response:
               value:
                 $ref: ../components/examples/activity.json
-    '4xx':
+    '4XX':
       $ref: ../components/responses/4xx.yaml
-    '5xx':
+    '5XX':
       $ref: ../components/responses/5xx.yaml
