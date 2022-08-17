@@ -121,12 +121,12 @@ put:
             properties:
               datastore:
                 allOf:
-                  - $ref: ../components/schemas/zoneDatastore.yaml
+                  - $ref: ../components/schemas/zoneFolder.yaml
                   - $ref: ../components/schemas/200-success.yaml
           examples:
             Report Types Response:
               value:
-                $ref: ../components/examples/zoneDatastore.json
+                $ref: ../components/examples/zoneFolder.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

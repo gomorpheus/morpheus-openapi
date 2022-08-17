@@ -1,0 +1,12 @@
+description: Error Codes
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/default-error.yaml
+    examples:
+      '500':
+        value:
+          $ref: ../examples/500.json
+      '503':
+        value:
+          $ref: ../examples/503.json

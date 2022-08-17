@@ -1,0 +1,30 @@
+description: Error Codes
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/default-error.yaml
+    examples:
+      '400':
+        value:
+          $ref: ../examples/400.json
+      '401':
+        value:
+          $ref: ../examples/401.json
+      '403':
+        value:
+          $ref: ../examples/403.json
+      '404':
+        value:
+          $ref: ../examples/404.json
+      '405':
+        value:
+          $ref: ../examples/405.json
+      '406':
+        value:
+          $ref: ../examples/406.json
+      '410':
+        value:
+          $ref: ../examples/410.json
+      '429':
+        value:
+          $ref: ../examples/429.json
