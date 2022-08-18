@@ -27,7 +27,7 @@ post:
             allOf:
             - type: object
               properties:
-                item:
+                order:
                   $ref: ../components/schemas/catalogOrderCreateSuccess.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:

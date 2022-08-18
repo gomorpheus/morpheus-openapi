@@ -1,0 +1,26 @@
+get:
+  summary: Get a Specific Catalog Inventory Item
+  description: This endpoint retrieves a specific catalog inventory item.
+  operationId: getCatalogItem
+  tags:
+    - Service Catalog
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              item:
+                $ref: ../components/schemas/catalogItem.yaml
+          examples:
+            Get Credentials Response:
+              value:
+                $ref: ../components/examples/catalogItem.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
