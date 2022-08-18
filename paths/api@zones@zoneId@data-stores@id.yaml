@@ -1,0 +1,157 @@
+get:
+  summary: Retrieves a Datastore for Specified Cloud
+  description: |
+    Data Stores can be managed for each Compute Zone (Cloud) in your infrastructure.
+    This endpoint retrieves a specific datastore under a cloud.
+  operationId: getCloudDatastores
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/zoneId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                datastore:
+                  $ref: ../components/schemas/zoneDatastore.yaml
+          examples:
+            Datastore Response:
+              value:
+                $ref: ../components/examples/zoneDatastore.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Updates a Specified Datastore for Specified Cloud
+  description: |
+    Updates a datastore for specified cloud.
+  operationId: updateCloudDatastores
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/zoneId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - datastore
+          properties:
+            datastore:
+              type: object
+              properties:
+                active: 
+                  type: boolean
+                  description: Activate `true` or disable `false` the datastore
+                visibility:
+                  type: string
+                  description: Setting `private` or `public`
+                  enum:
+                    - public
+                    - private
+                  default: private
+                tenantPermissions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      accounts:
+                        type: array
+                        description: Array of tenant account ids that are allowed access
+                        items:
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                      defaultTarget:
+                        type: array
+                        description: Array of tenant account ids which should use the data store as the Default
+                        items: 
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                      defaultStore:
+                        type: array
+                        description: Array of tenant account ids which should use the data store as the Image Target
+                        items: 
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                resourcePermissions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      all:
+                        type: boolean
+                        description: Pass `true` to allow access all groups
+                      sites:
+                        type: array
+                        description: Array of groups that are allowed access
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 1
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              datastore:
+                allOf:
+                  - $ref: ../components/schemas/zoneDatastore.yaml
+                  - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Report Types Response:
+              value:
+                $ref: ../components/examples/zoneDatastore.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

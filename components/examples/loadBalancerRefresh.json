@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "loadBalancer": {
+    "id": 80,
+    "name": "dand-nsxt",
+    "accountId": 1,
+    "cloud": {
+      "id": 75,
+      "name": "vmware-nsx"
+    },
+    "type": {
+      "id": 19,
+      "name": "NSX-T",
+      "code": "nsx-t"
+    },
+    "visibility": "public",
+    "description": "",
+    "host": "10.32.23.7",
+    "port": 22,
+    "username": null,
+    "ip": "10.32.23.7",
+    "internalIp": null,
+    "externalIp": null,
+    "apiPort": null,
+    "adminPort": null,
+    "sslEnabled": null,
+    "sslCert": null,
+    "config": {
+      "loglevel": "INFO",
+      "tier1": "/infra/tier-1s/4286ddad-3d8a-464b-81a8-e17e15f30ca8",
+      "size": "SMALL",
+      "adminState": true,
+      "systemVersion": "2.5.1.0.0.15314292"
+    },
+    "dateCreated": "2021-10-19T17:32:05Z",
+    "lastUpdated": "2021-12-03T18:52:47Z"
+  }
+}

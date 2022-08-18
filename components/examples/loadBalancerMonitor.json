@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "loadBalancerMonitor": {
+    "id": 64,
+    "loadBalancer": {
+      "id": 80,
+      "type": {
+        "id": 19,
+        "code": "nsx-t",
+        "name": "NSX-T"
+      },
+      "name": "dand-nsxt",
+      "ip": "10.32.23.7"
+    },
+    "name": "bob-test",
+    "code": null,
+    "category": null,
+    "visibility": "public",
+    "description": "",
+    "monitorType": "LBHttpMonitorProfile",
+    "monitorInterval": 5,
+    "monitorTimeout": 15,
+    "sendData": null,
+    "sendVersion": "HTTP_VERSION_1_1",
+    "sendType": "GET",
+    "receiveData": null,
+    "receiveCode": "201",
+    "disabledData": null,
+    "monitorUsername": null,
+    "monitorPassword": null,
+    "monitorDestination": "/",
+    "monitorReverse": false,
+    "monitorTransparent": false,
+    "monitorAdaptive": false,
+    "aliasAddress": null,
+    "aliasPort": 88,
+    "internalId": "/infra/lb-monitor-profiles/8bb2ee52-d117-4f50-9b21-499e65545808",
+    "externalId": "8bb2ee52-d117-4f50-9b21-499e65545808",
+    "monitorSource": "external",
+    "status": "ok",
+    "statusMessage": null,
+    "statusDate": null,
+    "enabled": true,
+    "maxRetry": 0,
+    "fallCount": 3,
+    "riseCount": 3,
+    "dataLength": null,
+    "config": {
+    },
+    "createdBy": null,
+    "dateCreated": "2021-10-19T17:39:33Z",
+    "lastUpdated": "2021-12-03T18:22:38Z"
+  }
+}

@@ -1,0 +1,46 @@
+{
+    "task": {
+        "id": 903,
+        "accountId": 1,
+        "name": "13. Python",
+        "code": null,
+        "taskType": {
+            "id": 28,
+            "code": "jythonTask",
+            "name": "Python Script"
+        },
+        "taskOptions": {
+            "pythonArgs": null,
+            "pythonBinary": null,
+            "pythonAdditionalPackages": null,
+            "port": null,
+            "host": null,
+            "username": null,
+            "sshKey": null,
+            "password": null,
+            "passwordHash": null,
+            "localScriptGitId": null,
+            "localScriptGitRef": null
+        },
+        "file": {
+            "id": 1071,
+            "sourceType": "local",
+            "contentRef": null,
+            "contentPath": null,
+            "repository": null,
+            "content": null
+        },
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:54:38Z",
+        "lastUpdated": "2022-08-04T13:54:38Z"
+    },
+    "success": true
+}

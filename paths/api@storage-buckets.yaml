@@ -1,0 +1,242 @@
+get:
+  summary: Retrieves all Storage Buckets
+  description: |
+    Retrieves all storage buckets.
+  operationId: listStorageBuckets
+  tags:
+    - Storage
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                storageBuckets:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/storageBucket.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Storage Buckets Response:
+              value:
+                $ref: ../components/examples/storageBuckets.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Creates a Storage Bucket
+  description: |
+    Creates a storage bucket.
+  operationId: addStorageBuckets
+  tags:
+    - Storage
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - storageBucket
+          properties:
+            storageBucket:
+              type: object
+              required:
+                - name
+                - providerType
+                - config
+              properties:
+                name: 
+                  type: string
+                  description: A unique name scoped to your account for the storage bucket
+                providerType:
+                  type: string
+                  description: The type of storage bucket
+                  enum:
+                    - s3
+                    - azure
+                    - cifs
+                    - local
+                    - nfs
+                    - openstack
+                    - rackspace
+                defaultBackupTarget:
+                  type: boolean
+                  description: Default Backup Target
+                  default: false
+                copyToStore:
+                  type: boolean
+                  description: Archive Snapshots
+                defaultDeploymentTarget:
+                  type: boolean
+                  description: Default Deployment Target
+                  default: false
+                defaultVirtualImageTarget:
+                  type: boolean
+                  description: Default Virtual Image Store
+                  default: false
+                retentionPolicyType:
+                  type: string
+                  description: Cleanup mode. `backup` - Move old files to a backup provider. `delete` - Delete old files. `none` - Keep all files.
+                  enum:
+                    - backup
+                    - delete
+                    - none
+                  default: none
+                retentionPolicyDays:
+                  type: integer
+                  format: int64
+                  description: The number of days old a file must be before it is deleted.
+                retentionProvider:
+                  type: string
+                  description: The backup Storage Bucket where old files are moved to.
+                bucketName:
+                    type: string
+                    description: The name of the bucket. Only applies to `Amazon`, `Azure`, `CIFS`, `NFSv3`, `Openstack Swift`, and `Rackspace CDN`.
+                    example: myBucket
+                createBucket: 
+                  type: boolean
+                  description: Create the bucket if it does not exist. Only applies to `Amazon`, `Azure`, `Openstack Swift`, and `Rackspace CDN`.
+                  default: false
+                config:
+                  oneOf:
+                  - type: object
+                    description: Amazon S3
+                    properties:
+                      accessKey:
+                        type: string
+                        description: Access Key
+                      secretKey:
+                        type: string
+                        description: Secret Key
+                      region:
+                        type: string
+                        description: Optional Amazon region if creating a new bucket
+                      endpoint:
+                        type: string
+                        description: Optional endpoint URL if pointing to an object store other than amazon that mimics the Amazon S3 APIs.
+                  - type: object
+                    description: Azure
+                    properties:
+                      storageAccount:
+                        type: string
+                        description: Storage Account
+                      storageKey:
+                        type: string
+                        description: Storage Key
+                  - type: object
+                    description: CIFS
+                    properties:
+                      host:
+                        type: string
+                        description: host
+                      username:
+                        type: string
+                        description: username
+                      password:
+                        type: string
+                        description: password
+                  - type: object
+                    description: Local Storage
+                    properties:
+                      basePath:
+                        type: string
+                        description: Storage Path
+                  - type: object
+                    description: NFSv3
+                    properties:
+                      host:
+                        type: string
+                        description: Host
+                      exportFolder:
+                        type: string
+                        description: Export Folder
+                  - type: object
+                    description: Openstack Swift
+                    properties:
+                      username:
+                        type: string
+                        description: Username
+                      apiKey:
+                        type: string
+                        description: API Key
+                      region:
+                        type: string
+                        description: Region
+                      identityUrl:
+                        type: string
+                        description: Identity URL
+                  - type: object
+                    description: Rackspace CDN
+                    properties: 
+                      username:
+                        type: string
+                        description: username
+                      apiKey:
+                        type: string
+                        description: API Key
+                      region:
+                        type: string
+                        description: Region
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                storageBucket:
+                  $ref: ../components/schemas/storageBucket.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Storage Bucket Response:
+              value:
+                $ref: ../components/examples/storageBucketSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

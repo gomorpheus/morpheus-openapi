@@ -1,0 +1,25 @@
+type: object
+required:
+  - mtu
+  - zonePool
+  - autoCreate
+properties: 
+  mtu:
+    type: string
+    description: GCP MTU
+    default: "1460"
+    enum:
+      - "1460"
+      - "1500"
+  zonePool:
+    type: object
+    required:
+      - id
+    properties:
+      id:
+        type: integer
+        description: Morpheus resource pool ID of the GCP Project for the network.
+  autoCreate:
+    type: boolean
+    description: Auto create subnets
+    default: true

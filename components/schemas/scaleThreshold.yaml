@@ -1,0 +1,52 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  type: 
+    type: string
+  autoUp: 
+    type: boolean
+  autoDown: 
+    type: boolean
+  minCount: 
+    type: integer
+    format: int64
+  maxCount: 
+    type: integer
+    format: int64
+  scaleIncrement: 
+    type: integer
+    format: int64
+  cpuEnabled: 
+    type: boolean
+  minCpu: 
+    type: integer
+    format: int64
+  maxCpu: 
+    type: integer
+    format: int64
+  memoryEnabled: 
+    type: boolean
+  minMemory: 
+    type: integer
+    format: int64
+  maxMemory: 
+    type: integer
+    format: int64
+  diskEnabled: 
+    type: boolean
+  minDisk: 
+    type: integer
+    format: int64
+  maxDisk: 
+    type: integer
+    format: int64
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

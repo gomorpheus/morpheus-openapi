@@ -1,0 +1,34 @@
+type: object
+properties: 
+  vipName: 
+    type: string
+    description: VIP Name
+  description: 
+    type: string
+    description: Description
+  vipAddress: 
+    type: string
+    description: VIP Address
+  vipPort: 
+    type: string
+    description: VIP Port
+  vipProtocol: 
+    type: string
+    description: VIP Protocol
+  vipHostname: 
+    type: string
+    description: VIP Hostname
+  pool:
+    type: integer
+    format: int64
+  sslCert: 
+    type: integer
+    format: int64
+    description: SSL Client Certificate ID
+  sslServerCert: 
+    type: integer
+    format: int64
+    description: SSL Server Certificate ID
+  config:
+    type: object
+    description: Configuration object with parameters that vary by type.

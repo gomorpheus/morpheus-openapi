@@ -1,0 +1,104 @@
+get:
+  summary: Get All Apps
+  description: |
+    This endpoint retrieves a paginated list of apps.
+  operationId: listApps
+  tags:
+    - Apps
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/createdBy.yaml
+    - $ref: ../components/parameters/showDeleted.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                apps:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/app.yaml
+            - $ref: ../components/schemas/appStats.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Apps Response:
+              value:
+                $ref: ../components/examples/apps.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create an App
+  description: Create an App
+  operationId: addApps
+  tags: 
+    -  Apps
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../components/schemas/appCreate.yaml
+        examples:
+          App Request:
+            value:
+              $ref: ../components/examples/appRequest.json
+
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              app:
+                $ref: ../components/schemas/app.yaml
+          examples:
+            Apps Response:
+              value:
+                $ref: ../components/examples/app.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

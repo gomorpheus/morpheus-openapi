@@ -1,0 +1,7 @@
+name: instanceName
+in: query
+description: Filter by instance name
+schema:
+  type: string
+  description: Instance Name
+example: "instance1"

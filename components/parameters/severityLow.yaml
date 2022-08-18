@@ -1,0 +1,10 @@
+name: severity
+in: query
+description: Filter by severity
+schema:
+  type: string
+  enum:
+    - INFO
+    - LOW
+    - WARNING
+    - CRITICAL

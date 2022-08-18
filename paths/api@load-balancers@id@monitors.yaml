@@ -1,0 +1,118 @@
+get:
+  summary: Get All Load Balancer Monitors For Load Balancer
+  description: This endpoint retrieves all load balancer monitors associated with a specified load balancer.
+  operationId: listLoadBalancerMonitors
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  loadBalancerMonitors:
+                    type: array
+                    items:
+                      type: object
+                      properties: 
+                        $ref: ../components/schemas/loadBalancerMonitor.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Load Balancer Monitors Response:
+              value:
+                $ref: ../components/examples/loadBalancerMonitors.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      
+post: 
+  summary: Create a Load Balancer Monitor
+  description: |
+    Use this command to create a load balancer Monitor.
+
+    This endpoint allows creating a Load Balancer Monitor. Configuration options vary by Load Balancer Type.
+  operationId: createLoadBalancerMonitor
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            loadBalancerMonitor:
+              type: object
+              properties: 
+                $ref: ../components/schemas/loadBalancerMonitorCreate.yaml
+        examples:
+          Load Balancer Monitor Request:
+            value: 
+              $ref: ../components/examples/loadBalancerMonitorCreate.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:
+            - type: object
+              properties:
+                loadBalancerMonitor:
+                  type: object
+                  properties: 
+                    $ref: ../components/schemas/loadBalancerMonitor.yaml
+            - $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Load Balancers Response:
+              value:
+                $ref: ../components/examples/loadBalancerMonitor.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

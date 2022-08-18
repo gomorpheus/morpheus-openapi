@@ -1,0 +1,50 @@
+post:
+  summary: Executes an Execution Request
+  description: |
+    Provides API interfaces for executing an arbitrary script or command on an instance, container or host.
+  operationId: executeExecutionRequest
+  tags:
+    - Automation
+  parameters:
+    - $ref: ../components/parameters/instanceId.yaml
+    - $ref: ../components/parameters/containerId.yaml
+    - $ref: ../components/parameters/serverId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - script
+          properties:
+            script:
+              type: string
+              description: A script or command to be executed
+              example: "uname -a"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

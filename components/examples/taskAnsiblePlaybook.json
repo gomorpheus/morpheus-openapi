@@ -1,0 +1,41 @@
+{
+    "task": {
+        "id": 867,
+        "accountId": 1,
+        "name": "1.ansible playbook",
+        "code": null,
+        "taskType": {
+            "id": 22,
+            "code": "ansibleTask",
+            "name": "Ansible Playbook"
+        },
+        "taskOptions": {
+            "ansiblePlaybook": null,
+            "password": null,
+            "passwordHash": null,
+            "ansibleSkipTags": null,
+            "username": null,
+            "ansibleGitRef": null,
+            "sshKey": null,
+            "ansibleTags": null,
+            "localScriptGitRef": null,
+            "localScriptGitId": null,
+            "ansibleGitId": "226",
+            "host": null,
+            "ansibleOptions": null,
+            "port": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:52:02Z",
+        "lastUpdated": "2022-08-04T13:52:02Z"
+    }
+}

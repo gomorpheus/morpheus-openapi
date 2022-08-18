@@ -1,0 +1,23 @@
+name: priceType
+in: query
+description: |
+  Restricts query to only load only prices with specified priceType.
+  * `fixed` - Everything
+  * `compute` - Memory + CPU
+  * `memory` - Memory
+  * `cores` - Cores
+  * `storage` - Storage
+  * `datastore` - Datastore
+  * `platform` - Platform
+  * `software` - Software
+schema:
+  type: string
+  enum:
+    - fixed
+    - compute
+    - memory
+    - cores
+    - storage
+    - datastore
+    - platform
+    - software

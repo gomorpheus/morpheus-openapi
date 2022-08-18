@@ -1,0 +1,106 @@
+get:
+  summary: Get all Network DHCP Relays for Network Relay
+  description: |
+    This endpoint retrieves all Network DHCP Relays for a specified Network Service.
+  operationId: getNetworkDhcpRelays
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/serverId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkDhcpRelays:
+                  items:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/networkDhcpRelay.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkDhcpRelays.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Network DHCP Relay
+  description: |
+    Create a Network DHCP Relay.
+  operationId: createNetworkDhcpRelay
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/serverId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            networkDhcpRelay:
+              $ref: ../components/schemas/networkDhcpRelayCreate.yaml
+        examples: 
+          Network DHCP Relay Request:
+            value:
+              $ref: ../components/examples/networkDhcpRelayCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/successId.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

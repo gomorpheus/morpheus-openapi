@@ -1,0 +1,6 @@
+name: value
+in: query
+description: The secret value to be stored. Only required for certain mounts. Some mounts generate their own value and do not require a value to be passed. eg. `uuid`, `key` and `password`.
+schema:
+  type: string
+example: '{"foo":"bar", "zip":"zap"}'

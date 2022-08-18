@@ -1,0 +1,76 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+    nullable: true
+  ruleType: 
+    type: string
+  customRule: 
+    type: boolean
+  instanceTypeId: 
+    type: string
+    nullable: true
+  direction: 
+    type: string
+  policy: 
+    type: string
+  sourceType: 
+    type: string
+  source: 
+    type: string
+    nullable: true
+  sourceGroup: 
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  sourceTier: 
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  portRange: 
+    type: string
+    nullable: true
+  protocol: 
+    type: string
+  destinationType: 
+    type: string
+  destination: 
+    type: string
+    nullable: true
+  destinationGroup: 
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  destinationTier: 
+    type: object
+    nullable: true
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+  externalId: 
+    type: string
+    nullable: true
+  enabled: 
+    type: string
+    nullable: true

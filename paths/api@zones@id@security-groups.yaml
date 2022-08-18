@@ -1,0 +1,112 @@
+get:
+  summary: Retrieves all Security Groups for a Cloud
+  description: |
+    Retrieves all security groups for a cloud.
+  operationId: listCloudSecurityGroups
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                success:
+                  type: boolean
+                firewallEnabled:
+                  type: boolean
+                securityGroups:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/zoneSecurityGroup.yaml
+          examples:
+            Cloud Security Groups Response:
+              value:
+                $ref: ../components/examples/zoneSecurityGroups.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Sets Security Groups for a Cloud
+  description: |
+    Sets security groups for acloud.
+  operationId: updateCloudSecurityGroups
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - securityGroupIds
+          properties:
+            securityGroupIds:
+              type: array
+              nullable: true
+              items:
+                type: integer
+                format: int64
+                description: |
+                  List of all security groups ids which should be applied.
+                  If no security groups should apply, pass `[]`
+              example: [19,2]
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                success:
+                  type: boolean
+                securityGroups:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/zoneSecurityGroup.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

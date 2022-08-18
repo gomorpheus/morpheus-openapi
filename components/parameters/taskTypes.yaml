@@ -1,0 +1,27 @@
+name: type
+in: query
+description: |
+  If specified will return all tasks by `task type` code.
+  Refer to `Task Types` API for up to date listings.
+schema:
+  type: string
+  enum:
+  - ansibleTask
+  - ansibleTowerTask
+  - chefTask
+  - email
+  - groovyTask
+  - httpTask
+  - javascriptTask
+  - jrubyTask
+  - containerScript
+  - containerTemplate
+  - localScript
+  - winrmTask
+  - puppetTask
+  - jythonTask
+  - restartTask
+  - script
+  - sshTask
+  - vro
+  - writeAttributes

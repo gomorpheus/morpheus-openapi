@@ -1,0 +1,226 @@
+get:
+  summary: Retrieves all Prices
+  description: |
+    Retrieves all prices.
+  operationId: listPrices
+  tags:
+    - Prices
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/includeInactive.yaml
+    - $ref: ../components/parameters/priceType.yaml
+    - $ref: ../components/parameters/platform.yaml
+    - $ref: ../components/parameters/currency.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                prices:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/price.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Prices Response:
+              value:
+                $ref: ../components/examples/prices.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+post:
+  summary: Creates a Price
+  description: |
+    Creates a price.
+  operationId: addPrices
+  tags:
+    - Prices
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - price
+          properties:
+            price:
+              type: object
+              required:
+                - name
+                - code
+                - priceType
+                - priceUnit
+                - incurCharges
+                - currency
+                - cost
+              properties:
+                name: 
+                  type: string
+                  description: Price name
+                code:
+                  type: string
+                  description: Price code, must be unique
+                account:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: Assign to specified tenant account
+                priceType:
+                  type: string
+                  description: |
+                    Restricts query to only load only prices with specified priceType.
+                    * `fixed` - Everything
+                    * `compute` - Memory + CPU
+                    * `memory` - Memory
+                    * `cores` - Cores
+                    * `storage` - Storage
+                    * `datastore` - Datastore
+                    * `platform` - Platform
+                    * `software` - Software
+                  enum:
+                    - fixed
+                    - compute
+                    - memory
+                    - cores
+                    - storage
+                    - datastore
+                    - platform
+                    - software
+                priceUnit:
+                  type: string
+                  description: The unit of pricing
+                  enum:
+                    - minute
+                    - hour
+                    - day
+                    - month
+                    - year
+                    - two year
+                    - three year
+                    - four year
+                    - five year
+                incurCharges:
+                  type: string
+                  description: Indicates when to incur charge
+                  enum:
+                    - running
+                    - stopped
+                    - always
+                currency:
+                  type: string
+                  description: ISO Currency code
+                  example: USD
+                cost:
+                  type: number
+                  description: Cost
+                  example: 10.5
+                markupType:
+                  type: string
+                  description: Price adjustment type
+                  enum:
+                    - fixed
+                    - percent
+                    - custom
+                markup:
+                  type: number
+                  description: Amount for `fixed` price adjustment type
+                  example: 2.5
+                markupPercent:
+                  type: number
+                  description: Percent for `percent` price adjustment type
+                  example: 13.5
+                customPrice:
+                  type: number
+                  description: Custom price for `custom` price adjustment type
+                  example: 12.25
+                platform:
+                  type: string
+                  description: Platform.  Required for `platform` price type
+                  example: linux
+                software:
+                  type: string
+                  description: Software.  Required for software price type
+                volumeType:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: |
+                        Volume type ID, required for `storage` price type.
+                        The endpoint /api/prices/volume-types provides a list of available volume type options.
+                datastore:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: |
+                        Datastore ID.  Required for datastore price type
+                crossCloudApply:
+                  type: boolean
+                  description: Apply price across clouds, optional true/false flag for datastore price type
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                price:
+                  $ref: ../components/schemas/price.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Price Response:
+              value:
+                $ref: ../components/examples/priceSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

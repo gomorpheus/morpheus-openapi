@@ -1,0 +1,48 @@
+get:
+  summary: Retrieves all Datastores for Specified Cloud
+  description: |
+    Data Stores can be managed for each Compute Zone (Cloud) in your infrastructure.
+    This endpoint retrieves all data stores under a cloud.
+  operationId: listCloudDatastores
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/zoneId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                datastores:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/zoneDatastore.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Datastores Response:
+              value:
+                $ref: ../components/examples/zoneDatastores.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

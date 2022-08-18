@@ -1,0 +1,44 @@
+{
+    "networkEdgeClusters": [
+        {
+            "id": 1,
+            "internalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "visibility": "public",
+            "dateCreated": "2021-11-01T23:02:22Z",
+            "providerId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "lastUpdated": "2021-11-04T21:23:59Z",
+            "active": true,
+            "displayName": "test-edge-cluster",
+            "name": "test-edge-cluster",
+            "enabled": true,
+            "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            "config": {
+                "clusterProfileBindings": "nsx-default-edge-high-availability-profile",
+                "members": 2,
+                "deploymentType": "VIRTUAL_MACHINE",
+                "memberNodeType": "EDGE_NODE"
+            },
+            "owner": {
+                "id": 1
+            },
+            "networkServer": {
+                "id": 3
+            },
+            "zone": {
+                "id": 5
+            },
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Stubby Toes Inc."
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 1,
+        "total": 1
+    }
+}

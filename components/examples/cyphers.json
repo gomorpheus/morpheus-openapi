@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": {
+    "keys": [
+      "password/15/mypassword",
+      "secret/foo"
+    ]
+  },
+  "cyphers": [
+    {
+      "itemKey": "password/15/mypassword",
+      "leaseTimeout": 2764800000,
+      "expireDate": "2019-03-23T10:17:52Z",
+      "dateCreated": "2019-02-19T10:17:52Z",
+      "lastUpdated": "2019-02-19T10:17:52Z",
+      "lastAccessed": "2019-02-19T10:17:52Z"
+    },
+    {
+      "itemKey": "secret/foo",
+      "leaseTimeout": 2764800000,
+      "expireDate": "2019-03-25T17:14:33Z",
+      "dateCreated": "2019-02-21T17:14:33Z",
+      "lastUpdated": "2019-02-21T17:14:33Z",
+      "lastAccessed": "2019-02-21T17:14:33Z"
+    }
+  ],
+  "meta": {
+    "size": 2,
+    "total": 2,
+    "max": 25,
+    "offset": 0
+  }
+}

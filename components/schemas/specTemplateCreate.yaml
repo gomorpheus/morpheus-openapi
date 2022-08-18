@@ -1,0 +1,84 @@
+type: object
+required:
+  - name
+  - type
+  - file
+properties:
+  name:
+    type: string
+    description: Spec template name
+  type:
+    type: object
+    required:
+      - code
+    properties:
+      code:
+        type: string
+        description: Spec Template Type. i.e. arm, cloudFormation, helm, kubernetes, oneview, terraform, ucs.
+  file:
+    type: object
+    description: File, object specifying file type and content
+    required:
+      - sourceType
+    properties:
+      sourceType:
+        type: string
+        description: File Source i.e. local, repository, url.
+        default: local
+      content:
+        type: string
+        description: File content, the template text. Only required when sourceType is `local`.
+      contentPath:
+        type: string
+        description: Content Path, the repo file location or url. Required when sourceType is repository or url.
+      contentRef:
+        type: string
+        description: Content Ref, the branch/tag. Only used when sourceType is repo.
+      repository:
+        type: object
+        required:
+          - id
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: Code Repository ID, required for type repository. Use `/api/options/codeRepositories` to see available repositories.
+  config:
+    type: object
+    description: The Cloud Formation type supports some additional configuration parameters
+    properties:
+      cloudformation:
+        type: object
+        required:
+          - IAM
+          - CAPABILITY_NAMED_IAM
+          - CAPABILITY_AUTO_EXPAND	
+        properties:
+          IAM:
+            oneOf:
+              - type: string
+                description: CAPABILITY_IAM
+                enum:
+                  - on
+                  - off
+              - type: boolean
+                description: CAPABILITY_IAM
+          CAPABILITY_NAMED_IAM:
+            oneOf:
+              - type: string
+                description: CAPABILITY_NAMED_IAM
+                enum:
+                  - on
+                  - off
+              - type: boolean
+                description: CAPABILITY_NAMED_IAM
+          CAPABILITY_AUTO_EXPAND:
+            oneOf:
+              - type: string
+                description: CAPABILITY_AUTO_EXPAND
+                enum:
+                  - on
+                  - off
+              - type: boolean
+                description: CAPABILITY_AUTO_EXPAND
+                

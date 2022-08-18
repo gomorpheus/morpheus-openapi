@@ -1,0 +1,69 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+  code:
+    type: string
+    nullable: true
+  enabled:
+    type: boolean
+  priority:
+    type: integer
+    format: int64
+  groupName:
+    type: string
+  direction:
+    type: string
+  ruleType:
+    type: string
+  policy:
+    type: string
+  source:
+    type: array
+    items:
+      type: string
+  sourceType:
+    type: string
+  destination:
+    type: array
+    items:
+      type: string
+  destinationType:
+    type: string
+  profiles:
+    type: array
+    items:
+      type: string
+  protocol:
+    type: string
+    nullable: true
+  application:
+    type: string
+    nullable: true
+  applicationType:
+    type: string
+  portRange:
+    type: string
+    nullable: true
+  sourcePortRange:
+    type: string
+    nullable: true
+  sourceGroup:
+    type: string
+    nullable: true
+  sourceTier:
+    type: string
+    nullable: true
+  applications:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string

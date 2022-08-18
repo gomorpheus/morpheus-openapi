@@ -15,6 +15,7 @@ properties:
         type: string
   account: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -35,11 +36,13 @@ properties:
   memoryRequirement: 
     type: integer
     format: int64
+    nullable: true
   sortOrder: 
     type: integer
     format: int64
   supportsConvertToManaged: 
     type: boolean
+    nullable: true
   provisionType: 
     $ref: provisionType.yaml
   taskSets: 
@@ -99,6 +102,7 @@ properties:
             type: boolean
           account: 
             type: object
+            nullable: true
             properties: 
               id: 
                 type: integer

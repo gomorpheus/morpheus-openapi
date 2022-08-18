@@ -6,7 +6,7 @@ put:
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/instanceTypeId-path.yaml
   responses:
     '200':
       description: Successful Request

@@ -1,0 +1,29 @@
+type: object
+properties: 
+  backupsEnabled: 
+    type: boolean
+  createBackups: 
+    type: boolean
+  backupAppliance: 
+    type: boolean
+  defaultStorageBucket: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  defaultSchedule: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  retentionCount: 
+    type: integer
+    format: int64

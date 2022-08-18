@@ -1,0 +1,43 @@
+{
+  "applianceSettings": {
+    "registrationEnabled": true,
+    "applianceUrl": "http://10.0.2.2:8080/",
+    "internalApplianceUrl": null,
+    "corsAllowed": null,
+    "dockerPrivilegedMode": true,
+    "passwordMinLength": "8",
+    "passwordMinUpperCase": "1",
+    "passwordMinNumbers": "1",
+    "passwordMinSymbols": "1",
+    "userBrowserSessionTimeout": "20",
+    "userBrowserSessionWarning": "15",
+    "expirePwdDays": 30,
+    "disableAfterAttempts": 5,
+    "disableAfterDaysInactive": 90,
+    "warnUserDaysBefore": 10,
+    "smtpMailFrom": "stubby.toes@gmail.com",
+    "smtpServer": "smtp.gmail.com",
+    "smtpPort": 465,
+    "smtpSSL": true,
+    "smtpTLS": true,
+    "smtpUser": "stubby.toes@gmail.com",
+    "smtpPassword": "password",
+    "proxyHost": null,
+    "proxyPort": null,
+    "proxyUser": "stubbytoes",
+    "proxyPassword": "password",
+    "proxyDomain": null,
+    "proxyWorkstation": null,
+    "currencyProvider": "openexchange",
+    "currencyKey": null,
+    "enableZoneTypes": [
+      1,
+      2
+    ],
+    "disableZoneTypes": [
+      9
+    ],
+    "defaultRoleId": 2,
+    "defaultUserRoleId": 4
+  }
+}

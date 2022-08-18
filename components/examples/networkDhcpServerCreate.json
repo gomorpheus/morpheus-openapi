@@ -1,0 +1,12 @@
+{
+  "networkDhcpServer": {
+      "serverIpAddress": "192.168.123.100/24",
+      "leaseTime": 86400,
+      "name": "test-dhcp-server",
+      "config": {
+          "edgeCluster": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "preferredEdgeNode1": "/infra/sites/default/enforcement-points/default/dhcp-servers/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "preferredEdgeNode2": "/infra/sites/default/enforcement-points/default/dhcp-servers/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/edge-nodes/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      }
+    }
+}

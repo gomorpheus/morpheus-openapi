@@ -1,0 +1,109 @@
+get:
+  summary: Get all Network Proxies 
+  description: |
+    This endpoint retrieves all Network Proxies associated with the account.
+  operationId: getNetworkProxies
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkProxies:
+                  items:
+                    type: object
+                    properties: 
+                      $ref: ../components/schemas/networkProxy.yaml
+                networkProxyCount:
+                  type: integer
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Network Proxies Response:
+              value:
+                $ref: ../components/examples/networkProxies.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Network Proxy
+  description: |
+    Create a Network Proxy.
+  operationId: createNetworkProxy
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            networkProxy:
+              type: object
+              properties:
+                $ref: ../components/schemas/networkProxyCreate.yaml
+        examples: 
+          Network Proxy Request:
+            value:
+              $ref: ../components/examples/networkProxyCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkProxy:
+                type: object
+                properties: 
+                  $ref: ../components/schemas/networkProxy.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/networkProxy.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

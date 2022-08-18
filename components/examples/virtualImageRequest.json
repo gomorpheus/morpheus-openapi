@@ -1,0 +1,17 @@
+{
+  "virtualImage": {
+    "name": "testimage2",
+    "imageType": "vmware",
+    "isCloudInit": true,
+    "installAgent": true,
+    "sshUsername": "root",
+    "sshPassword": "mygoodpassword123",
+    "sshKey": null,
+    "osType": {
+      "id": 9
+    },
+    "virtioSupported": true,
+    "vmToolsInstalled": true,
+    "config": {}
+  }
+}

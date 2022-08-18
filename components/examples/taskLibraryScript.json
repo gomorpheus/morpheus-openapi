@@ -1,0 +1,37 @@
+{
+    "task": {
+        "id": 891,
+        "accountId": 1,
+        "name": "9. library script",
+        "code": null,
+        "taskType": {
+            "id": 4,
+            "code": "containerScript",
+            "name": "Library Script"
+        },
+        "taskOptions": {
+            "host": null,
+            "username": null,
+            "password": null,
+            "passwordHash": null,
+            "localScriptGitRef": null,
+            "localScriptGitId": null,
+            "containerScriptId": null,
+            "sshKey": null,
+            "containerScript": null,
+            "port": null
+        },
+        "file": null,
+        "resultType": null,
+        "executeTarget": "resource",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:53:27Z",
+        "lastUpdated": "2022-08-04T13:53:27Z"
+    }
+}

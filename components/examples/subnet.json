@@ -1,0 +1,62 @@
+{
+  "subnet": {
+    "id": 77,
+    "code": null,
+    "name": "def2",
+    "active": true,
+    "description": null,
+    "externalId": "/subscriptions/88213e1e-d4c5-467f-b029-aa3021a798/resourceGroups/ARMUbuntu16/providers/Microsoft.Network/virtualNetworks/test-subnets2",
+    "uniqueId": null,
+    "addressPrefix": null,
+    "cidr": "192.168.2.0/24",
+    "gateway": null,
+    "netmask": "255.255.255.0",
+    "subnetAddress": "192.168.2.0/24",
+    "tftpServer": null,
+    "bootFile": null,
+    "pool": null,
+    "dhcpServer": true,
+    "hasFloatingIps": false,
+    "dhcpIp": null,
+    "dnsPrimary": null,
+    "dnsSecondary": null,
+    "dhcpStart": "192.168.2.1",
+    "dhcpEnd": "192.168.2.254",
+    "dhcpRange": null,
+    "networkProxy": null,
+    "networkDomain": null,
+    "searchDomains": null,
+    "defaultNetwork": false,
+    "assignPublicIp": false,
+    "visibility": "private",
+    "status": {
+      "name": "AVAILABLE"
+    },
+    "network": {
+      "id": 55,
+      "name": "our-subnet"
+    },
+    "type": {
+      "id": 6,
+      "code": "azure",
+      "name": "Azure Subnet"
+    },
+    "account": {
+      "id": 1,
+      "name": "root"
+    },
+    "securityGroups": [],
+    "tenants": [
+      {
+        "id": 1,
+        "name": "root"
+      }
+    ],
+    "resourcePermission": {
+      "all": true,
+      "sites": [],
+      "allPlans": true,
+      "plans": []
+    }
+  }
+}

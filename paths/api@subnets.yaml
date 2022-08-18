@@ -1,0 +1,100 @@
+get:
+  summary: Get All Subnets
+  description: |
+    This endpoint retrieves all Subnets associated with the account.
+  operationId: listSubnets
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                subnets:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/subnet.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Subnets Response:
+              value:
+                $ref: ../components/examples/subnets.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+      
+post: 
+  summary: Create a Subnet
+  description: This endpoint allows creating a Subnet. Only certain types of clouds support creating and deleting subnets. Configuration options vary for each Subnet Type.
+  operationId: createSubnet
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            $ref: ../components/schemas/subnetCreate.yaml
+        examples:
+          Subnet Request:
+            value: 
+              $ref: ../components/examples/subnetCreateRequest.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            type: object
+            properties:
+              subnet:
+                $ref: ../components/schemas/subnet.yaml
+          examples:
+            Subnet Request Success:
+              value:
+                $ref: ../components/examples/subnet.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

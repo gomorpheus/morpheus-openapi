@@ -1,0 +1,371 @@
+{
+    "taskSets": [
+        {
+            "id": 268,
+            "name": "a.Example Write Attributes",
+            "type": "provision",
+            "description": null,
+            "dateCreated": "2022-01-12T13:01:14Z",
+            "lastUpdated": "2022-01-12T13:01:14Z",
+            "accountId": 1,
+            "platform": null,
+            "visibility": "private",
+            "allowCustomConfig": false,
+            "tasks": [
+                808,
+                808
+            ],
+            "optionTypes": [],
+            "taskSetTasks": [
+                {
+                    "id": 880,
+                    "taskPhase": "reconfigure",
+                    "taskOrder": 1,
+                    "task": {
+                        "id": 808,
+                        "accountId": 1,
+                        "name": "a.Example Write Attributes",
+                        "code": null,
+                        "taskType": {
+                            "id": 1,
+                            "code": "script",
+                            "name": "Shell Script"
+                        },
+                        "taskOptions": {
+                            "localScriptGitRef": null,
+                            "password": null,
+                            "passwordHash": null,
+                            "username": null,
+                            "sshKey": null,
+                            "host": null,
+                            "localScriptGitId": null,
+                            "port": null
+                        },
+                        "file": {
+                            "id": 901,
+                            "sourceType": "local",
+                            "contentRef": null,
+                            "contentPath": null,
+                            "repository": null,
+                            "content": "{\r\n\"testAttribute\": \"<%=instance.customOptions.name%>\"\r\n}"
+                        },
+                        "resultType": null,
+                        "executeTarget": "local",
+                        "retryable": false,
+                        "retryCount": 5,
+                        "retryDelaySeconds": 10,
+                        "allowCustomConfig": false,
+                        "dateCreated": "2022-01-12T10:55:00Z",
+                        "lastUpdated": "2022-01-12T10:55:00Z"
+                    }
+                },
+                {
+                    "id": 877,
+                    "taskPhase": "provision",
+                    "taskOrder": 0,
+                    "task": {
+                        "id": 808,
+                        "accountId": 1,
+                        "name": "a.Example Write Attributes",
+                        "code": null,
+                        "taskType": {
+                            "id": 1,
+                            "code": "script",
+                            "name": "Shell Script"
+                        },
+                        "taskOptions": {
+                            "localScriptGitRef": null,
+                            "password": null,
+                            "passwordHash": null,
+                            "username": null,
+                            "sshKey": null,
+                            "host": null,
+                            "localScriptGitId": null,
+                            "port": null
+                        },
+                        "file": {
+                            "id": 901,
+                            "sourceType": "local",
+                            "contentRef": null,
+                            "contentPath": null,
+                            "repository": null,
+                            "content": "{\r\n\"testAttribute\": \"<%=instance.customOptions.name%>\"\r\n}"
+                        },
+                        "resultType": null,
+                        "executeTarget": "local",
+                        "retryable": false,
+                        "retryCount": 5,
+                        "retryDelaySeconds": 10,
+                        "allowCustomConfig": false,
+                        "dateCreated": "2022-01-12T10:55:00Z",
+                        "lastUpdated": "2022-01-12T10:55:00Z"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "name": "App Snapshot Management",
+            "type": "operation",
+            "description": null,
+            "dateCreated": "2019-11-23T22:29:40Z",
+            "lastUpdated": "2019-11-23T22:55:03Z",
+            "accountId": 1,
+            "platform": null,
+            "visibility": "private",
+            "allowCustomConfig": false,
+            "tasks": [
+                112
+            ],
+            "optionTypes": [
+                {
+                    "id": 3076,
+                    "name": "Restore",
+                    "description": null,
+                    "code": "restore",
+                    "fieldName": "restore",
+                    "fieldLabel": "Restore Snapshots",
+                    "fieldCode": null,
+                    "fieldContext": "config.customOptions",
+                    "fieldGroup": null,
+                    "fieldClass": null,
+                    "fieldAddOn": null,
+                    "fieldComponent": null,
+                    "fieldInput": null,
+                    "placeHolder": null,
+                    "verifyPattern": null,
+                    "helpBlock": null,
+                    "helpBlockFieldCode": null,
+                    "defaultValue": null,
+                    "optionSource": null,
+                    "optionSourceType": null,
+                    "optionList": null,
+                    "type": "checkbox",
+                    "advanced": false,
+                    "required": false,
+                    "exportMeta": false,
+                    "editable": false,
+                    "creatable": true,
+                    "config": {},
+                    "displayOrder": 0,
+                    "wrapperClass": null,
+                    "enabled": true,
+                    "noBlank": false,
+                    "dependsOnCode": null,
+                    "visibleOnCode": null,
+                    "requireOnCode": null,
+                    "contextualDefault": false,
+                    "displayValueOnDetails": null,
+                    "showOnCreate": null,
+                    "showOnEdit": null,
+                    "localCredential": null
+                },
+                {
+                    "id": 3073,
+                    "name": "Apps",
+                    "description": "Morpheus Apps List",
+                    "code": "apps",
+                    "fieldName": "apps",
+                    "fieldLabel": "Application",
+                    "fieldCode": null,
+                    "fieldContext": "config.customOptions",
+                    "fieldGroup": null,
+                    "fieldClass": null,
+                    "fieldAddOn": null,
+                    "fieldComponent": null,
+                    "fieldInput": null,
+                    "placeHolder": null,
+                    "verifyPattern": null,
+                    "helpBlock": null,
+                    "helpBlockFieldCode": null,
+                    "defaultValue": null,
+                    "optionSource": "list",
+                    "optionSourceType": null,
+                    "optionList": {
+                        "id": 22,
+                        "name": "Apps"
+                    },
+                    "type": "select",
+                    "advanced": false,
+                    "required": true,
+                    "exportMeta": false,
+                    "editable": false,
+                    "creatable": true,
+                    "config": {
+                        "_multiSelect": ""
+                    },
+                    "displayOrder": 0,
+                    "wrapperClass": null,
+                    "enabled": true,
+                    "noBlank": false,
+                    "dependsOnCode": "targetGroup",
+                    "visibleOnCode": null,
+                    "requireOnCode": null,
+                    "contextualDefault": false,
+                    "displayValueOnDetails": false,
+                    "showOnCreate": null,
+                    "showOnEdit": false,
+                    "localCredential": null
+                }
+            ],
+            "taskSetTasks": [
+                {
+                    "id": 145,
+                    "taskPhase": "operation",
+                    "taskOrder": 0,
+                    "task": {
+                        "id": 112,
+                        "accountId": 1,
+                        "name": "Apps - Application Snapshots",
+                        "code": null,
+                        "taskType": {
+                            "id": 1,
+                            "code": "script",
+                            "name": "Shell Script"
+                        },
+                        "taskOptions": {
+                            "sshKey": null,
+                            "password": null,
+                            "passwordHash": null,
+                            "shell.sudo": null,
+                            "localScriptGitRef": "master",
+                            "port": null,
+                            "username": null,
+                            "localScriptGitId": null,
+                            "host": null
+                        },
+                        "file": {
+                            "id": 874,
+                            "sourceType": "local",
+                            "contentRef": null,
+                            "contentPath": null,
+                            "repository": null,
+                            "content": "pwsh -file 'PS/Applied Systems/SnapshotInstances.ps1' -morphURL \"<%=morpheus.applianceUrl%>\" -restore \"<%=customOptions.restore%>\" -serviceBearer \"<%=cypher.read('secret/Bearer')%>\" -appId \"<%=customOptions.apps%>\""
+                        },
+                        "resultType": null,
+                        "executeTarget": "local",
+                        "retryable": false,
+                        "retryCount": 5,
+                        "retryDelaySeconds": 10,
+                        "allowCustomConfig": false,
+                        "dateCreated": "2019-11-23T22:45:41Z",
+                        "lastUpdated": "2021-12-15T21:18:14Z"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "name": "Approvals - Approvals Email",
+            "type": "operation",
+            "description": null,
+            "dateCreated": "2020-03-02T23:21:29Z",
+            "lastUpdated": "2022-04-18T14:50:09Z",
+            "accountId": 1,
+            "platform": null,
+            "visibility": "private",
+            "allowCustomConfig": false,
+            "tasks": [
+                841
+            ],
+            "optionTypes": [
+                {
+                    "id": 3305,
+                    "name": "checkTime",
+                    "description": null,
+                    "code": "checkTime",
+                    "fieldName": "checkTime",
+                    "fieldLabel": "Check Time",
+                    "fieldCode": null,
+                    "fieldContext": "config.customOptions",
+                    "fieldGroup": null,
+                    "fieldClass": null,
+                    "fieldAddOn": null,
+                    "fieldComponent": null,
+                    "fieldInput": null,
+                    "placeHolder": null,
+                    "verifyPattern": null,
+                    "helpBlock": null,
+                    "helpBlockFieldCode": null,
+                    "defaultValue": "10",
+                    "optionSource": null,
+                    "optionSourceType": null,
+                    "optionList": null,
+                    "type": "number",
+                    "advanced": false,
+                    "required": true,
+                    "exportMeta": false,
+                    "editable": false,
+                    "creatable": true,
+                    "config": {},
+                    "displayOrder": 0,
+                    "wrapperClass": null,
+                    "enabled": true,
+                    "noBlank": false,
+                    "dependsOnCode": null,
+                    "visibleOnCode": null,
+                    "requireOnCode": null,
+                    "contextualDefault": false,
+                    "displayValueOnDetails": null,
+                    "showOnCreate": null,
+                    "showOnEdit": null,
+                    "localCredential": null
+                }
+            ],
+            "taskSetTasks": [
+                {
+                    "id": 910,
+                    "taskPhase": "operation",
+                    "taskOrder": 0,
+                    "task": {
+                        "id": 841,
+                        "accountId": 1,
+                        "name": "Morpheus - Approvals Check",
+                        "code": null,
+                        "taskType": {
+                            "id": 13,
+                            "code": "winrmTask",
+                            "name": "Powershell Script"
+                        },
+                        "taskOptions": {
+                            "host": null,
+                            "username": null,
+                            "winrm.elevated": null,
+                            "sshKey": null,
+                            "localScriptGitId": null,
+                            "port": null,
+                            "localScriptGitRef": null,
+                            "password": null,
+                            "passwordHash": null
+                        },
+                        "file": {
+                            "id": 991,
+                            "sourceType": "repository",
+                            "contentRef": "main",
+                            "contentPath": "./PowerShell/Morpheus Approvals Check.ps1",
+                            "repository": {
+                                "id": 85,
+                                "name": "morpheus-automation-examples"
+                            },
+                            "content": null
+                        },
+                        "resultType": null,
+                        "executeTarget": "local",
+                        "retryable": false,
+                        "retryCount": 5,
+                        "retryDelaySeconds": 10,
+                        "allowCustomConfig": false,
+                        "dateCreated": "2022-04-18T14:49:55Z",
+                        "lastUpdated": "2022-04-18T14:53:19Z"
+                    }
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 28
+    }
+}

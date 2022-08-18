@@ -1,0 +1,16 @@
+type: object
+required:
+  - name
+description: For a full list of available firewall rule options, see ruleOptionTypes in the specific Network Router Type detail
+properties:
+  name: 
+    type: string
+    description: Firewall rule name
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the rule (true, false). Default is on
+    default: true
+  priority:
+    type: integer
+    format: int64
+    description: Priority for rule

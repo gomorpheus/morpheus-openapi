@@ -1,0 +1,36 @@
+type: object
+properties:
+  stats: 
+    type: object
+    properties: 
+      usedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      usedStorage: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      running: 
+        type: integer
+        format: int64
+      total: 
+        type: integer
+        format: int64
+      cpuUsage: 
+        type: number
+      instanceCount: 
+        type: integer
+        format: int64
+      instanceDayCount: 
+        type: array
+        items: 
+          type: integer
+          format: int64
+      instanceDayCountTotal: 
+        type: integer
+        format: int64

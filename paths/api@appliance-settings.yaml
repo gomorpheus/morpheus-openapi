@@ -1,0 +1,90 @@
+get:
+  summary: Get Appliance Settings
+  description: This endpoint retrieves appliance settings.
+  operationId: listApplianceSettings
+  tags:
+    - Appliance Settings
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              applianceSettings:
+                $ref: ../components/schemas/applianceSettings.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/applianceSettings.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+put:
+  summary: Update Appliance Settings
+  description: Update Appliance Settings
+  operationId: updateApplianceSettings
+  tags:
+    - Appliance Settings
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            applianceSettings:
+              $ref: ../components/schemas/applianceSettingsUpdate.yaml
+        examples:
+          Appliance Update Request:
+            value:
+              $ref: ../components/examples/applianceSettingsUpdate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/success.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

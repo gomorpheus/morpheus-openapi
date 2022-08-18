@@ -1,0 +1,181 @@
+get:
+  summary: Retrieves a Specific Security Group
+  description: |
+    Retrieves a specific security group.
+  operationId: getSecurityGroups
+  tags:
+    - Security Groups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              securityGroup:
+                $ref: ../components/schemas/securityGroup.yaml
+          examples:
+            Security Group Response:
+              value:
+                $ref: ../components/examples/securityGroup.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Creates a Security Group
+  description: |
+    Creates a security group.
+  operationId: updateSecurityGroups
+  tags:
+    - Security Groups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - securityGroup
+          properties:
+            securityGroup:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: Name for your security group
+                description:
+                  type: string
+                  description: Optional description field
+                active:
+                  type: boolean
+                  description: Set to `false` to disable a security group.
+                tenantPermissions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      accounts:
+                        type: array
+                        description: Array of tenant account ids that are allowed access
+                        items:
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                      canManageAccounts:
+                        type: array
+                        description: Array of tenant account ids that can manage
+                        items:
+                          type: integer
+                          format: int64
+                        example: [1, 3]
+                resourcePermissions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      all:
+                        type: boolean
+                        description: Pass `true` to allow access all groups
+                      sites:
+                        type: array
+                        description: Array of groups that are allowed access
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 1
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              securityGroup:
+                allOf:
+                  - $ref: ../components/schemas/securityGroup.yaml
+                  - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Security Group Response:
+              value:
+                $ref: ../components/examples/securityGroup.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Deletes a Security Group
+  description: |
+    Deletes a specified security group.
+  operationId: removeSecurityGroups
+  tags:
+    - Security Groups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

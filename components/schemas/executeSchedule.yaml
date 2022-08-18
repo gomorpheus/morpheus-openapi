@@ -1,0 +1,28 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+    nullable: true
+  enabled: 
+    type: boolean
+  scheduleType: 
+    type: string
+  scheduleTimezone: 
+    type: string
+    nullable: true
+  cron: 
+    type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

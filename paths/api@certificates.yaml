@@ -1,0 +1,114 @@
+get:
+  summary: Get All SSL Certificates
+  description: This endpoint retrieves all SSL certificates associated with the account.
+  operationId: listCertificates
+  tags:
+    - SSL Certificates
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              certificates:
+                type: array
+                items:
+                  type: object
+                  properties: 
+                    $ref: ../components/schemas/certificate.yaml
+              certificateCount:
+                type: integer
+                format: int64
+          examples:
+            Certificates Response:
+              value:
+                $ref: ../components/examples/certificates.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post: 
+  summary: Create a Certificate
+  description: Create a Certificate
+  operationId: addCertificate
+  tags: 
+    - SSL Certificates
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            certificate:
+              type: object
+              properties: 
+                $ref: ../components/schemas/certificateCreate.yaml
+        examples:
+          Certificate Request:
+            value:
+              $ref: ../components/examples/certificateCreate.json
+
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:   
+              - type: object
+                properties:
+                  certificate:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/certificate.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Certificate Creation:
+              value:
+                $ref: ../components/examples/instanceCreateVmwareSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+                    
+
+            
+    
+  

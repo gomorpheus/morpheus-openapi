@@ -1,0 +1,7 @@
+name: routeId
+in: path
+description: The ID of the route
+required: true
+schema:
+  type: number
+example: 4

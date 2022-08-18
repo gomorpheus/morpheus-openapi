@@ -1,0 +1,83 @@
+id: 
+  type: integer
+  format: int64
+loadBalancer: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    type: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+    name: 
+      type: string
+    ip: 
+      type: string
+name: 
+  type: string
+category: 
+  type: string
+serviceType: 
+  type: string
+serviceTypeDisplay: 
+  type: string
+visibility: 
+  type: string
+description: 
+  type: string
+internalId: 
+  type: string
+externalId: 
+  type: string
+proxyType: 
+  type: string
+  nullable: true
+redirectRewrite: 
+  type: string
+  nullable: true
+persistenceType: 
+  type: string
+  nullable: true
+sslEnabled: 
+  type: string
+  nullable: true
+sslCert: 
+  type: string
+  nullable: true
+accountCertificate: 
+  type: string
+  nullable: true
+enabled: 
+  type: boolean
+redirectUrl: 
+  type: string
+  nullable: true
+insertXforwardedFor: 
+  type: boolean
+persistenceCookieName: 
+  type: string
+  nullable: true
+persistenceExpiresIn: 
+  type: string
+  nullable: true
+editable: 
+  type: boolean
+config: 
+  type: object
+createdBy: 
+  type: string
+  nullable: true
+dateCreated: 
+  type: string
+  format: date-time
+lastUpdated: 
+  type: string
+  format: date-time

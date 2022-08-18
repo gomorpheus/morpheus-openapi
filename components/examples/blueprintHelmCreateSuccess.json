@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "msg": null,
+  "errors": null,
+  "errorCode": null,
+  "inProgress": false,
+  "blueprint": {
+    "id": 448,
+    "name": "HashiCorp Vault Helm Test",
+    "type": "helm",
+    "description": null,
+    "category": null,
+    "config": {
+      "image": "/assets/apps/template.png",
+      "name": "HashiCorp Vault Helm Test",
+      "type": "helm",
+      "helm": {
+        "git": {
+          "repoId": 724,
+          "path": "./",
+          "integrationId": 174,
+          "branch": "main"
+        },
+        "configType": "git"
+      }
+    },
+    "visibility": "private",
+    "resourcePermission": null,
+    "owner": {
+      "id": 287,
+      "username": "Test User"
+    },
+    "tenant": {
+      "id": 3,
+      "name": "Morpheus"
+    }
+  }
+}

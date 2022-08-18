@@ -1,0 +1,56 @@
+{
+    "datastore": {
+        "id": 7,
+        "name": "vsanDatastore",
+        "zone": {
+            "id": 1,
+            "name": "vCenter"
+        },
+        "type": "vsan",
+        "freeSpace": 21448916031192,
+        "online": true,
+        "active": true,
+        "visibility": "public",
+        "tenants": [
+            {
+                "id": 1,
+                "name": "Home",
+                "defaultStore": true,
+                "defaultTarget": true
+            },
+            {
+                "id": 94,
+                "name": "Customer 123",
+                "defaultStore": true,
+                "defaultTarget": true
+            }
+        ],
+        "resourcePermission": {
+            "all": true,
+            "sites": [
+                {
+                    "id": 43,
+                    "name": "VDI",
+                    "default": false
+                },
+                {
+                    "id": 7,
+                    "name": "All Clouds",
+                    "default": false
+                },
+                {
+                    "id": 1,
+                    "name": "Personal",
+                    "default": false
+                },
+                {
+                    "id": 6,
+                    "name": "Work",
+                    "default": false
+                }
+            ],
+            "allPlans": false,
+            "plans": []
+        }
+    }
+}

@@ -1,23 +1,21 @@
 get:
   summary: Get a Specific Instance Type
-  description: |
-    This endpoint retrieves a specific instance type.
+  description: This endpoint retrieves a specific instance type.
   operationId: getInstanceType
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/instanceTypeId-path.yaml
   responses:
     '200':
       description: Successful Request
       content:
         application/json:
           schema:
-            allOf:
-            - type: object
-              properties:
-                instanceType:
-                  $ref: ../components/schemas/instanceType.yaml
+            type: object
+            properties:
+              instanceType:
+                $ref: ../components/schemas/instanceType.yaml
           examples:
             Instance Type Response:
               value:
@@ -50,7 +48,7 @@ put:
   tags: 
     -  Library
   parameters: 
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/instanceTypeId-path.yaml
   requestBody: 
     content: 
       application/json: 
@@ -97,12 +95,12 @@ put:
   
 delete:
   summary: Delete an Instance Type
-  description: Will delete an instance type 
+  description: Will delete an instance type
   operationId: deleteInstanceType
   tags:
     - Library
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/instanceTypeId-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -134,4 +132,3 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-      

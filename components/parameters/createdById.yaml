@@ -1,0 +1,8 @@
+name: createdById
+in: query
+description: Filter by owner (user) id
+schema:
+  type: integer
+  format: int64
+  description: User ID
+example: 63

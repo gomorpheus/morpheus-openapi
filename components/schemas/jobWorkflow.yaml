@@ -1,0 +1,99 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+  workflow: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  jobSummary: 
+    type: string
+    nullable: true
+  scheduleMode: 
+    oneOf: 
+      - type: string
+        nullable: true
+      - type: integer
+        format: int64
+  dateTime: 
+    type: string
+    nullable: true
+  status: 
+    type: string
+    nullable: true
+  namespace: 
+    type: string
+    nullable: true
+  category: 
+    type: string
+    nullable: true
+  description: 
+    type: string
+    nullable: true
+  enabled: 
+    type: boolean
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  lastRun: 
+    type: string
+    format: date-time
+  lastResult: 
+    type: string
+  createdBy: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+      displayName: 
+        type: string
+  targetType: 
+    type: string
+  targets: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        targetType: 
+          type: string
+        refId: 
+          type: integer
+          format: int64
+  customConfig: 
+    type: string
+    nullable: true
+  customOptions: 
+    type: object
+    nullable: true
+    properties: 
+      checkTime: 
+        type: integer
+        format: int64

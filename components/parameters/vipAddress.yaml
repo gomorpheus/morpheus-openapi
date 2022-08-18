@@ -1,0 +1,6 @@
+name: vipAddress
+in: query
+description: If specified will return an exact match on vipAddress
+schema:
+  type: string
+example: "192.168.123.44"

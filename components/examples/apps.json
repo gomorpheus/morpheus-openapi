@@ -1,0 +1,1848 @@
+{
+  "apps": [
+    {
+      "id": 2034,
+      "name": "AWSUbuntuAA",
+      "description": "Deploy Ubuntu Server 20 latest on AWS",
+      "environment": "dev",
+      "accountId": 3,
+      "account": {
+        "id": 3,
+        "name": "Morpheus"
+      },
+      "owner": {
+        "id": 336,
+        "username": "Test User"
+      },
+      "siteId": 2,
+      "group": {
+        "id": 2,
+        "name": "Demo"
+      },
+      "blueprint": {
+        "id": 405,
+        "name": "AWS Ubuntu",
+        "type": "terraform"
+      },
+      "type": "terraform",
+      "dateCreated": "2022-06-16T07:01:39Z",
+      "lastUpdated": "2022-06-17T15:45:55Z",
+      "removalDate": null,
+      "appContext": "dev",
+      "status": "running",
+      "appStatus": "completed",
+      "instanceCount": 1,
+      "containerCount": 1,
+      "appTiers": [],
+      "instances": [
+        {
+          "id": 51718,
+          "name": "morph_tf_ec2"
+        }
+      ],
+      "stats": {
+        "usedMemory": 0,
+        "maxMemory": 1073741824,
+        "usedStorage": 0,
+        "maxStorage": 8589934592,
+        "running": 1,
+        "total": 0,
+        "cpuUsage": 0.0,
+        "instanceCount": 1,
+        "instanceDayCount": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "instanceDayCountTotal": 0
+      }
+    },
+    {
+      "id": 868,
+      "name": "Demo HA Morpheus",
+      "description": "External Rabbit, ES and Percona Clusters",
+      "environment": "production",
+      "accountId": 3,
+      "account": {
+        "id": 3,
+        "name": "Morpheus"
+      },
+      "owner": {
+        "id": 2,
+        "username": "Test User"
+      },
+      "siteId": 50,
+      "group": {
+        "id": 50,
+        "name": "Production"
+      },
+      "blueprint": {
+        "id": 28,
+        "name": "Morpheus HA",
+        "type": "morpheus"
+      },
+      "type": "morpheus",
+      "dateCreated": "2018-12-17T23:59:31Z",
+      "lastUpdated": "2022-06-21T04:51:12Z",
+      "removalDate": null,
+      "appContext": "production",
+      "status": "unknown",
+      "appStatus": "unknown",
+      "instanceCount": 4,
+      "containerCount": 11,
+      "appTiers": [
+        {
+          "tier": {
+            "id": 17,
+            "name": "Messaging"
+          },
+          "appInstances": [
+            {
+              "config": {},
+              "instance": {
+                "id": 5862,
+                "uuid": "b3bcacc3-f2f3-474b-adf1-d85d670ad56f",
+                "accountId": 3,
+                "tenant": {
+                  "id": 3,
+                  "name": "Morpheus"
+                },
+                "instanceType": {
+                  "id": 43,
+                  "code": "rabbitmq",
+                  "category": "messaging",
+                  "name": "RabbitMQ"
+                },
+                "group": {
+                  "id": 50,
+                  "name": "Production"
+                },
+                "cloud": {
+                  "id": 106,
+                  "name": "Nutanix Cluster 2"
+                },
+                "containers": [
+                  6564,
+                  6562,
+                  6563
+                ],
+                "servers": [
+                  71183,
+                  71181,
+                  71182
+                ],
+                "connectionInfo": [
+                  {
+                    "ip": "10.30.22.159",
+                    "port": 5672
+                  },
+                  {
+                    "ip": "10.30.22.155",
+                    "port": 5672
+                  },
+                  {
+                    "ip": "10.30.22.158",
+                    "port": 5672
+                  }
+                ],
+                "layout": {
+                  "id": 518,
+                  "name": "Nutanix RabbitMQ",
+                  "provisionTypeId": 19,
+                  "provisionTypeCode": "nutanix"
+                },
+                "plan": {
+                  "id": 87,
+                  "code": "nutanix-vm-2048",
+                  "name": "1 vCPU, 2GB Memory"
+                },
+                "name": "DMHAMQ",
+                "description": null,
+                "environment": "production",
+                "config": {
+                  "createUser": true,
+                  "layout": {
+                    "code": "rabbitmq-nutanix-3.6",
+                    "id": 518
+                  },
+                  "expireDays": "7",
+                  "servicePassword": "************",
+                  "name": "${app.name}-mq${sequence}",
+                  "allowExisting": false,
+                  "type": null,
+                  "shutdownDays": "2",
+                  "userGroup": {
+                    "id": ""
+                  },
+                  "serviceUsername": "morpheus",
+                  "cloud": "Nutanix",
+                  "instanceContext": null,
+                  "hostName": null,
+                  "instanceType": {
+                    "code": "rabbitmq"
+                  },
+                  "site": {
+                    "id": 371,
+                    "name": "DevTest"
+                  },
+                  "memoryDisplay": "MB",
+                  "expose": [],
+                  "customOptions": {},
+                  "createBackup": true,
+                  "backup": {
+                    "backupRepository": 1,
+                    "createBackup": true,
+                    "jobAction": "new",
+                    "jobRetentionCount": "1",
+                    "providerBackupType": "null",
+                    "enabled": true,
+                    "showScheduledBackupWarning": false
+                  },
+                  "powerScheduleType": null,
+                  "servicePasswordHash": "c0fb0c855ec4954a86f4e90bf5f9f0183d636034002fd9201df4e6e256d4c327"
+                },
+                "configGroup": null,
+                "configId": null,
+                "configRole": null,
+                "volumes": [
+                  {
+                    "vId": 56925,
+                    "size": 20,
+                    "maxIOPS": null,
+                    "name": "root",
+                    "rootVolume": true,
+                    "storageType": 18,
+                    "id": -1,
+                    "datastoreId": 358,
+                    "maxStorage": 0
+                  }
+                ],
+                "controllers": [],
+                "interfaces": [
+                  {
+                    "id": "networkGroup-2",
+                    "network": {
+                      "id": null,
+                      "group": 2,
+                      "dhcpServer": null,
+                      "name": null,
+                      "pool": null
+                    },
+                    "ipAddress": null,
+                    "networkInterfaceTypeId": null,
+                    "ipMode": ""
+                  }
+                ],
+                "customOptions": {},
+                "instanceVersion": "3.6",
+                "labels": [],
+                "tags": [],
+                "evars": [
+                  {
+                    "name": "RABBITMQ_IP",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_HOST",
+                    "value": "container6562",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_AMQP",
+                    "value": 5672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_PORT",
+                    "value": 5672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_ADDR",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP",
+                    "value": "tcp://10.30.22.155:5672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_SSL",
+                    "value": 5671,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_PORT",
+                    "value": 5671,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_ADDR",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP",
+                    "value": "tcp://10.30.22.155:5671",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_MGMT",
+                    "value": 15672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_PORT",
+                    "value": 15672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_ADDR",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP",
+                    "value": "tcp://10.30.22.155:15672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT",
+                    "value": 25672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_PORT",
+                    "value": 25672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_ADDR",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP",
+                    "value": "tcp://10.30.22.155:25672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_EPMD",
+                    "value": 4369,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_PORT",
+                    "value": 4369,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_ADDR",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP",
+                    "value": "tcp://10.30.22.155:4369",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_CLUSTER",
+                    "value": 35197,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_PORT",
+                    "value": 35197,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_ADDR",
+                    "value": "10.30.22.155",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP",
+                    "value": "tcp://10.30.22.155:35197",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_IP_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_HOST_2",
+                    "value": "container6563",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_AMQP_2",
+                    "value": 5672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_PORT_2",
+                    "value": 5672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_ADDR_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_2",
+                    "value": "tcp://10.30.22.158:5672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_SSL_2",
+                    "value": 5671,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_PORT_2",
+                    "value": 5671,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_ADDR_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_2",
+                    "value": "tcp://10.30.22.158:5671",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_MGMT_2",
+                    "value": 15672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_PORT_2",
+                    "value": 15672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_ADDR_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_2",
+                    "value": "tcp://10.30.22.158:15672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_2",
+                    "value": 25672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_PORT_2",
+                    "value": 25672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_ADDR_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_2",
+                    "value": "tcp://10.30.22.158:25672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_EPMD_2",
+                    "value": 4369,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_PORT_2",
+                    "value": 4369,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_ADDR_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_2",
+                    "value": "tcp://10.30.22.158:4369",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_CLUSTER_2",
+                    "value": 35197,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_PORT_2",
+                    "value": 35197,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_ADDR_2",
+                    "value": "10.30.22.158",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_2",
+                    "value": "tcp://10.30.22.158:35197",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_IP_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_HOST_3",
+                    "value": "container6564",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_AMQP_3",
+                    "value": 5672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_PORT_3",
+                    "value": 5672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_PROTO_3",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_ADDR_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5672_TCP_3",
+                    "value": "tcp://10.30.22.159:5672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_SSL_3",
+                    "value": 5671,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_PORT_3",
+                    "value": 5671,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_PROTO_3",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_ADDR_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_5671_TCP_3",
+                    "value": "tcp://10.30.22.159:5671",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_MGMT_3",
+                    "value": 15672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_PORT_3",
+                    "value": 15672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_PROTO_3",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_ADDR_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_15672_TCP_3",
+                    "value": "tcp://10.30.22.159:15672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_3",
+                    "value": 25672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_PORT_3",
+                    "value": 25672,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_PROTO_3",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_ADDR_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_25672_TCP_3",
+                    "value": "tcp://10.30.22.159:25672",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_EPMD_3",
+                    "value": 4369,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_PORT_3",
+                    "value": 4369,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_PROTO_3",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_ADDR_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_4369_TCP_3",
+                    "value": "tcp://10.30.22.159:4369",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_CLUSTER_3",
+                    "value": 35197,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_PORT_3",
+                    "value": 35197,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_PROTO_3",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_ADDR_3",
+                    "value": "10.30.22.159",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "RABBITMQ_PORT_35197_TCP_3",
+                    "value": "tcp://10.30.22.159:35197",
+                    "export": true,
+                    "masked": false
+                  }
+                ],
+                "maxMemory": 2147483648,
+                "maxStorage": 21474836480,
+                "maxCores": 1,
+                "coresPerSocket": null,
+                "maxCpu": 1,
+                "hourlyCost": 0.1725000042,
+                "hourlyPrice": 0.17366667090000001,
+                "instancePrice": null,
+                "dateCreated": "2018-12-17T23:59:36Z",
+                "lastUpdated": "2022-08-04T16:00:04Z",
+                "hostName": "demo-ha-mq1",
+                "domainName": null,
+                "environmentPrefix": null,
+                "firewallEnabled": true,
+                "networkLevel": "container",
+                "autoScale": false,
+                "instanceContext": "production",
+                "currentDeployId": null,
+                "locked": true,
+                "status": "running",
+                "statusMessage": null,
+                "errorMessage": null,
+                "statusDate": "2018-12-18T00:20:12Z",
+                "statusPercent": null,
+                "statusEta": null,
+                "userStatus": null,
+                "expireDays": 7,
+                "renewDays": null,
+                "expireCount": 0,
+                "expireDate": null,
+                "expireWarningDate": null,
+                "expireWarningSent": false,
+                "shutdownDays": 2,
+                "shutdownRenewDays": null,
+                "shutdownCount": 0,
+                "shutdownDate": null,
+                "shutdownWarningDate": null,
+                "shutdownWarningSent": false,
+                "removalDate": null,
+                "createdBy": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "owner": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "notes": "![hello](https://demo.morpheusdata.com/assets/branding/140x40/rabbitmq-d64573aaf029cb5797a02ff6d0fc58d1.svg){.myClass width=40 height=50}",
+                "powerSchedule": null,
+                "isScalable": null,
+                "instanceThreshold": null,
+                "isBusy": null,
+                "apps": []
+              }
+            }
+          ],
+          "bootSequence": 2
+        },
+        {
+          "tier": {
+            "id": 7,
+            "name": "Database"
+          },
+          "appInstances": [
+            {
+              "config": {},
+              "instance": {
+                "id": 5861,
+                "uuid": "7e84ad00-1421-46c2-a0c8-c7fcde5a8f93",
+                "accountId": 3,
+                "tenant": {
+                  "id": 3,
+                  "name": "Morpheus"
+                },
+                "instanceType": {
+                  "id": 39,
+                  "code": "percona",
+                  "category": "sql",
+                  "name": "Percona"
+                },
+                "group": {
+                  "id": 50,
+                  "name": "Production"
+                },
+                "cloud": {
+                  "id": 106,
+                  "name": "Nutanix Cluster 2"
+                },
+                "containers": [
+                  6560,
+                  6559,
+                  6561
+                ],
+                "servers": [
+                  71179,
+                  71178,
+                  71180
+                ],
+                "connectionInfo": [
+                  {
+                    "ip": "10.32.22.124",
+                    "port": null
+                  },
+                  {
+                    "ip": "10.32.22.123",
+                    "port": null
+                  },
+                  {
+                    "ip": "10.32.22.125",
+                    "port": null
+                  }
+                ],
+                "layout": {
+                  "id": 1015,
+                  "name": "Percona Cluster",
+                  "provisionTypeId": 19,
+                  "provisionTypeCode": "nutanix"
+                },
+                "plan": {
+                  "id": 699,
+                  "code": "nut11",
+                  "name": "Nutanix Custom"
+                },
+                "name": "DMHADB",
+                "description": null,
+                "environment": "production",
+                "config": {
+                  "password": "************",
+                  "port": 5672,
+                  "host": "${app.name}-db${sequence}",
+                  "createUser": true,
+                  "rootPassword": "************",
+                  "username": "morpheus",
+                  "layout": {
+                    "code": "cbfa3a66-fb8a-480d-a7cd-53ec8c66d83e",
+                    "id": 1015
+                  },
+                  "expireDays": "7",
+                  "name": "${app.name}-db${sequence}",
+                  "allowExisting": false,
+                  "type": null,
+                  "shutdownDays": "2",
+                  "userGroup": {
+                    "id": ""
+                  },
+                  "cloud": "Nutanix",
+                  "instanceContext": null,
+                  "hostName": null,
+                  "instanceType": {
+                    "code": "percona"
+                  },
+                  "site": {
+                    "id": 371,
+                    "name": "DevTest"
+                  },
+                  "memoryDisplay": "GB",
+                  "expose": [],
+                  "customOptions": {},
+                  "createBackup": true,
+                  "backup": {
+                    "backupRepository": 1,
+                    "createBackup": true,
+                    "jobAction": "new",
+                    "jobRetentionCount": "1",
+                    "providerBackupType": "null",
+                    "enabled": true,
+                    "showScheduledBackupWarning": false
+                  },
+                  "powerScheduleType": null,
+                  "passwordHash": "c0fb0c855ec4954a86f4e90bf5f9f0183d636034002fd9201df4e6e256d4c327",
+                  "rootPasswordHash": "c0fb0c855ec4954a86f4e90bf5f9f0183d636034002fd9201df4e6e256d4c327"
+                },
+                "configGroup": null,
+                "configId": null,
+                "configRole": null,
+                "volumes": [
+                  {
+                    "vId": 510716,
+                    "size": 20,
+                    "maxIOPS": null,
+                    "name": "root",
+                    "rootVolume": true,
+                    "storageType": 18,
+                    "id": -1,
+                    "datastoreId": 358,
+                    "maxStorage": 0
+                  }
+                ],
+                "controllers": [],
+                "interfaces": [
+                  {
+                    "id": "networkGroup-2",
+                    "network": {
+                      "id": null,
+                      "group": 2,
+                      "dhcpServer": null,
+                      "name": null,
+                      "pool": null
+                    },
+                    "ipAddress": null,
+                    "networkInterfaceTypeId": null,
+                    "ipMode": null
+                  }
+                ],
+                "customOptions": {},
+                "instanceVersion": "Percona 5.7 on CentOS 7.5",
+                "labels": [],
+                "tags": [],
+                "evars": [
+                  {
+                    "name": "PERCONA_MYSQL_IP",
+                    "value": "10.30.22.99",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_HOST",
+                    "value": "container6559",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_USERNAME",
+                    "value": "morpheus",
+                    "export": false,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_PASSWORD",
+                    "value": "morpheus4Admin!",
+                    "export": false,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_IP_2",
+                    "value": "10.30.22.149",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_HOST_2",
+                    "value": "container6560",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_USERNAME_2",
+                    "value": "morpheus",
+                    "export": false,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_PASSWORD_2",
+                    "value": "morpheus4Admin!",
+                    "export": false,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_IP_3",
+                    "value": "10.30.22.151",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_HOST_3",
+                    "value": "container6561",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_USERNAME_3",
+                    "value": "morpheus",
+                    "export": false,
+                    "masked": false
+                  },
+                  {
+                    "name": "PERCONA_MYSQL_PASSWORD_3",
+                    "value": "morpheus4Admin!",
+                    "export": false,
+                    "masked": false
+                  }
+                ],
+                "maxMemory": 4294967296,
+                "maxStorage": 21474836480,
+                "maxCores": 2,
+                "coresPerSocket": 1,
+                "maxCpu": 1,
+                "hourlyCost": 0.1725000042,
+                "hourlyPrice": 0.17366667090000001,
+                "instancePrice": null,
+                "dateCreated": "2018-12-17T23:59:34Z",
+                "lastUpdated": "2022-08-04T16:00:04Z",
+                "hostName": "demo-ha-db1",
+                "domainName": null,
+                "environmentPrefix": null,
+                "firewallEnabled": true,
+                "networkLevel": "container",
+                "autoScale": false,
+                "instanceContext": "production",
+                "currentDeployId": null,
+                "locked": true,
+                "status": "running",
+                "statusMessage": null,
+                "errorMessage": null,
+                "statusDate": "2018-12-18T00:09:38Z",
+                "statusPercent": null,
+                "statusEta": null,
+                "userStatus": null,
+                "expireDays": null,
+                "renewDays": null,
+                "expireCount": 0,
+                "expireDate": null,
+                "expireWarningDate": null,
+                "expireWarningSent": false,
+                "shutdownDays": null,
+                "shutdownRenewDays": null,
+                "shutdownCount": 0,
+                "shutdownDate": null,
+                "shutdownWarningDate": null,
+                "shutdownWarningSent": false,
+                "removalDate": null,
+                "createdBy": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "owner": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "notes": null,
+                "powerSchedule": null,
+                "isScalable": null,
+                "instanceThreshold": null,
+                "isBusy": null,
+                "apps": []
+              }
+            }
+          ],
+          "bootSequence": 0
+        },
+        {
+          "tier": {
+            "id": 16,
+            "name": "Elasticsearch"
+          },
+          "appInstances": [
+            {
+              "config": {},
+              "instance": {
+                "id": 5860,
+                "uuid": "c97bf862-4099-4124-a0aa-522c83500a73",
+                "accountId": 3,
+                "tenant": {
+                  "id": 3,
+                  "name": "Morpheus"
+                },
+                "instanceType": {
+                  "id": 171,
+                  "code": "escstm",
+                  "category": "nosql",
+                  "name": "Elasticsearch Custom"
+                },
+                "group": {
+                  "id": 50,
+                  "name": "Production"
+                },
+                "cloud": {
+                  "id": 106,
+                  "name": "Nutanix Cluster 2"
+                },
+                "containers": [
+                  6556,
+                  6557,
+                  6558
+                ],
+                "servers": [
+                  71175,
+                  71176,
+                  71177
+                ],
+                "connectionInfo": [
+                  {
+                    "ip": "10.32.22.126",
+                    "port": null
+                  },
+                  {
+                    "ip": "10.32.22.127",
+                    "port": null
+                  },
+                  {
+                    "ip": "10.32.22.128",
+                    "port": null
+                  }
+                ],
+                "layout": {
+                  "id": 1106,
+                  "name": "Elasticsearch Nutanix Single",
+                  "provisionTypeId": 19,
+                  "provisionTypeCode": "nutanix"
+                },
+                "plan": {
+                  "id": 87,
+                  "code": "nutanix-vm-2048",
+                  "name": "1 vCPU, 2GB Memory"
+                },
+                "name": "DMHAES",
+                "description": null,
+                "environment": "production",
+                "config": {
+                  "createUser": true,
+                  "layout": {
+                    "code": "e62cd85d-3cbb-4cc9-b52a-e698f2a766bb",
+                    "id": 1106
+                  },
+                  "expireDays": "7",
+                  "name": "${app.name}-es${sequence}",
+                  "allowExisting": false,
+                  "type": null,
+                  "shutdownDays": "2",
+                  "userGroup": {
+                    "id": ""
+                  },
+                  "cloud": "Nutanix",
+                  "instanceContext": null,
+                  "hostName": null,
+                  "instanceType": {
+                    "code": "escstm"
+                  },
+                  "site": {
+                    "id": 371,
+                    "name": "DevTest"
+                  },
+                  "memoryDisplay": "MB",
+                  "expose": [],
+                  "customOptions": {},
+                  "createBackup": true,
+                  "backup": {
+                    "backupRepository": 1,
+                    "createBackup": true,
+                    "jobAction": "new",
+                    "jobRetentionCount": "1",
+                    "providerBackupType": "null",
+                    "enabled": true,
+                    "showScheduledBackupWarning": false
+                  },
+                  "powerScheduleType": null
+                },
+                "configGroup": null,
+                "configId": null,
+                "configRole": null,
+                "volumes": [
+                  {
+                    "vId": 510716,
+                    "size": 20,
+                    "maxIOPS": null,
+                    "name": "root",
+                    "rootVolume": true,
+                    "storageType": 18,
+                    "id": -1,
+                    "datastoreId": 358,
+                    "maxStorage": 0
+                  }
+                ],
+                "controllers": [],
+                "interfaces": [
+                  {
+                    "id": "network-58874",
+                    "network": {
+                      "id": 58874,
+                      "group": null,
+                      "dhcpServer": true,
+                      "name": "AHV Unmanaged",
+                      "pool": {
+                        "id": 2,
+                        "name": "10.30.20.0/22"
+                      }
+                    },
+                    "ipAddress": null,
+                    "networkInterfaceTypeId": null,
+                    "ipMode": ""
+                  }
+                ],
+                "customOptions": {},
+                "instanceVersion": "5.6",
+                "labels": [],
+                "tags": [],
+                "evars": [
+                  {
+                    "name": "ELASTICSEARCH_CUSTOM_IP",
+                    "value": "10.30.22.152",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "ELASTICSEARCH_CUSTOM_HOST",
+                    "value": "container6556",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "ELASTICSEARCH_CUSTOM_IP_2",
+                    "value": "10.30.22.153",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "ELASTICSEARCH_CUSTOM_HOST_2",
+                    "value": "container6557",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "ELASTICSEARCH_CUSTOM_IP_3",
+                    "value": "10.30.22.154",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "ELASTICSEARCH_CUSTOM_HOST_3",
+                    "value": "container6558",
+                    "export": true,
+                    "masked": false
+                  }
+                ],
+                "maxMemory": 2147483648,
+                "maxStorage": 21474836480,
+                "maxCores": 1,
+                "coresPerSocket": null,
+                "maxCpu": 1,
+                "hourlyCost": 0.2161111196,
+                "hourlyPrice": 0.2176666752,
+                "instancePrice": null,
+                "dateCreated": "2018-12-17T23:59:32Z",
+                "lastUpdated": "2022-08-04T16:00:04Z",
+                "hostName": "demo-ha-es1",
+                "domainName": null,
+                "environmentPrefix": null,
+                "firewallEnabled": true,
+                "networkLevel": "container",
+                "autoScale": false,
+                "instanceContext": "production",
+                "currentDeployId": null,
+                "locked": true,
+                "status": "running",
+                "statusMessage": null,
+                "errorMessage": null,
+                "statusDate": "2018-12-18T00:17:45Z",
+                "statusPercent": null,
+                "statusEta": null,
+                "userStatus": null,
+                "expireDays": 2,
+                "renewDays": null,
+                "expireCount": 0,
+                "expireDate": null,
+                "expireWarningDate": null,
+                "expireWarningSent": false,
+                "shutdownDays": 1,
+                "shutdownRenewDays": null,
+                "shutdownCount": 0,
+                "shutdownDate": null,
+                "shutdownWarningDate": null,
+                "shutdownWarningSent": false,
+                "removalDate": null,
+                "createdBy": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "owner": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "notes": null,
+                "powerSchedule": null,
+                "isScalable": null,
+                "instanceThreshold": null,
+                "isBusy": null,
+                "apps": []
+              }
+            }
+          ],
+          "bootSequence": 1
+        },
+        {
+          "tier": {
+            "id": 15,
+            "name": "App"
+          },
+          "appInstances": [
+            {
+              "config": {},
+              "instance": {
+                "id": 5859,
+                "uuid": "c2a1075d-cc6b-4d2f-a954-ba3fa8432eac",
+                "accountId": 3,
+                "tenant": {
+                  "id": 3,
+                  "name": "Morpheus"
+                },
+                "instanceType": {
+                  "id": 71,
+                  "code": "morpheus",
+                  "category": "web",
+                  "name": "Morpheus"
+                },
+                "group": {
+                  "id": 50,
+                  "name": "Production"
+                },
+                "cloud": {
+                  "id": 106,
+                  "name": "Nutanix Cluster 2"
+                },
+                "containers": [
+                  45609,
+                  6555
+                ],
+                "servers": [
+                  103726,
+                  71174
+                ],
+                "connectionInfo": [
+                  {
+                    "ip": "10.32.22.122",
+                    "port": 443
+                  },
+                  {
+                    "ip": "10.32.22.121",
+                    "port": 443
+                  }
+                ],
+                "layout": {
+                  "id": 1014,
+                  "name": "Morpheus Full HA",
+                  "provisionTypeId": 19,
+                  "provisionTypeCode": "nutanix"
+                },
+                "plan": {
+                  "id": 2337,
+                  "code": "ntnx12R4CCS",
+                  "name": "Nutanix 12 GB Ram 4 Cores"
+                },
+                "name": "DMHAAP1",
+                "description": "Last Service Start: Thu Jun 27 21:15:44 UTC 2019",
+                "environment": "production",
+                "config": {
+                  "customOptions": {
+                    "morph_ver": "5.4.5-2"
+                  },
+                  "createUser": true,
+                  "layout": {
+                    "code": "ed0d3925-b7a8-47d6-8ce5-63e9231f68b1",
+                    "id": 1014
+                  },
+                  "expireDays": "2",
+                  "name": "${app.name}-app${sequence}",
+                  "allowExisting": false,
+                  "type": null,
+                  "shutdownDays": "2",
+                  "userGroup": {
+                    "id": ""
+                  },
+                  "cloud": "Nutanix",
+                  "instanceContext": null,
+                  "hostName": null,
+                  "instanceType": {
+                    "code": "morpheus"
+                  },
+                  "site": {
+                    "id": 371,
+                    "name": "DevTest"
+                  },
+                  "memoryDisplay": "MB",
+                  "expose": [
+                    "443"
+                  ],
+                  "lbInstances": [
+                    {
+                      "port": 443,
+                      "enabled": true,
+                      "id": 110,
+                      "loadBalancerId": 110,
+                      "loadBalancer": {
+                        "id": 110
+                      },
+                      "vipAddress": "10.30.22.150",
+                      "vipPort": 443,
+                      "vipHostname": "morphdemoha",
+                      "name": "morphdemoha",
+                      "vipName": "morphdemoha",
+                      "balanceMode": "leastconnections",
+                      "stickyMode": "sourceip",
+                      "sslCert": "-1",
+                      "protocol": "http",
+                      "vipProtocol": "http",
+                      "instanceId": null,
+                      "externalAddress": "off",
+                      "vipScheme": null,
+                      "sslRedirectMode": null,
+                      "vipShared": "off",
+                      "vipDirectAddress": null
+                    }
+                  ],
+                  "createBackup": true,
+                  "backup": {
+                    "backupRepository": 1,
+                    "createBackup": true,
+                    "jobAction": "new",
+                    "jobRetentionCount": "1",
+                    "providerBackupType": -1,
+                    "enabled": true,
+                    "showScheduledBackupWarning": false
+                  },
+                  "loadBalancerId": 249,
+                  "powerScheduleType": null,
+                  "removalOptions": {
+                    "force": true,
+                    "keepBackups": null,
+                    "releaseEIPs": false,
+                    "removeVolumes": true,
+                    "removeResources": true,
+                    "userId": null
+                  },
+                  "attributes": {
+                    "eyes": "blue",
+                    "age": 30,
+                    "team": "avs",
+                    "win": "cup"
+                  }
+                },
+                "configGroup": null,
+                "configId": null,
+                "configRole": null,
+                "volumes": [
+                  {
+                    "vId": 510716,
+                    "size": 40,
+                    "maxIOPS": null,
+                    "name": "root",
+                    "rootVolume": true,
+                    "storageType": 18,
+                    "id": -1,
+                    "datastoreId": 358,
+                    "maxStorage": 0
+                  }
+                ],
+                "controllers": [],
+                "interfaces": [
+                  {
+                    "id": "networkGroup-2",
+                    "network": {
+                      "id": null,
+                      "group": 2,
+                      "dhcpServer": null,
+                      "name": null,
+                      "pool": null
+                    },
+                    "ipAddress": null,
+                    "networkInterfaceTypeId": null,
+                    "ipMode": ""
+                  }
+                ],
+                "customOptions": {
+                  "morph_ver": "5.4.5-2"
+                },
+                "instanceVersion": "CentOS 7.5",
+                "labels": [],
+                "tags": [
+                  {
+                    "id": 13463956,
+                    "name": "morph_ver",
+                    "value": "5.4.5-2"
+                  }
+                ],
+                "evars": [
+                  {
+                    "name": "MORPHEUS_IP",
+                    "value": "10.32.22.121",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_HOST",
+                    "value": "container6555",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_HTTPS",
+                    "value": 443,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_PORT",
+                    "value": 443,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_PROTO",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_ADDR",
+                    "value": "10.32.22.121",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP",
+                    "value": "tcp://10.32.22.121:443",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT",
+                    "value": 443,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_IP_2",
+                    "value": "10.32.22.122",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_HOST_2",
+                    "value": "container45609",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_HTTPS_2",
+                    "value": 443,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_PORT_2",
+                    "value": 443,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_PROTO_2",
+                    "value": "tcp",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_ADDR_2",
+                    "value": "10.32.22.122",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_443_TCP_2",
+                    "value": "tcp://10.32.22.122:443",
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "MORPHEUS_PORT_2",
+                    "value": 443,
+                    "export": true,
+                    "masked": false
+                  },
+                  {
+                    "name": "test",
+                    "value": "1",
+                    "export": false,
+                    "masked": false
+                  }
+                ],
+                "maxMemory": 12884901888,
+                "maxStorage": 85899345920,
+                "maxCores": 4,
+                "coresPerSocket": 1,
+                "maxCpu": 1,
+                "hourlyCost": 0.2894444558222222,
+                "hourlyPrice": 0.2917777891555555,
+                "instancePrice": null,
+                "dateCreated": "2018-12-17T23:59:31Z",
+                "lastUpdated": "2022-08-04T16:00:04Z",
+                "hostName": "demo-ha-app1",
+                "domainName": null,
+                "environmentPrefix": null,
+                "firewallEnabled": true,
+                "networkLevel": "container",
+                "autoScale": false,
+                "instanceContext": "production",
+                "currentDeployId": null,
+                "locked": false,
+                "status": "running",
+                "statusMessage": null,
+                "errorMessage": null,
+                "statusDate": "2018-12-18T00:25:00Z",
+                "statusPercent": null,
+                "statusEta": null,
+                "userStatus": null,
+                "expireDays": 2,
+                "renewDays": null,
+                "expireCount": 0,
+                "expireDate": null,
+                "expireWarningDate": null,
+                "expireWarningSent": false,
+                "shutdownDays": 1,
+                "shutdownRenewDays": null,
+                "shutdownCount": 0,
+                "shutdownDate": null,
+                "shutdownWarningDate": null,
+                "shutdownWarningSent": false,
+                "removalDate": "2022-04-30T04:22:22Z",
+                "createdBy": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "owner": {
+                  "id": 2,
+                  "username": "jwheeler"
+                },
+                "notes": "`@cbunge this work now`\r\n\r\n```\r\nsweeeeeeeeeettt emooooooootions\r\n```\r\n\r\nVery good",
+                "powerSchedule": null,
+                "isScalable": null,
+                "instanceThreshold": {
+                  "id": 254,
+                  "autoUp": false,
+                  "autoDown": false,
+                  "minCount": 2,
+                  "maxCount": 2,
+                  "cpuEnabled": false,
+                  "minCpu": 0.0,
+                  "maxCpu": 0.0,
+                  "memoryEnabled": false,
+                  "minMemory": 30.0,
+                  "maxMemory": 90.0,
+                  "diskEnabled": false,
+                  "minDisk": 30.0,
+                  "maxDisk": 90.0,
+                  "minNetwork": null,
+                  "networkEnabled": false,
+                  "iopsEnabled": false,
+                  "minIops": null,
+                  "maxIops": null,
+                  "comment": null,
+                  "zoneId": 106,
+                  "dateCreated": "2020-04-10T03:03:45Z",
+                  "lastUpdated": "2022-04-12T14:04:42Z"
+                },
+                "isBusy": null,
+                "apps": []
+              }
+            }
+          ],
+          "bootSequence": 3
+        }
+      ],
+      "instances": [
+        {
+          "id": 5859,
+          "name": "DMHAAP1"
+        },
+        {
+          "id": 5861,
+          "name": "DMHADB"
+        },
+        {
+          "id": 5860,
+          "name": "DMHAES"
+        },
+        {
+          "id": 5862,
+          "name": "DMHAMQ"
+        }
+      ],
+      "stats": {
+        "usedMemory": 10224904000,
+        "maxMemory": 27827862592,
+        "usedStorage": 28618199040,
+        "maxStorage": 193273528320,
+        "running": 4,
+        "total": 0,
+        "cpuUsage": 17.1944189156,
+        "instanceCount": 3,
+        "instanceDayCount": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "instanceDayCountTotal": 0
+      }
+    }
+  ],
+  "stats": {
+    "usedMemory": 10224904000,
+    "maxMemory": 28901604416,
+    "usedStorage": 28618199040,
+    "maxStorage": 201863462912,
+    "running": 5,
+    "total": 0,
+    "cpuUsage": 17.1944189156,
+    "instanceCount": 4,
+    "instanceDayCount": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "instanceDayCountTotal": 0
+  },
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

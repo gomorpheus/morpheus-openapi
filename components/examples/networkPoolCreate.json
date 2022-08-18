@@ -1,0 +1,14 @@
+{
+  "networkPool": {
+    "name": "test pool",
+    "type": {
+      "code": "morpheus"
+    },
+    "ipRanges": [
+      {
+        "startAddress": "192.2.2.100",
+        "endAddress": "192.2.2.199"
+      }
+    ]
+  }
+}

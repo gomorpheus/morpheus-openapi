@@ -1,0 +1,46 @@
+{
+    "types": [
+        {
+            "id": 1,
+            "name": "Shutdown",
+            "code": "shutdown",
+            "category": "utilization",
+            "title": "Shutdown resource"
+        },
+        {
+            "id": 4,
+            "name": "Sizing",
+            "code": "size",
+            "category": "utilization",
+            "title": "Resize resource"
+        },
+        {
+            "id": 7,
+            "name": "Host Capacity",
+            "code": "hostCapacity",
+            "category": "utilization",
+            "title": "Add Capacity"
+        },
+        {
+            "id": 10,
+            "name": "Host Balancing",
+            "code": "hostBalancing",
+            "category": "utilization",
+            "title": "Balance Host"
+        },
+        {
+            "id": 13,
+            "name": "Datastore Capacity",
+            "code": "datastoreCapacity",
+            "category": "utilization",
+            "title": "Add Capacity"
+        },
+        {
+            "id": 16,
+            "name": "Reservation Recommendation",
+            "code": "reservations",
+            "category": "utilization",
+            "title": "Add Reservations"
+        }
+    ]
+}

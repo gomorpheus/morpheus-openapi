@@ -1,0 +1,117 @@
+id: 
+  type: integer
+  format: int64
+loadBalancer: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    type: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        code: 
+          type: string
+        name: 
+          type: string
+    name: 
+      type: string
+    ip: 
+      type: string
+name: 
+  type: string
+code: 
+  type: string
+  nullable: true
+category: 
+  type: string
+  nullable: true
+visibility: 
+  type: string
+description: 
+  type: string
+monitorType: 
+  type: string
+monitorInterval: 
+  type: integer
+  format: int64
+monitorTimeout: 
+  type: integer
+  format: int64
+sendData: 
+  type: string
+  nullable: true
+sendVersion: 
+  type: string
+sendType: 
+  type: string
+receiveData: 
+  type: string
+  nullable: true
+receiveCode: 
+  type: string
+disabledData: 
+  type: string
+  nullable: true
+monitorUsername: 
+  type: string
+  nullable: true
+monitorPassword: 
+  type: string
+  nullable: true
+monitorDestination: 
+  type: string
+monitorReverse: 
+  type: boolean
+monitorTransparent: 
+  type: boolean
+monitorAdaptive: 
+  type: boolean
+aliasAddress: 
+  type: string
+  nullable: true
+aliasPort: 
+  type: integer
+  format: int64
+internalId: 
+  type: string
+externalId: 
+  type: string
+monitorSource: 
+  type: string
+status: 
+  type: string
+statusMessage: 
+  type: string
+  nullable: true
+statusDate: 
+  type: string
+  nullable: true
+enabled: 
+  type: boolean
+maxRetry: 
+  type: integer
+  format: int64
+fallCount: 
+  type: integer
+  format: int64
+riseCount: 
+  type: integer
+  format: int64
+dataLength: 
+  type: string
+  nullable: true
+config: 
+  type: object
+createdBy: 
+  type: string
+  nullable: true
+dateCreated: 
+  type: string
+  format: date-time
+lastUpdated: 
+  type: string
+  format: date-time

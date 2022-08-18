@@ -1,0 +1,19 @@
+{
+  "specTemplate": {
+    "name": "cftest",
+    "type": {
+      "code": "cloudFormation"
+    },
+    "config": {
+      "cloudformation": {
+        "IAM": "on",
+        "CAPABILITY_NAMED_IAM": "on",
+        "CAPABILITY_AUTO_EXPAND": "off"
+      }
+    },
+    "file": {
+      "sourceType": "local",
+      "content": "{\"test\":\"spec\"}"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "provisioningSettings": {
+    "allowZoneSelection": true,
+    "allowServerSelection": true,
+    "requireEnvironments": true,
+    "showPricing": true,
+    "hideDatastoreStats": true,
+    "crossTenantNamingPolicies": true,
+    "reuseSequence": true,
+    "cloudInitUsername": "stubbytoes",
+    "cloudInitPassword": "supersecret",
+    "deployStorageProvider": {
+      "id": 42
+    },
+    "defaultTemplateType": {
+      "id": 2
+    }
+  }
+}

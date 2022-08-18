@@ -1,0 +1,34 @@
+{
+  "whitelabelSettings": {
+    "enabled": true,
+    "applianceName": "My Appliance",
+    "disableSupportMenu": false,
+    "headerLogo": "http://10.0.2.2:8080/storage/uploads/uploads/ApplianceInstance/1/headerLogo/header_logo_original.png",
+    "footerLogo": "http://10.0.2.2:8080/storage/uploads/uploads/ApplianceInstance/1/footerLogo/footer_logo_original.png",
+    "loginLogo": "http://10.0.2.2:8080/storage/uploads/uploads/ApplianceInstance/1/loginLogo/login_logo_original.png",
+    "favicon": "http://10.0.2.2:8080/storage/uploads/uploads/ApplianceInstance/1/favicon/favicon_original.ico",
+    "headerBgColor": "#ffffff",
+    "headerFgColor": "black",
+    "navBgColor": "#ffffff",
+    "navFgColor": "pink",
+    "navHoverColor": "green",
+    "primaryButtonBgColor": "red",
+    "primaryButtonFgColor": "blue",
+    "primaryButtonHoverBgColor": "orange",
+    "primaryButtonHoverFgColor": "gray",
+    "footerBgColor": "brown",
+    "footerFgColor": "yellow",
+    "loginBgColor": "aqua",
+    "overrideCss": "div {\r\n    font-size: 16px;\r\n}",
+    "copyrightString": "My copywriter",
+    "termsOfUse": "These are my terms of use.",
+    "privacyPolicy": "Here is my privacy policy.",
+    "supportMenuLinks": [
+      {
+        "url": "http://helpmenu.com",
+        "label": "Help",
+        "labelCode": "help"
+      }
+    ]
+  }
+}

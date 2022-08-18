@@ -1,0 +1,6 @@
+name: vipHostname
+in: query
+description: If specified will return an exact match on vipHostname
+schema:
+  type: string
+example: "mylb"

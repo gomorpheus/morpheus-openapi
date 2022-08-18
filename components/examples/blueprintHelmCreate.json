@@ -1,0 +1,14 @@
+{
+  "image": "/assets/apps/template.png",
+  "name": "HashiCorp Vault Helm Test",
+  "type": "helm",
+  "helm": {
+    "git": {
+      "repoId": 724,
+      "path": "./",
+      "integrationId": 174,
+      "branch": "main"
+    },
+    "configType": "git"
+  }
+}

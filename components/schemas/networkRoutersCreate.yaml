@@ -1,0 +1,53 @@
+type: object
+required:
+  - name
+  - type
+  - site
+properties:
+  name:
+    type: string
+    description: Name
+  type:
+    type: object
+    required:
+      - id
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: Network router type ID
+  site:
+    type: object
+    required:
+      - id
+    properties:
+      id:
+        oneOf:
+          - type: integer
+            format: int64
+            description: Group ID
+          - type: string
+            description: Specify "shared" for shared access
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the network router (true, false). Default is on
+  zone:
+    type: object
+    description: Required when type does not support a network server
+    required:
+      - id
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: Cloud ID
+  networkServer:
+    type: object
+    description: Required when type supports a network server
+    required:
+      - id
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: Network Server ID

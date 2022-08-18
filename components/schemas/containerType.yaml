@@ -5,6 +5,7 @@ properties:
     format: int32
   account: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -31,6 +32,7 @@ properties:
         type: string
   virtualImage: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -48,6 +50,15 @@ properties:
     nullable: true
     items:
       type: object
+      properties:
+        name:
+          type: string
+        port:
+          type: integer
+          format: int64
+        loadBalanceProtocol:
+          type: string
+          nullable: true
   containerScripts: 
     type: array
     nullable: true

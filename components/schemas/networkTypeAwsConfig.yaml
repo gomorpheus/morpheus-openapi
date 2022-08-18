@@ -1,0 +1,24 @@
+type: object
+required:
+  - availabilityZone
+  - cidr
+  - assignPublicIp
+  - zonePool
+properties: 
+  availabilityZone:
+    type: string
+    description: Availability Zone Name
+  cidr:
+    type: string
+    description: Network CIDR
+  assignPublicIp:
+    type: boolean
+    description: Assign public IPs by default.
+  zonePool:
+    type: object
+    required:
+      - id
+    properties:
+      id:
+        type: integer
+        description: Morpheus resource pool ID of the VPC for the network.

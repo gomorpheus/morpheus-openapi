@@ -1,0 +1,34 @@
+{
+  "optionTypeList": {
+    "id": 1,
+    "name": "my groups",
+    "description": "A list of my groups",
+    "type": "rest",
+    "sourceUrl": "http://myapp/api/options/groups",
+    "sourceMethod": "GET",
+    "ignoreSSLErrors": false,
+    "realTime": false,
+    "visibility": "private",
+    "config": {
+      "sourceHeaders": [
+        {
+          "name": "Authorization",
+          "value": "Bearer 8af52d52-c05d-1e3f-ae8b-542ecf47ae10",
+          "masked": false
+        },
+        {
+          "name": "Foobar",
+          "value": "************",
+          "masked": true
+        }
+      ]
+    },
+    "initialDataset": null,
+    "translationScript": "for(var x=0;x < data['data'].length; x++) {\r\n    results.push(data.data[x]);\r\n}",
+    "requestScript": null,
+    "account": {
+      "id": 1,
+      "name": "morpheusdata.com"
+    }
+  }
+}

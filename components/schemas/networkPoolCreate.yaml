@@ -1,0 +1,28 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Name
+  type:
+    type: object
+    properties:
+      code:
+        description: Pool Type. i.e. 'morpheus', 'phpipam', etc.
+  ipRanges:
+    type: array
+    description: Array of IP range objects, see IP Ranges, this can only be specified when type is 'morpheus'.
+    items:
+      type: object
+      required:
+        - startAddress
+        - endAddress
+      properties:
+        startAddress:
+          type: string
+          description: Starting IP Address
+        endAddress:
+          type: string
+          description: Ending IP Address
+  config:
+    type: object
+    description: Configuration object with parameters that vary by pool type.

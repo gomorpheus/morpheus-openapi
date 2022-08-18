@@ -1,0 +1,72 @@
+type: object
+properties: 
+  endpoint: 
+    type: string
+  accessKey: 
+    type: string
+  secretKey: 
+    type: string
+  _useHostCredentials: 
+    type: string
+  stsAssumeRole: 
+    type: string
+  isVpc: 
+    type: string
+  vpc: 
+    type: string
+  imageStoreId: 
+    type: string
+  ebsEncryption: 
+    type: string
+  costingReport: 
+    type: string
+  costingFolder: 
+    type: string
+  costingBucket: 
+    type: string
+  costingRegion: 
+    type: string
+  costingAccessKey: 
+    type: string
+  costingSecretKey: 
+    type: string
+    nullable: true
+  applianceUrl: 
+    type: string
+  datacenterName: 
+    type: string
+  networkServer.id: 
+    oneOf:
+    - type: string
+    - type: integer
+      format: int64
+  networkServer: 
+    type: object
+    properties: 
+      id:
+        oneOf:
+        - type: string
+        - type: integer
+          format: int64
+  securityServer: 
+    type: string
+    nullable: true
+  certificateProvider: 
+    type: string
+  backupMode: 
+    type: string
+  replicationMode: 
+    type: string
+  dnsIntegrationId: 
+    type: string
+  serviceRegistryId: 
+    type: string
+  configManagementId: 
+    type: string
+  configCmdbDiscovery: 
+    type: boolean
+  secretKeyHash: 
+    type: string
+  costingSecretKeyHash: 
+    type: string
+    nullable: true

@@ -1,0 +1,30 @@
+type: object
+properties:
+  name: 
+    type: string
+    description: File template name
+  fileName: 
+    type: string
+    description: Filename for the file template
+  filePath:
+    type: string
+    description: Path for the file template
+  category:
+    type: string
+    description: Category
+  templatePhase: 
+    type: string
+    description: Template Phase, provision, start, etc.
+  template: 
+    type: string
+    description: Template content, that is, the file template content itself.
+  fileOwner:
+    type: integer
+    format: int64
+    description: File Owner
+  settingName: 
+    type: string
+    description: Setting Name
+  settingCategory:
+    type: string
+    description: Setting Category

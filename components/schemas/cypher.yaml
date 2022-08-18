@@ -1,0 +1,19 @@
+type: object
+properties:
+  itemKey: 
+    type: string
+  leaseTimeout: 
+    type: integer
+    format: int64
+  expireDate: 
+    type: string
+    format: date-time
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  lastAccessed: 
+    type: string
+    format: date-time

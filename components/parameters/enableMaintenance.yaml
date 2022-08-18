@@ -1,0 +1,5 @@
+name: enabled
+in: query
+description: Pass true to turn on maintenance mode, or false to turn it off. If no value is given then it will be toggled from off to on or vice versa.
+schema:
+  type: boolean

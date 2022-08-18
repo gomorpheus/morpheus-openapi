@@ -1,0 +1,31 @@
+type: object
+required: 
+  - name
+  - leaseTime
+  - serverIpAddress
+  - config
+properties:
+  serverIpAddress:
+    type: string
+    description: Server Address for the DHCP Server
+  leaseTime:
+    type: integer
+    format: int64
+    description: Optional lease time for the DHCP Server
+    default: 86400
+  name:
+    type: string
+    description: Name
+  config:
+    type: object
+    description: Configuration object with parameters that vary by pool type.
+    properties:
+      edgeCluster:
+        type: string
+        description: Edge Cluster
+      preferredEdgeNode1:
+        type: string
+        description: Active Edge Node Options obtained by calling option source with :optionSource = nsxtEdgeNodes and networkServerId param
+      preferredEdgeNode2:
+        type: string
+        description: Standby Edge Node Options obtained by calling option source with optionSource = nsxtEdgeNodes and networkServerId param

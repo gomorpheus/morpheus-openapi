@@ -1,0 +1,109 @@
+{
+    "folders": [
+        {
+            "id": 273,
+            "name": "/",
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": null,
+            "type": "default",
+            "externalId": "/",
+            "visibility": "public",
+            "readOnly": false,
+            "defaultFolder": false,
+            "defaultStore": false,
+            "active": false,
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home",
+                    "defaultStore": false,
+                    "defaultTarget": false
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 0
+        },
+        {
+            "id": 208,
+            "name": ".Templates",
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 273,
+                "name": "/"
+            },
+            "type": "default",
+            "externalId": "group-v1002",
+            "visibility": "public",
+            "readOnly": false,
+            "defaultFolder": false,
+            "defaultStore": false,
+            "active": false,
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home",
+                    "defaultStore": false,
+                    "defaultTarget": false
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        },
+        {
+            "id": 214,
+            "name": "ESX Agents",
+            "zone": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "parent": {
+                "id": 273,
+                "name": "/"
+            },
+            "type": "default",
+            "externalId": "group-v1031",
+            "visibility": "public",
+            "readOnly": false,
+            "defaultFolder": false,
+            "defaultStore": false,
+            "active": false,
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "Home",
+                    "defaultStore": false,
+                    "defaultTarget": false
+                }
+            ],
+            "resourcePermission": {
+                "all": true,
+                "sites": [],
+                "allPlans": true,
+                "plans": []
+            },
+            "depth": 1
+        }
+    ],
+    "meta": {
+        "size": 3,
+        "total": 30,
+        "offset": 0,
+        "max": 3
+    }
+}

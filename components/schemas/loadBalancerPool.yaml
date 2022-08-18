@@ -1,0 +1,144 @@
+id:
+  type: integer
+  format: int64
+loadBalancer:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    type:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        code:
+          type: string
+        name:
+          type: string
+    name:
+      type: string
+    ip:
+      type: string
+name:
+  type: string
+category:
+  type: string
+  nullable: true
+visibility:
+  type: string
+description:
+  type: string
+  nullable: true
+internalId:
+  type: string
+externalId:
+  type: string
+enabled:
+  type: boolean
+vipSticky:
+  type: string
+  nullable: true
+vipBalance:
+  type: string
+allowNat:
+  type: string
+  nullable: true
+allowSnat:
+  type: string
+  nullable: true
+vipClientIpMode:
+  type: string
+  nullable: true
+vipServerIpMode:
+  type: string
+  nullable: true
+minActive:
+  type: integer
+  format: int64
+minInService:
+  type: string
+  nullable: true
+minUpMonitor:
+  type: string
+  nullable: true
+minUpAction:
+  type: string
+  nullable: true
+maxQueueDepth:
+  type: string
+  nullable: true
+maxQueueTime:
+  type: string
+  nullable: true
+numberActive:
+  type: integer
+  format: int64
+numberInService:
+  type: integer
+  format: int64
+healthScore:
+  type: integer
+  format: int64
+performanceScore:
+  type: integer
+  format: int64
+healthPenalty:
+  type: integer
+  format: int64
+securityPenalty:
+  type: integer
+  format: int64
+errorPenalty:
+  type: integer
+  format: int64
+downAction:
+  type: string
+  nullable: true
+rampTime:
+  type: string
+  nullable: true
+port:
+  type: string
+  nullable: true
+portType:
+  type: string
+  nullable: true
+status:
+  type: string
+nodes:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+monitors:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+members:
+  type: array
+  items:
+    type: object
+config:
+  type: object
+createdBy:
+  type: string
+  nullable: true
+dateCreated:
+  type: string
+  format: date-time
+lastUpdated:
+  type: string
+  format: date-time

@@ -1,0 +1,9 @@
+name: eventId
+in: path
+description: >-
+  ID of the job execution event
+required: true
+schema:
+  type: integer
+  format: int64
+example: 323

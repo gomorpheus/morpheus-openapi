@@ -1,0 +1,15 @@
+{
+  "name": "AWS - Simple Website Test",
+  "terraform": {
+    "tfvarSecret": "tfvars/profile/cloud/awslabswest1/variables",
+    "git": {
+      "repoId": 721,
+      "path": "./Terraform/AWS/simpleWebsite/",
+      "integrationId": 168,
+      "branch": "main"
+    },
+    "configType": "git"
+  },
+  "type": "terraform",
+  "image": "/assets/apps/template.png"
+}

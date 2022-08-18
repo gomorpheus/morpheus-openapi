@@ -1,0 +1,34 @@
+{
+  "loadBalancer": {
+      "id": 1064,
+      "name": "XXXXXX10070",
+      "accountId": 3,
+      "cloud": {
+          "id": 12,
+          "name": "AWS"
+      },
+      "type": {
+          "id": 3,
+          "name": "Amazon ELB",
+          "code": "amazon"
+      },
+      "visibility": "private",
+      "description": "my_desc1",
+      "host": "XXXXXX10070-3672406.us-west-1.elb.amazonaws.com",
+      "port": 22,
+      "username": null,
+      "password": null,
+      "passwordHash": null,
+      "ip": "XXXXXX10070-3672406.us-west-1.elb.amazonaws.com",
+      "internalIp": null,
+      "externalIp": null,
+      "apiPort": null,
+      "adminPort": null,
+      "sslEnabled": false,
+      "sslCert": null,
+      "enabled": true,
+      "config": {},
+      "dateCreated": "2021-02-26T21:18:56Z",
+      "lastUpdated": "2022-07-07T15:56:12Z"
+  }
+}

@@ -1,0 +1,90 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: Node type name
+  shortName: 
+    type: string
+    description: The short name is a name with no spaces used for display in your container list.
+  description: 
+    type: string
+    description: Node type description
+  containerVersion: 
+    type: string
+    description: Version of the node type
+  provisionTypeCode: 
+    type: string
+    description: Provision type code, eg. `amazon`, etc.
+  scripts: 
+    type: array
+    description: Array of script IDs.
+    items: 
+      type: integer
+      format: int64
+  templates:
+    type: array
+    description: Array of file template IDs.
+    items:
+      type: integer
+      format: int64
+  virtualImageId: 
+    type: integer
+    format: int64
+    description: Virtual image ID
+  statTypeCode: 
+    type: string
+    description: Stat type code.  Varies with node type, see Provision Types (customOptionTypes) for allowed values within selected type.
+  logTypeCode: 
+    type: string
+    description: Log type code.  Varies with node type, see Provision Types (customOptionTypes) for allowed values within selected type.
+  serverType: 
+    type: string
+    description: Server type.  Always pass "vm".
+  containerPorts:
+    type: array
+    description: List of exposed port definitions in the format NAME=PORT|PROTOCOL
+    example: 
+      - name: WEB
+        port: 80
+        loadBalanceProtocol: HTTP
+      - name: SECURE
+        port: 443
+        loadBalanceProtocol: HTTPS
+    items:
+      type: object
+      required:
+        - name
+        - port
+      properties:
+        name:
+          type: string
+        port:
+          type: integer
+          format: int64
+        loadBalanceProtocol:
+          type: string
+  environmentVariables:
+    type: array
+    description: The environmentVariables parameter is array of env objects.
+    items: 
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: Environment variable name
+        value:
+          type: string
+          description: Sets fixed value for variable
+        masked:
+          type: boolean
+          description: Can be used to enable / disable masking of variable
+          default: false
+        export:
+          type: boolean
+          description: Can be used to enable / disable export of variable
+          default: false
+  config: 
+    type: object
+    description: Config object varies with node type.  If using docker, scvmm, ARM, hyperv, or cloudformation, look up provision type details (customOptionTypes) for information.

@@ -1,0 +1,101 @@
+get:
+  summary: Get all Static Routes for a Network
+  description: |
+    This endpoint retrieves all routes for specified network.
+  operationId: getStaticRoutes
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkRoutes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    $ref: ../components/schemas/networkStaticRoute.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkStaticRoutes.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+put:
+  summary: Create a Network Static Route
+  description: |
+    Use this command to create a route for an existing network.
+  operationId: createStaticRoute
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            networkRoute:
+              $ref: ../components/schemas/networkStaticRouteCreate.yaml
+        examples: 
+          Successful Request:
+            value: 
+              $ref: ../components/examples/networkStaticRouteCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/successId.json 
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml  
+

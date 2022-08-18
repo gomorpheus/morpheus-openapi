@@ -1,0 +1,39 @@
+{
+  "whitelabelSettings": {
+    "navBgColor": "#fff",
+    "enabled": true,
+    "applianceName": "My Appliance",
+    "disableSupportMenu": false,
+    "resetHeaderLogo": true,
+    "resetFooterLogo": true,
+    "resetLoginLogo": true,
+    "resetFavicon": true,
+    "headerBgColor": "#fff",
+    "headerFgColor": "black",
+    "navFgColor": "pink",
+    "navHoverColor": "green",
+    "primaryButtonBgColor": "red",
+    "primaryButtonFgColor": "blue",
+    "primaryButtonHoverBgColor": "orange",
+    "primaryButtonHoverFgColor": "gray",
+    "footerBgColor": "brown",
+    "footerFgColor": "yellow",
+    "loginBgColor": "cyan",
+    "copyrightString": "My copywriter",
+    "overrideCss": "div {\n    font-size: 16px;\n}",
+    "termsOfUse": "These are my terms of use.",
+    "privacyPolicy": "Here is my privacy policy.",
+    "supportMenuLinks": [
+      {
+        "url": "http://helpme.com",
+        "label": "Help Label",
+        "labelCode": "help-code"
+      },
+      {
+        "url": "http://helpmemore.com",
+        "label": "Help More Label",
+        "labelCode": "help-more-code"
+      }
+    ]
+  }
+}

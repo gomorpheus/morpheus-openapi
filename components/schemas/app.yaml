@@ -1,0 +1,122 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+  environment: 
+    type: string
+  accountId: 
+    type: integer
+    format: int64
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  siteId: 
+    type: integer
+    format: int64
+  group: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  blueprint: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      type: 
+        type: string
+  type: 
+    type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  removalDate: 
+    type: string
+    nullable: true
+  appContext: 
+    type: string
+  status: 
+    type: string
+  appStatus: 
+    type: string
+  instanceCount: 
+    type: integer
+    format: int64
+  containerCount: 
+    type: integer
+    format: int64
+  appTiers: 
+    type: array
+    items: 
+      type: object
+  instances: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  stats: 
+    type: object
+    properties: 
+      usedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      usedStorage: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      running: 
+        type: integer
+        format: int64
+      total: 
+        type: integer
+        format: int64
+      cpuUsage: 
+        type: number
+      instanceCount: 
+        type: integer
+        format: int64
+      instanceDayCount: 
+        type: array
+        items: 
+          type: integer
+          format: int64
+      instanceDayCountTotal: 
+        type: integer
+        format: int64

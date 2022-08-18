@@ -1,0 +1,36 @@
+{
+  "rule": {
+    "ruleGroup": {
+      "id": 1032
+    },
+    "name": "stubby-toes-rule",
+    "description": null,
+    "enabled": true,
+    "priority": null,
+    "direction": "ingress",
+    "sources": {
+      "id": [
+        "/infra/domains/default/groups/stubby-toes-group"
+      ]
+    },
+    "destinations": {
+      "id": [
+        "/infra/domains/default/groups/stubby-toes-group"
+      ]
+    },
+    "config": {
+      "application": [
+        "HTTP"
+      ],
+      "profile": [
+        "HTTP"
+      ]
+    },
+    "scopes": {
+      "id": [
+        "/infra/domains/default/groups/stubby-toes-group"
+      ]
+    },
+    "policy": "accept"
+  }
+}

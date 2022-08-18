@@ -1,0 +1,7 @@
+name: deploymentId
+in: query
+description: Filter by deployment id
+schema:
+  type: integer
+  format: int64
+  example: 5

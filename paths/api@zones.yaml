@@ -7,9 +7,14 @@ get:
     - Clouds
   parameters:
     - $ref: ../components/parameters/lastUpdated.yaml
-    - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/type.yaml
+    - $ref: ../components/parameters/cloudTypes.yaml
     - $ref: ../components/parameters/groupId.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
   responses:
     '200':
       description: Successful Request
@@ -22,10 +27,14 @@ get:
                 zones:
                   type: array
                   items:
-                    $ref: ../components/schemas/zone.yaml
+                    anyOf:
+                    - $ref: ../components/schemas/zoneVcenterConfig.yaml
+                    - $ref: ../components/schemas/zoneAwsConfig.yaml
+                    - $ref: ../components/schemas/zoneAzureConfig.yaml
+                    - $ref: ../components/schemas/zoneGcpConfig.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Get Clouds Response:
+            Clouds Response:
               value:
                 $ref: ../components/examples/zones.json
     '400':
@@ -49,34 +58,95 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
 post:
-  summary: Creates a Group
+  summary: Creates a Cloud
   description: |
-    Creates a group.
-  operationId: addGroups
+    Creates a cloud.
+  operationId: addClouds
   tags:
-    - Groups
+    - Clouds
   requestBody:
     content:
       application/json:
         schema:
           type: object
           required:
-            - group
+            - zone
           properties:
-            group:
+            zone:
               type: object
               required:
                 - name
+                - zoneType
+                - groupId
+                - credential
               properties:
                 name: 
                   type: string
-                  description: A unique name scoped to your account for the group
+                  description: A unique name scoped to your account for the cloud
+                  example: My Cloud
+                description:
+                  type: string
+                  description: Optional description field if you want to put more info there
                 code:
                   type: string
                   description: Optional code for use with policies
+                  example: mycloud
                 location:
                   type: string
-                  description: Optional location argument for your group
+                  description: Optional location for your cloud
+                  example: US East
+                visibility:
+                  type: string
+                  description: private or public
+                  enum:
+                   - private
+                   - public
+                  default: private
+                zoneType:
+                  type: string
+                  default: standard
+                  description: Map containing code or id of the cloud type
+                groupId:
+                  type: integer
+                  format: int64
+                  description: Specifies which Server group this cloud should be assigned to
+                  example: 3
+                accountId:
+                  type: integer
+                  format: int64
+                  description: Specifies which Tenant this cloud should be assigned to
+                  example: 1
+                enabled:
+                  type: boolean
+                  description: Can be used to disable the cloud
+                  default: true
+                autoRecoverPowerState:
+                  type: boolean
+                  description: Automatically Power on VMs
+                  default: false
+                scalePriority:
+                  type: integer
+                  format: int64
+                  description: Scale Priority
+                  default: 1
+                linkedAccountId:
+                  type: integer
+                  format: int64
+                  description: Linked Account ID (enter commercial ID to get costing for AWS Govcloud)
+                config:
+                  type: object
+                  description: Map containing zone configuration settings. See the section on specific zone types for details.
+                securityMode:
+                  type: string
+                  description: host firewall. `off` or `internal`. a.k.a. "local firewall"
+                  default: "off"
+                credential:
+                  type: object
+                  description: Map containing Credential ID. `local` means use the values set in the local cloud config instead of associating a credential.
+                  example:
+                    id: 1
+                  default:
+                    type: local
   responses:
     '200':
       description: Successful Request
@@ -86,13 +156,22 @@ post:
             allOf:
             - type: object
               properties:
-                group:
-                  $ref: ../components/schemas/group.yaml
+                zone:
+                  $ref: ../components/schemas/zone.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Report Types Response:
+            Clouds Response - Create vCenter:
               value:
-                $ref: ../components/examples/group.json
+                $ref: ../components/examples/zoneVcenterSuccess.json
+            Clouds Response - Create AWS:
+              value:
+                $ref: ../components/examples/zoneAwsSuccess.json
+            Clouds Response - Create Azure:
+              value:
+                $ref: ../components/examples/zoneAzureSuccess.json
+            Clouds Response - Create GCP:
+              value:
+                $ref: ../components/examples/zoneGcpSuccess.json
     '400':
       $ref: ../components/responses/400.yaml
     '401':

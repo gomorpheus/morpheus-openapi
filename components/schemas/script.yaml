@@ -1,0 +1,42 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  account: 
+    type: string
+    nullable: true
+  name: 
+    type: string
+  category: 
+    type: string
+    nullable: true
+  sortOrder: 
+    type: integer
+    format: int64
+  scriptVersion: 
+    type: string
+  scriptPhase: 
+    type: string
+  scriptType: 
+    type: string
+  script: 
+    type: string
+  scriptService: 
+    type: string
+    nullable: true
+  scriptMethod: 
+    type: string
+    nullable: true
+  runAsUser: 
+    type: string
+    nullable: true
+  runAsPassword: 
+    type: string
+    nullable: true
+  sudoUser: 
+    type: boolean
+  failOnError: 
+    type: boolean

@@ -1,0 +1,221 @@
+{
+  "success": true,
+  "msg": null,
+  "errors": null,
+  "errorCode": null,
+  "inProgress": false,
+  "blueprint": {
+    "id": 444,
+    "name": "Application 1Test",
+    "type": "morpheus",
+    "description": null,
+    "category": null,
+    "config": {
+      "image": "/assets/apps/template.png",
+      "tiers": {
+        "App": {
+          "linkedTiers": [
+            "Database"
+          ],
+          "tierIndex": 1,
+          "tier": {
+            "bootOrder": 1,
+            "lockedFields": [
+              "bootOrder"
+            ]
+          },
+          "instances": [
+            {
+              "instance": {
+                "type": "apch"
+              },
+              "environments": {
+                "Dev": {
+                  "groups": {
+                    "Demo": {
+                      "clouds": {
+                        "AWS": {
+                          "backup": {
+                            "createBackup": false
+                          },
+                          "instance": {
+                            "layout": {
+                              "provisionTypeCode": "docker",
+                              "code": "ce9a61d1-6986-47e7-a138-cee218351e7a",
+                              "instanceVersion": "latest",
+                              "name": "Apache Docker",
+                              "id": 969
+                            },
+                            "expireDays": 2,
+                            "configEnabled": true,
+                            "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+                            "allowExisting": false,
+                            "type": "apch",
+                            "shutdownDays": 1,
+                            "userGroup": {
+                              "id": ""
+                            }
+                          },
+                          "loadBalancer": [
+                            {
+                              "externalAddressCheck": false,
+                              "protocol": "http",
+                              "vipPort": 80,
+                              "vipName": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+                              "internalPort": 80,
+                              "loadBalancePort": null,
+                              "loadBalanceProtocol": "http",
+                              "vipHostname": "${instance.name}.localdomain",
+                              "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+                              "id": "",
+                              "balanceMode": "leastconnections",
+                              "externalPort": 80
+                            }
+                          ],
+                          "volumes": [
+                            {
+                              "volumeCustomizable": false,
+                              "readonlyName": false,
+                              "size": 1,
+                              "name": "root",
+                              "rootVolume": true,
+                              "index": 0,
+                              "hasDatastore": true,
+                              "datastoreId": 1384,
+                              "maxStorage": 1073741824
+                            }
+                          ],
+                          "ports": [
+                            {
+                              "code": null,
+                              "visible": true,
+                              "internalPort": 80,
+                              "loadBalancePort": null,
+                              "loadBalanceProtocol": "HTTP",
+                              "sortOrder": 0,
+                              "name": "HTTP",
+                              "id": 130,
+                              "shortName": null,
+                              "externalPort": 80,
+                              "loadBalance": true
+                            }
+                          ],
+                          "config": {
+                            "poolProviderType": "kubernetes",
+                            "customOptions": {
+                              "appId": "001"
+                            },
+                            "resourcePoolId": 334,
+                            "createUser": true
+                          },
+                          "plan": {
+                            "code": "container-128",
+                            "id": 68
+                          },
+                          "group": {
+                            "id": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "Database": {
+          "tierIndex": 2,
+          "instances": [
+            {
+              "instance": {
+                "type": "mysql"
+              },
+              "environments": {
+                "Dev": {
+                  "groups": {
+                    "Demo": {
+                      "clouds": {
+                        "AWS": {
+                          "backup": {
+                            "backupRepository": 2,
+                            "veeamManagedServer": "",
+                            "createBackup": true,
+                            "jobAction": "new",
+                            "jobRetentionCount": "1",
+                            "providerBackupType": 3,
+                            "enabled": true,
+                            "showScheduledBackupWarning": false
+                          },
+                          "instance": {
+                            "layout": {
+                              "code": "mysql-rds-5.6-single",
+                              "id": 438
+                            },
+                            "expireDays": 2,
+                            "configEnabled": true,
+                            "name": "${userInitials.toUpperCase()}DM${type.take(3).toUpperCase()}${sequence+1000}",
+                            "allowExisting": false,
+                            "type": "mysql",
+                            "shutdownDays": 1,
+                            "userGroup": {
+                              "id": ""
+                            }
+                          },
+                          "volumes": [
+                            {
+                              "volumeCustomizable": true,
+                              "readonlyName": false,
+                              "size": 5,
+                              "maxIOPS": null,
+                              "name": "data",
+                              "index": 0,
+                              "rootVolume": true,
+                              "hasDatastore": false,
+                              "storageType": 1,
+                              "customMaxStorage": false,
+                              "maxStorage": 5368709120
+                            }
+                          ],
+                          "plan": {
+                            "code": "rds-db.m4.large",
+                            "id": 30
+                          },
+                          "config": {
+                            "resourcePoolId": 129,
+                            "createUser": true,
+                            "dbBackupRetention": 0,
+                            "dbPublic": "on"
+                          },
+                          "group": {
+                            "id": 2
+                          },
+                          "deployment": {
+                            "versionId": 61,
+                            "id": 13
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "name": "Application 1Test",
+      "type": "morpheus"
+    },
+    "visibility": "private",
+    "resourcePermission": null,
+    "owner": {
+      "id": 287,
+      "username": "Test User"
+    },
+    "tenant": {
+      "id": 3,
+      "name": "Morpheus"
+    }
+  }
+}

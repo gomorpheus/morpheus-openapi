@@ -1,0 +1,7 @@
+name: loadBalancerId
+in: path
+description: Load Balancer ID
+required: true
+schema:
+  type: number
+example: 4

@@ -1,0 +1,52 @@
+{
+    "scaleThresholds": [
+        {
+            "id": 1,
+            "name": "Default CPU Threshold",
+            "type": "template",
+            "autoUp": true,
+            "autoDown": true,
+            "minCount": 1,
+            "maxCount": 3,
+            "scaleIncrement": 1,
+            "cpuEnabled": true,
+            "minCpu": 40.0,
+            "maxCpu": 75.0,
+            "memoryEnabled": false,
+            "minMemory": 0.0,
+            "maxMemory": 0.0,
+            "diskEnabled": false,
+            "minDisk": 0.0,
+            "maxDisk": 0.0,
+            "dateCreated": "2018-12-15T05:40:02Z",
+            "lastUpdated": "2019-01-25T03:39:53Z"
+        },
+        {
+            "id": 49,
+            "name": "Test Thresh",
+            "type": "template",
+            "autoUp": true,
+            "autoDown": true,
+            "minCount": 1,
+            "maxCount": 3,
+            "scaleIncrement": 1,
+            "cpuEnabled": true,
+            "minCpu": 40.0,
+            "maxCpu": 75.0,
+            "memoryEnabled": false,
+            "minMemory": 0.0,
+            "maxMemory": 0.0,
+            "diskEnabled": false,
+            "minDisk": 0.0,
+            "maxDisk": 0.0,
+            "dateCreated": "2022-04-12T14:00:09Z",
+            "lastUpdated": "2022-04-12T14:00:09Z"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 2,
+        "total": 2
+    }
+}

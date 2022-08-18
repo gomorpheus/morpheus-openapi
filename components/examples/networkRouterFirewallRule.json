@@ -1,0 +1,37 @@
+{
+  "rule": {
+    "id": 1056,
+    "name": "dand-nsxt-t0-0425.1",
+    "code": null,
+    "enabled": true,
+    "priority": 10,
+    "groupName": "Policy_Default_Infra",
+    "direction": "any",
+    "ruleType": "custom",
+    "policy": "accept",
+    "source": [
+      "ANY"
+    ],
+    "sourceType": "cidr",
+    "destination": [
+      "ANY"
+    ],
+    "destinationType": "instance",
+    "profiles": [
+      "ANY"
+    ],
+    "protocol": null,
+    "application": null,
+    "applicationType": "port",
+    "portRange": null,
+    "sourcePortRange": null,
+    "sourceGroup": null,
+    "sourceTier": null,
+    "applications": [
+      {
+        "id": 432,
+        "name": "ANY"
+      }
+    ]
+  }
+}

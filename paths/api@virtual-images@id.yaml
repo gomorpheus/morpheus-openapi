@@ -1,0 +1,135 @@
+get:
+  summary: Get a Specific Virtual Image
+  description: This endpoint retrieves a specific virtual image and its files.
+  operationId: getVirtualImage
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/virtualImageId-path.yaml
+  responses:
+    '200':
+      description: Virtual Image
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              virtualImage:
+                $ref: ../components/schemas/virtualImage.yaml
+          examples:
+            Virtual Image Response:
+              value:
+                $ref: ../components/examples/virtualImage.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+put:
+  summary: Update a Virtual Image
+  description: This endpoint updates an existing virtual image.
+  operationId: updateVirtualImage
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/virtualImageId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - virtualImage
+          properties:
+            virtualImage:
+              $ref: ../components/schemas/virtualImageUpdate.yaml
+        examples: 
+          Virtual Image Request:
+            value: 
+              $ref: ../components/examples/virtualImageUpdateRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                virtualImage:
+                  $ref: ../components/schemas/virtualImage.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Virtual Image Create Response:
+              value:
+                $ref: ../components/examples/virtualImageCreateSuccess.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+delete:
+  summary: Delete a Virtual Image
+  description: Will delete a virtual image and any associated files, use removeFromCloud=true to also delete image locations from all clouds.
+  operationId: removeVirtualImage
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/virtualImageId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml

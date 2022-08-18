@@ -1,0 +1,7 @@
+name: dateCreated
+in: query
+description: Filter by dateCreated, the created timestamp is more recent or equal to the date specified
+schema:
+  type: string
+  description: Date created
+example: "2019-01-01"

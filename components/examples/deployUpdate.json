@@ -1,0 +1,33 @@
+{
+  "appDeploy": {
+    "id": 27,
+    "instanceId": 346,
+    "instance": {
+      "id": 346,
+      "name": "jd-testsite-2"
+    },
+    "deployment": {
+      "id": 17,
+      "name": "testsite",
+      "deployType": "file"
+    },
+    "deploymentVersionId": 58,
+    "deploymentVersion": {
+      "id": 58,
+      "userVersion": "5.0.9",
+      "version": "5.0.9",
+      "deployType": "file"
+    },
+    "config": {
+      "overwrite": true
+    },
+    "status": "staged",
+    "deployDate": "2020-10-03T00:33:35+0000",
+    "createdBy": {
+      "id": 1,
+      "username": "admin"
+    },
+    "dateCreated": "2020-10-03T00:33:30+0000",
+    "lastUpdated": "2020-10-03T00:33:35+0000"
+  }
+}

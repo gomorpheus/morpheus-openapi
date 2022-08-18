@@ -1,0 +1,22 @@
+{
+  "instanceTypeLayout": {
+    "name": "Foobar",
+    "instanceVersion": "1.1",
+    "description": "An example layout",
+    "creatable": true,
+    "provisionTypeCode": "amazon",
+    "memoryRequirement": "10000",
+    "hasAutoScale": true,
+    "supportsConvertToManaged": true,
+    "containerTypes": [
+      1548
+    ],
+    "optionTypes": [],
+    "specTemplates": [],
+    "permissions": {
+      "resourcePermissions": {
+        "all": true
+      }
+    }
+  }
+}

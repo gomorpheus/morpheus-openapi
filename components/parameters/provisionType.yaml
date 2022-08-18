@@ -1,0 +1,63 @@
+name: provisionType
+in: query
+description: |
+  Filter by `Provision Type` code.
+  Refer to `Provision Types` API for up to date listings.
+schema:
+  type: string
+  enum:
+  - AKS
+  - Alibaba
+  - Amazon
+  - ARM
+  - Azure
+  - Azure SQL Server
+  - Canonical MaaS
+  - Cloud Foundry App
+  - Cloud Foundry Diego
+  - Cloud Foundry Service
+  - CloudFormation
+  - Digital Ocean
+  - Docker
+  - Docker Swarm
+  - EKS
+  - ESXi
+  - External
+  - Fusion
+  - GKE
+  - Google
+  - Helm
+  - HP Oneview
+  - Huawei
+  - Hyper-V
+  - Hypervisor
+  - IBM Cloud
+  - Kubernetes
+  - KVM
+  - Lumen Edge
+  - lxc
+  - Manual
+  - Manual Kubernetes
+  - Nutanix
+  - Open Telekom
+  - OpenStack
+  - Oracle Cloud
+  - Oracle VM
+  - RDS
+  - SCVMM
+  - SCVMM Hypervisor
+  - SoftLayer
+  - Spoon
+  - Terraform
+  - UCS
+  - Unmanaged
+  - UpCloud
+  - Vagrant
+  - VCD VAPP
+  - VCloud Air
+  - vCloud Director
+  - VirtualBox
+  - Virtustream
+  - VMware
+  - Workflow
+  - Xen

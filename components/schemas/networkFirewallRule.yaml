@@ -1,0 +1,79 @@
+id:
+  type: integer
+  format: int32
+direction:
+  type: string
+sourceType:
+  type: string
+destinationType:
+  type: string
+name:
+  type: string
+policy:
+  type: string
+priority:
+  type: integer
+  format: int32
+enabled:
+  type: boolean
+ruleGroup:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int32
+    name:
+      type: string
+groupName:
+  type: string
+config:
+  type: object
+sources:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+destinations:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+applications:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+scopes:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+profiles:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+appliedTargets:
+  type: array
+  items:
+    type: object
