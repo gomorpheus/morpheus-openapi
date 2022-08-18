@@ -1,0 +1,6 @@
+name: includeZones
+in: query
+description: Indicates including zones in the service plan response payload
+schema:
+  type: boolean
+  default: false

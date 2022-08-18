@@ -551,6 +551,14 @@ paths:
     $ref: paths/api@security-groups@id@rules@sgId.yaml
   /api/servers/{id}/wiki:
     $ref: paths/api@servers@id@wiki.yaml
+  /api/service-plans:
+    $ref: paths/api@service-plans.yaml
+  /api/service-plans/{id}:
+    $ref: paths/api@service-plans@id.yaml
+  /api/service-plans/{id}/activate:
+    $ref: paths/api@service-plans@id@activate.yaml
+  /api/service-plans/{id}/deactivate:
+    $ref: paths/api@service-plans@id@deactivate.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:

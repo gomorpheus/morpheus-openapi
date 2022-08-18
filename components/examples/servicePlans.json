@@ -1,0 +1,144 @@
+{
+    "servicePlans": [
+        {
+            "id": 256,
+            "name": "Discovered Instance",
+            "code": "container-unmanaged",
+            "active": true,
+            "sortOrder": 7,
+            "description": "Discovered instance - unknown memory and disk",
+            "maxStorage": 2147483648,
+            "maxMemory": 536870912,
+            "maxCpu": null,
+            "maxCores": null,
+            "maxDisks": null,
+            "coresPerSocket": 1,
+            "customCpu": false,
+            "customCores": false,
+            "customMaxStorage": false,
+            "customMaxDataStorage": false,
+            "customMaxMemory": false,
+            "addVolumes": false,
+            "memoryOptionSource": null,
+            "cpuOptionSource": null,
+            "dateCreated": "2018-12-15T01:39:09Z",
+            "lastUpdated": "2020-03-04T21:23:06Z",
+            "regionCode": null,
+            "visibility": "public",
+            "editable": false,
+            "tenants": "",
+            "priceSets": [],
+            "config": {}
+        },
+        {
+            "id": 1912,
+            "name": "AKS Controller",
+            "code": "aks.default",
+            "active": true,
+            "sortOrder": 1,
+            "description": "AKS Controller",
+            "maxStorage": 1073741824,
+            "maxMemory": 1073741824,
+            "maxCpu": null,
+            "maxCores": 0,
+            "maxDisks": null,
+            "coresPerSocket": 1,
+            "customCpu": false,
+            "customCores": false,
+            "customMaxStorage": false,
+            "customMaxDataStorage": false,
+            "customMaxMemory": false,
+            "addVolumes": false,
+            "memoryOptionSource": null,
+            "cpuOptionSource": null,
+            "dateCreated": "2019-11-07T15:25:27Z",
+            "lastUpdated": "2020-06-15T13:57:44Z",
+            "regionCode": null,
+            "visibility": "public",
+            "editable": false,
+            "provisionType": {
+                "id": 139,
+                "name": "AKS",
+                "code": "aks",
+                "rootDiskCustomizable": false,
+                "addVolumes": false,
+                "customizeVolume": false,
+                "hasConfigurableCpuSockets": false
+            },
+            "tenants": "",
+            "priceSets": [
+                {
+                    "id": 22213,
+                    "name": "Azure - AKS Controller",
+                    "code": "aks.controller",
+                    "priceUnit": "hour"
+                }
+            ],
+            "config": {}
+        },
+        {
+            "id": 1,
+            "name": "T2 Nano - 1 Core, 0.5GB Memory",
+            "code": "amazon-t2.nano",
+            "active": true,
+            "sortOrder": 1,
+            "description": "T2 Nano - 1 Core, 0.5GB Memory",
+            "maxStorage": 10737418240,
+            "maxMemory": 536870912,
+            "maxCpu": null,
+            "maxCores": 1,
+            "maxDisks": null,
+            "coresPerSocket": 1,
+            "customCpu": false,
+            "customCores": false,
+            "customMaxStorage": true,
+            "customMaxDataStorage": true,
+            "customMaxMemory": false,
+            "addVolumes": true,
+            "memoryOptionSource": null,
+            "cpuOptionSource": null,
+            "dateCreated": "2018-12-15T01:39:06Z",
+            "lastUpdated": "2022-02-08T20:00:05Z",
+            "regionCode": null,
+            "visibility": "public",
+            "editable": false,
+            "provisionType": {
+                "id": 16,
+                "name": "Amazon",
+                "code": "amazon",
+                "rootDiskCustomizable": true,
+                "addVolumes": true,
+                "customizeVolume": true,
+                "hasConfigurableCpuSockets": false
+            },
+            "tenants": "",
+            "priceSets": [
+                {
+                    "id": 1414,
+                    "name": "Amazon - t2.nano - US East (N. Virginia)",
+                    "code": "amazon.t2.nano.ec2.us-east-1.amazonaws.com",
+                    "priceUnit": "hour"
+                },
+                {
+                    "id": 142,
+                    "name": "Amazon - t2.nano - US East (Ohio)",
+                    "code": "amazon.t2.nano.ec2.us-east-2.amazonaws.com",
+                    "priceUnit": "hour"
+                },
+                {
+                    "id": 1958,
+                    "name": "Amazon - t2.nano - US West (N. California)",
+                    "code": "amazon.t2.nano.ec2.us-west-1.amazonaws.com",
+                    "priceUnit": "hour"
+                }
+            ],
+            "config": {}
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 2264
+    }
+}
