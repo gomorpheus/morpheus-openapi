@@ -11,4 +11,4 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN }}
         with:
-          rdme: openapi [file] --key=${TOKEN} --id=API_DEFINITION_ID
+          rdme: openapi [file] --key=${{ secrets.TOKEN }} --id=morpheusdata
