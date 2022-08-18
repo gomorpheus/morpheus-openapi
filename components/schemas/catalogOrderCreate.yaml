@@ -1,0 +1,16 @@
+type: object
+properties:
+  items:
+    type: array
+    items:
+      type: object
+      description: Array of Item objects, each item in the order can be configured individually.
+      properties:
+        type:
+          type: object
+          properties:
+            name:
+              type: string
+              description: Order Name as a way to identify the order.
+        config:
+          type: object

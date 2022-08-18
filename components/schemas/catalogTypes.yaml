@@ -1,0 +1,22 @@
+type: array
+items:
+  type: object
+  properties:
+    id: 
+      type: integer
+      format: int64
+    name: 
+      type: string
+    description: 
+      type: string
+      nullable: true
+    type: 
+      type: string
+    context: 
+      type: string
+    featured: 
+      type: boolean
+    imagePath: 
+      type: string
+    darkImagePath: 
+      type: string

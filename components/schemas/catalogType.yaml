@@ -1,0 +1,24 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  type: 
+    type: string
+  context: 
+    type: string
+  featured: 
+    type: boolean
+  imagePath: 
+    type: string
+  darkImagePath: 
+    type: string
+  optionTypes:
+    type: array
+    items:
+      $ref: optionType.yaml

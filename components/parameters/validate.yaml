@@ -1,0 +1,6 @@
+name: validate
+in: query
+description: Validate Only. Use true to validate the configuration without actually placing the order or adding items to your inventory
+schema:
+  type: boolean
+  default: false

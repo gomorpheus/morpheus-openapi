@@ -1,0 +1,34 @@
+get:
+  summary: List Catalog Types
+  description: This endpoint retrieves the types available for ordering.
+  operationId: listCatalogTypes
+  tags:
+    - Service Catalog
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/featured.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                catalogItemTypes:
+                  $ref: ../components/schemas/catalogTypes.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Get Credentials Response:
+              value:
+                $ref: ../components/examples/catalogTypes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

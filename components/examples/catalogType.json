@@ -1,0 +1,50 @@
+{
+  "catalogItemType": {
+    "id": 1,
+    "name": "example",
+    "description": "Example catalog item",
+    "type": "blueprint",
+    "featured": true,
+    "imagePath": "/assets/containers-png/morph-resource2.png",
+    "darkImagePath": "/assets/containers-png/morph-resource2.png",
+    "optionTypes": [
+      {
+        "id": 1717,
+        "name": "App Name",
+        "description": "Name of your app",
+        "code": null,
+        "fieldName": "appName",
+        "fieldLabel": "App Name",
+        "fieldCode": null,
+        "fieldContext": "config.customOptions",
+        "fieldGroup": null,
+        "fieldClass": null,
+        "fieldAddOn": null,
+        "fieldComponent": null,
+        "fieldInput": null,
+        "placeHolder": null,
+        "verifyPattern": null,
+        "helpBlock": null,
+        "defaultValue": null,
+        "optionSource": null,
+        "optionList": null,
+        "type": "text",
+        "advanced": false,
+        "required": true,
+        "exportMeta": false,
+        "editable": false,
+        "creatable": true,
+        "config": {
+        },
+        "displayOrder": 0,
+        "wrapperClass": null,
+        "enabled": true,
+        "noBlank": false,
+        "dependsOnCode": null,
+        "visibleOnCode": null,
+        "contextualDefault": false,
+        "displayValueOnDetails": false
+      }
+    ]
+  }
+}
