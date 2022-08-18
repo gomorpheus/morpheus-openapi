@@ -481,6 +481,12 @@ paths:
     $ref: paths/api@power-schedules@id@remove-instances.yaml
   /api/power-schedules/{id}/remove-servers:
     $ref: paths/api@power-schedules@id@remove-servers.yaml
+  /api/price-sets:
+    $ref: paths/api@price-sets.yaml
+  /api/price-sets/{id}:
+    $ref: paths/api@price-sets@id.yaml
+  /api/price-sets/{id}/deactivate:
+    $ref: paths/api@price-sets@id@deactivate.yaml
   /api/prices:
     $ref: paths/api@prices.yaml
   /api/prices/{id}:

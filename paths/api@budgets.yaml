@@ -27,7 +27,7 @@ get:
                     $ref: ../components/schemas/budget.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Search Response:
+            Budgets Response:
               value:
                 $ref: ../components/examples/budgets.json 
     '4XX':
@@ -132,7 +132,7 @@ post:
                   $ref: ../components/schemas/budget.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Report Types Response:
+            Budget Response:
               value:
                 $ref: ../components/examples/budget.json
     '4XX':

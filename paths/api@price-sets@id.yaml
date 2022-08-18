@@ -1,0 +1,140 @@
+get:
+  summary: Retrieves a Specific Price Set
+  description: |
+    Retrieves a specific price set.
+  operationId: getPriceSets
+  tags:
+    - Price Sets
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              priceSet:
+                $ref: ../components/schemas/priceSet.yaml
+          examples:
+            Price Set Response:
+              value:
+                $ref: ../components/examples/priceSet.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a Price Set
+  description: |
+    Updates a price set.
+  operationId: updatePriceSets
+  tags:
+    - Price Sets
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - priceSet
+          properties:
+            priceSet:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: Price set name
+                  example: testName
+                code:
+                  type: string
+                  description: Price set code. Must be unique.
+                  example: priceSet1
+                regionCode:
+                  type: string
+                  description: Price set region code
+                  example: region.code.1
+                zone:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: Cloud ID
+                      example: 12
+                zonePool:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: Resource Pool ID
+                      example: 52
+                priceUnit:
+                  type: string
+                  description: Price Unit
+                  enum:
+                    - minute
+                    - hour
+                    - day
+                    - month
+                    - year
+                    - two year
+                    - three year
+                    - four year
+                    - five year
+                type:
+                  type: string
+                  description: Price set type
+                  enum:
+                    - fixed
+                    - compute_plus_storage
+                    - component
+                prices:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                budget:
+                  $ref: ../components/schemas/priceSet.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Price Sets Response:
+              value:
+                $ref: ../components/examples/priceSetSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Price Set
+  description: |
+    Deletes a specified price set.
+  operationId: removePriceSets
+  tags:
+    - Price Sets
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

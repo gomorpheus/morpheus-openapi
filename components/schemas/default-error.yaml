@@ -2,8 +2,3 @@ type: object
 properties:
   msg:
     type: string
-    examples:
-      '400':
-        "Bad Request – Your request failed. Check your request parameters and try again."
-      '401':
-        "Unauthorized – Your API key is invalid. Check your Authorization header."
