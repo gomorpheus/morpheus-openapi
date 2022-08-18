@@ -1,0 +1,14 @@
+# .github/workflows/readme-io.yml
+
+name: Sync OpenAPI to ReadMe
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: readmeio/rdme@7.3.0
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        with:
+          rdme: openapi [file] --key=${TOKEN} --id=API_DEFINITION_ID
