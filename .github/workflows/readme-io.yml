@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: readmeio/rdme@7.3.0
         with:
-          rdme: openapi bundled.yaml --key=${{ secrets.README_TOKEN }} --id=morpheusdata
+          rdme: openapi openapi.yaml --key=${{ secrets.README_TOKEN }} --id=morpheusdata
