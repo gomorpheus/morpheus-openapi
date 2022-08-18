@@ -13,10 +13,10 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: https://{api_url}
+  - url: https://{serverURL}
     description: Morpheus API
     variables:
-      api_url:
+      serverURL:
         default: localhost
 paths:
   /api/accounts:
@@ -668,7 +668,12 @@ paths:
 components:
   securitySchemes:
     bearerAuth:
-      description: Populate a bearer token for the Morpheus appliance you are testing
+      description: |
+        Populate a bearer token for the Morpheus appliance you are testing.
+        This can be generated in the UI under your personal `user settings`
+        or
+        Additional API methods can be found below.
+        https://morpheusdata.readme.io/reference/getaccesstoken-3    
       type: http
       scheme: bearer
     cypherAuth-XCToken:
