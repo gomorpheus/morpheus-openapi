@@ -1,0 +1,184 @@
+{
+    "vdiPool": {
+        "id": 5,
+        "name": "Windows 10",
+        "description": null,
+        "minIdle": 1,
+        "maxIdle": 1,
+        "initialPoolSize": 1,
+        "maxPoolSize": 20,
+        "allocationTimeoutMinutes": 5,
+        "persistentUser": false,
+        "recyclable": true,
+        "enabled": true,
+        "autoCreateLocalUserOnReservation": false,
+        "allowHypervisorConsole": false,
+        "allowCopy": true,
+        "allowPrinter": true,
+        "allowFileshare": false,
+        "guestConsoleJumpHost": null,
+        "guestConsoleJumpPort": null,
+        "guestConsoleJumpUsername": null,
+        "guestConsoleJumpPassword": null,
+        "guestConsoleJumpKeypair": null,
+        "gateway": null,
+        "iconPath": "/assets/containers-png/windesk.png",
+        "logo": "https://morpheus.bungebash.com/storage/logos/uploads/VdiPool/5/logo/pngfind.com-windows-10-logo-png-3253605_original.png",
+        "apps": [
+            {
+                "id": 17,
+                "name": "Word"
+            },
+            {
+                "id": 2,
+                "name": "Chrome"
+            },
+            {
+                "id": 4,
+                "name": "PowerShell"
+            },
+            {
+                "id": 11,
+                "name": "Doom"
+            },
+            {
+                "id": 7,
+                "name": "NotePad++"
+            },
+            {
+                "id": 15,
+                "name": "Excel"
+            }
+        ],
+        "owner": {
+            "id": 1,
+            "name": "Admin Admin",
+            "username": "Admin"
+        },
+        "config": {
+            "group": {
+                "id": "43",
+                "name": "VDI"
+            },
+            "cloud": {
+                "id": 1,
+                "name": "vCenter"
+            },
+            "type": "windesk",
+            "instance": {
+                "userGroup": {
+                    "id": ""
+                },
+                "networkDomain": {
+                    "id": 291
+                }
+            },
+            "name": "VDI-Win10-${sequence+1000}",
+            "environment": "13",
+            "config": {
+                "createUser": false,
+                "isEC2": false,
+                "isVpcSelectable": true,
+                "noAgent": false,
+                "smbiosAssetTag": null,
+                "nestedVirtualization": null,
+                "vmwareFolderId": "group-v1047",
+                "resourcePoolId": 1060,
+                "poolProviderType": null
+            },
+            "volumes": [
+                {
+                    "rootVolume": true,
+                    "name": "root",
+                    "maxStorage": 85899345920,
+                    "volumeCustomizable": true,
+                    "readonlyName": false,
+                    "size": 80,
+                    "storageType": 1,
+                    "maxIOPS": null,
+                    "datastoreId": "auto",
+                    "vId": 8446
+                }
+            ],
+            "hostName": "VDI-Win10-${sequence+1000}",
+            "layout": {
+                "id": 5021,
+                "code": "a2b56626-3e93-4c63-aca7-af7da6be8227"
+            },
+            "storageControllers": [],
+            "plan": {
+                "id": 901,
+                "code": "vm-8192"
+            },
+            "version": "Pro",
+            "networkInterfaces": [
+                {
+                    "primaryInterface": true,
+                    "network": {
+                        "id": "network-24",
+                        "hasPool": true,
+                        "idName": "Desktop",
+                        "pool": {
+                            "id": 27,
+                            "name": "192.168.2.0/24"
+                        }
+                    },
+                    "ipMode": "",
+                    "showNetworkPoolLabel": true,
+                    "showNetworkDhcpLabel": false
+                }
+            ],
+            "executionId": "a876b158-7868-4b93-8326-c075d3147a1d",
+            "backup": {
+                "createBackup": false,
+                "jobAction": "new",
+                "jobRetentionCount": "7",
+                "providerBackupType": -1
+            },
+            "loadBalancer": [],
+            "hideLock": true,
+            "hasNetworks": true,
+            "displayNetworks": [
+                {
+                    "name": "Desktop",
+                    "ipMode": "Default",
+                    "pool": {
+                        "id": 27,
+                        "name": "192.168.2.0/24"
+                    },
+                    "usePool": true
+                }
+            ],
+            "copies": 1,
+            "showScale": false,
+            "hasPreview": false,
+            "volumesDisplay": [
+                {
+                    "storage": "",
+                    "name": "root",
+                    "controller": null,
+                    "datastore": "Auto - Datastore",
+                    "displayOrder": null,
+                    "size": 80,
+                    "mountPoint": null
+                }
+            ]
+        },
+        "group": {
+            "id": 43,
+            "name": "VDI"
+        },
+        "cloud": {
+            "id": 1,
+            "name": "vCenter"
+        },
+        "usedCount": 0,
+        "reservedCount": 0,
+        "preparingCount": 0,
+        "idleCount": 1,
+        "status": "available",
+        "dateCreated": "2021-02-13T20:11:24Z",
+        "lastUpdated": "2022-08-19T00:34:10Z"
+    },
+    "success": true
+}

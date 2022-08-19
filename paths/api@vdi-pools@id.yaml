@@ -1,0 +1,263 @@
+get:
+  summary: Retrieves a Specific VDI Pool
+  description: |
+    Retrieves a specific VDI pool.
+  operationId: getVDIPools
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              vdiPool:
+                $ref: ../components/schemas/vdiPool.yaml
+          examples:
+            VDI Pool Response:
+              value:
+                $ref: ../components/examples/vdiPool.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a VDI Pool Configuration or Icon
+  description: |
+    Updates a VDI Pool configuration or icon.
+  operationId: updateVDIPools
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Update a VDI Pool Configuration
+          required:
+            - vdiPool
+          properties:
+            vdiPool:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: Virtual Desktop name
+                description:
+                  type: string
+                  description: Virtual Desktop description
+                owner:
+                  type: integer
+                  format: int64
+                  description: Owner (User) ID
+                  example: 21
+                minIdle:
+                  type: number
+                  description: |
+                    Min Idle - Sets the minimum number of idle instances on standby in the pool.
+                    The pool will always try to maintain this number of available instances on standby.
+                  example: 5
+                initialPoolSize:
+                  type: number
+                  description: The initial size of the pool to be allocated on creation
+                  example: 10
+                maxIdle:
+                  type: number
+                  description: |
+                    Sets the maximum number of idle instances on standby in the pool.
+                    If the number of idle instances supersedes this, the pool will start removing instances
+                  example: 2
+                maxPoolSize:
+                  type: number
+                  description: |
+                    Max limit on number of allocations and instances within the pool.
+                  example: 50
+                allocationTimeoutMinutes:
+                  type: number
+                  description: |
+                    Time (in minutes) after a user disconnects before an allocation is recycled or shutdown depending on persistence.
+                  example: 20
+                persistentUser:
+                  type: boolean
+                  description: Persistent Desktop Pool
+                  default: false
+                recyclable:
+                  type: boolean
+                  description: Recyclable VDI Pools only work with cloud types that support snapshot management (i.e. Vmware, Nutanix, VCD)
+                  default: false
+                allowCopy:
+                  type: boolean
+                  description: Allow copy from desktop
+                  default: false
+                allowPrinter:
+                  type: boolean
+                  description: Allow local printers from Desktop
+                  default: false
+                allowFileshare:
+                  type: boolean
+                  description: Allow File Share
+                  default: false
+                allowHypervisorConsole:
+                  type: boolean
+                  description: Allow hypervisor console
+                  default: false
+                autoCreateLocalUserOnReservation:
+                  type: boolean
+                  description: Auto create local user upon reservation
+                  default: false
+                enabled:
+                  type: boolean
+                  description: Can be used to enable or disable the VDI pool
+                  default: true
+                iconPath:
+                  type: string
+                  description: The relative location of an icon image
+                  example: "/assets/containers-png/windows.png"
+                apps:
+                  type: array
+                  description: Array of VDI App IDs
+                  items:
+                    type: integer
+                    format: int64
+                gateway:
+                  type: integer
+                  format: int64
+                  description: VDI Gateway ID
+                instanceConfig:
+                  type: string
+                  description: Instance Config JSON. Passing as a string will preserve property order.  See `config` object for required values.
+                config:
+                  type: object
+                  description: This can be passed in place of `instanceConfig`, but will not preserve the config property order.
+                  required:
+                    - name
+                    - group
+                    - cloud
+                    - type
+                    - layout
+                    - plan
+                  properties:
+                    name:
+                      type: string
+                      description: Name of instance
+                    group:
+                      oneOf:
+                        - type: string
+                          description: "`Group` name of the group to associate the instance with"
+                          example: dev - vmware
+                        - type: integer
+                          format: int64
+                          description: "`Group` ID of the group to associate the instance with"
+                          example: 2
+                    cloud:
+                      oneOf:
+                        - type: string
+                          description: "`Cloud` name of the cloud being provisioned into"
+                          example: vmware
+                        - type: integer
+                          format: int64
+                          description: "`Cloud` ID of the cloud being provisioned into"
+                          example: 6
+                    type:
+                      oneOf:
+                        - type: string
+                          description: "`Instance Type` code for the type of instance"
+                          example: nginx
+                        - type: integer
+                          format: int64
+                          description: "`Instance Type` ID for the type of instance"
+                          example: 233
+                    layout:
+                      oneOf:
+                        - type: string
+                          description: "`Layout` code for the instance type that you want to provision. i.e. single process or cluster"
+                          example: cent7
+                        - type: integer
+                          format: int64
+                          description: "`Layout` ID for the instance type that you want to provision. i.e. single process or cluster"
+                          example: 16
+                    plan:
+                      oneOf:
+                        - type: string
+                          description: "`Plan` code for the memory and storage option"
+                          example: aws.code1
+                        - type: integer
+                          format: int64
+                          description: "`Plan` ID for the memory and storage option"
+                          example: 1244
+                guestConsoleJumpHost:
+                  type: string
+                  description: Guest Console Jump Host
+                guestConsoleJumpPort:
+                  type: integer
+                  format: int64
+                  description: Guest Console Jump Port
+                guestConsoleJumpUsername:
+                  type: string
+                  description: Guest Console Jump Username
+                guestConsoleJumpPassword:
+                  type: string
+                  description: Guest Console Jump Password
+                guestConsoleJumpKeypair:
+                  type: integer
+                  format: int64
+                  description: Guest Console Jump Key Pair. see `Key Pair`
+      multipart/form-data:
+        schema:
+          type: object
+          description: Uploads a Custom Logo
+          required:
+            - vdiPool.logo
+          properties:
+            vdiPool.logo:
+              type: string
+              example: "/path/to/file.png"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - type: object
+                properties:
+                  vdiPool:
+                    $ref: ../components/schemas/vdiPool.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            VDI Pool Response:
+              value:
+                $ref: ../components/examples/vdiPoolSuccess.json
+            VDI Pool Update Logo Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a VDI Pool
+  description: |
+    Deletes a specified VDI Pool.
+  operationId: removeVDIPools
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
