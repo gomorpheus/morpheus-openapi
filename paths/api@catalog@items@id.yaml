@@ -17,9 +17,37 @@ get:
               item:
                 $ref: ../components/schemas/catalogItem.yaml
           examples:
-            Get Credentials Response:
+            Get Catalog Inventory Item Response:
               value:
                 $ref: ../components/examples/catalogItem.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Catalog Inventory Item
+  description: Will delete an instance and all associated monitors and backups.
+  operationId: deleteCatalogItem
+  tags:
+    - Service Catalog
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/preserveVolumes.yaml
+    - $ref: ../components/parameters/keepBackups.yaml
+    - $ref: ../components/parameters/releaseEIPs.yaml
+    - $ref: ../components/parameters/removeInstances-catalog.yaml
+    - $ref: ../components/parameters/force.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

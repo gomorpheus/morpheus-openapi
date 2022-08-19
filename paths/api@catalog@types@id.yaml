@@ -21,7 +21,7 @@ get:
                     $ref: ../components/schemas/catalogType.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
-            Get Credentials Response:
+            Get Catalog Type Response:
               value:
                 $ref: ../components/examples/catalogType.json
     '4XX':

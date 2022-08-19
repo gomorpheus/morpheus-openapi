@@ -77,6 +77,14 @@ paths:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
+  /api/catalog/cart:
+    $ref: paths/api@catalog@cart.yaml
+  /api/catalog/cart/items:
+    $ref: paths/api@catalog@cart@items.yaml
+  /api/catalog/cart/items/{id}:
+    $ref: paths/api@catalog@cart@items@id.yaml
+  /api/catalog/checkout:
+    $ref: paths/api@catalog@checkout.yaml
   /api/catalog/items:
     $ref: paths/api@catalog@items.yaml
   /api/catalog/orders:
