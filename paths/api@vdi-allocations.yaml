@@ -1,0 +1,50 @@
+get:
+  summary: Retrieves all VDI Allocations
+  description: |
+    Retrieves all VDI allocations.
+  operationId: listVDIAllocations
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - name: id
+      in: query
+      description: Filter by allocation ID
+      schema:
+        type: string
+      example: "preparing"
+    - name: status
+      in: query
+      description: Filter by allocation status
+      schema:
+        type: string
+      example: "preparing"
+    - $ref: ../components/parameters/poolId.yaml
+    - $ref: ../components/parameters/userId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                vdiAllocations:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/vdiAllocation.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            VDI Allocations Response:
+              value:
+                $ref: ../components/examples/vdiAllocations.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

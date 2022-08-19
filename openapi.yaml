@@ -617,6 +617,10 @@ paths:
     $ref: paths/api@vdi-pools@id.yaml
   /api/users/available-roles:
     $ref: paths/api@users@available-roles.yaml
+  /api/vdi-allocations:
+    $ref: paths/api@vdi-allocations.yaml
+  /api/vdi-allocations/{id}:
+    $ref: paths/api@vdi-allocations@id.yaml
   /api/vdi:
     $ref: paths/api@vdi.yaml
   /api/vdi/{id}:

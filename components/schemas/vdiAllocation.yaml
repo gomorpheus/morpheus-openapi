@@ -1,0 +1,55 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  pool: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  instance: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      status: 
+        type: string
+  user: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      username: 
+        type: string
+  localUserCreated: 
+    type: boolean
+  persistent: 
+    type: boolean
+  status: 
+    type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    nullable: true
+    format: date-time
+  lastReserved: 
+    type: string
+    nullable: true
+    format: date-time
+  releaseDate: 
+    type: string
+    nullable: true
+    format: date-time
