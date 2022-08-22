@@ -1,0 +1,58 @@
+{
+  "catalogItemType": {
+    "id": 1,
+    "name": "Example Nginx",
+    "description": "Example catalog item for an nginx instance",
+    "type": "instance",
+    "blueprint": null,
+    "refType": "InstanceType",
+    "refId": null,
+    "active": true,
+    "enabled": true,
+    "featured": true,
+    "iconPath": "/assets/containers-png/resource.png",
+    "config": {
+      "group": {
+        "id": 20,
+        "name": "Example Group"
+      },
+      "cloud": {
+        "id": 8,
+        "name": "Example Cloud"
+      },
+      "type": "nginx",
+      "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+      "hostName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+      "layout": {
+        "id": 7342,
+        "code": "nginx-1.14-single"
+      },
+      "plan": {
+        "id": 68,
+        "code": "container-128"
+      },
+      "version": "1.9",
+      "config": {
+        "createUser": true,
+        "resourcePoolId": 94944
+      },
+      "volumes": [
+        {
+          "rootVolume": true,
+          "name": "root",
+          "size": 60
+        }
+      ]
+    },
+    "optionTypes": [
+
+    ],
+    "createdBy": null,
+    "owner": {
+      "id": 1,
+      "name": "root"
+    },
+    "dateCreated": "2020-09-09T23:35:47Z",
+    "lastUpdated": "2020-09-16T03:58:32Z"
+  }
+}

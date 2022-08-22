@@ -1,0 +1,15 @@
+{
+  "catalogItemType": {
+    "name": "Example App",
+    "description": "Example catalog item type",
+    "type": "blueprint",
+    "iconPath": "/assets/containers-png/resource.png",
+    "blueprint": {
+      "id": 13278
+    },
+    "appSpec": "name: <%= customOptions.appName %>\r\ngroup:\r\n  name: Example\r\nenvironment: Test\r\ntiers:\r\n  Web:\r\n    instances:\r\n      - instance:\r\n          type: nginx\r\n          cloud: Example\r\n  App:\r\n    instances:\r\n      - instance:\r\n          type: apache\r\n          cloud: Example",
+    "optionTypes": [
+      2926
+    ]
+  }
+}
