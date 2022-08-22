@@ -179,8 +179,12 @@ paths:
     $ref: paths/api@health.yaml
   /api/health/alarms:
     $ref: paths/api@health@alarms.yaml
+  /api/health/alarms/acknowledge:
+    $ref: paths/api@health@alarms@acknowledge.yaml
   /api/health/alarms/{id}:
     $ref: paths/api@health@alarms@id.yaml
+  /api/health/alarms/{id}/acknowledge:
+    $ref: paths/api@health@alarms@id@acknowledge.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:

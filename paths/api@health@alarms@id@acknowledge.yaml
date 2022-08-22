@@ -1,0 +1,36 @@
+put:
+  summary: Acknowledge a Health Alarm
+  description: |
+    Acknowledge a specific health alarm.
+  operationId: acknowledgeHealthAlarm
+  tags:
+    - Health
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - alarm
+          properties:
+            alarm:
+              type: object
+              required:
+                - acknowledged
+              properties:
+                acknowledged: 
+                  type: boolean
+                  description: Pass `true` to ackowledge an alarm, or pass `false` to unacknowledge it.
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
