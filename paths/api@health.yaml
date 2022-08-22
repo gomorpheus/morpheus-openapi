@@ -1,0 +1,28 @@
+get:
+  summary: Retrieves Appliance Health
+  description: |
+    This endpoint retrieves health info about the appliance such as cpu, memory and database usage.
+    Elasticsearch statistics and queue usage are also returned.
+  operationId: listHealth
+  tags:
+    - Health
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                health:
+                  $ref: ../components/schemas/health.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Health Response:
+              value:
+                $ref: ../components/examples/health.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

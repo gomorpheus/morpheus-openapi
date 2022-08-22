@@ -169,6 +169,12 @@ paths:
     $ref: paths/api@guidance@stats.yaml
   /api/guidance/types:
     $ref: paths/api@guidance@types.yaml
+  /api/health:
+    $ref: paths/api@health.yaml
+  /api/health/alarms:
+    $ref: paths/api@health@alarms.yaml
+  /api/health/alarms/{id}:
+    $ref: paths/api@health@alarms@id.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
