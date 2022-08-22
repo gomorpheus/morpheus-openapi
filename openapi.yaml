@@ -93,6 +93,12 @@ paths:
     $ref: paths/api@catalog@types.yaml
   /api/catalog/types/{id}:
     $ref: paths/api@catalog@types@id.yaml
+  /api/catalog-item-types:
+    $ref: paths/api@catalog-item-types.yaml
+  /api/catalog-item-types/{id}:
+    $ref: paths/api@catalog-item-types@id.yaml
+  /api/catalog-item-types/{id}/update-logo:
+    $ref: paths/api@catalog-item-types@id@update-logo.yaml
   /api/certificates:
     $ref: paths/api@certificates.yaml
   /api/certificates/{id}:
@@ -754,6 +760,9 @@ tags:
     description: Manage Blueprints
   - name: Budgets
     description: Manage Budgets
+  - name: Catalog Items
+    description: |
+      Provides API interfaces for the managing catalog item types. These are the types that become available for order by the Service Catalog persona. This is the adminstrative api for the Library: Catalog Items functionality which was previously located under Tools: Self Service.
   - name: Checks
     description: Manage Monitoring Checks
   - name: Clouds

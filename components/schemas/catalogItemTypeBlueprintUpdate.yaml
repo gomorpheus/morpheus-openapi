@@ -1,0 +1,42 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: Catalog Item Type name
+  description: 
+    type: string
+    description: Catalog Item Type description
+  type: 
+    type: string
+    description: Type, `instance`, `blueprint` or `workflow`. This determines whether an Instance or App will be provisioned. Instance types require a config and blueprint requires a blueprint and appSpec, while workflow types requires a workflow and context.
+    enum:
+      - blueprint
+  iconPath: 
+    type: string
+    description: Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the catalog item type.
+    default: true
+  featured:
+    type: boolean
+    description: Can be used to feature the catalog item type.
+    default: false
+  blueprint: 
+    type: object
+    description: Blueprint object, identified by id or name. Only applies to type blueprint
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name:
+        type: string
+  appSpec: 
+    type: string
+    description: The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields 
+  optionTypes: 
+    type: array
+    description: Array of option type IDs, see Inputs. Only applies to type instance and blueprint.
+    items:
+      type: integer
+      format: int64
