@@ -1,0 +1,28 @@
+type: object
+properties: 
+  typeCode: 
+    type: string
+  ts: 
+    type: string
+    format: date-time
+  level: 
+    type: string
+  sourceType: 
+    type: string
+  message: 
+    type: string
+  hostname: 
+    type: string
+  title: 
+    type: string
+  logSignature: 
+    type: string
+  objectId: 
+    type: string
+  seq: 
+    type: integer
+    format: int64
+  _id: 
+    type: string
+  signatureVerified: 
+    type: boolean

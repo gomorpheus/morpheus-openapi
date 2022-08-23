@@ -1,0 +1,44 @@
+get:
+  summary: Export Appliance Health Logs
+  description: |
+    This endpoint downloads the morpheus appliance logs as a file attachment.
+    By default, the most recent 10,000 log entries are returned, with the newest at the end of the file.
+    The format for each log entry is `timestamp` `level` `message`.
+  operationId: exportHealthLogs
+  tags:
+    - Health
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/acknowledged.yaml
+    - $ref: ../components/parameters/startDate.yaml
+      description: Restricts query to only load logs updated more recently than the date specified. Default 24 hours ago.
+    - $ref: ../components/parameters/endDate.yaml
+    - name: reverse
+      in: query
+      description: |
+        Reverse order of records. This `true` by default when sort and direction are not passed, but `false` by default if either is passed.
+        This means that by default the newest log entries are the bottom of the file.
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+            example: 'attachment;filename="morpheus-2021-11-17-03-56-03.log"'
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

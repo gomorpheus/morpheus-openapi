@@ -185,6 +185,10 @@ paths:
     $ref: paths/api@health@alarms@id.yaml
   /api/health/alarms/{id}/acknowledge:
     $ref: paths/api@health@alarms@id@acknowledge.yaml
+  /api/health/logs:
+    $ref: paths/api@health@logs.yaml
+  /api/health/logs/export:
+    $ref: paths/api@health@logs@export.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
