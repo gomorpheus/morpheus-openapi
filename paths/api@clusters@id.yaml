@@ -1,0 +1,64 @@
+get:
+  summary: Get a Specific Cluster
+  description: This endpoint retrieves a specific cluster.
+  operationId: getClusters
+  tags:
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cluster:
+                $ref: ../components/schemas/cluster.yaml
+          examples:
+            Clusters Response:
+              value:
+                $ref: ../components/examples/cluster.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+# post: 
+#   summary: Create a new Deployment
+#   description: This endpoint will create a new deployment that is ready to have versions added to it.
+#   operationId: addDeployments
+#   tags: 
+#     -  Deployments
+#   requestBody: 
+#     content: 
+#       application/json: 
+#         schema: 
+#           type: object
+#           properties: 
+#             deployment:
+#               $ref: ../components/schemas/deploymentCreate.yaml
+#         examples:
+#           Deployment Request:
+#             value:
+#               $ref: ../components/examples/deploymentRequest.json
+#   responses:
+#     '200':
+#       description: Successful Request
+#       content:
+#         application/json:
+#           schema:
+#             allOf: 
+#             - type: object
+#               properties:
+#                 deployment:
+#                   $ref: ../components/schemas/deployment.yaml
+#             - $ref: ../components/schemas/200-success.yaml
+#           examples:
+#             Deployments Response:
+#               value:
+#                 $ref: ../components/examples/deploymentCreate.json
+#     '4XX':
+#       $ref: ../components/responses/4xx.yaml
+#     '5XX':
+#       $ref: ../components/responses/5xx.yaml

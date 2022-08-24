@@ -1,0 +1,74 @@
+{
+  "cluster": {
+    "type": "docker-cluster",
+    "name": "stubby toes docker cluster",
+    "displayName": "stubby toes display name",
+    "description": "cluster description",
+    "group": {
+      "id": 2
+    },
+    "cloud": {
+      "id": 3
+    },
+    "layout": "docker-amazon-ubuntu-16.04-single",
+    "server": {
+      "config": {
+        "resourcePool": "vpc-d673ebb3",
+        "publicIpType": "subnet",
+        "createUser": false
+      },
+      "name": "tippytoes",
+      "plan": {
+        "code": "amazon-t2.nano",
+        "options": {
+          "maxMemory": 536870912,
+          "cpuCount": 1,
+          "coreCount": 1,
+          "coresPerSocket": 1
+        }
+      },
+      "volumes": [
+        {
+          "id": -1,
+          "rootVolume": true,
+          "name": "root",
+          "size": 10,
+          "sizeId": null,
+          "storageType": 10,
+          "datastoreId": null
+        }
+      ],
+      "networkInterfaces": [
+        {
+          "network": {
+            "id": "network-20"
+          }
+        }
+      ],
+      "securityGroups": [
+        "sg-052d3dacc2b663fdd"
+      ],
+      "visibility": "private",
+      "userGroup": {
+        "id": 1
+      },
+      "networkDomain": null,
+      "hostname": null,
+      "nodeCount": 3,
+      "tags": [
+        {
+          "name": "Tag Name",
+          "value": "Sample Value"
+        },
+        {
+          "name": "BusinessUnit",
+          "value": "QualityAssurance"
+        }
+      ],
+      "labels": [
+        "cool",
+        "beans"
+      ]
+    }
+  }
+}

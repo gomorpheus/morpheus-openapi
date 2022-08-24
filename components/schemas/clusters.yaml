@@ -1,0 +1,233 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+    nullable: true
+  category: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  location: 
+    type: string
+    nullable: true
+  enabled: 
+    type: boolean
+  serviceUrl: 
+    type: string
+  serviceHost: 
+    type: string
+    nullable: true
+  servicePath: 
+    type: string
+    nullable: true
+  serviceHostname: 
+    type: string
+    nullable: true
+  servicePort: 
+    type: integer
+    format: int64
+  serviceUsername: 
+    type: string
+    nullable: true
+  servicePassword: 
+    type: string
+    nullable: true
+  servicePasswordHash: 
+    type: string
+    nullable: true
+  serviceToken: 
+    type: string
+  serviceTokenHash: 
+    type: string
+  serviceAccess: 
+    type: string
+  serviceAccessHash: 
+    type: string
+  serviceCert: 
+    type: string
+    nullable: true
+  serviceCertHash: 
+    type: string
+    nullable: true
+  serviceVersion: 
+    type: string
+  searchDomains: 
+    type: string
+    nullable: true
+  enableInternalDns: 
+    type: boolean
+  internalId: 
+    type: string
+    nullable: true
+  externalId: 
+    type: string
+    nullable: true
+  datacenterId: 
+    type: string
+    nullable: true
+  status: 
+    type: string
+  statusDate: 
+    type: string
+    format: date-time
+  statusMessage: 
+    type: string
+  inventoryLevel: 
+    type: string
+  lastSync: 
+    type: string
+    format: date-time
+  nextRunDate: 
+    type: string
+    format: date-time
+  lastSyncDuration: 
+    type: integer
+    format: int64
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  labels: 
+    type: string
+    nullable: true
+  tags: 
+    type: array
+    items:
+      type: object
+  serviceEntry: 
+    type: string
+    nullable: true
+  createdBy: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  userGroup: 
+    type: string
+    nullable: true
+  layout: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      provisionTypeCode: 
+        type: string
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  servers: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        typeSet: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            code: 
+              type: string
+            name: 
+              type: string
+        computeServerType: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            code: 
+              type: string
+            nodeType: 
+              type: string
+  accounts: 
+    type: array
+    items:
+      type: object
+  integrations: 
+    type: array
+    items: 
+      type: object
+  site: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      zoneType: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+  workerStats: 
+    type: object
+    properties: 
+      usedStorage: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      usedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      usedCpu: 
+        type: integer
+        format: int64
+      cpuUsage: 
+        type: number
+      cpuUsagePeak: 
+        type: number
+      cpuUsageAvg: 
+        type: number
+  config: 
+    type: object
