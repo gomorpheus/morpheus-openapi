@@ -1,0 +1,59 @@
+{
+    "userSource": {
+        "id": 2,
+        "name": "testdomain",
+        "description": null,
+        "code": "vXQ4f8GxA",
+        "type": "activeDirectory",
+        "active": true,
+        "deleted": false,
+        "autoSyncOnLogin": true,
+        "externalLogin": false,
+        "allowCustomMappings": false,
+        "account": {
+            "id": 1,
+            "name": "Home"
+        },
+        "defaultAccountRole": {
+            "id": 9,
+            "name": "No Access",
+            "authority": "No Access"
+        },
+        "config": {
+            "url": "testdomain.com",
+            "domain": "testdomain.com",
+            "useSSL": "off",
+            "bindingUsername": "testuser",
+            "bindingPassword": "************",
+            "requiredGroup": "Company",
+            "requiredGroupDN": "CN=Company,OU=Groups,OU=Environment,DC=testdomain,DC=com",
+            "searchMemberGroups": true,
+            "bindingPasswordHash": "1d6548d33ecc7f24ce2d2bde57b"
+        },
+        "roleMappings": [
+            {
+                "sourceRoleName": "Company test",
+                "sourceRoleFqn": "CN=Company: Test,OU=Groups,OU=Environment,DC=fqdn,DC=com",
+                "mappedRole": {
+                    "id": 7,
+                    "name": "User Admin",
+                    "authority": "User Admin"
+                }
+            },
+            {
+                "sourceRoleName": "Company-Admins",
+                "sourceRoleFqn": "CN=Company-Admins,OU=Groups,OU=Environment,DC=fqdn,DC=com",
+                "mappedRole": {
+                    "id": 1,
+                    "name": "System Admin",
+                    "authority": "System Admin"
+                }
+            }
+        ],
+        "subdomain": "1",
+        "loginURL": "https://testdomain.com/login/account/1",
+        "providerSettings": {},
+        "dateCreated": "2019-01-08T20:35:49Z",
+        "lastUpdated": "2021-04-28T11:31:46Z"
+    }
+}

@@ -1,0 +1,85 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+  code: 
+    type: string
+  type: 
+    type: string
+  active: 
+    type: boolean
+  deleted: 
+    type: boolean
+  autoSyncOnLogin: 
+    type: boolean
+  externalLogin: 
+    type: boolean
+  allowCustomMappings: 
+    type: boolean
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  defaultAccountRole: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      authority: 
+        type: string
+  config: 
+    type: object
+    properties: 
+      url: 
+        type: string
+      administratorAPIToken: 
+        type: string
+      requiredGroup: 
+        type: string
+      requiredGroupId: 
+        type: string
+      administratorAPITokenHash: 
+        type: string
+  roleMappings: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        sourceRoleName: 
+          type: string
+        sourceRoleFqn: 
+          type: string
+        mappedRole: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            name: 
+              type: string
+            authority: 
+              type: string
+  subdomain: 
+    type: string
+  loginURL: 
+    type: string
+  providerSettings: 
+    type: object
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

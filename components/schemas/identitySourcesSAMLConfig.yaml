@@ -1,0 +1,125 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+  code: 
+    type: string
+  type: 
+    type: string
+  active: 
+    type: boolean
+  deleted: 
+    type: boolean
+  autoSyncOnLogin: 
+    type: boolean
+  externalLogin: 
+    type: boolean
+  allowCustomMappings: 
+    type: boolean
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  defaultAccountRole: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      authority: 
+        type: string
+  config: 
+    type: object
+    properties: 
+      roleAttributeName: 
+        type: string
+      requiredAttributeValue: 
+        type: string
+      givenNameAttribute: 
+        type: string
+      surnameAttribute: 
+        type: string
+      logoutUrl: 
+        type: string
+      doNotIncludeSAMLRequest: 
+        type: boolean
+      publicKey: 
+        type: string
+      emailAttribute: 
+        type: string
+      url: 
+        type: string
+      doNotValidateSignature: 
+        type: boolean
+      doNotValidateStatusCode: 
+        type: boolean
+      doNotValidateDestination: 
+        type: boolean
+      doNotValidateIssueInstants: 
+        type: boolean
+      doNotValidateAssertions: 
+        type: boolean
+      doNotValidateAuthStatements: 
+        type: boolean
+      doNotValidateSubject: 
+        type: boolean
+      doNotValidateConditions: 
+        type: boolean
+      doNotValidateAudiences: 
+        type: boolean
+      doNotValidateSubjectRecipients: 
+        type: boolean
+      SAMLSignatureMode: 
+        type: string
+      forceAuthn: 
+        type: boolean
+  roleMappings: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        sourceRoleName: 
+          type: string
+        sourceRoleFqn: 
+          type: string
+          nullable: true
+        mappedRole: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            name: 
+              type: string
+            authority: 
+              type: string
+  subdomain: 
+    type: string
+  loginURL: 
+    type: string
+  providerSettings: 
+    type: object
+    properties: 
+      entityId: 
+        type: string
+      acsUrl: 
+        type: string
+      spMetadata: 
+        type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

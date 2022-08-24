@@ -1,0 +1,47 @@
+{
+    "userSource": {
+        "id": 4782,
+        "name": "Okta QA",
+        "description": "oktapreview trial",
+        "code": "eZiReLj9W",
+        "type": "okta",
+        "active": true,
+        "deleted": false,
+        "autoSyncOnLogin": true,
+        "externalLogin": false,
+        "allowCustomMappings": false,
+        "account": {
+            "id": 1552,
+            "name": "Auto Tenant 1"
+        },
+        "defaultAccountRole": {
+            "id": 19112,
+            "name": "Default: User",
+            "authority": "Default: User"
+        },
+        "config": {
+            "url": "https://dev-944588.oktapreview.com",
+            "administratorAPIToken": "************",
+            "requiredGroup": "test",
+            "requiredGroupId": "00g88d4kvt6UR0h7",
+            "administratorAPITokenHash": "93e63ebca0af709a007736"
+        },
+        "roleMappings": [
+            {
+                "sourceRoleName": "mathematicians",
+                "sourceRoleFqn": "00g86tlvyuJqZ0h7",
+                "mappedRole": {
+                    "id": 19117,
+                    "name": "Sub Role",
+                    "authority": "Sub Role"
+                }
+            }
+        ],
+        "subdomain": "auto",
+        "loginURL": "https://qa.fqdn.com/login/account/auto",
+        "providerSettings": {},
+        "dateCreated": "2020-02-06T18:16:40Z",
+        "lastUpdated": "2022-08-07T09:09:18Z"
+    },
+    "success": true
+}
