@@ -1,0 +1,121 @@
+{
+  "layout": {
+      "id": 226,
+      "internalId": "morpheus-aks-1.24.3",
+      "serverCount": 2,
+      "dateCreated": "2022-08-23T00:00:13Z",
+      "code": "kubernetes-azure-aks-1.24.3",
+      "lastUpdated": "2022-08-23T00:00:13Z",
+      "hasAutoScale": true,
+      "memoryRequirement": 1073741824,
+      "clusterVersion": "1.24.3",
+      "computeVersion": "1.24.3",
+      "hasSettings": false,
+      "sortOrder": -243,
+      "hasConfig": false,
+      "name": "Kubernetes 1.24.3 Cluster AKS",
+      "creatable": true,
+      "enabled": true,
+      "description": "This provisions a single kubernetes master in Azure",
+      "groupType": {
+          "id": 6,
+          "code": "aks-cluster",
+          "name": "AKS Cluster"
+      },
+      "environmentVariables": [],
+      "optionTypes": [],
+      "actions": [],
+      "computeServers": [
+          {
+              "id": 461,
+              "priorityOrder": 0,
+              "nodeCount": 1,
+              "nodeType": "master",
+              "minNodeCount": 1,
+              "maxNodeCount": null,
+              "dynamicCount": false,
+              "installContainerRuntime": false,
+              "installStorageRuntime": false,
+              "name": "kubernetes master",
+              "code": "kubernetes-azure-aks-1.24.3-set",
+              "category": "master",
+              "config": null,
+              "containerType": {
+                  "id": 2042,
+                  "account": null,
+                  "name": "Kubernetes Master 1.24.3 on AKS",
+                  "shortName": "kubernetes-aks",
+                  "code": "kubernetes-azure-aks-1.24.3",
+                  "containerVersion": "1.24.3",
+                  "provisionType": {
+                      "id": 48,
+                      "name": "AKS",
+                      "code": "aks"
+                  },
+                  "virtualImage": null,
+                  "category": "aks",
+                  "config": {},
+                  "containerPorts": [],
+                  "containerScripts": [],
+                  "containerTemplates": [],
+                  "environmentVariables": []
+              },
+              "computeServerType": {
+                  "id": 232,
+                  "code": "azureAksKubeMaster",
+                  "name": "Azure AKS Kubernetes Master",
+                  "managed": true,
+                  "externalDelete": true
+              },
+              "provisionService": null,
+              "planCategory": null,
+              "namePrefix": null,
+              "nameSuffix": null,
+              "forceNameIndex": false,
+              "loadBalance": false
+          }
+      ],
+      "installContainerRuntime": false,
+      "provisionType": {
+          "id": 48,
+          "name": "AKS",
+          "code": "aks"
+      },
+      "specTemplates": [
+          {
+              "id": 139,
+              "account": null,
+              "name": "Morpheus AKS 1.24.3 Template",
+              "code": "kubernetes-azure-aks-1.24.3-node-group",
+              "type": {
+                  "id": 10,
+                  "name": "AKS ARM Template",
+                  "code": "aks"
+              },
+              "externalId": null,
+              "externalType": null,
+              "deploymentId": null,
+              "status": null,
+              "file": {
+                  "id": 195,
+                  "sourceType": "local",
+                  "contentRef": null,
+                  "contentPath": null,
+                  "repository": null,
+                  "content": "{\n    \"$schema\": \"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#\",\n    \"contentVersion\": \"1.0.0.0\",\n    \"parameters\": {\n        \"dnsPrefix\": {\n            \"type\": \"string\",\n            \"metadata\": {\n                \"fieldLabel\": \"DNS Prefix\",\n                \"description\": \"DNS prefix to use with hosted Kubernetes API server FQDN.\"\n            }\n        },\n        \"osDiskSizeGB\": {\n            \"type\": \"int\",\n            \"defaultValue\": 0,\n            \"metadata\": {\n                \"fieldLabel\": \"Node Disk Size\",\n                \"description\": \"Disk size (in GiB) to provision for each of the agent pool nodes. This value ranges from 0 to 1023. Specifying 0 will apply the default disk size for that agentVMSize.\"\n            },\n            \"minValue\": 0,\n            \"maxValue\": 1023\n        },\n        \"nodeVMSize\": {\n            \"type\": \"string\",\n            \"defaultValue\": \"Standard_D2_v2\",\n            \"metadata\": {\n                \"fieldLabel\": \"Node Plan\",\n                \"morpheusType\": \"ServicePlan\",\n                \"description\": \"The size of the Virtual Machine.\"\n            }\n        },\n        \"vnetSubnetID\": {\n            \"type\": \"string\",\n            \"metadata\": {\n                \"fieldLabel\": \"Node Subnet\",\n                \"morpheusType\": \"Subnet\",\n                \"description\": \"Resource ID of virtual network subnet used for nodes and/or pods IP assignment.\"\n            }\n        },\n        \"serviceCidr\": {\n            \"type\": \"string\",\n            \"defaultValue\": \"10.1.0.0/16\",\n            \"metadata\": {\n                \"fieldLabel\": \"Service CIDR\",\n                \"description\": \"A CIDR notation IP range from which to assign service cluster IPs.\"\n            }\n        },\n        \"dnsServiceIP\": {\n            \"type\": \"string\",\n            \"defaultValue\": \"10.1.0.10\",\n            \"metadata\": {\n                \"fieldLabel\": \"DNS Service IP\",\n                \"description\": \"Containers DNS server IP address.\"\n            }\n        },\n        \"dockerBridgeCidr\": {\n            \"type\": \"string\",\n            \"defaultValue\": \"172.17.0.1/16\",\n            \"metadata\": {\n                \"fieldLabel\": \"Docker Bridge CIDR\",\n                \"description\": \"A CIDR notation IP for Docker bridge.\"\n            }\n        }\n    },\n    \"resources\": [\n        {\n            \"apiVersion\": \"2019-08-01\",\n            \"dependsOn\": [],\n            \"type\": \"Microsoft.ContainerService/managedClusters\",\n            \"location\": \"TO_BE_REPLACED\",\n            \"name\": \"TO_BE_REPLACED\",\n            \"properties\": {\n                \"kubernetesVersion\": \"1.24.3\",\n                \"enableRBAC\": true,\n                \"dnsPrefix\": \"[parameters('dnsPrefix')]\",\n                \"agentPoolProfiles\": [\n                    {\n                        \"name\": \"TO_BE_REPLACED\",\n                        \"osDiskSizeGB\": \"[parameters('osDiskSizeGB')]\",\n                        \"count\": \"TO_BE_REPLACED\",\n                        \"vmSize\": \"[parameters('nodeVMSize')]\",\n                        \"osType\": \"Linux\",\n                        \"storageProfile\": \"ManagedDisks\",\n                        \"vnetSubnetID\": \"[parameters('vnetSubnetID')]\"\n                    }\n                ],\n                \"servicePrincipalProfile\": {\n                    \"ClientId\": \"TO_BE_REPLACED\",\n                    \"Secret\": \"TO_BE_REPLACED\"\n                },\n                \"networkProfile\": {\n                    \"loadBalancerSku\": \"standard\",\n                    \"networkPlugin\": \"azure\",\n                    \"serviceCidr\": \"[parameters('serviceCidr')]\",\n                    \"dnsServiceIP\": \"[parameters('dnsServiceIP')]\",\n                    \"dockerBridgeCidr\": \"[parameters('dockerBridgeCidr')]\"\n                },\n                \"addonProfiles\": {\n                    \"httpApplicationRouting\": {\n                        \"enabled\": true\n                    }\n                }\n            }\n        }\n    ]\n}"
+              },
+              "config": {},
+              "createdBy": null,
+              "updatedBy": null,
+              "dateCreated": "2022-08-23T00:00:13Z",
+              "lastUpdated": "2022-08-23T00:00:13Z"
+          }
+      ],
+      "taskSets": [],
+      "type": {
+          "id": 99,
+          "code": "azureKubeMaster",
+          "name": "Azure Kubernetes Master"
+      }
+  }
+}

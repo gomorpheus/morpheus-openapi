@@ -1,0 +1,68 @@
+get:
+  summary: Get All Cluster Layouts
+  description: This endpoint retrieves all cluster layouts.
+  operationId: listClusterLayouts
+  tags:
+    - Cluster Layouts
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/provisionType.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                layouts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/clusterLayout.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Layouts Response:
+              value:
+                $ref: ../components/examples/clusterLayouts.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create a Cluster Layout
+  description: Use this command to create a cluster layout.
+  operationId: addClusterLayouts
+  tags: 
+    -  Cluster Layouts
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            layout:
+              $ref: ../components/schemas/clusterLayoutCreate.yaml
+        examples:
+          Cluster Layout Request:
+            value:
+              $ref: ../components/examples/clusterLayoutRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Cluster Layout Response:
+              value:
+                $ref: ../components/examples/successId.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

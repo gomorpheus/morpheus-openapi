@@ -1,0 +1,12 @@
+name: providerType
+in: query
+description: |
+  Filter by `Provider Type` code.
+schema:
+  type: string
+  enum:
+  - morpheus
+  - kubernetes
+  - kvm
+  - docker
+  

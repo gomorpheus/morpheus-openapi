@@ -1,0 +1,84 @@
+get:
+  summary: Get a Specific Cluster Layout
+  description: This endpoint retrieves a specific cluster layout.
+  operationId: getClusterLayout
+  tags:
+    - Cluster Layouts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              layout:
+                $ref: ../components/schemas/clusterLayout.yaml
+          examples:
+            Cluster Layout Response:
+              value:
+                $ref: ../components/examples/clusterLayout.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update a Cluster Layout
+  description: Use this command to update an existing cluster layout.
+  operationId: updateClusterLayout
+  tags: 
+    -  Cluster Layouts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            layout:
+              $ref: ../components/schemas/clusterLayoutUpdate.yaml
+        examples:
+          Cluster Layout Request:
+            value:
+              $ref: ../components/examples/clusterLayoutUpdateRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Cluster Layout Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Cluster Layout
+  description: Will delete a cluster layout
+  operationId: deleteClusterLayout
+  tags:
+    - Cluster Layouts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

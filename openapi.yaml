@@ -103,6 +103,12 @@ paths:
     $ref: paths/api@certificates.yaml
   /api/certificates/{id}:
     $ref: paths/api@certificates@id.yaml
+  /api/cluster-types:
+    $ref: paths/api@cluster-types.yaml
+  # /api/clusters:
+  #   $ref: paths/api@clusters.yaml
+  /api/clusters/{id}:
+    $ref: paths/api@clusters@id.yaml
   /api/clusters/{id}/wiki:
     $ref: paths/api@clusters@id@wiki.yaml
   /api/credentials:
@@ -293,6 +299,12 @@ paths:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
+  /api/library/cluster-layouts:
+    $ref: paths/api@library@cluster-layouts.yaml
+  /api/library/cluster-layouts/{id}:
+    $ref: paths/api@library@cluster-layouts@id.yaml
+  /api/library/cluster-layouts/{id}/clone:
+    $ref: paths/api@library@cluster-layouts@id@clone.yaml
   /api/library/container-scripts:
     $ref: paths/api@library@container-scripts.yaml
   /api/library/container-scripts/{id}:

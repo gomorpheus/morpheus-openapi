@@ -1,0 +1,26 @@
+post:
+  summary: Get a Specific Cluster Layout
+  description: This endpoint retrieves a specific cluster layout.
+  operationId: addClusterLayoutClone
+  tags:
+    - Cluster Layouts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/cloneName.yaml
+    - $ref: ../components/parameters/cloneDescription.yaml
+    - $ref: ../components/parameters/cloneComputeVersion.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Cluster Layouts Response:
+              value:
+                $ref: ../components/examples/successId.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
