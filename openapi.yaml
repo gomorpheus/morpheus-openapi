@@ -647,6 +647,8 @@ paths:
     $ref: paths/api@task-types@id.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
+  /api/user-sources:
+    $ref: paths/api@user-sources.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
