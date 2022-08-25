@@ -1,0 +1,10 @@
+name: config
+in: query
+description: If specified will return an exact match on code
+schema:
+  type: object
+  additionalProperties:
+    type: string
+    description: Field names must be prefixed with `config.`
+  example:
+    config.fieldName1: value1
