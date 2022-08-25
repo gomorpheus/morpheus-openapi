@@ -96,41 +96,45 @@ put:
                       description: Default `Role ID`
                       example: 19
                 roleMappings:
-                  type: array
-                  description: "`Role Mapping` objects"
-                  items:
-                    oneOf: 
-                      - type: object
-                        properties:
-                          mappedRole:
-                            type: object
-                            description: |
-                              This object defines a mapping from the Morpheus role to the identity source role.
-                              The Morpheus role is identified by passing `mappedRole.id` or `mappedRole.authority` and
-                              the identity source role must be identified by passing either `sourceRoleFqn` or `sourceRoleName` to match on.
-                            properties:
-                              id:
-                                type: integer
-                                format: int64
-                                description: Role ID of the Morpheus role in the identity source tenant
-                                example: 19118
-                              authority:
-                                type: string
-                                description: Role authority of the Morpheus role in the identity source tenant
-                                example: Socrates
-                          sourceRoleFqn:
-                            type: string
-                            description: Fully Qualified Name of the role in the identity source
-                            example: "CN=Mathematicians,CN=Users,DC=qa,DC=ad,DC=myorg,DC=com"
-                          sourceRoleName:
-                            type: string
-                            description: Name of the role in the identity source
-                            example: Philosophers
-                      - type: object
-                        deprecated: true
-                        description: Map of Morpheus `'Role ID':'Fully Qualified Role Name'`
-                        additionalProperties:
+                  oneOf: 
+                  - type: array
+                    description: "`Role Mapping` objects"
+                    items:
+                      type: object
+                      properties:
+                        mappedRole:
+                          type: object
+                          description: |
+                            This object defines a mapping from the Morpheus role to the identity source role.
+                            The Morpheus role is identified by passing `mappedRole.id` or `mappedRole.authority` and
+                            the identity source role must be identified by passing either `sourceRoleFqn` or `sourceRoleName` to match on.
+                            **NOTE** This replaces the current mappings and must contain the entire set of role mappings you would like to set.
+                            Anything not defined will be removed.
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              description: Role ID of the Morpheus role in the identity source tenant
+                              example: 19118
+                            authority:
+                              type: string
+                              description: Role authority of the Morpheus role in the identity source tenant
+                              example: Socrates
+                        sourceRoleFqn:
                           type: string
+                          description: Fully Qualified Name of the role in the identity source
+                          example: "CN=Mathematicians,CN=Users,DC=qa,DC=ad,DC=myorg,DC=com"
+                        sourceRoleName:
+                          type: string
+                          description: Name of the role in the identity source
+                          example: Philosophers
+                  - type: object
+                    deprecated: true
+                    description: |
+                      Map of Morpheus `'Role ID':'Fully Qualified Role Name'`
+                      **NOTE** This will add/update the specified role mapping(s) without removing undefined settings.
+                    additionalProperties:
+                      type: string
                 roleMappingNames:
                   type: object
                   description: Map of Morpheus '`Role ID`':'`Role Name`'

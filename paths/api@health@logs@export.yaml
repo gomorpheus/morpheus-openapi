@@ -16,7 +16,6 @@ get:
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/acknowledged.yaml
     - $ref: ../components/parameters/startDate.yaml
-      description: Restricts query to only load logs updated more recently than the date specified. Default 24 hours ago.
     - $ref: ../components/parameters/endDate.yaml
     - name: reverse
       in: query

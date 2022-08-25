@@ -1,0 +1,92 @@
+{
+    "policies": [
+        {
+            "id": 79,
+            "name": "Account - Max VMs",
+            "description": null,
+            "policyType": {
+                "id": 10,
+                "code": "maxVms",
+                "name": "Max VMs"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxVms": "130"
+            },
+            "enabled": true,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 25,
+            "name": "Approvals",
+            "description": null,
+            "policyType": {
+                "id": 37,
+                "code": "provisionApproval",
+                "name": "Approve Provision"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "accountIntegrationId": "-100"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 11,
+            "name": "Default Naming Scheme",
+            "description": "${userInitials}-${type}-${sequence+1000} |||| ${userInitials}-${type}-${sequence.toString().padLeft(4,'0')}",
+            "policyType": {
+                "id": 22,
+                "code": "naming",
+                "name": "Instance Name"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": null,
+            "config": {
+                "namingType": "user",
+                "namingPattern": "${userInitials}-${type}-${sequence+1000}",
+                "_namingConflict": "",
+                "namingConflict": "on"
+            },
+            "enabled": true,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        }
+    ],
+    "policyCount": 21,
+    "meta": {
+        "size": 3,
+        "total": 21,
+        "offset": 0,
+        "max": 3
+    }
+}
