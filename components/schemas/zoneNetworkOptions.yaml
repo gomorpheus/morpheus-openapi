@@ -19,6 +19,7 @@ properties:
   networkGroups: 
     type: array
     items: 
+      type: object
   networkTypes: 
     type: array
     items: 
