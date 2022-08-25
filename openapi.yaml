@@ -649,6 +649,10 @@ paths:
     $ref: paths/api@usage.yaml
   /api/user-sources:
     $ref: paths/api@user-sources.yaml
+  /api/user-sources/{id}:
+    $ref: paths/api@user-sources@id.yaml
+  /api/user-sources/{id}/subdomain:
+    $ref: paths/api@user-sources@id@subdomain.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
