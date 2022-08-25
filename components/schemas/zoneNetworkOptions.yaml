@@ -1,0 +1,54 @@
+type: object
+properties:
+  networks: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: string
+        name: 
+          type: string
+        dhcpServer: 
+          type: boolean
+        allowStaticOverride: 
+          type: boolean
+        pool: 
+          type: string
+          nullable: true
+  networkGroups: 
+    type: array
+    items: 
+  networkTypes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        displayOrder: 
+          type: integer
+          format: int64
+        enabled: 
+          type: boolean
+        defaultType: 
+          type: boolean
+        externalId: 
+          type: string
+        code: 
+          type: string
+  networkSubnets: 
+    type: array
+    items: 
+  hasNetworks: 
+    type: boolean
+  maxNetworks: 
+    type: integer
+    format: int64
+  enableNetworkTypeSelection: 
+    type: string
+  supportsNetworkSelection: 
+    type: boolean

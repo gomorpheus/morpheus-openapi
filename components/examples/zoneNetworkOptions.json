@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "data": {
+    "networks": [
+      {
+        "id": "network-240",
+        "name": "testnet1",
+        "dhcpServer": true,
+        "allowStaticOverride": false,
+        "pool": null
+      },
+      {
+        "id": "network-110",
+        "name": "VM Network",
+        "dhcpServer": true,
+        "allowStaticOverride": true,
+        "pool": {
+          "id": 2,
+          "name": "MorphPool"
+        }
+      }
+    ],
+    "networkGroups": [],
+    "networkTypes": [
+      {
+        "id": 2,
+        "name": "E1000",
+        "displayOrder": 3,
+        "enabled": true,
+        "defaultType": false,
+        "externalId": "e1000",
+        "code": "e1000"
+      },
+      {
+        "id": 3,
+        "name": "VMXNET 2",
+        "displayOrder": 2,
+        "enabled": true,
+        "defaultType": false,
+        "externalId": "vmxNet2",
+        "code": "vmxNet2"
+      },
+      {
+        "id": 4,
+        "name": "VMXNET 3",
+        "displayOrder": 1,
+        "enabled": true,
+        "defaultType": true,
+        "externalId": "vmxNet3",
+        "code": "vmxNet3"
+      }
+    ],
+    "networkSubnets": [],
+    "hasNetworks": true,
+    "maxNetworks": 0,
+    "enableNetworkTypeSelection": "on",
+    "supportsNetworkSelection": true
+  }
+}

@@ -1,0 +1,27 @@
+get:
+  summary: Retrieves network options by zone/cloud
+  description: |
+    This endpoint can be used to see which network options are available for a given cloud (zoneId) and provision type.
+  operationId: listOptionNetworkOptions
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/zoneId.yaml
+    - $ref: ../components/parameters/provisionTypeId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: ../components/schemas/zoneNetworkOptions.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Search Response:
+              value:
+                $ref: ../components/examples/zoneNetworkOptions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

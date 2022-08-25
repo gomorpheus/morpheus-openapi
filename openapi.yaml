@@ -517,6 +517,8 @@ paths:
     $ref: paths/api@networks@services.yaml
   /api/options/list:
     $ref: paths/api@options@list.yaml
+  /api/options/zoneNetworkOptions:
+    $ref: paths/api@options@zoneNetworkOptions.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/power-schedules:
