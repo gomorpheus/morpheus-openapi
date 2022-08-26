@@ -1,0 +1,146 @@
+type: object
+required: 
+  - config
+  - name
+  - plan
+properties: 
+  config: 
+    type: object
+    description: |
+      Key for specific host type configuration
+
+      The config parameter is for configuration options that are specific to each Provision Type. The Provision Types api can be used to see which options are available.
+  name: 
+    type: string
+    description: Name to be used for host(s) created in the cluster
+  plan: 
+    type: object
+    required: 
+      - id
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: The id for the memory and storage option pre-configured within Morpheus.
+      code: 
+        type: string
+        description: The code for the memory and storage option pre-configured within Morpheus.
+      options: 
+        type: object
+        description: Map of custom options depending on selected service plan . An example would be `maxMemory`, or `maxCores`.
+  volumes: 
+    type: array
+    description: The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects
+    items: 
+      type: object
+      required: 
+        - name
+        - datastoreId
+      properties: 
+        id: 
+          type: integer
+          format: int64
+          description: The id for the LV configuration being created
+          default: -1
+        rootVolume: 
+          type: boolean
+          description: If set to false then a non-root LV will be created
+          default: true
+        name: 
+          type: string
+          description: Name/type of the LV being created
+          default: root
+        size: 
+          type: integer
+          format: int64
+          description: |
+            Size of the LV to be created in GBs
+
+            Default is from the service plan
+        sizeId: 
+          type: string
+          nullable: true
+          description: Can be used to select pre-existing LV choices from Morpheus
+        storageType: 
+          type: integer
+          format: int64
+          description: Identifier for LV type
+        datastoreId: 
+          type: string
+          nullable: true
+          description: The ID of the specific datastore. Auto selection can be specified as auto or `autoCluster` (for clusters).
+  networkInterfaces: 
+    type: array
+    description: |
+      The networkInterfaces parameter is for network configuration.
+
+      The Options API /api/options/zoneNetworkOptions can be used to see which options are available.
+
+      It should be passed as an array of Objects with the following attributes
+    items: 
+      type: object
+      required: 
+        - network
+      properties: 
+        network: 
+          type: object
+          required:
+            - id
+          properties: 
+            id:
+              oneOf:
+                - type: string
+                  description: A network group can be specified instead by prefixing its ID with `networkGroup-`.
+                - type: integer
+                  description: Network ID
+        networkInterfaceTypeId:
+          type: integer
+          format: int64
+          description: The id of type of the network interface.
+        ipAddress:
+          type: string
+          description: The ip address. Not applicable when using DHCP or IP Pools.
+  securityGroups: 
+    type: array
+    description: Key for security group configuration.
+    items: 
+      type: string
+      description: ID of the security group to assign the host to.
+  visibility: 
+    type: string
+    description: Visibility for server host
+    default: private
+  userGroup: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: User Group ID for server host
+  networkDomain: 
+    type: string
+    description: Network domain
+    nullable: true
+  hostname: 
+    type: string
+    description: Hostname for server host
+    nullable: true
+  nodeCount: 
+    type: integer
+    format: int64
+    description: Number of workers or hosts
+  tags: 
+    type: array
+    description: Metadata tags, Array of objects having a name and value.
+    items: 
+      type: object
+      properties: 
+        name: 
+          type: string
+        value: 
+          type: string
+  labels: 
+    type: array
+    description: Array of strings (keywords)
+    items: 
+      type: string

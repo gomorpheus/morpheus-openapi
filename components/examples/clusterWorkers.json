@@ -1,0 +1,75 @@
+{
+  "workers": [
+    {
+      "id": 11,
+      "externalId": "i-03a65f2d1d34f4d76",
+      "internalId": null,
+      "accountId": 1,
+      "account": {
+        "name": "Stubby Toes Inc."
+      },
+      "name": "kube-worker-1",
+      "visibility": "public",
+      "description": null,
+      "zoneId": 3,
+      "siteId": 2,
+      "sshHost": null,
+      "sshPort": 22,
+      "externalIp": null,
+      "internalIp": "172.31.7.195",
+      "volumeId": null,
+      "platform": null,
+      "platformVersion": null,
+      "sshUsername": "root",
+      "sshPassword": "****",
+      "osDevice": "/dev/sda",
+      "dataDevice": "/dev/sdb",
+      "lvmEnabled": false,
+      "apiKey": "xxxxx",
+      "softwareRaid": false,
+      "dateCreated": "2019-07-29T23:41:19+0000",
+      "lastUpdated": "2019-08-09T21:25:44+0000",
+      "stats": {
+        "usedStorage": null,
+        "reservedStorage": 0,
+        "maxStorage": 10737418240,
+        "usedMemory": 0,
+        "reservedMemory": 0,
+        "maxMemory": 536870912
+      },
+      "status": "failed",
+      "statusMessage": null,
+      "errorMessage": null,
+      "statusDate": null,
+      "statusPercent": null,
+      "statusEta": null,
+      "powerState": "unknown",
+      "computeServerType": {
+        "id": 192,
+        "code": "amazonKubeWorker",
+        "name": "Amazon Kubernetes Worker",
+        "managed": true,
+        "externalDelete": true
+      },
+      "agentInstalled": false,
+      "lastAgentUpdate": null,
+      "agentVersion": null,
+      "maxCores": 1,
+      "maxMemory": 536870912,
+      "maxStorage": 10737418240,
+      "maxCpu": null,
+      "serverOs": null,
+      "enabled": true,
+      "zone": {
+        "id": 3,
+        "name": "stubby toes aws cloud"
+      },
+      "plan": {
+        "id": 1,
+        "code": "amazon-t2.nano",
+        "name": "Amazon T2 Nano - 1 Core, 0.5GB Memory"
+      },
+      "containers": []
+    }
+  ]
+}

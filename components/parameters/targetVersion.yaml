@@ -1,0 +1,7 @@
+name: targetVersion
+in: query
+description: Target version for cluster after upgrade
+schema:
+  type: string
+required: true
+example: "1.21.14"

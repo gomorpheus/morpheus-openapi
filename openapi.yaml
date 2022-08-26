@@ -111,14 +111,60 @@ paths:
     $ref: paths/api@clusters@id.yaml
   /api/clusters/{clusterId}/api-config:
     $ref: paths/api@clusters@id@api-config.yaml
+  /api/clusters/{clusterId}/containers:
+    $ref: paths/api@clusters@id@containers.yaml
+  /api/clusters/{clusterId}/containers/{id}:
+    $ref: paths/api@clusters@id@containers@id.yaml
+  /api/clusters/{clusterId}/containers/{id}/restart:
+    $ref: paths/api@clusters@id@containers@id@restart.yaml
+  /api/clusters/{clusterId}/deployments:
+    $ref: paths/api@clusters@id@deployments.yaml
+  /api/clusters/{clusterId}/deployments/{id}:
+    $ref: paths/api@clusters@id@deployments@id.yaml
+  /api/clusters/{clusterId}/deployments/{id}/restart:
+    $ref: paths/api@clusters@id@deployments@id@restart.yaml
+  /api/clusters/{clusterId}/jobs:
+    $ref: paths/api@clusters@id@jobs.yaml
+  /api/clusters/{clusterId}/jobs/{id}:
+    $ref: paths/api@clusters@id@jobs@id.yaml
+  /api/clusters/{clusterId}/masters:
+    $ref: paths/api@clusters@id@masters.yaml
   /api/clusters/{clusterId}/namespaces:
     $ref: paths/api@clusters@id@namespaces.yaml
   /api/clusters/{clusterId}/namespaces/{id}:
     $ref: paths/api@clusters@id@namespaces@id.yaml
   /api/clusters/{clusterId}/permissions:
     $ref: paths/api@clusters@id@permissions.yaml
+  /api/clusters/{clusterId}/pods:
+    $ref: paths/api@clusters@id@pods.yaml
+  /api/clusters/{clusterId}/pods/{id}/restart:
+    $ref: paths/api@clusters@id@pods@id@restart.yaml
+  /api/clusters/{clusterId}/servers:
+    $ref: paths/api@clusters@id@servers.yaml
+  /api/clusters/{clusterId}/servers/{id}:
+    $ref: paths/api@clusters@id@servers@id.yaml
+  /api/clusters/{clusterId}/services:
+    $ref: paths/api@clusters@id@services.yaml
+  /api/clusters/{clusterId}/services/{id}:
+    $ref: paths/api@clusters@id@services@id.yaml
+  /api/clusters/{clusterId}/statefulsets:
+    $ref: paths/api@clusters@id@statefulsets.yaml
+  /api/clusters/{clusterId}/statefulsets/{id}:
+    $ref: paths/api@clusters@id@statefulsets@id.yaml
+  /api/clusters/{clusterId}/statefulsets/{id}/restart:
+    $ref: paths/api@clusters@id@statefulsets@id@restart.yaml
+  /api/clusters/{clusterId}/upgrade-cluster:
+    $ref: paths/api@clusters@id@upgrade-cluster.yaml
+  /api/clusters/{clusterId}/volumes:
+    $ref: paths/api@clusters@id@volumes.yaml
+  /api/clusters/{clusterId}/volumes/{id}:
+    $ref: paths/api@clusters@id@volumes@id.yaml
   /api/clusters/{clusterId}/wiki:
     $ref: paths/api@clusters@id@wiki.yaml
+  /api/clusters/{clusterId}/worker-count:
+    $ref: paths/api@clusters@id@worker-count.yaml
+  /api/clusters/{clusterId}/workers:
+    $ref: paths/api@clusters@id@workers.yaml
   /api/credentials:
     $ref: paths/api@credentials.yaml
   /api/credentials/{id}:

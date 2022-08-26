@@ -1,0 +1,170 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  externalId: 
+    type: string
+  internalId: 
+    type: string
+    nullable: true
+  accountId: 
+    type: integer
+    format: int64
+  account: 
+    type: object
+    properties: 
+      name: 
+        type: string
+  name: 
+    type: string
+  visibility: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  zoneId: 
+    type: integer
+    format: int64
+  siteId: 
+    type: integer
+    format: int64
+  sshHost: 
+    type: string
+    nullable: true
+  sshPort: 
+    type: integer
+    format: int64
+  externalIp: 
+    type: string
+    nullable: true
+  internalIp: 
+    type: string
+  volumeId: 
+    type: string
+    nullable: true
+  platform: 
+    type: string
+    nullable: true
+  platformVersion: 
+    type: string
+    nullable: true
+  sshUsername: 
+    type: string
+  sshPassword: 
+    type: string
+  osDevice: 
+    type: string
+  dataDevice: 
+    type: string
+  lvmEnabled: 
+    type: boolean
+  apiKey: 
+    type: string
+  softwareRaid: 
+    type: boolean
+  dateCreated: 
+    type: string
+  lastUpdated: 
+    type: string
+  stats: 
+    type: object
+    properties: 
+      usedStorage: 
+        type: string
+        nullable: true
+      reservedStorage: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      usedMemory: 
+        type: integer
+        format: int64
+      reservedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+  status: 
+    type: string
+  statusMessage: 
+    type: string
+    nullable: true
+  errorMessage: 
+    type: string
+    nullable: true
+  statusDate: 
+    type: string
+    nullable: true
+  statusPercent: 
+    type: string
+    nullable: true
+  statusEta: 
+    type: string
+    nullable: true
+  powerState: 
+    type: string
+  computeServerType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+      managed: 
+        type: boolean
+      externalDelete: 
+        type: boolean
+  agentInstalled: 
+    type: boolean
+  lastAgentUpdate: 
+    type: string
+    nullable: true
+  agentVersion: 
+    type: string
+    nullable: true
+  maxCores: 
+    type: integer
+    format: int64
+  maxMemory: 
+    type: integer
+    format: int64
+  maxStorage: 
+    type: integer
+    format: int64
+  maxCpu: 
+    type: string
+    nullable: true
+  serverOs: 
+    type: string
+    nullable: true
+  enabled: 
+    type: boolean
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  plan: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  containers: 
+    type: array
+    items: 
+      type: object

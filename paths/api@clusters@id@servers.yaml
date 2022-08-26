@@ -1,0 +1,35 @@
+post: 
+  summary: Add Worker
+  description: Add Worker
+  operationId: addClusterWorker
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            server:
+              $ref: ../components/schemas/clusterServerCreate.yaml
+        examples:
+          Cluster Request:
+            value:
+              $ref: ../components/examples/clusterServerCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

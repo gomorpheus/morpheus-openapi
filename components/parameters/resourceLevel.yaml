@@ -1,0 +1,10 @@
+name: resourceLevel
+in: query
+description: Resource level filter
+schema:
+  type: string
+  enum:
+    - app
+    - system
+    - storage
+    - logging

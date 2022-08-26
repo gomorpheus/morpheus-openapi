@@ -1,0 +1,36 @@
+{
+  "volumes": [
+    {
+      "id": 123,
+      "displayOrder": 0,
+      "active": true,
+      "usedStorage": 0,
+      "resizeable": true,
+      "online": true,
+      "deviceDisplayName": "xvda",
+      "name": "root",
+      "externalId": "vol-076adc80392a1217a",
+      "volumeType": "disk",
+      "deviceName": "/dev/sda1",
+      "removable": false,
+      "readOnly": false,
+      "zoneId": 3,
+      "rootVolume": true,
+      "category": "kubernetes.persistentVolumeClaim.cluster.3",
+      "status": "provisioned",
+      "maxStorage": 21474836480,
+      "account": {
+        "id": 1
+      },
+      "type": {
+        "id": 10
+      }
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}
