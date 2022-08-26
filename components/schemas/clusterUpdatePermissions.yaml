@@ -38,8 +38,11 @@ properties:
         type: string
         description: Visibility
   tenantPermissions:
-    type: array
-    description: Array of tenant account ids that are allowed access
-    items:
-      type: integer
-      format: int64
+    type: object
+    properties: 
+      accounts:
+        type: array
+        description: Array of tenant account ids that are allowed access
+        items: 
+          type: integer
+          format: int64

@@ -1,0 +1,68 @@
+get: 
+  summary: Get a Specific Datastore
+  description: This endpoint retrieves a specific cluster datastore.
+  operationId: getClusterDatastore
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            type: object
+            properties:
+              datastore:
+                $ref: ../components/schemas/clusterDatastore.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterDatastore.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update Datastore
+  description: Update Datastore
+  operationId: updateClusterDatastore
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            datastore:
+              $ref: ../components/schemas/clusterDatastoreUpdate.yaml
+        examples:
+          Cluster Request:
+            value:
+              $ref: ../components/examples/clusterDatastoreUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                cluster:
+                  $ref: ../components/schemas/cluster.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/clusterCreate.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -117,12 +117,22 @@ paths:
     $ref: paths/api@clusters@id@containers@id.yaml
   /api/clusters/{clusterId}/containers/{id}/restart:
     $ref: paths/api@clusters@id@containers@id@restart.yaml
+  /api/clusters/{clusterId}/datastores:
+    $ref: paths/api@clusters@id@datastores.yaml
+  /api/clusters/{clusterId}/datastores/{id}:
+    $ref: paths/api@clusters@id@datastores@id.yaml
   /api/clusters/{clusterId}/deployments:
     $ref: paths/api@clusters@id@deployments.yaml
   /api/clusters/{clusterId}/deployments/{id}:
     $ref: paths/api@clusters@id@deployments@id.yaml
   /api/clusters/{clusterId}/deployments/{id}/restart:
     $ref: paths/api@clusters@id@deployments@id@restart.yaml
+  /api/clusters/{clusterId}/history:
+    $ref: paths/api@clusters@id@history.yaml
+  /api/clusters/{clusterId}/history/{id}:
+    $ref: paths/api@clusters@id@history@id.yaml
+  /api/clusters/{clusterId}/history/events/{id}:
+    $ref: paths/api@clusters@id@history@events@id.yaml
   /api/clusters/{clusterId}/jobs:
     $ref: paths/api@clusters@id@jobs.yaml
   /api/clusters/{clusterId}/jobs/{id}:

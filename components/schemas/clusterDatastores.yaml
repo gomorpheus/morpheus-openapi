@@ -1,0 +1,71 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+    nullable: true
+  type: 
+    type: string
+  visibility: 
+    type: string
+  storageSize: 
+    type: integer
+    format: int64
+  freeSpace: 
+    type: integer
+    format: int64
+  drsEnabled: 
+    type: boolean
+  active: 
+    type: boolean
+  allowWrite: 
+    type: boolean
+  defaultStore: 
+    type: boolean
+  online: 
+    type: boolean
+  allowRead: 
+    type: boolean
+  allowProvision: 
+    type: boolean
+  refType: 
+    type: string
+  refId: 
+    type: integer
+    format: int64
+  externalId: 
+    type: string
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  zonePool: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  tenants: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  datastores: 
+    type: array

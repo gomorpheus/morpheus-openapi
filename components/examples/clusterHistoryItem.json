@@ -1,0 +1,46 @@
+{
+  "process": {
+    "id": 7,
+    "accountId": 1,
+    "uniqueId": "17bac5a4-b417-4004-ad5a-d05d16c42757",
+    "processType": {
+      "code": "serverProvision",
+      "name": "server provision"
+    },
+    "description": null,
+    "subType": null,
+    "subId": null,
+    "zoneId": null,
+    "integrationId": null,
+    "instanceId": null,
+    "containerId": null,
+    "serverId": 12,
+    "containerName": null,
+    "displayName": "kube1-master",
+    "timerCategory": "amazonKubeMaster.provision",
+    "timerSubCategory": null,
+    "status": "complete",
+    "reason": null,
+    "percent": 100.0,
+    "statusEta": 23108,
+    "message": null,
+    "output": null,
+    "error": null,
+    "startDate": "2019-07-29T23:40:56+0000",
+    "endDate": "2019-07-29T23:41:19+0000",
+    "duration": 22785,
+    "dateCreated": "2019-07-29T23:40:56+0000",
+    "lastUpdated": "2019-07-29T23:41:19+0000",
+    "createdBy": {
+      "username": "root",
+      "displayName": "Stubby Toes"
+    },
+    "updatedBy": {
+      "username": "root",
+      "displayName": "Stubby Toes"
+    },
+    "events": [
+
+    ]
+  }
+}
