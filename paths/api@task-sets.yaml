@@ -61,6 +61,11 @@ post:
                 description:
                   type: string
                   description: A description of the workflow
+                labels:
+                  type: array
+                  description: An array of Category labels for filtering
+                  items: 
+                    type: string
                 type:
                   type: string
                   description: Workflow type

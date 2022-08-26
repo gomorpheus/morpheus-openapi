@@ -10,6 +10,11 @@ properties:
   description: 
     type: string
     nullable: true
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
   dateCreated: 
     type: string
     format: date-time

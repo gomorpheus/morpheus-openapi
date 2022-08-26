@@ -10,6 +10,7 @@
                 "code": "ansibleTask",
                 "name": "Ansible Playbook"
             },
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "ansiblePlaybook": null,
@@ -46,6 +47,7 @@
                 "code": "containerTemplate",
                 "name": "Library Template"
             },
+            "labels": [],
             "taskOptions": {
                 "port": null,
                 "host": null,
@@ -78,6 +80,7 @@
                 "code": "winrmTask",
                 "name": "Powershell Script"
             },
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "host": null,
@@ -115,6 +118,7 @@
                 "code": "puppetTask",
                 "name": "Puppet Agent Install"
             },
+            "labels": [],
             "taskOptions": {
                 "password": null,
                 "passwordHash": null,
@@ -147,6 +151,7 @@
                 "code": "jythonTask",
                 "name": "Python Script"
             },
+            "labels": [],
             "taskOptions": {
                 "sshKey": null,
                 "pythonArgs": null,
@@ -187,6 +192,7 @@
                 "code": "restartTask",
                 "name": "Restart"
             },
+            "labels": [],
             "taskOptions": {
                 "localScriptGitId": null,
                 "username": null,
@@ -217,6 +223,7 @@
                 "code": "script",
                 "name": "Shell Script"
             },
+            "labels": [],
             "taskOptions": {
                 "username": null,
                 "localScriptGitRef": null,
@@ -254,6 +261,7 @@
                 "code": "vro",
                 "name": "vRealize Orchestrator Workflow"
             },
+            "labels": [],
             "taskOptions": {
                 "sshKey": null,
                 "port": null,
@@ -285,6 +293,7 @@
                 "code": "writeAttributes",
                 "name": "Write Attributes"
             },
+            "labels": [],
             "taskOptions": {
                 "writeAttributes.attributes": null,
                 "username": null,
@@ -316,6 +325,7 @@
                 "code": "ansibleTowerTask",
                 "name": "Ansible Tower Job"
             },
+            "labels": [],
             "taskOptions": {
                 "ansibleTowerGitRef": null,
                 "ansibleTowerExecuteMode": "executeHost",
@@ -349,6 +359,7 @@
                 "code": "chefTask",
                 "name": "Chef bootstrap"
             },
+            "labels": [],
             "taskOptions": {
                 "password": null,
                 "passwordHash": null,
@@ -386,6 +397,7 @@
                 "code": "email",
                 "name": "Email"
             },
+            "labels": [],
             "taskOptions": {
                 "emailSkipTemplate": null,
                 "username": null,
@@ -426,6 +438,7 @@
                 "code": "groovyTask",
                 "name": "Groovy Script"
             },
+            "labels": [],
             "taskOptions": {
                 "username": null,
                 "localScriptGitId": null,
@@ -463,6 +476,7 @@
                 "code": "httpTask",
                 "name": "HTTP"
             },
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "port": null,
@@ -501,6 +515,7 @@
                 "code": "javascriptTask",
                 "name": "Javascript"
             },
+            "labels": [],
             "taskOptions": {
                 "sshKey": null,
                 "localScriptGitRef": null,
@@ -532,6 +547,7 @@
                 "code": "jrubyTask",
                 "name": "jRuby Script"
             },
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "port": null,
@@ -569,6 +585,7 @@
                 "code": "containerScript",
                 "name": "Library Script"
             },
+            "labels": [],
             "taskOptions": {
                 "containerScriptId": null,
                 "localScriptGitId": null,
