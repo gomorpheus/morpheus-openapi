@@ -23,6 +23,7 @@ properties:
     type: boolean
   serviceUrl: 
     type: string
+    nullable: true
   serviceHost: 
     type: string
     nullable: true

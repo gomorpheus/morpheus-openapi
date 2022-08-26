@@ -1,74 +1,56 @@
 {
   "cluster": {
-    "type": "docker-cluster",
-    "name": "stubby toes docker cluster",
-    "displayName": "stubby toes display name",
-    "description": "cluster description",
+    "type": "kubernetes-cluster",
     "group": {
-      "id": 2
+      "id": 1
     },
+    "name": "testcluster",
     "cloud": {
-      "id": 3
+      "id": 15
     },
-    "layout": "docker-amazon-ubuntu-16.04-single",
+    "layout": {
+      "id": 219
+    },
     "server": {
       "config": {
-        "resourcePool": "vpc-d673ebb3",
-        "publicIpType": "subnet",
-        "createUser": false
+        "resourcePoolId": 75,
+        "hostId": "",
+        "podCidr": "172.20.0.0/16",
+        "serviceCidr": "172.30.0.0/16",
+        "nodeCount": 3,
+        "createUser": true
       },
-      "name": "tippytoes",
+      "name": "testpool",
       "plan": {
-        "code": "amazon-t2.nano",
-        "options": {
-          "maxMemory": 536870912,
-          "cpuCount": 1,
-          "coreCount": 1,
-          "coresPerSocket": 1
-        }
+        "id": 365,
+        "code": "vm-8192",
+        "options": {}
       },
       "volumes": [
         {
           "id": -1,
           "rootVolume": true,
           "name": "root",
-          "size": 10,
+          "size": 80,
           "sizeId": null,
-          "storageType": 10,
-          "datastoreId": null
+          "storageType": 1,
+          "datastoreId": "auto"
         }
       ],
       "networkInterfaces": [
         {
           "network": {
-            "id": "network-20"
-          }
+            "id": "network-110"
+          },
+          "networkInterfaceTypeId": 4,
+          "ipMode": "dhcp"
         }
       ],
-      "securityGroups": [
-        "sg-052d3dacc2b663fdd"
-      ],
+      "securityGroups": [],
       "visibility": "private",
-      "userGroup": {
-        "id": 1
-      },
-      "networkDomain": null,
-      "hostname": null,
       "nodeCount": 3,
-      "tags": [
-        {
-          "name": "Tag Name",
-          "value": "Sample Value"
-        },
-        {
-          "name": "BusinessUnit",
-          "value": "QualityAssurance"
-        }
-      ],
-      "labels": [
-        "cool",
-        "beans"
-      ]
+      "networkDomain": null,
+      "hostname": "kubehostname"
     }
   }
 }

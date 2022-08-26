@@ -1,0 +1,23 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: Cluster name
+  description: 
+    type: string
+    description: Cluster description
+  enabled: 
+    type: boolean
+    description: Cluster enabled
+  serviceUrl: 
+    type: string
+    description: Cluster API Url
+  serviceToken: 
+    type: string
+    description: Cluster API token
+  refresh: 
+    type: boolean
+    description: Queue cluster refresh
+  managed: 
+    type: boolean
+    description: Cluster managed

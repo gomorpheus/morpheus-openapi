@@ -7,7 +7,7 @@ get:
     - Wiki
     - Clusters
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/clusterId-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -38,7 +38,7 @@ put:
     - Wiki
     - Clusters
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/clusterId-path.yaml
   requestBody:
     content:
       application/json:

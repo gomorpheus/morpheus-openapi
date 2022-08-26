@@ -105,11 +105,19 @@ paths:
     $ref: paths/api@certificates@id.yaml
   /api/cluster-types:
     $ref: paths/api@cluster-types.yaml
-  # /api/clusters:
-  #   $ref: paths/api@clusters.yaml
-  /api/clusters/{id}:
+  /api/clusters:
+    $ref: paths/api@clusters.yaml
+  /api/clusters/{clusterId}:
     $ref: paths/api@clusters@id.yaml
-  /api/clusters/{id}/wiki:
+  /api/clusters/{clusterId}/api-config:
+    $ref: paths/api@clusters@id@api-config.yaml
+  /api/clusters/{clusterId}/namespaces:
+    $ref: paths/api@clusters@id@namespaces.yaml
+  /api/clusters/{clusterId}/namespaces/{id}:
+    $ref: paths/api@clusters@id@namespaces@id.yaml
+  /api/clusters/{clusterId}/permissions:
+    $ref: paths/api@clusters@id@permissions.yaml
+  /api/clusters/{clusterId}/wiki:
     $ref: paths/api@clusters@id@wiki.yaml
   /api/credentials:
     $ref: paths/api@credentials.yaml

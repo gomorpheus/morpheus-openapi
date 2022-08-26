@@ -1,11 +1,12 @@
 get:
-  summary: Get a Specific Cluster
-  description: This endpoint retrieves a specific cluster.
-  operationId: getCluster
+  summary: Get Namespace (Kubernetes)
+  description: This endpoint retrieves a specific namespace of a cluster
+  operationId: getClusterNamespace
   tags:
     - Clusters
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
       description: Successful Request
@@ -14,36 +15,37 @@ get:
           schema:
             type: object
             properties:
-              cluster:
-                $ref: ../components/schemas/cluster.yaml
+              namespace:
+                $ref: ../components/schemas/clusterNamespace.yaml
           examples:
             Clusters Response:
               value:
-                $ref: ../components/examples/cluster.json 
+                $ref: ../components/examples/clusterNamespace.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
 put: 
-  summary: Update Cluster
-  description: Update Cluster
-  operationId: updateCluster
+  summary: Update Namespace (Kubernetes)
+  description: Update Namespace (Kubernetes)
+  operationId: updateClusterNamespace
   tags: 
     -  Clusters
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
   requestBody: 
     content: 
       application/json: 
-        schema: 
+        schema:
           type: object
-          properties: 
-            cluster:
-              $ref: ../components/schemas/clusterUpdate.yaml
+          properties:
+            namespace:
+              $ref: ../components/schemas/clusterNamespaceUpdate.yaml
         examples:
-          Cluster Request:
+          Clusters Response:
             value:
-              $ref: ../components/examples/clusterUpdate.json
+              $ref: ../components/examples/clusterNamespaceUpdate.json
   responses:
     '200':
       description: Successful Request
@@ -54,28 +56,25 @@ put:
             - type: object
               properties:
                 cluster:
-                  $ref: ../components/schemas/cluster.yaml
+                  $ref: ../components/schemas/clusterNamespaceCreateSuccess.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Deployments Response:
+            Cluster Response:
               value:
-                $ref: ../components/examples/clusterCreate.json
+                $ref: ../components/examples/clusterNamespaceCreateSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
 delete: 
-  summary: Delete a Cluster
-  description: Will delete a cluster and associated resources, hosts, volumes asynchronously
-  operationId: deleteCluster
+  summary: Delete a Namespace (Kubernetes)
+  description: Will delete a namespace from the specified cluster
+  operationId: deleteClusterNamespace
   tags:
     - Clusters
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
-    - $ref: ../components/parameters/removeInstances.yaml
-    - $ref: ../components/parameters/removeResources.yaml
-    - $ref: ../components/parameters/preserveVolumes.yaml
-    - $ref: ../components/parameters/releaseEIPs.yaml
+    - $ref: ../components/parameters/id-path.yaml
     - $ref: ../components/parameters/force.yaml
   responses:
     '200':
