@@ -1,0 +1,28 @@
+{
+    "policy": {
+        "id": 96,
+        "name": "1. Approve Delete",
+        "description": null,
+        "policyType": {
+            "id": 78,
+            "code": "deleteApproval",
+            "name": "Approve Delete"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "accountIntegrationId": "-100"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

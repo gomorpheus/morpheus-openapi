@@ -1,13 +1,13 @@
 {
     "policies": [
         {
-            "id": 79,
-            "name": "Account - Max VMs",
+            "id": 96,
+            "name": "1. Approve Delete",
             "description": null,
             "policyType": {
-                "id": 10,
-                "code": "maxVms",
-                "name": "Max VMs"
+                "id": 78,
+                "code": "deleteApproval",
+                "name": "Approve Delete"
             },
             "zone": null,
             "site": null,
@@ -17,9 +17,9 @@
             "refId": null,
             "eachUser": false,
             "config": {
-                "maxVms": "130"
+                "accountIntegrationId": "-100"
             },
-            "enabled": true,
+            "enabled": false,
             "owner": {
                 "id": 1,
                 "name": "Home"
@@ -27,8 +27,279 @@
             "accounts": []
         },
         {
-            "id": 25,
-            "name": "Approvals",
+            "id": 123,
+            "name": "10. Expiration",
+            "description": null,
+            "policyType": {
+                "id": 31,
+                "code": "lifecycle",
+                "name": "Expiration"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "lifecycleType": "user",
+                "lifecycleAge": "30",
+                "lifecycleRenewal": "7",
+                "lifecycleNotify": "1",
+                "lifecycleMessage": "Instance ${instance?.name} is set to expire on ${instance?.expireDate}",
+                "lifecycleAutoRenew": "on",
+                "lifecycleExtensionsBeforeApproval": "0",
+                "accountIntegrationId": "-100",
+                "lifecycleHideFixed": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 126,
+            "name": "11. File Share Storage Quota",
+            "description": null,
+            "policyType": {
+                "id": 54,
+                "code": "storageShareQuota",
+                "name": "File Share Storage Quota"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxStorage": "1"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 129,
+            "name": "12. Hostname",
+            "description": null,
+            "policyType": {
+                "id": 28,
+                "code": "hostNaming",
+                "name": "Hostname"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "hostNamingType": "user",
+                "hostNamingPattern": "354235"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 132,
+            "name": "13. Instance Name",
+            "description": null,
+            "policyType": {
+                "id": 22,
+                "code": "naming",
+                "name": "Instance Name"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "namingType": "user",
+                "namingPattern": "32523",
+                "namingConflict": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 135,
+            "name": "14. Max Containers",
+            "description": null,
+            "policyType": {
+                "id": 13,
+                "code": "maxContainers",
+                "name": "Max Containers"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxContainers": "3"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 138,
+            "name": "15. Max Cores",
+            "description": null,
+            "policyType": {
+                "id": 7,
+                "code": "maxCores",
+                "name": "Max Cores"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxCores": "235"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 141,
+            "name": "16. Max Hosts",
+            "description": null,
+            "policyType": {
+                "id": 16,
+                "code": "maxHosts",
+                "name": "Max Hosts"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxHosts": "324562"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 144,
+            "name": "17. Max Load Balancer Pools",
+            "description": null,
+            "policyType": {
+                "id": 82,
+                "code": "maxPools",
+                "name": "Max Load Balancer Pools"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxPools": "235"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 147,
+            "name": "18. Max Memory",
+            "description": null,
+            "policyType": {
+                "id": 1,
+                "code": "maxMemory",
+                "name": "Max Memory"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxMemory": "325"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 150,
+            "name": "19. Max Pool Members",
+            "description": null,
+            "policyType": {
+                "id": 88,
+                "code": "maxPoolMembers",
+                "name": "Max Pool Members"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxPoolMembers": "1516"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 99,
+            "name": "2. Approve Provision",
             "description": null,
             "policyType": {
                 "id": 37,
@@ -53,13 +324,13 @@
             "accounts": []
         },
         {
-            "id": 11,
-            "name": "Default Naming Scheme",
-            "description": "${userInitials}-${type}-${sequence+1000} |||| ${userInitials}-${type}-${sequence.toString().padLeft(4,'0')}",
+            "id": 153,
+            "name": "20. Max Storage",
+            "description": null,
             "policyType": {
-                "id": 22,
-                "code": "naming",
-                "name": "Instance Name"
+                "id": 4,
+                "code": "maxStorage",
+                "name": "Max Storage"
             },
             "zone": null,
             "site": null,
@@ -67,14 +338,568 @@
             "role": null,
             "refType": null,
             "refId": null,
-            "eachUser": null,
+            "eachUser": false,
             "config": {
-                "namingType": "user",
-                "namingPattern": "${userInitials}-${type}-${sequence+1000}",
-                "_namingConflict": "",
-                "namingConflict": "on"
+                "maxStorage": "12352"
             },
-            "enabled": true,
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 156,
+            "name": "21. Max Virtual Servers",
+            "description": null,
+            "policyType": {
+                "id": 85,
+                "code": "maxVirtualServers",
+                "name": "Max Virtual Servers"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxVirtualServers": "235"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 159,
+            "name": "22.  Max VMs",
+            "description": null,
+            "policyType": {
+                "id": 10,
+                "code": "maxVms",
+                "name": "Max VMs"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxVms": "23543"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 162,
+            "name": "23. MOTD",
+            "description": null,
+            "policyType": {
+                "id": 64,
+                "code": "motd",
+                "name": "Message of the Day"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "motd.title": "",
+                "motd": {
+                    "title": "",
+                    "message": "knlghsn",
+                    "type": "info",
+                    "_fullPage": ""
+                },
+                "motd.message": "knlghsn",
+                "motd.type": "info",
+                "motd._fullPage": "",
+                "motd.date": "2022-08-26 15:53:26"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 165,
+            "name": "24. Network Quota",
+            "description": null,
+            "policyType": {
+                "id": 70,
+                "code": "maxNetworks",
+                "name": "Network Quota"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxNetworks": "345"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 168,
+            "name": "25. Object Storage Quota",
+            "description": null,
+            "policyType": {
+                "id": 51,
+                "code": "storageBucketQuota",
+                "name": "Object Storage Quota"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxStorage": "123453"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 171,
+            "name": "26. Power Schedule",
+            "description": null,
+            "policyType": {
+                "id": 40,
+                "code": "powerSchedule",
+                "name": "Power Schedule"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "powerScheduleType": "user",
+                "powerSchedule": "1",
+                "powerScheduleHideFixed": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 174,
+            "name": "27. Router Quota",
+            "description": null,
+            "policyType": {
+                "id": 73,
+                "code": "maxRouters",
+                "name": "Router Quota"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxRouters": "25"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 177,
+            "name": "28. Shutdown",
+            "description": null,
+            "policyType": {
+                "id": 34,
+                "code": "shutdown",
+                "name": "Shutdown"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "shutdownType": "user",
+                "shutdownAge": "30",
+                "shutdownRenewal": "7",
+                "shutdownNotify": "1",
+                "shutdownMessage": "Instance ${instance?.name} is set to shutdown on ${instance?.shutdownDate}",
+                "shutdownAutoRenew": "on",
+                "shutdownExtensionsBeforeApproval": "0",
+                "accountIntegrationId": "-100",
+                "shutdownHideFixed": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 180,
+            "name": "29. Storage Server Storage Quota",
+            "description": null,
+            "policyType": {
+                "id": 58,
+                "code": "storageServerQuota",
+                "name": "Storage Server Storage Quota"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "storageServerId": "33",
+                "maxStorage": "2424"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 102,
+            "name": "3. Approve Reconfigure",
+            "description": null,
+            "policyType": {
+                "id": 81,
+                "code": "reconfigureApproval",
+                "name": "Approve Reconfigure"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "accountIntegrationId": "-100"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 183,
+            "name": "30. Tags",
+            "description": null,
+            "policyType": {
+                "id": 77,
+                "code": "tags",
+                "name": "Tags"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "strict": false,
+                "key": "wer",
+                "valueListId": "",
+                "value": ""
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 186,
+            "name": "31. User Creation",
+            "description": null,
+            "policyType": {
+                "id": 43,
+                "code": "createUser",
+                "name": "User Creation"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "createUserType": "user",
+                "createUser": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 189,
+            "name": "32. User Group Creation",
+            "description": null,
+            "policyType": {
+                "id": 49,
+                "code": "createUserGroup",
+                "name": "User Group Creation"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "userGroup": "3"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 192,
+            "name": "33. Workflow",
+            "description": null,
+            "policyType": {
+                "id": 57,
+                "code": "workflow",
+                "name": "Workflow"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "workflowId": "268"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 105,
+            "name": "4. Backup Creation",
+            "description": null,
+            "policyType": {
+                "id": 46,
+                "code": "createBackup",
+                "name": "Backup Creation"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "createBackupType": "user",
+                "createBackup": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 108,
+            "name": "5. Backup Targets",
+            "description": null,
+            "policyType": {
+                "id": 61,
+                "code": "backupStorage",
+                "name": "Backup Targets"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "backupStorageIds": [
+                    "108"
+                ]
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 111,
+            "name": "6. Budget",
+            "description": null,
+            "policyType": {
+                "id": 19,
+                "code": "maxPrice",
+                "name": "Budget"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "maxPrice": "144",
+                "maxPriceCurrency": "USD",
+                "maxPriceUnit": "month"
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 114,
+            "name": "7. Cluster Resource Name",
+            "description": null,
+            "policyType": {
+                "id": 25,
+                "code": "serverNaming",
+                "name": "Cluster Resource Name"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "serverNamingType": "user",
+                "serverNamingPattern": "325432",
+                "serverNamingConflict": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 117,
+            "name": "8. Cypher Access",
+            "description": null,
+            "policyType": {
+                "id": 91,
+                "code": "cypher",
+                "name": "Cypher Access"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "keyPattern": "",
+                "read": false,
+                "write": false,
+                "update": false,
+                "delete": false,
+                "list": false
+            },
+            "enabled": false,
+            "owner": {
+                "id": 1,
+                "name": "Home"
+            },
+            "accounts": []
+        },
+        {
+            "id": 120,
+            "name": "9. Delayed Delete",
+            "description": null,
+            "policyType": {
+                "id": 67,
+                "code": "delayedRemoval",
+                "name": "Delayed Delete"
+            },
+            "zone": null,
+            "site": null,
+            "user": null,
+            "role": null,
+            "refType": null,
+            "refId": null,
+            "eachUser": false,
+            "config": {
+                "removalAge": "30"
+            },
+            "enabled": false,
             "owner": {
                 "id": 1,
                 "name": "Home"
@@ -82,11 +907,11 @@
             "accounts": []
         }
     ],
-    "policyCount": 21,
+    "policyCount": 54,
     "meta": {
-        "size": 3,
-        "total": 21,
+        "size": 33,
+        "total": 54,
         "offset": 0,
-        "max": 3
+        "max": 33
     }
 }

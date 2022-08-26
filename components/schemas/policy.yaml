@@ -1,0 +1,368 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  policyType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  zone: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  site: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  user: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  role: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      authority: 
+        type: string
+  refType: 
+    type: string
+    nullable: true
+  refId: 
+    type: string
+    nullable: true
+  eachUser: 
+    type: boolean
+    nullable: true
+  config:
+    oneOf:
+    - type: object
+      description: |
+        - Approve Delete
+        - Approve Provisiong
+        - Approve Reconfigure
+      properties: 
+        accountIntegrationId: 
+          type: string
+    - type: object
+      description: |
+        - Backup Creation
+      properties:
+        createBackupType:
+          type: string
+        createBackup:
+          type: boolean
+    - type: object
+      description: |
+        - Backup Targets
+      properties:
+        backupStorageIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+    - type: object
+      description: |
+        - Budget
+      properties:
+        maxPrice:
+          type: number
+        maxPriceCurrency:
+          type: string
+        maxPriceUnit:
+          type: string
+    - type: object
+      description: |
+        - Cluster Resource Name
+      properties:
+        serverNamingType:
+          type: string
+        serverNamingPattern:
+          type: string
+        serverNamingConflict:
+          type: boolean
+    - type: object
+      description: |
+        - Cypher Access
+      properties:
+        keyPattern:
+          type: string
+        read:
+          type: boolean
+        write:
+          type: boolean
+        update:
+          type: boolean
+        delete:
+          type: boolean
+        list:
+          type: boolean
+    - type: object
+      description: |
+        - Delayed Delete
+      properties:
+        removalAge:
+          type: string
+    - type: object
+      description: |
+        - Expiration
+      properties:
+        lifecycleType:
+          type: string
+        lifecycleAge:
+          type: string
+        lifecycleRenewal:
+          type: string
+        lifecycleNotify:
+          type: string
+        lifecycleMessage:
+          type: string
+        lifecycleAutoRenew:
+          type: boolean
+        lifecycleExtensionsBeforeApproval:
+          type: string
+        accountIntegrationId:
+          type: string
+        lifecycleHideFixed:
+          type: boolean
+    - type: object
+      description: |
+        - File Share Storage Quota
+      properties:
+        maxStorage:
+          type: string
+    - type: object
+      description: |
+        - Hostname
+      properties:
+        hostNamingType:
+          type: string
+        hostNamingPattern:
+          type: string 
+    - type: object
+      description: |
+        - Instance Name
+      properties:
+        namingType:
+          type: string
+        namingPattern:
+          type: string
+        namingConflict:
+          type: boolean
+    - type: object
+      description: |
+        - Max Containers
+      properties:
+        maxContainers:
+          type: string
+    - type: object
+      description: |
+        - Max Cores
+      properties:
+        maxCores:
+          type: string 
+    - type: object
+      description: |
+        - Max Hosts
+      properties:
+        maxHosts:
+          type: string 
+    - type: object
+      description: |
+        - Max Load Balancer Pools
+      properties:
+        maxPools:
+          type: string
+    - type: object
+      description: |
+        - Max Memory
+      properties:
+        maxMemory:
+          type: string
+    - type: object
+      description: |
+        - Max Pool Members
+      properties:
+        maxPoolMembers:
+          type: string
+    - type: object
+      description: |
+        - Max Storage
+        - Object Storage Quota
+      properties:
+        maxStorage:
+          type: string
+    - type: object
+      description: |
+        - Max Virtual Servers
+      properties:
+        maxVirtualServers:
+          type: string
+    - type: object
+      description: |
+        - Max VMs
+      properties:
+        maxVms:
+          type: string
+    - type: object
+      description: |
+        - Message of the Day
+      properties:
+        motd.title:
+          type: string
+        motd:
+          type: object
+          properties:
+            title:
+              type: string
+            message:
+              type: string
+            type:
+              type: string
+            _fullPage:
+              type: boolean
+              nullable: true
+        motd.message:
+          type: string
+        motd.type:
+          type: string
+        motd._fullPage:
+          type: boolean
+          nullable: true
+        motd.date:
+          type: string
+          format: date-time
+    - type: object
+      description: |
+        - Network Quota
+      properties:
+        maxNetworks:
+          type: string
+    - type: object
+      description: |
+        - Power Schedule
+      properties:
+        powerScheduleType:
+          type: string
+        powerSchedule:
+          type: string
+        powerScheduleHideFixed:
+          type: boolean
+    - type: object
+      description: |
+        - Router Quota
+      properties:
+        maxRouters:
+          type: string
+    - type: object
+      description: |
+        - Shutdown
+      properties:
+        shutdownType:
+          type: string
+        shutdownAge:
+          type: string
+        shutdownRenewal:
+          type: string
+        shutdownNotify:
+          type: string
+        shutdownMessage:
+          type: string
+        shutdownAutoRenew:
+          type: boolean
+        shutdownExtensionsBeforeApproval:
+          type: string
+        accountIntegrationId:
+          type: string
+        shutdownHideFixed:
+          type: boolean
+    - type: object
+      description: |
+        - Storage Server Storage Quota
+      properties:
+        storageServerId:
+          type: string
+        maxStorage:
+          type: string
+    - type: object
+      description: |
+        - Tags
+      properties:
+        strict:
+          type: boolean
+        key:
+          type: string
+        valueListId:
+          type: string
+        value:
+          type: string
+    - type: object
+      description: |
+        - User Creation
+      properties:
+        createUserType:
+          type: string
+        createUser:
+          type: boolean
+    - type: object
+      description: |
+        - User Group Creation
+      properties:
+        userGroup:
+          type: string
+    - type: object
+      description: |
+        - Workflow
+      properties:
+        workflowId:
+          type: string
+  enabled: 
+    type: boolean
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  accounts: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string

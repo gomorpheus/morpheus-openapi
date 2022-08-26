@@ -1,0 +1,530 @@
+get:
+  summary: Retrieves all Policies
+  description: |
+    Retrieves all policies.
+  operationId: listPolicies
+  tags:
+    - Policies
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                policies:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/policy.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Policies Response:
+              value:
+                $ref: ../components/examples/policies.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a Policy
+  description: |
+    Creates a policy.
+  operationId: addPolicies
+  tags:
+    - Policies
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - policy
+          properties:
+            policy:
+              type: object
+              required:
+                - name
+                - policyType
+                - refType
+              properties:
+                name: 
+                  type: string
+                  description: A name for the policy
+                  example: Sample Policy
+                description:
+                  type: string
+                  description: A description for the policy
+                policyType:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                      description: The policy type
+                      enum:
+                      - Approve Delete
+                      - Approve Provision
+                      - Approve Reconfigure
+                      - Backup Creation
+                      - Backup Targets
+                      - Budget
+                      - Cluster Resource Name
+                      - Cypher Access
+                      - Delayed Delete
+                      - Expiration
+                      - File Share Storage Quota
+                      - Hostname
+                      - Instance Name
+                      - Max Containers
+                      - Max Cores
+                      - Max Hosts
+                      - Max Load Balancer Pools
+                      - Max Memory
+                      - Max Pool Members
+                      - Max Storage
+                      - Max Virtual Servers
+                      - Max VMs
+                      - Message of the Day
+                      - Network Quota
+                      - Object Storage Quota
+                      - Power Schedule
+                      - Router Quota
+                      - Shutdown
+                      - Storage Server Storage Quota
+                      - Tags
+                      - User Creation
+                      - User Group Creation
+                      - Workflow
+                    config:
+                      description: A map of config values. The expected values vary by policyType.
+                      oneOf:
+                        - type: object
+                          description: |
+                            - Approve Delete
+                            - Approve Provisiong
+                            - Approve Reconfigure
+                          properties: 
+                            accountIntegrationId: 
+                              type: string
+                        - type: object
+                          description: |
+                            - Backup Creation
+                          properties:
+                            createBackupType:
+                              type: string
+                            createBackup:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - Backup Targets
+                          properties:
+                            backupStorageIds:
+                              type: array
+                              items:
+                                type: integer
+                                format: int64
+                        - type: object
+                          description: |
+                            - Budget
+                          properties:
+                            maxPrice:
+                              type: number
+                            maxPriceCurrency:
+                              type: string
+                            maxPriceUnit:
+                              type: string
+                        - type: object
+                          description: |
+                            - Cluster Resource Name
+                          properties:
+                            serverNamingType:
+                              type: string
+                            serverNamingPattern:
+                              type: string
+                            serverNamingConflict:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - Cypher Access
+                          properties:
+                            keyPattern:
+                              type: string
+                            read:
+                              type: boolean
+                            write:
+                              type: boolean
+                            update:
+                              type: boolean
+                            delete:
+                              type: boolean
+                            list:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - Delayed Delete
+                          properties:
+                            removalAge:
+                              type: string
+                        - type: object
+                          description: |
+                            - Expiration
+                          properties:
+                            lifecycleType:
+                              type: string
+                            lifecycleAge:
+                              type: string
+                            lifecycleRenewal:
+                              type: string
+                            lifecycleNotify:
+                              type: string
+                            lifecycleMessage:
+                              type: string
+                            lifecycleAutoRenew:
+                              type: boolean
+                            lifecycleExtensionsBeforeApproval:
+                              type: string
+                            accountIntegrationId:
+                              type: string
+                            lifecycleHideFixed:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - File Share Storage Quota
+                          properties:
+                            maxStorage:
+                              type: string
+                        - type: object
+                          description: |
+                            - Hostname
+                          properties:
+                            hostNamingType:
+                              type: string
+                            hostNamingPattern:
+                              type: string 
+                        - type: object
+                          description: |
+                            - Instance Name
+                          properties:
+                            namingType:
+                              type: string
+                            namingPattern:
+                              type: string
+                            namingConflict:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - Max Containers
+                          properties:
+                            maxContainers:
+                              type: string
+                        - type: object
+                          description: |
+                            - Max Cores
+                          properties:
+                            maxCores:
+                              type: string 
+                        - type: object
+                          description: |
+                            - Max Hosts
+                          properties:
+                            maxHosts:
+                              type: string 
+                        - type: object
+                          description: |
+                            - Max Load Balancer Pools
+                          properties:
+                            maxPools:
+                              type: string
+                        - type: object
+                          description: |
+                            - Max Memory
+                          properties:
+                            maxMemory:
+                              type: string
+                        - type: object
+                          description: |
+                            - Max Pool Members
+                          properties:
+                            maxPoolMembers:
+                              type: string
+                        - type: object
+                          description: |
+                            - Max Storage
+                            - Object Storage Quota
+                          properties:
+                            maxStorage:
+                              type: string
+                        - type: object
+                          description: |
+                            - Max Virtual Servers
+                          properties:
+                            maxVirtualServers:
+                              type: string
+                        - type: object
+                          description: |
+                            - Max VMs
+                          properties:
+                            maxVms:
+                              type: string
+                        - type: object
+                          description: |
+                            - Message of the Day
+                          properties:
+                            motd.title:
+                              type: string
+                            motd:
+                              type: object
+                              properties:
+                                title:
+                                  type: string
+                                message:
+                                  type: string
+                                type:
+                                  type: string
+                                _fullPage:
+                                  type: boolean
+                                  nullable: true
+                            motd.message:
+                              type: string
+                            motd.type:
+                              type: string
+                            motd._fullPage:
+                              type: boolean
+                              nullable: true
+                            motd.date:
+                              type: string
+                              format: date-time
+                        - type: object
+                          description: |
+                            - Network Quota
+                          properties:
+                            maxNetworks:
+                              type: string
+                        - type: object
+                          description: |
+                            - Power Schedule
+                          properties:
+                            powerScheduleType:
+                              type: string
+                            powerSchedule:
+                              type: string
+                            powerScheduleHideFixed:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - Router Quota
+                          properties:
+                            maxRouters:
+                              type: string
+                        - type: object
+                          description: |
+                            - Shutdown
+                          properties:
+                            shutdownType:
+                              type: string
+                            shutdownAge:
+                              type: string
+                            shutdownRenewal:
+                              type: string
+                            shutdownNotify:
+                              type: string
+                            shutdownMessage:
+                              type: string
+                            shutdownAutoRenew:
+                              type: boolean
+                            shutdownExtensionsBeforeApproval:
+                              type: string
+                            accountIntegrationId:
+                              type: string
+                            shutdownHideFixed:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - Storage Server Storage Quota
+                          properties:
+                            storageServerId:
+                              type: string
+                            maxStorage:
+                              type: string
+                        - type: object
+                          description: |
+                            - Tags
+                          properties:
+                            strict:
+                              type: boolean
+                            key:
+                              type: string
+                            valueListId:
+                              type: string
+                            value:
+                              type: string
+                        - type: object
+                          description: |
+                            - User Creation
+                          properties:
+                            createUserType:
+                              type: string
+                            createUser:
+                              type: boolean
+                        - type: object
+                          description: |
+                            - User Group Creation
+                          properties:
+                            userGroup:
+                              type: string
+                        - type: object
+                          description: |
+                            - Workflow
+                          properties:
+                            workflowId:
+                              type: string
+                    enabled:
+                      type: boolean
+                      description: Set to false to disable
+                      default: true
+                    refType:
+                      type: string
+                      description: Scope object type
+                      enum:
+                      - ComputeSite
+                      - ComputeZone
+                      - User
+                      - Role
+                      - Network
+                    refId:
+                      type: integer
+                      format: int64
+                      description: Scope object ID (`group`,`cloud`,`user`, etc)
+                    accounts:
+                      type: array
+                      description: Array of tenants to scope the policy to
+                      items:
+                        type: integer
+                        format: int64
+                    eachUser:
+                      type: boolean
+                      description: Apply individually to each user in role.  Only when `refType` equals `Role`
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                policy:
+                  $ref: ../components/schemas/policy.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Policy Response - Approve Delete:
+              value:
+                $ref: ../components/examples/policyApproveDeleteSuccess.json
+            Policy Response - Approve Provision:
+              value:
+                $ref: ../components/examples/policyApproveProvisionSuccess.json
+            Policy Response - Approve Reconfigure:
+              value:
+                $ref: ../components/examples/policyApproveReconfigureSuccess.json
+            Policy Response - Backup Creation:
+              value:
+                $ref: ../components/examples/policyBackupCreationSuccess.json
+            Policy Response - Backup Targets:
+              value:
+                $ref: ../components/examples/policyBackupTargetsSuccess.json
+            Policy Response - Budget:
+              value:
+                $ref: ../components/examples/policyBudgetSuccess.json
+            Policy Response - Cluster Resource Name:
+              value:
+                $ref: ../components/examples/policyClusterResourceNameSuccess.json
+            Policy Response - Cypher Access:
+              value:
+                $ref: ../components/examples/policyCypherAccessSuccess.json
+            Policy Response - Delayed Delete:
+              value:
+                $ref: ../components/examples/policyDelayedDeleteSuccess.json
+            Policy Response - Expiration:
+              value:
+                $ref: ../components/examples/policyExpirationSuccess.json
+            Policy Response - File Share Storage Quota:
+              value:
+                $ref: ../components/examples/policyFileShareStorageQuotaSuccess.json
+            Policy Response - Hostname:
+              value:
+                $ref: ../components/examples/policyHostnameSuccess.json
+            Policy Response - Instance Name:
+              value:
+                $ref: ../components/examples/policyInstanceSuccess.json
+            Policy Response - Max Containers:
+              value:
+                $ref: ../components/examples/policyMaxContainersSuccess.json
+            Policy Response - Max Cores:
+              value:
+                $ref: ../components/examples/policyMaxCoresSuccess.json
+            Policy Response - Max Hosts:
+              value:
+                $ref: ../components/examples/policyMaxHostsSuccess.json
+            Policy Response - Max Load Balancers:
+              value:
+                $ref: ../components/examples/policyMaxLoadBalancersSuccess.json
+            Policy Response - Max Memory:
+              value:
+                $ref: ../components/examples/policyMaxMemorySuccess.json
+            Policy Response - Max Pool Members:
+              value:
+                $ref: ../components/examples/policyMaxPoolMembersSuccess.json
+            Policy Response - Max Storage:
+              value:
+                $ref: ../components/examples/policyMaxStorageSuccess.json
+            Policy Response - Max Virtual Servers:
+              value:
+                $ref: ../components/examples/policyMaxVirtualServersSuccess.json
+            Policy Response - Max VMs:
+              value:
+                $ref: ../components/examples/policyMaxVMsSuccess.json
+            Policy Response - Message of the Day:
+              value:
+                $ref: ../components/examples/policyMOTDSuccess.json
+            Policy Response - Network Quota:
+              value:
+                $ref: ../components/examples/policyNetworkQuotaSuccess.json
+            Policy Response - Object Storage Quota:
+              value:
+                $ref: ../components/examples/policyStorageQuotaSuccess.json
+            Policy Response - Power Schedule:
+              value:
+                $ref: ../components/examples/policyPowerScheduleSuccess.json
+            Policy Response - Router Quota:
+              value:
+                $ref: ../components/examples/policyRouterQuotaSuccess.json
+            Policy Response - Shutdown:
+              value:
+                $ref: ../components/examples/policyShutdownSuccess.json
+            Policy Response - Storage Server Quota:
+              value:
+                $ref: ../components/examples/policyStorageServerQuotaSuccess.json
+            Policy Response - Tags:
+              value:
+                $ref: ../components/examples/policyTagsSuccess.json
+            Policy Response - User Creation:
+              value:
+                $ref: ../components/examples/policyUserCreationSuccess.json
+            Policy Response - User Group Creation:
+              value:
+                $ref: ../components/examples/policyUserGroupCreationSuccess.json
+            Policy Response - Workflow:
+              value:
+                $ref: ../components/examples/policyWorkflowSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

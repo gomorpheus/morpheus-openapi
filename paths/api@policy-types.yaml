@@ -17,40 +17,7 @@ get:
                 policyTypes:
                   type: array
                   items:
-                    anyOf:
-                    - $ref: ../components/schemas/policyTypeApproveDelete.yaml
-                    - $ref: ../components/schemas/policyTypeApproveProvision.yaml
-                    - $ref: ../components/schemas/policyTypeApproveReconfigure.yaml
-                    - $ref: ../components/schemas/policyTypeBackupCreation.yaml
-                    - $ref: ../components/schemas/policyTypeBackupTargets.yaml
-                    - $ref: ../components/schemas/policyTypeBudget.yaml
-                    - $ref: ../components/schemas/policyTypeClusterResourceName.yaml
-                    - $ref: ../components/schemas/policyTypeCypherAccess.yaml
-                    - $ref: ../components/schemas/policyTypeDelayedDelete.yaml
-                    - $ref: ../components/schemas/policyTypeExpiration.yaml
-                    - $ref: ../components/schemas/policyTypeFileShareStorageQuota.yaml
-                    - $ref: ../components/schemas/policyTypeHostname.yaml
-                    - $ref: ../components/schemas/policyTypeInstanceName.yaml
-                    - $ref: ../components/schemas/policyTypeMaxContainers.yaml
-                    - $ref: ../components/schemas/policyTypeMaxCores.yaml
-                    - $ref: ../components/schemas/policyTypeMaxHosts.yaml
-                    - $ref: ../components/schemas/policyTypeMaxLoadBalancerPools.yaml
-                    - $ref: ../components/schemas/policyTypeMaxMemory.yaml
-                    - $ref: ../components/schemas/policyTypeMaxPoolMembers.yaml
-                    - $ref: ../components/schemas/policyTypeMaxStorage.yaml
-                    - $ref: ../components/schemas/policyTypeMaxVirtualServers.yaml
-                    - $ref: ../components/schemas/policyTypeMaxVMs.yaml
-                    - $ref: ../components/schemas/policyTypeMOTD.yaml
-                    - $ref: ../components/schemas/policyTypeNetworkQuota.yaml
-                    - $ref: ../components/schemas/policyTypeObjectStorageQuota.yaml
-                    - $ref: ../components/schemas/policyTypePowerSchedule.yaml
-                    - $ref: ../components/schemas/policyTypeRouterQuota.yaml
-                    - $ref: ../components/schemas/policyTypeShutdown.yaml
-                    - $ref: ../components/schemas/policyTypeStorageServerStorageQuota.yaml
-                    - $ref: ../components/schemas/policyTypeTags.yaml
-                    - $ref: ../components/schemas/policyTypeUserCreation.yaml
-                    - $ref: ../components/schemas/policyTypeUserGroupCreation.yaml
-                    - $ref: ../components/schemas/policyTypeWorkflow.yaml
+                    $ref: ../components/schemas/policyType.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Policy Types Response:
