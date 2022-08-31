@@ -3,6 +3,7 @@
         {
             "id": 3880,
             "name": "Approvals Check",
+            "labels": [],
             "type": {
                 "id": 4,
                 "name": "Workflow Job",
@@ -38,6 +39,7 @@
         {
             "id": 3877,
             "name": "Quota",
+            "labels": [],
             "type": {
                 "id": 7,
                 "name": "Task Job",
@@ -71,6 +73,7 @@
         {
             "id": 6829,
             "name": "rook-ceph-osd-prepare-mks-k8s-worker-1",
+            "labels": [],
             "type": {
                 "id": 11,
                 "name": "Kubernetes Job",
@@ -97,6 +100,7 @@
         {
             "id": 6832,
             "name": "rook-ceph-osd-prepare-mks-k8s-worker-2",
+            "labels": [],
             "type": {
                 "id": 11,
                 "name": "Kubernetes Job",
@@ -123,6 +127,7 @@
         {
             "id": 6835,
             "name": "rook-ceph-osd-prepare-mks-k8s-worker-3",
+            "labels": [],
             "type": {
                 "id": 11,
                 "name": "Kubernetes Job",
@@ -149,6 +154,7 @@
         {
             "id": 1877,
             "name": "scap security bundle 0.1.53",
+            "labels": [],
             "type": {
                 "id": 14,
                 "name": "Security Scan Job",

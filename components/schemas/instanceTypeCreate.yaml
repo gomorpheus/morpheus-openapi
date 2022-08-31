@@ -5,6 +5,12 @@ properties:
   name: 
     type: string
     description: Instance type name
+  labels:
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items: 
+      type: string
   description: 
     type: string
     description: Instance type description
