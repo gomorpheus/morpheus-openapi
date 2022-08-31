@@ -1,4 +1,5 @@
 type: object
+additionalProperties: false
 properties: 
   id: 
     type: integer
@@ -66,6 +67,7 @@ properties:
   config:
     oneOf:
     - type: object
+      additionalProperties: false
       description: |
         - Approve Delete
         - Approve Provisiong
@@ -74,6 +76,9 @@ properties:
         accountIntegrationId: 
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - createBackupType
       description: |
         - Backup Creation
       properties:
@@ -81,29 +86,41 @@ properties:
           type: string
         createBackup:
           type: boolean
+        accountIntegrationId: 
+          type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - backupStorageIds
       description: |
         - Backup Targets
       properties:
         backupStorageIds:
           type: array
           items:
-            type: integer
-            format: int64
+            type: string
     - type: object
+      additionalProperties: false   
+      required: 
+        - maxPrice   
       description: |
         - Budget
       properties:
         maxPrice:
-          type: number
+          type: string
         maxPriceCurrency:
           type: string
         maxPriceUnit:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - serverNamingType
       description: |
         - Cluster Resource Name
       properties:
+        accountIntegrationId: 
+          type: string
         serverNamingType:
           type: string
         serverNamingPattern:
@@ -111,9 +128,14 @@ properties:
         serverNamingConflict:
           type: boolean
     - type: object
+      additionalProperties: false
+      required: 
+        - keyPattern
       description: |
         - Cypher Access
       properties:
+        accountIntegrationId: 
+          type: string
         keyPattern:
           type: string
         read:
@@ -127,12 +149,20 @@ properties:
         list:
           type: boolean
     - type: object
+      additionalProperties: false
+      required: 
+        - removalAge
       description: |
         - Delayed Delete
       properties:
+        accountIntegrationId: 
+          type: string
         removalAge:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - lifecycleType
       description: |
         - Expiration
       properties:
@@ -147,7 +177,11 @@ properties:
         lifecycleMessage:
           type: string
         lifecycleAutoRenew:
-          type: boolean
+          type: string
+          nullable: true
+          enum: 
+            - on
+            - off
         lifecycleExtensionsBeforeApproval:
           type: string
         accountIntegrationId:
@@ -155,12 +189,9 @@ properties:
         lifecycleHideFixed:
           type: boolean
     - type: object
-      description: |
-        - File Share Storage Quota
-      properties:
-        maxStorage:
-          type: string
-    - type: object
+      additionalProperties: false
+      required: 
+        - hostNamingType
       description: |
         - Hostname
       properties:
@@ -169,6 +200,9 @@ properties:
         hostNamingPattern:
           type: string 
     - type: object
+      additionalProperties: false
+      required: 
+        - namingType
       description: |
         - Instance Name
       properties:
@@ -179,66 +213,98 @@ properties:
         namingConflict:
           type: boolean
     - type: object
+      additionalProperties: false
+      required: 
+        - maxContainers
       description: |
         - Max Containers
       properties:
         maxContainers:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - maxCores
       description: |
         - Max Cores
       properties:
         maxCores:
           type: string 
     - type: object
+      additionalProperties: false
+      required: 
+        - maxHosts
       description: |
         - Max Hosts
       properties:
         maxHosts:
           type: string 
     - type: object
+      additionalProperties: false
+      required: 
+        - maxPools
       description: |
         - Max Load Balancer Pools
       properties:
         maxPools:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - maxMemory
       description: |
         - Max Memory
       properties:
         maxMemory:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - maxPoolMembers
       description: |
         - Max Pool Members
       properties:
         maxPoolMembers:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - maxStorage
       description: |
         - Max Storage
         - Object Storage Quota
+        - File Share Storage Quota
       properties:
         maxStorage:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - maxVirtualServers
       description: |
         - Max Virtual Servers
       properties:
         maxVirtualServers:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - maxVms
       description: |
         - Max VMs
       properties:
         maxVms:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - motd
       description: |
         - Message of the Day
       properties:
         motd.title:
           type: string
+          nullable: true
         motd:
           type: object
           properties:
@@ -249,25 +315,39 @@ properties:
             type:
               type: string
             _fullPage:
-              type: boolean
+              type: string
               nullable: true
+              enum:
+              - on
+              - off
+              - ""
         motd.message:
           type: string
         motd.type:
           type: string
         motd._fullPage:
-          type: boolean
+          type: string
           nullable: true
+          enum:
+          - on
+          - off
+          - ""
         motd.date:
           type: string
           format: date-time
     - type: object
+      additionalProperties: false
+      required: 
+        - maxNetworks
       description: |
         - Network Quota
       properties:
         maxNetworks:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - powerScheduleType
       description: |
         - Power Schedule
       properties:
@@ -278,12 +358,18 @@ properties:
         powerScheduleHideFixed:
           type: boolean
     - type: object
+      additionalProperties: false
+      required: 
+        - maxRouters
       description: |
         - Router Quota
       properties:
         maxRouters:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - shutdownType
       description: |
         - Shutdown
       properties:
@@ -298,7 +384,11 @@ properties:
         shutdownMessage:
           type: string
         shutdownAutoRenew:
-          type: boolean
+          type: string
+          nullable: true
+          enum: 
+            - on
+            - off
         shutdownExtensionsBeforeApproval:
           type: string
         accountIntegrationId:
@@ -306,6 +396,9 @@ properties:
         shutdownHideFixed:
           type: boolean
     - type: object
+      additionalProperties: false
+      required: 
+        - storageServerId
       description: |
         - Storage Server Storage Quota
       properties:
@@ -314,6 +407,9 @@ properties:
         maxStorage:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - strict
       description: |
         - Tags
       properties:
@@ -326,6 +422,9 @@ properties:
         value:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - createUserType
       description: |
         - User Creation
       properties:
@@ -334,12 +433,18 @@ properties:
         createUser:
           type: boolean
     - type: object
+      additionalProperties: false
+      required: 
+        - userGroup
       description: |
         - User Group Creation
       properties:
         userGroup:
           type: string
     - type: object
+      additionalProperties: false
+      required: 
+        - workflowId
       description: |
         - Workflow
       properties:

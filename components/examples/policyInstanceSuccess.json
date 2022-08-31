@@ -1,0 +1,31 @@
+{
+    "policy": {
+        "id": 132,
+        "name": "13. Instance Name",
+        "description": null,
+        "policyType": {
+            "id": 22,
+            "code": "naming",
+            "name": "Instance Name"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "namingType": "user",
+            "namingPattern": "32523",
+            "namingConflict": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

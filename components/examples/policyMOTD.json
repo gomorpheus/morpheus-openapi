@@ -1,0 +1,38 @@
+{
+    "policy": {
+        "id": 162,
+        "name": "23. MOTD",
+        "description": null,
+        "policyType": {
+            "id": 64,
+            "code": "motd",
+            "name": "Message of the Day"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "motd.title": "",
+            "motd": {
+                "title": "",
+                "message": "knlghsn",
+                "type": "info",
+                "_fullPage": ""
+            },
+            "motd.message": "knlghsn",
+            "motd.type": "info",
+            "motd._fullPage": "",
+            "motd.date": "2022-08-26 15:53:26"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

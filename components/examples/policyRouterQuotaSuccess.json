@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 174,
+        "name": "27. Router Quota",
+        "description": null,
+        "policyType": {
+            "id": 73,
+            "code": "maxRouters",
+            "name": "Router Quota"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxRouters": "25"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

@@ -1,0 +1,28 @@
+{
+    "policy": {
+        "id": 138,
+        "name": "15. Max Cores",
+        "description": null,
+        "policyType": {
+            "id": 7,
+            "code": "maxCores",
+            "name": "Max Cores"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxCores": "235"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

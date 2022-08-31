@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 144,
+        "name": "17. Max Load Balancer Pools",
+        "description": null,
+        "policyType": {
+            "id": 82,
+            "code": "maxPools",
+            "name": "Max Load Balancer Pools"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxPools": "235"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

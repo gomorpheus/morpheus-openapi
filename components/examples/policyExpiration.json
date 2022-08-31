@@ -1,0 +1,36 @@
+{
+    "policy": {
+        "id": 123,
+        "name": "10. Expiration",
+        "description": null,
+        "policyType": {
+            "id": 31,
+            "code": "lifecycle",
+            "name": "Expiration"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "lifecycleType": "user",
+            "lifecycleAge": "30",
+            "lifecycleRenewal": "7",
+            "lifecycleNotify": "1",
+            "lifecycleMessage": "Instance ${instance?.name} is set to expire on ${instance?.expireDate}",
+            "lifecycleAutoRenew": "on",
+            "lifecycleExtensionsBeforeApproval": "0",
+            "accountIntegrationId": "-100",
+            "lifecycleHideFixed": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

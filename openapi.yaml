@@ -585,6 +585,10 @@ paths:
     $ref: paths/api@options@zoneNetworkOptions.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
+  /api/policies:
+    $ref: paths/api@policies.yaml
+  /api/policies/{id}:
+    $ref: paths/api@policies@id.yaml
   /api/power-schedules:
     $ref: paths/api@power-schedules.yaml
   /api/power-schedules/{id}:

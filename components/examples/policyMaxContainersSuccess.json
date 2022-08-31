@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 135,
+        "name": "14. Max Containers",
+        "description": null,
+        "policyType": {
+            "id": 13,
+            "code": "maxContainers",
+            "name": "Max Containers"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxContainers": "3"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

@@ -1,0 +1,28 @@
+{
+    "policy": {
+        "id": 141,
+        "name": "16. Max Hosts",
+        "description": null,
+        "policyType": {
+            "id": 16,
+            "code": "maxHosts",
+            "name": "Max Hosts"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxHosts": "324562"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

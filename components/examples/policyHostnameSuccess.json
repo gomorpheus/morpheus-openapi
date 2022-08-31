@@ -1,0 +1,30 @@
+{
+    "policy": {
+        "id": 129,
+        "name": "12. Hostname",
+        "description": null,
+        "policyType": {
+            "id": 28,
+            "code": "hostNaming",
+            "name": "Hostname"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "hostNamingType": "user",
+            "hostNamingPattern": "354235"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 168,
+        "name": "25. Object Storage Quota",
+        "description": null,
+        "policyType": {
+            "id": 51,
+            "code": "storageBucketQuota",
+            "name": "Object Storage Quota"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxStorage": "123453"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}
