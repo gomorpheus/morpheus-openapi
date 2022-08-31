@@ -13,7 +13,11 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/policy.yaml
+            allOf:
+            - type: object
+              properties:
+                policy:
+                  $ref: ../components/schemas/policy.yaml
           examples:
             Policy Response - Approve Delete:
               value:
