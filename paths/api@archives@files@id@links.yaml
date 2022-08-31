@@ -1,0 +1,58 @@
+get:
+  summary: Get Archive File Links
+  description: This endpoint retrieves the links that have been created for the specified file.
+  operationId: getArchiveFileLinks
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  archiveFileLinks:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/archiveFileLinks.yaml
+          examples:
+            Archive Files Response:
+              value:
+                $ref: ../components/examples/archiveFileLinks.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create an Archive File Link
+  description: This returns a secret token that can be used to download the file via a public url, without any other authentication or authorization. File links can be set to expire after a certain amount of time.
+  operationId: addArchiveFileLink
+  tags: 
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/expireSeconds.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  secretAccessKey:
+                    type: string
+          examples:
+            Archive File Link Response:
+              value:
+                $ref: ../components/examples/archiveFileLinkCreateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

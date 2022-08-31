@@ -1,0 +1,24 @@
+delete:
+  summary: Delete an Archive File Link
+  description: This will delete the link from the system, so it can no longer be used.
+  operationId: deleteArchiveFileLink
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/linkId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

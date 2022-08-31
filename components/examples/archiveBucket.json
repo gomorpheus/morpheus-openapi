@@ -1,0 +1,51 @@
+{
+  "archiveBucket": {
+      "id": 1,
+      "name": "archive-local",
+      "description": null,
+      "storageProvider": {
+          "id": 158,
+          "name": "testing-non-volatile"
+      },
+      "owner": {
+          "id": 1,
+          "name": "mastertenant"
+      },
+      "createdBy": {
+          "username": "admin"
+      },
+      "isPublic": true,
+      "visibility": "private",
+      "code": "6610b008e775",
+      "filePath": "morpheus-archives/6610b008e775/",
+      "rawSize": 2898378,
+      "fileCount": 1,
+      "accounts": [],
+      "dateCreated": "2021-03-12T14:14:43Z",
+      "lastUpdated": "2021-03-12T14:16:01Z"
+  },
+  "isOwner": true,
+  "parentDirectory": null,
+  "archiveFiles": [
+      {
+          "id": 1,
+          "name": "mealprep.gif",
+          "filePath": "mealprep.gif",
+          "archiveBucket": {
+              "id": 1,
+              "name": "archive-local",
+              "isPublic": true
+          },
+          "createdBy": {
+              "username": "admin"
+          },
+          "isDirectory": false,
+          "status": "Active",
+          "rawSize": 2898378,
+          "contentType": "image/gif",
+          "dateCreated": "2021-03-12T14:16:00Z",
+          "lastUpdated": "2021-03-12T14:16:01Z"
+      }
+  ],
+  "archiveFileCount": 1
+}

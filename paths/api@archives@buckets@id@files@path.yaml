@@ -1,0 +1,78 @@
+get:
+  summary: Get All Archive Files
+  description: This endpoint retrieves all files in an archive bucket under the specified `filePath`.
+  operationId: listArchiveFiles
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/bucketName-path.yaml
+    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/fullTree.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                archiveBucket:
+                  $ref: ../components/schemas/archiveBucket.yaml
+                isOwner:
+                  type: boolean
+                parentDirectory:
+                  type: string
+                  nullable: true
+                archiveFiles:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/archiveBucketFile.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Archive Files Response:
+              value:
+                $ref: ../components/examples/archiveBucketFiles.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Upload Archive File
+  description: |
+    Upload a file to the specified archive bucket and file path.
+
+    This will overwrite the file if it already exists.
+  operationId: addArchiveFile
+  tags: 
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/bucketName-path.yaml
+    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/archiveFilename.yaml
+  requestBody:
+    content:
+      multipart/form-data: 
+        schema: 
+          type: object
+          properties: 
+            file:
+              type: string
+              format: binary
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Archive File Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

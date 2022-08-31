@@ -63,6 +63,20 @@ paths:
     $ref: paths/api@apps@id@validate-apply.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@id@wiki.yaml
+  /api/archives/buckets:
+    $ref: paths/api@archives@buckets.yaml
+  /api/archives/buckets/{id}:
+    $ref: paths/api@archives@buckets@id.yaml
+  /api/archives/buckets/{bucket}/files/{filePath}:
+    $ref: paths/api@archives@buckets@id@files@path.yaml
+  /api/archives/download/{bucket}/{filePath}:
+    $ref: paths/api@archives@download@id@path.yaml
+  /api/archives/files/{id}:
+    $ref: paths/api@archives@files@id.yaml
+  /api/archives/files/{id}/links:
+    $ref: paths/api@archives@files@id@links.yaml
+  /api/archives/files/{id}/links/{linkId}:
+    $ref: paths/api@archives@files@id@links@id.yaml
   /api/backup-settings:
     $ref: paths/api@backup-settings.yaml
   /api/billing/account:
@@ -663,6 +677,10 @@ paths:
     $ref: paths/api@provisioning-licenses@id@reservations.yaml
   /api/provisioning-settings:
     $ref: paths/api@provisioning-settings.yaml
+  /api/public-archives/download/{bucket}/{filePath}:
+    $ref: paths/api@public-archives@download@id@path.yaml
+  /api/public-archives/link:
+    $ref: paths/api@public-archives@link.yaml
   /api/report-types:
     $ref: paths/api@report-types.yaml
   /api/reports:
@@ -883,7 +901,10 @@ tags:
   - name: Apps
     description: Manage Apps
   - name: Archives
-    description: Manage Archives
+    description: |
+      Archives provides a way to store your files and make them available for download by your Scripts and Users.
+
+      Archives are organized by buckets. Each bucket has a unique name that is used to identify it in URLs and Scripts.
   - name: Authentication
     description: Manage Appliance Authentication
   - name: Automation

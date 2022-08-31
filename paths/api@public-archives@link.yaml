@@ -1,0 +1,15 @@
+get:
+  summary: Download an Archive File Link
+  description: Download an archive file link.
+  operationId: getArchivePublicFileLink
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/secretAccessToken.yaml
+  responses:
+    '200':
+      description: Returns the contents of the specified file as an attachment with Content-Type dicated by the file
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

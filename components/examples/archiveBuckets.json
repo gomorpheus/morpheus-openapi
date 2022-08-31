@@ -1,0 +1,56 @@
+{
+  "archiveBuckets": [
+    {
+      "id": 1,
+      "name": "testbucket",
+      "description": "a test archive with local storage",
+      "storageProvider": {
+        "id": 2,
+        "name": "testdrive2"
+      },
+      "owner": {
+        "id": 1,
+        "name": "root"
+      },
+      "createdBy": null,
+      "isPublic": true,
+      "visibility": "private",
+      "code": "454ed1af504f",
+      "filePath": "morpheus-archives/454ed1af504f/",
+      "rawSize": 65154,
+      "fileCount": 16,
+      "accounts": [],
+      "dateCreated": "2017-06-14T14:09:01Z",
+      "lastUpdated": "2017-06-14T14:09:01Z"
+    },
+    {
+      "id": 2,
+      "name": "s3bucket",
+      "description": "an test archive using s3",
+      "storageProvider": {
+        "id": 3,
+        "name": "test-bucket"
+      },
+      "owner": {
+        "id": 1,
+        "name": "root"
+      },
+      "createdBy": null,
+      "isPublic": false,
+      "visibility": "private",
+      "code": "4fdcad04901b",
+      "filePath": "morpheus-archives/4fdcad04901b/",
+      "rawSize": 70389,
+      "fileCount": 18,
+      "accounts": [],
+      "dateCreated": "2017-06-14T16:31:19Z",
+      "lastUpdated": "2017-06-14T16:31:19Z"
+    }
+  ],
+  "meta": {
+    "size": 2,
+    "total": 2,
+    "offset": 0,
+    "max": 50
+  }
+}

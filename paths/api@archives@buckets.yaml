@@ -1,0 +1,79 @@
+get:
+  summary: Get All Archive Buckets
+  description: This endpoint retrieves all archive buckets associated with the account.
+  operationId: listArchiveBuckets
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                archiveBuckets:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/archiveBucket.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Archive Buckets Response:
+              value:
+                $ref: ../components/examples/archiveBuckets.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create an Archive Bucket
+  description: Create an Archive Bucket
+  operationId: addArchiveBucket
+  tags: 
+    - Archives
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            archiveBucket:
+              $ref: ../components/schemas/archiveBucketCreate.yaml
+        examples:
+          Archive Buckets Request:
+            value:
+              $ref: ../components/examples/archiveBucketRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              archiveBucket:
+                $ref: ../components/schemas/archiveBucket.yaml
+              isOwner:
+                type: boolean
+              parentDirectory:
+                type: string
+                nullable: true
+              archiveFiles:
+                type: array
+                items:
+                  $ref: ../components/schemas/archiveBucketFile.yaml
+              archiveFileCount:
+                type: integer
+                format: int64
+          examples:
+            Archive Bucket Response:
+              value:
+                $ref: ../components/examples/archiveBucket.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

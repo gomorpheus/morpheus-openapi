@@ -1,0 +1,54 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  storageProvider: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  createdBy: 
+    type: object
+    nullable: true
+    properties: 
+      username:
+        type: string
+  isPublic: 
+    type: boolean
+  visibility: 
+    type: string
+  code: 
+    type: string
+  filePath: 
+    type: string
+  rawSize: 
+    type: integer
+    format: int64
+  fileCount: 
+    type: integer
+    format: int64
+  accounts: 
+    type: array
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
