@@ -7,6 +7,12 @@ properties:
     type: string
     description: Cluster layout description
     nullable: true
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   computeVersion: 
     type: string
     description: Version of the cluster layout

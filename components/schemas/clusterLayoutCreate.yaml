@@ -12,6 +12,11 @@ properties:
     type: string
     description: Cluster layout description
     nullable: true
+  labels: 
+    type: array
+    nullable: true
+    items:
+      type: string
   computeVersion: 
     type: string
     description: Version of the cluster layout
