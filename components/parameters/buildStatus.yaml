@@ -1,0 +1,11 @@
+name: status
+in: query
+description: Filter by status
+schema:
+  type: string
+  description: Build status
+  enum:
+    - running
+    - success
+    - failed
+example: "running"

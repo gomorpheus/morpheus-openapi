@@ -1,0 +1,82 @@
+{
+  "imageBuilds": [
+    {
+      "id": 1,
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "type": {
+        "id": 1,
+        "code": "vmware",
+        "name": "VMware"
+      },
+      "site": {
+        "id": 1,
+        "name": "my-group"
+      },
+      "zone": {
+        "id": 1,
+        "name": "my-vmware"
+      },
+      "name": "testbuild",
+      "description": "a test build",
+      "bootScript": {
+        "id": 2,
+        "fileName": "debian standard"
+      },
+      "bootCommand": null,
+      "preseedScript": {
+        "id": 2,
+        "fileName": "debian 8"
+      },
+      "scripts": [
+        {
+          "id": 114,
+          "name": "blah.txt",
+          "type": "bash",
+          "phase": "postProvision"
+        }
+      ],
+      "sshUsername": "builderbot",
+      "sshPassword": "************",
+      "storageProvider": null,
+      "buildOutputName": "mytestbuild",
+      "conversionFormats": null,
+      "isCloudInit": false,
+      "vmToolsInstalled": true,
+      "keepResults": 2,
+      "config": {
+      },
+      "lastResult": {
+        "id": 70,
+        "imageBuild": {
+          "id": 21,
+          "name": "testbuild"
+        },
+        "buildNumber": 6,
+        "startDate": "2017-09-28T05:48:03Z",
+        "endDate": null,
+        "statusMessage": "Initializing",
+        "statusPercent": 0.0,
+        "statusEta": null,
+        "status": "running",
+        "errorMessage": null,
+        "createdBy": {
+          "username": "admin"
+        },
+        "tempInstance": null,
+        "virtualImages": [
+
+        ]
+      },
+      "executionCount": 2
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

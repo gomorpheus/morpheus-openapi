@@ -89,6 +89,10 @@ paths:
     $ref: paths/api@blueprints@id@image.yaml
   /api/blueprints/{id}/update-permissions:
     $ref: paths/api@blueprints@id@update-permissions.yaml
+  /api/boot-scripts:
+    $ref: paths/api@boot-scripts.yaml
+  /api/boot-scripts/{id}:
+    $ref: paths/api@boot-scripts@id.yaml
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
@@ -275,6 +279,14 @@ paths:
     $ref: paths/api@health@logs.yaml
   /api/health/logs/export:
     $ref: paths/api@health@logs@export.yaml
+  /api/image-builds:
+    $ref: paths/api@image-builds.yaml
+  /api/image-builds/{id}:
+    $ref: paths/api@image-builds@id.yaml
+  /api/image-builds/{id}/list-executions:
+    $ref: paths/api@image-builds@id@list-executions.yaml
+  /api/image-builds/{id}/run:
+    $ref: paths/api@image-builds@id@run.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -617,6 +629,10 @@ paths:
     $ref: paths/api@power-schedules@id@remove-instances.yaml
   /api/power-schedules/{id}/remove-servers:
     $ref: paths/api@power-schedules@id@remove-servers.yaml
+  /api/preseed-scripts:
+    $ref: paths/api@preseed-scripts.yaml
+  /api/preseed-scripts/{id}:
+    $ref: paths/api@preseed-scripts@id.yaml
   /api/price-sets:
     $ref: paths/api@price-sets.yaml
   /api/price-sets/{id}:

@@ -1,0 +1,8 @@
+name: buildNumber
+in: query
+description: If specified will return an exact match on buildNumber
+schema:
+  type: integer
+  format: int64
+  description: Build number
+example: 4

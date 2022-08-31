@@ -1,0 +1,8 @@
+type: object
+properties: 
+  fileName: 
+    type: string
+    description: A name for the preseed script
+  content: 
+    type: string
+    description: The script content
