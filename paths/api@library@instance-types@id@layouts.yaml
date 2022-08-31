@@ -14,6 +14,7 @@ get:
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/code.yaml
     - $ref: ../components/parameters/provisionType.yaml
+    - $ref: ../components/parameters/label.yaml
   responses:
     '200':
       description: Successful Request

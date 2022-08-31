@@ -59,6 +59,12 @@ put:
                   type: string
                   description: A name for the Job
                   example: Sample Job Name
+                labels:
+                  type: array
+                  description: Array of label strings, can be used for filtering.
+                  nullable: true
+                  items: 
+                    type: string
                 enabled:
                   type: boolean
                   description: Use this to set enabled state

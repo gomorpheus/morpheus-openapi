@@ -26,6 +26,12 @@ properties:
     type: string
   name: 
     type: string
+  labels:
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items: 
+      type: string
   instanceVersion: 
     type: string
   description: 
