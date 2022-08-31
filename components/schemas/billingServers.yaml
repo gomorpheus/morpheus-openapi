@@ -1,0 +1,49 @@
+type: object
+properties: 
+  price: 
+    type: integer
+    format: int64
+  cost: 
+    type: integer
+    format: int64
+  startDate: 
+    type: string
+    format: date-time
+  endDate: 
+    type: string
+    format: date-time
+  servers: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        refType: 
+          type: string
+        refUUID: 
+          type: string
+        refId: 
+          type: integer
+          format: int64
+        startDate: 
+          type: string
+          format: date-time
+        endDate: 
+          type: string
+          format: date-time
+        cost: 
+          type: integer
+          format: int64
+        price: 
+          type: integer
+          format: int64
+        usages: 
+          type: array
+          items: 
+            type: object
+        numUnits: 
+          type: integer
+          format: int64
+        unit: 
+          type: string
+        name: 
+          type: string

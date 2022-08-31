@@ -1,0 +1,40 @@
+get:
+  summary: This endpoint will retrieve a specific account by id if the user has permission to access it
+  description: |
+    Will retrieve billing information for a specific tenant, if it is the current account or a sub account of the requesting user's account.
+  operationId: getBillingAccount
+  tags:
+    - Billing
+  parameters:
+    - $ref: ../components/parameters/startDate.yaml
+    - $ref: ../components/parameters/endDate.yaml
+    - $ref: ../components/parameters/includeUsages.yaml
+    - $ref: ../components/parameters/maxUsages.yaml
+    - $ref: ../components/parameters/offsetUsages.yaml
+    - $ref: ../components/parameters/includeComputeServers.yaml
+    - $ref: ../components/parameters/includeInstances.yaml
+    - $ref: ../components/parameters/includeDiscoveredServers.yaml
+    - $ref: ../components/parameters/includeLoadBalancers.yaml
+    - $ref: ../components/parameters/includeVirtualImages.yaml
+    - $ref: ../components/parameters/includeSnapshots.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Array of Billing
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                billingInfo:
+                  $ref: ../components/schemas/billing.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Billing Response:
+              value:
+                $ref: ../components/examples/billing.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

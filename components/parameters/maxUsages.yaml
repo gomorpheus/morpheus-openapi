@@ -1,0 +1,6 @@
+name: maxUsages
+in: query
+description: Optional ability to limit the usages returned
+schema:
+  type: integer
+  format: int64

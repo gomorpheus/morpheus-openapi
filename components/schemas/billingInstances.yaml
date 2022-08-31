@@ -1,0 +1,35 @@
+type: object
+properties: 
+  price: 
+    type: integer
+    format: int64
+  cost: 
+    type: integer
+    format: int64
+  startDate: 
+    type: string
+    format: date-time
+  endDate: 
+    type: string
+    format: date-time
+  instances: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        containers: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              usages: 
+                type: array
+                items: 
+                  type: object
+              numUnits: 
+                type: integer
+                format: int64
+              unit: 
+                type: string
+              name: 
+                type: string

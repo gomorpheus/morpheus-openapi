@@ -1,0 +1,6 @@
+name: includeUsages
+in: query
+description: Optional ability to suppress the usage records
+schema:
+  type: boolean
+  default: true

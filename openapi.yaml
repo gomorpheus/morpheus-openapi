@@ -65,6 +65,22 @@ paths:
     $ref: paths/api@apps@id@wiki.yaml
   /api/backup-settings:
     $ref: paths/api@backup-settings.yaml
+  /api/billing/account:
+    $ref: paths/api@billing@account.yaml
+  /api/billing/account/{id}:
+    $ref: paths/api@billing@account@id.yaml
+  /api/billing/instances:
+    $ref: paths/api@billing@instances.yaml
+  /api/billing/instances/{identifier}:
+    $ref: paths/api@billing@instances@identifier.yaml
+  /api/billing/servers:
+    $ref: paths/api@billing@servers.yaml
+  /api/billing/servers/{identifier}:
+    $ref: paths/api@billing@servers@identifier.yaml
+  /api/billing/zones:
+    $ref: paths/api@billing@zones.yaml
+  /api/billing/zones/{identifier}:
+    $ref: paths/api@billing@zones@identifier.yaml
   /api/blueprints:
     $ref: paths/api@blueprints.yaml
   /api/blueprints/{id}:

@@ -1,0 +1,250 @@
+{
+    "success": true,
+    "billingInfo": {
+        "accountId": 1,
+        "accountUUID": "cbf6a110-69ed-4b70-a0e9-a105129922ec",
+        "name": "Home",
+        "startDate": "2022-08-01T00:00:00Z",
+        "endDate": "2022-08-31T14:21:44Z",
+        "priceUnit": "hour",
+        "price": 0,
+        "cost": 0,
+        "zones": [
+            {
+                "zoneName": "Personal HyperV",
+                "zoneId": 25,
+                "zoneUUID": "670a7696-36a7-4800-91a6-3247e24b37e2",
+                "zoneCode": "HyperHome",
+                "startDate": "2022-08-01T00:00:00Z",
+                "endDate": "2022-08-31T14:21:44Z",
+                "priceUnit": "hour",
+                "computeServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "instances": {
+                    "price": 0,
+                    "cost": 0,
+                    "instances": [],
+                    "count": 0
+                },
+                "discoveredServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "loadBalancers": {
+                    "price": 0,
+                    "cost": 0,
+                    "loadBalancers": [],
+                    "count": 0
+                },
+                "virtualImages": {
+                    "price": 0,
+                    "cost": 0,
+                    "virtualImages": [],
+                    "count": 0
+                },
+                "snapshots": {
+                    "price": 0,
+                    "cost": 0,
+                    "snapshots": [],
+                    "count": 0
+                },
+                "price": 0,
+                "cost": 0
+            },
+            {
+                "zoneName": "Work Azure",
+                "zoneId": 17,
+                "zoneUUID": "e188b575-7250-49b0-a16f-7cecc7fa1510",
+                "zoneCode": "azure",
+                "startDate": "2022-08-01T00:00:00Z",
+                "endDate": "2022-08-31T14:21:44Z",
+                "priceUnit": "hour",
+                "computeServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "instances": {
+                    "price": 0,
+                    "cost": 0,
+                    "instances": [],
+                    "count": 0
+                },
+                "discoveredServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "loadBalancers": {
+                    "price": 0,
+                    "cost": 0,
+                    "loadBalancers": [],
+                    "count": 0
+                },
+                "virtualImages": {
+                    "price": 0,
+                    "cost": 0,
+                    "virtualImages": [],
+                    "count": 0
+                },
+                "snapshots": {
+                    "price": 0,
+                    "cost": 0,
+                    "snapshots": [],
+                    "count": 0
+                },
+                "price": 0,
+                "cost": 0
+            },
+            {
+                "zoneName": "vCenter",
+                "zoneId": 1,
+                "zoneUUID": "3acedd6b-1010-47e7-b8da-79d7892f4eb0",
+                "zoneCode": null,
+                "startDate": "2022-08-01T00:00:00Z",
+                "endDate": "2022-08-31T14:21:44Z",
+                "priceUnit": "hour",
+                "computeServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "instances": {
+                    "price": 0,
+                    "cost": 0,
+                    "instances": [],
+                    "count": 0
+                },
+                "discoveredServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "loadBalancers": {
+                    "price": 0,
+                    "cost": 0,
+                    "loadBalancers": [],
+                    "count": 0
+                },
+                "virtualImages": {
+                    "price": 0,
+                    "cost": 0,
+                    "virtualImages": [],
+                    "count": 0
+                },
+                "snapshots": {
+                    "price": 0,
+                    "cost": 0,
+                    "snapshots": [],
+                    "count": 0
+                },
+                "price": 0,
+                "cost": 0
+            },
+            {
+                "zoneName": "Work AWS",
+                "zoneId": 67,
+                "zoneUUID": "3c54a033-c730-49c9-83df-9ba295f4abcb",
+                "zoneCode": "waws",
+                "startDate": "2022-08-01T00:00:00Z",
+                "endDate": "2022-08-31T14:21:44Z",
+                "priceUnit": "hour",
+                "computeServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "instances": {
+                    "price": 0,
+                    "cost": 0,
+                    "instances": [],
+                    "count": 0
+                },
+                "discoveredServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "loadBalancers": {
+                    "price": 0,
+                    "cost": 0,
+                    "loadBalancers": [],
+                    "count": 0
+                },
+                "virtualImages": {
+                    "price": 0,
+                    "cost": 0,
+                    "virtualImages": [],
+                    "count": 0
+                },
+                "snapshots": {
+                    "price": 0,
+                    "cost": 0,
+                    "snapshots": [],
+                    "count": 0
+                },
+                "price": 0,
+                "cost": 0
+            },
+            {
+                "zoneName": "Work GCP",
+                "zoneId": 61,
+                "zoneUUID": "ad62331b-25d5-4726-aa32-844cb5c9e5e5",
+                "zoneCode": "googlecloud",
+                "startDate": "2022-08-01T00:00:00Z",
+                "endDate": "2022-08-31T14:21:44Z",
+                "priceUnit": "hour",
+                "computeServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "instances": {
+                    "price": 0,
+                    "cost": 0,
+                    "instances": [],
+                    "count": 0
+                },
+                "discoveredServers": {
+                    "price": 0,
+                    "cost": 0,
+                    "servers": [],
+                    "count": 0
+                },
+                "loadBalancers": {
+                    "price": 0,
+                    "cost": 0,
+                    "loadBalancers": [],
+                    "count": 0
+                },
+                "virtualImages": {
+                    "price": 0,
+                    "cost": 0,
+                    "virtualImages": [],
+                    "count": 0
+                },
+                "snapshots": {
+                    "price": 0,
+                    "cost": 0,
+                    "snapshots": [],
+                    "count": 0
+                },
+                "price": 0,
+                "cost": 0
+            }
+        ]
+    }
+}

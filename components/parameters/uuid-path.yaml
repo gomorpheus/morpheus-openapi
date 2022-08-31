@@ -1,0 +1,6 @@
+name: uuid
+in: path
+description: Morpheus UUID of the Object being created or referenced
+required: true
+schema:
+  type: string
