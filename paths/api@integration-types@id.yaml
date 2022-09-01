@@ -1,0 +1,33 @@
+get:
+  summary: Retrieves a Specific Integration Type
+  description: |
+    Retrieves a specific integration type.
+  operationId: getIntegrationTypes
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - name: optiontypes
+      in: query
+      description: Pass `true` to include optionTypes in the response for each integration type
+      schema:
+        type: boolean
+        default: false
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              integrationType:
+                $ref: ../components/schemas/integrationType.yaml
+          examples:
+            Integration Type Response:
+              value:
+                $ref: ../components/examples/integrationType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

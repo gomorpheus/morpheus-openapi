@@ -383,6 +383,10 @@ paths:
     $ref: paths/api@instances@service-plans.yaml
   /api/integration-types:
     $ref: paths/api@integration-types.yaml
+  /api/integration-types/{id}:
+    $ref: paths/api@integration-types@id.yaml
+  /api/integration-types/{id}/option-types:
+    $ref: paths/api@integration-types@id@option-types.yaml
   /api/invoice-line-items:
     $ref: paths/api@invoice-line-items.yaml
   /api/invoice-line-items/{id}:
