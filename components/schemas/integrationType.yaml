@@ -1,0 +1,34 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  category: 
+    type: string
+  enabled: 
+    type: boolean
+  creatable: 
+    type: boolean
+  hasCMDB: 
+    type: boolean
+  hasCMDBDiscovery: 
+    type: boolean
+  hasCM: 
+    type: boolean
+  hasDNS: 
+    type: boolean
+  hasApprovals: 
+    type: boolean
+  hasDeleteApprovals: 
+    type: boolean
+  hasReconfigureApprovals: 
+    type: boolean
+  isPlugin: 
+    type: boolean

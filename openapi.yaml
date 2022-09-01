@@ -381,6 +381,8 @@ paths:
     $ref: paths/api@instances@id@workflow.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
+  /api/integration-types:
+    $ref: paths/api@integration-types.yaml
   /api/invoice-line-items:
     $ref: paths/api@invoice-line-items.yaml
   /api/invoice-line-items/{id}:

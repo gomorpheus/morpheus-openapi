@@ -1,0 +1,8 @@
+name: objects
+in: query
+description: |
+  Include `objects=true` to return the Integration Objects for each integration. 
+  Available in api version 5.2.8/5.3.2.
+schema:
+  type: boolean
+  default: false

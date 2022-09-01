@@ -5,6 +5,6 @@ description: |
   You can store a string instead by passing `type=string`. This means the data value returned by the API will be a string instead of an object.
 schema:
   type: string
-enum:
-  - string
-  - object
+  enum:
+    - string
+    - object
