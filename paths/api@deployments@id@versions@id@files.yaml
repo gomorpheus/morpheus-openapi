@@ -10,7 +10,7 @@ get:
   parameters:
     - $ref: ../components/parameters/deploymentId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/phrase.yaml
@@ -46,7 +46,7 @@ post:
   parameters:
     - $ref: ../components/parameters/deploymentId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
   requestBody:
     content:
       multipart/form-data: 
@@ -80,7 +80,7 @@ delete:
   parameters:
     - $ref: ../components/parameters/deploymentId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/filepath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
     - $ref: ../components/parameters/force.yaml
   responses:
     '200':
