@@ -717,8 +717,38 @@ paths:
     $ref: paths/api@security-groups@id@rules.yaml
   /api/security-groups/{id}/rules/{sgId}:
     $ref: paths/api@security-groups@id@rules@sgId.yaml
+  /api/server-types:
+    $ref: paths/api@server-types.yaml
+  /api/server-types/{id}:
+    $ref: paths/api@server-types@id.yaml
+  /api/servers:
+    $ref: paths/api@servers.yaml
+  /api/servers/{id}:
+    $ref: paths/api@servers@id.yaml
+  /api/servers/{id}/assign-account:
+    $ref: paths/api@servers@id@assign-account.yaml
+  /api/servers/{id}/install-agent:
+    $ref: paths/api@servers@id@install-agent.yaml
+  /api/servers/{id}/make-managed:
+    $ref: paths/api@servers@id@make-managed.yaml
+  /api/servers/{id}/resize:
+    $ref: paths/api@servers@id@resize.yaml
+  /api/servers/{id}/snapshots:
+    $ref: paths/api@servers@id@snapshots.yaml
+  /api/servers/{id}/start:
+    $ref: paths/api@servers@id@start.yaml
+  /api/servers/{id}/stop:
+    $ref: paths/api@servers@id@stop.yaml
+  /api/servers/{id}/upgrade:
+    $ref: paths/api@servers@id@upgrade.yaml
+  /api/servers/{id}/workflow:
+    $ref: paths/api@servers@id@workflow.yaml
   /api/servers/{id}/wiki:
     $ref: paths/api@servers@id@wiki.yaml
+  /api/servers/change-cloud:
+    $ref: paths/api@servers@change-cloud.yaml
+  /api/servers/service-plans:
+    $ref: paths/api@servers@service-plans.yaml
   /api/service-plans:
     $ref: paths/api@service-plans.yaml
   /api/service-plans/{id}:
@@ -965,6 +995,8 @@ tags:
     description: View Appliance Health Statistics
   - name: History
     description: View History
+  - name: Hosts
+    description: Manage Hosts
   - name: Identity Sources
     description: Manage Identity Sources
   - name: Image Builds

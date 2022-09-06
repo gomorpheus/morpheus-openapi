@@ -1,0 +1,39 @@
+put:
+  summary: Run Workflow on a Host
+  description: |
+    This will run a provisioning workflow on a host.
+
+    For operational workflows, see Execute a Workflow.
+  operationId: updateHostExecuteWorkflow
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/workflowId.yaml
+    - $ref: ../components/parameters/workflowName.yaml
+  tags: 
+    -  Hosts
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            $ref: ../components/schemas/hostRunWorkflow.yaml
+        examples:
+          Host Request:
+            value:
+              $ref: ../components/examples/hostRunWorkflow.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

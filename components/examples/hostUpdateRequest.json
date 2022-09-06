@@ -1,0 +1,17 @@
+{
+  "server": {
+    "name": "my-nginx",
+    "description": "my-nginx",
+    "addTags": [
+      {
+        "name": "hello",
+        "value": "world"
+      }
+    ],
+    "removeTags": [
+      {
+        "name": "oldTag"
+      }
+    ]
+  }
+}

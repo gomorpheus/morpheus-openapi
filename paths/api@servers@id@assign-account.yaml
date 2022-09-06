@@ -1,0 +1,34 @@
+put:
+  summary: Assign To Tenant
+  description: This will change the ownership of the host to the specified Tenant account. This is only available to Master Tenant users.
+  operationId: updateHostAssignTenant
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverAccountId.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            moveAssociatedInstances:
+              type: boolean
+              description: Move associated instances to specified Tenant account.
+              default: true
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,6 @@
+name: serverType
+in: query
+description: Filter by server type code
+schema:
+  type: string
+example: vmwareHypervisor

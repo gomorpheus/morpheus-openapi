@@ -1,0 +1,105 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  value: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  maxStorage: 
+    type: integer
+    format: int64
+  maxMemory: 
+    type: integer
+    format: int64
+  maxCpu: 
+    type: integer
+    format: int64
+  maxCores: 
+    type: integer
+    format: int64
+  maxDataStorage: 
+    type: integer
+    format: int64
+  customCpu: 
+    type: boolean
+  customMaxMemory: 
+    type: boolean
+  customMaxStorage: 
+    type: boolean
+  customMaxDataStorage: 
+    type: boolean
+  customCoresPerSocket: 
+    type: boolean
+  coresPerSocket: 
+    type: integer
+    format: int64
+    nullable: true
+  storageTypes: 
+    type: string
+    nullable: true
+  rootStorageTypes: 
+    type: string
+    nullable: true
+  addVolumes: 
+    type: boolean
+  customizeVolume: 
+    type: boolean
+  rootDiskCustomizable: 
+    type: boolean
+  hostDiskMode: 
+    type: string
+    nullable: true
+  hasDatastore: 
+    type: string
+    nullable: true
+  lvmSupported: 
+    type: string
+    nullable: true
+  minDisk: 
+    type: string
+    nullable: true
+  maxDisk: 
+    type: string
+    nullable: true
+  datastores: 
+    type: object
+    properties: 
+      cluster: 
+        type: array
+        items: 
+          type: object
+      store: 
+        type: array
+        items: 
+          type: object
+  supportsAutoDatastore: 
+    type: boolean
+  autoOptions: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: string
+        name: 
+          type: string
+  cpuOptions: 
+    type: array
+  memoryOptions: 
+    type: array
+  rootCustomSizeOptions: 
+    type: object
+  customSizeOptions: 
+    type: object
+  customCores: 
+    type: boolean
+  maxDisks: 
+    type: string
+    nullable: true
+  memorySizeType: 
+    type: string

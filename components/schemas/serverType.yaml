@@ -1,0 +1,62 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  name: 
+    type: string
+  description: 
+    type: string
+  nodeType: 
+    type: string
+  platform: 
+    type: string
+  enabled: 
+    type: boolean
+  selectable: 
+    type: boolean
+  externalDelete: 
+    type: boolean
+  managed: 
+    type: boolean
+  controlPower: 
+    type: boolean
+  controlSuspend: 
+    type: boolean
+  creatable: 
+    type: boolean
+  hasAgent: 
+    type: boolean
+  vmHypervisor: 
+    type: boolean
+  containerHypervisor: 
+    type: boolean
+  bareMetalHost: 
+    type: boolean
+  guestVm: 
+    type: boolean
+  hasAutomation: 
+    type: boolean
+  provisionType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+      hasNetworks: 
+        type: boolean
+      hasZonePools: 
+        type: boolean
+  optionTypes: 
+    type: array
+    items: 
+      $ref: optionType.yaml
+  displayOrder: 
+    type: integer
+    format: int64

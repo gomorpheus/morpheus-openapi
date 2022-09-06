@@ -1,0 +1,6 @@
+name: vmHypervisor
+in: query
+description: Filter to show only VM Hypervisors (true)
+schema:
+  type: boolean
+example: false

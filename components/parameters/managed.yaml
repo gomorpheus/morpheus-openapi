@@ -1,0 +1,6 @@
+name: managed
+in: query
+description: Filter by managed (true) or unmanaged (false)
+schema:
+  type: boolean
+example: false

@@ -1,0 +1,26 @@
+get:
+  summary: Get a Specific Host Type
+  description: This endpoint will retrieve a specific host type by id
+  operationId: getHostType
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              serverType:
+                $ref: ../components/schemas/serverType.yaml
+          examples:
+            Server Types Response:
+              value:
+                $ref: ../components/examples/serverType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

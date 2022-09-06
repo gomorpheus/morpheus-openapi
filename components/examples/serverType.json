@@ -1,0 +1,32 @@
+{
+  "serverType": {
+      "id": 22,
+      "code": "virtualboxVm",
+      "name": "Virtualbox Instance",
+      "description": "",
+      "nodeType": "morpheus-vm-node",
+      "platform": "linux",
+      "enabled": true,
+      "selectable": false,
+      "externalDelete": true,
+      "managed": true,
+      "controlPower": true,
+      "controlSuspend": false,
+      "creatable": false,
+      "hasAgent": true,
+      "vmHypervisor": false,
+      "containerHypervisor": false,
+      "bareMetalHost": false,
+      "guestVm": true,
+      "hasAutomation": true,
+      "provisionType": {
+          "id": 23,
+          "code": "virtualbox",
+          "name": "VirtualBox",
+          "hasNetworks": false,
+          "hasZonePools": false
+      },
+      "optionTypes": [],
+      "displayOrder": 0
+  }
+}

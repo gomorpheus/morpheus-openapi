@@ -1,0 +1,87 @@
+get:
+  summary: Get a Specific Host
+  description: This endpoint retrieves a specific host.
+  operationId: getHost
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              server:
+                $ref: ../components/schemas/server.yaml
+              stats:
+                type: object
+          examples:
+            Hosts Response:
+              value:
+                $ref: ../components/examples/server.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updating a Host
+  description: Updating a Host
+  operationId: updateHost
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  tags: 
+    -  Hosts
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            server:
+              $ref: ../components/schemas/hostUpdate.yaml
+        examples:
+          Host Request:
+            value:
+              $ref: ../components/examples/hostUpdateRequest.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              server:
+                $ref: ../components/schemas/server.yaml
+              stats:
+                type: object
+          examples:
+            Hosts Response:
+              value:
+                $ref: ../components/examples/server.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Host
+  description: Will delete a host asynchronously.
+  operationId: removeHost
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
