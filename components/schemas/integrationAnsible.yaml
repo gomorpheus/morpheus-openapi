@@ -9,6 +9,8 @@ properties:
     type: boolean
   type: 
     type: string
+    enum:
+    - ansible
   integrationType: 
     type: object
     properties: 
@@ -71,10 +73,4 @@ properties:
     type: string
     nullable: true
   credential: 
-    type: object
-    properties: 
-      type: 
-        type: string
-      types: 
-        type: string
-        nullable: true
+    $ref: creds.yaml
