@@ -22,6 +22,12 @@ paths:
 
   /api/activity:
     $ref: paths/api@activity.yaml
+  /api/log-settings:
+    $ref: paths/api@log-settings.yaml
+  /api/log-settings/syslog-rules:
+    $ref: paths/api@log-settings@syslog-rules.yaml
+  /api/log-settings/syslog-rules/{id}:
+    $ref: paths/api@log-settings@syslog-rules@id.yaml
   /api/appliance-settings:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
@@ -71,6 +77,18 @@ paths:
     $ref: paths/api@archives@files@id@links.yaml
   /api/archives/files/{id}/links/{linkId}:
     $ref: paths/api@archives@files@id@links@id.yaml
+  /api/forgot/reset-password:
+    $ref: paths/api@forgot@reset-password.yaml
+  /api/forgot/send-email:
+    $ref: paths/api@forgot@send-email.yaml
+  /api/execute-schedules:
+    $ref: paths/api@execute-schedules.yaml
+  /api/execute-schedules/{id}:
+    $ref: paths/api@execute-schedules@id.yaml
+  /api/execution-request/execute:
+    $ref: paths/api@execution-request@execute.yaml
+  /api/execution-request/{uniqueId}:
+    $ref: paths/api@execution-request@uniqueId.yaml
   /api/backup-settings:
     $ref: paths/api@backup-settings.yaml
   /api/billing/account:
@@ -103,10 +121,12 @@ paths:
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
   
-  /api/certificates:
-    $ref: paths/api@certificates.yaml
-  /api/certificates/{id}:
-    $ref: paths/api@certificates@id.yaml
+  /api/library/cluster-layouts:
+    $ref: paths/api@library@cluster-layouts.yaml
+  /api/library/cluster-layouts/{id}:
+    $ref: paths/api@library@cluster-layouts@id.yaml
+  /api/library/cluster-layouts/{id}/clone:
+    $ref: paths/api@library@cluster-layouts@id@clone.yaml
   /api/cluster-types:
     $ref: paths/api@cluster-types.yaml
   /api/clusters:
@@ -216,18 +236,8 @@ paths:
     $ref: paths/api@environments@id.yaml
   /api/environments/{id}/toggle-active:
     $ref: paths/api@environments@id@toggle-active.yaml
-  /api/execute-schedules:
-    $ref: paths/api@execute-schedules.yaml
-  /api/execute-schedules/{id}:
-    $ref: paths/api@execute-schedules@id.yaml
-  /api/execution-request/execute:
-    $ref: paths/api@execution-request@execute.yaml
-  /api/execution-request/{uniqueId}:
-    $ref: paths/api@execution-request@uniqueId.yaml
-  /api/forgot/reset-password:
-    $ref: paths/api@forgot@reset-password.yaml
-  /api/forgot/send-email:
-    $ref: paths/api@forgot@send-email.yaml
+
+
   /api/groups:
     $ref: paths/api@groups.yaml
   /api/groups/{id}:
@@ -382,12 +392,7 @@ paths:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
-  /api/library/cluster-layouts:
-    $ref: paths/api@library@cluster-layouts.yaml
-  /api/library/cluster-layouts/{id}:
-    $ref: paths/api@library@cluster-layouts@id.yaml
-  /api/library/cluster-layouts/{id}/clone:
-    $ref: paths/api@library@cluster-layouts@id@clone.yaml
+
   /api/library/container-scripts:
     $ref: paths/api@library@container-scripts.yaml
   /api/library/container-scripts/{id}:
@@ -460,12 +465,7 @@ paths:
     $ref: paths/api@load-balancers@id@virtual-servers.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
-  /api/log-settings:
-    $ref: paths/api@log-settings.yaml
-  /api/log-settings/syslog-rules:
-    $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings/syslog-rules/{id}:
-    $ref: paths/api@log-settings@syslog-rules@id.yaml
+
   /api/logs:
     $ref: paths/api@logs.yaml
   /api/monitoring/alerts:
@@ -753,6 +753,10 @@ paths:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:
     $ref: paths/api@snapshots@id.yaml
+  /api/certificates:
+    $ref: paths/api@certificates.yaml
+  /api/certificates/{id}:
+    $ref: paths/api@certificates@id.yaml
   /api/storage-buckets:
     $ref: paths/api@storage-buckets.yaml
   /api/storage-buckets/{id}:
