@@ -387,6 +387,10 @@ paths:
     $ref: paths/api@integration-types@id.yaml
   /api/integration-types/{id}/option-types:
     $ref: paths/api@integration-types@id@option-types.yaml
+  /api/integrations:
+    $ref: paths/api@integrations.yaml
+  /api/integrations/{id}/refresh:
+    $ref: paths/api@integrations@id@refresh.yaml
   /api/invoice-line-items:
     $ref: paths/api@invoice-line-items.yaml
   /api/invoice-line-items/{id}:
