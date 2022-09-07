@@ -19,12 +19,7 @@ servers:
       serverURL:
         default: localhost
 paths:
-  /api/accounts:
-    $ref: paths/api@accounts.yaml
-  /api/accounts/available-roles:
-    $ref: paths/api@accounts@available-roles.yaml
-  /api/accounts/{id}:
-    $ref: paths/api@accounts@id.yaml
+
   /api/activity:
     $ref: paths/api@activity.yaml
   /api/appliance-settings:
@@ -781,6 +776,12 @@ paths:
     $ref: paths/api@storage-volumes.yaml
   /api/storage-volumes/{id}:
     $ref: paths/api@storage-volumes@id.yaml
+  /api/accounts:
+    $ref: paths/api@accounts.yaml
+  /api/accounts/available-roles:
+    $ref: paths/api@accounts@available-roles.yaml
+  /api/accounts/{id}:
+    $ref: paths/api@accounts@id.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:
