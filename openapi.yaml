@@ -56,8 +56,7 @@ paths:
     $ref: paths/api@apps@id@state.yaml
   /api/apps/{id}/validate-apply:
     $ref: paths/api@apps@id@validate-apply.yaml
-  /api/apps/{id}/wiki:
-    $ref: paths/api@apps@id@wiki.yaml
+
   /api/archives/buckets:
     $ref: paths/api@archives@buckets.yaml
   /api/archives/buckets/{id}:
@@ -98,36 +97,12 @@ paths:
     $ref: paths/api@blueprints@id@image.yaml
   /api/blueprints/{id}/update-permissions:
     $ref: paths/api@blueprints@id@update-permissions.yaml
-  /api/boot-scripts:
-    $ref: paths/api@boot-scripts.yaml
-  /api/boot-scripts/{id}:
-    $ref: paths/api@boot-scripts@id.yaml
+
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
-  /api/catalog/cart:
-    $ref: paths/api@catalog@cart.yaml
-  /api/catalog/cart/items:
-    $ref: paths/api@catalog@cart@items.yaml
-  /api/catalog/cart/items/{id}:
-    $ref: paths/api@catalog@cart@items@id.yaml
-  /api/catalog/checkout:
-    $ref: paths/api@catalog@checkout.yaml
-  /api/catalog/items:
-    $ref: paths/api@catalog@items.yaml
-  /api/catalog/orders:
-    $ref: paths/api@catalog@orders.yaml
-  /api/catalog/types:
-    $ref: paths/api@catalog@types.yaml
-  /api/catalog/types/{id}:
-    $ref: paths/api@catalog@types@id.yaml
-  /api/catalog-item-types:
-    $ref: paths/api@catalog-item-types.yaml
-  /api/catalog-item-types/{id}:
-    $ref: paths/api@catalog-item-types@id.yaml
-  /api/catalog-item-types/{id}/update-logo:
-    $ref: paths/api@catalog-item-types@id@update-logo.yaml
+  
   /api/certificates:
     $ref: paths/api@certificates.yaml
   /api/certificates/{id}:
@@ -198,8 +173,7 @@ paths:
     $ref: paths/api@clusters@id@volumes.yaml
   /api/clusters/{clusterId}/volumes/{id}:
     $ref: paths/api@clusters@id@volumes@id.yaml
-  /api/clusters/{clusterId}/wiki:
-    $ref: paths/api@clusters@id@wiki.yaml
+
   /api/clusters/{clusterId}/worker-count:
     $ref: paths/api@clusters@id@worker-count.yaml
   /api/clusters/{clusterId}/workers:
@@ -260,8 +234,7 @@ paths:
     $ref: paths/api@groups@id.yaml
   /api/groups/{id}/update-zones:
     $ref: paths/api@groups@id@update-zones.yaml
-  /api/groups/{id}/wiki:
-    $ref: paths/api@groups@id@wiki.yaml
+
   /api/guidance:
     $ref: paths/api@guidance.yaml
   /api/guidance/{id}:
@@ -288,6 +261,10 @@ paths:
     $ref: paths/api@health@logs.yaml
   /api/health/logs/export:
     $ref: paths/api@health@logs@export.yaml
+  /api/boot-scripts:
+    $ref: paths/api@boot-scripts.yaml
+  /api/boot-scripts/{id}:
+    $ref: paths/api@boot-scripts@id.yaml
   /api/image-builds:
     $ref: paths/api@image-builds.yaml
   /api/image-builds/{id}:
@@ -370,8 +347,7 @@ paths:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:
     $ref: paths/api@instances@id@validate-apply.yaml
-  /api/instances/{id}/wiki:
-    $ref: paths/api@instances@id@wiki.yaml
+
   /api/instances/{id}/workflow:
     $ref: paths/api@instances@id@workflow.yaml
   /api/instances/service-plans:
@@ -738,10 +714,31 @@ paths:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:
     $ref: paths/api@servers@id@workflow.yaml
-  /api/servers/{id}/wiki:
-    $ref: paths/api@servers@id@wiki.yaml
+
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
+  /api/catalog/cart:
+    $ref: paths/api@catalog@cart.yaml
+  /api/catalog/cart/items:
+    $ref: paths/api@catalog@cart@items.yaml
+  /api/catalog/cart/items/{id}:
+    $ref: paths/api@catalog@cart@items@id.yaml
+  /api/catalog/checkout:
+    $ref: paths/api@catalog@checkout.yaml
+  /api/catalog/items:
+    $ref: paths/api@catalog@items.yaml
+  /api/catalog/orders:
+    $ref: paths/api@catalog@orders.yaml
+  /api/catalog/types:
+    $ref: paths/api@catalog@types.yaml
+  /api/catalog/types/{id}:
+    $ref: paths/api@catalog@types@id.yaml
+  /api/catalog-item-types:
+    $ref: paths/api@catalog-item-types.yaml
+  /api/catalog-item-types/{id}:
+    $ref: paths/api@catalog-item-types@id.yaml
+  /api/catalog-item-types/{id}/update-logo:
+    $ref: paths/api@catalog-item-types@id@update-logo.yaml
   /api/servers/service-plans:
     $ref: paths/api@servers@service-plans.yaml
   /api/service-plans:
@@ -860,12 +857,7 @@ paths:
     $ref: paths/api@whitelabel-settings@images@imageType.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
-  /api/wiki/categories:
-    $ref: paths/api@wiki@categories.yaml
-  /api/wiki/pages:
-    $ref: paths/api@wiki@pages.yaml
-  /api/wiki/pages/{id}:
-    $ref: paths/api@wiki@pages@id.yaml
+
   /api/zone-types:
     $ref: paths/api@zone-types.yaml
   /api/zone-types/{id}:
@@ -890,6 +882,23 @@ paths:
     $ref: paths/api@zones@id@refresh.yaml
   /api/zones/{id}/security-groups:
     $ref: paths/api@zones@id@security-groups.yaml
+  /api/apps/{id}/wiki:
+    $ref: paths/api@apps@id@wiki.yaml
+  /api/clusters/{clusterId}/wiki:
+    $ref: paths/api@clusters@id@wiki.yaml
+  /api/groups/{id}/wiki:
+    $ref: paths/api@groups@id@wiki.yaml
+  /api/instances/{id}/wiki:
+    $ref: paths/api@instances@id@wiki.yaml
+  /api/servers/{id}/wiki:
+    $ref: paths/api@servers@id@wiki.yaml
+  /api/wiki/categories:
+    $ref: paths/api@wiki@categories.yaml
+  /api/wiki/pages:
+    $ref: paths/api@wiki@pages.yaml
+  /api/wiki/pages/{id}:
+    $ref: paths/api@wiki@pages@id.yaml
+    
   /api/zones/{id}/wiki:
     $ref: paths/api@zones@id@wiki.yaml
   /oauth/token:
