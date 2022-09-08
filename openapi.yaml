@@ -19,14 +19,15 @@ servers:
       serverURL:
         default: localhost
 paths:
-  /api/accounts:
-    $ref: paths/api@accounts.yaml
-  /api/accounts/available-roles:
-    $ref: paths/api@accounts@available-roles.yaml
-  /api/accounts/{id}:
-    $ref: paths/api@accounts@id.yaml
+
   /api/activity:
     $ref: paths/api@activity.yaml
+  /api/log-settings:
+    $ref: paths/api@log-settings.yaml
+  /api/log-settings/syslog-rules:
+    $ref: paths/api@log-settings@syslog-rules.yaml
+  /api/log-settings/syslog-rules/{id}:
+    $ref: paths/api@log-settings@syslog-rules@id.yaml
   /api/appliance-settings:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
@@ -61,8 +62,7 @@ paths:
     $ref: paths/api@apps@id@state.yaml
   /api/apps/{id}/validate-apply:
     $ref: paths/api@apps@id@validate-apply.yaml
-  /api/apps/{id}/wiki:
-    $ref: paths/api@apps@id@wiki.yaml
+
   /api/archives/buckets:
     $ref: paths/api@archives@buckets.yaml
   /api/archives/buckets/{id}:
@@ -77,6 +77,18 @@ paths:
     $ref: paths/api@archives@files@id@links.yaml
   /api/archives/files/{id}/links/{linkId}:
     $ref: paths/api@archives@files@id@links@id.yaml
+  /api/forgot/reset-password:
+    $ref: paths/api@forgot@reset-password.yaml
+  /api/forgot/send-email:
+    $ref: paths/api@forgot@send-email.yaml
+  /api/execute-schedules:
+    $ref: paths/api@execute-schedules.yaml
+  /api/execute-schedules/{id}:
+    $ref: paths/api@execute-schedules@id.yaml
+  /api/execution-request/execute:
+    $ref: paths/api@execution-request@execute.yaml
+  /api/execution-request/{uniqueId}:
+    $ref: paths/api@execution-request@uniqueId.yaml
   /api/backup-settings:
     $ref: paths/api@backup-settings.yaml
   /api/billing/account:
@@ -103,40 +115,18 @@ paths:
     $ref: paths/api@blueprints@id@image.yaml
   /api/blueprints/{id}/update-permissions:
     $ref: paths/api@blueprints@id@update-permissions.yaml
-  /api/boot-scripts:
-    $ref: paths/api@boot-scripts.yaml
-  /api/boot-scripts/{id}:
-    $ref: paths/api@boot-scripts@id.yaml
+
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
-  /api/catalog/cart:
-    $ref: paths/api@catalog@cart.yaml
-  /api/catalog/cart/items:
-    $ref: paths/api@catalog@cart@items.yaml
-  /api/catalog/cart/items/{id}:
-    $ref: paths/api@catalog@cart@items@id.yaml
-  /api/catalog/checkout:
-    $ref: paths/api@catalog@checkout.yaml
-  /api/catalog/items:
-    $ref: paths/api@catalog@items.yaml
-  /api/catalog/orders:
-    $ref: paths/api@catalog@orders.yaml
-  /api/catalog/types:
-    $ref: paths/api@catalog@types.yaml
-  /api/catalog/types/{id}:
-    $ref: paths/api@catalog@types@id.yaml
-  /api/catalog-item-types:
-    $ref: paths/api@catalog-item-types.yaml
-  /api/catalog-item-types/{id}:
-    $ref: paths/api@catalog-item-types@id.yaml
-  /api/catalog-item-types/{id}/update-logo:
-    $ref: paths/api@catalog-item-types@id@update-logo.yaml
-  /api/certificates:
-    $ref: paths/api@certificates.yaml
-  /api/certificates/{id}:
-    $ref: paths/api@certificates@id.yaml
+  
+  /api/library/cluster-layouts:
+    $ref: paths/api@library@cluster-layouts.yaml
+  /api/library/cluster-layouts/{id}:
+    $ref: paths/api@library@cluster-layouts@id.yaml
+  /api/library/cluster-layouts/{id}/clone:
+    $ref: paths/api@library@cluster-layouts@id@clone.yaml
   /api/cluster-types:
     $ref: paths/api@cluster-types.yaml
   /api/clusters:
@@ -203,8 +193,7 @@ paths:
     $ref: paths/api@clusters@id@volumes.yaml
   /api/clusters/{clusterId}/volumes/{id}:
     $ref: paths/api@clusters@id@volumes@id.yaml
-  /api/clusters/{clusterId}/wiki:
-    $ref: paths/api@clusters@id@wiki.yaml
+
   /api/clusters/{clusterId}/worker-count:
     $ref: paths/api@clusters@id@worker-count.yaml
   /api/clusters/{clusterId}/workers:
@@ -247,26 +236,15 @@ paths:
     $ref: paths/api@environments@id.yaml
   /api/environments/{id}/toggle-active:
     $ref: paths/api@environments@id@toggle-active.yaml
-  /api/execute-schedules:
-    $ref: paths/api@execute-schedules.yaml
-  /api/execute-schedules/{id}:
-    $ref: paths/api@execute-schedules@id.yaml
-  /api/execution-request/execute:
-    $ref: paths/api@execution-request@execute.yaml
-  /api/execution-request/{uniqueId}:
-    $ref: paths/api@execution-request@uniqueId.yaml
-  /api/forgot/reset-password:
-    $ref: paths/api@forgot@reset-password.yaml
-  /api/forgot/send-email:
-    $ref: paths/api@forgot@send-email.yaml
+
+
   /api/groups:
     $ref: paths/api@groups.yaml
   /api/groups/{id}:
     $ref: paths/api@groups@id.yaml
   /api/groups/{id}/update-zones:
     $ref: paths/api@groups@id@update-zones.yaml
-  /api/groups/{id}/wiki:
-    $ref: paths/api@groups@id@wiki.yaml
+
   /api/guidance:
     $ref: paths/api@guidance.yaml
   /api/guidance/{id}:
@@ -293,6 +271,10 @@ paths:
     $ref: paths/api@health@logs.yaml
   /api/health/logs/export:
     $ref: paths/api@health@logs@export.yaml
+  /api/boot-scripts:
+    $ref: paths/api@boot-scripts.yaml
+  /api/boot-scripts/{id}:
+    $ref: paths/api@boot-scripts@id.yaml
   /api/image-builds:
     $ref: paths/api@image-builds.yaml
   /api/image-builds/{id}:
@@ -375,8 +357,7 @@ paths:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:
     $ref: paths/api@instances@id@validate-apply.yaml
-  /api/instances/{id}/wiki:
-    $ref: paths/api@instances@id@wiki.yaml
+
   /api/instances/{id}/workflow:
     $ref: paths/api@instances@id@workflow.yaml
   /api/instances/service-plans:
@@ -415,12 +396,7 @@ paths:
     $ref: paths/api@key-pairs.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
-  /api/library/cluster-layouts:
-    $ref: paths/api@library@cluster-layouts.yaml
-  /api/library/cluster-layouts/{id}:
-    $ref: paths/api@library@cluster-layouts@id.yaml
-  /api/library/cluster-layouts/{id}/clone:
-    $ref: paths/api@library@cluster-layouts@id@clone.yaml
+
   /api/library/container-scripts:
     $ref: paths/api@library@container-scripts.yaml
   /api/library/container-scripts/{id}:
@@ -493,12 +469,7 @@ paths:
     $ref: paths/api@load-balancers@id@virtual-servers.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
-  /api/log-settings:
-    $ref: paths/api@log-settings.yaml
-  /api/log-settings/syslog-rules:
-    $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings/syslog-rules/{id}:
-    $ref: paths/api@log-settings@syslog-rules@id.yaml
+
   /api/logs:
     $ref: paths/api@logs.yaml
   /api/monitoring/alerts:
@@ -747,10 +718,31 @@ paths:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:
     $ref: paths/api@servers@id@workflow.yaml
-  /api/servers/{id}/wiki:
-    $ref: paths/api@servers@id@wiki.yaml
+
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
+  /api/catalog/cart:
+    $ref: paths/api@catalog@cart.yaml
+  /api/catalog/cart/items:
+    $ref: paths/api@catalog@cart@items.yaml
+  /api/catalog/cart/items/{id}:
+    $ref: paths/api@catalog@cart@items@id.yaml
+  /api/catalog/checkout:
+    $ref: paths/api@catalog@checkout.yaml
+  /api/catalog/items:
+    $ref: paths/api@catalog@items.yaml
+  /api/catalog/orders:
+    $ref: paths/api@catalog@orders.yaml
+  /api/catalog/types:
+    $ref: paths/api@catalog@types.yaml
+  /api/catalog/types/{id}:
+    $ref: paths/api@catalog@types@id.yaml
+  /api/catalog-item-types:
+    $ref: paths/api@catalog-item-types.yaml
+  /api/catalog-item-types/{id}:
+    $ref: paths/api@catalog-item-types@id.yaml
+  /api/catalog-item-types/{id}/update-logo:
+    $ref: paths/api@catalog-item-types@id@update-logo.yaml
   /api/servers/service-plans:
     $ref: paths/api@servers@service-plans.yaml
   /api/service-plans:
@@ -765,6 +757,10 @@ paths:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:
     $ref: paths/api@snapshots@id.yaml
+  /api/certificates:
+    $ref: paths/api@certificates.yaml
+  /api/certificates/{id}:
+    $ref: paths/api@certificates@id.yaml
   /api/storage-buckets:
     $ref: paths/api@storage-buckets.yaml
   /api/storage-buckets/{id}:
@@ -785,6 +781,12 @@ paths:
     $ref: paths/api@storage-volumes.yaml
   /api/storage-volumes/{id}:
     $ref: paths/api@storage-volumes@id.yaml
+  /api/accounts:
+    $ref: paths/api@accounts.yaml
+  /api/accounts/available-roles:
+    $ref: paths/api@accounts@available-roles.yaml
+  /api/accounts/{id}:
+    $ref: paths/api@accounts@id.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:
@@ -863,12 +865,7 @@ paths:
     $ref: paths/api@whitelabel-settings@images@imageType.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
-  /api/wiki/categories:
-    $ref: paths/api@wiki@categories.yaml
-  /api/wiki/pages:
-    $ref: paths/api@wiki@pages.yaml
-  /api/wiki/pages/{id}:
-    $ref: paths/api@wiki@pages@id.yaml
+
   /api/zone-types:
     $ref: paths/api@zone-types.yaml
   /api/zone-types/{id}:
@@ -893,6 +890,23 @@ paths:
     $ref: paths/api@zones@id@refresh.yaml
   /api/zones/{id}/security-groups:
     $ref: paths/api@zones@id@security-groups.yaml
+  /api/apps/{id}/wiki:
+    $ref: paths/api@apps@id@wiki.yaml
+  /api/clusters/{clusterId}/wiki:
+    $ref: paths/api@clusters@id@wiki.yaml
+  /api/groups/{id}/wiki:
+    $ref: paths/api@groups@id@wiki.yaml
+  /api/instances/{id}/wiki:
+    $ref: paths/api@instances@id@wiki.yaml
+  /api/servers/{id}/wiki:
+    $ref: paths/api@servers@id@wiki.yaml
+  /api/wiki/categories:
+    $ref: paths/api@wiki@categories.yaml
+  /api/wiki/pages:
+    $ref: paths/api@wiki@pages.yaml
+  /api/wiki/pages/{id}:
+    $ref: paths/api@wiki@pages@id.yaml
+    
   /api/zones/{id}/wiki:
     $ref: paths/api@zones@id@wiki.yaml
   /oauth/token:
