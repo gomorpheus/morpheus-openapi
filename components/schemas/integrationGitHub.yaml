@@ -10,7 +10,7 @@ properties:
   type: 
     type: string
     enum:
-    - ansible
+    - github
   integrationType: 
     type: object
     properties: 
@@ -21,7 +21,11 @@ properties:
         type: string
       name: 
         type: string
-  url: 
+  username: 
+    type: string
+  token: 
+    type: string
+  tokenHash: 
     type: string
   serviceKey: 
     type: object
@@ -36,30 +40,10 @@ properties:
   config: 
     type: object
     properties: 
-      inventory: 
-        type: string
-        nullable: true
       defaultBranch: 
         type: string
       cacheEnabled: 
-        type: string
-        nullable: true
-      ansiblePlaybooks: 
-        type: string
-      ansibleRoles: 
-        type: string
-      ansibleGroupVars: 
-        type: string
-      ansibleHostVars: 
-        type: string
-      ansibleCommandBus: 
         type: boolean
-      ansibleVerbose: 
-        type: boolean
-      ansibleGalaxyEnabled: 
-        type: boolean
-      ansibleDefaultBranch: 
-        type: string
   status: 
     type: string
   statusDate: 

@@ -1,0 +1,38 @@
+{
+    "integration": {
+        "id": 14076,
+        "name": "Lab Salt Master",
+        "enabled": true,
+        "type": "saltMaster",
+        "integrationType": {
+            "id": 4,
+            "code": "saltMaster",
+            "name": "Salt Master"
+        },
+        "url": "10.10.10.10",
+        "port": "22",
+        "username": "admin",
+        "password": "************",
+        "passwordHash": "e806a291cfc3e61f83b98d344ee57e3e8933cccece4fb45e1481f1f560e70eb1",
+        "path": "/srv/salt",
+        "version": "latest",
+        "windowsVersion": "2016.11.6",
+        "repoUrl": "https://repo.saltstack.com/",
+        "serviceMode": "single",
+        "isPlugin": false,
+        "config": {
+            "saltApplyOnMinion": false
+        },
+        "status": "error",
+        "statusDate": "2022-09-01T17:38:00Z",
+        "statusMessage": "no masters online",
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

@@ -10,7 +10,7 @@ properties:
   type: 
     type: string
     enum:
-    - ansible
+    - chef
   integrationType: 
     type: object
     properties: 
@@ -23,48 +23,47 @@ properties:
         type: string
   url: 
     type: string
-  serviceKey: 
-    type: object
-    properties: 
-      id: 
-        type: integer
-        format: int64
-      name: 
-        type: string
   isPlugin: 
     type: boolean
   config: 
     type: object
     properties: 
-      inventory: 
+      databags: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            path: 
+              type: string
+            key: 
+              type: string
+      endpoint: 
         type: string
-        nullable: true
-      defaultBranch: 
+      org: 
         type: string
-      cacheEnabled: 
+      chefUser: 
         type: string
-        nullable: true
-      ansiblePlaybooks: 
+      userKey: 
         type: string
-      ansibleRoles: 
+      orgKey: 
         type: string
-      ansibleGroupVars: 
+      version: 
         type: string
-      ansibleHostVars: 
-        type: string
-      ansibleCommandBus: 
+      chefUseFqdn: 
         type: boolean
-      ansibleVerbose: 
-        type: boolean
-      ansibleGalaxyEnabled: 
-        type: boolean
-      ansibleDefaultBranch: 
+      windowsVersion: 
+        type: string
+      windowsInstallUrl: 
+        type: string
+      userKeyHash: 
+        type: string
+      orgKeyHash: 
         type: string
   status: 
     type: string
   statusDate: 
     type: string
-    format: date-time
+    nullable: true
   statusMessage: 
     type: string
     nullable: true

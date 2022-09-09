@@ -1,0 +1,29 @@
+{
+    "success": true,
+    "integration": {
+        "id": 2,
+        "name": "Labs QA Private Hub",
+        "enabled": true,
+        "type": "docker.registry",
+        "integrationType": {
+            "id": 5,
+            "code": "docker.registry",
+            "name": "Docker repository"
+        },
+        "url": "https://index.docker.io/v1/",
+        "username": "bertramqa",
+        "password": "************",
+        "passwordHash": "64515b216ad31366c5bd9681922cdc13145a",
+        "isPlugin": false,
+        "config": {},
+        "status": null,
+        "statusDate": null,
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": null
+        }
+    }
+}

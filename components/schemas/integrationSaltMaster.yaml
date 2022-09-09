@@ -10,7 +10,7 @@ properties:
   type: 
     type: string
     enum:
-    - ansible
+    - saltMaster
   integrationType: 
     type: object
     properties: 
@@ -23,43 +23,31 @@ properties:
         type: string
   url: 
     type: string
-  serviceKey: 
-    type: object
-    properties: 
-      id: 
-        type: integer
-        format: int64
-      name: 
-        type: string
+  port: 
+    type: string
+  username: 
+    type: string
+  password: 
+    type: string
+  passwordHash: 
+    type: string
+  path: 
+    type: string
+  version: 
+    type: string
+  windowsVersion: 
+    type: string
+  repoUrl: 
+    type: string
+  serviceMode: 
+    type: string
   isPlugin: 
     type: boolean
   config: 
     type: object
     properties: 
-      inventory: 
-        type: string
-        nullable: true
-      defaultBranch: 
-        type: string
-      cacheEnabled: 
-        type: string
-        nullable: true
-      ansiblePlaybooks: 
-        type: string
-      ansibleRoles: 
-        type: string
-      ansibleGroupVars: 
-        type: string
-      ansibleHostVars: 
-        type: string
-      ansibleCommandBus: 
+      saltApplyOnMinion: 
         type: boolean
-      ansibleVerbose: 
-        type: boolean
-      ansibleGalaxyEnabled: 
-        type: boolean
-      ansibleDefaultBranch: 
-        type: string
   status: 
     type: string
   statusDate: 
@@ -67,7 +55,6 @@ properties:
     format: date-time
   statusMessage: 
     type: string
-    nullable: true
   lastSync: 
     type: string
     nullable: true

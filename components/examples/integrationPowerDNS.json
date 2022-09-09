@@ -1,0 +1,31 @@
+{
+    "integration": {
+        "id": 146,
+        "name": "Labs PowerDNS",
+        "enabled": true,
+        "type": "powerDns",
+        "integrationType": {
+            "id": 11,
+            "code": "powerDns",
+            "name": "PowerDNS"
+        },
+        "url": "https://dns.fqdn.com",
+        "version": "4",
+        "serviceFlag": true,
+        "isPlugin": false,
+        "config": {},
+        "status": "ok",
+        "statusDate": "2022-09-01T17:24:50Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "id": 1035,
+            "name": "Integration: PowerDNS",
+            "type": "api-key",
+            "types": [
+                "api-key"
+            ]
+        }
+    }
+}

@@ -10,7 +10,7 @@ properties:
   type: 
     type: string
     enum:
-    - ansible
+    - remedy
   integrationType: 
     type: object
     properties: 
@@ -23,43 +23,24 @@ properties:
         type: string
   url: 
     type: string
-  serviceKey: 
-    type: object
-    properties: 
-      id: 
-        type: integer
-        format: int64
-      name: 
-        type: string
+  username: 
+    type: string
+  password: 
+    type: string
+  passwordHash: 
+    type: string
   isPlugin: 
     type: boolean
   config: 
     type: object
     properties: 
-      inventory: 
+      approvalUser: 
+        type: string
+      company: 
+        type: string
+      remedyIgnoreSSLErrors: 
         type: string
         nullable: true
-      defaultBranch: 
-        type: string
-      cacheEnabled: 
-        type: string
-        nullable: true
-      ansiblePlaybooks: 
-        type: string
-      ansibleRoles: 
-        type: string
-      ansibleGroupVars: 
-        type: string
-      ansibleHostVars: 
-        type: string
-      ansibleCommandBus: 
-        type: boolean
-      ansibleVerbose: 
-        type: boolean
-      ansibleGalaxyEnabled: 
-        type: boolean
-      ansibleDefaultBranch: 
-        type: string
   status: 
     type: string
   statusDate: 

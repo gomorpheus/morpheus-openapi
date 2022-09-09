@@ -10,7 +10,7 @@ properties:
   type: 
     type: string
     enum:
-    - ansible
+    - puppet
   integrationType: 
     type: object
     properties: 
@@ -21,50 +21,26 @@ properties:
         type: string
       name: 
         type: string
-  url: 
-    type: string
-  serviceKey: 
-    type: object
-    properties: 
-      id: 
-        type: integer
-        format: int64
-      name: 
-        type: string
   isPlugin: 
     type: boolean
   config: 
     type: object
     properties: 
-      inventory: 
+      puppetMaster: 
         type: string
-        nullable: true
-      defaultBranch: 
+      puppetFireNow: 
         type: string
-      cacheEnabled: 
+      puppetSshUser: 
         type: string
-        nullable: true
-      ansiblePlaybooks: 
+      puppetSshPassword: 
         type: string
-      ansibleRoles: 
-        type: string
-      ansibleGroupVars: 
-        type: string
-      ansibleHostVars: 
-        type: string
-      ansibleCommandBus: 
-        type: boolean
-      ansibleVerbose: 
-        type: boolean
-      ansibleGalaxyEnabled: 
-        type: boolean
-      ansibleDefaultBranch: 
+      puppetSshPasswordHash: 
         type: string
   status: 
     type: string
   statusDate: 
     type: string
-    format: date-time
+    nullable: true
   statusMessage: 
     type: string
     nullable: true

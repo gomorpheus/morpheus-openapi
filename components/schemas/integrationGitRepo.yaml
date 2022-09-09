@@ -10,7 +10,7 @@ properties:
   type: 
     type: string
     enum:
-    - ansible
+    - git
   integrationType: 
     type: object
     properties: 
@@ -36,35 +36,15 @@ properties:
   config: 
     type: object
     properties: 
-      inventory: 
-        type: string
-        nullable: true
       defaultBranch: 
         type: string
       cacheEnabled: 
-        type: string
-        nullable: true
-      ansiblePlaybooks: 
-        type: string
-      ansibleRoles: 
-        type: string
-      ansibleGroupVars: 
-        type: string
-      ansibleHostVars: 
-        type: string
-      ansibleCommandBus: 
         type: boolean
-      ansibleVerbose: 
-        type: boolean
-      ansibleGalaxyEnabled: 
-        type: boolean
-      ansibleDefaultBranch: 
-        type: string
   status: 
     type: string
   statusDate: 
     type: string
-    format: date-time
+    nullable: true
   statusMessage: 
     type: string
     nullable: true

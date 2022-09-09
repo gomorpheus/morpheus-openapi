@@ -1,0 +1,38 @@
+{
+    "integration": {
+        "id": 4343,
+        "name": "Labs Cherwell",
+        "enabled": true,
+        "type": "cherwell",
+        "integrationType": {
+            "id": 26,
+            "code": "cherwell",
+            "name": "Cherwell"
+        },
+        "url": "https://cherwell.fqdn.com",
+        "username": "Admin",
+        "password": "************",
+        "passwordHash": "792c1c21bcafb312934c9",
+        "isPlugin": false,
+        "config": {
+            "cherwellCustomCmdbMapping": "{\r\n\"ShortDescription\":\"Created from Morpheus by ${instance.createdByUsername} in ${zone.name}\"\r\n}",
+            "cherwellClientKey": "a1063167-24e6-480be",
+            "cherwellCreatedBy": "Jamie",
+            "cherwellStartDate": "5",
+            "cherwellEndDate": "10",
+            "cherwellIgnoreSSLErrors": null,
+            "cherwellBusinessObject": ""
+        },
+        "status": "ok",
+        "statusDate": null,
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

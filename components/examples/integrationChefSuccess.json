@@ -1,0 +1,48 @@
+{
+    "success": true,
+    "integration": {
+        "id": 4,
+        "name": "Labs QA Chef",
+        "enabled": true,
+        "type": "chef",
+        "integrationType": {
+            "id": 1,
+            "code": "chef",
+            "name": "Chef"
+        },
+        "url": "https://chef.fqdn.com",
+        "isPlugin": false,
+        "config": {
+            "databags": [
+                {
+                    "path": "/etc/chef/databag_secret",
+                    "key": "************"
+                }
+            ],
+            "endpoint": "https://chef.fqdn.com",
+            "org": "morpheus-qa",
+            "chefUser": "",
+            "userKey": "************",
+            "orgKey": "************",
+            "version": "14.13.11",
+            "chefUseFqdn": false,
+            "windowsVersion": "14.13.11",
+            "windowsInstallUrl": "",
+            "userKeyHash": "4747c3641ab4aa9ac10628b58e0e25b",
+            "orgKeyHash": "d5a7bfab28c575638b1e623153d1fdefe4e1747"
+        },
+        "status": "ok",
+        "statusDate": null,
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "id": 1020,
+            "name": "Integration: QA Chef",
+            "type": "username-keypair",
+            "types": [
+                "username-keypair"
+            ]
+        }
+    }
+}
