@@ -1,0 +1,39 @@
+type: object
+required:
+  - integration
+properties:
+  integration:
+    type: object
+    required:
+      - name
+      - type
+      - serviceUsername
+    properties:
+      name: 
+        type: string
+        description: Name, a unique identifier for the integration
+        example: Sample Integration
+      type:
+        type: string
+        description: Integration Type Code
+        enum:
+        - github
+      serviceUsername:
+        type: string
+        description: Username
+      servicePassword:
+        type: string
+        description: Password
+      serviceToken:
+        type: string
+        description: Access Token
+      serviceKey:
+        type: integer
+        format: int64
+        description: Key Pair ID
+      config:
+        type: object
+        properties:
+          cacheEnabled:
+            type: boolean
+            description: Enable Git Repository Caching

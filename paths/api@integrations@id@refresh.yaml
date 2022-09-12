@@ -39,58 +39,58 @@ post:
                   - $ref: ../components/schemas/integrationvRO.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Integration Response - Create Ansible:
+            Integration Response - Refresh Ansible:
               value:
                 $ref: ../components/examples/integrationAnsibleSuccess.json
-            Integration Response - Create Ansible Tower:
+            Integration Response - Refresh Ansible Tower:
               value:
                 $ref: ../components/examples/integrationAnsibleTowerSuccess.json
-            Integration Response - Create Bind DNS:
+            Integration Response - Refresh Bind DNS:
               value:
                 $ref: ../components/examples/integrationBindDNSSuccess.json
-            Integration Response - Create Chef:
+            Integration Response - Refresh Chef:
               value:
                 $ref: ../components/examples/integrationChefSuccess.json
-            Integration Response - Create Cherwell:
+            Integration Response - Refresh Cherwell:
               value:
                 $ref: ../components/examples/integrationCherwellSuccess.json
-            Integration Response - Create Cypher:
+            Integration Response - Refresh Cypher:
               value:
                 $ref: ../components/examples/integrationCypherSuccess.json
-            Integration Response - Create Docker Repository:
+            Integration Response - Refresh Docker Repository:
               value:
                 $ref: ../components/examples/integrationDockerRepoSuccess.json
-            Integration Response - Create Git Repository:
+            Integration Response - Refresh Git Repository:
               value:
                 $ref: ../components/examples/integrationGitRepoSuccess.json
-            Integration Response - Create GitHub:
+            Integration Response - Refresh GitHub:
               value:
                 $ref: ../components/examples/integrationGitHubSuccess.json
-            Integration Response - Create Jenkins:
+            Integration Response - Refresh Jenkins:
               value:
                 $ref: ../components/examples/integrationJenkinsSuccess.json
-            Integration Response - Create Microsoft DNS:
+            Integration Response - Refresh Microsoft DNS:
               value:
                 $ref: ../components/examples/integrationMicrosoftDNSSuccess.json
-            Integration Response - Create PowerDNS:
+            Integration Response - Refresh PowerDNS:
               value:
                 $ref: ../components/examples/integrationPowerDNSSuccess.json
-            Integration Response - Create Puppet:
+            Integration Response - Refresh Puppet:
               value:
                 $ref: ../components/examples/integrationPuppetSuccess.json
-            Integration Response - Create Remedy:
+            Integration Response - Refresh Remedy:
               value:
                 $ref: ../components/examples/integrationRemedySuccess.json
-            Integration Response - Create Route53:
+            Integration Response - Refresh Route53:
               value:
                 $ref: ../components/examples/integrationRoute53Success.json
-            Integration Response - Create Salt Master:
+            Integration Response - Refresh Salt Master:
               value:
                 $ref: ../components/examples/integrationSaltMasterSuccess.json
-            Integration Response - Create ServiceNow:
+            Integration Response - Refresh ServiceNow:
               value:
                 $ref: ../components/examples/integrationSNOWSuccess.json
-            Integration Response - Create vRealize Orchestrator:
+            Integration Response - Refresh vRealize Orchestrator:
               value:
                 $ref: ../components/examples/integrationvROSuccess.json
     '4XX':

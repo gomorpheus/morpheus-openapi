@@ -1,0 +1,30 @@
+type: object
+required:
+  - integration
+properties:
+  integration:
+    type: object
+    required:
+      - name
+      - type
+      - serviceUrl
+      - serviceUsername
+    properties:
+      name: 
+        type: string
+        description: Name, a unique identifier for the integration
+        example: Sample Integration
+      type:
+        type: string
+        description: Integration Type Code
+        enum:
+        - jenkins
+      serviceUrl:
+        type: string
+        description: Jenkins URL
+      serviceUsername:
+        type: string
+        description: Username
+      servicePassword:
+        type: string
+        description: Password

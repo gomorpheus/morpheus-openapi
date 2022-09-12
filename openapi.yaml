@@ -357,7 +357,6 @@ paths:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:
     $ref: paths/api@instances@id@validate-apply.yaml
-
   /api/instances/{id}/workflow:
     $ref: paths/api@instances@id@workflow.yaml
   /api/instances/service-plans:
@@ -370,6 +369,10 @@ paths:
     $ref: paths/api@integration-types@id@option-types.yaml
   /api/integrations:
     $ref: paths/api@integrations.yaml
+  /api/integrations/{id}/objects:
+    $ref: paths/api@integrations@id@objects.yaml
+  /api/integrations/{id}/objects/{objectId}:
+    $ref: paths/api@integrations@id@objects@objectId.yaml
   /api/integrations/{id}/refresh:
     $ref: paths/api@integrations@id@refresh.yaml
   /api/invoice-line-items:
@@ -1094,8 +1097,6 @@ tags:
     description: Manage Security Groups
   - name: Self Service
     description: Manage Self Service
-  - name: Servers
-    description: Manage Servers (Hosts)
   - name: Service Catalog
     description: Manage Service Catalog
   - name: Service Plans
