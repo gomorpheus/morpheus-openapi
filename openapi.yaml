@@ -129,6 +129,13 @@ paths:
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
     
+  /api/catalog-item-types:
+    $ref: paths/api@catalog-item-types.yaml
+  /api/catalog-item-types/{id}:
+    $ref: paths/api@catalog-item-types@id.yaml
+  /api/catalog-item-types/{id}/update-logo:
+    $ref: paths/api@catalog-item-types@id@update-logo.yaml
+    
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -341,10 +348,24 @@ paths:
   /api/health/logs/export:
     $ref: paths/api@health@logs@export.yaml
 
+  /api/processes:
+    $ref: paths/api@processes.yaml
+  /api/processes/{id}:
+    $ref: paths/api@processes@id.yaml
+  /api/processes/events/{id}:
+    $ref: paths/api@processes@events@id.yaml
+
   /api/server-types:
     $ref: paths/api@server-types.yaml
   /api/server-types/{id}:
     $ref: paths/api@server-types@id.yaml
+
+  /api/user-sources:
+    $ref: paths/api@user-sources.yaml
+  /api/user-sources/{id}:
+    $ref: paths/api@user-sources@id.yaml
+  /api/user-sources/{id}/subdomain:
+    $ref: paths/api@user-sources@id@subdomain.yaml
 
   /api/boot-scripts:
     $ref: paths/api@boot-scripts.yaml
@@ -692,12 +713,7 @@ paths:
     $ref: paths/api@prices@id.yaml
   /api/prices/{id}/deactivate:
     $ref: paths/api@prices@id@deactivate.yaml
-  /api/processes:
-    $ref: paths/api@processes.yaml
-  /api/processes/{id}:
-    $ref: paths/api@processes@id.yaml
-  /api/processes/events/{id}:
-    $ref: paths/api@processes@events@id.yaml
+  
   /api/provision-types:
     $ref: paths/api@provision-types.yaml
   /api/provision-types/{id}:
@@ -786,12 +802,7 @@ paths:
     $ref: paths/api@catalog@types.yaml
   /api/catalog/types/{id}:
     $ref: paths/api@catalog@types@id.yaml
-  /api/catalog-item-types:
-    $ref: paths/api@catalog-item-types.yaml
-  /api/catalog-item-types/{id}:
-    $ref: paths/api@catalog-item-types@id.yaml
-  /api/catalog-item-types/{id}/update-logo:
-    $ref: paths/api@catalog-item-types@id@update-logo.yaml
+  
   /api/servers/service-plans:
     $ref: paths/api@servers@service-plans.yaml
   /api/service-plans:
@@ -860,12 +871,7 @@ paths:
     $ref: paths/api@task-types@id.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
-  /api/user-sources:
-    $ref: paths/api@user-sources.yaml
-  /api/user-sources/{id}:
-    $ref: paths/api@user-sources@id.yaml
-  /api/user-sources/{id}/subdomain:
-    $ref: paths/api@user-sources@id@subdomain.yaml
+  
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:

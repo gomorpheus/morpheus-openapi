@@ -1,42 +1,158 @@
 {
   "applianceSettings": {
-    "applianceUrl": "http://foo.com",
-    "internalApplianceUrl": "172.16.0.1",
-    "corsAllowed": "bar.com",
-    "registrationEnabled": true,
-    "defaultRoleId": "2",
-    "defaultUserRoleId": "4",
-    "dockerPrivilegedMode": true,
-    "passwordMinLength": "8",
-    "passwordMinUpperCase": "1",
-    "passwordMinNumbers": "1",
-    "passwordMinSymbols": "1",
-    "userBrowserSessionTimeout": "20",
-    "userBrowserSessionWarning": "15",
-    "expirePwdDays": "1000",
-    "disableAfterAttempts": "100",
-    "disableAfterDaysInactive": "2000",
-    "warnUserDaysBefore": "10",
-    "smtpMailFrom": "dan.devilbiss@gmail.com",
-    "smtpServer": "smtp.gmail.com",
-    "smtpPort": "465",
-    "smtpSSL": true,
-    "smtpTLS": true,
-    "smtpUser": "dan.devilbiss@gmail.com",
-    "smtpPassword": "************",
-    "proxyHost": "proxy.com",
-    "proxyPort": "8080",
-    "proxyUser": "ddevilbiss",
-    "proxyPassword": "************",
-    "proxyDomain": "proxy.com",
-    "proxyWorkstation": "work",
-    "currencyProvider": "openexchange",
-    "currencyKey": "1234",
-    "enabledZoneTypes": [
-      {
-        "id": 12,
-        "name": "Amazon"
-      }
-    ]
+      "applianceUrl": "https://mysite.fqdn.com/",
+      "internalApplianceUrl": "http://192.168.1.14",
+      "corsAllowed": "*",
+      "registrationEnabled": false,
+      "defaultRoleId": "4",
+      "defaultUserRoleId": null,
+      "dockerPrivilegedMode": false,
+      "expirePwdDays": null,
+      "disableAfterAttempts": null,
+      "disableAfterDaysInactive": null,
+      "warnUserDaysBefore": null,
+      "smtpMailFrom": "NoReply@fqdn.com",
+      "smtpServer": "smtp.fqdn.com",
+      "smtpPort": "587",
+      "smtpSSL": true,
+      "smtpTLS": true,
+      "smtpUser": "user@fqdn.com",
+      "smtpPassword": "********",
+      "smtpPasswordHash": "945b02b487b4bb7",
+      "proxyHost": null,
+      "proxyPort": null,
+      "proxyUser": null,
+      "proxyPassword": null,
+      "proxyPasswordHash": null,
+      "proxyDomain": null,
+      "proxyWorkstation": null,
+      "currencyProvider": "openexchange",
+      "currencyKey": "183972d649aa8",
+      "enabledZoneTypes": [
+          {
+              "id": 22,
+              "name": "Alibaba Cloud"
+          },
+          {
+              "id": 31,
+              "name": "Amazon"
+          },
+          {
+              "id": 52,
+              "name": "Azure (Public)"
+          },
+          {
+              "id": 55,
+              "name": "Azure Stack (Private)"
+          },
+          {
+              "id": 13,
+              "name": "Dell"
+          },
+          {
+              "id": 58,
+              "name": "DigitalOcean"
+          },
+          {
+              "id": 49,
+              "name": "Google Cloud"
+          },
+          {
+              "id": 16,
+              "name": "HPE OneView"
+          },
+          {
+              "id": 107,
+              "name": "Huawei"
+          },
+          {
+              "id": 76,
+              "name": "Hyper-V"
+          },
+          {
+              "id": 1,
+              "name": "IBM Cloud"
+          },
+          {
+              "id": 97,
+              "name": "IBM Cloud Platform"
+          },
+          {
+              "id": 113,
+              "name": "Lumen Edge Services"
+          },
+          {
+              "id": 40,
+              "name": "MacStadium"
+          },
+          {
+              "id": 28,
+              "name": "Morpheus"
+          },
+          {
+              "id": 70,
+              "name": "Nutanix"
+          },
+          {
+              "id": 88,
+              "name": "Open Telekom Cloud"
+          },
+          {
+              "id": 19,
+              "name": "OpenStack"
+          },
+          {
+              "id": 85,
+              "name": "Oracle Public Cloud"
+          },
+          {
+              "id": 79,
+              "name": "Oracle VM"
+          },
+          {
+              "id": 100,
+              "name": "Platform 9"
+          },
+          {
+              "id": 25,
+              "name": "SCVMM"
+          },
+          {
+              "id": 46,
+              "name": "SoftLayer"
+          },
+          {
+              "id": 4,
+              "name": "UCS"
+          },
+          {
+              "id": 82,
+              "name": "UpCloud"
+          },
+          {
+              "id": 109,
+              "name": "VMware Cloud on AWS"
+          },
+          {
+              "id": 67,
+              "name": "VMware ESXi"
+          },
+          {
+              "id": 64,
+              "name": "VMware Fusion"
+          },
+          {
+              "id": 37,
+              "name": "VMware vCenter"
+          },
+          {
+              "id": 73,
+              "name": "XenServer"
+          },
+          {
+              "id": 103,
+              "name": "vCloud Director"
+          }
+      ]
   }
 }
