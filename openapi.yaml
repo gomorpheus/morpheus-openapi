@@ -128,6 +128,36 @@ paths:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
+    
+  /api/monitoring/apps:
+    $ref: paths/api@monitoring@apps.yaml
+  /api/monitoring/apps/mute-all:
+    $ref: paths/api@monitoring@apps@mute-all.yaml
+  /api/monitoring/apps/{id}:
+    $ref: paths/api@monitoring@apps@id.yaml
+  /api/monitoring/apps/{id}/mute:
+    $ref: paths/api@monitoring@apps@id@mute.yaml
+  /api/monitoring/checks:
+    $ref: paths/api@monitoring@checks.yaml
+  /api/monitoring/checks/mute-all:
+    $ref: paths/api@monitoring@checks@mute-all.yaml
+  /api/monitoring/checks/{id}:
+    $ref: paths/api@monitoring@checks@id.yaml
+  /api/monitoring/checks/{id}/mute:
+    $ref: paths/api@monitoring@checks@id@mute.yaml
+  /api/monitoring/check-types:
+    $ref: paths/api@monitoring@check-types.yaml
+  /api/monitoring/check-types/{id}:
+    $ref: paths/api@monitoring@check-types@id.yaml
+
+  /api/monitoring/groups:
+    $ref: paths/api@monitoring@groups.yaml
+  /api/monitoring/groups/{id}:
+    $ref: paths/api@monitoring@groups@id.yaml
+  /api/monitoring/groups/{id}/mute:
+    $ref: paths/api@monitoring@groups@id@mute.yaml
+  /api/monitoring/groups/mute-all:
+    $ref: paths/api@monitoring@groups@mute-all.yaml
 
   /api/zone-types:
     $ref: paths/api@zone-types.yaml
@@ -231,6 +261,12 @@ paths:
     $ref: paths/api@clusters@id@worker-count.yaml
   /api/clusters/{clusterId}/workers:
     $ref: paths/api@clusters@id@workers.yaml
+    
+  /api/monitoring/contacts:
+    $ref: paths/api@monitoring@contacts.yaml
+  /api/monitoring/contacts/{id}:
+    $ref: paths/api@monitoring@contacts@id.yaml
+  
   /api/credentials:
     $ref: paths/api@credentials.yaml
   /api/credentials/{id}:
@@ -304,6 +340,12 @@ paths:
     $ref: paths/api@health@logs.yaml
   /api/health/logs/export:
     $ref: paths/api@health@logs@export.yaml
+
+  /api/server-types:
+    $ref: paths/api@server-types.yaml
+  /api/server-types/{id}:
+    $ref: paths/api@server-types@id.yaml
+
   /api/boot-scripts:
     $ref: paths/api@boot-scripts.yaml
   /api/boot-scripts/{id}:
@@ -316,6 +358,18 @@ paths:
     $ref: paths/api@image-builds@id@list-executions.yaml
   /api/image-builds/{id}/run:
     $ref: paths/api@image-builds@id@run.yaml
+
+  /api/monitoring/incidents:
+    $ref: paths/api@monitoring@incidents.yaml
+  /api/monitoring/incidents/{id}:
+    $ref: paths/api@monitoring@incidents@id.yaml
+  /api/monitoring/incidents/{id}/mute:
+    $ref: paths/api@monitoring@incidents@id@mute.yaml
+  /api/monitoring/incidents/{id}/reopen:
+    $ref: paths/api@monitoring@incidents@id@reopen.yaml
+  /api/monitoring/incidents/mute-all:
+    $ref: paths/api@monitoring@incidents@mute-all.yaml
+
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -506,9 +560,6 @@ paths:
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
 
-  /api/logs:
-    $ref: paths/api@logs.yaml
-
   /api/log-settings:
     $ref: paths/api@log-settings.yaml
   /api/log-settings/syslog-rules:
@@ -516,48 +567,9 @@ paths:
   /api/log-settings/syslog-rules/{id}:
     $ref: paths/api@log-settings@syslog-rules@id.yaml
 
-  /api/monitoring/apps:
-    $ref: paths/api@monitoring@apps.yaml
-  /api/monitoring/apps/mute-all:
-    $ref: paths/api@monitoring@apps@mute-all.yaml
-  /api/monitoring/apps/{id}:
-    $ref: paths/api@monitoring@apps@id.yaml
-  /api/monitoring/apps/{id}/mute:
-    $ref: paths/api@monitoring@apps@id@mute.yaml
-  /api/monitoring/checks:
-    $ref: paths/api@monitoring@checks.yaml
-  /api/monitoring/checks/mute-all:
-    $ref: paths/api@monitoring@checks@mute-all.yaml
-  /api/monitoring/checks/{id}:
-    $ref: paths/api@monitoring@checks@id.yaml
-  /api/monitoring/checks/{id}/mute:
-    $ref: paths/api@monitoring@checks@id@mute.yaml
-  /api/monitoring/check-types:
-    $ref: paths/api@monitoring@check-types.yaml
-  /api/monitoring/check-types/{id}:
-    $ref: paths/api@monitoring@check-types@id.yaml
-  /api/monitoring/contacts:
-    $ref: paths/api@monitoring@contacts.yaml
-  /api/monitoring/contacts/{id}:
-    $ref: paths/api@monitoring@contacts@id.yaml
-  /api/monitoring/groups:
-    $ref: paths/api@monitoring@groups.yaml
-  /api/monitoring/groups/{id}:
-    $ref: paths/api@monitoring@groups@id.yaml
-  /api/monitoring/groups/{id}/mute:
-    $ref: paths/api@monitoring@groups@id@mute.yaml
-  /api/monitoring/groups/mute-all:
-    $ref: paths/api@monitoring@groups@mute-all.yaml
-  /api/monitoring/incidents:
-    $ref: paths/api@monitoring@incidents.yaml
-  /api/monitoring/incidents/{id}:
-    $ref: paths/api@monitoring@incidents@id.yaml
-  /api/monitoring/incidents/{id}/mute:
-    $ref: paths/api@monitoring@incidents@id@mute.yaml
-  /api/monitoring/incidents/{id}/reopen:
-    $ref: paths/api@monitoring@incidents@id@reopen.yaml
-  /api/monitoring/incidents/mute-all:
-    $ref: paths/api@monitoring@incidents@mute-all.yaml
+  /api/logs:
+    $ref: paths/api@logs.yaml
+
   /api/network-router-types:
     $ref: paths/api@network-router-types.yaml
   /api/network-router-types/{id}:
@@ -732,10 +744,7 @@ paths:
     $ref: paths/api@security-groups@id@rules.yaml
   /api/security-groups/{id}/rules/{sgId}:
     $ref: paths/api@security-groups@id@rules@sgId.yaml
-  /api/server-types:
-    $ref: paths/api@server-types.yaml
-  /api/server-types/{id}:
-    $ref: paths/api@server-types@id.yaml
+  
   /api/servers:
     $ref: paths/api@servers.yaml
   /api/servers/{id}:
