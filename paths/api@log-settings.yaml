@@ -4,7 +4,6 @@ get:
   operationId: listLogSettings
   tags:
     - Log Settings
-    - Administration
   responses:
     '200':
       description: Log Settings
@@ -28,7 +27,6 @@ put:
   description: Update Log Settings
   operationId: updateLogSettings
   tags:
-    - Administration
     - Log Settings
   requestBody:
     content:

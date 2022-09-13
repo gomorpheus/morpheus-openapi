@@ -3,7 +3,6 @@ post:
   description: Creates a new syslog rule. This command will also update existing syslog rule by specified name if already exists
   operationId: addLogSettingsSyslogRules
   tags:
-    - Administration
     - Log Settings
   requestBody:
     content:

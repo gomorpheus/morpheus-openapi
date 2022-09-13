@@ -30,12 +30,12 @@ paths:
 
   /api/activity:
     $ref: paths/api@activity.yaml
-  /api/log-settings:
-    $ref: paths/api@log-settings.yaml
-  /api/log-settings/syslog-rules:
-    $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings/syslog-rules/{id}:
-    $ref: paths/api@log-settings@syslog-rules@id.yaml
+    
+  /api/monitoring/alerts:
+    $ref: paths/api@monitoring@alerts.yaml
+  /api/monitoring/alerts/{id}:
+    $ref: paths/api@monitoring@alerts@id.yaml
+
   /api/appliance-settings:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
@@ -128,6 +128,31 @@ paths:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
+
+  /api/zone-types:
+    $ref: paths/api@zone-types.yaml
+  /api/zone-types/{id}:
+    $ref: paths/api@zone-types@id.yaml
+  /api/zones:
+    $ref: paths/api@zones.yaml
+  /api/zones/{id}:
+    $ref: paths/api@zones@id.yaml
+  /api/zones/{zoneId}/data-stores:
+    $ref: paths/api@zones@zoneId@data-stores.yaml
+  /api/zones/{zoneId}/data-stores/{id}:
+    $ref: paths/api@zones@zoneId@data-stores@id.yaml
+  /api/zones/{zoneId}/folders:
+    $ref: paths/api@zones@zoneId@folders.yaml
+  /api/zones/{zoneId}/folders/{id}:
+    $ref: paths/api@zones@zoneId@folders@id.yaml
+  /api/zones/{zoneId}/resource-pools:
+    $ref: paths/api@zones@zoneId@resource-pools.yaml
+  /api/zones/{zoneId}/resource-pools/{id}:
+    $ref: paths/api@zones@zoneId@resource-pools@id.yaml
+  /api/zones/{id}/refresh:
+    $ref: paths/api@zones@id@refresh.yaml
+  /api/zones/{id}/security-groups:
+    $ref: paths/api@zones@id@security-groups.yaml  
   
   /api/library/cluster-layouts:
     $ref: paths/api@library@cluster-layouts.yaml
@@ -483,10 +508,14 @@ paths:
 
   /api/logs:
     $ref: paths/api@logs.yaml
-  /api/monitoring/alerts:
-    $ref: paths/api@monitoring@alerts.yaml
-  /api/monitoring/alerts/{id}:
-    $ref: paths/api@monitoring@alerts@id.yaml
+
+  /api/log-settings:
+    $ref: paths/api@log-settings.yaml
+  /api/log-settings/syslog-rules:
+    $ref: paths/api@log-settings@syslog-rules.yaml
+  /api/log-settings/syslog-rules/{id}:
+    $ref: paths/api@log-settings@syslog-rules@id.yaml
+
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -877,30 +906,6 @@ paths:
   /api/whoami:
     $ref: paths/api@whoami.yaml
 
-  /api/zone-types:
-    $ref: paths/api@zone-types.yaml
-  /api/zone-types/{id}:
-    $ref: paths/api@zone-types@id.yaml
-  /api/zones:
-    $ref: paths/api@zones.yaml
-  /api/zones/{id}:
-    $ref: paths/api@zones@id.yaml
-  /api/zones/{zoneId}/data-stores:
-    $ref: paths/api@zones@zoneId@data-stores.yaml
-  /api/zones/{zoneId}/data-stores/{id}:
-    $ref: paths/api@zones@zoneId@data-stores@id.yaml
-  /api/zones/{zoneId}/folders:
-    $ref: paths/api@zones@zoneId@folders.yaml
-  /api/zones/{zoneId}/folders/{id}:
-    $ref: paths/api@zones@zoneId@folders@id.yaml
-  /api/zones/{zoneId}/resource-pools:
-    $ref: paths/api@zones@zoneId@resource-pools.yaml
-  /api/zones/{zoneId}/resource-pools/{id}:
-    $ref: paths/api@zones@zoneId@resource-pools@id.yaml
-  /api/zones/{id}/refresh:
-    $ref: paths/api@zones@id@refresh.yaml
-  /api/zones/{id}/security-groups:
-    $ref: paths/api@zones@id@security-groups.yaml
   /api/apps/{id}/wiki:
     $ref: paths/api@apps@id@wiki.yaml
   /api/clusters/{clusterId}/wiki:

@@ -3,7 +3,6 @@ delete:
   description: Will delete the syslog rule matching the specified name.
   operationId: deleteLogSettingsSyslogRules
   tags:
-    - Administration
     - Log Settings
   parameters:
   - $ref: ../components/parameters/id-path.yaml
