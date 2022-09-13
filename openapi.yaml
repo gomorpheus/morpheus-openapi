@@ -18,6 +18,11 @@ servers:
     variables:
       serverURL:
         default: localhost
+x-explorer-enabled: false
+x-samples-languages:
+  - curl
+  - python
+  - powershell
 paths:
 
   /api/activity:
