@@ -18,11 +18,14 @@ servers:
     variables:
       serverURL:
         default: localhost
-x-explorer-enabled: false
+x-readme:
+  explorer-enabled: false
 x-samples-languages:
   - curl
   - python
   - powershell
+  - javascript
+  - go
 paths:
 
   /api/activity:
