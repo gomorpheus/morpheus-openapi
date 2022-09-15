@@ -1,5 +1,5 @@
 type: object
-properties:
+properties: 
   applianceUrl: 
     type: string
   internalApplianceUrl: 
@@ -12,60 +12,73 @@ properties:
     type: string
   defaultUserRoleId: 
     type: string
+    nullable: true
   dockerPrivilegedMode: 
     type: boolean
-  passwordMinLength: 
-    type: string
-  passwordMinUpperCase: 
-    type: string
-  passwordMinNumbers: 
-    type: string
-  passwordMinSymbols: 
-    type: string
-  userBrowserSessionTimeout: 
-    type: string
-  userBrowserSessionWarning: 
-    type: string
   expirePwdDays: 
     type: string
+    nullable: true
   disableAfterAttempts: 
     type: string
+    nullable: true
   disableAfterDaysInactive: 
     type: string
+    nullable: true
   warnUserDaysBefore: 
     type: string
+    nullable: true
   smtpMailFrom: 
     type: string
+    nullable: true
   smtpServer: 
     type: string
+    nullable: true
   smtpPort: 
     type: string
+    nullable: true
   smtpSSL: 
     type: boolean
   smtpTLS: 
     type: boolean
   smtpUser: 
     type: string
+    nullable: true
   smtpPassword: 
     type: string
+    nullable: true
+  smtpPasswordHash: 
+    type: string
+    nullable: true
   proxyHost: 
     type: string
+    nullable: true
   proxyPort: 
     type: string
+    nullable: true
   proxyUser: 
     type: string
+    nullable: true
   proxyPassword: 
     type: string
+    nullable: true
+  proxyPasswordHash: 
+    type: string
+    nullable: true
   proxyDomain: 
     type: string
+    nullable: true
   proxyWorkstation: 
     type: string
+    nullable: true
   currencyProvider: 
     type: string
+    nullable: true
   currencyKey: 
     type: string
+    nullable: true
   enabledZoneTypes: 
     type: array
+    nullable: true
     items: 
       type: object
       properties: 
