@@ -38,16 +38,13 @@ properties:
       metricName: 
         type: string
   config:
-    allOf:
-    - oneOf:
+    anyOf:
       - $ref: checkWebConfig.yaml
       - $ref: checkSqlConfig.yaml
       - $ref: checkElasticsearchConfig.yaml
       - $ref: checkSocketConfig.yaml
       - $ref: checkPushConfig.yaml
       - $ref: checkVmConfig.yaml
-    - anyOf:
-      - $ref: checkSshConfig.yaml
   container:
     type: object
     nullable: true

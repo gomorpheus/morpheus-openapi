@@ -1,0 +1,22 @@
+{
+  "check": {
+    "name": "MySql Check",
+    "checkType": {
+      "code": "mysqlCheck"
+    },
+    "config": {
+      "dbHost": "db.example.org",
+      "dbPort": "3306",
+      "dbUser": "basicUser",
+      "dbPassword": "basicPassword",
+      "dbName": "mydb",
+      "dbQuery": "select 1",
+      "checkOperator": "lt",
+      "checkResult": 2,
+      "tunnelOn": "on",
+      "sshHost": "192.168.55.12",
+      "sshUser": "myuser",
+      "sshPassword": "secretpass"
+    }
+  }
+}

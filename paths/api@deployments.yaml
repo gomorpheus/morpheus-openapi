@@ -29,7 +29,7 @@ get:
           examples:
             Deployments Response:
               value:
-                $ref: ../components/examples/deployments.json 
+                $ref: ../components/examples/deployments.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
