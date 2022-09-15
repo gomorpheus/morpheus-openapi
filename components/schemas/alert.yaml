@@ -20,8 +20,10 @@ properties:
     format: int64
   dateCreated: 
     type: string
+    format: date-time
   lastUpdated: 
     type: string
+    format: date-time
   checks: 
     type: array
     nullable: true

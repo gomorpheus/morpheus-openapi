@@ -43,13 +43,13 @@ properties:
     format: date-time
   lastUpdated: 
     type: string
-    nullable: true
     format: date-time
+    nullable: true
   lastReserved: 
     type: string
-    nullable: true
     format: date-time
+    nullable: true
   releaseDate: 
     type: string
-    nullable: true
     format: date-time
+    nullable: true

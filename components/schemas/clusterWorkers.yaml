@@ -65,8 +65,10 @@ properties:
     type: boolean
   dateCreated: 
     type: string
+    format: date-time
   lastUpdated: 
     type: string
+    format: date-time
   stats: 
     type: object
     properties: 

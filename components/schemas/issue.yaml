@@ -7,12 +7,12 @@ properties:
     type: string
   app: 
     type: string
-    format: nullable
+    nullable: true
   available: 
     type: boolean
   check: 
     type: string
-    format: nullable
+    nullable: true
   checkGroup: 
     type: object
     properties: 
@@ -23,10 +23,11 @@ properties:
         type: string
   checkStatus: 
     type: string
-    format: nullable
+    nullable: true
   endDate: 
     type: string
-    format: nullable
+    format: date-time
+    nullable: true
   health: 
     type: integer
     format: int64
@@ -40,13 +41,14 @@ properties:
         format: int64
   lastCheckTime: 
     type: string
-    format: nullable
+    format: date-time
+    nullable: true
   lastError: 
     type: string
-    format: nullable
+    nullable: true
   lastMessage: 
     type: string
-    format: nullable
+    nullable: true
   name: 
     type: string
   severity: 

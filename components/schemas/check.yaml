@@ -76,6 +76,7 @@ properties:
     nullable: true
   endDate: 
     type: string
+    format: date-time
     nullable: true
   health: 
     type: integer
@@ -136,4 +137,5 @@ properties:
     type: string
   startDate: 
     type: string
+    format: date-time
     nullable: true

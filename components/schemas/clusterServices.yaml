@@ -28,7 +28,9 @@ properties:
     nullable: true
   dateCreated: 
     type: string
+    format: date-time
     nullable: true
   lastUpdated: 
     type: string
+    format: date-time
     nullable: true

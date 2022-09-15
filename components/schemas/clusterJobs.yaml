@@ -22,8 +22,10 @@ properties:
     type: boolean
   dateCreated: 
     type: string
+    format: date-time
   lastUpdated: 
     type: string
+    format: date-time
   lastRun: 
     type: string
     nullable: true

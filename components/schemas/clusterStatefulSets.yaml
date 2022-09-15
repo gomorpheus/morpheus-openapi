@@ -23,6 +23,7 @@ properties:
     type: string
   lastUpdated: 
     type: string
+    format: date-time
   owner: 
     type: object
     properties: 

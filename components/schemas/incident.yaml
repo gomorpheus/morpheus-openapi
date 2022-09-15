@@ -40,6 +40,7 @@ properties:
     nullable: true
   endDate: 
     type: string
+    format: date-time
     nullable: true
   inUptime: 
     type: boolean

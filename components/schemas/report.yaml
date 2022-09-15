@@ -45,8 +45,10 @@ properties:
         nullable: true
       startDate: 
         type: string
+        format: date-time
       endDate: 
         type: string
+        format: date-time
       cloudId: 
         type: string
   createdBy: 
