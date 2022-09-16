@@ -7,6 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: get README_VERSION_ID
+        env:
+          IDJSON: ${{ secrets.README_ID_JSON }}
+        run: |
+          README_VERSION_ID=$(echo $IDJSON | jq .$GITHUB_REF_NAME -r)
+          echo "::add-mask::$README_VERSION_ID"
+          idsize=${#README_VERSION_ID}
+          if [ $idsize -lt 6 ]; then
+            echo "No ID found"
+            exit 0
+          fi
+          echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
+      - name: node.js setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: '12.x'
+      - name: lint with redocly
+        run: npx @redocly/cli lint openapi.yaml
+      - name: bundle with redocly
+        run: npx @redocly/cli bundle openapi.yaml > bundled.yaml
       - uses: readmeio/rdme@7.3.0
         with:
-          rdme: openapi openapi.yaml --key=${{ secrets.README_TOKEN }} --id=${{ secrets.README_ID }}
+          rdme: openapi bundled.yaml --key=${{ secrets.README_TOKEN }} --id=$README_VERSION_ID
