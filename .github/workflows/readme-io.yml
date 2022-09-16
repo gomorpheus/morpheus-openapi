@@ -20,14 +20,14 @@ jobs:
           fi
           echo "::add-mask::$README_VERSION_ID"
           echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
-      - name: node.js setup
-        uses: actions/setup-node@v3
+      - name: lint with redocly in docker
+        uses: docker://redocly/openapi-cli
         with:
-          node-version: '12.x'
-      - name: lint with redocly
-        run: npx @redocly/cli lint openapi.yaml
-      - name: bundle with redocly
-        run: npx @redocly/cli bundle openapi.yaml > bundled.yaml
-      - uses: readmeio/rdme@7.3.0
+          args: lint openapi.yaml
+      - name: bundle with redocly in docker
+        run: |
+          docker run --rm -v $PWD:/spec redocly/openapi-cli bundle openapi.yaml > bundle.yaml
+      - name: push to readme
+        uses: readmeio/rdme@7.3.0
         with:
-          rdme: openapi bundled.yaml --key=${{ secrets.README_TOKEN }} --id=$README_VERSION_ID
+          rdme: openapi bundle.yaml --key=${{ secrets.README_TOKEN }} --id=$README_VERSION_ID
