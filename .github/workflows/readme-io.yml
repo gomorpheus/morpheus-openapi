@@ -11,12 +11,13 @@ jobs:
         env:
           IDJSON: ${{ secrets.README_ID_JSON }}
         run: |
+          echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
           README_VERSION_ID=$(echo $IDJSON | jq .'["$GITHUB_REF_NAME"]' -r)
           echo "::add-mask::$README_VERSION_ID"
           idsize=${#README_VERSION_ID}
           if [ $idsize -lt 6 ]; then
             echo "No ID found"
-            exit 0
+            exit 1
           fi
           echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
       - name: node.js setup
