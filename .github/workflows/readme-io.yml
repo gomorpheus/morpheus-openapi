@@ -11,7 +11,7 @@ jobs:
         env:
           IDJSON: ${{ secrets.README_ID_JSON }}
         run: |
-          README_VERSION_ID=$(echo $IDJSON | jq .["$GITHUB_REF_NAME"] -r)
+          README_VERSION_ID=$(echo $IDJSON | jq .'["$GITHUB_REF_NAME"]' -r)
           echo "::add-mask::$README_VERSION_ID"
           idsize=${#README_VERSION_ID}
           if [ $idsize -lt 6 ]; then
