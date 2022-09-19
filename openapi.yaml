@@ -19,7 +19,8 @@ servers:
       serverURL:
         default: localhost
 x-readme:
-  explorer-enabled: false
+  explorer-enabled: true
+  metrics-enabled: false
 x-samples-languages:
   - curl
   - python
