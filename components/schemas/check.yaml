@@ -39,7 +39,7 @@ properties:
         type: string
   config:
     anyOf:
-      # - $ref: checkWebConfig.yaml
+      - $ref: checkWebConfig.yaml
       - $ref: checkSqlConfig.yaml
       - $ref: checkElasticsearchConfig.yaml
       - $ref: checkSocketConfig.yaml
