@@ -24,7 +24,7 @@ get:
                 approvals:
                   type: array
                   items:
-                    $ref: ../components/schemas/approval.yaml
+                    $ref: ../components/schemas/approvals.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Search Response:
