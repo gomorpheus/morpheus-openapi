@@ -3,4 +3,4 @@ in: query
 description: Sort order, the name of the property to sort by
 schema:
   type: string
-  default: name
+  default: refName
