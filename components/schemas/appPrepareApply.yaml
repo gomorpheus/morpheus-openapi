@@ -7,23 +7,39 @@ properties:
         type: string
       name: 
         type: string
+      autoValidate:
+        type: boolean
       terraform: 
         type: object
         properties: 
-          tf: 
+          refreshMode: 
             type: string
-          tfvarSecret: 
+          backendType: 
+            type: string
+          timeoutMode:
             type: string
           configType: 
             type: string
       type: 
         type: string
-      executionId: 
+      config:
+        type: object
+      blueprintName:
         type: string
-      templateParameter: 
+      description:
+        type: string
+        nullable: true
+      templateId:
+        type: integer
+        format: int64
+      blueprintId:
+        type: integer
+        format: int64
+      group:
         type: object
         properties: 
-          environment: 
+          name: 
             type: string
-          instanceName: 
-            type: string
+          id:
+            type: integer
+            format: int64
