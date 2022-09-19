@@ -1,7 +1,7 @@
 # .github/workflows/spectral-lint.yml
 
 name: Run OpenAPI linters
-on: [push, workflow_dispatch]
+on: [pull_request, workflow_dispatch]
 jobs:
   redocly-lint-openapi:
     runs-on: ubuntu-latest
