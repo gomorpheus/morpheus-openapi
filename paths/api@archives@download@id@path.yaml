@@ -12,7 +12,7 @@ get:
     - $ref: ../components/parameters/filePath-path.yaml
   responses:
     '200':
-      description: Returns the contents of the specified file as an attachment with Content-Type dicated by the file
+      description: Returns the contents of the specified file as an attachment with Content-Type dictated by the file
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
