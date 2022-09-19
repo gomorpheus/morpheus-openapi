@@ -28,9 +28,11 @@ properties:
     format: date-time
   lastAccessDate: 
     type: string
+    format: date-time
     nullable: true
   expirationDate: 
     type: string
+    format: date-time
     nullable: true
   downloadCount: 
     type: integer

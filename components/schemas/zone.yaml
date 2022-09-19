@@ -53,6 +53,7 @@ properties:
     nullable: true
   costStatusDate: 
     type: string
+    format: date-time
     nullable: true
   zoneType: 
     type: object
