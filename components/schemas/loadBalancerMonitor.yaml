@@ -89,6 +89,7 @@ statusMessage:
   nullable: true
 statusDate: 
   type: string
+  format: date-time
   nullable: true
 enabled: 
   type: boolean

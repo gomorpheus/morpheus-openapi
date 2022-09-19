@@ -120,6 +120,7 @@ properties:
     nullable: true
   lastWarningDate: 
     type: string
+    format: date-time
     nullable: true
   name: 
     type: string

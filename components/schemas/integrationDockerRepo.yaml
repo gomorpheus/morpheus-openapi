@@ -39,6 +39,7 @@ properties:
     nullable: true
   statusDate: 
     type: string
+    format: date-time
     nullable: true
   statusMessage: 
     type: string

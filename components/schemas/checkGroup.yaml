@@ -30,12 +30,15 @@ properties:
     nullable: true
   lastWarningDate: 
     type: string
+    format: date-time
     nullable: true
   lastErrorDate: 
     type: string
+    format: date-time
     nullable: true
   lastSuccessDate: 
     type: string
+    format: date-time
     nullable: true
   lastRunDate: 
     type: string

@@ -59,6 +59,7 @@ properties:
     format: date-time
   removalDate: 
     type: string
+    format: date-time
     nullable: true
   appContext: 
     type: string

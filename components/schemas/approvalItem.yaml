@@ -38,6 +38,7 @@ properties:
         format: date-time
       dateDenied: 
         type: string
+        format: date-time
         nullable: true
       approval: 
         type: object
