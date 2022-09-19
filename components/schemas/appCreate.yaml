@@ -6,8 +6,12 @@ properties:
   blueprintId: 
     oneOf: 
       - type: integer
+        description: Blueprint ID
         format: int64
       - type: string
+        description: String for `existing` selection
+        enum: 
+          - existing
     description: The ID of the Blueprint. Use "existing" to create a blank app.
   name: 
     type: string
