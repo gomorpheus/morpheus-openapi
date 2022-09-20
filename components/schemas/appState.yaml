@@ -84,6 +84,7 @@ properties:
               oneOf:
                 - type: string
                 - type: object
+                  nullable: true
             type: 
               type: string
   output: 
