@@ -75,6 +75,8 @@ properties:
     format: int64
   appTiers: 
     type: array
+    items: 
+      type: object
   instances: 
     type: array
     items: 
