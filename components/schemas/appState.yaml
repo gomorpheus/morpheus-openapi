@@ -26,8 +26,6 @@ properties:
     type: boolean
   planResources: 
     type: array
-    items: 
-      type: object
   specs: 
     type: array
     items: 
@@ -39,8 +37,12 @@ properties:
         name: 
           type: string
         template: 
-          type: string
-          nullable: true
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: string
         isolated: 
           type: boolean
   stateData: 
@@ -59,6 +61,7 @@ properties:
               type: string
             value: 
               type: string
+              nullable: true
             sensitive: 
               type: boolean
             type: 
@@ -78,7 +81,10 @@ properties:
             key: 
               type: string
             name: 
-              type: string
+              oneOf:
+                - type: string
+                - type: object
+                  nullable: true
             type: 
               type: string
   output: 
@@ -86,5 +92,3 @@ properties:
     properties: 
       outputs: 
         type: array
-        items: 
-          type: object
