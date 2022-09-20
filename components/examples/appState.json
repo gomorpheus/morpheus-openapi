@@ -3,10 +3,10 @@
   "workloads": [
     {
       "refType": "App",
-      "refId": 65,
-      "refName": "tf-example",
+      "refId": 2878,
+      "refName": "api-tf-test-app",
       "subRefName": null,
-      "stateDate": "2022-04-04T17:35:01Z",
+      "stateDate": "2022-09-13T22:21:34Z",
       "status": "ok",
       "iacDrift": false
     }
@@ -15,25 +15,40 @@
   "planResources": [],
   "specs": [
     {
-      "id": 9,
-      "name": "tf-example",
-      "template": null,
+      "id": 2433,
+      "name": "api-tf-test",
+      "template": {
+        "name": "api-tf-test",
+        "type": "terraform"
+      },
       "isolated": false
     }
   ],
-  "stateData": "{\n    \"format_version\": \"1.0\",\n    \"terraform_version\": \"1.1.7\",\n    ....",
-  "planData": "vsphere_virtual_machine.vm: Refreshing state... [id=422da4c7-2fdb-cb01-e65c-0c07e17903a8]\n\nNo changes. Your infrastructure matches the configuration.\n\nTerraform has compared your real infrastructure against your configuration\nand found no differences, so no changes are needed.\n",
+  "stateData": "{\n    \"format_version\": \"1.0\",\n    \"terraform_version\": \"1.2.9\",\n    \"values\": {\n        \"root_module\": {\n            \"resources\": [\n                {\n                    \"address\": \"data.vsphere_datacenter.dc\",\n                    \"mode\": \"data\",\n                    \"type\": \"vsphere_datacenter\",\n                    \"name\": \"dc\",\n                    \"provider_name\": \"registry.terraform.io/hashicorp/vsphere\",\n                    \"schema_version\": 0,\n                    \"values\": {\n                        \"id\": \"datacenter-13\",\n                        \"name\": \"labs-den-dc2-qa\"\n                    },\n                    \"sensitive_values\": {\n                        \n                    }\n                },\n                {\n                    \"address\": \"data.vsphere_datastore.datastore\",\n                    \"mode\": \"data\",\n                    \"type\": \"vsphere_datastore\",\n                    \"name\": \"datastore\",\n                    \"provider_name\": \"registry.terraform.io/hashicorp/vsphere\",\n                    \"schema_version\": 0,\n                    \"values\": {\n                        \"datacenter_id\": \"datacenter-13\",\n                        \"id\": \"datastore-38379\",\n                        \"name\": \"ESXi-DC2-QA-LUN01\"\n                    },\n                    \"sensitive_values\": {\n                        \n                    }\n                },\n                {\n                    \"address\": \"data.vsphere_network.network\",\n                    \"mode\": \"data\",\n                    \"type\": \"vsphere_network\",\n                    \"name\": \"network\",\n                    \"provider_name\": \"registry.terraform.io/hashicorp/vsphere\",\n                    \"schema_version\": 0,\n                    \"values\": {\n                        \"datacenter_id\": \"datacenter-13\",\n                        \"distributed_virtual_switch_uuid\": null,\n                        \"id\": \"dvportgroup-77\",\n                        \"name\": \"VLAN0002 - Internal Server\",\n                        \"type\": \"DistributedVirtualPortgroup\"\n                    },\n                    \"sensitive_values\": {\n                        \n                    }\n                },\n                {\n                    \"address\": \"data.vsphere_resource_pool.pool\",\n                    \"mode\": \"data\",\n                    \"type\": \"vsphere_resource_pool\",\n                    \"name\": \"pool\",\n                    \"provider_name\": \"registry.terraform.io/hashicorp/vsphere\",\n                    \"schema_version\": 0,\n                    \"values\": {\n                        \"datacenter_id\": \"datacenter-13\",\n                        \"id\": \"resgroup-39403\",\n                        \"name\": \"QA\"\n                    },\n                    \"sensitive_values\": {\n                        \n                    }\n                },\n                {\n                    \"address\": \"data.vsphere_virtual_machine.template\",\n                    \"mode\": \"data\",\n                    \"type\": \"vsphere_virtual_machine\",\n                    \"name\": \"template\",\n                    \"provider_name\": \"registry.terraform.io/hashicorp/vsphere\",\n                    \"schema_version\": 0,\n                    \"values\": {\n                        \"alternate_guest_name\": \"\",\n                        \"annotation\": \"\",\n                        \"boot_delay\": 0,\n                        \"boot_retry_delay\": 10000,\n                        \"boot_retry_enabled\": false,\n                        \"change_version\": \"2021-10-06T22:10:34.285179Z\",\n                        \"cpu_hot_add_enabled\": false,\n                        \"cpu_hot_remove_enabled\": false,\n                        \"cpu_limit\": -1,\n                        \"cpu_performance_counters_enabled\": false,\n                        \"cpu_reservation\": 0,\n                        \"cpu_share_count\": 1000,\n                        \"cpu_share_level\": \"normal\",\n                        \"datacenter_id\": \"datacenter-13\",\n                        \"default_ip_address\": null,\n                        \"disks\": [\n                            {\n                                \"eagerly_scrub\": false,\n                                \"label\": \"Hard disk 1\",\n                                \"size\": 6,\n                                \"thin_provisioned\": true,\n                                \"unit_number\": 0\n                            }\n                        ],\n                        \"efi_secure_boot_enabled\": false,\n                        \"enable_disk_uuid\": false,\n                        \"enable_logging\": true,\n                        \"ept_rvi_mode\": \"automatic\",\n                        \"extra_config\": {\n                            \n                        },\n                        \"firmware\": \"bios\",\n                        \"guest_id\": \"ubuntu64Guest\",\n                        \"guest_ip_addresses\": [\n                            \n                        ],\n                        \"hardware_version\": 9,\n                        \"hv_mode\": \"hvAuto\",\n                        \"id\": \"422d6a72-285b-b132-a080-c869348c539f\",\n                        \"ide_controller_scan_count\": 2,\n                        \"latency_sensitivity\": \"normal\",\n                        \"memory\": 512,\n                        \"memory_hot_add_enabled\": false,\n                        \"memory_limit\": -1,\n                        \"memory_reservation\": 0,\n                        \"memory_share_count\": 5120,\n                        \"memory_share_level\": \"normal\",\n                        \"name\": \"qa-apache\",\n                        \"nested_hv_enabled\": false,\n                        \"network_interface_types\": [\n                            \"vmxnet3\"\n                        ],\n                        \"network_interfaces\": [\n                            {\n                                \"adapter_type\": \"vmxnet3\",\n                                \"bandwidth_limit\": -1,\n                                \"bandwidth_reservation\": 0,\n                                \"bandwidth_share_count\": 50,\n                                \"bandwidth_share_level\": \"normal\",\n                                \"mac_address\": \"00:50:56:ad:20:a0\",\n                                \"network_id\": \"\"\n                            }\n                        ],\n                        \"num_cores_per_socket\": 1,\n                        \"num_cpus\": 1,\n                        \"replace_trigger\": null,\n                        \"run_tools_scripts_after_power_on\": true,\n                        \"run_tools_scripts_after_resume\": true,\n                        \"run_tools_scripts_before_guest_reboot\": false,\n                        \"run_tools_scripts_before_guest_shutdown\": true,\n                        \"run_tools_scripts_before_guest_standby\": true,\n                        \"sata_controller_scan_count\": 0,\n                        \"scsi_bus_sharing\": \"noSharing\",\n                        \"scsi_controller_scan_count\": 1,\n                        \"scsi_type\": \"lsilogic\",\n                        \"storage_policy_id\": null,\n                        \"swap_placement_policy\": \"inherit\",\n                        \"sync_time_with_host\": false,\n                        \"sync_time_with_host_periodically\": true,\n                        \"tools_upgrade_policy\": \"upgradeAtPowerCycle\",\n                        \"uuid\": \"422d6a72-285b-b132-a080-c869348c539f\",\n                        \"vapp\": null,\n                        \"vapp_transport\": [\n                            \n                        ],\n                        \"vbs_enabled\": false,\n                        \"vvtd_enabled\": false\n                    },\n                    \"sensitive_values\": {\n                        \"disks\": [\n                            {\n                                \n                            }\n                        ],\n                        \"extra_config\": {\n                            \n                        },\n                        \"guest_ip_addresses\": [\n                            \n                        ],\n                        \"network_interface_types\": [\n                            false\n                        ],\n                        \"network_interfaces\": [\n                            {\n                                \n                            }\n                        ],\n                        \"vapp_transport\": [\n                            \n                        ]\n                    }\n                },\n                {\n                    \"address\": \"vsphere_virtual_machine.vm\",\n                    \"mode\": \"managed\",\n                    \"type\": \"vsphere_virtual_machine\",\n                    \"name\": \"vm\",\n                    \"provider_name\": \"registry.terraform.io/hashicorp/vsphere\",\n                    \"schema_version\": 3,\n                    \"values\": {\n                        \"alternate_guest_name\": \"\",\n                        \"annotation\": \"\",\n                        \"boot_delay\": 0,\n                        \"boot_retry_delay\": 10000,\n                        \"boot_retry_enabled\": false,\n                        \"cdrom\": [\n                            \n                        ],\n                        \"change_version\": \"2022-09-13T22:20:15.871554Z\",\n                        \"clone\": [\n                            {\n                                \"customize\": [\n                                    \n                                ],\n                                \"linked_clone\": false,\n                                \"ovf_network_map\": null,\n                                \"ovf_storage_map\": null,\n                                \"template_uuid\": \"422d6a72-285b-b132-a080-c869348c539f\",\n                                \"timeout\": 30\n                            }\n                        ],\n                        \"cpu_hot_add_enabled\": false,\n                        \"cpu_hot_remove_enabled\": false,\n                        \"cpu_limit\": -1,\n                        \"cpu_performance_counters_enabled\": false,\n                        \"cpu_reservation\": 0,\n                        \"cpu_share_count\": 1000,\n                        \"cpu_share_level\": \"normal\",\n                        \"custom_attributes\": null,\n                        \"datacenter_id\": null,\n                        \"datastore_cluster_id\": null,\n                        \"datastore_id\": \"datastore-38379\",\n                        \"default_ip_address\": \"10.32.23.98\",\n                        \"disk\": [\n                            {\n                                \"attach\": false,\n                                \"controller_type\": \"scsi\",\n                                \"datastore_id\": \"datastore-38379\",\n                                \"device_address\": \"scsi:0:0\",\n                                \"disk_mode\": \"persistent\",\n                                \"disk_sharing\": \"sharingNone\",\n                                \"eagerly_scrub\": false,\n                                \"io_limit\": -1,\n                                \"io_reservation\": 0,\n                                \"io_share_count\": 1000,\n                                \"io_share_level\": \"normal\",\n                                \"keep_on_remove\": false,\n                                \"key\": 2000,\n                                \"label\": \"disk0\",\n                                \"path\": \"api-test-vmw-terraform/api-test-vmw-terraform.vmdk\",\n                                \"size\": 15,\n                                \"storage_policy_id\": \"\",\n                                \"thin_provisioned\": true,\n                                \"unit_number\": 0,\n                                \"uuid\": \"6000C29d-3d64-fe1a-5180-8207a7a9ccd4\",\n                                \"write_through\": false\n                            },\n                            {\n                                \"attach\": false,\n                                \"controller_type\": \"scsi\",\n                                \"datastore_id\": \"datastore-38379\",\n                                \"device_address\": \"scsi:0:1\",\n                                \"disk_mode\": \"persistent\",\n                                \"disk_sharing\": \"sharingNone\",\n                                \"eagerly_scrub\": false,\n                                \"io_limit\": -1,\n                                \"io_reservation\": 0,\n                                \"io_share_count\": 1000,\n                                \"io_share_level\": \"normal\",\n                                \"keep_on_remove\": false,\n                                \"key\": 2001,\n                                \"label\": \"disk1\",\n                                \"path\": \"api-test-vmw-terraform/api-test-vmw-terraform_1.vmdk\",\n                                \"size\": 5,\n                                \"storage_policy_id\": \"\",\n                                \"thin_provisioned\": true,\n                                \"unit_number\": 1,\n                                \"uuid\": \"6000C292-a05b-b09d-4bf3-d9b2ac921b76\",\n                                \"write_through\": false\n                            }\n                        ],\n                        \"efi_secure_boot_enabled\": false,\n                        \"enable_disk_uuid\": false,\n                        \"enable_logging\": false,\n                        \"ept_rvi_mode\": \"automatic\",\n                        \"extra_config\": null,\n                        \"firmware\": \"bios\",\n                        \"folder\": \"\",\n                        \"force_power_off\": true,\n                        \"guest_id\": \"ubuntu64Guest\",\n                        \"guest_ip_addresses\": [\n                            \"10.32.23.98\",\n                            \"fe80::250:56ff:fead:5b1c\"\n                        ],\n                        \"hardware_version\": 9,\n                        \"host_system_id\": \"host-37486\",\n                        \"hv_mode\": \"hvAuto\",\n                        \"id\": \"422df5da-0609-f741-9855-4a38a285a526\",\n                        \"ide_controller_count\": 2,\n                        \"ignored_guest_ips\": null,\n                        \"imported\": null,\n                        \"latency_sensitivity\": \"normal\",\n                        \"memory\": 1024,\n                        \"memory_hot_add_enabled\": false,\n                        \"memory_limit\": -1,\n                        \"memory_reservation\": 0,\n                        \"memory_share_count\": 10240,\n                        \"memory_share_level\": \"normal\",\n                        \"migrate_wait_timeout\": 30,\n                        \"moid\": \"vm-92994\",\n                        \"name\": \"api-test-vmw-terraform\",\n                        \"nested_hv_enabled\": false,\n                        \"network_interface\": [\n                            {\n                                \"adapter_type\": \"vmxnet3\",\n                                \"bandwidth_limit\": -1,\n                                \"bandwidth_reservation\": 0,\n                                \"bandwidth_share_count\": 50,\n                                \"bandwidth_share_level\": \"normal\",\n                                \"device_address\": \"pci:0:7\",\n                                \"key\": 4000,\n                                \"mac_address\": \"00:50:56:ad:5b:1c\",\n                                \"network_id\": \"dvportgroup-77\",\n                                \"ovf_mapping\": \"\",\n                                \"use_static_mac\": false\n                            }\n                        ],\n                        \"num_cores_per_socket\": 1,\n                        \"num_cpus\": 1,\n                        \"ovf_deploy\": [\n                            \n                        ],\n                        \"pci_device_id\": null,\n                        \"power_state\": \"on\",\n                        \"poweron_timeout\": 300,\n                        \"reboot_required\": false,\n                        \"replace_trigger\": null,\n                        \"resource_pool_id\": \"resgroup-39403\",\n                        \"run_tools_scripts_after_power_on\": true,\n                        \"run_tools_scripts_after_resume\": true,\n                        \"run_tools_scripts_before_guest_reboot\": false,\n                        \"run_tools_scripts_before_guest_shutdown\": true,\n                        \"run_tools_scripts_before_guest_standby\": true,\n                        \"sata_controller_count\": 0,\n                        \"scsi_bus_sharing\": \"noSharing\",\n                        \"scsi_controller_count\": 1,\n                        \"scsi_type\": \"pvscsi\",\n                        \"shutdown_wait_timeout\": 3,\n                        \"storage_policy_id\": \"\",\n                        \"swap_placement_policy\": \"inherit\",\n                        \"sync_time_with_host\": false,\n                        \"sync_time_with_host_periodically\": false,\n                        \"tags\": null,\n                        \"tools_upgrade_policy\": \"manual\",\n                        \"uuid\": \"422df5da-0609-f741-9855-4a38a285a526\",\n                        \"vapp\": [\n                            \n                        ],\n                        \"vapp_transport\": [\n                            \n                        ],\n                        \"vbs_enabled\": false,\n                        \"vmware_tools_status\": \"guestToolsRunning\",\n                        \"vmx_path\": \"api-test-vmw-terraform/api-test-vmw-terraform.vmx\",\n                        \"vvtd_enabled\": false,\n                        \"wait_for_guest_ip_timeout\": 0,\n                        \"wait_for_guest_net_routable\": true,\n                        \"wait_for_guest_net_timeout\": 5\n                    },\n                    \"sensitive_values\": {\n                        \"cdrom\": [\n                            \n                        ],\n                        \"clone\": [\n                            {\n                                \"customize\": [\n                                    \n                                ]\n                            }\n                        ],\n                        \"disk\": [\n                            {\n                                \n                            },\n                            {\n                                \n                            }\n                        ],\n                        \"guest_ip_addresses\": [\n                            false,\n                            false\n                        ],\n                        \"network_interface\": [\n                            {\n                                \n                            }\n                        ],\n                        \"ovf_deploy\": [\n                            \n                        ],\n                        \"vapp\": [\n                            \n                        ],\n                        \"vapp_transport\": [\n                            \n                        ]\n                    },\n                    \"depends_on\": [\n                        \"data.vsphere_datastore.datastore\",\n                        \"data.vsphere_network.network\",\n                        \"data.vsphere_resource_pool.pool\",\n                        \"data.vsphere_virtual_machine.template\"\n                    ]\n                }\n            ]\n        }\n    }\n}",
+  "planData": "data.vsphere_datacenter.dc: Reading...\ndata.vsphere_datacenter.dc: Read complete after 0s [id=datacenter-13]\ndata.vsphere_network.network: Reading...\ndata.vsphere_resource_pool.pool: Reading...\ndata.vsphere_datastore.datastore: Reading...\ndata.vsphere_virtual_machine.template: Reading...\ndata.vsphere_network.network: Read complete after 0s [id=dvportgroup-77]\ndata.vsphere_datastore.datastore: Read complete after 0s [id=datastore-38379]\ndata.vsphere_virtual_machine.template: Read complete after 0s [id=422d6a72-285b-b132-a080-c869348c539f]\ndata.vsphere_resource_pool.pool: Read complete after 0s [id=resgroup-39403]\nvsphere_virtual_machine.vm: Refreshing state... [id=422df5da-0609-f741-9855-4a38a285a526]\n\nNo changes. Your infrastructure matches the configuration.\n\nTerraform has compared your real infrastructure against your configuration\nand found no differences, so no changes are needed.\n",
   "input": {
     "variables": [
       {
-        "name": "environment",
-        "value": "dev",
+        "name": "cloudPassword",
+        "value": null,
         "sensitive": false,
         "type": "string"
       },
       {
-        "name": "instanceName",
-        "value": "tf-example",
+        "name": "cloudUrl",
+        "value": null,
+        "sensitive": false,
+        "type": "string"
+      },
+      {
+        "name": "cloudUsername",
+        "value": null,
+        "sensitive": false,
+        "type": "string"
+      },
+      {
+        "name": "datacenterName",
+        "value": null,
         "sensitive": false,
         "type": "string"
       }
@@ -46,12 +61,52 @@
     "data": [
       {
         "key": "dc",
-        "name": "labs-qa",
+        "name": {
+          "attributes": [],
+          "children": [],
+          "column": 9,
+          "length": null,
+          "line": 17,
+          "name": "var.datacenterName",
+          "parent": {
+            "attributes": [],
+            "children": [
+              {
+                "_ref": "../..",
+                "class": "com.bertramlabs.plugins.hcl4j.RuntimeSymbols.Variable"
+              }
+            ],
+            "column": 2,
+            "length": null,
+            "line": 17,
+            "name": "name",
+            "parent": {
+              "attributes": [],
+              "children": [
+                {
+                  "_ref": "../..",
+                  "class": "com.bertramlabs.plugins.hcl4j.symbols.HCLAttribute"
+                }
+              ],
+              "column": 30,
+              "length": null,
+              "line": 16,
+              "name": "data",
+              "parent": null,
+              "position": 506,
+              "symbolName": "Block"
+            },
+            "position": 511,
+            "symbolName": "Attribute"
+          },
+          "position": 518,
+          "symbolName": "Variable"
+        },
         "type": "vsphere_datacenter"
       },
       {
         "key": "datastore",
-        "name": "ESXi-LUN1",
+        "name": "ESXi-DC2-QA-LUN01",
         "type": "vsphere_datastore"
       },
       {
@@ -61,12 +116,12 @@
       },
       {
         "key": "network",
-        "name": "VLAN0002",
+        "name": "VLAN0002 - Internal Server",
         "type": "vsphere_network"
       },
       {
         "key": "template",
-        "name": "Morpheus Ubuntu 20.04.1 v1",
+        "name": "qa-apache",
         "type": "vsphere_virtual_machine"
       }
     ]
