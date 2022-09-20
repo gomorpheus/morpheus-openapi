@@ -56,26 +56,16 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              archiveBucket:
-                $ref: ../components/schemas/archiveBucket.yaml
-              isOwner:
-                type: boolean
-              parentDirectory:
-                type: string
-                nullable: true
-              archiveFiles:
-                type: array
-                items:
-                  $ref: ../components/schemas/archiveBucketFile.yaml
-              archiveFileCount:
-                type: integer
-                format: int64
+            allOf:
+              - type: object
+                properties:
+                  archiveBucket:
+                    $ref: ../components/schemas/archiveBucket.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Archive Bucket Response:
               value:
-                $ref: ../components/examples/archiveBucket.json
+                $ref: ../components/examples/archiveBucketCreateResponse.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
