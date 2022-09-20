@@ -68,10 +68,6 @@ post:
                     type: array
                     items:
                       $ref: ../components/schemas/appSecurityGroups.yaml
-              - type: object
-                properties:
-                  firewallEnabled:
-                    type: boolean
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Apps Security Groups Response:
