@@ -67,11 +67,16 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - type: object
+                properties: 
+                  archiveFile:
+                    $ref: ../components/schemas/archiveBucketFile.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Archive File Response:
               value:
-                $ref: ../components/examples/success.json
+                $ref: ../components/examples/archiveFileUploadSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
