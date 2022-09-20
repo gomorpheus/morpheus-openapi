@@ -16,6 +16,8 @@ get:
             properties:
               archiveFile:
                 $ref: ../components/schemas/archiveBucketFile.yaml
+              isOwner:
+                type: boolean
           examples:
             Archive Files Response:
               value:
