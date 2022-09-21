@@ -32,6 +32,9 @@ properties:
   contentType: 
     type: string
     nullable: true
+  downloadCount:
+    type: integer
+    format: int64
   dateCreated: 
     type: string
     format: date-time
