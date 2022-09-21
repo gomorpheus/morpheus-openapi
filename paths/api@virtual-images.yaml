@@ -13,7 +13,6 @@ get:
     - $ref: ../components/parameters/filterType.yaml
     - $ref: ../components/parameters/imageType.yaml
     - $ref: ../components/parameters/tags.yaml
-    - $ref: ../components/parameters/label.yaml
   responses:
     '200':
       description: Successful Request

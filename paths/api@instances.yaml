@@ -30,7 +30,6 @@ get:
     - $ref: ../components/parameters/tags.yaml
     - $ref: ../components/parameters/metadata.yaml
     - $ref: ../components/parameters/detailsFalse.yaml
-    - $ref: ../components/parameters/label.yaml
   responses:
     '200':
       description: Successful Request
