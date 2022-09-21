@@ -33,7 +33,11 @@
             "linuxKeyPairId": null,
             "windowsUsername": null,
             "windowsPassword": null,
-            "defaultPersona": null,
+            "defaultPersona": {
+                "id": 1,
+                "code": "standard",
+                "name": "Standard"
+            },
             "dateCreated": "2020-10-14T15:15:36Z",
             "lastUpdated": "2022-03-01T02:09:16Z"
         },
@@ -70,7 +74,11 @@
             "linuxKeyPairId": 13,
             "windowsUsername": "ahicks",
             "windowsPassword": "************",
-            "defaultPersona": null,
+            "defaultPersona": {
+                "id": 1,
+                "code": "standard",
+                "name": "Standard"
+            },
             "dateCreated": "2017-02-17T06:47:17Z",
             "lastUpdated": "2021-08-26T18:58:09Z"
         }
