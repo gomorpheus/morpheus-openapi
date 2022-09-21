@@ -21,12 +21,12 @@ servers:
 x-readme:
   explorer-enabled: true
   metrics-enabled: false
-x-samples-languages:
-  - curl
-  - python
-  - powershell
-  - javascript
-  - go
+  samples-languages:
+    - curl
+    - python
+    - powershell
+    - javascript
+    - go
 paths:
 
   /api/activity:
