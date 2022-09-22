@@ -1,0 +1,31 @@
+{
+  "instance": {
+    "id": 77036,
+    "name": "qa-docker"
+  },
+  "instanceThreshold": {
+    "id": 1,
+    "autoUp": true,
+    "autoDown": true,
+    "minCount": 1,
+    "maxCount": 3,
+    "cpuEnabled": true,
+    "minCpu": 50.0,
+    "maxCpu": 90.0,
+    "memoryEnabled": true,
+    "minMemory": 50.0,
+    "maxMemory": 90.0,
+    "diskEnabled": true,
+    "minDisk": 50.0,
+    "maxDisk": 90.0,
+    "minNetwork": null,
+    "networkEnabled": false,
+    "iopsEnabled": false,
+    "minIops": null,
+    "maxIops": null,
+    "comment": null,
+    "zoneId": null,
+    "dateCreated": "2021-08-01T22:29:58Z",
+    "lastUpdated": "2021-08-01T22:33:58Z"
+  }
+}
