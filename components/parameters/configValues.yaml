@@ -1,10 +1,9 @@
 name: config
 in: query
-description: If specified will return an exact match on code
+description: Input parameters are required if the input is dependent on them.  Fields must be prefixed with `config.`
+explode: true
+style: form
 schema:
-  type: object
-  additionalProperties:
-    type: string
-    description: Field names must be prefixed with `config.`
+  type: string
   example:
     config.fieldName1: value1
