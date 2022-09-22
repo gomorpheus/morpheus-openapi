@@ -442,6 +442,8 @@ paths:
     $ref: paths/api@instances@id@lock.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
+  /api/instances/{id}/refresh:
+    $ref: paths/api@instances@id@refresh.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/restart:
