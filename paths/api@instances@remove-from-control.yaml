@@ -1,0 +1,37 @@
+delete:
+  summary: Remove From Control
+  description: Will delete a brownfield instance (or instances) asynchronously (Only deletes records local to Morpheus, actual VMs remain unchanged).
+  operationId: removeInstancesFromControl
+  tags:
+    - Instances
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            ids:
+              type: array
+              description: Array of Ids of brownfield Instances to be deleted
+              items:
+                type: integer
+                format: int64
+        examples:
+          Remove Instances From Control Request:
+            value:
+              $ref: ../components/examples/removeFromControlRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/removeFromControlRequestSuccess.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

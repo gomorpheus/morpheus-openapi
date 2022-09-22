@@ -442,6 +442,8 @@ paths:
     $ref: paths/api@instances@id@lock.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
+  /api/instances/{id}/refresh:
+    $ref: paths/api@instances@id@refresh.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/restart:
@@ -468,6 +470,8 @@ paths:
     $ref: paths/api@instances@id@validate-apply.yaml
   /api/instances/{id}/workflow:
     $ref: paths/api@instances@id@workflow.yaml
+  /api/instances/remove-from-control:
+    $ref: paths/api@instances@remove-from-control.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
   /api/integration-types:
