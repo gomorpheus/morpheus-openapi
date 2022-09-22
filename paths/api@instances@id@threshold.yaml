@@ -1,0 +1,34 @@
+get:
+  summary: Get an Instance Threshold
+  description: This gets an instance scaling threshold 
+  operationId: getInstanceThreshold
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              instance:
+                type: object
+                properties:
+                  id: 
+                    type: integer
+                    format: int64
+                  name: 
+                    type: string
+              instanceThreshold:
+                $ref: ../components/schemas/instanceThreshold.yaml
+          examples:
+            Instance Threshold Response:
+              value:
+                $ref: ../components/examples/instanceThreshold.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

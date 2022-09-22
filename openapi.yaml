@@ -464,6 +464,8 @@ paths:
     $ref: paths/api@instances@id@stop.yaml
   /api/instances/{id}/suspend:
     $ref: paths/api@instances@id@suspend.yaml
+  /api/instances/{id}/threshold:
+    $ref: paths/api@instances@id@threshold.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:
@@ -682,6 +684,8 @@ paths:
     $ref: paths/api@networks@servers@id@scopes@id.yaml
   /api/networks/services:
     $ref: paths/api@networks@services.yaml
+  /api/options/{optionSource}:
+    $ref: paths/api@options@optionSource.yaml
   /api/options/list:
     $ref: paths/api@options@list.yaml
   /api/options/zoneNetworkOptions:
