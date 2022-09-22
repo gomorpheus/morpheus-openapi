@@ -1,0 +1,31 @@
+get:
+  summary: Get Subnets for a Network
+  description: |
+    This endpoint retrieves all Subnets under a specific network.
+  operationId: getNetworkSubnets
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  subnets:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/subnet.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkSubnets.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
