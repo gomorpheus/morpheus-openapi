@@ -275,6 +275,10 @@ paths:
   /api/monitoring/contacts/{id}:
     $ref: paths/api@monitoring@contacts@id.yaml
   
+  /api/credential-types:
+    $ref: paths/api@credential-types.yaml
+  /api/credential-types/{id}:
+    $ref: paths/api@credential-types@id.yaml
   /api/credentials:
     $ref: paths/api@credentials.yaml
   /api/credentials/{id}:
