@@ -612,6 +612,8 @@ paths:
     $ref: paths/api@networks@id@routes.yaml
   /api/networks/{id}/routes/{routeId}:
     $ref: paths/api@networks@id@routes@id.yaml
+  /api/networks/{id}/subnets:
+    $ref: paths/api@networks@id@subnets.yaml
   /api/networks/domains:
     $ref: paths/api@networks@domains.yaml
   /api/networks/domains/{id}:
