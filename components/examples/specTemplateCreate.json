@@ -1,6 +1,10 @@
 {
   "specTemplate": {
     "name": "cftest",
+    "labels": [
+      "alabel",
+      "another"
+    ],
     "type": {
       "code": "cloudFormation"
     },

@@ -1,7 +1,7 @@
 get:
-  summary: Retrieves a Specific Job Execution
+  summary: Retrieves a Specific Job Execution Event
   description: |
-    Retrieves a specific job execution.
+    Retrieves a specific job execution event.
   operationId: getJobExecutionEvents
   tags:
     - Jobs

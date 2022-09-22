@@ -1,7 +1,9 @@
 get:
-  summary: Get All Subnets
+  summary: Get All Subnet Types
   description: |
-    This endpoint retrieves all Subnets associated with the account.
+    Provides API for viewing Network Subnet Types and their configuration options.
+
+    This endpoint retrieves all Network Types. The sample response has been abbreviated.
   operationId: listSubnetTypes
   tags:
     - Networks

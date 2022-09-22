@@ -21,12 +21,12 @@ servers:
 x-readme:
   explorer-enabled: true
   metrics-enabled: false
-x-samples-languages:
-  - curl
-  - python
-  - powershell
-  - javascript
-  - go
+  samples-languages:
+    - curl
+    - python
+    - powershell
+    - javascript
+    - go
 paths:
 
   /api/activity:
@@ -442,6 +442,8 @@ paths:
     $ref: paths/api@instances@id@lock.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
+  /api/instances/{id}/refresh:
+    $ref: paths/api@instances@id@refresh.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/restart:
@@ -468,6 +470,8 @@ paths:
     $ref: paths/api@instances@id@validate-apply.yaml
   /api/instances/{id}/workflow:
     $ref: paths/api@instances@id@workflow.yaml
+  /api/instances/remove-from-control:
+    $ref: paths/api@instances@remove-from-control.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
   /api/integration-types:
@@ -608,6 +612,8 @@ paths:
     $ref: paths/api@networks@id@routes.yaml
   /api/networks/{id}/routes/{routeId}:
     $ref: paths/api@networks@id@routes@id.yaml
+  /api/networks/{id}/subnets:
+    $ref: paths/api@networks@id@subnets.yaml
   /api/networks/domains:
     $ref: paths/api@networks@domains.yaml
   /api/networks/domains/{id}:
