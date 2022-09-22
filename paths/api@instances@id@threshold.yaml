@@ -25,7 +25,7 @@ get:
               instanceThreshold:
                 $ref: ../components/schemas/instanceThreshold.yaml
           examples:
-            Instance Env Response:
+            Instance Threshold Response:
               value:
                 $ref: ../components/examples/instanceThreshold.json 
     '4XX':
