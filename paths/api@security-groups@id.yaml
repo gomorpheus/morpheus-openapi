@@ -26,9 +26,9 @@ get:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 put:
-  summary: Creates a Security Group
+  summary: Updating a Security Group
   description: |
-    Creates a security group.
+    Updating a Security Group
   operationId: updateSecurityGroups
   tags:
     - Security Groups
