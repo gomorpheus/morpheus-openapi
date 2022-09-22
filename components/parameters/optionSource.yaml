@@ -1,0 +1,7 @@
+name: optionSource
+in: path
+required: true
+description: "`optionSource` to be listed"
+schema:
+  type: string
+  example: "keyPairs"

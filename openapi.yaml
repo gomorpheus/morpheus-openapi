@@ -682,6 +682,8 @@ paths:
     $ref: paths/api@networks@servers@id@scopes@id.yaml
   /api/networks/services:
     $ref: paths/api@networks@services.yaml
+  /api/options/{optionSource}:
+    $ref: paths/api@options@optionSource.yaml
   /api/options/list:
     $ref: paths/api@options@list.yaml
   /api/options/zoneNetworkOptions:
