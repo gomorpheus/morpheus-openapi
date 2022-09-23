@@ -1,0 +1,72 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+    nullable: true
+  location: 
+    type: string
+    nullable: true
+  accountId: 
+    type: integer
+    format: int64
+  visibility: 
+    type: string
+  active: 
+    type: boolean
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  zones: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  stats: 
+    type: object
+    properties: 
+      instanceCounts: 
+        type: object
+        properties: 
+          all: 
+            type: integer
+            format: int64
+      serverCounts: 
+        type: object
+        properties: 
+          all: 
+            type: integer
+            format: int64
+          host: 
+            type: integer
+            format: int64
+          hypervisor: 
+            type: integer
+            format: int64
+          containerHost: 
+            type: integer
+            format: int64
+          vm: 
+            type: integer
+            format: int64
+          baremetal: 
+            type: integer
+            format: int64
+          unmanaged: 
+            type: integer
+            format: int64
+  serverCount: 
+    type: integer
+    format: int64
