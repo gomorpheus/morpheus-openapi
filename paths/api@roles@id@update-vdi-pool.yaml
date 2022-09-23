@@ -1,0 +1,46 @@
+put:
+  summary: Customizing VDI Pool Access
+  description: Customizing VDI Pool Access
+  operationId: updateRoleVDIPoolAccess
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  tags:
+    - Roles
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - vdiPoolId
+            - access
+          properties:
+            vdiPoolId:
+              type: integer
+              description: "`id` of the cloud (zone)"
+            access:
+              type: string
+              description: The new access level.
+              enum:
+                - full
+                - none
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  access:
+                    type: string
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Role Feature Permission Response:
+              value:
+                $ref: ../components/examples/updateRoleFeaturePermissionResponse.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

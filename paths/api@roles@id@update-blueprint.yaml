@@ -1,0 +1,47 @@
+put:
+  summary: Customizing Blueprint Access
+  description: Customizing Blueprint Access
+  operationId: updateRoleBlueprintAccess
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  tags:
+    - Roles
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - appTemplateId
+            - access
+          properties:
+            appTemplateId:
+              type: integer
+              description: "`id` of the blueprint (appTemplate)"
+            access:
+              type: string
+              description: The new access level.
+              enum:
+                - full
+                - read
+                - none
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  access:
+                    type: string
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Role Feature Permission Response:
+              value:
+                $ref: ../components/examples/updateRoleFeaturePermissionResponse.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

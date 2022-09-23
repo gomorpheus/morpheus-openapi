@@ -1,0 +1,15 @@
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: The code of the permission being changed
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - read
+      - none
