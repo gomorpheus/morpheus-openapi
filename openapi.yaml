@@ -757,6 +757,24 @@ paths:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
     $ref: paths/api@roles@id.yaml
+  /api/roles/{id}/update-blueprint:
+    $ref: paths/api@roles@id@update-blueprint.yaml
+  /api/roles/{id}/update-catalog-item-type:
+    $ref: paths/api@roles@id@update-catalog-item-type.yaml
+  /api/roles/{id}/update-cloud:
+    $ref: paths/api@roles@id@update-cloud.yaml
+  /api/roles/{id}/update-group:
+    $ref: paths/api@roles@id@update-group.yaml
+  /api/roles/{id}/update-instance-type:
+    $ref: paths/api@roles@id@update-instance-type.yaml
+  /api/roles/{id}/update-permission:
+    $ref: paths/api@roles@id@update-permission.yaml
+  /api/roles/{id}/update-persona:
+    $ref: paths/api@roles@id@update-persona.yaml
+  /api/roles/{id}/update-report-type:
+    $ref: paths/api@roles@id@update-report-type.yaml
+  /api/roles/{id}/update-vdi-pool:
+    $ref: paths/api@roles@id@update-vdi-pool.yaml
   /api/scale-thresholds:
     $ref: paths/api@scale-thresholds.yaml
   /api/scale-thresholds/{id}:

@@ -1,0 +1,17 @@
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`InstanceType` is the code for Global Instance Type Access"
+    enum:
+      - InstanceType
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - custom
+      - none
