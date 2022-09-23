@@ -1,0 +1,103 @@
+get:
+  summary: Get a Specific Group for Subtenant
+  description: Get details about a tenant
+  operationId: getTenantSubtenantGroup
+  tags:
+    - Tenants
+  parameters:
+    - $ref: ../components/parameters/accountId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              group:
+                $ref: ../components/schemas/tenantGroup.yaml
+          examples:
+            SubTenant Group Response:
+              value:
+                $ref: ../components/examples/tenantGroup.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updating a Group for Subtenant
+  description: Updating a Group for Subtenant.
+  operationId: updateTenantSubtenantGroup
+  tags:
+    - Tenants
+  parameters:
+    - $ref: ../components/parameters/accountId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - group
+          properties:
+            group:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: A unique name scoped to the subtenant for the group
+                description:
+                  type: string
+                  description: Optional description field if you want to put more info there
+                code:
+                  type: string
+                  description: Optional code for use with policies
+                location:
+                  type: string
+                  description: location
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              account:
+                allOf:
+                  - $ref: ../components/schemas/tenantGroup.yaml
+                  - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Tenant Group Response:
+              value:
+                $ref: ../components/examples/tenantGroupCreateResponse.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Group for Subtenant
+  description: If a group has zones or servers still tied to it, a delete action will fail.
+  operationId: removeTenantSubtenantGroup
+  tags:
+    - Tenants
+  parameters:
+    - $ref: ../components/parameters/accountId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Deletion:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

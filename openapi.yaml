@@ -862,6 +862,12 @@ paths:
     $ref: paths/api@accounts@available-roles.yaml
   /api/accounts/{id}:
     $ref: paths/api@accounts@id.yaml
+  /api/accounts/{accountId}/groups:
+    $ref: paths/api@accounts@id@groups.yaml
+  /api/accounts/{accountId}/groups/{id}:
+    $ref: paths/api@accounts@id@groups@id.yaml
+  /api/accounts/{accountId}/groups/{id}/update-zones:
+    $ref: paths/api@accounts@id@groups@id@update-zones.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:
