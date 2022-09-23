@@ -1,0 +1,17 @@
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`ComputeZone` is the code for Global Cloud Access"
+    enum:
+      - ComputeZone
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - custom
+      - none

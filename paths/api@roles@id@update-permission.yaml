@@ -1,0 +1,66 @@
+put:
+  summary: Updating Role Feature Permissions
+  description: Updating Role Feature Permissions
+  operationId: updateRoleFeaturePermission
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  tags:
+    - Roles
+  requestBody:
+    content:
+      application/json:
+        schema:
+          anyOf:
+            - $ref: ../components/schemas/rolePermissionBasic.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalGroup.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalCloud.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalInstanceType.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalBlueprint.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalCatalogItemType.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalVDIPool.yaml
+            - $ref: ../components/schemas/rolePermissionGlobalReportType.yaml
+        examples:
+          Updating Role Feature Permissions Request - Basic:
+            value:
+              $ref: ../components/examples/rolePermissionBasic.json
+          Updating Role Feature Permissions Request - Global Group Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalGroup.json
+          Updating Role Feature Permissions Request - Global Cloud Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalCloud.json
+          Updating Role Feature Permissions Request - Global Instance Type Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalInstanceType.json
+          Updating Role Feature Permissions Request - Global Blueprint Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalBlueprint.json
+          Updating Role Feature Permissions Request - Global Catalog Item Type Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalCatalogItemType.json
+          Updating Role Feature Permissions Request - Global VDI Pool Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalVDIPool.json
+          Updating Role Feature Permissions Request - Global Report Type Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalReportType.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  access:
+                    type: string
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Role Feature Permission Response:
+              value:
+                $ref: ../components/examples/updateRoleFeaturePermissionResponse.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
