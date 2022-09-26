@@ -17,7 +17,7 @@ servers:
     description: Morpheus API
     variables:
       serverURL:
-        default: localhost
+        default: CHANGEME
 x-readme:
   explorer-enabled: true
   metrics-enabled: false
