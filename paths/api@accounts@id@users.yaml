@@ -18,7 +18,8 @@ post:
               $ref: ../components/schemas/userCreate.yaml
         examples:
           Create User Request:
-              $ref: ../components/examples/userCreate.json
+              value:
+                $ref: ../components/examples/userCreate.json
   responses:
     '200':
       description: User Object
