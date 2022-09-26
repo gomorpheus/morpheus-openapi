@@ -1,0 +1,120 @@
+{
+    "user": {
+        "id": 16118,
+        "accountId": 1,
+        "username": "apiuser",
+        "displayName": "API User",
+        "email": "apiuser@example.com",
+        "firstName": "API",
+        "lastName": "User",
+        "enabled": true,
+        "receiveNotifications": false,
+        "isUsing2FA": false,
+        "accountExpired": false,
+        "accountLocked": false,
+        "passwordExpired": false,
+        "loginCount": 1358,
+        "loginAttempts": 0,
+        "lastLoginDate": "2022-09-14T13:12:18Z",
+        "roles": [
+            {
+                "id": 1,
+                "name": "System Admin",
+                "authority": "System Admin",
+                "description": "Super User"
+            }
+        ],
+        "account": {
+            "id": 1,
+            "name": "QA"
+        },
+        "linuxUsername": "apiuser",
+        "linuxPassword": "************",
+        "linuxKeyPairId": 2,
+        "windowsUsername": "apiuser",
+        "windowsPassword": "************",
+        "defaultPersona": {
+            "id": 1,
+            "code": "standard",
+            "name": "Standard"
+        },
+        "dateCreated": "2019-12-05T21:52:26Z",
+        "lastUpdated": "2022-09-14T13:12:18Z"
+    },
+    "isMasterAccount": true,
+    "permissions": [
+        {
+            "name": "AppTemplate",
+            "code": "AppTemplate",
+            "access": "full"
+        },
+        {
+            "name": "CatalogItemType",
+            "code": "CatalogItemType",
+            "access": "full"
+        },
+        {
+            "name": "Certificates",
+            "code": "admin-certificates",
+            "access": "full"
+        },
+        {
+            "name": "Integrations",
+            "code": "admin-cm",
+            "access": "full"
+        },
+        {
+            "name": "Instance Types",
+            "code": "admin-containers",
+            "access": "full"
+        },
+        {
+            "name": "Distributed Workers",
+            "code": "admin-distributed-workers",
+            "access": "full"
+        },
+        {
+            "name": "Environment Settings",
+            "code": "admin-environments",
+            "access": "full"
+        },
+        {
+            "name": "Policies",
+            "code": "admin-global-policies",
+            "access": "full"
+        },
+        {
+            "name": "Groups",
+            "code": "admin-groups",
+            "access": "full"
+        },
+        {
+            "name": "Guidance Settings",
+            "code": "admin-guidanceSettings",
+            "access": "full"
+        },
+        {
+            "name": "Health",
+            "code": "admin-health",
+            "access": "read"
+        },
+        {
+            "name": "Identity Source",
+            "code": "admin-identity-sources",
+            "access": "full"
+        },
+        {
+            "name": "Keypairs",
+            "code": "admin-keypairs",
+            "access": "full"
+        },
+        {
+            "name": "Virtual Images",
+            "code": "virtual-images",
+            "access": "full"
+        }
+    ],
+    "appliance": {
+        "buildVersion": "5.5.1"
+    }
+}
