@@ -884,6 +884,8 @@ paths:
     $ref: paths/api@accounts@id@groups@id.yaml
   /api/accounts/{accountId}/groups/{id}/update-zones:
     $ref: paths/api@accounts@id@groups@id@update-zones.yaml
+  /api/accounts/{accountId}/users:
+    $ref: paths/api@accounts@id@users.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:

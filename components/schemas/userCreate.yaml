@@ -1,0 +1,58 @@
+type: object
+description: Payload for creating a new user
+required:
+  - username
+  - email
+  - password
+  - roles
+properties:
+  firstName:
+    type: string
+    description: The user's first name (optional)
+    example: John
+  lastName:
+    type: string
+    description: The user's last name (optional)
+    example: Smith
+  username:
+    type: string
+    description: Username (unique per tenant).
+    example: jsmith
+  email:
+    type: string
+    description: Email address
+    example: jsmith@email.com
+  password:
+    type: string
+    format: password
+    description: Password to apply to the user
+    example: Passw0rd!
+  roles:
+    type: array
+    description: Array of objects with id of the role(s) to assign to the user.
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+  receiveNotifications:
+    type: boolean
+    description: Receive Notifications?
+    default: true
+  linuxUsername:
+    type: string
+    description: Linux Username, user settings for provisioning
+  linuxPassword:
+    type: string
+    description: Linux Password, user settings for provisioning
+  linuxKeyPairId:
+    type: integer
+    format: int64
+    description: Linux SSH Key, user settings for provisioning
+  windowsUsername:
+    type: string
+    description: Windows Username, user settings for provisioning
+  windowsPassword:
+    type: string
+    description: Windows Password, user settings for provisioning

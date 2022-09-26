@@ -1,0 +1,41 @@
+post:
+  summary: Create a User For a Tenant
+  description: Create a User For a Tenant.
+  operationId: addUserTenant
+  tags:
+    - Tenants
+  parameters:
+    - $ref: ../components/parameters/accountId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - user
+          properties:
+            user:
+              $ref: ../components/schemas/userCreate.yaml
+        examples:
+          Create User Request:
+              $ref: ../components/examples/userCreate.json
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                user:
+                  $ref: ../components/schemas/user.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Create User Response:
+              value:
+                $ref: ../components/examples/userSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
