@@ -1,7 +1,7 @@
 get:
   summary: Get a Specific User
-  description: Get details about a specific user.
-  operationId: getUsers
+  description: This endpoint will retrieve a specific user by id if the user has permission to access the user.
+  operationId: getUser
   tags:
     - Users
   parameters:
@@ -85,9 +85,9 @@ put:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 delete:
-  summary: Delete a Specific User
+  summary: Delete a User
   description: Delete an existing user.
-  operationId: deleteUsers
+  operationId: deleteUser
   tags:
     - Users
   parameters:
