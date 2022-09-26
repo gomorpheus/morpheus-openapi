@@ -39,7 +39,7 @@ get:
           examples:
             Whoami Response:
               value:
-                $ref: ../components/examples/user.json
+                $ref: ../components/examples/whoami.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
