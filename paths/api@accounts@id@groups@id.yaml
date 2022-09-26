@@ -1,6 +1,6 @@
 get:
   summary: Get a Specific Group for Subtenant
-  description: Get details about a tenant
+  description: This endpoint retrieves a specific group.
   operationId: getTenantSubtenantGroup
   tags:
     - Tenants
