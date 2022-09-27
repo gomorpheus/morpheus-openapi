@@ -444,6 +444,8 @@ paths:
     $ref: paths/api@instances@id@linked-clone@id.yaml
   /api/instances/{id}/lock:
     $ref: paths/api@instances@id@lock.yaml
+  /api/instances/{id}/networkInterfaceUpdate/{networkInterfaceId}:
+    $ref: paths/api@instances@networkInterfaces@id.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
   /api/instances/{id}/refresh:
@@ -816,7 +818,8 @@ paths:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:
     $ref: paths/api@servers@id@workflow.yaml
-
+  /api/servers/{id}/networkInterfaces/{networkInterfaceId}:
+    $ref: paths/api@servers@networkInterfaces@id.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
   /api/catalog/cart:

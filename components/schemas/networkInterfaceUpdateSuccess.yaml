@@ -1,0 +1,479 @@
+type: object
+required:
+  - name
+properties:
+  networkInterface: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      addresses: 
+        type: array
+      internalId: 
+        type: string
+        nullable: true
+      interfaceId: 
+        type: string
+        nullable: true
+      displayOrder: 
+        type: integer
+        format: int64
+      networkPool: 
+        type: string
+        nullable: true
+      dhcp: 
+        type: boolean
+      uuid: 
+        type: string
+      active: 
+        type: boolean
+      uniqueId: 
+        type: string
+      subnet: 
+        type: string
+        nullable: true
+      replaceHostRecord: 
+        type: boolean
+      ipMode: 
+        type: string
+      version: 
+        type: string
+        nullable: true
+      ipSubnet: 
+        type: string
+        nullable: true
+      config: 
+        type: string
+        nullable: true
+      publicIpAddress: 
+        type: string
+      fabricId: 
+        type: string
+        nullable: true
+      ipv6Subnet: 
+        type: string
+        nullable: true
+      macAddress: 
+        type: string
+      publicIpv6Address: 
+        type: string
+        nullable: true
+      refType: 
+        type: string
+        nullable: true
+      networkGroup: 
+        type: string
+        nullable: true
+      refId: 
+        type: string
+        nullable: true
+      networkDomain: 
+        type: string
+        nullable: true
+      name: 
+        type: string
+      primaryInterface: 
+        type: boolean
+      networkPoolIPv6: 
+        type: string
+        nullable: true
+      network: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+      vlanId: 
+        type: string
+        nullable: true
+      type: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+      networkPosition: 
+        type: string
+        nullable: true
+      poolAssigned: 
+        type: boolean
+      description: 
+        type: string
+      externalType: 
+        type: string
+        nullable: true
+      externalId: 
+        type: string
+  interfaceType: 
+    type: string
+  netId: 
+    type: integer
+    format: int64
+  server: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      externalId: 
+        type: string
+      accountId: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      displayName: 
+        type: string
+      visibility: 
+        type: string
+      description: 
+        type: string
+        nullable: true
+      zoneId: 
+        type: integer
+        format: int64
+      siteId: 
+        type: integer
+        format: int64
+      sshHost: 
+        type: string
+      sshPort: 
+        type: integer
+        format: int64
+      externalIp: 
+        type: string
+      internalIp: 
+        type: string
+      volumeId: 
+        type: string
+        nullable: true
+      platform: 
+        type: string
+      platformVersion: 
+        type: string
+      sshUsername: 
+        type: string
+      sshPassword: 
+        type: string
+      osDevice: 
+        type: string
+      dataDevice: 
+        type: string
+      lvmEnabled: 
+        type: boolean
+      apiKey: 
+        type: string
+      softwareRaid: 
+        type: boolean
+      config: 
+        type: string
+      capacityInfo: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          maxMemory: 
+            type: integer
+            format: int64
+          server: 
+            type: object
+            properties: 
+              id: 
+                type: integer
+                format: int64
+          usedStorage: 
+            type: integer
+            format: int64
+          version: 
+            type: string
+            nullable: true
+          maxCpu: 
+            type: string
+            nullable: true
+          usedCores: 
+            type: integer
+            format: int64
+          usedMemory: 
+            type: integer
+            format: int64
+          maxCores: 
+            type: integer
+            format: int64
+          maxStorage: 
+            type: integer
+            format: int64
+      dateCreated: 
+        type: string
+        format: date-time
+      lastUpdated: 
+        type: string
+        format: date-time
+      lastStats: 
+        type: string
+      status: 
+        type: string
+      computeServerType: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          code: 
+            type: string
+          name: 
+            type: string
+          description: 
+            type: string
+          platform: 
+            type: string
+          nodeType: 
+            type: string
+          managed: 
+            type: boolean
+          enabled: 
+            type: boolean
+          vmHypervisor: 
+            type: boolean
+          containerHypervisor: 
+            type: boolean
+          displayOrder: 
+            type: integer
+            format: int64
+          selectable: 
+            type: boolean
+          controlPower: 
+            type: boolean
+          controlSuspend: 
+            type: boolean
+          hasAgent: 
+            type: boolean
+          creatable: 
+            type: boolean
+          optionTypes: 
+            type: array
+      interfaces: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            addresses: 
+              type: array
+              items: 
+                type: object
+                properties: 
+                  id: 
+                    type: integer
+                    format: int64
+            internalId: 
+              type: string
+              nullable: true
+            interfaceId: 
+              type: string
+              nullable: true
+            displayOrder: 
+              type: integer
+              format: int64
+            networkPool: 
+              type: string
+              nullable: true
+            dhcp: 
+              type: boolean
+            uuid: 
+              type: string
+            active: 
+              type: boolean
+            uniqueId: 
+              type: string
+            subnet: 
+              type: string
+              nullable: true
+            replaceHostRecord: 
+              type: boolean
+            ipMode: 
+              type: string
+            version: 
+              type: string
+              nullable: true
+            ipSubnet: 
+              type: string
+              nullable: true
+            config: 
+              type: string
+              nullable: true
+            publicIpAddress: 
+              type: string
+            fabricId: 
+              type: string
+              nullable: true
+            ipv6Subnet: 
+              type: string
+              nullable: true
+            macAddress: 
+              type: string
+            publicIpv6Address: 
+              type: string
+              nullable: true
+            refType: 
+              type: string
+              nullable: true
+            networkGroup: 
+              type: string
+              nullable: true
+            refId: 
+              type: string
+              nullable: true
+            networkDomain: 
+              type: string
+              nullable: true
+            name: 
+              type: string
+            primaryInterface: 
+              type: boolean
+            networkPoolIPv6: 
+              type: string
+              nullable: true
+            network: 
+              type: object
+              properties: 
+                id: 
+                  type: integer
+                  format: int64
+            vlanId: 
+              type: string
+              nullable: true
+            type: 
+              type: object
+              properties: 
+                id: 
+                  type: integer
+                  format: int64
+            networkPosition: 
+              type: string
+              nullable: true
+            poolAssigned: 
+              type: boolean
+            description: 
+              type: string
+            externalType: 
+              type: string
+              nullable: true
+            externalId: 
+              type: string
+      zone: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          accountId: 
+            type: integer
+            format: int64
+          groups: 
+            type: array
+            items: 
+              type: integer
+              format: int64
+          name: 
+            type: string
+          description: 
+            type: string
+            nullable: true
+          location: 
+            type: string
+          visibility: 
+            type: string
+          zoneTypeId: 
+            type: integer
+            format: int64
+          networkServer: 
+            type: object
+            properties: 
+              id: 
+                type: integer
+                format: int64
+              name: 
+                type: string
+              description: 
+                type: string
+                nullable: true
+              type: 
+                type: object
+                properties: 
+                  id: 
+                    type: integer
+                    format: int64
+                  name: 
+                    type: string
+                  code: 
+                    type: string
+                  description: 
+                    type: string
+                  creatable: 
+                    type: boolean
+                  userVisible: 
+                    type: boolean
+                  hasScopes: 
+                    type: boolean
+                  titleScopes: 
+                    type: string
+                    nullable: true
+                  hasNetworks: 
+                    type: boolean
+                  titleNetworks: 
+                    type: string
+                    nullable: true
+                  hasSwitches: 
+                    type: boolean
+                  titleSwitches: 
+                    type: string
+                    nullable: true
+                  hasGateways: 
+                    type: boolean
+                  titleGateways: 
+                    type: string
+                    nullable: true
+                  hasRouters: 
+                    type: boolean
+                  titleRouters: 
+                    type: string
+                    nullable: true
+                  hasSecurityGroups: 
+                    type: boolean
+                  titleSecurityGroups: 
+                    type: string
+                    nullable: true
+                  hasLoadBalancers: 
+                    type: boolean
+                  titleLoadBalancers: 
+                    type: string
+                    nullable: true
+                  hasRouteTables: 
+                    type: boolean
+                  titleRouteTables: 
+                    type: string
+                    nullable: true
+                  hasFirewall: 
+                    type: boolean
+                  titleFirewall: 
+                    type: string
+                    nullable: true
+                  hasFirewallGroups: 
+                    type: boolean
+                  titleFirewallGroups: 
+                    type: string
+                    nullable: true
+              status: 
+                type: string
+              enabled: 
+                type: boolean
+              visibility: 
+                type: string
+          securityServer: 
+            type: string
+            nullable: true
+
