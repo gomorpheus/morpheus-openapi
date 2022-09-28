@@ -486,6 +486,8 @@ paths:
     $ref: paths/api@integration-types@id@option-types.yaml
   /api/integrations:
     $ref: paths/api@integrations.yaml
+  /api/integrations/{id}:
+    $ref: paths/api@integrations@id.yaml
   /api/integrations/{id}/objects:
     $ref: paths/api@integrations@id@objects.yaml
   /api/integrations/{id}/objects/{objectId}:
