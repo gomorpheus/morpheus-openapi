@@ -1,0 +1,26 @@
+get:
+  summary: Get a Specific User Permissions
+  description: This will list all the permissions for a specific user.
+  operationId: getUserPermissions
+  tags:
+    - Users
+  parameters:
+  - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: User Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              access:
+                $ref: ../components/schemas/userPermissions.yaml
+          examples:
+            Get User Response:
+              value:
+                $ref: ../components/examples/userPermissions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

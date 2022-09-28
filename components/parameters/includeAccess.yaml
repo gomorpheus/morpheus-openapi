@@ -1,0 +1,6 @@
+name: includeAccess
+in: query
+description: Include `access` information in the response. This is the permissions, clouds, instanceTypes, etc. that the user is authorized for based on their assigned Role(s).
+schema:
+  type: boolean
+example: true
