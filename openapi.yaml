@@ -17,7 +17,7 @@ servers:
     description: Morpheus API
     variables:
       serverURL:
-        default: localhost
+        default: CHANGEME
 x-readme:
   explorer-enabled: true
   metrics-enabled: false
@@ -444,6 +444,8 @@ paths:
     $ref: paths/api@instances@id@linked-clone@id.yaml
   /api/instances/{id}/lock:
     $ref: paths/api@instances@id@lock.yaml
+  /api/instances/{id}/networkInterfaces/{networkInterfaceId}:
+    $ref: paths/api@instances@id@networkInterfaces@id.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
   /api/instances/{id}/refresh:
@@ -816,7 +818,8 @@ paths:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:
     $ref: paths/api@servers@id@workflow.yaml
-
+  /api/servers/{id}/networkInterfaces/{networkInterfaceId}:
+    $ref: paths/api@servers@id@networkInterfaces@id.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
   /api/catalog/cart:
@@ -886,6 +889,8 @@ paths:
     $ref: paths/api@accounts@id@groups@id.yaml
   /api/accounts/{accountId}/groups/{id}/update-zones:
     $ref: paths/api@accounts@id@groups@id@update-zones.yaml
+  /api/accounts/{accountId}/users:
+    $ref: paths/api@accounts@id@users.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:
@@ -911,10 +916,24 @@ paths:
   /api/usage:
     $ref: paths/api@usage.yaml
   
+  /api/user-settings:
+    $ref: paths/api@user-settings.yaml
+  /api/user-settings/api-clients:
+    $ref: paths/api@user-settings@api-clients.yaml
+  /api/user-settings/avatar:
+    $ref: paths/api@user-settings@avatar.yaml
+  /api/user-settings/clear-access-token:
+    $ref: paths/api@user-settings@clear-access-token.yaml
+  /api/user-settings/desktop-background:
+    $ref: paths/api@user-settings@desktop-background.yaml
+  /api/user-settings/regenerate-access-token:
+    $ref: paths/api@user-settings@regenerate-access-token.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
     $ref: paths/api@users@id.yaml
+  /api/users/{id}/permissions:
+    $ref: paths/api@users@id@permissions.yaml
   /api/vdi-apps:
     $ref: paths/api@vdi-apps.yaml
   /api/vdi-apps/{id}:

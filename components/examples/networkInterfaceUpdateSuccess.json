@@ -1,0 +1,212 @@
+{
+    "success": true,
+    "networkInterface": {
+        "id": 3444,
+        "addresses": [
+            {
+                "id": 667
+            }
+        ],
+        "internalId": null,
+        "interfaceId": null,
+        "displayOrder": 0,
+        "networkPool": null,
+        "dhcp": true,
+        "uuid": "e43e146a-6d1f-48a6-9502-2ab358e28a70",
+        "active": true,
+        "uniqueId": "morpheus-nic-6-6-0",
+        "subnet": null,
+        "replaceHostRecord": false,
+        "ipMode": "",
+        "version": null,
+        "ipSubnet": null,
+        "config": null,
+        "publicIpAddress": "54.193.157.197",
+        "fabricId": null,
+        "ipv6Subnet": null,
+        "macAddress": "02:72:be:60:07:57",
+        "publicIpv6Address": null,
+        "refType": null,
+        "networkGroup": null,
+        "refId": null,
+        "networkDomain": null,
+        "name": "etho000",
+        "primaryInterface": true,
+        "networkPoolIPv6": null,
+        "network": {
+            "id": 12
+        },
+        "vlanId": null,
+        "type": {
+            "id": 1
+        },
+        "networkPosition": null,
+        "poolAssigned": false,
+        "description": "",
+        "externalType": null,
+        "externalId": "eni-0a5212a08164d4c5f"
+    },
+    "interfaceType": "network",
+    "netId": 12,
+    "server": {
+        "id": 3832,
+        "externalId": "i-0ae375129b52cafe8",
+        "accountId": 1,
+        "name": "ld-local-apache-54",
+        "displayName": "ld-local-apache-54",
+        "visibility": "private",
+        "description": null,
+        "zoneId": 1,
+        "siteId": 1,
+        "sshHost": "54.193.157.197",
+        "sshPort": 22,
+        "externalIp": "54.193.157.197",
+        "internalIp": "10.200.21.127",
+        "volumeId": null,
+        "platform": "ubuntu",
+        "platformVersion": "14.04",
+        "sshUsername": "lukedavitt",
+        "sshPassword": "****",
+        "osDevice": "/dev/xvda",
+        "dataDevice": "/dev/sdb",
+        "lvmEnabled": false,
+        "apiKey": "b428dce4-9080-47bb-b891-586874353455",
+        "softwareRaid": false,
+        "config": "{\"poolProviderType\":null,\"isVpcSelectable\":true,\"instanceProfile\":null,\"isEC2\":\"false\",\"availabilityId\":null,\"resourcePoolId\":1,\"publicIpType\":\"subnet\",\"createUser\":true,\"securityId\":null,\"kmsKeyId\":null,\"noAgent\":false}",
+        "capacityInfo": {
+            "id": 1263,
+            "maxMemory": 512217088,
+            "server": {
+                "id": 3832
+            },
+            "usedStorage": 0,
+            "version": null,
+            "maxCpu": null,
+            "usedCores": 0,
+            "usedMemory": 0,
+            "maxCores": 1,
+            "maxStorage": 10737418240
+        },
+        "dateCreated": "2022-09-27T16:06:20Z",
+        "lastUpdated": "2022-09-27T16:11:46Z",
+        "lastStats": "{\"ts\":\"2022-09-27T16:11:41+0000\",\"freeMemory\":291856000,\"usedMemory\":208356000,\"freeSwap\":0,\"usedSwap\":0,\"cpuIdleTime\":258850,\"cpuSystemTime\":24010,\"cpuUserTime\":29580,\"cpuTotalTime\":312440,\"cpuUsage\":0.2168118953704834,\"maxStorage\":10737418240,\"usedStorage\":1536983040,\"reservedStorage\":10423046144,\"netTxUsage\":25,\"netRxUsage\":7,\"networkBandwidth\":0}",
+        "status": "provisioned",
+        "computeServerType": {
+            "id": 92,
+            "code": "amazonVm",
+            "name": "Amazon Instance",
+            "description": "",
+            "platform": "linux",
+            "nodeType": "morpheus-vm-node",
+            "managed": true,
+            "enabled": true,
+            "vmHypervisor": false,
+            "containerHypervisor": false,
+            "displayOrder": 0,
+            "selectable": false,
+            "controlPower": true,
+            "controlSuspend": false,
+            "hasAgent": true,
+            "creatable": false,
+            "optionTypes": []
+        },
+        "interfaces": [
+            {
+                "id": 3444,
+                "addresses": [
+                    {
+                        "id": 667
+                    }
+                ],
+                "internalId": null,
+                "interfaceId": null,
+                "displayOrder": 0,
+                "networkPool": null,
+                "dhcp": true,
+                "uuid": "e43e146a-6d1f-48a6-9502-2ab358e28a70",
+                "active": true,
+                "uniqueId": "morpheus-nic-6-6-0",
+                "subnet": null,
+                "replaceHostRecord": false,
+                "ipMode": "",
+                "version": null,
+                "ipSubnet": null,
+                "config": null,
+                "publicIpAddress": "54.193.157.197",
+                "fabricId": null,
+                "ipv6Subnet": null,
+                "macAddress": "02:72:be:60:07:57",
+                "publicIpv6Address": null,
+                "refType": null,
+                "networkGroup": null,
+                "refId": null,
+                "networkDomain": null,
+                "name": "etho000",
+                "primaryInterface": true,
+                "networkPoolIPv6": null,
+                "network": {
+                    "id": 12
+                },
+                "vlanId": null,
+                "type": {
+                    "id": 1
+                },
+                "networkPosition": null,
+                "poolAssigned": false,
+                "description": "",
+                "externalType": null,
+                "externalId": "eni-0a5212a08164d4c5f"
+            }
+        ],
+        "zone": {
+            "id": 1,
+            "accountId": 1,
+            "groups": [
+                1,
+                5
+            ],
+            "name": "ld-amazon",
+            "description": null,
+            "location": "yo momma and daddy",
+            "visibility": "public",
+            "zoneTypeId": 4,
+            "networkServer": {
+                "id": 1,
+                "name": "ld-amazon",
+                "description": null,
+                "type": {
+                    "id": 10,
+                    "name": "Amazon",
+                    "code": "amazon",
+                    "description": "AWS EC2",
+                    "creatable": false,
+                    "userVisible": false,
+                    "hasScopes": false,
+                    "titleScopes": null,
+                    "hasNetworks": false,
+                    "titleNetworks": null,
+                    "hasSwitches": false,
+                    "titleSwitches": null,
+                    "hasGateways": false,
+                    "titleGateways": null,
+                    "hasRouters": false,
+                    "titleRouters": null,
+                    "hasSecurityGroups": false,
+                    "titleSecurityGroups": null,
+                    "hasLoadBalancers": false,
+                    "titleLoadBalancers": null,
+                    "hasRouteTables": false,
+                    "titleRouteTables": null,
+                    "hasFirewall": false,
+                    "titleFirewall": null,
+                    "hasFirewallGroups": false,
+                    "titleFirewallGroups": null
+                },
+                "status": "ok",
+                "enabled": true,
+                "visibility": "public"
+            },
+            "securityServer": null
+        }
+    }
+}

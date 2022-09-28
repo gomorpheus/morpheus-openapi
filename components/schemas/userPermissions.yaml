@@ -1,0 +1,23 @@
+type: object
+nullable: true
+properties: 
+  features:
+    type: array
+    items: 
+      type: object
+  zones:
+    type: array
+    items: 
+      type: object
+  sites:
+    type: array
+    items: 
+      type: object
+  instanceTypes:
+    type: array
+    items: 
+      type: object
+  appTemplates:
+    type: array
+    items: 
+      type: object

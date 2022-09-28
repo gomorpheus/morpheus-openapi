@@ -1,0 +1,31 @@
+get:
+  summary: Get Available API Clients
+  description: This endpoint retrieves a list of available API clients.
+  operationId: getUserSettingsApiClients
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              clients:
+                $ref: ../components/schemas/userSettingsApiClients.yaml
+          examples:
+            User Settings Response:
+              value:
+                $ref: ../components/examples/userSettingsApiClients.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

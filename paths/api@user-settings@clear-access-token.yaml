@@ -1,0 +1,29 @@
+put:
+  summary: Revoke API Access Token
+  description: This endpoint revokes your API access token for the specified client.
+  operationId: deleteUserSettingsAccessToken
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+    - $ref: ../components/parameters/clientId.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            User Settings Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
