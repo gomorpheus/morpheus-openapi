@@ -9,16 +9,21 @@ properties:
     type: string
   description: 
     type: string
+    nullable: true
   category: 
     type: string
   loadMethod: 
     type: string
+    nullable: true
   enforceMethod: 
     type: string
+    nullable: true
   prepareMethod: 
     type: string
+    nullable: true
   validateMethod: 
     type: string
+    nullable: true
   enforceOnProvision: 
     type: boolean
   enforceOnManaged: 
@@ -26,85 +31,4 @@ properties:
   optionTypes: 
     type: array
     items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        code: 
-          type: string
-        name: 
-          type: string
-        enabled: 
-          type: boolean
-        editable: 
-          type: boolean
-        description: 
-          type: string
-          nullable: true
-        type: 
-          type: string
-        config: 
-          type: object
-          properties:  
-        displayOrder: 
-          type: integer
-          format: int64
-        optionSource: 
-          type: string
-        optionSourceType: 
-          type: string
-          nullable: true
-        defaultValue: 
-          type: string
-          nullable: true
-        placeHolder: 
-          type: string
-          nullable: true
-        helpBlock: 
-          type: string
-        required: 
-          type: boolean
-        fieldLabel: 
-          type: string
-        fieldGroup: 
-          type: string
-        fieldName: 
-          type: string
-        fieldContext: 
-          type: string
-        fieldCode: 
-          type: string
-        dependsOnCode: 
-          type: string
-          nullable: true
-        visibleOnCode: 
-          type: string
-          nullable: true
-        requireOnCode: 
-          type: string
-          nullable: true
-        idTemplate: 
-          type: string
-          nullable: true
-        noBlank: 
-          type: boolean
-        contextualDefault: 
-          type: boolean
-        minVal: 
-          type: string
-          nullable: true
-        maxVal: 
-          type: string
-          nullable: true
-        minLength: 
-          type: string
-          nullable: true
-        maxLength: 
-          type: string
-          nullable: true
-        wrapperSelector: 
-          type: string
-          nullable: true
-        excludeFromSearch: 
-          type: boolean
+      $ref: optionType.yaml
