@@ -704,6 +704,16 @@ paths:
     $ref: paths/api@policies.yaml
   /api/policies/{id}:
     $ref: paths/api@policies@id.yaml
+  /api/groups/{groupId}/policies:
+    $ref: paths/api@groups@id@policies.yaml
+  /api/groups/{groupId}/policies/{id}:
+    $ref: paths/api@groups@id@policies@id.yaml
+  /api/zones/{cloudId}/policies:
+    $ref: paths/api@zones@id@policies.yaml
+  /api/zones/{cloudId}/policies/{id}:
+    $ref: paths/api@zones@id@policies@id.yaml
+  /api/policy-types:
+    $ref: paths/api@policy-types.yaml
   /api/power-schedules:
     $ref: paths/api@power-schedules.yaml
   /api/power-schedules/{id}:

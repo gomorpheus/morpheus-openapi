@@ -1,11 +1,12 @@
 get:
-  summary: Retrieves a Specific Policy
+  summary: Retrieves a Specific Policy for a Cloud
   description: |
-    Retrieves a specific policy.
-  operationId: getPolicies
+    Retrieves a specific policy for a Cloud.
+  operationId: getPoliciesCloud
   tags:
     - Policies
   parameters:
+    - $ref: ../components/parameters/cloudId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
@@ -123,13 +124,14 @@ get:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 put:
-  summary: Updates a Policy
+  summary: Updates a Policy for a Cloud
   description: |
-    Updates a policy.
-  operationId: updatePolicies
+    Updates a policy for a Cloud.
+  operationId: updatePoliciesCloud
   tags:
     - Policies
   parameters:
+    - $ref: ../components/parameters/cloudId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
     content:
@@ -258,13 +260,14 @@ put:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 delete:
-  summary: Deletes a Policy
+  summary: Deletes a Policy for a Cloud
   description: |
-    Deletes a specified policy.
-  operationId: removePolicies
+    Deletes a specified policy for a Cloud.
+  operationId: removePoliciesCloud
   tags:
     - Policies
   parameters:
+    - $ref: ../components/parameters/cloudId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
