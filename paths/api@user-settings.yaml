@@ -1,0 +1,85 @@
+get:
+  summary: User Settings
+  description: |
+    Provides API for managing your own user settings and api access tokens.
+
+    This endpoint retrieves your user settings and API access token information.
+  operationId: listUserSettings
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/userSettings.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            User Settings Response:
+              value:
+                $ref: ../components/examples/userSettings.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update User Settings
+  description: |
+    This endpoint allows updating user settings.
+  operationId: updateUserSettings
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            user:
+              $ref: ../components/schemas/userSettingsUpdate.yaml
+        examples: 
+          User Settings Update Request:
+            value:
+              $ref: ../components/examples/userSettingsUpdate.json
+      multipart/form-data:
+        schema:
+          type: object
+          description: Uploads a Custom Logo
+          properties:
+            user.avatar:
+              type: string
+              example: "/path/to/file.png"
+            user.desktopBackground:
+              type: string
+              example: "/path/to/file.png"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            User Settings Update Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

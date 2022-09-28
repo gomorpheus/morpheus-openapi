@@ -916,10 +916,14 @@ paths:
   /api/usage:
     $ref: paths/api@usage.yaml
   
+  /api/user-settings:
+    $ref: paths/api@user-settings.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
     $ref: paths/api@users@id.yaml
+  /api/users/{id}/permissions:
+    $ref: paths/api@users@id@permissions.yaml
   /api/vdi-apps:
     $ref: paths/api@vdi-apps.yaml
   /api/vdi-apps/{id}:

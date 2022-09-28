@@ -5,7 +5,8 @@ get:
   tags:
     - Users
   parameters:
-  - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/includeAccess.yaml
   responses:
     '200':
       description: User Object
