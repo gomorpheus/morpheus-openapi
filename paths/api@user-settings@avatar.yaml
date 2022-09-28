@@ -1,0 +1,66 @@
+post: 
+  summary: Update Avatar
+  description: This endpoint updates your avatar image. Expects multipart form data as the request format, not JSON.
+  operationId: updateUserSettingsAvatar
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+  requestBody: 
+    content: 
+      multipart/form-data:
+        schema:
+          type: object
+          description: Uploads a Custom Avatar
+          properties:
+            user.avatar:
+              type: string
+              example: "/path/to/file.png"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            User Settings Update Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete Avatar
+  description: Delete your avatar image.
+  operationId: deleteUserSettingsAvatar
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Success Object
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Delete Image Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

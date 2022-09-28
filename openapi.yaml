@@ -913,6 +913,16 @@ paths:
   
   /api/user-settings:
     $ref: paths/api@user-settings.yaml
+  /api/user-settings/api-clients:
+    $ref: paths/api@user-settings@api-clients.yaml
+  /api/user-settings/avatar:
+    $ref: paths/api@user-settings@avatar.yaml
+  /api/user-settings/clear-access-token:
+    $ref: paths/api@user-settings@clear-access-token.yaml
+  /api/user-settings/desktop-background:
+    $ref: paths/api@user-settings@desktop-background.yaml
+  /api/user-settings/regenerate-access-token:
+    $ref: paths/api@user-settings@regenerate-access-token.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:

@@ -1,0 +1,31 @@
+put:
+  summary: Regenerate API Access Token
+  description: This endpoint regenerates your API access token for the specified client. If a current token exists, it is revoked and a new token is returned.
+  operationId: updateUserSettingsAccessToken
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: query
+      description: ID of User (Only available to the master tenant.)  Default is the current user
+      schema:
+        type: integer
+        format: int64
+    - $ref: ../components/parameters/clientId.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/userSettingsRegenerateAccessToken.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            User Settings Response:
+              value:
+                $ref: ../components/examples/userSettingsRegenerateAccessToken.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
