@@ -444,7 +444,7 @@ paths:
     $ref: paths/api@instances@id@linked-clone@id.yaml
   /api/instances/{id}/lock:
     $ref: paths/api@instances@id@lock.yaml
-  /api/instances/{id}/networkInterfaceUpdate/{networkInterfaceId}:
+  /api/instances/{id}/networkInterfaces/{networkInterfaceId}:
     $ref: paths/api@instances@id@networkInterfaces@id.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
