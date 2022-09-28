@@ -60,7 +60,7 @@ put:
       multipart/form-data:
         schema:
           type: object
-          description: Uploads a Custom Logo
+          description: Uploads custom images
           properties:
             user.avatar:
               type: string
