@@ -30,7 +30,7 @@ get:
                         description: Value
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Search Response:
+            Option Values Response:
               value:
                 $ref: ../components/examples/optionValues.json
     '4XX':
