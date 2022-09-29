@@ -846,6 +846,8 @@ paths:
     $ref: paths/api@catalog@checkout.yaml
   /api/catalog/items:
     $ref: paths/api@catalog@items.yaml
+  /api/catalog/items/{id}:
+    $ref: paths/api@catalog@items@id.yaml
   /api/catalog/orders:
     $ref: paths/api@catalog@orders.yaml
   /api/catalog/types:
