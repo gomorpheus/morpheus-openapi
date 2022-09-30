@@ -1,8 +1,7 @@
 get:
   summary: List Virtual Desktops
   description: >
-    This endpoint retrieves all virtual desktops (VDI pools) along with the allocation
-    for your user if one exists.
+    This endpoint retrieves all virtual desktops along with the allocation for your user if one exists.
   operationId: listVdi
   tags:
     - VDI
