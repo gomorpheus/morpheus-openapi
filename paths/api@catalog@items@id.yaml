@@ -26,7 +26,7 @@ get:
       $ref: ../components/responses/5xx.yaml
 delete:
   summary: Delete a Catalog Inventory Item
-  description: Will delete an instance and all associated monitors and backups.
+  description: Will delete a catalog inventory item, which by default will deprovision any associated any instances and servers.
   operationId: deleteCatalogItem
   tags:
     - Service Catalog

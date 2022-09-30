@@ -1,8 +1,7 @@
 get:
   summary: Get a Specific Virtual Desktop
   description: >
-    This endpoint retrieves a specific virtual desktop (VDI pool) along
-    with the allocation for your user if one exists.
+    This endpoint retrieves a specific virtual desktop along with the allocation for your user if one exists.
   operationId: getVdi
   tags:
     - VDI
