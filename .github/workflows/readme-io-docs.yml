@@ -1,0 +1,25 @@
+name: Sync OpenAPI to ReadMe
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - name: get README_VERSION_ID
+      #   env:
+      #     IDJSON: ${{ secrets.README_ID_JSON }}
+      #   run: |
+      #     echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
+      #     README_VERSION_ID=$(python3 -c 'import json,os;print(json.loads(os.environ.get("IDJSON"))[os.environ.get("GITHUB_REF_NAME")])')
+      #     idsize=${#README_VERSION_ID}
+      #     if [ $idsize -lt 6 ]; then
+      #       echo "No ID found"
+      #       exit 1
+      #     fi
+      #     echo "::add-mask::$README_VERSION_ID"
+      #     echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
+      - name: Install rdme client
+        run: |
+          npm install rdme@7.5.0
+          npx rdme categories --key ${{ secrets.README_TOKEN }} --version 5.5.2-dev
+        
