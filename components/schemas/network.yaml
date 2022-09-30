@@ -158,6 +158,9 @@ properties:
         type: integer
         format: int64
         description: Network Domain ID
+  searchDomains:
+    type: string
+    nullable: true
   prefixLength: 
     type: string
     nullable: true
