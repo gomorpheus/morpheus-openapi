@@ -1,7 +1,7 @@
 post:
   summary: Allocate Virtual Desktop
   description: >
-    This endpoint allocates a specific virtual desktop (VDI pool) for use by your user.
+    This endpoint allocates a specific virtual desktop for use by your user.
     It will return the desktop and its allocation for your user, or an error if allocation fails,
     which will occur if the desktop is fully allocated already. If your user already has an allocation,
     the desktop and allocation will still be returned succesfully and the server does not make any changes.
