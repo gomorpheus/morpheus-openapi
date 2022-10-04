@@ -26,6 +26,13 @@ properties:
       id: 
         type: integer
         format: int64
+  defaultCloud:
+    type: object
+    description: A Map containing the id of the defaultCloud for the app.
+    properties:
+      id:
+        type: integer
+        format: int64
   environment:
     type: string
     description: Environment code (appContext)
