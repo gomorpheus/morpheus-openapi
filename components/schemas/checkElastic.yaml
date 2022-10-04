@@ -1,6 +1,5 @@
 description: |
-  Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health.
-  In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage.
+  Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health. In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage.
 type: object
 properties:
   name:

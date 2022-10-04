@@ -1,6 +1,5 @@
 description: |
-  Socket check confirms a certain TCP port is up and responding in your environment.
-  It can be configured do an initial send upon connect and compare and expected response of the service.
+  Socket check confirms a certain TCP port is up and responding in your environment.  It can be configured do an initial send upon connect and compare and expected response of the service.
 type: object
 properties:
   name:
