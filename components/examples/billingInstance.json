@@ -1,0 +1,112 @@
+{
+  "success": true,
+  "billingInfo": {
+    "instanceId": null,
+    "instanceUUID": "35268156-4ad2-4d12-9536-726576c58982",
+    "startDate": "2022-10-01T00:00:00Z",
+    "endDate": "2022-10-04T19:40:43Z",
+    "name": "GPDMUBU1007",
+    "price": 3.4320881916824763570,
+    "cost": 3.4320881916824763570,
+    "currency": "USD",
+    "containers": [
+      {
+        "refType": "container",
+        "refUUID": "656a8cff-aef9-469c-8867-36f10d427ea6",
+        "refId": 509971,
+        "startDate": "2022-10-01T00:00:00Z",
+        "endDate": "2022-10-04T19:40:43Z",
+        "cost": 3.4320881916824763570,
+        "price": 3.4320881916824763570,
+        "numUnits": 91.6786577778,
+        "unit": "hour",
+        "currency": "USD",
+        "usages": [
+          {
+            "cost": 3.4320881916824763570,
+            "price": 3.4320881916824763570,
+            "createdByUser": "Greg Pietro",
+            "createdByUserId": 259,
+            "siteId": 371,
+            "siteName": "DevTest",
+            "siteUUID": "d157ffef-aaee-4040-9b23-b571680bb3e5",
+            "siteCode": "dev",
+            "currency": "USD",
+            "startDate": "2022-10-01T00:00:00Z",
+            "endDate": "2022-10-04T19:40:43Z",
+            "status": "running",
+            "tags": [
+              {
+                "name": "CostCenter",
+                "value": "Operations"
+              },
+              {
+                "name": "Morpheus Id",
+                "value": "509971"
+              },
+              {
+                "name": "Morpheus Instance Id",
+                "value": "18035"
+              },
+              {
+                "name": "Morpheus Server Id",
+                "value": "216377"
+              },
+              {
+                "name": "Morpheus Environment",
+                "value": "production"
+              }
+            ],
+            "applicablePrices": [
+              {
+                "startDate": "2022-10-01T00:00:00Z",
+                "endDate": "2022-10-04T19:40:43Z",
+                "numUnits": 91.6786577778,
+                "cost": 3.4320881916824763570,
+                "price": 3.4320881916824763570,
+                "currency": "USD",
+                "prices": [
+                  {
+                    "type": "compute",
+                    "pricePerUnit": 0.027600000,
+                    "costPerUnit": 0.027600000,
+                    "cost": 2.5303309546672800000,
+                    "price": 2.5303309546672800000,
+                    "quantity": null
+                  },
+                  {
+                    "type": "storage",
+                    "pricePerUnit": 0.0001639344240000000,
+                    "costPerUnit": 0.0001639344240000000,
+                    "cost": 0.01502928795589676298720000000,
+                    "price": 0.01502928795589676298720000000,
+                    "quantity": 60,
+                    "datastoreId": null,
+                    "volumeType": "gp2",
+                    "datastore": "none"
+                  }
+                ]
+              }
+            ],
+            "servicePlanId": 3,
+            "servicePlanName": "T2 Small - 1 Core, 2GB Memory",
+            "resourcePoolId": 129,
+            "resourcePoolName": "labs"
+          }
+        ],
+        "numUsages": 1,
+        "totalUsages": 1,
+        "hasMoreUsages": false,
+        "foundPricing": true,
+        "name": "GPDMUBU1007_509971",
+        "serverId": 216377,
+        "serverUUID": "a3808297-415e-4f13-ac91-c26b5905f6fa",
+        "serverUniqueId": null,
+        "serverExternalId": "i-075e7634d54718666",
+        "serverInternalId": null,
+        "resourcePoolId": 129,
+        "resourcePoolName": "labs"
+      }
+    ]
+  }
+}
