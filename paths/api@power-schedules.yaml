@@ -143,36 +143,6 @@ post:
                 schedule:
                   allOf:
                   - $ref: ../components/schemas/powerSchedule.yaml
-                  - type: object
-                    properties:
-                      instances:
-                        type: array
-                        nullable: true
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 123
-                            name:
-                              type: string
-                              example: "test"
-                  - type: object
-                    properties:
-                      servers:
-                        type: array
-                        nullable: true
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 123
-                            name:
-                              type: string
-                              example: "test"
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Power Schedule Response:
