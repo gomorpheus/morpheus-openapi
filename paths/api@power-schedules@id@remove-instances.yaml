@@ -26,7 +26,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            $ref: ../components/schemas/200-success-expanded.yaml
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
