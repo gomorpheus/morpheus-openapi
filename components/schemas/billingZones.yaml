@@ -1,24 +1,15 @@
 type: object
 properties: 
-  accountId: 
-    type: integer
-    format: int64
-  accountUUID: 
-    type: string
-  name: 
-    type: string
+  price: 
+    type: number
+  cost: 
+    type: number
   startDate: 
     type: string
     format: date-time
   endDate: 
     type: string
     format: date-time
-  priceUnit: 
-    type: string
-  price: 
-    type: number
-  cost: 
-    type: number
   zones: 
     type: array
     items: 

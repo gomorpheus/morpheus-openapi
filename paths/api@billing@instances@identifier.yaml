@@ -1,8 +1,8 @@
 get:
-  summary: Retrieves billing information for a instance in the requestor's account. Use instanceUUID whenever possible.
+  summary: Retrieves billing information for an instance in the requestor's account. Use instanceUUID whenever possible.
   description: |
     Provides API interfaces for viewing billing usage information by tenant, zone, instance or server.
-    By default, usage is returned is from the beginning of the current month until now.
+    By default, usage returned is from the beginning of the current month until now.
     The date range is parameterized but the end date cannot exceed the current date.
   operationId: getBillingInstancesIdentifier
   tags:
@@ -26,12 +26,12 @@ get:
             - type: object
               properties:
                 billingInfo:
-                  $ref: ../components/schemas/billingInstances.yaml
+                  $ref: ../components/schemas/billingInstance.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Billing Response:
               value:
-                $ref: ../components/examples/billingInstances.json
+                $ref: ../components/examples/billingInstance.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

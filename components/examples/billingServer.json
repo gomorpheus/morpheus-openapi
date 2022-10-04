@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "billingInfo": {
+      "refType": "computeServer",
+      "refUUID": "2456e3e1-be16-4a64-8de1-ee59bc0477de",
+      "refId": null,
+      "startDate": "2022-10-01T00:00:00Z",
+      "endDate": "2022-10-04T19:55:33Z",
+      "cost": 2.4111745975804526776,
+      "price": 2.4111745975804526776,
+      "numUnits": 91.9260322222,
+      "unit": "hour",
+      "currency": "USD",
+      "usages": [
+          {
+              "cost": 2.4111745975804526776,
+              "price": 2.4111745975804526776,
+              "createdByUser": "User man",
+              "createdByUserId": 4,
+              "siteId": null,
+              "siteName": null,
+              "siteUUID": null,
+              "siteCode": null,
+              "currency": "USD",
+              "startDate": "2022-10-01T00:00:00Z",
+              "endDate": "2022-10-04T19:55:33Z",
+              "status": "stopped",
+              "tags": [],
+              "applicablePrices": [
+                  {
+                      "startDate": "2022-10-01T00:00:00Z",
+                      "endDate": "2022-10-04T19:55:33Z",
+                      "numUnits": 91.9260322222,
+                      "cost": 2.4111745975804526776,
+                      "price": 2.4111745975804526776,
+                      "currency": "USD",
+                      "prices": [
+                          {
+                              "type": "storage",
+                              "pricePerUnit": 0.0001639344240000000,
+                              "costPerUnit": 0.0001639344240000000,
+                              "cost": 0.01506984114295179701280000000,
+                              "price": 0.01506984114295179701280000000,
+                              "quantity": 80,
+                              "datastoreId": null,
+                              "volumeType": "gp2",
+                              "datastore": "none"
+                          },
+                          {
+                              "type": "storage",
+                              "pricePerUnit": 0.0001639344240000000,
+                              "costPerUnit": 0.0001639344240000000,
+                              "cost": 0.01506984114295179701280000000,
+                              "price": 0.01506984114295179701280000000,
+                              "quantity": 80,
+                              "datastoreId": null,
+                              "volumeType": "gp2",
+                              "datastore": "none"
+                          }
+                      ]
+                  }
+              ],
+              "servicePlanId": 4,
+              "servicePlanName": "T2 Medium - 2 Core, 4GB Memory",
+              "resourcePoolId": 129,
+              "resourcePoolName": "labs"
+          }
+      ],
+      "numUsages": 1,
+      "totalUsages": 1,
+      "hasMoreUsages": false,
+      "foundPricing": true,
+      "name": "k8s-demo-aws-17-worker-4",
+      "serverUUID": "2456e3e1-be16-4a64-8de1-ee59bc0477de",
+      "serverUniqueId": null,
+      "serverExternalId": "i-0602c9d8c7a9a9625",
+      "serverInternalId": null,
+      "resourcePoolId": 129,
+      "resourcePoolName": "labs"
+  }
+}

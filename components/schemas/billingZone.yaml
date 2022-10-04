@@ -1,0 +1,108 @@
+type: object
+properties:
+  zoneName:
+    type: string
+  zoneId:
+    type: integer
+    format: int64
+  zoneUUID:
+    type: string
+  zoneCode:
+    type: string
+    nullable: true
+  startDate:
+    type: string
+    format: date-time
+  endDate:
+    type: string
+    format: date-time
+  priceUnit:
+    type: string
+  computeServers:
+    type: object
+    properties:
+      price:
+        type: number
+      cost:
+        type: number
+      servers:
+        type: array
+        items:
+          type: object
+      count:
+        type: integer
+        format: int64
+  instances:
+    type: object
+    properties:
+      price:
+        type: number
+      cost:
+        type: number
+      instances:
+        type: array
+        items:
+          type: object
+      count:
+        type: integer
+        format: int64
+  discoveredServers:
+    type: object
+    properties:
+      price:
+        type: number
+      cost:
+        type: number
+      servers:
+        type: array
+        items:
+          type: object
+      count:
+        type: integer
+        format: int64
+  loadBalancers:
+    type: object
+    properties:
+      price:
+        type: number
+      cost:
+        type: number
+      loadBalancers:
+        type: array
+        items:
+          type: object
+      count:
+        type: integer
+        format: int64
+  virtualImages:
+    type: object
+    properties:
+      price:
+        type: number
+      cost:
+        type: number
+      virtualImages:
+        type: array
+        items:
+          type: object
+      count:
+        type: integer
+        format: int64
+  snapshots:
+    type: object
+    properties:
+      price:
+        type: number
+      cost:
+        type: number
+      snapshots:
+        type: array
+        items:
+          type: object
+      count:
+        type: integer
+        format: int64
+  price:
+    type: number
+  cost:
+    type: number
