@@ -22,7 +22,7 @@ jobs:
       #     echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
       - name: Install rdme client and grab category IDs
         run: |
-          npm install rdme@7.5.0
+          npm install rdme@7.3.0
           README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
           echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
       - uses: jannekem/run-python-script-action@v1
