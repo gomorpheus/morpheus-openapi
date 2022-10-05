@@ -28,7 +28,7 @@ jobs:
           cat cats
           jq --version
           echo "straight output"
-          jq -r .[] cats
+          jq -r . cats
           
           jq --raw-output '.[] | select(.type == "guide").id' cats
           #README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
