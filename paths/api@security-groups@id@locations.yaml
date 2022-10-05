@@ -29,9 +29,9 @@ post:
                   example: 1
                 customOptions:
                   anyOf:
-                  - $ref: securityGroupLocationAzureCustomOptions.yaml
-                  - $ref: securityGroupLocationAwsCustomOptions.yaml
-                  - $ref: securityGroupLocationOpenstackCustomOptions.yaml
+                  - $ref: ../components/schemas/securityGroupLocationAzureCustomOptions.yaml
+                  - $ref: ../components/schemas/securityGroupLocationAwsCustomOptions.yaml
+                  - $ref: ../components/schemas/securityGroupLocationOpenstackCustomOptions.yaml
   responses:
     '200':
       description: Successful Request
