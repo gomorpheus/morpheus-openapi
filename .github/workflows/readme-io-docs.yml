@@ -24,9 +24,10 @@ jobs:
         run: |
           npm install rdme@7.5.0
           echo "rdme installed fine"
-          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME
-          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id'
-          README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
+          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME > cats
+          cat cats | jq --raw-output '.[] | select(.type == "guide").id'
+          #README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
+          README_CATEGORY_ID=$(cat cats | jq --raw-output '.[] | select(.type == "guide").id')
           echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
       - uses: jannekem/run-python-script-action@v1
         with:
