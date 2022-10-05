@@ -163,7 +163,22 @@ properties:
           type: integer
           format: int64
   securityServer: 
-    type: string
+    type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+    nullable: true
+  networkServer: 
+    type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
     nullable: true
   stats: 
     type: object
