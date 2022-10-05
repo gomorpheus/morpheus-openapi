@@ -24,7 +24,7 @@ jobs:
         run: |
           npm install rdme@7.5.0
           echo "rdme installed fine"
-          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME > cats.json
+          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME 1>cats.json
           sed -n 'l' cats.json
           sed -i 's/\x0//g' cats.json
           # cat cats
