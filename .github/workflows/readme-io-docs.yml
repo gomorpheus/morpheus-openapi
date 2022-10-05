@@ -24,30 +24,46 @@ jobs:
         run: |
           npm install rdme@7.5.0
           echo "rdme installed fine"
-          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME > cats
-          cat cats
-          jq --version
-          echo "straight output"
-          jq -r . cats
+          npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME > cats.json
+          # cat cats
+          # jq --version
+          # echo "straight output"
+          # jq -r . cats
           
-          jq --raw-output '.[] | select(.type == "guide").id' cats
-          #README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
-          README_CATEGORY_ID=$(cat cats | jq --raw-output '.[] | select(.type == "guide").id')
-          echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
+          # jq --raw-output '.[] | select(.type == "guide").id' cats
+          # #README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
+          # README_CATEGORY_ID=$(cat cats | jq --raw-output '.[] | select(.type == "guide").id')
+          # echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
       - uses: jannekem/run-python-script-action@v1
         with:
           script: |
             import frontmatter
             import os
+            import json
+
+            ### Get category ID from json
+            jsonfile = 'cats.json'
+            category_id = None
+            with open(jsonfile) as jf:
+                allcats = json.load(jf)
+                for section in allcats:
+                    if section['type'] == "guide":
+                        category_id = section['id']
+
+            if category_id is None:
+                print("Could not find category ID")
+                quit(1)
+
+            ### Modify frontmatter with category ID
             dir = 'docs'
             for fn in os.listdir(dir):
-              f = os.path.join(dir, fn)
-              if os.path.isfile(f):
-                with open(f) as mdf:
-                  y = frontmatter.load(mdf)
-                  y.metadata['category'] = os.environ['README_CATEGORY_ID']
-                  newdata = frontmatter.dumps(y)
-                with open(f, 'w') as newmdf:
-                    newmdf.write(newdata)
+                f = os.path.join(dir, fn)
+                if os.path.isfile(f):
+                    with open(f) as mdf:
+                        y = frontmatter.load(mdf)
+                        y.metadata['category'] = "cat id"
+                        newdata = frontmatter.dumps(y)
+                    with open(f, 'w') as newmdf:
+                        print("newmdf.write(newdata)")
       - run: |
           npx rdme docs docs/ --dryRun
