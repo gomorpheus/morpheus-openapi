@@ -58,4 +58,4 @@ jobs:
                     with open(f, 'w') as newmdf:
                         newmdf.write(newdata)
       - run: |
-          npx rdme docs docs/ --key ${{ secrets.README_TOKEN }} --dryRun
+          npx rdme docs docs/ --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME --dryRun
