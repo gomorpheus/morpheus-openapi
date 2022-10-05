@@ -1,0 +1,45 @@
+name: Sync Docs to ReadMe
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install python-frontmatter
+      # - name: get README_VERSION_ID
+      #   env:
+      #     IDJSON: ${{ secrets.README_ID_JSON }}
+      #   run: |
+      #     echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
+      #     README_VERSION_ID=$(python3 -c 'import json,os;print(json.loads(os.environ.get("IDJSON"))[os.environ.get("GITHUB_REF_NAME")])')
+      #     idsize=${#README_VERSION_ID}
+      #     if [ $idsize -lt 6 ]; then
+      #       echo "No ID found"
+      #       exit 1
+      #     fi
+      #     echo "::add-mask::$README_VERSION_ID"
+      #     echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
+      - name: Install rdme client and grab category IDs
+        run: |
+          npm install rdme@7.5.0
+          echo "rdme installed fine"
+          README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
+          echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
+      - uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            import frontmatter
+            import os
+            dir = 'docs'
+            for fn in os.listdir(dir):
+              f = os.path.join(dir, fn)
+              if os.path.isfile(f):
+                with open(f) as mdf:
+                  y = frontmatter.load(mdf)
+                  y.metadata['category'] = os.environ['README_CATEGORY_ID']
+                  newdata = frontmatter.dumps(y)
+                with open(f, 'w') as newmdf:
+                    newmdf.write(newdata)
+      - run: |
+          npx rdme docs docs/ --dryRun
