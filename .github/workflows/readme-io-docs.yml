@@ -26,7 +26,7 @@ jobs:
           echo "rdme installed fine"
           npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME > cats
           cat cats
-          cat cats | jq --raw-output '.[] | select(.type == "guide").id'
+          jq --raw-output '.[] | select(.type == "guide").id' cats
           #README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
           README_CATEGORY_ID=$(cat cats | jq --raw-output '.[] | select(.type == "guide").id')
           echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
