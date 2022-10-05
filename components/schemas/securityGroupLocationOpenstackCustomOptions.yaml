@@ -1,0 +1,7 @@
+type: object
+properties: 
+  resourcePoolId: 
+    type: integer
+    format: int64
+    description: Resource Pool ID (applicable to cloud types Openstack/OpenTelekom/Huawei)
+    example: 3

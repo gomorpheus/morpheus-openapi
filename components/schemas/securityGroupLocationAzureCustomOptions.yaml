@@ -1,0 +1,6 @@
+type: object
+properties: 
+  resourceGroup: 
+    type: string
+    description: External ID of Azure Resource Group
+    example: demo-lab

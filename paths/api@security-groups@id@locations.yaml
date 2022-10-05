@@ -28,28 +28,10 @@ post:
                   description: The ID of the Zone (Cloud)
                   example: 1
                 customOptions:
-                  type: array
-                  items:
-                    anyOf:
-                    - type: object
-                      required:
-                       - vpc
-                      properties:
-                        vpc:
-                          type: integer
-                          format: int64
-                          description: External ID of Amazon VPC
-                          example: 3
-                    - type: object
-                      required:
-                        - resourceGroup
-                      properties:
-                        resourceGroup:
-                          type: integer
-                          format: int64
-                          description: External ID of the Azure Resource Group to scope to
-                          example: 5
-                    - type: object
+                  anyOf:
+                  - $ref: securityGroupLocationAzureCustomOptions.yaml
+                  - $ref: securityGroupLocationAwsCustomOptions.yaml
+                  - $ref: securityGroupLocationOpenstackCustomOptions.yaml
   responses:
     '200':
       description: Successful Request
