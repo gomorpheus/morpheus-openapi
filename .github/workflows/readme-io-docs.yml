@@ -26,17 +26,6 @@ jobs:
           echo "rdme installed fine"
           npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME 1>cats.json
           sed -i -n '/^\[$/,$p' cats.json
-          #sed -n 'l' cats.json
-          #sed -i 's/\x0//g' cats.json
-          # cat cats
-          # jq --version
-          # echo "straight output"
-          # jq -r . cats
-          
-          # jq --raw-output '.[] | select(.type == "guide").id' cats
-          # #README_CATEGORY_ID=$(npx rdme categories --key ${{ secrets.README_TOKEN }} --version $GITHUB_REF_NAME | jq --raw-output '.[] | select(.type == "guide").id')
-          # README_CATEGORY_ID=$(cat cats | jq --raw-output '.[] | select(.type == "guide").id')
-          # echo "README_CATEGORY_ID=${README_CATEGORY_ID}" >> $GITHUB_ENV
       - uses: jannekem/run-python-script-action@v1
         with:
           script: |
@@ -67,6 +56,6 @@ jobs:
                         y.metadata['category'] = "cat id"
                         newdata = frontmatter.dumps(y)
                     with open(f, 'w') as newmdf:
-                        print("newmdf.write(newdata)")
+                        newmdf.write(newdata)
       - run: |
-          npx rdme docs docs/ --dryRun
+          npx rdme docs docs/ --key ${{ secrets.README_TOKEN }} --dryRun
