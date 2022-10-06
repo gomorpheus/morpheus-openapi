@@ -13,14 +13,10 @@ get:
             allOf:
             - type: object
               properties:
-                servers:
+                clients:
                   type: array
                   items:
                     $ref: ../components/schemas/client.yaml
-                stats:
-                  type: object
-                multitenant:
-                  type: boolean
             - $ref: ../components/schemas/meta.yaml
           examples:
             Clients Response:
@@ -74,7 +70,7 @@ post:
             allOf:
             - type: object
               properties:
-                account:
+                client:
                   $ref: ../components/schemas/client.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
