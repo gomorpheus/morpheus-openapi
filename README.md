@@ -27,3 +27,7 @@ This will build the file that we upload to the host, you can use this file in an
 Pushing to a branch which matches a defined version number with valid secret entry will bundle `openapi.yaml` using redocly-cli and upload to the destination given a good lint.  
 
 Branch name must match version name on destination at https://apidocs2.morpheusdata.com
+
+## NOTE
+
+Do not put any documentation into `docs/` where the filename matches a tag in `openapi.yaml`.  Bad things will happen, and we'll have to delete and resync.
