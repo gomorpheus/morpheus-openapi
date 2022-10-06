@@ -1,0 +1,99 @@
+{
+    "clients": [
+        {
+            "id": 3,
+            "clientId": "morph-api",
+            "accessTokenValiditySeconds": 31536000,
+            "refreshTokenValiditySeconds": 31536000,
+            "authorities": [
+                "ROLE_CLIENT"
+            ],
+            "authorizedGrantTypes": [
+                "refresh_token",
+                "implicit",
+                "password",
+                "client_credentials",
+                "authorization_code"
+            ],
+            "scopes": [
+                "read",
+                "write"
+            ]
+        },
+        {
+            "id": 4,
+            "clientId": "morph-automation",
+            "accessTokenValiditySeconds": 1440,
+            "refreshTokenValiditySeconds": 1440,
+            "authorities": [
+                "ROLE_CLIENT"
+            ],
+            "authorizedGrantTypes": [
+                "refresh_token",
+                "implicit",
+                "password",
+                "client_credentials",
+                "authorization_code"
+            ],
+            "scopes": [
+                "read",
+                "write"
+            ]
+        },
+        {
+            "id": 2,
+            "clientId": "morph-cli",
+            "accessTokenValiditySeconds": 31536000,
+            "refreshTokenValiditySeconds": 31536000,
+            "authorities": [
+                "ROLE_CLIENT"
+            ],
+            "authorizedGrantTypes": [
+                "refresh_token",
+                "implicit",
+                "password",
+                "client_credentials",
+                "authorization_code"
+            ],
+            "scopes": [
+                "read",
+                "write"
+            ]
+        },
+        {
+            "id": 1,
+            "clientId": "morph-customer",
+            "accessTokenValiditySeconds": 31536000,
+            "refreshTokenValiditySeconds": 31536000,
+            "authorities": [
+                "ROLE_CLIENT"
+            ],
+            "authorizedGrantTypes": [
+                "refresh_token",
+                "implicit",
+                "password",
+                "client_credentials",
+                "authorization_code"
+            ],
+            "scopes": [
+                "read",
+                "write"
+            ]
+        },
+        {
+            "id": 5,
+            "clientId": "morpheus-terraform",
+            "accessTokenValiditySeconds": 1440,
+            "refreshTokenValiditySeconds": 1440,
+            "authorities": [],
+            "authorizedGrantTypes": [],
+            "scopes": []
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 5,
+        "total": 5
+    }
+}

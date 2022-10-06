@@ -1,0 +1,87 @@
+get:
+  summary: Retrieves a Specific Client
+  description: |
+    Retrieves a specific client.
+  operationId: getClients
+  tags:
+    - Clients
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                client:
+                  $ref: ../components/schemas/client.yaml
+          examples:
+            Client Response:
+              value:
+                $ref: ../components/examples/client.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a Client
+  description: |
+    Updates a client.
+  operationId: updateClients
+  tags:
+    - Clients
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - client
+          properties:
+            client:
+              $ref: ../components/schemas/clientUpdate.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                client:
+                  $ref: ../components/schemas/client.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Client Response:
+              value:
+                $ref: ../components/examples/clientSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Client
+  description: |
+    Deletes a specified client.
+  operationId: removeClients
+  tags:
+    - Clients
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

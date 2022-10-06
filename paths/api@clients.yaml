@@ -1,0 +1,84 @@
+get: 
+  summary: Get All Clients
+  description: This endpoint retries a paginated list of clients.
+  operationId: listClients
+  tags: 
+    -  Clients
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                clients:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/client.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Clients Response:
+              value:
+                $ref: ../components/examples/clients.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Create a Client
+  description: >-
+    Create a new Client.
+  operationId: addClient
+  tags:
+    - Clients
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - client
+          properties:
+            client:
+              type: object
+              description: Payload for creating a new client
+              required:
+                - clientId
+              properties:
+                clientId:
+                  type: string
+                  description: ClientId
+                  example: Test Client
+                accessTokenValiditySeconds:
+                  type: integer
+                  nullable: true
+                  description: Length of time accessToken is valid in seconds.
+                  example: 43200
+                refreshTokenValiditySeconds:
+                  type: integer
+                  nullable: true
+                  description: Length of time refreshToken is valid in seconds.
+                  example: 43200
+  responses:
+    '200':
+      description: Client Object
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                client:
+                  $ref: ../components/schemas/client.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Client Response:
+              value:
+                $ref: ../components/examples/clientSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
