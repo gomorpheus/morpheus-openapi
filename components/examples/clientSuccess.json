@@ -1,0 +1,23 @@
+{
+    "success": true,
+    "client": {
+        "id": 29,
+        "clientId": "morph-api-client-here",
+        "accessTokenValiditySeconds": 49,
+        "refreshTokenValiditySeconds": null,
+        "authorities": [
+            "ROLE_CLIENT"
+        ],
+        "authorizedGrantTypes": [
+            "refresh_token",
+            "implicit",
+            "password",
+            "client_credentials",
+            "authorization_code"
+        ],
+        "scopes": [
+            "read",
+            "write"
+        ]
+    }
+}

@@ -136,6 +136,12 @@ paths:
     $ref: paths/api@catalog-item-types@id.yaml
   /api/catalog-item-types/{id}/update-logo:
     $ref: paths/api@catalog-item-types@id@update-logo.yaml
+  
+  /api/clients:
+    $ref: paths/api@clients.yaml
+  /api/clients/{id}:
+    $ref: paths/api@clients@id.yaml
+  
     
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
@@ -1082,6 +1088,8 @@ tags:
       Provides API interfaces for the managing catalog item types. These are the types that become available for order by the Service Catalog persona. This is the adminstrative api for the Library: Catalog Items functionality which was previously located under Tools: Self Service.
   - name: Checks
     description: Manage Monitoring Checks
+  - name: Clients
+    description: Manage Clients
   - name: Clouds
     description: Manage Clouds
   - name: Cluster Layouts

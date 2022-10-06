@@ -1,0 +1,10 @@
+type: object
+properties: 
+  clientId: 
+    type: string
+  accessTokenValiditySeconds: 
+    type: integer
+    format: int64
+  refreshTokenValiditySeconds: 
+    type: integer
+    format: int64
