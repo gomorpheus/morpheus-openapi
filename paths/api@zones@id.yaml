@@ -163,6 +163,13 @@ delete:
   tags:
     - Clouds
   parameters:
+    - name: removeResources
+      in: query
+      description: Remove Resources. This will delete all the managed resources in the cloud.
+      required: false
+      schema:
+        type: boolean
+        default: false
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
