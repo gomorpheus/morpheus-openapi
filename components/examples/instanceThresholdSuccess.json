@@ -1,0 +1,20 @@
+{
+    "instanceThreshold": {
+        "id": 1,
+        "autoUp": true,
+        "autoDown": true,
+        "minCount": 1,
+        "maxCount": 3,
+        "scaleIncrement": 1,
+        "cpuEnabled": true,
+        "minCpu": 40.0,
+        "maxCpu": 75.0,
+        "memoryEnabled": false,
+        "minMemory": 0.0,
+        "maxMemory": 0.0,
+        "diskEnabled": false,
+        "minDisk": 0.0,
+        "maxDisk": 0.0
+    },
+    "success": true
+}
