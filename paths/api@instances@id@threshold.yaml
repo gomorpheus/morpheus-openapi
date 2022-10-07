@@ -113,11 +113,11 @@ put:
             allOf:
             - type: object
               properties:
-                scaleThreshold:
+                instanceThreshold:
                   $ref: ../components/schemas/instanceThreshold.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Scale Threshold Response:
+            Instance Threshold Response:
               value:
                 $ref: ../components/examples/instanceThresholdSuccess.json
     '4XX':
