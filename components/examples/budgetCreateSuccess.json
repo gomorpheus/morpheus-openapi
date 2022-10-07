@@ -1,0 +1,53 @@
+{
+    "success": true,
+    "budget": {
+        "id": 12,
+        "name": "300 monthly budget",
+        "description": "300 monthly budget",
+        "account": {
+            "id": 3,
+            "name": "Morpheus"
+        },
+        "enabled": true,
+        "refScope": "tenant",
+        "refType": "Account",
+        "refId": 56,
+        "refName": "tenant A",
+        "period": "year",
+        "year": "2022",
+        "resourceType": "all",
+        "timezone": "UTC",
+        "startDate": "2022-01-01T00:00:00Z",
+        "endDate": "2022-12-31T23:59:59Z",
+        "interval": "month",
+        "costs": [
+            0.0,
+            0.0,
+            0.0,
+            300.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "isFiscal": false,
+        "averageCost": 25.0,
+        "totalCost": 300.0,
+        "currency": "USD",
+        "rollover": false,
+        "warningLimit": null,
+        "overLimit": null,
+        "externalId": null,
+        "internalId": null,
+        "createdById": 342,
+        "createdByName": "Mihai Popa",
+        "updatedById": null,
+        "updatedByName": null,
+        "dateCreated": "2022-04-07T20:44:40Z",
+        "lastUpdated": "2022-04-07T20:44:40Z"
+    }
+}
