@@ -13,6 +13,11 @@ properties:
     type: string
     description: Web URL you wish to use to run a check on
     example: 'https://google.com'
+  ignoreSSL:
+    type: boolean
+    description: Ignore SSL Errors
+    example: true
+    default: false
   checkUser:
     type: string
     description: If you want to use HTTP Basic Authentication, populate this field with the username
