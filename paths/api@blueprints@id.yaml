@@ -66,7 +66,7 @@ put:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 delete:
-  summary: Delete a blueprint
+  summary: Delete a Blueprint
   description: Delete a Blueprint
   operationId: deleteBlueprint
   tags:
