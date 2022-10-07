@@ -165,7 +165,7 @@ delete:
   parameters:
     - name: removeResources
       in: query
-      description: Remove Resources. This will delete all the managed resources in the cloud.
+      description: Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute.
       required: false
       schema:
         type: boolean

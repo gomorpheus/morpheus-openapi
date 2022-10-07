@@ -41,7 +41,7 @@ put:
           type: object
           properties: 
             optionTypeList:
-              $ref: ../components/schemas/optionTypeListCreate.yaml
+              $ref: ../components/schemas/optionTypeListUpdate.yaml
         examples:
           Option Type List Request:
             value: 

@@ -3,6 +3,12 @@ properties:
   name: 
     type: string
     description: A name for the virtual image
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   imageType: 
     type: string
     description: Code of image type. eg. vmware, ami, etc.

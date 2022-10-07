@@ -8,6 +8,10 @@ properties:
   description: 
     type: string
     nullable: true
+  labels:
+    type: array
+    items: 
+      type: string
   ownerId: 
     type: integer
     format: int64

@@ -1,6 +1,6 @@
 get: 
-  summary: Get All Clients
-  description: This endpoint retries a paginated list of clients.
+  summary: Get All Oauth Clients
+  description: This endpoint retrieves a paginated list of oauth clients.
   operationId: listClients
   tags: 
     -  Clients
@@ -27,9 +27,9 @@ get:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 post:
-  summary: Create a Client
+  summary: Create an Oauth Client
   description: >-
-    Create a new Client.
+    Create a new Oauth Client.
   operationId: addClient
   tags:
     - Clients
@@ -43,7 +43,7 @@ post:
           properties:
             client:
               type: object
-              description: Payload for creating a new client
+              description: Payload for creating a new oauth client
               required:
                 - clientId
               properties:

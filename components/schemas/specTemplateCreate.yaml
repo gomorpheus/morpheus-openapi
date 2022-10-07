@@ -7,11 +7,11 @@ properties:
   name:
     type: string
     description: Spec template name
-  labels:
+  labels: 
     type: array
-    description: Labels to apply to spec (comma separated)
+    description: Array of label strings, can be used for filtering.
     nullable: true
-    items: 
+    items:
       type: string
   type:
     type: object
