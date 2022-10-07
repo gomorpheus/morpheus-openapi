@@ -119,7 +119,7 @@ put:
           examples:
             Scale Threshold Response:
               value:
-                $ref: ../components/examples/scaleThresholdSuccess.json
+                $ref: ../components/examples/instanceThresholdSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
