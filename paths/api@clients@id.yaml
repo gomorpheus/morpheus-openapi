@@ -1,7 +1,7 @@
 get:
-  summary: Retrieves a Specific Client
+  summary: Retrieves a Specific Oauth Client
   description: |
-    Retrieves a specific client.
+    Retrieves a specific oauth client.
   operationId: getClients
   tags:
     - Clients
@@ -27,9 +27,9 @@ get:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 put:
-  summary: Updates a Client
+  summary: Updates an Oauth Client
   description: |
-    Updates a client.
+    Updates an oauth client.
   operationId: updateClients
   tags:
     - Clients
@@ -66,9 +66,9 @@ put:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 delete:
-  summary: Deletes a Client
+  summary: Deletes an Oauth Client
   description: |
-    Deletes a specified client.
+    Deletes a specified oauth client.
   operationId: removeClients
   tags:
     - Clients
