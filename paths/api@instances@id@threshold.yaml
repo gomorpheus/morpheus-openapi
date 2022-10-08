@@ -49,7 +49,7 @@ put:
           required:
             - instanceThreshold
           properties:
-            instanceThreshold
+            instanceThreshold:
               type: object
               properties:
                 autoUp:
