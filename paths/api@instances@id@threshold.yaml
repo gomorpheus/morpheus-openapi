@@ -47,9 +47,9 @@ put:
         schema:
           type: object
           required:
-            - scaleThreshold
+            - instanceThreshold
           properties:
-            scaleThreshold:
+            instanceThreshold
               type: object
               properties:
                 autoUp:
