@@ -526,10 +526,6 @@ properties:
               type: string
             macAddress: 
               type: string
-      labels: 
-        type: array
-        items:
-          type: object
       tags: 
         type: array
         items: 

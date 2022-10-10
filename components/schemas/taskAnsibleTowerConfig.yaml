@@ -23,11 +23,6 @@ properties:
           - ansibleTowerTask
       name: 
         type: string
-  labels:
-    type: array
-    nullable: true
-    items: 
-      type: string
   taskOptions: 
     type: object
     additionalProperties: false

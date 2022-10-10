@@ -5,11 +5,6 @@ properties:
     format: int64
   name:
     type: string
-  labels:
-    type: array
-    nullable: true
-    items: 
-      type: string
   description:
     type: string
     nullable: true

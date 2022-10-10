@@ -6,12 +6,6 @@ properties:
   name: 
     type: string
     description: File template name
-  labels: 
-    type: array
-    description: Array of label strings, can be used for filtering.
-    nullable: true
-    items:
-      type: string
   fileName: 
     type: string
     description: Filename for the file template

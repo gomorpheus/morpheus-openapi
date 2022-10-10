@@ -5,12 +5,6 @@ properties:
   name: 
     type: string
     description: Script name
-  labels: 
-    type: array
-    description: Array of label strings, can be used for filtering.
-    nullable: true
-    items:
-      type: string
   category: 
     type: string
     description: Script category

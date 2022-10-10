@@ -147,11 +147,6 @@ put:
                         - sshTask
                         - vro
                         - writeAttributes
-                    labels:
-                      type: array
-                      description: An array of Category labels for filtering
-                      items: 
-                        type: string
                     taskOptions:
                       type: object
                       description: Map of options specific to each `task type`. eg. script

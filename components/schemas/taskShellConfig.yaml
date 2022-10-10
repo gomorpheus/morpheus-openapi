@@ -25,10 +25,6 @@ properties:
           - script
       name: 
         type: string
-  labels:
-    type: array
-    items: 
-      type: string
   taskOptions: 
     type: object
     additionalProperties: false

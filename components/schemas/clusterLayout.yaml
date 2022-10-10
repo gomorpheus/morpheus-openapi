@@ -13,11 +13,6 @@ properties:
     format: date-time
   code: 
     type: string
-  labels: 
-    type: array
-    nullable: true
-    items:
-      type: string
   lastUpdated: 
     type: string
     format: date-time
@@ -115,11 +110,6 @@ properties:
               nullable: true
             name: 
               type: string
-            labels:
-              type: array
-              nullable: true
-              items:
-                type: string
             shortName: 
               type: string
             code: 
@@ -214,11 +204,6 @@ properties:
           nullable: true
         name: 
           type: string
-        labels:
-          type: array
-          nullable: true
-          items:
-            type: string
         code: 
           type: string
         type: 

@@ -7,11 +7,6 @@ properties:
   name: 
     type: string
     description: Layout name
-  labels:
-    type: array
-    nullable: true
-    items: 
-      type: string
   instanceVersion: 
     type: string
     description: Version of the layout

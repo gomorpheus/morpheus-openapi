@@ -16,11 +16,6 @@ properties:
         type: string
   name: 
     type: string
-  labels: 
-    type: array
-    nullable: true
-    items:
-      type: string
   fileName: 
     type: string
   filePath: 
