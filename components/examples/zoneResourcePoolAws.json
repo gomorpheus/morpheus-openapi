@@ -1,6 +1,7 @@
 {
     "resourcePool": {
         "id": 1297,
+        "name": "vpc-1c079e61",
         "description": "vpc-1c079e61 - vpc-1c079e61 - 172.31.0.0/16",
         "zone": {
             "id": 67,
@@ -21,8 +22,6 @@
             "cidrBlock": "172.31.0.0/16",
             "tenancy": "default"
         },
-        "name": "vpc-1c079e61",
-        "displayName": null,
         "tenants": [
             {
                 "id": 1,

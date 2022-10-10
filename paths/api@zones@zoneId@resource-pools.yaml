@@ -81,9 +81,6 @@ post:
                     - public
                     - private
                   default: private
-                displayName:
-                  type: string
-                  description: Optional Display Name (VMware only)
                 inventory:
                   type: boolean
                   description: Enable `True` or disable `False` inventory sync for resource pool during cloud refresh

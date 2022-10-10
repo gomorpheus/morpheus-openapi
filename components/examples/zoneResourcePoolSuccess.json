@@ -1,6 +1,7 @@
 {
     "resourcePool": {
         "id": 12,
+        "name": "Infrastructure",
         "description": null,
         "zone": {
             "id": 1,
@@ -21,8 +22,6 @@
         "status": "available",
         "inventory": true,
         "config": {},
-        "name": "Infrastructure",
-        "displayName": "",
         "tenants": [
             {
                 "id": 1,

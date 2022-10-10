@@ -88,9 +88,6 @@ properties:
           example: "billingAccounts/013A63-23432-11124"
   name: 
     type: string
-  displayName: 
-    type: string
-    nullable: true
   tenants: 
     type: array
     items: 
