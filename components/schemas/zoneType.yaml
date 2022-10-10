@@ -235,9 +235,6 @@ properties:
               showOnEdit: 
                 type: boolean
                 nullable: true
-              localCredential: 
-                type: boolean
-                nullable: true
         displayOrder: 
           type: integer
           format: int64
@@ -354,8 +351,5 @@ properties:
           type: boolean
           nullable: true
         showOnEdit: 
-          type: boolean
-          nullable: true
-        localCredential: 
           type: boolean
           nullable: true

@@ -156,9 +156,6 @@ properties:
         showOnEdit: 
           type: boolean
           nullable: true
-        localCredential: 
-          type: boolean
-          nullable: true
   groupOptionTypes: 
     type: array
     items: 
@@ -262,9 +259,6 @@ properties:
           type: boolean
           nullable: true
         showOnEdit: 
-          type: boolean
-          nullable: true
-        localCredential: 
           type: boolean
           nullable: true
   bucketOptionTypes: 

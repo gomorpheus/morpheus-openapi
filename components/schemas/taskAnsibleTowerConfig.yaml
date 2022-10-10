@@ -103,11 +103,6 @@ properties:
     format: int64
   allowCustomConfig: 
     type: boolean
-  credential: 
-    type: object
-    properties: 
-      type: 
-        type: string
   dateCreated: 
     type: string
     format: date-time

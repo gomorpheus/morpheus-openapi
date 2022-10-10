@@ -145,9 +145,6 @@ properties:
         showOnEdit: 
           type: boolean
           nullable: true
-        localCredential: 
-          type: string
-          nullable: true
   taskSetTasks: 
     type: array
     items: 

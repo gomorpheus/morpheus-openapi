@@ -43,10 +43,6 @@ properties:
           Pass `false` to skip refresh. 
           By default, refresh is done on update, when it is supported by the integration type.
         default: true
-      credential:
-        description: |
-          Map containing Credential ID or the default {"type": "local"} 
-          which means use the values set in the local task options username and password instead of associating a credential.
         oneOf: 
           - type: object
             properties: 
