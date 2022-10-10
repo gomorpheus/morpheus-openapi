@@ -258,8 +258,6 @@ paths:
     $ref: paths/api@clusters@id@statefulsets@id.yaml
   /api/clusters/{clusterId}/statefulsets/{id}/restart:
     $ref: paths/api@clusters@id@statefulsets@id@restart.yaml
-  /api/clusters/{clusterId}/upgrade-cluster:
-    $ref: paths/api@clusters@id@upgrade-cluster.yaml
   /api/clusters/{clusterId}/volumes:
     $ref: paths/api@clusters@id@volumes.yaml
   /api/clusters/{clusterId}/volumes/{id}:
