@@ -16,6 +16,10 @@ get:
             properties:
               checkGroup:
                 $ref: ../components/schemas/checkGroup.yaml
+              checks:
+                type: array
+                items: 
+                  $ref: ../components/schemas/check.yaml
           examples:
             Check Group Response:
               value:
