@@ -137,3 +137,5 @@ properties:
     type: string
     format: date-time
     nullable: true
+  deleted:
+    type: boolean
