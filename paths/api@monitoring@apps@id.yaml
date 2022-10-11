@@ -16,10 +16,18 @@ get:
             properties:
               monitorApp:
                 $ref: ../components/schemas/checkApp.yaml
+              checkGroups:
+                type: array
+                items: 
+                  $ref: ../components/schemas/checkGroup.yaml
               checks:
                 type: array
                 items:
                   $ref: ../components/schemas/check.yaml
+              openIncidents:
+                type: array
+                items: 
+                  $ref: ../components/schemas/incident.yaml
           examples:
             Check App Response:
               value:
