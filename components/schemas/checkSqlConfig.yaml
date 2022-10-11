@@ -23,6 +23,10 @@ properties:
     type: string
     description: Database password, (all check data is encrypted inside the database)
     example: basicPassword
+  dbPasswordHash:
+    type: string
+    description: Database password hash
+    example: 61236d68c76405c9c7b40838a9c5d120c76e4b222222222221943c0f340f10
   dbName:
     type: string
     description: Database name you would like to connect to
