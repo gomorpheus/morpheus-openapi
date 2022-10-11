@@ -4,6 +4,26 @@ get:
   operationId: listClients
   tags: 
     -  Clients
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      schema:
+        type: string
+        default: clientId
+    - $ref: ../components/parameters/direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on clientId
+      schema:
+        type: string
+    - name: clientId
+      in: query
+      description: Search phrase for partial matches on clientId
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
@@ -46,11 +66,17 @@ post:
               description: Payload for creating a new oauth client
               required:
                 - clientId
+                - accessTokenValiditySeconds
+                - refreshTokenValiditySeconds
               properties:
                 clientId:
                   type: string
                   description: ClientId
                   example: Test Client
+                clientSecret:
+                  type: string
+                  description: ClientSecret
+                  example: thisIsaClientSecretKeyPhrase
                 accessTokenValiditySeconds:
                   type: integer
                   nullable: true
