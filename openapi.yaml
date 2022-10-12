@@ -559,6 +559,10 @@ paths:
     $ref: paths/api@library@spec-templates.yaml
   /api/library/spec-templates/{id}:
     $ref: paths/api@library@spec-templates@id.yaml
+  /api/security-packages:
+    $ref: paths/api@security-packages.yaml
+  /api/security-packages/{id}:
+    $ref: paths/api@security-packages@id.yaml
   /api/license:
     $ref: paths/api@license.yaml
   /api/license/test:
@@ -1191,6 +1195,8 @@ tags:
     description: Global Search Functions
   - name: Security Groups
     description: Manage Security Groups
+  - name: Security Packages
+    description: Manage Security Packages
   - name: Self Service
     description: Manage Self Service
   - name: Service Catalog
