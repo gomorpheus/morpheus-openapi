@@ -87,7 +87,7 @@ put:
           schema:
             type: object
             properties:
-              datastore:
+              folder:
                 allOf:
                   - $ref: ../components/schemas/zoneFolder.yaml
                   - $ref: ../components/schemas/200-success.yaml
