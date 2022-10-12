@@ -52,3 +52,6 @@ properties:
           type: boolean
   resourcePermission: 
     $ref: resourcePermissions.yaml
+  depth:
+    type: integer
+    format: int64
