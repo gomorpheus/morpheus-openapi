@@ -1,0 +1,17 @@
+type: object
+properties: 
+  managers:
+    type: array
+    description: Array of manager usernames
+    items: 
+      type: string
+  developers:
+    type: array
+    description: Array of developer usernames
+    items: 
+      type: string
+  auditors:
+    type: array
+    description: Array of auditor usernames
+    items: 
+      type: string
