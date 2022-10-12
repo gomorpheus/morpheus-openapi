@@ -24,6 +24,8 @@ properties:
     type: string
   costingBucket: 
     type: string
+  costingBucketName:
+    type: string
   costingRegion: 
     type: string
   costingAccessKey: 
@@ -31,23 +33,27 @@ properties:
   costingSecretKey: 
     type: string
     nullable: true
+  costingReportName:
+    type: string
   applianceUrl: 
     type: string
   datacenterName: 
     type: string
   networkServer.id: 
-    oneOf:
-    - type: string
-    - type: integer
-      format: int64
+    type: string
+      # oneOf:
+      # - type: string
+      # - type: integer
+      #   format: int64
   networkServer: 
     type: object
     properties: 
       id:
-        oneOf:
-        - type: string
-        - type: integer
-          format: int64
+        type: string
+        # oneOf:
+        # - type: string
+        # - type: integer
+        #   format: int64
   securityServer: 
     type: string
     nullable: true

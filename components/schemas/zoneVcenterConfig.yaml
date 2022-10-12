@@ -43,18 +43,20 @@ properties:
     type: string
     nullable: true
   networkServer.id: 
-    oneOf:
-    - type: string
-    - type: integer
-      format: int64
+    type: string
+      # oneOf:
+      # - type: string
+      # - type: integer
+      #   format: int64
   networkServer: 
     type: object
     properties: 
       id:
-        oneOf:
-        - type: string
-        - type: integer
-          format: int64
+        type: string
+        # oneOf:
+        # - type: string
+        # - type: integer
+        #   format: int64
   securityMode: 
     type: string
   certificateProvider: 

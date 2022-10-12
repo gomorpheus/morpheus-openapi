@@ -17,18 +17,20 @@ properties:
   datacenterName: 
     type: string
   networkServer.id: 
-    oneOf:
-    - type: string
-    - type: integer
-      format: int64
+    type: string
+      # oneOf:
+      # - type: string
+      # - type: integer
+      #   format: int64
   networkServer: 
     type: object
     properties: 
       id:
-        oneOf:
-        - type: string
-        - type: integer
-          format: int64
+        type: string
+        # oneOf:
+        # - type: string
+        # - type: integer
+        #   format: int64
   securityServer: 
     type: string
     nullable: true
