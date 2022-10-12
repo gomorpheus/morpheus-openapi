@@ -5,7 +5,6 @@ get:
   operationId: listSecurityPackages
   tags:
     - Library
-    - Security Packages
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
@@ -42,7 +41,6 @@ post:
   operationId: addSecurityPackages
   tags:
     - Library
-    - Security Packages
   requestBody:
     content:
       application/json:

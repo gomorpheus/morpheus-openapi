@@ -5,7 +5,6 @@ get:
   operationId: getSecurityPackages
   tags:
     - Library
-    - Security Packages
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -34,7 +33,6 @@ put:
   operationId: updateSecurityPackages
   tags:
     - Library
-    - Security Packages
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -93,7 +91,6 @@ delete:
   operationId: removeSecurityPackages
   tags:
     - Library
-    - Security Packages
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
