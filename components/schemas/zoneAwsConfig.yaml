@@ -24,6 +24,8 @@ properties:
     type: string
   costingBucket: 
     type: string
+  costingBucketName:
+    type: string
   costingRegion: 
     type: string
   costingAccessKey: 
@@ -31,6 +33,8 @@ properties:
   costingSecretKey: 
     type: string
     nullable: true
+  costingReportName:
+    type: string
   applianceUrl: 
     type: string
   datacenterName: 
