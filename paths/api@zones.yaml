@@ -62,7 +62,6 @@ post:
                 - name
                 - zoneType
                 - groupId
-                - credential
               properties:
                 name: 
                   type: string
@@ -126,11 +125,13 @@ post:
                   default: "off"
                 credential:
                   type: object
-                  description: Map containing Credential ID. `local` means use the values set in the local cloud config instead of associating a credential.
-                  example:
-                    id: 1
-                  default:
-                    type: local
+                  description: Map containing Credential ID. Setting `type` to `local` means use the values set in the local cloud config instead of associating a credential.
+                  properties: 
+                    type: 
+                      type: string
+                      default: local
+                    id:
+                      type: integer
   responses:
     '200':
       description: Successful Request
