@@ -59,6 +59,12 @@ post:
                   type: string
                   description: A name for the security package
                   example: Sample Security Package
+                labels:
+                    type: array
+                    description: Array of label strings, can be used for filtering.
+                    nullable: true
+                    items: 
+                      type: string
                 type: 
                   type: string
                   description: Security Package Type Code
