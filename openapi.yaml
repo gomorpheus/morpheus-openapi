@@ -563,6 +563,10 @@ paths:
     $ref: paths/api@security-packages.yaml
   /api/security-packages/{id}:
     $ref: paths/api@security-packages@id.yaml
+  /api/security-package-types:
+    $ref: paths/api@security-package-types.yaml
+  /api/security-package-types/{id}:
+    $ref: paths/api@security-package-types@id.yaml
   /api/license:
     $ref: paths/api@license.yaml
   /api/license/test:

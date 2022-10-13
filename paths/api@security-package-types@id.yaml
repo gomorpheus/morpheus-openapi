@@ -1,0 +1,27 @@
+get:
+  summary: Retrieves a Specific Security Package Type
+  description: |
+    Retrieves a specific security package type.
+  operationId: getSecurityPackageType
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              securityPackageType:
+                $ref: ../components/schemas/securityPackageType.yaml
+          examples:
+            Security Package Type Response:
+              value:
+                $ref: ../components/examples/securityPackageType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
