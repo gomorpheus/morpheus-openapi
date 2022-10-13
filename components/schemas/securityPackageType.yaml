@@ -1,0 +1,22 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  code: 
+    type: string
+  name: 
+    type: string
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
+  description: 
+    type: string
+  enabled: 
+    type: boolean
+  optionTypes: 
+    type: array
+    items:
+      $ref: optionType.yaml
