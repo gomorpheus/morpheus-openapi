@@ -1,0 +1,57 @@
+get:
+  summary: Retrieves all Security Scans
+  description: |
+    Retrieves all security scans.
+  operationId: listSecurityScans
+  tags:
+    - Security Scans
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by
+      schema:
+        type: string
+        default: scanDate desc
+    - $ref: ../components/parameters/direction.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on name or description of security package
+      schema:
+        type: string
+    - name: securityPackageId
+      in: query
+      description: Filter results by security package id(s). This parameter can be passed multiple times to match more than one id.
+      schema:
+        type: integer
+        format: int64
+    - $ref: ../components/parameters/serverId.yaml
+    - name: results
+      in: query
+      description: Include Results Summary in the response under each security scan
+      schema:
+        type: boolean
+        default: false
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                securityScans:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/securityScan.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Security Scans Response:
+              value:
+                $ref: ../components/examples/securityScans.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
