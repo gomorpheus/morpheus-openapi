@@ -23,7 +23,6 @@ put:
               description: The new access level.
               enum:
                 - full
-                - read
                 - none
   responses:
     '200':
