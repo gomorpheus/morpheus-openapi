@@ -1,0 +1,54 @@
+get:
+  summary: Retrieves a Specific Security Scan
+  description: |
+    Retrieves a specific security scan.
+  operationId: getSecurityScans
+  tags:
+    - Security Scans
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - name: results
+      in: query
+      description: Include Results Summary in the response under the security scan
+      schema:
+        type: boolean
+        default: false
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                securityScan:
+                  $ref: ../components/schemas/securityScan.yaml
+          examples:
+            Security Scan Response:
+              value:
+                $ref: ../components/examples/securityScan.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Security Scan
+  description: |
+    Deletes a specified security scan.
+  operationId: removeSecurityScans
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
