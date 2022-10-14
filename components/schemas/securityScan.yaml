@@ -48,6 +48,7 @@ properties:
     type: number
   externalId: 
     type: string
+    nullable: true
   createdBy: 
     type: string
   updatedBy: 
