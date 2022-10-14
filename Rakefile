@@ -3,8 +3,8 @@
 PROJECT_ROOT = `git rev-parse --show-toplevel`.strip
 BUILD_DIR    = File.join(PROJECT_ROOT, "build")
 
-desc "Validates schema by executing lint commands via docker"
-task :validate => ["docker:lint"]
+desc "Test that the openapi schema is valid by executing lint commands via docker"
+task :test => ["docker:lint"]
 
 desc "Builds bundled.yaml with redocly via docker "
 task :build => ["docker:build"]

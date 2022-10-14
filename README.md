@@ -5,15 +5,15 @@ OpenAPI documentation for the Morpheus API
 
 Using docker:
 
-```
+```shell
 docker run --rm -v $PWD:/spec redocly/openapi-cli lint openapi.yaml --skip-rule no-invalid-media-type-examples
 docker run --rm -v $PWD:/tmp -it stoplight/spectral lint -v -F hint "/tmp/openapi.yaml" --ruleset "/tmp/.spectral.json"
 ```
 
-The *validate* rake task does the same as above:
+The *test* rake task does the same as above:
 
-```
-rake validate
+```shell
+rake test
 ```
 
 NOTE: The OpenAPI spec is case senstive.  This has caused problems when developing on Windows and Mac.  You may get a good lint with the above commands, but when pushed, it will show any errors in the Actions log.
@@ -22,13 +22,13 @@ NOTE: The OpenAPI spec is case senstive.  This has caused problems when developi
 
 Using docker:
 
-```
+```shell
 docker run --rm -v $PWD:/spec redocly/openapi-cli bundle openapi.yaml > bundled.yaml
 ```
 
 The *build* rake task does the same as above:
 
-```
+```shell
 rake build
 ```
 
