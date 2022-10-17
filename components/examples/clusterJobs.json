@@ -1,27 +1,92 @@
 {
   "jobs": [
-    {
-      "id": 5,
-      "name": "Job 1",
-      "type": "morpheus.task",
-      "status": null,
-      "namespace": null,
-      "category": "kubernetes.job.cluster.3",
-      "description": null,
-      "enabled": true,
-      "dateCreated": "2019-09-29T19:51:37+0000",
-      "lastUpdated": "2019-09-29T20:00:58+0000",
-      "lastRun": null,
-      "createdBy": {
-        "id": 1,
-        "username": "root"
+      {
+          "id": 26923,
+          "name": "rook-ceph-osd-prepare-2856d57e093683027ef71e823493dec5",
+          "labels": [],
+          "type": {
+              "id": 5,
+              "name": "Kubernetes Job",
+              "code": "kubernetes.job"
+          },
+          "jobSummary": null,
+          "scheduleMode": null,
+          "dateTime": null,
+          "status": "success",
+          "namespace": "rook-ceph",
+          "category": "kubernetes.job.cluster.14982",
+          "description": null,
+          "enabled": true,
+          "dateCreated": "2022-10-13T20:37:51Z",
+          "lastUpdated": "2022-10-13T20:37:51Z",
+          "lastRun": "2022-10-13T20:37:21Z",
+          "lastResult": null,
+          "createdBy": null,
+          "targetType": null,
+          "targets": [],
+          "customConfig": null,
+          "customOptions": null
+      },
+      {
+          "id": 26924,
+          "name": "rook-ceph-osd-prepare-830bcefee374dd2850737f412b8141cd",
+          "labels": [],
+          "type": {
+              "id": 5,
+              "name": "Kubernetes Job",
+              "code": "kubernetes.job"
+          },
+          "jobSummary": null,
+          "scheduleMode": null,
+          "dateTime": null,
+          "status": "success",
+          "namespace": "rook-ceph",
+          "category": "kubernetes.job.cluster.14982",
+          "description": null,
+          "enabled": true,
+          "dateCreated": "2022-10-13T20:37:51Z",
+          "lastUpdated": "2022-10-13T20:37:51Z",
+          "lastRun": "2022-10-13T20:37:28Z",
+          "lastResult": null,
+          "createdBy": null,
+          "targetType": null,
+          "targets": [],
+          "customConfig": null,
+          "customOptions": null
+      },
+      {
+          "id": 26925,
+          "name": "rook-ceph-osd-prepare-9ce0053e1c0cf923fd294073acce3723",
+          "labels": [],
+          "type": {
+              "id": 5,
+              "name": "Kubernetes Job",
+              "code": "kubernetes.job"
+          },
+          "jobSummary": null,
+          "scheduleMode": null,
+          "dateTime": null,
+          "status": "success",
+          "namespace": "rook-ceph",
+          "category": "kubernetes.job.cluster.14982",
+          "description": null,
+          "enabled": true,
+          "dateCreated": "2022-10-13T20:37:51Z",
+          "lastUpdated": "2022-10-13T20:37:51Z",
+          "lastRun": "2022-10-13T20:37:25Z",
+          "lastResult": null,
+          "createdBy": null,
+          "targetType": null,
+          "targets": [],
+          "customConfig": null,
+          "customOptions": null
       }
-    }
   ],
+  "stats": {},
   "meta": {
-    "size": 1,
-    "total": 1,
-    "offset": 0,
-    "max": 25
+      "offset": 0,
+      "max": 25,
+      "size": 3,
+      "total": 3
   }
 }

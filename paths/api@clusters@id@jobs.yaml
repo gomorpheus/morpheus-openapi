@@ -24,6 +24,10 @@ get:
                     type: array
                     items:
                       $ref: ../components/schemas/clusterJobs.yaml
+              - type: object
+                properties:
+                  stats:
+                    type: object
               - $ref: ../components/schemas/meta.yaml
           examples:
             Cluster Request:

@@ -4,7 +4,7 @@ get:
     Retrieves a specific security package.
   operationId: getSecurityPackages
   tags:
-    - Library
+    - Security Packages
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -32,7 +32,7 @@ put:
     Updates a security package.
   operationId: updateSecurityPackages
   tags:
-    - Library
+    - Security Packages
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
@@ -50,6 +50,12 @@ put:
                   type: string
                   description: A name for the security package
                   example: Sample Security Package
+                labels:
+                    type: array
+                    description: Array of label strings, can be used for filtering.
+                    nullable: true
+                    items: 
+                      type: string
                 type: 
                   type: string
                   description: Security Package Type Code
@@ -90,7 +96,7 @@ delete:
     Deletes a specified security package.
   operationId: removeSecurityPackages
   tags:
-    - Library
+    - Security Packages
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:

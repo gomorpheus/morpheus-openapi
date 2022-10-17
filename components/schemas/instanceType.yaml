@@ -78,3 +78,11 @@ properties:
     nullable: true
     items:
       type: object
+  imagePath: 
+    type: string
+    nullable: true
+    description: Logo image URL
+  darkImagePath: 
+    type: string
+    nullable: true
+    description: Dark logo image URL
