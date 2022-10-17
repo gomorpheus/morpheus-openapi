@@ -30,6 +30,10 @@ properties:
   integrationId: 
     type: string
     nullable: true
+  appId:
+    type: integer
+    format: int64
+    nullable: true
   instanceId: 
     type: string
     nullable: true
@@ -44,11 +48,6 @@ properties:
     nullable: true
   displayName: 
     type: string
-  timerCategory: 
-    type: string
-  timerSubCategory: 
-    type: string
-    nullable: true
   status: 
     type: string
   reason: 
@@ -100,3 +99,113 @@ properties:
         type: string
   events: 
     type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        processId: 
+          type: integer
+          format: int64
+        accountId: 
+          type: integer
+          format: int64
+        uniqueId: 
+          type: string
+        processType: 
+          type: object
+          properties: 
+            code: 
+              type: string
+            name: 
+              type: string
+        description: 
+          type: string
+          nullable: true
+        refType: 
+          type: string
+        refId: 
+          type: integer
+          format: int64
+        subType: 
+          type: string
+          nullable: true
+        subId: 
+          type: integer
+          format: int64
+          nullable: true
+        zoneId: 
+          type: integer
+          format: int64
+          nullable: true
+        integrationId: 
+          type: integer
+          format: int64
+          nullable: true
+        instanceId: 
+          type: integer
+          format: int64
+          nullable: true
+        containerId: 
+          type: integer
+          format: int64
+          nullable: true
+        serverId: 
+          type: integer
+          format: int64
+          nullable: true
+        containerName: 
+          type: string
+          nullable: true
+        displayName: 
+          type: string
+        status: 
+          type: string
+        reason: 
+          type: string
+          nullable: true
+        percent: 
+          type: integer
+          format: int64
+        statusEta: 
+          type: integer
+          format: int64
+        message: 
+          type: string
+          nullable: true
+        output: 
+          type: string
+          nullable: true
+        error: 
+          type: string
+          nullable: true
+        startDate: 
+          type: string
+          format: date-time
+        endDate: 
+          type: string
+          format: date-time
+        duration: 
+          type: integer
+          format: int64
+        dateCreated: 
+          type: string
+          format: date-time
+        lastUpdated: 
+          type: string
+          format: date-time
+        createdBy: 
+          type: object
+          properties: 
+            username: 
+              type: string
+            displayName: 
+              type: string
+        updatedBy: 
+          type: object
+          properties: 
+            username: 
+              type: string
+            displayName: 
+              type: string
