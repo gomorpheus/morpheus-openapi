@@ -1,47 +1,87 @@
 {
   "processes": [
     {
-      "id": 250,
+      "id": 695454,
       "accountId": 1,
-      "uniqueId": "cebc47ec-cb2f-417a-886e-dd60cf81db26",
+      "uniqueId": "d6341ce0-867c-4524-aa6e-188e585cbcbc",
       "processType": {
-        "code": "provision",
-        "name": "provision"
+        "code": "serverGroupProvision",
+        "name": "cluster provision"
       },
+      "displayName": "api-kube-cluster-new-1665692616",
       "description": null,
       "subType": null,
       "subId": null,
-      "zoneId": 34,
+      "zoneId": null,
       "integrationId": null,
-      "instanceId": 238,
-      "containerId": 240,
-      "serverId": 601,
-      "containerName": "apachetest",
-      "displayName": "apachetest",
-      "timerCategory": "vmware",
-      "timerSubCategory": "28",
-      "status": "failed",
+      "appId": null,
+      "instanceId": null,
+      "containerId": null,
+      "serverId": null,
+      "containerName": null,
+      "status": "complete",
       "reason": null,
       "percent": 100.0,
-      "statusEta": 348246,
+      "statusEta": 0,
       "message": null,
       "output": null,
       "error": null,
-      "startDate": "2018-09-28T19:10:56+0000",
-      "endDate": "2018-09-28T20:21:49+0000",
-      "duration": 4253127,
-      "dateCreated": "2018-09-28T19:10:56+0000",
-      "lastUpdated": "2018-09-28T20:21:49+0000",
+      "startDate": "2022-10-13T20:31:44Z",
+      "endDate": "2022-10-13T20:33:52Z",
+      "duration": 127670,
+      "dateCreated": "2022-10-13T20:31:44Z",
+      "lastUpdated": "2022-10-13T20:33:52Z",
       "createdBy": {
-        "username": "admin",
-        "displayName": "Admin"
+        "username": "apiuser",
+        "displayName": "API User"
       },
       "updatedBy": {
-        "username": "admin",
-        "displayName": "Admin"
+        "username": "apiuser",
+        "displayName": "API User"
       },
       "events": [
-
+        {
+          "id": 1987836,
+          "processId": 695454,
+          "accountId": 1,
+          "uniqueId": "fb627750-27d2-422d-a3f1-aa58a58f387c",
+          "processType": {
+            "code": "applyPackage",
+            "name": "apply package"
+          },
+          "description": null,
+          "refType": "computeServerGroup",
+          "refId": 14982,
+          "subType": null,
+          "subId": null,
+          "zoneId": null,
+          "integrationId": null,
+          "instanceId": null,
+          "containerId": null,
+          "serverId": null,
+          "containerName": null,
+          "displayName": "api-kube-cluster-new-1665692616",
+          "status": "complete",
+          "reason": null,
+          "percent": 100.0,
+          "statusEta": 112774,
+          "message": null,
+          "output": null,
+          "error": null,
+          "startDate": "2022-10-13T20:31:44Z",
+          "endDate": "2022-10-13T20:31:44Z",
+          "duration": 31,
+          "dateCreated": "2022-10-13T20:31:44Z",
+          "lastUpdated": "2022-10-13T20:31:44Z",
+          "createdBy": {
+            "username": "apiuser",
+            "displayName": "API User"
+          },
+          "updatedBy": {
+            "username": "apiuser",
+            "displayName": "API User"
+          }
+        }
       ]
     }
   ],
