@@ -54,4 +54,11 @@ properties:
         provisionTypeCode:
           type: string
           nullable: true
-  
+  imagePath: 
+    type: string
+    nullable: true
+    description: Logo image URL
+  darkImagePath: 
+    type: string
+    nullable: true
+    description: Dark logo image URL
