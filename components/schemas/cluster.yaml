@@ -109,6 +109,8 @@ properties:
   lastUpdated: 
     type: string
     format: date-time
+  managed:
+    type: boolean
   labels: 
     type: string
     nullable: true
