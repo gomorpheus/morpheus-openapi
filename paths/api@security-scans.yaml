@@ -13,8 +13,8 @@ get:
       description: Sort order, the name of the property to sort by
       schema:
         type: string
-        default: scanDate desc
-    - $ref: ../components/parameters/direction.yaml
+        default: scanDate
+    - $ref: ../components/parameters/direction-desc.yaml
     - name: phrase
       in: query
       description: Search phrase for partial matches on name or description of security package
