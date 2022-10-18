@@ -5,6 +5,21 @@ get:
   operationId: listInstanceTypesProvisioning
   tags:
     - Instances
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+    - $ref: ../components/parameters/featured.yaml
+    - name: details
+      in: query
+      description: Load full details including optionTypes, environmentVariables, etc. These properties are excluded by default.
+      schema:
+        type: boolean
+        example: true
   responses:
     '200':
       description: Successful Request
