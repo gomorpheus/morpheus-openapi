@@ -147,12 +147,37 @@ post:
                     file:
                       type: object
                       description: |
-                        File, object specifying type and content, see File Object.
-                        This is required for task types that expect a script, having scriptable:true and an optionType of type:"file-content".
+                        File, object specifying type and content, see File Object. This is required for task types that expect a script, having scriptable:true and an optionType of `type:"file-content"`.
+                      required: 
+                        - sourceType
+                      properties: 
+                        sourceType:
+                          type: string
+                          description: File Source i.e. `local`, `repository`, `url`. Default is `local`.
+                          enum:
+                            - local
+                            - respository
+                            - url
+                          default: local
+                        content:
+                          type: string
+                          description: File content, the script text. Only required when sourceType is `local`.
+                        contentPath:
+                          type: string
+                          description: Content Path, the repo file location or url. Required when sourceType is `repository` or `url`.
+                        contentRef:
+                          type: string
+                          description: Content Ref, the branch/tag. Only used when sourceType is `repository`.
+                        respository:
+                          type: object
+                          properties: 
+                            id:
+                              type: integer
+                              format: int64
+                              description: Code Repository ID, required for type `repository`. Use `/api/options/codeRepositories` to see available repositories.
                     credential:
                       description: |
-                        Map containing Credential ID or the default {"type": "local"} 
-                        which means use the values set in the local task options username and password instead of associating a credential.
+                        Map containing Credential ID or the default `{"type": "local"}` which means use the values set in the local task options username and password instead of associating a credential.
                       oneOf: 
                         - type: object
                           properties: 
