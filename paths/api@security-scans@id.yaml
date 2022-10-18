@@ -9,7 +9,7 @@ get:
     - $ref: ../components/parameters/id-path.yaml
     - name: results
       in: query
-      description: Include Results Summary in the response under the security scan
+      description: Include the `results` object in the response under the security scan. This is a potentially very large object containing the raw results of the scan.
       schema:
         type: boolean
         default: false
