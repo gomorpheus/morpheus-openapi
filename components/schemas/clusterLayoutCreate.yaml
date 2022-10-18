@@ -102,7 +102,7 @@ properties:
       required:
         - containerType
       properties: 
-        count:
+        nodeCount:
           type: integer
           format: int64
           description: Number of nodes
@@ -123,7 +123,7 @@ properties:
       required:
         - containerType
       properties: 
-        count:
+        nodeCount:
           type: integer
           format: int64
           description: Number of nodes
