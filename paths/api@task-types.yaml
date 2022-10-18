@@ -15,14 +15,12 @@ get:
       content:
         application/json:
           schema:
-            allOf:
-            - type: object
-              properties:
-                taskTypes:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/taskType.yaml
-            - $ref: ../components/schemas/meta.yaml
+            type: object
+            properties:
+              taskTypes:
+                type: array
+                items:
+                  $ref: ../components/schemas/taskType.yaml
           examples:
             Task Types Response:
               value:

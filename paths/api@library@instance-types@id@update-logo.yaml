@@ -1,7 +1,7 @@
 post:
   summary: Update Logo For Instance Type
   description: |
-    Use this command to update the logo image for an existing instance type. This endpoint expects multipart form data as the request format, not JSON.
+    Use this command to update the logo and dark logo images for an existing instance type. This endpoint expects multipart form data as the request format, not JSON.
   operationId: updateInstanceTypeLogo
   tags:
     - Library
@@ -16,6 +16,11 @@ post:
             logo:
               type: string
               format: binary
+              description: Logo File png,jpg,svg
+            darkLogo:
+              type: string
+              format: binary
+              description: Dark Logo File png,jpg,svg
   responses:
     '200':
       description: Successful Request

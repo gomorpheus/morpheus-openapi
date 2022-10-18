@@ -1,0 +1,22 @@
+{
+    "client": {
+        "id": 2,
+        "clientId": "morph-cli",
+        "accessTokenValiditySeconds": 31536000,
+        "refreshTokenValiditySeconds": 31536000,
+        "authorities": [
+            "ROLE_CLIENT"
+        ],
+        "authorizedGrantTypes": [
+            "refresh_token",
+            "implicit",
+            "password",
+            "client_credentials",
+            "authorization_code"
+        ],
+        "scopes": [
+            "read",
+            "write"
+        ]
+    }
+}

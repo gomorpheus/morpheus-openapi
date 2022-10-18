@@ -1,0 +1,12 @@
+type: object
+properties: 
+  cidrBlock:
+    type: string
+    description: Provide the base CIDR Block to use for this VPC (must be between a /16 and /28 Block)
+  tenancy:
+    type: string
+    description: default or dedicated
+    default: default
+    enum: 
+      - default
+      - dedicated

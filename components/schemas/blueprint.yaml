@@ -5,6 +5,10 @@ properties:
     format: int64
   name:
     type: string
+  labels:
+    type: array
+    items: 
+      type: string
   type:
     type: string
   description:

@@ -6,6 +6,12 @@ properties:
   description: 
     type: string
     description: Instance type description
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   code: 
     type: string
     description: Instance type code

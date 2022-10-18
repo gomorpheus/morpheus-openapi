@@ -15,9 +15,11 @@ properties:
   storageSize: 
     type: integer
     format: int64
+    nullable: true
   freeSpace: 
     type: integer
     format: int64
+    nullable: true
   drsEnabled: 
     type: boolean
   active: 

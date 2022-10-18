@@ -1,6 +1,6 @@
 put:
   summary: Update Logo For Catalog Item Type
-  description: Use this command to update the logo images for an existing catalog item type. This endpoint expects multipart form data as the request format, not JSON.
+  description: Use this command to update the logo and dark logo images for an existing catalog item type. This endpoint expects multipart form data as the request format, not JSON.
   operationId: updateCatalogItemTypeLogo
   tags:
     - Catalog Items

@@ -24,7 +24,7 @@ get:
                 budgets:
                   type: array
                   items:
-                    $ref: ../components/schemas/budget.yaml
+                    $ref: ../components/schemas/budgets.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Budgets Response:
@@ -129,12 +129,12 @@ post:
             - type: object
               properties:
                 budget:
-                  $ref: ../components/schemas/budget.yaml
+                  $ref: ../components/schemas/budgets.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Budget Response:
               value:
-                $ref: ../components/examples/budget.json
+                $ref: ../components/examples/budgetCreateSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

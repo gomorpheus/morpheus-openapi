@@ -136,6 +136,12 @@ paths:
     $ref: paths/api@catalog-item-types@id.yaml
   /api/catalog-item-types/{id}/update-logo:
     $ref: paths/api@catalog-item-types@id@update-logo.yaml
+  
+  /api/clients:
+    $ref: paths/api@clients.yaml
+  /api/clients/{id}:
+    $ref: paths/api@clients@id.yaml
+  
     
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
@@ -809,7 +815,18 @@ paths:
     $ref: paths/api@security-groups@id@rules.yaml
   /api/security-groups/{id}/rules/{sgId}:
     $ref: paths/api@security-groups@id@rules@sgId.yaml
-  
+  /api/security-packages:
+    $ref: paths/api@security-packages.yaml
+  /api/security-packages/{id}:
+    $ref: paths/api@security-packages@id.yaml
+  /api/security-package-types:
+    $ref: paths/api@security-package-types.yaml
+  /api/security-package-types/{id}:
+    $ref: paths/api@security-package-types@id.yaml
+  /api/security-scans:
+    $ref: paths/api@security-scans.yaml
+  /api/security-scans/{id}:
+    $ref: paths/api@security-scans@id.yaml
   /api/servers:
     $ref: paths/api@servers.yaml
   /api/servers/{id}:
@@ -917,14 +934,15 @@ paths:
     $ref: paths/api@tasks.yaml
   /api/tasks/{id}:
     $ref: paths/api@tasks@id.yaml
+  /api/tasks/{id}/execute:
+    $ref: paths/api@tasks@id@execute.yaml
   /api/task-sets:
     $ref: paths/api@task-sets.yaml
   /api/task-sets/{id}:
     $ref: paths/api@task-sets@id.yaml
   /api/task-sets/{id}/execute:
     $ref: paths/api@task-sets@id@execute.yaml
-  /api/tasks/{id}/execute:
-    $ref: paths/api@tasks@id@execute.yaml
+  
   /api/task-types:
     $ref: paths/api@task-types.yaml
   /api/task-types/{id}:
@@ -1081,6 +1099,8 @@ tags:
       Provides API interfaces for the managing catalog item types. These are the types that become available for order by the Service Catalog persona. This is the adminstrative api for the Library: Catalog Items functionality which was previously located under Tools: Self Service.
   - name: Checks
     description: Manage Monitoring Checks
+  - name: Clients
+    description: Manage Clients
   - name: Clouds
     description: Manage Clouds
   - name: Cluster Layouts
@@ -1197,6 +1217,10 @@ tags:
     description: Global Search Functions
   - name: Security Groups
     description: Manage Security Groups
+  - name: Security Packages
+    description: Manage Security Packages
+  - name: Security Scans
+    description: Manage Security Scans
   - name: Self Service
     description: Manage Self Service
   - name: Service Catalog

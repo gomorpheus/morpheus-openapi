@@ -1,0 +1,15 @@
+type: object
+description: A response object 
+properties:
+  success:
+    type: boolean
+    description: Success indicator, true when the request succeeded and false when an error occurred
+    default: true
+  msg:
+    type: string
+    nullable: true
+    description: Message containing a description of the result, usually a message about the error that occurred
+  errors:
+    type: object
+    nullable: true
+    description: Validation errors, with a key for Object containing error messages for each invalid parameter (key)

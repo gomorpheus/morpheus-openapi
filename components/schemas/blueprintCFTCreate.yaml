@@ -12,6 +12,12 @@ properties:
     description: Blueprint Type
     enum:
       - cloudFormation
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   cloudFormation: 
     type: object
     required:

@@ -89,19 +89,14 @@ put:
       $ref: ../components/responses/5xx.yaml
 delete:
   summary: Delete a Specific Tenant
-  description: >-
-    Delete an existing tenant. This deletes everything under the tenant. An
-    error will occur if the tenant still has managed resources, unless
-    `removeResources=true`.
+  description: Delete an existing tenant. This action is not reversible and will result in the removal of all data pertaining to this tenant as well as potentially any provisioned assets depending on the value of `removeResources`.
   operationId: removeTenant
   tags:
     - Tenants
   parameters:
     - name: removeResources
       in: query
-      description: >-
-        Remove Resources. This will delete all the managed resources under the
-        account instead of erroring.
+      description: Remove Resources. This will delete all the managed resources in the tenant.
       required: false
       schema:
         type: boolean

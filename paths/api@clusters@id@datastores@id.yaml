@@ -55,13 +55,13 @@ put:
             allOf: 
             - type: object
               properties:
-                cluster:
-                  $ref: ../components/schemas/cluster.yaml
+                datastore:
+                  $ref: ../components/schemas/clusterDatastore.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Deployments Response:
               value:
-                $ref: ../components/examples/clusterCreate.json
+                $ref: ../components/examples/clusterDatastoreUpdateSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

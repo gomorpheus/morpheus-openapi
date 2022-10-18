@@ -1,0 +1,112 @@
+get:
+  summary: Retrieves a Specific Security Package
+  description: |
+    Retrieves a specific security package.
+  operationId: getSecurityPackages
+  tags:
+    - Security Packages
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                securityPackage:
+                  $ref: ../components/schemas/securityPackage.yaml
+          examples:
+            Security Package Response:
+              value:
+                $ref: ../components/examples/securityPackage.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a Security Package
+  description: |
+    Updates a security package.
+  operationId: updateSecurityPackages
+  tags:
+    - Security Packages
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - securityPackage
+          properties:
+            securityPackage:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: A name for the security package
+                  example: Sample Security Package
+                labels:
+                    type: array
+                    description: Array of label strings, can be used for filtering.
+                    nullable: true
+                    items: 
+                      type: string
+                type: 
+                  type: string
+                  description: Security Package Type Code
+                  default: scap-package
+                description: 
+                  type: string
+                  description: A description for the security package
+                url:
+                  type: string
+                  description: URL to download the security package zip file from
+                  example: "http://10.0.2.2:8080/public-archives/download/SCAP/scap-security-guide-0.1.51.zip"
+                enabled:
+                  type: boolean
+                  description: Can be used to disable the security package
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                securityPackage:
+                  $ref: ../components/schemas/securityPackage.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Security Package Response:
+              value:
+                $ref: ../components/examples/securityPackageSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Security Package
+  description: |
+    Deletes a specified security package.
+  operationId: removeSecurityPackages
+  tags:
+    - Security Packages
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

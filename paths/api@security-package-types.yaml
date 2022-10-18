@@ -1,0 +1,29 @@
+get:
+  summary: Retrieves all Security Package Types
+  description: |
+    Retrieves all Security Package Types
+  operationId: listSecurityPackageTypes
+  tags:
+    - Library
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                securityPackageTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/securityPackageType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Security Package Types Response:
+              value:
+                $ref: ../components/examples/securityPackageTypes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

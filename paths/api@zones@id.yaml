@@ -163,6 +163,13 @@ delete:
   tags:
     - Clouds
   parameters:
+    - name: removeResources
+      in: query
+      description: Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute.
+      required: false
+      schema:
+        type: boolean
+        default: false
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':

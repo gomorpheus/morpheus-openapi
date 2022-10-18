@@ -1,22 +1,170 @@
 {
-    "success": true,
-    "billingInfo": {
-      "price": 0.0,
-      "cost": 0.0,
-      "startDate": "2017-01-01T00:00:00Z",
-      "endDate": "2017-01-31T23:59:59Z",
-      "instances": [
-        {
-          "containers": [
-                    {
-              "usages": [
-              ],
-              "numUnits": 0.0,
-              "unit": "hour",
-              "name": "name"
-            }
-          ]
-        }
-      ]
-    }
+  "success": true,
+  "billingInfo": {
+    "price": 35.954438910413501532535,
+    "cost": 35.954438910413501532535,
+    "startDate": "2022-06-01T00:00:00Z",
+    "endDate": "2022-06-01T23:59:59Z",
+    "instances": [
+      {
+        "instanceId": 143887,
+        "instanceUUID": "f2546992-93dc-4ad3-b4ac-432529b79ee9",
+        "startDate": "2022-06-01T00:00:00Z",
+        "endDate": "2022-06-01T23:59:59Z",
+        "name": "qa-proxy",
+        "price": 1.3999838362945370370,
+        "cost": 1.3999838362945370370,
+        "currency": "USD",
+        "containers": [
+          {
+            "refType": "container",
+            "refUUID": "009bafc7-fef7-42b0-9f13-f494e8afe9bc",
+            "refId": 521536,
+            "startDate": "2022-06-01T00:00:00Z",
+            "endDate": "2022-06-01T23:59:59Z",
+            "cost": 1.3999838362945370370,
+            "price": 1.3999838362945370370,
+            "numUnits": 23.9997222222,
+            "unit": "hour",
+            "currency": "USD",
+            "usages": [
+              {
+                "name": "qa-proxy_521536",
+                "instanceName": "qa-proxy",
+                "zoneName": "QA VMware",
+                "accountName": "Morpheus QA",
+                "volumes": [
+                  {
+                    "size": 21474836480,
+                    "typeCode": "standard",
+                    "datastore": {
+                      "id": 73198,
+                      "name": "ESXi-DC2-QA-LUN02",
+                      "type": "vmfs",
+                      "externalId": "datastore-38380",
+                      "internalId": null,
+                      "externalPath": null
+                    }
+                  }
+                ],
+                "maxMemory": 2147483648,
+                "maxCpu": null,
+                "maxCores": 1,
+                "serverExternalId": "vm-39149",
+                "serverInternalId": "502d5f07-d3ef-c48f-2f41-2f49ce7b1d1d",
+                "planName": "1 CPU, 2GB Memory",
+                "hourlyPrice": 0.058333335,
+                "hourlyCost": 0.058333335,
+                "currency": "USD",
+                "pricesUsed": [
+                  {
+                    "type": "memory",
+                    "pricePerUnit": 0.0000067816847764757,
+                    "costPerUnit": 0.0000067816847764757,
+                    "quantity": 2048
+                  },
+                  {
+                    "type": "cores",
+                    "pricePerUnit": 0.0416666670000000000,
+                    "costPerUnit": 0.0416666670000000000,
+                    "quantity": 1.0
+                  },
+                  {
+                    "type": "cpu",
+                    "pricePerUnit": 0E-19,
+                    "costPerUnit": 0E-19,
+                    "quantity": 0.0
+                  },
+                  {
+                    "type": "storage",
+                    "pricePerUnit": 0.0001388888900000000,
+                    "costPerUnit": 0.0001388888900000000,
+                    "quantity": 20,
+                    "volumeType": "Standard",
+                    "datastore": "ESXi-DC2-QA-LUN02",
+                    "datastoreId": 73198
+                  }
+                ],
+                "cost": 1.3999838362945370370,
+                "price": 1.3999838362945370370,
+                "createdByUser": "Tommy Marks",
+                "createdByUserId": 5,
+                "siteId": 56097,
+                "siteName": "Permanent",
+                "siteUUID": "ea258ca1-2754-4a64-a461-3e0064d2c2dc",
+                "siteCode": null,
+                "startDate": "2022-06-01T00:00:00Z",
+                "endDate": "2022-06-01T23:59:59Z",
+                "status": "running",
+                "tags": [],
+                "applicablePrices": [
+                  {
+                    "startDate": "2022-06-01T00:00:00Z",
+                    "endDate": "2022-06-01T23:59:59Z",
+                    "numUnits": 23.9997222222,
+                    "cost": 1.3999838362945370370,
+                    "price": 1.3999838362945370370,
+                    "currency": "USD",
+                    "prices": [
+                      {
+                        "type": "memory",
+                        "pricePerUnit": 0.0000067816847764757,
+                        "costPerUnit": 0.0000067816847764757,
+                        "cost": 0.00016275855083393929708830054,
+                        "price": 0.00016275855083393929708830054,
+                        "quantity": 2048
+                      },
+                      {
+                        "type": "cores",
+                        "pricePerUnit": 0.0416666670000000000,
+                        "costPerUnit": 0.0416666670000000000,
+                        "cost": 0.99998843392490740740000000000,
+                        "price": 0.99998843392490740740000000000,
+                        "quantity": 1.0
+                      },
+                      {
+                        "type": "cpu",
+                        "pricePerUnit": 0E-19,
+                        "costPerUnit": 0E-19,
+                        "cost": 0E-29,
+                        "price": 0E-29,
+                        "quantity": 0.0
+                      },
+                      {
+                        "type": "storage",
+                        "pricePerUnit": 0.0001388888900000000,
+                        "costPerUnit": 0.0001388888900000000,
+                        "cost": 0.00333329477974969135800000000,
+                        "price": 0.00333329477974969135800000000,
+                        "quantity": 20,
+                        "datastoreId": 73198,
+                        "volumeType": "Standard",
+                        "datastore": "ESXi-DC2-QA-LUN02"
+                      }
+                    ]
+                  }
+                ],
+                "servicePlanId": 147,
+                "servicePlanName": "1 CPU, 2GB Memory",
+                "resourcePoolId": 139626,
+                "resourcePoolName": "QA"
+              }
+            ],
+            "numUsages": 1,
+            "totalUsages": 1,
+            "hasMoreUsages": false,
+            "foundPricing": true,
+            "name": "qa-proxy_521536",
+            "serverId": 581833,
+            "serverUUID": "35d48abf-bb04-4b44-9c36-db90d4511385",
+            "serverUniqueId": "422d28b3-dfb5-3a01-73d7-c8a4c5ba746a",
+            "serverExternalId": "vm-39149",
+            "serverInternalId": "502d5f07-d3ef-c48f-2f41-2f49ce7b1d1d",
+            "resourcePoolId": 139626,
+            "resourcePoolName": "QA"
+          }
+        ]
+      }
+    ]
   }
+}

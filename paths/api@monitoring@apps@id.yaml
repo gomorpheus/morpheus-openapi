@@ -16,10 +16,18 @@ get:
             properties:
               monitorApp:
                 $ref: ../components/schemas/checkApp.yaml
+              checkGroups:
+                type: array
+                items: 
+                  $ref: ../components/schemas/checkGroup.yaml
               checks:
                 type: array
                 items:
                   $ref: ../components/schemas/check.yaml
+              openIncidents:
+                type: array
+                items: 
+                  $ref: ../components/schemas/incident.yaml
           examples:
             Check App Response:
               value:
@@ -56,10 +64,6 @@ put:
                   type: string
                   description: Optional description field
                   example: My cool description
-                minHappy:
-                  type: integer
-                  description: This specifies the minimum number of checks within inUptime
-                  default: 1
                 inUptime:
                   type: boolean
                   description: Used to determine if check should affect account wide availability calculations

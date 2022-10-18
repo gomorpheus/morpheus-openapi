@@ -2,7 +2,7 @@ get:
   summary: Retrieves billing information for a specific zone in the requestor's account. Use zoneUUID whenever possible.
   description: |
     Provides API interfaces for viewing billing usage information by tenant, zone, instance or server.
-    By default, usage is returned is from the beginning of the current month until now.
+    By default, usage returned is from the beginning of the current month until now.
     The date range is parameterized but the end date cannot exceed the current date.
   operationId: getBillingZoneIdentifier
   tags:
@@ -30,12 +30,12 @@ get:
             - type: object
               properties:
                 billingInfo:
-                  $ref: ../components/schemas/billing.yaml
+                  $ref: ../components/schemas/billingZone.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Billing Response:
               value:
-                $ref: ../components/examples/billing.json
+                $ref: ../components/examples/billingZone.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

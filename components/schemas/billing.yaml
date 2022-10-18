@@ -16,11 +16,9 @@ properties:
   priceUnit: 
     type: string
   price: 
-    type: integer
-    format: int64
+    type: number
   cost: 
-    type: integer
-    format: int64
+    type: number
   zones: 
     type: array
     items: 
@@ -48,11 +46,9 @@ properties:
           type: object
           properties: 
             price: 
-              type: integer
-              format: int64
+              type: number
             cost: 
-              type: integer
-              format: int64
+              type: number
             servers: 
               type: array
               items:
@@ -64,11 +60,9 @@ properties:
           type: object
           properties: 
             price: 
-              type: integer
-              format: int64
+              type: number
             cost: 
-              type: integer
-              format: int64
+              type: number
             instances: 
               type: array
               items: 
@@ -80,11 +74,9 @@ properties:
           type: object
           properties: 
             price: 
-              type: integer
-              format: int64
+              type: number
             cost: 
-              type: integer
-              format: int64
+              type: number
             servers: 
               type: array
               items: 
@@ -96,11 +88,9 @@ properties:
           type: object
           properties: 
             price: 
-              type: integer
-              format: int64
+              type: number
             cost: 
-              type: integer
-              format: int64
+              type: number
             loadBalancers: 
               type: array
               items: 
@@ -112,11 +102,9 @@ properties:
           type: object
           properties: 
             price: 
-              type: integer
-              format: int64
+              type: number
             cost: 
-              type: integer
-              format: int64
+              type: number
             virtualImages: 
               type: array
               items: 
@@ -128,11 +116,9 @@ properties:
           type: object
           properties: 
             price: 
-              type: integer
-              format: int64
+              type: number
             cost: 
-              type: integer
-              format: int64
+              type: number
             snapshots: 
               type: array
               items: 
@@ -141,8 +127,6 @@ properties:
               type: integer
               format: int64
         price: 
-          type: integer
-          format: int64
+          type: number
         cost: 
-          type: integer
-          format: int64
+          type: number

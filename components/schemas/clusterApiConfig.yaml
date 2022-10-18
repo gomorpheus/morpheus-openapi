@@ -21,6 +21,9 @@ properties:
   servicePassword: 
     type: string
     nullable: true
+  servicePasswordHash: 
+    type: string
+    nullable: true
   serviceToken: 
     type: string
     description: API Token
@@ -30,9 +33,6 @@ properties:
     description: Kube Config
     nullable: true
   serviceCert: 
-    type: string
-    nullable: true
-  serviceConfig: 
     type: string
     nullable: true
   serviceVersion: 

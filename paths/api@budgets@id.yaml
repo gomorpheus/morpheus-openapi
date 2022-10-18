@@ -13,10 +13,12 @@ get:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              budget:
-                $ref: ../components/schemas/budget.yaml
+            allOf: 
+              - type: object
+                properties:
+                  budget:
+                    $ref: ../components/schemas/budget.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Budget Response:
               value:
@@ -118,14 +120,16 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              budget:
-                $ref: ../components/schemas/budget.yaml
+            allOf:
+              - type: object
+                properties:
+                  budget:
+                    $ref: ../components/schemas/budgets.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Budget Response:
               value:
-                $ref: ../components/examples/budget.json
+                $ref: ../components/examples/budgetCreateSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
