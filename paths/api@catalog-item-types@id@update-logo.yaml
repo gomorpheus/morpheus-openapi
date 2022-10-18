@@ -29,11 +29,13 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf: 
+              - $ref: ../components/schemas/catalogItemType.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Successful Response:
               value:
-                $ref: ../components/examples/success.json
+                $ref: ../components/examples/catalogItemTypeUpdateSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
