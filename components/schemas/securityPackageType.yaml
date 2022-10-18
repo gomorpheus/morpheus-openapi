@@ -7,11 +7,6 @@ properties:
     type: string
   name: 
     type: string
-  labels:
-    type: array
-    nullable: true
-    items: 
-      type: string
   description: 
     type: string
     nullable: true
