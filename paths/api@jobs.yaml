@@ -207,6 +207,16 @@ post:
                         type: integer
                         format: int64
                         example: 123
+                  scanPath: 
+                    type: string
+                    nullable: true
+                    description: Scan Checklist
+                    example: "/test_CentOS_Linux_7_Benchmark_v3/test_CentOS_Linux_7_Benchmark_v3.1.1-xccdf.xml"
+                  securityProfile: 
+                    type: string
+                    nullable: true
+                    description: Security Profile
+                    example: "xccdf_org.cisecurity.benchmarks_profile_Level_2_-_Server"
                   targetType:
                     type: string
                     description: Target type where job will execute
