@@ -13,11 +13,6 @@ properties:
     format: date-time
   code: 
     type: string
-  labels: 
-    type: array
-    nullable: true
-    items:
-      type: string
   lastUpdated: 
     type: string
     format: date-time
