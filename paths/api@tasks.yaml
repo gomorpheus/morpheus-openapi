@@ -156,7 +156,7 @@ post:
                           description: File Source i.e. `local`, `repository`, `url`. Default is `local`.
                           enum:
                             - local
-                            - respository
+                            - repository
                             - url
                           default: local
                         content:
@@ -168,7 +168,7 @@ post:
                         contentRef:
                           type: string
                           description: Content Ref, the branch/tag. Only used when sourceType is `repository`.
-                        respository:
+                        repository:
                           type: object
                           properties: 
                             id:
