@@ -98,8 +98,57 @@ properties:
   environmentPrefix: 
     type: string
     nullable: true
+  configGroup: 
+    type: string
+    nullable: true
+  configId: 
+    type: string
+    nullable: true
+  configRole: 
+    type: string
+    nullable: true
   stats: 
     type: object
+    properties: 
+      ts: 
+        type: string
+        format: date-time
+      running: 
+        type: boolean
+      userCpuUsage: 
+        type: number
+      systemCpuUsage: 
+        type: number
+      usedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      cacheMemory: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      usedStorage: 
+        type: integer
+        format: int64
+      readIOPS: 
+        type: integer
+        format: int64
+      writeIOPS: 
+        type: integer
+        format: int64
+      totalIOPS: 
+        type: integer
+        format: int64
+      netTxUsage: 
+        type: integer
+        format: int64
+      netRxUsage: 
+        type: integer
+        format: int64
   runtimeInfo: 
     type: object
   containerVersion: 
@@ -133,7 +182,14 @@ properties:
   maxCpu: 
     type: string
     nullable: true
+  hourlyPrice:
+    type: number
   availableActions: 
     type: array
     items: 
       type: object
+      properties: 
+        code:
+          type: string
+        name: 
+          type: string
