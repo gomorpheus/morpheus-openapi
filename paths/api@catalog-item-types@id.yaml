@@ -69,7 +69,10 @@ put:
         application/json:
           schema:
             allOf: 
-              - $ref: ../components/schemas/catalogItemType.yaml
+              - type: object
+                properties:
+                  catalogItemType:
+                    $ref: ../components/schemas/catalogItemType.yaml
               - $ref: ../components/schemas/200-success.yaml
           examples:
             Successful Response:
