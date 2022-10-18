@@ -13,6 +13,7 @@ get:
       schema:
         type: boolean
         default: false
+      example: true
   responses:
     '200':
       description: Successful Request
