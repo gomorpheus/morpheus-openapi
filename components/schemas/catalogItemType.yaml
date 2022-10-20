@@ -7,6 +7,10 @@ properties:
     type: string
   description: 
     type: string
+  labels:
+    type: array
+    items: 
+      type: string
   type: 
     type: string
   blueprint: 

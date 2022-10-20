@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Example Instance",
       "description": "Example catalog item type",
+      "labels": [],
       "type": "instance",
       "blueprint": null,
       "refType": "InstanceType",
@@ -67,6 +68,7 @@
       "id": 2,
       "name": "Example App",
       "description": "Example catalog item type using a blueprint with scribe",
+      "labels": [],
       "type": "blueprint",
       "blueprint": {
         "id": 15,
