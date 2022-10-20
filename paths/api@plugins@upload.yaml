@@ -1,0 +1,37 @@
+post:
+  summary: Upload Plugin
+  description: |
+    Upload a plugin .jar file to install a new plugin or update an existing plugin to a new version.
+  operationId: uploadPlugin
+  tags:
+    - Plugins
+  requestBody:
+    content:
+      multipart/form-data: 
+        schema: 
+          type: object
+          properties: 
+            file:
+              type: string
+              format: binary
+              description: Plugin .jar file contents
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                plugin:
+                  $ref: ../components/schemas/plugin.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Plugin Response:
+              value:
+                $ref: ../components/examples/pluginSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
