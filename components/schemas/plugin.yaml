@@ -1,0 +1,57 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+  description: 
+    type: string
+  version: 
+    type: string
+  enabled: 
+    type: boolean
+  author: 
+    type: string
+    nullable: true
+  websiteUrl: 
+    type: string
+    nullable: true
+  sourceCodeLocationUrl: 
+    type: string
+    nullable: true
+  issueTrackerUrl: 
+    type: string
+    nullable: true
+  valid: 
+    type: boolean
+  hasValidUpdate: 
+    type: boolean
+  status: 
+    type: string
+  statusMessage: 
+    type: string
+    nullable: true
+  providers: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        name: 
+          type: string
+        type: 
+          type: string
+  config: 
+    type: object
+  optionTypes: 
+    type: array
+    items: 
+      $ref: optionType.yaml
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
