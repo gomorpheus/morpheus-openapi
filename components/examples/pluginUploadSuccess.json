@@ -1,10 +1,29 @@
 {
-    "plugin": {
+	"success": true,
+	"plugin": {
+		"id": 7,
 		"name": "HashiCorp Vault",
 		"code": "morpheus-hashicorp-vault-plugin",
 		"description": "HashiCorp Vault Plugin",
 		"version": "1.2.1",
-		"author": "Morpheus"
-	},
-	"success": true
+		"enabled": true,
+		"author": "Morpheus",
+		"websiteUrl": null,
+		"sourceCodeLocationUrl": "https://github.com/cpdtaylor/morpheus-hashicorp-vault-plugin",
+		"issueTrackerUrl": "https://github.com/cpdtaylor/morpheus-hashicorp-vault-plugin/issues",
+		"valid": true,
+		"hasValidUpdate": false,
+		"status": "installing",
+		"statusMessage": "",
+		"providers": [
+
+		],
+		"optionTypes": [
+
+		],
+		"config": {
+		},
+		"dateCreated": "2022-10-21T15:22:14Z",
+		"lastUpdated": "2022-10-21T15:22:14Z"
+	}
 }
