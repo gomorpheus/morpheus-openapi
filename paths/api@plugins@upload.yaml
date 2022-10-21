@@ -2,6 +2,8 @@ post:
   summary: Upload Plugin
   description: |
     Upload a plugin .jar file to install a new plugin or update an existing plugin to a new version.
+    This endpoint parses the plugin file and starts the asynchronous creation and loading of the plugin.
+    The plugin record itself won't be created until the reload is complete, so only the `name`, `code` and `version` are returned, not an `id`.
   operationId: uploadPlugin
   tags:
     - Plugins
@@ -30,7 +32,7 @@ post:
           examples:
             Plugin Response:
               value:
-                $ref: ../components/examples/pluginSuccess.json
+                $ref: ../components/examples/pluginUploadSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
