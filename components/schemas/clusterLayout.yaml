@@ -50,6 +50,10 @@ properties:
         type: string
       name: 
         type: string
+  labels:
+    type: array
+    items: 
+      type: string
   environmentVariables: 
     type: array
     items: 
