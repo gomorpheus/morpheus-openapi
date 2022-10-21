@@ -27,7 +27,20 @@ post:
             - type: object
               properties:
                 plugin:
-                  $ref: ../components/schemas/plugin.yaml
+                  type: object
+                  properties: 
+                    name: 
+                      type: string
+                    code: 
+                      type: string
+                    description: 
+                      type: string
+                      nullable: true
+                    version: 
+                      type: string
+                    author: 
+                      type: string
+                      nullable: true
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Plugin Response:
