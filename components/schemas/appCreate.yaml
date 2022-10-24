@@ -22,6 +22,12 @@ properties:
   description: 
     type: string
     description: Description
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   group: 
     type: object
     description: A Map containing the id of the Group

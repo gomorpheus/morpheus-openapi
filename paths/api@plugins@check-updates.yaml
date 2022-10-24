@@ -1,7 +1,7 @@
 post:
   summary: Check Plugins For Available Updates
   description: |
-    Checks if installed plugin has an update available
+    Check for installed plugins that have available updates.
   operationId: pluginCheckUpdates
   tags:
     - Plugins
