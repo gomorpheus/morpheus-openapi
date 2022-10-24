@@ -696,12 +696,6 @@ paths:
     $ref: paths/api@options@zoneNetworkOptions.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
-  /api/plugins:
-    $ref: paths/api@plugins.yaml
-  /api/plugins/upload:
-    $ref: paths/api@plugins@upload.yaml
-  /api/plugins/{id}:
-    $ref: paths/api@plugins@id.yaml
   /api/policies:
     $ref: paths/api@policies.yaml
   /api/policies/{id}:
@@ -809,18 +803,6 @@ paths:
     $ref: paths/api@security-groups@id@rules.yaml
   /api/security-groups/{id}/rules/{sgId}:
     $ref: paths/api@security-groups@id@rules@sgId.yaml
-  /api/security-packages:
-    $ref: paths/api@security-packages.yaml
-  /api/security-packages/{id}:
-    $ref: paths/api@security-packages@id.yaml
-  /api/security-package-types:
-    $ref: paths/api@security-package-types.yaml
-  /api/security-package-types/{id}:
-    $ref: paths/api@security-package-types@id.yaml
-  /api/security-scans:
-    $ref: paths/api@security-scans.yaml
-  /api/security-scans/{id}:
-    $ref: paths/api@security-scans@id.yaml
   /api/servers:
     $ref: paths/api@servers.yaml
   /api/servers/{id}:
@@ -1183,8 +1165,6 @@ tags:
     description: All Endpoints Pertaining to Personas
   - name: Ping
     description: Ping Appliance
-  - name: Plugins
-    description: Manage Plugins
   - name: Policies
     description: Manage Policies
   - name: Price Sets
@@ -1210,10 +1190,6 @@ tags:
     description: Global Search Functions
   - name: Security Groups
     description: Manage Security Groups
-  - name: Security Packages
-    description: Manage Security Packages
-  - name: Security Scans
-    description: Manage Security Scans
   - name: Self Service
     description: Manage Self Service
   - name: Service Catalog
