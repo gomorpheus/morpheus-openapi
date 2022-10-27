@@ -195,6 +195,8 @@ paths:
     $ref: paths/api@zones@zoneId@resource-pools@id.yaml
   /api/zones/{id}/refresh:
     $ref: paths/api@zones@id@refresh.yaml
+  /api/zones/{id}/update-logo:
+    $ref: paths/api@zones@id@update-logo.yaml
   /api/zones/{id}/security-groups:
     $ref: paths/api@zones@id@security-groups.yaml  
   

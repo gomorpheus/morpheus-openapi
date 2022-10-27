@@ -119,6 +119,10 @@ put:
                   type: string
                   description: host firewall. `off` or `internal`. a.k.a. "local firewall"
                   default: "off"
+                defaultCloudLogos:
+                  type: boolean
+                  description: Can be used to clear any custom logo and darkLogo, reverting to the defaults for the cloud type
+                  default: true
                 credential:
                   type: object
                   description: Map containing Credential ID. `local` means use the values set in the local cloud config instead of associating a credential.
