@@ -698,6 +698,14 @@ paths:
     $ref: paths/api@networks@servers@id@scopes@id.yaml
   /api/networks/services:
     $ref: paths/api@networks@services.yaml
+  /api/networks/pool-servers:
+    $ref: paths/api@networks@pool-servers.yaml
+  /api/networks/pool-servers/{id}:
+    $ref: paths/api@networks@pool-servers@id.yaml
+  /api/networks/pool-server-types:
+    $ref: paths/api@networks@pool-server-types.yaml
+  /api/networks/pool-server-types/{id}:
+    $ref: paths/api@networks@pool-server-types@id.yaml
   /api/options/codeRepositories:
     $ref: paths/api@options@codeRepositories.yaml
   /api/options/{optionSource}:
