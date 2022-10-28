@@ -5,13 +5,14 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`ComputeZone` is the code for Global Cloud Access"
-    enum:
-      - ComputeZone
+    description: "`ComputeSite` is the code for Default Group Access"
+    enum: 
+      - ComputeSite
   access:
     type: string
     description: The new access level.
     enum:
       - full
       - custom
+      - read
       - none

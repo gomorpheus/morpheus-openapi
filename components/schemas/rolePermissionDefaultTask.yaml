@@ -5,14 +5,12 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`ComputeSite` is the code for Global Group Access"
-    enum: 
-      - ComputeSite
+    description: "`Task` is the code for Default Task Access"
+    enum:
+      - Tasks
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
-      - read
       - none

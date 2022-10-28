@@ -5,9 +5,9 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`ReportTypes` is the code for Global Report Type Access"
+    description: "`InstanceType` is the code for Default Instance Type Access"
     enum:
-      - ReportTypes
+      - InstanceType
   access:
     type: string
     description: The new access level.

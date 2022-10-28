@@ -5,13 +5,12 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`InstanceType` is the code for Global Instance Type Access"
+    description: "`TaskSet` is the code for Default Workflow Access"
     enum:
-      - InstanceType
+      - Tasks
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
       - none

@@ -5,9 +5,9 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`AppTemplate` is the code for Global Blueprint Access"
+    description: "`ReportTypes` is the code for Default Report Type Access"
     enum:
-      - AppTemplate
+      - ReportTypes
   access:
     type: string
     description: The new access level.

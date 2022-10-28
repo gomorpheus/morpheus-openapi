@@ -1,0 +1,17 @@
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`AppTemplate` is the code for Default Blueprint Access"
+    enum:
+      - AppTemplate
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - custom
+      - none

@@ -12,13 +12,15 @@ put:
         schema:
           anyOf:
             - $ref: ../components/schemas/rolePermissionBasic.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalGroup.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalCloud.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalInstanceType.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalBlueprint.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalCatalogItemType.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalVDIPool.yaml
-            - $ref: ../components/schemas/rolePermissionGlobalReportType.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultGroup.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultCloud.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultInstanceType.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultBlueprint.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultCatalogItemType.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultVDIPool.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultReportType.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultTask.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultTaskSet.yaml
         examples:
           Updating Role Permissions Request - Basic:
             value:
