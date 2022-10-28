@@ -195,6 +195,8 @@ paths:
     $ref: paths/api@zones@zoneId@resource-pools@id.yaml
   /api/zones/{id}/refresh:
     $ref: paths/api@zones@id@refresh.yaml
+  /api/zones/{id}/update-logo:
+    $ref: paths/api@zones@id@update-logo.yaml
   /api/zones/{id}/security-groups:
     $ref: paths/api@zones@id@security-groups.yaml  
   
@@ -612,10 +614,6 @@ paths:
   /api/logs:
     $ref: paths/api@logs.yaml
 
-  /api/network-router-types:
-    $ref: paths/api@network-router-types.yaml
-  /api/network-router-types/{id}:
-    $ref: paths/api@network-router-types@id.yaml
   /api/network-types:
     $ref: paths/api@network-types.yaml
   /api/network-types/{id}:
@@ -630,22 +628,14 @@ paths:
     $ref: paths/api@networks@id@routes@id.yaml
   /api/networks/{id}/subnets:
     $ref: paths/api@networks@id@subnets.yaml
-  /api/networks/domains:
-    $ref: paths/api@networks@domains.yaml
-  /api/networks/domains/{id}:
-    $ref: paths/api@networks@domains@id.yaml
   /api/networks/groups:
     $ref: paths/api@networks@groups.yaml
   /api/networks/groups/{id}:
     $ref: paths/api@networks@groups@id.yaml
-  /api/networks/pools:
-    $ref: paths/api@networks@pools.yaml
-  /api/networks/pools/{id}:
-    $ref: paths/api@networks@pools@id.yaml
-  /api/networks/proxies:
-    $ref: paths/api@networks@proxies.yaml
-  /api/networks/proxies/{id}:
-    $ref: paths/api@networks@proxies@id.yaml
+  /api/network-router-types:
+    $ref: paths/api@network-router-types.yaml
+  /api/network-router-types/{id}:
+    $ref: paths/api@network-router-types@id.yaml
   /api/networks/routers:
     $ref: paths/api@networks@routers.yaml
   /api/networks/routers/{id}:
@@ -672,6 +662,18 @@ paths:
     $ref: paths/api@networks@routers@id@routes.yaml
   /api/networks/routers/{routerId}/routes/{id}:
     $ref: paths/api@networks@routers@id@routes@id.yaml
+  /api/networks/pools:
+    $ref: paths/api@networks@pools.yaml
+  /api/networks/pools/{id}:
+    $ref: paths/api@networks@pools@id.yaml
+  /api/networks/domains:
+    $ref: paths/api@networks@domains.yaml
+  /api/networks/domains/{id}:
+    $ref: paths/api@networks@domains@id.yaml
+  /api/networks/proxies:
+    $ref: paths/api@networks@proxies.yaml
+  /api/networks/proxies/{id}:
+    $ref: paths/api@networks@proxies@id.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:
@@ -698,6 +700,14 @@ paths:
     $ref: paths/api@networks@servers@id@scopes@id.yaml
   /api/networks/services:
     $ref: paths/api@networks@services.yaml
+  /api/networks/pool-servers:
+    $ref: paths/api@networks@pool-servers.yaml
+  /api/networks/pool-servers/{id}:
+    $ref: paths/api@networks@pool-servers@id.yaml
+  /api/networks/pool-server-types:
+    $ref: paths/api@networks@pool-server-types.yaml
+  /api/networks/pool-server-types/{id}:
+    $ref: paths/api@networks@pool-server-types@id.yaml
   /api/options/codeRepositories:
     $ref: paths/api@options@codeRepositories.yaml
   /api/options/{optionSource}:

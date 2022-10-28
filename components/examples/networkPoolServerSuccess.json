@@ -1,0 +1,54 @@
+{
+	"success": true,
+	"networkPoolServer": {
+		"id": 149,
+		"type": {
+			"id": 2,
+			"name": "Infoblox",
+			"code": "infoblox"
+		},
+		"name": "Labs Infoblox",
+		"enabled": true,
+		"description": null,
+		"internalId": null,
+		"externalId": null,
+		"serviceUrl": "https://infoblox-server/wapi/v2.9",
+		"serviceHost": null,
+		"servicePort": 22,
+		"serviceMode": "static",
+		"serviceUsername": null,
+		"servicePassword": null,
+		"apiPort": null,
+		"adminPort": null,
+		"status": "ok",
+		"statusMessage": null,
+		"statusDate": "2022-10-21T19:00:04Z",
+		"networkFilter": null,
+		"tenantMatch": null,
+		"dateCreated": "2021-03-19T14:31:07Z",
+		"lastUpdated": "2022-10-21T19:00:04Z",
+		"account": {
+			"id": 1,
+			"name": "Morpheus QA"
+		},
+		"pools": [
+			{
+				"id": 17681,
+				"name": "172.16.1.0/24"
+			},
+			{
+				"id": 12493,
+				"name": "10.30.26.192/26"
+			},
+			{
+				"id": 12492,
+				"name": "10.32.26.192/26"
+			}
+		],
+		"credential": {
+			"id": 1032,
+			"name": "Integration: Infoblox",
+			"type": "username-password"
+		}
+	}
+}

@@ -149,6 +149,14 @@ properties:
           type: string
         type:
           type: string
+  imagePath: 
+    type: string
+    nullable: true
+    description: Logo image URL
+  darkImagePath: 
+    type: string
+    nullable: true
+    description: Dark logo image URL
   dateCreated: 
     type: string
     format: date-time

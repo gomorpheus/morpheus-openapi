@@ -1,0 +1,13 @@
+{
+  "networkPoolServer": {
+    "type": "phpipam",
+    "name": "Labs phpIPAM",
+    "serviceUrl": "http://phpipam-server/api",
+    "config": {
+      "appId": "phpipam-app-id"
+    },
+    "credential": {
+      "id": 1033
+    }
+  }
+}

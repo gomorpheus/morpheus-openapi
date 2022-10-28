@@ -1,0 +1,89 @@
+get:
+  summary: Get All Network Pool Servers
+  description: |
+    This endpoint retrieves all Network Pool Servers associated with the account.
+  operationId: listNetworkPoolServers
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkPoolServers:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/networkPoolServer.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Network Pool Servers Response:
+              value:
+                $ref: ../components/examples/networkPoolServers.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create a Network Pool Server
+  description: This endpoint allows creating a Network Pool Server. Only certain types of integrations support creating and deleting network pool servers, such as Bluecat, Infoblox, phpIPAM, and Solar Winds. Configuration options vary by type. Note that creating a pool server will automatically create and associate the corresponding network integration object, but management is done via the network pool server object.
+  operationId: createNetworkPoolServer
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            networkPoolServer:
+              type: object
+              description: Payload for creating a new Network Pool Server
+              anyOf:
+                - $ref: ../components/schemas/networkPoolServerCreateBluecat.yaml
+                - $ref: ../components/schemas/networkPoolServerCreateInfoblox.yaml
+                - $ref: ../components/schemas/networkPoolServerCreatePhpIpam.yaml
+                - $ref: ../components/schemas/networkPoolServerCreateSolarWinds.yaml
+        examples:
+          Network Pool Server Request - Bluecat:
+            value: 
+              $ref: ../components/examples/networkPoolServerCreateBluecat.json
+          Network Pool Server Request - Infoblox:
+            value: 
+              $ref: ../components/examples/networkPoolServerCreateInfoblox.json
+          Network Pool Server Request - PHP Ipam:
+            value: 
+              $ref: ../components/examples/networkPoolServerCreatePhpIpam.json
+          Network Pool Server Request - Solar Winds:
+            value: 
+              $ref: ../components/examples/networkPoolServerCreateSolarWinds.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  networkPoolServer:
+                    $ref: ../components/schemas/networkPoolServer.yaml
+          examples:
+            Network Pool Server Request Success:
+              value:
+                $ref: ../components/examples/networkPoolServerSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

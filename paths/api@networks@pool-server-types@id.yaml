@@ -1,0 +1,27 @@
+get:
+  summary: Retrieves a Specific Network Pool Server Type
+  description: |
+    Retrieves a specific Network Pool Server Type.
+  operationId: getNetworkPoolServerType
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkPoolServerType:
+                $ref: ../components/schemas/networkPoolServerType.yaml
+          examples:
+            Network Pool Server Type Response - Infoblox:
+              value:
+                $ref: ../components/examples/networkPoolServerType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
