@@ -2595,6 +2595,7 @@
       "access": "none"
     }
   ],
+  "globalPersonaAccess": "full",
   "personaPermissions": [
     {
       "id": 1,
@@ -2834,6 +2835,24 @@
       "code": "workloadSummary",
       "name": "Workload Summary",
       "access": "none"
+    }
+  ],
+  "globalTaskAccess": "full",
+  "taskPermissions": [
+    {
+      "id": 2,
+      "name": "Instance Config",
+      "code": null,
+      "access": "none"
+    }
+  ],
+  "globalTaskSetAccess": "full",
+  "taskSetPermissions": [
+    {
+      "id": 1,
+      "name": "Catalog Item",
+      "code": null,
+      "access": null
     }
   ]
 }

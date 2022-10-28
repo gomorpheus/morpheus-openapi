@@ -1,7 +1,7 @@
 put:
-  summary: Updating Role Feature Permissions
-  description: Updating Role Feature Permissions
-  operationId: updateRoleFeaturePermission
+  summary: Updating Role Permissions
+  description: Updating Role Permissions
+  operationId: updateRolePermission
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   tags:
@@ -20,30 +20,36 @@ put:
             - $ref: ../components/schemas/rolePermissionGlobalVDIPool.yaml
             - $ref: ../components/schemas/rolePermissionGlobalReportType.yaml
         examples:
-          Updating Role Feature Permissions Request - Basic:
+          Updating Role Permissions Request - Basic:
             value:
               $ref: ../components/examples/rolePermissionBasic.json
-          Updating Role Feature Permissions Request - Global Group Access:
+          Updating Role Permissions Request - Default Group Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalGroup.json
-          Updating Role Feature Permissions Request - Global Cloud Access:
+          Updating Role Permissions Request - Default Cloud Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalCloud.json
-          Updating Role Feature Permissions Request - Global Instance Type Access:
+          Updating Role Permissions Request - Default Instance Type Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalInstanceType.json
-          Updating Role Feature Permissions Request - Global Blueprint Access:
+          Updating Role Permissions Request - Default Blueprint Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalBlueprint.json
-          Updating Role Feature Permissions Request - Global Catalog Item Type Access:
+          Updating Role Permissions Request - Default Catalog Item Type Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalCatalogItemType.json
-          Updating Role Feature Permissions Request - Global VDI Pool Access:
+          Updating Role Permissions Request - Default VDI Pool Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalVDIPool.json
-          Updating Role Feature Permissions Request - Global Report Type Access:
+          Updating Role Permissions Request - Default Report Type Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalTaskType.json
+          Updating Role Permissions Request - Default Task Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalReportType.json
+          Updating Role Permissions Request - Default Workflow Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalTaskSet.json
   responses:
     '200':
       description: Successful Response

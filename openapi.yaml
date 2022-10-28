@@ -803,6 +803,10 @@ paths:
     $ref: paths/api@roles@id@update-persona.yaml
   /api/roles/{id}/update-report-type:
     $ref: paths/api@roles@id@update-report-type.yaml
+  /api/roles/{id}/update-task:
+    $ref: paths/api@roles@id@update-task.yaml
+  /api/roles/{id}/update-task-set:
+    $ref: paths/api@roles@id@update-task-set.yaml
   /api/roles/{id}/update-vdi-pool:
     $ref: paths/api@roles@id@update-vdi-pool.yaml
   /api/scale-thresholds:
