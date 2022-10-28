@@ -12,7 +12,7 @@ put:
         schema:
           type: object
           required:
-            - instanceTypeId
+            - taskSetId
             - access
           properties:
             taskSetId:
