@@ -38,9 +38,9 @@ put:
                     type: string
               - $ref: ../components/schemas/200-success.yaml
           examples:
-            Role Feature Permission Response:
+            Role Permission Response:
               value:
-                $ref: ../components/examples/updateRoleFeaturePermissionResponse.json
+                $ref: ../components/examples/updateRolePermissionResponse.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
