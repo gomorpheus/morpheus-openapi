@@ -10,20 +10,8 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - reportTypeId
-            - access
-          properties:
-            reportTypeId:
-              type: integer
-              description: "`id` of the report type"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - none
+          - $ref: ../components/schemas/rolePermissionReportType.yaml
+          - $ref: ../components/schemas/rolePermissionReportTypeAll.yaml
   responses:
     '200':
       description: Successful Response

@@ -10,21 +10,9 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - groupId
-            - access
-          properties:
-            groupId:
-              type: integer
-              description: "`id` of the group (site)"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - read
-                - none
+          oneOf:
+            - $ref: ../components/schemas/rolePermissionGroup.yaml
+            - $ref: ../components/schemas/rolePermissionGroupAll.yaml
   responses:
     '200':
       description: Successful Response

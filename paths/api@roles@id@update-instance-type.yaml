@@ -10,20 +10,8 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - instanceTypeId
-            - access
-          properties:
-            instanceTypeId:
-              type: integer
-              description: "`id` of the instance type"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - none
+          - $ref: ../components/schemas/rolePermissionInstanceType.yaml
+          - $ref: ../components/schemas/rolePermissionInstanceTypeAll.yaml
   responses:
     '200':
       description: Successful Response

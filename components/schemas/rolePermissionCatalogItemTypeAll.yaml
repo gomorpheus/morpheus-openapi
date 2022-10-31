@@ -1,0 +1,14 @@
+type: object
+required:
+  - allCatalogItemTypes
+  - access
+properties:
+  allAppTemplates:
+    type: boolean
+    description: "Apply to all catalog item types"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

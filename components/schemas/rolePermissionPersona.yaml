@@ -1,13 +1,11 @@
 type: object
 required:
-  - permissionCode
+  - personaCode
   - access
 properties:
-  permissionCode:
+  personaCode:
     type: string
-    description: "`CatalogItemType` is the code for Default Catalog Item Type Access"
-    enum:
-      - CatalogItemType
+    description: "code of the Persona, eg. `standard` or `serviceCatalog`"
   access:
     type: string
     description: The new access level.

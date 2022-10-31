@@ -11,10 +11,11 @@ put:
       application/json:
         schema:
           anyOf:
-            - $ref: ../components/schemas/rolePermissionBasic.yaml
+            - $ref: ../components/schemas/rolePermissionFeature.yaml
             - $ref: ../components/schemas/rolePermissionDefaultGroup.yaml
             - $ref: ../components/schemas/rolePermissionDefaultCloud.yaml
             - $ref: ../components/schemas/rolePermissionDefaultInstanceType.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultPersona.yaml
             - $ref: ../components/schemas/rolePermissionDefaultBlueprint.yaml
             - $ref: ../components/schemas/rolePermissionDefaultCatalogItemType.yaml
             - $ref: ../components/schemas/rolePermissionDefaultVDIPool.yaml
@@ -24,7 +25,7 @@ put:
         examples:
           Updating Role Permissions Request - Basic:
             value:
-              $ref: ../components/examples/rolePermissionBasic.json
+              $ref: ../components/examples/rolePermissionFeature.json
           Updating Role Permissions Request - Default Group Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalGroup.json

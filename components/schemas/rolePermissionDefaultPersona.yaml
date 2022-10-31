@@ -5,7 +5,9 @@ required:
 properties:
   permissionCode:
     type: string
-    description: The code of the permission being changed
+    description: "`Persona` is the code for Default Group Access"
+    enum: 
+      - ComputeSite
   access:
     type: string
     description: The new access level.

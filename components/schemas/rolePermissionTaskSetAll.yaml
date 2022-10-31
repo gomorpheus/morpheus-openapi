@@ -1,0 +1,14 @@
+type: object
+required:
+  - allTaskSets
+  - access
+properties:
+  allTasks:
+    type: boolean
+    description: "Apply to all workflows (taskSets)"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

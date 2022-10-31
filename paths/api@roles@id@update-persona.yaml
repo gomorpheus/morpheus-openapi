@@ -10,20 +10,8 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - personaCode
-            - access
-          properties:
-            personaCode:
-              type: string
-              description: "code of the Persona, eg. `standard` or `serviceCatalog`"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - none
+          - $ref: ../components/schemas/rolePermissionPersona.yaml
+          - $ref: ../components/schemas/rolePermissionPersonaAll.yaml
   responses:
     '200':
       description: Successful Response

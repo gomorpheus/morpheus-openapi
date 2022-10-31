@@ -1,13 +1,11 @@
 type: object
 required:
-  - permissionCode
+  - groupId
   - access
 properties:
-  permissionCode:
-    type: string
-    description: "`ComputeSite` is the code for Default Group Access"
-    enum: 
-      - ComputeSite
+  groupId:
+    type: integer
+    description: "`id` of the group (site)"
   access:
     type: string
     description: The new access level.

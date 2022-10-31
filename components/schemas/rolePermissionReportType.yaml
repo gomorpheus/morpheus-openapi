@@ -1,0 +1,14 @@
+type: object
+required:
+  - reportTypeId
+  - access
+properties:
+  reportTypeId:
+    type: integer
+    description: "`id` of the report type"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

@@ -10,21 +10,9 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - cloudId
-            - access
-          properties:
-            cloudId:
-              type: integer
-              description: "`id` of the cloud (zone)"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - read
-                - none
+          oneOf:
+            - $ref: ../components/schemas/rolePermissionCloud.yaml
+            - $ref: ../components/schemas/rolePermissionCloudAll.yaml
   responses:
     '200':
       description: Successful Response

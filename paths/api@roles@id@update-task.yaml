@@ -10,21 +10,8 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - taskId
-            - access
-          properties:
-            taskId:
-              type: integer
-              description: "`id` of the task"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - none
-                - default
+          - $ref: ../components/schemas/rolePermissionTask.yaml
+          - $ref: ../components/schemas/rolePermissionTaskAll.yaml
   responses:
     '200':
       description: Successful Response

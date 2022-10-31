@@ -1,13 +1,11 @@
 type: object
 required:
-  - permissionCode
+  - cloudId
   - access
 properties:
-  permissionCode:
-    type: string
-    description: "`ComputeSite` is the code for Default Group Access"
-    enum: 
-      - ComputeSite
+  cloudId:
+    type: integer
+    description: "`id` of the cloud (zone)"
   access:
     type: string
     description: The new access level.
