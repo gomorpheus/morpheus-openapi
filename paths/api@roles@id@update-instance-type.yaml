@@ -10,8 +10,9 @@ put:
     content:
       application/json:
         schema:
-          - $ref: ../components/schemas/rolePermissionInstanceType.yaml
-          - $ref: ../components/schemas/rolePermissionInstanceTypeAll.yaml
+          oneOf:
+            - $ref: ../components/schemas/rolePermissionInstanceType.yaml
+            - $ref: ../components/schemas/rolePermissionInstanceTypeAll.yaml
   responses:
     '200':
       description: Successful Response
