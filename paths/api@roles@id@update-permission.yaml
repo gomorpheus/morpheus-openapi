@@ -15,15 +15,16 @@ put:
             - $ref: ../components/schemas/rolePermissionDefaultGroup.yaml
             - $ref: ../components/schemas/rolePermissionDefaultCloud.yaml
             - $ref: ../components/schemas/rolePermissionDefaultInstanceType.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultPersona.yaml
             - $ref: ../components/schemas/rolePermissionDefaultBlueprint.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultReportType.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultPersona.yaml
             - $ref: ../components/schemas/rolePermissionDefaultCatalogItemType.yaml
             - $ref: ../components/schemas/rolePermissionDefaultVDIPool.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultReportType.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultTask.yaml
             - $ref: ../components/schemas/rolePermissionDefaultTaskSet.yaml
+            - $ref: ../components/schemas/rolePermissionDefaultTask.yaml
+
         examples:
-          Updating Role Permissions Request - Basic:
+          Updating Role Permissions Request - Feature:
             value:
               $ref: ../components/examples/rolePermissionFeature.json
           Updating Role Permissions Request - Default Group Access:
@@ -38,21 +39,25 @@ put:
           Updating Role Permissions Request - Default Blueprint Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalBlueprint.json
+          Updating Role Permissions Request - Default Report Type Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalReportType.json
+          Updating Role Permissions Request - Default Persona Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalPersona.json
           Updating Role Permissions Request - Default Catalog Item Type Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalCatalogItemType.json
           Updating Role Permissions Request - Default VDI Pool Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalVDIPool.json
-          Updating Role Permissions Request - Default Report Type Access:
-            value:
-              $ref: ../components/examples/rolePermissionGlobalTaskType.json
-          Updating Role Permissions Request - Default Task Access:
-            value:
-              $ref: ../components/examples/rolePermissionGlobalReportType.json
           Updating Role Permissions Request - Default Workflow Access:
             value:
               $ref: ../components/examples/rolePermissionGlobalTaskSet.json
+          Updating Role Permissions Request - Default Task Access:
+            value:
+              $ref: ../components/examples/rolePermissionGlobalTask.json
+
   responses:
     '200':
       description: Successful Response
