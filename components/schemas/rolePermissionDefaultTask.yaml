@@ -7,7 +7,7 @@ properties:
     type: string
     description: "`Task` is the code for Default Task Access"
     enum:
-      - Tasks
+      - Task
   access:
     type: string
     description: The new access level.

@@ -7,7 +7,7 @@ properties:
     type: string
     description: "`TaskSet` is the code for Default Workflow Access"
     enum:
-      - Tasks
+      - TaskSet
   access:
     type: string
     description: The new access level.

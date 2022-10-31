@@ -10,7 +10,7 @@ put:
     content:
       application/json:
         schema:
-          anyOf:
+          oneOf:
             - $ref: ../components/schemas/rolePermissionFeature.yaml
             - $ref: ../components/schemas/rolePermissionDefaultGroup.yaml
             - $ref: ../components/schemas/rolePermissionDefaultCloud.yaml

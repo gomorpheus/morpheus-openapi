@@ -7,7 +7,7 @@ properties:
     type: string
     description: "`Persona` is the code for Default Group Access"
     enum: 
-      - ComputeSite
+      - Persona
   access:
     type: string
     description: The new access level.
