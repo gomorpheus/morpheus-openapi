@@ -11,17 +11,330 @@ put:
       application/json:
         schema:
           oneOf:
-            - $ref: ../components/schemas/rolePermissionFeature.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultGroup.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultCloud.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultInstanceType.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultBlueprint.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultReportType.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultPersona.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultCatalogItemType.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultVDIPool.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultTaskSet.yaml
-            - $ref: ../components/schemas/rolePermissionDefaultTask.yaml
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: The code of the permission being changed
+                  enum:
+                    - account-usage
+                    - activity
+                    - admin-accounts
+                    - admin-accounts-users
+                    - admin-appliance
+                    - admin-backupSettings
+                    - admin-certificates
+                    - admin-clients
+                    - admin-cm
+                    - admin-containers
+                    - admin-distributed-workers
+                    - admin-environments
+                    - admin-global-policies
+                    - admin-groups
+                    - admin-guidanceSettings
+                    - admin-health
+                    - admin-identity-sources
+                    - admin-keypairs
+                    - admin-licenses
+                    - admin-logSettings
+                    - admin-monitorSettings
+                    - admin-motd
+                    - admin-packages
+                    - admin-plugins
+                    - admin-policies
+                    - admin-profiles
+                    - admin-provisioningSettings
+                    - admin-roles
+                    - admin-servers
+                    - admin-servicePlans
+                    - admin-users
+                    - admin-whitelabel
+                    - admin-zones
+                    - app-templates
+                    - apps
+                    - arm-template
+                    - automation-services
+                    - backup-services
+                    - backups
+                    - billing
+                    - catalog
+                    - cloudFormation-template
+                    - code-repositories
+                    - credentials
+                    - dashboard
+                    - deployment-services
+                    - deployments
+                    - execution-request
+                    - executions
+                    - guidance
+                    - helm-template
+                    - infrastructure-boot
+                    - infrastructure-cluster
+                    - infrastructure-dhcp-pool
+                    - infrastructure-domains
+                    - infrastructure-ippools
+                    - infrastructure-kube-cntl
+                    - infrastructure-loadbalancer
+                    - infrastructure-move-server
+                    - infrastructure-nat
+                    - infrastructure-network-dhcp-relay
+                    - infrastructure-network-dhcp-routes
+                    - infrastructure-network-dhcp-server
+                    - infrastructure-network-firewalls
+                    - infrastructure-network-integrations
+                    - infrastructure-network-router-firewalls
+                    - infrastructure-network-router-interfaces
+                    - infrastructure-network-router-redistribution
+                    - infrastructure-network-router-routes
+                    - infrastructure-network-server-groups
+                    - infrastructure-networks
+                    - infrastructure-proxies
+                    - infrastructure-router-dhcp-binding
+                    - infrastructure-router-dhcp-relay
+                    - infrastructure-routers
+                    - infrastructure-securityGroups
+                    - infrastructure-state
+                    - infrastructure-storage
+                    - infrastructure-storage-browser
+                    - integrations-ansible
+                    - job-executions
+                    - job-templates
+                    - kubernetes-template
+                    - library-advanced-node-type-options
+                    - library-options
+                    - library-templates
+                    - logs
+                    - monitoring
+                    - operations-alarms
+                    - operations-approvals
+                    - operations-budgets
+                    - operations-invoices
+                    - operations-wiki
+                    - projects
+                    - provisioning
+                    - provisioning-add
+                    - provisioning-admin
+                    - provisioning-clone
+                    - provisioning-delete
+                    - provisioning-edit
+                    - provisioning-environment
+                    - provisioning-execute-script
+                    - provisioning-execute-task
+                    - provisioning-execute-workflow
+                    - provisioning-force-delete
+                    - provisioning-import-image
+                    - provisioning-lock
+                    - provisioning-power
+                    - provisioning-reconfigure
+                    - provisioning-reconfigure-add-disk
+                    - provisioning-reconfigure-add-network
+                    - provisioning-reconfigure-change-plan
+                    - provisioning-reconfigure-disk-type
+                    - provisioning-reconfigure-modify-disk
+                    - provisioning-reconfigure-modify-network
+                    - provisioning-reconfigure-remove-disk
+                    - provisioning-reconfigure-remove-network
+                    - provisioning-remove-control
+                    - provisioning-scale
+                    - provisioning-settings
+                    - provisioning-state
+                    - reports
+                    - reports-analytics
+                    - scheduling-execute
+                    - scheduling-power
+                    - security-scan
+                    - service-catalog
+                    - service-catalog-dashboard
+                    - service-catalog-inventory
+                    - services-archives
+                    - services-cypher
+                    - services-image-builder
+                    - services-kubernetes
+                    - services-network-registry
+                    - services-vdi-copy
+                    - services-vdi-pools
+                    - services-vdi-printer
+                    - snapshots
+                    - task-scripts
+                    - tasks
+                    - terminal
+                    - terminal-access
+                    - terraform-template
+                    - thresholds
+                    - trust-services
+                    - virtual-images
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - read
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`ComputeSite` is the code for Default Group Access"
+                  enum:
+                    - ComputeSite
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - read
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`ComputeZone` is the code for Default Cloud Access"
+                  enum:
+                    - ComputeZone
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`InstanceType` is the code for Default Instance Type Access"
+                  enum:
+                    - InstanceType
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`AppTemplate` is the code for Default Blueprint Access"
+                  enum:
+                    - AppTemplate
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`ReportTypes` is the code for Default Report Type Access"
+                  enum:
+                    - ReportTypes
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`Persona` is the code for Default Group Access"
+                  enum:
+                    - Persona
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - read
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`CatalogItemType` is the code for Default Catalog Item Type Access"
+                  enum:
+                    - CatalogItemType
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`VdiPools` is the code for Global VDI Pool Access"
+                  enum:
+                    - VdiPools
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`TaskSet` is the code for Default Workflow Access"
+                  enum:
+                    - TaskSet
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
+            - type: object
+              required:
+                - permissionCode
+                - access
+              properties:
+                permissionCode:
+                  type: string
+                  description: "`Task` is the code for Default Task Access"
+                  enum:
+                    - Task
+                access:
+                  type: string
+                  description: The new access level.
+                  enum:
+                    - full
+                    - none
 
         examples:
           Updating Role Permissions Request - Feature:
