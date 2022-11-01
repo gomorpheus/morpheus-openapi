@@ -1,3 +1,4 @@
+title: Default Persona Permission
 type: object
 required:
   - permissionCode
@@ -5,7 +6,7 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`Persona` is the code for Default Group Access"
+    description: "`Persona` is the code for Default Persona Access"
     enum: 
       - Persona
   access:
