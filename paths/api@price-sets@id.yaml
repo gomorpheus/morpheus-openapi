@@ -93,6 +93,12 @@ put:
                     - fixed
                     - compute_plus_storage
                     - component
+                    - load_balancer
+                    - snapshot
+                    - virtual_image
+                    - software_or_service
+                    - instance_type
+                    - instance_type_layout
                 prices:
                   type: array
                   items:

@@ -8,6 +8,10 @@ properties:
   name: 
     type: string
     description: Node type name
+  labels:
+    type: array
+    items: 
+      type: string
   shortName: 
     type: string
     description: The short name is a name with no spaces used for display in your container list.
