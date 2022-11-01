@@ -1,3 +1,4 @@
+title: Feature Permission
 type: object
 required:
   - permissionCode
@@ -5,7 +6,7 @@ required:
 properties:
   permissionCode:
     type: string
-    description: The code of the permission being changed
+    description: The code of the feature permission being changed
     enum:
       - account-usage
       - activity
