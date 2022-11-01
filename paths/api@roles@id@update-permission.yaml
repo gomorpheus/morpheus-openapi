@@ -22,7 +22,6 @@ put:
             - $ref: ../components/schemas/rolePermissionDefaultVDIPool.yaml
             - $ref: ../components/schemas/rolePermissionDefaultTaskSet.yaml
             - $ref: ../components/schemas/rolePermissionDefaultTask.yaml
-
         examples:
           Updating Role Permissions Request - Feature:
             value:
