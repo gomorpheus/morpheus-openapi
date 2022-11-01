@@ -78,6 +78,11 @@ properties:
     nullable: true
     items:
       type: object
+  priceSets: 
+    type: array
+    nullable: true
+    items:
+      type: object
   imagePath: 
     type: string
     nullable: true

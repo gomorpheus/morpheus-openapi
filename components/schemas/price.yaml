@@ -56,8 +56,38 @@ properties:
       name: 
         type: string
   datastore: 
-    type: string
+    type: object
     nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  instanceType: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  instanceTypeLayout: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+      instanceVersion: 
+        type: string
   crossCloudApply: 
     type: boolean
     nullable: true

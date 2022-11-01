@@ -72,6 +72,18 @@ properties:
           type: boolean
           description: Can be used to enable / disable export of variable
           default: false
+  priceSets: 
+    type: array
+    description: Array of price set objects
+    items:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Price Set ID
   permissions: 
     type: object
     description: Permissions object for upgrading group access

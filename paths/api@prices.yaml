@@ -16,6 +16,11 @@ get:
     - $ref: ../components/parameters/priceType.yaml
     - $ref: ../components/parameters/platform.yaml
     - $ref: ../components/parameters/currency.yaml
+    - name: type
+      in: query
+      description: Filter by type code
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
@@ -89,6 +94,10 @@ post:
                     * `datastore` - Datastore
                     * `platform` - Platform
                     * `software` - Software
+                    * `load_balancer` - Load Balancer
+                    * `load_balancer_virtual_server` - Load Balancer Virtual Server
+                    * `instance_type` - Instance Type
+                    * `instance_type_layout` - Instance Type Layout
                   enum:
                     - fixed
                     - compute
@@ -98,6 +107,10 @@ post:
                     - datastore
                     - platform
                     - software
+                    - load_balancer
+                    - load_balancer_virtual_server
+                    - instance_type
+                    - instance_type_layout
                 priceUnit:
                   type: string
                   description: The unit of pricing
@@ -169,6 +182,22 @@ post:
                       format: int64
                       description: |
                         Datastore ID.  Required for datastore price type
+                instanceType:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: |
+                        Instance Type ID.  Required for instance_type price type
+                instanceTypeLayout:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: |
+                        Instance Type Layout ID.  Required for instance_type_layout price type
                 crossCloudApply:
                   type: boolean
                   description: Apply price across clouds, optional true/false flag for datastore price type
