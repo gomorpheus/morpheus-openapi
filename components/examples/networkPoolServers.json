@@ -9,27 +9,30 @@
 			},
 			"name": "Labs BlueCat",
 			"enabled": true,
-			"description": null,
-			"internalId": null,
-			"externalId": null,
 			"serviceUrl": "https://bluecat-server",
 			"serviceHost": null,
 			"servicePort": 22,
 			"serviceMode": null,
 			"serviceUsername": null,
 			"servicePassword": null,
-			"apiPort": null,
-			"adminPort": null,
 			"status": "ok",
 			"statusMessage": null,
 			"statusDate": null,
+			"config": {
+				"inventoryExisting": "on"
+      },
 			"networkFilter": null,
+			"zoneFilter": null,
 			"tenantMatch": null,
 			"dateCreated": "2021-12-16T19:53:25Z",
 			"lastUpdated": "2022-07-26T14:00:04Z",
 			"account": {
 				"id": 1,
 				"name": "Labs"
+			},
+			"integration": {
+				"id": 87,
+				"name": "Labs Bluecat"
 			},
 			"pools": [
 				{
@@ -60,27 +63,30 @@
 			},
 			"name": "Labs Infoblox",
 			"enabled": true,
-			"description": null,
-			"internalId": null,
-			"externalId": null,
 			"serviceUrl": "https://infoblox-server/wapi/v2.9",
 			"serviceHost": null,
 			"servicePort": 22,
 			"serviceMode": "static",
 			"serviceUsername": null,
 			"servicePassword": null,
-			"apiPort": null,
-			"adminPort": null,
 			"status": "ok",
 			"statusMessage": null,
 			"statusDate": "2022-10-21T19:00:04Z",
+			"config": {
+				"inventoryExisting": "on"
+      },
 			"networkFilter": null,
+			"zoneFilter": null,
 			"tenantMatch": null,
 			"dateCreated": "2021-03-19T14:31:07Z",
 			"lastUpdated": "2022-10-21T19:00:04Z",
 			"account": {
 				"id": 1,
 				"name": "Labs"
+			},
+			"integration": {
+				"id": 88,
+				"name": "Labs Infoblox"
 			},
 			"pools": [
 				{
@@ -111,27 +117,30 @@
 			},
 			"name": "Labs phpIPAM",
 			"enabled": true,
-			"description": null,
-			"internalId": null,
-			"externalId": null,
 			"serviceUrl": "http://phpipam-server/api",
 			"serviceHost": null,
 			"servicePort": 22,
 			"serviceMode": null,
 			"serviceUsername": null,
 			"servicePassword": null,
-			"apiPort": null,
-			"adminPort": null,
 			"status": "ok",
 			"statusMessage": null,
 			"statusDate": "2022-10-21T19:00:02Z",
+			"config": {
+        "appId": "app-id"
+      },
 			"networkFilter": null,
+			"zoneFilter": null,
 			"tenantMatch": null,
 			"dateCreated": "2021-09-21T02:09:57Z",
 			"lastUpdated": "2022-10-21T19:00:02Z",
 			"account": {
 				"id": 1,
 				"name": "Labs"
+			},
+			"integration": {
+				"id": 89,
+				"name": "Labs phpIPAM"
 			},
 			"pools": [
 				{
@@ -158,27 +167,30 @@
 			},
 			"name": "Labs SolarWinds",
 			"enabled": true,
-			"description": null,
-			"internalId": null,
-			"externalId": null,
 			"serviceUrl": "https://solarwinds-server:17778",
 			"serviceHost": null,
 			"servicePort": 22,
 			"serviceMode": null,
 			"serviceUsername": null,
 			"servicePassword": null,
-			"apiPort": null,
-			"adminPort": null,
 			"status": "ok",
 			"statusMessage": null,
 			"statusDate": "2022-10-21T19:00:27Z",
+			"config": {
+				"inventoryExisting": "on"
+      },
 			"networkFilter": null,
+			"zoneFilter": null,
 			"tenantMatch": null,
 			"dateCreated": "2019-08-05T15:02:43Z",
 			"lastUpdated": "2022-10-21T19:00:27Z",
 			"account": {
 				"id": 1,
 				"name": "Labs"
+			},
+			"integration": {
+				"id": 90,
+				"name": "Labs SolarWinds"
 			},
 			"pools": [
 				{
@@ -197,11 +209,10 @@
 			}
 		}
 	],
-    "networkPoolServerServerCount": 4,
-    "meta": {
-      "size": 4,
-      "total": 4,
-      "offset": 0,
-      "max": 25
-    }
+  "meta": {
+    "size": 4,
+    "total": 4,
+    "offset": 0,
+    "max": 25
+  }
 }

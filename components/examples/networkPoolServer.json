@@ -8,27 +8,30 @@
 		},
 		"name": "Labs Infoblox",
 		"enabled": true,
-		"description": null,
-		"internalId": null,
-		"externalId": null,
 		"serviceUrl": "https://labs-dc2-infoblox1.prod.dc2.den.morpheusdata.com/wapi/v2.9",
 		"serviceHost": null,
 		"servicePort": 22,
 		"serviceMode": "static",
 		"serviceUsername": null,
 		"servicePassword": null,
-		"apiPort": null,
-		"adminPort": null,
 		"status": "ok",
 		"statusMessage": null,
 		"statusDate": "2022-10-21T19:00:04Z",
+		"config": {
+			"inventoryExisting": "on"
+	    },
 		"networkFilter": null,
+		"zoneFilter": null,
 		"tenantMatch": null,
 		"dateCreated": "2021-03-19T14:31:07Z",
 		"lastUpdated": "2022-10-21T19:00:04Z",
 		"account": {
 			"id": 1,
 			"name": "Labs"
+		},
+		"integration": {
+			"id": 88,
+			"name": "Labs Infoblox"
 		},
 		"pools": [
 			{
