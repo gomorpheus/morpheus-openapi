@@ -1,8 +1,8 @@
 get:
   summary: Retrieves all Integration Types
   description: |
-    A Integration Type is specific third party software that the appliance can be configured to integrate with,
-    such as Chef, Git, Jenkins, etc.
+    An Integration Type is specific third party software that the appliance can be configured to integrate with,
+    such as Ansible, Chef, Git, ServiceNOW, etc.
   operationId: listIntegrationTypes
   tags:
     - Integrations
