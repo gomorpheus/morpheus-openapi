@@ -17,10 +17,6 @@ properties:
     type: boolean
     description: Can be used to enable / disable the network pool server.
     default: true
-  # description: 
-  #   type: string
-  #   description: Description
-  #   nullable: true
   serviceUrl: 
     type: string
     description: URL
