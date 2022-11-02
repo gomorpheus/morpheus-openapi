@@ -3,7 +3,7 @@ required:
   - allTaskSets
   - access
 properties:
-  allTasks:
+  allTaskSets:
     type: boolean
     description: "Apply to all workflows (taskSets)"
   access:

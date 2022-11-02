@@ -159,5 +159,15 @@ properties:
     description: The new access level.
     enum:
       - full
-      - read
+      - full_decrypted
+      - group
+      - listfiles
+      - managerules
+      - no
       - none
+      - provision
+      - read
+      - rolemappings
+      - user
+      - view
+      - yes

@@ -3,7 +3,7 @@ required:
   - allCatalogItemTypes
   - access
 properties:
-  allAppTemplates:
+  allCatalogItemTypes:
     type: boolean
     description: "Apply to all catalog item types"
   access:

@@ -1,6 +1,6 @@
 put:
   summary: Updating Role Permissions
-  description: Updating Role Permissions
+  description: Update a feature permission or default permission category (group, cloud, persona, ect.)
   operationId: updateRolePermission
   parameters:
     - $ref: ../components/parameters/id-path.yaml

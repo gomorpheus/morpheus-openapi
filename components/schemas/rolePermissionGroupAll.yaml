@@ -3,9 +3,9 @@ required:
   - allGroups
   - access
 properties:
-  groupId:
+  allGroups:
     type: boolean
-    description: "Apply to all group (site)"
+    description: "Apply to all groups (site)"
   access:
     type: string
     description: The new access level.

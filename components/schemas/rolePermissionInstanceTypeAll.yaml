@@ -3,7 +3,7 @@ required:
   - allAppTemplates
   - access
 properties:
-  allAppTemplates:
+  allInstanceTypes:
     type: boolean
     description: "Apply to all instance types"
   access:
