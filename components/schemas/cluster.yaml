@@ -113,6 +113,7 @@ properties:
     type: boolean
   labels:
     type: array
+    nullable: true
     items: 
       type: string
   tags: 

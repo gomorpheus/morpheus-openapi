@@ -191,6 +191,7 @@ properties:
           format: int64
         code:
           type: string
+          nullable: true
         name:
           type: string
         access:
@@ -207,6 +208,7 @@ properties:
           format: int64
         code:
           type: string
+          nullable: true
         name:
           type: string
         access:
