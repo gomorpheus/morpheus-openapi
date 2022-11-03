@@ -72,8 +72,6 @@ put:
                     * `software` - Software
                     * `load_balancer` - Load Balancer
                     * `load_balancer_virtual_server` - Load Balancer Virtual Server
-                    * `instance_type` - Instance Type
-                    * `instance_type_layout` - Instance Type Layout
                   enum:
                     - fixed
                     - compute
@@ -85,8 +83,6 @@ put:
                     - software
                     - load_balancer
                     - load_balancer_virtual_server
-                    - instance_type
-                    - instance_type_layout
                 priceUnit:
                   type: string
                   description: The unit of pricing
@@ -158,22 +154,6 @@ put:
                       format: int64
                       description: |
                         Datastore ID.  Required for datastore price type
-                instanceType:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      format: int64
-                      description: |
-                        Instance Type ID.  Required for instance_type price type
-                instanceTypeLayout:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      format: int64
-                      description: |
-                        Instance Type Layout ID.  Required for instance_type_layout price type
                 crossCloudApply:
                   type: boolean
                   description: Apply price across clouds, optional true/false flag for datastore price type
