@@ -14,7 +14,8 @@ get:
     - $ref: ../components/parameters/description.yaml
     - $ref: ../components/parameters/enabled.yaml
     - $ref: ../components/parameters/featured.yaml
-    - $ref: ../components/parameters/label.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
   responses:
     '200':
       description: Successful Request

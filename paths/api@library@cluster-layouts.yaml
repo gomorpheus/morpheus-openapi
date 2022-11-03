@@ -11,7 +11,8 @@ get:
     - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/provisionType.yaml
-    - $ref: ../components/parameters/label.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
   responses:
     '200':
       description: Successful Request

@@ -12,7 +12,8 @@ get:
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/createdBy.yaml
     - $ref: ../components/parameters/showDeleted.yaml
-    - $ref: ../components/parameters/label.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
   responses:
     '200':
       description: Successful Request

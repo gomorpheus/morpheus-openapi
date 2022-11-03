@@ -26,7 +26,8 @@ get:
     - $ref: ../components/parameters/shutdownDateMin.yaml
     - $ref: ../components/parameters/shutdownDays.yaml
     - $ref: ../components/parameters/shutdownDaysMin.yaml
-    - $ref: ../components/parameters/label.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
     - $ref: ../components/parameters/tags.yaml
     - $ref: ../components/parameters/metadata.yaml
     - $ref: ../components/parameters/detailsFalse.yaml
