@@ -71,6 +71,9 @@ properties:
     type: string
     format: date-time
     nullable: true
+  config: 
+    type: object
+    description: Config object varies with pool server type. 
   networkFilter: 
     type: string
     description: Network Filter
