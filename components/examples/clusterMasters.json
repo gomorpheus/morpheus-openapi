@@ -1,0 +1,193 @@
+{
+  "masters": [
+    {
+      "id": 821748,
+      "uuid": "9c39f5bb-1064-43cf-a43d-92f6e35971bf",
+      "externalId": "i-08190db6749c371c6",
+      "internalId": null,
+      "externalUniqueId": null,
+      "name": "api-kube-host-new-1666819578-master",
+      "externalName": "api-kube-host-new-1666819578-master",
+      "hostname": "api-kube-host-new-1666819578-master",
+      "accountId": 1,
+      "account": {
+        "id": 1,
+        "name": "Morpheus QA"
+      },
+      "owner": {
+        "id": 16118,
+        "username": "apiuser"
+      },
+      "zone": {
+        "id": 3,
+        "name": "QA Amazon"
+      },
+      "plan": {
+        "id": 4,
+        "code": "amazon-t2.medium",
+        "name": "T2 Medium - 2 Core, 4GB Memory"
+      },
+      "computeServerType": {
+        "id": 195,
+        "code": "amazonKubeMaster",
+        "name": "Amazon Kubernetes Master",
+        "managed": true,
+        "externalDelete": true
+      },
+      "visibility": "public",
+      "description": "My Kubernetes Cluster",
+      "zoneId": 3,
+      "siteId": 15,
+      "resourcePoolId": 35856,
+      "folderId": null,
+      "sshHost": "54.219.87.133",
+      "sshPort": 22,
+      "externalIp": "54.219.87.133",
+      "internalIp": "10.200.11.43",
+      "volumeId": null,
+      "platform": "ubuntu",
+      "platformVersion": "20.04",
+      "sshUsername": "cloudinit",
+      "sshPassword": "************",
+      "sshPasswordHash": "2e1c33de75664c05bbb8205a574f6ce9f29ee4862e005072957970277ef441ec",
+      "osDevice": "/dev/sda",
+      "osType": "linux",
+      "dataDevice": "/dev/xvdb",
+      "lvmEnabled": true,
+      "apiKey": "be8aaa16-771e-46d3-a5a9-31be1c4175a0",
+      "softwareRaid": false,
+      "dateCreated": "2022-10-26T21:26:19Z",
+      "lastUpdated": "2022-10-26T22:06:09Z",
+      "stats": {
+        "usedStorage": 5409886208,
+        "reservedStorage": 0,
+        "maxStorage": 42949672960,
+        "usedMemory": 1685276000,
+        "reservedMemory": 0,
+        "maxMemory": 4113256448,
+        "cpuUsage": 8.309823274612427
+      },
+      "status": "provisioned",
+      "statusMessage": null,
+      "errorMessage": null,
+      "statusDate": null,
+      "statusPercent": null,
+      "statusEta": null,
+      "powerState": "on",
+      "agentInstalled": true,
+      "lastAgentUpdate": "2022-10-26T22:06:09Z",
+      "agentVersion": "2.3.2",
+      "maxCores": 2,
+      "coresPerSocket": null,
+      "maxMemory": 4294967296,
+      "maxStorage": 85899345920,
+      "maxCpu": 2,
+      "hourlyPrice": 0.0694533333,
+      "sourceImage": {
+        "id": 1301781,
+        "code": "amazon.ec2.image.morpheus.ubuntu.20.04.4-v1.ubuntu.20.04.4.amd64",
+        "name": "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20220419"
+      },
+      "serverOs": null,
+      "volumes": [
+        {
+          "id": 3972123,
+          "name": "root",
+          "controllerId": null,
+          "controllerMountPoint": null,
+          "resizeable": true,
+          "planResizable": true,
+          "rootVolume": true,
+          "unitNumber": null,
+          "typeId": 7,
+          "configurableIOPS": false,
+          "datastoreId": null,
+          "maxStorage": 42949672960,
+          "displayOrder": 0,
+          "maxIOPS": null,
+          "uuid": "fc5ee1de-efd8-424f-96c7-4db98813d563"
+        },
+        {
+          "id": 3972124,
+          "name": "data",
+          "controllerId": null,
+          "controllerMountPoint": null,
+          "resizeable": true,
+          "planResizable": true,
+          "rootVolume": false,
+          "unitNumber": null,
+          "typeId": 7,
+          "configurableIOPS": false,
+          "datastoreId": null,
+          "maxStorage": 42949672960,
+          "displayOrder": 1,
+          "maxIOPS": null,
+          "uuid": "1c72ed95-b7f8-4e0f-850c-56e1f7a7fe92"
+        }
+      ],
+      "controllers": [],
+      "interfaces": [
+        {
+          "id": 1137547,
+          "refType": null,
+          "refId": null,
+          "name": "eth0",
+          "internalId": null,
+          "externalId": null,
+          "uniqueId": null,
+          "publicIpAddress": "54.219.87.133",
+          "publicIpv6Address": null,
+          "ipAddress": "10.200.11.43",
+          "ipv6Address": null,
+          "ipSubnet": null,
+          "ipv6Subnet": null,
+          "description": null,
+          "dhcp": true,
+          "active": true,
+          "poolAssigned": false,
+          "primaryInterface": true,
+          "network": {
+            "id": 6,
+            "name": "labs_web_1a (subnet-72b9162b)"
+          },
+          "subnet": null,
+          "networkGroup": null,
+          "networkPosition": null,
+          "networkPool": null,
+          "networkDomain": null,
+          "type": null,
+          "ipMode": null,
+          "macAddress": null
+        }
+      ],
+      "labels": [],
+      "tags": [],
+      "enabled": true,
+      "tagCompliant": null,
+      "containers": [
+        733816,
+        733821,
+        733823,
+        733824,
+        733825,
+        733828,
+        733830,
+        733831,
+        733848,
+        733849
+      ],
+      "guestConsolePreferred": false,
+      "guestConsoleType": null,
+      "guestConsoleUsername": null,
+      "guestConsolePassword": null,
+      "guestConsolePasswordHash": null,
+      "guestConsolePort": null
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 1000,
+    "size": 1,
+    "total": 1
+  }
+}
