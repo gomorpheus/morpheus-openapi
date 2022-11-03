@@ -7,8 +7,7 @@ properties:
   permissionCode:
     type: string
     description: "`ComputeSite` is the code for Default Group Access"
-    default: 
-      - ComputeSite
+    default: ComputeSite
     enum: 
       - ComputeSite
   access:
