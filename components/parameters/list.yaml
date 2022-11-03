@@ -1,5 +1,6 @@
 name: list
 in: query
-description: This endpoint is available http method LIST. The GET method can be used to list keys as well, by passing the query parameter list=true.
+description: This endpoint is available via the http method LIST. The GET method can be used to list keys as well, by passing the query parameter list=true.
 schema:
   type: boolean
+  default: false
