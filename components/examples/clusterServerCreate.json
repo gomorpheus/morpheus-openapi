@@ -1,19 +1,18 @@
 {
   "server": {
     "config": {
-      "resourcePool": "vpc-d673ebb3",
+      "resourcePool": 35856,
       "publicIpType": "subnet",
       "createUser": false
     },
-    "name": "tippytoes",
+    "serverType": {
+      "id": 196
+    },
+    "name": "api-kube-host-new-worker-4-1666905432",
+    "description": "API Test: This is my Kubernetes host",
     "plan": {
-      "id": 1,
-      "code": "amazon-t2.nano",
+      "code": "amazon-t2.medium",
       "options": {
-        "maxMemory": 536870912,
-        "cpuCount": 1,
-        "coreCount": 1,
-        "coresPerSocket": 1
       }
     },
     "volumes": [
@@ -21,31 +20,32 @@
         "id": -1,
         "rootVolume": true,
         "name": "root",
-        "size": 10,
+        "size": 40,
         "sizeId": null,
-        "storageType": 10,
+        "storageType": 7,
+        "datastoreId": null
+      },
+      {
+        "rootVolume": false,
+        "name": "data",
+        "size": 40,
+        "sizeId": null,
+        "storageType": 7,
         "datastoreId": null
       }
     ],
     "networkInterfaces": [
       {
         "network": {
-          "id": "network-20"
+          "id": "network-6"
         }
       }
     ],
     "securityGroups": [
-      "sg-052d3dacc2b663fdd"
+      "sg-fe44ed9a"
     ],
-    "visibility": "private",
-    "userGroup": {
-      "id": 1
-    },
-    "networkDomain": null,
-    "hostname": null,
     "nodeCount": 1,
-    "taskSet": {
-      "id": 2
-    }
+    "networkDomain": null,
+    "hostname": "api-kube-host-new-worker-4"
   }
 }
