@@ -1,0 +1,14 @@
+type: object
+required:
+  - appTemplateId
+  - access
+properties:
+  appTemplateId:
+    type: integer
+    description: "`id` of the blueprint (appTemplate)"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

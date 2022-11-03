@@ -1,3 +1,4 @@
+title: Default Workflow Permission
 type: object
 required:
   - permissionCode
@@ -5,13 +6,12 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`AppTemplate` is the code for Global Blueprint Access"
+    description: "`TaskSet` is the code for Default Workflow Access"
     enum:
-      - AppTemplate
+      - TaskSet
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
       - none

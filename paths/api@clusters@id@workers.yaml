@@ -12,12 +12,14 @@ get:
       content: 
         application/json: 
           schema: 
-            type: object
-            properties: 
-              workers:
-                type: array
-                items:
-                  $ref: ../components/schemas/clusterWorkers.yaml
+            allOf:
+              - type: object
+                properties: 
+                  workers:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/clusterWorkers.yaml
+              - $ref: ../components/schemas/meta.yaml
           examples:
             Cluster Request:
               value:

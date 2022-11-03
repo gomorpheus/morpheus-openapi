@@ -1,0 +1,96 @@
+get:
+  summary: Get a Specific Network Pool Server
+  description: |
+    This endpoint retrieves a specific Network Pool Server.
+  operationId: getNetworkPoolServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkPoolServer:
+                $ref: ../components/schemas/networkPoolServer.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkPoolServer.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+put: 
+  summary: Update a Network Pool Server
+  description: |
+    This endpoint allows updating a Network Pool Server. Configuration options vary by type.
+  operationId: updateNetworkPoolServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            networkPoolServer:
+              type: object
+              description: Payload for creating a new Network Pool Server
+              oneOf:
+                - $ref: ../components/schemas/networkPoolServerUpdateBluecat.yaml
+                - $ref: ../components/schemas/networkPoolServerUpdateInfoblox.yaml
+                - $ref: ../components/schemas/networkPoolServerUpdatePhpIpam.yaml
+                - $ref: ../components/schemas/networkPoolServerUpdateSolarWinds.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  networkPoolServer:
+                    $ref: ../components/schemas/networkPoolServer.yaml
+          examples: 
+            Network Pool Server Update Success:
+              value:
+                $ref: ../components/examples/networkPoolServerSuccess.json
+
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+delete: 
+  summary: Delete a Network Pool Server
+  description: Will delete a Network Pool Server from the system and make it no longer usable.
+  operationId: deleteNetworkPoolServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

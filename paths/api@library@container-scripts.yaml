@@ -13,7 +13,8 @@ get:
     - $ref: ../components/parameters/sort.yaml
     - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/label.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
     - $ref: ../components/parameters/scriptType.yaml
     - $ref: ../components/parameters/scriptPhase.yaml
   responses:

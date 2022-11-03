@@ -1,3 +1,4 @@
+title: Default Persona Permission
 type: object
 required:
   - permissionCode
@@ -5,13 +6,13 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`VdiPools` is the code for Global VDI Pool Access"
-    enum:
-      - VdiPools
+    description: "`Persona` is the code for Default Persona Access"
+    enum: 
+      - Persona
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
+      - read
       - none

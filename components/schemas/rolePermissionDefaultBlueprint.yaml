@@ -1,3 +1,4 @@
+title: Default Blueprint Permission
 type: object
 required:
   - permissionCode
@@ -5,13 +6,12 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`CatalogItemType` is the code for Global Catalog Item Type Access"
+    description: "`AppTemplate` is the code for Default Blueprint Access"
     enum:
-      - CatalogItemType
+      - AppTemplate
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
       - none

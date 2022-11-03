@@ -7,6 +7,7 @@ properties:
     type: string
   description: 
     type: string
+    nullable: true
   regionCode: 
     type: string
     nullable: true
@@ -14,6 +15,8 @@ properties:
     type: string
     nullable: true
   status: 
+    type: string
+  visibility:
     type: string
   active: 
     type: boolean

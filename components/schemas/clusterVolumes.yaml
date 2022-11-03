@@ -3,6 +3,8 @@ properties:
   id: 
     type: integer
     format: int64
+  internalId: 
+    type: string
   displayOrder: 
     type: integer
     format: int64
@@ -11,15 +13,23 @@ properties:
   usedStorage: 
     type: integer
     format: int64
+  provisionType: 
+    type: string
   resizeable: 
     type: boolean
   online: 
     type: boolean
   deviceDisplayName: 
     type: string
+  refType: 
+    type: string
   name: 
     type: string
   externalId: 
+    type: string
+  datastoreOption: 
+    type: string
+  claimName: 
     type: string
   volumeType: 
     type: string
@@ -27,16 +37,25 @@ properties:
     type: string
   removable: 
     type: boolean
+  poolName: 
+    type: string
   readOnly: 
     type: boolean
+  sourceId: 
+    type: string
   zoneId: 
     type: integer
     format: int64
   rootVolume: 
     type: boolean
+  refId: 
+    type: integer
+    format: int64
   category: 
     type: string
   status: 
+    type: string
+  rawData: 
     type: string
   maxStorage: 
     type: integer
@@ -48,6 +67,12 @@ properties:
         type: integer
         format: int64
   type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  datastore: 
     type: object
     properties: 
       id: 

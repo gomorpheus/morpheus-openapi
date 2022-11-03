@@ -1,6 +1,6 @@
 post: 
   summary: Add Worker
-  description: Add Worker
+  description: Add Worker 
   operationId: addClusterWorker
   tags: 
     -  Clusters
@@ -24,11 +24,18 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - type: object
+                properties:
+                  servers:
+                    type: array
+                    items:
+                      type: object
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/success.json 
+                $ref: ../components/examples/clusterServerCreateSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

@@ -1,0 +1,17 @@
+title: Default Task Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`Task` is the code for Default Task Access"
+    enum:
+      - Task
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

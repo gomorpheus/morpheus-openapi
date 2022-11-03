@@ -1,0 +1,14 @@
+type: object
+required:
+  - allReportTypes
+  - access
+properties:
+  allReportTypes:
+    type: boolean
+    description: "Apply to all report types"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

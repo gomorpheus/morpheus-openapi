@@ -1,0 +1,218 @@
+{
+	"networkPoolServers": [
+		{
+			"id": 227,
+			"type": {
+				"id": 3,
+				"name": "Bluecat",
+				"code": "bluecat"
+			},
+			"name": "Labs BlueCat",
+			"enabled": true,
+			"serviceUrl": "https://bluecat-server",
+			"serviceHost": null,
+			"servicePort": 22,
+			"serviceMode": null,
+			"serviceUsername": null,
+			"servicePassword": null,
+			"status": "ok",
+			"statusMessage": null,
+			"statusDate": null,
+			"config": {
+				"inventoryExisting": "on"
+      },
+			"networkFilter": null,
+			"zoneFilter": null,
+			"tenantMatch": null,
+			"dateCreated": "2021-12-16T19:53:25Z",
+			"lastUpdated": "2022-07-26T14:00:04Z",
+			"account": {
+				"id": 1,
+				"name": "Labs"
+			},
+			"integration": {
+				"id": 87,
+				"name": "Labs Bluecat"
+			},
+			"pools": [
+				{
+					"id": 18296,
+					"name": "192.168.0.64/26"
+				},
+				{
+					"id": 17075,
+					"name": "10.12.27.0/24 vlan7"
+				},
+				{
+					"id": 18297,
+					"name": "192.168.0.0/26"
+				}
+			],
+			"credential": {
+				"id": 1031,
+				"name": "Integration: BlueCat",
+				"type": "username-password"
+			}
+		},
+		{
+			"id": 149,
+			"type": {
+				"id": 2,
+				"name": "Infoblox",
+				"code": "infoblox"
+			},
+			"name": "Labs Infoblox",
+			"enabled": true,
+			"serviceUrl": "https://infoblox-server/wapi/v2.9",
+			"serviceHost": null,
+			"servicePort": 22,
+			"serviceMode": "static",
+			"serviceUsername": null,
+			"servicePassword": null,
+			"status": "ok",
+			"statusMessage": null,
+			"statusDate": "2022-10-21T19:00:04Z",
+			"config": {
+				"inventoryExisting": "on"
+      },
+			"networkFilter": null,
+			"zoneFilter": null,
+			"tenantMatch": null,
+			"dateCreated": "2021-03-19T14:31:07Z",
+			"lastUpdated": "2022-10-21T19:00:04Z",
+			"account": {
+				"id": 1,
+				"name": "Labs"
+			},
+			"integration": {
+				"id": 88,
+				"name": "Labs Infoblox"
+			},
+			"pools": [
+				{
+					"id": 12492,
+					"name": "10.12.26.192/26"
+				},
+				{
+					"id": 12493,
+					"name": "10.10.26.192/26"
+				},
+				{
+					"id": 17681,
+					"name": "172.16.1.0/24"
+				}
+			],
+			"credential": {
+				"id": 1032,
+				"name": "Integration: Infoblox",
+				"type": "username-password"
+			}
+		},
+		{
+			"id": 213,
+			"type": {
+				"id": 4,
+				"name": "phpIPAM",
+				"code": "phpipam"
+			},
+			"name": "Labs phpIPAM",
+			"enabled": true,
+			"serviceUrl": "http://phpipam-server/api",
+			"serviceHost": null,
+			"servicePort": 22,
+			"serviceMode": null,
+			"serviceUsername": null,
+			"servicePassword": null,
+			"status": "ok",
+			"statusMessage": null,
+			"statusDate": "2022-10-21T19:00:02Z",
+			"config": {
+        "appId": "app-id"
+      },
+			"networkFilter": null,
+			"zoneFilter": null,
+			"tenantMatch": null,
+			"dateCreated": "2021-09-21T02:09:57Z",
+			"lastUpdated": "2022-10-21T19:00:02Z",
+			"account": {
+				"id": 1,
+				"name": "Labs"
+			},
+			"integration": {
+				"id": 89,
+				"name": "Labs phpIPAM"
+			},
+			"pools": [
+				{
+					"id": 14862,
+					"name": "10.12.28.0/24"
+				},
+				{
+					"id": 17695,
+					"name": "10.12.22.160/27"
+				}
+			],
+			"credential": {
+				"id": 1033,
+				"name": "Integration: phpIPAM",
+				"type": "username-password"
+			}
+		},
+		{
+			"id": 138,
+			"type": {
+				"id": 5,
+				"name": "SolarWinds",
+				"code": "solarwindsipam"
+			},
+			"name": "Labs SolarWinds",
+			"enabled": true,
+			"serviceUrl": "https://solarwinds-server:17778",
+			"serviceHost": null,
+			"servicePort": 22,
+			"serviceMode": null,
+			"serviceUsername": null,
+			"servicePassword": null,
+			"status": "ok",
+			"statusMessage": null,
+			"statusDate": "2022-10-21T19:00:27Z",
+			"config": {
+				"inventoryExisting": "on"
+      },
+			"networkFilter": null,
+			"zoneFilter": null,
+			"tenantMatch": null,
+			"dateCreated": "2019-08-05T15:02:43Z",
+			"lastUpdated": "2022-10-21T19:00:27Z",
+			"account": {
+				"id": 1,
+				"name": "Labs"
+			},
+			"integration": {
+				"id": 90,
+				"name": "Labs SolarWinds"
+			},
+			"pools": [
+				{
+					"id": 10551,
+					"name": "10.11.20.0 /22"
+				},
+				{
+					"id": 10554,
+					"name": "10.11.26.0 /24"
+				}
+			],
+			"credential": {
+				"id": 1034,
+				"name": "Integration: SolarWinds",
+				"type": "username-password"
+			}
+		}
+	],
+  "meta": {
+    "size": 4,
+    "total": 4,
+    "offset": 0,
+    "max": 25
+  }
+}

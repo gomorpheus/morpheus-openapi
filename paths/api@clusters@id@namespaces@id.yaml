@@ -1,6 +1,6 @@
 get:
   summary: Get Namespace (Kubernetes)
-  description: This endpoint retrieves a specific namespace of a cluster
+  description: This endpoint retrieves a specific namespace of a Kubernetes cluster
   operationId: getClusterNamespace
   tags:
     - Clusters
@@ -55,7 +55,7 @@ put:
             allOf: 
             - type: object
               properties:
-                cluster:
+                namespace:
                   $ref: ../components/schemas/clusterNamespaceCreateSuccess.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:

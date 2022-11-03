@@ -1,0 +1,89 @@
+title: Infoblox Network Pool Server
+type: object
+required:
+  - type
+  - name
+  - serviceUrl
+properties:
+  type: 
+    type: string
+    description: Type Code (Infoblox)
+    enum:
+      - infoblox
+  name: 
+    type: string
+    description: Name
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the network pool server.
+    default: true
+  serviceUrl: 
+    type: string
+    description: URL
+    nullable: true
+    example: "https://infoblox-server/wapi/v2.9"
+  serviceUsername: 
+    type: string
+    description: Username
+    nullable: true
+  servicePassword: 
+    type: string
+    description: Password
+    nullable: true
+  serviceThrottleRate: 
+    type: integer
+    format: int64
+    description: Throttle Rate
+    nullable: true
+    default: 0
+  ignoreSsl: 
+    type: boolean
+    description: Disable SSL SNI Verification
+    nullable: true
+    default: true
+  networkFilter: 
+    type: string
+    description: Network Filter
+    nullable: true
+  zoneFilter: 
+    type: string
+    description: Zone Filter
+    nullable: true
+  tenantMatch: 
+    type: string
+    description: Tenant Match
+    nullable: true
+  serviceMode: 
+    type: string
+    description: IP Mode
+    nullable: true
+    example: static
+    default: static
+    enum:
+      - static
+      - dhcp
+  config: 
+    type: object
+    properties: 
+      inventoryExisting: 
+        type: string
+        description: Inventory Existing
+        nullable: true
+        default: off
+        enum:
+          - on
+          - off
+      extraAttributes: 
+        type: string
+        description: Extra Attributes
+        nullable: true
+        example: '{"Date Assigned":"<%=dateCreated%>","Requestor":"<%=username%>"}'
+  credential: 
+    type: object
+    description: 'Map containing Credential ID or the default `{"type": "local"}` which means use the values set in the local serviceUsername and servicePassword instead of associating a credential.'
+    properties: 
+      type: 
+        type: string
+      id:
+        type: integer
+        format: int64

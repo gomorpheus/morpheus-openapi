@@ -1,3 +1,4 @@
+title: Default VDI Pool Permission
 type: object
 required:
   - permissionCode
@@ -5,13 +6,12 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`InstanceType` is the code for Global Instance Type Access"
+    description: "`VdiPools` is the code for Default VDI Pool Access"
     enum:
-      - InstanceType
+      - VdiPools
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
       - none

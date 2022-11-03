@@ -1,3 +1,4 @@
+title: Default Catalog Item Type Permission
 type: object
 required:
   - permissionCode
@@ -5,13 +6,12 @@ required:
 properties:
   permissionCode:
     type: string
-    description: "`ComputeZone` is the code for Global Cloud Access"
+    description: "`CatalogItemType` is the code for Default Catalog Item Type Access"
     enum:
-      - ComputeZone
+      - CatalogItemType
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - custom
       - none

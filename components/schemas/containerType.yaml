@@ -14,6 +14,10 @@ properties:
         type: string
   name: 
     type: string
+  labels:
+    type: array
+    items: 
+      type: string
   shortName: 
     type: string
   code: 

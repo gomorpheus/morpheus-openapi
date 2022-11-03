@@ -1,15 +1,14 @@
 type: object
 required:
-  - permissionCode
+  - allTaskSets
   - access
 properties:
-  permissionCode:
-    type: string
-    description: The code of the permission being changed
+  allTaskSets:
+    type: boolean
+    description: "Apply to all workflows (taskSets)"
   access:
     type: string
     description: The new access level.
     enum:
       - full
-      - read
       - none

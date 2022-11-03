@@ -10,20 +10,9 @@ put:
     content:
       application/json:
         schema:
-          type: object
-          required:
-            - catalogItemTypeId
-            - access
-          properties:
-            catalogItemTypeId:
-              type: integer
-              description: "`id` of the catalog item type"
-            access:
-              type: string
-              description: The new access level.
-              enum:
-                - full
-                - none
+          oneOf:
+            - $ref: ../components/schemas/rolePermissionCatalogItemType.yaml
+            - $ref: ../components/schemas/rolePermissionCatalogItemTypeAll.yaml
   responses:
     '200':
       description: Successful Response
@@ -37,9 +26,9 @@ put:
                     type: string
               - $ref: ../components/schemas/200-success.yaml
           examples:
-            Role Feature Permission Response:
+            Role Permission Response:
               value:
-                $ref: ../components/examples/updateRoleFeaturePermissionResponse.json
+                $ref: ../components/examples/updateRolePermissionResponse.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

@@ -70,6 +70,8 @@ put:
                     * `datastore` - Datastore
                     * `platform` - Platform
                     * `software` - Software
+                    * `load_balancer` - Load Balancer
+                    * `load_balancer_virtual_server` - Load Balancer Virtual Server
                   enum:
                     - fixed
                     - compute
@@ -79,6 +81,8 @@ put:
                     - datastore
                     - platform
                     - software
+                    - load_balancer
+                    - load_balancer_virtual_server
                 priceUnit:
                   type: string
                   description: The unit of pricing

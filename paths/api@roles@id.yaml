@@ -46,6 +46,12 @@ put:
                   type: string
                   nullable: true
                   description: Description
+                defaultPersona:
+                  type: string
+                  enum:
+                    - standard
+                    - serviceCatalog
+                    - vdi
   responses:
     '200':
       description: Role Object

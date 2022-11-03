@@ -1,0 +1,6 @@
+type: string
+description: Visibility - Set to public to allow all tenants
+default: private
+enum:
+  - public
+  - private

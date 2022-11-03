@@ -111,9 +111,11 @@ properties:
     format: date-time
   managed:
     type: boolean
-  labels: 
-    type: string
+  labels:
+    type: array
     nullable: true
+    items: 
+      type: string
   tags: 
     type: array
     items: 

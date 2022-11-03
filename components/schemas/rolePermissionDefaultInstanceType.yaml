@@ -1,0 +1,17 @@
+title: Default Instance Type Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`InstanceType` is the code for Default Instance Type Access"
+    enum:
+      - InstanceType
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

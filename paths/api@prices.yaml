@@ -16,6 +16,11 @@ get:
     - $ref: ../components/parameters/priceType.yaml
     - $ref: ../components/parameters/platform.yaml
     - $ref: ../components/parameters/currency.yaml
+    - name: type
+      in: query
+      description: Filter by type code
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
@@ -89,6 +94,8 @@ post:
                     * `datastore` - Datastore
                     * `platform` - Platform
                     * `software` - Software
+                    * `load_balancer` - Load Balancer
+                    * `load_balancer_virtual_server` - Load Balancer Virtual Server
                   enum:
                     - fixed
                     - compute
@@ -98,6 +105,8 @@ post:
                     - datastore
                     - platform
                     - software
+                    - load_balancer
+                    - load_balancer_virtual_server
                 priceUnit:
                   type: string
                   description: The unit of pricing

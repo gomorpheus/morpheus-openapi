@@ -15,14 +15,14 @@ get:
           schema: 
             type: object
             properties: 
-              workers:
+              masters:
                 type: array
                 items:
-                  $ref: ../components/schemas/clusterWorkers.yaml
+                  $ref: ../components/schemas/clusterMasters.yaml
           examples:
             Cluster Request:
               value:
-                $ref: ../components/examples/clusterWorkers.json
+                $ref: ../components/examples/clusterMasters.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

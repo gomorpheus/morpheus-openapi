@@ -80,6 +80,11 @@ properties:
     nullable: true
     items:
       type: object
+  priceSets: 
+    type: array
+    nullable: true
+    items:
+      type: object
   specTemplates: 
     type: array
     nullable: true

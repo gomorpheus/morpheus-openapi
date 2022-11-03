@@ -1,0 +1,124 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+    description: Network Pool Server ID
+  type: 
+    type: object
+    description: Network Pool Server Type
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+  name: 
+    type: string
+    description: Name
+  enabled: 
+    type: boolean
+  serviceUrl: 
+    type: string
+    description: Service URL
+    nullable: true
+    example: "https://example-infoblox-fqdn/wapi/v2.9"
+  serviceHost: 
+    type: string
+    description: Service Host
+    nullable: true
+  servicePort: 
+    type: integer
+    description: Service Port
+    nullable: true
+    example: 22
+  serviceMode: 
+    type: string
+    description: Service Mode
+    nullable: true
+  serviceUsername: 
+    type: string
+    description: Service Username
+    nullable: true
+  servicePassword: 
+    type: string
+    description: Service Password
+    nullable: true
+  servicePasswordHash: 
+    type: string
+  serviceThrottleRate: 
+    type: integer
+    format: int64
+    description: Throttle Rate
+    nullable: true
+    default: 0
+  ignoreSsl: 
+    type: boolean
+    description: Disable SSL SNI Verification
+    nullable: true
+    default: true
+  status: 
+    type: string
+    description: Status
+    example: ok
+  statusMessage: 
+    type: string
+    description: Status Message
+    nullable: true
+  statusDate: 
+    type: string
+    format: date-time
+    nullable: true
+  config: 
+    type: object
+    description: Config object varies with pool server type. 
+  networkFilter: 
+    type: string
+    description: Network Filter
+    nullable: true
+  zoneFilter: 
+    type: string
+    description: Zone Filter
+    nullable: true
+  tenantMatch: 
+    type: string
+    description: Tenant Match
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  account: 
+    type: object
+    description: Owner Tenant
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  integration: 
+    type: object
+    description: Integration
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  pools: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  credential: 
+    $ref: creds2.yaml

@@ -13,11 +13,11 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            $ref: ../components/schemas/successError.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/success.json 
+                $ref: ../components/examples/successError.json 
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

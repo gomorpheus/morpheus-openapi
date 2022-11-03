@@ -20,6 +20,10 @@ properties:
     description: Power schedule ID.
     type: integer
     format: int64
+  labels:
+    type: array
+    items: 
+      type: string
   tags:
     description: Metadata tags, Array of objects having a name and value.
     type: array

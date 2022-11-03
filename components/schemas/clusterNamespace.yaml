@@ -11,8 +11,8 @@ properties:
     type: string
   status: 
     type: string
-  active: 
-    type: boolean
+  externalId: 
+    type: string
   permissions: 
     type: object
     properties: 
