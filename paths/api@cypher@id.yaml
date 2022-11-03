@@ -97,13 +97,21 @@ post:
             allOf: 
             - type: object
               properties:
-                deployment:
-                  $ref: ../components/schemas/deployment.yaml
+                data:
+                  type: string
+                type:
+                  type: string
+                lease_duration:
+                  type: integer
+                  format: int64
+                  nullable: true
+                cypher:
+                  $ref: ../components/schemas/cypher.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Cypher Response:
               value:
-                $ref: ../components/examples/deploymentCreate.json
+                $ref: ../components/examples/cypherCreate.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

@@ -8,20 +8,24 @@
   },
   "cyphers": [
     {
+      "id": 2,
       "itemKey": "password/15/mypassword",
       "leaseTimeout": 2764800000,
       "expireDate": "2019-03-23T10:17:52Z",
       "dateCreated": "2019-02-19T10:17:52Z",
       "lastUpdated": "2019-02-19T10:17:52Z",
-      "lastAccessed": "2019-02-19T10:17:52Z"
+      "lastAccessed": "2019-02-19T10:17:52Z",
+      "createdBy": "1"
     },
     {
+      "id": 3,
       "itemKey": "secret/foo",
       "leaseTimeout": 2764800000,
       "expireDate": "2019-03-25T17:14:33Z",
       "dateCreated": "2019-02-21T17:14:33Z",
       "lastUpdated": "2019-02-21T17:14:33Z",
-      "lastAccessed": "2019-02-21T17:14:33Z"
+      "lastAccessed": "2019-02-21T17:14:33Z",
+      "createdBy": "1"
     }
   ],
   "meta": {
