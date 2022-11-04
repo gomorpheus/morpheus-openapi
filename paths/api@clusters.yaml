@@ -13,6 +13,8 @@ get:
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/zoneId.yaml
     - $ref: ../components/parameters/typeId.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
   responses:
     '200':
       description: Successful Request
