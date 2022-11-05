@@ -48,12 +48,20 @@ properties:
     nullable: true
   config: 
     type: object
+    required:
+      - appId
     properties: 
       appId:
         type: string
         description: App ID (Your App name in phpIPAM)
-    required:
-      - appId
+    inventoryExisting: 
+        type: string
+        description: Inventory Existing
+        nullable: true
+        default: off
+        enum:
+          - on
+          - off
   credential: 
     type: object
     description: 'Map containing Credential ID or the default `{"type": "local"}` which means use the values set in the local serviceUsername and servicePassword instead of associating a credential.'
