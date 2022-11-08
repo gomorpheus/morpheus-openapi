@@ -39,7 +39,6 @@ properties:
   ignoreSsl: 
     type: boolean
     description: Disable SSL SNI Verification
-    nullable: true
     default: true
   networkFilter: 
     type: string
