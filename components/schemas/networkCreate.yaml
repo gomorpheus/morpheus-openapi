@@ -83,10 +83,10 @@ properties:
   searchDomains:
     type: string
     description: Search Domains
-  scanNetwork:
-    type: boolean
-    description: Scan Network
-    default: false
+  # scanNetwork:
+  #   type: boolean
+  #   description: Scan Network
+  #   default: false
   networkProxy: 
     type: object
     properties: 
