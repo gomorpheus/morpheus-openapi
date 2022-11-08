@@ -145,6 +145,6 @@ properties:
           type: string
   labels: 
     type: array
-    description: Array of strings (keywords)
+    description: Array of strings (keywords). This will set labels on the server and also on the cluster as well by default.
     items: 
       type: string

@@ -23,6 +23,11 @@ properties:
   description: 
     type: string
     description: Description of the cluster to be created
+  labels: 
+    type: array
+    description: Array of strings (keywords). This will override labels passed under the `server` object.
+    items: 
+      type: string
   group: 
     type: object
     properties: 
