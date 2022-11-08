@@ -40,7 +40,6 @@ properties:
   ignoreSsl: 
     type: boolean
     description: Disable SSL SNI Verification
-    nullable: true
     default: true
   networkFilter: 
     type: string
@@ -54,7 +53,7 @@ properties:
       appId:
         type: string
         description: App ID (Your App name in phpIPAM)
-    inventoryExisting: 
+      inventoryExisting: 
         type: string
         description: Inventory Existing
         nullable: true
