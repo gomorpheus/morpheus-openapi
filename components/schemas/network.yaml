@@ -47,6 +47,10 @@ properties:
     type: string
     nullable: true
     description: Network Code
+  ipv4Enabled:
+    type: boolean
+  ipv6Enabled:
+    type: boolean
   category: 
     type: string
     description: Network Category
@@ -118,7 +122,25 @@ properties:
     nullable: true
   cidr: 
     type: string
-    description: CIDR Network
+    description: Network CIDR
+  gatewayIPv6: 
+    type: string
+    description: IPv6 Network Gateway 
+    nullable: true
+  netmaskIPv6: 
+    type: string
+    nullable: true
+  dnsPrimaryIPv6: 
+    type: string
+    description: Primary IPv6 DNS Server
+    nullable: true
+  dnsSecondaryIPv6: 
+    type: string
+    description: Secondary IPv6 DNS Server
+    nullable: true
+  cidrIPv6: 
+    type: string
+    description: IPv6 Network CIDR
   tftpServer: 
     type: string
     nullable: true
@@ -140,6 +162,9 @@ properties:
     type: string
     nullable: true
   pool: 
+    type: object
+    nullable: true
+  poolIPv6: 
     type: object
     nullable: true
   networkProxy: 

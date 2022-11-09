@@ -109,8 +109,10 @@ ipRanges:
         format: int64
       startAddress: 
         type: string
+        nullable: true
       endAddress: 
         type: string
+        nullable: true
       internalId: 
         type: string
         nullable: true
@@ -131,3 +133,10 @@ ipRanges:
       lastUpdated: 
         type: string
         format: date-time
+      cidr:
+        type: string
+        nullable: true
+      cidrIPv6:
+        type: string
+        nullable: true
+
