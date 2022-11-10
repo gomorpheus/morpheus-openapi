@@ -53,6 +53,24 @@ properties:
   dnsSecondary: 
     type: string
     description: Secondary DNS Server
+  gatewayIPv6: 
+    type: string
+    description: IPv6 Network Gateway 
+    nullable: true
+  netmaskIPv6: 
+    type: string
+    nullable: true
+  dnsPrimaryIPv6: 
+    type: string
+    description: Primary IPv6 DNS Server
+    nullable: true
+  dnsSecondaryIPv6: 
+    type: string
+    description: Secondary IPv6 DNS Server
+    nullable: true
+  cidrIPv6: 
+    type: string
+    description: IPv6 Network CIDR
   vlanId:
     type: integer
     format: int64
@@ -60,6 +78,11 @@ properties:
     type: integer
     format: int64
     description: Network Pool ID
+    nullable: true
+  poolIPv6: 
+    type: integer
+    format: int64
+    description: IPv6 Network Pool ID
     nullable: true
   allowStaticOverride: 
     type: boolean

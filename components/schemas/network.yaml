@@ -47,10 +47,6 @@ properties:
     type: string
     nullable: true
     description: Network Code
-  ipv4Enabled:
-    type: boolean
-  ipv6Enabled:
-    type: boolean
   category: 
     type: string
     description: Network Category

@@ -10,12 +10,9 @@ properties:
         description: Pool Type. i.e. 'morpheus', 'phpipam', etc.
   ipRanges:
     type: array
-    description: Array of IP range objects, see IP Ranges, this can only be specified when type is 'morpheus'.
+    description: Array of IP range objects. Type 'morpheus' expects startAddress and endAddress. Type 'morpheusipv6' expects a cidrIPv6.
     items:
       type: object
-      required:
-        - startAddress
-        - endAddress
       properties:
         startAddress:
           type: string
@@ -23,6 +20,9 @@ properties:
         endAddress:
           type: string
           description: Ending IP Address
+        cidrIPv6:
+          type: string
+          description: IPv6 Network CIDR
   config:
     type: object
     description: Configuration object with parameters that vary by pool type.
