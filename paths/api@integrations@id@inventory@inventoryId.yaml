@@ -77,7 +77,7 @@ put:
               properties:
                 tenants: 
                   type: array
-                  description: Array of tenant account ids that are allowed access
+                  description: Array of tenant accounts that will use this inventory as Default. Used by jobs set to 'Use Tenant Default'
                   items: 
                     type: object
                     properties: 
