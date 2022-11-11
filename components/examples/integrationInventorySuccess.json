@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "inventory": {
+    "id": 10,
+    "name": "Dev",
+    "description": null,
+    "externalId": "3",
+    "owner": {
+      "id": 1,
+      "name": "root"
+    },
+    "tenants": [
+      {
+        "id": 1,
+        "name": "root"
+      },
+      {
+        "id": 2,
+        "name": "acme"
+      },
+      {
+        "id": 3,
+        "name": "icorp"
+      }
+    ]
+  }
+}

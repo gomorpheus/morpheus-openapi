@@ -76,6 +76,45 @@
                     "name": "Blank Apache",
                     "access": "full"
                 }
+            ],
+            "personas": [
+                {
+                    "id": 1,
+                    "code": "serviceCatalog",
+                    "name": "Service Catalog",
+                    "access": "full"
+                }
+            ],
+            "vdiPools": [
+                {
+                    "id": 1,
+                    "name": "Windows 11",
+                    "access": "full"
+                }
+            ],
+            "reportTypes": [
+                {
+                    "id": 1,
+                    "code": "amazonReservationCoverage",
+                    "name": "Amazon Reservation Coverage",
+                    "access": "full"
+                }
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "name": "task",
+                    "code": "task",
+                    "access": "full"
+                }
+            ],
+            "taskSets": [
+                {
+                    "id": 1,
+                    "name": "workflow",
+                    "code": "workflow",
+                    "access": "full"
+                }
             ]
         }
     }

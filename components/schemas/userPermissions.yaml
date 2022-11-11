@@ -21,3 +21,27 @@ properties:
     type: array
     items: 
       type: object
+  catalogItemTypes:
+    type: array
+    items:
+      type: object
+  personas:
+    type: array
+    items:
+      type: object
+  vdiPools:
+    type: array
+    items:
+      type: object
+  reportTypes:
+    type: array
+    items:
+      type: object
+  tasks:
+    type: array
+    items:
+      type: object
+  taskSets:
+    type: array
+    items:
+      type: object

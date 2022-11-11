@@ -27,6 +27,9 @@ properties:
     description: Throttle Rate
     nullable: true
     default: 0
+  ignoreSsl: 
+    type: boolean
+    description: Disable SSL SNI Verification
   networkFilter: 
     type: string
     description: Network Filter

@@ -116,10 +116,6 @@ properties:
     nullable: true
     items: 
       type: string
-  tags: 
-    type: array
-    items: 
-      type: object
   serviceEntry: 
     type: string
     nullable: true
