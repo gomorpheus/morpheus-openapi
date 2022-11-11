@@ -1,0 +1,45 @@
+get:
+  summary: Get All Integration Inventory
+  description: |
+    This endpoint retrieves a list of inventory for a specific integration.
+    Only certain types of integrations support this operation, such as Ansible Tower.
+  operationId: listIntegrationInventory
+  tags:
+    - Integrations
+  parameters:
+    - name: id
+      in: path
+      description: Morpheus ID of the Integration
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 9
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                inventory:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/integrationInventory.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Integration Inventory Response:
+              value:
+                $ref: ../components/examples/integrationInventoryList.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
