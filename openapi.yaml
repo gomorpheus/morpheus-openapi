@@ -486,12 +486,16 @@ paths:
     $ref: paths/api@integrations.yaml
   /api/integrations/{id}:
     $ref: paths/api@integrations@id.yaml
+  /api/integrations/{id}/refresh:
+    $ref: paths/api@integrations@id@refresh.yaml
   /api/integrations/{id}/objects:
     $ref: paths/api@integrations@id@objects.yaml
   /api/integrations/{id}/objects/{objectId}:
     $ref: paths/api@integrations@id@objects@objectId.yaml
-  /api/integrations/{id}/refresh:
-    $ref: paths/api@integrations@id@refresh.yaml
+  /api/integrations/{id}/inventory:
+    $ref: paths/api@integrations@id@inventory.yaml
+  /api/integrations/{id}/inventory/{inventoryId}:
+    $ref: paths/api@integrations@id@inventory@inventoryId.yaml
   /api/invoice-line-items:
     $ref: paths/api@invoice-line-items.yaml
   /api/invoice-line-items/{id}:
