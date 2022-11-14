@@ -41,6 +41,10 @@ properties:
         type: integer
         format: int64
         description: Network Type ID
+  ipv4Enabled:
+    type: boolean
+  ipv6Enabled: 
+    type: boolean
   cidr: 
     type: string
     description: CIDR Network
