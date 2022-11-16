@@ -10,6 +10,11 @@ properties:
   displayName: 
     type: string
     description: Network Display Name
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
   zone: 
     type: object
     properties: 
