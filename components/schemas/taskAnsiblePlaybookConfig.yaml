@@ -27,6 +27,8 @@ properties:
     type: array
     items: 
       type: string
+  visibility:
+    type: string
   taskOptions: 
     type: object
     properties: 

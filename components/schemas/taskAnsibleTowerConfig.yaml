@@ -28,6 +28,8 @@ properties:
     nullable: true
     items: 
       type: string
+  visibility:
+    type: string
   taskOptions: 
     type: object
     additionalProperties: false

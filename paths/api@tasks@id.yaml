@@ -119,6 +119,10 @@ put:
                   type: string
                   description: A unique code for the task
                   example: aTaskCode
+                visibility: 
+                  type: string
+                  description: Visibility
+                  default: private
                 taskType:
                   type: object
                   required:
