@@ -84,6 +84,13 @@ post:
                   type: string
                   description: A unique code for the task
                   example: aTaskCode
+                visibility: 
+                  type: string
+                  description: private or public
+                  default: private
+                  enum:
+                    - private
+                    - public
                 taskType:
                   type: object
                   required:

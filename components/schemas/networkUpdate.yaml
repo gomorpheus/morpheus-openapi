@@ -3,6 +3,12 @@ properties:
   displayName: 
     type: string
     description: Display Name
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   description: 
     type: string
     nullable: true

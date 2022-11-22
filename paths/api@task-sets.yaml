@@ -75,6 +75,13 @@ post:
                   enum: 
                     - provision
                     - operation
+                visibility: 
+                  type: string
+                  description: private or public
+                  default: private
+                  enum:
+                    - private
+                    - public
                 optionTypes:
                   type: array
                   description: List of option type IDs for use with operational workflow configuration.
