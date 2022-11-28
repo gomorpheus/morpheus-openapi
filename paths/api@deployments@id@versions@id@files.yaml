@@ -10,7 +10,7 @@ get:
   parameters:
     - $ref: ../components/parameters/deploymentId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/filepath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/phrase.yaml
@@ -33,27 +33,10 @@ get:
             Deployments Response:
               value:
                 $ref: ../components/examples/deploymentVersions.json 
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
-
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post: 
   summary: Upload a Deployment File
   description: This endpoint will upload a file for a specific deployment version. This will overwrite the file if one with the same name exists already.
@@ -63,7 +46,7 @@ post:
   parameters:
     - $ref: ../components/parameters/deploymentId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/filepath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
   requestBody:
     content:
       multipart/form-data: 
@@ -84,27 +67,10 @@ post:
             Deployments Version Response:
               value:
                 $ref: ../components/examples/success.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
-
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 delete:
   summary: Delete a Deployment File
   description: This endpoint will delete an existing deployment file. To recursively delete a directory and all of its contents, the force parameter must be specified.
@@ -114,7 +80,7 @@ delete:
   parameters:
     - $ref: ../components/parameters/deploymentId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/filepath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
     - $ref: ../components/parameters/force.yaml
   responses:
     '200':
@@ -127,23 +93,7 @@ delete:
             Response:
               value:
                 $ref: ../components/examples/success.json 
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

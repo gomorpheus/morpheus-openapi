@@ -1,0 +1,51 @@
+{
+  "server": {
+    "config": {
+      "resourcePool": 35856,
+      "publicIpType": "subnet",
+      "createUser": false
+    },
+    "serverType": {
+      "id": 196
+    },
+    "name": "api-kube-host-new-worker-4-1666905432",
+    "description": "API Test: This is my Kubernetes host",
+    "plan": {
+      "code": "amazon-t2.medium",
+      "options": {
+      }
+    },
+    "volumes": [
+      {
+        "id": -1,
+        "rootVolume": true,
+        "name": "root",
+        "size": 40,
+        "sizeId": null,
+        "storageType": 7,
+        "datastoreId": null
+      },
+      {
+        "rootVolume": false,
+        "name": "data",
+        "size": 40,
+        "sizeId": null,
+        "storageType": 7,
+        "datastoreId": null
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "network": {
+          "id": "network-6"
+        }
+      }
+    ],
+    "securityGroups": [
+      "sg-fe44ed9a"
+    ],
+    "nodeCount": 1,
+    "networkDomain": null,
+    "hostname": "api-kube-host-new-worker-4"
+  }
+}

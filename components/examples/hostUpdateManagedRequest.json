@@ -1,0 +1,31 @@
+{
+  "server": {
+    "sshUsername": "admin",
+    "sshPassword": "93KL_&Tdst!e",
+    "serverOs": {
+      "id": 1
+    },
+    "plan": {
+      "id": 9
+    },
+    "account": {
+      "id": 1
+    },
+    "tags": [
+      {
+        "name": "hello",
+        "value": "world"
+      },
+      {
+        "name": "flash",
+        "value": "bang"
+      }
+    ],
+    "config": {
+      "customOptions": {
+        "dbfoldername": "data"
+      }
+    }
+  },
+  "installAgent": true
+}

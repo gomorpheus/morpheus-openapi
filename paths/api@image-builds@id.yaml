@@ -1,0 +1,95 @@
+get:
+  summary: Get a Specific Image Build
+  description: This endpoint retrieves a specific image build.
+  operationId: getImageBuild
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              imageBuild:
+                $ref: ../components/schemas/imageBuild.yaml
+              imageBuildExecutions:
+                type: array
+                items:
+                  $ref: ../components/schemas/imageBuildExecution.yaml
+          examples:
+            Image Build Response:
+              value:
+                $ref: ../components/examples/imageBuild.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Update an Image Build
+  description: Update an Image Build
+  operationId: updateImageBuild
+  tags: 
+    -  Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            imageBuild:
+              $ref: ../components/schemas/imageBuildCreate.yaml
+        examples:
+          Image Build Update:
+            value:
+              $ref: ../components/examples/imageBuildUpdate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json: 
+          schema:
+            type: object
+            properties:
+              imageBuild:
+                $ref: ../components/schemas/imageBuild.yaml
+              imageBuildExecutions:
+                type: array
+                items:
+                  $ref: ../components/schemas/imageBuildExecution.yaml
+          examples:
+            Image Build Response:
+              value:
+                $ref: ../components/examples/imageBuild.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete an Image Build
+  description: Will delete an image build from the system and make it no longer usable.
+  operationId: deleteImageBuild
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

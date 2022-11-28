@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 180,
+        "name": "29. Storage Server Storage Quota",
+        "description": null,
+        "policyType": {
+            "id": 58,
+            "code": "storageServerQuota",
+            "name": "Storage Server Storage Quota"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "storageServerId": "33",
+            "maxStorage": "2424"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

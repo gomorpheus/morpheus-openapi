@@ -1,0 +1,105 @@
+{
+  "groups": [
+      {
+          "id": 580,
+          "name": "Developers",
+          "code": null,
+          "location": null,
+          "accountId": 52,
+          "visibility": "private",
+          "active": true,
+          "dateCreated": "2021-03-26T13:40:16Z",
+          "lastUpdated": "2022-03-29T20:04:21Z",
+          "zones": [
+              {
+                  "id": 12,
+                  "name": "AWS"
+              },
+              {
+                  "id": 92,
+                  "name": "Openstack"
+              }
+          ],
+          "stats": {
+              "instanceCounts": {
+                  "all": 0
+              },
+              "serverCounts": {
+                  "all": 0,
+                  "host": 0,
+                  "hypervisor": 0,
+                  "containerHost": 0,
+                  "vm": 0,
+                  "baremetal": 0,
+                  "unmanaged": 0
+              }
+          },
+          "serverCount": 0
+      },
+      {
+          "id": 543,
+          "name": "Openstack",
+          "code": null,
+          "location": null,
+          "accountId": 52,
+          "visibility": "private",
+          "active": true,
+          "dateCreated": "2020-06-18T23:13:32Z",
+          "lastUpdated": "2021-04-26T17:41:59Z",
+          "zones": [
+              {
+                  "id": 92,
+                  "name": "Openstack"
+              }
+          ],
+          "stats": {
+              "instanceCounts": {
+                  "all": 0
+              },
+              "serverCounts": {
+                  "all": 0,
+                  "host": 0,
+                  "hypervisor": 0,
+                  "containerHost": 0,
+                  "vm": 0,
+                  "baremetal": 0,
+                  "unmanaged": 0
+              }
+          },
+          "serverCount": 0
+      },
+      {
+          "id": 544,
+          "name": "VMware Demo Cluster",
+          "code": null,
+          "location": null,
+          "accountId": 52,
+          "visibility": "private",
+          "active": true,
+          "dateCreated": "2020-06-18T23:13:33Z",
+          "lastUpdated": "2022-03-29T20:04:21Z",
+          "zones": [],
+          "stats": {
+              "instanceCounts": {
+                  "all": 0
+              },
+              "serverCounts": {
+                  "all": 0,
+                  "host": 0,
+                  "hypervisor": 0,
+                  "containerHost": 0,
+                  "vm": 0,
+                  "baremetal": 0,
+                  "unmanaged": 0
+              }
+          },
+          "serverCount": 0
+      }
+  ],
+  "meta": {
+      "offset": 0,
+      "max": 25,
+      "size": 3,
+      "total": 3
+  }
+}

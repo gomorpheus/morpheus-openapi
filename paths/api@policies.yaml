@@ -1,0 +1,169 @@
+get:
+  summary: Retrieves all Policies
+  description: |
+    Retrieves all policies.
+  operationId: listPolicies
+  tags:
+    - Policies
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                policies:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/policy.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Policies Response:
+              value:
+                $ref: ../components/examples/policies.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a Policy
+  description: |
+    Creates a policy.
+  operationId: addPolicies
+  tags:
+    - Policies
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - policy
+          properties:
+            policy:
+              $ref: ../components/schemas/policyCreate.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                policy:
+                  $ref: ../components/schemas/policy.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Policy Response - Approve Delete:
+              value:
+                $ref: ../components/examples/policyApproveDeleteSuccess.json
+            Policy Response - Approve Provision:
+              value:
+                $ref: ../components/examples/policyApproveProvisionSuccess.json
+            Policy Response - Approve Reconfigure:
+              value:
+                $ref: ../components/examples/policyApproveReconfigureSuccess.json
+            Policy Response - Backup Creation:
+              value:
+                $ref: ../components/examples/policyBackupCreationSuccess.json
+            Policy Response - Backup Targets:
+              value:
+                $ref: ../components/examples/policyBackupTargetsSuccess.json
+            Policy Response - Budget:
+              value:
+                $ref: ../components/examples/policyBudgetSuccess.json
+            Policy Response - Cluster Resource Name:
+              value:
+                $ref: ../components/examples/policyClusterResourceNameSuccess.json
+            Policy Response - Cypher Access:
+              value:
+                $ref: ../components/examples/policyCypherAccessSuccess.json
+            Policy Response - Delayed Delete:
+              value:
+                $ref: ../components/examples/policyDelayedDeleteSuccess.json
+            Policy Response - Expiration:
+              value:
+                $ref: ../components/examples/policyExpirationSuccess.json
+            Policy Response - File Share Storage Quota:
+              value:
+                $ref: ../components/examples/policyFileShareStorageQuotaSuccess.json
+            Policy Response - Hostname:
+              value:
+                $ref: ../components/examples/policyHostnameSuccess.json
+            Policy Response - Instance Name:
+              value:
+                $ref: ../components/examples/policyInstanceSuccess.json
+            Policy Response - Max Containers:
+              value:
+                $ref: ../components/examples/policyMaxContainersSuccess.json
+            Policy Response - Max Cores:
+              value:
+                $ref: ../components/examples/policyMaxCoresSuccess.json
+            Policy Response - Max Hosts:
+              value:
+                $ref: ../components/examples/policyMaxHostsSuccess.json
+            Policy Response - Max Load Balancers:
+              value:
+                $ref: ../components/examples/policyMaxLoadBalancersSuccess.json
+            Policy Response - Max Memory:
+              value:
+                $ref: ../components/examples/policyMaxMemorySuccess.json
+            Policy Response - Max Pool Members:
+              value:
+                $ref: ../components/examples/policyMaxPoolMembersSuccess.json
+            Policy Response - Max Storage:
+              value:
+                $ref: ../components/examples/policyMaxStorageSuccess.json
+            Policy Response - Max Virtual Servers:
+              value:
+                $ref: ../components/examples/policyMaxVirtualServersSuccess.json
+            Policy Response - Max VMs:
+              value:
+                $ref: ../components/examples/policyMaxVMsSuccess.json
+            Policy Response - Message of the Day:
+              value:
+                $ref: ../components/examples/policyMOTDSuccess.json
+            Policy Response - Network Quota:
+              value:
+                $ref: ../components/examples/policyNetworkQuotaSuccess.json
+            Policy Response - Object Storage Quota:
+              value:
+                $ref: ../components/examples/policyStorageQuotaSuccess.json
+            Policy Response - Power Schedule:
+              value:
+                $ref: ../components/examples/policyPowerScheduleSuccess.json
+            Policy Response - Router Quota:
+              value:
+                $ref: ../components/examples/policyRouterQuotaSuccess.json
+            Policy Response - Shutdown:
+              value:
+                $ref: ../components/examples/policyShutdownSuccess.json
+            Policy Response - Storage Server Quota:
+              value:
+                $ref: ../components/examples/policyStorageServerQuotaSuccess.json
+            Policy Response - Tags:
+              value:
+                $ref: ../components/examples/policyTagsSuccess.json
+            Policy Response - User Creation:
+              value:
+                $ref: ../components/examples/policyUserCreationSuccess.json
+            Policy Response - User Group Creation:
+              value:
+                $ref: ../components/examples/policyUserGroupCreationSuccess.json
+            Policy Response - Workflow:
+              value:
+                $ref: ../components/examples/policyWorkflowSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

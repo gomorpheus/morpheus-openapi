@@ -1,0 +1,11 @@
+name: status
+in: query
+description: Filter by health status.
+schema:
+  type: string
+  enum:
+    - error
+    - healthy
+    - warning
+    - muted
+example: "healthy"

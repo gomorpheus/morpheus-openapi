@@ -25,5 +25,7 @@ properties:
     type: string
   dateCreated: 
     type: string
+    format: date-time
   lastUpdated: 
     type: string
+    format: date-time

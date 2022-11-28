@@ -1,0 +1,40 @@
+{
+  "server": {
+    "id": 82,
+    "plan": {
+      "id": 76
+    }
+  },
+  "volumes": [
+    {
+      "id": 419,
+      "rootVolume": true,
+      "name": "root",
+      "size": 10,
+      "sizeId": null,
+      "storageType": 1,
+      "datastoreId": "auto"
+    }
+  ],
+  "deleteOriginalVolumes": true,
+  "servicePlanOptions": {
+    "maxCores": 1,
+    "coresPerSocket": 1,
+    "maxMemory": 536870912
+  },
+  "networkInterfaces": [
+    {
+      "id": 612,
+      "name": "eth0",
+      "network": {
+        "id": "network-22"
+      }
+    },
+    {
+      "name": "eth1",
+      "network": {
+        "id": "network-22"
+      }
+    }
+  ]
+}

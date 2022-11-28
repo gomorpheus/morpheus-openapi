@@ -6,6 +6,7 @@
             "name": "mastertenant"
         },
         "name": "Amazon Custom",
+        "labels": [],
         "code": "awscustom",
         "description": null,
         "provisionTypeCode": "amazon",
@@ -41,6 +42,7 @@
                 },
                 "code": "501d6db3-d474-40c6-b5f6-f7e12424db51",
                 "name": "Windows",
+                "labels": [],
                 "instanceVersion": "2019",
                 "description": null,
                 "creatable": true,
@@ -94,6 +96,7 @@
                         {
                             "id": 61,
                             "name": "skip agent install",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.general.noAgent",
                             "fieldName": "noAgent",
@@ -135,6 +138,7 @@
                         {
                             "id": 139,
                             "name": "amazon zone",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.availabilityId",
                             "fieldName": "availabilityId",
@@ -176,6 +180,7 @@
                         {
                             "id": 140,
                             "name": "amazon cloud type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.isEC2",
                             "fieldName": "isEC2",
@@ -217,6 +222,7 @@
                         {
                             "id": 142,
                             "name": "security group",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.securityId",
                             "fieldName": "securityId",
@@ -258,6 +264,7 @@
                         {
                             "id": 143,
                             "name": "public ip",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.publicIpType",
                             "fieldName": "publicIpType",
@@ -299,6 +306,7 @@
                         {
                             "id": 144,
                             "name": "iam profile",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.instanceProfile",
                             "fieldName": "instanceProfile",
@@ -340,6 +348,7 @@
                         {
                             "id": 1798,
                             "name": "KMS Key ID",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.kmsKeyId",
                             "fieldName": "kmsKeyId",
@@ -383,6 +392,7 @@
                         {
                             "id": 147,
                             "name": "mount data",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.mountData",
                             "fieldName": "mountData",
@@ -424,6 +434,7 @@
                         {
                             "id": 150,
                             "name": "stat type code",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.statTypeCode",
                             "fieldName": "statTypeCode",
@@ -465,6 +476,7 @@
                         {
                             "id": 152,
                             "name": "server type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.serverType",
                             "fieldName": "serverType",
@@ -506,6 +518,7 @@
                         {
                             "id": 153,
                             "name": "layout description",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceTypeLayout.description",
                             "fieldName": "description",
@@ -547,6 +560,7 @@
                         {
                             "id": 145,
                             "name": "virtual image",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.virtualImageId",
                             "fieldName": "virtualImageId",
@@ -588,6 +602,7 @@
                         {
                             "id": 149,
                             "name": "backup type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceType.viewSet",
                             "fieldName": "viewSet",
@@ -629,6 +644,7 @@
                         {
                             "id": 151,
                             "name": "log type code",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.logTypeCode",
                             "fieldName": "logTypeCode",
@@ -670,6 +686,7 @@
                         {
                             "id": 146,
                             "name": "mount logs",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.mountLogs",
                             "fieldName": "mountLogs",
@@ -711,6 +728,7 @@
                         {
                             "id": 148,
                             "name": "backup type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceType.backupType",
                             "fieldName": "backupType",
@@ -908,6 +926,7 @@
                 },
                 "code": "f2f993db-7255-4084-b47f-35981a05e649",
                 "name": "CentOS",
+                "labels": [],
                 "instanceVersion": "7.9",
                 "description": null,
                 "creatable": true,
@@ -961,6 +980,7 @@
                         {
                             "id": 61,
                             "name": "skip agent install",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.general.noAgent",
                             "fieldName": "noAgent",
@@ -1002,6 +1022,7 @@
                         {
                             "id": 139,
                             "name": "amazon zone",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.availabilityId",
                             "fieldName": "availabilityId",
@@ -1043,6 +1064,7 @@
                         {
                             "id": 140,
                             "name": "amazon cloud type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.isEC2",
                             "fieldName": "isEC2",
@@ -1084,6 +1106,7 @@
                         {
                             "id": 142,
                             "name": "security group",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.securityId",
                             "fieldName": "securityId",
@@ -1125,6 +1148,7 @@
                         {
                             "id": 143,
                             "name": "public ip",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.publicIpType",
                             "fieldName": "publicIpType",
@@ -1166,6 +1190,7 @@
                         {
                             "id": 144,
                             "name": "iam profile",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.instanceProfile",
                             "fieldName": "instanceProfile",
@@ -1207,6 +1232,7 @@
                         {
                             "id": 1798,
                             "name": "KMS Key ID",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.kmsKeyId",
                             "fieldName": "kmsKeyId",
@@ -1250,6 +1276,7 @@
                         {
                             "id": 147,
                             "name": "mount data",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.mountData",
                             "fieldName": "mountData",
@@ -1291,6 +1318,7 @@
                         {
                             "id": 150,
                             "name": "stat type code",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.statTypeCode",
                             "fieldName": "statTypeCode",
@@ -1332,6 +1360,7 @@
                         {
                             "id": 152,
                             "name": "server type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.serverType",
                             "fieldName": "serverType",
@@ -1373,6 +1402,7 @@
                         {
                             "id": 153,
                             "name": "layout description",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceTypeLayout.description",
                             "fieldName": "description",
@@ -1414,6 +1444,7 @@
                         {
                             "id": 145,
                             "name": "virtual image",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.virtualImageId",
                             "fieldName": "virtualImageId",
@@ -1455,6 +1486,7 @@
                         {
                             "id": 149,
                             "name": "backup type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceType.viewSet",
                             "fieldName": "viewSet",
@@ -1496,6 +1528,7 @@
                         {
                             "id": 151,
                             "name": "log type code",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.logTypeCode",
                             "fieldName": "logTypeCode",
@@ -1537,6 +1570,7 @@
                         {
                             "id": 146,
                             "name": "mount logs",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.mountLogs",
                             "fieldName": "mountLogs",
@@ -1578,6 +1612,7 @@
                         {
                             "id": 148,
                             "name": "backup type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceType.backupType",
                             "fieldName": "backupType",
@@ -1775,6 +1810,7 @@
                 },
                 "code": "9c845a88-61af-42b3-8a4e-41642bbd6d43",
                 "name": "New VPC Sample",
+                "labels": [],
                 "instanceVersion": "1.0",
                 "description": null,
                 "creatable": true,
@@ -1871,6 +1907,7 @@
                     {
                         "id": 1795,
                         "name": "AWSRegion_current",
+                        "labels": [],
                         "description": null,
                         "code": "awsRegion",
                         "fieldName": "awsRegion",
@@ -1922,6 +1959,7 @@
                             "name": "mastertenant"
                         },
                         "name": "sample tf local vars",
+                        "labels": [],
                         "code": null,
                         "type": {
                             "id": 3,
@@ -1957,6 +1995,7 @@
                             "name": "mastertenant"
                         },
                         "name": "sample AWS provider",
+                        "labels": [],
                         "code": null,
                         "type": {
                             "id": 3,
@@ -1992,6 +2031,7 @@
                             "name": "mastertenant"
                         },
                         "name": "sample vpc",
+                        "labels": [],
                         "code": null,
                         "type": {
                             "id": 3,
@@ -2036,6 +2076,7 @@
                 },
                 "code": "e92c1a4f-c0c2-4186-b63a-ca560e8e9582",
                 "name": "CentOS",
+                "labels": [],
                 "instanceVersion": "7.3",
                 "description": null,
                 "creatable": true,
@@ -2089,6 +2130,7 @@
                         {
                             "id": 61,
                             "name": "skip agent install",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.general.noAgent",
                             "fieldName": "noAgent",
@@ -2130,6 +2172,7 @@
                         {
                             "id": 139,
                             "name": "amazon zone",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.availabilityId",
                             "fieldName": "availabilityId",
@@ -2171,6 +2214,7 @@
                         {
                             "id": 140,
                             "name": "amazon cloud type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.isEC2",
                             "fieldName": "isEC2",
@@ -2212,6 +2256,7 @@
                         {
                             "id": 142,
                             "name": "security group",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.securityId",
                             "fieldName": "securityId",
@@ -2253,6 +2298,7 @@
                         {
                             "id": 143,
                             "name": "public ip",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.publicIpType",
                             "fieldName": "publicIpType",
@@ -2294,6 +2340,7 @@
                         {
                             "id": 144,
                             "name": "iam profile",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.instanceProfile",
                             "fieldName": "instanceProfile",
@@ -2335,6 +2382,7 @@
                         {
                             "id": 1798,
                             "name": "KMS Key ID",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.kmsKeyId",
                             "fieldName": "kmsKeyId",
@@ -2378,6 +2426,7 @@
                         {
                             "id": 147,
                             "name": "mount data",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.mountData",
                             "fieldName": "mountData",
@@ -2419,6 +2468,7 @@
                         {
                             "id": 150,
                             "name": "stat type code",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.statTypeCode",
                             "fieldName": "statTypeCode",
@@ -2460,6 +2510,7 @@
                         {
                             "id": 152,
                             "name": "server type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.serverType",
                             "fieldName": "serverType",
@@ -2501,6 +2552,7 @@
                         {
                             "id": 153,
                             "name": "layout description",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceTypeLayout.description",
                             "fieldName": "description",
@@ -2542,6 +2594,7 @@
                         {
                             "id": 145,
                             "name": "virtual image",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.virtualImageId",
                             "fieldName": "virtualImageId",
@@ -2583,6 +2636,7 @@
                         {
                             "id": 149,
                             "name": "backup type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceType.viewSet",
                             "fieldName": "viewSet",
@@ -2624,6 +2678,7 @@
                         {
                             "id": 151,
                             "name": "log type code",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.logTypeCode",
                             "fieldName": "logTypeCode",
@@ -2665,6 +2720,7 @@
                         {
                             "id": 146,
                             "name": "mount logs",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.containerType.mountLogs",
                             "fieldName": "mountLogs",
@@ -2706,6 +2762,7 @@
                         {
                             "id": 148,
                             "name": "backup type",
+                            "labels": [],
                             "description": null,
                             "code": "provisionType.amazon.custom.instanceType.backupType",
                             "fieldName": "backupType",
@@ -2890,6 +2947,7 @@
                     {
                         "id": 1068,
                         "name": "package_name",
+                        "labels": [],
                         "description": null,
                         "code": "packageName",
                         "fieldName": "packageName",
@@ -2935,6 +2993,9 @@
             }
         ],
         "optionTypes": [],
-        "environmentVariables": []
+        "environmentVariables": [],
+        "priceSets": [],
+        "imagePath": "http://10.0.2.2:8080/storage/uploads/uploads/InstanceType/98/logo/custom_logo_original.jpg",
+        "darkImagePath": null
     }
 }

@@ -1,0 +1,8 @@
+name: objectId
+in: path
+description: Morpheus ID of the Object being created or referenced
+required: true
+schema:
+  type: integer
+  format: int64
+example: 122

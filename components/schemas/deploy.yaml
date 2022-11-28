@@ -41,7 +41,10 @@ status:
   type: string
 deployDate: 
   type: string
+  format: date-time
 dateCreated: 
   type: string
+  format: date-time
 lastUpdated: 
   type: string
+  format: date-time

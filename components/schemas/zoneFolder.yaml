@@ -50,5 +50,8 @@ properties:
           type: boolean
         defaultTarget: 
           type: boolean
-  resourcePermission: 
+  resourcePermissions: 
     $ref: resourcePermissions.yaml
+  depth:
+    type: integer
+    format: int64

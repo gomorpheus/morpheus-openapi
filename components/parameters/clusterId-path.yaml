@@ -1,0 +1,7 @@
+name: clusterId
+in: path
+description: The ID of the cluster
+required: true
+schema:
+  type: integer
+example: 5

@@ -1,8 +1,7 @@
 get:
-  summary: Get a Specific VDI Pool
+  summary: Get a Specific Virtual Desktop
   description: >
-    This endpoint retrieves a specific virtual desktop (VDI pool) along
-    with the allocation for your user if one exists.
+    This endpoint retrieves a specific virtual desktop along with the allocation for your user if one exists.
   operationId: getVdi
   tags:
     - VDI
@@ -22,23 +21,7 @@ get:
             VDI Response:
               value:
                 $ref: ../components/examples/vdi.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

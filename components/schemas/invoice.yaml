@@ -231,6 +231,7 @@ properties:
     nullable: true
   lastCostDate: 
     type: string
+    format: date-time
     nullable: true
   lastActualDate: 
     type: string

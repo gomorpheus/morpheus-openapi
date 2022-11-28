@@ -1,0 +1,82 @@
+get:
+  summary: Retrieves all Integration Types
+  description: |
+    An Integration Type is specific third party software that the appliance can be configured to integrate with,
+    such as Ansible, Chef, Git, ServiceNOW, etc.
+  operationId: listIntegrationTypes
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+    - name: optiontypes
+      in: query
+      description: Pass `true` to include optionTypes in the response for each integration type
+      schema:
+        type: boolean
+        default: false
+    - $ref: ../components/parameters/description.yaml
+    - $ref: ../components/parameters/category.yaml
+    - name: creatable
+      in: query
+      description: Filter by creatable
+      schema: 
+        type: boolean
+    - $ref: ../components/parameters/enabled.yaml
+    - name: hasCMDB
+      in: query
+      description: Filter by hasCMDB
+      schema: 
+        type: boolean
+    - name: hasCMDBDiscovery
+      in: query
+      description: Filter by hasCMDBDiscovery
+      schema: 
+        type: boolean
+    - name: hasCM
+      in: query
+      description: Filter by hasCM
+      schema: 
+        type: boolean
+    - name: hasDNS
+      in: query
+      description: Filter by hasDNS
+      schema: 
+        type: boolean
+    - name: hasApprovals
+      in: query
+      description: Filter by hasApprovals
+      schema: 
+        type: boolean
+    - name: isPlugin
+      in: query
+      description: Filter by isPlugin
+      schema: 
+        type: boolean
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                integrationTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/integrationType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Integration Types Response:
+              value:
+                $ref: ../components/examples/integrationTypes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

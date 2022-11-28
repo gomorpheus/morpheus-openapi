@@ -1,0 +1,94 @@
+get:
+  summary: Get a Specific Cluster
+  description: This endpoint retrieves a specific cluster.
+  operationId: getCluster
+  tags:
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cluster:
+                $ref: ../components/schemas/cluster.yaml
+          examples:
+            Clusters Response:
+              value:
+                $ref: ../components/examples/cluster.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update Cluster
+  description: Update Cluster
+  operationId: updateCluster
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            cluster:
+              $ref: ../components/schemas/clusterUpdate.yaml
+        examples:
+          Cluster Request:
+            value:
+              $ref: ../components/examples/clusterUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                cluster:
+                  $ref: ../components/schemas/cluster.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Deployments Response:
+              value:
+                $ref: ../components/examples/clusterCreate.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete: 
+  summary: Delete a Cluster
+  description: Will delete a cluster and associated resources, hosts, volumes asynchronously
+  operationId: deleteCluster
+  tags:
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/removeInstances.yaml
+    - $ref: ../components/parameters/removeResources.yaml
+    - $ref: ../components/parameters/preserveVolumes.yaml
+    - $ref: ../components/parameters/releaseEIPs.yaml
+    - $ref: ../components/parameters/force.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

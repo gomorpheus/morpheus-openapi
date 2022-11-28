@@ -1,0 +1,23 @@
+post:
+  summary: Run an Image Build
+  description: Running an image build is done asynchronously. This api will kick off the new execution and update the image build status.
+  operationId: executeImageBuild
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

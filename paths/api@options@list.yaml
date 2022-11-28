@@ -1,0 +1,39 @@
+get:
+  summary: Retrieves input option values
+  description: |
+    Retrieves all input option values.  Can be used with parameters to supply dependent input values.
+  operationId: listOptionValues
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/optionTypeId.yaml
+    - $ref: ../components/parameters/configValues.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        description: Key
+                      value:
+                        type: string
+                        description: Value
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Option Values Response:
+              value:
+                $ref: ../components/examples/optionValues.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

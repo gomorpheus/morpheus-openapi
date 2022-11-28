@@ -1,0 +1,54 @@
+get:
+  summary: Get Cluster Upgrade Versions (Kubernetes)
+  description: This endpoint returns valid version targets for upgrading kubectl and kubeadm on the cluster.
+  operationId: getClusterUpgradeVersions
+  tags:
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema: 
+            type: object
+            properties: 
+              versions:
+                type: array
+                items:
+                  type: string
+              currentVersion:
+                type: string
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterUpgradeVersions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Upgrade a Cluster (Kubernetes)
+  description: This endpoint updates the kubectl and kudeadm versions on a Kubernetes cluster to the specified version. Use Get Cluster Upgrade Versions to list valid version targets for the cluster.
+  operationId: updateClusterUpgradeVersions
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/targetVersion.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

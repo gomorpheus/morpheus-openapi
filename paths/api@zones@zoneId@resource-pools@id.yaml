@@ -29,26 +29,10 @@ get:
             Resource Pool Response - GCP:
               value:
                 $ref: ../components/examples/zoneResourcePoolGcp.json 
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 put:
   summary: Updates a Specified Resource Pool for Specified Cloud
   description: |
@@ -99,36 +83,7 @@ put:
                           format: int64
                         example: [1, 3]
                 resourcePermissions:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      all:
-                        type: boolean
-                        description: Pass `true` to allow access all groups
-                      sites:
-                        type: array
-                        description: Array of groups that are allowed access
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 1
-                      allPlans:
-                        type: boolean
-                        description: Pass true to allow access all plans
-                      plans:
-                        type: array
-                        description: Array of plans that are allowed access
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 1
+                  $ref: ../components/schemas/resourcePermissions.yaml
   responses:
     '200':
       description: Successful Request
@@ -145,26 +100,10 @@ put:
             Update Resource Pool Response:
               value:
                 $ref: ../components/examples/zoneResourcePoolSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 delete:
   summary: Deletes a Resource Pool for Specified Cloud
   description: |
@@ -182,23 +121,7 @@ delete:
         application/json:
           schema:
             $ref: ../components/schemas/200-success.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

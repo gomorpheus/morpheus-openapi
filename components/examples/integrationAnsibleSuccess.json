@@ -1,0 +1,41 @@
+{   
+    "success": true,
+    "integration": {
+        "id": 147,
+        "name": "Labs Ansible",
+        "enabled": true,
+        "type": "ansible",
+        "integrationType": {
+            "id": 3,
+            "code": "ansible",
+            "name": "Ansible"
+        },
+        "url": "git@github.com:bertramdev/fqdn-ansible.git",
+        "serviceKey": {
+            "id": 3,
+            "name": "Tommy"
+        },
+        "isPlugin": false,
+        "config": {
+            "inventory": "[al-app]\r\n10.30.20.152   ansible_user=al-ansible ansible_password=<%=cypher.read('password/al-ansible')%>",
+            "defaultBranch": "",
+            "cacheEnabled": "on",
+            "ansiblePlaybooks": "/",
+            "ansibleRoles": "/roles",
+            "ansibleGroupVars": "/groups_vars",
+            "ansibleHostVars": "/hosts",
+            "ansibleCommandBus": false,
+            "ansibleVerbose": false,
+            "ansibleGalaxyEnabled": false,
+            "ansibleDefaultBranch": ""
+        },
+        "status": "ok",
+        "statusDate": "2022-07-22T03:52:17Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local"
+        }
+    }
+}

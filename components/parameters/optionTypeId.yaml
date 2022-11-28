@@ -1,0 +1,7 @@
+name: optionTypeId
+in: query
+description: Input or Option Type ID
+required: true
+schema:
+  type: integer
+  format: int64

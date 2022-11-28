@@ -1,0 +1,73 @@
+{
+  "parentDirectory": null,
+  "archiveFiles": [
+    {
+      "id": 951,
+      "name": "myapp",
+      "filePath": "myapp",
+      "archiveBucket": {
+        "id": 38,
+        "name": "mybucket",
+        "isPublic": false
+      },
+      "createdBy": {
+        "username": "admin"
+      },
+      "isDirectory": true,
+      "status": "Active",
+      "rawSize": 26719,
+      "contentType": null,
+      "dateCreated": "2018-07-26T19:38:17Z",
+      "lastUpdated": "2018-07-26T19:38:17Z"
+    },
+    {
+      "id": 933,
+      "name": "readme.txt",
+      "filePath": "readme.txt",
+      "archiveBucket": {
+        "id": 38,
+        "name": "mybucket",
+        "isPublic": false
+      },
+      "createdBy": {
+        "username": "admin"
+      },
+      "isDirectory": false,
+      "status": "Active",
+      "rawSize": 47104,
+      "contentType": "text/plain",
+      "dateCreated": "2018-07-20T04:07:33Z",
+      "lastUpdated": "2018-07-20T04:07:33Z"
+    }
+  ],
+  "archiveBucket": {
+    "id": 38,
+    "name": "mybucket",
+    "description": "a test bucket with local storage",
+    "storageProvider": {
+      "id": 10,
+      "name": "testdrive3"
+    },
+    "owner": {
+      "id": 1,
+      "name": "root"
+    },
+    "createdBy": null,
+    "isPublic": false,
+    "visibility": "private",
+    "code": "9dab5b3f4ada",
+    "filePath": "morpheus-archives/9dab5b3f4ada/",
+    "rawSize": 73823,
+    "fileCount": 3,
+    "accounts": [],
+    "dateCreated": "2018-07-20T04:07:09Z",
+    "lastUpdated": "2018-07-26T19:38:17Z"
+  },
+  "isOwner": true,
+  "meta": {
+    "size": 2,
+    "total": 2,
+    "offset": 0,
+    "max": 50
+  }
+}

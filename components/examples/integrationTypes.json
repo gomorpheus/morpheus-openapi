@@ -1,0 +1,61 @@
+{
+    "integrationTypes": [
+        {
+            "id": 3,
+            "code": "ansible",
+            "name": "Ansible",
+            "description": null,
+            "category": "automation",
+            "enabled": true,
+            "creatable": true,
+            "hasCMDB": false,
+            "hasCMDBDiscovery": false,
+            "hasCM": false,
+            "hasDNS": false,
+            "hasApprovals": false,
+            "hasDeleteApprovals": false,
+            "hasReconfigureApprovals": false,
+            "isPlugin": false
+        },
+        {
+            "id": 25,
+            "code": "ansibleTower",
+            "name": "Ansible Tower",
+            "description": null,
+            "category": "automation",
+            "enabled": true,
+            "creatable": true,
+            "hasCMDB": false,
+            "hasCMDBDiscovery": false,
+            "hasCM": false,
+            "hasDNS": false,
+            "hasApprovals": false,
+            "hasDeleteApprovals": false,
+            "hasReconfigureApprovals": false,
+            "isPlugin": false
+        },
+        {
+            "id": 13,
+            "code": "bindDns",
+            "name": "Bind DNS",
+            "description": null,
+            "category": "dns",
+            "enabled": true,
+            "creatable": true,
+            "hasCMDB": false,
+            "hasCMDBDiscovery": false,
+            "hasCM": false,
+            "hasDNS": true,
+            "hasApprovals": false,
+            "hasDeleteApprovals": false,
+            "hasReconfigureApprovals": false,
+            "isPlugin": false
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 19
+    }
+}

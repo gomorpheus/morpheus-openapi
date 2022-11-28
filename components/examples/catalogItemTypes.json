@@ -1,0 +1,137 @@
+{
+  "catalogItemTypes": [
+    {
+      "id": 1,
+      "name": "Example Instance",
+      "description": "Example catalog item type",
+      "labels": [],
+      "type": "instance",
+      "blueprint": null,
+      "refType": "InstanceType",
+      "refId": null,
+      "active": true,
+      "enabled": true,
+      "featured": true,
+      "iconPath": "/assets/containers-png/nginx.png",
+      "imagePath": "/assets/containers-png/nginx.png",
+      "darkImagePath": "/assets/containers-png/nginx.png",
+      "config": {
+        "group": {
+          "id": 20,
+          "name": "Example Group"
+        },
+        "cloud": {
+          "id": 8,
+          "name": "Example Cloud"
+        },
+        "type": "nginx",
+        "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+        "hostName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+        "layout": {
+          "id": 7342,
+          "code": "nginx-1.14-single"
+        },
+        "plan": {
+          "id": 68,
+          "code": "container-128"
+        },
+        "version": "1.9",
+        "config": {
+          "createUser": true,
+          "resourcePoolId": 94944
+        },
+        "networkInterfaces": [
+          {
+            "network": {
+              "id": "network-3"
+            }
+          }
+        ],
+        "volumes": [
+          {
+            "rootVolume": true,
+            "name": "root",
+            "size": 60
+          }
+        ]
+      },
+      "optionTypes": [],
+      "createdBy": null,
+      "owner": {
+        "id": 1,
+        "name": "root"
+      },
+      "dateCreated": "2020-09-09T23:35:47Z",
+      "lastUpdated": "2020-09-16T03:58:32Z"
+    },
+    {
+      "id": 2,
+      "name": "Example App",
+      "description": "Example catalog item type using a blueprint with scribe",
+      "labels": [],
+      "type": "blueprint",
+      "blueprint": {
+        "id": 15,
+        "name": "Example Blueprint"
+      },
+      "refType": "AppTemplate",
+      "refId": null,
+      "active": true,
+      "enabled": true,
+      "featured": true,
+      "iconPath": "/assets/containers-png/docker.png",
+      "imagePath": "/assets/containers-png/docker.png",
+      "darkImagePath": "/assets/containers-png/docker.png",
+      "appSpec": "name: <%= customOptions.appName %>\r\ngroup:\r\n  name: Example\r\nenvironment: Test\r\ntiers:\r\n  Web:\r\n    instances:\r\n      - instance:\r\n          type: nginx\r\n          cloud: Example\r\n  App:\r\n    instances:\r\n      - instance:\r\n          type: activemq\r\n          cloud: Example",
+      "optionTypes": [
+        {
+          "id": 2926,
+          "name": "App Name",
+          "description": "Enter a unique name for the app",
+          "code": "appName",
+          "fieldName": "appName",
+          "fieldLabel": "App Name",
+          "fieldCode": null,
+          "fieldContext": "config.customOptions",
+          "fieldGroup": null,
+          "fieldClass": null,
+          "fieldAddOn": null,
+          "fieldComponent": null,
+          "fieldInput": null,
+          "placeHolder": null,
+          "verifyPattern": null,
+          "helpBlock": null,
+          "defaultValue": null,
+          "optionSource": null,
+          "optionList": null,
+          "type": "text",
+          "advanced": false,
+          "required": true,
+          "exportMeta": false,
+          "editable": false,
+          "creatable": true,
+          "config": {},
+          "displayOrder": 0,
+          "wrapperClass": null,
+          "enabled": true,
+          "noBlank": false,
+          "dependsOnCode": null,
+          "contextualDefault": false
+        }
+      ],
+      "createdBy": null,
+      "owner": {
+        "id": 1,
+        "name": "root"
+      },
+      "dateCreated": "2020-09-25T19:13:05Z",
+      "lastUpdated": "2020-09-28T20:29:55Z"
+    }
+  ],
+  "meta": {
+    "size": 2,
+    "total": 2,
+    "max": 25,
+    "offset": 25
+  }
+}

@@ -1,0 +1,6 @@
+name: bareMetalHost
+in: query
+description: Filter to show only Baremetal Servers (true)
+schema:
+  type: boolean
+example: false

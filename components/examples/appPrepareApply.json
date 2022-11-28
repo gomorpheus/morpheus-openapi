@@ -1,18 +1,32 @@
 {
   "success": true,
   "data": {
-    "image": "/assets/branding/90x30/blueprint-terraform.svg",
-    "name": "tf-example",
-    "terraform": {
-      "tf": "(your terraform config)",
-      "tfvarSecret": "tfvars/tf-example",
-      "configType": "tf"
-    },
-    "type": "terraform",
-    "executionId": "23e55735-3b6e-4183-861c-01a12eae2f9f",
-    "templateParameter": {
-      "environment": "dev",
-      "instanceName": "tf-example"
-    }
+      "image": "/assets/apps/template.png",
+      "name": "api-tf-test-app",
+      "autoValidate": true,
+      "terraform": {
+          "refreshMode": "manual",
+          "backendType": "spec",
+          "timeoutMode": "fifteen-minutes",
+          "configType": "spec"
+      },
+      "type": "terraform",
+      "config": {
+          "specs": [
+              {
+                  "id": 449,
+                  "value": 449,
+                  "name": "api-tf-test"
+              }
+          ]
+      },
+      "blueprintName": "api-tf-test-blueprint",
+      "description": null,
+      "templateId": 9345,
+      "blueprintId": 9345,
+      "group": {
+          "name": "QA VMware",
+          "id": 31597
+      }
   }
 }

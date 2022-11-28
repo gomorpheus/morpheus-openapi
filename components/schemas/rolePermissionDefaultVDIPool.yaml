@@ -1,0 +1,17 @@
+title: Default VDI Pool Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`VdiPools` is the code for Default VDI Pool Access"
+    enum:
+      - VdiPools
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

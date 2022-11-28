@@ -1,0 +1,94 @@
+{
+  "processes": [
+    {
+      "id": 695454,
+      "accountId": 1,
+      "uniqueId": "d6341ce0-867c-4524-aa6e-188e585cbcbc",
+      "processType": {
+        "code": "serverGroupProvision",
+        "name": "cluster provision"
+      },
+      "displayName": "api-kube-cluster-new-1665692616",
+      "description": null,
+      "subType": null,
+      "subId": null,
+      "zoneId": null,
+      "integrationId": null,
+      "appId": null,
+      "instanceId": null,
+      "containerId": null,
+      "serverId": null,
+      "containerName": null,
+      "status": "complete",
+      "reason": null,
+      "percent": 100.0,
+      "statusEta": 0,
+      "message": null,
+      "output": null,
+      "error": null,
+      "startDate": "2022-10-13T20:31:44Z",
+      "endDate": "2022-10-13T20:33:52Z",
+      "duration": 127670,
+      "dateCreated": "2022-10-13T20:31:44Z",
+      "lastUpdated": "2022-10-13T20:33:52Z",
+      "createdBy": {
+        "username": "apiuser",
+        "displayName": "API User"
+      },
+      "updatedBy": {
+        "username": "apiuser",
+        "displayName": "API User"
+      },
+      "events": [
+        {
+          "id": 1987836,
+          "processId": 695454,
+          "accountId": 1,
+          "uniqueId": "fb627750-27d2-422d-a3f1-aa58a58f387c",
+          "processType": {
+            "code": "applyPackage",
+            "name": "apply package"
+          },
+          "description": null,
+          "refType": "computeServerGroup",
+          "refId": 14982,
+          "subType": null,
+          "subId": null,
+          "zoneId": null,
+          "integrationId": null,
+          "instanceId": null,
+          "containerId": null,
+          "serverId": null,
+          "containerName": null,
+          "displayName": "api-kube-cluster-new-1665692616",
+          "status": "complete",
+          "reason": null,
+          "percent": 100.0,
+          "statusEta": 112774,
+          "message": null,
+          "output": null,
+          "error": null,
+          "startDate": "2022-10-13T20:31:44Z",
+          "endDate": "2022-10-13T20:31:44Z",
+          "duration": 31,
+          "dateCreated": "2022-10-13T20:31:44Z",
+          "lastUpdated": "2022-10-13T20:31:44Z",
+          "createdBy": {
+            "username": "apiuser",
+            "displayName": "API User"
+          },
+          "updatedBy": {
+            "username": "apiuser",
+            "displayName": "API User"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

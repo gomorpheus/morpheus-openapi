@@ -1,0 +1,6 @@
+name: computeVersion
+in: query
+description: Version of cluster layout. Defaults to cloned layout version
+schema:
+  type: string
+example: "2.0"

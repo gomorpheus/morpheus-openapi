@@ -30,26 +30,10 @@ get:
             Clouds Response - GCP:
               value:
                 $ref: ../components/examples/zoneGcp.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 put:
   summary: Updates a Cloud
   description: |
@@ -135,6 +119,9 @@ put:
                   type: string
                   description: host firewall. `off` or `internal`. a.k.a. "local firewall"
                   default: "off"
+                defaultCloudLogos:
+                  type: boolean
+                  description: Can be used to clear any custom logo and darkLogo, reverting to the defaults for the cloud type
                 credential:
                   type: object
                   description: Map containing Credential ID. `local` means use the values set in the local cloud config instead of associating a credential.
@@ -167,26 +154,10 @@ put:
             Clouds Response - Update GCP:
               value:
                 $ref: ../components/examples/zoneGcpSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 delete:
   summary: Deletes a Cloud
   description: |
@@ -195,6 +166,13 @@ delete:
   tags:
     - Clouds
   parameters:
+    - name: removeResources
+      in: query
+      description: Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute.
+      required: false
+      schema:
+        type: boolean
+        default: false
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
@@ -203,23 +181,7 @@ delete:
         application/json:
           schema:
             $ref: ../components/schemas/200-success.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

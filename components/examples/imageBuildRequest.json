@@ -1,0 +1,71 @@
+{
+  "imageBuild": {
+    "type": "vmware",
+    "name": "builder test",
+    "description": null,
+    "site": {
+      "id": 1
+    },
+    "zone": {
+      "id": 1
+    },
+    "config": {
+      "zoneId": 1,
+      "instance": {
+        "name": "builder test",
+        "site": {
+          "id": 1
+        },
+        "type": "vmware",
+        "instanceType": {
+          "code": "vmware"
+        },
+        "layout": {
+          "id": 142
+        },
+        "plan": {
+          "id": 76
+        },
+        "networkDomain": {}
+      },
+      "config": {
+        "resourcePoolId": "resgroup-123",
+        "template": 1232,
+        "nestedVirtualization": "off",
+        "expose": "8080"
+      },
+      "volumes": [
+        {
+          "id": -1,
+          "rootVolume": true,
+          "name": "root",
+          "size": 10,
+          "storageType": 1,
+          "datastoreId": "autoCluster"
+        }
+      ],
+      "networkInterfaces": [
+        {
+          "network": {
+            "id": "network-147"
+          },
+          "networkInterfaceTypeId": 4
+        }
+      ]
+    },
+    "bootScript": {
+      "id": 2
+    },
+    "preseedScript": {
+      "id": 2
+    },
+    "scripts": [],
+    "sshUsername": "builderbot",
+    "sshPassword": "password",
+    "storageProvider": null,
+    "isCloudInit": "off",
+    "buildOutputName": null,
+    "conversionFormats": null,
+    "keepResults": 0
+  }
+}

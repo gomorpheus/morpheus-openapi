@@ -1,0 +1,36 @@
+get:
+  summary: Retrieves all Plugins
+  description: |
+    Retrieves all plugins.
+  operationId: listPlugins
+  tags:
+    - Plugins
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                plugins:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/plugin.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Plugins Response:
+              value:
+                $ref: ../components/examples/plugins.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

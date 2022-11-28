@@ -5,6 +5,7 @@
       "id": 321,
       "name": "test-net",
       "displayName": "test-net",
+      "labels": [],
       "group": {
           "id": 1,
           "name": "admin"
@@ -59,10 +60,10 @@
           "id": 3,
           "name": "adomain.xyz"
       },
+      "searchDomains": "abc.xyz",
       "prefixLength": null,
       "visibility": "private",
       "enableAdmin": false,
-      "scanNetwork": false,
       "active": true,
       "defaultNetwork": false,
       "assignPublicIp": false,

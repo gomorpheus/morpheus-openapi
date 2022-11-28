@@ -1,0 +1,23 @@
+put:
+  summary: Upgrade Agent
+  description: This will upgrade the version of the install installed on the host.
+  operationId: updateHostUpgradeAgent
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

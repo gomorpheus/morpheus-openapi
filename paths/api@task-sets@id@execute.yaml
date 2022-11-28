@@ -52,24 +52,30 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+            allOf:
+              - type: object
+                properties: 
+                  job:
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                        format: int64
+                  jobExecution:
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                        format: int64
+                      processId:
+                        type: string
+                        nullable: true
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Execution Response:
+              value: 
+                $ref: ../components/examples/jobExecuteSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

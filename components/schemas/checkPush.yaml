@@ -1,6 +1,7 @@
 description: |
-  Web check type allows you to perform a standard web request and validate the response came back successfully.
-  Additionally, you can check for matching text within the result.
+  A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates.
+  To push an update using the api key one must send a json payload like so: `curl -XPOST https://<morpheus url>/api/monitoring/push?apiKey=<apiKey> -H 'Content-Type: application/json' -d '{"success":true, "message": "any comment goes here"}'`
+  The API Key will be returned on successful creation or can be found by getting this check.
 type: object
 properties:
   name:

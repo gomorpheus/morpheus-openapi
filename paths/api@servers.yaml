@@ -1,0 +1,93 @@
+get:
+  summary: Get All Hosts
+  description: This endpoint retrieves a paginated list of hosts.
+  operationId: listHosts
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/zoneId.yaml
+    - $ref: ../components/parameters/siteId.yaml
+    - $ref: ../components/parameters/clusterId.yaml
+    - $ref: ../components/parameters/managed.yaml
+    - $ref: ../components/parameters/serverType.yaml
+    - $ref: ../components/parameters/powerState.yaml
+    - $ref: ../components/parameters/ip.yaml
+    - $ref: ../components/parameters/vm.yaml
+    - $ref: ../components/parameters/vmHypervisor.yaml
+    - $ref: ../components/parameters/bareMetalHost.yaml
+    - $ref: ../components/parameters/status-server.yaml
+    - $ref: ../components/parameters/agentInstalled-server.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
+    - $ref: ../components/parameters/createdBy.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
+    - $ref: ../components/parameters/tags.yaml
+    - $ref: ../components/parameters/metadata.yaml
+    - $ref: ../components/parameters/uuid.yaml
+    - $ref: ../components/parameters/externalId.yaml
+    - $ref: ../components/parameters/internalId.yaml
+    - $ref: ../components/parameters/externalUniqueId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                servers:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/server.yaml
+                stats:
+                  type: object
+                multitenant:
+                  type: boolean
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Hosts Response:
+              value:
+                $ref: ../components/examples/servers.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+# post: 
+#   summary: Provision a Host
+#   description: Provision a Host
+#   operationId: addHost
+#   tags: 
+#     -  Hosts
+#   requestBody: 
+#     content: 
+#       application/json: 
+#         schema: 
+#           $ref: ../components/schemas/serverCreate.yaml
+#         examples:
+#           Host Request:
+#             value:
+#               $ref: ../components/examples/serverCreateRequest.json
+#   responses:
+#     '200':
+#       description: Successful Response
+#       content: 
+#         application/json: 
+#           schema:
+#             allOf:   
+#               - oneOf: 
+#                 - $ref: ../components/schemas/instanceCreateSuccess.yaml
+#                 - $ref: ../components/schemas/successError.yaml
+#               - $ref: ../components/schemas/200-success.yaml
+#           examples:
+#             Successful Instance Creation - VMWare:
+#               value:
+#                 $ref: ../components/examples/instanceCreateVmwareSuccess.json
+#     '4XX':
+#       $ref: ../components/responses/4xx.yaml
+#     '5XX':
+#       $ref: ../components/responses/5xx.yaml

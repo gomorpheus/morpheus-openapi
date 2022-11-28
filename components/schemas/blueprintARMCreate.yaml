@@ -15,6 +15,12 @@ properties:
     description: Blueprint Type
     enum:
       - arm
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   arm: 
     type: object
     required:

@@ -1,0 +1,54 @@
+get:
+  summary: Get Archive File Details
+  description: Get details about a specific archive file.
+  operationId: getArchiveFileDetail
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              archiveFile:
+                $ref: ../components/schemas/archiveBucketFile.yaml
+              isOwner:
+                type: boolean
+          examples:
+            Archive Files Response:
+              value:
+                $ref: ../components/examples/archiveBucketFile.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete Archive File
+  description: |
+    Permanently delete a file or directory.
+
+    Deleting a directory will also delete all the files under it.
+  operationId: deleteArchiveFile
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

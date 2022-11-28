@@ -1,0 +1,27 @@
+get:
+  summary: Retrieves a Specific VDI Allocation
+  description: |
+    Retrieves a specific VDI allocation.
+  operationId: getVDIAllocations
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              vdiAllocation:
+                $ref: ../components/schemas/vdiAllocation.yaml
+          examples:
+            VDI Allocation Response:
+              value:
+                $ref: ../components/examples/vdiAllocation.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

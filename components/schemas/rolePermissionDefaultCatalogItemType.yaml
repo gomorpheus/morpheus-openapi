@@ -1,0 +1,17 @@
+title: Default Catalog Item Type Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`CatalogItemType` is the code for Default Catalog Item Type Access"
+    enum:
+      - CatalogItemType
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

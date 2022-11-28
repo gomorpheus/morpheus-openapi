@@ -1,0 +1,37 @@
+{
+    "success": true,
+    "integration": {
+        "id": 12436,
+        "name": "Labs Bind DNS",
+        "enabled": true,
+        "type": "bindDns",
+        "integrationType": {
+            "id": 13,
+            "code": "bindDns",
+            "name": "Bind DNS"
+        },
+        "host": "labs-bind-01.fqdn.com",
+        "isPlugin": false,
+        "config": {
+            "zones": [
+                {
+                    "zoneName": "",
+                    "reverseZone": ""
+                }
+            ]
+        },
+        "status": "ok",
+        "statusDate": "2022-07-08T15:43:40Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "id": 1010,
+            "name": "Integration: Bind DNS",
+            "type": "username-password",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

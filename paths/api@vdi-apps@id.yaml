@@ -1,0 +1,117 @@
+get:
+  summary: Retrieves a Specific VDI App
+  description: |
+    Retrieves a specific VDI app.
+  operationId: getVDIApps
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              vdiApp:
+                $ref: ../components/schemas/vdiApp.yaml
+          examples:
+            VDI App Response:
+              value:
+                $ref: ../components/examples/vdiApp.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a VDI App Configuration or Icon
+  description: |
+    Updates a VDI App configuration or icon.
+  operationId: updateVDIApps
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Updates VDI App
+          required:
+            - vdiApp
+          properties:
+            vdiApp:
+              oneOf: 
+              - type: object
+                properties:
+                  name: 
+                    type: string
+                    description: VDI App name
+                  description:
+                    type: string
+                    description: Description
+                  iconPath:
+                    type: string
+                    format: binary
+                    description: Icon Path. A relative location of an icon image
+                    example: "/assets/containers-png/windows.png"
+                  launchPrefix:
+                    type: string
+                    description: The RDS App Name Prefix.  Must start with '||'
+                    example: '||chrome'
+      multipart/form-data:
+        schema:
+          type: object
+          description: Uploads a Custom Logo
+          required:
+            - vdiApp.logo
+          properties:
+            vdiApp.logo:
+              type: string
+              example: "/path/to/file.png"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            anyOf:
+            - type: object
+              properties:
+                vdiApp:
+                  $ref: ../components/schemas/vdiApp.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            VDI App Response:
+              value:
+                $ref: ../components/examples/vdiAppSuccess.json
+            VDI App Update Logo Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a VDI App
+  description: |
+    Deletes a specified VDI App.
+  operationId: removeVDIApps
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

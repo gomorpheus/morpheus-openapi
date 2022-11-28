@@ -1,0 +1,16 @@
+cloudId:
+  type: integer
+  format: int64
+  description: The cloud/zone ID we are moving the set of servers to
+servers:
+  type: array
+  description: 'A JSON array of source: and target: server ids to be moved. If the target is blank Morpheus will automatically try to match by the servers unique or externalId'
+  items:
+    type: object
+    properties:
+      source:
+        type: integer
+        format: int64
+      target:
+        type: integer
+        format: int64

@@ -1,0 +1,37 @@
+{
+    "policy": {
+        "id": 177,
+        "name": "28. Shutdown",
+        "description": null,
+        "policyType": {
+            "id": 34,
+            "code": "shutdown",
+            "name": "Shutdown"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "shutdownType": "user",
+            "shutdownAge": "30",
+            "shutdownRenewal": "7",
+            "shutdownNotify": "1",
+            "shutdownMessage": "Instance ${instance?.name} is set to shutdown on ${instance?.shutdownDate}",
+            "shutdownAutoRenew": "on",
+            "shutdownExtensionsBeforeApproval": "0",
+            "accountIntegrationId": "-100",
+            "shutdownHideFixed": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

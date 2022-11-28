@@ -1,0 +1,45 @@
+type: object
+required:
+  - workflow
+properties: 
+  name: 
+    type: string
+    description: Catalog Item Type name
+  description: 
+    type: string
+    description: Catalog Item Type description
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
+  type: 
+    type: string
+    description: Type, `instance`, `blueprint` or `workflow`. This determines whether an Instance or App will be provisioned. Instance types require a config and blueprint requires a blueprint and appSpec, while workflow types requires a workflow and context.
+    enum:
+      - workflow
+  iconPath: 
+    type: string
+    description: Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the catalog item type.
+    default: true
+  featured:
+    type: boolean
+    description: Can be used to feature the catalog item type.
+    default: false
+  workflow: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  context: 
+    type: string
+    description: Context for running the workflow, determines if a target resource must be selected.
+    enum:
+      - instance
+      - server
+      - appliance

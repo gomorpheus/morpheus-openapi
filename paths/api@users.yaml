@@ -1,6 +1,7 @@
 get:
   summary: List All Users
-  description: Get a list of users.
+  description: |
+    This endpoint retrieves all users in the current user's tenant account. Master tenant users with permission to manage subtenants can use `global=true` to find users across all tenants.
   operationId: listUsers
   tags:
     - Users
@@ -11,10 +12,11 @@ get:
     - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/username.yaml
-    - $ref: ../components/parameters/email.yaml
     - $ref: ../components/parameters/firstName.yaml
+    - $ref: ../components/parameters/lastName.yaml
+    - $ref: ../components/parameters/email.yaml
     - $ref: ../components/parameters/roleId.yaml
-    - $ref: ../components/parameters/role.yaml
+    - $ref: ../components/parameters/lastUpdated.yaml
     - $ref: ../components/parameters/accountId.yaml
     - $ref: ../components/parameters/global.yaml
   responses:
@@ -36,30 +38,14 @@ get:
             Users Response:
               value:
                 $ref: ../components/examples/users.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post:
   summary: Create a New User
   description: Create a new user.
-  operationId: addUsers
+  operationId: addUser
   tags:
     - Users
   parameters:
@@ -78,38 +64,11 @@ post:
             - user
           properties:
             user:
-              type: object
-              description: Payload for creating a new user
-              required:
-                - name
-                - roles
-              properties:
-                firstName:
-                  type: string
-                  description: First Name
-                  example: John
-                lastName:
-                  type: string
-                  description: Last Name
-                  example: Smith
-                username:
-                  type: string
-                  description: Username (unique per tenant).
-                  example: jsmith
-                email:
-                  type: string
-                  description: Email address
-                  example: jsmith@email.com
-                password:
-                  type: string
-                  format: password
-                  description: Password
-                  example: Passw0rd!
-                roles:
-                  type: array
-                  description: List of Roles
-                  items:
-                    $ref: ../components/schemas/ReferenceObject.yaml
+              $ref: ../components/schemas/userCreate.yaml
+        examples:
+          Create User Request:
+              value:
+                $ref: ../components/examples/userCreate.json
   responses:
     '200':
       description: User Object
@@ -126,23 +85,7 @@ post:
             Create User Response:
               value:
                 $ref: ../components/examples/userSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

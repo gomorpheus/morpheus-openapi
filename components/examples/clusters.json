@@ -1,0 +1,153 @@
+{
+  "clusters": [
+    {
+      "id": 9,
+      "name": "democluster",
+      "code": null,
+      "category": null,
+      "visibility": "private",
+      "description": null,
+      "location": null,
+      "enabled": true,
+      "serviceUrl": "https://192.168.88.207:6443",
+      "serviceHost": null,
+      "servicePath": null,
+      "serviceHostname": null,
+      "servicePort": 22,
+      "serviceUsername": null,
+      "servicePassword": null,
+      "servicePasswordHash": null,
+      "serviceToken": "************",
+      "serviceTokenHash": "************",
+      "serviceAccess": "************",
+      "serviceAccessHash": "************",
+      "serviceCert": null,
+      "serviceCertHash": null,
+      "serviceVersion": "v1.23.5",
+      "searchDomains": null,
+      "enableInternalDns": false,
+      "internalId": null,
+      "externalId": null,
+      "datacenterId": null,
+      "status": "ok",
+      "statusDate": "2022-08-23T15:11:52Z",
+      "statusMessage": "",
+      "inventoryLevel": "full",
+      "lastSync": "2022-08-23T15:11:48Z",
+      "nextRunDate": "2022-08-23T15:16:52Z",
+      "lastSyncDuration": 3382,
+      "dateCreated": "2022-08-23T14:33:50Z",
+      "lastUpdated": "2022-08-23T15:11:52Z",
+      "managed": true,
+      "labels": [],
+      "tags": [],
+      "serviceEntry": null,
+      "createdBy": {
+        "id": 1,
+        "username": "admin"
+      },
+      "userGroup": null,
+      "layout": {
+        "id": 219,
+        "name": "MKS Kubernetes 1.23 Cluster on Ubuntu 20.04",
+        "provisionTypeCode": "vmware"
+      },
+      "owner": {
+        "id": 1,
+        "name": "mastertenant"
+      },
+      "servers": [
+        {
+          "id": 2678,
+          "name": "democluster-master",
+          "typeSet": {
+            "id": 448,
+            "code": "kubernetes-1.23.5-ubuntu-20.04.1-vmware-amd64-set",
+            "name": "kubernetes master"
+          },
+          "computeServerType": {
+            "id": 196,
+            "code": "vmwareKubeMaster",
+            "nodeType": "kube-master"
+          }
+        },
+        {
+          "id": 2681,
+          "name": "democluster-worker-3",
+          "typeSet": {
+            "id": 449,
+            "code": "kubernetes-1.23.5-ubuntu-20.04.1-worker-vmware-amd64-set",
+            "name": "kubernetes worker"
+          },
+          "computeServerType": {
+            "id": 197,
+            "code": "vmwareKubeWorker",
+            "nodeType": "kube-worker"
+          }
+        },
+        {
+          "id": 2679,
+          "name": "democluster-worker-1",
+          "typeSet": {
+            "id": 449,
+            "code": "kubernetes-1.23.5-ubuntu-20.04.1-worker-vmware-amd64-set",
+            "name": "kubernetes worker"
+          },
+          "computeServerType": {
+            "id": 197,
+            "code": "vmwareKubeWorker",
+            "nodeType": "kube-worker"
+          }
+        },
+        {
+          "id": 2680,
+          "name": "democluster-worker-2",
+          "typeSet": {
+            "id": 449,
+            "code": "kubernetes-1.23.5-ubuntu-20.04.1-worker-vmware-amd64-set",
+            "name": "kubernetes worker"
+          },
+          "computeServerType": {
+            "id": 197,
+            "code": "vmwareKubeWorker",
+            "nodeType": "kube-worker"
+          }
+        }
+      ],
+      "accounts": [],
+      "integrations": [],
+      "site": {
+        "id": 1,
+        "name": "admin"
+      },
+      "type": {
+        "id": 1,
+        "name": "Kubernetes Cluster"
+      },
+      "zone": {
+        "id": 15,
+        "name": "vcenter1 - homelab",
+        "zoneType": {
+          "id": 26
+        }
+      },
+      "workerStats": {
+        "usedStorage": 35053010944,
+        "maxStorage": 126625677312,
+        "usedMemory": 6331108000,
+        "maxMemory": 24959574016,
+        "usedCpu": 0.0,
+        "cpuUsage": 45.693206787109375,
+        "cpuUsagePeak": 16.34461283683777,
+        "cpuUsageAvg": 15.231068929036459
+      },
+      "config": {}
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

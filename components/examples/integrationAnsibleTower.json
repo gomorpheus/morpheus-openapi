@@ -1,0 +1,30 @@
+{
+    "integration": {
+        "id": 4997,
+        "name": "Labs Ansible Tower",
+        "enabled": true,
+        "type": "ansibleTower",
+        "integrationType": {
+            "id": 25,
+            "code": "ansibleTower",
+            "name": "Ansible Tower"
+        },
+        "url": "https://tower.fqdn.com",
+        "version": "v2",
+        "isPlugin": false,
+        "config": {},
+        "status": "ok",
+        "statusDate": "2022-09-01T16:44:39Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "id": 1018,
+            "name": "Integration: Ansible Tower",
+            "type": "username-password",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

@@ -21,8 +21,8 @@ properties:
           type: string
         dateCreated: 
           type: string
-          nullable: true
           format: date-time
+          nullable: true
         score: 
           type: number
           nullable: true

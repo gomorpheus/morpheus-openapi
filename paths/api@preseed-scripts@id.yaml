@@ -1,0 +1,87 @@
+get:
+  summary: Get a Specific Preseed Script
+  description: This endpoint retrieves a specific preseed script.
+  operationId: getPreseedScript
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              preseedScript:
+                $ref: ../components/schemas/preseedScript.yaml
+          examples:
+            Preseed Script Response:
+              value:
+                $ref: ../components/examples/preseedScript.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Update a Preseed Script
+  description: Update a Preseed Script
+  operationId: updatePreseedScript
+  tags: 
+    -  Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            preseedScript:
+              $ref: ../components/schemas/preseedScriptsCreate.yaml
+        examples:
+          Preseed Script Request:
+            value:
+              $ref: ../components/examples/preseedScriptsRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              preseedScript:
+                $ref: ../components/schemas/preseedScript.yaml
+          examples:
+            Preseed Script Response:
+              value:
+                $ref: ../components/examples/preseedScript.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Preseed Script
+  description: Will delete a preseed script from the system and make it no longer usable.
+  operationId: deletePreseedScript
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

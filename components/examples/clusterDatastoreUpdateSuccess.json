@@ -1,0 +1,54 @@
+{
+  "datastore": {
+      "id": 105154,
+      "name": "rook-ceph-block",
+      "code": "kubernetes.storageClass.cluster.14982.46dda0f5-df48-4fd0-986d-76ebe259a3cb",
+      "type": "rook-ceph.rbd.csi.ceph.com",
+      "visibility": "public",
+      "storageSize": null,
+      "freeSpace": null,
+      "drsEnabled": false,
+      "active": false,
+      "allowWrite": true,
+      "defaultStore": false,
+      "online": true,
+      "allowRead": true,
+      "allowProvision": true,
+      "refType": "ComputeServerGroup",
+      "refId": 14982,
+      "externalId": "46dda0f5-df48-4fd0-986d-76ebe259a3cb",
+      "zone": {
+          "id": 3
+      },
+      "owner": {
+          "id": 1
+      },
+      "datastores": [],
+      "permissions": {
+          "resourcePermissions": {
+              "defaultStore": false,
+              "allPlans": false,
+              "defaultTarget": false,
+              "canManage": false,
+              "all": true,
+              "account": {
+                  "id": 1
+              },
+              "sites": [],
+              "plans": []
+          },
+          "tenantPermissions": {
+              "accounts": [
+                  1
+              ]
+          }
+      },
+      "tenants": [
+          {
+              "id": 1,
+              "name": "Morpheus QA"
+          }
+      ]
+  },
+  "success": true
+}

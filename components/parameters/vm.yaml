@@ -1,0 +1,6 @@
+name: vm
+in: query
+description: Filter to show only Virtual Machines (true)
+schema:
+  type: boolean
+example: false

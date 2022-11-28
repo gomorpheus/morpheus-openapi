@@ -10,7 +10,7 @@ get:
     - $ref: ../components/parameters/sort.yaml
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/phrase.yaml
-    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/checkHealthStatus.yaml
     - $ref: ../components/parameters/lastUpdated.yaml
     - $ref: ../components/parameters/deleted.yaml
   responses:
@@ -31,29 +31,18 @@ get:
             Checks Response:
               value:
                 $ref: ../components/examples/checks.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post:
   summary: Create a New Check
-  description: Create a new monitoring check.
+  description: |
+    Create a new monitoring check.
+
+    SSH tunneling options allow the different check types to tunnel to a host via a proxy, and execute checks relative to the proxy. A SSH tunnel can use your account generated public and private key-pairs or SSH password. It is strongly recommended to use a key-pair.
+
+    To enable SSH tunneling for a check, add `tunnelOn`, `sshHost`, `sshUser`, and optionally, `sshPort` and `sshPassword` parameters to any check type config as seen earlier in the Check Types section.
   operationId: addChecks
   tags:
     - Checks
@@ -84,6 +73,9 @@ post:
           Check Request - MySQL:
             value:
               $ref: ../components/examples/checkMysqlRequest.json
+          Check Request with SSH - MySQL:
+            value:
+              $ref: ../components/examples/checkMysqlWSshRequest.json
           Check Request - SQL:
             value:
               $ref: ../components/examples/checkSqlRequest.json
@@ -136,23 +128,7 @@ post:
             Check Response - Create Push Check:
               value:
                 $ref: ../components/examples/checkPushSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

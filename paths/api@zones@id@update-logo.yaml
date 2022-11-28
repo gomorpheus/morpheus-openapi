@@ -1,0 +1,38 @@
+post:
+  summary: Update Logo For Cloud
+  description: |
+    Use this command to update the logo and dark logo images for a cloud. This endpoint expects multipart form data as the request format, not JSON.
+  operationId: updateCloudLogo
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      multipart/form-data: 
+        schema: 
+          type: object
+          properties: 
+            logo:
+              type: string
+              format: binary
+              description: Logo File png,jpg,svg
+            darkLogo:
+              type: string
+              format: binary
+              description: Dark Logo File png,jpg,svg
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -5,6 +5,7 @@
         "id": 142797,
         "name": "test-net2",
         "displayName": "test-net2",
+        "labels": [],
         "group": {
             "id": 2,
             "name": "Demo"
@@ -56,10 +57,10 @@
         "pool": null,
         "networkProxy": null,
         "networkDomain": null,
+        "searchDomains": null,
         "prefixLength": null,
         "visibility": "private",
         "enableAdmin": false,
-        "scanNetwork": false,
         "active": true,
         "defaultNetwork": false,
         "assignPublicIp": false,

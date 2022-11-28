@@ -1,0 +1,81 @@
+{
+    "integrations": [
+        {
+            "id": 209,
+            "name": "myrepo",
+            "enabled": true,
+            "type": "git",
+            "integrationType": {
+                "id": 19,
+                "code": "git",
+                "name": "Git repository"
+            },
+            "url": "https://company@dev.azure.com/company/_git/myrepo",
+            "username": "user@fqdn.com",
+            "password": "************",
+            "passwordHash": "eb2f1eea3c8a0205f228efc77e60a8d",
+            "token": "************",
+            "tokenHash": "eb2f1eea3c8a0205f228efc77e60a8d",
+            "isPlugin": false,
+            "config": {
+                "defaultBranch": "master",
+                "cacheEnabled": false
+            },
+            "status": "ok",
+            "statusDate": "2021-07-19T15:20:53Z",
+            "statusMessage": null,
+            "lastSync": null,
+            "lastSyncDuration": null
+        },
+        {
+            "id": 181,
+            "name": "Automation Examples",
+            "enabled": true,
+            "type": "git",
+            "integrationType": {
+                "id": 19,
+                "code": "git",
+                "name": "Git repository"
+            },
+            "url": "https://github.com/gomorpheus/morpheus-automation-examples",
+            "isPlugin": false,
+            "config": {
+                "defaultBranch": "main"
+            },
+            "status": "ok",
+            "statusDate": null,
+            "statusMessage": null,
+            "lastSync": null,
+            "lastSyncDuration": null
+        },
+        {
+            "id": 137,
+            "name": "Lab DNS",
+            "enabled": true,
+            "type": "microsoft.dns",
+            "integrationType": {
+                "id": 22,
+                "code": "microsoft.dns",
+                "name": "Microsoft DNS"
+            },
+            "url": "labDNS.fqdn.com",
+            "username": "serviceAccount@fqdn.COM",
+            "password": "************",
+            "passwordHash": "1d6548d33ed228b10a3164121199188316b0e079",
+            "serviceFlag": true,
+            "isPlugin": false,
+            "config": {},
+            "status": "ok",
+            "statusDate": "2022-08-09T12:10:48Z",
+            "statusMessage": null,
+            "lastSync": null,
+            "lastSyncDuration": null
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 3,
+        "size": 3,
+        "total": 10
+    }
+}

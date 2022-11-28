@@ -1,0 +1,37 @@
+put:
+  summary: Updating a label for an Instance's Network
+  description: Updating an Instance's Network's Label
+  operationId: updateInstanceNetworkInterface
+  tags: 
+    -  Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/networkInterfaceId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../components/schemas/networkInterfaceUpdate.yaml
+        examples:
+          Instance Update:
+            value:
+              $ref: ../components/examples/networkInterfaceUpdate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json: 
+          schema:
+            allOf:   
+              - oneOf: 
+                - $ref: ../components/schemas/networkInterfaceUpdateSuccess.yaml
+                - $ref: ../components/schemas/successError.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful NetworkInterface Update:
+              value:
+                $ref: ../components/examples/networkInterfaceUpdateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

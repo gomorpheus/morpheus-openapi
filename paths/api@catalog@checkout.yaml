@@ -1,0 +1,26 @@
+post:
+  summary: Checkout Catalog Cart
+  description: Use this command to checkout, finalizing your cart and placing an order. This converts each item in the cart to an inventory item, changing the status from IN_CART to ORDERED and potentially starts the provisioning process for each item.
+  operationId: addCatalogCart
+  tags:
+    - Service Catalog
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  msg:
+                    type: string
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Request:
+              value:
+                $ref: ../components/examples/catalogCheckout.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

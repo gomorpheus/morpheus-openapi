@@ -1,0 +1,53 @@
+type: object
+required: 
+  - type
+  - name
+  - group
+  - cloud
+  - layout
+  - server
+properties: 
+  type: 
+    oneOf:
+      - type: string
+        description: Code of type of cluster to be created
+      - type: object
+        properties: 
+          id:
+            type: integer
+            format: int64
+            description: The type ID of cluster to be created
+  name: 
+    type: string
+    description: Name of the cluster to be created
+  description: 
+    type: string
+    description: Description of the cluster to be created
+  labels: 
+    type: array
+    description: Array of strings (keywords). This will override labels passed under the `server` object.
+    items: 
+      type: string
+  group: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: The Group ID to provision the cluster into
+  cloud: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: The Cloud ID to provision the host into
+  layout: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: The Layout ID for the host type(s) that will be provisioned for the cluster
+  server: 
+    $ref: clusterServerCreate.yaml

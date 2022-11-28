@@ -1,0 +1,89 @@
+get:
+  summary: Retrieves all VDI Gateways
+  description: |
+    Retrieves all VDI gateways.
+  operationId: listVDIGateways
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/description.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                vdiGateways:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/vdiGateway.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            VDI Gateways Response:
+              value:
+                $ref: ../components/examples/vdiGateways.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a VDI Gateway
+  description: |
+    Creates a VDI gateway.
+  operationId: addVDIGateways
+  tags:
+    - VDI
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - vdiGateway
+          properties:
+            vdiGateway:
+              oneOf: 
+              - type: object
+                required:
+                  - name
+                  - gatewayUrl
+                properties:
+                  name: 
+                    type: string
+                    description: VDI Gateway name
+                  description:
+                    type: string
+                    description: Description
+                  gatewayUrl:
+                    type: string
+                    description: Gateway URL
+                    example: "https://fqdn.com"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            anyOf:
+            - type: object
+              properties:
+                vdiGateway:
+                  $ref: ../components/schemas/vdiGateway.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            VDI Gateway Response:
+              value:
+                $ref: ../components/examples/vdiGatewaySuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

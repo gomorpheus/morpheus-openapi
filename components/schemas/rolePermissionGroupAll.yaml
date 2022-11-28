@@ -1,0 +1,15 @@
+type: object
+required:
+  - allGroups
+  - access
+properties:
+  allGroups:
+    type: boolean
+    description: "Apply to all groups (site)"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - read
+      - none

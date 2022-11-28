@@ -3,6 +3,12 @@ properties:
   displayName: 
     type: string
     description: Display Name
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   description: 
     type: string
     nullable: true
@@ -49,10 +55,10 @@ properties:
   searchDomains:
     type: string
     description: Search Domains
-  scanNetwork:
-    type: boolean
-    description: Scan Network
-    default: false
+  # scanNetwork:
+  #   type: boolean
+  #   description: Scan Network
+  #   default: false
   networkProxy: 
     type: object
     properties: 

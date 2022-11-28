@@ -1,0 +1,94 @@
+{
+  "plans": [
+    {
+      "id": 379,
+      "name": "1 Core, 512MB Memory",
+      "value": 379,
+      "code": "esxi-512",
+      "maxStorage": 10737418240,
+      "maxMemory": 536870912,
+      "maxCpu": 0,
+      "maxCores": 1,
+      "maxDataStorage": 0,
+      "customCpu": false,
+      "customMaxMemory": false,
+      "customMaxStorage": true,
+      "customMaxDataStorage": true,
+      "customCoresPerSocket": false,
+      "coresPerSocket": null,
+      "storageTypes": null,
+      "rootStorageTypes": null,
+      "addVolumes": false,
+      "customizeVolume": false,
+      "rootDiskCustomizable": false,
+      "hostDiskMode": null,
+      "hasDatastore": null,
+      "lvmSupported": null,
+      "minDisk": null,
+      "maxDisk": null,
+      "datastores": {
+        "cluster": [],
+        "store": []
+      },
+      "supportsAutoDatastore": true,
+      "autoOptions": [
+        {
+          "id": "auto",
+          "name": "Auto - Datastore"
+        }
+      ],
+      "cpuOptions": [],
+      "memoryOptions": [],
+      "rootCustomSizeOptions": {},
+      "customSizeOptions": {},
+      "customCores": false,
+      "maxDisks": null,
+      "memorySizeType": "MB"
+    },
+    {
+      "id": 361,
+      "name": "1 CPU, 512MB Memory",
+      "value": 361,
+      "code": "vm-512",
+      "maxStorage": 10737418240,
+      "maxMemory": 536870912,
+      "maxCpu": 0,
+      "maxCores": 1,
+      "maxDataStorage": 0,
+      "customCpu": false,
+      "customMaxMemory": false,
+      "customMaxStorage": true,
+      "customMaxDataStorage": true,
+      "customCoresPerSocket": true,
+      "coresPerSocket": 1,
+      "storageTypes": null,
+      "rootStorageTypes": null,
+      "addVolumes": false,
+      "customizeVolume": false,
+      "rootDiskCustomizable": false,
+      "hostDiskMode": null,
+      "hasDatastore": null,
+      "lvmSupported": null,
+      "minDisk": null,
+      "maxDisk": null,
+      "datastores": {
+        "cluster": [],
+        "store": []
+      },
+      "supportsAutoDatastore": true,
+      "autoOptions": [
+        {
+          "id": "auto",
+          "name": "Auto - Datastore"
+        }
+      ],
+      "cpuOptions": [],
+      "memoryOptions": [],
+      "rootCustomSizeOptions": {},
+      "customSizeOptions": {},
+      "customCores": false,
+      "maxDisks": null,
+      "memorySizeType": "MB"
+    }
+  ]
+}

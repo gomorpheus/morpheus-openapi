@@ -1,0 +1,7 @@
+name: accountId
+in: query
+description: ID of the Tenant
+schema:
+  type: integer
+  format: int64
+example: 3

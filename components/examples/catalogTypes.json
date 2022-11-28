@@ -1,0 +1,38 @@
+{
+  "catalogItemTypes": [
+    {
+      "id": 1,
+      "name": "apache",
+      "description": "Example apache instance",
+      "type": "instance",
+      "featured": true,
+      "imagePath": "/assets/containers-png/apache.png",
+      "darkImagePath": "/assets/containers-png/apache.png"
+    },
+    {
+      "id": 2,
+      "name": "example",
+      "description": "Example catalog item",
+      "type": "instance",
+      "featured": true,
+      "imagePath": "/assets/containers-png/apache.png",
+      "darkImagePath": "/assets/containers-png/apache.png"
+    },
+    {
+      "id": 3,
+      "name": "example",
+      "description": null,
+      "type": "workflow",
+      "context": "instance",
+      "featured": false,
+      "imagePath": "/assets/containers-png/morph-resource2.png",
+      "darkImagePath": "/assets/containers-png/morph-resource2.png"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 3,
+    "total": 3
+  }
+}

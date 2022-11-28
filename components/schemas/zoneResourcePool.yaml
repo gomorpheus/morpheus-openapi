@@ -103,3 +103,6 @@ properties:
           type: string
   resourcePermission: 
     $ref: resourcePermissions.yaml
+  depth:
+    type: integer
+    format: int64

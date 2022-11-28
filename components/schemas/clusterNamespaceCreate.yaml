@@ -1,0 +1,46 @@
+type: object
+required:
+  - name
+properties: 
+  name: 
+    type: string
+    description: Namespace name
+  description: 
+    type: string
+    description: Namespace description
+  active: 
+    type: boolean
+    description: Namespace active
+    default: false
+  resourcePermissions: 
+    type: object
+    description: Map for namespace group and service plan permissions.
+    properties: 
+      all: 
+        type: boolean
+        description: Pass true to allow access to all groups
+      sites: 
+        type: array
+        description: Array of groups that are allowed access
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            default: 
+              type: boolean
+      allPlans: 
+        type: boolean
+        description: Pass true to allow access to all plans
+      plans: 
+        type: array
+        description: Array of plans that are allowed access
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            default: 
+              type: boolean

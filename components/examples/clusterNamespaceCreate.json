@@ -1,0 +1,23 @@
+{
+  "namespace": {
+    "name": "Namespace Name",
+    "description": "Description",
+    "active": true,
+    "resourcePermissions": {
+      "all": true,
+      "allPlans": true,
+      "sites": [
+        {
+          "id": 2,
+          "default": true
+        }
+      ],
+      "plans": [
+        {
+          "id": 88,
+          "default": false
+        }
+      ]
+    }
+  }
+}

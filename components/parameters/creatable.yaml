@@ -1,0 +1,5 @@
+name: creatable
+in: query
+description: Filter by creatable flag. This is whether or not it can be provisioned.
+schema:
+  type: boolean

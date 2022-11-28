@@ -1,0 +1,107 @@
+get:
+  summary: Retrieves all VDI Apps
+  description: |
+    Retrieves all VDI apps.
+  operationId: listVDIApps
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/description.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                vdiApps:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/vdiApp.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            VDI Apps Response:
+              value:
+                $ref: ../components/examples/vdiApps.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a VDI App
+  description: |
+    Creates a VDI app.
+  operationId: addVDIApps
+  tags:
+    - VDI
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Create VDI App
+          required:
+            - vdiApp
+          properties:
+            vdiApp:
+              oneOf: 
+              - type: object
+                required:
+                  - name
+                properties:
+                  name: 
+                    type: string
+                    description: VDI App name
+                  description:
+                    type: string
+                    description: Description
+                  iconPath:
+                    type: string
+                    format: binary
+                    description: Icon Path. A relative location of an icon image
+                    example: "/assets/containers-png/windows.png"
+                  launchPrefix:
+                    type: string
+                    description: The RDS App Name Prefix.  Must start with '||'
+                    example: '||chrome'
+      multipart/form-data:
+        schema:
+          type: object
+          description: Uploads a Custom Logo
+          required:
+            - vdiApp.logo
+          properties:
+            vdiApp.logo:
+              type: string
+              example: "/path/to/file.png"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            anyOf:
+            - type: object
+              properties:
+                vdiApp:
+                  $ref: ../components/schemas/vdiApp.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            VDI App Response:
+              value:
+                $ref: ../components/examples/vdiAppSuccess.json
+            VDI App Add Logo Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

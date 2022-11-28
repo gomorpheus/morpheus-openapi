@@ -1,0 +1,6 @@
+name: includeSnapshots
+in: query
+description: Optional ability to exclude snapshots
+schema:
+  type: boolean
+  default: true

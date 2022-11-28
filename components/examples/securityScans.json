@@ -1,0 +1,72 @@
+{
+  "securityScans": [
+    {
+      "id": 74,
+      "securityPackage": {
+        "id": 3,
+        "name": "scaptest",
+        "description": null,
+        "type": {
+          "id": 1,
+          "code": "scap-package",
+          "name": "SCAP Package"
+        }
+      },
+      "server": {
+        "id": 17094,
+        "name": "dev-server-1"
+      },
+      "status": "running",
+      "scanDate": "2022-10-13T13:53:27Z",
+      "scanDuration": 0,
+      "testCount": 0,
+      "runCount": 0,
+      "passCount": 0,
+      "failCount": 0,
+      "otherCount": 0,
+      "scanScore": 0.0,
+      "externalId": null,
+      "createdBy": "admin",
+      "updatedBy": "admin",
+      "dateCreated": "2022-10-13T13:53:27Z",
+      "lastUpdated": "2022-10-13T13:53:27Z"
+    },
+    {
+      "id": 73,
+      "securityPackage": {
+        "id": 3,
+        "name": "scaptest",
+        "description": null,
+        "type": {
+          "id": 1,
+          "code": "scap-package",
+          "name": "SCAP Package"
+        }
+      },
+      "server": {
+        "id": 17094,
+        "name": "dev-server-1"
+      },
+      "status": "running",
+      "scanDate": "2022-10-13T00:01:05Z",
+      "scanDuration": 0,
+      "testCount": 0,
+      "runCount": 0,
+      "passCount": 0,
+      "failCount": 0,
+      "otherCount": 0,
+      "scanScore": 0.0,
+      "externalId": null,
+      "createdBy": "admin",
+      "updatedBy": "admin",
+      "dateCreated": "2022-10-13T00:01:05Z",
+      "lastUpdated": "2022-10-13T00:01:05Z"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 2,
+    "size": 2,
+    "total": 74
+  }
+}

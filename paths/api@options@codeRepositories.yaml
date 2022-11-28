@@ -1,0 +1,37 @@
+get:
+  summary: Retrieves a list of Code/GIT Repositories
+  description: |
+    Retrieves a list of Code/GIT Repositories
+  operationId: listCodeRepositories
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/integrationId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: ../components/schemas/200-success.yaml
+            - type: object
+              properties:
+                data:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      name: 
+                        type: string
+                      value: 
+                        type: integer
+                        format: int64            
+          examples:
+            Code Repositories Response:
+              value:
+                $ref: ../components/examples/codeRepositories.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,55 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      type: 
+        type: string
+  quantity: 
+    type: integer
+    format: int64
+  status: 
+    type: string
+  statusMessage: 
+    type: string
+    nullable: true
+  refType: 
+    type: string
+  instance: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      status: 
+        type: string
+      locations: 
+        type: array
+        items: 
+          type: string
+      virtualMachines: 
+        type: integer
+        format: int64
+      version: 
+        type: string
+  orderDate: 
+    type: string
+    format: date-time
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

@@ -1,0 +1,31 @@
+get:
+  summary: Get Option Source Data
+  description: |
+    Returns a list of name/value pairs for option-type models. Some option-types depend on input data for proper representation. This typically includes zoneId or siteId for the item being provisioned as request parameters or sometimes previous option type parameters. Each option returned has a `value`, which is often the `id`, but may be a `code` or other attribute.
+  operationId: getOptionSourceData
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/optionSource.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                data:
+                  type: array
+                  items: 
+                    type: object         
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Option Source Data Response:
+              value:
+                $ref: ../components/examples/optionSourceData.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,7 @@
+taskSet:
+  type: object
+  description: Object containing workflow configuration parameters
+  properties:
+    customOptions:
+      type: object
+      description: Object containing any custom option type configuration parameters

@@ -13,6 +13,10 @@ properties:
         type: string
   name: 
     type: string
+  labels:
+    type: array
+    items: 
+      type: string
   code: 
     type: string
     nullable: true
@@ -66,5 +70,7 @@ properties:
     nullable: true
   dateCreated: 
     type: string
+    format: date-time
   lastUpdated: 
     type: string
+    format: date-time

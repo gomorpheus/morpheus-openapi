@@ -1,0 +1,27 @@
+get: 
+  summary: Get Cluster History Details
+  description: This endpoint retrieves the history for a specific cluster process.
+  operationId: getClusterHistoryDetail
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json:
+          schema:
+            type: object
+            properties:
+              process:
+                $ref: ../components/schemas/clusterHistoryItem.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterHistoryItem.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

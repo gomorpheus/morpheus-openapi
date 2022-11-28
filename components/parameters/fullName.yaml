@@ -1,0 +1,6 @@
+name: fullName
+in: query
+description: If specified will return an exact match on fullName
+schema:
+  type: string
+example: "Bugs Bunny"

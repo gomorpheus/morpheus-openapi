@@ -1,0 +1,85 @@
+type: object
+required:
+  - integration
+properties:
+  integration:
+    type: object
+    required:
+      - name
+      - type
+      - serviceUrl
+    properties:
+      name: 
+        type: string
+        description: Name, a unique identifier for the integration
+        example: Sample Integration
+      type:
+        type: string
+        description: Integration Type Code
+        enum:
+        - ansible
+      enabled:
+        type: boolean
+        description: Set `true` to enable integration
+      refresh:
+        type: boolean
+        description: |
+          Pass `false` to skip refresh. 
+          By default, refresh is done on update, when it is supported by the integration type.
+        default: true
+      serviceUrl:
+        type: string
+        description: Ansible Git URL
+        example: https://myrepo.git
+      serviceUsername:
+        type: string
+        description: Git Username
+        example: MyUser
+      servicePassword:
+        type: string
+        description: Git Password or Token depending on the Git host
+        example: MyPassword
+      serviceToken:
+        type: string
+        description: Git Token
+      serviceKey:
+        type: integer
+        format: int64
+        description: Keypair ID
+      config:
+        type: object
+        properties: 
+          defaultBranch:
+            type: string
+            description: default branch
+            enum: 
+              - main
+              - master
+          ansiblePlaybooks:
+            type: string
+            description: Playbooks path
+            example: "/"
+          ansibleRoles:
+            type: string
+            description: Roles path
+            example: "/roles"
+          ansibleGroupVars:
+            type: string
+            description: Group variables path
+            example: "/groups"
+          ansibleHostVars:
+            type: string
+            description: Host variables path
+            example: "/hosts"
+          ansibleGalaxyEnabled:
+            type: boolean
+            description: Use Ansible Galaxy
+          ansibleVerbose:
+            type: boolean
+            description: Use verbose logging
+          ansibleCommandBus:
+            type: boolean
+            description: Use Morpheus Agent Command Bus
+          cacheEnabled:
+            type: boolean
+            description: Enable Git repository caching

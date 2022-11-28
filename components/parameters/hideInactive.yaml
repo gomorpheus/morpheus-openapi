@@ -1,0 +1,7 @@
+name: hideInactive
+in: query
+description: If true restricts query to only load active datastores
+schema:
+  type: boolean
+  default: false
+example: true

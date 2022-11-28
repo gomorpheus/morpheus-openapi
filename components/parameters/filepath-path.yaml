@@ -1,7 +1,7 @@
-name: filepath
+name: filePath
 in: path
 required: true
-description: The path to to search for files under. Default is the root directory /.
+description: The directory to search under. The root directory / is the default.
 schema:
   type: string
   example: "/config/environments/"

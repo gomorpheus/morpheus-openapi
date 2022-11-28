@@ -1,0 +1,54 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  enabled: 
+    type: boolean
+  type: 
+    type: string
+    enum:
+    - vro
+  integrationType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  url: 
+    type: string
+  token: 
+    type: string
+  tokenHash: 
+    type: string
+  authType: 
+    type: string
+  authId: 
+    type: string
+  isPlugin: 
+    type: boolean
+  config: 
+    type: object
+    nullable: true
+  status: 
+    type: string
+  statusDate: 
+    type: string
+    format: date-time
+  statusMessage: 
+    type: string
+    nullable: true
+  lastSync: 
+    type: string
+    nullable: true
+  lastSyncDuration: 
+    type: string
+    nullable: true
+  credential: 
+    $ref: creds.yaml

@@ -1,12 +1,35 @@
 # .github/workflows/readme-io.yml
 
 name: Sync OpenAPI to ReadMe
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: readmeio/rdme@7.3.0
+      - name: get README_VERSION_ID
+        env:
+          IDJSON: ${{ secrets.README_ID_JSON }}
+        run: |
+          echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
+          README_VERSION_ID=$(python3 -c 'import json,os;print(json.loads(os.environ.get("IDJSON"))[os.environ.get("GITHUB_REF_NAME")])')
+          idsize=${#README_VERSION_ID}
+          if [ $idsize -lt 6 ]; then
+            echo "No ID found"
+            exit 1
+          fi
+          echo "::add-mask::$README_VERSION_ID"
+          echo "README_VERSION_ID=${README_VERSION_ID}" >> $GITHUB_ENV
+      - name: lint with redocly in docker
+        uses: docker://redocly/openapi-cli
         with:
-          rdme: openapi [file] --key=${{ secrets.README_TOKEN }} --id=morpheusdata
+          args: lint openapi.yaml
+      - name: bundle with redocly in docker
+        run: |
+          docker run --rm -v $PWD:/spec redocly/openapi-cli bundle openapi.yaml > bundle.yaml
+      - name: push to readme
+        #uses: readmeio/rdme@7.3.0
+        uses: readmeio/rdme@7.5.0
+        with:
+          rdme: openapi bundle.yaml --key=${{ secrets.README_TOKEN }} --id=$README_VERSION_ID
+        continue-on-error: true

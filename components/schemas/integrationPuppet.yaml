@@ -1,0 +1,55 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  enabled: 
+    type: boolean
+  type: 
+    type: string
+    enum:
+    - puppet
+  integrationType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  isPlugin: 
+    type: boolean
+  config: 
+    type: object
+    properties: 
+      puppetMaster: 
+        type: string
+      puppetFireNow: 
+        type: string
+      puppetSshUser: 
+        type: string
+      puppetSshPassword: 
+        type: string
+      puppetSshPasswordHash: 
+        type: string
+  status: 
+    type: string
+  statusDate: 
+    type: string
+    format: date-time
+    nullable: true
+  statusMessage: 
+    type: string
+    nullable: true
+  lastSync: 
+    type: string
+    nullable: true
+  lastSyncDuration: 
+    type: string
+    nullable: true
+  credential: 
+    $ref: creds.yaml

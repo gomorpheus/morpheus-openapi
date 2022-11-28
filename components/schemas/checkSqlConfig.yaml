@@ -23,6 +23,10 @@ properties:
     type: string
     description: Database password, (all check data is encrypted inside the database)
     example: basicPassword
+  dbPasswordHash:
+    type: string
+    description: Database password hash
+    example: 61236d68c76405c9c7b40838a9c5d120c76e4b222222222221943c0f340f10
   dbName:
     type: string
     description: Database name you would like to connect to
@@ -41,3 +45,33 @@ properties:
   checkResult:
     type: number
     example: 3
+  checkUser: 
+    type: string
+  textCheckOn: 
+    type: string
+  checkPassword: 
+    type: string
+  webTextMatch: 
+    type: string
+  checkPasswordHash: 
+    type: string
+  tunnelOn: 
+    type: string
+    description: Set to on to turn on tunneling
+    enum:
+      - on
+      - off
+    default: off
+  sshHost: 
+    type: string
+    description: Hostname or IP address of the proxy host
+  sshPort: 
+    type: integer
+    format: int64
+    description: Port for SSH on the proxy host, defaults to 22
+  sshUser: 
+    type: string
+    description: SSH user on the proxy host to login as
+  sshPassword:
+    type: string
+    description: Password for user, if not using key based authentication

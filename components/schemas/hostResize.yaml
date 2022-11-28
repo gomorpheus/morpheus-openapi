@@ -1,0 +1,39 @@
+server:
+  type: object
+  properties:
+    plan: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+          description: The ID of the new plan (optional). See Available Service Plans
+servicePlanOptions:
+  type: object
+  properties:
+    maxCores:
+      type: integer
+      format: int64
+      description: Core Count
+    coresPerSocket:
+      type: integer
+      format: int64
+      description: Cores Per Socket
+    maxMemory:
+      type: integer
+      format: int64
+      description: Memory in bytes For backwards compatability, values less than 1048576 are treated as being in MB and will be converted to bytes
+volumes:
+  type: array
+  description: List of volumes with their new sizes.
+  items:
+    $ref: instanceCreateVolume.yaml
+deleteOriginalVolumes:
+  type: boolean
+  description: Delete the original volumes after resizing. (Amazon only)
+  default: false
+networkInterfaces:
+  type: array
+  description: Key for network configurations. Include id to update an existing interface.
+  items:
+    $ref: instanceCreateNetwork.yaml

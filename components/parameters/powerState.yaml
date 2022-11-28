@@ -1,0 +1,6 @@
+name: powerState
+in: query
+description: Filter by power status
+schema:
+  type: string
+example: "off"

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "resourcePermissions": {
+      "all": true,
+      "sites": [
+        {
+          "id": 1,
+          "default": true
+        }
+      ],
+      "allPlans": true,
+      "plans": [
+        {
+          "id": 1,
+          "default": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+get:
+  summary: Get a Specific Catalog Type
+  description: This endpoint retrieves a specific catalog item type. This also returns an array of associated optionTypes that are used to configure the catalog item.
+  operationId: getCatalogType
+  tags:
+    - Service Catalog
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                catalogItemTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/catalogType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Get Catalog Type Response:
+              value:
+                $ref: ../components/examples/catalogType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -24,6 +24,12 @@ subnet:
       description: private or public
       type: string
       default: "private"
+    labels: 
+      type: array
+      description: Array of label strings, can be used for filtering.
+      nullable: true
+      items:
+        type: string
 resourcePermission:
   type: object
   properties:

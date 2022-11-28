@@ -1,0 +1,32 @@
+{
+    "integration": {
+        "id": 4314,
+        "name": "QA Terraform Samples",
+        "enabled": true,
+        "type": "git",
+        "integrationType": {
+            "id": 6,
+            "code": "git",
+            "name": "Git repository"
+        },
+        "url": "https://github.com/tmo/terraform-samples.git",
+        "serviceKey": {
+            "id": 4,
+            "name": "QA Key"
+        },
+        "isPlugin": false,
+        "config": {
+            "defaultBranch": "",
+            "cacheEnabled": false
+        },
+        "status": "ok",
+        "statusDate": null,
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": null
+        }
+    }
+}

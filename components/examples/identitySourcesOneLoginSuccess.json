@@ -1,0 +1,49 @@
+{
+    "userSource": {
+        "id": 4783,
+        "name": "OneLogin QA",
+        "description": "onelogin test",
+        "code": "stfG0VlIT",
+        "type": "oneLogin",
+        "active": true,
+        "deleted": false,
+        "autoSyncOnLogin": true,
+        "externalLogin": false,
+        "allowCustomMappings": false,
+        "account": {
+            "id": 1552,
+            "name": "Auto Tenant 1"
+        },
+        "defaultAccountRole": {
+            "id": 19112,
+            "name": "Default: User",
+            "authority": "Default: User"
+        },
+        "config": {
+            "subdomain": "test-labs-dev",
+            "region": "us",
+            "clientSecret": "************",
+            "clientId": "3c9f6960b4dd8af33dfd7082ea03d40f6b1583260",
+            "requiredRole": "testAdmin Role",
+            "requiredRoleId": "144498",
+            "clientSecretHash": "91a2f9931590bc91a4fbea616653a248e7d01c"
+        },
+        "roleMappings": [
+            {
+                "sourceRoleName": "Mathematician Role",
+                "sourceRoleFqn": "145780",
+                "mappedRole": {
+                    "id": 19117,
+                    "name": "Sub Role",
+                    "authority": "Sub Role"
+                }
+            }
+        ],
+        "subdomain": "auto",
+        "loginURL": "https://qa.fqdn.com/login/account/auto",
+        "providerSettings": {},
+        "dateCreated": "2020-02-06T18:16:46Z",
+        "lastUpdated": "2022-08-07T08:58:13Z"
+    },
+    "success": true
+}

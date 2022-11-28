@@ -1,0 +1,19 @@
+delete:
+  summary: Remove a Catalog Item From Cart
+  description: Will remove a catalog item that is currently in the cart.
+  operationId: deleteCatalogCartItem
+  tags:
+    - Service Catalog
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "msg": "Order created",
+  "order": {
+      "id": 4161,
+      "name": null,
+      "items": [
+          {
+              "id": 2883,
+              "type": {
+                  "id": 12,
+                  "name": "Attach Public IP",
+                  "type": "instance"
+              },
+              "quantity": 1,
+              "price": 0E-9,
+              "currency": "USD",
+              "unit": "month",
+              "valid": true,
+              "status": "ORDERED",
+              "dateCreated": "2022-08-18T19:56:01Z",
+              "lastUpdated": "2022-08-18T19:56:02Z"
+          }
+      ],
+      "stats": {
+          "price": 0,
+          "currency": "USD",
+          "unit": "month"
+      }
+  }
+}

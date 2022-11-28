@@ -1,0 +1,12 @@
+type: object
+properties:
+  active:
+    type: boolean
+    description: Datastore active
+    default: true
+  permissions:
+    $ref: clusterUpdatePermissions.yaml
+  visibility:
+    type: string
+    description: Visibility for datastore
+    default: private

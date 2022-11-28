@@ -1,39 +1,121 @@
 {
     "user": {
-        "id": 4,
-        "accountId": 3,
-        "username": "ahicks",
-        "displayName": "Adam Hicks",
-        "email": "ahicks@morpheusdata.com",
-        "firstName": "Adam",
-        "lastName": "Hicks",
-        "enabled": false,
+        "id": 1,
+        "accountId": 1,
+        "username": "admin",
+        "displayName": "Morpheus Admin",
+        "email": "admin@morpheusdata.com",
+        "firstName": "Morpheus",
+        "lastName": "Admin",
+        "enabled": true,
         "receiveNotifications": true,
-        "isUsing2FA": false,
+        "isUsing2FA": true,
         "accountExpired": false,
         "accountLocked": false,
         "passwordExpired": false,
-        "loginCount": 1576,
+        "loginCount": 42,
         "loginAttempts": 0,
-        "lastLoginDate": "2021-08-17T17:12:08Z",
+        "lastLoginDate": "2021-04-17T00:12:01Z",
         "roles": [
             {
-                "id": 16,
-                "authority": "Morpheus Admin",
-                "description": "Morpheus Administrator Role"
+                "id": 1,
+                "authority": "System Admin",
+                "description": "Super User"
             }
         ],
         "account": {
-            "id": 3,
-            "name": "Morpheus"
+            "id": 1,
+            "name": "morpheusdata.com"
         },
-        "linuxUsername": "ahicks",
-        "linuxPassword": "************",
-        "linuxKeyPairId": 13,
-        "windowsUsername": "ahicks",
+        "linuxUsername": "morphadmin",
+        "linuxPassword": null,
+        "linuxKeyPairId": 5,
+        "windowsUsername": "morphadmin",
         "windowsPassword": "************",
-        "defaultPersona": null,
-        "dateCreated": "2017-02-17T06:47:17Z",
-        "lastUpdated": "2021-08-26T18:58:09Z"
+        "defaultPersona": {
+            "id": 1,
+            "code": "standard",
+            "name": "Standard"
+        },
+        "dateCreated": "2016-08-27T19:28:09Z",
+        "lastUpdated": "2021-04-17T00:12:01Z",
+        "access": {
+            "features": [
+                {
+                    "id": 11,
+                    "code": "admin-appliance",
+                    "name": "Admin: Appliance Settings",
+                    "access": "full"
+                }
+            ],
+            "zones": [
+                {
+                    "id": 1,
+                    "name": "zone1",
+                    "access": "full"
+                }
+            ],
+            "sites": [
+                {
+                    "id": 1,
+                    "name": "AWS",
+                    "access": "full"
+                }
+            ],
+            "instanceTypes": [
+                {
+                    "id": 1,
+                    "code": "activemq",
+                    "name": "ActiveMQ",
+                    "access": "full"
+                }
+            ],
+            "appTemplates": [
+                {
+                    "id": 1,
+                    "name": "Blank Apache",
+                    "access": "full"
+                }
+            ],
+            "personas": [
+                {
+                    "id": 1,
+                    "code": "serviceCatalog",
+                    "name": "Service Catalog",
+                    "access": "full"
+                }
+            ],
+            "vdiPools": [
+                {
+                    "id": 1,
+                    "name": "Windows 11",
+                    "access": "full"
+                }
+            ],
+            "reportTypes": [
+                {
+                    "id": 1,
+                    "code": "amazonReservationCoverage",
+                    "name": "Amazon Reservation Coverage",
+                    "access": "full"
+                }
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "name": "task",
+                    "code": "task",
+                    "access": "full"
+                }
+            ],
+            "taskSets": [
+                {
+                    "id": 1,
+                    "name": "workflow",
+                    "code": "workflow",
+                    "access": "full"
+                }
+            ]
+        }
     }
 }

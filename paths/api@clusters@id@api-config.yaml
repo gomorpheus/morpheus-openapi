@@ -1,0 +1,23 @@
+get: 
+  summary: Get API Config
+  description: This endpoint retrieves the API configuration for a specified cluster. The configuration is cluster type specific.
+  operationId: getClusterApiConfig
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema: 
+            $ref: ../components/schemas/clusterApiConfig.yaml
+          examples:
+            Cluster Response:
+              value:
+                $ref: ../components/examples/clusterApiConfig.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

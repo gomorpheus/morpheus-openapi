@@ -1,0 +1,25 @@
+{
+    "object": {
+        "id": 922,
+        "name": "Amazon VM",
+        "type": "layout",
+        "refType": "InstanceTypeLayout",
+        "refId": 2134733,
+        "layout": {
+            "id": 2134733,
+            "name": "Amazon VM",
+            "code": "ubuntu-amazon-20.04",
+            "provisionType": {
+                "id": 11,
+                "name": "Amazon",
+                "code": "amazon"
+            },
+            "instanceType": {
+                "id": 6,
+                "name": "Ubuntu",
+                "code": "ubuntu"
+            },
+            "instanceVersion": "20.04"
+        }
+    }
+}

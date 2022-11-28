@@ -1,0 +1,91 @@
+get:
+  summary: Get a Specific License
+  description: This endpoint retrieves a specific license.
+  operationId: getProvisioningLicense
+  tags:
+    - Provisioning Licenses
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              license:
+                $ref: ../components/schemas/provisioningLicense.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/provisioningLicense.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+put:
+  summary: Update a License
+  description: Use this command to update an existing license.
+  operationId: updateProvisioningLicense
+  tags:
+    - Provisioning Licenses
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            license:
+              $ref: ../components/schemas/provisioningLicensesUpdate.yaml
+        examples:
+          License Update Request:
+            value:
+              $ref: ../components/examples/provisioningLicensesUpdate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  license:
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                        format: int64
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/provisioningLicensesCreateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+delete:
+  summary: Delete a License
+  description: Will delete a license.
+  operationId: removeProvisioningLicense
+  tags:
+    - Provisioning Licenses
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

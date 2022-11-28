@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 126,
+        "name": "11. File Share Storage Quota",
+        "description": null,
+        "policyType": {
+            "id": 54,
+            "code": "storageShareQuota",
+            "name": "File Share Storage Quota"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxStorage": "1"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

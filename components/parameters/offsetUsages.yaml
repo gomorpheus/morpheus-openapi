@@ -1,0 +1,6 @@
+name: offsetUsages
+in: query
+description: Optional ability to offset the usages returned, for use with maxUsages to paginate
+schema:
+  type: integer
+  format: int64

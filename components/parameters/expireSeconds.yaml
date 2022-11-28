@@ -1,0 +1,8 @@
+name: expireSeconds
+in: query
+description: Time to live in seconds. 0 means do not expire.
+schema:
+  type: integer
+  format: int64
+  default: 0
+example: 600

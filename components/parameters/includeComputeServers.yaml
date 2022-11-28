@@ -1,0 +1,6 @@
+name: includeComputeServers
+in: query
+description: Optional ability to exclude compute servers
+schema:
+  type: boolean
+  default: true

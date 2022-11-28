@@ -1,0 +1,30 @@
+{
+    "policy": {
+        "id": 105,
+        "name": "4. Backup Creation",
+        "description": null,
+        "policyType": {
+            "id": 46,
+            "code": "createBackup",
+            "name": "Backup Creation"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "createBackupType": "user",
+            "createBackup": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

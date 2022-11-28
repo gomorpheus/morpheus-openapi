@@ -1,11 +1,12 @@
 get:
   summary: Get a Specific User
-  description: Get details about a specific user.
-  operationId: getUsers
+  description: This endpoint will retrieve a specific user by id if the user has permission to access the user.
+  operationId: getUser
   tags:
     - Users
   parameters:
-  - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/includeAccess.yaml
   responses:
     '200':
       description: User Object
@@ -20,26 +21,10 @@ get:
             Get User Response:
               value:
                 $ref: ../components/examples/user.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 put:
   summary: Update user
   description: Update an existing user.
@@ -96,30 +81,14 @@ put:
             Update User Response:
               value:
                 $ref: ../components/examples/userSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 delete:
-  summary: Delete a Specific User
+  summary: Delete a User
   description: Delete an existing user.
-  operationId: deleteUsers
+  operationId: deleteUser
   tags:
     - Users
   parameters:
@@ -135,23 +104,7 @@ delete:
             Delete User Response:
               value:
                 $ref: ../components/examples/success.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

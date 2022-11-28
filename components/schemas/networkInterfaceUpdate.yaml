@@ -1,0 +1,6 @@
+type: object
+properties:
+  label:
+    type: string
+    description: Desired Name for the Network Interface
+    example: eth0-new

@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 186,
+        "name": "31. User Creation",
+        "description": null,
+        "policyType": {
+            "id": 43,
+            "code": "createUser",
+            "name": "User Creation"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "createUserType": "user",
+            "createUser": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "policy": {
+        "id": 189,
+        "name": "32. User Group Creation",
+        "description": null,
+        "policyType": {
+            "id": 49,
+            "code": "createUserGroup",
+            "name": "User Group Creation"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "userGroup": "3"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

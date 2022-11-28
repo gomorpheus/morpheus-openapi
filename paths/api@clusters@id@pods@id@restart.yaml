@@ -1,0 +1,24 @@
+put: 
+  summary: Restart a Pod
+  description: Will restart a pod in the specified cluster.
+  operationId: restartClusterPod
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successError.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/successError.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

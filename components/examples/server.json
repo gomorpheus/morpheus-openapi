@@ -1,0 +1,213 @@
+{
+  "server": {
+      "id": 270414,
+      "uuid": "b3f44e90-7165-4264-be0b-33f799b669ce",
+      "externalId": "vm-80894",
+      "internalId": "502d8b73-fec2-164a-636d-3deb31877f80",
+      "externalUniqueId": "422dd960-a5eb-bf80-4471-8cfa50100266",
+      "name": "67105test01",
+      "externalName": "67105test01",
+      "hostname": "morphrhel",
+      "parentServer": {
+          "id": 220340,
+          "name": "demo.morpheusdata.com"
+      },
+      "accountId": 3,
+      "account": {
+          "id": 3,
+          "name": "Morpheus"
+      },
+      "owner": null,
+      "zone": {
+          "id": 172,
+          "name": "VMware Demo Cluster H5"
+      },
+      "plan": {
+          "id": 1093,
+          "code": "internal-custom-vmware",
+          "name": "Custom VMWare"
+      },
+      "computeServerType": {
+          "id": 74,
+          "code": "vmwareUnmanaged",
+          "name": "Vmware VM",
+          "managed": false,
+          "externalDelete": true
+      },
+      "visibility": "private",
+      "description": null,
+      "zoneId": 172,
+      "siteId": 443,
+      "resourcePoolId": 4080,
+      "folderId": null,
+      "sshHost": "192.168.20.42",
+      "sshPort": 22,
+      "externalIp": "192.168.20.42",
+      "internalIp": "192.168.20.42",
+      "volumeId": null,
+      "platform": null,
+      "platformVersion": null,
+      "sshUsername": "root",
+      "sshPassword": null,
+      "sshPasswordHash": null,
+      "osDevice": "/dev/sda",
+      "osType": "other",
+      "dataDevice": "/dev/sdb",
+      "lvmEnabled": false,
+      "apiKey": "507ee0bb-527e-4495-b5be-86703bfe9d6c",
+      "softwareRaid": false,
+      "dateCreated": "2022-07-14T06:43:08Z",
+      "lastUpdated": "2022-09-01T15:02:22Z",
+      "stats": {
+          "ts": "2022-09-01T15:02:22Z",
+          "maxMemory": 17179869184,
+          "usedMemory": 170917888,
+          "maxStorage": 17179869184,
+          "usedStorage": 0,
+          "cpuUsage": 0.4785779400,
+          "freeMemory": 17008951296
+      },
+      "status": "provisioned",
+      "statusMessage": null,
+      "errorMessage": null,
+      "statusDate": null,
+      "statusPercent": null,
+      "statusEta": null,
+      "powerState": "on",
+      "agentInstalled": false,
+      "lastAgentUpdate": null,
+      "agentVersion": null,
+      "maxCores": 2,
+      "coresPerSocket": 1,
+      "maxMemory": 17179869184,
+      "maxStorage": 17179869184,
+      "maxCpu": null,
+      "hourlyCost": 0.1122221653,
+      "hourlyPrice": 0.1122221653,
+      "sourceImage": null,
+      "serverOs": {
+          "id": 53,
+          "code": "other.64",
+          "name": "other 64-bit",
+          "description": null,
+          "vendor": "other",
+          "category": "other",
+          "osFamily": null,
+          "osVersion": "all",
+          "bitCount": 64,
+          "platform": "other"
+      },
+      "volumes": [
+          {
+              "id": 2620495,
+              "name": "root",
+              "controllerId": 2144621,
+              "controllerMountPoint": "2144621:0:6:0",
+              "resizeable": true,
+              "planResizable": true,
+              "rootVolume": true,
+              "unitNumber": "0",
+              "typeId": 1,
+              "configurableIOPS": false,
+              "datastoreId": 21317,
+              "maxStorage": 17179869184,
+              "displayOrder": 0,
+              "maxIOPS": null,
+              "uuid": "38c37d6d-3d56-44f7-9c41-0b43460d5b40"
+          }
+      ],
+      "controllers": [
+          {
+              "id": 2144619,
+              "name": "IDE 0",
+              "type": {
+                  "id": 2,
+                  "code": "vmware-ide",
+                  "name": "IDE"
+              },
+              "maxDevices": 2,
+              "reservedUnitNumber": -1
+          },
+          {
+              "id": 2144620,
+              "name": "IDE 1",
+              "type": {
+                  "id": 2,
+                  "code": "vmware-ide",
+                  "name": "IDE"
+              },
+              "maxDevices": 2,
+              "reservedUnitNumber": -1
+          },
+          {
+              "id": 2144621,
+              "name": "SCSI controller 0",
+              "type": {
+                  "id": 6,
+                  "code": "vmware-paravirtual",
+                  "name": "SCSI VMware Paravirtual"
+              },
+              "maxDevices": 15,
+              "reservedUnitNumber": 7
+          }
+      ],
+      "interfaces": [
+          {
+              "id": 658953,
+              "refType": null,
+              "refId": null,
+              "name": "Network adapter 1",
+              "internalId": null,
+              "externalId": "4000",
+              "uniqueId": null,
+              "publicIpAddress": null,
+              "publicIpv6Address": null,
+              "ipAddress": "192.168.20.42",
+              "ipv6Address": "fe80::250:56ff:feee:29d4",
+              "ipSubnet": null,
+              "ipv6Subnet": null,
+              "description": null,
+              "dhcp": true,
+              "active": true,
+              "poolAssigned": false,
+              "primaryInterface": true,
+              "network": {
+                  "id": 135357,
+                  "name": "VLAN0251 - Internal Server"
+              },
+              "subnet": null,
+              "networkGroup": null,
+              "networkPosition": null,
+              "networkPool": null,
+              "networkDomain": null,
+              "type": {
+                  "id": 4,
+                  "code": "vmxNet3",
+                  "name": "VMXNET 3"
+              },
+              "ipMode": null,
+              "macAddress": "00:50:56:ad:29:d4"
+          }
+      ],
+      "labels": [],
+      "tags": [],
+      "enabled": true,
+      "tagCompliant": null,
+      "containers": [],
+      "guestConsolePreferred": false,
+      "guestConsoleType": null,
+      "guestConsoleUsername": null,
+      "guestConsolePassword": null,
+      "guestConsolePasswordHash": null,
+      "guestConsolePort": null
+  },
+  "stats": {
+      "usedStorage": 0,
+      "reservedStorage": 0,
+      "maxStorage": 17179869184,
+      "usedMemory": 170917888,
+      "reservedMemory": 0,
+      "maxMemory": 17179869184,
+      "cpuUsage": 0.4785779400
+  }
+}

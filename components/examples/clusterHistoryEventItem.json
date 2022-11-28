@@ -1,0 +1,44 @@
+{
+  "processEvent": {
+    "id": 6,
+    "processId": 125,
+    "accountId": 1,
+    "uniqueId": "f1ec503c-365a-4002-8fc5-2c0f3e9121d1",
+    "processType": {
+      "code": "provisionImage",
+      "name": "prepare image"
+    },
+    "description": null,
+    "refType": "computeServer",
+    "refId": 129,
+    "subType": null,
+    "subId": null,
+    "zoneId": null,
+    "integrationId": null,
+    "instanceId": null,
+    "containerId": null,
+    "serverId": 129,
+    "containerName": null,
+    "displayName": "dans-docker-host-2",
+    "status": "failed",
+    "reason": null,
+    "percent": 100.0,
+    "statusEta": 180000,
+    "message": "failed to provision server",
+    "output": null,
+    "error": null,
+    "startDate": "2019-09-25T17:49:23+0000",
+    "endDate": "2019-09-25T17:49:43+0000",
+    "duration": 20199,
+    "dateCreated": "2019-09-25T17:49:23+0000",
+    "lastUpdated": "2019-09-25T17:50:56+0000",
+    "createdBy": {
+      "username": "root",
+      "displayName": "Stubby Toes"
+    },
+    "updatedBy": {
+      "username": "root",
+      "displayName": "Stubby Toes"
+    }
+  }
+}

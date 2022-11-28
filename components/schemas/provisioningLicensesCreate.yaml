@@ -1,0 +1,45 @@
+type: object
+required: 
+  - name
+  - licenseType
+  - licenseKey
+properties: 
+  name: 
+    type: string
+    description: Name
+  licenseType: 
+    type: string
+    description: License Type - The license type code.
+    example: win
+  licenseKey: 
+    type: string
+    description: License Key - The license key, to be kept a secret.
+  orgName: 
+    type: string
+    description: Org Name - The Organization Name (if applicable) related to the license key
+  fullName: 
+    type: string
+    description: Full Name - The Full Name (if applicable) related to the license key
+  licenseVersion: 
+    type: string
+    description: License Version
+  copies: 
+    type: integer
+    format: int64
+    description: Copies - The number of times the key can be used.
+    default: 1
+  description: 
+    type: string
+    description: Description
+  virtualImages: 
+    type: array
+    description: Virtual Images - Array of Virtual Image IDs to associate with license.
+    items: 
+      type: integer
+      format: int64
+  tenants: 
+    type: array
+    description: Tenants - Array of tenants that are allowed to use the key.
+    items: 
+      type: integer
+      format: int64

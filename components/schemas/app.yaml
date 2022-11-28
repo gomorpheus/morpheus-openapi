@@ -7,6 +7,10 @@ properties:
     type: string
   description: 
     type: string
+  labels:
+    type: array
+    items: 
+      type: string
   environment: 
     type: string
   accountId: 
@@ -59,6 +63,7 @@ properties:
     format: date-time
   removalDate: 
     type: string
+    format: date-time
     nullable: true
   appContext: 
     type: string
@@ -74,8 +79,6 @@ properties:
     format: int64
   appTiers: 
     type: array
-    items: 
-      type: object
   instances: 
     type: array
     items: 

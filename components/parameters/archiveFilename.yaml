@@ -1,0 +1,6 @@
+name: filename
+in: query
+description: Specify a filename for archive file. The base filename of the uploaded file is the default.
+schema:
+  type: string
+example: "/path/to/file"

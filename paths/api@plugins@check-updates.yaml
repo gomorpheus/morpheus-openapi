@@ -1,0 +1,40 @@
+post:
+  summary: Check Plugins For Available Updates
+  description: |
+    Check for installed plugins that have available updates.
+  operationId: pluginCheckUpdates
+  tags:
+    - Plugins
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - $ref: ../components/schemas/200-success.yaml
+            - type: object
+              properties:
+                pluginsToUpdate:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      id: 
+                        type: integer
+                        format: int64
+                      name: 
+                        type: string
+                      code: 
+                        type: string
+                      version: 
+                        type: string
+                        description: Version that is currently installed
+          examples:
+            Plugin Response:
+              value:
+                $ref: ../components/examples/pluginCheckUpdatesSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

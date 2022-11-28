@@ -1,0 +1,101 @@
+get:
+  summary: Get a Specific Archive Bucket
+  description: This endpoint retrieves a specific archive bucket.
+  operationId: getArchiveBucket
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              archiveBucket:
+                $ref: ../components/schemas/archiveBucket.yaml
+              isOwner:
+                type: boolean
+              parentDirectory:
+                type: string
+                nullable: true
+              archiveFiles:
+                type: array
+                items:
+                  $ref: ../components/schemas/archiveBucketFile.yaml
+              archiveFileCount:
+                type: integer
+                format: int64
+          examples:
+            Archive Bucket Response:
+              value:
+                $ref: ../components/examples/archiveBucket.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Update an Archive Bucket
+  description: Update an Archive Bucket
+  operationId: updateArchiveBucket
+  tags: 
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            archiveBucket:
+              $ref: ../components/schemas/archiveBucketUpdate.yaml
+        examples:
+          Archive Bucket Request:
+            value:
+              $ref: ../components/examples/archiveBucketUpdateRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  archiveBucket:
+                    $ref: ../components/schemas/archiveBucket.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Archive Bucket Response:
+              value:
+                $ref: ../components/examples/archiveBucketCreateResponse.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete an Archive Bucket
+  description: Will delete an archive bucket from the system and make it no longer usable.
+  operationId: deleteArchiveBucket
+  tags:
+    - Archives
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

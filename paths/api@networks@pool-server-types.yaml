@@ -1,0 +1,37 @@
+get:
+  summary: Get All Network Pool Server Types
+  description: |
+    This endpoint retrieves all Network Pool Server Types
+  operationId: listNetworkPoolServerTypes
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkPoolServerTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/networkPoolServerType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Network Pool Servers Response:
+              value:
+                $ref: ../components/examples/networkPoolServerTypes.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,46 @@
+{
+  "layout": {
+    "name": "Stubby Toes Kubernetes Cluster",
+    "computeVersion": "1.0",
+    "description": null,
+    "labels": [],
+    "creatable": true,
+    "groupType": {
+      "id": 1
+    },
+    "provisionType": {
+      "id": 5
+    },
+    "memoryRequirement": 1073741824,
+    "taskSets": [
+      {
+        "id": 8
+      }
+    ],
+    "hasAutoScale": true,
+    "environmentVariables": [
+      {
+        "name": "foo",
+        "value": "bar",
+        "masked": false,
+        "export": false
+      }
+    ],
+    "optionTypes": [],
+    "masters": [
+      {
+        "containerType": {
+          "id": 1928
+        }
+      }
+    ],
+    "workers": [
+      {
+        "count": 3,
+        "containerType": {
+          "id": 1928
+        }
+      }
+    ]
+  }
+}

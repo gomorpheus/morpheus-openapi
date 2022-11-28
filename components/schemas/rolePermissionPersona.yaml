@@ -1,0 +1,14 @@
+type: object
+required:
+  - personaCode
+  - access
+properties:
+  personaCode:
+    type: string
+    description: "code of the Persona, eg. `standard` or `serviceCatalog`"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

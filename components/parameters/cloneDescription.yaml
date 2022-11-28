@@ -1,0 +1,6 @@
+name: description
+in: query
+description: Description of cluster layout. Defaults to cloned layout description
+schema:
+  type: string
+example: New Description

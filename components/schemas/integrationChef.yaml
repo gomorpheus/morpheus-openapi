@@ -1,0 +1,78 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  enabled: 
+    type: boolean
+  type: 
+    type: string
+    enum:
+    - chef
+  integrationType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  url: 
+    type: string
+  isPlugin: 
+    type: boolean
+  config: 
+    type: object
+    properties: 
+      databags: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            path: 
+              type: string
+            key: 
+              type: string
+      endpoint: 
+        type: string
+      org: 
+        type: string
+      chefUser: 
+        type: string
+      userKey: 
+        type: string
+      orgKey: 
+        type: string
+      version: 
+        type: string
+      chefUseFqdn: 
+        type: boolean
+      windowsVersion: 
+        type: string
+      windowsInstallUrl: 
+        type: string
+      userKeyHash: 
+        type: string
+      orgKeyHash: 
+        type: string
+  status: 
+    type: string
+  statusDate: 
+    type: string
+    format: date-time
+    nullable: true
+  statusMessage: 
+    type: string
+    nullable: true
+  lastSync: 
+    type: string
+    nullable: true
+  lastSyncDuration: 
+    type: string
+    nullable: true
+  credential: 
+    $ref: creds.yaml

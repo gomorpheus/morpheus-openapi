@@ -10,6 +10,12 @@ properties:
   displayName: 
     type: string
     description: Display Name
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   description: 
     type: string
     nullable: true
@@ -41,6 +47,10 @@ properties:
         type: integer
         format: int64
         description: Network Type ID
+  ipv4Enabled:
+    type: boolean
+  ipv6Enabled: 
+    type: boolean
   cidr: 
     type: string
     description: CIDR Network
@@ -53,6 +63,24 @@ properties:
   dnsSecondary: 
     type: string
     description: Secondary DNS Server
+  gatewayIPv6: 
+    type: string
+    description: IPv6 Network Gateway 
+    nullable: true
+  netmaskIPv6: 
+    type: string
+    nullable: true
+  dnsPrimaryIPv6: 
+    type: string
+    description: Primary IPv6 DNS Server
+    nullable: true
+  dnsSecondaryIPv6: 
+    type: string
+    description: Secondary IPv6 DNS Server
+    nullable: true
+  cidrIPv6: 
+    type: string
+    description: IPv6 Network CIDR
   vlanId:
     type: integer
     format: int64
@@ -60,6 +88,11 @@ properties:
     type: integer
     format: int64
     description: Network Pool ID
+    nullable: true
+  poolIPv6: 
+    type: integer
+    format: int64
+    description: IPv6 Network Pool ID
     nullable: true
   allowStaticOverride: 
     type: boolean
@@ -83,10 +116,10 @@ properties:
   searchDomains:
     type: string
     description: Search Domains
-  scanNetwork:
-    type: boolean
-    description: Scan Network
-    default: false
+  # scanNetwork:
+  #   type: boolean
+  #   description: Scan Network
+  #   default: false
   networkProxy: 
     type: object
     properties: 

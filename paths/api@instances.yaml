@@ -27,6 +27,7 @@ get:
     - $ref: ../components/parameters/shutdownDays.yaml
     - $ref: ../components/parameters/shutdownDaysMin.yaml
     - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
     - $ref: ../components/parameters/tags.yaml
     - $ref: ../components/parameters/metadata.yaml
     - $ref: ../components/parameters/detailsFalse.yaml
@@ -48,27 +49,10 @@ get:
             Instances Response:
               value:
                 $ref: ../components/examples/instances.json 
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
-
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post: 
   summary: Create an Instance
   description: Create an Instance
@@ -121,28 +105,7 @@ post:
             Unsuccessful Instance Creation:
               value:
                 $ref: ../components/examples/instanceCreateFail.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
-                    
-
-            
-    
-  
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

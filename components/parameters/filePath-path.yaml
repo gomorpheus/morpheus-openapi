@@ -1,0 +1,8 @@
+name: filePath
+in: path
+required: true
+description: The directory to search under. The root directory / is the default.
+schema:
+  type: string
+  example: "/config/environments/"
+  default: "/"

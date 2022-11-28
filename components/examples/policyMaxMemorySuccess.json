@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 147,
+        "name": "18. Max Memory",
+        "description": null,
+        "policyType": {
+            "id": 1,
+            "code": "maxMemory",
+            "name": "Max Memory"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxMemory": "325"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

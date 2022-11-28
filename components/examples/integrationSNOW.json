@@ -1,0 +1,46 @@
+{
+    "integration": {
+        "id": 3662,
+        "name": "Labs ServiceNow",
+        "enabled": true,
+        "type": "serviceNow",
+        "integrationType": {
+            "id": 10,
+            "code": "serviceNow",
+            "name": "ServiceNow"
+        },
+        "url": "https://ven014.service-now.com/",
+        "isPlugin": false,
+        "config": {
+            "incidentAccess": true,
+            "requestAccess": true,
+            "serviceNowCMDBBusinessObject": "",
+            "serviceNowCustomCmdbMapping": "",
+            "serviceNowCmdbClassMapping": [
+                {
+                    "id": "47",
+                    "code": "amazonVm",
+                    "name": "Amazon Instance",
+                    "nowClass": "cmdb_ci_vm_instance"
+                }
+            ],
+            "webServiceImportUrl": "/api/x_moda_morpheus_ca/morpheus_ci_bulk_insert",
+            "webServiceImportSysId": "5b08034bcb3e",
+            "webServiceOperationUrl": "/api/moda/morpheus_ci_bulk_insert",
+            "preparedForSync": true
+        },
+        "status": "ok",
+        "statusDate": "2022-08-05T08:04:16Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "id": 1124,
+            "name": "Integration ServiceNow",
+            "type": "username-password",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

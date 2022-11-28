@@ -30,26 +30,10 @@ get:
             Power Schedules Response:
               value:
                 $ref: ../components/examples/powerSchedules.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post:
   summary: Creates a Power Schedule
   description: |
@@ -159,58 +143,12 @@ post:
                 schedule:
                   allOf:
                   - $ref: ../components/schemas/powerSchedule.yaml
-                  - type: object
-                    properties:
-                      instances:
-                        type: array
-                        nullable: true
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 123
-                            name:
-                              type: string
-                              example: "test"
-                  - type: object
-                    properties:
-                      servers:
-                        type: array
-                        nullable: true
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 123
-                            name:
-                              type: string
-                              example: "test"
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Power Schedule Response:
               value:
                 $ref: ../components/examples/powerScheduleSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

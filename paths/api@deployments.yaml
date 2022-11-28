@@ -29,28 +29,11 @@ get:
           examples:
             Deployments Response:
               value:
-                $ref: ../components/examples/deployments.json 
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
-
+                $ref: ../components/examples/deployments.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post: 
   summary: Create a new Deployment
   description: This endpoint will create a new deployment that is ready to have versions added to it.
@@ -79,29 +62,13 @@ post:
             - type: object
               properties:
                 deployment:
-                  $ref: ../components/schemas/deployment.yaml
+                  $ref: ../components/schemas/deploymentCreateSuccess.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Deployments Response:
               value:
-                $ref: ../components/examples/deploymentCreate.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+                $ref: ../components/examples/deploymentCreateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

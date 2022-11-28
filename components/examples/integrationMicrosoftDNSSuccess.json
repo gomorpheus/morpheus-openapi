@@ -1,0 +1,31 @@
+{
+    "success": true,
+    "integration": {
+        "id": 2157,
+        "name": "Labs Microsoft DNS",
+        "enabled": true,
+        "type": "microsoft.dns",
+        "integrationType": {
+            "id": 8,
+            "code": "microsoft.dns",
+            "name": "Microsoft DNS"
+        },
+        "url": "10.13.21.3",
+        "serviceFlag": true,
+        "isPlugin": false,
+        "config": {},
+        "status": "ok",
+        "statusDate": "2022-05-12T06:30:35Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "id": 1015,
+            "name": "Integration: Microsoft DNS",
+            "type": "username-password",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

@@ -5,6 +5,7 @@
             "name": "a.Example Write Attributes",
             "type": "provision",
             "description": null,
+            "labels": [],
             "dateCreated": "2022-01-12T13:01:14Z",
             "lastUpdated": "2022-01-12T13:01:14Z",
             "accountId": 1,
@@ -31,6 +32,7 @@
                             "code": "script",
                             "name": "Shell Script"
                         },
+                        "labels": [],
                         "taskOptions": {
                             "localScriptGitRef": null,
                             "password": null,
@@ -73,6 +75,7 @@
                             "code": "script",
                             "name": "Shell Script"
                         },
+                        "labels": [],
                         "taskOptions": {
                             "localScriptGitRef": null,
                             "password": null,
@@ -108,6 +111,7 @@
             "name": "App Snapshot Management",
             "type": "operation",
             "description": null,
+            "labels": [],
             "dateCreated": "2019-11-23T22:29:40Z",
             "lastUpdated": "2019-11-23T22:55:03Z",
             "accountId": 1,
@@ -223,6 +227,7 @@
                             "code": "script",
                             "name": "Shell Script"
                         },
+                        "labels": [],
                         "taskOptions": {
                             "sshKey": null,
                             "password": null,
@@ -259,6 +264,7 @@
             "name": "Approvals - Approvals Email",
             "type": "operation",
             "description": null,
+            "labels": [],
             "dateCreated": "2020-03-02T23:21:29Z",
             "lastUpdated": "2022-04-18T14:50:09Z",
             "accountId": 1,
@@ -327,6 +333,7 @@
                             "code": "winrmTask",
                             "name": "Powershell Script"
                         },
+                        "labels": [],
                         "taskOptions": {
                             "host": null,
                             "username": null,

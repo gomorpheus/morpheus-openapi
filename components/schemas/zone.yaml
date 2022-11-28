@@ -53,7 +53,14 @@ properties:
     nullable: true
   costStatusDate: 
     type: string
+    format: date-time
     nullable: true
+  costLastSyncDuration:
+    type: integer
+    format: int64
+  costLastSync:
+    type: string
+    format: date-time
   zoneType: 
     type: object
     properties: 
@@ -142,10 +149,27 @@ properties:
           type: string
         type:
           type: string
+  imagePath: 
+    type: string
+    nullable: true
+    description: Logo image URL
+  darkImagePath: 
+    type: string
+    nullable: true
+    description: Dark logo image URL
   dateCreated: 
     type: string
     format: date-time
   lastUpdated: 
+    type: string
+    format: date-time
+  lastSync:
+    type: string
+    format: date-time
+  lastSyncDuration:
+    type: integer
+    format: int64
+  nextRunDate:
     type: string
     format: date-time
   groups: 
@@ -162,7 +186,22 @@ properties:
           type: integer
           format: int64
   securityServer: 
-    type: string
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+    nullable: true
+  networkServer: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
     nullable: true
   stats: 
     type: object

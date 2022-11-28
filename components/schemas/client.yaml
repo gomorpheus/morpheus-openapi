@@ -1,0 +1,25 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  clientId: 
+    type: string
+  accessTokenValiditySeconds: 
+    type: integer
+    format: int64
+  refreshTokenValiditySeconds: 
+    type: integer
+    format: int64
+  authorities: 
+    type: array
+    items: 
+      type: string
+  authorizedGrantTypes: 
+    type: array
+    items: 
+      type: string
+  scopes: 
+    type: array
+    items: 
+      type: string

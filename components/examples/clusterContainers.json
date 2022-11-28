@@ -1,0 +1,74 @@
+{
+  "containers": [
+    {
+      "id": 14,
+      "uuid": "",
+      "accountId": 1,
+      "instance": null,
+      "containerType": {
+        "id": 50,
+        "code": "ubuntu-14.04.03",
+        "category": null,
+        "name": "Ubuntu 14.04"
+      },
+      "containerTypeSet": {
+        "id": null,
+        "code": null,
+        "category": null
+      },
+      "server": {
+        "id": 20,
+        "name": "cluster 2"
+      },
+      "cloud": {
+        "id": 3,
+        "name": "aws cloud"
+      },
+      "name": "ubuntu_14",
+      "ip": "172.31.0.197",
+      "internalIp": "172.31.0.197",
+      "internalHostname": "container14",
+      "externalHostname": "container14",
+      "externalDomain": "localdomain",
+      "externalFqdn": "container14.localdomain",
+      "ports": [
+
+      ],
+      "plan": {
+        "id": null,
+        "code": null,
+        "name": null
+      },
+      "dateCreated": null,
+      "lastUpdated": "2019-10-01T13:55:23+0000",
+      "statsEnabled": false,
+      "status": "unknown",
+      "userStatus": "stopped",
+      "environmentPrefix": null,
+      "stats": {
+      },
+      "runtimeInfo": {
+      },
+      "containerVersion": null,
+      "repositoryImage": null,
+      "planCategory": null,
+      "hostname": null,
+      "domainName": null,
+      "volumeCreated": false,
+      "containerCreated": false,
+      "maxStorage": null,
+      "maxMemory": null,
+      "maxCores": null,
+      "maxCpu": null,
+      "availableActions": [
+
+      ]
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

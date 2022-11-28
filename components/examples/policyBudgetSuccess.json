@@ -1,0 +1,31 @@
+{
+    "policy": {
+        "id": 111,
+        "name": "6. Budget",
+        "description": null,
+        "policyType": {
+            "id": 19,
+            "code": "maxPrice",
+            "name": "Budget"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxPrice": "144",
+            "maxPriceCurrency": "USD",
+            "maxPriceUnit": "month"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

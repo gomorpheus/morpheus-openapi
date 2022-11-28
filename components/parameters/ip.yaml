@@ -1,0 +1,6 @@
+name: ip
+in: query
+description: Filter by IP address
+schema:
+  type: string
+example: "192.168.1.45"

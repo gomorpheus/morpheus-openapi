@@ -13,6 +13,8 @@ get:
     - $ref: ../components/parameters/filterType.yaml
     - $ref: ../components/parameters/imageType.yaml
     - $ref: ../components/parameters/tags.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
   responses:
     '200':
       description: Successful Request
@@ -31,26 +33,10 @@ get:
             Virtual Images Response:
               value:
                 $ref: ../components/examples/virtualImages.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 
 post:
   summary: Create a Virtual Image
@@ -88,23 +74,7 @@ post:
             Virtual Image Create Response:
               value:
                 $ref: ../components/examples/virtualImageCreateSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,55 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+  licenseType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  licenseKey: 
+    type: string
+  orgName: 
+    type: string
+  fullName: 
+    type: string
+  licenseVersion: 
+    type: string
+  copies: 
+    type: integer
+    format: int64
+  reservationCount: 
+    type: integer
+    format: int64
+  tenants: 
+    type: array
+    items: 
+      type: object
+  virtualImages: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string

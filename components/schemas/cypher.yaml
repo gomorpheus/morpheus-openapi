@@ -1,5 +1,7 @@
 type: object
 properties:
+  id:
+    type: integer
   itemKey: 
     type: string
   leaseTimeout: 
@@ -8,12 +10,16 @@ properties:
   expireDate: 
     type: string
     format: date-time
+    nullable: true
   dateCreated: 
     type: string
     format: date-time
+    nullable: true
   lastUpdated: 
     type: string
     format: date-time
   lastAccessed: 
     type: string
     format: date-time
+  createdBy:
+    type: string
