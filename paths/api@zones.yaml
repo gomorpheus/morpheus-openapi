@@ -59,7 +59,7 @@ post:
                 - zoneType
                 - groupId
               properties:
-                name: 
+                name:
                   type: string
                   description: A unique name scoped to your account for the cloud
                   example: My Cloud
@@ -82,9 +82,11 @@ post:
                    - public
                   default: private
                 zoneType:
-                  type: string
-                  default: standard
-                  description: Map containing code or id of the cloud type
+                  type: object
+                  description: Map containing the Cloud (zone) type ID. See the zone-types API to fetch a list of all available Cloud (zone) types and their IDs.
+                  properties:
+                    id:
+                      type: integer
                 groupId:
                   type: integer
                   format: int64
@@ -122,8 +124,8 @@ post:
                 credential:
                   type: object
                   description: Map containing Credential ID. Setting `type` to `local` means use the values set in the local cloud config instead of associating a credential.
-                  properties: 
-                    type: 
+                  properties:
+                    type:
                       type: string
                       default: local
                     id:
