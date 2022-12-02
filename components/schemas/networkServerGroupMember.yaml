@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  category:
+    type: string
+  type:
+    type: string
+  memberName:
+    type: string
+  memberType:
+    type: string
+  memberValue:
+    type: string
+  memberExpression:
+    type: string
+  displayOrder:
+    type: integer
+    format: int64
+  internalId:
+    type: string
+  externalId:
+    type: string
+  members:
+    type: array
+      items:
+        $ref: ./networkServerGroupMember.yaml

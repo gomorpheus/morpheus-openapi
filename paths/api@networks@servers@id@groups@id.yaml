@@ -1,0 +1,92 @@
+get:
+  summary: Get a specific Network Server Group
+  description: |
+    This endpoint retrieves a specific Network Server Group.
+  operationId: getNetworkServerGroup
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/serverId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              group:
+                properties:
+                  $ref: ../components/schemas/networkServerGroup.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkServerGroup.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+put:
+  summary: Update a Network Server Group
+  description: |
+    Use this command to update an existing network server group.
+  operationId: updateNetworkServerGroup
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            group:
+              type: object
+        examples:
+          Network Server Group Request:
+            value:
+              $ref: ../components/examples/networkServerGroupUpdate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Request:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+delete:
+  summary: Delete a Network Server Group
+  description: Will delete a Network Server Group from the system and make it no longer usable.
+  operationId: deleteNetworkServerGroup
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/serverId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
