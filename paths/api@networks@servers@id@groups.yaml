@@ -42,8 +42,7 @@ post:
     Use this command to create a network server group.
   operationId: createNetworkServerGroup
   tags:
-    - Networks
-    - Network Servers
+    - Network
   parameters:
     - $ref: ../components/parameters/serverId-path.yaml
   requestBody: 
