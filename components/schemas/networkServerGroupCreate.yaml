@@ -38,10 +38,10 @@ properties:
   members:
     type: array
     items:
-      $ref: ./networkServerGroupMember.yaml
+      $ref: networkServerGroupMember.yaml
   tags:
     type: array
     items:
-      $ref: ./tag.yaml
+      $ref: tag.yaml
   permissions:
-    $ref: ./permissions.yaml
+    $ref: permissions.yaml

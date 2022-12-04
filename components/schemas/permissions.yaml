@@ -11,7 +11,7 @@ properties:
       visibility:
         type: string
   resourcePermissions:
-    $ref: ./resourcePermissions.yaml
+    $ref: resourcePermissions.yaml
   tenantPermissions:
     type: object
     properties:
