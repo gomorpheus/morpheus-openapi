@@ -35,13 +35,13 @@ properties:
       id:
         type: integer
         format: int64
-  members:
-    type: array
-    items:
-      $ref: networkServerGroupMember.yaml
   tags:
     type: array
     items:
       $ref: tag.yaml
   permissions:
     $ref: permissions.yaml
+  members:
+    type: array
+    items:
+      $ref: networkServerGroupMember.yaml
