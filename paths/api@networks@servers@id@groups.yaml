@@ -23,8 +23,8 @@ get:
               properties:
                 groups:
                   items:
-                    type: array
-                    items:
+                    type: object
+                    properties:
                       $ref: ../components/schemas/networkServerGroup.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
@@ -42,7 +42,7 @@ post:
     Use this command to create a network server group.
   operationId: createNetworkServerGroup
   tags:
-    - Network
+    - Networks
   parameters:
     - $ref: ../components/parameters/serverId-path.yaml
   requestBody: 
