@@ -1,43 +1,41 @@
-type: object
-properties:
-  id:
-    type: integer
-    format: int64
-  name:
-    type: string
-  description:
-    type: string
-  internalId:
-    type: string
-  externalId:
-    type: string
-  visibility:
-    type: string
-  account:
-    type: object
-    properties:
-      id:
-        type: integer
-        format: int64
-  owner:
-    type: object
-    properties:
-      id:
-        type: integer
-        format: int64
-  networkServer:
-    type: object
-    properties:
-      id:
-        type: integer
-        format: int64
-  permissions:
-    $ref: permissions.yaml
-  tags:
-    type: array
-    items:
-      $ref: tag.yaml
-  members:
-    type: array
-    items:
-      $ref: networkServerGroupMember.yaml
+id:
+  type: integer
+  format: int64
+name:
+  type: string
+description:
+  type: string
+internalId:
+  type: string
+externalId:
+  type: string
+visibility:
+  type: string
+account:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+owner:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+networkServer:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+permissions:
+  $ref: permissions.yaml
+tags:
+  type: array
+  items:
+    $ref: tag.yaml
+members:
+  type: array
+  items:
+    $ref: networkServerGroupMember.yaml

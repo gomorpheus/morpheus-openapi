@@ -24,7 +24,9 @@ get:
                 groups:
                   type: array
                   items:
-                    $ref: ../components/schemas/networkServerGroup.yaml
+                    type: object
+                    properties: 
+                      $ref: ../components/schemas/networkServerGroup.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Networks Response:

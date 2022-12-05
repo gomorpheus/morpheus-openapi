@@ -17,7 +17,9 @@ get:
             type: object
             properties:
               group:
-                $ref: ../components/schemas/networkServerGroup.yaml
+                type: object
+                properties: 
+                  $ref: ../components/schemas/networkServerGroup.yaml
           examples:
             Networks Response:
               value:
