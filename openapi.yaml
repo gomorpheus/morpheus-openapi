@@ -547,9 +547,9 @@ paths:
     $ref: paths/api@library@instance-types@id@update-logo.yaml
   /api/library/layouts:
     $ref: paths/api@library@layouts.yaml
-  /api/library/layouts@{id}:
+  /api/library/layouts/{id}:
     $ref: paths/api@library@layouts@id.yaml
-  /api/library/layouts@{id}@permissions:
+  /api/library/layouts/{id}/permissions:
     $ref: paths/api@library@layouts@id@permissions.yaml
   /api/library/option-type-lists:
     $ref: paths/api@library@option-type-lists.yaml
