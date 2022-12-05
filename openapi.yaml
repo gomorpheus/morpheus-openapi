@@ -206,6 +206,8 @@ paths:
     $ref: paths/api@clusters@id.yaml
   /api/clusters/{clusterId}/api-config:
     $ref: paths/api@clusters@id@api-config.yaml
+  /api/clusters/{clusterId}/apply-template:
+    $ref: paths/api@clusters@id@apply-template.yaml
   /api/clusters/{clusterId}/containers:
     $ref: paths/api@clusters@id@containers.yaml
   /api/clusters/{clusterId}/containers/{id}:

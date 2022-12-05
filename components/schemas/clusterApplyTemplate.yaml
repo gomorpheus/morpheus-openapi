@@ -1,0 +1,173 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  internalId: 
+    type: string
+    nullable: true
+  inventoryLevel: 
+    type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  location: 
+    type: string
+    nullable: true
+  lastSyncDuration: 
+    type: integer
+    format: int64
+  serviceVersion: 
+    type: string
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  serviceConfig: 
+    type: string
+  version: 
+    type: string
+    nullable: true
+  servers: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+  config: 
+    type: string
+  nextRunDate: 
+    type: string
+    format: date-time
+  servicePath: 
+    type: string
+    nullable: true
+  accounts: 
+    type: array
+  statusMessage: 
+    type: string
+  serviceUsername: 
+    type: string
+    nullable: true
+  servicePort: 
+    type: integer
+    format: int64
+  nodeCount: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  datacenterId: 
+    type: string
+    nullable: true
+  apiKey: 
+    type: string
+  serviceCert: 
+    type: string
+    nullable: true
+  statusDate: 
+    type: string
+    format: date-time
+  externalId: 
+    type: string
+    nullable: true
+  packages: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+  visibility: 
+    type: string
+  layout: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  serviceToken: 
+    type: string
+  userGroup: 
+    type: string
+    nullable: true
+  code: 
+    type: string
+    nullable: true
+  tags: 
+    type: string
+    nullable: true
+  lastUpdated: 
+    type: string
+    format: date-time
+  managed: 
+    type: boolean
+  serviceHostname: 
+    type: string
+    nullable: true
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  serviceUrl: 
+    type: string
+  servicePassword: 
+    type: string
+    nullable: true
+  lastSync: 
+    type: string
+    format: date-time
+  metadata: 
+    type: array
+  discovered: 
+    type: boolean
+  integrations: 
+    type: array
+  serviceEntry: 
+    type: string
+    nullable: true
+  serviceHost: 
+    type: string
+    nullable: true
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  category: 
+    type: string
+    nullable: true
+  createdBy: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  status: 
+    type: string
+  searchDomains: 
+    type: string
+    nullable: true
+  enableInternalDns: 
+    type: boolean
+  site: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  enabled: 
+    type: boolean
+  serviceAccess: 
+    type: string
+  description: 
+    type: string
+    nullable: true
