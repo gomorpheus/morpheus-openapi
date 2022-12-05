@@ -22,10 +22,9 @@ get:
             - type: object
               properties:
                 groups:
+                  type: array
                   items:
-                    type: object
-                    properties:
-                      $ref: ../components/schemas/networkServerGroup.yaml
+                    $ref: ../components/schemas/networkServerGroup.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Networks Response:
