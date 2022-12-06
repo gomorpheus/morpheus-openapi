@@ -877,6 +877,8 @@ paths:
     $ref: paths/api@servers@id@start.yaml
   /api/servers/{id}/stop:
     $ref: paths/api@servers@id@stop.yaml
+  /api/servers/{id}/restart:
+    $ref: paths/api@servers@id@restart.yaml
   /api/servers/{id}/upgrade:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:
