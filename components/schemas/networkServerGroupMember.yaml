@@ -25,4 +25,4 @@ properties:
   members:
     type: array
     items:
-      $ref: networkServerGroupMember.yaml
+      type: object
