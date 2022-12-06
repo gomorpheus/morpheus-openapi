@@ -9,17 +9,22 @@ properties:
     type: string
   memberName:
     type: string
+    nullable: true
   memberType:
     type: string
+    nullable: true
   memberValue:
     type: string
+    nullable: true
   memberExpression:
     type: string
+    nullable: true
   displayOrder:
     type: integer
     format: int64
   internalId:
     type: string
+    nullable: true
   externalId:
     type: string
   members:
