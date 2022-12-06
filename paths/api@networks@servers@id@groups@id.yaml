@@ -2,6 +2,7 @@ get:
   summary: Get a specific Network Server Group
   description: |
     This endpoint retrieves a specific Network Server Group for a Network Server.
+    Note: Only available for NSX-T network integrations.
   operationId: getNetworkServerGroup
   tags:
     - Networks
@@ -33,6 +34,7 @@ put:
   summary: Update a Network Server Group
   description: |
     Use this command to update an existing network server group.
+    Note: Only available for NSX-T network integrations.
   operationId: updateNetworkServerGroup
   tags:
     - Networks
@@ -69,7 +71,9 @@ put:
 
 delete:
   summary: Delete a Network Server Group
-  description: Will delete a Network Server Group from the system and make it no longer usable.
+  description: |
+    Will delete a Network Server Group from the system and make it no longer usable.
+    Note: Only available for NSX-T network integrations.
   operationId: deleteNetworkServerGroup
   tags:
     - Networks
