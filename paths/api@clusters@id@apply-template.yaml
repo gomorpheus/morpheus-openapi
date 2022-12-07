@@ -11,13 +11,22 @@ post:
       application/json: 
         schema: 
           type: object
+          required: 
+            -  specType
           properties:
             serviceUrl: 
               type: string
               description: Url of desired template to apply to cluster
             specTemplate:
               type: string
-              description: Name of desired Spec Template to apply to cluster
+              description: Name or ID of desired Spec Template to apply to cluster
+            specYaml:
+              type: string
+              description: Yaml of template to apply to cluster
+            specType:
+              type: string
+              description: Type of template to be applied
+            
   responses:
     '200':
       description: Successful Request
