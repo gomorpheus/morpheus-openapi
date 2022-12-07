@@ -1,5 +1,5 @@
 post: 
-  summary: Apply Template to Kubernetes Cluster
+  summary: Apply Template to Cluster (Kubernetes)
   description: This endpoint applies the requested template, via serviceUrl or Spec Template name, to a kubernetes cluster.
   operationId: applyTemplate
   tags: 
@@ -24,11 +24,11 @@ post:
       content:
         application/json:
           schema: 
-            $ref: ../components/schemas/clusterApplyTemplate.yaml
+            $ref: ../components/schemas/cluster.yaml
           examples:
             Cluster Response:
               value:
-                $ref: ../components/examples/clusterApplyTemplate.json
+                $ref: ../components/examples/cluster.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
