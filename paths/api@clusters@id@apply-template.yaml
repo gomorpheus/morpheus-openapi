@@ -3,7 +3,7 @@ post:
   description: |
     This endpoint applies the requested template, via Service Url, YAML, or Spec Template name/id, to a Kubernetes cluster.
 
-    **Note**: The success response informs of status of submission of request. Results of the actual template application can be assesed with the returned execution id via:  See [/api/execution-request/{uniqueId}](#/Automation/getExecutionRequest)
+    **Note**: The success response informs of status of submission of request. Results of the actual template application can be assesed with the returned execution id via:  See [/api/execution-request/{uniqueId}](/reference/getexecutionrequest)
   operationId: applyTemplate
   tags: 
     -  Clusters
