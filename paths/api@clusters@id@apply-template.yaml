@@ -1,6 +1,9 @@
 post: 
   summary: Apply Template to Cluster (Kubernetes)
-  description: This endpoint applies the requested template, via serviceUrl or Spec Template name, to a kubernetes cluster.
+  description: |
+    This endpoint applies the requested template, via Service Url, YAML, or Spec Template name/id, to a Kubernetes cluster.
+
+    **Note**: The success response informs of status of submission of request. Results of the actual template application can be assesed with the returned execution id via:  See [/api/execution-request/{uniqueId}](#/Automation/getExecutionRequest)
   operationId: applyTemplate
   tags: 
     -  Clusters
@@ -33,11 +36,11 @@ post:
       content:
         application/json:
           schema: 
-            $ref: ../components/schemas/cluster.yaml
+            $ref: ../components/schemas/clusterApplyTemplate.yaml
           examples:
             Cluster Response:
               value:
-                $ref: ../components/examples/cluster.json
+                $ref: ../components/examples/clusterApplyTemplate.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
