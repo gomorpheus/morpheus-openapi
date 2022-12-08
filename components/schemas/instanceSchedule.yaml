@@ -1,0 +1,112 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  scheduleType: 
+    type: string
+    default: dayOfWeek
+    enum:
+    - dayOfWeek
+    - exact
+  startDayOfWeek:
+    type: integer
+    description: Start day of the week 1-7 (Sun-Sat). Only used and required for scheduleType `dayOfWeek`
+    example: 1
+  startTime:
+    type: string
+    description: Start time of the day in 24-hour format. Only used and required for scheduleType `dayOfWeek`
+    example: "00:00"
+  endDayOfWeek:
+    type: integer
+    description: End day of the week 1-7 (Sun-Sat). Only used and required for scheduleType `dayOfWeek`
+    example: 7
+  endTime:
+    type: string
+    description: End time of the day in 24-hour format. Only used and required for scheduleType `dayOfWeek`
+    example: "23:59"
+  startDate:
+    type: string
+    format: date-time
+    description: Start Date. Only used and required for scheduleType `exact`
+    example: "2022-12-25T00:00:00Z"
+  endDate:
+    type: string
+    format: date-time
+    description: End Date. Only used and required for scheduleType `exact`
+    example: "2023-01-01T00:00:00Z"
+  startDisplay:
+    type: string
+    description: Start day and time formatted for display
+    example: 'Sat@11:59PM'
+  endDisplay:
+    type: string
+    description: End day and time formatted for display
+    example: 'Sat@11:59PM'
+  threshold: 
+    type: object
+    properties: 
+      autoUp:
+        type: boolean
+        description: Auto Upscale
+        default: false
+      autoDown:
+        type: boolean
+        description: Auto Downscale
+        default: false
+      minCount:
+        type: integer
+        description: The minimum number of nodes to scale down to
+        example: 1
+      maxCount:
+        type: integer
+        description: The maximum number of nodes to scale up to
+        example: 3
+      cpuEnabled:
+        type: boolean
+        description: Enable CPU Threshold
+        default: false
+      minCpu:
+        type: number
+        format: double
+        description: Min CPU (%)
+        default: 0.0
+      maxCpu:
+        type: number
+        format: double
+        description: Max CPU (%)
+        default: 0.0
+      memoryEnabled:
+        type: boolean
+        description: Enable Memory Threshold
+        default: false
+      minMemory:
+        type: number
+        format: double
+        description: Min Memory (%)
+        default: 0.0
+      maxMemory:
+        type: number
+        format: double
+        description: Max Memory (%)
+        default: 0.0
+      diskEnabled:
+        type: boolean
+        description: Enable Disk Threshold
+        default: false
+      minDisk:
+        type: number
+        format: double
+        description: Min Disk (%)
+        default: 0.0
+      maxDisk:
+        type: number
+        format: double
+        description: Max Disk (%)
+        default: 0.0
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time

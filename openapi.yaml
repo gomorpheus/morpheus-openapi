@@ -480,6 +480,10 @@ paths:
     $ref: paths/api@instances@id@suspend.yaml
   /api/instances/{id}/threshold:
     $ref: paths/api@instances@id@threshold.yaml
+  /api/instances/{id}/schedules:
+    $ref: paths/api@instances@id@schedules.yaml
+  /api/instances/{id}/schedules/{scheduleId}:
+    $ref: paths/api@instances@id@schedules@scheduleId.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:

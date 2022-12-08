@@ -1,0 +1,91 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  scheduleType: 
+    type: string
+    default: dayOfWeek
+    enum:
+    - dayOfWeek
+    - exact
+  startDayOfWeek:
+    type: integer
+    description: Start day of the week 1-7 (Sun-Sat). Only used and required for scheduleType `dayOfWeek`
+    example: 1
+  startTime:
+    type: string
+    description: Start time of the day in 24-hour format. Only used and required for scheduleType `dayOfWeek`
+    example: "00:00"
+  endDayOfWeek:
+    type: integer
+    description: End day of the week 1-7 (Sun-Sat). Only used and required for scheduleType `dayOfWeek`
+    example: 7
+  endTime:
+    type: string
+    description: End time of the day in 24-hour format. Only used and required for scheduleType `dayOfWeek`
+    example: "23:59"
+  startDate:
+    type: string
+    format: date-time
+    description: Start Date. Only used and required for scheduleType `exact`
+    example: "2022-12-25T00:00:00Z"
+  endDate:
+    type: string
+    format: date-time
+    description: End Date. Only used and required for scheduleType `exact`
+    example: "2023-01-01T00:00:00Z"
+  threshold: 
+    type: object
+    properties: 
+      sourceThresholdId:
+        type: integer
+        format: int64
+        description: Source Scale Threshold to apply as a template. All threshold settings with be copied from this threshold, and can be overridden by also passing each setting explicitly.
+      autoUp:
+        type: boolean
+        description: Auto Upscale
+      autoDown:
+        type: boolean
+        description: Auto Downscale
+      minCount:
+        type: integer
+        description: The minimum number of nodes to scale down to
+        example: 1
+      maxCount:
+        type: integer
+        description: The maximum number of nodes to scale up to
+        example: 3
+      cpuEnabled:
+        type: boolean
+        description: Enable CPU Threshold
+      minCpu:
+        type: number
+        format: double
+        description: Min CPU (%)
+      maxCpu:
+        type: number
+        format: double
+        description: Max CPU (%)
+      memoryEnabled:
+        type: boolean
+        description: Enable Memory Threshold
+      minMemory:
+        type: number
+        format: double
+        description: Min Memory (%)
+      maxMemory:
+        type: number
+        format: double
+        description: Max Memory (%)
+      diskEnabled:
+        type: boolean
+        description: Enable Disk Threshold
+      minDisk:
+        type: number
+        format: double
+        description: Min Disk (%)
+      maxDisk:
+        type: number
+        format: double
+        description: Max Disk (%)

@@ -1,0 +1,95 @@
+get:
+  summary: Get a Specific Instance Schedule
+  description: |
+    This endpoint retrieves a specific instance scaling schedule.
+  operationId: getInstanceSchedule
+  tags:
+    - Instances
+  parameters:
+    - name: id
+      in: path
+      description: Instance ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 42
+    - name: scheduleId
+      in: path
+      description: Instance Schedule ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 1
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              instanceSchedule:
+                $ref: ../components/schemas/instanceSchedule.yaml
+          examples:
+            Instance Schedule Response:
+              value:
+                $ref: ../components/examples/instanceSchedule.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updating an Instance Schedule
+  description: This endpoint provides updating of an instance schedule
+  operationId: updateInstanceSchedule
+  tags: 
+    -  Instances
+  parameters:
+    - name: id
+      in: path
+      description: Instance ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 9
+    - name: scheduleId
+      in: path
+      description: Instance Schedule ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 1
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          required:
+            - instanceSchedule
+          properties:
+            instanceSchedule:
+              $ref: ../components/schemas/instanceScheduleUpdate.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instanceSchedule:
+                  $ref: ../components/schemas/instanceSchedule.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Update Instance Schedule Response:
+              value:
+                $ref: ../components/examples/instanceScheduleSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
