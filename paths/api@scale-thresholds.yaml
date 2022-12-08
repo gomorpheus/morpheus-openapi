@@ -80,10 +80,12 @@ post:
                   default: false
                 minCpu:
                   type: number
+                  format: double
                   description: Min CPU (%)
                   default: 0.0
                 maxCpu:
                   type: number
+                  format: double
                   description: Max CPU (%)
                   default: 0.0
                 memoryEnabled:
@@ -92,10 +94,12 @@ post:
                   default: false
                 minMemory:
                   type: number
+                  format: double
                   description: Min Memory (%)
                   default: 0.0
                 maxMemory:
                   type: number
+                  format: double
                   description: Max Memory (%)
                   default: 0.0
                 diskEnabled:
@@ -104,10 +108,12 @@ post:
                   default: false
                 minDisk:
                   type: number
+                  format: double
                   description: Min Disk (%)
                   default: 0.0
                 maxDisk:
                   type: number
+                  format: double
                   description: Max Disk (%)
                   default: 0.0
   responses:

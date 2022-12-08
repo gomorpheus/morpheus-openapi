@@ -24,6 +24,10 @@ get:
                     type: string
               instanceThreshold:
                 $ref: ../components/schemas/instanceThreshold.yaml
+              instanceSchedules:
+                type: array
+                items:
+                  $ref: ../components/schemas/instanceSchedule.yaml
           examples:
             Instance Threshold Response:
               value:
@@ -115,6 +119,10 @@ put:
               properties:
                 instanceThreshold:
                   $ref: ../components/schemas/instanceThreshold.yaml
+                instanceSchedules:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/instanceSchedule.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
             Instance Threshold Response:
