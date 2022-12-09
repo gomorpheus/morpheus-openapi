@@ -54,7 +54,8 @@ properties:
     type: string
     nullable: true
   zoneId: 
-    type: string
+    type: integer
+    format: int64
     nullable: true
   dateCreated: 
     type: string

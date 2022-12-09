@@ -1,0 +1,87 @@
+get:
+  summary: Get all Instance Schedules
+  description: This endpoint retrieves all the scaling threshold schedules for a specific instance.
+  operationId: getInstanceSchedules
+  tags:
+    - Instances
+  parameters:
+    - name: id
+      in: path
+      description: Instance ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 42
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instanceSchedules:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/instanceSchedule.yaml
+#            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Instance Schedules Response:
+              value:
+                $ref: ../components/examples/instanceSchedules.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+post: 
+  summary: Create a new Instance Schedule
+  description: >
+    Create a new schedule for a specific instance. 
+    This creates an instance scaling threshold that only applies during the specifid schedule.
+  operationId: createInstanceSchedule
+  tags: 
+    -  Instances
+  parameters:
+    - name: id
+      in: path
+      description: Instance ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 42
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            instanceSchedule:
+              $ref: ../components/schemas/instanceScheduleCreate.yaml
+        examples:
+          Create Instance Schedule Request:
+            value:
+              $ref: ../components/examples/instanceScheduleCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instanceSchedule:
+                  $ref: ../components/schemas/instanceSchedule.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Create Instance Schedule Response:
+              value:
+                $ref: ../components/examples/instanceScheduleSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
