@@ -1,0 +1,36 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  index:
+    type: integer
+    format: int64
+  external:
+    type: integer
+    format: int64
+  internal:
+    type: integer
+    format: int64
+  displayName:
+    type: string
+  primaryPort:
+    type: boolean
+  export:
+    type: boolean
+  visible:
+    type: boolean
+  exportName:
+    type: string
+  loadBalanceProtocol:
+    type: string
+  loadBalance:
+    type: boolean
+  protocol:
+    type: string
+  linkPort:
+    type: boolean
+  externalIp:
+    type: string
+  internalIp:
+    type: string

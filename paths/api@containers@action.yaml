@@ -1,11 +1,18 @@
 put:
-  summary: Eject a Specific Container
-  description: This endpoint ejects attached disk/iso of a specific container.
-  operationId: ejectContainerAction
+  summary: Execute Containers Action
+  description: This endpoint executes a container action on specific container(s).
+  operationId: executeContainersAction
   tags:
     - Containers
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/ids.yaml
+    - name: code
+      in: query
+      required: true
+      description: Action code to be executed on specific container(s).
+      schema:
+        type: string
+      example: apache-remove-node
   responses:
     '200':
       description: Successful Request

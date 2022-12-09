@@ -1,6 +1,6 @@
 put:
   summary: Clone Specific Container to Image
-  description: This endpoint allows creating an image template from an existing container.
+  description: This endpoint clones and converts a Container in its current state to image in the source Cloud and adds Virtual Image Record with metadata matching the source configuration.
   operationId: cloneImageContainerAction
   tags:
     - Containers
