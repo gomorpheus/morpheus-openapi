@@ -16,7 +16,7 @@ properties:
   startTime:
     type: string
     description: Start time of the day in 24-hour format. Only used and required for scheduleType `dayOfWeek`
-    example: "00:00"
+    example: "01:00"
   endDayOfWeek:
     type: integer
     description: End day of the week 1-7 (Sun-Sat). Only used and required for scheduleType `dayOfWeek`
@@ -24,7 +24,7 @@ properties:
   endTime:
     type: string
     description: End time of the day in 24-hour format. Only used and required for scheduleType `dayOfWeek`
-    example: "23:59"
+    example: "20:15"
   startDate:
     type: string
     format: date-time
@@ -37,12 +37,12 @@ properties:
     example: "2023-01-01T00:00:00Z"
   startDisplay:
     type: string
-    description: Start day and time formatted for display
-    example: 'Sat@11:59PM'
+    description: Start day and time or start date formatted for display
+    example: 'Sun@1:00AM'
   endDisplay:
     type: string
-    description: End day and time formatted for display
-    example: 'Sat@11:59PM'
+    description: End day and time or end date formatted for display
+    example: 'Fri@8:15PM'
   threshold: 
     type: object
     properties: 
@@ -62,6 +62,11 @@ properties:
         type: integer
         description: The maximum number of nodes to scale up to
         example: 3
+      scaleIncrement: 
+        type: integer
+        format: int64
+        description: The number of nodes that are added or removed at one time when scaling up or down
+        default: 1
       cpuEnabled:
         type: boolean
         description: Enable CPU Threshold
