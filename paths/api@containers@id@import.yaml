@@ -11,11 +11,11 @@ put:
       application/json:
         schema:
           type: object
-            properties:
-              storageProviderId:
-                type: integer
-                description: Optional storage provider to use.
-                format: int64
+          properties:
+            storageProviderId:
+              type: integer
+              description: Optional storage provider to use.
+              format: int64
   responses:
     '200':
       description: Successful Request

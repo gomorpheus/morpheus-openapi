@@ -32,5 +32,7 @@ properties:
     type: boolean
   externalIp:
     type: string
+    nullable: true
   internalIp:
     type: string
+    nullable: true
