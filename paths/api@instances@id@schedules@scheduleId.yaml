@@ -93,3 +93,38 @@ put:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes an Instance Schedule
+  description: |
+    Deletes a specified instance scaling schedule
+  operationId: deleteInstanceSchedule
+  tags:
+    - Instances
+  parameters:
+    - name: id
+      in: path
+      description: Instance ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 42
+    - name: scheduleId
+      in: path
+      description: Instance Schedule ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 1
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

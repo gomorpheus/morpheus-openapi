@@ -13,6 +13,9 @@ properties:
   maxCount: 
     type: integer
     format: int64
+  scaleIncrement: 
+    type: integer
+    format: int64
   cpuEnabled: 
     type: boolean
   minCpu: 
