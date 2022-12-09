@@ -2,6 +2,8 @@ type: object
 properties:
   id:
     type: integer
+  uuid:
+    type: string
   accountId:
     type: integer
   instance:
@@ -63,7 +65,7 @@ properties:
     type: array
     nullable: true
     items:
-      type: object
+      $ref: containerPort.yaml
   plan:
     type: object
     properties:
@@ -115,8 +117,6 @@ properties:
         type: number
       totalIOPS:
         type: number
-      iops:
-        type: object
       netTxUsage:
         type: integer
       netRxUsage:
@@ -147,8 +147,6 @@ properties:
     type: integer
   maxCores:
     type: integer
-  coresPerSocket:
-    type: integer
   maxCpu:
     type: integer
   availableActions:
@@ -156,3 +154,15 @@ properties:
     nullable: true
     items: 
       type: object
+  configGroup:
+    type: string
+  configId:
+    type: string
+  configRole:
+    type: string
+  hourlyCost:
+    type: number
+    format: double
+  hourlyPrice:
+    type: number
+    format: double

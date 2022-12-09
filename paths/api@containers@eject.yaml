@@ -1,11 +1,11 @@
 put:
-  summary: Eject a Specific Container
-  description: This endpoint ejects attached disk/iso of a specific container.
-  operationId: ejectContainerAction
+  summary: Eject Containers
+  description: This endpoint ejects attached disk/iso on specific container(s).
+  operationId: ejectContainersAction
   tags:
     - Containers
   parameters:
-    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/ids.yaml
   responses:
     '200':
       description: Successful Request

@@ -1,7 +1,7 @@
 put:
-  summary: Eject a Specific Container
-  description: This endpoint ejects attached disk/iso of a specific container.
-  operationId: ejectContainerAction
+  summary: Start a Specific Container
+  description: This endpoint starts a specific container.
+  operationId: startContainerAction
   tags:
     - Containers
   parameters:
