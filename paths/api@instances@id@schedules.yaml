@@ -40,7 +40,7 @@ post:
   summary: Create a new Instance Schedule
   description: >
     Create a new schedule for a specific instance. 
-    This creates an instance scaling threshold that only applies during the specifid schedule.
+    This creates an instance scaling threshold that only applies during a defined schedule.
   operationId: createInstanceSchedule
   tags: 
     -  Instances
