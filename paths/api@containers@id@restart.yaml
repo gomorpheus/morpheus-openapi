@@ -1,0 +1,23 @@
+put:
+  summary: Restarts a Specific Container
+  description: This endpoint restarts a specific container.
+  operationId: restartContainerAction
+  tags:
+    - Containers
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Execute Container Action Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

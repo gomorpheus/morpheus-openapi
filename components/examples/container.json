@@ -1,0 +1,110 @@
+{
+  "container": {
+    "id": 152,
+    "uuid": "3ba426fa-ec4a-4b3d-a489-d52998b52b77",
+    "accountId": 1,
+    "instance": {
+      "id": 17,
+      "name": "dd-amazon-apache-12"
+    },
+    "containerType": {
+      "id": 159,
+      "code": "apache-amazon-2.4",
+      "category": "apache",
+      "name": "Apache 2.4"
+    },
+    "containerTypeSet": {
+      "id": 131,
+      "code": "apache-amazon-2.4-set",
+      "category": "apache"
+    },
+    "server": {
+      "id": 6863,
+      "name": "dd-amazon-apache-12"
+    },
+    "cloud": {
+      "id": 2,
+      "name": "Labs AWS"
+    },
+    "name": "dd-amazon-apache-12_152",
+    "ip": "10.200.12.144",
+    "internalIp": "10.200.12.144",
+    "internalHostname": "container152",
+    "externalHostname": "dd-amazon-apache-12",
+    "externalDomain": "localdomain",
+    "externalFqdn": "dd-amazon-apache-12.localdomain",
+    "ports": [
+      {
+        "id": 43,
+        "index": 0,
+        "external": 80,
+        "internal": 80,
+        "displayName": "Http",
+        "primaryPort": false,
+        "export": true,
+        "visible": true,
+        "exportName": "HTTP",
+        "loadBalanceProtocol": "http",
+        "loadBalance": true,
+        "protocol": "http",
+        "link": true,
+        "externalIp": null,
+        "internalIp": null
+      },
+      {
+        "id": 44,
+        "index": 1,
+        "external": 443,
+        "internal": 443,
+        "displayName": "Https",
+        "primaryPort": false,
+        "export": true,
+        "visible": true,
+        "exportName": "HTTPS",
+        "loadBalanceProtocol": "https",
+        "loadBalance": true,
+        "protocol": "https",
+        "link": true,
+        "externalIp": null,
+        "internalIp": null
+      }
+    ],
+    "plan": {
+      "id": 417,
+      "code": "amazon-t2.nano",
+      "name": "T2 Nano - 1 Core, 0.5GB Memory"
+    },
+    "dateCreated": "2022-12-08T21:18:40Z",
+    "lastUpdated": "2022-12-08T21:19:24Z",
+    "statsEnabled": true,
+    "status": "deploying",
+    "userStatus": "stopped",
+    "environmentPrefix": null,
+    "configGroup": null,
+    "configId": null,
+    "configRole": null,
+    "stats": {
+    },
+    "runtimeInfo": {
+    },
+    "containerVersion": null,
+    "repositoryImage": null,
+    "planCategory": null,
+    "hostname": "dd-amazon-apache-12",
+    "domainName": null,
+    "volumeCreated": false,
+    "containerCreated": true,
+    "maxStorage": 21474836480,
+    "maxMemory": 536870912,
+    "maxCores": 1,
+    "maxCpu": null,
+    "hourlyCost": 0.0,
+    "hourlyPrice": 0.010178688,
+    "availableActions": [
+      {
+        "code": "apache-remove-node",
+        "name": "Remove Apache Node"
+      }
+    ]
+  }
+}
