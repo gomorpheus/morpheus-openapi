@@ -14,10 +14,10 @@ get:
           schema:
             type: object
             properties:
-              cluster:
+              container:
                 $ref: ../components/schemas/container.yaml
           examples:
-            Clusters Response:
+            Containers Response:
               value:
                 $ref: ../components/examples/container.json
     '4XX':
