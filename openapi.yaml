@@ -136,13 +136,30 @@ paths:
     $ref: paths/api@catalog-item-types@id.yaml
   /api/catalog-item-types/{id}/update-logo:
     $ref: paths/api@catalog-item-types@id@update-logo.yaml
-  
+
   /api/clients:
     $ref: paths/api@clients.yaml
   /api/clients/{id}:
     $ref: paths/api@clients@id.yaml
-  
-    
+
+
+  /api/containers/{id}:
+    $ref: paths/api@containers@id.yaml
+  /api/containers/{id}/action:
+    $ref: paths/api@containers@id@action.yaml
+  /api/containers/{id}/actions:
+    $ref: paths/api@containers@id@actions.yaml
+  /api/containers/{id}/clone-image:
+    $ref: paths/api@containers@id@clone-image.yaml
+  /api/containers/{id}/eject:
+    $ref: paths/api@containers@id@eject.yaml
+  /api/containers/{id}/import:
+    $ref: paths/api@containers@id@import.yaml
+  /api/containers/{id}/restart:
+    $ref: paths/api@containers@id@restart.yaml
+  /api/containers/{id}/suspend:
+    $ref: paths/api@containers@id@suspend.yaml
+
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -1135,6 +1152,8 @@ tags:
     description: Manage Kubernetes Clusters
   - name: Contacts
     description: Manage Monitoring Contacts
+  - name: Containers
+    description: Manage Containers
   - name: Credentials
     description: Manage Credentials
   - name: Cypher
