@@ -149,6 +149,7 @@ properties:
     type: integer
   maxCpu:
     type: integer
+    nullable: true
   availableActions:
     type: array
     nullable: true
@@ -156,10 +157,13 @@ properties:
       type: object
   configGroup:
     type: string
+    nullable: true
   configId:
     type: string
+    nullable: true
   configRole:
     type: string
+    nullable: true
   hourlyCost:
     type: number
     format: double
