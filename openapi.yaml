@@ -157,6 +157,20 @@ paths:
     $ref: paths/api@containers@stop.yaml
   /api/containers/suspend:
     $ref: paths/api@containers@suspend.yaml
+  /api/containers/action:
+    $ref: paths/api@containers@action.yaml
+  /api/containers/actions:
+    $ref: paths/api@containers@actions.yaml
+  /api/containers/eject:
+    $ref: paths/api@containers@eject.yaml
+  /api/containers/restart:
+    $ref: paths/api@containers@restart.yaml
+  /api/containers/start:
+    $ref: paths/api@containers@start.yaml
+  /api/containers/stop:
+    $ref: paths/api@containers@stop.yaml
+  /api/containers/suspend:
+    $ref: paths/api@containers@suspend.yaml
   /api/containers/{id}:
     $ref: paths/api@containers@id.yaml
   /api/containers/{id}/action:
