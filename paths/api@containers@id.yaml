@@ -1,0 +1,26 @@
+get:
+  summary: Get a Specific Container
+  description: This endpoint retrieves a specific container.
+  operationId: getContainer
+  tags:
+    - Containers
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cluster:
+                $ref: ../components/schemas/container.yaml
+          examples:
+            Clusters Response:
+              value:
+                $ref: ../components/examples/container.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
