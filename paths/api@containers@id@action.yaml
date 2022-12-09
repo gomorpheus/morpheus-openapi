@@ -6,7 +6,13 @@ put:
     - Containers
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-    - $ref: ../components/parameters/code.yaml
+    - name: code
+      in: query
+      required: true
+      description: Action code to be executed on a specific container.
+      schema:
+        type: string
+      example: apache-remove-node
   responses:
     '200':
       description: Successful Request
