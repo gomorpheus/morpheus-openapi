@@ -137,41 +137,6 @@ paths:
   /api/catalog-item-types/{id}/update-logo:
     $ref: paths/api@catalog-item-types@id@update-logo.yaml
 
-  /api/containers/action:
-    $ref: paths/api@containers@action.yaml
-  /api/containers/actions:
-    $ref: paths/api@containers@actions.yaml
-  /api/containers/eject:
-    $ref: paths/api@containers@eject.yaml
-  /api/containers/restart:
-    $ref: paths/api@containers@restart.yaml
-  /api/containers/start:
-    $ref: paths/api@containers@start.yaml
-  /api/containers/stop:
-    $ref: paths/api@containers@stop.yaml
-  /api/containers/suspend:
-    $ref: paths/api@containers@suspend.yaml
-  /api/containers/{id}:
-    $ref: paths/api@containers@id.yaml
-  /api/containers/{id}/action:
-    $ref: paths/api@containers@id@action.yaml
-  /api/containers/{id}/actions:
-    $ref: paths/api@containers@id@actions.yaml
-  /api/containers/{id}/clone-image:
-    $ref: paths/api@containers@id@clone-image.yaml
-  /api/containers/{id}/eject:
-    $ref: paths/api@containers@id@eject.yaml
-  /api/containers/{id}/import:
-    $ref: paths/api@containers@id@import.yaml
-  /api/containers/{id}/restart:
-    $ref: paths/api@containers@id@restart.yaml
-  /api/containers/{id}/start:
-    $ref: paths/api@containers@id@start.yaml
-  /api/containers/{id}/stop:
-    $ref: paths/api@containers@id@stop.yaml
-  /api/containers/{id}/suspend:
-    $ref: paths/api@containers@id@suspend.yaml
-
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -226,7 +191,28 @@ paths:
     $ref: paths/api@zones@id@refresh.yaml
   /api/zones/{id}/security-groups:
     $ref: paths/api@zones@id@security-groups.yaml  
-  
+
+  /api/containers/{id}:
+    $ref: paths/api@containers@id.yaml
+  /api/containers/{id}/action:
+    $ref: paths/api@containers@id@action.yaml
+  /api/containers/{id}/actions:
+    $ref: paths/api@containers@id@actions.yaml
+  /api/containers/{id}/clone-image:
+    $ref: paths/api@containers@id@clone-image.yaml
+  /api/containers/{id}/eject:
+    $ref: paths/api@containers@id@eject.yaml
+  /api/containers/{id}/import:
+    $ref: paths/api@containers@id@import.yaml
+  /api/containers/{id}/restart:
+    $ref: paths/api@containers@id@restart.yaml
+  /api/containers/{id}/start:
+    $ref: paths/api@containers@id@start.yaml
+  /api/containers/{id}/stop:
+    $ref: paths/api@containers@id@stop.yaml
+  /api/containers/{id}/suspend:
+    $ref: paths/api@containers@id@suspend.yaml
+
   /api/library/cluster-layouts:
     $ref: paths/api@library@cluster-layouts.yaml
   /api/library/cluster-layouts/{id}:
