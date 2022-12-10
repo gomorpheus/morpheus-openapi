@@ -234,7 +234,28 @@ paths:
     $ref: paths/api@zones@id@update-logo.yaml
   /api/zones/{id}/security-groups:
     $ref: paths/api@zones@id@security-groups.yaml  
-  
+
+  /api/containers/{id}:
+    $ref: paths/api@containers@id.yaml
+  /api/containers/{id}/action:
+    $ref: paths/api@containers@id@action.yaml
+  /api/containers/{id}/actions:
+    $ref: paths/api@containers@id@actions.yaml
+  /api/containers/{id}/clone-image:
+    $ref: paths/api@containers@id@clone-image.yaml
+  /api/containers/{id}/eject:
+    $ref: paths/api@containers@id@eject.yaml
+  /api/containers/{id}/import:
+    $ref: paths/api@containers@id@import.yaml
+  /api/containers/{id}/restart:
+    $ref: paths/api@containers@id@restart.yaml
+  /api/containers/{id}/start:
+    $ref: paths/api@containers@id@start.yaml
+  /api/containers/{id}/stop:
+    $ref: paths/api@containers@id@stop.yaml
+  /api/containers/{id}/suspend:
+    $ref: paths/api@containers@id@suspend.yaml
+
   /api/library/cluster-layouts:
     $ref: paths/api@library@cluster-layouts.yaml
   /api/library/cluster-layouts/{id}:
