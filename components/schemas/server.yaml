@@ -274,6 +274,14 @@ properties:
           nullable: true
         uuid: 
           type: string
+        uniqueId: 
+          type: string
+          nullable: true
+        externalId: 
+          type: string
+          nullable: true
+        internalId: 
+          type: string
   controllers: 
     type: array
     items: 

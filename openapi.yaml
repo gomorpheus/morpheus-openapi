@@ -263,6 +263,8 @@ paths:
     $ref: paths/api@clusters@id.yaml
   /api/clusters/{clusterId}/api-config:
     $ref: paths/api@clusters@id@api-config.yaml
+  /api/clusters/{clusterId}/apply-template:
+    $ref: paths/api@clusters@id@apply-template.yaml
   /api/clusters/{clusterId}/containers:
     $ref: paths/api@clusters@id@containers.yaml
   /api/clusters/{clusterId}/containers/{id}:
@@ -550,6 +552,10 @@ paths:
     $ref: paths/api@instances@id@suspend.yaml
   /api/instances/{id}/threshold:
     $ref: paths/api@instances@id@threshold.yaml
+  /api/instances/{id}/schedules:
+    $ref: paths/api@instances@id@schedules.yaml
+  /api/instances/{id}/schedules/{scheduleId}:
+    $ref: paths/api@instances@id@schedules@scheduleId.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:
@@ -941,6 +947,8 @@ paths:
     $ref: paths/api@servers@id@start.yaml
   /api/servers/{id}/stop:
     $ref: paths/api@servers@id@stop.yaml
+  /api/servers/{id}/restart:
+    $ref: paths/api@servers@id@restart.yaml
   /api/servers/{id}/upgrade:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:

@@ -1,0 +1,24 @@
+{
+  "instanceSchedule": {
+    "scheduleType": "dayOfWeek",
+    "startDayOfWeek": 2,
+    "startTime": "00:00",
+    "endDayOfWeek": 6,
+    "endTime": "20:00",
+    "threshold": {
+      "autoUp": false,
+      "autoDown": false,
+      "minCount": 1,
+      "maxCount": 3,
+      "cpuEnabled": true,
+      "minCpu": 0,
+      "maxCpu": 95,
+      "memoryEnabled": true,
+      "minMemory": 0,
+      "maxMemory": 95,
+      "diskEnabled": true,
+      "minDisk": 0,
+      "maxDisk": 95
+    }
+  }
+}
