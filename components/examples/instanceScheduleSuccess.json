@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "instanceSchedule": {
+    "id": 46,
+    "scheduleType": "dayOfWeek",
+    "startDayOfWeek": 2,
+    "startTime": "00:00",
+    "endDayOfWeek": 6,
+    "endTime": "20:00",
+    "startDisplay": "Mon@12:00AM",
+    "endDisplay": "Fri@8:00PM",
+    "threshold": {
+      "autoUp": false,
+      "autoDown": false,
+      "minCount": 1,
+      "maxCount": 3,
+      "scaleIncrement": 1,
+      "cpuEnabled": true,
+      "minCpu": 0.0,
+      "maxCpu": 95.0,
+      "memoryEnabled": true,
+      "minMemory": 0.0,
+      "maxMemory": 95.0,
+      "diskEnabled": true,
+      "minDisk": 0.0,
+      "maxDisk": 95.0
+    },
+    "dateCreated": "2022-12-08T20:01:34Z",
+    "lastUpdated": "2022-12-08T20:01:34Z"
+  }
+}

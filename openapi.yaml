@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 5.5.2
+  version: 5.5.3
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -136,13 +136,13 @@ paths:
     $ref: paths/api@catalog-item-types@id.yaml
   /api/catalog-item-types/{id}/update-logo:
     $ref: paths/api@catalog-item-types@id@update-logo.yaml
-  
+
   /api/clients:
     $ref: paths/api@clients.yaml
   /api/clients/{id}:
     $ref: paths/api@clients@id.yaml
-  
-    
+
+
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -198,8 +198,8 @@ paths:
   /api/zones/{id}/update-logo:
     $ref: paths/api@zones@id@update-logo.yaml
   /api/zones/{id}/security-groups:
-    $ref: paths/api@zones@id@security-groups.yaml  
-  
+    $ref: paths/api@zones@id@security-groups.yaml
+
   /api/library/cluster-layouts:
     $ref: paths/api@library@cluster-layouts.yaml
   /api/library/cluster-layouts/{id}:
@@ -214,6 +214,8 @@ paths:
     $ref: paths/api@clusters@id.yaml
   /api/clusters/{clusterId}/api-config:
     $ref: paths/api@clusters@id@api-config.yaml
+  /api/clusters/{clusterId}/apply-template:
+    $ref: paths/api@clusters@id@apply-template.yaml
   /api/clusters/{clusterId}/containers:
     $ref: paths/api@clusters@id@containers.yaml
   /api/clusters/{clusterId}/containers/{id}:
@@ -282,7 +284,28 @@ paths:
     $ref: paths/api@monitoring@contacts.yaml
   /api/monitoring/contacts/{id}:
     $ref: paths/api@monitoring@contacts@id.yaml
-  
+
+  /api/containers/{id}:
+    $ref: paths/api@containers@id.yaml
+  /api/containers/{id}/action:
+    $ref: paths/api@containers@id@action.yaml
+  /api/containers/{id}/actions:
+    $ref: paths/api@containers@id@actions.yaml
+  /api/containers/{id}/clone-image:
+    $ref: paths/api@containers@id@clone-image.yaml
+  /api/containers/{id}/eject:
+    $ref: paths/api@containers@id@eject.yaml
+  /api/containers/{id}/import:
+    $ref: paths/api@containers@id@import.yaml
+  /api/containers/{id}/restart:
+    $ref: paths/api@containers@id@restart.yaml
+  /api/containers/{id}/start:
+    $ref: paths/api@containers@id@start.yaml
+  /api/containers/{id}/stop:
+    $ref: paths/api@containers@id@stop.yaml
+  /api/containers/{id}/suspend:
+    $ref: paths/api@containers@id@suspend.yaml
+
   /api/credential-types:
     $ref: paths/api@credential-types.yaml
   /api/credential-types/{id}:
@@ -480,6 +503,10 @@ paths:
     $ref: paths/api@instances@id@suspend.yaml
   /api/instances/{id}/threshold:
     $ref: paths/api@instances@id@threshold.yaml
+  /api/instances/{id}/schedules:
+    $ref: paths/api@instances@id@schedules.yaml
+  /api/instances/{id}/schedules/{scheduleId}:
+    $ref: paths/api@instances@id@schedules@scheduleId.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
   /api/instances/{id}/validate-apply:
@@ -559,9 +586,9 @@ paths:
     $ref: paths/api@library@instance-types@id@update-logo.yaml
   /api/library/layouts:
     $ref: paths/api@library@layouts.yaml
-  /api/library/layouts@{id}:
+  /api/library/layouts/{id}:
     $ref: paths/api@library@layouts@id.yaml
-  /api/library/layouts@{id}@permissions:
+  /api/library/layouts/{id}/permissions:
     $ref: paths/api@library@layouts@id@permissions.yaml
   /api/library/option-type-lists:
     $ref: paths/api@library@option-type-lists.yaml
@@ -871,6 +898,8 @@ paths:
     $ref: paths/api@servers@id@start.yaml
   /api/servers/{id}/stop:
     $ref: paths/api@servers@id@stop.yaml
+  /api/servers/{id}/restart:
+    $ref: paths/api@servers@id@restart.yaml
   /api/servers/{id}/upgrade:
     $ref: paths/api@servers@id@upgrade.yaml
   /api/servers/{id}/workflow:
@@ -1135,6 +1164,8 @@ tags:
     description: Manage Kubernetes Clusters
   - name: Contacts
     description: Manage Monitoring Contacts
+  - name: Containers
+    description: Manage Containers
   - name: Credentials
     description: Manage Credentials
   - name: Cypher

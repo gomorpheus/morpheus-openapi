@@ -29,7 +29,7 @@ jobs:
           docker run --rm -v $PWD:/spec redocly/openapi-cli bundle openapi.yaml > bundle.yaml
       - name: push to readme
         #uses: readmeio/rdme@7.3.0
-        uses: readmeio/rdme@7.5.0
+        uses: readmeio/rdme@8.1.1
         with:
           rdme: openapi bundle.yaml --key=${{ secrets.README_TOKEN }} --id=$README_VERSION_ID
         continue-on-error: true

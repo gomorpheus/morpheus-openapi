@@ -32,14 +32,14 @@ put:
   operationId: updateHost
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-  tags: 
+  tags:
     -  Hosts
-  requestBody: 
-    content: 
-      application/json: 
-        schema: 
+  requestBody:
+    content:
+      application/json:
+        schema:
           type: object
-          properties: 
+          properties:
             server:
               $ref: ../components/schemas/hostUpdate.yaml
         examples:
@@ -74,6 +74,11 @@ delete:
     - Hosts
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/removeResources.yaml
+    - $ref: ../components/parameters/removeInstances.yaml
+    - $ref: ../components/parameters/preserveVolumes.yaml
+    - $ref: ../components/parameters/releaseEIPs.yaml
+    - $ref: ../components/parameters/force.yaml
   responses:
     '200':
       description: Successful Request
