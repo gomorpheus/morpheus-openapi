@@ -53,7 +53,7 @@ post:
             - policy
           properties:
             policy:
-              $ref: ../components/schemas/policyCreate.yaml
+              $ref: ../components/schemas/policyCloudCreate.yaml
   responses:
     '200':
       description: Successful Request

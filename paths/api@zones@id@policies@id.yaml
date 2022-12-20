@@ -142,7 +142,7 @@ put:
             - policy
           properties:
             policy:
-              $ref: ../components/schemas/policyUpdate.yaml
+              $ref: ../components/schemas/policyCloudUpdate.yaml
   responses:
     '200':
       description: Successful Request
