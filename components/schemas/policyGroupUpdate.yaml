@@ -339,15 +339,10 @@ properties:
         description: Scope object type
         enum:
         - ComputeSite
-        - ComputeZone
-        - User
-        - Role
-        - Network
-        - Plan
       refId:
         type: integer
         format: int64
-        description: Scope object ID (`group`,`cloud`,`user`, etc)
+        description: Scope object ID (`group`)
       accounts:
         type: array
         description: Array of tenants to scope the policy to
