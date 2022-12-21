@@ -68,12 +68,16 @@ post:
                   example: appCost
                 startDate: 
                   type: string
-                  format: date
                   example: 2019-01-01
                 endDate: 
                   type: string
-                  format: date
                   example: 2020-01-01
+                startMonth: 
+                  type: string
+                  example: 01/2019
+                endMonth: 
+                  type: string
+                  example: 01/2020
                 groupId:
                   description: The Group ID filter for the report
                   type: number
