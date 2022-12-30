@@ -1,81 +1,141 @@
 {
-  "success": true,
-  "billingInfo": {
-      "refType": "computeServer",
-      "refUUID": "2456e3e1-be16-4a64-8de1-ee59bc0477de",
-      "refId": null,
-      "startDate": "2022-10-01T00:00:00Z",
-      "endDate": "2022-10-04T19:55:33Z",
-      "cost": 2.4111745975804526776,
-      "price": 2.4111745975804526776,
-      "numUnits": 91.9260322222,
-      "unit": "hour",
-      "currency": "USD",
-      "usages": [
-          {
-              "cost": 2.4111745975804526776,
-              "price": 2.4111745975804526776,
-              "createdByUser": "User man",
-              "createdByUserId": 4,
-              "siteId": null,
-              "siteName": null,
-              "siteUUID": null,
-              "siteCode": null,
-              "currency": "USD",
-              "startDate": "2022-10-01T00:00:00Z",
-              "endDate": "2022-10-04T19:55:33Z",
-              "status": "stopped",
-              "tags": [],
-              "applicablePrices": [
-                  {
-                      "startDate": "2022-10-01T00:00:00Z",
-                      "endDate": "2022-10-04T19:55:33Z",
-                      "numUnits": 91.9260322222,
-                      "cost": 2.4111745975804526776,
-                      "price": 2.4111745975804526776,
-                      "currency": "USD",
-                      "prices": [
-                          {
-                              "type": "storage",
-                              "pricePerUnit": 0.0001639344240000000,
-                              "costPerUnit": 0.0001639344240000000,
-                              "cost": 0.01506984114295179701280000000,
-                              "price": 0.01506984114295179701280000000,
-                              "quantity": 80,
-                              "datastoreId": null,
-                              "volumeType": "gp2",
-                              "datastore": "none"
-                          },
-                          {
-                              "type": "storage",
-                              "pricePerUnit": 0.0001639344240000000,
-                              "costPerUnit": 0.0001639344240000000,
-                              "cost": 0.01506984114295179701280000000,
-                              "price": 0.01506984114295179701280000000,
-                              "quantity": 80,
-                              "datastoreId": null,
-                              "volumeType": "gp2",
-                              "datastore": "none"
-                          }
-                      ]
-                  }
-              ],
-              "servicePlanId": 4,
-              "servicePlanName": "T2 Medium - 2 Core, 4GB Memory",
-              "resourcePoolId": 129,
-              "resourcePoolName": "labs"
-          }
-      ],
-      "numUsages": 1,
-      "totalUsages": 1,
-      "hasMoreUsages": false,
-      "foundPricing": true,
-      "name": "k8s-demo-aws-17-worker-4",
-      "serverUUID": "2456e3e1-be16-4a64-8de1-ee59bc0477de",
-      "serverUniqueId": null,
-      "serverExternalId": "i-0602c9d8c7a9a9625",
-      "serverInternalId": null,
-      "resourcePoolId": 129,
-      "resourcePoolName": "labs"
-  }
+    "success": true,
+    "billingInfo": {
+        "refType": "computeServer",
+        "refUUID": "dca94ff0-2d5d-4e1e-985c-253e498140bf",
+        "refId": 563537,
+        "startDate": "2022-06-01T00:00:00Z",
+        "endDate": "2022-06-01T23:59:59Z",
+        "cost": 3.2983533201694459338,
+        "price": 3.2983533201694459338,
+        "numUnits": 23.9997222222,
+        "unit": "hour",
+        "currency": "USD",
+        "usages": [
+            {
+                "name": "qa-kube-master",
+                "zoneName": "QA Kubernetes",
+                "accountName": "Morpheus QA",
+                "volumes": [
+                    {
+                        "size": 0,
+                        "typeCode": "standard",
+                        "datastore": null
+                    }
+                ],
+                "maxMemory": 8364822528,
+                "maxCpu": null,
+                "maxCores": 2,
+                "serverExternalId": null,
+                "serverInternalId": null,
+                "planName": "Default Manual",
+                "hourlyPrice": 0.137432979,
+                "hourlyCost": 0.137432979,
+                "currency": "USD",
+                "pricesUsed": [
+                    {
+                        "type": "memory",
+                        "pricePerUnit": 0.0000067816847764757,
+                        "costPerUnit": 0.0000067816847764757,
+                        "quantity": 7977.31640625
+                    },
+                    {
+                        "type": "cores",
+                        "pricePerUnit": 0.0416666670000000000,
+                        "costPerUnit": 0.0416666670000000000,
+                        "quantity": 2.0
+                    },
+                    {
+                        "type": "cpu",
+                        "pricePerUnit": 0E-19,
+                        "costPerUnit": 0E-19,
+                        "quantity": 0.0
+                    },
+                    {
+                        "type": "storage",
+                        "pricePerUnit": 0.0001388888900000000,
+                        "costPerUnit": 0.0001388888900000000,
+                        "quantity": 0,
+                        "volumeType": "Standard",
+                        "datastore": "none",
+                        "datastoreId": null
+                    }
+                ],
+                "cost": 3.2983533201694459338,
+                "price": 3.2983533201694459338,
+                "createdByUser": "Tommy Marks",
+                "createdByUserId": 5,
+                "siteId": null,
+                "siteName": null,
+                "siteUUID": null,
+                "siteCode": null,
+                "startDate": "2022-06-01T00:00:00Z",
+                "endDate": "2022-06-01T23:59:59Z",
+                "status": "running",
+                "tags": [],
+                "applicablePrices": [
+                    {
+                        "startDate": "2022-06-01T00:00:00Z",
+                        "endDate": "2022-06-01T23:59:59Z",
+                        "numUnits": 23.9997222222,
+                        "cost": 3.2983533201694459338,
+                        "price": 3.2983533201694459338,
+                        "currency": "USD",
+                        "prices": [
+                            {
+                                "type": "memory",
+                                "pricePerUnit": 0.0000067816847764757,
+                                "costPerUnit": 0.0000067816847764757,
+                                "cost": 0.00016275855083393929708830054,
+                                "price": 0.00016275855083393929708830054,
+                                "quantity": 7977.31640625
+                            },
+                            {
+                                "type": "cores",
+                                "pricePerUnit": 0.0416666670000000000,
+                                "costPerUnit": 0.0416666670000000000,
+                                "cost": 0.99998843392490740740000000000,
+                                "price": 0.99998843392490740740000000000,
+                                "quantity": 2.0
+                            },
+                            {
+                                "type": "cpu",
+                                "pricePerUnit": 0E-19,
+                                "costPerUnit": 0E-19,
+                                "cost": 0E-29,
+                                "price": 0E-29,
+                                "quantity": 0.0
+                            },
+                            {
+                                "type": "storage",
+                                "pricePerUnit": 0.0001388888900000000,
+                                "costPerUnit": 0.0001388888900000000,
+                                "cost": 0.00333329477974969135800000000,
+                                "price": 0.00333329477974969135800000000,
+                                "quantity": 0,
+                                "datastoreId": null,
+                                "volumeType": "Standard",
+                                "datastore": "none"
+                            }
+                        ]
+                    }
+                ],
+                "servicePlanId": 67,
+                "servicePlanName": "Default Manual",
+                "resourcePoolId": null,
+                "resourcePoolName": null
+            }
+        ],
+        "numUsages": 1,
+        "totalUsages": 1,
+        "hasMoreUsages": false,
+        "foundPricing": true,
+        "name": "qa-kube-master",
+        "serverUUID": "dca94ff0-2d5d-4e1e-985c-253e498140bf",
+        "serverUniqueId": null,
+        "serverExternalId": null,
+        "serverInternalId": null,
+        "resourcePoolId": null,
+        "resourcePoolName": null
+    }
 }

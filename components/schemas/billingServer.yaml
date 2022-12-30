@@ -5,8 +5,8 @@ properties:
   refUUID: 
     type: string
   refId: 
-    type: string
-    nullable: true
+    type: integer
+    format: int64
   startDate: 
     type: string
     format: date-time
@@ -28,6 +28,61 @@ properties:
     items: 
       type: object
       properties: 
+        name: 
+          type: string
+        zoneName: 
+          type: string
+        accountName: 
+          type: string
+        volumes: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              size: 
+                type: integer
+                format: int64
+              typeCode: 
+                type: string
+              datastore: 
+                type: string
+                nullable: true
+        maxMemory: 
+          type: integer
+          format: int64
+        maxCpu: 
+          type: string
+          nullable: true
+        maxCores: 
+          type: integer
+          format: int64
+        serverExternalId: 
+          type: string
+          nullable: true
+        serverInternalId: 
+          type: string
+          nullable: true
+        planName: 
+          type: string
+        hourlyPrice: 
+          type: number
+        hourlyCost: 
+          type: number
+        currency: 
+          type: string
+        pricesUsed: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              type: 
+                type: string
+              pricePerUnit: 
+                type: number
+              costPerUnit: 
+                type: number
+              quantity: 
+                type: number
         cost: 
           type: number
         price: 
@@ -49,8 +104,6 @@ properties:
         siteCode: 
           type: string
           nullable: true
-        currency: 
-          type: string
         startDate: 
           type: string
           format: date-time
@@ -63,6 +116,11 @@ properties:
           type: array
           items: 
             type: object
+            properties: 
+              name:
+                type: string
+              value:
+                type: string
         applicablePrices: 
           type: array
           items: 
@@ -98,25 +156,18 @@ properties:
                     price: 
                       type: number
                     quantity: 
-                      type: integer
-                      format: int64
-                    datastoreId: 
-                      type: string
-                      nullable: true
-                    volumeType: 
-                      type: string
-                    datastore: 
-                      type: string
+                      type: number
         servicePlanId: 
           type: integer
           format: int64
         servicePlanName: 
           type: string
         resourcePoolId: 
-          type: integer
-          format: int64
+          type: string
+          nullable: true
         resourcePoolName: 
           type: string
+          nullable: true
   numUsages: 
     type: integer
     format: int64
@@ -136,11 +187,13 @@ properties:
     nullable: true
   serverExternalId: 
     type: string
+    nullable: true
   serverInternalId: 
     type: string
     nullable: true
   resourcePoolId: 
-    type: integer
-    format: int64
+    type: string
+    nullable: true
   resourcePoolName: 
     type: string
+    nullable: true
