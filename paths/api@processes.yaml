@@ -11,7 +11,11 @@ get:
     - $ref: ../components/parameters/serverId.yaml
     - $ref: ../components/parameters/zoneId.yaml
     - $ref: ../components/parameters/appId.yaml
-    - $ref: ../components/parameters/phrase.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on message, displayName, output, event.message, event.output or event.error
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
