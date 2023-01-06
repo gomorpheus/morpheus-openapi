@@ -17,6 +17,14 @@ properties:
     description: Type, `instance`, `blueprint` or `workflow`. This determines whether an Instance or App will be provisioned. Instance types require a config and blueprint requires a blueprint and appSpec, while workflow types requires a workflow and context.
     enum:
       - workflow
+  visibility:
+    type: string
+    description: Visibility - Set to public to allow all tenants
+    default: private
+  layoutCode: 
+    type: string
+    description: Identifier primarily used for Plugin Catalog Item Types
+    nullable: true
   iconPath: 
     type: string
     description: Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
