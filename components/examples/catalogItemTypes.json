@@ -6,6 +6,8 @@
       "description": "Example catalog item type",
       "labels": [],
       "type": "instance",
+      "visibility": "private",
+      "layoutCode": null,
       "blueprint": null,
       "refType": "InstanceType",
       "refId": null,
@@ -70,6 +72,8 @@
       "description": "Example catalog item type using a blueprint with scribe",
       "labels": [],
       "type": "blueprint",
+      "visibility": "private",
+      "layoutCode": null,
       "blueprint": {
         "id": 15,
         "name": "Example Blueprint"

@@ -13,6 +13,11 @@ properties:
       type: string
   type: 
     type: string
+  visibility:
+    type: string
+  layoutCode:
+    type: string
+    nullable: true
   blueprint: 
     type: object
     nullable: true
