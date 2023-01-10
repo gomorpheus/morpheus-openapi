@@ -369,6 +369,8 @@ paths:
     $ref: paths/api@guidance@stats.yaml
   /api/guidance/types:
     $ref: paths/api@guidance@types.yaml
+  /api/guidance-settings:
+    $ref: paths/api@guidance-settings.yaml
   /api/health:
     $ref: paths/api@health.yaml
   /api/health/alarms:
@@ -426,7 +428,8 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
-
+  /api/monitoring-settings:
+    $ref: paths/api@monitoring-settings.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -1191,6 +1194,8 @@ tags:
     description: Manage Groups
   - name: Guidance
     description: Manage Guidance Recommendations
+  - name: Guidance Settings
+    description: Manage Guidance Settings
   - name: Health
     description: View Appliance Health Statistics
   - name: History
@@ -1233,6 +1238,8 @@ tags:
     description: View Logs
   - name: Monitoring
     description: All Endpoints Under the Monitoring Tab
+  - name: Monitoring Settings
+    description: Manage Monitoring Settings
   - name: Morpheus API
     description: All Endpoints Specific to Morpheus API
   - name: Networks
