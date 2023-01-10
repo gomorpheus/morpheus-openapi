@@ -1,44 +1,44 @@
 get:
-  summary: List All Log Settings
-  description: This endpoint retrieves log settings.
-  operationId: listLogSettings
+  summary: Get Guidance Settings
+  description: This endpoint retrieves guidance settings.
+  operationId: getGuidanceSettings
   tags:
-    - Log Settings
+    - Guidance Settings
   responses:
     '200':
-      description: Log Settings
+      description: Guidance Settings
       content:
         application/json:
           schema:
             type: object
             properties:
-              logSettings:
-                $ref: ../components/schemas/logSettings.yaml
+              guidanceSettings:
+                $ref: ../components/schemas/guidanceSettings.yaml
           examples:
-            Log Settings Response:
+            Guidance Settings Response:
               value:
-                $ref: ../components/examples/logSettings.json
+                $ref: ../components/examples/guidanceSettings.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
 put:
-  summary: Update Log Settings
-  description: Update Log Settings
-  operationId: updateLogSettings
+  summary: Update Guidance Settings
+  description: Update Guidance Settings
+  operationId: updateGuidanceSettings
   tags:
-    - Log Settings
+    - Guidance Settings
   requestBody:
     content:
       application/json:
         schema:
             type: object
             properties:
-              logSettings:
-                $ref: ../components/schemas/logSettings.yaml
+              guidanceSettings:
+                $ref: ../components/schemas/guidanceSettings.yaml
   responses:
     '200':
-      description: Update Log Settings Object
+      description: Update Guidance Settings Object
       content:
         application/json:
           schema:
@@ -47,7 +47,7 @@ put:
           examples:
             Update User Response:
               value:
-                $ref: ../components/examples/userSuccess.json
+                $ref: ../components/examples/success.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

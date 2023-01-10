@@ -1,0 +1,94 @@
+type: object
+properties: 
+  autoManageChecks: 
+    type: boolean
+    description: Auto Create Checks
+  availabilityTimeFrame: 
+    type: integer
+    format: int32
+    description: Availability Time Frame. The number of days availability should be calculated for. Changes will not take effect until your checks have passed their check interval.
+    nullable: true
+    example: 30
+  availabilityPrecision: 
+    type: integer
+    format: int32
+    description: Availability Precision. The number of decimal places availability should be displayed in. Can be anywhere between 0 and 5.
+    nullable: true
+    example: 3
+  defaultCheckInterval: 
+    type: integer
+    format: int32
+    description: Default Check Interval. The number of minutes to use as the default interval to use when creating new checks.
+    nullable: true
+    example: 5
+  serviceNow: 
+    type: object
+    description: Service Now Settings
+    properties: 
+      enabled: 
+        type: boolean
+        description: Enabled
+      integration: 
+        type: object
+        description: Service Now Integration Object
+        properties: 
+          id:
+            type: integer
+            format: int64
+            description: Service Now Integration ID
+      newIncidentAction: 
+        type: string
+        description: New Incident Action
+        nullable: true
+        example: create
+        enum:
+          - create
+          - none
+      closeIncidentAction: 
+        type: string
+        description: New Incident Action
+        nullable: true
+        example: close
+        enum:
+          - close
+          - activity
+          - none
+      infoMapping: 
+        type: string
+        description: Info Mapping
+        nullable: true
+        example: low
+        enum:
+          - low
+          - medium
+          - high
+      warningMapping: 
+        type: string
+        description: Warning Mapping
+        nullable: true
+        example: medium
+        enum:
+          - low
+          - medium
+          - high
+      criticalMapping: 
+        type: string
+        description: Critical Mapping
+        nullable: true
+        example: high
+        enum:
+          - low
+          - medium
+          - high
+  newRelic: 
+    type: object
+    description: New Relic Settings
+    properties: 
+      enabled: 
+        type: boolean
+        description: Enabled
+      licenseKey: 
+        type: string
+        description: License Key
+        nullable: true
+        example: "NEW_RELIC_LICENSE_KEY_VALUE"
