@@ -36,6 +36,9 @@ properties:
             type: integer
             format: int64
             description: Service Now Integration ID
+          name:
+            type: string
+            description: Service Now Integration Name
       newIncidentAction: 
         type: string
         description: New Incident Action
@@ -46,7 +49,7 @@ properties:
           - none
       closeIncidentAction: 
         type: string
-        description: New Incident Action
+        description: Close Incident Action
         nullable: true
         example: close
         enum:
