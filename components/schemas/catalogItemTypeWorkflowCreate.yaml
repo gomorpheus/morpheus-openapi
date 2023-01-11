@@ -5,6 +5,10 @@ properties:
   name: 
     type: string
     description: Catalog Item Type name
+  code: 
+    type: string
+    description: Useful shortcode for provisioning naming schemes and export reference.
+    nullable: true
   description: 
     type: string
     description: Catalog Item Type description

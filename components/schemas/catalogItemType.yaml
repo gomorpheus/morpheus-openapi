@@ -5,6 +5,10 @@ properties:
     format: int64
   name: 
     type: string
+  code: 
+    type: string
+    description: Useful shortcode for provisioning naming schemes and export reference.
+    nullable: true
   description: 
     type: string
   labels:
