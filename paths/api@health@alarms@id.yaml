@@ -1,7 +1,6 @@
 get:
   summary: Retrieves a Specific Appliance Health Alarm
-  description: |
-    This endpoint will retrieve a specific health alarm by ID.
+  description: This endpoint will retrieve a specific health alarm by ID.
   operationId: getHealthAlarms
   tags:
     - Health

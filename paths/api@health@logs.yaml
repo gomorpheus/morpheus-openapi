@@ -1,9 +1,6 @@
 get:
   summary: Retrieves Appliance Health Logs
-  description: |
-    This endpoint retrieves all health logs. These are the logs of the remote appliance itself.
-    These logs show all ui activity and are useful for troubleshooting and auditing. Stack traces are filtered for Morpheus services.
-    Complete stack traces can be found in `/var/log/morpheus/morpheus-ui/current`.
+  description: This endpoint retrieves all health logs. These are the logs of the remote appliance itself. These logs show all ui activity and are useful for troubleshooting and auditing. Stack traces are filtered for Morpheus services. Complete stack traces can be found in `/var/log/morpheus/morpheus-ui/current`.
   operationId: listHealthLogs
   tags:
     - Health
