@@ -41,7 +41,7 @@ properties:
     description: Can be used to feature the catalog item type.
     default: false
   config: 
-    $ref: instanceType.yaml
+    $ref: catalogItemTypeInstanceScribe.yaml
   optionTypes: 
     type: array
     description: Array of option type IDs. Only applies to type instance and blueprint.

@@ -1,62 +1,157 @@
 {
   "catalogItemType": {
-    "id": 1,
-    "name": "Example Nginx",
-    "code": "example-nginx",
-    "description": "Example catalog item for an nginx instance",
-    "labels": [],
-    "type": "instance",
-    "visibility":"public",
-    "layoutCode":null,
-    "blueprint": null,
-    "refType": "InstanceType",
-    "refId": null,
-    "active": true,
-    "enabled": true,
-    "featured": true,
-    "iconPath": "/assets/containers-png/resource.png",
-    "config": {
-      "group": {
-        "id": 20,
-        "name": "Example Group"
-      },
-      "cloud": {
-        "id": 8,
-        "name": "Example Cloud"
-      },
-      "type": "nginx",
-      "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
-      "hostName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
-      "layout": {
-        "id": 7342,
-        "code": "nginx-1.14-single"
-      },
-      "plan": {
-        "id": 68,
-        "code": "container-128"
-      },
-      "version": "1.9",
+      "id": 84,
+      "name": "Simple Instance",
+      "code": null,
+      "description": "don't delete",
+      "labels": [
+          "auto",
+          "keep"
+      ],
+      "type": "instance",
+      "visibility": "private",
+      "layoutCode": null,
+      "enabled": true,
+      "featured": true,
+      "iconPath": "/assets/containers-png/nginx.png",
+      "imagePath": "/assets/containers-png/nginx.png",
+      "darkImagePath": "/assets/containers-png/nginx.png",
       "config": {
-        "createUser": true,
-        "resourcePoolId": 94944
+          "group": {
+              "id": "20",
+              "name": "QA Docker"
+          },
+          "cloud": {
+              "id": 8,
+              "name": "QA Docker"
+          },
+          "type": "nginx",
+          "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+          "config": {
+              "createUser": true,
+              "isEC2": false,
+              "isVpcSelectable": true,
+              "provisionServerId": null,
+              "resourcePoolId": 160835,
+              "poolProviderType": "docker"
+          },
+          "volumes": [
+              {
+                  "index": 0,
+                  "rootVolume": true,
+                  "name": "data",
+                  "maxStorage": 1073741824,
+                  "volumeCustomizable": false,
+                  "hasDatastore": false,
+                  "readonlyName": false,
+                  "customMaxStorage": false,
+                  "size": 1
+              }
+          ],
+          "hostName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+          "layout": {
+              "id": 7342,
+              "code": "nginx-1.14-single"
+          },
+          "plan": {
+              "id": 68,
+              "code": "container-128"
+          },
+          "version": "1.9",
+          "ports": [
+              {
+                  "id": 59,
+                  "code": "nginx.80",
+                  "name": "Http",
+                  "shortName": "http",
+                  "internalPort": 80,
+                  "externalPort": 80,
+                  "loadBalancePort": null,
+                  "sortOrder": 0,
+                  "loadBalanceProtocol": "http",
+                  "loadBalance": true,
+                  "visible": true
+              },
+              {
+                  "id": 60,
+                  "code": "nginx.443",
+                  "name": "Https",
+                  "shortName": "https",
+                  "internalPort": 443,
+                  "externalPort": 443,
+                  "loadBalancePort": null,
+                  "sortOrder": 1,
+                  "loadBalanceProtocol": "https",
+                  "loadBalance": true,
+                  "visible": true
+              }
+          ],
+          "networkInterfaces": [],
+          "templateParameter": null,
+          "backup": {
+              "createBackup": true,
+              "jobAction": "new",
+              "jobRetentionCount": "3",
+              "veeamManagedServer": "",
+              "backupRepository": 1,
+              "jobSchedule": 2,
+              "target": 37006
+          },
+          "loadBalancer": [
+              {
+                  "internalPort": 80,
+                  "externalPort": 80,
+                  "loadBalancePort": null,
+                  "loadBalanceProtocol": "http",
+                  "externalAddressCheck": false,
+                  "protocol": "http",
+                  "balanceMode": "leastconnections",
+                  "vipPort": 80,
+                  "vipHostname": "${userInitials}-${cloudCode}-${type}-simple-${sequence}.localdomain",
+                  "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+                  "vipName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}-load-balancer",
+                  "id": ""
+              },
+              {
+                  "internalPort": 443,
+                  "externalPort": 443,
+                  "loadBalancePort": null,
+                  "loadBalanceProtocol": "https",
+                  "externalAddressCheck": false,
+                  "protocol": "https",
+                  "balanceMode": "leastconnections",
+                  "vipPort": 443,
+                  "vipHostname": "${userInitials}-${cloudCode}-${type}-simple-${sequence}.localdomain",
+                  "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+                  "vipName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}-load-balancer",
+                  "id": ""
+              }
+          ],
+          "hideLock": true,
+          "deployment": {
+              "id": 1,
+              "versionId": 7
+          },
+          "showScale": false,
+          "volumesDisplay": [
+              {
+                  "storage": null,
+                  "name": "data",
+                  "controller": null,
+                  "datastore": null,
+                  "displayOrder": null,
+                  "size": 1,
+                  "mountPoint": null
+              }
+          ]
       },
-      "volumes": [
-        {
-          "rootVolume": true,
-          "name": "root",
-          "size": 60
-        }
-      ]
-    },
-    "optionTypes": [
-
-    ],
-    "createdBy": null,
-    "owner": {
-      "id": 1,
-      "name": "root"
-    },
-    "dateCreated": "2020-09-09T23:35:47Z",
-    "lastUpdated": "2020-09-16T03:58:32Z"
+      "content": "# Nginx Container\r\nThis is a sample catalog item that provisions a single nginx docker container.\r\nEnjoy!",
+      "optionTypes": [],
+      "owner": {
+          "id": 1,
+          "name": "Morpheus QA"
+      },
+      "dateCreated": "2020-09-09T23:35:47Z",
+      "lastUpdated": "2022-10-22T18:40:53Z"
   }
 }

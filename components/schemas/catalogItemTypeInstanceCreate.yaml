@@ -43,10 +43,13 @@ properties:
     description: Can be used to feature the catalog item type.
     default: false
   config: 
-    $ref: instanceType.yaml
+    $ref: catalogItemTypeInstanceScribe.yaml
   optionTypes: 
     type: array
     description: Array of option type IDs. Only applies to type instance and blueprint.
     items: 
       type: integer
       format: int64
+  content:
+    type: string
+    description: Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
