@@ -19,6 +19,7 @@ properties:
         description: The policy type code. See `Retrieves all Policy Types` endpoint for listing.
   config:
     description: A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
+    type: object
   enabled:
     type: boolean
     description: Set to false to disable
