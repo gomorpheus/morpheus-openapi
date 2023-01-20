@@ -51,6 +51,10 @@ post:
           properties:
             policy:
               $ref: ../components/schemas/policyCreate.yaml
+        examples: 
+          Policy Create Request - Max Memory:
+            value:
+              $ref: ../components/examples/policyMaxMemoryCreate.json
   responses:
     '200':
       description: Successful Request
