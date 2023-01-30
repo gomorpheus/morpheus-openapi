@@ -87,3 +87,6 @@ properties:
           format: int64
         name: 
           type: string
+  statsRetainmentPeriod:
+    type: integer
+    format: int64
