@@ -26,6 +26,7 @@ properties:
     type: boolean
   planResources: 
     type: array
+    nullable: true
   specs: 
     type: array
     items: 

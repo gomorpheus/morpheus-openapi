@@ -79,6 +79,9 @@ properties:
     format: int64
   appTiers: 
     type: array
+    nullable: true
+    items:
+      type: string
   instances: 
     type: array
     items: 
