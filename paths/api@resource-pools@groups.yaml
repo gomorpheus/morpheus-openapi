@@ -1,0 +1,64 @@
+get:
+  summary: Get all Resource Pool Groups
+  description: |
+    This endpoint retrieves all Resource Pool Groups associated with the account.
+  operationId: getResourcePoolGroups
+  tags:
+    - Resource Pools
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              resourcePoolGroups:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    $ref: ../components/schemas/resourcePoolGroup.yaml
+          examples:
+            Resource Pool Groups Response:
+              value:
+                $ref: ../components/examples/resourcePoolGroups.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+post:
+  summary: Create a Resource Pool Group
+  description: |
+    Use this command to create a resource pool group.
+  operationId: createResourcePoolGroup
+  tags:
+    - Resource Pools
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            resourcePoolGroup:
+              $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+        examples: 
+          Successful Request:
+            value: 
+              $ref: ../components/examples/resourcePoolGroupsCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Resource Pools Response:
+              value:
+                $ref: ../components/examples/successId.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
