@@ -1,0 +1,64 @@
+{
+  "networkGroup": {
+    "id": 1,
+    "name": "test resource pool group",
+    "description": "a test resource pool group",
+    "visibility": "private",
+    "active": true,
+    "pools": [
+      1
+    ],
+    "tenants": [
+      {
+        "id": 1,
+        "name": "root"
+      }
+    ],
+    "resourcePermission": {
+      "all": true,
+      "sites": [
+        {
+          "id": 284,
+          "name": "anothergroup",
+          "default": true
+        },
+        {
+          "id": 317,
+          "name": "another group",
+          "default": false
+        }
+      ],
+      "allPlans": null,
+      "plans": []
+    }
+  },
+  "networks": [
+    {
+      "id": 1,
+      "description": null,
+      "zone": {
+          "id": 1,
+          "name": "vCenter"
+      },
+      "parent": null,
+      "type": "Cluster",
+      "externalId": "resgroup-12",
+      "regionCode": null,
+      "iacId": null,
+      "visibility": "private",
+      "readOnly": false,
+      "defaultPool": false,
+      "active": true,
+      "status": "available",
+      "inventory": true,
+      "config": {},
+      "name": "Auto-Deploy",
+      "tenants": [
+          {
+              "id": 1,
+              "name": "root"
+          }
+      ]
+  }
+  ]
+}
