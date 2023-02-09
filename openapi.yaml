@@ -41,6 +41,8 @@ paths:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
     $ref: paths/api@appliance-settings@maintenance.yaml
+  /api/appliance-settings/reindex:
+    $ref: paths/api@appliance-settings@reindex.yaml
   /api/approval-items/{id}:
     $ref: paths/api@approval-items@id.yaml
   /api/approval-items/{id}/{action}:
@@ -137,23 +139,6 @@ paths:
   /api/catalog-item-types/{id}/update-logo:
     $ref: paths/api@catalog-item-types@id@update-logo.yaml
 
-  /api/containers/{id}:
-    $ref: paths/api@containers@id.yaml
-  /api/containers/{id}/action:
-    $ref: paths/api@containers@id@action.yaml
-  /api/containers/{id}/actions:
-    $ref: paths/api@containers@id@actions.yaml
-  /api/containers/{id}/clone-image:
-    $ref: paths/api@containers@id@clone-image.yaml
-  /api/containers/{id}/eject:
-    $ref: paths/api@containers@id@eject.yaml
-  /api/containers/{id}/import:
-    $ref: paths/api@containers@id@import.yaml
-  /api/containers/{id}/restart:
-    $ref: paths/api@containers@id@restart.yaml
-  /api/containers/{id}/suspend:
-    $ref: paths/api@containers@id@suspend.yaml
-
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -207,8 +192,8 @@ paths:
   /api/zones/{id}/refresh:
     $ref: paths/api@zones@id@refresh.yaml
   /api/zones/{id}/security-groups:
-    $ref: paths/api@zones@id@security-groups.yaml  
-  
+    $ref: paths/api@zones@id@security-groups.yaml
+
   /api/library/cluster-layouts:
     $ref: paths/api@library@cluster-layouts.yaml
   /api/library/cluster-layouts/{id}:
@@ -291,7 +276,28 @@ paths:
     $ref: paths/api@monitoring@contacts.yaml
   /api/monitoring/contacts/{id}:
     $ref: paths/api@monitoring@contacts@id.yaml
-  
+
+  /api/containers/{id}:
+    $ref: paths/api@containers@id.yaml
+  /api/containers/{id}/action:
+    $ref: paths/api@containers@id@action.yaml
+  /api/containers/{id}/actions:
+    $ref: paths/api@containers@id@actions.yaml
+  /api/containers/{id}/clone-image:
+    $ref: paths/api@containers@id@clone-image.yaml
+  /api/containers/{id}/eject:
+    $ref: paths/api@containers@id@eject.yaml
+  /api/containers/{id}/import:
+    $ref: paths/api@containers@id@import.yaml
+  /api/containers/{id}/restart:
+    $ref: paths/api@containers@id@restart.yaml
+  /api/containers/{id}/start:
+    $ref: paths/api@containers@id@start.yaml
+  /api/containers/{id}/stop:
+    $ref: paths/api@containers@id@stop.yaml
+  /api/containers/{id}/suspend:
+    $ref: paths/api@containers@id@suspend.yaml
+
   /api/credential-types:
     $ref: paths/api@credential-types.yaml
   /api/credential-types/{id}:
@@ -355,6 +361,8 @@ paths:
     $ref: paths/api@guidance@stats.yaml
   /api/guidance/types:
     $ref: paths/api@guidance@types.yaml
+  /api/guidance-settings:
+    $ref: paths/api@guidance-settings.yaml
   /api/health:
     $ref: paths/api@health.yaml
   /api/health/alarms:
@@ -412,7 +420,8 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
-
+  /api/monitoring-settings:
+    $ref: paths/api@monitoring-settings.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -1160,6 +1169,8 @@ tags:
     description: Manage Groups
   - name: Guidance
     description: Manage Guidance Recommendations
+  - name: Guidance Settings
+    description: Manage Guidance Settings
   - name: Health
     description: View Appliance Health Statistics
   - name: History
@@ -1202,6 +1213,8 @@ tags:
     description: View Logs
   - name: Monitoring
     description: All Endpoints Under the Monitoring Tab
+  - name: Monitoring Settings
+    description: Manage Monitoring Settings
   - name: Morpheus API
     description: All Endpoints Specific to Morpheus API
   - name: Networks

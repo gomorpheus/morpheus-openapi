@@ -1,6 +1,6 @@
 put:
   summary: Eject a Specific Container
-  description: This endpoint ejects a specific container.
+  description: This endpoint ejects attached disk/iso of a specific container.
   operationId: ejectContainerAction
   tags:
     - Containers

@@ -1,21 +1,11 @@
 put:
-  summary: Import a Specific Container
-  description: This endpoint clones and exports a Container in its current state to target Storage provider and adds Virtual Image Record with metadata matching the source configuration.
-  operationId: importContainerAction
+  summary: Stop a Specific Container
+  description: This endpoint stops a specific container.
+  operationId: stopContainerAction
   tags:
     - Containers
   parameters:
     - $ref: ../components/parameters/id-path.yaml
-  requestBody:
-    content:
-      application/json:
-        schema:
-          type: object
-          properties:
-            storageProviderId:
-              type: integer
-              description: Optional storage provider to use.
-              format: int64
   responses:
     '200':
       description: Successful Request

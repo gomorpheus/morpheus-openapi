@@ -1,0 +1,21 @@
+post:
+  summary: Reindex Search
+  description: Reindex all searchable data
+  operationId: reindex
+  tags:
+    - Appliance Settings
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

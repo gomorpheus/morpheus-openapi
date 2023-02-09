@@ -80,36 +80,36 @@ put:
                           format: int64
                         example: [1, 3]
                 resourcePermissions:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      all:
-                        type: boolean
-                        description: Pass `true` to allow access all groups
-                      sites:
-                        type: array
-                        description: Array of groups that are allowed access
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 1
-                      allPlans:
-                        type: boolean
-                        description: Pass true to allow access all plans
-                      plans:
-                        type: array
-                        description: Array of plans that are allowed access
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 1
+                  type: object
+                  properties:
+                    all:
+                      type: boolean
+                      description: Pass `true` to allow access all groups
+                      default: true
+                    sites:
+                      type: array
+                      description: Array of groups that are allowed access
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
+                    allPlans:
+                      type: boolean
+                      description: Pass true to allow access all plans
+                      default: true
+                    plans:
+                      type: array
+                      description: Array of plans that are allowed access
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
   responses:
     '200':
       description: Successful Request
