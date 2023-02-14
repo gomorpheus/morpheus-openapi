@@ -7,8 +7,9 @@ description:
   type: string
 visibility: 
   type: string
-active: 
-  type: boolean
+mode:
+  type: string
+  description: Pool selection mode. Valid values are `roundrobin` or `availablecapacity`.
 pools: 
   type: array
   items: 

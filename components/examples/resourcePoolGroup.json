@@ -4,7 +4,7 @@
     "name": "test resource pool group",
     "description": "a test resource pool group",
     "visibility": "private",
-    "active": true,
+    "mode": "roundrobin",
     "pools": [
       1
     ],

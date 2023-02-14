@@ -4,12 +4,11 @@ properties:
     type: string
   description: 
     type: string
+  mode:
+    type: string
+    description: Pool selection mode. Valid values are `roundrobin` or `availablecapacity`.
   pools: 
     type: array
     items: 
       type: integer
       format: int64
-  subnets: 
-    type: array
-    items: 
-      type: object
