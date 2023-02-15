@@ -6,7 +6,7 @@ get:
     - Archives
   parameters:
     - $ref: ../components/parameters/bucketName-path.yaml
-    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
   responses:
     '200':
       description: Returns the contents of the specified file as an attachment with Content-Type dicated by the file
