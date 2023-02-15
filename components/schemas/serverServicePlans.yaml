@@ -90,8 +90,14 @@ properties:
           type: string
   cpuOptions: 
     type: array
+    nullable: true
+    items:
+      type: object
   memoryOptions: 
     type: array
+    nullable: true
+    items:
+      type: object
   rootCustomSizeOptions: 
     type: object
   customSizeOptions: 

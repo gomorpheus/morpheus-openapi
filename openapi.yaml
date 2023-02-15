@@ -78,9 +78,9 @@ paths:
     $ref: paths/api@archives@buckets.yaml
   /api/archives/buckets/{id}:
     $ref: paths/api@archives@buckets@id.yaml
-  /api/archives/buckets/{bucket}/files/{filePath}:
+  /api/archives/buckets/{bucket}/files/{filepath}:
     $ref: paths/api@archives@buckets@id@files@path.yaml
-  /api/archives/download/{bucket}/{filePath}:
+  /api/archives/download/{bucket}/{filepath}:
     $ref: paths/api@archives@download@id@path.yaml
   /api/archives/files/{id}:
     $ref: paths/api@archives@files@id.yaml
@@ -817,7 +817,7 @@ paths:
     $ref: paths/api@provisioning-licenses@id@reservations.yaml
   /api/provisioning-settings:
     $ref: paths/api@provisioning-settings.yaml
-  /api/public-archives/download/{bucket}/{filePath}:
+  /api/public-archives/download/{bucket}/{filepath}:
     $ref: paths/api@public-archives@download@id@path.yaml
   /api/public-archives/link:
     $ref: paths/api@public-archives@link.yaml

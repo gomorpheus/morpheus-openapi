@@ -26,6 +26,8 @@ properties:
     type: boolean
   planResources: 
     type: array
+    items:
+      type: object
   specs: 
     type: array
     items: 
@@ -92,3 +94,5 @@ properties:
     properties: 
       outputs: 
         type: array
+        items:
+          type: object

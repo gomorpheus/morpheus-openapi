@@ -10,6 +10,8 @@ properties:
         format: int64
       addresses: 
         type: array
+        items:
+          type: object
       internalId: 
         type: string
         nullable: true
@@ -253,6 +255,8 @@ properties:
             type: boolean
           optionTypes: 
             type: array
+            items:
+              type: object
       interfaces: 
         type: array
         items: 

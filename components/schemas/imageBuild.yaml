@@ -152,6 +152,8 @@ properties:
               type: string
       storageControllers: 
         type: array
+        items:
+          type: object
       zoneId: 
         type: integer
         format: int64
@@ -222,6 +224,9 @@ properties:
         nullable: true
       virtualImages: 
         type: array
+        nullable: true
+        items: 
+          type: object
   executionCount: 
     type: integer
     format: int64

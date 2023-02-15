@@ -100,8 +100,14 @@ properties:
                 format: int64
           sites: 
             type: array
+            nullable: true
+            items: 
+              type: object
           plans: 
             type: array
+            nullable: true
+            items: 
+              type: object
       tenantPermissions: 
         type: object
         properties: 
@@ -112,3 +118,5 @@ properties:
               format: int64
   datastores: 
     type: array
+    items:
+      type: object

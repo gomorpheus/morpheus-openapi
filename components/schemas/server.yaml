@@ -399,8 +399,12 @@ properties:
           type: string
   labels: 
     type: array
+    items:
+      type: object
   tags: 
     type: array
+    items:
+      type: object
   enabled: 
     type: boolean
   tagCompliant: 
@@ -408,6 +412,8 @@ properties:
     nullable: true
   containers: 
     type: array
+    items:
+      type: object
   guestConsolePreferred: 
     type: boolean
   guestConsoleType: 

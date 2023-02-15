@@ -69,6 +69,8 @@ properties:
     nullable: true
   targets:
     type: array
+    items:
+      type: object
   customConfig:
     type: object
     nullable: true
