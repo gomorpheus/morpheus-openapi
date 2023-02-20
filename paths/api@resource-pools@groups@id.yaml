@@ -54,11 +54,11 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
           examples: 
             Successful Request:
               value:
-                $ref: ../components/examples/success.json
+                $ref: ../components/examples/resourcePoolGroupsCreate.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

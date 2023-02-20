@@ -53,11 +53,11 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/successId.yaml
+            $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
           examples:
             Resource Pools Response:
               value:
-                $ref: ../components/examples/successId.json 
+                $ref: ../components/examples/resourcePoolGroupsCreate.json 
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

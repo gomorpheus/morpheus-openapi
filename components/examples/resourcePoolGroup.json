@@ -1,5 +1,5 @@
 {
-  "networkGroup": {
+  "resourcePoolGroup": {
     "id": 1,
     "name": "test resource pool group",
     "description": "a test resource pool group",
@@ -32,33 +32,36 @@
       "plans": []
     }
   },
-  "networks": [
-    {
-      "id": 1,
-      "description": null,
-      "zone": {
-          "id": 1,
-          "name": "vCenter"
-      },
-      "parent": null,
-      "type": "Cluster",
-      "externalId": "resgroup-12",
-      "regionCode": null,
-      "iacId": null,
-      "visibility": "private",
-      "readOnly": false,
-      "defaultPool": false,
-      "active": true,
-      "status": "available",
-      "inventory": true,
-      "config": {},
-      "name": "Auto-Deploy",
-      "tenants": [
-          {
-              "id": 1,
-              "name": "root"
-          }
-      ]
-  }
-  ]
+  "pools": [
+        {
+            "id": 1,
+            "description": "pool-1",
+            "zone": {
+                "id": 1,
+                "name": "AWS Cloud"
+            },
+            "parent": null,
+            "type": "vpc",
+            "externalId": "vpc-adsf1234",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "public",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {
+                "cidrBlock": "10.240.0.0/16",
+                "tenancy": "default"
+            },
+            "name": "pool-1",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "root"
+                }
+            ]
+        }
+    ]
 }
