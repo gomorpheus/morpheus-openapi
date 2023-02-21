@@ -16,8 +16,7 @@ get:
             type: object
             properties:
               resourcePoolGroup:
-                properties:
-                  $ref: ../components/schemas/resourcePoolGroup.yaml
+                $ref: ../components/schemas/resourcePoolGroup.yaml
           examples:
             Resource Pools Response:
               value:
@@ -43,8 +42,7 @@ put:
           type: object
           properties:
             resourcePoolGroup:
-              properties:
-                $ref: ../components/schemas/resourcePoolGroupsCreateInput.yaml
+              $ref: ../components/schemas/resourcePoolGroupsCreateInput.yaml
         examples: 
           Resource Pool Group Request:
             value:
@@ -58,8 +56,7 @@ put:
             type: object
             properties:
               resourcePoolGroup:
-                properties:
-                  $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+                $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
           examples: 
             Successful Request:
               value:
