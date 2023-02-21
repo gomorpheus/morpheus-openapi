@@ -42,7 +42,7 @@ post:
           type: object
           properties: 
             resourcePoolGroup:
-              $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+              $ref: ../components/schemas/resourcePoolGroupsCreateInput.yaml
         examples: 
           Successful Request:
             value: 
