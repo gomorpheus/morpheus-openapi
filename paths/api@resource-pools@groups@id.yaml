@@ -57,7 +57,8 @@ put:
             type: object
             properties:
               resourcePoolGroup:
-                $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+                properties:
+                  $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
           examples: 
             Successful Request:
               value:

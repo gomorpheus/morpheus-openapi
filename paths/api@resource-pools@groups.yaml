@@ -53,7 +53,11 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+            type: object
+            properties:
+              resourcePoolGroup:
+                properties:
+                  $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
           examples:
             Resource Pools Response:
               value:
