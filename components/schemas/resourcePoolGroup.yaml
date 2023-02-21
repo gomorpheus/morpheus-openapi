@@ -13,8 +13,7 @@ mode:
 pools: 
   type: array
   items: 
-    type: integer
-    format: int64
+    $ref: zonePoolGroup.yaml
 tenants: 
   type: array
   items: 
@@ -25,7 +24,7 @@ tenants:
         format: int64
       name: 
         type: string
-resourcePermissions:
+resourcePermission:
   type: object
   properties:
     all:

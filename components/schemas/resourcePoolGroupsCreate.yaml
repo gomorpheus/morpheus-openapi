@@ -1,5 +1,8 @@
 type: object
-properties: 
+properties:
+  id: 
+    type: integer
+    format: int64 
   name: 
     type: string
   description: 
@@ -24,7 +27,7 @@ properties:
           format: int64
         name: 
           type: string
-  resourcePermissions:
+  resourcePermission:
     type: object
     properties:
       all:
