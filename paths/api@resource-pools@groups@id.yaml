@@ -39,11 +39,12 @@ put:
   requestBody: 
     content: 
       application/json: 
-        schema: 
+        schema:
           type: object
-          properties: 
+          properties:
             resourcePoolGroup:
-              $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+              properties:
+                $ref: ../components/schemas/resourcePoolGroupsCreateInput.yaml
         examples: 
           Resource Pool Group Request:
             value:
@@ -54,7 +55,11 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+            type: object
+            properties:
+              resourcePoolGroup:
+                properties:
+                  $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
           examples: 
             Successful Request:
               value:

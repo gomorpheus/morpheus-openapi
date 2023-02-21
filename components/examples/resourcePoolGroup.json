@@ -15,7 +15,7 @@
       }
     ],
     "resourcePermission": {
-      "all": true,
+      "all": false,
       "sites": [
         {
           "id": 284,
@@ -27,9 +27,7 @@
           "name": "another group",
           "default": false
         }
-      ],
-      "allPlans": null,
-      "plans": []
+      ]
     }
   },
   "pools": [

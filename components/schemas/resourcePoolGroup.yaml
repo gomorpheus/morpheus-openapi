@@ -13,7 +13,7 @@ mode:
 pools: 
   type: array
   items: 
-    $ref: zoneResourcePool.yaml
+    $ref: resourcePoolForGroup.yaml
 tenants: 
   type: array
   items: 
@@ -41,17 +41,6 @@ resourcePermission:
             type: integer
             format: int64
             example: 1
-    allPlans:
-      type: boolean
-      description: Pass true to allow access all plans
-      default: true
-    plans:
-      type: array
-      description: Array of plans that are allowed access
-      items:
-        type: object
-        properties:
-          id:
-            type: integer
-            format: int64
-            example: 1
+          default:
+            type: boolean
+            example: true

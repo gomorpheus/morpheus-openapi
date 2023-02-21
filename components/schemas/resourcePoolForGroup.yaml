@@ -1,0 +1,103 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  description: 
+    type: string
+    nullable: true
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  parent: 
+    type: object
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  type: 
+    type: string
+  externalId: 
+    type: string
+  regionCode: 
+    type: string
+    nullable: true
+  iacId: 
+    type: string
+    nullable: true
+  visibility: 
+    type: string
+  readOnly: 
+    type: boolean
+  defaultPool: 
+    type: boolean
+  active: 
+    type: boolean
+  status: 
+    type: string
+  inventory: 
+    type: boolean
+  config:
+    anyOf:
+    - type: object
+      nullable: true
+      description: Type VMware
+      additionalProperties: false
+    - type: object
+      description: Type AWS
+      required:
+        - cidrBlock
+        - tenancy
+      properties:
+        cidrBlock:
+          type: string
+          description: Provide the base CIDR Block to use for this VPC (must be between a /16 and /28 Block)
+          example: "10.0.0.1/16"
+        tenancy:
+          type: string
+          enum:
+            - default
+            - dedicated
+          default: default
+    - type: object
+      description: Type GCP
+      required:
+        - parent
+        - billingAccount
+      properties:
+        projectId:
+          type: string
+          nullable: true
+          description: |
+            Project ID can have lowercase letters, digits, or hyphens.
+            It must start with a lowercase letter and end with a letter or number.
+          example: my-project-123
+        parent:
+          format: int64
+          example: 200
+        billingAccount:
+          type: string
+          example: "billingAccounts/013A63-23432-11124"
+  name: 
+    type: string
+  displayName: 
+    type: string
+    nullable: true
+  tenants: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
