@@ -13,7 +13,7 @@ mode:
 pools: 
   type: array
   items: 
-    $ref: zonePoolGroup.yaml
+    $ref: zoneResourcePool.yaml
 tenants: 
   type: array
   items: 
