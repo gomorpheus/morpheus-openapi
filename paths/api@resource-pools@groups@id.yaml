@@ -16,7 +16,8 @@ get:
             type: object
             properties:
               resourcePoolGroup:
-                $ref: ../components/schemas/resourcePoolGroup.yaml
+                properties:
+                  $ref: ../components/schemas/resourcePoolGroup.yaml
           examples:
             Resource Pools Response:
               value:
