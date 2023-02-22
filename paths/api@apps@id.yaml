@@ -70,6 +70,7 @@ delete:
     - $ref: ../components/parameters/removeInstances.yaml
     - $ref: ../components/parameters/preserveVolumes.yaml
     - $ref: ../components/parameters/keepBackups.yaml
+    - $ref: ../components/parameters/releaseFloatingIps.yaml
     - $ref: ../components/parameters/releaseEIPs.yaml
     - $ref: ../components/parameters/force.yaml
   responses:
