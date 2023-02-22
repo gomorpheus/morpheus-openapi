@@ -45,3 +45,6 @@ properties:
       - instance
       - server
       - appliance
+  workflowConfig:
+    type: string
+    description: Configuration object that contains settings for the workflow.

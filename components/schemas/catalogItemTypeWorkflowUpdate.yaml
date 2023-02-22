@@ -38,3 +38,6 @@ properties:
         format: int64
   context: 
     type: string
+  workflowConfig:
+    type: string
+    description: Configuration object that contains settings for the workflow.
