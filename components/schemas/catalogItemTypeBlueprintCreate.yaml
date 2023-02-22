@@ -9,6 +9,10 @@ properties:
     type: string
     description: Useful shortcode for provisioning naming schemes and export reference.
     nullable: true
+  category:
+    type: string
+    description: Catalog Item Type category
+    nullable: true
   description: 
     type: string
     description: Catalog Item Type description
