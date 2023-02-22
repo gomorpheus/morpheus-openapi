@@ -1,6 +1,6 @@
-name: releaseEIPs
+name: releaseFloatingIps
 in: query
-description: Alias for releaseFloatingIps
+description: Release Floating IPs
 schema:
   type: string
   default: "on"
