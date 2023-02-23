@@ -1,0 +1,15 @@
+config:
+  type: object
+  required:
+    - osExternalNetworkId
+  properties:
+    osExternalNetworkId:
+      type: string
+      description: |
+        The Floating IP identifier in the format: "ip-ID" or "pool-ID". 
+        The Options API /api/options/openStack/openstackFloatingIpOptions?containerId=99 can be used to see which options are available.
+      example: ip-42
+    floatingIpBandwidth:
+      type: number
+      description: Bandwidth (Mbit/s)
+      example: 1024

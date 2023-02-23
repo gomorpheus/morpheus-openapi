@@ -1,0 +1,11 @@
+put:
+  summary: Release a Floating IP
+  description: |
+    Release a floating IP detaching it from the associated node/VM.
+  operationId: releaseNetworkFloatingIp
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    $ref: ../components/responses/standard.yaml
