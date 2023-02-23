@@ -1,0 +1,35 @@
+get:
+  summary: Get All Floating IPs
+  description: |
+    This endpoint retrieves all network floating IPs associated with the account.
+  operationId: getAllNetworkFloatingIps
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkPools:
+                  items:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/networkFloatingIp.yaml
+                networkPoolCount:
+                  type: integer
+                  format: int64
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkFloatingIps.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -307,6 +307,10 @@ paths:
     $ref: paths/api@containers@id@stop.yaml
   /api/containers/{id}/suspend:
     $ref: paths/api@containers@id@suspend.yaml
+  /api/containers/{id}/attach-floating-ip:
+    $ref: paths/api@containers@id@attach-floating-ip.yaml
+  /api/containers/{id}/release-floating-ip:
+    $ref: paths/api@containers@id@release-floating-ip.yaml
 
   /api/credential-types:
     $ref: paths/api@credential-types.yaml
@@ -704,6 +708,12 @@ paths:
     $ref: paths/api@networks@pools.yaml
   /api/networks/pools/{id}:
     $ref: paths/api@networks@pools@id.yaml
+  /api/networks/floating-ips:
+    $ref: paths/api@networks@floating-ips.yaml
+  /api/networks/floating-ips/{id}:
+    $ref: paths/api@networks@floating-ips@id.yaml
+  /api/networks/floating-ips/{id}/release:
+    $ref: paths/api@networks@floating-ips@id@release.yaml
   /api/networks/domains:
     $ref: paths/api@networks@domains.yaml
   /api/networks/domains/{id}:

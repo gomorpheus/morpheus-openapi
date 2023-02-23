@@ -1,0 +1,70 @@
+{
+  "networkFloatingIps": [
+    {
+      "id": 51,
+      "externalId": "1b633f67-6a1e-4195-b1e3-45b9704e4766",
+      "cloud": {
+        "id": 103,
+        "name": "QA Openstack",
+        "type": "openstack"
+      },
+      "server": {
+        "id": 21840,
+        "name": "jd-openstack-231"
+      },
+      "ipStatus": "assigned",
+      "ipAddress": "10.32.23.188",
+      "ipRange": null,
+      "ptrId": null,
+      "dateCreated": "2023-02-23T18:22:40Z",
+      "lastUpdated": "2023-02-23T19:12:45Z",
+      "networkDomain": null,
+      "createdBy": null
+    },
+    {
+      "id": 37,
+      "externalId": "d331d781-3469-40ff-97ea-56b754fde12b",
+      "cloud": {
+        "id": 103,
+        "name": "QA Openstack",
+        "type": "openstack"
+      },
+      "server": null,
+      "ipStatus": "free",
+      "ipAddress": "10.32.23.189",
+      "ipRange": null,
+      "ptrId": null,
+      "dateCreated": "2023-02-23T03:19:52Z",
+      "lastUpdated": "2023-02-23T03:19:56Z",
+      "networkDomain": null,
+      "createdBy": null
+    },
+    {
+      "id": 50,
+      "externalId": "1850a308-d412-4e00-b28e-cd859d2c9099",
+      "cloud": {
+        "id": 103,
+        "name": "QA Openstack",
+        "type": "openstack"
+      },
+      "server": {
+        "id": 21873,
+        "name": "autoq-opsk-debian10-0223"
+      },
+      "ipStatus": "assigned",
+      "ipAddress": "10.32.23.190",
+      "ipRange": null,
+      "ptrId": "172.16.21.142",
+      "dateCreated": "2023-02-23T18:22:40Z",
+      "lastUpdated": "2023-02-23T18:22:44Z",
+      "networkDomain": null,
+      "createdBy": null
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 3,
+    "total": 3
+  }
+}

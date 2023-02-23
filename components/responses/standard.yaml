@@ -1,0 +1,14 @@
+'200':
+  description: Successful Request
+  content:
+    application/json:
+      schema:
+        $ref: ../schemas/200-success.yaml
+      examples:
+        Successful Response:
+          value:
+            $ref: ../examples/success.json 
+'4XX':
+  $ref: ../responses/4xx.yaml
+'5XX':
+  $ref: ../responses/5xx.yaml
