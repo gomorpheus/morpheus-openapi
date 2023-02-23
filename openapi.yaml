@@ -564,6 +564,8 @@ paths:
     $ref: paths/api@jobs@id@execute.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
+  /api/key-pairs/generate:
+    $ref: paths/api@key-pairs@generate.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
 
