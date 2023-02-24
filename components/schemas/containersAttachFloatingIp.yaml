@@ -7,9 +7,11 @@ config:
       type: string
       description: |
         The Floating IP identifier in the format: "ip-ID" or "pool-ID". 
-        The Options API /api/options/openStack/openstackFloatingIpOptions?containerId=99 can be used to see which options are available.
+        The Options API /api/options/openStack/openstackFloatingIpOptions?containerId={{containerId}} can be used to see which options are available.
       example: ip-42
     floatingIpBandwidth:
       type: number
-      description: Bandwidth (Mbit/s)
+      description: |
+        Bandwidth (Mbit/s)
+        Only the following cloud types support this parameter: Huawei, OpenTelekom
       example: 1024

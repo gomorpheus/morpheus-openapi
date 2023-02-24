@@ -15,7 +15,7 @@ get:
           schema:
             type: object
             properties:
-              networkPool:
+              networkFloatingIp:
                 type: object
                 properties:
                   $ref: ../components/schemas/networkFloatingIp.yaml

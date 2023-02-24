@@ -1,0 +1,10 @@
+put:
+  summary: Detach Floating IP from Container
+  description: This endpoint detaches a floating IP from a container (node/VM).
+  operationId: containersDetachFloatingIp
+  tags:
+    - Containers
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    $ref: ../components/responses/standard.yaml

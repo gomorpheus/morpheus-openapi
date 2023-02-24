@@ -28,7 +28,6 @@ properties:
     enum:
       - "enable"
       - "enable_custom_storage"
-      - "off"
   osGuestDiagnostics:
     type: string
     description: OS Guest Diagnostics
