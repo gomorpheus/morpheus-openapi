@@ -309,8 +309,8 @@ paths:
     $ref: paths/api@containers@id@suspend.yaml
   /api/containers/{id}/attach-floating-ip:
     $ref: paths/api@containers@id@attach-floating-ip.yaml
-  /api/containers/{id}/release-floating-ip:
-    $ref: paths/api@containers@id@release-floating-ip.yaml
+  /api/containers/{id}/detach-floating-ip:
+    $ref: paths/api@containers@id@detach-floating-ip.yaml
 
   /api/credential-types:
     $ref: paths/api@credential-types.yaml
