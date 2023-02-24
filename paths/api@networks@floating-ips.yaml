@@ -7,6 +7,34 @@ get:
     - Networks
   parameters:
     - $ref: ../components/parameters/phrase.yaml
+    - name: ipAddress
+      in: query
+      description: Filter by IP Address
+      schema:
+        type: string
+      example: "10.32.23.188"
+    - name: ipStatus
+      in: query
+      description: Filter by IP Status
+      schema:
+        type: string
+        enum:
+        - assigned
+        - free
+        - pending
+      example: "10.32.23.188"
+    - name: zoneId
+      in: query
+      description: Filter by Cloud ID
+      schema:
+        type: integer
+        format: int64
+    - name: serverId
+      in: query
+      description: Filter by Server ID
+      schema:
+        type: integer
+        format: int64
   responses:
     '200':
       description: Successful Request
