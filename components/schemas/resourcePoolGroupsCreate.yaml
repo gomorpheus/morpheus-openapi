@@ -12,6 +12,7 @@ mode:
   description: Pool selection mode. Valid values are `roundrobin` or `availablecapacity`.
 pools: 
   type: array
+  description: Array of Resource Pool IDs
   items: 
     type: integer
     format: int64

@@ -12,8 +12,10 @@ mode:
   description: Pool selection mode. Valid values are `roundrobin` or `availablecapacity`.
 pools: 
   type: array
+  description: Array of Resource Pool IDs
   items: 
-    $ref: resourcePoolForGroup.yaml
+    type: integer
+    format: int64
 tenants: 
   type: array
   items: 
