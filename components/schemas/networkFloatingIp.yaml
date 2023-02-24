@@ -20,6 +20,7 @@ cloud:
       description: Cloud Type Code
 server: 
   type: object
+  nullable: true
   description: Server (if one is attached to the Floating IP)
   properties: 
     id: 
