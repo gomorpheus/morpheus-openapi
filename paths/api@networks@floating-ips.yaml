@@ -22,7 +22,6 @@ get:
         - assigned
         - free
         - pending
-      example: "10.32.23.188"
     - name: zoneId
       in: query
       description: Filter by Cloud ID
