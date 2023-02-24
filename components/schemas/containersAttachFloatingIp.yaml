@@ -11,7 +11,6 @@ config:
       example: ip-42
     floatingIpBandwidth:
       type: number
-      description: Bandwidth (Mbit/s)
       description: |
         Bandwidth (Mbit/s)
         Only the following cloud types support this parameter: Huawei, OpenTelekom

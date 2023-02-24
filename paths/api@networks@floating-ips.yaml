@@ -16,14 +16,11 @@ get:
             allOf:
             - type: object
               properties:
-                networkPools:
+                networkFloatingIps:
                   items:
                     type: object
                     properties:
                       $ref: ../components/schemas/networkFloatingIp.yaml
-                networkPoolCount:
-                  type: integer
-                  format: int64
             - $ref: ../components/schemas/meta.yaml
           examples:
             Networks Response:
