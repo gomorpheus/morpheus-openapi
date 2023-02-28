@@ -13,6 +13,13 @@ properties:
     nullable: true
   hasPrivateKey: 
     type: boolean
+  privateKeyHash:
+    type: string
+    nullable: true
+  privateKey:
+    type: string
+    nullable: true
+    description: Only present in response to generate
   fingerprint: 
     type: string
     nullable: true

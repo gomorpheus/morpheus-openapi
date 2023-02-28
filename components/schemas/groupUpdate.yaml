@@ -1,0 +1,34 @@
+type: object
+required:
+  - name
+properties:
+  name: 
+    type: string
+    description: A unique name scoped to your account for the group
+  code:
+    type: string
+    description: Optional code for use with policies
+  location:
+    type: string
+    description: Optional location argument for your group
+  config: 
+    type: object
+    properties: 
+      dnsIntegrationId: 
+        type: string
+        description: Optional DNS Integration ID
+      configCmdbId: 
+        type: string
+        description: Optional CMDB Integration ID
+      configCmId: 
+        type: string
+        description: Optional Change Management Integration ID 
+      serviceRegistryId: 
+        type: string
+        description: Optional Service Registry Integration ID
+      configManagementId: 
+        type: string
+        description: Optional Configuration Management Integration ID
+      configCmdbDiscovery:
+        type: boolean
+        description: Enable or disable CMDB Discovery

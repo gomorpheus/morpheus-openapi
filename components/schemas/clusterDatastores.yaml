@@ -71,6 +71,9 @@ properties:
           type: string
   datastores: 
     type: array
+    nullable: true
+    items: 
+      type: object
   permissions:
     type: object
     properties: 

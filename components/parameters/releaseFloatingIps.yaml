@@ -1,0 +1,7 @@
+name: releaseFloatingIps
+in: query
+description: Release Floating IPs
+schema:
+  type: string
+  default: "on"
+example: "off"

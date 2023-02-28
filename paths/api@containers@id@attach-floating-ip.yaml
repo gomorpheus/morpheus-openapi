@@ -1,0 +1,21 @@
+put:
+  summary: Attach Floating IP to Container
+  description: This endpoint attaches a floating IP to a container (node/VM).
+  operationId: containersAttachFloatingIp
+  tags:
+    - Containers
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            $ref: ../components/schemas/containersAttachFloatingIp.yaml
+        examples:
+          Snapshot Request:
+            value:
+              $ref: ../components/examples/containersAttachFloatingIp.json
+  responses:
+    $ref: ../components/responses/standard.yaml

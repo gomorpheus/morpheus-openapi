@@ -1,0 +1,41 @@
+post:
+  summary: Generates a Key Pair
+  description: |
+    Generates a Key Pair.
+  operationId: generateKeyPairs
+  tags:
+    - Key Pairs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - keyPair
+          properties:
+            keyPair:
+              type: object
+              required:
+                - name
+                - publicKey
+              properties:
+                name: 
+                  type: string
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              keyPair:
+                $ref: ../components/schemas/key-pair.yaml
+          examples:
+            Report Types Response:
+              value:
+                $ref: ../components/examples/key-pairs.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

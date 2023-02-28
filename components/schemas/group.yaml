@@ -25,10 +25,14 @@ properties:
         type: string
       configCmdbId: 
         type: string
+      configCmId: 
+        type: string
       serviceRegistryId: 
         type: string
       configManagementId: 
         type: string
+      configCmdbDiscovery:
+        type: boolean
   dateCreated: 
     type: string
     format: date-time

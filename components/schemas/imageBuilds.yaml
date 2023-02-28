@@ -142,6 +142,8 @@ properties:
         nullable: true
       virtualImages: 
         type: array
+        items:
+          type: object
   executionCount: 
     type: integer
     format: int64

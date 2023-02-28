@@ -1,0 +1,72 @@
+id: 
+  type: integer
+  format: int64
+externalId: 
+  type: string
+  nullable: true
+cloud: 
+  type: object
+  description: Cloud
+  properties: 
+    id: 
+      type: integer
+      format: int64
+      description: Cloud ID
+    name: 
+      type: string
+      description: Cloud Name
+    type: 
+      type: string
+      description: Cloud Type Code
+server: 
+  type: object
+  nullable: true
+  description: Server (if one is attached to the Floating IP)
+  properties: 
+    id: 
+      type: integer
+      format: int64
+      description: Server ID
+    name: 
+      type: string
+      description: Server Name
+ipStatus: 
+  type: string
+  enum:
+    - assigned
+    - free
+    - pending
+ipAddress: 
+  type: string
+  description: IP Address
+ipRange: 
+  type: string
+  nullable: true
+ptrId: 
+  type: string
+  nullable: true
+networkDomain: 
+  type: object
+  nullable: true
+  properties: 
+    id:
+      type: integer
+      format: int64
+      description: Network Domain ID
+createdBy: 
+  type: object
+  nullable: true
+  properties: 
+    id:
+      type: integer
+      format: int64
+      description: User ID
+    username:
+      type: string
+      description: Username
+dateCreated: 
+  type: string
+  format: date-time
+lastUpdated: 
+  type: string
+  format: date-time

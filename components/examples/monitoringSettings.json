@@ -1,0 +1,24 @@
+{
+  "monitoringSettings": {
+    "autoManageChecks": true,
+    "availabilityTimeFrame": 30,
+    "availabilityPrecision": 3,
+    "defaultCheckInterval": 5,
+    "serviceNow": {
+      "enabled": true,
+      "integration": {
+        "id": 70,
+        "name": "ServiceNow"
+      },
+      "newIncidentAction": "create",
+      "closeIncidentAction": "close",
+      "infoMapping": "low",
+      "warningMapping": "medium",
+      "criticalMapping": "high"
+    },
+    "newRelic": {
+      "enabled": true,
+      "licenseKey": "NEW_RELICE_LICENSE_KEY_VALUE"
+    }
+  }
+}

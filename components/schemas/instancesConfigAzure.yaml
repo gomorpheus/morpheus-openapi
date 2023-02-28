@@ -1,9 +1,8 @@
 type: object
 properties:
   resourcePoolId:
-    type: integer
-    format: int64
-    description: External ID of the resource group to use for instance
+    type: string
+    description: id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
   availabilityOptions:
     type: string
     description: Availability Options
@@ -27,8 +26,8 @@ properties:
     type: string
     description: Boot Diagnostics
     enum:
-      - "on"
-      - "off"
+      - "enable"
+      - "enable_custom_storage"
   osGuestDiagnostics:
     type: string
     description: OS Guest Diagnostics

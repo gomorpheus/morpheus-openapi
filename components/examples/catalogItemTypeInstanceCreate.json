@@ -1,9 +1,13 @@
 {
   "catalogItemType": {
     "name": "Example App",
+    "code": "example-app",
+    "category": "example category",
     "description": "Example catalog item type",
     "labels": [],
     "type": "instance",
+    "visibility": "public",
+    "layoutCode": null,
     "iconPath": "/assets/containers-png/apache.png",
     "config": {
       "group": {
@@ -38,7 +42,7 @@
         {
           "primaryInterface": true,
           "network": {
-            "id": "<%= customOptions.morphnetwork %>",
+            "id": "network-102",
             "hasPool": false
           },
           "ipMode": "",

@@ -1,4 +1,4 @@
-get:
+put:
   summary: Add Catalog Item to Cart
   description: Use this command to add an item to your service catalog cart.
   operationId: addCatalogCartItem
@@ -31,7 +31,7 @@ get:
                   $ref: ../components/schemas/catalogItem.yaml
             - $ref: ../components/schemas/200-success.yaml
           examples:
-            Get Credentials Response:
+            Add Catalog Item to Cart Response:
               value:
                 $ref: ../components/examples/catalogItemCreateSuccess.json
     '4XX':

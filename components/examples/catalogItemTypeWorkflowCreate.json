@@ -1,12 +1,21 @@
 {
   "catalogItemType": {
     "name": "Example Operation",
+    "code": "example-op",
+    "category": "example category",
     "description": "Example catalog item type",
     "labels": [],
     "type": "workflow",
+    "visibility": "public",
+    "layoutCode": null,
     "workflow": {
       "id": 13
     },
-    "context": "instance"
+    "context": "instance",
+    "config": {
+      "first": "Stubby",
+      "middle": "Little",
+      "last": "Toes"
+    }
   }
 }

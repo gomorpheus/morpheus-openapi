@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 5.5.3
+  version: 6.0.0
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -41,6 +41,8 @@ paths:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
     $ref: paths/api@appliance-settings@maintenance.yaml
+  /api/appliance-settings/reindex:
+    $ref: paths/api@appliance-settings@reindex.yaml
   /api/approval-items/{id}:
     $ref: paths/api@approval-items@id.yaml
   /api/approval-items/{id}/{action}:
@@ -76,9 +78,9 @@ paths:
     $ref: paths/api@archives@buckets.yaml
   /api/archives/buckets/{id}:
     $ref: paths/api@archives@buckets@id.yaml
-  /api/archives/buckets/{bucket}/files/{filePath}:
+  /api/archives/buckets/{bucket}/files/{filepath}:
     $ref: paths/api@archives@buckets@id@files@path.yaml
-  /api/archives/download/{bucket}/{filePath}:
+  /api/archives/download/{bucket}/{filepath}:
     $ref: paths/api@archives@download@id@path.yaml
   /api/archives/files/{id}:
     $ref: paths/api@archives@files@id.yaml
@@ -141,8 +143,8 @@ paths:
     $ref: paths/api@clients.yaml
   /api/clients/{id}:
     $ref: paths/api@clients@id.yaml
-
-
+  
+    
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
   /api/monitoring/apps/mute-all:
@@ -305,6 +307,10 @@ paths:
     $ref: paths/api@containers@id@stop.yaml
   /api/containers/{id}/suspend:
     $ref: paths/api@containers@id@suspend.yaml
+  /api/containers/{id}/attach-floating-ip:
+    $ref: paths/api@containers@id@attach-floating-ip.yaml
+  /api/containers/{id}/detach-floating-ip:
+    $ref: paths/api@containers@id@detach-floating-ip.yaml
 
   /api/credential-types:
     $ref: paths/api@credential-types.yaml
@@ -369,6 +375,8 @@ paths:
     $ref: paths/api@guidance@stats.yaml
   /api/guidance/types:
     $ref: paths/api@guidance@types.yaml
+  /api/guidance-settings:
+    $ref: paths/api@guidance-settings.yaml
   /api/health:
     $ref: paths/api@health.yaml
   /api/health/alarms:
@@ -426,7 +434,8 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
-
+  /api/monitoring-settings:
+    $ref: paths/api@monitoring-settings.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -559,6 +568,8 @@ paths:
     $ref: paths/api@jobs@id@execute.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
+  /api/key-pairs/generate:
+    $ref: paths/api@key-pairs@generate.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
 
@@ -697,6 +708,12 @@ paths:
     $ref: paths/api@networks@pools.yaml
   /api/networks/pools/{id}:
     $ref: paths/api@networks@pools@id.yaml
+  /api/networks/floating-ips:
+    $ref: paths/api@networks@floating-ips.yaml
+  /api/networks/floating-ips/{id}:
+    $ref: paths/api@networks@floating-ips@id.yaml
+  /api/networks/floating-ips/{id}/release:
+    $ref: paths/api@networks@floating-ips@id@release.yaml
   /api/networks/domains:
     $ref: paths/api@networks@domains.yaml
   /api/networks/domains/{id}:
@@ -812,7 +829,7 @@ paths:
     $ref: paths/api@provisioning-licenses@id@reservations.yaml
   /api/provisioning-settings:
     $ref: paths/api@provisioning-settings.yaml
-  /api/public-archives/download/{bucket}/{filePath}:
+  /api/public-archives/download/{bucket}/{filepath}:
     $ref: paths/api@public-archives@download@id@path.yaml
   /api/public-archives/link:
     $ref: paths/api@public-archives@link.yaml
@@ -824,6 +841,10 @@ paths:
     $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
     $ref: paths/api@reports@download@id.yaml
+  /api/resource-pools/groups:
+    $ref: paths/api@resource-pools@groups.yaml
+  /api/resource-pools/groups/{id}:
+    $ref: paths/api@resource-pools@groups@id.yaml
   /api/roles:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
@@ -1191,6 +1212,8 @@ tags:
     description: Manage Groups
   - name: Guidance
     description: Manage Guidance Recommendations
+  - name: Guidance Settings
+    description: Manage Guidance Settings
   - name: Health
     description: View Appliance Health Statistics
   - name: History
@@ -1233,6 +1256,8 @@ tags:
     description: View Logs
   - name: Monitoring
     description: All Endpoints Under the Monitoring Tab
+  - name: Monitoring Settings
+    description: Manage Monitoring Settings
   - name: Morpheus API
     description: All Endpoints Specific to Morpheus API
   - name: Networks
@@ -1268,6 +1293,8 @@ tags:
       Provides API interfaces for managing provisioning licenses within Morpheus. This allows configuration of which Windows license keys should be installed when provisioning your virtual images.
   - name: Reports
     description: Manage Reports
+  - name: Resource Pools
+    description: Manage Resource Pools
   - name: Roles
     description: Manage Roles (Authorities)
   - name: Scripts

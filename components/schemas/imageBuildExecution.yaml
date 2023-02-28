@@ -45,3 +45,6 @@ properties:
     nullable: true
   virtualImages: 
     type: array
+    nullable: true
+    items: 
+      type: object

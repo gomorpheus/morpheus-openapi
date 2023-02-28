@@ -1,15 +1,18 @@
 {
   "catalogItemTypes": [
     {
-      "id": 1,
-      "name": "Example Instance",
-      "description": "Example catalog item type",
-      "labels": [],
+      "id": 84,
+      "name": "Simple Instance",
+      "code": null,
+      "category": "example category",
+      "description": "don't delete",
+      "labels": [
+        "auto",
+        "keep"
+      ],
       "type": "instance",
-      "blueprint": null,
-      "refType": "InstanceType",
-      "refId": null,
-      "active": true,
+      "visibility": "private",
+      "layoutCode": null,
       "enabled": true,
       "featured": true,
       "iconPath": "/assets/containers-png/nginx.png",
@@ -17,15 +20,36 @@
       "darkImagePath": "/assets/containers-png/nginx.png",
       "config": {
         "group": {
-          "id": 20,
-          "name": "Example Group"
+          "id": "20",
+          "name": "QA Docker"
         },
         "cloud": {
           "id": 8,
-          "name": "Example Cloud"
+          "name": "QA Docker"
         },
         "type": "nginx",
         "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+        "config": {
+          "createUser": true,
+          "isEC2": false,
+          "isVpcSelectable": true,
+          "provisionServerId": null,
+          "resourcePoolId": 160835,
+          "poolProviderType": "docker"
+        },
+        "volumes": [
+          {
+            "index": 0,
+            "rootVolume": true,
+            "name": "data",
+            "maxStorage": 1073741824,
+            "volumeCustomizable": false,
+            "hasDatastore": false,
+            "readonlyName": false,
+            "customMaxStorage": false,
+            "size": 1
+          }
+        ],
         "hostName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
         "layout": {
           "id": 7342,
@@ -36,101 +60,165 @@
           "code": "container-128"
         },
         "version": "1.9",
-        "config": {
-          "createUser": true,
-          "resourcePoolId": 94944
-        },
-        "networkInterfaces": [
+        "ports": [
           {
-            "network": {
-              "id": "network-3"
-            }
+            "id": 59,
+            "code": "nginx.80",
+            "name": "Http",
+            "shortName": "http",
+            "internalPort": 80,
+            "externalPort": 80,
+            "loadBalancePort": null,
+            "sortOrder": 0,
+            "loadBalanceProtocol": "http",
+            "loadBalance": true,
+            "visible": true
+          },
+          {
+            "id": 60,
+            "code": "nginx.443",
+            "name": "Https",
+            "shortName": "https",
+            "internalPort": 443,
+            "externalPort": 443,
+            "loadBalancePort": null,
+            "sortOrder": 1,
+            "loadBalanceProtocol": "https",
+            "loadBalance": true,
+            "visible": true
           }
         ],
-        "volumes": [
+        "networkInterfaces": [],
+        "templateParameter": null,
+        "backup": {
+          "createBackup": true,
+          "jobAction": "new",
+          "jobRetentionCount": "3",
+          "veeamManagedServer": "",
+          "backupRepository": 1,
+          "jobSchedule": 2,
+          "target": 37006
+        },
+        "loadBalancer": [
           {
-            "rootVolume": true,
-            "name": "root",
-            "size": 60
+            "internalPort": 80,
+            "externalPort": 80,
+            "loadBalancePort": null,
+            "loadBalanceProtocol": "http",
+            "externalAddressCheck": false,
+            "protocol": "http",
+            "balanceMode": "leastconnections",
+            "vipPort": 80,
+            "vipHostname": "${userInitials}-${cloudCode}-${type}-simple-${sequence}.localdomain",
+            "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+            "vipName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}-load-balancer",
+            "id": ""
+          },
+          {
+            "internalPort": 443,
+            "externalPort": 443,
+            "loadBalancePort": null,
+            "loadBalanceProtocol": "https",
+            "externalAddressCheck": false,
+            "protocol": "https",
+            "balanceMode": "leastconnections",
+            "vipPort": 443,
+            "vipHostname": "${userInitials}-${cloudCode}-${type}-simple-${sequence}.localdomain",
+            "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+            "vipName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}-load-balancer",
+            "id": ""
+          }
+        ],
+        "hideLock": true,
+        "deployment": {
+          "id": 1,
+          "versionId": 7
+        },
+        "showScale": false,
+        "volumesDisplay": [
+          {
+            "storage": null,
+            "name": "data",
+            "controller": null,
+            "datastore": null,
+            "displayOrder": null,
+            "size": 1,
+            "mountPoint": null
           }
         ]
       },
+      "content": "# Nginx Container\r\nThis is a sample catalog item that provisions a single nginx docker container.\r\nEnjoy!",
       "optionTypes": [],
-      "createdBy": null,
       "owner": {
         "id": 1,
-        "name": "root"
+        "name": "Morpheus QA"
       },
       "dateCreated": "2020-09-09T23:35:47Z",
-      "lastUpdated": "2020-09-16T03:58:32Z"
+      "lastUpdated": "2022-10-22T18:40:53Z"
     },
     {
-      "id": 2,
-      "name": "Example App",
-      "description": "Example catalog item type using a blueprint with scribe",
-      "labels": [],
+      "id": 202,
+      "name": "Simple Blueprint",
+      "code": null,
+      "description": "don't delete",
+      "labels": [
+        "auto",
+        "keep"
+      ],
       "type": "blueprint",
-      "blueprint": {
-        "id": 15,
-        "name": "Example Blueprint"
-      },
-      "refType": "AppTemplate",
-      "refId": null,
-      "active": true,
+      "visibility": "private",
+      "layoutCode": null,
       "enabled": true,
       "featured": true,
       "iconPath": "/assets/containers-png/docker.png",
       "imagePath": "/assets/containers-png/docker.png",
       "darkImagePath": "/assets/containers-png/docker.png",
-      "appSpec": "name: <%= customOptions.appName %>\r\ngroup:\r\n  name: Example\r\nenvironment: Test\r\ntiers:\r\n  Web:\r\n    instances:\r\n      - instance:\r\n          type: nginx\r\n          cloud: Example\r\n  App:\r\n    instances:\r\n      - instance:\r\n          type: activemq\r\n          cloud: Example",
-      "optionTypes": [
-        {
-          "id": 2926,
-          "name": "App Name",
-          "description": "Enter a unique name for the app",
-          "code": "appName",
-          "fieldName": "appName",
-          "fieldLabel": "App Name",
-          "fieldCode": null,
-          "fieldContext": "config.customOptions",
-          "fieldGroup": null,
-          "fieldClass": null,
-          "fieldAddOn": null,
-          "fieldComponent": null,
-          "fieldInput": null,
-          "placeHolder": null,
-          "verifyPattern": null,
-          "helpBlock": null,
-          "defaultValue": null,
-          "optionSource": null,
-          "optionList": null,
-          "type": "text",
-          "advanced": false,
-          "required": true,
-          "exportMeta": false,
-          "editable": false,
-          "creatable": true,
-          "config": {},
-          "displayOrder": 0,
-          "wrapperClass": null,
-          "enabled": true,
-          "noBlank": false,
-          "dependsOnCode": null,
-          "contextualDefault": false
-        }
-      ],
-      "createdBy": null,
+      "blueprint": {
+        "id": 13278,
+        "name": "Catalog Blueprint"
+      },
+      "appSpec": "name: '${userInitials}-${groupCode}-blueprint-${sequence}'\r\ngroup:\r\n  name: QA Docker\r\nenvironment: Test\r\ntiers:\r\n  Web:\r\n    instances:\r\n      - instance:\r\n          type: nginx\r\n          cloud: QA Docker\r\n  App:\r\n    instances:\r\n      - instance:\r\n          type: apache\r\n          cloud: QA Docker",
+      "content": "# App - Apache & Nginx\r\nThis is a sample catalog item that provisions an app. The app is made up of nginx and apache docker containers.\r\nEnjoy!",
+      "optionTypes": [],
       "owner": {
         "id": 1,
-        "name": "root"
+        "name": "Morpheus QA"
       },
       "dateCreated": "2020-09-25T19:13:05Z",
-      "lastUpdated": "2020-09-28T20:29:55Z"
+      "lastUpdated": "2022-10-22T18:40:49Z"
+    },
+    {
+      "id": 1344,
+      "name": "Appsec Restart",
+      "code": null,
+      "description": null,
+      "labels": [],
+      "type": "workflow",
+      "visibility": "private",
+      "layoutCode": null,
+      "enabled": true,
+      "featured": false,
+      "iconPath": "/assets/branding/140x40/resource.svg",
+      "imagePath": "/assets/branding/140x40/resource.svg",
+      "darkImagePath": "/assets/branding/140x40/resource.svg",
+      "workflow": {
+        "id": 6163,
+        "name": "AppSec Restart"
+      },
+      "context": "instance",
+      "content": null,
+      "optionTypes": [],
+      "owner": {
+        "id": 1,
+        "name": "Morpheus QA"
+      },
+      "dateCreated": "2022-03-15T15:44:51Z",
+      "lastUpdated": "2022-03-15T15:44:51Z"
     }
   ],
   "meta": {
-    "size": 2,
-    "total": 2,
+    "size": 3,
+    "total": 3,
     "max": 25,
     "offset": 25
   }

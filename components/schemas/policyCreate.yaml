@@ -2,7 +2,7 @@ type: object
 required:
   - name
   - policyType
-  - refType
+  - config
 properties:
   name: 
     type: string
@@ -16,347 +16,37 @@ properties:
     properties:
       code:
         type: string
-        description: The policy type
-        enum:
-        - Approve Delete
-        - Approve Provision
-        - Approve Reconfigure
-        - Backup Creation
-        - Backup Targets
-        - Budget
-        - Cluster Resource Name
-        - Cypher Access
-        - Delayed Delete
-        - Expiration
-        - File Share Storage Quota
-        - Hostname
-        - Instance Name
-        - Max Containers
-        - Max Cores
-        - Max Hosts
-        - Max Load Balancer Pools
-        - Max Memory
-        - Max Pool Members
-        - Max Storage
-        - Max Virtual Servers
-        - Max VMs
-        - Message of the Day
-        - Network Quota
-        - Object Storage Quota
-        - Power Schedule
-        - Router Quota
-        - Shutdown
-        - Storage Server Storage Quota
-        - Tags
-        - User Creation
-        - User Group Creation
-        - Workflow
-      config:
-        description: A map of config values. The expected values vary by policyType.
-        oneOf:
-          - type: object
-            description: |
-              - Approve Delete
-              - Approve Provisiong
-              - Approve Reconfigure
-            properties: 
-              accountIntegrationId: 
-                type: string
-          - type: object
-            description: |
-              - Backup Creation
-            properties:
-              createBackupType:
-                type: string
-              createBackup:
-                type: boolean
-          - type: object
-            description: |
-              - Backup Targets
-            properties:
-              backupStorageIds:
-                type: array
-                items:
-                  type: integer
-                  format: int64
-          - type: object
-            description: |
-              - Budget
-            properties:
-              maxPrice:
-                type: number
-              maxPriceCurrency:
-                type: string
-              maxPriceUnit:
-                type: string
-          - type: object
-            description: |
-              - Cluster Resource Name
-            properties:
-              serverNamingType:
-                type: string
-              serverNamingPattern:
-                type: string
-              serverNamingConflict:
-                type: boolean
-          - type: object
-            description: |
-              - Cypher Access
-            properties:
-              keyPattern:
-                type: string
-              read:
-                type: boolean
-              write:
-                type: boolean
-              update:
-                type: boolean
-              delete:
-                type: boolean
-              list:
-                type: boolean
-          - type: object
-            description: |
-              - Delayed Delete
-            properties:
-              removalAge:
-                type: string
-          - type: object
-            description: |
-              - Expiration
-            properties:
-              lifecycleType:
-                type: string
-              lifecycleAge:
-                type: string
-              lifecycleRenewal:
-                type: string
-              lifecycleNotify:
-                type: string
-              lifecycleMessage:
-                type: string
-              lifecycleAutoRenew:
-                type: boolean
-              lifecycleExtensionsBeforeApproval:
-                type: string
-              accountIntegrationId:
-                type: string
-              lifecycleHideFixed:
-                type: boolean
-          - type: object
-            description: |
-              - File Share Storage Quota
-            properties:
-              maxStorage:
-                type: string
-          - type: object
-            description: |
-              - Hostname
-            properties:
-              hostNamingType:
-                type: string
-              hostNamingPattern:
-                type: string 
-          - type: object
-            description: |
-              - Instance Name
-            properties:
-              namingType:
-                type: string
-              namingPattern:
-                type: string
-              namingConflict:
-                type: boolean
-          - type: object
-            description: |
-              - Max Containers
-            properties:
-              maxContainers:
-                type: string
-          - type: object
-            description: |
-              - Max Cores
-            properties:
-              maxCores:
-                type: string 
-          - type: object
-            description: |
-              - Max Hosts
-            properties:
-              maxHosts:
-                type: string 
-          - type: object
-            description: |
-              - Max Load Balancer Pools
-            properties:
-              maxPools:
-                type: string
-          - type: object
-            description: |
-              - Max Memory
-            properties:
-              maxMemory:
-                type: string
-          - type: object
-            description: |
-              - Max Pool Members
-            properties:
-              maxPoolMembers:
-                type: string
-          - type: object
-            description: |
-              - Max Storage
-              - Object Storage Quota
-            properties:
-              maxStorage:
-                type: string
-          - type: object
-            description: |
-              - Max Virtual Servers
-            properties:
-              maxVirtualServers:
-                type: string
-          - type: object
-            description: |
-              - Max VMs
-            properties:
-              maxVms:
-                type: string
-          - type: object
-            description: |
-              - Message of the Day
-            properties:
-              motd.title:
-                type: string
-              motd:
-                type: object
-                properties:
-                  title:
-                    type: string
-                  message:
-                    type: string
-                  type:
-                    type: string
-                  _fullPage:
-                    type: boolean
-                    nullable: true
-              motd.message:
-                type: string
-              motd.type:
-                type: string
-              motd._fullPage:
-                type: boolean
-                nullable: true
-              motd.date:
-                type: string
-                format: date-time
-          - type: object
-            description: |
-              - Network Quota
-            properties:
-              maxNetworks:
-                type: string
-          - type: object
-            description: |
-              - Power Schedule
-            properties:
-              powerScheduleType:
-                type: string
-              powerSchedule:
-                type: string
-              powerScheduleHideFixed:
-                type: boolean
-          - type: object
-            description: |
-              - Router Quota
-            properties:
-              maxRouters:
-                type: string
-          - type: object
-            description: |
-              - Shutdown
-            properties:
-              shutdownType:
-                type: string
-              shutdownAge:
-                type: string
-              shutdownRenewal:
-                type: string
-              shutdownNotify:
-                type: string
-              shutdownMessage:
-                type: string
-              shutdownAutoRenew:
-                type: boolean
-              shutdownExtensionsBeforeApproval:
-                type: string
-              accountIntegrationId:
-                type: string
-              shutdownHideFixed:
-                type: boolean
-          - type: object
-            description: |
-              - Storage Server Storage Quota
-            properties:
-              storageServerId:
-                type: string
-              maxStorage:
-                type: string
-          - type: object
-            description: |
-              - Tags
-            properties:
-              strict:
-                type: boolean
-              key:
-                type: string
-              valueListId:
-                type: string
-              value:
-                type: string
-          - type: object
-            description: |
-              - User Creation
-            properties:
-              createUserType:
-                type: string
-              createUser:
-                type: boolean
-          - type: object
-            description: |
-              - User Group Creation
-            properties:
-              userGroup:
-                type: string
-          - type: object
-            description: |
-              - Workflow
-            properties:
-              workflowId:
-                type: string
-      enabled:
-        type: boolean
-        description: Set to false to disable
-        default: true
-      refType:
-        type: string
-        description: Scope object type
-        enum:
-        - ComputeSite
-        - ComputeZone
-        - User
-        - Role
-        - Network
-      refId:
-        type: integer
-        format: int64
-        description: Scope object ID (`group`,`cloud`,`user`, etc)
-      accounts:
-        type: array
-        description: Array of tenants to scope the policy to
-        items:
-          type: integer
-          format: int64
-      eachUser:
-        type: boolean
-        description: Apply individually to each user in role.  Only when `refType` equals `Role`
+        description: The policy type code. See `Retrieves all Policy Types` endpoint for listing.
+  config:
+    description: A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
+    type: object
+  enabled:
+    type: boolean
+    description: Set to false to disable
+    default: true
+  refType:
+    type: string
+    description: Scope object type.  If none specified, will default to Global (null)
+    enum:
+    - null
+    - ComputeSite
+    - ComputeZone
+    - User
+    - Role
+    - Network
+    - Plan
+    default: null
+    nullable: true
+  refId:
+    type: integer
+    format: int64
+    description: Scope object ID (`group`,`cloud`,`user`, etc)
+  accounts:
+    type: array
+    description: Array of tenants to scope the policy to
+    items:
+      type: integer
+      format: int64
+  eachUser:
+      type: boolean
+      description: Apply individually to each user in role.  Only when `refType` equals `Role`

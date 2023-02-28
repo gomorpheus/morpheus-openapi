@@ -1,9 +1,6 @@
 get:
   summary: Export Appliance Health Logs
-  description: |
-    This endpoint downloads the morpheus appliance logs as a file attachment.
-    By default, the most recent 10,000 log entries are returned, with the newest at the end of the file.
-    The format for each log entry is `timestamp` `level` `message`.
+  description: This endpoint downloads the morpheus appliance logs as a file attachment. By default, the most recent 10,000 log entries are returned, with the newest at the end of the file. The format for each log entry is `timestamp` `level` `message`.
   operationId: exportHealthLogs
   tags:
     - Health

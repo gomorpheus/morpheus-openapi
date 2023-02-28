@@ -1,0 +1,54 @@
+get:
+  summary: Get Guidance Settings
+  description: This endpoint retrieves guidance settings.
+  operationId: getGuidanceSettings
+  tags:
+    - Guidance Settings
+  responses:
+    '200':
+      description: Guidance Settings
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              guidanceSettings:
+                $ref: ../components/schemas/guidanceSettings.yaml
+          examples:
+            Guidance Settings Response:
+              value:
+                $ref: ../components/examples/guidanceSettings.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Update Guidance Settings
+  description: Update Guidance Settings
+  operationId: updateGuidanceSettings
+  tags:
+    - Guidance Settings
+  requestBody:
+    content:
+      application/json:
+        schema:
+            type: object
+            properties:
+              guidanceSettings:
+                $ref: ../components/schemas/guidanceSettings.yaml
+  responses:
+    '200':
+      description: Update Guidance Settings Object
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Update User Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

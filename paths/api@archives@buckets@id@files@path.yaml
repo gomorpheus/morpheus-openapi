@@ -6,7 +6,7 @@ get:
     - Archives
   parameters:
     - $ref: ../components/parameters/bucketName-path.yaml
-    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/fullTree.yaml
@@ -50,7 +50,7 @@ post:
     - Archives
   parameters:
     - $ref: ../components/parameters/bucketName-path.yaml
-    - $ref: ../components/parameters/filePath-path.yaml
+    - $ref: ../components/parameters/filepath-lower-path.yaml
     - $ref: ../components/parameters/archiveFilename.yaml
   requestBody:
     content:
