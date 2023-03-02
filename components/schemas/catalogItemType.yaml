@@ -26,6 +26,9 @@ properties:
     type: boolean
   featured: 
     type: boolean
+  allowQuantity: 
+    description: Can users order more than one of this item at a time.
+    type: boolean
   iconPath: 
     type: string
   imagePath: 

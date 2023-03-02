@@ -12,6 +12,11 @@ properties:
           name:
             type: string
             description: Order Name as a way to identify the order.
+      quantity:
+        type: integer
+        format: int64
+        description: |
+          Quantity for this catalog item. Will be overridden to 1 if quantity not allowed by the item type.
       config:
         type: object
         description: |

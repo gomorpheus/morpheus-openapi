@@ -6,6 +6,7 @@
       "description": "Example apache instance",
       "type": "instance",
       "featured": true,
+      "allowQuantity": false,
       "imagePath": "/assets/containers-png/apache.png",
       "darkImagePath": "/assets/containers-png/apache.png"
     },
@@ -15,6 +16,7 @@
       "description": "Example catalog item",
       "type": "instance",
       "featured": true,
+      "allowQuantity": true,
       "imagePath": "/assets/containers-png/apache.png",
       "darkImagePath": "/assets/containers-png/apache.png"
     },
@@ -25,6 +27,7 @@
       "type": "workflow",
       "context": "instance",
       "featured": false,
+      "allowQuantity": false,
       "imagePath": "/assets/containers-png/morph-resource2.png",
       "darkImagePath": "/assets/containers-png/morph-resource2.png"
     }
