@@ -16,9 +16,6 @@ properties:
   description: 
     type: string
     description: Catalog Item Type description
-  allowQuantity: 
-    description: Can users order more than one of this item at a time.
-    type: boolean
   labels: 
     type: array
     description: Array of label strings, can be used for filtering.
@@ -48,6 +45,10 @@ properties:
   featured:
     type: boolean
     description: Can be used to feature the catalog item type.
+    default: false
+  allowQuantity: 
+    description: Can users order more than one of this item at a time.
+    type: boolean
     default: false
   workflow: 
     type: object
