@@ -16,6 +16,9 @@ properties:
   description: 
     type: string
     description: Catalog Item Type description
+  allowQuantity: 
+    description: Can users order more than one of this item at a time.
+    type: boolean
   labels: 
     type: array
     description: Array of label strings, can be used for filtering.
