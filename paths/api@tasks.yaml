@@ -119,85 +119,85 @@ post:
                         - sshTask
                         - vro
                         - writeAttributes
-                    labels:
-                      type: array
-                      description: An array of Category labels for filtering
-                      items: 
-                        type: string
-                    taskOptions:
-                      type: object
-                      description: Map of options specific to each `task type`. eg. script
-                    resultType:
+                labels:
+                  type: array
+                  description: An array of Category labels for filtering
+                  items: 
+                    type: string
+                taskOptions:
+                  type: object
+                  description: Map of options specific to each `task type`. eg. script
+                resultType:
+                  type: string
+                  nullable: true
+                  enum: 
+                    - exitCode
+                    - keyValue
+                    - json
+                executeTarget:
+                  type: string
+                  description: |
+                    The execution target. eg. local,remote,resource. The default value varies by task type.
+                  enum: 
+                    - local
+                    - remote
+                    - resource
+                retryable:
+                  type: boolean
+                  description: If the task should be retried or not.
+                  default: false
+                retryCount:
+                  type: integer
+                  description: The number of times to retry.
+                retryDelaySeconds:
+                  type: number
+                  description: The delay, between retries.
+                file:
+                  type: object
+                  description: |
+                    File, object specifying type and content, see File Object. This is required for task types that expect a script, having scriptable:true and an optionType of `type:"file-content"`.
+                  required: 
+                    - sourceType
+                  properties: 
+                    sourceType:
                       type: string
-                      nullable: true
-                      enum: 
-                        - exitCode
-                        - keyValue
-                        - json
-                    executeTarget:
-                      type: string
-                      description: |
-                        The execution target. eg. local,remote,resource. The default value varies by task type.
-                      enum: 
+                      description: File Source i.e. `local`, `repository`, `url`. Default is `local`.
+                      enum:
                         - local
-                        - remote
-                        - resource
-                    retryable:
-                      type: boolean
-                      description: If the task should be retried or not.
-                      default: false
-                    retryCount:
-                      type: integer
-                      description: The number of times to retry.
-                    retryDelaySeconds:
-                      type: number
-                      description: The delay, between retries.
-                    file:
+                        - repository
+                        - url
+                      default: local
+                    content:
+                      type: string
+                      description: File content, the script text. Only required when sourceType is `local`.
+                    contentPath:
+                      type: string
+                      description: Content Path, the repo file location or url. Required when sourceType is `repository` or `url`.
+                    contentRef:
+                      type: string
+                      description: Content Ref, the branch/tag. Only used when sourceType is `repository`.
+                    repository:
                       type: object
-                      description: |
-                        File, object specifying type and content, see File Object. This is required for task types that expect a script, having scriptable:true and an optionType of `type:"file-content"`.
-                      required: 
-                        - sourceType
                       properties: 
-                        sourceType:
+                        id:
+                          type: integer
+                          format: int64
+                          description: Code Repository ID, required for type `repository`. Use `/api/options/codeRepositories` to see available repositories.
+                credential:
+                  description: |
+                    Map containing Credential ID or the default `{"type": "local"}` which means use the values set in the local task options username and password instead of associating a credential.
+                  oneOf: 
+                    - type: object
+                      properties: 
+                        type:
                           type: string
-                          description: File Source i.e. `local`, `repository`, `url`. Default is `local`.
                           enum:
-                            - local
-                            - repository
-                            - url
-                          default: local
-                        content:
-                          type: string
-                          description: File content, the script text. Only required when sourceType is `local`.
-                        contentPath:
-                          type: string
-                          description: Content Path, the repo file location or url. Required when sourceType is `repository` or `url`.
-                        contentRef:
-                          type: string
-                          description: Content Ref, the branch/tag. Only used when sourceType is `repository`.
-                        repository:
-                          type: object
-                          properties: 
-                            id:
-                              type: integer
-                              format: int64
-                              description: Code Repository ID, required for type `repository`. Use `/api/options/codeRepositories` to see available repositories.
-                    credential:
-                      description: |
-                        Map containing Credential ID or the default `{"type": "local"}` which means use the values set in the local task options username and password instead of associating a credential.
-                      oneOf: 
-                        - type: object
-                          properties: 
-                            type:
-                              type: string
-                              enum:
-                                - local                              
-                        - type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
+                            - local                              
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
   responses:
     '200':
       description: Successful Request
