@@ -6,13 +6,6 @@ get:
   operationId: listTenantsAvailableRoles
   tags:
     - Tenants
-  parameters:
-    - name: accountId
-      in: query
-      description: Tenant ID, find roles for sub tenant account.
-      schema:
-        type: integer
-        format: int64
   responses:
     '200':
       description: Array of roles
