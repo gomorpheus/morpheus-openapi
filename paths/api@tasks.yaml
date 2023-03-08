@@ -38,6 +38,7 @@ get:
                     - $ref: ../components/schemas/taskJrubyConfig.yaml
                     - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                     - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
+                    - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
                     - $ref: ../components/schemas/taskPowershellConfig.yaml
                     - $ref: ../components/schemas/taskPuppetConfig.yaml
                     - $ref: ../components/schemas/taskPythonConfig.yaml
@@ -111,6 +112,7 @@ post:
                         - containerScript
                         - containerTemplate
                         - localScript
+                        - nestedWorkflow
                         - winrmTask
                         - puppetTask
                         - jythonTask
@@ -219,6 +221,7 @@ post:
                   - $ref: ../components/schemas/taskJrubyConfig.yaml
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
+                  - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
                   - $ref: ../components/schemas/taskPowershellConfig.yaml
                   - $ref: ../components/schemas/taskPuppetConfig.yaml
                   - $ref: ../components/schemas/taskPythonConfig.yaml
@@ -258,6 +261,9 @@ post:
             Task Response - Create Library Template:
               value:
                 $ref: ../components/examples/taskLibraryTemplateSuccess.json
+            Task Response - Create Nested Workflow:
+              value:
+                $ref: ../components/examples/taskNestedWorkflowSuccess.json
             Task Response - Create PowerShell:
               value:
                 $ref: ../components/examples/taskPowershellSuccess.json
