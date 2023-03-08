@@ -1,0 +1,30 @@
+{
+    "task": {
+        "id": 96,
+        "accountId": 1,
+        "name": "Initialize",
+        "code": null,
+        "taskType": {
+            "id": 20,
+            "code": "nestedWorkflow",
+            "name": "Nested Workflow"
+        },
+        "labels": [],
+        "visibility":"public",
+        "taskOptions": {
+            "operationalWorkflowId": "84",
+            "operationalWorkflowName": "Bootstrap Workflow"
+        },
+        "resultType": null,
+        "executeTarget": "local",
+        "retryable": false,
+        "retryCount": 5,
+        "retryDelaySeconds": 10,
+        "allowCustomConfig": false,
+        "credential": {
+            "type": "local"
+        },
+        "dateCreated": "2022-08-04T13:53:15Z",
+        "lastUpdated": "2022-08-04T13:53:15Z"
+    }
+}

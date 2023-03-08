@@ -28,6 +28,7 @@ get:
                   - $ref: ../components/schemas/taskJrubyConfig.yaml
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
+                  - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
                   - $ref: ../components/schemas/taskPowershellConfig.yaml
                   - $ref: ../components/schemas/taskPuppetConfig.yaml
                   - $ref: ../components/schemas/taskPythonConfig.yaml
@@ -66,6 +67,9 @@ get:
             Task Response - Get Library Template:
               value:
                 $ref: ../components/examples/taskLibraryTemplate.json
+            Task Response - Get Nested Workflow:
+              value:
+                $ref: ../components/examples/taskNestedWorkflow.json
             Task Response - Get PowerShell:
               value:
                 $ref: ../components/examples/taskPowershell.json
@@ -143,6 +147,7 @@ put:
                         - containerScript
                         - containerTemplate
                         - localScript
+                        - nestedWorkflow
                         - winrmTask
                         - puppetTask
                         - jythonTask
@@ -252,6 +257,7 @@ put:
                   - $ref: ../components/schemas/taskJrubyConfig.yaml
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
+                  - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
                   - $ref: ../components/schemas/taskPowershellConfig.yaml
                   - $ref: ../components/schemas/taskPuppetConfig.yaml
                   - $ref: ../components/schemas/taskPythonConfig.yaml
@@ -291,6 +297,9 @@ put:
             Task Response - Update Library Template:
               value:
                 $ref: ../components/examples/taskLibraryTemplateSuccess.json
+            Task Response - Update Nested Workflow:
+              value:
+                $ref: ../components/examples/taskNestedWorkflowSuccess.json
             Task Response - Update PowerShell:
               value:
                 $ref: ../components/examples/taskPowershellSuccess.json
