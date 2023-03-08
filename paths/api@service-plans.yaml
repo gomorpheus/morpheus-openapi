@@ -148,10 +148,10 @@ post:
                       properties: 
                         minStorage: 
                           type: string
-                          description: Custom min storage in GB (unless `storageSizeType` set to mb)
+                          description: Custom min storage in GB
                         maxStorage: 
                           type: string
-                          description: Custom max storage in GB (unless `storageSizeType` set to mb)
+                          description: Custom max storage in GB
                         minPerDiskSize:
                           type: string
                           description: Custom min per disk size in GB

@@ -120,10 +120,10 @@ properties:
             type: string
             nullable: true
           minPerDiskSize:
-            type: number
+            type: string
             nullable: true
           maxPerDiskSize:
-            type: number
+            type: string
             nullable: true
           minMemory: 
             type: number
