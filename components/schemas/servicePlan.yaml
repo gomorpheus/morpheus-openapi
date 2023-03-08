@@ -119,6 +119,12 @@ properties:
           maxStorage: 
             type: string
             nullable: true
+          minPerDiskSize:
+            type: number
+            nullable: true
+          maxPerDiskSize:
+            type: number
+            nullable: true
           minMemory: 
             type: number
             nullable: true

@@ -152,6 +152,12 @@ post:
                         maxStorage: 
                           type: string
                           description: Custom max storage in GB (unless `storageSizeType` set to mb)
+                        minPerDiskSize:
+                          type: string
+                          description: Custom min per disk size in GB
+                        maxPerDiskSize:
+                          type: string
+                          description: Custom max per disk size in GB
                         minMemory: 
                           type: integer
                           format: int64
