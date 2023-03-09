@@ -20,7 +20,7 @@ properties:
       code: 
         type: string
         enum: 
-          - jrubyTask
+          - nestedWorkflow
       name: 
         type: string
   labels:
