@@ -101,7 +101,9 @@ put:
                   enum:
                     - appliance
                     - instance
+                    - instance-label
                     - server
+                    - server-label
                 targets:
                   type: array
                   nullable: true
@@ -111,6 +113,12 @@ put:
                       refId:
                         type: integer
                         format: int64
+                instanceLabel:
+                  type: string
+                  description: Instance Label. Only applicable if `targetType` is `instance-label`.
+                serverLabel:
+                  type: string
+                  description: Server Label. Only applicable if `targetType` is `server-label`.
                 scheduleMode:
                   oneOf:
                   - type: string

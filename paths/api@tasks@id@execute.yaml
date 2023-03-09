@@ -25,21 +25,29 @@ post:
                   type: string
                   description: The target context for task execution. This is required for tasks with `executeTarget` set to `resource`.
                   enum:
-                    - instance
-                    - server
                     - appliance
+                    - instance
+                    - instance-label
+                    - server
+                    - server-label
                 instances:
                   type: array
-                  description: Array of Instance IDs. Only applicable for `targetType` is instance.
+                  description: Array of Instance IDs. Only applicable if `targetType` is instance.
                   items:
                     type: integer
                     format: int64
                 servers:
                   type: array
-                  description: Array of Server IDs. Only applicable for `targetType` is `server`.
+                  description: Array of Server IDs. Only applicable if `targetType` is `server`.
                   items:
                     type: integer
                     format: int64
+                instanceLabel:
+                  type: string
+                  description: Instance Label. Only applicable if `targetType` is `instance-label`.
+                serverLabel:
+                  type: string
+                  description: Server Label. Only applicable if `targetType` is `server-label`.
                 customOptions:
                   type: object
                   description: Map of options to be used as values in the task. These correspond to option types.
