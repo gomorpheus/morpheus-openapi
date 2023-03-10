@@ -3,6 +3,8 @@ properties:
   id:
     type: integer
     format: int64
+  uuid: 
+    type: string
   name:
     type: string
   accountId:
@@ -26,6 +28,8 @@ properties:
         type: string
       code:
         type: string
+  owner:
+    $ref: owner.yaml
   visibility:
     type: string
   description:
@@ -66,3 +70,13 @@ properties:
   lastUpdated:
     type: string
     format: date-time
+  credential:
+    $ref: creds.yaml
+  # price: 
+  #   $ref: loadBalancerPrice.yaml
+  # instancePrice: 
+  #   $ref: instancePrice.yaml
+  tenants:
+    $ref: tenants.yaml
+  resourcePermission:
+    $ref: resourcePermissions.yaml
