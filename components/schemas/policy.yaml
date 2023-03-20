@@ -450,6 +450,17 @@ properties:
       properties:
         workflowId:
           type: string
+    - type: object
+      additionalProperties: false
+      required: 
+        - maxStorage
+        - maxCores
+        - maxMemory
+      description: |
+        - Exclude Containers/Pods in calculating stats
+      properties:
+        excludeContainer:
+          type: boolean
   enabled: 
     type: boolean
   owner: 
