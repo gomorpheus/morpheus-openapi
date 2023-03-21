@@ -175,6 +175,8 @@ properties:
             properties:
               maxCores:
                 type: string 
+              excludeContainers:
+                type: boolean 
           - type: object
             description: |
               - Max Hosts
@@ -193,6 +195,8 @@ properties:
             properties:
               maxMemory:
                 type: string
+              excludeContainers:
+                type: boolean 
           - type: object
             description: |
               - Max Pool Members
@@ -206,6 +210,8 @@ properties:
             properties:
               maxStorage:
                 type: string
+              excludeContainers:
+                type: boolean 
           - type: object
             description: |
               - Max Virtual Servers

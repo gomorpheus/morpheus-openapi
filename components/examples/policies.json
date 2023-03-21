@@ -184,7 +184,8 @@
             "refId": null,
             "eachUser": false,
             "config": {
-                "maxCores": "235"
+                "maxCores": "235",
+                "excludeContainers": false
             },
             "enabled": false,
             "owner": {
@@ -262,7 +263,8 @@
             "refId": null,
             "eachUser": false,
             "config": {
-                "maxMemory": "325"
+                "maxMemory": "325",
+                "excludeContainers": false
             },
             "enabled": false,
             "owner": {
@@ -340,7 +342,8 @@
             "refId": null,
             "eachUser": false,
             "config": {
-                "maxStorage": "12352"
+                "maxStorage": "12352",
+                "excludeContainers": false
             },
             "enabled": false,
             "owner": {
