@@ -25,7 +25,20 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - type: object
+                properties:
+                  userSource:
+                    anyOf:
+                    - $ref: ../components/schemas/identitySourcesLDAPConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesJumpCloudConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesADConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesOktaConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesOneLoginConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesSAMLConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesAzureADConfig.yaml
+                    - $ref: ../components/schemas/identitySourcesCustomSSOConfig.yaml
+              - $ref: ../components/schemas/200-success.yaml
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
