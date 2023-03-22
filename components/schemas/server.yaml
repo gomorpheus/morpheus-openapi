@@ -37,8 +37,7 @@ properties:
       name: 
         type: string
   owner: 
-    type: string
-    nullable: true
+    $ref: owner.yaml
   zone: 
     type: object
     properties: 
