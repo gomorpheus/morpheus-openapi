@@ -46,7 +46,7 @@ get:
                     $ref: ../components/schemas/server.yaml
                 stats:
                   type: object
-                multitenant:
+                multiTenant:
                   type: boolean
             - $ref: ../components/schemas/meta.yaml
           examples:
