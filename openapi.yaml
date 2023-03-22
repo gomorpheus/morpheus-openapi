@@ -434,8 +434,6 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
-  /api/monitoring-settings:
-    $ref: paths/api@monitoring-settings.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -656,6 +654,9 @@ paths:
   /api/logs:
     $ref: paths/api@logs.yaml
 
+  /api/monitoring-settings:
+    $ref: paths/api@monitoring-settings.yaml
+  
   /api/network-types:
     $ref: paths/api@network-types.yaml
   /api/network-types/{id}:
