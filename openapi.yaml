@@ -756,6 +756,8 @@ paths:
     $ref: paths/api@networks@pool-server-types.yaml
   /api/networks/pool-server-types/{id}:
     $ref: paths/api@networks@pool-server-types@id.yaml
+  /api/networks/servers/{id}/refresh:
+    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/options/codeRepositories:
     $ref: paths/api@options@codeRepositories.yaml
   /api/options/{optionSource}:

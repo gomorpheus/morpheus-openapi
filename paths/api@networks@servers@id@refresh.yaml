@@ -1,0 +1,24 @@
+post: 
+  summary: Refresh a Network Server/Integration
+  description: |
+    Refreshes a network server/integration.
+  operationId: refreshNetworkServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/successId.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
