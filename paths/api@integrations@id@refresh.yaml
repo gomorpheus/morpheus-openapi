@@ -28,7 +28,6 @@ post:
                   - $ref: ../components/schemas/integrationDockerRepo.yaml
                   - $ref: ../components/schemas/integrationGitRepo.yaml
                   - $ref: ../components/schemas/integrationGitHub.yaml
-                  - $ref: ../components/schemas/integrationJenkins.yaml
                   - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
                   - $ref: ../components/schemas/integrationPowerDNS.yaml
                   - $ref: ../components/schemas/integrationPuppet.yaml
@@ -66,9 +65,6 @@ post:
             Integration Response - Refresh GitHub:
               value:
                 $ref: ../components/examples/integrationGitHubSuccess.json
-            Integration Response - Refresh Jenkins:
-              value:
-                $ref: ../components/examples/integrationJenkinsSuccess.json
             Integration Response - Refresh Microsoft DNS:
               value:
                 $ref: ../components/examples/integrationMicrosoftDNSSuccess.json

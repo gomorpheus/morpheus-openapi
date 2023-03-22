@@ -27,7 +27,6 @@ get:
                   - $ref: ../components/schemas/integrationDockerRepo.yaml
                   - $ref: ../components/schemas/integrationGitRepo.yaml
                   - $ref: ../components/schemas/integrationGitHub.yaml
-                  - $ref: ../components/schemas/integrationJenkins.yaml
                   - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
                   - $ref: ../components/schemas/integrationPowerDNS.yaml
                   - $ref: ../components/schemas/integrationPuppet.yaml
@@ -65,9 +64,6 @@ get:
             Integration Response - GitHub:
               value:
                 $ref: ../components/examples/integrationGitHub.json
-            Integration Response - Jenkins:
-              value:
-                $ref: ../components/examples/integrationJenkins.json
             Integration Response - Microsoft DNS:
               value:
                 $ref: ../components/examples/integrationMicrosoftDNS.json
@@ -117,7 +113,6 @@ put:
             - $ref: ../components/schemas/integrationDockerRepoConfig.yaml
             - $ref: ../components/schemas/integrationGitRepoConfig.yaml
             - $ref: ../components/schemas/integrationGitHubConfig.yaml
-            - $ref: ../components/schemas/integrationJenkinsConfig.yaml
   responses:
     '200':
       description: Successful Request
@@ -138,7 +133,6 @@ put:
                   - $ref: ../components/schemas/integrationDockerRepo.yaml
                   - $ref: ../components/schemas/integrationGitRepo.yaml
                   - $ref: ../components/schemas/integrationGitHub.yaml
-                  - $ref: ../components/schemas/integrationJenkins.yaml
                   - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
                   - $ref: ../components/schemas/integrationPowerDNS.yaml
                   - $ref: ../components/schemas/integrationPuppet.yaml
@@ -176,9 +170,6 @@ put:
             Integration Response - Update GitHub:
               value:
                 $ref: ../components/examples/integrationGitHubSuccess.json
-            Integration Response - Update Jenkins:
-              value:
-                $ref: ../components/examples/integrationJenkinsSuccess.json
             Integration Response - Update Microsoft DNS:
               value:
                 $ref: ../components/examples/integrationMicrosoftDNSSuccess.json
