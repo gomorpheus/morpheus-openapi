@@ -13,19 +13,18 @@ get:
       content:
         application/json:
           schema:
-            allOf:
-            - type: object
-              properties:
-                task:
-                  anyOf:
-                  - $ref: ../components/schemas/identitySourcesLDAPConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesJumpCloudConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesADConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesOktaConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesOneLoginConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesSAMLConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesAzureADConfig.yaml
-                  - $ref: ../components/schemas/identitySourcesCustomSSOConfig.yaml
+            type: object
+            properties:
+              userSource:
+                anyOf:
+                - $ref: ../components/schemas/identitySourcesLDAPConfig.yaml
+                - $ref: ../components/schemas/identitySourcesJumpCloudConfig.yaml
+                - $ref: ../components/schemas/identitySourcesADConfig.yaml
+                - $ref: ../components/schemas/identitySourcesOktaConfig.yaml
+                - $ref: ../components/schemas/identitySourcesOneLoginConfig.yaml
+                - $ref: ../components/schemas/identitySourcesSAMLConfig.yaml
+                - $ref: ../components/schemas/identitySourcesAzureADConfig.yaml
+                - $ref: ../components/schemas/identitySourcesCustomSSOConfig.yaml
           examples:
             Identity Source - LDAP Response:
               value:
