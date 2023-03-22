@@ -1,0 +1,23 @@
+type: object
+description: OneLogin Configuration
+properties: 
+  subdomain:
+    type: string
+    description: OneLogin Subdomain
+    example: mydomain
+  region:
+    type: string
+    description: OneLogin Region
+    example: us
+  clientSecret:
+    type: string
+    description: API Client Secret
+    example: jtweijt09375280238
+  clientId:
+    type: string
+    description: API Client ID
+    example: ijogijrut0out04980u5049
+  requiredRole:
+    type: string
+    description: Required Role
+    example: myrole

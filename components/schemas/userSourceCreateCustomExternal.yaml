@@ -1,0 +1,29 @@
+type: object
+description: Custom External Configuration
+properties:
+  loginUrl:
+    type: string
+    description: External Login URL
+    example: "https://fqdn"
+  doNotIncludeSAMLRequest:
+    type: boolean
+    description: Do not include SAMLRequest
+    default: false
+  logout:
+    type: string
+    description: External Logout URL
+    example: "https://fqdn/logout"
+  encryptionAlgo:
+    type: string
+    description: Encryption Algorithm
+    enum: 
+      - NONE
+      - AES
+      - DES
+      - DESede
+      - HmacSHA1
+      - HmacSHA256
+  encryptionKey:
+    type: string
+    description: Encryption Key
+    example: "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIF"

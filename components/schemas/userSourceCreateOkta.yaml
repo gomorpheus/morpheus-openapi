@@ -1,0 +1,15 @@
+type: object
+description: Okta Configuration
+properties:
+  url:
+    type: string
+    description: Okta URL
+    example: "https://test.okta.com"
+  administratorAPIToken:
+    type: string
+    description: Administrator API Token
+    example: "9875023985039285"
+  requiredGroup:
+    type: string
+    description: Required Group
+    example: dev

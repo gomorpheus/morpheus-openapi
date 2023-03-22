@@ -1,0 +1,59 @@
+type: object
+description: SAML Configuration
+properties:
+  url:
+    type: string
+    description: Login Redirect URL
+    example: "https://myurl.com/redirect"
+  doNotIncludeSAMLRequest:
+    type: boolean
+    description: Exclude SAML Request Parameter
+    default: false
+  logoutUrl:
+    type: string
+    description: Lougout Post URL
+    example: "https://myurl.com/logout"
+  SAMLSignatureMode:
+    type: string
+    description: SAML Request signing mode
+    enum:
+      - NoSignature
+      - SelfSigned
+      - CustomSignature
+    default: NoSignature
+  request509Certificate:
+    type: string
+    description: Only applies when `SAMLSignatureMode=CustomSignature`
+    example: "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIF"
+  requestPrivateKey:
+    type: string
+    description: RSA Private Key. Only applies when `SAMLSignatureMode=CustomSignature`
+    example: "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIF"
+  doNotValidateSignature:
+    type: boolean
+    description: SAML Response Signing Flag
+    default: true
+  publicKey:
+    type: string
+    description: Signing Public Key. Only applies when `doNotValidateSignature=true`
+    example: "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIF"
+  privateKey:
+    type: string
+    description: Encryption RSA Private Key
+    example: "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIF"
+  givenNameAttribute:
+    type: string
+    description: Given Name Attribute Name
+    example: John
+  surnameAttribute:
+    type: string
+    description: Surname Attribute Name
+    example: Smith
+  roleAttributeName:
+    type: string
+    description: Role Attribute Name
+    example: firstName
+  requiredAttributeValue:
+    type: string
+    description: Role Attibute Required Value
+    example: dev

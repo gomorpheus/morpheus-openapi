@@ -1,0 +1,19 @@
+type: object
+description: LDAP Configuration
+properties: 
+  url:
+    type: string
+    description: URL of Endpoint
+    example: "my.fqdn.com"
+  bindingUsername:
+    type: string
+    description: Binding Username
+    example: jsmith
+  bindingPassword:
+    type: string
+    description: Binding Password
+    example: 'MyPassword'
+  requiredGroup:
+    type: string
+    description: User DN Expression
+    example: "uid=$username,cn=users,cn=account,dc=example,dc=veritas,dc=com"

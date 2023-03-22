@@ -1,0 +1,52 @@
+type: object
+required:
+  - userSource
+properties:
+  userSource:
+    type: object
+    required:
+      - name
+      - type
+      - defaultAccountRole
+    properties:
+      name: 
+        type: string
+        description: A name for the Identity Source
+        example: mydomain AD
+      type:
+        type: string
+        description: IDM type code
+      description:
+        type: string
+        description: description
+      defaultAccountRole:
+        type: object
+        required: 
+          - id
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: Default `Role ID`
+            example: 19
+      roleMappings:
+        oneOf: 
+        - $ref: userSourceCreationMap.yaml
+        - $ref: userSourceCreationObject.yaml
+      roleMappingNames:
+        type: object
+        description: |
+          Map of Morpheus '`Role ID`':'`Role Name`'.
+        deprecated: true
+        additionalProperties:
+          type: string
+      config:
+        oneOf:
+          - $ref: userSourceCreateLDAP.yaml
+          - $ref: userSourceCreateJumpCloud.yaml
+          - $ref: userSourceCreateActiveDirectory.yaml
+          - $ref: userSourceCreateOkta.yaml
+          - $ref: userSourceCreateOneLogin.yaml
+          - $ref: userSourceCreateSaml.yaml
+          - $ref: userSourceCreateCustomExternal.yaml
+          - $ref: userSourceCreateCustomApi.yaml

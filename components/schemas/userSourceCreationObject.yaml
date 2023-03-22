@@ -1,0 +1,7 @@
+type: object
+deprecated: true
+description: |
+  Map of Morpheus `'Role ID':'Fully Qualified Role Name'`
+  **NOTE** This will add/update the specified role mapping(s) without removing undefined settings.
+additionalProperties:
+  type: string
