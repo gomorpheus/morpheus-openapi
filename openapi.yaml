@@ -704,8 +704,6 @@ paths:
     $ref: paths/api@networks@routers@id@routes.yaml
   /api/networks/routers/{routerId}/routes/{id}:
     $ref: paths/api@networks@routers@id@routes@id.yaml
-  /api/networks/servers/{id}/refresh:
-    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/networks/pools:
     $ref: paths/api@networks@pools.yaml
   /api/networks/pools/{id}:
