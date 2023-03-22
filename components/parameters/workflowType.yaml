@@ -1,0 +1,9 @@
+name: type
+in: query
+description: Filter by Workflow Type
+schema:
+  type: string
+  enum:
+    - operation
+    - provision
+example: "provision"
