@@ -9,8 +9,10 @@ properties:
     type: string
   internalId: 
     type: string
+    nullable: true
   externalUniqueId: 
     type: string
+    nullable: true
   name: 
     type: string
   externalName: 
@@ -219,6 +221,7 @@ properties:
   coresPerSocket: 
     type: integer
     format: int64
+    nullable: true
   maxMemory: 
     type: integer
     format: int64
@@ -226,7 +229,8 @@ properties:
     type: integer
     format: int64
   maxCpu: 
-    type: string
+    type: integer
+    format: int64
     nullable: true
   hourlyCost: 
     type: number
@@ -245,6 +249,7 @@ properties:
         type: string
   serverOs: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -283,8 +288,10 @@ properties:
         controllerId: 
           type: integer
           format: int64
+          nullable: true
         controllerMountPoint: 
           type: string
+          nullable: true
         resizeable: 
           type: boolean
         planResizable: 
@@ -293,6 +300,7 @@ properties:
           type: boolean
         unitNumber: 
           type: string
+          nullable: true
         typeId: 
           type: integer
           format: int64
@@ -301,6 +309,7 @@ properties:
         datastoreId: 
           type: integer
           format: int64
+          nullable: true
         maxStorage: 
           type: integer
           format: int64
@@ -320,6 +329,7 @@ properties:
           nullable: true
         internalId: 
           type: string
+          nullable: true
   controllers: 
     type: array
     items: 
@@ -367,6 +377,7 @@ properties:
           nullable: true
         externalId: 
           type: string
+          nullable: true
         uniqueId: 
           type: string
           nullable: true
@@ -380,6 +391,7 @@ properties:
           type: string
         ipv6Address: 
           type: string
+          nullable: true
         ipSubnet: 
           type: string
           nullable: true
@@ -428,6 +440,7 @@ properties:
           nullable: true
         type: 
           type: object
+          nullable: true
           properties: 
             id: 
               type: integer
@@ -441,6 +454,7 @@ properties:
           nullable: true
         macAddress: 
           type: string
+          nullable: true
   labels: 
     type: array
     nullable: true
