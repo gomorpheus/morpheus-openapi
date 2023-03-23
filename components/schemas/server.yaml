@@ -85,7 +85,8 @@ properties:
     type: integer
     format: int64
   folderId: 
-    type: string
+    type: integer
+    format: int64
     nullable: true
   sshHost: 
     type: string
@@ -137,6 +138,24 @@ properties:
       ts: 
         type: string
         format: date-time
+      freeSwap:
+        type: integer
+        format: int64
+      usedSwap: 
+        type: integer
+        format: int64
+      cpuIdleTime:
+        type: integer
+        format: int64
+      cpuSystemTime:
+        type: integer
+        format: int64
+      cpuUserTime:
+        type: integer
+        format: int64
+      cpuTotalTime:
+        type: integer
+        format: int64
       maxMemory: 
         type: integer
         format: int64
@@ -149,9 +168,21 @@ properties:
       usedStorage: 
         type: integer
         format: int64
+      reservedStorage: 
+        type: integer
+        format: int64
       cpuUsage: 
         type: number
       freeMemory: 
+        type: integer
+        format: int64
+      netTxUsage:
+        type: integer
+        format: int64
+      netRxUsage:
+        type: integer
+        format: int64
+      networkBandwidth:
         type: integer
         format: int64
   status: 
@@ -202,8 +233,16 @@ properties:
   hourlyPrice: 
     type: number
   sourceImage: 
-    type: string
+    type: object
     nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
   serverOs: 
     type: object
     properties: 
@@ -376,8 +415,14 @@ properties:
           type: string
           nullable: true
         networkPool: 
-          type: string
+          type: object
           nullable: true
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
         networkDomain: 
           type: string
           nullable: true
@@ -398,10 +443,12 @@ properties:
           type: string
   labels: 
     type: array
+    nullable: true
     items:
       type: object
   tags: 
     type: array
+    nullable: true
     items:
       type: object
   enabled: 
@@ -412,7 +459,41 @@ properties:
   containers: 
     type: array
     items:
-      type: object
+      type: integer
+      format: int64
+  config: 
+    type: object
+    properties: 
+      poolProviderType: 
+        type: string
+        nullable: true
+      isVpcSelectable: 
+        type: boolean
+      smbiosAssetTag: 
+        type: string
+        nullable: true
+      isEC2: 
+        type: boolean
+      resourcePoolId: 
+        type: integer
+        format: int64
+      hostId:
+        type: integer
+        format: int64
+        nullable: true
+      createUser: 
+        type: boolean
+      nestedVirtualization: 
+        type: string
+        nullable: true
+      vmwareFolderId: 
+        type: string
+      noAgent: 
+        type: boolean
+      powerScheduleType:
+        type: integer
+        format: int64
+        nullable: true
   guestConsolePreferred: 
     type: boolean
   guestConsoleType: 
