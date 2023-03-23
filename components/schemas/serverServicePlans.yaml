@@ -40,11 +40,15 @@ properties:
     format: int64
     nullable: true
   storageTypes: 
-    type: string
+    type: array
     nullable: true
+    items: 
+      type: object
   rootStorageTypes: 
-    type: string
+    type: array
     nullable: true
+    items: 
+      type: object
   addVolumes: 
     type: boolean
   customizeVolume: 
