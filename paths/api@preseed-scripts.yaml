@@ -59,14 +59,19 @@ post:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              preseedScript:
-                $ref: ../components/schemas/preseedScript.yaml
+            allOf:
+              - type: object
+                properties:
+                  preseedScript:
+                    $ref: ../components/schemas/preseedScript.yaml
+                  errorCode:
+                    type: string
+                    nullable: true
+              - $ref: ../components/schemas/200-success-expanded.yaml
           examples:
             Preseed Script Response:
               value:
-                $ref: ../components/examples/preseedScript.json
+                $ref: ../components/examples/preseedScriptCreateResponse.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
