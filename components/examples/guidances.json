@@ -327,12 +327,193 @@
                 "used_cpu_userAvg": 0,
                 "used_cpu_userSum": 0
             }
+        },
+        {
+            "id": 12700,
+            "dateCreated": "2022-10-25T18:52:52Z",
+            "lastUpdated": "2022-11-14T22:39:34Z",
+            "actionCategory": "reservation",
+            "actionMessage": "Reservation recommentations",
+            "actionTitle": "reserve.compute",
+            "actionType": "reserve",
+            "actionValue": "34.23315601452646",
+            "actionValueType": "reservation",
+            "actionPlanId": null,
+            "statusMessage": "Reservation recommendations for cloud QA Azure (all)",
+            "accountId": 1,
+            "userId": null,
+            "siteId": 2,
+            "zone": {
+                "id": 26588,
+                "name": "QA Azure (all)",
+                "zoneType": {
+                    "id": 9,
+                    "name": "Azure (Public)"
+                }
+            },
+            "state": "open",
+            "stateMessage": null,
+            "severity": "info",
+            "resolved": false,
+            "resolvedMessage": null,
+            "refType": "computeZone",
+            "refId": 26588,
+            "refName": "QA Azure (all)",
+            "type": {
+                "id": 6,
+                "name": "Reservation Recommendation",
+                "code": "reservations",
+                "title": "Add Reservations"
+            },
+            "savings": {
+                "amount": 34.23315601452646,
+                "currency": "USD"
+            },
+            "config": {
+                "success": true,
+                "detailList": [
+                    {
+                        "id": "billingAccount/88213e1e-d4c5-467f-b029-fa3072281a98/providers/Microsoft.Consumption/reservationRecommendations/f8c629b4-04e6-429d-b1be-e82e4aa03da5",
+                        "apiName": "f8c629b4-04e6-429d-b1be-e82e4aa03da5",
+                        "apiType": "Microsoft.Consumption/reservationRecommendations",
+                        "externalId": "Standard_DS1_v2",
+                        "period": "Last30Days",
+                        "name": "Standard_DS1_v2",
+                        "type": "Standard_DS1_v2",
+                        "category": "Standard_DS1_v2",
+                        "size": "Standard_DS1_v2 (Cores: 1, Memory: 3.5 GB) (eastus)",
+                        "region": "uksouth",
+                        "term": "P1Y",
+                        "meterId": "9ccde83d-b9d7-4523-bbe0-06f8e2b0984f",
+                        "onDemandCount": 0,
+                        "onDemandCost": 62.23703729306019,
+                        "reservedCount": 0,
+                        "reservedCost": 0,
+                        "recommendedCount": 1,
+                        "recommendedCost": 28.003881278533733,
+                        "totalSavings": 34.23315601452646,
+                        "totalSavingsPercent": 0.55004475636156
+                    }
+                ],
+                "services": {
+                    "azureVms": {
+                        "code": "azureVms",
+                        "name": "Azure Virtual Machines",
+                        "paymentOptions": {
+                            "NO_UPFRONT": {
+                                "code": "NO_UPFRONT",
+                                "name": "No Upfront",
+                                "termOptions": {
+                                    "{code=P1Y, name=1 Year, defaultOption=true}": {
+                                        "code": "P1Y",
+                                        "name": "1 Year",
+                                        "detailList": [
+                                            {
+                                                "id": "billingAccount/88213e1e-d4c5-467f-b029-fa3072281a98/providers/Microsoft.Consumption/reservationRecommendations/f8c629b4-04e6-429d-b1be-e82e4aa03da5",
+                                                "apiName": "f8c629b4-04e6-429d-b1be-e82e4aa03da5",
+                                                "apiType": "Microsoft.Consumption/reservationRecommendations",
+                                                "externalId": "Standard_DS1_v2",
+                                                "period": "Last30Days",
+                                                "name": "Standard_DS1_v2",
+                                                "type": "Standard_DS1_v2",
+                                                "category": "Standard_DS1_v2",
+                                                "size": "Standard_DS1_v2 (Cores: 1, Memory: 3.5 GB) (eastus)",
+                                                "region": "uksouth",
+                                                "term": "P1Y",
+                                                "meterId": "9ccde83d-b9d7-4523-bbe0-06f8e2b0984f",
+                                                "onDemandCount": 0,
+                                                "onDemandCost": 62.23703729306019,
+                                                "reservedCount": 0,
+                                                "reservedCost": 0,
+                                                "recommendedCount": 1,
+                                                "recommendedCost": 28.003881278533733,
+                                                "totalSavings": 34.23315601452646,
+                                                "totalSavingsPercent": 0.55004475636156
+                                            }
+                                        ],
+                                        "summary": {
+                                            "totalSavings": 34.23315601452646,
+                                            "currencyCode": "USD",
+                                            "totalSavingsPercent": 0.55004475636156,
+                                            "term": "",
+                                            "paymentOption": "",
+                                            "service": "compute",
+                                            "onDemandCount": 0,
+                                            "onDemandCost": 62.23703729306019,
+                                            "reservedCount": 0,
+                                            "reservedCost": 0,
+                                            "recommendedCount": 1,
+                                            "recommendedCost": 28.003881278533733
+                                        }
+                                    },
+                                    "{code=P3Y, name=3 Year}": {
+                                        "code": "P3Y",
+                                        "name": "3 Year",
+                                        "detailList": [
+                                            {
+                                                "id": "billingAccount/88213e1e-d4c5-467f-b029-fa3072281a98/providers/Microsoft.Consumption/reservationRecommendations/87b78f94-a0e7-4373-bb92-2823bd1724d4",
+                                                "apiName": "87b78f94-a0e7-4373-bb92-2823bd1724d4",
+                                                "apiType": "Microsoft.Consumption/reservationRecommendations",
+                                                "externalId": "Standard_DS1_v2",
+                                                "period": "Last30Days",
+                                                "name": "Standard_DS1_v2",
+                                                "type": "Standard_DS1_v2",
+                                                "category": "Standard_DS1_v2",
+                                                "size": "Standard_DS1_v2 (Cores: 1, Memory: 3.5 GB) (eastus)",
+                                                "region": "uksouth",
+                                                "term": "P3Y",
+                                                "meterId": "9ccde83d-b9d7-4523-bbe0-06f8e2b0984f",
+                                                "onDemandCount": 0,
+                                                "onDemandCost": 62.23703729306019,
+                                                "reservedCount": 0,
+                                                "reservedCost": 0,
+                                                "recommendedCount": 1,
+                                                "recommendedCost": 18.91206240486866,
+                                                "totalSavings": 43.324974888191534,
+                                                "totalSavingsPercent": 0.696128491531240
+                                            }
+                                        ],
+                                        "summary": {
+                                            "totalSavings": 43.324974888191534,
+                                            "currencyCode": "USD",
+                                            "totalSavingsPercent": 0.696128491531240,
+                                            "term": "",
+                                            "paymentOption": "",
+                                            "service": "compute",
+                                            "onDemandCount": 0,
+                                            "onDemandCost": 62.23703729306019,
+                                            "reservedCount": 0,
+                                            "reservedCost": 0,
+                                            "recommendedCount": 1,
+                                            "recommendedCost": 18.91206240486866
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": {
+                    "totalSavings": 34.23315601452646,
+                    "currencyCode": "USD",
+                    "totalSavingsPercent": 0.55004475636156,
+                    "term": "",
+                    "paymentOption": "",
+                    "service": "compute",
+                    "onDemandCount": 0,
+                    "onDemandCost": 62.23703729306019,
+                    "reservedCount": 0,
+                    "reservedCost": 0,
+                    "recommendedCount": 1,
+                    "recommendedCost": 28.003881278533733
+                }
+            }
         }
     ],
     "meta": {
         "offset": 0,
-        "max": 3,
-        "size": 3,
+        "max": 4,
+        "size": 4,
         "total": 12
     }
 }

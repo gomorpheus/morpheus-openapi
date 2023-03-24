@@ -16,7 +16,9 @@ get:
             type: object
             properties:
               discovery:
-                $ref: ../components/schemas/guidance.yaml
+                anyOf:
+                  - $ref: ../components/schemas/guidanceVmwareSizing.yaml
+                  - $ref: ../components/schemas/guidanceAzureReservations.yaml
           examples:
             Guidance Response:
               value:

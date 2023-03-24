@@ -1,0 +1,284 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  actionCategory: 
+    type: string
+  actionMessage: 
+    type: string
+  actionTitle: 
+    type: string
+  actionType: 
+    type: string
+  actionValue: 
+    type: string
+  actionValueType: 
+    type: string
+  actionPlanId: 
+    type: string
+    nullable: true
+  statusMessage: 
+    type: string
+  accountId: 
+    type: integer
+    format: int64
+  userId: 
+    type: string
+    nullable: true
+  siteId: 
+    type: integer
+    format: int64
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      zoneType: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+  state: 
+    type: string
+  stateMessage: 
+    type: string
+    nullable: true
+  severity: 
+    type: string
+  resolved: 
+    type: boolean
+  resolvedMessage: 
+    type: string
+    nullable: true
+  refType: 
+    type: string
+  refId: 
+    type: integer
+    format: int64
+  refName: 
+    type: string
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+      title: 
+        type: string
+  savings: 
+    type: object
+    properties: 
+      amount: 
+        type: number
+      currency: 
+        type: string
+  config: 
+    type: object
+    properties: 
+      success: 
+        type: boolean
+      detailList: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: string
+            apiName: 
+              type: string
+            apiType: 
+              type: string
+            externalId: 
+              type: string
+            period: 
+              type: string
+            name: 
+              type: string
+            type: 
+              type: string
+            category: 
+              type: string
+            size: 
+              type: string
+            region: 
+              type: string
+            term: 
+              type: string
+            meterId: 
+              type: string
+            onDemandCount: 
+              type: integer
+              format: int64
+            onDemandCost: 
+              type: number
+            reservedCount: 
+              type: integer
+              format: int64
+            reservedCost: 
+              type: integer
+              format: int64
+            recommendedCount: 
+              type: integer
+              format: int64
+            recommendedCost: 
+              type: number
+            totalSavings: 
+              type: number
+            totalSavingsPercent: 
+              type: number
+      services: 
+        type: object
+        properties: 
+          azureVms: 
+            type: object
+            properties: 
+              code: 
+                type: string
+              name: 
+                type: string
+              paymentOptions: 
+                type: object
+                additionalProperties:
+                  type: object
+                  properties: 
+                    code: 
+                      type: string
+                    name: 
+                      type: string
+                    termOptions: 
+                      type: object
+                      additionalProperties: 
+                        type: object
+                        properties: 
+                          code: 
+                            type: string
+                          name: 
+                            type: string
+                          detailList: 
+                            type: array
+                            items: 
+                              type: object
+                              properties: 
+                                id: 
+                                  type: string
+                                apiName: 
+                                  type: string
+                                apiType: 
+                                  type: string
+                                externalId: 
+                                  type: string
+                                period: 
+                                  type: string
+                                name: 
+                                  type: string
+                                type: 
+                                  type: string
+                                category: 
+                                  type: string
+                                size: 
+                                  type: string
+                                region: 
+                                  type: string
+                                term: 
+                                  type: string
+                                meterId: 
+                                  type: string
+                                onDemandCount: 
+                                  type: integer
+                                  format: int64
+                                onDemandCost: 
+                                  type: number
+                                reservedCount: 
+                                  type: integer
+                                  format: int64
+                                reservedCost: 
+                                  type: integer
+                                  format: int64
+                                recommendedCount: 
+                                  type: integer
+                                  format: int64
+                                recommendedCost: 
+                                  type: number
+                                totalSavings: 
+                                  type: number
+                                totalSavingsPercent: 
+                                  type: number
+                          summary: 
+                            type: object
+                            properties: 
+                              totalSavings: 
+                                type: number
+                              currencyCode: 
+                                type: string
+                              totalSavingsPercent: 
+                                type: number
+                              term: 
+                                type: string
+                              paymentOption: 
+                                type: string
+                              service: 
+                                type: string
+                              onDemandCount: 
+                                type: integer
+                                format: int64
+                              onDemandCost: 
+                                type: number
+                              reservedCount: 
+                                type: integer
+                                format: int64
+                              reservedCost: 
+                                type: integer
+                                format: int64
+                              recommendedCount: 
+                                type: integer
+                                format: int64
+                              recommendedCost: 
+                                type: number
+      summary: 
+        type: object
+        properties: 
+          totalSavings: 
+            type: number
+          currencyCode: 
+            type: string
+          totalSavingsPercent: 
+            type: number
+          term: 
+            type: string
+          paymentOption: 
+            type: string
+          service: 
+            type: string
+          onDemandCount: 
+            type: integer
+            format: int64
+          onDemandCost: 
+            type: number
+          reservedCount: 
+            type: integer
+            format: int64
+          reservedCost: 
+            type: integer
+            format: int64
+          recommendedCount: 
+            type: integer
+            format: int64
+          recommendedCost: 
+            type: number
