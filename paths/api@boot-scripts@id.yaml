@@ -50,10 +50,19 @@ put:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              bootScript:
-                $ref: ../components/schemas/bootScript.yaml
+            allOf:
+              - type: object
+                properties:
+                  bootScript:
+                    $ref: ../components/schemas/bootScript.yaml
+              - type: object
+                properties: 
+                  errorCode:
+                    type: string
+                    nullable: true
+                  inProgress:
+                    type: boolean
+              - $ref: ../components/schemas/200-success-expanded.yaml
           examples:
             Boot Script Response:
               value:
