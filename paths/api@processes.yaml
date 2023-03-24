@@ -1,7 +1,7 @@
 get:
-  summary: Retrieves Process History for Instances
+  summary: Retrieves Process History
   description: |
-    Retrieves process history for instances.
+    Retrieves process history for objects
   operationId: listHistory
   tags:
     - History
