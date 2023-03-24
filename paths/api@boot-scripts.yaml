@@ -23,6 +23,9 @@ get:
                   type: array
                   items:
                     $ref: ../components/schemas/bootScript.yaml
+                bootScriptCount:
+                  type: integer
+                  format: int64
             - $ref: ../components/schemas/meta.yaml
           examples:
             Boot Scripts Response:
