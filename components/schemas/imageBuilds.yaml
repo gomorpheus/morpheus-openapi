@@ -95,6 +95,122 @@ properties:
     format: int64
   config: 
     type: object
+    properties:
+      instance: 
+        type: object
+        properties: 
+          layout: 
+            type: object
+            properties: 
+              code: 
+                type: string
+              name: 
+                type: string
+              id: 
+                type: integer
+                format: int64
+          site: 
+            type: object
+            properties: 
+              id: 
+                type: integer
+                format: int64
+          name: 
+            type: string
+          type: 
+            type: string
+      networkInterfaces: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            ipMode: 
+              type: string
+            primaryInterface: 
+              type: boolean
+            showNetworkPoolLabel: 
+              type: boolean
+            showNetworkDhcpLabel: 
+              type: boolean
+            network: 
+              type: object
+              properties: 
+                idName: 
+                  type: string
+                pool: 
+                  type: object
+                  properties: 
+                    name: 
+                      type: string
+                    id: 
+                      type: integer
+                      format: int64
+                id: 
+                  type: string
+                hasPool: 
+                  type: boolean
+            networkInterfaceTypeId: 
+              type: integer
+              format: int64
+            networkInterfaceTypeIdName: 
+              type: string
+      volumes: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            volumeCustomizable: 
+              type: boolean
+            vId: 
+              type: integer
+              format: int64
+            readonlyName: 
+              type: boolean
+            size: 
+              type: integer
+              format: int64
+            maxIOPS: 
+              type: string
+              nullable: true
+            name: 
+              type: string
+            rootVolume: 
+              type: boolean
+            storageType: 
+              type: integer
+              format: int64
+            datastoreId: 
+              type: string
+            maxStorage: 
+              type: integer
+              format: int64
+      storageControllers: 
+        type: array
+        items: 
+          type: object
+      zoneId: 
+        type: integer
+        format: int64
+      config: 
+        type: object
+        properties: 
+          template: 
+            type: integer
+            format: int64
+          resourcePoolId: 
+            type: integer
+            format: int64
+          expose: 
+            type: integer
+            format: int64
+      plan: 
+        type: object
+        properties: 
+          code: 
+            type: string
+          id: 
+            type: integer
+            format: int64
   lastResult: 
     type: object
     properties: 
