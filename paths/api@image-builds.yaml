@@ -61,11 +61,10 @@ post:
               properties:
                 imageBuild:
                   $ref: ../components/schemas/imageBuild.yaml
-                imageBuildExecutions:
-                  type: array
-                  items:
-                    $ref: ../components/schemas/imageBuildExecution.yaml
-            - $ref: ../components/schemas/200-success.yaml
+                errorCode:
+                  type: string
+                  nullable: true
+            - $ref: ../components/schemas/200-success-expanded.yaml
           examples:
             Image Build Response:
               value:

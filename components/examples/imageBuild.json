@@ -1,159 +1,95 @@
 {
+  "success": true,
+  "msg": null,
+  "errors": null,
+  "errorCode": null,
   "imageBuild": {
-    "id": 1,
-    "account": {
-      "id": 1,
-      "name": "root"
-    },
-    "type": {
-      "id": 1,
-      "code": "vmware",
-      "name": "VMware"
-    },
-    "site": {
-      "id": 1,
-      "name": "my-group"
-    },
-    "zone": {
-      "id": 1,
-      "name": "my-vmware"
-    },
-    "name": "testbuild",
-    "description": "a test build",
-    "bootScript": {
-      "id": 2,
-      "fileName": "debian standard"
-    },
-    "bootCommand": null,
-    "preseedScript": {
-      "id": 2,
-      "fileName": "debian 8"
-    },
-    "scripts": [
-      {
-        "id": 114,
-        "name": "cleanup.sh",
-        "type": "bash",
-        "phase": "postProvision"
-      }
-    ],
-    "sshUsername": "builderbot",
-    "sshPassword": "************",
-    "storageProvider": null,
-    "buildOutputName": null,
-    "conversionFormats": null,
-    "isCloudInit": false,
-    "vmToolsInstalled": true,
-    "keepResults": 2,
-    "config": {
-      "instance": {
-        "layout": {
-          "code": "vmware-1.0-single",
-          "id": 142
-        },
-        "type": "vmware",
-        "userGroup": {
-          "id": ""
-        }
+      "id": 101,
+      "account": {
+          "id": 1,
+          "name": "Morpheus QA"
       },
-      "networkInterfaces": [
-        {
-          "primaryInterface": true,
-          "network": {
-            "id": "network-147"
-          }
-        }
-      ],
-      "volumes": [
-        {
-          "vId": 1752,
-          "size": 10,
-          "maxIOPS": null,
-          "name": "root",
-          "rootVolume": true,
-          "storageType": 1,
-          "datastoreId": "auto"
-        }
-      ],
-      "storageControllers": [],
-      "zoneId": 1,
+      "type": {
+          "id": 1,
+          "code": "vmware",
+          "name": "VMware"
+      },
+      "site": {
+          "id": 56092,
+          "name": "QA VMware"
+      },
+      "zone": {
+          "id": 26324,
+          "name": "QA VMware"
+      },
+      "name": "API Test: Image Build",
+      "description": null,
+      "bootScript": {
+          "id": 3,
+          "fileName": "centos-7"
+      },
+      "bootCommand": null,
+      "preseedScript": {
+          "id": 3,
+          "fileName": "centos-7-ks.cfg"
+      },
+      "scripts": [],
+      "sshUsername": "cloudinit",
+      "sshPassword": "************",
+      "storageProvider": null,
+      "buildOutputName": null,
+      "conversionFormats": null,
+      "isCloudInit": false,
+      "vmToolsInstalled": false,
+      "keepResults": null,
       "config": {
-        "template": 1752,
-        "vmwareResourcePoolId": "resgroup-123",
-        "expose": 8080
+          "instance": {
+              "cloud": "QA VMware",
+              "layout": {
+                  "code": "vmware-1.0-single",
+                  "id": 354
+              },
+              "site": {
+                  "id": 56092
+              },
+              "instanceType": {
+                  "code": "vmware"
+              },
+              "name": "API Test: Image Build",
+              "type": "vmware",
+              "plan": {
+                  "id": 145
+              }
+          },
+          "networkInterfaces": [
+              {
+                  "network": {
+                      "id": "network-173431"
+                  },
+                  "networkInterfaceTypeId": 4
+              }
+          ],
+          "layoutSize": 1,
+          "volumes": [
+              {
+                  "size": 10,
+                  "name": "root",
+                  "rootVolume": true,
+                  "storageType": 1,
+                  "id": -1,
+                  "datastoreId": "autoCluster"
+              }
+          ],
+          "zoneId": 26324,
+          "config": {
+              "template": 889977,
+              "resourcePoolId": 139625,
+              "nestedVirtualization": "off",
+              "vmwareFolderId": "group-v80"
+          }
       },
-      "plan": {
-        "code": "vm-512",
-        "id": 75
-      }
-    },
-    "lastResult": {
-      "id": 70,
-      "imageBuild": {
-        "id": 21,
-        "name": "testbuild"
-      },
-      "buildNumber": 6,
-      "startDate": "2017-09-28T05:48:03Z",
-      "endDate": null,
-      "statusMessage": "Booting",
-      "statusPercent": 20.0,
-      "statusEta": null,
-      "status": "running",
-      "errorMessage": null,
-      "createdBy": {
-        "username": "admin"
-      },
-      "tempInstance": null,
-      "virtualImages": []
-    },
-    "executionCount": 4
+      "lastResult": null,
+      "executionCount": 0
   },
-  "imageBuildExecutions": [
-    {
-      "id": 70,
-      "imageBuild": {
-        "id": 21,
-        "name": "testbuild"
-      },
-      "buildNumber": 6,
-      "startDate": "2017-09-28T05:48:03Z",
-      "endDate": null,
-      "statusMessage": "Booting",
-      "statusPercent": 20.0,
-      "statusEta": null,
-      "status": "running",
-      "errorMessage": null,
-      "createdBy": {
-        "username": "admin"
-      },
-      "tempInstance": null,
-      "virtualImages": []
-    },
-    {
-      "id": 57,
-      "imageBuild": {
-        "id": 21,
-        "name": "testbuild"
-      },
-      "buildNumber": 3,
-      "startDate": "2017-09-27T02:41:26Z",
-      "endDate": "2017-09-27T03:08:30Z",
-      "statusMessage": null,
-      "statusPercent": 100.0,
-      "statusEta": null,
-      "status": "success",
-      "errorMessage": null,
-      "createdBy": {
-        "username": "admin"
-      },
-      "tempInstance": null,
-      "virtualImages": [
-        {
-          "id": 1812,
-          "name": "testbuild-1-156-1506480866464"
-        }
-      ]
-    }
-  ]
+  "inProgress": false
 }

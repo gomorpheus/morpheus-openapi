@@ -41,6 +41,7 @@ properties:
     type: string
   description: 
     type: string
+    nullable: true
   bootScript: 
     type: object
     properties: 
@@ -94,6 +95,7 @@ properties:
   keepResults: 
     type: integer
     format: int64
+    nullable: true
   config: 
     type: object
     properties: 
@@ -132,7 +134,7 @@ properties:
         items: 
           type: object
           properties: 
-            vId: 
+            id: 
               type: integer
               format: int64
             size: 
@@ -163,11 +165,13 @@ properties:
           template: 
             type: integer
             format: int64
-          vmwareResourcePoolId: 
+          vmwareFolderId: 
             type: string
-          expose: 
+          resourcePoolId:
             type: integer
             format: int64
+          nestedVirtualization: 
+            type: string
       plan: 
         type: object
         properties: 
@@ -178,6 +182,7 @@ properties:
             format: int64
   lastResult: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
