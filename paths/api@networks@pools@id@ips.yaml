@@ -54,6 +54,8 @@ post:
   operationId: createNetworkPoolIp
   tags:
     - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
   requestBody:
     content:
       application/json:

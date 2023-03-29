@@ -6,6 +6,7 @@ get:
   tags:
     - Networks
   parameters:
+    - $ref: ../components/parameters/networkPoolId.yaml
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
@@ -54,6 +55,7 @@ delete:
   tags:
     - Networks
   parameters:
+    - $ref: ../components/parameters/networkPoolId.yaml
     - $ref: ../components/parameters/id-path.yaml
   responses:
     '200':
