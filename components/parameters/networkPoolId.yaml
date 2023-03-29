@@ -1,7 +1,8 @@
 name: networkPoolId
-in: query
-description: Filter by Network Pool ID
+in: path
+description: Morpheus Network Pool ID of the Object being referenced
+required: true
 schema:
   type: integer
   format: int64
-example: 13
+example: 1
