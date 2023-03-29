@@ -405,6 +405,10 @@ paths:
     $ref: paths/api@networks@pools.yaml
   /api/networks/pools/{id}:
     $ref: paths/api@networks@pools@id.yaml
+  /api/networks/pools/{pool_id}/ips:
+    $ref: paths/api@networks@pools@id@ips.yaml
+  /api/networks/pools/{pool_id}/ips/{id}:
+    $ref: paths/api@networks@pools@id@ips@id.yaml
   /api/networks/proxies:
     $ref: paths/api@networks@proxies.yaml
   /api/networks/proxies/{id}:

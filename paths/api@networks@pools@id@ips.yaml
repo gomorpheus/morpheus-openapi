@@ -1,0 +1,107 @@
+get:
+  summary: Get all IP Addresses for a Specific Network Pool
+  description: |
+    This endpoint retrieves a list of IP addresses for a specific Network Pool.
+  operationId: getNetworkPoolIps
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkPoolIps:
+                  items:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/networkPoolIp.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Networks Response:
+              value:
+                $ref: ../components/examples/networkPoolIps.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+
+post:
+  summary: Create a Network Pool IP Address
+  description: |
+    Create an IP Address for a Specific Network Pool
+  operationId: createNetworkPoolIp
+  tags:
+    - Networks
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            networkPoolIp:
+              ipAddress:
+                type: string
+              hostname:
+                type: string
+        examples:
+          Network Pool Request:
+            value:
+              $ref: ../components/examples/networkPoolIpCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkPool:
+                type: object
+                properties:
+                  $ref: ../components/schemas/networkPoolIp.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/networkPoolIps.json
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '405':
+      $ref: ../components/responses/405.yaml
+    '406':
+      $ref: ../components/responses/406.yaml
+    '410':
+      $ref: ../components/responses/410.yaml
+    '429':
+      $ref: ../components/responses/429.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
