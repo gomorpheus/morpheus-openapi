@@ -1,0 +1,7 @@
+name: networkPoolId
+in: query
+description: Filter by Network Pool ID
+schema:
+  type: integer
+  format: int64
+example: 13

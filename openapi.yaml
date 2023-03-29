@@ -708,9 +708,9 @@ paths:
     $ref: paths/api@networks@pools.yaml
   /api/networks/pools/{id}:
     $ref: paths/api@networks@pools@id.yaml
-  /api/networks/pools/{pool_id}/ips:
+  /api/networks/pools/{id}/ips:
     $ref: paths/api@networks@pools@id@ips.yaml
-  /api/networks/pools/{pool_id}/ips/{id}:
+  /api/networks/pools/{networkPoolId}/ips/{id}:
     $ref: paths/api@networks@pools@id@ips@id.yaml
   /api/networks/floating-ips:
     $ref: paths/api@networks@floating-ips.yaml
