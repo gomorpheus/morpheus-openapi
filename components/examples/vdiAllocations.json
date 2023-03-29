@@ -1,0 +1,78 @@
+{
+    "vdiAllocations": [
+        {
+            "id": 706,
+            "pool": {
+                "id": 7,
+                "name": "CentOS Desktop"
+            },
+            "instance": {
+                "id": 2425,
+                "name": "VDI-Cent-1021",
+                "status": "stopped"
+            },
+            "user": {
+                "id": 1,
+                "name": "Admin Admin",
+                "username": "Admin"
+            },
+            "localUserCreated": true,
+            "persistent": true,
+            "status": "shutdown",
+            "dateCreated": "2021-04-28T11:56:08Z",
+            "lastUpdated": "2022-05-12T10:13:11Z",
+            "lastReserved": "2021-10-12T11:41:00Z",
+            "releaseDate": "2022-05-12T10:18:11Z"
+        },
+        {
+            "id": 1234,
+            "pool": {
+                "id": 7,
+                "name": "CentOS Desktop"
+            },
+            "instance": {
+                "id": 3025,
+                "name": "VDI-Cent-1022",
+                "status": "stopped"
+            },
+            "user": {
+                "id": 171,
+                "name": "Bob Boyd",
+                "username": "Bob Boyd"
+            },
+            "localUserCreated": true,
+            "persistent": true,
+            "status": "shutdown",
+            "dateCreated": "2021-07-14T11:43:41Z",
+            "lastUpdated": "2022-08-18T21:47:02Z",
+            "lastReserved": "2021-10-12T08:12:18Z",
+            "releaseDate": "2022-08-18T21:52:02Z"
+        },
+        {
+            "id": 1464,
+            "pool": {
+                "id": 5,
+                "name": "Windows 10"
+            },
+            "instance": {
+                "id": 3870,
+                "name": "VDI-Win10-1500",
+                "status": "running"
+            },
+            "user": null,
+            "localUserCreated": false,
+            "persistent": false,
+            "status": "available",
+            "dateCreated": "2022-08-19T00:33:19Z",
+            "lastUpdated": "2022-08-19T00:41:30Z",
+            "lastReserved": null,
+            "releaseDate": null
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 3,
+        "total": 3
+    }
+}

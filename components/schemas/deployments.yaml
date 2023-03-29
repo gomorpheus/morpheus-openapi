@@ -16,8 +16,10 @@ properties:
     nullable: true
   dateCreated: 
     type: string
+    format: date-time
   lastUpdated: 
     type: string
+    format: date-time
   versionCount: 
     type: integer
     format: int64

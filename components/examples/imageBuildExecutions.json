@@ -1,0 +1,58 @@
+{
+  "imageBuildExecutions": [
+    {
+      "id": 82,
+      "imageBuild": {
+        "id": 20,
+        "name": "my-testbuild"
+      },
+      "buildNumber": 2,
+      "startDate": "2017-09-29T15:30:07Z",
+      "endDate": null,
+      "statusMessage": "Installing",
+      "statusPercent": 25.0,
+      "statusEta": null,
+      "status": "running",
+      "errorMessage": null,
+      "createdBy": {
+        "username": "admin"
+      },
+      "tempInstance": null,
+      "virtualImages": [
+
+      ]
+    },
+    {
+      "id": 81,
+      "imageBuild": {
+        "id": 20,
+        "name": "my-testbuild"
+      },
+      "buildNumber": 1,
+      "startDate": "2017-09-29T14:57:33Z",
+      "endDate": "2017-09-29T15:26:41Z",
+      "statusMessage": null,
+      "statusPercent": 100.0,
+      "statusEta": null,
+      "status": "success",
+      "errorMessage": null,
+      "createdBy": {
+        "username": "admin"
+      },
+      "tempInstance": null,
+      "virtualImages": [
+        {
+          "id": 1850,
+          "name": "my-testbuild-4-176-1506697891084"
+        }
+      ]
+    }
+  ],
+  "imageBuildExecutionCount": 2,
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 2,
+    "total": 2
+  }
+}

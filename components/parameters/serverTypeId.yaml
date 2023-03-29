@@ -1,0 +1,7 @@
+name: serverTypeId
+in: query
+description: The ID of the Host Type
+schema:
+  type: integer
+  format: int64
+example: 5

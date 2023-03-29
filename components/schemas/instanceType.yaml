@@ -13,6 +13,11 @@ properties:
         type: string
   name: 
     type: string
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
   code: 
     type: string
   description: 
@@ -73,3 +78,16 @@ properties:
     nullable: true
     items:
       type: object
+  priceSets: 
+    type: array
+    nullable: true
+    items:
+      type: object
+  imagePath: 
+    type: string
+    nullable: true
+    description: Logo image URL
+  darkImagePath: 
+    type: string
+    nullable: true
+    description: Dark logo image URL

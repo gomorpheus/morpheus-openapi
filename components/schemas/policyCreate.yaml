@@ -1,0 +1,52 @@
+type: object
+required:
+  - name
+  - policyType
+  - config
+properties:
+  name: 
+    type: string
+    description: A name for the policy
+    example: Sample Policy
+  description:
+    type: string
+    description: A description for the policy
+  policyType:
+    type: object
+    properties:
+      code:
+        type: string
+        description: The policy type code. See `Retrieves all Policy Types` endpoint for listing.
+  config:
+    description: A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
+    type: object
+  enabled:
+    type: boolean
+    description: Set to false to disable
+    default: true
+  refType:
+    type: string
+    description: Scope object type.  If none specified, will default to Global (null)
+    enum:
+    - null
+    - ComputeSite
+    - ComputeZone
+    - User
+    - Role
+    - Network
+    - Plan
+    default: null
+    nullable: true
+  refId:
+    type: integer
+    format: int64
+    description: Scope object ID (`group`,`cloud`,`user`, etc)
+  accounts:
+    type: array
+    description: Array of tenants to scope the policy to
+    items:
+      type: integer
+      format: int64
+  eachUser:
+      type: boolean
+      description: Apply individually to each user in role.  Only when `refType` equals `Role`

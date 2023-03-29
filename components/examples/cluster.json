@@ -1,0 +1,172 @@
+{
+  "cluster": {
+    "id": 9,
+    "name": "democluster",
+    "code": null,
+    "category": null,
+    "visibility": "private",
+    "description": null,
+    "location": null,
+    "enabled": true,
+    "serviceUrl": "https://192.168.88.207:6443",
+    "serviceHost": null,
+    "servicePath": null,
+    "serviceHostname": null,
+    "servicePort": 22,
+    "serviceUsername": null,
+    "servicePassword": null,
+    "servicePasswordHash": null,
+    "serviceToken": "************",
+    "serviceTokenHash": "71a24696b1b3e7ab5017f508755a9063cfae8b34dac1af2fc28d4ecd29068c41",
+    "serviceAccess": "************",
+    "serviceAccessHash": "5e3e613243db1f751bbd1b3dac7250a5b2cc434b6ae95269e949ade04cf199bc",
+    "serviceCert": null,
+    "serviceCertHash": null,
+    "serviceVersion": "v1.23.5",
+    "searchDomains": null,
+    "enableInternalDns": false,
+    "internalId": null,
+    "externalId": null,
+    "datacenterId": null,
+    "status": "ok",
+    "statusDate": "2022-08-23T17:38:07Z",
+    "statusMessage": "",
+    "inventoryLevel": "full",
+    "lastSync": "2022-08-23T17:38:05Z",
+    "nextRunDate": "2022-08-23T17:43:07Z",
+    "lastSyncDuration": 2009,
+    "dateCreated": "2022-08-23T14:33:50Z",
+    "lastUpdated": "2022-08-23T17:38:07Z",
+    "managed": true,
+    "labels": [],
+    "tags": [],
+    "serviceEntry": null,
+    "createdBy": {
+      "id": 1,
+      "username": "admin"
+    },
+    "userGroup": null,
+    "layout": {
+      "id": 219,
+      "name": "MKS Kubernetes 1.23 Cluster on Ubuntu 20.04",
+      "provisionTypeCode": "vmware"
+    },
+    "owner": {
+      "id": 1,
+      "name": "mastertenant"
+    },
+    "servers": [
+      {
+        "id": 2681,
+        "name": "democluster-worker-3",
+        "typeSet": {
+          "id": 449,
+          "code": "kubernetes-1.23.5-ubuntu-20.04.1-worker-vmware-amd64-set",
+          "name": "kubernetes worker"
+        },
+        "computeServerType": {
+          "id": 197,
+          "code": "vmwareKubeWorker",
+          "nodeType": "kube-worker"
+        }
+      },
+      {
+        "id": 2679,
+        "name": "democluster-worker-1",
+        "typeSet": {
+          "id": 449,
+          "code": "kubernetes-1.23.5-ubuntu-20.04.1-worker-vmware-amd64-set",
+          "name": "kubernetes worker"
+        },
+        "computeServerType": {
+          "id": 197,
+          "code": "vmwareKubeWorker",
+          "nodeType": "kube-worker"
+        }
+      },
+      {
+        "id": 2680,
+        "name": "democluster-worker-2",
+        "typeSet": {
+          "id": 449,
+          "code": "kubernetes-1.23.5-ubuntu-20.04.1-worker-vmware-amd64-set",
+          "name": "kubernetes worker"
+        },
+        "computeServerType": {
+          "id": 197,
+          "code": "vmwareKubeWorker",
+          "nodeType": "kube-worker"
+        }
+      },
+      {
+        "id": 2678,
+        "name": "democluster-master",
+        "typeSet": {
+          "id": 448,
+          "code": "kubernetes-1.23.5-ubuntu-20.04.1-vmware-amd64-set",
+          "name": "kubernetes master"
+        },
+        "computeServerType": {
+          "id": 196,
+          "code": "vmwareKubeMaster",
+          "nodeType": "kube-master"
+        }
+      }
+    ],
+    "accounts": [],
+    "integrations": [],
+    "site": {
+      "id": 1,
+      "name": "admin"
+    },
+    "type": {
+      "id": 1,
+      "name": "Kubernetes Cluster"
+    },
+    "zone": {
+      "id": 15,
+      "name": "vcenter1 - homelab",
+      "zoneType": {
+        "id": 26
+      }
+    },
+    "workerStats": {
+      "usedStorage": 35438845952,
+      "maxStorage": 126625677312,
+      "usedMemory": 7138608000,
+      "maxMemory": 24959574016,
+      "usedCpu": 0.0,
+      "cpuUsage": 46.52637243270874,
+      "cpuUsagePeak": 16.31583571434021,
+      "cpuUsageAvg": 15.508790810902914
+    },
+    "containersCount": 106,
+    "deploymentsCount": 23,
+    "podsCount": 60,
+    "jobsCount": 3,
+    "volumesCount": 0,
+    "namespacesCount": 10,
+    "workersCount": 3,
+    "servicesCount": 24,
+    "permissions": {
+      "resourcePool": {
+        "id": 251,
+        "name": "democluster",
+        "visibility": "private"
+      },
+      "resourcePermissions": {
+        "defaultStore": false,
+        "allPlans": true,
+        "defaultTarget": false,
+        "canManage": false,
+        "all": true,
+        "account": {
+          "id": 1
+        },
+        "sites": [],
+        "plans": []
+      }
+    },
+    "config": {}
+  }
+}

@@ -1,0 +1,34 @@
+put:
+  summary: Install Agent
+  description: This will make the host a managed server, and install the agent.
+  operationId: updateHostInstallAgent
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  tags: 
+    -  Hosts
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            $ref: ../components/schemas/hostInstallAgent.yaml
+        examples:
+          Host Request:
+            value:
+              $ref: ../components/examples/hostInstallAgent.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

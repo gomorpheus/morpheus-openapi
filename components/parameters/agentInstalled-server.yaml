@@ -1,0 +1,6 @@
+name: agentInstalled
+in: query
+description: Filter by agent installed (true)
+schema:
+  type: boolean
+example: true

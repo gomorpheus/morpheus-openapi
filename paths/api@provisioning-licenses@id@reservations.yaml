@@ -1,0 +1,28 @@
+get:
+  summary: Get Reservations for Specific License
+  description: This endpoint retrieves all reservations for a specific license. Each time a license is applied to a new server, a reservation is created, reducing the available copies for the license.
+  operationId: getProvisioningLicenseReservations
+  tags:
+    - Provisioning Licenses
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              licenses:
+                type: array
+                items:
+                  $ref: ../components/schemas/provisioningLicenseReservations.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/provisioningLicenseReservations.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

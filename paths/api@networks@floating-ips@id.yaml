@@ -1,0 +1,29 @@
+get:
+  summary: Get a Specific Floating IP
+  description: |
+    This endpoint retrieves a specific Floating IP.
+  operationId: getNetworkFloatingIp
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkFloatingIp:
+                type: object
+                properties:
+                  $ref: ../components/schemas/networkFloatingIp.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/networkFloatingIp.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

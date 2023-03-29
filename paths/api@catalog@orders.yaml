@@ -1,0 +1,40 @@
+post:
+  summary: Place Catalog Order
+  description: This will place an order for the specified items, adding items to the inventory right away, without using the cart.
+  operationId: addCatalogOrder
+  tags:
+    - Service Catalog
+  parameters:
+    - $ref: ../components/parameters/validate.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            order:
+              $ref: ../components/schemas/catalogOrderCreate.yaml
+        examples:
+          Catalog Order Request:
+            value:
+              $ref: ../components/examples/catalogOrderCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                order:
+                  $ref: ../components/schemas/catalogOrderCreateSuccess.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Catalog Order Response:
+              value:
+                $ref: ../components/examples/catalogOrderCreateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

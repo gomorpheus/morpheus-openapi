@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "integration": {
+        "id": 4369,
+        "name": "Labs Remedy",
+        "enabled": true,
+        "type": "remedy",
+        "integrationType": {
+            "id": 27,
+            "code": "remedy",
+            "name": "Remedy"
+        },
+        "url": "http://ec2.compute-1.amazonaws.com:8008",
+        "username": "admin",
+        "password": "************",
+        "passwordHash": "590561e975aa1cbdaa6ffe48a87d3642",
+        "isPlugin": false,
+        "config": {
+            "approvalUser": "Allen",
+            "company": "Services",
+            "remedyIgnoreSSLErrors": null
+        },
+        "status": "ok",
+        "statusDate": "2022-08-12T10:51:23Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

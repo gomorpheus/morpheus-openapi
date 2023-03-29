@@ -1,0 +1,15 @@
+type: object
+required:
+  - cloudId
+  - access
+properties:
+  cloudId:
+    type: integer
+    description: "`id` of the cloud (zone)"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - read
+      - none

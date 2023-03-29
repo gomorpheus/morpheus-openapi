@@ -1,0 +1,33 @@
+{
+    "policy": {
+        "id": 117,
+        "name": "8. Cypher Access",
+        "description": null,
+        "policyType": {
+            "id": 91,
+            "code": "cypher",
+            "name": "Cypher Access"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "keyPattern": "",
+            "read": false,
+            "write": false,
+            "update": false,
+            "delete": false,
+            "list": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

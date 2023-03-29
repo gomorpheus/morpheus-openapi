@@ -1,0 +1,41 @@
+get:
+  summary: Get Catalog Cart
+  description: This endpoint retrieves the current catalog cart and all the items in it.
+  operationId: listCatalogCart
+  tags:
+    - Service Catalog
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cart:
+                $ref: ../components/schemas/catalogCart.yaml
+          examples:
+            Get Catalog Cart Response:
+              value:
+                $ref: ../components/examples/catalogCart.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Clear Catalog Cart
+  description: Use this command to empty your cart, deleting all the items in it.
+  operationId: deleteCatalogCart
+  tags:
+    - Service Catalog
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

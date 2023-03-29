@@ -1,0 +1,17 @@
+title: Default Workflow Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`TaskSet` is the code for Default Workflow Access"
+    enum:
+      - TaskSet
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

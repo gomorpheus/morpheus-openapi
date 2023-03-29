@@ -1,0 +1,92 @@
+get:
+  summary: Get a Specific Resource Pool Group
+  description: |
+    This endpoint retrieves a specific Resource Pool Group.
+  operationId: getresourcePoolGroup
+  tags:
+    - Resource Pools
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              resourcePoolGroup:
+                properties:
+                  $ref: ../components/schemas/resourcePoolGroup.yaml
+          examples:
+            Resource Pools Response:
+              value:
+                $ref: ../components/examples/resourcePoolGroup.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+put: 
+  summary: Update a Resource Pool Group
+  description: |
+    Use this command to update an existing resource pool Group.
+  operationId: updateResourcePoolGroup
+  tags:
+    - Resource Pools
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            resourcePoolGroup:
+              $ref: ../components/schemas/resourcePoolGroupsCreateInput.yaml
+        examples: 
+          Resource Pool Group Request:
+            value:
+              $ref: ../components/examples/resourcePoolGroupsCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              resourcePoolGroup:
+                properties:
+                  $ref: ../components/schemas/resourcePoolGroupsCreate.yaml
+          examples: 
+            Successful Request:
+              value:
+                $ref: ../components/examples/resourcePoolGroupsCreate.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete: 
+  summary: Delete a Resource Pool Group
+  description: Will delete a Resource Pool Group from the system and make it no longer usable.
+  operationId: deleteResourcePoolGroup
+  tags:
+    - Resource Pools
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

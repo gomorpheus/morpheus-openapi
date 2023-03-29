@@ -1,0 +1,46 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  type: 
+    type: string
+  refType: 
+    type: string
+  refId: 
+    type: integer
+    format: int64
+  layout: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+      provisionType: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+          code: 
+            type: string
+      instanceType: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          name: 
+            type: string
+          code: 
+            type: string
+      instanceVersion: 
+        type: string

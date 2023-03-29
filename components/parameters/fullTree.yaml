@@ -1,0 +1,6 @@
+name: fullTree
+in: query
+description: Include files under sub directories too. This is always true when searching with phrase.
+schema:
+  type: boolean
+  default: false

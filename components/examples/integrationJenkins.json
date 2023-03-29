@@ -1,0 +1,29 @@
+{
+    "integration": {
+        "id": 240,
+        "name": "FQDN Data Jenkins",
+        "enabled": true,
+        "type": "jenkins",
+        "integrationType": {
+            "id": 40,
+            "code": "jenkins",
+            "name": "Jenkins"
+        },
+        "url": "https://jenkins.FQDN.com",
+        "host": "my-password",
+        "username": "my-user",
+        "isPlugin": false,
+        "config": {},
+        "status": "ok",
+        "statusDate": null,
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": [
+                "username-password"
+            ]
+        }
+    }
+}

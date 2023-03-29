@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "user": {
+    "id": 1,
+    "username": "admin",
+    "firstName": "Admin",
+    "lastName": "",
+    "email": "admin@morpheusdata.com",
+    "linuxUsername": "morphadmin",
+    "linuxPassword": "************",
+    "linuxKeyPairId": null,
+    "windowsUsername": "morphadmin",
+    "windowsPassword": "************",
+    "avatar": "$serverUrl/storage/uploads/uploads/User/1/avatar/admin_original.png",
+    "desktopBackground": "$serverUrl/storage/uploads/uploads/User/1/desktopBackground/vaperwave_wallpaper_original.jpg",
+    "receiveNotifications": true,
+    "defaultGroup": {
+      "id": 1,
+      "name": "Dev Group"
+    },
+    "defaultCloud": {
+      "id": 1,
+      "name": "Dev Cloud"
+    },
+    "defaultPersona": {
+      "id": 1,
+      "code": "standard",
+      "name": "Standard"
+    },
+    "isUsing2FA": true,
+    "tenant": {
+      "id": 1,
+      "name": "root"
+    }
+  },
+  "accessTokens": [
+    {
+      "clientId": "morph-api",
+      "username": "admin",
+      "expiration": "2022-03-18T14:52:02Z",
+      "tokenType": "bearer",
+      "maskedAccessToken": "3ae256c-********",
+      "maskedRefreshToken": "465f403-********"
+    },
+    {
+      "clientId": "morph-cli",
+      "username": "admin",
+      "expiration": "2022-04-01T02:29:52Z",
+      "tokenType": "bearer",
+      "maskedAccessToken": "10fd4a4-********",
+      "maskedRefreshToken": "2341f4b-********"
+    }
+  ]
+}

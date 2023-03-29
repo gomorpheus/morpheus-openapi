@@ -1,0 +1,7 @@
+name: removeInstances
+in: query
+description: Remove Instances. Only applies to type `blueprint` (Apps)
+schema:
+  type: string
+  default: "on"
+example: "off"

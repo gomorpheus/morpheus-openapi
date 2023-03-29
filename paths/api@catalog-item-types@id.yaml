@@ -1,0 +1,103 @@
+get:
+  summary: Get a Specific Catalog Item Type
+  description: This endpoint retrieves a specific category item type.
+  operationId: getCatalogItemType
+  tags:
+    - Catalog Items
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              catalogItemType:
+                $ref: ../components/schemas/catalogItemType.yaml
+          examples:
+            Get Catalog Item Response:
+              value:
+                $ref: ../components/examples/catalogItemType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Update a Catalog Item Type
+  description: Use this command to update an existing catalog item type.
+  operationId: updateCatalogItemType
+  tags:
+    - Catalog Items
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            catalogItemType:
+              anyOf:
+                - $ref: ../components/schemas/catalogItemTypeInstanceUpdate.yaml
+                - $ref: ../components/schemas/catalogItemTypeBlueprintUpdate.yaml
+                - $ref: ../components/schemas/catalogItemTypeWorkflowUpdate.yaml
+        examples:
+          Catalog Item Type Request:
+            value:
+              $ref: ../components/examples/catalogItemTypeUpdate.json
+      multipart/form-data:
+        schema: 
+          oneOf:
+            - type: object
+              properties: 
+                logo:
+                  type: string
+                  description: Logo File png,jpg,svg
+                  format: binary
+            - type: object
+              properties: 
+                darkLogo:
+                  type: string
+                  description: Dark Logo File png,jpg,svg
+                  format: binary
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+              - type: object
+                properties:
+                  catalogItemType:
+                    $ref: ../components/schemas/catalogItemType.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/catalogItemTypeUpdateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Catalog Item Type
+  description: Will delete a catalog item type.
+  operationId: removeCatalogItemType
+  tags:
+    - Catalog Items
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

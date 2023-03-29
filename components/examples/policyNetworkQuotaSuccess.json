@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 165,
+        "name": "24. Network Quota",
+        "description": null,
+        "policyType": {
+            "id": 70,
+            "code": "maxNetworks",
+            "name": "Network Quota"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxNetworks": "345"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

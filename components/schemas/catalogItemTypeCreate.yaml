@@ -1,0 +1,104 @@
+type: object
+properties: 
+  name: 
+    type: string
+  category:
+    type: string
+  description:
+    type: string
+  type: 
+    type: string
+  iconPath: 
+    type: string
+  config: 
+    type: object
+    properties: 
+      group: 
+        type: object
+        properties: 
+          id: 
+            type: string
+      cloud: 
+        type: object
+        properties: 
+          id: 
+            type: string
+      type: 
+        type: string
+      instance: 
+        type: object
+      name: 
+        type: string
+      config: 
+        type: object
+        properties: 
+          createUser: 
+            type: boolean
+          resourcePoolId: 
+            type: string
+      environment: 
+        type: string
+      volumes: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            rootVolume: 
+              type: boolean
+            name: 
+              type: string
+            size: 
+              type: integer
+              format: int64
+            storageType: 
+              type: integer
+              format: int64
+      hostName: 
+        type: string
+      layout: 
+        type: object
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          code: 
+            type: string
+      networkInterfaces: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            primaryInterface: 
+              type: boolean
+            network: 
+              type: object
+              properties: 
+                id: 
+                  type: string
+                hasPool: 
+                  type: boolean
+            ipMode: 
+              type: string
+            showNetworkPoolLabel: 
+              type: boolean
+            showNetworkDhcpLabel: 
+              type: boolean
+      plan: 
+        type: object
+        properties: 
+          id: 
+            type: string
+      version: 
+        type: string
+      securityGroups: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: string
+  optionTypes: 
+    type: array
+    items: 
+      type: integer
+      format: int64

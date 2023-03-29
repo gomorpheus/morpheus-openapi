@@ -1,0 +1,56 @@
+type: object
+required:
+  - integration
+properties:
+  integration:
+    type: object
+    required:
+      - name
+      - type
+      - serviceUrl
+      - serviceUsername
+      - servicePassword
+    properties:
+      name: 
+        type: string
+        description: Name, a unique identifier for the integration
+        example: Sample Integration
+      type:
+        type: string
+        description: Integration Type Code
+        enum:
+        - serviceNow
+      enabled:
+        type: boolean
+        description: Set `true` to enable integration
+      refresh:
+        type: boolean
+        description: |
+          Pass `false` to skip refresh. 
+          By default, refresh is done on update, when it is supported by the integration type.
+        default: true
+      serviceUrl:
+        type: string
+        description: ServiceNow Host
+        example: https://snow.com/mysnow
+      serviceUsername:
+        type: string
+        description: ServiceNow Username
+      servicePassword:
+        type: string
+        description: ServiceNow Password
+      config:
+        type: object
+        properties: 
+          serviceNowCustomCmdbMapping:
+            type: array
+            items: 
+              type: object
+          serviceNowCmdbClassMapping:
+            type: array
+            items: 
+              type: object
+          serviceNowCMDBBusinessObject:
+            type: array
+            items: 
+              type: object

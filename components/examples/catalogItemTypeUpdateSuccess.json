@@ -1,0 +1,195 @@
+{
+  "success": true,
+  "catalogItemType": {
+    "id": 1678,
+    "name": "api-test-instance",
+    "description": "My instance description",
+    "labels": [],
+    "type": "instance",
+    "enabled": true,
+    "featured": true,
+    "iconPath": "/assets/containers-png/options.png",
+    "imagePath": "https://qa.morpheusdata.com/storage/logos/uploads/CatalogItemType/1678/logo/davidbdaria_original.png",
+    "darkImagePath": "https://qa.morpheusdata.com/storage/logos/uploads/CatalogItemType/1678/darkLogo/davidblankinship_original.png",
+    "config": {
+      "hostName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+      "backup": {
+        "backupRepository": 1,
+        "veeamManagedServer": "",
+        "jobSchedule": 2,
+        "createBackup": true,
+        "jobAction": "new",
+        "jobRetentionCount": "3",
+        "target": 37006
+      },
+      "volumesDisplay": [
+        {
+          "controller": null,
+          "mountPoint": null,
+          "size": 1,
+          "datastore": null,
+          "name": "data",
+          "displayOrder": null,
+          "storage": null
+        }
+      ],
+      "volumes": [
+        {
+          "volumeCustomizable": false,
+          "readonlyName": false,
+          "size": 1,
+          "name": "data",
+          "index": 0,
+          "rootVolume": true,
+          "hasDatastore": false,
+          "customMaxStorage": false,
+          "maxStorage": 1073741824
+        }
+      ],
+      "type": "nginx",
+      "ports": [
+        {
+          "code": "nginx.80",
+          "visible": true,
+          "internalPort": 80,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": "http",
+          "sortOrder": 0,
+          "name": "Http",
+          "id": 59,
+          "shortName": "http",
+          "externalPort": 80,
+          "loadBalance": true
+        },
+        {
+          "code": "nginx.443",
+          "visible": true,
+          "internalPort": 443,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": "https",
+          "sortOrder": 1,
+          "name": "Https",
+          "id": 60,
+          "shortName": "https",
+          "externalPort": 443,
+          "loadBalance": true
+        }
+      ],
+      "version": "1.9",
+      "hideLock": true,
+      "cloud": {
+        "name": "QA Docker",
+        "id": 8
+      },
+      "layout": {
+        "code": "nginx-1.9-single"
+      },
+      "showScale": false,
+      "networkInterfaces": [],
+      "templateParameter": null,
+      "loadBalancer": [
+        {
+          "externalAddressCheck": false,
+          "protocol": "http",
+          "vipPort": 80,
+          "vipName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}-load-balancer",
+          "internalPort": 80,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": "http",
+          "vipHostname": "${userInitials}-${cloudCode}-${type}-simple-${sequence}.localdomain",
+          "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+          "id": "",
+          "balanceMode": "leastconnections",
+          "externalPort": 80
+        },
+        {
+          "externalAddressCheck": false,
+          "protocol": "https",
+          "vipPort": 443,
+          "vipName": "${userInitials}-${cloudCode}-${type}-simple-${sequence}-load-balancer",
+          "internalPort": 443,
+          "loadBalancePort": null,
+          "loadBalanceProtocol": "https",
+          "vipHostname": "${userInitials}-${cloudCode}-${type}-simple-${sequence}.localdomain",
+          "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+          "id": "",
+          "balanceMode": "leastconnections",
+          "externalPort": 443
+        }
+      ],
+      "name": "${userInitials}-${cloudCode}-${type}-simple-${sequence}",
+      "config": {
+        "poolProviderType": "docker",
+        "isVpcSelectable": true,
+        "isEC2": false,
+        "resourcePoolId": 94944,
+        "createUser": true,
+        "provisionServerId": null
+      },
+      "plan": {
+        "code": "container-128",
+        "id": 68
+      },
+      "group": {
+        "name": "QA Docker",
+        "id": 20
+      },
+      "deployment": {
+        "versionId": 7,
+        "id": 1
+      }
+    },
+    "content": "This is my wiki content",
+    "optionTypes": [
+      {
+        "id": 2926,
+        "name": "App Name",
+        "description": "Option type for catalog item",
+        "labels": [],
+        "code": "appName",
+        "fieldName": "appName",
+        "fieldLabel": "App Name",
+        "fieldCode": null,
+        "fieldContext": "config.customOptions",
+        "fieldGroup": null,
+        "fieldClass": null,
+        "fieldAddOn": null,
+        "fieldComponent": null,
+        "fieldInput": null,
+        "placeHolder": null,
+        "verifyPattern": null,
+        "helpBlock": null,
+        "helpBlockFieldCode": null,
+        "defaultValue": null,
+        "optionSource": null,
+        "optionSourceType": null,
+        "optionList": null,
+        "type": "text",
+        "advanced": false,
+        "required": true,
+        "exportMeta": false,
+        "editable": false,
+        "creatable": true,
+        "config": {},
+        "displayOrder": 5,
+        "wrapperClass": null,
+        "enabled": true,
+        "noBlank": false,
+        "dependsOnCode": null,
+        "visibleOnCode": null,
+        "requireOnCode": null,
+        "contextualDefault": false,
+        "displayValueOnDetails": null,
+        "showOnCreate": true,
+        "showOnEdit": true,
+        "localCredential": null
+      }
+    ],
+    "owner": {
+      "id": 1,
+      "name": "Morpheus QA"
+    },
+    "dateCreated": "2022-09-20T17:54:46Z",
+    "lastUpdated": "2022-09-20T18:17:46Z"
+  }
+}

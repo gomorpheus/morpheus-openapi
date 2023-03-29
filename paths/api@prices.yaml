@@ -16,6 +16,11 @@ get:
     - $ref: ../components/parameters/priceType.yaml
     - $ref: ../components/parameters/platform.yaml
     - $ref: ../components/parameters/currency.yaml
+    - name: type
+      in: query
+      description: Filter by type code
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
@@ -34,26 +39,10 @@ get:
             Prices Response:
               value:
                 $ref: ../components/examples/prices.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post:
   summary: Creates a Price
   description: |
@@ -105,6 +94,8 @@ post:
                     * `datastore` - Datastore
                     * `platform` - Platform
                     * `software` - Software
+                    * `load_balancer` - Load Balancer
+                    * `load_balancer_virtual_server` - Load Balancer Virtual Server
                   enum:
                     - fixed
                     - compute
@@ -114,6 +105,8 @@ post:
                     - datastore
                     - platform
                     - software
+                    - load_balancer
+                    - load_balancer_virtual_server
                 priceUnit:
                   type: string
                   description: The unit of pricing
@@ -204,23 +197,7 @@ post:
             Price Response:
               value:
                 $ref: ../components/examples/priceSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

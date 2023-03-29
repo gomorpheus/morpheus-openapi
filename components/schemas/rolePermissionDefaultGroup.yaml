@@ -1,0 +1,19 @@
+title: Default Group Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`ComputeSite` is the code for Default Group Access"
+    default: ComputeSite
+    enum: 
+      - ComputeSite
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - read
+      - none

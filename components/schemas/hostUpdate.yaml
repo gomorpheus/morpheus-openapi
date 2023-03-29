@@ -1,0 +1,85 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Unique name scoped to your account for the server.
+    example: myserver
+  description:
+    type: string
+    description: Optional description field.
+    example: "my new server"
+  sshUsername:
+    type: string
+    description: SSH Username
+    example: myuser
+  sshPassword:
+    type: string
+    description: SSH Password
+    example: mypassword
+  powerScheduleType:
+    description: Power schedule ID.
+    type: integer
+    format: int64
+  labels:
+    type: array
+    items: 
+      type: string
+  tags:
+    description: Metadata tags, Array of objects having a name and value.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    example:
+      - name: hello
+        value: world
+      - name: flash
+        value: bang
+  addTags:
+    description: Add or update value of Metadata tags, Array of objects having a name and value.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    example:
+      - name: hello
+        value: world
+      - name: flash
+        value: bang
+  removeTags:
+    description: Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+          nullable: true
+    example:
+      - name: hello
+  guestConsoleType:
+    type: string
+    description: The Type of guest console this server provides such as disabled, vnc, rdp, ssh
+  guestConsoleUsername:
+    type: string
+    description: The optional guest console username if you don't want to use the user defaults
+  guestConsolePassword:
+    type: string
+    description: The optional guest console password if not using the accessing users creds
+  guestConsolePort:
+    type: string
+    description: The port the guest console is being accessed from
+  guestConsolePreferred:
+    type: boolean
+    description: Can turn off guest console preferences on server in favor of hypervisor console
+    default: true

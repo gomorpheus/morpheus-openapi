@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 159,
+        "name": "22.  Max VMs",
+        "description": null,
+        "policyType": {
+            "id": 10,
+            "code": "maxVms",
+            "name": "Max VMs"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxVms": "23543"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

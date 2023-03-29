@@ -1,0 +1,55 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  enabled: 
+    type: boolean
+  type: 
+    type: string
+    enum:
+    - bindDns
+  integrationType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  host: 
+    type: string
+  isPlugin: 
+    type: boolean
+  config: 
+    type: object
+    properties: 
+      zones: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            zoneName: 
+              type: string
+            reverseZone: 
+              type: string
+  status: 
+    type: string
+  statusDate: 
+    type: string
+    format: date-time
+  statusMessage: 
+    type: string
+    nullable: true
+  lastSync: 
+    type: string
+    nullable: true
+  lastSyncDuration: 
+    type: string
+    nullable: true
+  credential: 
+    $ref: creds.yaml

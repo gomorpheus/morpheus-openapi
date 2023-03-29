@@ -1,0 +1,87 @@
+get:
+  summary: Get a Specific Boot Script
+  description: This endpoint retrieves a specific boot script.
+  operationId: getBootScript
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              bootScript:
+                $ref: ../components/schemas/bootScript.yaml
+          examples:
+            Boot Script Response:
+              value:
+                $ref: ../components/examples/bootScript.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Update a Boot Script
+  description: Update a Boot Script
+  operationId: updateBootScript
+  tags: 
+    -  Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            bootScript:
+              $ref: ../components/schemas/bootScriptsCreate.yaml
+        examples:
+          Boot Script Request:
+            value:
+              $ref: ../components/examples/bootScriptsRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              bootScript:
+                $ref: ../components/schemas/bootScript.yaml
+          examples:
+            Boot Script Response:
+              value:
+                $ref: ../components/examples/bootScript.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Boot Script
+  description: Will delete a boot script from the system and make it no longer usable.
+  operationId: deleteBootScript
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

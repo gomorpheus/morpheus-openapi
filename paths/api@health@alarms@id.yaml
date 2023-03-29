@@ -1,0 +1,28 @@
+get:
+  summary: Retrieves a Specific Appliance Health Alarm
+  description: This endpoint will retrieve a specific health alarm by ID.
+  operationId: getHealthAlarms
+  tags:
+    - Health
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                alarm:
+                  $ref: ../components/schemas/alarm.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Health Alarm Response:
+              value:
+                $ref: ../components/examples/alarm.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

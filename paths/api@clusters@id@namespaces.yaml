@@ -1,0 +1,70 @@
+get:
+  summary: List Namespaces (Kubernetes)
+  description: List Namespaces (Kubernetes)
+  operationId: getClusterNamespaces
+  tags:
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                namespaces:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/clusterNamespaces.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Clusters Response:
+              value:
+                $ref: ../components/examples/clusterNamespaces.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Add Namespace (Kubernetes)
+  description: Add Namespace (Kubernetes)
+  operationId: addClusterNamespace
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            namespace:
+              $ref: ../components/schemas/clusterNamespaceCreate.yaml
+        examples:
+          Cluster Request:
+            value:
+              $ref: ../components/examples/clusterNamespaceCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+            - type: object
+              properties:
+                namespace:
+                  $ref: ../components/schemas/clusterNamespaceCreateSuccess.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Cluster Response:
+              value:
+                $ref: ../components/examples/clusterNamespaceCreateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

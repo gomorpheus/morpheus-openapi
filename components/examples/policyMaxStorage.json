@@ -1,0 +1,28 @@
+{
+    "policy": {
+        "id": 153,
+        "name": "20. Max Storage",
+        "description": null,
+        "policyType": {
+            "id": 4,
+            "code": "maxStorage",
+            "name": "Max Storage"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxStorage": "12352"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

@@ -56,8 +56,14 @@ properties:
       name: 
         type: string
   datastore: 
-    type: string
+    type: object
     nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
   crossCloudApply: 
     type: boolean
     nullable: true

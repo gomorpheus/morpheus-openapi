@@ -1,0 +1,73 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  deployTargetService: 
+    type: string
+  shortName: 
+    type: string
+  providerType: 
+    type: string
+  code: 
+    type: string
+  hostService: 
+    type: string
+  managed: 
+    type: boolean
+  hasMasters: 
+    type: boolean
+  hasWorkers: 
+    type: boolean
+  viewSet: 
+    type: string
+  imageCode: 
+    type: string
+  kubeCtlLocal: 
+    type: boolean
+  hasDatastore: 
+    type: boolean
+  supportsCloudScaling: 
+    type: boolean
+  name: 
+    type: string
+  hasDefaultDataDisk: 
+    type: boolean
+  canManage: 
+    type: boolean
+  hasCluster: 
+    type: boolean
+  description: 
+    type: string
+  optionTypes: 
+    type: array
+    items: 
+      $ref: optionType.yaml
+  controllerTypes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        code: 
+          type: string
+        description: 
+          type: string
+  workerTypes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        code: 
+          type: string
+        description: 
+          type: string

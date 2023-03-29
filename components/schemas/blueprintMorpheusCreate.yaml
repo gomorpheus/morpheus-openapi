@@ -12,6 +12,12 @@ properties:
     description: Blueprint Type
     enum:
       - morpheus
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   tiers:
     type: object
     description: Tier definitions - Create in UI to view a baseline for object

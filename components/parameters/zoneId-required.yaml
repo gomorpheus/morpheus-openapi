@@ -1,0 +1,8 @@
+name: zoneId
+in: query
+description: The Zone ID for Filtering
+required: true
+schema:
+  type: integer
+  format: int64
+example: 3

@@ -1,0 +1,6 @@
+name: includeVirtualImages
+in: query
+description: Optional ability to exclude virtual images
+schema:
+  type: boolean
+  default: true

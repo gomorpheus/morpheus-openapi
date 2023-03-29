@@ -1,0 +1,6 @@
+name: licenseVersion
+in: query
+description: If specified will return an exact match on licenseVersion
+schema:
+  type: string
+example: "2012 R2 Standard"

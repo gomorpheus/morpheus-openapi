@@ -1,0 +1,6 @@
+name: includeDiscoveredServers
+in: query
+description: Optional ability to exclude discovered servers
+schema:
+  type: boolean
+  default: true

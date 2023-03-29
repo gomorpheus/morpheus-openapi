@@ -1,0 +1,7 @@
+name: typeId
+in: query
+description: Type filter, restricts query to only load clusters of a specified cluster type
+schema:
+  type: integer
+  format: int64
+example: 3

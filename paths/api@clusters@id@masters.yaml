@@ -1,0 +1,29 @@
+get:
+  summary: Get Masters (Kubernetes)
+  description: This endpoint retrieves masters of a specified kubernetes cluster.
+  operationId: getClusterMasters
+  tags:
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema: 
+            type: object
+            properties: 
+              masters:
+                type: array
+                items:
+                  $ref: ../components/schemas/clusterMasters.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterMasters.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

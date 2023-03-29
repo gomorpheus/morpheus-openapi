@@ -1,0 +1,209 @@
+type: object
+properties: 
+  price: 
+    type: number
+  cost: 
+    type: number
+  startDate: 
+    type: string
+    format: date-time
+  endDate: 
+    type: string
+    format: date-time
+  servers: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        refType: 
+          type: string
+        refUUID: 
+          type: string
+        refId: 
+          type: integer
+          format: int64
+        startDate: 
+          type: string
+          format: date-time
+        endDate: 
+          type: string
+          format: date-time
+        cost: 
+          type: number
+        price: 
+          type: number
+        numUnits: 
+          type: number
+        unit: 
+          type: string
+        currency: 
+          type: string
+        usages: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              name: 
+                type: string
+              zoneName: 
+                type: string
+              accountName: 
+                type: string
+              volumes: 
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    size: 
+                      type: integer
+                      format: int64
+                    typeCode: 
+                      type: string
+                    datastore: 
+                      type: string
+                      nullable: true
+              maxMemory: 
+                type: integer
+                format: int64
+              maxCpu: 
+                type: string
+                nullable: true
+              maxCores: 
+                type: integer
+                format: int64
+              serverExternalId: 
+                type: string
+                nullable: true
+              serverInternalId: 
+                type: string
+                nullable: true
+              planName: 
+                type: string
+              hourlyPrice: 
+                type: number
+              hourlyCost: 
+                type: number
+              currency: 
+                type: string
+              pricesUsed: 
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    type: 
+                      type: string
+                    pricePerUnit: 
+                      type: number
+                    costPerUnit: 
+                      type: number
+                    quantity: 
+                      type: number
+              cost: 
+                type: number
+              price: 
+                type: number
+              createdByUser: 
+                type: string
+              createdByUserId: 
+                type: integer
+                format: int64
+              siteId: 
+                type: string
+                nullable: true
+              siteName: 
+                type: string
+                nullable: true
+              siteUUID: 
+                type: string
+                nullable: true
+              siteCode: 
+                type: string
+                nullable: true
+              startDate: 
+                type: string
+                format: date-time
+              endDate: 
+                type: string
+                format: date-time
+              status: 
+                type: string
+              tags: 
+                type: array
+                items: 
+                  type: object
+              applicablePrices: 
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    startDate: 
+                      type: string
+                      format: date-time
+                    endDate: 
+                      type: string
+                      format: date-time
+                    numUnits: 
+                      type: number
+                    cost: 
+                      type: number
+                    price: 
+                      type: number
+                    currency: 
+                      type: string
+                    prices: 
+                      type: array
+                      items: 
+                        type: object
+                        properties: 
+                          type: 
+                            type: string
+                          pricePerUnit: 
+                            type: number
+                          costPerUnit: 
+                            type: number
+                          cost: 
+                            type: number
+                          price: 
+                            type: number
+                          quantity: 
+                            type: number
+              servicePlanId: 
+                type: integer
+                format: int64
+              servicePlanName: 
+                type: string
+              resourcePoolId: 
+                type: string
+                nullable: true
+              resourcePoolName: 
+                type: string
+                nullable: true
+        numUsages: 
+          type: integer
+          format: int64
+        totalUsages: 
+          type: integer
+          format: int64
+        hasMoreUsages: 
+          type: boolean
+        foundPricing: 
+          type: boolean
+        name: 
+          type: string
+        serverUUID: 
+          type: string
+        serverUniqueId: 
+          type: string
+          nullable: true
+        serverExternalId: 
+          type: string
+          nullable: true
+        serverInternalId: 
+          type: string
+          nullable: true
+        resourcePoolId: 
+          type: string
+          nullable: true
+        resourcePoolName: 
+          type: string
+          nullable: true

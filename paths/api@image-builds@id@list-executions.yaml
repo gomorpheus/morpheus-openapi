@@ -1,0 +1,35 @@
+get:
+  summary: List Image Build Executions
+  description: List all executions for an image build. This same info is also returned by the image build GET api, which returns the 100 most recent executions.
+  operationId: getImageBuildExecutions
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+    - $ref: ../components/parameters/buildNumber.yaml
+    - $ref: ../components/parameters/buildStatus.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                imageBuildExecutions:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/imageBuildExecution.yaml
+                imageBuildExecutionCount:
+                  type: integer
+                  format: int64
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Image Build Response:
+              value:
+                $ref: ../components/examples/imageBuildExecutions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

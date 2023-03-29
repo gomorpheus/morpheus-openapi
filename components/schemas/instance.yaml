@@ -470,6 +470,7 @@ properties:
     type: boolean
   removalDate: 
     type: string
+    format: date-time
     nullable: true
   createdBy: 
     type: object

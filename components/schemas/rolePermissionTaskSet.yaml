@@ -1,0 +1,14 @@
+type: object
+required:
+  - taskSetId
+  - access
+properties:
+  taskId:
+    type: integer
+    description: "`id` of the workflow (taskSet)"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

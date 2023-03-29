@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "integration": {
+        "id": 1257,
+        "name": "Github - TM",
+        "enabled": true,
+        "type": "github",
+        "integrationType": {
+            "id": 15,
+            "code": "github",
+            "name": "GitHub"
+        },
+        "username": "tmo",
+        "token": "************",
+        "tokenHash": "17c4ab2a4510f07880b3e195080f8e6ad6eb48a8",
+        "serviceKey": {
+            "id": 3,
+            "name": "tmo"
+        },
+        "isPlugin": false,
+        "config": {
+            "defaultBranch": "",
+            "cacheEnabled": false
+        },
+        "status": "ok",
+        "statusDate": "2022-07-22T03:52:29Z",
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": null
+        }
+    }
+}

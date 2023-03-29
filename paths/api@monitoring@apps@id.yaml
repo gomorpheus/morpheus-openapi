@@ -16,34 +16,26 @@ get:
             properties:
               monitorApp:
                 $ref: ../components/schemas/checkApp.yaml
+              checkGroups:
+                type: array
+                items: 
+                  $ref: ../components/schemas/checkGroup.yaml
               checks:
                 type: array
                 items:
                   $ref: ../components/schemas/check.yaml
+              openIncidents:
+                type: array
+                items: 
+                  $ref: ../components/schemas/incident.yaml
           examples:
             Check App Response:
               value:
                 $ref: ../components/examples/checkApp.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 put:
   summary: Update Check App
   description: Update an existing monitoring check app.
@@ -72,10 +64,6 @@ put:
                   type: string
                   description: Optional description field
                   example: My cool description
-                minHappy:
-                  type: integer
-                  description: This specifies the minimum number of checks within inUptime
-                  default: 1
                 inUptime:
                   type: boolean
                   description: Used to determine if check should affect account wide availability calculations
@@ -116,26 +104,10 @@ put:
             Check App Response:
               value:
                 $ref: ../components/examples/checkAppSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 delete:
   summary: Delete a Specific Check App
   description: Delete an existing monitoring check app.
@@ -155,23 +127,7 @@ delete:
             Delete Check App Response:
               value:
                 $ref: ../components/examples/success.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

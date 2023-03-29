@@ -1,0 +1,17 @@
+title: Default Persona Permission
+type: object
+required:
+  - permissionCode
+  - access
+properties:
+  permissionCode:
+    type: string
+    description: "`Persona` is the code for Default Persona Access"
+    enum: 
+      - Persona
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

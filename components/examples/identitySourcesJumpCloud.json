@@ -1,0 +1,46 @@
+{
+    "userSource": {
+        "id": 4771,
+        "name": "JumpCloud QA",
+        "description": "jumpcloud trial",
+        "code": "E81DYhKVN",
+        "type": "jumpCloud",
+        "active": true,
+        "deleted": false,
+        "autoSyncOnLogin": true,
+        "externalLogin": false,
+        "allowCustomMappings": false,
+        "account": {
+            "id": 1552,
+            "name": "Auto Tenant 1"
+        },
+        "defaultAccountRole": {
+            "id": 19112,
+            "name": "Default: User",
+            "authority": "Default: User"
+        },
+        "config": {
+            "organizationId": "56ba843059b2343b0",
+            "bindingUsername": "jcgauss",
+            "bindingPassword": "************",
+            "requiredRole": "testTag",
+            "bindingPasswordHash": "590561e48a87d3642"
+        },
+        "roleMappings": [
+            {
+                "sourceRoleName": "mathematicians",
+                "sourceRoleFqn": "cn=mathematicians,ou=Users,o=56b3786b2343b0,dc=jumpcloud,dc=com",
+                "mappedRole": {
+                    "id": 19117,
+                    "name": "Sub Role",
+                    "authority": "Sub Role"
+                }
+            }
+        ],
+        "subdomain": "auto",
+        "loginURL": "https://qa.fqdn.com/login/account/auto",
+        "providerSettings": {},
+        "dateCreated": "2020-02-06T17:52:07Z",
+        "lastUpdated": "2022-08-07T07:52:03Z"
+    }
+}

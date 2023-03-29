@@ -1,0 +1,6 @@
+name: includeLoadBalancers
+in: query
+description: Optional ability to exclude load balancers
+schema:
+  type: boolean
+  default: true

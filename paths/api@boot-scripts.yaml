@@ -1,0 +1,70 @@
+get:
+  summary: Boot Scripts
+  description: |
+    Boot Scripts are used in the Image Builder service. See Image Builds.
+
+    This endpoint retrieves all boot scripts associated with the account.
+  operationId: listBootScripts
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                bootScripts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/bootScript.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Boot Scripts Response:
+              value:
+                $ref: ../components/examples/bootScripts.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create a Boot Script
+  description: Create a Boot Script
+  operationId: addBootScript
+  tags: 
+    -  Image Builds
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            bootScript:
+              $ref: ../components/schemas/bootScriptsCreate.yaml
+        examples:
+          Boot Script Request:
+            value:
+              $ref: ../components/examples/bootScriptsRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              bootScript:
+                $ref: ../components/schemas/bootScript.yaml
+          examples:
+            Boot Script Response:
+              value:
+                $ref: ../components/examples/bootScript.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

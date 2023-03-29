@@ -12,6 +12,10 @@ properties:
     description: A description for the blueprint
     example: Basic Template Description
     nullable: true
+  labels:
+    type: array
+    items: 
+      type: string
   category:
     type: string
     description: Category

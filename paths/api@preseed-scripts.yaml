@@ -1,0 +1,70 @@
+get:
+  summary: Preseed Scripts
+  description: |
+    Preseed Scripts are used in the Image Builder service. See Image Builds.
+
+    This endpoint retrieves all preseed scripts associated with the account.
+  operationId: listPreseedScripts
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                preseedScripts:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/preseedScript.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Preseed Scripts Response:
+              value:
+                $ref: ../components/examples/preseedScripts.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create a Preseed Script
+  description: Create a Preseed Script
+  operationId: addPreseedScript
+  tags: 
+    -  Image Builds
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            preseedScript:
+              $ref: ../components/schemas/preseedScriptsCreate.yaml
+        examples:
+          Preseed Script Request:
+            value:
+              $ref: ../components/examples/preseedScriptsRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              preseedScript:
+                $ref: ../components/schemas/preseedScript.yaml
+          examples:
+            Preseed Script Response:
+              value:
+                $ref: ../components/examples/preseedScript.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,5 +1,5 @@
 type: object
-properties: 
+properties:
   id: 
     type: integer
     format: int64
@@ -45,6 +45,8 @@ properties:
         id: 
           type: integer
           format: int64
+        name:
+          type: string
         authority: 
           type: string
         description: 
@@ -74,11 +76,66 @@ properties:
     type: string
     nullable: true
   defaultPersona: 
-    type: string
-    nullable: true
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      code:
+        type: string
+      name: 
+        type: string
   dateCreated: 
     type: string
     format: date-time
   lastUpdated: 
     type: string
     format: date-time
+  access:
+    type: object
+    nullable: true
+    properties: 
+      features:
+        type: array
+        items: 
+          type: object
+      zones:
+        type: array
+        items: 
+          type: object
+      sites:
+        type: array
+        items: 
+          type: object
+      instanceTypes:
+        type: array
+        items: 
+          type: object
+      appTemplates:
+        type: array
+        items: 
+          type: object
+      catalogItemTypes:
+        type: array
+        items:
+          type: object
+      personas:
+        type: array
+        items:
+          type: object
+      vdiPools:
+        type: array
+        items:
+          type: object
+      reportTypes:
+        type: array
+        items:
+          type: object
+      tasks:
+        type: array
+        items:
+          type: object
+      taskSets:
+        type: array
+        items:
+          type: object

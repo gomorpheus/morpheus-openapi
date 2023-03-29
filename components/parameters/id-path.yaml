@@ -1,7 +1,8 @@
 name: id
 in: path
-description: Morpheus ID of the Object being created or referenced
+description: Morpheus ID of the Object being referenced
 required: true
 schema:
-  type: number
-example: 7
+  type: integer
+  format: int64
+example: 1

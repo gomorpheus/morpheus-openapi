@@ -6,9 +6,8 @@ properties:
     description: Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
     default: false
   resourcePoolId:
-    type: integer
-    format: int64
-    description: External ID of the resource group to use for instance
+    type: string
+    description: id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
   hostId:
     type: string
     description: Specific host to deploy to if so desired.

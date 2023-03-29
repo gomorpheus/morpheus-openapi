@@ -1,0 +1,24 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description: 
+    type: string
+  accountId: 
+    type: integer
+    format: int64
+  externalId: 
+    type: string
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  versionCount: 
+    type: integer
+    format: int64

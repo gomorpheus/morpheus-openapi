@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 150,
+        "name": "19. Max Pool Members",
+        "description": null,
+        "policyType": {
+            "id": 88,
+            "code": "maxPoolMembers",
+            "name": "Max Pool Members"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "maxPoolMembers": "1516"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}

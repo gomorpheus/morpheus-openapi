@@ -9,6 +9,12 @@ properties:
     type: string
     description: Description
     nullable: true
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   type: 
     type: string
     description: Option List Type eg. `rest`, `api`, `ldap` or `manual`.

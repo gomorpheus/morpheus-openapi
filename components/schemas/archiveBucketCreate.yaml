@@ -1,0 +1,32 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: A name for the archive bucket. Must be globally unique.
+  description: 
+    type: string
+    description: A description for the archive bucket
+  storageProvider: 
+    type: object
+    description: Storage Provider
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  visibility: 
+    type: string
+    description: Visibility - Set to public to allow all tenants
+    default: private
+    enum:
+      - public
+      - private
+  isPublic: 
+    type: boolean
+    description: Public URL - Set to true to allow anonymous access
+    default: false
+  accounts:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64

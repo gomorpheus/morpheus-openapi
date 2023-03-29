@@ -1,0 +1,55 @@
+{
+    "userSource": {
+        "id": 5553,
+        "name": "LDAP ForumSys",
+        "description": "public ldap test server",
+        "code": "hJN7thPRR",
+        "type": "ldap",
+        "active": true,
+        "deleted": false,
+        "autoSyncOnLogin": true,
+        "externalLogin": false,
+        "allowCustomMappings": false,
+        "account": {
+            "id": 1552,
+            "name": "Auto Tenant 1"
+        },
+        "defaultAccountRole": {
+            "id": 19112,
+            "name": "Default: User",
+            "authority": "Default: User"
+        },
+        "config": {
+            "url": "ldap://ldap.forumsys.com",
+            "bindingUsername": "einstein",
+            "bindingPassword": "************",
+            "userFqnExpression": "uid=$username,dc=example,dc=com",
+            "requiredRoleFqn": "",
+            "usernameAttribute": "",
+            "commonNameAttribute": "",
+            "firstNameAttribute": "",
+            "lastNameAttribute": "",
+            "emailAttribute": "",
+            "uniqueMemberAttribute": "",
+            "memberOfAttribute": "",
+            "bindingPasswordHash": "5e881ef721d1542d8"
+        },
+        "roleMappings": [
+            {
+                "sourceRoleName": null,
+                "sourceRoleFqn": "ou=mathematicians,dc=example,dc=com",
+                "mappedRole": {
+                    "id": 19115,
+                    "name": "Sub Admin",
+                    "authority": "Sub Admin"
+                }
+            }
+        ],
+        "subdomain": "auto",
+        "loginURL": "https://qa.fqdn.com/login/account/auto",
+        "providerSettings": {},
+        "dateCreated": "2021-06-22T19:22:18Z",
+        "lastUpdated": "2022-04-07T19:24:26Z"
+    },
+    "success": true
+}

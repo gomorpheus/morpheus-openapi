@@ -8,12 +8,9 @@ get:
     - Clouds
   parameters:
     - $ref: ../components/parameters/zoneId-path.yaml
-    - $ref: ../components/parameters/max.yaml
-    - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
-    - $ref: ../components/parameters/direction.yaml
-    - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/max.yaml
   responses:
     '200':
       description: Successful Request
@@ -32,30 +29,14 @@ get:
             Resource Pools Response:
               value:
                 $ref: ../components/examples/zoneResourcePools.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
 post:
   summary: Creates a Specified Resource Pool for Specified Cloud
   description: |
-    Creates a resource pool for specified cloud.
+    Creates a resource pool for specified cloud. Only certain types of clouds support creating and deleting resource pools. Configuration options vary by type.
   operationId: addCloudResourcePool
   tags:
     - Clouds
@@ -104,6 +85,10 @@ post:
                   type: boolean
                   description: Enable `True` or disable `False` inventory sync for resource pool during cloud refresh
                   default: true
+                config:
+                  anyOf: 
+                    - $ref: ../components/schemas/AwsResourcePoolConfig.yaml
+                    - $ref: ../components/schemas/CloudFoundryResourcePoolConfig.yaml
                 tenantPermissions:
                   type: array
                   items:
@@ -117,38 +102,36 @@ post:
                           format: int64
                         example: [1, 3]
                 resourcePermissions:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      all:
-                        type: boolean
-                        description: Pass `true` to allow access all groups
-                        default: true
-                      sites:
-                        type: array
-                        description: Array of groups that are allowed access
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 1
-                      allPlans:
-                        type: boolean
-                        description: Pass true to allow access all plans
-                        default: true
-                      plans:
-                        type: array
-                        description: Array of plans that are allowed access
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              format: int64
-                              example: 1
+                  type: object
+                  properties:
+                    all:
+                      type: boolean
+                      description: Pass `true` to allow access all groups
+                      default: true
+                    sites:
+                      type: array
+                      description: Array of groups that are allowed access
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
+                    allPlans:
+                      type: boolean
+                      description: Pass true to allow access all plans
+                      default: true
+                    plans:
+                      type: array
+                      description: Array of plans that are allowed access
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
   responses:
     '200':
       description: Successful Request
@@ -165,23 +148,7 @@ post:
             Create Resource Pool Response:
               value:
                 $ref: ../components/examples/zoneResourcePoolSuccess.json
-    '400':
-      $ref: ../components/responses/400.yaml
-    '401':
-      $ref: ../components/responses/401.yaml
-    '403':
-      $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '405':
-      $ref: ../components/responses/405.yaml
-    '406':
-      $ref: ../components/responses/406.yaml
-    '410':
-      $ref: ../components/responses/410.yaml
-    '429':
-      $ref: ../components/responses/429.yaml
-    '500':
-      $ref: ../components/responses/500.yaml
-    '503':
-      $ref: ../components/responses/503.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

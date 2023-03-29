@@ -1,0 +1,6 @@
+name: name
+in: query
+description: Name of cluster layout. Defaults to Copy of <cloned layout name>
+schema:
+  type: string
+example: New Name

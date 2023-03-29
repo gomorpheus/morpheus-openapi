@@ -1,0 +1,8 @@
+name: workerCount
+in: query
+description: The target number of worker nodes
+required: true
+schema:
+  type: integer
+  format: int64
+example: 5

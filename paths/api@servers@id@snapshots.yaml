@@ -1,0 +1,28 @@
+get:
+  summary: Get list of snapshots for a Host
+  description: Get list of snapshots for a Host
+  operationId: getHostSnpshots
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              snapshots:
+                type: array
+                items:
+                  $ref: ../components/schemas/snapshot.yaml
+          examples:
+            Hosts Response:
+              value:
+                $ref: ../components/examples/serverSnapshots.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

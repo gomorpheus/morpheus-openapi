@@ -1,0 +1,66 @@
+{
+    "userSource": {
+        "id": 208,
+        "name": "SAML OneLogin",
+        "description": "saml test",
+        "code": "cxUydyybg",
+        "type": "saml",
+        "active": true,
+        "deleted": false,
+        "autoSyncOnLogin": true,
+        "externalLogin": true,
+        "allowCustomMappings": false,
+        "account": {
+            "id": 1552,
+            "name": "Auto Tenant 1"
+        },
+        "defaultAccountRole": {
+            "id": 19112,
+            "name": "Default: User",
+            "authority": "Default: User"
+        },
+        "config": {
+            "roleAttributeName": "firstName",
+            "requiredAttributeValue": "",
+            "givenNameAttribute": "firstName",
+            "surnameAttribute": "lastName",
+            "logoutUrl": "https://testqa-dev.onelogin.com/trust/saml2/http-redirect/slo/618053",
+            "doNotIncludeSAMLRequest": false,
+            "publicKey": "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIFFBMRUwEwYDVQQL\r\nDAxPiBJZFAxHzAdBgNVBAMMFk9uZUxvZ2luIEFjY291bnQgOTkxNTAw\r\nHhcNMTcwMTEyMjM1NTE4WhcNMjIwMTEzMjM1NTE4WjBbMQswCQYDVQQGEwJVUzEU\r\nMBIGA1UECgwLTW9ycGhldXMgUUExFTATBgNVBAsMDE9uZUxvZ2luIElkUDEfMB0G\r\nA1UEAwwWT25lTG9naW4gQWNjb3VudCA5OTE1MDCCASIwDQYJKoZIhvcNAQEBBQAD\r\nggEPADCCAQoCggEBAKc4dpnF82y8pwZzL+OK42NfcVnxMFuU/4FkdYWgKMVPAJZq\r\nym+bDbA4I6vak9MjsdMQbR6V1T7YFGl/vGbyc4KWNS7AqSGJsh/utMpkEyCxvC1v\r\nFEih5Kv2/NUCDndK12ieCTo8fqx5aArUBTfSC/qE+zKAQNb612iXHGeWU+WDZyRP\r\ncuFwBqDVj0zNaHsRqTn9iZb2qTudgTP31Ne5vkW00NQUQaA8Cx+fd6NPq6ePabhO\r\n58O7ak3/bm8xcW+r0oPNM+VEfGnj5873ysSuAFpP/u5nJerUtGHkx7CFCl/X6VUc\r\nBdL/cXkjJY/aBf5WBoxuqSs5+8JtxwrML4Q6pqcCAwEAAaOB2zCB2DAMBgNVHRMB\r\nAf8EAjAAMB0GA1UdDgQWBBTOfbgE8anmOcGy2t5A+Y3gD5qxkzCBmAYDVR0jBIGQ\r\nMIGNgBTOfbgE8anmOcGy2t5A+Y3gD5qxk6FfpF0wWzELMAkGA1UEBhMCVVMxFDAS\r\nBgNVBAoMC01vcnBoZXVzIFFBMRUwEwYDVQQLDAxPbmVMb2dpbiBJZFAxHzAdBgNV\r\nBAMMFk9uZUxvZ2luIEFjY291bnQgOTkxNTCCFGsoN7KYeqYpP2u0Dix/LN+MsxqS\r\nMA4GA1UdDwEB/wQEAwIHgDANBgkqhkiG9w0BAQUFAAOCAQEALz7WlF7/IlXNzj9L\r\nZp+C3lXDeBpfgTXaYXuUGhv02comPOKsqmj+BeVGvsAlUE2q6u7Row/yPSJtchZX\r\nYZNRJmVFxtYvrmsfCaDTawRRPpqxdup0YHHW6JYbT2mwm9PdkKolrTPPx+IlLvWR\r\njiPm6wrmVdPOWDWYBXpQ3rzMgTUNdd3meYqYy6R5brjN3VkonwHM53OFDoIKroNf\r\nyBeIllFZQJTN3iwyJnhkP37WUjzRktyKiBqqzENNv36q4FmvLO9pkKvpHPBzSBtW\r\nLEYafPrSMsch7qyelx4vKcyvIjh53OvipwX4gGQNCFdn3em4E0JDd/dggd+kGINA\r\nLL/t9A==",
+            "emailAttribute": "email",
+            "url": "https://testqa-dev.onelogin.com/trust/saml2/http-post/sso/618053",
+            "doNotValidateSignature": true,
+            "doNotValidateStatusCode": true,
+            "doNotValidateDestination": true,
+            "doNotValidateIssueInstants": true,
+            "doNotValidateAssertions": true,
+            "doNotValidateAuthStatements": false,
+            "doNotValidateSubject": false,
+            "doNotValidateConditions": false,
+            "doNotValidateAudiences": false,
+            "doNotValidateSubjectRecipients": false,
+            "SAMLSignatureMode": "NoSignature",
+            "forceAuthn": true
+        },
+        "roleMappings": [
+            {
+                "sourceRoleName": "Carl",
+                "sourceRoleFqn": null,
+                "mappedRole": {
+                    "id": 19115,
+                    "name": "Sub Admin",
+                    "authority": "Sub Admin"
+                }
+            }
+        ],
+        "subdomain": "auto",
+        "loginURL": "https://qa.fqdn.com/login/account/auto",
+        "providerSettings": {
+            "entityId": "https://qa.fqdn.com/saml/dyybg",
+            "acsUrl": "https://qa.fqdn.com/externalLogin/callback/dyybg",
+            "spMetadata": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><EntityDescriptor entityID=\"https://qa.fqdn.com/saml/cxUydyybg\" xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\"><SPSSODescriptor AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"false\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"><NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat><AssertionConsumerService index=\"0\" isDefault=\"true\" Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://qa.fqdn.com/externalLogin/callback/cxUydyybg\"/></SPSSODescriptor></EntityDescriptor>"
+        },
+        "dateCreated": "2017-05-24T03:59:44Z",
+        "lastUpdated": "2022-01-11T04:38:52Z"
+    }
+}

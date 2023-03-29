@@ -1,0 +1,141 @@
+{
+  "archiveBuckets": [
+      {
+          "id": 926,
+          "name": "Auto Dell Isilon 1217120534835",
+          "description": "auto test",
+          "storageProvider": {
+              "id": 80413,
+              "name": "qa-dell-isilon-share"
+          },
+          "owner": {
+              "id": 1,
+              "name": "Morpheus QA"
+          },
+          "createdBy": {
+              "username": "auto"
+          },
+          "isPublic": false,
+          "visibility": "private",
+          "code": "5a517f3facd8",
+          "filePath": "morpheus-archives/5a517f3facd8/",
+          "rawSize": null,
+          "fileCount": 1,
+          "accounts": [],
+          "dateCreated": "2021-12-17T20:05:52Z",
+          "lastUpdated": "2021-12-17T20:05:52Z"
+      },
+      {
+          "id": 908,
+          "name": "Images",
+          "description": null,
+          "storageProvider": {
+              "id": 32456,
+              "name": "jordon-test"
+          },
+          "owner": {
+              "id": 1,
+              "name": "Morpheus QA"
+          },
+          "createdBy": {
+              "username": "cbunge"
+          },
+          "isPublic": true,
+          "visibility": "private",
+          "code": "1dfa2cacdef8",
+          "filePath": "morpheus-archives/1dfa2cacdef8/",
+          "rawSize": 235323,
+          "fileCount": 1,
+          "accounts": [],
+          "dateCreated": "2020-10-30T18:14:04Z",
+          "lastUpdated": "2020-10-30T18:14:17Z"
+      },
+      {
+          "id": 755,
+          "name": "Local Archives",
+          "description": null,
+          "storageProvider": {
+              "id": 113,
+              "name": "Local Archives"
+          },
+          "owner": {
+              "id": 1,
+              "name": "Morpheus QA"
+          },
+          "createdBy": {
+              "username": "tommy"
+          },
+          "isPublic": false,
+          "visibility": "private",
+          "code": "f7c56768e00c",
+          "filePath": "morpheus-archives/f7c56768e00c/",
+          "rawSize": 7855721979,
+          "fileCount": 468,
+          "accounts": [],
+          "dateCreated": "2020-07-07T23:54:46Z",
+          "lastUpdated": "2022-09-02T21:23:41Z"
+      },
+      {
+          "id": 756,
+          "name": "Morpheus Installers",
+          "description": null,
+          "storageProvider": {
+              "id": 37001,
+              "name": "S3 Archives"
+          },
+          "owner": {
+              "id": 1,
+              "name": "Morpheus QA"
+          },
+          "createdBy": {
+              "username": "tommy"
+          },
+          "isPublic": false,
+          "visibility": "private",
+          "code": "d5efa1f33816",
+          "filePath": "morpheus-archives/d5efa1f33816/",
+          "rawSize": null,
+          "fileCount": 0,
+          "accounts": [],
+          "dateCreated": "2020-07-07T23:55:04Z",
+          "lastUpdated": "2020-07-07T23:55:04Z"
+      },
+      {
+          "id": 1030,
+          "name": "vstest",
+          "description": null,
+          "storageProvider": {
+              "id": 70205,
+              "name": "QA Azure"
+          },
+          "owner": {
+              "id": 1,
+              "name": "Morpheus QA"
+          },
+          "createdBy": {
+              "username": "vs@morpheusdata.com"
+          },
+          "isPublic": true,
+          "visibility": "public",
+          "code": "937bad56b80c",
+          "filePath": "morpheus-archives/937bad56b80c/",
+          "rawSize": 151038,
+          "fileCount": 1,
+          "accounts": [
+              {
+                  "id": 1,
+                  "name": "Morpheus QA"
+              }
+          ],
+          "dateCreated": "2022-07-07T10:03:48Z",
+          "lastUpdated": "2022-07-07T10:04:04Z"
+      }
+  ],
+  "archiveBucketCount": 5,
+  "meta": {
+      "size": 5,
+      "total": 5,
+      "offset": 0,
+      "max": 50
+  }
+}

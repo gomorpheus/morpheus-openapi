@@ -1,0 +1,11 @@
+{
+    "policy": {
+        "name": "Max Memory Policy for MyOrg",
+        "policyType": {
+            "code": "maxMemory"
+        },
+        "config": {
+            "maxMemory": 4096
+        }
+    }
+}

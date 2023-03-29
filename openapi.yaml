@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 5.5.2
+  version: 6.0.0
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -13,24 +13,36 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 servers:
-  - url: https://{api_url}
+  - url: https://{serverURL}
     description: Morpheus API
     variables:
-      api_url:
-        default: localhost
+      serverURL:
+        default: CHANGEME
+x-readme:
+  explorer-enabled: true
+  metrics-enabled: false
+  samples-languages:
+    - curl
+    - python
+    - powershell
+    - javascript
+    - go
 paths:
-  /api/accounts:
-    $ref: paths/api@accounts.yaml
-  /api/accounts/{id}:
-    $ref: paths/api@accounts@id.yaml
+
   /api/activity:
     $ref: paths/api@activity.yaml
-  /api/accounts/available-roles:
-    $ref: paths/api@accounts@available-roles.yaml
+
+  /api/monitoring/alerts:
+    $ref: paths/api@monitoring@alerts.yaml
+  /api/monitoring/alerts/{id}:
+    $ref: paths/api@monitoring@alerts@id.yaml
+
   /api/appliance-settings:
     $ref: paths/api@appliance-settings.yaml
   /api/appliance-settings/maintenance:
     $ref: paths/api@appliance-settings@maintenance.yaml
+  /api/appliance-settings/reindex:
+    $ref: paths/api@appliance-settings@reindex.yaml
   /api/approval-items/{id}:
     $ref: paths/api@approval-items@id.yaml
   /api/approval-items/{id}/{action}:
@@ -49,10 +61,10 @@ paths:
     $ref: paths/api@apps@id@apply.yaml
   /api/apps/{id}/cancel-removal:
     $ref: paths/api@apps@id@cancel-removal.yaml
-  /api/apps/{id}/refresh:
-    $ref: paths/api@apps@id@refresh.yaml
   /api/apps/{id}/prepare-apply:
     $ref: paths/api@apps@id@prepare-apply.yaml
+  /api/apps/{id}/refresh:
+    $ref: paths/api@apps@id@refresh.yaml
   /api/apps/{id}/remove-instance:
     $ref: paths/api@apps@id@remove-instance.yaml
   /api/apps/{id}/security-groups:
@@ -61,10 +73,51 @@ paths:
     $ref: paths/api@apps@id@state.yaml
   /api/apps/{id}/validate-apply:
     $ref: paths/api@apps@id@validate-apply.yaml
-  /api/apps/{id}/wiki:
-    $ref: paths/api@apps@id@wiki.yaml
+
+  /api/archives/buckets:
+    $ref: paths/api@archives@buckets.yaml
+  /api/archives/buckets/{id}:
+    $ref: paths/api@archives@buckets@id.yaml
+  /api/archives/buckets/{bucket}/files/{filepath}:
+    $ref: paths/api@archives@buckets@id@files@path.yaml
+  /api/archives/download/{bucket}/{filepath}:
+    $ref: paths/api@archives@download@id@path.yaml
+  /api/archives/files/{id}:
+    $ref: paths/api@archives@files@id.yaml
+  /api/archives/files/{id}/links:
+    $ref: paths/api@archives@files@id@links.yaml
+  /api/archives/files/{id}/links/{linkId}:
+    $ref: paths/api@archives@files@id@links@id.yaml
+  /api/forgot/reset-password:
+    $ref: paths/api@forgot@reset-password.yaml
+  /api/forgot/send-email:
+    $ref: paths/api@forgot@send-email.yaml
+  /api/execute-schedules:
+    $ref: paths/api@execute-schedules.yaml
+  /api/execute-schedules/{id}:
+    $ref: paths/api@execute-schedules@id.yaml
+  /api/execution-request/execute:
+    $ref: paths/api@execution-request@execute.yaml
+  /api/execution-request/{uniqueId}:
+    $ref: paths/api@execution-request@uniqueId.yaml
   /api/backup-settings:
     $ref: paths/api@backup-settings.yaml
+  /api/billing/account:
+    $ref: paths/api@billing@account.yaml
+  /api/billing/account/{id}:
+    $ref: paths/api@billing@account@id.yaml
+  /api/billing/instances:
+    $ref: paths/api@billing@instances.yaml
+  /api/billing/instances/{identifier}:
+    $ref: paths/api@billing@instances@identifier.yaml
+  /api/billing/servers:
+    $ref: paths/api@billing@servers.yaml
+  /api/billing/servers/{identifier}:
+    $ref: paths/api@billing@servers@identifier.yaml
+  /api/billing/zones:
+    $ref: paths/api@billing@zones.yaml
+  /api/billing/zones/{identifier}:
+    $ref: paths/api@billing@zones@identifier.yaml
   /api/blueprints:
     $ref: paths/api@blueprints.yaml
   /api/blueprints/{id}:
@@ -73,16 +126,196 @@ paths:
     $ref: paths/api@blueprints@id@image.yaml
   /api/blueprints/{id}/update-permissions:
     $ref: paths/api@blueprints@id@update-permissions.yaml
+
   /api/budgets:
     $ref: paths/api@budgets.yaml
   /api/budgets/{id}:
     $ref: paths/api@budgets@id.yaml
-  /api/certificates:
-    $ref: paths/api@certificates.yaml
-  /api/certificates/{id}:
-    $ref: paths/api@certificates@id.yaml
-  /api/clusters/{id}/wiki:
-    $ref: paths/api@clusters@id@wiki.yaml
+
+  /api/catalog-item-types:
+    $ref: paths/api@catalog-item-types.yaml
+  /api/catalog-item-types/{id}:
+    $ref: paths/api@catalog-item-types@id.yaml
+  /api/catalog-item-types/{id}/update-logo:
+    $ref: paths/api@catalog-item-types@id@update-logo.yaml
+
+  /api/clients:
+    $ref: paths/api@clients.yaml
+  /api/clients/{id}:
+    $ref: paths/api@clients@id.yaml
+
+
+  /api/monitoring/apps:
+    $ref: paths/api@monitoring@apps.yaml
+  /api/monitoring/apps/mute-all:
+    $ref: paths/api@monitoring@apps@mute-all.yaml
+  /api/monitoring/apps/{id}:
+    $ref: paths/api@monitoring@apps@id.yaml
+  /api/monitoring/apps/{id}/mute:
+    $ref: paths/api@monitoring@apps@id@mute.yaml
+  /api/monitoring/checks:
+    $ref: paths/api@monitoring@checks.yaml
+  /api/monitoring/checks/mute-all:
+    $ref: paths/api@monitoring@checks@mute-all.yaml
+  /api/monitoring/checks/{id}:
+    $ref: paths/api@monitoring@checks@id.yaml
+  /api/monitoring/checks/{id}/mute:
+    $ref: paths/api@monitoring@checks@id@mute.yaml
+  /api/monitoring/check-types:
+    $ref: paths/api@monitoring@check-types.yaml
+  /api/monitoring/check-types/{id}:
+    $ref: paths/api@monitoring@check-types@id.yaml
+
+  /api/monitoring/groups:
+    $ref: paths/api@monitoring@groups.yaml
+  /api/monitoring/groups/{id}:
+    $ref: paths/api@monitoring@groups@id.yaml
+  /api/monitoring/groups/{id}/mute:
+    $ref: paths/api@monitoring@groups@id@mute.yaml
+  /api/monitoring/groups/mute-all:
+    $ref: paths/api@monitoring@groups@mute-all.yaml
+
+  /api/zone-types:
+    $ref: paths/api@zone-types.yaml
+  /api/zone-types/{id}:
+    $ref: paths/api@zone-types@id.yaml
+  /api/zones:
+    $ref: paths/api@zones.yaml
+  /api/zones/{id}:
+    $ref: paths/api@zones@id.yaml
+  /api/zones/{zoneId}/data-stores:
+    $ref: paths/api@zones@zoneId@data-stores.yaml
+  /api/zones/{zoneId}/data-stores/{id}:
+    $ref: paths/api@zones@zoneId@data-stores@id.yaml
+  /api/zones/{zoneId}/folders:
+    $ref: paths/api@zones@zoneId@folders.yaml
+  /api/zones/{zoneId}/folders/{id}:
+    $ref: paths/api@zones@zoneId@folders@id.yaml
+  /api/zones/{zoneId}/resource-pools:
+    $ref: paths/api@zones@zoneId@resource-pools.yaml
+  /api/zones/{zoneId}/resource-pools/{id}:
+    $ref: paths/api@zones@zoneId@resource-pools@id.yaml
+  /api/zones/{id}/refresh:
+    $ref: paths/api@zones@id@refresh.yaml
+  /api/zones/{id}/update-logo:
+    $ref: paths/api@zones@id@update-logo.yaml
+  /api/zones/{id}/security-groups:
+    $ref: paths/api@zones@id@security-groups.yaml
+
+  /api/library/cluster-layouts:
+    $ref: paths/api@library@cluster-layouts.yaml
+  /api/library/cluster-layouts/{id}:
+    $ref: paths/api@library@cluster-layouts@id.yaml
+  /api/library/cluster-layouts/{id}/clone:
+    $ref: paths/api@library@cluster-layouts@id@clone.yaml
+  /api/cluster-types:
+    $ref: paths/api@cluster-types.yaml
+  /api/clusters:
+    $ref: paths/api@clusters.yaml
+  /api/clusters/{clusterId}:
+    $ref: paths/api@clusters@id.yaml
+  /api/clusters/{clusterId}/api-config:
+    $ref: paths/api@clusters@id@api-config.yaml
+  /api/clusters/{clusterId}/apply-template:
+    $ref: paths/api@clusters@id@apply-template.yaml
+  /api/clusters/{clusterId}/containers:
+    $ref: paths/api@clusters@id@containers.yaml
+  /api/clusters/{clusterId}/containers/{id}:
+    $ref: paths/api@clusters@id@containers@id.yaml
+  /api/clusters/{clusterId}/containers/{id}/restart:
+    $ref: paths/api@clusters@id@containers@id@restart.yaml
+  /api/clusters/{clusterId}/datastores:
+    $ref: paths/api@clusters@id@datastores.yaml
+  /api/clusters/{clusterId}/datastores/{id}:
+    $ref: paths/api@clusters@id@datastores@id.yaml
+  /api/clusters/{clusterId}/deployments:
+    $ref: paths/api@clusters@id@deployments.yaml
+  /api/clusters/{clusterId}/deployments/{id}:
+    $ref: paths/api@clusters@id@deployments@id.yaml
+  /api/clusters/{clusterId}/deployments/{id}/restart:
+    $ref: paths/api@clusters@id@deployments@id@restart.yaml
+  /api/clusters/{clusterId}/history:
+    $ref: paths/api@clusters@id@history.yaml
+  /api/clusters/{clusterId}/history/{id}:
+    $ref: paths/api@clusters@id@history@id.yaml
+  /api/clusters/{clusterId}/history/events/{id}:
+    $ref: paths/api@clusters@id@history@events@id.yaml
+  /api/clusters/{clusterId}/jobs:
+    $ref: paths/api@clusters@id@jobs.yaml
+  /api/clusters/{clusterId}/jobs/{id}:
+    $ref: paths/api@clusters@id@jobs@id.yaml
+  /api/clusters/{clusterId}/masters:
+    $ref: paths/api@clusters@id@masters.yaml
+  /api/clusters/{clusterId}/namespaces:
+    $ref: paths/api@clusters@id@namespaces.yaml
+  /api/clusters/{clusterId}/namespaces/{id}:
+    $ref: paths/api@clusters@id@namespaces@id.yaml
+  /api/clusters/{clusterId}/permissions:
+    $ref: paths/api@clusters@id@permissions.yaml
+  /api/clusters/{clusterId}/pods:
+    $ref: paths/api@clusters@id@pods.yaml
+  /api/clusters/{clusterId}/pods/{id}/restart:
+    $ref: paths/api@clusters@id@pods@id@restart.yaml
+  /api/clusters/{clusterId}/servers:
+    $ref: paths/api@clusters@id@servers.yaml
+  /api/clusters/{clusterId}/servers/{id}:
+    $ref: paths/api@clusters@id@servers@id.yaml
+  /api/clusters/{clusterId}/services:
+    $ref: paths/api@clusters@id@services.yaml
+  /api/clusters/{clusterId}/services/{id}:
+    $ref: paths/api@clusters@id@services@id.yaml
+  /api/clusters/{clusterId}/statefulsets:
+    $ref: paths/api@clusters@id@statefulsets.yaml
+  /api/clusters/{clusterId}/statefulsets/{id}:
+    $ref: paths/api@clusters@id@statefulsets@id.yaml
+  /api/clusters/{clusterId}/statefulsets/{id}/restart:
+    $ref: paths/api@clusters@id@statefulsets@id@restart.yaml
+  /api/clusters/{clusterId}/upgrade-cluster:
+    $ref: paths/api@clusters@id@upgrade-cluster.yaml
+  /api/clusters/{clusterId}/volumes:
+    $ref: paths/api@clusters@id@volumes.yaml
+  /api/clusters/{clusterId}/volumes/{id}:
+    $ref: paths/api@clusters@id@volumes@id.yaml
+
+  /api/clusters/{clusterId}/worker-count:
+    $ref: paths/api@clusters@id@worker-count.yaml
+  /api/clusters/{clusterId}/workers:
+    $ref: paths/api@clusters@id@workers.yaml
+
+  /api/monitoring/contacts:
+    $ref: paths/api@monitoring@contacts.yaml
+  /api/monitoring/contacts/{id}:
+    $ref: paths/api@monitoring@contacts@id.yaml
+
+  /api/containers/{id}:
+    $ref: paths/api@containers@id.yaml
+  /api/containers/{id}/action:
+    $ref: paths/api@containers@id@action.yaml
+  /api/containers/{id}/actions:
+    $ref: paths/api@containers@id@actions.yaml
+  /api/containers/{id}/clone-image:
+    $ref: paths/api@containers@id@clone-image.yaml
+  /api/containers/{id}/eject:
+    $ref: paths/api@containers@id@eject.yaml
+  /api/containers/{id}/import:
+    $ref: paths/api@containers@id@import.yaml
+  /api/containers/{id}/restart:
+    $ref: paths/api@containers@id@restart.yaml
+  /api/containers/{id}/start:
+    $ref: paths/api@containers@id@start.yaml
+  /api/containers/{id}/stop:
+    $ref: paths/api@containers@id@stop.yaml
+  /api/containers/{id}/suspend:
+    $ref: paths/api@containers@id@suspend.yaml
+  /api/containers/{id}/attach-floating-ip:
+    $ref: paths/api@containers@id@attach-floating-ip.yaml
+  /api/containers/{id}/detach-floating-ip:
+    $ref: paths/api@containers@id@detach-floating-ip.yaml
+
+  /api/credential-types:
+    $ref: paths/api@credential-types.yaml
+  /api/credential-types/{id}:
+    $ref: paths/api@credential-types@id.yaml
   /api/credentials:
     $ref: paths/api@credentials.yaml
   /api/credentials/{id}:
@@ -121,26 +354,15 @@ paths:
     $ref: paths/api@environments@id.yaml
   /api/environments/{id}/toggle-active:
     $ref: paths/api@environments@id@toggle-active.yaml
-  /api/execute-schedules:
-    $ref: paths/api@execute-schedules.yaml
-  /api/execute-schedules/{id}:
-    $ref: paths/api@execute-schedules@id.yaml
-  /api/execution-request/execute:
-    $ref: paths/api@execution-request@execute.yaml
-  /api/execution-request/{uniqueId}:
-    $ref: paths/api@execution-request@uniqueId.yaml
-  /api/forgot/reset-password:
-    $ref: paths/api@forgot@reset-password.yaml
-  /api/forgot/send-email:
-    $ref: paths/api@forgot@send-email.yaml
+
+
   /api/groups:
     $ref: paths/api@groups.yaml
   /api/groups/{id}:
     $ref: paths/api@groups@id.yaml
   /api/groups/{id}/update-zones:
     $ref: paths/api@groups@id@update-zones.yaml
-  /api/groups/{id}/wiki:
-    $ref: paths/api@groups@id@wiki.yaml
+
   /api/guidance:
     $ref: paths/api@guidance.yaml
   /api/guidance/{id}:
@@ -153,6 +375,71 @@ paths:
     $ref: paths/api@guidance@stats.yaml
   /api/guidance/types:
     $ref: paths/api@guidance@types.yaml
+  /api/guidance-settings:
+    $ref: paths/api@guidance-settings.yaml
+  /api/health:
+    $ref: paths/api@health.yaml
+  /api/health/alarms:
+    $ref: paths/api@health@alarms.yaml
+  /api/health/alarms/acknowledge:
+    $ref: paths/api@health@alarms@acknowledge.yaml
+  /api/health/alarms/{id}:
+    $ref: paths/api@health@alarms@id.yaml
+  /api/health/alarms/{id}/acknowledge:
+    $ref: paths/api@health@alarms@id@acknowledge.yaml
+  /api/health/logs:
+    $ref: paths/api@health@logs.yaml
+  /api/health/logs/export:
+    $ref: paths/api@health@logs@export.yaml
+
+  /api/processes:
+    $ref: paths/api@processes.yaml
+  /api/processes/{id}:
+    $ref: paths/api@processes@id.yaml
+  /api/processes/events/{id}:
+    $ref: paths/api@processes@events@id.yaml
+
+  /api/server-types:
+    $ref: paths/api@server-types.yaml
+  /api/server-types/{id}:
+    $ref: paths/api@server-types@id.yaml
+
+  /api/user-sources:
+    $ref: paths/api@user-sources.yaml
+  /api/user-sources/{id}:
+    $ref: paths/api@user-sources@id.yaml
+  /api/user-sources/{id}/subdomain:
+    $ref: paths/api@user-sources@id@subdomain.yaml
+
+  /api/boot-scripts:
+    $ref: paths/api@boot-scripts.yaml
+  /api/boot-scripts/{id}:
+    $ref: paths/api@boot-scripts@id.yaml
+  /api/image-builds:
+    $ref: paths/api@image-builds.yaml
+  /api/image-builds/{id}:
+    $ref: paths/api@image-builds@id.yaml
+  /api/image-builds/{id}/list-executions:
+    $ref: paths/api@image-builds@id@list-executions.yaml
+  /api/image-builds/{id}/run:
+    $ref: paths/api@image-builds@id@run.yaml
+
+  /api/monitoring/incidents:
+    $ref: paths/api@monitoring@incidents.yaml
+  /api/monitoring/incidents/{id}:
+    $ref: paths/api@monitoring@incidents@id.yaml
+  /api/monitoring/incidents/{id}/mute:
+    $ref: paths/api@monitoring@incidents@id@mute.yaml
+  /api/monitoring/incidents/{id}/reopen:
+    $ref: paths/api@monitoring@incidents@id@reopen.yaml
+  /api/monitoring/incidents/mute-all:
+    $ref: paths/api@monitoring@incidents@mute-all.yaml
+  /api/monitoring-settings:
+    $ref: paths/api@monitoring-settings.yaml
+  /api/instance-types:
+    $ref: paths/api@instance-types.yaml
+  /api/instance-types/{id}:
+    $ref: paths/api@instance-types@id.yaml
   /api/instances:
     $ref: paths/api@instances.yaml
   /api/instances/{id}:
@@ -163,24 +450,26 @@ paths:
     $ref: paths/api@instances@id@backup.yaml
   /api/instances/{id}/backups:
     $ref: paths/api@instances@id@backups.yaml
-  /api/instances/{id}/clone:
-    $ref: paths/api@instances@id@clone.yaml
-  /api/instances/{id}/clone-image:
-    $ref: paths/api@instances@id@clone-image.yaml
   /api/instances/{id}/cancel-expiration:
     $ref: paths/api@instances@id@cancel-expiration.yaml
   /api/instances/{id}/cancel-removal:
     $ref: paths/api@instances@id@cancel-removal.yaml
   /api/instances/{id}/cancel-shutdown:
     $ref: paths/api@instances@id@cancel-shutdown.yaml
+  /api/instances/{id}/clone-image:
+    $ref: paths/api@instances@id@clone-image.yaml
+  /api/instances/{id}/clone:
+    $ref: paths/api@instances@id@clone.yaml
   /api/instances/{id}/containers:
     $ref: paths/api@instances@id@containers.yaml
-  /api/instances/{id}/delete-container-snapshots/{containerId}:
-    $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
   /api/instances/{id}/delete-all-snapshots:
     $ref: paths/api@instances@id@delete-all-snapshots.yaml
+  /api/instances/{id}/delete-container-snapshots/{containerId}:
+    $ref: paths/api@instances@id@delete-container-snapshots@id.yaml
   /api/instances/{id}/deploys:
     $ref: paths/api@instances@id@deploys.yaml
+  /api/instances/{id}/eject:
+    $ref: paths/api@instances@id@eject.yaml
   /api/instances/{id}/envs:
     $ref: paths/api@instances@id@envs.yaml
   /api/instances/{id}/extend-expiration:
@@ -195,8 +484,12 @@ paths:
     $ref: paths/api@instances@id@linked-clone@id.yaml
   /api/instances/{id}/lock:
     $ref: paths/api@instances@id@lock.yaml
+  /api/instances/{id}/networkInterfaces/{networkInterfaceId}:
+    $ref: paths/api@instances@id@networkInterfaces@id.yaml
   /api/instances/{id}/prepare-apply:
     $ref: paths/api@instances@id@prepare-apply.yaml
+  /api/instances/{id}/refresh:
+    $ref: paths/api@instances@id@refresh.yaml
   /api/instances/{id}/resize:
     $ref: paths/api@instances@id@resize.yaml
   /api/instances/{id}/restart:
@@ -215,20 +508,48 @@ paths:
     $ref: paths/api@instances@id@state.yaml
   /api/instances/{id}/stop:
     $ref: paths/api@instances@id@stop.yaml
+  /api/instances/{id}/suspend:
+    $ref: paths/api@instances@id@suspend.yaml
+  /api/instances/{id}/threshold:
+    $ref: paths/api@instances@id@threshold.yaml
+  /api/instances/{id}/schedules:
+    $ref: paths/api@instances@id@schedules.yaml
+  /api/instances/{id}/schedules/{scheduleId}:
+    $ref: paths/api@instances@id@schedules@scheduleId.yaml
   /api/instances/{id}/unlock:
     $ref: paths/api@instances@id@unlock.yaml
-  /api/instances/{id}/wiki:
-    $ref: paths/api@instances@id@wiki.yaml
-  /api/instances/{id}/workflow:
-    $ref: paths/api@instances@id@workflow.yaml
-  /api/instances/service-plans:
-    $ref: paths/api@instances@service-plans.yaml
   /api/instances/{id}/validate-apply:
     $ref: paths/api@instances@id@validate-apply.yaml
-  /api/instance-types:
-    $ref: paths/api@instance-types.yaml
-  /api/instance-types/{id}:
-    $ref: paths/api@instance-types@id.yaml
+  /api/instances/{id}/workflow:
+    $ref: paths/api@instances@id@workflow.yaml
+  /api/instances/remove-from-control:
+    $ref: paths/api@instances@remove-from-control.yaml
+  /api/instances/service-plans:
+    $ref: paths/api@instances@service-plans.yaml
+  /api/integration-types:
+    $ref: paths/api@integration-types.yaml
+  /api/integration-types/{id}:
+    $ref: paths/api@integration-types@id.yaml
+  /api/integration-types/{id}/option-types:
+    $ref: paths/api@integration-types@id@option-types.yaml
+  /api/integrations:
+    $ref: paths/api@integrations.yaml
+  /api/integrations/{id}:
+    $ref: paths/api@integrations@id.yaml
+  /api/integrations/{id}/refresh:
+    $ref: paths/api@integrations@id@refresh.yaml
+  /api/integrations/{id}/objects:
+    $ref: paths/api@integrations@id@objects.yaml
+  /api/integrations/{id}/objects/{objectId}:
+    $ref: paths/api@integrations@id@objects@objectId.yaml
+  /api/integrations/{id}/inventory:
+    $ref: paths/api@integrations@id@inventory.yaml
+  /api/integrations/{id}/inventory/{inventoryId}:
+    $ref: paths/api@integrations@id@inventory@inventoryId.yaml
+  /api/invoice-line-items:
+    $ref: paths/api@invoice-line-items.yaml
+  /api/invoice-line-items/{id}:
+    $ref: paths/api@invoice-line-items@id.yaml
   /api/invoices:
     $ref: paths/api@invoices.yaml
   /api/invoices/{id}:
@@ -245,24 +566,13 @@ paths:
     $ref: paths/api@jobs@id.yaml
   /api/jobs/{id}/execute:
     $ref: paths/api@jobs@id@execute.yaml
-  /api/invoice-line-items:
-    $ref: paths/api@invoice-line-items.yaml
-  /api/invoice-line-items/{id}:
-    $ref: paths/api@invoice-line-items@id.yaml
-  /api/license:
-    $ref: paths/api@license.yaml
-  /api/log-settings:
-    $ref: paths/api@log-settings.yaml
-  /api/log-settings/syslog-rules:
-    $ref: paths/api@log-settings@syslog-rules.yaml
-  /api/log-settings/syslog-rules/{id}:
-    $ref: paths/api@log-settings@syslog-rules@id.yaml
-  /api/logs:
-    $ref: paths/api@logs.yaml
   /api/key-pairs:
     $ref: paths/api@key-pairs.yaml
+  /api/key-pairs/generate:
+    $ref: paths/api@key-pairs@generate.yaml
   /api/key-pairs/{id}:
     $ref: paths/api@key-pairs@id.yaml
+
   /api/library/container-scripts:
     $ref: paths/api@library@container-scripts.yaml
   /api/library/container-scripts/{id}:
@@ -271,9 +581,9 @@ paths:
     $ref: paths/api@library@container-types.yaml
   /api/library/container-types/{id}:
     $ref: paths/api@library@container-types@id.yaml
-  /api/library/file-templates:
+  /api/library/container-templates:
     $ref: paths/api@library@file-templates.yaml
-  /api/library/file-templates/{id}:
+  /api/library/container-templates/{id}:
     $ref: paths/api@library@file-templates@id.yaml
   /api/library/instance-types:
     $ref: paths/api@library@instance-types.yaml
@@ -287,32 +597,36 @@ paths:
     $ref: paths/api@library@instance-types@id@update-logo.yaml
   /api/library/layouts:
     $ref: paths/api@library@layouts.yaml
-  /api/library/layouts@{id}:
+  /api/library/layouts/{id}:
     $ref: paths/api@library@layouts@id.yaml
-  /api/library/layouts@{id}@permissions:
+  /api/library/layouts/{id}/permissions:
     $ref: paths/api@library@layouts@id@permissions.yaml
-  /api/library/option-types:
-    $ref: paths/api@library@option-types.yaml
-  /api/library/option-types/{id}:
-    $ref: paths/api@library@option-types@id.yaml
   /api/library/option-type-lists:
     $ref: paths/api@library@option-type-lists.yaml
   /api/library/option-type-lists/{id}:
     $ref: paths/api@library@option-type-lists@id.yaml
   /api/library/option-type-lists/{id}/items:
     $ref: paths/api@library@option-type-lists@id@items.yaml
+  /api/library/option-types:
+    $ref: paths/api@library@option-types.yaml
+  /api/library/option-types/{id}:
+    $ref: paths/api@library@option-types@id.yaml
   /api/library/spec-templates:
     $ref: paths/api@library@spec-templates.yaml
   /api/library/spec-templates/{id}:
     $ref: paths/api@library@spec-templates@id.yaml
+  /api/license:
+    $ref: paths/api@license.yaml
   /api/license/test:
     $ref: paths/api@license@test.yaml
+  /api/load-balancer-types:
+    $ref: paths/api@load-balancer-types.yaml
+  /api/load-balancer-types/{id}:
+    $ref: paths/api@load-balancer-types@id.yaml
   /api/load-balancers:
     $ref: paths/api@load-balancers.yaml
   /api/load-balancers/{loadBalancerId}:
     $ref: paths/api@load-balancers@id.yaml
-  /api/load-balancers/{loadBalancerId}/refresh:
-    $ref: paths/api@load-balancers@id@refresh.yaml
   /api/load-balancers/{loadBalancerId}/monitors:
     $ref: paths/api@load-balancers@id@monitors.yaml
   /api/load-balancers/{loadBalancerId}/monitors/{id}:
@@ -325,62 +639,23 @@ paths:
     $ref: paths/api@load-balancers@id@profiles.yaml
   /api/load-balancers/{loadBalancerId}/profiles/{id}:
     $ref: paths/api@load-balancers@id@profiles@id.yaml
+  /api/load-balancers/{loadBalancerId}/refresh:
+    $ref: paths/api@load-balancers@id@refresh.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers:
     $ref: paths/api@load-balancers@id@virtual-servers.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
-  /api/load-balancer-types:
-    $ref: paths/api@load-balancer-types.yaml
-  /api/load-balancer-types/{id}:
-    $ref: paths/api@load-balancer-types@id.yaml
-  /api/monitoring/alerts:
-    $ref: paths/api@monitoring@alerts.yaml
-  /api/monitoring/alerts/{id}:
-    $ref: paths/api@monitoring@alerts@id.yaml
-  /api/monitoring/apps:
-    $ref: paths/api@monitoring@apps.yaml
-  /api/monitoring/apps/mute-all:
-    $ref: paths/api@monitoring@apps@mute-all.yaml
-  /api/monitoring/apps/{id}:
-    $ref: paths/api@monitoring@apps@id.yaml
-  /api/monitoring/apps/{id}/mute:
-    $ref: paths/api@monitoring@apps@id@mute.yaml
-  /api/monitoring/checks:
-    $ref: paths/api@monitoring@checks.yaml
-  /api/monitoring/checks/mute-all:
-    $ref: paths/api@monitoring@checks@mute-all.yaml
-  /api/monitoring/checks/{id}:
-    $ref: paths/api@monitoring@checks@id.yaml
-  /api/monitoring/checks/{id}/mute:
-    $ref: paths/api@monitoring@checks@id@mute.yaml
-  /api/monitoring/check-types:
-    $ref: paths/api@monitoring@check-types.yaml
-  /api/monitoring/check-types/{id}:
-    $ref: paths/api@monitoring@check-types@id.yaml
-  /api/monitoring/contacts:
-    $ref: paths/api@monitoring@contacts.yaml
-  /api/monitoring/contacts/{id}:
-    $ref: paths/api@monitoring@contacts@id.yaml
-  /api/monitoring/groups:
-    $ref: paths/api@monitoring@groups.yaml
-  /api/monitoring/groups/{id}:
-    $ref: paths/api@monitoring@groups@id.yaml
-  /api/monitoring/groups/{id}/mute:
-    $ref: paths/api@monitoring@groups@id@mute.yaml
-  /api/monitoring/incidents:
-    $ref: paths/api@monitoring@incidents.yaml
-  /api/monitoring/incidents/{id}:
-    $ref: paths/api@monitoring@incidents@id.yaml
-  /api/monitoring/incidents/{id}/mute:
-    $ref: paths/api@monitoring@incidents@id@mute.yaml
-  /api/monitoring/incidents/{id}/reopen:
-    $ref: paths/api@monitoring@incidents@id@reopen.yaml
-  /api/monitoring/incidents/mute-all:
-    $ref: paths/api@monitoring@incidents@mute-all.yaml
-  /api/network-router-types:
-    $ref: paths/api@network-router-types.yaml
-  /api/network-router-types/{id}:
-    $ref: paths/api@network-router-types@id.yaml
+
+  /api/log-settings:
+    $ref: paths/api@log-settings.yaml
+  /api/log-settings/syslog-rules:
+    $ref: paths/api@log-settings@syslog-rules.yaml
+  /api/log-settings/syslog-rules/{id}:
+    $ref: paths/api@log-settings@syslog-rules@id.yaml
+
+  /api/logs:
+    $ref: paths/api@logs.yaml
+
   /api/network-types:
     $ref: paths/api@network-types.yaml
   /api/network-types/{id}:
@@ -393,26 +668,16 @@ paths:
     $ref: paths/api@networks@id@routes.yaml
   /api/networks/{id}/routes/{routeId}:
     $ref: paths/api@networks@id@routes@id.yaml
-  /api/networks/domains:
-    $ref: paths/api@networks@domains.yaml
-  /api/networks/domains/{id}:
-    $ref: paths/api@networks@domains@id.yaml
+  /api/networks/{id}/subnets:
+    $ref: paths/api@networks@id@subnets.yaml
   /api/networks/groups:
     $ref: paths/api@networks@groups.yaml
   /api/networks/groups/{id}:
     $ref: paths/api@networks@groups@id.yaml
-  /api/networks/pools:
-    $ref: paths/api@networks@pools.yaml
-  /api/networks/pools/{id}:
-    $ref: paths/api@networks@pools@id.yaml
-  /api/networks/pools/{pool_id}/ips:
-    $ref: paths/api@networks@pools@id@ips.yaml
-  /api/networks/pools/{pool_id}/ips/{id}:
-    $ref: paths/api@networks@pools@id@ips@id.yaml
-  /api/networks/proxies:
-    $ref: paths/api@networks@proxies.yaml
-  /api/networks/proxies/{id}:
-    $ref: paths/api@networks@proxies@id.yaml
+  /api/network-router-types:
+    $ref: paths/api@network-router-types.yaml
+  /api/network-router-types/{id}:
+    $ref: paths/api@network-router-types@id.yaml
   /api/networks/routers:
     $ref: paths/api@networks@routers.yaml
   /api/networks/routers/{id}:
@@ -439,6 +704,28 @@ paths:
     $ref: paths/api@networks@routers@id@routes.yaml
   /api/networks/routers/{routerId}/routes/{id}:
     $ref: paths/api@networks@routers@id@routes@id.yaml
+  /api/networks/pools:
+    $ref: paths/api@networks@pools.yaml
+  /api/networks/pools/{id}:
+    $ref: paths/api@networks@pools@id.yaml
+  /api/networks/pools/{pool_id}/ips:
+    $ref: paths/api@networks@pools@id@ips.yaml
+  /api/networks/pools/{pool_id}/ips/{id}:
+    $ref: paths/api@networks@pools@id@ips@id.yaml
+  /api/networks/floating-ips:
+    $ref: paths/api@networks@floating-ips.yaml
+  /api/networks/floating-ips/{id}:
+    $ref: paths/api@networks@floating-ips@id.yaml
+  /api/networks/floating-ips/{id}/release:
+    $ref: paths/api@networks@floating-ips@id@release.yaml
+  /api/networks/domains:
+    $ref: paths/api@networks@domains.yaml
+  /api/networks/domains/{id}:
+    $ref: paths/api@networks@domains@id.yaml
+  /api/networks/proxies:
+    $ref: paths/api@networks@proxies.yaml
+  /api/networks/proxies/{id}:
+    $ref: paths/api@networks@proxies@id.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:
@@ -465,8 +752,46 @@ paths:
     $ref: paths/api@networks@servers@id@scopes@id.yaml
   /api/networks/services:
     $ref: paths/api@networks@services.yaml
+  /api/networks/pool-servers:
+    $ref: paths/api@networks@pool-servers.yaml
+  /api/networks/pool-servers/{id}:
+    $ref: paths/api@networks@pool-servers@id.yaml
+  /api/networks/pool-server-types:
+    $ref: paths/api@networks@pool-server-types.yaml
+  /api/networks/pool-server-types/{id}:
+    $ref: paths/api@networks@pool-server-types@id.yaml
+  /api/options/codeRepositories:
+    $ref: paths/api@options@codeRepositories.yaml
+  /api/options/{optionSource}:
+    $ref: paths/api@options@optionSource.yaml
+  /api/options/list:
+    $ref: paths/api@options@list.yaml
+  /api/options/zoneNetworkOptions:
+    $ref: paths/api@options@zoneNetworkOptions.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
+  /api/plugins:
+    $ref: paths/api@plugins.yaml
+  /api/plugins/upload:
+    $ref: paths/api@plugins@upload.yaml
+  /api/plugins/{id}:
+    $ref: paths/api@plugins@id.yaml
+  /api/plugins/check-updates:
+    $ref: paths/api@plugins@check-updates.yaml
+  /api/policies:
+    $ref: paths/api@policies.yaml
+  /api/policies/{id}:
+    $ref: paths/api@policies@id.yaml
+  /api/groups/{groupId}/policies:
+    $ref: paths/api@groups@id@policies.yaml
+  /api/groups/{groupId}/policies/{id}:
+    $ref: paths/api@groups@id@policies@id.yaml
+  /api/zones/{cloudId}/policies:
+    $ref: paths/api@zones@id@policies.yaml
+  /api/zones/{cloudId}/policies/{id}:
+    $ref: paths/api@zones@id@policies@id.yaml
+  /api/policy-types:
+    $ref: paths/api@policy-types.yaml
   /api/power-schedules:
     $ref: paths/api@power-schedules.yaml
   /api/power-schedules/{id}:
@@ -479,24 +804,39 @@ paths:
     $ref: paths/api@power-schedules@id@remove-instances.yaml
   /api/power-schedules/{id}/remove-servers:
     $ref: paths/api@power-schedules@id@remove-servers.yaml
+  /api/preseed-scripts:
+    $ref: paths/api@preseed-scripts.yaml
+  /api/preseed-scripts/{id}:
+    $ref: paths/api@preseed-scripts@id.yaml
+  /api/price-sets:
+    $ref: paths/api@price-sets.yaml
+  /api/price-sets/{id}:
+    $ref: paths/api@price-sets@id.yaml
+  /api/price-sets/{id}/deactivate:
+    $ref: paths/api@price-sets@id@deactivate.yaml
   /api/prices:
     $ref: paths/api@prices.yaml
   /api/prices/{id}:
     $ref: paths/api@prices@id.yaml
   /api/prices/{id}/deactivate:
     $ref: paths/api@prices@id@deactivate.yaml
-  /api/processes:
-    $ref: paths/api@processes.yaml
-  /api/processes/{id}:
-    $ref: paths/api@processes@id.yaml
-  /api/processes/events/{id}:
-    $ref: paths/api@processes@events@id.yaml
+
   /api/provision-types:
     $ref: paths/api@provision-types.yaml
   /api/provision-types/{id}:
     $ref: paths/api@provision-types@id.yaml
+  /api/provisioning-licenses:
+    $ref: paths/api@provisioning-licenses.yaml
+  /api/provisioning-licenses/{id}:
+    $ref: paths/api@provisioning-licenses@id.yaml
+  /api/provisioning-licenses/{id}/reservations:
+    $ref: paths/api@provisioning-licenses@id@reservations.yaml
   /api/provisioning-settings:
     $ref: paths/api@provisioning-settings.yaml
+  /api/public-archives/download/{bucket}/{filepath}:
+    $ref: paths/api@public-archives@download@id@path.yaml
+  /api/public-archives/link:
+    $ref: paths/api@public-archives@link.yaml
   /api/report-types:
     $ref: paths/api@report-types.yaml
   /api/reports:
@@ -505,10 +845,36 @@ paths:
     $ref: paths/api@reports@id.yaml
   /api/reports/download/{id}{format}:
     $ref: paths/api@reports@download@id.yaml
+  /api/resource-pools/groups:
+    $ref: paths/api@resource-pools@groups.yaml
+  /api/resource-pools/groups/{id}:
+    $ref: paths/api@resource-pools@groups@id.yaml
   /api/roles:
     $ref: paths/api@roles.yaml
   /api/roles/{id}:
     $ref: paths/api@roles@id.yaml
+  /api/roles/{id}/update-blueprint:
+    $ref: paths/api@roles@id@update-blueprint.yaml
+  /api/roles/{id}/update-catalog-item-type:
+    $ref: paths/api@roles@id@update-catalog-item-type.yaml
+  /api/roles/{id}/update-cloud:
+    $ref: paths/api@roles@id@update-cloud.yaml
+  /api/roles/{id}/update-group:
+    $ref: paths/api@roles@id@update-group.yaml
+  /api/roles/{id}/update-instance-type:
+    $ref: paths/api@roles@id@update-instance-type.yaml
+  /api/roles/{id}/update-permission:
+    $ref: paths/api@roles@id@update-permission.yaml
+  /api/roles/{id}/update-persona:
+    $ref: paths/api@roles@id@update-persona.yaml
+  /api/roles/{id}/update-report-type:
+    $ref: paths/api@roles@id@update-report-type.yaml
+  /api/roles/{id}/update-task:
+    $ref: paths/api@roles@id@update-task.yaml
+  /api/roles/{id}/update-task-set:
+    $ref: paths/api@roles@id@update-task-set.yaml
+  /api/roles/{id}/update-vdi-pool:
+    $ref: paths/api@roles@id@update-vdi-pool.yaml
   /api/scale-thresholds:
     $ref: paths/api@scale-thresholds.yaml
   /api/scale-thresholds/{id}:
@@ -527,12 +893,83 @@ paths:
     $ref: paths/api@security-groups@id@rules.yaml
   /api/security-groups/{id}/rules/{sgId}:
     $ref: paths/api@security-groups@id@rules@sgId.yaml
-  /api/servers/{id}/wiki:
-    $ref: paths/api@servers@id@wiki.yaml
+  /api/security-packages:
+    $ref: paths/api@security-packages.yaml
+  /api/security-packages/{id}:
+    $ref: paths/api@security-packages@id.yaml
+  /api/security-package-types:
+    $ref: paths/api@security-package-types.yaml
+  /api/security-package-types/{id}:
+    $ref: paths/api@security-package-types@id.yaml
+  /api/security-scans:
+    $ref: paths/api@security-scans.yaml
+  /api/security-scans/{id}:
+    $ref: paths/api@security-scans@id.yaml
+  /api/servers:
+    $ref: paths/api@servers.yaml
+  /api/servers/{id}:
+    $ref: paths/api@servers@id.yaml
+  /api/servers/{id}/assign-account:
+    $ref: paths/api@servers@id@assign-account.yaml
+  /api/servers/{id}/install-agent:
+    $ref: paths/api@servers@id@install-agent.yaml
+  /api/servers/{id}/make-managed:
+    $ref: paths/api@servers@id@make-managed.yaml
+  /api/servers/{id}/resize:
+    $ref: paths/api@servers@id@resize.yaml
+  /api/servers/{id}/snapshots:
+    $ref: paths/api@servers@id@snapshots.yaml
+  /api/servers/{id}/start:
+    $ref: paths/api@servers@id@start.yaml
+  /api/servers/{id}/stop:
+    $ref: paths/api@servers@id@stop.yaml
+  /api/servers/{id}/restart:
+    $ref: paths/api@servers@id@restart.yaml
+  /api/servers/{id}/upgrade:
+    $ref: paths/api@servers@id@upgrade.yaml
+  /api/servers/{id}/workflow:
+    $ref: paths/api@servers@id@workflow.yaml
+  /api/servers/{id}/networkInterfaces/{networkInterfaceId}:
+    $ref: paths/api@servers@id@networkInterfaces@id.yaml
+  /api/servers/change-cloud:
+    $ref: paths/api@servers@change-cloud.yaml
+  /api/catalog/cart:
+    $ref: paths/api@catalog@cart.yaml
+  /api/catalog/cart/items:
+    $ref: paths/api@catalog@cart@items.yaml
+  /api/catalog/cart/items/{id}:
+    $ref: paths/api@catalog@cart@items@id.yaml
+  /api/catalog/checkout:
+    $ref: paths/api@catalog@checkout.yaml
+  /api/catalog/items:
+    $ref: paths/api@catalog@items.yaml
+  /api/catalog/items/{id}:
+    $ref: paths/api@catalog@items@id.yaml
+  /api/catalog/orders:
+    $ref: paths/api@catalog@orders.yaml
+  /api/catalog/types:
+    $ref: paths/api@catalog@types.yaml
+  /api/catalog/types/{id}:
+    $ref: paths/api@catalog@types@id.yaml
+
+  /api/servers/service-plans:
+    $ref: paths/api@servers@service-plans.yaml
+  /api/service-plans:
+    $ref: paths/api@service-plans.yaml
+  /api/service-plans/{id}:
+    $ref: paths/api@service-plans@id.yaml
+  /api/service-plans/{id}/activate:
+    $ref: paths/api@service-plans@id@activate.yaml
+  /api/service-plans/{id}/deactivate:
+    $ref: paths/api@service-plans@id@deactivate.yaml
   /api/setup:
     $ref: paths/api@setup.yaml
   /api/snapshots/{id}:
     $ref: paths/api@snapshots@id.yaml
+  /api/certificates:
+    $ref: paths/api@certificates.yaml
+  /api/certificates/{id}:
+    $ref: paths/api@certificates@id.yaml
   /api/storage-buckets:
     $ref: paths/api@storage-buckets.yaml
   /api/storage-buckets/{id}:
@@ -553,6 +990,20 @@ paths:
     $ref: paths/api@storage-volumes.yaml
   /api/storage-volumes/{id}:
     $ref: paths/api@storage-volumes@id.yaml
+  /api/accounts:
+    $ref: paths/api@accounts.yaml
+  /api/accounts/available-roles:
+    $ref: paths/api@accounts@available-roles.yaml
+  /api/accounts/{id}:
+    $ref: paths/api@accounts@id.yaml
+  /api/accounts/{accountId}/groups:
+    $ref: paths/api@accounts@id@groups.yaml
+  /api/accounts/{accountId}/groups/{id}:
+    $ref: paths/api@accounts@id@groups@id.yaml
+  /api/accounts/{accountId}/groups/{id}/update-zones:
+    $ref: paths/api@accounts@id@groups@id@update-zones.yaml
+  /api/accounts/{accountId}/users:
+    $ref: paths/api@accounts@id@users.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:
@@ -563,26 +1014,58 @@ paths:
     $ref: paths/api@tasks.yaml
   /api/tasks/{id}:
     $ref: paths/api@tasks@id.yaml
+  /api/tasks/{id}/execute:
+    $ref: paths/api@tasks@id@execute.yaml
   /api/task-sets:
     $ref: paths/api@task-sets.yaml
   /api/task-sets/{id}:
     $ref: paths/api@task-sets@id.yaml
   /api/task-sets/{id}/execute:
     $ref: paths/api@task-sets@id@execute.yaml
-  /api/tasks/{id}/execute:
-    $ref: paths/api@tasks@id@execute.yaml
+
   /api/task-types:
     $ref: paths/api@task-types.yaml
   /api/task-types/{id}:
     $ref: paths/api@task-types@id.yaml
   /api/usage:
     $ref: paths/api@usage.yaml
+
+  /api/user-settings:
+    $ref: paths/api@user-settings.yaml
+  /api/user-settings/api-clients:
+    $ref: paths/api@user-settings@api-clients.yaml
+  /api/user-settings/avatar:
+    $ref: paths/api@user-settings@avatar.yaml
+  /api/user-settings/clear-access-token:
+    $ref: paths/api@user-settings@clear-access-token.yaml
+  /api/user-settings/desktop-background:
+    $ref: paths/api@user-settings@desktop-background.yaml
+  /api/user-settings/regenerate-access-token:
+    $ref: paths/api@user-settings@regenerate-access-token.yaml
   /api/users:
     $ref: paths/api@users.yaml
   /api/users/{id}:
     $ref: paths/api@users@id.yaml
+  /api/users/{id}/permissions:
+    $ref: paths/api@users@id@permissions.yaml
+  /api/vdi-apps:
+    $ref: paths/api@vdi-apps.yaml
+  /api/vdi-apps/{id}:
+    $ref: paths/api@vdi-apps@id.yaml
+  /api/vdi-gateways:
+    $ref: paths/api@vdi-gateways.yaml
+  /api/vdi-gateways/{id}:
+    $ref: paths/api@vdi-gateways@id.yaml
+  /api/vdi-pools:
+    $ref: paths/api@vdi-pools.yaml
+  /api/vdi-pools/{id}:
+    $ref: paths/api@vdi-pools@id.yaml
   /api/users/available-roles:
     $ref: paths/api@users@available-roles.yaml
+  /api/vdi-allocations:
+    $ref: paths/api@vdi-allocations.yaml
+  /api/vdi-allocations/{id}:
+    $ref: paths/api@vdi-allocations@id.yaml
   /api/vdi:
     $ref: paths/api@vdi.yaml
   /api/vdi/{id}:
@@ -609,36 +1092,24 @@ paths:
     $ref: paths/api@whitelabel-settings@images@imageType.yaml
   /api/whoami:
     $ref: paths/api@whoami.yaml
+
+  /api/apps/{id}/wiki:
+    $ref: paths/api@apps@id@wiki.yaml
+  /api/clusters/{clusterId}/wiki:
+    $ref: paths/api@clusters@id@wiki.yaml
+  /api/groups/{id}/wiki:
+    $ref: paths/api@groups@id@wiki.yaml
+  /api/instances/{id}/wiki:
+    $ref: paths/api@instances@id@wiki.yaml
+  /api/servers/{id}/wiki:
+    $ref: paths/api@servers@id@wiki.yaml
   /api/wiki/categories:
     $ref: paths/api@wiki@categories.yaml
   /api/wiki/pages:
     $ref: paths/api@wiki@pages.yaml
   /api/wiki/pages/{id}:
     $ref: paths/api@wiki@pages@id.yaml
-  /api/zone-types:
-    $ref: paths/api@zone-types.yaml
-  /api/zone-types/{id}:
-    $ref: paths/api@zone-types@id.yaml
-  /api/zones:
-    $ref: paths/api@zones.yaml
-  /api/zones/{id}:
-    $ref: paths/api@zones@id.yaml
-  /api/zones/{zoneId}/data-stores:
-    $ref: paths/api@zones@zoneId@data-stores.yaml
-  /api/zones/{zoneId}/data-stores/{id}:
-    $ref: paths/api@zones@zoneId@data-stores@id.yaml
-  /api/zones/{zoneId}/folders:
-    $ref: paths/api@zones@zoneId@folders.yaml
-  /api/zones/{zoneId}/folders/{id}:
-    $ref: paths/api@zones@zoneId@folders@id.yaml
-  /api/zones/{zoneId}/resource-pools:
-    $ref: paths/api@zones@zoneId@resource-pools.yaml
-  /api/zones/{zoneId}/resource-pools/{id}:
-    $ref: paths/api@zones@zoneId@resource-pools@id.yaml
-  /api/zones/{id}/refresh:
-    $ref: paths/api@zones@id@refresh.yaml
-  /api/zones/{id}/security-groups:
-    $ref: paths/api@zones@id@security-groups.yaml
+
   /api/zones/{id}/wiki:
     $ref: paths/api@zones@id@wiki.yaml
   /oauth/token:
@@ -646,7 +1117,12 @@ paths:
 components:
   securitySchemes:
     bearerAuth:
-      description: Populate a bearer token for the Morpheus appliance you are testing
+      description: |
+        Populate a bearer token for the Morpheus appliance you are testing.
+        This can be generated in the UI under your personal `user settings`
+        or
+        Additional API methods can be found below.
+        https://morpheusdata.readme.io/reference/getaccesstoken-3
       type: http
       scheme: bearer
     cypherAuth-XCToken:
@@ -682,7 +1158,10 @@ tags:
   - name: Apps
     description: Manage Apps
   - name: Archives
-    description: Manage Archives
+    description: |
+      Archives provides a way to store your files and make them available for download by your Scripts and Users.
+
+      Archives are organized by buckets. Each bucket has a unique name that is used to identify it in URLs and Scripts.
   - name: Authentication
     description: Manage Appliance Authentication
   - name: Automation
@@ -695,8 +1174,13 @@ tags:
     description: Manage Blueprints
   - name: Budgets
     description: Manage Budgets
+  - name: Catalog Items
+    description: |
+      Provides API interfaces for the managing catalog item types. These are the types that become available for order by the Service Catalog persona. This is the adminstrative api for the Library: Catalog Items functionality which was previously located under Tools: Self Service.
   - name: Checks
     description: Manage Monitoring Checks
+  - name: Clients
+    description: Manage Clients
   - name: Clouds
     description: Manage Clouds
   - name: Cluster Layouts
@@ -705,6 +1189,8 @@ tags:
     description: Manage Kubernetes Clusters
   - name: Contacts
     description: Manage Monitoring Contacts
+  - name: Containers
+    description: Manage Containers
   - name: Credentials
     description: Manage Credentials
   - name: Cypher
@@ -730,10 +1216,14 @@ tags:
     description: Manage Groups
   - name: Guidance
     description: Manage Guidance Recommendations
+  - name: Guidance Settings
+    description: Manage Guidance Settings
   - name: Health
     description: View Appliance Health Statistics
   - name: History
     description: View History
+  - name: Hosts
+    description: Manage Hosts
   - name: Identity Sources
     description: Manage Identity Sources
   - name: Image Builds
@@ -770,6 +1260,8 @@ tags:
     description: View Logs
   - name: Monitoring
     description: All Endpoints Under the Monitoring Tab
+  - name: Monitoring Settings
+    description: Manage Monitoring Settings
   - name: Morpheus API
     description: All Endpoints Specific to Morpheus API
   - name: Networks
@@ -786,6 +1278,8 @@ tags:
     description: All Endpoints Pertaining to Personas
   - name: Ping
     description: Ping Appliance
+  - name: Plugins
+    description: Manage Plugins
   - name: Policies
     description: Manage Policies
   - name: Price Sets
@@ -799,9 +1293,12 @@ tags:
   - name: Provisioning Settings
     description: Manage Provisioning Settings
   - name: Provisioning Licenses
-    description: Manage Provisioning Licenses
+    description: |
+      Provides API interfaces for managing provisioning licenses within Morpheus. This allows configuration of which Windows license keys should be installed when provisioning your virtual images.
   - name: Reports
     description: Manage Reports
+  - name: Resource Pools
+    description: Manage Resource Pools
   - name: Roles
     description: Manage Roles (Authorities)
   - name: Scripts
@@ -810,10 +1307,12 @@ tags:
     description: Global Search Functions
   - name: Security Groups
     description: Manage Security Groups
+  - name: Security Packages
+    description: Manage Security Packages
+  - name: Security Scans
+    description: Manage Security Scans
   - name: Self Service
     description: Manage Self Service
-  - name: Servers
-    description: Manage Servers (Hosts)
   - name: Service Catalog
     description: Manage Service Catalog
   - name: Service Plans

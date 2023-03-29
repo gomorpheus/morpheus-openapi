@@ -1,0 +1,98 @@
+get:
+  summary: Retrieves a Specific VDI Gateway
+  description: |
+    Retrieves a specific VDI gateway.
+  operationId: getVDIGateways
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              vdiGateway:
+                $ref: ../components/schemas/vdiGateway.yaml
+          examples:
+            VDI Gateway Response:
+              value:
+                $ref: ../components/examples/vdiGateway.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a VDI Gateway Configuration
+  description: |
+    Updates a VDI Gateway configuration or icon.
+  operationId: updateVDIGateways
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - vdiGateway
+          properties:
+            vdiGateway:
+              oneOf: 
+              - type: object
+                properties:
+                  name: 
+                    type: string
+                    description: VDI Gateway name
+                  description:
+                    type: string
+                    description: Description
+                  gatewayUrl:
+                    type: string
+                    description: Gateway URL
+                    example: "https://fqdn.com"
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            anyOf:
+            - type: object
+              properties:
+                vdiGateway:
+                  $ref: ../components/schemas/vdiGateway.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            VDI Gateway Response:
+              value:
+                $ref: ../components/examples/vdiGatewaySuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a VDI Gateway
+  description: |
+    Deletes a specified VDI Gateway.
+  operationId: removeVDIGateways
+  tags:
+    - VDI
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

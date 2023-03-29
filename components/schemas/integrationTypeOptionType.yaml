@@ -1,0 +1,114 @@
+type: array
+items: 
+  type: object
+  properties: 
+    id: 
+      type: integer
+      format: int64
+    name: 
+      type: string
+    description: 
+      type: string
+      nullable: true
+    labels: 
+      type: array
+      items: 
+        type: object
+    code: 
+      type: string
+    fieldName: 
+      type: string
+    fieldLabel: 
+      type: string
+    fieldCode: 
+      type: string
+    fieldContext: 
+      type: string
+    fieldGroup: 
+      type: string
+      nullable: true
+    fieldClass: 
+      type: string
+      nullable: true
+    fieldAddOn: 
+      type: string
+      nullable: true
+    fieldComponent: 
+      type: string
+      nullable: true
+    fieldInput: 
+      type: string
+      nullable: true
+    placeHolder: 
+      type: string
+      nullable: true
+    verifyPattern: 
+      type: string
+      nullable: true
+    helpBlock: 
+      type: string
+    helpBlockFieldCode: 
+      type: string
+      nullable: true
+    defaultValue: 
+      type: string
+      nullable: true
+    optionSource: 
+      type: string
+      nullable: true
+    optionSourceType: 
+      type: string
+      nullable: true
+    optionList: 
+      type: string
+      nullable: true
+    type: 
+      type: string
+    advanced: 
+      type: boolean
+    required: 
+      type: boolean
+    exportMeta:
+      type: boolean
+      nullable: true
+    editable: 
+      type: boolean
+    creatable: 
+      type: boolean
+    config: 
+      type: object
+    displayOrder: 
+      type: integer
+      format: int64
+    wrapperClass: 
+      type: string
+      nullable: true
+    enabled: 
+      type: boolean
+    noBlank: 
+      type: boolean
+      nullable: true
+    dependsOnCode: 
+      type: boolean
+      nullable: true
+    visibleOnCode: 
+      type: boolean
+      nullable: true
+    requireOnCode: 
+      type: boolean
+      nullable: true
+    contextualDefault: 
+      type: boolean
+      nullable: true
+    displayValueOnDetails: 
+      type: boolean
+      nullable: true
+    showOnCreate: 
+      type: boolean
+      nullable: true
+    showOnEdit: 
+      type: boolean
+      nullable: true
+    localCredential: 
+      type: boolean
+      nullable: true

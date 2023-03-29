@@ -1,0 +1,38 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
+  description: 
+    type: string
+  type: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+  enabled: 
+    type: boolean
+  url: 
+    type: string
+  uuid: 
+    type: string
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  config: 
+    type: object

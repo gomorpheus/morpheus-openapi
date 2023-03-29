@@ -1,0 +1,379 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  uuid: 
+    type: string
+  externalId: 
+    type: string
+  internalId: 
+    type: string
+    nullable: true
+  externalUniqueId: 
+    type: string
+    nullable: true
+  name: 
+    type: string
+  externalName: 
+    type: string
+  hostname: 
+    type: string
+  accountId: 
+    type: integer
+    format: int64
+  account: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  owner: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+  zone: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+  plan: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  computeServerType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+      managed: 
+        type: boolean
+      externalDelete: 
+        type: boolean
+  visibility: 
+    type: string
+  description: 
+    type: string
+  zoneId: 
+    type: integer
+    format: int64
+  siteId: 
+    type: integer
+    format: int64
+  resourcePoolId: 
+    type: integer
+    format: int64
+  folderId: 
+    type: string
+    nullable: true
+  sshHost: 
+    type: string
+  sshPort: 
+    type: integer
+    format: int64
+  externalIp: 
+    type: string
+  internalIp: 
+    type: string
+  volumeId: 
+    type: string
+    nullable: true
+  platform: 
+    type: string
+  platformVersion: 
+    type: string
+  sshUsername: 
+    type: string
+  sshPassword: 
+    type: string
+  sshPasswordHash: 
+    type: string
+  osDevice: 
+    type: string
+  osType: 
+    type: string
+  dataDevice: 
+    type: string
+  lvmEnabled: 
+    type: boolean
+  apiKey: 
+    type: string
+  softwareRaid: 
+    type: boolean
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  stats: 
+    type: object
+    properties: 
+      usedStorage: 
+        type: integer
+        format: int64
+      reservedStorage: 
+        type: integer
+        format: int64
+      maxStorage: 
+        type: integer
+        format: int64
+      usedMemory: 
+        type: integer
+        format: int64
+      reservedMemory: 
+        type: integer
+        format: int64
+      maxMemory: 
+        type: integer
+        format: int64
+      cpuUsage: 
+        type: number
+  status: 
+    type: string
+  statusMessage: 
+    type: string
+    nullable: true
+  errorMessage: 
+    type: string
+    nullable: true
+  statusDate: 
+    type: string
+    nullable: true
+  statusPercent: 
+    type: string
+    nullable: true
+  statusEta: 
+    type: string
+    nullable: true
+  powerState: 
+    type: string
+  agentInstalled: 
+    type: boolean
+  lastAgentUpdate: 
+    type: string
+    format: date-time
+  agentVersion: 
+    type: string
+  maxCores: 
+    type: integer
+    format: int64
+  coresPerSocket: 
+    type: string
+    nullable: true
+  maxMemory: 
+    type: integer
+    format: int64
+  maxStorage: 
+    type: integer
+    format: int64
+  maxCpu: 
+    type: integer
+    format: int64
+  hourlyPrice: 
+    type: number
+  sourceImage: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
+  serverOs: 
+    type: string
+    nullable: true
+  volumes: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        controllerId: 
+          type: string
+          nullable: true
+        controllerMountPoint: 
+          type: string
+          nullable: true
+        resizeable: 
+          type: boolean
+        planResizable: 
+          type: boolean
+        rootVolume: 
+          type: boolean
+        unitNumber: 
+          type: string
+          nullable: true
+        typeId: 
+          type: integer
+          format: int64
+        configurableIOPS: 
+          type: boolean
+        datastoreId: 
+          type: string
+          nullable: true
+        maxStorage: 
+          type: integer
+          format: int64
+        displayOrder: 
+          type: integer
+          format: int64
+        maxIOPS: 
+          type: string
+          nullable: true
+        uuid: 
+          type: string
+  controllers: 
+    type: array
+    items: 
+      type: object
+  interfaces: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        refType: 
+          type: string
+          nullable: true
+        refId: 
+          type: string
+          nullable: true
+        name: 
+          type: string
+        internalId: 
+          type: string
+          nullable: true
+        externalId: 
+          type: string
+          nullable: true
+        uniqueId: 
+          type: string
+          nullable: true
+        publicIpAddress: 
+          type: string
+        publicIpv6Address: 
+          type: string
+          nullable: true
+        ipAddress: 
+          type: string
+        ipv6Address: 
+          type: string
+          nullable: true
+        ipSubnet: 
+          type: string
+          nullable: true
+        ipv6Subnet: 
+          type: string
+          nullable: true
+        description: 
+          type: string
+          nullable: true
+        dhcp: 
+          type: boolean
+        active: 
+          type: boolean
+        poolAssigned: 
+          type: boolean
+        primaryInterface: 
+          type: boolean
+        network: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            name: 
+              type: string
+        subnet: 
+          type: string
+          nullable: true
+        networkGroup: 
+          type: string
+          nullable: true
+        networkPosition: 
+          type: string
+          nullable: true
+        networkPool: 
+          type: string
+          nullable: true
+        networkDomain: 
+          type: string
+          nullable: true
+        type: 
+          type: string
+          nullable: true
+        ipMode: 
+          type: string
+          nullable: true
+        macAddress: 
+          type: string
+          nullable: true
+  labels: 
+    type: array
+    items: 
+      type: string
+  tags: 
+    type: array
+    items: 
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+  enabled: 
+    type: boolean
+  tagCompliant: 
+    type: string
+    nullable: true
+  containers: 
+    type: array
+    items: 
+      type: integer
+      format: int64
+  guestConsolePreferred: 
+    type: boolean
+  guestConsoleType: 
+    type: string
+    nullable: true
+  guestConsoleUsername: 
+    type: string
+    nullable: true
+  guestConsolePassword: 
+    type: string
+    nullable: true
+  guestConsolePasswordHash: 
+    type: string
+    nullable: true
+  guestConsolePort: 
+    type: string
+    nullable: true

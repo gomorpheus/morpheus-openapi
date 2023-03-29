@@ -1,0 +1,36 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  type: 
+    type: string
+    nullable: true
+  code: 
+    type: string
+    nullable: true
+  externalIp: 
+    type: string
+    nullable: true
+  internalIp: 
+    type: string
+    nullable: true
+  externalPort: 
+    type: string
+    nullable: true
+  internalPort: 
+    type: string
+    nullable: true
+  status: 
+    type: string
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+    nullable: true
+  lastUpdated: 
+    type: string
+    format: date-time
+    nullable: true

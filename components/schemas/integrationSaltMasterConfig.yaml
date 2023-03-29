@@ -1,0 +1,71 @@
+type: object
+required:
+  - integration
+properties:
+  integration:
+    type: object
+    required:
+      - name
+      - type
+      - serviceUrl
+      - serviceUsername
+    properties:
+      name: 
+        type: string
+        description: Name, a unique identifier for the integration
+        example: Sample Integration
+      type:
+        type: string
+        description: Integration Type Code
+        enum:
+        - saltMaster
+      serviceMode:
+        type: string
+        description: Topology
+        default: single
+      serviceUrl:
+        type: string
+        description: Salt Master
+      secondary:
+        type: string
+        description: Salt Syndic
+      servicePort:
+        type: integer
+        description: SSH Port
+        default: 22
+      serviceUsername:
+        type: string
+        description: Username
+      servicePassword:
+        type: string
+        description: Password
+      serviceKey:
+        type: string
+        description: Master Key Pair
+      authKey:
+        type: string
+        description: Signing Key
+      servicePath:
+        type: string
+        description: Working Directory
+      serviceVersion:
+        type: string
+        description: Salt Version
+      serviceWindowsVersion:
+        type: string
+        description: Salt Version (Windows)
+      repoUrl:
+        type: string
+        description: Repo URL
+      serviceConfig:
+        type: string
+        description: Minion Config
+      serviceCommand:
+        type: string
+        description: Post Provision Commands
+      config:
+        type: object
+        properties: 
+          saltApplyOnMinion:
+            type: boolean
+            description: Apply state via Minion instead of Master (salt-call)

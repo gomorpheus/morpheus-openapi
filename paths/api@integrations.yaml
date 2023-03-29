@@ -1,0 +1,172 @@
+get:
+  summary: Retrieves all Integrations
+  description: |
+    Retrieves all integrations.
+  operationId: listIntegrations
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/id.yaml
+    - $ref: ../components/parameters/url.yaml
+    - $ref: ../components/parameters/host.yaml
+    - $ref: ../components/parameters/port.yaml
+    - $ref: ../components/parameters/username.yaml
+    - $ref: ../components/parameters/version.yaml
+    - $ref: ../components/parameters/windowsVersion.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/objects.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            anyOf:
+            - type: object
+              properties:
+                integrations:
+                  type: array
+                  items:
+                    anyOf:
+                    - $ref: ../components/schemas/integrationAnsible.yaml
+                    - $ref: ../components/schemas/integrationAnsibleTower.yaml
+                    - $ref: ../components/schemas/integrationBindDNS.yaml
+                    - $ref: ../components/schemas/integrationChef.yaml
+                    - $ref: ../components/schemas/integrationCherwell.yaml
+                    - $ref: ../components/schemas/integrationCypher.yaml
+                    - $ref: ../components/schemas/integrationDockerRepo.yaml
+                    - $ref: ../components/schemas/integrationGitRepo.yaml
+                    - $ref: ../components/schemas/integrationGitHub.yaml
+                    - $ref: ../components/schemas/integrationJenkins.yaml
+                    - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
+                    - $ref: ../components/schemas/integrationPowerDNS.yaml
+                    - $ref: ../components/schemas/integrationPuppet.yaml
+                    - $ref: ../components/schemas/integrationRemedy.yaml
+                    - $ref: ../components/schemas/integrationRoute53.yaml
+                    - $ref: ../components/schemas/integrationSaltMaster.yaml
+                    - $ref: ../components/schemas/integrationSNOW.yaml
+                    - $ref: ../components/schemas/integrationvRO.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Integrations Response:
+              value:
+                $ref: ../components/examples/integrations.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates an Integration
+  description: |
+    Creates an integration.
+  operationId: addIntegrations
+  tags:
+    - Integrations
+  requestBody:
+    content:
+      application/json:
+        schema:
+          oneOf: 
+            - $ref: ../components/schemas/integrationConfig.yaml
+            - $ref: ../components/schemas/integrationAnsibleConfig.yaml
+            - $ref: ../components/schemas/integrationSNOWConfig.yaml
+            - $ref: ../components/schemas/integrationSaltMasterConfig.yaml
+            - $ref: ../components/schemas/integrationDockerRepoConfig.yaml
+            - $ref: ../components/schemas/integrationGitRepoConfig.yaml
+            - $ref: ../components/schemas/integrationGitHubConfig.yaml
+            - $ref: ../components/schemas/integrationJenkinsConfig.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                integration:
+                  oneOf:
+                  - $ref: ../components/schemas/integrationAnsible.yaml
+                  - $ref: ../components/schemas/integrationAnsibleTower.yaml
+                  - $ref: ../components/schemas/integrationBindDNS.yaml
+                  - $ref: ../components/schemas/integrationChef.yaml
+                  - $ref: ../components/schemas/integrationCherwell.yaml
+                  - $ref: ../components/schemas/integrationCypher.yaml
+                  - $ref: ../components/schemas/integrationDockerRepo.yaml
+                  - $ref: ../components/schemas/integrationGitRepo.yaml
+                  - $ref: ../components/schemas/integrationGitHub.yaml
+                  - $ref: ../components/schemas/integrationJenkins.yaml
+                  - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
+                  - $ref: ../components/schemas/integrationPowerDNS.yaml
+                  - $ref: ../components/schemas/integrationPuppet.yaml
+                  - $ref: ../components/schemas/integrationRemedy.yaml
+                  - $ref: ../components/schemas/integrationRoute53.yaml
+                  - $ref: ../components/schemas/integrationSaltMaster.yaml
+                  - $ref: ../components/schemas/integrationSNOW.yaml
+                  - $ref: ../components/schemas/integrationvRO.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Integration Response - Create Ansible:
+              value:
+                $ref: ../components/examples/integrationAnsibleSuccess.json
+            Integration Response - Create Ansible Tower:
+              value:
+                $ref: ../components/examples/integrationAnsibleTowerSuccess.json
+            Integration Response - Create Bind DNS:
+              value:
+                $ref: ../components/examples/integrationBindDNSSuccess.json
+            Integration Response - Create Chef:
+              value:
+                $ref: ../components/examples/integrationChefSuccess.json
+            Integration Response - Create Cherwell:
+              value:
+                $ref: ../components/examples/integrationCherwellSuccess.json
+            Integration Response - Create Cypher:
+              value:
+                $ref: ../components/examples/integrationCypherSuccess.json
+            Integration Response - Create Docker Repository:
+              value:
+                $ref: ../components/examples/integrationDockerRepoSuccess.json
+            Integration Response - Create Git Repository:
+              value:
+                $ref: ../components/examples/integrationGitRepoSuccess.json
+            Integration Response - Create GitHub:
+              value:
+                $ref: ../components/examples/integrationGitHubSuccess.json
+            Integration Response - Create Jenkins:
+              value:
+                $ref: ../components/examples/integrationJenkinsSuccess.json
+            Integration Response - Create Microsoft DNS:
+              value:
+                $ref: ../components/examples/integrationMicrosoftDNSSuccess.json
+            Integration Response - Create PowerDNS:
+              value:
+                $ref: ../components/examples/integrationPowerDNSSuccess.json
+            Integration Response - Create Puppet:
+              value:
+                $ref: ../components/examples/integrationPuppetSuccess.json
+            Integration Response - Create Remedy:
+              value:
+                $ref: ../components/examples/integrationRemedySuccess.json
+            Integration Response - Create Route53:
+              value:
+                $ref: ../components/examples/integrationRoute53Success.json
+            Integration Response - Create Salt Master:
+              value:
+                $ref: ../components/examples/integrationSaltMasterSuccess.json
+            Integration Response - Create ServiceNow:
+              value:
+                $ref: ../components/examples/integrationSNOWSuccess.json
+            Integration Response - Create vRealize Orchestrator:
+              value:
+                $ref: ../components/examples/integrationvROSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

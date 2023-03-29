@@ -1,0 +1,30 @@
+{
+    "policy": {
+        "id": 114,
+        "name": "7. Cluster Resource Name",
+        "description": null,
+        "policyType": {
+            "id": 25,
+            "code": "serverNaming",
+            "name": "Cluster Resource Name"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "serverNamingType": "user",
+            "serverNamingPattern": "325432",
+            "serverNamingConflict": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

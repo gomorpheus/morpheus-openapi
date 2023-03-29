@@ -1,0 +1,134 @@
+get:
+  summary: Get an Instance Scale Threshold
+  description: Retrieves the scale threshold settings for a specific instance
+  operationId: getInstanceThreshold
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              instance:
+                type: object
+                properties:
+                  id: 
+                    type: integer
+                    format: int64
+                  name: 
+                    type: string
+              instanceThreshold:
+                $ref: ../components/schemas/instanceThreshold.yaml
+              instanceSchedules:
+                type: array
+                items:
+                  $ref: ../components/schemas/instanceSchedule.yaml
+          examples:
+            Instance Threshold Response:
+              value:
+                $ref: ../components/examples/instanceThreshold.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates an Instance Scale Threshold
+  description: |
+    Updates the scale threshold settings for a specific instance
+  operationId: updateInstanceThreshold
+  tags:
+    -  Instances
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - instanceThreshold
+          properties:
+            instanceThreshold:
+              type: object
+              properties:
+                autoUp:
+                  type: boolean
+                  description: Auto Upscale
+                  default: false
+                autoDown:
+                  type: boolean
+                  description: Auto Downscale
+                  default: false
+                minCount:
+                  type: integer
+                  description: The minimum number of nodes to scale down to
+                  example: 1
+                maxCount:
+                  type: integer
+                  description: The maximum number of nodes to scale up to
+                  example: 3
+                cpuEnabled:
+                  type: boolean
+                  description: Enable CPU Threshold
+                  default: false
+                minCpu:
+                  type: number
+                  description: Min CPU (%)
+                  default: 0.0
+                maxCpu:
+                  type: number
+                  description: Max CPU (%)
+                  default: 0.0
+                memoryEnabled:
+                  type: boolean
+                  description: Enable Memory Threshold
+                  default: false
+                minMemory:
+                  type: number
+                  description: Min Memory (%)
+                  default: 0.0
+                maxMemory:
+                  type: number
+                  description: Max Memory (%)
+                  default: 0.0
+                diskEnabled:
+                  type: boolean
+                  description: Enable Disk Threshold
+                  default: false
+                minDisk:
+                  type: number
+                  description: Min Disk (%)
+                  default: 0.0
+                maxDisk:
+                  type: number
+                  description: Max Disk (%)
+                  default: 0.0
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                instanceThreshold:
+                  $ref: ../components/schemas/instanceThreshold.yaml
+                instanceSchedules:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/instanceSchedule.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Instance Threshold Response:
+              value:
+                $ref: ../components/examples/instanceThresholdSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

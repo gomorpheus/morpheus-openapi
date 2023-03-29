@@ -1,0 +1,31 @@
+{
+    "success": true,
+    "integration": {
+        "id": 13823,
+        "name": "Labs Puppet",
+        "enabled": true,
+        "type": "puppet",
+        "integrationType": {
+            "id": 2,
+            "code": "puppet",
+            "name": "Puppet"
+        },
+        "isPlugin": false,
+        "config": {
+            "puppetMaster": "labs-puppetmaster2.fqdn.com",
+            "puppetFireNow": "true",
+            "puppetSshUser": "admin",
+            "puppetSshPassword": "************",
+            "puppetSshPasswordHash": "259daa8fd6f266ba1291"
+        },
+        "status": "ok",
+        "statusDate": null,
+        "statusMessage": null,
+        "lastSync": null,
+        "lastSyncDuration": null,
+        "credential": {
+            "type": "local",
+            "types": null
+        }
+    }
+}

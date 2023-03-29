@@ -10,6 +10,8 @@
                 "code": "ansibleTask",
                 "name": "Ansible Playbook"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "ansiblePlaybook": null,
@@ -46,6 +48,8 @@
                 "code": "containerTemplate",
                 "name": "Library Template"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "port": null,
                 "host": null,
@@ -78,6 +82,8 @@
                 "code": "winrmTask",
                 "name": "Powershell Script"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "host": null,
@@ -115,6 +121,8 @@
                 "code": "puppetTask",
                 "name": "Puppet Agent Install"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "password": null,
                 "passwordHash": null,
@@ -147,6 +155,8 @@
                 "code": "jythonTask",
                 "name": "Python Script"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "sshKey": null,
                 "pythonArgs": null,
@@ -187,6 +197,8 @@
                 "code": "restartTask",
                 "name": "Restart"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "localScriptGitId": null,
                 "username": null,
@@ -217,6 +229,8 @@
                 "code": "script",
                 "name": "Shell Script"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "username": null,
                 "localScriptGitRef": null,
@@ -254,6 +268,8 @@
                 "code": "vro",
                 "name": "vRealize Orchestrator Workflow"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "sshKey": null,
                 "port": null,
@@ -285,6 +301,8 @@
                 "code": "writeAttributes",
                 "name": "Write Attributes"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "writeAttributes.attributes": null,
                 "username": null,
@@ -316,6 +334,8 @@
                 "code": "ansibleTowerTask",
                 "name": "Ansible Tower Job"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "ansibleTowerGitRef": null,
                 "ansibleTowerExecuteMode": "executeHost",
@@ -349,6 +369,8 @@
                 "code": "chefTask",
                 "name": "Chef bootstrap"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "password": null,
                 "passwordHash": null,
@@ -386,6 +408,8 @@
                 "code": "email",
                 "name": "Email"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "emailSkipTemplate": null,
                 "username": null,
@@ -426,6 +450,8 @@
                 "code": "groovyTask",
                 "name": "Groovy Script"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "username": null,
                 "localScriptGitId": null,
@@ -463,6 +489,8 @@
                 "code": "httpTask",
                 "name": "HTTP"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "port": null,
@@ -501,6 +529,8 @@
                 "code": "javascriptTask",
                 "name": "Javascript"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "sshKey": null,
                 "localScriptGitRef": null,
@@ -532,6 +562,8 @@
                 "code": "jrubyTask",
                 "name": "jRuby Script"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "localScriptGitRef": null,
                 "port": null,
@@ -569,6 +601,8 @@
                 "code": "containerScript",
                 "name": "Library Script"
             },
+            "visibility": "private",
+            "labels": [],
             "taskOptions": {
                 "containerScriptId": null,
                 "localScriptGitId": null,

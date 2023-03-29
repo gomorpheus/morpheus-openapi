@@ -1,0 +1,229 @@
+get:
+  summary: Retrieves a Specific Integration
+  description: |
+    Retrieves a specific integration.
+  operationId: getIntegrations
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                integration:
+                  oneOf:
+                  - $ref: ../components/schemas/integrationAnsible.yaml
+                  - $ref: ../components/schemas/integrationAnsibleTower.yaml
+                  - $ref: ../components/schemas/integrationBindDNS.yaml
+                  - $ref: ../components/schemas/integrationChef.yaml
+                  - $ref: ../components/schemas/integrationCherwell.yaml
+                  - $ref: ../components/schemas/integrationCypher.yaml
+                  - $ref: ../components/schemas/integrationDockerRepo.yaml
+                  - $ref: ../components/schemas/integrationGitRepo.yaml
+                  - $ref: ../components/schemas/integrationGitHub.yaml
+                  - $ref: ../components/schemas/integrationJenkins.yaml
+                  - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
+                  - $ref: ../components/schemas/integrationPowerDNS.yaml
+                  - $ref: ../components/schemas/integrationPuppet.yaml
+                  - $ref: ../components/schemas/integrationRemedy.yaml
+                  - $ref: ../components/schemas/integrationRoute53.yaml
+                  - $ref: ../components/schemas/integrationSaltMaster.yaml
+                  - $ref: ../components/schemas/integrationSNOW.yaml
+                  - $ref: ../components/schemas/integrationvRO.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Integration Response - Ansible:
+              value:
+                $ref: ../components/examples/integrationAnsible.json
+            Integration Response - Ansible Tower:
+              value:
+                $ref: ../components/examples/integrationAnsibleTower.json
+            Integration Response - Bind DNS:
+              value:
+                $ref: ../components/examples/integrationBindDNS.json
+            Integration Response - Chef:
+              value:
+                $ref: ../components/examples/integrationChef.json
+            Integration Response - Cherwell:
+              value:
+                $ref: ../components/examples/integrationCherwell.json
+            Integration Response - Cypher:
+              value:
+                $ref: ../components/examples/integrationCypher.json
+            Integration Response - Docker Repository:
+              value:
+                $ref: ../components/examples/integrationDockerRepo.json
+            Integration Response - Git Repository:
+              value:
+                $ref: ../components/examples/integrationGitRepo.json
+            Integration Response - GitHub:
+              value:
+                $ref: ../components/examples/integrationGitHub.json
+            Integration Response - Jenkins:
+              value:
+                $ref: ../components/examples/integrationJenkins.json
+            Integration Response - Microsoft DNS:
+              value:
+                $ref: ../components/examples/integrationMicrosoftDNS.json
+            Integration Response - PowerDNS:
+              value:
+                $ref: ../components/examples/integrationPowerDNS.json
+            Integration Response - Puppet:
+              value:
+                $ref: ../components/examples/integrationPuppet.json
+            Integration Response - Remedy:
+              value:
+                $ref: ../components/examples/integrationRemedy.json
+            Integration Response - Route53:
+              value:
+                $ref: ../components/examples/integrationRoute53.json
+            Integration Response - Salt Master:
+              value:
+                $ref: ../components/examples/integrationSaltMaster.json
+            Integration Response - ServiceNow:
+              value:
+                $ref: ../components/examples/integrationSNOW.json
+            Integration Response - vRealize Orchestrator:
+              value:
+                $ref: ../components/examples/integrationvRO.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates an Integration
+  description: |
+    Updates an integration.
+  operationId: updateIntegrations
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          oneOf: 
+            - $ref: ../components/schemas/integrationConfig.yaml
+            - $ref: ../components/schemas/integrationAnsibleConfig.yaml
+            - $ref: ../components/schemas/integrationSNOWConfig.yaml
+            - $ref: ../components/schemas/integrationSaltMasterConfig.yaml
+            - $ref: ../components/schemas/integrationDockerRepoConfig.yaml
+            - $ref: ../components/schemas/integrationGitRepoConfig.yaml
+            - $ref: ../components/schemas/integrationGitHubConfig.yaml
+            - $ref: ../components/schemas/integrationJenkinsConfig.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                integration:
+                  oneOf:
+                  - $ref: ../components/schemas/integrationAnsible.yaml
+                  - $ref: ../components/schemas/integrationAnsibleTower.yaml
+                  - $ref: ../components/schemas/integrationBindDNS.yaml
+                  - $ref: ../components/schemas/integrationChef.yaml
+                  - $ref: ../components/schemas/integrationCherwell.yaml
+                  - $ref: ../components/schemas/integrationCypher.yaml
+                  - $ref: ../components/schemas/integrationDockerRepo.yaml
+                  - $ref: ../components/schemas/integrationGitRepo.yaml
+                  - $ref: ../components/schemas/integrationGitHub.yaml
+                  - $ref: ../components/schemas/integrationJenkins.yaml
+                  - $ref: ../components/schemas/integrationMicrosoftDNS.yaml
+                  - $ref: ../components/schemas/integrationPowerDNS.yaml
+                  - $ref: ../components/schemas/integrationPuppet.yaml
+                  - $ref: ../components/schemas/integrationRemedy.yaml
+                  - $ref: ../components/schemas/integrationRoute53.yaml
+                  - $ref: ../components/schemas/integrationSaltMaster.yaml
+                  - $ref: ../components/schemas/integrationSNOW.yaml
+                  - $ref: ../components/schemas/integrationvRO.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Integration Response - Update Ansible:
+              value:
+                $ref: ../components/examples/integrationAnsibleSuccess.json
+            Integration Response - Update Ansible Tower:
+              value:
+                $ref: ../components/examples/integrationAnsibleTowerSuccess.json
+            Integration Response - Update Bind DNS:
+              value:
+                $ref: ../components/examples/integrationBindDNSSuccess.json
+            Integration Response - Update Chef:
+              value:
+                $ref: ../components/examples/integrationChefSuccess.json
+            Integration Response - Update Cherwell:
+              value:
+                $ref: ../components/examples/integrationCherwellSuccess.json
+            Integration Response - Update Cypher:
+              value:
+                $ref: ../components/examples/integrationCypherSuccess.json
+            Integration Response - Update Docker Repository:
+              value:
+                $ref: ../components/examples/integrationDockerRepoSuccess.json
+            Integration Response - Update Git Repository:
+              value:
+                $ref: ../components/examples/integrationGitRepoSuccess.json
+            Integration Response - Update GitHub:
+              value:
+                $ref: ../components/examples/integrationGitHubSuccess.json
+            Integration Response - Update Jenkins:
+              value:
+                $ref: ../components/examples/integrationJenkinsSuccess.json
+            Integration Response - Update Microsoft DNS:
+              value:
+                $ref: ../components/examples/integrationMicrosoftDNSSuccess.json
+            Integration Response - Update PowerDNS:
+              value:
+                $ref: ../components/examples/integrationPowerDNSSuccess.json
+            Integration Response - Update Puppet:
+              value:
+                $ref: ../components/examples/integrationPuppetSuccess.json
+            Integration Response - Update Remedy:
+              value:
+                $ref: ../components/examples/integrationRemedySuccess.json
+            Integration Response - Update Route53:
+              value:
+                $ref: ../components/examples/integrationRoute53Success.json
+            Integration Response - Update Salt Master:
+              value:
+                $ref: ../components/examples/integrationSaltMasterSuccess.json
+            Integration Response - Update ServiceNow:
+              value:
+                $ref: ../components/examples/integrationSNOWSuccess.json
+            Integration Response - Update vRealize Orchestrator:
+              value:
+                $ref: ../components/examples/integrationvROSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes an Integration
+  description: |
+    Deletes a specified integration.
+  operationId: removeIntegrations
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

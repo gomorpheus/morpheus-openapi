@@ -1,0 +1,7 @@
+name: networkInterfaceId
+in: path
+description: NetworkInterface (ComputeServerInterface) ID of the Object being created or referenced
+required: true
+schema:
+  type: number
+example: 7

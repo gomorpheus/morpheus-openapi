@@ -1,0 +1,64 @@
+{
+  "licenses": [
+    {
+      "id": 1,
+      "name": "2012 R2 Standard",
+      "description": "2012 R2 Standard",
+      "licenseType": {
+        "id": 1,
+        "code": "win",
+        "name": "Windows"
+      },
+      "licenseKey": "*************************AB3E",
+      "orgName": "Acme Motors",
+      "fullName": "Bugs Bunny",
+      "licenseVersion": "2012 R2 Standard",
+      "copies": 1,
+      "reservationCount": 0,
+      "tenants": [],
+      "virtualImages": [
+        {
+          "id": 2021,
+          "name": "Windows-Server-R2-AL"
+        }
+      ],
+      "account": {
+        "id": 1,
+        "name": "Acme"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Microsoft Windows Server 2012 R2 Standard Evaluation",
+      "description": "Microsoft Windows Server 2012 R2 Standard Evaluation",
+      "licenseType": {
+        "id": 1,
+        "code": "win",
+        "name": "Windows"
+      },
+      "licenseKey": "*************************A41H",
+      "orgName": "Acme Motors",
+      "fullName": "Yosemite Sam",
+      "licenseVersion": "2012 R2 SE",
+      "copies": 105,
+      "reservationCount": 0,
+      "tenants": [],
+      "virtualImages": [
+        {
+          "id": 2022,
+          "name": "Windows-Server-R2-SE"
+        }
+      ],
+      "account": {
+        "id": 1,
+        "name": "Acme"
+      }
+    }
+  ],
+  "meta": {
+    "size": 2,
+    "total": 2,
+    "offset": 0,
+    "max": 25
+  }
+}

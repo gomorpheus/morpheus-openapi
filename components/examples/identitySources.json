@@ -1,0 +1,139 @@
+{
+    "userSources": [
+        {
+            "id": 2,
+            "name": "testdomain",
+            "description": null,
+            "code": "vXQ4f8GxA",
+            "type": "activeDirectory",
+            "active": true,
+            "deleted": false,
+            "autoSyncOnLogin": true,
+            "externalLogin": false,
+            "allowCustomMappings": false,
+            "account": {
+                "id": 1,
+                "name": "Home"
+            },
+            "defaultAccountRole": {
+                "id": 9,
+                "name": "No Access",
+                "authority": "No Access"
+            },
+            "config": {
+                "url": "testdomain.com",
+                "domain": "testdomain.com",
+                "useSSL": "off",
+                "bindingUsername": "testuser",
+                "bindingPassword": "************",
+                "requiredGroup": "Company",
+                "requiredGroupDN": "CN=Company,OU=Groups,OU=Environment,DC=testdomain,DC=com",
+                "searchMemberGroups": true,
+                "bindingPasswordHash": "1d6548d33ecc7f24ce2d2bde57b"
+            },
+            "roleMappings": [
+                {
+                    "sourceRoleName": "Company test",
+                    "sourceRoleFqn": "CN=Company: Test,OU=Groups,OU=Environment,DC=fqdn,DC=com",
+                    "mappedRole": {
+                        "id": 7,
+                        "name": "User Admin",
+                        "authority": "User Admin"
+                    }
+                },
+                {
+                    "sourceRoleName": "Company-Admins",
+                    "sourceRoleFqn": "CN=Company-Admins,OU=Groups,OU=Environment,DC=fqdn,DC=com",
+                    "mappedRole": {
+                        "id": 1,
+                        "name": "System Admin",
+                        "authority": "System Admin"
+                    }
+                }
+            ],
+            "subdomain": "1",
+            "loginURL": "https://testdomain.com/login/account/1",
+            "providerSettings": {},
+            "dateCreated": "2019-01-08T20:35:49Z",
+            "lastUpdated": "2021-04-28T11:31:46Z"
+        },
+        {
+            "id": 9,
+            "name": "Company SSO",
+            "description": "Company Data Azure SSO",
+            "code": "DTiml0pVO",
+            "type": "azureSaml",
+            "active": true,
+            "deleted": false,
+            "autoSyncOnLogin": true,
+            "externalLogin": true,
+            "allowCustomMappings": false,
+            "account": {
+                "id": 1,
+                "name": "Home"
+            },
+            "defaultAccountRole": {
+                "id": 9,
+                "name": "No Access",
+                "authority": "No Access"
+            },
+            "config": {
+                "url": "https://login.microsoftonline.com/b16e27e81a77d/saml2",
+                "logoutUrl": "https://login.microsoftonline.com/b7e81a77d/saml2",
+                "doNotIncludeSAMLRequest": false,
+                "SAMLSignatureMode": "NoSignature",
+                "doNotValidateSignature": false,
+                "doNotValidateStatusCode": true,
+                "doNotValidateDestination": true,
+                "doNotValidateIssueInstants": true,
+                "doNotValidateAssertions": true,
+                "givenNameAttribute": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
+                "surnameAttribute": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname",
+                "emailAttribute": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+                "requiredAttributeValue": "",
+                "roleAttributeName": "http://schemas.microsoft.com/ws/2008/06/identity/claims/groups",
+                "azureTenantId": "",
+                "azureAppId": "",
+                "azureAppSecret": null,
+                "roleLinkAttributeName": "",
+                "publicKey": "-----BEGIN CERTIFICATE-----\r\nMIIC8Dsplksk/t6\r\n-----END CERTIFICATE-----",
+                "azureAppSecretHash": null
+            },
+            "roleMappings": [
+                {
+                    "sourceRoleName": "d5d5-af68-26fa8cdbaa10",
+                    "sourceRoleFqn": null,
+                    "mappedRole": {
+                        "id": 1,
+                        "name": "System Admin",
+                        "authority": "System Admin"
+                    }
+                },
+                {
+                    "sourceRoleName": "14f59985-3c9ecbfb0c65",
+                    "sourceRoleFqn": null,
+                    "mappedRole": {
+                        "id": 345,
+                        "name": "Company Engineer",
+                        "authority": "Company Engineer"
+                    }
+                }
+            ],
+            "subdomain": "1",
+            "loginURL": "https://Company.fqdn.com/login/account/1",
+            "providerSettings": {
+                "entityId": "https://Company.fqdn.com/saml/DTiO",
+                "acsUrl": "https://Company.fqdn.com/externalLogin/callback/DTiO",
+                "spMetadata": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><EntityDescriptor entityID=\"https://Company.fqdn.com/saml/DTiml0pVO\" xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\"><SPSSODescriptor AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"true\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"><NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat><AssertionConsumerService index=\"0\" isDefault=\"true\" Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://Company.fqdn.com/externalLogin/callback/DTiml0pVO\"/></SPSSODescriptor></EntityDescriptor>"
+            },
+            "dateCreated": "2021-02-22T12:30:08Z",
+            "lastUpdated": "2021-02-26T17:44:11Z"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 2,
+        "total": 2
+    }
+}

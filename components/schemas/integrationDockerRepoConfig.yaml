@@ -1,0 +1,31 @@
+type: object
+required:
+  - integration
+properties:
+  integration:
+    type: object
+    required:
+      - name
+      - type
+      - serviceUrl
+      - serviceUsername
+      - servicePassword
+    properties:
+      name: 
+        type: string
+        description: Name, a unique identifier for the integration
+        example: Sample Integration
+      type:
+        type: string
+        description: Integration Type Code
+        enum:
+        - docker.registry
+      serviceUrl:
+        type: string
+        description: Repository URL
+      serviceUsername:
+        type: string
+        description: Username
+      servicePassword:
+        type: string
+        description: Password

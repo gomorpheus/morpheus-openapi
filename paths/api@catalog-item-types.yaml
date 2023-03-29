@@ -1,0 +1,92 @@
+get:
+  summary: Get All Catalog Item Types
+  description: This endpoint retrieves all catalog item types.
+  operationId: listCatalogItemTypes
+  tags:
+    - Catalog Items
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/description.yaml
+    - $ref: ../components/parameters/enabled.yaml
+    - $ref: ../components/parameters/featured.yaml
+    - $ref: ../components/parameters/labels.yaml
+    - $ref: ../components/parameters/allLabels.yaml
+    - $ref: ../components/parameters/code.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                catalogItemTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/catalogItemType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Get Catalog Items Response:
+              value:
+                $ref: ../components/examples/catalogItemTypes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Create a Catalog Item Type
+  description: Use this command to create a catalog item type.
+  operationId: addCatalogItemType
+  tags:
+    - Catalog Items
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            catalogItemType:
+              oneOf:
+                - $ref: ../components/schemas/catalogItemTypeInstanceCreate.yaml
+                - $ref: ../components/schemas/catalogItemTypeBlueprintCreate.yaml
+                - $ref: ../components/schemas/catalogItemTypeWorkflowCreate.yaml
+        examples:
+          Catalog Item Type Request - Instance:
+            value:
+              $ref: ../components/examples/catalogItemTypeInstanceCreate.json
+          Catalog Item Type Request - Blueprint:
+            value:
+              $ref: ../components/examples/catalogItemTypeBlueprintCreate.json
+          Catalog Item Type Request - Workflow:
+            value:
+              $ref: ../components/examples/catalogItemTypeWorkflowCreate.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                catalogItemType:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Catalog Item Type Response - Instance:
+              value:
+                $ref: ../components/examples/catalogItemTypeCreateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

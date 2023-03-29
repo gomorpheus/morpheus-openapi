@@ -23,6 +23,12 @@ properties:
           - containerTemplate
       name: 
         type: string
+  labels:
+    type: array
+    items: 
+      type: string
+  visibility:
+    type: string
   taskOptions: 
     type: object
     additionalProperties: false

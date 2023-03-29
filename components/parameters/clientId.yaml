@@ -1,0 +1,6 @@
+name: clientId
+in: query
+description: Client ID.  See `Get Available API Clients` for a list of valid `clientId` values.
+schema:
+  type: string
+example: morph-cli

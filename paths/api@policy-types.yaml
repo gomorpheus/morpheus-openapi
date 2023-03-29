@@ -1,0 +1,29 @@
+get:
+  summary: Retrieves all Policy Types
+  description: |
+    Retrieves all Policy Types
+  operationId: listPolicyTypes
+  tags:
+    - Policies
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                policyTypes:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/policyType.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Policy Types Response:
+              value:
+                $ref: ../components/examples/policyTypes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

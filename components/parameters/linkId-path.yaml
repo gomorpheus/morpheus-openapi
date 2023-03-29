@@ -1,0 +1,7 @@
+name: linkId
+in: path
+required: true
+description: The ID of the archive file link.
+schema:
+  type: integer
+  format: int64

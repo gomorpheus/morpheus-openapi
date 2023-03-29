@@ -7,6 +7,12 @@ properties:
     type: string
     description: Short description of the option type
     nullable: true
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    nullable: true
+    items:
+      type: string
   fieldName:
     type: string
     description: Field Name, the name for user input. This along with fieldContext determines the configuration property name.  The property key for when posting this option type to a JSON POST request

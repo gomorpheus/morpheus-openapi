@@ -1,0 +1,56 @@
+{
+  "cluster": {
+    "type": "kubernetes-cluster",
+    "group": {
+      "id": 1
+    },
+    "name": "testcluster",
+    "cloud": {
+      "id": 15
+    },
+    "layout": {
+      "id": 219
+    },
+    "server": {
+      "config": {
+        "resourcePoolId": 75,
+        "hostId": "",
+        "podCidr": "172.20.0.0/16",
+        "serviceCidr": "172.30.0.0/16",
+        "nodeCount": 3,
+        "createUser": true
+      },
+      "name": "testpool",
+      "plan": {
+        "id": 365,
+        "code": "vm-8192",
+        "options": {}
+      },
+      "volumes": [
+        {
+          "id": -1,
+          "rootVolume": true,
+          "name": "root",
+          "size": 80,
+          "sizeId": null,
+          "storageType": 1,
+          "datastoreId": "auto"
+        }
+      ],
+      "networkInterfaces": [
+        {
+          "network": {
+            "id": "network-110"
+          },
+          "networkInterfaceTypeId": 4,
+          "ipMode": "dhcp"
+        }
+      ],
+      "securityGroups": [],
+      "visibility": "private",
+      "nodeCount": 3,
+      "networkDomain": null,
+      "hostname": "kubehostname"
+    }
+  }
+}

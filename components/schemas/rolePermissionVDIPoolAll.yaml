@@ -1,0 +1,14 @@
+type: object
+required:
+  - allVdiPools
+  - access
+properties:
+  allTasks:
+    type: boolean
+    description: "Apply to all VDI Pools"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

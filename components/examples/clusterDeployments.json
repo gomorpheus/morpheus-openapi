@@ -1,0 +1,27 @@
+{
+  "deployments": [
+    {
+      "id": 4,
+      "name": "test deployment display name",
+      "code": "test_deployment_code",
+      "description": null,
+      "category": "kubernetes.deployment.cluster.3",
+      "resourceLevel": "app",
+      "resourceType": "deployment",
+      "managed": false,
+      "status": "starting",
+      "lastUpdated": "2019-10-01T02:09:53+0000",
+      "owner": {
+        "id": 1
+      },
+      "totalCpuUsage": 0,
+      "stats": {}
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

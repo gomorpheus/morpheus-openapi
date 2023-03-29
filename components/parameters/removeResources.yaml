@@ -1,0 +1,7 @@
+name: removeResources
+in: query
+description: Remove Resources
+schema:
+  type: string
+  default: "on"
+example: "off"

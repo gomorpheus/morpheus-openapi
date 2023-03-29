@@ -10,6 +10,11 @@ properties:
     nullable: true
   name: 
     type: string
+  labels: 
+    type: array
+    nullable: true
+    items:
+      type: string
   category: 
     type: string
     nullable: true

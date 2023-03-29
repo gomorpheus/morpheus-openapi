@@ -1,0 +1,67 @@
+{
+  "catalogItemType": {
+    "name": "Example App",
+    "code": "example-app",
+    "category": "example category",
+    "description": "Example catalog item type",
+    "labels": [],
+    "type": "instance",
+    "visibility": "public",
+    "layoutCode": null,
+    "iconPath": "/assets/containers-png/apache.png",
+    "config": {
+      "group": {
+        "id": "<%= customOptions.morphgroup %>"
+      },
+      "cloud": {
+        "id": "<%= customOptions.morphcloud %>"
+      },
+      "type": "apache",
+      "instance": {
+      },
+      "name": "${userInitials}-apache-${sequence}",
+      "config": {
+        "createUser": true,
+        "resourcePoolId": "<%= customOptions.morphpool %>"
+      },
+      "environment": "<%= customOptions.morphenv %>",
+      "volumes": [
+        {
+          "rootVolume": true,
+          "name": "root",
+          "size": 10,
+          "storageType": 5
+        }
+      ],
+      "hostName": "${userInitials}-apache-${sequence}",
+      "layout": {
+        "id": 31,
+        "code": "apache-amazon-2.4-single"
+      },
+      "networkInterfaces": [
+        {
+          "primaryInterface": true,
+          "network": {
+            "id": "network-102",
+            "hasPool": false
+          },
+          "ipMode": "",
+          "showNetworkPoolLabel": false,
+          "showNetworkDhcpLabel": true
+        }
+      ],
+      "plan": {
+        "id": "<%= customOptions.morphplan %>"
+      },
+      "version": "2.4",
+      "securityGroups": [
+        {
+          "id": "<%= customOptions.morphsecgroup %>"
+        }
+      ]
+    },
+    "optionTypes": [
+      34,35,36,37,38,39,40
+    ]
+  }
+}

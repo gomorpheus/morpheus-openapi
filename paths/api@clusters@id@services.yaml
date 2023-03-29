@@ -1,0 +1,35 @@
+get: 
+  summary: Get Services
+  description: This endpoint retrieves services of a specified cluster.
+  operationId: listClusterServices
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/order.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  services:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/clusterServices.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterServices.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

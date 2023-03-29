@@ -1,0 +1,28 @@
+{
+    "policy": {
+        "id": 102,
+        "name": "3. Approve Reconfigure",
+        "description": null,
+        "policyType": {
+            "id": 81,
+            "code": "reconfigureApproval",
+            "name": "Approve Reconfigure"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "accountIntegrationId": "-100"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

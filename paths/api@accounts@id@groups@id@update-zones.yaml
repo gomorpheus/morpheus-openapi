@@ -1,0 +1,48 @@
+put:
+  summary: Updating Group Zones for Subtenant
+  description: This will update the zones that are assigned to the group. Any zones that are not passed in the zones parameter will be removed from the group.
+  operationId: updateTenantSubtenantGroupZones
+  tags:
+    - Tenants
+  parameters:
+    - $ref: ../components/parameters/accountId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - group
+          properties:
+            group:
+              type: object
+              required:
+                - zones
+              properties:
+                zones:
+                  type: array
+                  description: An array of all the zones assigned to this group.
+                  items:
+                    type: object
+                    required:
+                      - id
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Tenant Group Zones Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

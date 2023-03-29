@@ -1,0 +1,27 @@
+get:
+  summary: Retrieves a Option Types for a Specific Integration Type
+  description: |
+    This endpoint will retrieve the list of option types for a specific integration type.
+  operationId: getIntegrationTypeOptionTypes
+  tags:
+    - Integrations
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              optionTypes:
+                $ref: ../components/schemas/integrationTypeOptionType.yaml
+          examples:
+            Integration Type Option Type Response:
+              value:
+                $ref: ../components/examples/integrationTypeOptionTypes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

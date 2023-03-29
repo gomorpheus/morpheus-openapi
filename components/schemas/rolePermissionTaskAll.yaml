@@ -1,0 +1,14 @@
+type: object
+required:
+  - allTasks
+  - access
+properties:
+  allTasks:
+    type: boolean
+    description: "Apply to all tasks"
+  access:
+    type: string
+    description: The new access level.
+    enum:
+      - full
+      - none

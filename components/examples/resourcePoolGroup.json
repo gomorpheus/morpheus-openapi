@@ -1,0 +1,65 @@
+{
+  "resourcePoolGroup": {
+    "id": 1,
+    "name": "test resource pool group",
+    "description": "a test resource pool group",
+    "visibility": "private",
+    "mode": "roundrobin",
+    "pools": [
+      1
+    ],
+    "tenants": [
+      {
+        "id": 1,
+        "name": "root"
+      }
+    ],
+    "resourcePermission": {
+      "all": false,
+      "sites": [
+        {
+          "id": 284,
+          "name": "anothergroup",
+          "default": true
+        },
+        {
+          "id": 317,
+          "name": "another group",
+          "default": false
+        }
+      ]
+    }
+  },
+  "pools": [
+        {
+            "id": 1,
+            "description": "pool-1",
+            "zone": {
+                "id": 1,
+                "name": "AWS Cloud"
+            },
+            "parent": null,
+            "type": "vpc",
+            "externalId": "vpc-adsf1234",
+            "regionCode": null,
+            "iacId": null,
+            "visibility": "public",
+            "readOnly": false,
+            "defaultPool": false,
+            "active": true,
+            "status": "available",
+            "inventory": true,
+            "config": {
+                "cidrBlock": "10.240.0.0/16",
+                "tenancy": "default"
+            },
+            "name": "pool-1",
+            "tenants": [
+                {
+                    "id": 1,
+                    "name": "root"
+                }
+            ]
+        }
+    ]
+}

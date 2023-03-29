@@ -1,0 +1,551 @@
+{
+  "clusterTypes": [
+      {
+          "id": 6,
+          "deployTargetService": "kubernetesDeployTargetService",
+          "shortName": "aks",
+          "providerType": "kubernetes",
+          "code": "aks-cluster",
+          "hostService": "aksHostService",
+          "managed": false,
+          "hasMasters": true,
+          "hasWorkers": true,
+          "viewSet": "kubernetes",
+          "imageCode": "kubernetes",
+          "kubeCtlLocal": true,
+          "hasDatastore": false,
+          "supportsCloudScaling": true,
+          "name": "AKS Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": true,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [],
+          "controllerTypes": [
+              {
+                  "id": 7,
+                  "name": "AKS Kubernetes Master",
+                  "code": "aks-kube-master",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 4,
+                  "name": "Kubernetes Worker",
+                  "code": "kube-worker",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 2,
+          "deployTargetService": "dockerDeployTargetService",
+          "shortName": "docker",
+          "providerType": "docker",
+          "code": "docker-cluster",
+          "hostService": "dockerHostService",
+          "managed": true,
+          "hasMasters": false,
+          "hasWorkers": true,
+          "viewSet": "docker",
+          "imageCode": "docker",
+          "hasDatastore": false,
+          "name": "Docker Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": false,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [
+              {
+                  "id": 1960,
+                  "name": "tags",
+                  "description": null,
+                  "code": "computeServerGroupType.tags",
+                  "fieldName": "metadata",
+                  "fieldLabel": "Tags",
+                  "fieldCode": "gomorpheus.label.tags",
+                  "fieldContext": "domain",
+                  "fieldGroup": "Advanced",
+                  "fieldClass": null,
+                  "fieldAddOn": null,
+                  "fieldComponent": null,
+                  "fieldInput": null,
+                  "placeHolder": null,
+                  "verifyPattern": null,
+                  "helpBlock": "",
+                  "helpBlockFieldCode": null,
+                  "defaultValue": null,
+                  "optionSource": null,
+                  "optionSourceType": null,
+                  "optionList": null,
+                  "type": "multiText",
+                  "advanced": false,
+                  "required": false,
+                  "exportMeta": false,
+                  "editable": true,
+                  "creatable": true,
+                  "config": {
+                      "fields": [
+                          {
+                              "name": "name",
+                              "required": true,
+                              "label": "Name"
+                          },
+                          {
+                              "name": "value",
+                              "required": false,
+                              "label": "Value"
+                          }
+                      ],
+                      "nameField": "metadata.name",
+                      "nameFieldLabel": "gomorpheus.label.name",
+                      "valueField": "metadata.value",
+                      "valueFieldLabel": "gomorpheus.label.value"
+                  },
+                  "displayOrder": 110,
+                  "wrapperClass": null,
+                  "enabled": true,
+                  "noBlank": false,
+                  "dependsOnCode": null,
+                  "visibleOnCode": null,
+                  "requireOnCode": null,
+                  "contextualDefault": false,
+                  "displayValueOnDetails": false,
+                  "showOnCreate": true,
+                  "showOnEdit": true,
+                  "localCredential": null
+              }
+          ],
+          "controllerTypes": [
+              {
+                  "id": 1,
+                  "name": "Docker Host",
+                  "code": "docker-host",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 1,
+                  "name": "Docker Host",
+                  "code": "docker-host",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 5,
+          "deployTargetService": "kubernetesDeployTargetService",
+          "shortName": "eks",
+          "providerType": "kubernetes",
+          "code": "eks-cluster",
+          "hostService": "eksHostService",
+          "managed": false,
+          "hasMasters": false,
+          "hasWorkers": true,
+          "viewSet": "kubernetes",
+          "imageCode": "kubernetes",
+          "kubeCtlLocal": true,
+          "hasDatastore": false,
+          "supportsCloudScaling": true,
+          "name": "EKS Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": true,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [],
+          "controllerTypes": [
+              {
+                  "id": 3,
+                  "name": "EKS Kubernetes Master",
+                  "code": "eks-kube-master",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 4,
+                  "name": "Kubernetes Worker",
+                  "code": "kube-worker",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 7,
+          "deployTargetService": "kubernetesDeployTargetService",
+          "shortName": "external kubernetes",
+          "providerType": "kubernetes",
+          "code": "external-kubernetes-cluster",
+          "hostService": "externalKubernetesHostService",
+          "managed": false,
+          "hasMasters": false,
+          "hasWorkers": true,
+          "viewSet": "kubernetes",
+          "imageCode": "kubernetes",
+          "kubeCtlLocal": true,
+          "hasDatastore": false,
+          "name": "External Kubernetes Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": true,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [],
+          "controllerTypes": [
+              {
+                  "id": 8,
+                  "name": "Kubernetes Master",
+                  "code": "external-kube-master",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 4,
+                  "name": "Kubernetes Worker",
+                  "code": "kube-worker",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 8,
+          "deployTargetService": "kubernetesDeployTargetService",
+          "shortName": "gke",
+          "providerType": "kubernetes",
+          "code": "gke-cluster",
+          "hostService": "gkeHostService",
+          "managed": false,
+          "hasMasters": false,
+          "hasWorkers": true,
+          "viewSet": "kubernetes",
+          "imageCode": "kubernetes",
+          "kubeCtlLocal": true,
+          "hasDatastore": false,
+          "supportsCloudScaling": true,
+          "name": "GKE Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": true,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [],
+          "controllerTypes": [
+              {
+                  "id": 9,
+                  "name": "GKE Kubernetes Master",
+                  "code": "gke-kube-master",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 4,
+                  "name": "Kubernetes Worker",
+                  "code": "kube-worker",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 1,
+          "deployTargetService": "kubernetesDeployTargetService",
+          "shortName": "mks kubernetes",
+          "providerType": "kubernetes",
+          "code": "kubernetes-cluster",
+          "hostService": "kubernetesHostService",
+          "managed": true,
+          "hasMasters": true,
+          "hasWorkers": true,
+          "viewSet": "kubernetes",
+          "imageCode": "kubernetes",
+          "hasDatastore": true,
+          "name": "Kubernetes Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": true,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [
+              {
+                  "id": 350,
+                  "name": "initConfig",
+                  "description": null,
+                  "code": "computeServerGroupType.kubernetes.initConfig",
+                  "fieldName": "initConfig",
+                  "fieldLabel": "Init Args",
+                  "fieldCode": "gomorpheus.label.initArgs",
+                  "fieldContext": "config",
+                  "fieldGroup": "advanced",
+                  "fieldClass": null,
+                  "fieldAddOn": null,
+                  "fieldComponent": null,
+                  "fieldInput": null,
+                  "placeHolder": null,
+                  "verifyPattern": null,
+                  "helpBlock": "gomorpheus.help.initArgs",
+                  "helpBlockFieldCode": null,
+                  "defaultValue": null,
+                  "optionSource": null,
+                  "optionSourceType": null,
+                  "optionList": null,
+                  "type": "text",
+                  "advanced": false,
+                  "required": false,
+                  "exportMeta": false,
+                  "editable": false,
+                  "creatable": true,
+                  "config": {},
+                  "displayOrder": 15,
+                  "wrapperClass": null,
+                  "enabled": true,
+                  "noBlank": false,
+                  "dependsOnCode": null,
+                  "visibleOnCode": null,
+                  "requireOnCode": null,
+                  "contextualDefault": false,
+                  "displayValueOnDetails": null,
+                  "showOnCreate": null,
+                  "showOnEdit": null,
+                  "localCredential": null
+              },
+              {
+                  "id": 1737,
+                  "name": "serviceToken",
+                  "description": null,
+                  "code": "computeServerGroupType.kubernetes.serviceToken",
+                  "fieldName": "serviceToken",
+                  "fieldLabel": "Api Token",
+                  "fieldCode": "gomorpheus.label.kubernetes.apiToken",
+                  "fieldContext": "domain",
+                  "fieldGroup": "default",
+                  "fieldClass": null,
+                  "fieldAddOn": null,
+                  "fieldComponent": null,
+                  "fieldInput": null,
+                  "placeHolder": null,
+                  "verifyPattern": null,
+                  "helpBlock": "",
+                  "helpBlockFieldCode": null,
+                  "defaultValue": null,
+                  "optionSource": null,
+                  "optionSourceType": null,
+                  "optionList": null,
+                  "type": "text",
+                  "advanced": false,
+                  "required": false,
+                  "exportMeta": false,
+                  "editable": true,
+                  "creatable": false,
+                  "config": {},
+                  "displayOrder": 10,
+                  "wrapperClass": null,
+                  "enabled": true,
+                  "noBlank": false,
+                  "dependsOnCode": null,
+                  "visibleOnCode": null,
+                  "requireOnCode": null,
+                  "contextualDefault": false,
+                  "displayValueOnDetails": false,
+                  "showOnCreate": true,
+                  "showOnEdit": true,
+                  "localCredential": null
+              },
+              {
+                  "id": 1960,
+                  "name": "tags",
+                  "description": null,
+                  "code": "computeServerGroupType.tags",
+                  "fieldName": "metadata",
+                  "fieldLabel": "Tags",
+                  "fieldCode": "gomorpheus.label.tags",
+                  "fieldContext": "domain",
+                  "fieldGroup": "Advanced",
+                  "fieldClass": null,
+                  "fieldAddOn": null,
+                  "fieldComponent": null,
+                  "fieldInput": null,
+                  "placeHolder": null,
+                  "verifyPattern": null,
+                  "helpBlock": "",
+                  "helpBlockFieldCode": null,
+                  "defaultValue": null,
+                  "optionSource": null,
+                  "optionSourceType": null,
+                  "optionList": null,
+                  "type": "multiText",
+                  "advanced": false,
+                  "required": false,
+                  "exportMeta": false,
+                  "editable": true,
+                  "creatable": true,
+                  "config": {
+                      "fields": [
+                          {
+                              "name": "name",
+                              "required": true,
+                              "label": "Name"
+                          },
+                          {
+                              "name": "value",
+                              "required": false,
+                              "label": "Value"
+                          }
+                      ],
+                      "nameField": "metadata.name",
+                      "nameFieldLabel": "gomorpheus.label.name",
+                      "valueField": "metadata.value",
+                      "valueFieldLabel": "gomorpheus.label.value"
+                  },
+                  "displayOrder": 110,
+                  "wrapperClass": null,
+                  "enabled": true,
+                  "noBlank": false,
+                  "dependsOnCode": null,
+                  "visibleOnCode": null,
+                  "requireOnCode": null,
+                  "contextualDefault": false,
+                  "displayValueOnDetails": false,
+                  "showOnCreate": true,
+                  "showOnEdit": true,
+                  "localCredential": null
+              },
+              {
+                  "id": 349,
+                  "name": "serviceUrl",
+                  "description": null,
+                  "code": "computeServerGroupType.kubernetes.serviceUrl",
+                  "fieldName": "serviceUrl",
+                  "fieldLabel": "API URL",
+                  "fieldCode": "gomorpheus.optiontype.ApiUrl",
+                  "fieldContext": "domain",
+                  "fieldGroup": "default",
+                  "fieldClass": null,
+                  "fieldAddOn": null,
+                  "fieldComponent": null,
+                  "fieldInput": null,
+                  "placeHolder": null,
+                  "verifyPattern": null,
+                  "helpBlock": "",
+                  "helpBlockFieldCode": null,
+                  "defaultValue": null,
+                  "optionSource": null,
+                  "optionSourceType": null,
+                  "optionList": null,
+                  "type": "text",
+                  "advanced": false,
+                  "required": false,
+                  "exportMeta": false,
+                  "editable": true,
+                  "creatable": false,
+                  "config": {},
+                  "displayOrder": 10,
+                  "wrapperClass": null,
+                  "enabled": true,
+                  "noBlank": false,
+                  "dependsOnCode": null,
+                  "visibleOnCode": null,
+                  "requireOnCode": null,
+                  "contextualDefault": false,
+                  "displayValueOnDetails": null,
+                  "showOnCreate": null,
+                  "showOnEdit": null,
+                  "localCredential": null
+              }
+          ],
+          "controllerTypes": [
+              {
+                  "id": 2,
+                  "name": "Kubernetes Master",
+                  "code": "kube-master",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 4,
+                  "name": "Kubernetes Worker",
+                  "code": "kube-worker",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 3,
+          "deployTargetService": "vmDeployTargetService",
+          "shortName": "kvm",
+          "providerType": "kvm",
+          "code": "kvm-cluster",
+          "hostService": "kvmHostService",
+          "managed": true,
+          "hasMasters": false,
+          "hasWorkers": true,
+          "viewSet": "kvm",
+          "imageCode": "kvm",
+          "hasDatastore": true,
+          "name": "KVM Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": false,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [],
+          "controllerTypes": [
+              {
+                  "id": 5,
+                  "name": "KVM Host",
+                  "code": "kvm-host",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 5,
+                  "name": "KVM Host",
+                  "code": "kvm-host",
+                  "description": ""
+              }
+          ]
+      },
+      {
+          "id": 4,
+          "deployTargetService": "vmDeployTargetService",
+          "shortName": "kvm",
+          "providerType": "morpheus",
+          "code": "kvm-docker-cluster",
+          "hostService": "kvmDockerHostService",
+          "managed": true,
+          "hasMasters": false,
+          "hasWorkers": true,
+          "viewSet": "kvm",
+          "imageCode": "kvm",
+          "hasDatastore": true,
+          "name": "KVM/Docker Cluster",
+          "hasDefaultDataDisk": true,
+          "canManage": false,
+          "hasCluster": true,
+          "description": "",
+          "optionTypes": [],
+          "controllerTypes": [
+              {
+                  "id": 6,
+                  "name": "KVM Docker Host",
+                  "code": "kvm-docker-host",
+                  "description": ""
+              }
+          ],
+          "workerTypes": [
+              {
+                  "id": 6,
+                  "name": "KVM Docker Host",
+                  "code": "kvm-docker-host",
+                  "description": ""
+              }
+          ]
+      }
+  ],
+  "meta": {
+      "offset": 0,
+      "max": 25,
+      "size": 8,
+      "total": 8
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "namespace": {
+    "id": 13,
+    "visibility": "public",
+    "name": "My Namespace",
+    "description": "new description",
+    "status": "available",
+    "externalId": "b016341e-eaa5-4532-89a3-e4372340f266",
+    "permissions": {
+      "resourcePermissions": {
+        "allGroups": true,
+        "defaultStore": false,
+        "allPlans": true,
+        "defaultTarget": false,
+        "morpheusResourceType": "ComputeZonePool",
+        "morpheusResourceId": 13,
+        "canManage": false,
+        "all": true,
+        "account": {
+          "id": 1
+        },
+        "sites": [
+          {
+            "id": 2,
+            "name": "aws group",
+            "default": false
+          }
+        ],
+        "plans": [
+          {
+            "id": 88,
+            "name": "128MB Memory, 1GB Storage",
+            "default": true
+          }
+        ]
+      }
+    }
+  }
+}

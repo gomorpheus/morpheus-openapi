@@ -38,16 +38,13 @@ properties:
       metricName: 
         type: string
   config:
-    allOf:
-    - oneOf:
+    anyOf:
       - $ref: checkWebConfig.yaml
       - $ref: checkSqlConfig.yaml
       - $ref: checkElasticsearchConfig.yaml
       - $ref: checkSocketConfig.yaml
       - $ref: checkPushConfig.yaml
       - $ref: checkVmConfig.yaml
-    - anyOf:
-      - $ref: checkSshConfig.yaml
   container:
     type: object
     nullable: true
@@ -76,6 +73,7 @@ properties:
     nullable: true
   endDate: 
     type: string
+    format: date-time
     nullable: true
   health: 
     type: integer
@@ -122,6 +120,7 @@ properties:
     nullable: true
   lastWarningDate: 
     type: string
+    format: date-time
     nullable: true
   name: 
     type: string
@@ -136,4 +135,7 @@ properties:
     type: string
   startDate: 
     type: string
+    format: date-time
     nullable: true
+  deleted:
+    type: boolean

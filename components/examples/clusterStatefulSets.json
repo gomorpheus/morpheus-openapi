@@ -1,0 +1,27 @@
+{
+  "statefulsets": [
+    {
+      "id": 3,
+      "name": "test statefulset display name",
+      "code": "test_code",
+      "description": null,
+      "category": "kubernetes.statefulset.cluster.3",
+      "resourceLevel": null,
+      "resourceType": "statefulset",
+      "managed": false,
+      "status": "starting",
+      "lastUpdated": "2019-10-01T02:10:32+0000",
+      "owner": {
+        "id": 1
+      },
+      "totalCpuUsage": 0,
+      "stats": {}
+    }
+  ],
+  "meta": {
+    "size": 1,
+    "total": 1,
+    "offset": 0,
+    "max": 25
+  }
+}

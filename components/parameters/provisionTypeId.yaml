@@ -1,0 +1,7 @@
+name: provisionTypeId
+in: query
+description: Provision type filter, restricts query to only load service plans of specified provision type
+schema:
+  type: integer
+  format: int64
+example: 22

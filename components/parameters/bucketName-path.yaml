@@ -1,0 +1,6 @@
+name: bucket
+in: path
+required: true
+description: Bucket name
+schema:
+  type: string

@@ -1,0 +1,30 @@
+get:
+  summary: Get Available Service Plans for a Host
+  description: This endpoint retrieves all the Service Plans available for the specified cloud and host type. It may be used to get the list of available plans when creating a new host or resizing an existing host.
+  operationId: listServerServicePlans
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/zoneId-required.yaml
+    - $ref: ../components/parameters/serverTypeId.yaml
+    - $ref: ../components/parameters/siteId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              plans:
+                type: array
+                items:
+                  $ref: ../components/schemas/serverServicePlans.yaml
+          examples:
+            Service Plans Response:
+              value:
+                $ref: ../components/examples/serverServicePlans.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

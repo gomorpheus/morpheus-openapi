@@ -1,0 +1,9 @@
+name: config
+in: query
+description: Input parameters are required if the input is dependent on them.  Fields must be prefixed with `config.`
+explode: true
+# style: simple
+schema:
+  type: object
+  example:
+    config.fieldName1: value1

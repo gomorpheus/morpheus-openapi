@@ -1,0 +1,13 @@
+{
+  "networkPoolServer": {
+    "type": "solarwindsipam",
+    "name": "Labs SolarWinds",
+    "serviceUrl": "https://solarwinds-server:17778",
+    "config": {
+      "appId": "phpipam-app-id"
+    },
+    "credential": {
+      "id": 1034
+    }
+  }
+}

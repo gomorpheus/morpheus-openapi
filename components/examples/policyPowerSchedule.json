@@ -1,0 +1,30 @@
+{
+    "policy": {
+        "id": 171,
+        "name": "26. Power Schedule",
+        "description": null,
+        "policyType": {
+            "id": 40,
+            "code": "powerSchedule",
+            "name": "Power Schedule"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "powerScheduleType": "user",
+            "powerSchedule": "1",
+            "powerScheduleHideFixed": false
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    }
+}

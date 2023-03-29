@@ -1,6 +1,6 @@
 name: description
 in: query
-description: Filter by description, wildcard may be specified as %. eg. example-%
+description: Filter by description, wildcard may be specified as %. eg. `example-%`
 schema:
   type: string
 example: The desription of my cool object

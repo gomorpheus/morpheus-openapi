@@ -3,6 +3,7 @@
     "id": 1,
     "name": "my-network",
     "displayName": "network display name",
+    "labels": [],
     "zone": {
       "id": 31,
       "name": "qa-azure"
@@ -50,6 +51,7 @@
     "pool": null,
     "networkProxy": null,
     "networkDomain": null,
+    "searchDomains": null,
     "prefixLength": null,
     "visibility": "private",
     "enableAdmin": false,

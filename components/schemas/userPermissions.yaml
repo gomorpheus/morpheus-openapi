@@ -1,0 +1,47 @@
+type: object
+nullable: true
+properties: 
+  features:
+    type: array
+    items: 
+      type: object
+  zones:
+    type: array
+    items: 
+      type: object
+  sites:
+    type: array
+    items: 
+      type: object
+  instanceTypes:
+    type: array
+    items: 
+      type: object
+  appTemplates:
+    type: array
+    items: 
+      type: object
+  catalogItemTypes:
+    type: array
+    items:
+      type: object
+  personas:
+    type: array
+    items:
+      type: object
+  vdiPools:
+    type: array
+    items:
+      type: object
+  reportTypes:
+    type: array
+    items:
+      type: object
+  tasks:
+    type: array
+    items:
+      type: object
+  taskSets:
+    type: array
+    items:
+      type: object

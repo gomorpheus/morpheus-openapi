@@ -1,0 +1,73 @@
+get:
+  summary: Get All Image Builds
+  description: This endpoint retrieves all image builds associated with the account.
+  operationId: listImageBuilds
+  tags:
+    - Image Builds
+  parameters:
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                imageBuilds:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/imageBuilds.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Image Builds Response:
+              value:
+                $ref: ../components/examples/imageBuilds.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create an Image Build
+  description: Create an Image Build
+  operationId: addImageBuild
+  tags: 
+    -  Image Builds
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            imageBuild:
+              $ref: ../components/schemas/imageBuildCreate.yaml
+        examples:
+          Image Build Request:
+            value:
+              $ref: ../components/examples/imageBuildRequest.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:
+            - type: object
+              properties:
+                imageBuild:
+                  $ref: ../components/schemas/imageBuild.yaml
+                imageBuildExecutions:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/imageBuildExecution.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Image Build Response:
+              value:
+                $ref: ../components/examples/imageBuild.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

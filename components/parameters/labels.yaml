@@ -1,6 +1,5 @@
 name: labels
 in: query
-description: Filter by label(s)
+description: Filter by label(s), matches records that contain any of the specified labels
 schema:
   type: string
-example: "applabel"

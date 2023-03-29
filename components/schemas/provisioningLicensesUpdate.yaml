@@ -1,0 +1,28 @@
+type: object
+properties: 
+  name: 
+    type: string
+    description: Name
+  licenseVersion: 
+    type: string
+    description: License Version
+  copies: 
+    type: integer
+    format: int64
+    description: Copies - The number of times the key can be used.
+    default: 1
+  description: 
+    type: string
+    description: Description
+  virtualImages: 
+    type: array
+    description: Virtual Images - Array of Virtual Image IDs to associate with license.
+    items: 
+      type: integer
+      format: int64
+  tenants: 
+    type: array
+    description: Tenants - Array of tenants that are allowed to use the key.
+    items: 
+      type: integer
+      format: int64

@@ -133,6 +133,8 @@ properties:
           type: string
         access: 
           type: string
+  globalPersonaAccess:
+    type: string
   personaPermissions: 
     type: array
     items: 
@@ -176,4 +178,38 @@ properties:
         name: 
           type: string
         access: 
+          type: string
+  globalTaskAccess:
+    type: string
+  taskPermissions:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        code:
+          type: string
+          nullable: true
+        name:
+          type: string
+        access:
+          type: string
+  globalTaskSetAccess:
+    type: string
+  taskSetPermissions:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        code:
+          type: string
+          nullable: true
+        name:
+          type: string
+        access:
           type: string

@@ -1,0 +1,6 @@
+{
+  "bootScript": {
+    "fileName": "debian standard",
+    "content": "<esc><wait>install <wait> preseed/url=<%=preseedUrl%> <wait>debian-installer=en_US.UTF-8 <wait>auto <wait>locale=en_US.UTF-8 <wait>kbd-chooser/method=us <wait>keyboard-configuration/xkb-keymap=us <wait>netcfg/get_hostname=<%=container.hostname%> <wait>netcfg/get_domain=morpheusdata.com <wait>fb=false <wait>debconf/frontend=noninteractive <wait>console-setup/ask_detect=false <wait>console-keymaps-at/keymap=us <wait>grub-installer/bootdev=/dev/sda <wait><enter><wait>"
+  }
+}

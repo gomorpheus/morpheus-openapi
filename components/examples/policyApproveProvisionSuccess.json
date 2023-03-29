@@ -1,0 +1,29 @@
+{
+    "policy": {
+        "id": 99,
+        "name": "2. Approve Provision",
+        "description": null,
+        "policyType": {
+            "id": 37,
+            "code": "provisionApproval",
+            "name": "Approve Provision"
+        },
+        "zone": null,
+        "site": null,
+        "user": null,
+        "role": null,
+        "refType": null,
+        "refId": null,
+        "eachUser": false,
+        "config": {
+            "accountIntegrationId": "-100"
+        },
+        "enabled": false,
+        "owner": {
+            "id": 1,
+            "name": "Home"
+        },
+        "accounts": []
+    },
+    "success": true
+}
