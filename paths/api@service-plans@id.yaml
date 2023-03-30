@@ -148,6 +148,18 @@ put:
                         maxCores: 
                           type: string
                           description: Custom max cores
+                        minSockets: 
+                          type: string
+                          description: Custom min sockets
+                        maxSockets:
+                          type: string
+                          description: Custom max sockets
+                        minCoresPerSocket:
+                          type: string
+                          description: Custom min cores allowed per socket
+                        maxCoresPerSocket:
+                          type: string
+                          description: Custom max cores allowed per socket
   responses:
     '200':
       description: Successful Request

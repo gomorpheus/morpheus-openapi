@@ -137,6 +137,18 @@ properties:
           maxCores: 
             type: string
             nullable: true
+          minSockets: 
+            type: string
+            nullable: true
+          maxSockets:
+            type: string
+            nullable: true
+          minCoresPerSocket:
+            type: string
+            nullable: true
+          maxCoresPerSocket:
+            type: string
+            nullable: true
   zones: 
     type: array
     items: 
