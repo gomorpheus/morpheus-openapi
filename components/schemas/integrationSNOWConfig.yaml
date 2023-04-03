@@ -54,3 +54,7 @@ properties:
             type: array
             items: 
               type: object
+          ignoreCertErrors:
+            type: boolean
+            description: Ignore SSL Errors.
+            default: false
