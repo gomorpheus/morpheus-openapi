@@ -1,0 +1,28 @@
+{
+  "zone": {
+    "visibility": "private",
+    "zoneType": {
+      "id": 16
+    },
+    "enabled": true,
+    "autoRecoverPowerState": false,
+    "scalePriority": 1,
+    "config": {
+      "cloudType": "global",
+      "importExisting": "off",
+      "subscriberId": "8d6b0be1b6a8",
+      "tenantId": "aa46b411cb55",
+      "clientId": "477ae92bd8ad",
+      "clientSecret": "******",
+      "resourceGroup": "/subscriptions/8d6b0be1b6a8/resourceGroups/TestRG",
+      "inventoryLevel": "full",
+      "rpcMode": "guestexec"
+    },
+    "securityMode": "off",
+    "credential": {
+      "type": "local"
+    },
+    "name": "testcloud",
+    "groupId": 1
+  }
+}

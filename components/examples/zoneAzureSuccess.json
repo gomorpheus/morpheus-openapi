@@ -1,124 +1,99 @@
 {
-    "zone": {
-        "id": 17,
-        "uuid": "e188b575-7250-49b0-a16f-7cecc7fa1510",
-        "externalId": null,
-        "name": "Work Azure",
-        "code": "azure",
-        "location": "Global",
-        "owner": {
-            "id": 1,
-            "name": "Home"
-        },
-        "accountId": 1,
-        "account": {
-            "id": 1,
-            "name": "Home"
-        },
-        "visibility": "private",
-        "enabled": true,
-        "status": "ok",
-        "statusMessage": null,
-        "statusDate": "2022-07-21T14:12:25Z",
-        "costStatus": null,
-        "costStatusMessage": null,
-        "costStatusDate": null,
-        "zoneType": {
-            "id": 52,
-            "code": "azure",
-            "name": "Azure (Public)"
-        },
-        "zoneTypeId": 52,
-        "guidanceMode": "manual",
-        "storageMode": "standard",
-        "agentMode": "cloudInit",
-        "userDataLinux": null,
-        "userDataWindows": null,
-        "consoleKeymap": null,
-        "containerMode": "docker",
-        "costingMode": "costing",
-        "serviceVersion": null,
-        "securityMode": "off",
-        "inventoryLevel": "off",
-        "timezone": "America/Louisville",
-        "apiProxy": null,
-        "provisioningProxy": null,
-        "networkDomain": null,
-        "domainName": "localdomain",
-        "regionCode": null,
-        "autoRecoverPowerState": false,
-        "scalePriority": 1,
-        "config": {
-            "subscriberId": "e64e9163-ccb3-4396-a0d8-aced5adb0c18",
-            "tenantId": "a8710d7f-0aa7-41a5-a8d5-1f5b19c3260d",
-            "clientId": "3460b20d-31e8-4a2c-bcf0-ccf9fc4d6a05",
-            "clientSecret": "************",
-            "resourceGroup": "",
-            "_importExisting": "",
-            "importExisting": "on",
-            "inventoryLevel": "full",
-            "applianceUrl": "",
-            "datacenterName": "",
-            "networkServer.id": "",
-            "networkServer": {
-                "id": ""
-            },
-            "securityMode": "off",
-            "certificateProvider": "internal",
-            "backupMode": "internal",
-            "replicationMode": "-1",
-            "dnsIntegrationId": "",
-            "configManagementId": "",
-            "configCmdbId": "",
-            "securityServer": "null",
-            "accountType": "",
-            "serviceRegistryId": "",
-            "cloudType": "global",
-            "rpcMode": "guestexec",
-            "diskEncryption": "",
-            "encryptionSet": "",
-            "cspTenantId": "",
-            "cspClientId": "",
-            "cspClientSecret": null,
-            "cspCustomer": null,
-            "configCmdbDiscovery": false,
-            "azureCostingMode": "standard",
-            "clientSecretHash": "fd3e1facabbe297c07022612946dd61ccddd23371fc672cd63f414a550b1f744",
-            "cspClientSecretHash": null
-        },
-        "credential": {
-            "type": "local"
-        },
-        "imagePath": null,
-        "darkImagePath": null,
-        "dateCreated": "2019-02-09T00:35:11Z",
-        "lastUpdated": "2022-07-21T14:12:25Z",
-        "groups": [
-            {
-                "id": 7,
-                "name": "All Clouds",
-                "accountId": 1
-            },
-            {
-                "id": 6,
-                "name": "Work",
-                "accountId": 1
-            }
-        ],
-        "securityServer": null,
-        "networkServer": null,
-        "stats": {
-            "serverCounts": {
-                "all": 0,
-                "host": 0,
-                "hypervisor": 0,
-                "containerHost": 0,
-                "vm": 0,
-                "baremetal": 0,
-                "unmanaged": 0
-            }
-        },
-        "serverCount": 0
+  "success": true,
+  "zone": {
+    "id": 33,
+    "uuid": "938f627d-80ac-461a-842f-6fd72e8af93b",
+    "externalId": null,
+    "name": "testcloud",
+    "code": "azure",
+    "location": null,
+    "owner": {
+      "id": 1,
+      "name": "mastertenant"
     },
-    "success": true
+    "accountId": 1,
+    "account": {
+      "id": 1,
+      "name": "mastertenant"
+    },
+    "visibility": "private",
+    "enabled": true,
+    "status": "initializing",
+    "statusMessage": null,
+    "statusDate": null,
+    "lastSync": null,
+    "nextRunDate": null,
+    "lastSyncDuration": null,
+    "costStatus": "ok",
+    "costStatusMessage": null,
+    "costStatusDate": null,
+    "costLastSyncDuration": null,
+    "costLastSync": null,
+    "zoneType": {
+      "id": 16,
+      "code": "azure",
+      "name": "Azure (Public)"
+    },
+    "zoneTypeId": 16,
+    "guidanceMode": null,
+    "storageMode": "standard",
+    "agentMode": "cloudInit",
+    "userDataLinux": null,
+    "userDataWindows": null,
+    "consoleKeymap": null,
+    "containerMode": "docker",
+    "costingMode": null,
+    "serviceVersion": null,
+    "securityMode": "off",
+    "inventoryLevel": "off",
+    "timezone": null,
+    "apiProxy": null,
+    "provisioningProxy": null,
+    "networkDomain": null,
+    "domainName": "localdomain",
+    "regionCode": null,
+    "autoRecoverPowerState": false,
+    "scalePriority": 1,
+    "config": {
+      "resourceGroup": "/subscriptions/8d6b0be1b6a8/resourceGroups/TestRG",
+      "clientId": "477ae92bd8ad",
+      "configCmdbDiscovery": false,
+      "rpcMode": "guestexec",
+      "cloudType": "global",
+      "tenantId": "aa46b411cb55",
+      "clientSecretHash": "42c9d98dee6da86deed579db8",
+      "subscriberId": "8d6b0be1b6a8",
+      "clientSecret": "************",
+      "inventoryLevel": "full",
+      "importExisting": "off"
+    },
+    "credential": {
+      "type": "local"
+    },
+    "imagePath": null,
+    "darkImagePath": null,
+    "dateCreated": "2023-04-03T19:26:27Z",
+    "lastUpdated": "2023-04-03T19:26:28Z",
+    "groups": [
+      {
+        "id": 1,
+        "name": "admin",
+        "accountId": 1
+      }
+    ],
+    "securityServer": null,
+    "networkServer": null,
+    "stats": {
+      "serverCounts": {
+        "all": 0,
+        "host": 0,
+        "hypervisor": 0,
+        "containerHost": 0,
+        "vm": 0,
+        "baremetal": 0,
+        "unmanaged": 0
+      }
+    },
+    "serverCount": 0
+  }
 }
