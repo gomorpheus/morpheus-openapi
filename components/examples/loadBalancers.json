@@ -33,7 +33,13 @@
         "systemVersion": "2.5.1.0.0.15314292"
       },
       "dateCreated": "2021-10-19T17:32:05Z",
-      "lastUpdated": "2021-12-03T18:52:47Z"
+      "lastUpdated": "2021-12-03T18:52:47Z",
+      "tenants": [
+        {
+          "id": 1,
+          "name": "root"
+        }
+      ]
     },
     {
       "id": 115,
@@ -69,7 +75,21 @@
         "systemVersion": "2.5.1.0.0.15314292"
       },
       "dateCreated": "2021-11-18T16:53:16Z",
-      "lastUpdated": "2021-12-03T18:52:43Z"
+      "lastUpdated": "2021-12-03T18:52:43Z",
+      "tenants": [
+        {
+          "id": 1,
+          "name": "root"
+        },
+        {
+          "id": 2,
+          "name": "acme"
+        },
+        {
+          "id": 3,
+          "name": "icorp"
+        }
+      ]
     }
   ],
   "meta": {
