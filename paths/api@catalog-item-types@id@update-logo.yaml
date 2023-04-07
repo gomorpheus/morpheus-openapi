@@ -10,15 +10,15 @@ put:
     content: 
       multipart/form-data:
         schema: 
-          oneOf:
-            - type: object
+          type: object
+          properties:
+            catalogItemType:
+              type: object
               properties: 
                 logo:
                   type: string
                   description: Logo File png,jpg,svg
                   format: binary
-            - type: object
-              properties: 
                 darkLogo:
                   type: string
                   description: Dark Logo File png,jpg,svg
