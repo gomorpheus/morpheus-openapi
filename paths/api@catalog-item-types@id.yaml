@@ -51,17 +51,14 @@ put:
         schema: 
           type: object
           properties:
-            catalogItemType:
-              type: object
-              properties: 
-                logo:
-                  type: string
-                  description: Logo File png,jpg,svg
-                  format: binary
-                darkLogo:
-                  type: string
-                  description: Dark Logo File png,jpg,svg
-                  format: binary
+            catalogItemType.logo:
+              type: string
+              description: Logo File png,jpg,svg
+              format: binary
+            catalogItemType.darkLogo:
+              type: string
+              description: Dark Logo File png,jpg,svg
+              format: binary
   responses:
     '200':
       description: Successful Request
