@@ -37,7 +37,7 @@ get:
 post: 
   summary: Create a Load Balancer
   description: |
-    Available for NSX-T load balancers only
+    Available for NSX load balancers only
 
     Use this command to create a load balancer.
   operationId: createLoadBalancer

@@ -16,8 +16,8 @@
     "type": {
       "id": 5,
       "code": "nsx-t-tier0-gateway",
-      "name": "NSX-T Tier-0 Gateway",
-      "description": "NSX-T Tier-0 Gateway",
+      "name": "NSX Tier-0 Gateway",
+      "description": "NSX Tier-0 Gateway",
       "enabled": true,
       "creatable": true,
       "selectable": true,
@@ -207,16 +207,16 @@
     },
     "networkServer": {
       "id": 13,
-      "name": "Labs NSX-T",
+      "name": "Labs NSX",
       "integration": {
         "id": 14,
-        "name": "Labs NSX-T",
+        "name": "Labs NSX",
         "enabled": true,
         "type": "nsx-t",
         "integrationType": {
           "id": 28,
           "code": "nsx-t",
-          "name": "NSX-T"
+          "name": "NSX"
         },
         "url": "https://10.32.23.7",
         "port": "22",
@@ -237,7 +237,7 @@
     "zone": {
       "id": 20,
       "code": "nsxt",
-      "name": "QA VMware NSX-T"
+      "name": "QA VMware NSX"
     },
     "instance": null,
     "externalNetwork": null,
