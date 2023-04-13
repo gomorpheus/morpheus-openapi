@@ -17,6 +17,42 @@ properties:
       code:
         type: string
         description: The policy type code. See `Retrieves all Policy Types` endpoint for listing.
+        enum:
+          - deleteApproval
+          - provisionApproval
+          - reconfigureApproval
+          - workflowApproval
+          - createBackup
+          - backupStorage
+          - maxPrice
+          - serverNaming
+          - cypher
+          - delayedRemoval
+          - lifecycle
+          - storageShareQuota
+          - hostNaming
+          - naming
+          - maxContainers
+          - maxCores
+          - maxHosts
+          - maxPools
+          - maxMemory
+          - maxPoolMembers
+          - maxSnapshots
+          - maxStorage
+          - maxVirtualServers
+          - maxVms
+          - motd
+          - maxNetworks
+          - storageBucketQuota
+          - powerSchedule
+          - maxRouters
+          - shutdown
+          - storageServerQuota
+          - tags
+          - createUser
+          - createUserGroup
+          - workflow
   config:
     description: A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
     oneOf:
