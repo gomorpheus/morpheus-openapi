@@ -17,7 +17,9 @@ properties:
     description: A map of config values. The expected values vary by policyType.
     oneOf:
       - type: object
+        title: Approve Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Approve Delete
           - Approve Provisiong
           - Approve Reconfigure
@@ -25,7 +27,9 @@ properties:
           accountIntegrationId: 
             type: string
       - type: object
+        title: Backup Creation Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Backup Creation
         properties:
           createBackupType:
@@ -33,7 +37,9 @@ properties:
           createBackup:
             type: boolean
       - type: object
+        title: Backup Targets Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Backup Targets
         properties:
           backupStorageIds:
@@ -42,7 +48,9 @@ properties:
               type: integer
               format: int64
       - type: object
+        title: Budget Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Budget
         properties:
           maxPrice:
@@ -52,7 +60,9 @@ properties:
           maxPriceUnit:
             type: string
       - type: object
+        title: Cluster Resource Name Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Cluster Resource Name
         properties:
           serverNamingType:
@@ -62,7 +72,9 @@ properties:
           serverNamingConflict:
             type: boolean
       - type: object
+        title: Cypher Access Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Cypher Access
         properties:
           keyPattern:
@@ -78,13 +90,17 @@ properties:
           list:
             type: boolean
       - type: object
+        title: Delayed Delete Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Delayed Delete
         properties:
           removalAge:
             type: string
       - type: object
+        title: Expiration Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Expiration
         properties:
           lifecycleType:
@@ -106,13 +122,17 @@ properties:
           lifecycleHideFixed:
             type: boolean
       - type: object
+        title: File Share Storage Quota Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - File Share Storage Quota
         properties:
           maxStorage:
             type: string
       - type: object
+        title: Hostname Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Hostname
         properties:
           hostNamingType:
@@ -120,7 +140,9 @@ properties:
           hostNamingPattern:
             type: string 
       - type: object
+        title: Instance Name Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Instance Name
         properties:
           namingType:
@@ -130,13 +152,17 @@ properties:
           namingConflict:
             type: boolean
       - type: object
+        title: Max Containers Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Containers
         properties:
           maxContainers:
             type: string
       - type: object
+        title: Max Cores Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Cores
         properties:
           maxCores:
@@ -144,19 +170,25 @@ properties:
           excludeContainers:
             type: boolean 
       - type: object
+        title: Max Hosts Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Hosts
         properties:
           maxHosts:
             type: string 
       - type: object
+        title: Max Load Balancer Pools Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Load Balancer Pools
         properties:
           maxPools:
             type: string
       - type: object
+        title: Max Memory Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Memory
         properties:
           maxMemory:
@@ -164,13 +196,17 @@ properties:
           excludeContainers:
             type: boolean 
       - type: object
+        title: Max Pool Members Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Pool Members
         properties:
           maxPoolMembers:
             type: string
       - type: object
+        title: Max Storage and Object Storage Quota Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Storage
           - Object Storage Quota
         properties:
@@ -179,19 +215,25 @@ properties:
           excludeContainers:
             type: boolean 
       - type: object
+        title: Max Virtual Servers Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max Virtual Servers
         properties:
           maxVirtualServers:
             type: string
       - type: object
+        title: Max VMs Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Max VMs
         properties:
           maxVms:
             type: string
       - type: object
+        title: Message of the Day Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Message of the Day
         properties:
           motd.title:
@@ -219,13 +261,17 @@ properties:
             type: string
             format: date-time
       - type: object
+        title: Network Quota Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Network Quota
         properties:
           maxNetworks:
             type: string
       - type: object
+        title: Power Schedule Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Power Schedule
         properties:
           powerScheduleType:
@@ -235,13 +281,17 @@ properties:
           powerScheduleHideFixed:
             type: boolean
       - type: object
+        title: Router Quota Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Router Quota
         properties:
           maxRouters:
             type: string
       - type: object
+        title: Shutdown Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Shutdown
         properties:
           shutdownType:
@@ -263,7 +313,9 @@ properties:
           shutdownHideFixed:
             type: boolean
       - type: object
+        title: Storage Server Storage Quota Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Storage Server Storage Quota
         properties:
           storageServerId:
@@ -271,7 +323,9 @@ properties:
           maxStorage:
             type: string
       - type: object
+        title: Tags Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Tags
         properties:
           strict:
@@ -283,7 +337,9 @@ properties:
           value:
             type: string
       - type: object
+        title: User Creation Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - User Creation
         properties:
           createUserType:
@@ -291,13 +347,17 @@ properties:
           createUser:
             type: boolean
       - type: object
+        title: User Group Creation Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - User Group Creation
         properties:
           userGroup:
             type: string
       - type: object
+        title: Workflow Policy Type Configuration
         description: |
+          Configuration settings for the following policy types:
           - Workflow
         properties:
           workflowId:
