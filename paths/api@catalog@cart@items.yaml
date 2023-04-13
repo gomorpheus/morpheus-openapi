@@ -10,10 +10,7 @@ put:
     content: 
       application/json: 
         schema: 
-          type: object
-          properties:
-            order:
-              $ref: ../components/schemas/catalogCartItemCreate.yaml
+          $ref: ../components/schemas/catalogCartItemCreate.yaml
         examples:
           Catalog Cart Item Request:
             value:
