@@ -104,6 +104,8 @@ properties:
   dhcpIp: 
     type: string
     nullable: true
+  dhcpServerIPv6: 
+    type: boolean
   gateway: 
     type: string
     description: Network Gateway 

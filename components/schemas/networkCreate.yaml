@@ -106,6 +106,9 @@ properties:
   dhcpServer: 
     type: boolean
     description: DHCP Server enabled network
+  dhcpServerIPv6: 
+    type: boolean
+    description: IPv6 DHCP Server enabled network
   networkDomain: 
     type: object
     properties: 
