@@ -10,7 +10,11 @@ get:
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/sort.yaml
     - $ref: ../components/parameters/direction.yaml
-    - $ref: ../components/parameters/phrase.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on username or email
+      schema:
+        type: string
     - $ref: ../components/parameters/username.yaml
     - $ref: ../components/parameters/firstName.yaml
     - $ref: ../components/parameters/lastName.yaml
