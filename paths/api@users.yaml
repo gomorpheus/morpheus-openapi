@@ -16,8 +16,6 @@ get:
       schema:
         type: string
     - $ref: ../components/parameters/username.yaml
-    - $ref: ../components/parameters/firstName.yaml
-    - $ref: ../components/parameters/lastName.yaml
     - $ref: ../components/parameters/email.yaml
     - $ref: ../components/parameters/roleId.yaml
     - $ref: ../components/parameters/lastUpdated.yaml
