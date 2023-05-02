@@ -45,7 +45,6 @@ post:
   operationId: createLoadBalancerPoolNode
   tags:
     - Load Balancers
-    - Load Balancer Pools
   parameters:
     - $ref: ../components/parameters/loadBalancerPoolId-path.yaml
   requestBody:
