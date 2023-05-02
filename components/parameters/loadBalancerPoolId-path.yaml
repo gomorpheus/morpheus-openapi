@@ -1,0 +1,7 @@
+name: loadBalancerPoolId
+in: path
+description: Load Balancer Pool ID
+required: true
+schema:
+  type: number
+example: 4

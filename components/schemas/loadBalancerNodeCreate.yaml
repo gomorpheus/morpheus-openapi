@@ -1,0 +1,18 @@
+name:
+  type: string
+  description: Name
+description:
+  type: string
+  description: Description
+ipAddress:
+  type: string
+  description: IP Address
+port:
+  type: integer
+  description: Port number
+weight:
+  type: Integer
+  description: Weight applied balance algoritm
+config:
+  type: object
+  description: Configuration object with parameters that vary by type.
