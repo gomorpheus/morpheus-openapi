@@ -93,6 +93,7 @@ createdBy:
       format: int64
     username:
       type: string
+  nullable: true
 dateCreated:
   type: string
   format: date-time
