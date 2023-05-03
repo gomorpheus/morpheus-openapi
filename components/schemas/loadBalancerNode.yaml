@@ -85,6 +85,11 @@ externalRefId:
 externalRefName:
   type: string
   nullable: true
+partition:
+  type: string
+  nullable: true
+config:
+  type: object
 createdBy:
   type: object
   properties:
