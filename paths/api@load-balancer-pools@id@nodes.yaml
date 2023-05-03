@@ -1,0 +1,85 @@
+get:
+  summary: Get All Load Balancer Pool Nodes For Load Balancer Pool
+  description: This endpoint retrieves all load balancer pool nodes associated with a specified load balancer pool.
+  operationId: listLoadBalancerPoolNodes
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerPoolId-path.yaml
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  loadBalancerNodes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        $ref: ../components/schemas/loadBalancerNode.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Load Balancer Nodes Response:
+              value:
+                $ref: ../components/examples/loadBalancerNodes.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+post:
+  summary: Create a Load Balancer Pool Node
+  description: |
+    Use this command to create a load balancer pool node.
+
+    This endpoint allows creating a Load Balancer Pool Node. Configuration options vary by Load Balancer Type.
+  operationId: createLoadBalancerPoolNode
+  tags:
+    - Load Balancers
+  parameters:
+    - $ref: ../components/parameters/loadBalancerPoolId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            loadBalancerNode:
+              type: object
+              properties:
+                $ref: ../components/schemas/loadBalancerNodeCreate.yaml
+        examples:
+          Load Balancer Node Request:
+            value:
+              $ref: ../components/examples/loadBalancerNodeCreate.json
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  loadBalancerNode:
+                    type: object
+                    properties:
+                      $ref: ../components/schemas/loadBalancerNode.yaml
+              - $ref: ../components/schemas/successMessage.yaml
+          examples:
+            Load Balancers Response:
+              value:
+                $ref: ../components/examples/loadBalancerNode.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -643,6 +643,10 @@ paths:
     $ref: paths/api@load-balancers@id@virtual-servers.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
+  /api/load-balancer-pools/{loadBalancerPoolId}/nodes:
+    $ref: paths/api@load-balancer-pools@id@nodes.yaml
+  /api/load-balancer-pools/{loadBalancerPoolId}/nodes/{id}:
+    $ref: paths/api@load-balancer-pools@id@nodes@id.yaml
 
   /api/log-settings:
     $ref: paths/api@log-settings.yaml
