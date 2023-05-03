@@ -148,6 +148,7 @@ properties:
   cidrIPv6: 
     type: string
     description: IPv6 Network CIDR
+    nullable: true
   tftpServer: 
     type: string
     nullable: true

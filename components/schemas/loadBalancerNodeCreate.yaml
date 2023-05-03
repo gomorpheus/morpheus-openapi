@@ -11,7 +11,7 @@ port:
   type: integer
   description: Port number
 weight:
-  type: Integer
+  type: integer
   description: Weight applied balance algoritm
 config:
   type: object
