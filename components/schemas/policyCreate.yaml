@@ -233,6 +233,7 @@ properties:
         properties:
           maxMemory:
             type: string
+            description: "Max Memory (GB)"
           excludeContainers:
             type: boolean 
       - type: object
