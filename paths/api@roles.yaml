@@ -23,7 +23,6 @@ get:
         enum:
           - user
           - account
-    - $ref: ../components/parameters/includeDefaultAccess.yaml
   responses:
     '200':
       description: Successful Request

@@ -6,6 +6,8 @@ get:
   operationId: getRole
   tags:
     - Roles
+  parameters:
+    - $ref: ../components/parameters/includeDefaultAccess.yaml
   responses:
     '200':
       description: Role Object
