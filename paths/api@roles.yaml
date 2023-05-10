@@ -23,6 +23,7 @@ get:
         enum:
           - user
           - account
+    - $ref: ../components/parameters/includeDefaultAccess.yaml
   responses:
     '200':
       description: Successful Request
@@ -51,6 +52,8 @@ post:
   operationId: addRoles
   tags:
     - Roles
+  parameters:
+    - $ref: ../components/parameters/includeDefaultAccess.yaml
   requestBody:
     content:
       application/json:
@@ -123,13 +126,13 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
                           $ref: ../components/schemas/rolePermissionAccessLevels.yaml
                 globalSiteAccess: 
                   type: string
                   description: Set the default access level for for groups (sites). Only applies to user roles.
                   enum:
+                    - default
                     - full
                     - read
                     - none
@@ -148,8 +151,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
+                          - default
                           - full
                           - read
                           - none
@@ -157,6 +160,7 @@ post:
                   type: string
                   description: Set the default access level for for clouds (zones). Only applies to base account (tenant) roles.
                   enum:
+                    - default
                     - full
                     - read
                     - none
@@ -175,8 +179,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
+                          - default
                           - full
                           - read
                           - none
@@ -201,10 +205,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalAppTemplateAccess: 
                   type: string
                   description: Set the default access level for blueprints
@@ -226,10 +228,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalCatalogItemTypeAccess: 
                   type: string
                   description: Set the default access level for catalog item types
@@ -251,10 +251,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalPersonaAccess:
                   type: string
                   description: Set the default access level for personas
@@ -280,10 +278,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalVdiPoolAccess: 
                   type: string
                   description: Set the default access level for VDI pools
@@ -305,10 +301,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalReportTypeAccess: 
                   type: string
                   description: Set the default access level for report types
@@ -330,10 +324,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalTaskAccess:
                   type: string
                   description: Set the default access level for tasks
@@ -355,10 +347,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
                 globalTaskSetAccess:
                   type: string
                   description: Set the default access level for workflows (taskSets)
@@ -380,10 +370,8 @@ post:
                       access:
                         type: string
                         description: The new access level.
-                        nullable: true
                         enum:
-                          - full
-                          - none
+                          $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
   responses:
     '200':
       description: Role Object
