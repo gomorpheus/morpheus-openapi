@@ -151,6 +151,7 @@ post:
                         nullable: true
                         enum:
                           - full
+                          - read
                           - none
                 globalZoneAccess: 
                   type: string
@@ -181,12 +182,13 @@ post:
                           - none
                 globalInstanceTypeAccess: 
                   type: string
-                  description: Set the default access level for for groups
+                  description: Set the default access level for for instance types
                   enum:
                     - full
                     - none
                 instanceTypes: 
                   type: array
+                  description: Set the access level for the specified instance types
                   items: 
                     type: object
                     required:
@@ -211,6 +213,7 @@ post:
                     - none
                 appTemplates: 
                   type: array
+                  description: Set the access level for the specified blueprints (appTemplates)
                   items: 
                     type: object
                     required:
@@ -235,6 +238,7 @@ post:
                     - none
                 catalogItemTypes: 
                   type: array
+                  description: Set the access level for the specified catalog item types
                   items: 
                     type: object
                     required:
@@ -259,6 +263,7 @@ post:
                     - none
                 personas: 
                   type: array
+                  description: Set the access level for the specified personas
                   items: 
                     type: object
                     required:
@@ -287,6 +292,7 @@ post:
                     - none
                 vdiPools: 
                   type: array
+                  description: Set the access level for the specified VDI pools
                   items: 
                     type: object
                     required:
@@ -311,6 +317,7 @@ post:
                     - none
                 reportTypes: 
                   type: array
+                  description: Set the access level for the specified report types
                   items: 
                     type: object
                     required:
@@ -335,6 +342,7 @@ post:
                     - none
                 tasks:
                   type: array
+                  description: Set the access level for the specified tasks
                   items:
                     type: object
                     required:
@@ -359,6 +367,7 @@ post:
                     - none
                 taskSets:
                   type: array
+                  description: Set the access level for the specified workflows (taskSets)
                   items:
                     type: object
                     required:
