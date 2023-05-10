@@ -100,6 +100,281 @@ post:
                     Multitenant Locked, prevents sub-tenant users from modifying
                     their copy of multienant roles. *Only available to master
                     tenant*
+                defaultPersona:
+                  type: string
+                  enum:
+                    - standard
+                    - serviceCatalog
+                    - vdi
+                permissions: 
+                  type: array
+                  description: Set the access level for the specified permissions.
+                  items: 
+                    type: object
+                    required:
+                      - code
+                      - access
+                    properties:
+                      code:
+                        type: string
+                        description: "`code` of the feature permission"
+                        enum:
+                          $ref: ../components/schemas/rolePermissionCodes.yaml
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          $ref: ../components/schemas/rolePermissionAccessLevels.yaml
+                globalSiteAccess: 
+                  type: string
+                  description: Set the default access level for for groups (sites). Only applies to user roles.
+                  enum:
+                    - full
+                    - read
+                    - none
+                sites: 
+                  type: array
+                  description: Set the access level for the specified groups (sites). Only applies to user roles.
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the group (site)"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalZoneAccess: 
+                  type: string
+                  description: Set the default access level for for clouds (zones). Only applies to base account (tenant) roles.
+                  enum:
+                    - full
+                    - read
+                    - none
+                zones: 
+                  type: array
+                  description: Set the access level for the specified clouds (zones). Only applies to base account (tenant) roles.
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the cloud (zone)"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - read
+                          - none
+                globalInstanceTypeAccess: 
+                  type: string
+                  description: Set the default access level for for groups
+                  enum:
+                    - full
+                    - none
+                instanceTypes: 
+                  type: array
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the instance type"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalAppTemplateAccess: 
+                  type: string
+                  description: Set the default access level for blueprints
+                  enum:
+                    - full
+                    - none
+                appTemplates: 
+                  type: array
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the blueprint (appTemplate)"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalCatalogItemTypeAccess: 
+                  type: string
+                  description: Set the default access level for catalog item types
+                  enum:
+                    - full
+                    - none
+                catalogItemTypes: 
+                  type: array
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the catalog item type"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalPersonaAccess:
+                  type: string
+                  description: Set the default access level for personas
+                  enum:
+                    - full
+                    - none
+                personas: 
+                  type: array
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      code:
+                        type: string
+                        description: "`code` of the persona"
+                        enum:
+                          - standard
+                          - serviceCatalog
+                          - vdi
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalVdiPoolAccess: 
+                  type: string
+                  description: Set the default access level for VDI pools
+                  enum:
+                    - full
+                    - none
+                vdiPools: 
+                  type: array
+                  items: 
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the VDI pool"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalReportTypeAccess: 
+                  type: string
+                  description: Set the default access level for report types
+                  enum:
+                    - full
+                    - none
+                reportTypes: 
+                  type: array
+                  items: 
+                    type: object
+                    required:
+                      - code
+                      - access
+                    properties:
+                      code:
+                        type: string
+                        description: "`code` of the report type"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalTaskAccess:
+                  type: string
+                  description: Set the default access level for tasks
+                  enum:
+                    - full
+                    - none
+                tasks:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the task"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
+                globalTaskSetAccess:
+                  type: string
+                  description: Set the default access level for workflows (taskSets)
+                  enum:
+                    - full
+                    - none
+                taskSets:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - id
+                      - access
+                    properties:
+                      id:
+                        type: integer
+                        description: "`id` of the workflow (taskSet)"
+                      access:
+                        type: string
+                        description: The new access level.
+                        nullable: true
+                        enum:
+                          - full
+                          - none
   responses:
     '200':
       description: Role Object
