@@ -3,7 +3,7 @@ required:
   - taskSetId
   - access
 properties:
-  taskId:
+  taskSetId:
     type: integer
     description: "`id` of the workflow (taskSet)"
   access:
