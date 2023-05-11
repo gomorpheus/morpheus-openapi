@@ -231,7 +231,7 @@ properties:
         maxCores:
           type: string
         excludeContainers:
-          type: boolean
+          $ref: checkbox.yaml
     - type: object
       additionalProperties: false
       required: 
@@ -260,7 +260,7 @@ properties:
         maxMemory:
           type: string
         excludeContainers:
-          type: boolean
+          $ref: checkbox.yaml
     - type: object
       additionalProperties: false
       required: 
@@ -282,7 +282,7 @@ properties:
         maxStorage:
           type: string
         excludeContainers:
-          type: boolean
+          $ref: checkbox.yaml
     - type: object
       additionalProperties: false
       required: 
