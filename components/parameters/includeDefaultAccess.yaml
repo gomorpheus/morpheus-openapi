@@ -1,0 +1,8 @@
+name: includeDefaultAccess
+in: query
+description: >
+  Pass true to include all resource permissions in the response including those with access set to `default`.
+  Only resources with access specific levels are returned by default. eg. `full`, `read` or `none`
+schema:
+  type: boolean
+example: true
