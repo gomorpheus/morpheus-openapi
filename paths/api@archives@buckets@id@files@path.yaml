@@ -7,8 +7,20 @@ get:
   parameters:
     - $ref: ../components/parameters/bucketName-path.yaml
     - $ref: ../components/parameters/filepath-lower-path.yaml
-    - $ref: ../components/parameters/name.yaml
-    - $ref: ../components/parameters/phrase.yaml
+    - name: name
+      in: query
+      description: If specified will return an exact match on file name
+      schema:
+        type: string
+      example: test-config.yaml
+    - name: phrase
+      in: query
+      description: |
+        Search phrase for partial matches on file name, wildcard may be specified as %, eg. example-%
+        This also searches for files under sub directories too.
+      schema:
+        type: string
+      example: test-%.yaml
     - $ref: ../components/parameters/fullTree.yaml
   responses:
     '200':

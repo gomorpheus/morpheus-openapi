@@ -5,13 +5,15 @@
         "id": 11,
         "code": "admin-appliance",
         "name": "Admin: Appliance Settings",
-        "access": "full"
+        "access": "full",
+        "subCategory": "admin"
       },
       {
         "id": 13,
         "code": "admin-backupSettings",
         "name": "Admin: Backup Settings",
-        "access": "none"
+        "access": "none",
+        "subCategory": "admin"
       }
     ],
     "zones": [
