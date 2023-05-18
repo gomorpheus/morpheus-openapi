@@ -108,6 +108,7 @@ post:
                     - standard
                     - serviceCatalog
                     - vdi
+                  nullable: true
                 permissions: 
                   type: array
                   description: Set the access level for the specified permissions.
@@ -371,6 +372,10 @@ post:
                         description: The new access level.
                         enum:
                           $ref: ../components/schemas/rolePermissionAccessLevelsForResource.yaml
+                owner:
+                  type: integer
+                  format: int64
+                  description: Set the role owner (tenant) by ID. *Only available to master tenant*
   responses:
     '200':
       description: Role Object
