@@ -1,0 +1,14 @@
+{
+  "loadBalancerNode": {
+    "name": "stubby-toes-node",
+    "description": "",
+    "config": {
+      "adminState": "ENABLED",
+      "backupMember": false,
+      "maxConcurrentConnections": 10
+    },
+    "ipAddress": "172.16.1.1",
+    "port": 80,
+    "weight": 1
+  }
+}

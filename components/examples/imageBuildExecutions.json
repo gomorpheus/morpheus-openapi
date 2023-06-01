@@ -1,58 +1,148 @@
 {
   "imageBuildExecutions": [
-    {
-      "id": 82,
-      "imageBuild": {
-        "id": 20,
-        "name": "my-testbuild"
-      },
-      "buildNumber": 2,
-      "startDate": "2017-09-29T15:30:07Z",
-      "endDate": null,
-      "statusMessage": "Installing",
-      "statusPercent": 25.0,
-      "statusEta": null,
-      "status": "running",
-      "errorMessage": null,
-      "createdBy": {
-        "username": "admin"
-      },
-      "tempInstance": null,
-      "virtualImages": [
-
-      ]
-    },
-    {
-      "id": 81,
-      "imageBuild": {
-        "id": 20,
-        "name": "my-testbuild"
-      },
-      "buildNumber": 1,
-      "startDate": "2017-09-29T14:57:33Z",
-      "endDate": "2017-09-29T15:26:41Z",
-      "statusMessage": null,
-      "statusPercent": 100.0,
-      "statusEta": null,
-      "status": "success",
-      "errorMessage": null,
-      "createdBy": {
-        "username": "admin"
-      },
-      "tempInstance": null,
-      "virtualImages": [
-        {
-          "id": 1850,
-          "name": "my-testbuild-4-176-1506697891084"
-        }
-      ]
-    }
+      {
+          "id": 29,
+          "imageBuild": {
+              "id": 104,
+              "name": "API Test: Image Build"
+          },
+          "buildNumber": 1,
+          "startDate": "2022-12-20T20:32:55Z",
+          "endDate": "2022-12-20T20:39:25Z",
+          "statusMessage": null,
+          "statusPercent": 100.0,
+          "statusEta": null,
+          "status": "success",
+          "errorMessage": null,
+          "createdBy": {
+              "username": "apiuser"
+          },
+          "tempInstance": null,
+          "virtualImages": [
+              {
+                  "id": 1402753,
+                  "name": "API Test: Image Build-768378-1671568644560"
+              }
+          ]
+      }
   ],
-  "imageBuildExecutionCount": 2,
+  "imageBuildExecutionCount": 1,
+  "imageBuild": {
+      "id": 104,
+      "account": {
+          "id": 1,
+          "name": "Morpheus QA"
+      },
+      "type": {
+          "id": 1,
+          "code": "vmware",
+          "name": "VMware"
+      },
+      "site": {
+          "id": 56092,
+          "name": "QA VMware"
+      },
+      "zone": {
+          "id": 26324,
+          "name": "QA VMware"
+      },
+      "name": "API Test: Image Build",
+      "description": "API Test: A Good Build",
+      "bootScript": {
+          "id": 3,
+          "fileName": "centos-7"
+      },
+      "bootCommand": null,
+      "preseedScript": {
+          "id": 3,
+          "fileName": "centos-7-ks.cfg"
+      },
+      "scripts": [],
+      "sshUsername": "cloudinit",
+      "sshPassword": "************",
+      "storageProvider": null,
+      "buildOutputName": null,
+      "conversionFormats": null,
+      "isCloudInit": false,
+      "vmToolsInstalled": false,
+      "keepResults": 5,
+      "config": {
+          "instance": {
+              "cloud": "QA VMware",
+              "layout": {
+                  "code": "vmware-1.0-single",
+                  "id": 354
+              },
+              "site": {
+                  "id": 56092
+              },
+              "instanceType": {
+                  "code": "vmware"
+              },
+              "name": "API Test: Image Build",
+              "type": "vmware",
+              "plan": {
+                  "id": 145
+              }
+          },
+          "networkInterfaces": [
+              {
+                  "network": {
+                      "id": "network-173431"
+                  },
+                  "networkInterfaceTypeId": 4
+              }
+          ],
+          "layoutSize": 1,
+          "volumes": [
+              {
+                  "size": 10,
+                  "name": "root",
+                  "rootVolume": true,
+                  "storageType": 1,
+                  "id": -1,
+                  "datastoreId": "autoCluster"
+              }
+          ],
+          "zoneId": 26324,
+          "config": {
+              "template": 889977,
+              "resourcePoolId": 139625,
+              "nestedVirtualization": "off",
+              "vmwareFolderId": "group-v80"
+          }
+      },
+      "lastResult": {
+          "id": 29,
+          "imageBuild": {
+              "id": 104,
+              "name": "API Test: Image Build"
+          },
+          "buildNumber": 1,
+          "startDate": "2022-12-20T20:32:55Z",
+          "endDate": "2022-12-20T20:39:25Z",
+          "statusMessage": null,
+          "statusPercent": 100.0,
+          "statusEta": null,
+          "status": "success",
+          "errorMessage": null,
+          "createdBy": {
+              "username": "apiuser"
+          },
+          "tempInstance": null,
+          "virtualImages": [
+              {
+                  "id": 1402753,
+                  "name": "API Test: Image Build-768378-1671568644560"
+              }
+          ]
+      },
+      "executionCount": 1
+  },
   "meta": {
-    "offset": 0,
-    "max": 25,
-    "size": 2,
-    "total": 2
+      "offset": 0,
+      "max": 25,
+      "size": 1,
+      "total": 1
   }
 }

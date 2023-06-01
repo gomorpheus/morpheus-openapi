@@ -14,6 +14,7 @@ properties:
     type: string
   location: 
     type: string
+    nullable: true
   owner: 
     type: object
     properties: 
@@ -45,6 +46,7 @@ properties:
   statusDate: 
     type: string
     format: date-time
+    nullable: true
   costStatus: 
     type: string
     nullable: true
@@ -58,9 +60,11 @@ properties:
   costLastSyncDuration:
     type: integer
     format: int64
+    nullable: true
   costLastSync:
     type: string
     format: date-time
+    nullable: true
   zoneType: 
     type: object
     properties: 
@@ -76,6 +80,7 @@ properties:
     format: int64
   guidanceMode: 
     type: string
+    nullable: true
   storageMode: 
     type: string
   agentMode: 
@@ -93,6 +98,7 @@ properties:
     type: string
   costingMode: 
     type: string
+    nullable: true
   serviceVersion: 
     type: string
     nullable: true
@@ -166,12 +172,15 @@ properties:
   lastSync:
     type: string
     format: date-time
+    nullable: true
   lastSyncDuration:
     type: integer
     format: int64
+    nullable: true
   nextRunDate:
     type: string
     format: date-time
+    nullable: true
   groups: 
     type: array
     items: 

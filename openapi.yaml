@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 6.0.0
+  version: 6.1.1
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -434,8 +434,6 @@ paths:
     $ref: paths/api@monitoring@incidents@id@reopen.yaml
   /api/monitoring/incidents/mute-all:
     $ref: paths/api@monitoring@incidents@mute-all.yaml
-  /api/monitoring-settings:
-    $ref: paths/api@monitoring-settings.yaml
   /api/instance-types:
     $ref: paths/api@instance-types.yaml
   /api/instance-types/{id}:
@@ -645,6 +643,10 @@ paths:
     $ref: paths/api@load-balancers@id@virtual-servers.yaml
   /api/load-balancers/{loadBalancerId}/virtual-servers/{id}:
     $ref: paths/api@load-balancers@id@virtual-servers@id.yaml
+  /api/load-balancer-pools/{loadBalancerPoolId}/nodes:
+    $ref: paths/api@load-balancer-pools@id@nodes.yaml
+  /api/load-balancer-pools/{loadBalancerPoolId}/nodes/{id}:
+    $ref: paths/api@load-balancer-pools@id@nodes@id.yaml
 
   /api/log-settings:
     $ref: paths/api@log-settings.yaml
@@ -656,6 +658,9 @@ paths:
   /api/logs:
     $ref: paths/api@logs.yaml
 
+  /api/monitoring-settings:
+    $ref: paths/api@monitoring-settings.yaml
+  
   /api/network-types:
     $ref: paths/api@network-types.yaml
   /api/network-types/{id}:
@@ -708,6 +713,10 @@ paths:
     $ref: paths/api@networks@pools.yaml
   /api/networks/pools/{id}:
     $ref: paths/api@networks@pools@id.yaml
+  /api/networks/pools/{id}/ips:
+    $ref: paths/api@networks@pools@id@ips.yaml
+  /api/networks/pools/{networkPoolId}/ips/{id}:
+    $ref: paths/api@networks@pools@id@ips@id.yaml
   /api/networks/floating-ips:
     $ref: paths/api@networks@floating-ips.yaml
   /api/networks/floating-ips/{id}:
@@ -756,6 +765,8 @@ paths:
     $ref: paths/api@networks@pool-server-types.yaml
   /api/networks/pool-server-types/{id}:
     $ref: paths/api@networks@pool-server-types@id.yaml
+  /api/networks/servers/{id}/refresh:
+    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/options/codeRepositories:
     $ref: paths/api@options@codeRepositories.yaml
   /api/options/{optionSource}:

@@ -1,102 +1,79 @@
 {
+    "success": true,
     "zone": {
-        "id": 67,
-        "uuid": "3c54a033-c730-49c9-83df-9ba295f4abcb",
-        "externalId": "602411630141",
-        "name": "Work AWS",
-        "code": "waws",
-        "location": "US East",
+        "id": 31,
+        "uuid": "529b97a4-fe35-4ef8-9552-6bc88ecf6692",
+        "externalId": null,
+        "name": "testzone",
+        "code": "amazon",
+        "location": null,
         "owner": {
             "id": 1,
-            "name": "Home"
+            "name": "mastertenant"
         },
         "accountId": 1,
         "account": {
             "id": 1,
-            "name": "Home"
+            "name": "mastertenant"
         },
         "visibility": "private",
         "enabled": true,
-        "status": "ok",
+        "status": "initializing",
         "statusMessage": null,
-        "statusDate": "2022-07-21T14:14:26Z",
-        "costStatus": null,
+        "statusDate": null,
+        "lastSync": null,
+        "nextRunDate": null,
+        "lastSyncDuration": null,
+        "costStatus": "ok",
         "costStatusMessage": null,
         "costStatusDate": null,
+        "costLastSyncDuration": null,
+        "costLastSync": null,
         "zoneType": {
-            "id": 31,
+            "id": 12,
             "code": "amazon",
             "name": "Amazon"
         },
-        "zoneTypeId": 31,
-        "guidanceMode": "manual",
+        "zoneTypeId": 12,
+        "guidanceMode": null,
         "storageMode": "standard",
         "agentMode": "cloudInit",
         "userDataLinux": null,
         "userDataWindows": null,
         "consoleKeymap": null,
         "containerMode": "docker",
-        "costingMode": "off",
+        "costingMode": null,
         "serviceVersion": null,
         "securityMode": "off",
-        "inventoryLevel": "full",
+        "inventoryLevel": "off",
         "timezone": null,
         "apiProxy": null,
         "provisioningProxy": null,
         "networkDomain": null,
         "domainName": "localdomain",
-        "regionCode": "ec2.us-east-1.amazonaws.com",
-        "autoRecoverPowerState": true,
+        "regionCode": null,
+        "autoRecoverPowerState": false,
         "scalePriority": 1,
         "config": {
-            "endpoint": "ec2.us-east-1.amazonaws.com",
-            "accessKey": "AKIAYYQUH7Y6TBUZTES4",
-            "secretKey": "************",
-            "_useHostCredentials": "",
-            "stsAssumeRole": "",
-            "isVpc": "true",
-            "vpc": "",
-            "imageStoreId": "",
-            "ebsEncryption": "off",
-            "costingReport": "example-costing",
-            "costingFolder": "",
-            "costingBucket": "example-morpheus",
-            "costingRegion": "us-east-1",
-            "costingAccessKey": "",
-            "costingSecretKey": null,
-            "applianceUrl": "",
-            "datacenterName": "",
-            "networkServer.id": "52",
-            "networkServer": {
-                "id": "52"
-            },
-            "securityServer": "null",
-            "certificateProvider": "internal",
-            "backupMode": "internal",
-            "replicationMode": "-1",
-            "dnsIntegrationId": "",
-            "serviceRegistryId": "",
-            "configManagementId": "",
+            "endpoint": "ec2.ca-central-1.amazonaws.com",
+            "isVpc": "on",
             "configCmdbDiscovery": false,
-            "secretKeyHash": "f4716cfe8d162c8c69f4a1d895f239e10b3e334338b2a4cf77d693f2fb7c9444",
-            "costingSecretKeyHash": null
+            "secretKey": "************",
+            "accessKey": "AKIA",
+            "secretKeyHash": "9c8323ee9073d65d86287f8aa1e322fc",
+            "importExisting": "off"
         },
         "credential": {
             "type": "local"
         },
         "imagePath": null,
         "darkImagePath": null,
-        "dateCreated": "2021-06-25T14:12:17Z",
-        "lastUpdated": "2022-07-21T14:14:26Z",
+        "dateCreated": "2023-04-03T18:07:22Z",
+        "lastUpdated": "2023-04-03T18:07:23Z",
         "groups": [
             {
-                "id": 7,
-                "name": "All Clouds",
-                "accountId": 1
-            },
-            {
-                "id": 6,
-                "name": "Work",
+                "id": 1,
+                "name": "admin",
                 "accountId": 1
             }
         ],
@@ -114,6 +91,5 @@
             }
         },
         "serverCount": 0
-    },
-    "success": true
+    }
 }

@@ -58,10 +58,6 @@ put:
             properties:
               imageBuild:
                 $ref: ../components/schemas/imageBuild.yaml
-              imageBuildExecutions:
-                type: array
-                items:
-                  $ref: ../components/schemas/imageBuildExecution.yaml
           examples:
             Image Build Response:
               value:

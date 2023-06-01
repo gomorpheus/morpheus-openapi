@@ -2,16 +2,18 @@ type: object
 properties:
   item:
     type: object
-    required: 
-      - config
-    description: Array of Item objects, each item in the order can be configured individually.
     properties:
       type:
         type: object
         properties:
           name:
             type: string
-            description: Order Name as a way to identify the order.
+            description: Catalog item name
+      quantity:
+        type: integer
+        format: int64
+        description: |
+          Quantity for this catalog item. Will be overridden to 1 if quantity not allowed by the item type.
       config:
         type: object
         description: |

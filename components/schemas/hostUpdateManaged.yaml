@@ -56,4 +56,11 @@ installAgent:
   type: boolean
   description: Install agent. Set to false to manually install agent instead.
   default: true
-
+instanceTypeId:
+  type: integer
+  format: int64
+  description: Instance Type ID for the new Instance  
+layout:
+  type: integer
+  format: int64
+  description: Layout ID for the new Instance  

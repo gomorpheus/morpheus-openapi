@@ -23,11 +23,17 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf: 
+              - type: object
+                properties:
+                  publicKey:
+                    type: string
+                    description: Public key to be put into `authorized_keys` on target VM
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/success.json 
+                $ref: ../components/examples/managedSuccess.json 
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

@@ -1,0 +1,102 @@
+id:
+  type: integer
+  format: int64
+name:
+  type: string
+visibility:
+  type: string
+description:
+  type: string
+  nullable: true
+ipAddress:
+  type: string
+port:
+  type: integer
+  format: int64
+portType:
+  type: string
+  nullable: true
+monitorPort:
+  type: string
+  nullable: true
+weight:
+  type: integer
+  format: int64
+  nullable: true
+nodeState:
+  type: string
+  nullable: true
+internalId:
+  type: string
+  nullable: true
+externalId:
+  type: string
+  nullable: true
+enabled:
+  type: boolean
+status:
+  type: string
+statusMessage:
+  type: string
+  nullable: true
+statusDate:
+  type: string
+  format: date-time
+  nullable: true
+server:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    name:
+      type: string
+  nullable: true
+instanceId:
+  type: integer
+  format: int64
+  nullable: true
+containerId:
+  type: integer
+  format: int64
+  nullable: true
+nodeSource:
+  type: string
+  nullable: true
+monitor:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    name:
+      type: string
+  nullable: true
+maxConnections:
+  type: integer
+  format: int64
+  nullable: true
+externalRefType:
+  type: string
+  nullable: true
+externalRefId:
+  type: string
+  nullable: true
+externalRefName:
+  type: string
+  nullable: true
+createdBy:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    username:
+      type: string
+  nullable: true
+dateCreated:
+  type: string
+  format: date-time
+lastUpdated:
+  type: string
+  format: date-time

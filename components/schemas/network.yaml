@@ -104,6 +104,8 @@ properties:
   dhcpIp: 
     type: string
     nullable: true
+  dhcpServerIPv6: 
+    type: boolean
   gateway: 
     type: string
     description: Network Gateway 
@@ -146,6 +148,7 @@ properties:
   cidrIPv6: 
     type: string
     description: IPv6 Network CIDR
+    nullable: true
   tftpServer: 
     type: string
     nullable: true

@@ -22,7 +22,7 @@ properties:
         type: integer
         format: int64
       networkPool: 
-        type: string
+        type: object
         nullable: true
       dhcp: 
         type: boolean
@@ -78,7 +78,7 @@ properties:
       primaryInterface: 
         type: boolean
       networkPoolIPv6: 
-        type: string
+        type: object
         nullable: true
       network: 
         type: object
@@ -283,7 +283,7 @@ properties:
               type: integer
               format: int64
             networkPool: 
-              type: string
+              type: object
               nullable: true
             dhcp: 
               type: boolean
@@ -339,7 +339,7 @@ properties:
             primaryInterface: 
               type: boolean
             networkPoolIPv6: 
-              type: string
+              type: object
               nullable: true
             network: 
               type: object

@@ -1,0 +1,28 @@
+{
+  "zone": {
+    "visibility": "private",
+    "zoneType": {
+      "id": 26
+    },
+    "enabled": true,
+    "autoRecoverPowerState": false,
+    "scalePriority": 1,
+    "config": {
+      "rpcMode": "guestexec",
+      "hideHostSelection": "on",
+      "enableStorageTypeSelection": "on",
+      "enableVnc": "on",
+      "importExisting": "off",
+      "apiUrl": "https://192.168.88.16/sdk",
+      "username": "administrator@vsphere.local",
+      "password": "****",
+      "datacenter": "dc1"
+    },
+    "securityMode": "off",
+    "credential": {
+      "type": "local"
+    },
+    "name": "testcloud",
+    "groupId": 1
+  }
+}

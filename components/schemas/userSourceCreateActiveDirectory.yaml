@@ -1,0 +1,31 @@
+type: object
+description: Active Directory Configuration
+properties:
+  url:
+    type: string
+    description: AD Server IP/FQDN
+    example: my.fqdn.com
+  domain:
+    type: string
+    description: Domain
+    example: fqdn.com
+  useSSL:
+    type: boolean
+    description: Use SSL
+    default: false
+  bindingUsername:
+    type: string
+    description: Binding Username
+    example: jsmith
+  bindingPassword:
+    type: string
+    description: Binding Password
+    example: "MyPassword"
+  requiredGroup:
+    type: string
+    description: Required Group
+    example: Administrators
+  searchMemberGroups:
+    type: boolean
+    description: Include Member Groups
+    default: false

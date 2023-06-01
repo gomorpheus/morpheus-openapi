@@ -1,0 +1,30 @@
+type: object
+description: Custom API Configuration
+properties:
+  endpoint:
+    type: string
+    description: API Endpoint
+    example: "https://fqdn.com"
+  apiStyle:
+    type: string
+    description: API Style
+    enum:
+      - Form URL Encoded [GET]
+      - Form URL Encoded [POST]
+      - JSON [POST]
+      - XML [POST]
+      - HTTP Basic [GET]
+  encryptionAlgo:
+    type: string
+    description: Encryption Algorithm
+    enum: 
+      - NONE
+      - AES
+      - DES
+      - DESede
+      - HmacSHA1
+      - HmacSHA256
+  encryptionKey:
+    type: string
+    description: Encryption Key
+    example: "MIIEIDCCAwigAwcNAQEF\r\nBQAwWzELMoZXVzIF"

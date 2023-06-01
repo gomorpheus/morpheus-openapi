@@ -1,0 +1,77 @@
+id:
+  type: integer
+  format: int64
+networkPoolId:
+  type: integer
+  format: int64
+ipType:
+  type: string
+ipAddress:
+  type: string
+gatewayAddress:
+  type: string
+  nullable: true
+subnetMask:
+  type: string
+  nullable: true
+dnsServer:
+  type: string
+  nullable: true
+interfaceName:
+  type: string
+  nullable: true
+description:
+  type: string
+  nullable: true
+active:
+  type: boolean
+staticIp:
+  type: boolean
+fqdn:
+  type: string
+domainName:
+  type: string
+  nullable: true
+hostname:
+  type: string
+internalId:
+  type: string
+  nullable: true
+externalId:
+  type: string
+  nullable: true
+ptrId:
+  type: string
+  nullable: true
+dateCreated:
+  type: string
+  format: date-time
+lastUpdated:
+  type: string
+  format: date-time
+startDate:
+  type: string
+  format: date-time
+endDate:
+  type: string
+  format: date-time
+refType:
+  type: string
+  nullable: true
+refId:
+  type: string
+  nullable: true
+subRefId:
+  type: string
+  nullable: true
+networkDomain:
+  type: string
+  nullable: true
+createdBy:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+    username:
+      type: string

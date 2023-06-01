@@ -56,6 +56,10 @@ properties:
             format: int64
             description: The id for the memory and storage option pre-configured within Morpheus.
             example: 75
+      instanceContext:
+        type: string
+        description: Environment
+        example: "dev"
   zoneId:
     type: integer
     format: int64

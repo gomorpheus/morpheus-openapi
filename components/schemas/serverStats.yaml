@@ -1,0 +1,22 @@
+type: object
+properties:
+  usedStorage: 
+    type: integer
+    format: int64
+  reservedStorage: 
+    type: integer
+    format: int64
+  maxStorage: 
+    type: integer
+    format: int64
+  usedMemory: 
+    type: integer
+    format: int64
+  reservedMemory: 
+    type: integer
+    format: int64
+  maxMemory: 
+    type: integer
+    format: int64
+  cpuUsage: 
+    type: number

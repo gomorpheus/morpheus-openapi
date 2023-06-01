@@ -1,0 +1,41 @@
+{
+  "loadBalancerNode": {
+    "id": 324,
+    "name": "stubby-toes-node",
+    "visibility": "public",
+    "description": "",
+    "ipAddress": "172.16.1.1",
+    "port": 80,
+    "portType": null,
+    "monitorPort": null,
+    "weight": 1,
+    "nodeState": "enabled",
+    "internalId": null,
+    "externalId": null,
+    "rawData": null,
+    "enabled": true,
+    "status": "offline",
+    "statusMessage": null,
+    "statusDate": null,
+    "server": null,
+    "instanceId": null,
+    "containerId": null,
+    "nodeSource": "sync",
+    "monitor": null,
+    "maxConnections": null,
+    "externalRefType": null,
+    "externalRefId": null,
+    "externalRefName": null,
+    "partition": null,
+    "createdBy": null,
+    "dateCreated": "2023-04-10T16:05:52Z",
+    "lastUpdated": "2023-04-29T15:42:10Z",
+    "config": {
+      "displayName": "stubby-toes-node",
+      "ipAddress": "172.16.1.1",
+      "port": "80",
+      "adminState": "ENABLED",
+      "backupMember": false
+    }
+  }
+}

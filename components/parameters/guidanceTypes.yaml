@@ -1,6 +1,6 @@
 name: type
 in: query
-description: Filter by Guidance Type
+description: Filter by Guidance Type.  See `Retrieves Guidance Types` for most up to date list of types.
 schema:
   type: string
   enum:
@@ -10,3 +10,4 @@ schema:
     - Host Balancing
     - Datastore Capacity
     - Reservation Recommendation
+    - Orphaned Resources

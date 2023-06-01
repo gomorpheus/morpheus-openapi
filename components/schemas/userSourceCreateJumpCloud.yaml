@@ -1,0 +1,19 @@
+type: object
+description: JumpCloud Configuration
+properties:
+  organizationId:
+    type: boolean
+    description: Organization ID
+    default: false
+  bindingUsername:
+    type: string
+    description: Binding Username
+    example: jsmith
+  bindingPassword:
+    type: string
+    description: Binding Password
+    example: "MyPassword"
+  requiredRole:
+    type: string
+    description: Required group name
+    example: dev

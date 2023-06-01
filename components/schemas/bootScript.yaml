@@ -20,6 +20,7 @@ properties:
     type: string
   createdBy: 
     type: object
+    nullable: true
     properties: 
       username: 
         type: string

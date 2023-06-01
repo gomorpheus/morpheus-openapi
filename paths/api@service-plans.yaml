@@ -148,10 +148,16 @@ post:
                       properties: 
                         minStorage: 
                           type: string
-                          description: Custom min storage in GB (unless `storageSizeType` set to mb)
+                          description: Custom min storage in GB
                         maxStorage: 
                           type: string
-                          description: Custom max storage in GB (unless `storageSizeType` set to mb)
+                          description: Custom max storage in GB
+                        minPerDiskSize:
+                          type: string
+                          description: Custom min per disk size in GB
+                        maxPerDiskSize:
+                          type: string
+                          description: Custom max per disk size in GB
                         minMemory: 
                           type: integer
                           format: int64
@@ -166,6 +172,18 @@ post:
                         maxCores: 
                           type: string
                           description: Custom max cores
+                        minSockets: 
+                          type: string
+                          description: Custom min sockets
+                        maxSockets:
+                          type: string
+                          description: Custom max sockets
+                        minCoresPerSocket:
+                          type: string
+                          description: Custom min cores allowed per socket
+                        maxCoresPerSocket:
+                          type: string
+                          description: Custom max cores allowed per socket
   responses:
     '200':
       description: Successful Request

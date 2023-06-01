@@ -119,6 +119,12 @@ properties:
           maxStorage: 
             type: string
             nullable: true
+          minPerDiskSize:
+            type: string
+            nullable: true
+          maxPerDiskSize:
+            type: string
+            nullable: true
           minMemory: 
             type: number
             nullable: true
@@ -129,6 +135,18 @@ properties:
             type: string
             nullable: true
           maxCores: 
+            type: string
+            nullable: true
+          minSockets: 
+            type: string
+            nullable: true
+          maxSockets:
+            type: string
+            nullable: true
+          minCoresPerSocket:
+            type: string
+            nullable: true
+          maxCoresPerSocket:
             type: string
             nullable: true
   zones: 

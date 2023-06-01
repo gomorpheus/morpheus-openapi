@@ -24,6 +24,8 @@ get:
                 imageBuildExecutionCount:
                   type: integer
                   format: int64
+                imageBuild:
+                  $ref: ../components/schemas/imageBuild.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Image Build Response:

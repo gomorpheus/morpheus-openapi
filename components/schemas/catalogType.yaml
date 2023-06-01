@@ -14,6 +14,9 @@ properties:
     type: string
   featured: 
     type: boolean
+  allowQuantity: 
+    description: Can users order more than one of this item at a time.
+    type: boolean
   imagePath: 
     type: string
   darkImagePath: 

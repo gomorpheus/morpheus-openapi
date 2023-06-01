@@ -1,7 +1,7 @@
 put:
   summary: Deactivates a Price Set
   description: |
-    Deactivates a price set.
+    Deactivates a price set. This does the same thing as the delete action in the UI, hiding it and making it unavailable to new resources.
   operationId: deactivatePriceSets
   tags:
     - Price Sets

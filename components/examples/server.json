@@ -1,216 +1,250 @@
 {
-  "server": {
-      "id": 270414,
-      "uuid": "b3f44e90-7165-4264-be0b-33f799b669ce",
-      "externalId": "vm-80894",
-      "internalId": "502d8b73-fec2-164a-636d-3deb31877f80",
-      "externalUniqueId": "422dd960-a5eb-bf80-4471-8cfa50100266",
-      "name": "67105test01",
-      "externalName": "67105test01",
-      "hostname": "morphrhel",
-      "parentServer": {
-          "id": 220340,
-          "name": "demo.morpheusdata.com"
-      },
-      "accountId": 3,
-      "account": {
-          "id": 3,
-          "name": "Morpheus"
-      },
-      "owner": null,
-      "zone": {
-          "id": 172,
-          "name": "VMware Demo Cluster H5"
-      },
-      "plan": {
-          "id": 1093,
-          "code": "internal-custom-vmware",
-          "name": "Custom VMWare"
-      },
-      "computeServerType": {
-          "id": 74,
-          "code": "vmwareUnmanaged",
-          "name": "Vmware VM",
-          "managed": false,
-          "externalDelete": true
-      },
-      "visibility": "private",
-      "description": null,
-      "zoneId": 172,
-      "siteId": 443,
-      "resourcePoolId": 4080,
-      "folderId": null,
-      "sshHost": "192.168.20.42",
-      "sshPort": 22,
-      "externalIp": "192.168.20.42",
-      "internalIp": "192.168.20.42",
-      "volumeId": null,
-      "platform": null,
-      "platformVersion": null,
-      "sshUsername": "root",
-      "sshPassword": null,
-      "sshPasswordHash": null,
-      "osDevice": "/dev/sda",
-      "osType": "other",
-      "dataDevice": "/dev/sdb",
-      "lvmEnabled": false,
-      "apiKey": "507ee0bb-527e-4495-b5be-86703bfe9d6c",
-      "softwareRaid": false,
-      "dateCreated": "2022-07-14T06:43:08Z",
-      "lastUpdated": "2022-09-01T15:02:22Z",
-      "stats": {
-          "ts": "2022-09-01T15:02:22Z",
-          "maxMemory": 17179869184,
-          "usedMemory": 170917888,
-          "maxStorage": 17179869184,
-          "usedStorage": 0,
-          "cpuUsage": 0.4785779400,
-          "freeMemory": 17008951296
-      },
-      "status": "provisioned",
-      "statusMessage": null,
-      "errorMessage": null,
-      "statusDate": null,
-      "statusPercent": null,
-      "statusEta": null,
-      "powerState": "on",
-      "agentInstalled": false,
-      "lastAgentUpdate": null,
-      "agentVersion": null,
-      "maxCores": 2,
-      "coresPerSocket": 1,
-      "maxMemory": 17179869184,
-      "maxStorage": 17179869184,
-      "maxCpu": null,
-      "hourlyCost": 0.1122221653,
-      "hourlyPrice": 0.1122221653,
-      "sourceImage": null,
-      "serverOs": {
-          "id": 53,
-          "code": "other.64",
-          "name": "other 64-bit",
-          "description": null,
-          "vendor": "other",
-          "category": "other",
-          "osFamily": null,
-          "osVersion": "all",
-          "bitCount": 64,
-          "platform": "other"
-      },
-      "volumes": [
-          {
-              "id": 2620495,
-              "name": "root",
-              "controllerId": 2144621,
-              "controllerMountPoint": "2144621:0:6:0",
-              "resizeable": true,
-              "planResizable": true,
-              "rootVolume": true,
-              "unitNumber": "0",
-              "typeId": 1,
-              "configurableIOPS": false,
-              "datastoreId": 21317,
-              "maxStorage": 17179869184,
-              "displayOrder": 0,
-              "maxIOPS": null,
-              "uuid": "38c37d6d-3d56-44f7-9c41-0b43460d5b40",
-              "uniqueId": "morpheus-vol-398-1174-0",
-              "externalId": "2000",
-              "internalId": "[ESXi-DC2-QA-LUN01] morphrhel/morphrhel..vmdk"
-          }
-      ],
-      "controllers": [
-          {
-              "id": 2144619,
-              "name": "IDE 0",
-              "type": {
-                  "id": 2,
-                  "code": "vmware-ide",
-                  "name": "IDE"
-              },
-              "maxDevices": 2,
-              "reservedUnitNumber": -1
-          },
-          {
-              "id": 2144620,
-              "name": "IDE 1",
-              "type": {
-                  "id": 2,
-                  "code": "vmware-ide",
-                  "name": "IDE"
-              },
-              "maxDevices": 2,
-              "reservedUnitNumber": -1
-          },
-          {
-              "id": 2144621,
-              "name": "SCSI controller 0",
-              "type": {
-                  "id": 6,
-                  "code": "vmware-paravirtual",
-                  "name": "SCSI VMware Paravirtual"
-              },
-              "maxDevices": 15,
-              "reservedUnitNumber": 7
-          }
-      ],
-      "interfaces": [
-          {
-              "id": 658953,
-              "refType": null,
-              "refId": null,
-              "name": "Network adapter 1",
-              "internalId": null,
-              "externalId": "4000",
-              "uniqueId": null,
-              "publicIpAddress": null,
-              "publicIpv6Address": null,
-              "ipAddress": "192.168.20.42",
-              "ipv6Address": "fe80::250:56ff:feee:29d4",
-              "ipSubnet": null,
-              "ipv6Subnet": null,
-              "description": null,
-              "dhcp": true,
-              "active": true,
-              "poolAssigned": false,
-              "primaryInterface": true,
-              "network": {
-                  "id": 135357,
-                  "name": "VLAN0251 - Internal Server"
-              },
-              "subnet": null,
-              "networkGroup": null,
-              "networkPosition": null,
-              "networkPool": null,
-              "networkDomain": null,
-              "type": {
-                  "id": 4,
-                  "code": "vmxNet3",
-                  "name": "VMXNET 3"
-              },
-              "ipMode": null,
-              "macAddress": "00:50:56:ad:29:d4"
-          }
-      ],
-      "labels": [],
-      "tags": [],
-      "enabled": true,
-      "tagCompliant": null,
-      "containers": [],
-      "guestConsolePreferred": false,
-      "guestConsoleType": null,
-      "guestConsoleUsername": null,
-      "guestConsolePassword": null,
-      "guestConsolePasswordHash": null,
-      "guestConsolePort": null
-  },
-  "stats": {
-      "usedStorage": 0,
-      "reservedStorage": 0,
-      "maxStorage": 17179869184,
-      "usedMemory": 170917888,
-      "reservedMemory": 0,
-      "maxMemory": 17179869184,
-      "cpuUsage": 0.4785779400
-  }
+    "server": {
+        "id": 837579,
+        "uuid": "28f48736-e5ac-42f0-83bb-34c5d3d46f3e",
+        "externalId": "vm-104987",
+        "internalId": "502d9a89-7fc8-1871-b192-f147984a8f3b",
+        "externalUniqueId": "422d0218-8a98-da27-fa01-5532bb773433",
+        "name": "power-vc-proxy-dont-delete",
+        "externalName": "power-vc-proxy-dont-delete",
+        "hostname": "dd-vmw-ubuntu-1",
+        "parentServer": {
+            "id": 577784,
+            "name": "qa-dc2-esxi-03.prod.dc2.den.morpheusdata.com"
+        },
+        "accountId": 1,
+        "account": {
+            "id": 1,
+            "name": "Morpheus QA"
+        },
+        "owner": {
+            "id": 3035,
+            "username": "ddeyoung"
+        },
+        "zone": {
+            "id": 26324,
+            "name": "QA VMware"
+        },
+        "plan": {
+            "id": 146,
+            "code": "vm-1024",
+            "name": "1 CPU, 1GB Memory"
+        },
+        "computeServerType": {
+            "id": 75,
+            "code": "vmwareVm",
+            "name": "VMware Linux VM",
+            "managed": true,
+            "externalDelete": true
+        },
+        "visibility": "private",
+        "description": null,
+        "zoneId": 26324,
+        "siteId": 2,
+        "resourcePoolId": 138293,
+        "folderId": 80842,
+        "sshHost": "10.32.20.254",
+        "sshPort": 22,
+        "externalIp": "10.32.20.254",
+        "internalIp": "10.32.20.254",
+        "volumeId": null,
+        "platform": "ubuntu",
+        "platformVersion": "20.04",
+        "sshUsername": "cloudinit",
+        "sshPassword": "************",
+        "sshPasswordHash": "2e1c33de75664c05bbb8205a574f6ce9f29ee4862e005072957970277ef441ec",
+        "osDevice": "/dev/vda",
+        "osType": "linux",
+        "dataDevice": "/dev/vda",
+        "lvmEnabled": false,
+        "apiKey": "78c3d500-d093-4cbc-97a3-84bbb8e2d344",
+        "softwareRaid": false,
+        "dateCreated": "2022-11-22T16:27:14Z",
+        "lastUpdated": "2022-12-19T21:45:37Z",
+        "stats": {
+            "ts": "2022-12-19T21:45:34+0000",
+            "freeMemory": 623220000,
+            "usedMemory": 381560000,
+            "freeSwap": 0,
+            "usedSwap": 0,
+            "cpuIdleTime": 2335608550,
+            "cpuSystemTime": 2581880,
+            "cpuUserTime": 3719110,
+            "cpuTotalTime": 2341909540,
+            "cpuUsage": 0.25109052658081055,
+            "maxStorage": 21474836480,
+            "usedStorage": 2941341696,
+            "reservedStorage": 21069623296,
+            "netTxUsage": 37,
+            "netRxUsage": 1008,
+            "networkBandwidth": 1310720000
+        },
+        "status": "provisioned",
+        "statusMessage": null,
+        "errorMessage": null,
+        "statusDate": "2022-11-22T16:29:18Z",
+        "statusPercent": null,
+        "statusEta": null,
+        "powerState": "on",
+        "agentInstalled": true,
+        "lastAgentUpdate": "2022-12-19T21:45:37Z",
+        "agentVersion": "2.3.2",
+        "maxCores": 1,
+        "coresPerSocket": 1,
+        "maxMemory": 1073741824,
+        "maxStorage": 21474836480,
+        "maxCpu": null,
+        "hourlyCost": 0.0513888896,
+        "hourlyPrice": 0.0513888896,
+        "sourceImage": {
+            "id": 1253896,
+            "code": "vmware.vsphere.image.morpheus.ubuntu.20.04.4-v2.ubuntu.20.04.4.amd64",
+            "name": "Morpheus Ubuntu 20.04.4 v2"
+        },
+        "serverOs": {
+            "id": 9,
+            "code": "ubuntu.64",
+            "name": "ubuntu 64-bit",
+            "description": null,
+            "vendor": "canonical",
+            "category": "ubuntu",
+            "osFamily": "debian",
+            "osVersion": "all",
+            "bitCount": 64,
+            "platform": "linux"
+        },
+        "volumes": [
+            {
+                "id": 4248106,
+                "name": "root",
+                "controllerId": 1988576,
+                "controllerMountPoint": "1988576:0:4:0",
+                "resizeable": true,
+                "planResizable": true,
+                "rootVolume": true,
+                "unitNumber": "0",
+                "typeId": 1,
+                "configurableIOPS": false,
+                "datastoreId": 73198,
+                "maxStorage": 21474836480,
+                "displayOrder": 0,
+                "maxIOPS": null,
+                "uuid": "bbdc7c71-bfc7-4e22-9cb4-6d2ee27e4205",
+                "uniqueId": "morpheus-vol-184999-748095-0",
+                "externalId": "2000",
+                "internalId": "[ESXi-DC2-QA-LUN02] dd-vmw-ubuntu-1/dd-vmw-ubuntu-1.vmdk"
+            }
+        ],
+        "controllers": [
+            {
+                "id": 1988576,
+                "name": "SCSI controller 0",
+                "type": {
+                    "id": 4,
+                    "code": "vmware-lsiLogic",
+                    "name": "SCSI LSI Logic Parallel"
+                },
+                "maxDevices": 15,
+                "reservedUnitNumber": 7
+            },
+            {
+                "id": 1988577,
+                "name": "IDE 0",
+                "type": {
+                    "id": 2,
+                    "code": "vmware-ide",
+                    "name": "IDE"
+                },
+                "maxDevices": 2,
+                "reservedUnitNumber": -1
+            },
+            {
+                "id": 1988578,
+                "name": "IDE 1",
+                "type": {
+                    "id": 2,
+                    "code": "vmware-ide",
+                    "name": "IDE"
+                },
+                "maxDevices": 2,
+                "reservedUnitNumber": -1
+            }
+        ],
+        "interfaces": [
+            {
+                "id": 1152297,
+                "refType": null,
+                "refId": null,
+                "name": "eth0",
+                "internalId": "7",
+                "externalId": "4000",
+                "uniqueId": "morpheus-nic-184999-748095-0",
+                "publicIpAddress": "10.32.20.254",
+                "publicIpv6Address": null,
+                "ipAddress": "10.32.20.254",
+                "ipv6Address": "fe80::250:56ff:fead:efc7",
+                "ipSubnet": null,
+                "ipv6Subnet": null,
+                "description": null,
+                "dhcp": true,
+                "active": true,
+                "poolAssigned": false,
+                "primaryInterface": true,
+                "network": {
+                    "id": 173431,
+                    "name": "VLAN0002 - Internal Server"
+                },
+                "subnet": null,
+                "networkGroup": null,
+                "networkPosition": null,
+                "networkPool": {
+                    "id": 18823,
+                    "name": "10.32.20.0 /22"
+                },
+                "networkDomain": null,
+                "type": {
+                    "id": 4,
+                    "code": "vmxNet3",
+                    "name": "VMXNET 3"
+                },
+                "ipMode": null,
+                "macAddress": "00:50:56:ad:ef:c7"
+            }
+        ],
+        "labels": [],
+        "tags": [],
+        "enabled": true,
+        "tagCompliant": null,
+        "containers": [
+            748095
+        ],
+        "config": {
+            "poolProviderType": null,
+            "isVpcSelectable": true,
+            "smbiosAssetTag": null,
+            "isEC2": false,
+            "resourcePoolId": 138293,
+            "hostId": null,
+            "createUser": true,
+            "nestedVirtualization": null,
+            "vmwareFolderId": "group-v80",
+            "noAgent": false,
+            "powerScheduleType": null
+        },
+        "guestConsolePreferred": true,
+        "guestConsoleType": "ssh",
+        "guestConsoleUsername": null,
+        "guestConsolePassword": null,
+        "guestConsolePasswordHash": null,
+        "guestConsolePort": null
+    },
+    "stats": {
+        "usedStorage": 2941341696,
+        "reservedStorage": 21474836480,
+        "maxStorage": 21474836480,
+        "usedMemory": 381560000,
+        "reservedMemory": 1028894720,
+        "maxMemory": 1028894720,
+        "cpuUsage": 0.25109052658081055
+    }
 }

@@ -1,121 +1,83 @@
 {
+    "success": true,
     "zone": {
-        "id": 1,
-        "uuid": "3acedd6b-1010-47e7-b8da-79d7892f4eb0",
+        "id": 32,
+        "uuid": "212b551f-24e4-4603-9f55-53cb005a416a",
         "externalId": null,
-        "name": "vCenter",
-        "code": "labvCenter",
-        "location": "Kentucky",
+        "name": "testcloud",
+        "code": "vmware",
+        "location": null,
         "owner": {
             "id": 1,
-            "name": "Home"
+            "name": "mastertenant"
         },
         "accountId": 1,
         "account": {
             "id": 1,
-            "name": "Home"
+            "name": "mastertenant"
         },
-        "visibility": "public",
+        "visibility": "private",
         "enabled": true,
-        "status": "ok",
+        "status": "initializing",
         "statusMessage": null,
-        "statusDate": "2022-07-21T14:08:16Z",
+        "statusDate": null,
+        "lastSync": null,
+        "nextRunDate": null,
+        "lastSyncDuration": null,
         "costStatus": "ok",
         "costStatusMessage": null,
-        "costStatusDate": "2022-07-21T01:30:02Z",
+        "costStatusDate": null,
+        "costLastSyncDuration": null,
+        "costLastSync": null,
         "zoneType": {
-            "id": 37,
+            "id": 26,
             "code": "vmware",
             "name": "VMware vCenter"
         },
-        "zoneTypeId": 37,
-        "guidanceMode": "manual",
-        "storageMode": "lvm",
+        "zoneTypeId": 26,
+        "guidanceMode": null,
+        "storageMode": "standard",
         "agentMode": "cloudInit",
         "userDataLinux": null,
         "userDataWindows": null,
-        "consoleKeymap": "us",
-        "containerMode": "all",
-        "costingMode": "costing",
+        "consoleKeymap": null,
+        "containerMode": "docker",
+        "costingMode": null,
         "serviceVersion": null,
         "securityMode": "off",
         "inventoryLevel": "off",
-        "timezone": "America/New_York",
+        "timezone": null,
         "apiProxy": null,
         "provisioningProxy": null,
-        "networkDomain": {
-            "id": 9,
-            "name": "Example - WIN"
-        },
-        "domainName": "example.com",
-        "regionCode": "75b745d0b91d6344a5c5c1150d517f1b",
+        "networkDomain": null,
+        "domainName": "localdomain",
+        "regionCode": null,
         "autoRecoverPowerState": false,
         "scalePriority": 1,
         "config": {
-            "apiUrl": "https://192.168.0.110/sdk",
-            "username": "",
-            "password": null,
-            "datacenter": "Home",
-            "cluster": "",
-            "resourcePoolId": "",
-            "resourcePool": "",
-            "rpcMode": "rpc",
-            "_hideHostSelection": "",
-            "hideHostSelection": "on",
-            "_importExisting": "",
-            "importExisting": "on",
-            "_enableVnc": "",
             "enableVnc": "on",
-            "_enableDiskTypeSelection": "",
-            "_enableNetworkTypeSelection": "",
-            "diskStorageType": "thin",
-            "applianceUrl": "",
-            "datacenterName": "",
-            "networkServer.id": "unmanaged",
-            "networkServer": {
-                "id": "unmanaged"
-            },
-            "securityMode": "off",
-            "certificateProvider": "internal",
-            "backupMode": "internal",
-            "replicationMode": "-1",
-            "dnsIntegrationId": "137",
-            "configCmdbId": "",
-            "configManagementId": "",
-            "configCmId": "",
-            "securityServer": "off",
-            "serviceRegistryId": "-1",
-            "enableDiskTypeSelection": "on",
-            "kubeUrl": "https://192.168.10.5:6443",
-            "apiVersion": "7.0",
-            "datacenterId": "datacenter-2",
+            "password": "************",
             "configCmdbDiscovery": false,
-            "distributedWorkerId": "",
-            "passwordHash": null
+            "rpcMode": "guestexec",
+            "enableStorageTypeSelection": "on",
+            "apiUrl": "https://192.168.88.16/sdk",
+            "hideHostSelection": "on",
+            "datacenter": "dc1",
+            "importExisting": "off",
+            "passwordHash": "a1e6764955a8f1c6c4992ad861feec5",
+            "username": "administrator@vsphere.local"
         },
         "credential": {
-            "id": 1,
-            "name": "vCenter",
-            "type": "username-password"
+            "type": "local"
         },
         "imagePath": null,
         "darkImagePath": null,
-        "dateCreated": "2018-12-15T06:06:48Z",
-        "lastUpdated": "2022-07-21T14:08:16Z",
+        "dateCreated": "2023-04-03T18:45:05Z",
+        "lastUpdated": "2023-04-03T18:45:05Z",
         "groups": [
             {
-                "id": 7,
-                "name": "All Clouds",
-                "accountId": 1
-            },
-            {
                 "id": 1,
-                "name": "Personal",
-                "accountId": 1
-            },
-            {
-                "id": 43,
-                "name": "VDI",
+                "name": "admin",
                 "accountId": 1
             }
         ],
@@ -123,16 +85,15 @@
         "networkServer": null,
         "stats": {
             "serverCounts": {
-                "all": 10,
-                "host": 10,
-                "hypervisor": 3,
-                "containerHost": 7,
-                "vm": 32,
+                "all": 0,
+                "host": 0,
+                "hypervisor": 0,
+                "containerHost": 0,
+                "vm": 0,
                 "baremetal": 0,
-                "unmanaged": 4
+                "unmanaged": 0
             }
         },
-        "serverCount": 10
-    },
-    "success": true
+        "serverCount": 0
+    }
 }

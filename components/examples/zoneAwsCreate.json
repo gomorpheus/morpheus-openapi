@@ -1,0 +1,24 @@
+{
+  "zone": {
+    "visibility": "private",
+    "zoneType": {
+      "id": 12
+    },
+    "enabled": true,
+    "autoRecoverPowerState": false,
+    "scalePriority": 1,
+    "config": {
+      "endpoint": "ec2.ca-central-1.amazonaws.com",
+      "accessKey": "AK key",
+      "secretKey": "******",
+      "importExisting": "off",
+      "isVpc": "on"
+    },
+    "securityMode": "off",
+    "credential": {
+      "type": "local"
+    },
+    "name": "testzone",
+    "groupId": 1
+  }
+}

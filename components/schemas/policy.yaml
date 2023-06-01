@@ -229,7 +229,9 @@ properties:
         - Max Cores
       properties:
         maxCores:
-          type: string 
+          type: string
+        excludeContainers:
+          type: boolean
     - type: object
       additionalProperties: false
       required: 
@@ -257,6 +259,8 @@ properties:
       properties:
         maxMemory:
           type: string
+        excludeContainers:
+          type: boolean
     - type: object
       additionalProperties: false
       required: 
@@ -277,6 +281,8 @@ properties:
       properties:
         maxStorage:
           type: string
+        excludeContainers:
+          type: boolean
     - type: object
       additionalProperties: false
       required: 

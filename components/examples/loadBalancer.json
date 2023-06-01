@@ -1,7 +1,7 @@
 {
   "loadBalancer": {
       "id": 1064,
-      "name": "XXXXXX10070",
+      "uuid": "3e84ad00-1421-46c2-a0c8-17fcde5a8f93",
       "accountId": 3,
       "cloud": {
           "id": 12,
@@ -11,6 +11,10 @@
           "id": 3,
           "name": "Amazon ELB",
           "code": "amazon"
+      },
+      "owner": {
+        "id": 1,
+        "name": "root"
       },
       "visibility": "private",
       "description": "my_desc1",
@@ -29,6 +33,20 @@
       "enabled": true,
       "config": {},
       "dateCreated": "2021-02-26T21:18:56Z",
-      "lastUpdated": "2022-07-07T15:56:12Z"
+      "lastUpdated": "2022-07-07T15:56:12Z",
+      "tenants": [
+        {
+          "id": 1,
+          "name": "root"
+        },
+        {
+          "id": 2,
+          "name": "acme"
+        },
+        {
+          "id": 3,
+          "name": "icorp"
+        }
+      ]
   }
 }

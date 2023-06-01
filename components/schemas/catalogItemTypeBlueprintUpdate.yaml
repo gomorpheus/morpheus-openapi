@@ -44,6 +44,10 @@ properties:
     type: boolean
     description: Can be used to feature the catalog item type.
     default: false
+  allowQuantity: 
+    description: Can users order more than one of this item at a time.
+    type: boolean
+    default: false
   blueprint: 
     type: object
     description: Blueprint object, identified by id or name. Only applies to type blueprint

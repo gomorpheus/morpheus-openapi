@@ -9,8 +9,10 @@ properties:
     type: string
   internalId: 
     type: string
+    nullable: true
   externalUniqueId: 
     type: string
+    nullable: true
   name: 
     type: string
   externalName: 
@@ -37,8 +39,7 @@ properties:
       name: 
         type: string
   owner: 
-    type: string
-    nullable: true
+    $ref: owner.yaml
   zone: 
     type: object
     properties: 
@@ -86,7 +87,8 @@ properties:
     type: integer
     format: int64
   folderId: 
-    type: string
+    type: integer
+    format: int64
     nullable: true
   sshHost: 
     type: string
@@ -138,6 +140,24 @@ properties:
       ts: 
         type: string
         format: date-time
+      freeSwap:
+        type: integer
+        format: int64
+      usedSwap: 
+        type: integer
+        format: int64
+      cpuIdleTime:
+        type: integer
+        format: int64
+      cpuSystemTime:
+        type: integer
+        format: int64
+      cpuUserTime:
+        type: integer
+        format: int64
+      cpuTotalTime:
+        type: integer
+        format: int64
       maxMemory: 
         type: integer
         format: int64
@@ -150,9 +170,21 @@ properties:
       usedStorage: 
         type: integer
         format: int64
+      reservedStorage: 
+        type: integer
+        format: int64
       cpuUsage: 
         type: number
       freeMemory: 
+        type: integer
+        format: int64
+      netTxUsage:
+        type: integer
+        format: int64
+      netRxUsage:
+        type: integer
+        format: int64
+      networkBandwidth:
         type: integer
         format: int64
   status: 
@@ -189,6 +221,7 @@ properties:
   coresPerSocket: 
     type: integer
     format: int64
+    nullable: true
   maxMemory: 
     type: integer
     format: int64
@@ -196,17 +229,27 @@ properties:
     type: integer
     format: int64
   maxCpu: 
-    type: string
+    type: integer
+    format: int64
     nullable: true
   hourlyCost: 
     type: number
   hourlyPrice: 
     type: number
   sourceImage: 
-    type: string
+    type: object
     nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      code: 
+        type: string
+      name: 
+        type: string
   serverOs: 
     type: object
+    nullable: true
     properties: 
       id: 
         type: integer
@@ -245,8 +288,10 @@ properties:
         controllerId: 
           type: integer
           format: int64
+          nullable: true
         controllerMountPoint: 
           type: string
+          nullable: true
         resizeable: 
           type: boolean
         planResizable: 
@@ -255,6 +300,7 @@ properties:
           type: boolean
         unitNumber: 
           type: string
+          nullable: true
         typeId: 
           type: integer
           format: int64
@@ -263,6 +309,7 @@ properties:
         datastoreId: 
           type: integer
           format: int64
+          nullable: true
         maxStorage: 
           type: integer
           format: int64
@@ -282,6 +329,7 @@ properties:
           nullable: true
         internalId: 
           type: string
+          nullable: true
   controllers: 
     type: array
     items: 
@@ -329,6 +377,7 @@ properties:
           nullable: true
         externalId: 
           type: string
+          nullable: true
         uniqueId: 
           type: string
           nullable: true
@@ -342,6 +391,7 @@ properties:
           type: string
         ipv6Address: 
           type: string
+          nullable: true
         ipSubnet: 
           type: string
           nullable: true
@@ -377,13 +427,20 @@ properties:
           type: string
           nullable: true
         networkPool: 
-          type: string
+          type: object
           nullable: true
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
         networkDomain: 
           type: string
           nullable: true
         type: 
           type: object
+          nullable: true
           properties: 
             id: 
               type: integer
@@ -397,12 +454,15 @@ properties:
           nullable: true
         macAddress: 
           type: string
+          nullable: true
   labels: 
     type: array
+    nullable: true
     items:
       type: object
   tags: 
     type: array
+    nullable: true
     items:
       type: object
   enabled: 
@@ -413,7 +473,41 @@ properties:
   containers: 
     type: array
     items:
-      type: object
+      type: integer
+      format: int64
+  config: 
+    type: object
+    properties: 
+      poolProviderType: 
+        type: string
+        nullable: true
+      isVpcSelectable: 
+        type: boolean
+      smbiosAssetTag: 
+        type: string
+        nullable: true
+      isEC2: 
+        type: boolean
+      resourcePoolId: 
+        type: integer
+        format: int64
+      hostId:
+        type: integer
+        format: int64
+        nullable: true
+      createUser: 
+        type: boolean
+      nestedVirtualization: 
+        type: string
+        nullable: true
+      vmwareFolderId: 
+        type: string
+      noAgent: 
+        type: boolean
+      powerScheduleType:
+        type: integer
+        format: int64
+        nullable: true
   guestConsolePreferred: 
     type: boolean
   guestConsoleType: 

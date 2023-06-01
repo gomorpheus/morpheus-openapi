@@ -1,0 +1,24 @@
+{
+  "zone": {
+    "visibility": "private",
+    "zoneType": {
+      "id": 15
+    },
+    "enabled": true,
+    "autoRecoverPowerState": false,
+    "scalePriority": 1,
+    "config": {
+      "importExisting": "off",
+      "privateKey": "-----BEGIN PRIVATE KEY-----\\nMIIE...RNhz8c=\\n-----END PRIVATE KEY-----",
+      "clientEmail": "morphtest@polar-thing-616684.iam.gserviceaccount.com",
+      "projectId": "polar-thing-616684",
+      "googleRegionId": "us-central1"
+    },
+    "securityMode": "off",
+    "credential": {
+      "type": "local"
+    },
+    "name": "testcloud",
+    "groupId": 1
+  }
+}
