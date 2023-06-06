@@ -9,6 +9,10 @@ properties:
     enum:
     - dayOfWeek
     - exact
+  scheduleTimezone:
+    type: string
+    description: Time Zone eg. America/New_York, Europe/Amsterdam, etc. Only used and required for scheduleType `dayOfWeek`
+    default: UTC
   startDayOfWeek:
     type: integer
     description: Start day of the week 1-7 (Sun-Sat). Only used and required for scheduleType `dayOfWeek`

@@ -342,12 +342,6 @@ paths:
     $ref: paths/api@deploys@id.yaml
   /api/deploys/{id}/deploy:
     $ref: paths/api@deploys@id@deploy.yaml
-  /api/doc:
-    $ref: paths/api@doc.yaml
-  /api/doc/openapi:
-    $ref: paths/api@doc@openapi.yaml
-  /api/doc/openapi.yaml:
-    $ref: paths/api@doc@openapi.yaml.yaml
   /api/environments:
     $ref: paths/api@environments.yaml
   /api/environments/{id}:
