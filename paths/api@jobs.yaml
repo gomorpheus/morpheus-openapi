@@ -126,10 +126,8 @@ post:
                       format: int64
                       example: 123
                   customOptions:
-                    type: array
+                    type: object
                     description: Map of options to be used as values in the workflow tasks. These correspond to option types.
-                    items:
-                      type: object
                   customConfig:
                     type: string
                     description: Job custom configuration (String in JSON format)
@@ -194,10 +192,8 @@ post:
                       format: int64
                       example: 123
                   customOptions:
-                    type: array
+                    type: object
                     description: Map of options to be used as values in the workflow tasks. These correspond to option types.
-                    items:
-                      type: object
                   customConfig:
                     type: string
                     description: Job custom configuration (String in JSON format)
@@ -271,10 +267,8 @@ post:
                       format: int64
                       example: 123
                   customOptions:
-                    type: array
+                    type: object
                     description: Map of options to be used as values in the workflow tasks. These correspond to option types.
-                    items:
-                      type: object
                   customConfig:
                     type: string
                     description: Job custom configuration (String in JSON format)
