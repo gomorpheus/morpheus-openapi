@@ -1,0 +1,192 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "my-group",
+      "description": null,
+      "internalId": "my-group",
+      "externalId": "/infra/domains/default/groups/my-group",
+      "visibility": "private",
+      "account": {
+        "id": 1
+      },
+      "owner": {
+        "id": 1
+      },
+      "networkServer": {
+        "id": 1
+      },
+      "members": [
+        {
+          "id": 1,
+          "category": "nsxt.group.1.default.member",
+          "type": "Condition",
+          "memberName": null,
+          "memberType": "VirtualMachine",
+          "memberValue": "OR",
+          "memberExpression": "{\"key\":\"Tag\",\"operator\":\"EQUALS\",\"value\":\"bar\",\"scope\":\"baz\"}",
+          "displayOrder": 1,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        },
+        {
+          "id": 2,
+          "category": "nsxt.group.1.default.member",
+          "type": "NestedExpression",
+          "memberName": null,
+          "memberType": null,
+          "memberValue": null,
+          "memberExpression": null,
+          "displayOrder": 2,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+            {
+              "id": 3,
+              "category": "nsxt.group.1.default.member",
+              "type": "Condition",
+              "memberName": null,
+              "memberType": "VirtualMachine",
+              "memberValue": "AND",
+              "memberExpression": "{\"key\":\"Name\",\"operator\":\"EQUALS\",\"value\":\"bar\"}",
+              "displayOrder": 1,
+              "internalId": null,
+              "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+              "members": [
+
+              ]
+            },
+            {
+              "id": 4,
+              "category": "nsxt.group.1.default.member",
+              "type": "Condition",
+              "memberName": null,
+              "memberType": "VirtualMachine",
+              "memberValue": null,
+              "memberExpression": "{\"key\":\"ComputerName\",\"operator\":\"NOTEQUALS\",\"value\":\"bar\"}",
+              "displayOrder": 2,
+              "internalId": null,
+              "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+              "members": [
+
+              ]
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "category": "nsxt.group.1.default.member",
+          "type": "Path",
+          "memberName": "My Other Group",
+          "memberType": "Group",
+          "memberValue": "/infra/domains/default/groups/my-other-group",
+          "memberExpression": null,
+          "displayOrder": 3,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        },
+        {
+          "id": 6,
+          "category": "nsxt.group.1.default.member",
+          "type": "Path",
+          "memberName": "my-other-group",
+          "memberType": "Group",
+          "memberValue": "/infra/domains/default/groups/my-other-group",
+          "memberExpression": null,
+          "displayOrder": 4,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        },
+        {
+          "id": 7,
+          "category": "nsxt.group.1.default.member",
+          "type": "Path",
+          "memberName": "segment",
+          "memberType": "Segment",
+          "memberValue": "/infra/segments/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "memberExpression": null,
+          "displayOrder": 5,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        },
+        {
+          "id": 8,
+          "category": "nsxt.group.1.default.member",
+          "type": "Path",
+          "memberName": "segment-port",
+          "memberType": "SegmentPort",
+          "memberValue": "/infra/segments/12345/ports/segment-port",
+          "memberExpression": null,
+          "displayOrder": 6,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        },
+        {
+          "id": 9,
+          "category": "nsxt.group.1.default.member",
+          "type": "ExternalID",
+          "memberName": "vCLS-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "memberType": "VirtualMachine",
+          "memberValue": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "memberExpression": null,
+          "displayOrder": 7,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        },
+        {
+          "id": 10,
+          "category": "nsxt.group.1.default.member",
+          "type": "ExternalID",
+          "memberName": "Network adapter",
+          "memberType": "VirtualNetworkInterface",
+          "memberValue": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "memberExpression": null,
+          "displayOrder": 8,
+          "internalId": null,
+          "externalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+          "members": [
+
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "name",
+          "value": "value"
+        }
+      ],
+      "permissions": {
+        "tenantPermissions": {
+          "accounts": [
+            1,2
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 1,
+    "total": 1
+  }
+}
