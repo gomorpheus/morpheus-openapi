@@ -745,6 +745,10 @@ paths:
     $ref: paths/api@networks@servers@id@firewall-rule-groups.yaml
   /api/networks/servers/{serverId}/firewall-rule-groups/{id}:
     $ref: paths/api@networks@servers@id@firewall-rule-groups@id.yaml
+  /api/networks/servers/{serverId}/groups:
+    $ref: paths/api@networks@servers@id@groups.yaml
+  /api/networks/servers/{serverId}/groups/{id}:
+    $ref: paths/api@networks@servers@id@groups@id.yaml
   /api/networks/servers/{serverId}/scopes:
     $ref: paths/api@networks@servers@id@scopes.yaml
   /api/networks/servers/{serverId}/scopes/{id}:
