@@ -1,0 +1,143 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+    description: Backup ID
+  name: 
+    type: string
+    description: Name
+  locationType: 
+    type: string
+    description: Source Type (instance, server, storage)
+  instance: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Instance ID
+      name: 
+        type: string
+        description: Instance Name
+    nullable: true
+  containerId: 
+    type: integer
+    format: int64
+    nullable: true
+  job: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Backup Job ID
+      name: 
+        type: string
+        description: Backup Job Name
+  schedule: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Schedule ID
+      name: 
+        type: string
+        description: Schedule Name
+      cron: 
+        type: string
+        description: Schedule Cron Expression
+    nullable: true
+  retentionCount: 
+    type: integer
+    format: int64
+    nullable: true
+  backupType: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Backup Type ID
+      code: 
+        type: string
+        description: Backup Type Code
+      name: 
+        type: string
+        description: Backup Type Name
+  storageProvider: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Storage Provider ID
+      name: 
+        type: string
+        description: Storage Provider Name
+    nullable: true
+  backupProvider: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Backup Provider ID
+      name: 
+        type: string
+        description: Backup Provider Name
+    nullable: true
+  backupRespository: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Backup Respository ID
+      name: 
+        type: string
+        description: Backup Respository Name
+    nullable: true
+  cronExpression: 
+    type: string
+    nullable: true
+    description: Cron Expression
+  nextFire: 
+    type: string
+    format: date-time
+    nullable: true
+    description: Next Fire
+  lastStatus: 
+    type: string
+    nullable: true
+    description: Last Status
+  lastResult: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Last Result ID
+      name: 
+        type: string
+        description: Last Result Status
+      dateCreated: 
+        type: string
+        format: date-time
+        description: Last Result Date Created
+    nullable: true
+  stats:
+    type: object
+    description: Backup Result Statistics
+  enabled:
+    type: boolean
+    description: Enabled
+  dateCreated: 
+    type: string
+    format: date-time
+    description: Date Created
+  lastUpdated: 
+    type: string
+    format: date-time
+    description: Last Updated

@@ -1,0 +1,105 @@
+get:
+  summary: Retrieves a Specific Backup Job
+  description: |
+    Retrieves a specific backup job.
+  operationId: getBackupJobs
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              job:
+                $ref: ../components/schemas/backupJob.yaml
+          examples:
+            Backup Job Response:
+              value:
+                $ref: ../components/examples/backupJob.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a Backup Job
+  description: |
+    Updates a backup job.
+  operationId: updateBackupJobs
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - job
+          properties:
+            job:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: A name for the backup job
+                code: 
+                  type: string
+                  description: A code for the backup job
+                scheduleId: 
+                  type: integer
+                  format: int64
+                  description: Execute Schedule ID to use for the backup job
+                  nullable: true
+                retentionCount:
+                  type: integer
+                  format: int64
+                  description: Retention Count
+                enabled:
+                  type: boolean
+                  description: Can be used to enable or disable the backup job
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                job:
+                  $ref: ../components/schemas/backupJob.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Backup Job Response:
+              value:
+                $ref: ../components/examples/backupJobSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Backup Job
+  description: |
+    Deletes a specified backup job.
+  operationId: removeBackupJobs
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
