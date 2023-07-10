@@ -60,9 +60,6 @@ put:
                   type: integer
                   format: int64
                   description: Retention Count
-                enabled:
-                  type: boolean
-                  description: Can be used to enable or disable the backup job
   responses:
     '200':
       description: Successful Request
