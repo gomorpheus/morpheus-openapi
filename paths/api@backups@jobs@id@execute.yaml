@@ -1,0 +1,34 @@
+post:
+  summary: Executes a Backup Job
+  description: |
+    Executes a backup job.
+  operationId: executeBackupJobs
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                job:
+                  $ref: ../components/schemas/backupJob.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Backup Job Response:
+              value:
+                $ref: ../components/examples/backupJobSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

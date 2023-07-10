@@ -1,0 +1,82 @@
+{
+  "jobs": [
+    {
+      "id": 37,
+      "name": "a backup",
+      "retentionCount": 2,
+      "schedule": {
+        "id": 2,
+        "name": "Weekly on Sunday at Midnight",
+        "cron": "0 0 * * 7"
+      },
+      "externalId": null,
+      "backupProvider": null,
+      "backupRepository": null,
+      "cronExpression": "0 0 * * 7",
+      "nextFire": "2023-06-18T00:00:00Z",
+      "source": "user",
+      "visibility": "private",
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "enabled": true,
+      "dateCreated": "2023-03-29T14:59:15Z",
+      "lastUpdated": "2023-06-11T00:01:01Z"
+    },
+    {
+      "id": 39,
+      "name": "a new job",
+      "retentionCount": 2,
+      "schedule": {
+        "id": 2,
+        "name": "Weekly on Sunday at Midnight",
+        "cron": "0 0 * * 7"
+      },
+      "externalId": null,
+      "backupProvider": null,
+      "backupRepository": null,
+      "cronExpression": "0 0 * * 7",
+      "nextFire": "2023-06-18T00:00:00Z",
+      "source": "user",
+      "visibility": "private",
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "enabled": true,
+      "dateCreated": "2023-04-03T19:36:53Z",
+      "lastUpdated": "2023-06-11T00:01:01Z"
+    },
+    {
+      "id": 51,
+      "name": "test-backup",
+      "retentionCount": null,
+      "schedule": {
+        "id": 2,
+        "name": "Weekly on Sunday at Midnight",
+        "cron": "0 0 * * 7"
+      },
+      "externalId": null,
+      "backupProvider": null,
+      "backupRepository": null,
+      "cronExpression": "0 0 * * 7",
+      "nextFire": "2023-06-18T00:00:00Z",
+      "source": "user",
+      "visibility": "private",
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "enabled": true,
+      "dateCreated": "2023-05-30T15:02:33Z",
+      "lastUpdated": "2023-06-11T00:01:01Z"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 3,
+    "total": 3
+  }
+}

@@ -1,0 +1,97 @@
+get:
+  summary: Retrieves a Specific Backup
+  description: |
+    Retrieves a specific backup.
+  operationId: getBackups
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              backup:
+                $ref: ../components/schemas/backup.yaml
+          examples:
+            Backup Response:
+              value:
+                $ref: ../components/examples/backup.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put:
+  summary: Updates a Backup
+  description: |
+    Updates a backup.
+  operationId: updateBackups
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - backup
+          properties:
+            backup:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: A name for the backup
+                jobId: 
+                  type: integer
+                  format: int64
+                  description: The Backup Job ID to assign the backup to. This determines when the backup is run.
+                enabled:
+                  type: boolean
+                  description: Can be used to enable or disable the backup
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                backup:
+                  $ref: ../components/schemas/backup.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Backup Response:
+              value:
+                $ref: ../components/examples/backupSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Backup
+  description: |
+    Deletes a specified backup.
+  operationId: removeBackups
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,76 @@
+get:
+  summary: Retrieves all Backup Results
+  description: |
+    Retrieves all backup results.
+  operationId: listBackupResults
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - name: name
+      in: query
+      description: Filter by backupName
+      schema:
+        type: string
+      example: test-backup
+    - name: phrase
+      in: query
+      description: |
+        Search phrase for partial matches on backupName, wildcard may be specified as %, eg. example-%
+      schema:
+        type: string
+      example: test
+    - name: backupId
+      in: query
+      description: Filter by backup ID
+      schema:
+        type: integer
+        format: int64
+    - name: backupSetId
+      in: query
+      description: Filter by backupSetId
+      schema:
+        type: string
+    - name: instanceId
+      in: query
+      description: Filter by instance ID
+      schema:
+        type: integer
+        format: int64
+    - name: containerId
+      in: query
+      description: Filter by container ID
+      schema:
+        type: integer
+        format: int64
+    - name: serverId
+      in: query
+      description: Filter by server ID
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                results:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/backupResult.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Backup Results Response:
+              value:
+                $ref: ../components/examples/backupResults.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

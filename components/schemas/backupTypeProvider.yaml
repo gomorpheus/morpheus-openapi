@@ -1,0 +1,97 @@
+title: Backup Storage Provider
+required:
+  - locationType
+  - name
+  - instanceId
+  - containerId
+  - backupType
+  - jobAction
+properties:
+  locationType: 
+    type: string
+    enum:
+    - storage
+  name: 
+    type: string
+    description: A name for the backup
+  sourceProviderId:
+    type: integer
+    format: int64
+    description: Source Object Store. The ID of the storage provider (bucket) to be backed up.
+  storageProviderId:
+    type: integer
+    format: int64
+    description: Target Object Store. The ID of the storage provider (bucket) the backup will be copied to.
+  backupType:
+    type: string
+    description: The backup type code, options vary by the type of cloud and source
+    enum:
+      - alibabaSnapshot
+      - amazonSnapshot
+      - avamarVMWareBackup
+      - azureSnapshot
+      - bluemixSnapshot
+      - commvaultFileBackup
+      - commvaultOpenstackBackup
+      - commvaultVMWareBackup
+      - digitaloceanSnapshot
+      - directoryBackup
+      - esxiSnapshot
+      - fileBackup
+      - fusionSnapshot
+      - googleSnapshot
+      - huaweiSnapshot
+      - hypervSnapshot
+      - kvm
+      - lvmImage
+      - lvmMigration
+      - lvmSnapshot
+      - MongoDB
+      - morpheusAppliance
+      - morpheusContainerBackup
+      - morpheusStorageBackup
+      - morpheusVmBackup
+      - MySQL
+      - nutanixSnapshot
+      - openstackSnapshot
+      - opentelekomSnapshot
+      - oracleCloudSnapshot
+      - Postgres
+      - powervcSnapshot
+      - rubrikVMWareBackup
+      - scvmmSnapshot
+      - softlayerSnapshot
+      - SqlServer
+      - tarDirectoryBackup
+      - upCloudSnapshot
+      - vcdSnapshot
+      - veeamHypervBackup
+      - veeamScvmmBackup
+      - veeamVcdBackup
+      - veeamVMWareBackup
+      - virtustreamSnapshot
+      - vmwareSnapshot
+      - winMigration
+      - xenSnapshot
+  jobAction:
+    type: string
+    description: Create a new backup job, clone an existing job or add the new backup to an existing job
+    enum:
+      - new
+      - clone
+      - addTo
+  jobId:
+    type: integer
+    format: int64
+    description: The ID of the job to clone or add to. Only applies to jobAction `clone` and `addTo`.
+  jobName:
+    type: string
+    description: Name for new job. Only applies to jobAction `new` and `clone`.
+  jobSchedule:
+    type: integer
+    format: int64
+    description: The ID of the execute schedule for new job. See Execute Schedules. Only applies to jobAction `new` and `clone`.
+  retentionCount:
+    type: integer
+    format: int64
+    description: Retention Count for new job. By default the backup settings value will be used. Only applies to jobAction `new` and `clone`. 

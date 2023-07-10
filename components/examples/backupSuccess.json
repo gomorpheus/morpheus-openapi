@@ -1,0 +1,52 @@
+{
+  "backup": {
+    "id": 60,
+    "name": "test-backup",
+    "locationType": "instance",
+    "instance": {
+      "id": 432,
+      "name": "jd-azure-234"
+    },
+    "containerId": 1210,
+    "job": {
+      "id": 53,
+      "name": "test-backup"
+    },
+    "schedule": {
+      "id": 2,
+      "name": "Weekly on Sunday at Midnight",
+      "cron": "0 0 * * 7"
+    },
+    "retentionCount": null,
+    "backupType": {
+      "id": 20,
+      "code": "azureSnapshot",
+      "name": "Azure VM Snapshot"
+    },
+    "backupProvider": null,
+    "storageProvider": {
+      "id": 10,
+      "name": "Backup Storage"
+    },
+    "backupRepository": null,
+    "cronExpression": "0 0 * * 7",
+    "nextFire": "2023-06-18T00:00:00Z",
+    "lastStatus": null,
+    "lastResult": null,
+    "stats": {
+      "totalSize": 0,
+      "success": 0,
+      "failed": 0,
+      "totalCompleted": 0,
+      "successRate": 0,
+      "failRate": 0,
+      "avgSize": 0,
+      "lastFiveResults": [
+
+      ]
+    },
+    "enabled": true,
+    "dateCreated": "2023-06-16T17:16:21Z",
+    "lastUpdated": "2023-06-16T17:16:21Z"
+  }
+}
