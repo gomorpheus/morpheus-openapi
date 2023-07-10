@@ -9,7 +9,7 @@ properties:
     description: Name
   code: 
     type: string
-    description: Name
+    description: Code is a unique identifier. The default value is the same as name with spaces (` `) replaced with underscores (`_`)
   schedule: 
     type: object
     properties: 
