@@ -130,6 +130,45 @@ properties:
   stats:
     type: object
     description: Backup Result Statistics
+    properties: 
+      totalSize: 
+        type: integer
+        format: int64
+        description: Total size of all backups in bytes
+      avgSize: 
+        type: integer
+        format: int64
+        description: Average size of each backup in bytes
+      totalCompleted: 
+        type: integer
+        format: int64
+        description: Total completed count
+      success: 
+        type: integer
+        format: int64
+        description: Successful backup count
+      failed: 
+        type: integer
+        format: int64
+        description: Failed backup count
+      successRate: 
+        type: number
+        format: double
+        description: Success rate 0-1
+      failRate: 
+        type: number
+        format: double
+        description: Failure rate 0-1
+      lastFiveResults:
+        type: array
+        description: List of the last 5 backup result statuses
+        items: 
+          type: string
+          enum:
+            - SUCCEEDED
+            - FAILED
+            - IN_PROGRESS
+            - START_REQUESTED
   enabled:
     type: boolean
     description: Enabled

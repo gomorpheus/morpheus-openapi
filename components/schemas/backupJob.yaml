@@ -61,10 +61,10 @@ properties:
     type: string
     format: date-time
     nullable: true
-    description: Next Fire
+    description: Next Fire is the datetime the job will next occur on according to its schedule
   source:
     type: string
-  visibilityvisibility:
+  visibility:
     type: string
   account: 
     type: object
