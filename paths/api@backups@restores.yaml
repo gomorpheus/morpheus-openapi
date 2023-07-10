@@ -8,18 +8,22 @@ get:
   parameters:
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
-    - $ref: ../components/parameters/sort.yaml
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by. The default sort order is `startDate` descending
+      schema:
+        type: string
     - $ref: ../components/parameters/direction.yaml
     - name: name
       in: query
-      description: Filter by backupName
+      description: Filter by backup name
       schema:
         type: string
       example: test-backup
     - name: phrase
       in: query
       description: |
-        Search phrase for partial matches on backupName, wildcard may be specified as %, eg. example-%
+        Search phrase for partial matches on backup name, wildcard may be specified as %, eg. example-%
       schema:
         type: string
       example: test
@@ -29,26 +33,14 @@ get:
       schema:
         type: integer
         format: int64
-    - name: backupSetId
+    - name: backupResultId
       in: query
-      description: Filter by backupSetId
+      description: Filter by backup result ID
       schema:
         type: string
-    - name: instanceId
-      in: query
-      description: Filter by instance ID
-      schema:
-        type: integer
-        format: int64
     - name: containerId
       in: query
       description: Filter by container ID
-      schema:
-        type: integer
-        format: int64
-    - name: serverId
-      in: query
-      description: Filter by server ID
       schema:
         type: integer
         format: int64

@@ -12,6 +12,7 @@ get:
     - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/externalId.yaml
   responses:
     '200':
       description: Successful Request
@@ -57,9 +58,6 @@ post:
                 name: 
                   type: string
                   description: A name for the backup job
-                code: 
-                  type: string
-                  description: A code for the backup job. The default value is the name with spaces replaced by `_`.
                 scheduleId: 
                   type: integer
                   format: int64
