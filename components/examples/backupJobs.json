@@ -3,6 +3,7 @@
     {
       "id": 37,
       "name": "a backup",
+      "code": "a_backup",
       "retentionCount": 2,
       "schedule": {
         "id": 2,
@@ -20,13 +21,13 @@
         "id": 1,
         "name": "root"
       },
-      "enabled": true,
       "dateCreated": "2023-03-29T14:59:15Z",
       "lastUpdated": "2023-06-11T00:01:01Z"
     },
     {
       "id": 39,
       "name": "a new job",
+      "code": "a_new_job",
       "retentionCount": 2,
       "schedule": {
         "id": 2,
@@ -44,13 +45,13 @@
         "id": 1,
         "name": "root"
       },
-      "enabled": true,
       "dateCreated": "2023-04-03T19:36:53Z",
       "lastUpdated": "2023-06-11T00:01:01Z"
     },
     {
       "id": 51,
       "name": "test-backup",
+      "code": "test-backup",
       "retentionCount": null,
       "schedule": {
         "id": 2,
@@ -68,7 +69,6 @@
         "id": 1,
         "name": "root"
       },
-      "enabled": true,
       "dateCreated": "2023-05-30T15:02:33Z",
       "lastUpdated": "2023-06-11T00:01:01Z"
     }
