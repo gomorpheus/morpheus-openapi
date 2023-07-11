@@ -11,5 +11,18 @@ properties:
           foo: bar
   taskPhase:
     type: string
-    description: Task Phase, default for Provisioning workflows is `provision` and the default for Operational workflows is `all`.
+    description: Task Phase to run for Provisioning workflows. The default is `provision`.
+    default: provision
+    enum:
+      - start
+      - stop
+      - preProvision
+      - provision
+      - postProvision
+      - preDeploy
+      - deploy
+      - reconfigure
+      - teardown
+      - startup
+      - shutdown
 
