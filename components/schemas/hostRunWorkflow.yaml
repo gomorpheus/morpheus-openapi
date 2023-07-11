@@ -5,3 +5,6 @@ taskSet:
     customOptions:
       type: object
       description: Object containing any custom option type configuration parameters
+taskPhase:
+  type: string
+  description: Task Phase, default for Provisioning workflows is `provision` and the default for Operational workflows is `all`.
