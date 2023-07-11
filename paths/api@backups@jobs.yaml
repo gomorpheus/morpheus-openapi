@@ -12,6 +12,7 @@ get:
     - $ref: ../components/parameters/direction.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
     - $ref: ../components/parameters/externalId.yaml
   responses:
     '200':
@@ -58,6 +59,9 @@ post:
                 name: 
                   type: string
                   description: A name for the backup job
+                code: 
+                  type: string
+                  description: A code for the backup job
                 scheduleId: 
                   type: integer
                   format: int64
