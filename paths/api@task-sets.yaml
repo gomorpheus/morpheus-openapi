@@ -101,6 +101,21 @@ post:
                       type: string
                       description: Task Phase. Pass operation for `operational` workflows.
                       default: provision
+                      enum:
+                        - start
+                        - stop
+                        - preProvision
+                        - provision
+                        - postProvision
+                        - preDeploy
+                        - deploy
+                        - reconfigure
+                        - teardown
+                        - startup
+                        - shutdown
+                        - operation
+
+
   responses:
     '200':
       description: Successful Request
