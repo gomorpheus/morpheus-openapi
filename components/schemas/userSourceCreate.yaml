@@ -40,6 +40,12 @@ properties:
         deprecated: true
         additionalProperties:
           type: string
+      allowCustomMappings:
+        type: boolean
+        description: Enable Role Mapping Permission
+      manualRoleAssignment:
+        type: boolean
+        description: Manual Role Assignment
       config:
         oneOf:
           - $ref: userSourceCreateLDAP.yaml
