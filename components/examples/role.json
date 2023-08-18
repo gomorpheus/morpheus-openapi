@@ -1,6 +1,7 @@
 {
   "role": {
     "id": 425,
+    "name": "A Tenant Role",
     "authority": "A Tenant Role",
     "description": null,
     "scope": "Account",
@@ -20,784 +21,1026 @@
   },
   "featurePermissions": [
     {
+      "id": 80,
+      "code": "activity",
+      "name": "Activity",
+      "access": "read",
+      "subCategory": "operations"
+    },
+    {
+      "id": 69,
+      "code": "provisioning-admin",
+      "name": "Administrator",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 89,
+      "code": "library-advanced-node-type-options",
+      "name": "Advanced Node Type Options",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 103,
+      "code": "operations-alarms",
+      "name": "Alarms",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 43,
+      "code": "reports-analytics",
+      "name": "Analytics",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 81,
+      "code": "integrations-ansible",
+      "name": "Ansible",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 51,
+      "code": "app-templates",
+      "name": "App Blueprints",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
       "id": 11,
       "code": "admin-appliance",
-      "name": "Admin: Appliance Settings",
-      "access": "full"
+      "name": "Appliance Settings",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 39,
+      "code": "operations-approvals",
+      "name": "Approvals",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 21,
+      "code": "apps",
+      "name": "Apps",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 48,
+      "code": "services-archives",
+      "name": "Archives",
+      "access": "full",
+      "subCategory": "tools"
     },
     {
       "id": 13,
       "code": "admin-backupSettings",
-      "name": "Admin: Backup Settings",
-      "access": "full"
-    },
-    {
-      "id": 130,
-      "code": "admin-distributed-workers",
-      "name": "Admin: Distributed Workers",
-      "access": "none"
-    },
-    {
-      "id": 46,
-      "code": "admin-environments",
-      "name": "Admin: Environment Settings",
-      "access": "full"
-    },
-    {
-      "id": 101,
-      "code": "admin-guidanceSettings",
-      "name": "Admin: Guidance Settings",
-      "access": "full"
-    },
-    {
-      "id": 103,
-      "code": "admin-health",
-      "name": "Admin: Health",
-      "access": "read"
-    },
-    {
-      "id": 9,
-      "code": "admin-identity-sources",
-      "name": "Admin: Identity Source",
-      "access": "full"
-    },
-    {
-      "id": 17,
-      "code": "admin-cm",
-      "name": "Admin: Integrations",
-      "access": "full"
-    },
-    {
-      "id": 50,
-      "code": "admin-licenses",
-      "name": "Admin: License Settings",
-      "access": "full"
-    },
-    {
-      "id": 16,
-      "code": "admin-logSettings",
-      "name": "Admin: Log Settings",
-      "access": "full"
-    },
-    {
-      "id": 85,
-      "code": "admin-motd",
-      "name": "Admin: Message of the day",
-      "access": "full"
-    },
-    {
-      "id": 14,
-      "code": "admin-monitorSettings",
-      "name": "Admin: Monitoring Settings",
-      "access": "full"
-    },
-    {
-      "id": 126,
-      "code": "admin-packages",
-      "name": "Admin: Packages",
-      "access": "none"
-    },
-    {
-      "id": 102,
-      "code": "admin-plugins",
-      "name": "Admin: Plugins",
-      "access": "full"
-    },
-    {
-      "id": 65,
-      "code": "admin-global-policies",
-      "name": "Admin: Policies",
-      "access": "full"
-    },
-    {
-      "id": 127,
-      "code": "admin-profiles",
-      "name": "Admin: Profiles",
-      "access": "none"
-    },
-    {
-      "id": 15,
-      "code": "admin-provisioningSettings",
-      "name": "Admin: Provisioning Settings",
-      "access": "full"
-    },
-    {
-      "id": 7,
-      "code": "admin-roles",
-      "name": "Admin: Roles",
-      "access": "full"
-    },
-    {
-      "id": 6,
-      "code": "admin-servicePlans",
-      "name": "Admin: Service Plans",
-      "access": "full"
-    },
-    {
-      "id": 4,
-      "code": "admin-accounts",
-      "name": "Admin: Tenant",
-      "access": "full"
-    },
-    {
-      "id": 5,
-      "code": "admin-accounts-users",
-      "name": "Admin: Tenant - Impersonate Users",
-      "access": "full"
-    },
-    {
-      "id": 10,
-      "code": "admin-users",
-      "name": "Admin: Users",
-      "access": "full"
-    },
-    {
-      "id": 12,
-      "code": "admin-whitelabel",
-      "name": "Admin: Whitelabel Settings",
-      "access": "full"
-    },
-    {
-      "id": 45,
-      "code": "billing",
-      "name": "API: Billing",
-      "access": "full"
-    },
-    {
-      "id": 73,
-      "code": "execution-request",
-      "name": "API: Execution Request",
-      "access": "full"
+      "name": "Backup Settings",
+      "access": "full",
+      "subCategory": "admin"
     },
     {
       "id": 22,
       "code": "backups",
       "name": "Backups",
-      "access": "full"
+      "access": "full",
+      "subCategory": "backups"
     },
     {
-      "id": 62,
-      "code": "backup-services",
-      "name": "Backups: Integrations",
-      "access": "full"
-    },
-    {
-      "id": 106,
-      "code": "service-catalog",
-      "name": "Catalog",
-      "access": "full"
-    },
-    {
-      "id": 107,
-      "code": "service-catalog-dashboard",
-      "name": "Catalog: Dashboard",
-      "access": "read"
-    },
-    {
-      "id": 108,
-      "code": "service-catalog-inventory",
-      "name": "Catalog: Inventory",
-      "access": "full"
-    },
-    {
-      "id": 120,
-      "code": "custom-instance-tab",
-      "name": "Custom Instance Tab",
-      "access": "full"
-    },
-    {
-      "id": 123,
-      "code": "custom-server-tab",
-      "name": "Custom Server Tab",
-      "access": "none"
-    },
-    {
-      "id": 140,
-      "code": "datadog-instance-tab",
-      "name": "DataDog Instance Tab",
-      "access": "none"
-    },
-    {
-      "id": 137,
-      "code": "example-catalog-view",
-      "name": "Example Catalog Layout",
-      "access": "none"
-    },
-    {
-      "id": 38,
-      "code": "infrastructure-boot",
-      "name": "Infrastructure: Boot",
-      "access": "full"
-    },
-    {
-      "id": 18,
-      "code": "admin-certificates",
-      "name": "Infrastructure: Certificates",
-      "access": "full"
-    },
-    {
-      "id": 3,
-      "code": "admin-zones",
-      "name": "Infrastructure: Clouds",
-      "access": "full"
-    },
-    {
-      "id": 84,
-      "code": "infrastructure-cluster",
-      "name": "Infrastructure: Clusters",
-      "access": "full"
-    },
-    {
-      "id": 1,
-      "code": "admin-servers",
-      "name": "Infrastructure: Compute",
-      "access": "full"
-    },
-    {
-      "id": 138,
-      "code": "credentials",
-      "name": "Infrastructure: Credentials",
-      "access": "none"
-    },
-    {
-      "id": 133,
-      "code": "infrastructure-network-dhcp-relay",
-      "name": "Infrastructure: DHCP Relays",
-      "access": "none"
-    },
-    {
-      "id": 132,
-      "code": "infrastructure-network-dhcp-server",
-      "name": "Infrastructure: DHCP Servers",
-      "access": "none"
-    },
-    {
-      "id": 2,
-      "code": "admin-groups",
-      "name": "Infrastructure: Groups",
-      "access": "full"
-    },
-    {
-      "id": 20,
-      "code": "admin-keypairs",
-      "name": "Infrastructure: Keypairs",
-      "access": "full"
-    },
-    {
-      "id": 135,
-      "code": "infrastructure-kube-cntl",
-      "name": "Infrastructure: Kubernetes Control",
-      "access": "full"
-    },
-    {
-      "id": 35,
-      "code": "infrastructure-loadbalancer",
-      "name": "Infrastructure: Load Balancers",
-      "access": "full"
-    },
-    {
-      "id": 87,
-      "code": "infrastructure-domains",
-      "name": "Infrastructure: Network Domains",
-      "access": "full"
-    },
-    {
-      "id": 99,
-      "code": "infrastructure-network-firewalls",
-      "name": "Infrastructure: Network Firewalls",
-      "access": "full"
-    },
-    {
-      "id": 97,
-      "code": "infrastructure-network-integrations",
-      "name": "Infrastructure: Network Integration",
-      "access": "full"
-    },
-    {
-      "id": 89,
-      "code": "infrastructure-ippools",
-      "name": "Infrastructure: Network IP Pools",
-      "access": "full"
-    },
-    {
-      "id": 88,
-      "code": "infrastructure-proxies",
-      "name": "Infrastructure: Network Proxies",
-      "access": "full"
-    },
-    {
-      "id": 119,
-      "code": "infrastructure-router-dhcp-binding",
-      "name": "Infrastructure: Network Router DHCP Binding",
-      "access": "full"
-    },
-    {
-      "id": 98,
-      "code": "infrastructure-dhcp-pool",
-      "name": "Infrastructure: Network Router DHCP Pool",
-      "access": "full"
-    },
-    {
-      "id": 118,
-      "code": "infrastructure-router-dhcp-relay",
-      "name": "Infrastructure: Network Router DHCP Relay",
-      "access": "full"
-    },
-    {
-      "id": 112,
-      "code": "infrastructure-network-router-firewalls",
-      "name": "Infrastructure: Network Router Firewalls",
-      "access": "full"
-    },
-    {
-      "id": 111,
-      "code": "infrastructure-network-router-interfaces",
-      "name": "Infrastructure: Network Router Interfaces",
-      "access": "full"
-    },
-    {
-      "id": 109,
-      "code": "infrastructure-nat",
-      "name": "Infrastructure: Network Router NAT",
-      "access": "full"
-    },
-    {
-      "id": 113,
-      "code": "infrastructure-network-router-redistribution",
-      "name": "Infrastructure: Network Router Redistribution",
-      "access": "full"
-    },
-    {
-      "id": 110,
-      "code": "infrastructure-network-router-routes",
-      "name": "Infrastructure: Network Router Routes",
-      "access": "full"
-    },
-    {
-      "id": 86,
-      "code": "infrastructure-routers",
-      "name": "Infrastructure: Network Routers",
-      "access": "full"
-    },
-    {
-      "id": 134,
-      "code": "infrastructure-network-server-groups",
-      "name": "Infrastructure: Network Server Groups",
-      "access": "none"
-    },
-    {
-      "id": 136,
-      "code": "infrastructure-network-dhcp-routes",
-      "name": "Infrastructure: Network Static Routes",
-      "access": "none"
-    },
-    {
-      "id": 36,
-      "code": "infrastructure-networks",
-      "name": "Infrastructure: Networks",
-      "access": "full"
-    },
-    {
-      "id": 19,
-      "code": "admin-policies",
-      "name": "Infrastructure: Policies",
-      "access": "full"
-    },
-    {
-      "id": 37,
-      "code": "infrastructure-securityGroups",
-      "name": "Infrastructure: Security Groups",
-      "access": "full"
-    },
-    {
-      "id": 69,
-      "code": "infrastructure-state",
-      "name": "Infrastructure: State",
-      "access": "full"
-    },
-    {
-      "id": 34,
-      "code": "infrastructure-storage",
-      "name": "Infrastructure: Storage",
-      "access": "full"
-    },
-    {
-      "id": 63,
-      "code": "infrastructure-storage-browser",
-      "name": "Infrastructure: Storage Browser",
-      "access": "read"
+      "id": 45,
+      "code": "billing",
+      "name": "Billing",
+      "access": "full",
+      "subCategory": "api"
     },
     {
       "id": 61,
-      "code": "trust-services",
-      "name": "Infrastructure: Trust Integrations",
-      "access": "full"
-    },
-    {
-      "id": 76,
-      "code": "integrations-ansible",
-      "name": "Integrations: Ansible",
-      "access": "full"
-    },
-    {
-      "id": 52,
-      "code": "app-templates",
-      "name": "Library: App Blueprints",
-      "access": "full"
-    },
-    {
-      "id": 58,
       "code": "arm-template",
-      "name": "Library: Blueprints - ARM",
-      "access": "full"
+      "name": "Blueprints - ARM",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 68,
+      "id": 70,
       "code": "cloudFormation-template",
-      "name": "Library: Blueprints - CloudFormation",
-      "access": "full"
+      "name": "Blueprints - CloudFormation",
+      "access": "full",
+      "subCategory": "library"
     },
     {
       "id": 83,
       "code": "helm-template",
-      "name": "Library: Blueprints - Helm",
-      "access": "full"
+      "name": "Blueprints - Helm",
+      "access": "full",
+      "subCategory": "library"
     },
     {
       "id": 82,
       "code": "kubernetes-template",
-      "name": "Library: Blueprints - Kubernetes",
-      "access": "full"
+      "name": "Blueprints - Kubernetes",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 59,
+      "id": 62,
       "code": "terraform-template",
-      "name": "Library: Blueprints - Terraform",
-      "access": "full"
+      "name": "Blueprints - Terraform",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
+      "id": 38,
+      "code": "infrastructure-boot",
+      "name": "Boot",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 77,
+      "code": "operations-budgets",
+      "name": "Budgets",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 113,
+      "code": "service-catalog",
+      "name": "Catalog",
+      "access": "full",
+      "subCategory": "catalog"
+    },
+    {
+      "id": 98,
+      "code": "catalog",
+      "name": "Catalog Items",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
+      "id": 18,
+      "code": "admin-certificates",
+      "name": "Certificates",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 307,
+      "code": "admin-clients",
+      "name": "Clients",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 3,
+      "code": "admin-zones",
+      "name": "Clouds",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 91,
+      "code": "infrastructure-cluster",
+      "name": "Clusters",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 29,
+      "code": "deployments",
+      "name": "Code Deployments",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 57,
+      "code": "deployment-services",
+      "name": "Code Integrations",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 178,
+      "code": "code-repositories",
+      "name": "Code Repositories",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 1,
+      "code": "admin-servers",
+      "name": "Compute",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 160,
+      "code": "services-vdi-copy",
+      "name": "Copy/Paste",
+      "access": "full",
+      "subCategory": "virtual-desktop"
+    },
+    {
+      "id": 241,
+      "code": "credentials",
+      "name": "Credentials",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 44,
+      "code": "services-cypher",
+      "name": "Cypher",
+      "access": "full_decrypted",
+      "subCategory": "tools"
+    },
+    {
+      "id": 23,
+      "code": "dashboard",
+      "name": "Dashboard",
+      "access": "read",
+      "subCategory": "operations"
+    },
+    {
+      "id": 114,
+      "code": "service-catalog-dashboard",
+      "name": "Dashboard",
+      "access": "read",
+      "subCategory": "catalog"
+    },
+    {
+      "id": 211,
+      "code": "infrastructure-network-dhcp-relay",
+      "name": "DHCP Relays",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 210,
+      "code": "infrastructure-network-dhcp-server",
+      "name": "DHCP Servers",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 207,
+      "code": "admin-distributed-workers",
+      "name": "Distributed Workers",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 94,
+      "code": "infrastructure-domains",
+      "name": "Domains",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 47,
+      "code": "admin-environments",
+      "name": "Environment Settings",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 293,
+      "code": "provisioning-environment",
+      "name": "Environment Variables",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 106,
+      "code": "provisioning-execute-script",
+      "name": "Execute Script",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 107,
+      "code": "provisioning-execute-task",
+      "name": "Execute Task",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 108,
+      "code": "provisioning-execute-workflow",
+      "name": "Execute Workflow",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 76,
+      "code": "execution-request",
+      "name": "Execution Request",
+      "access": "full",
+      "subCategory": "api"
+    },
+    {
+      "id": 218,
+      "code": "executions",
+      "name": "Executions",
+      "access": "read",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 122,
+      "code": "infrastructure-network-firewalls",
+      "name": "Firewalls",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 327,
+      "code": "infrastructure-floating-ips",
+      "name": "Floating IPs",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 2,
+      "code": "admin-groups",
+      "name": "Groups",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 54,
+      "code": "guidance",
+      "name": "Guidance",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 101,
+      "code": "admin-guidanceSettings",
+      "name": "Guidance Settings",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 102,
+      "code": "admin-health",
+      "name": "Health",
+      "access": "read",
+      "subCategory": "admin"
+    },
+    {
+      "id": 9,
+      "code": "admin-identity-sources",
+      "name": "Identity Source",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 53,
+      "code": "services-image-builder",
+      "name": "Image Builder",
+      "access": "full",
+      "subCategory": "tools"
     },
     {
       "id": 105,
-      "code": "catalog",
-      "name": "Library: Catalog Items",
-      "access": "full"
+      "code": "provisioning-import-image",
+      "name": "Import Image",
+      "access": "full",
+      "subCategory": "provisioning"
     },
     {
       "id": 8,
       "code": "admin-containers",
-      "name": "Library: Instance Types",
-      "access": "full"
+      "name": "Instance Types",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 57,
+      "id": 273,
+      "code": "provisioning-add",
+      "name": "Instances: Add",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 104,
+      "code": "provisioning-clone",
+      "name": "Instances: Clone",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 275,
+      "code": "provisioning-delete",
+      "name": "Instances: Delete",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 274,
+      "code": "provisioning-edit",
+      "name": "Instances: Edit",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 52,
+      "code": "provisioning-force-delete",
+      "name": "Instances: Force Delete",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 26,
+      "code": "provisioning",
+      "name": "Instances: List",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 276,
+      "code": "provisioning-lock",
+      "name": "Instances: Lock/Unlock",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 255,
+      "code": "provisioning-remove-control",
+      "name": "Instances: Remove From Control",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 277,
+      "code": "provisioning-scale",
+      "name": "Instances: Scale",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 278,
+      "code": "provisioning-settings",
+      "name": "Instances: Settings",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 121,
+      "code": "infrastructure-network-integrations",
+      "name": "Integration",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 17,
+      "code": "admin-cm",
+      "name": "Integrations",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 58,
       "code": "automation-services",
-      "name": "Library: Integrations",
-      "access": "full"
+      "name": "Integrations",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 128,
-      "code": "library-options",
-      "name": "Library: Options",
-      "access": "full"
+      "id": 66,
+      "code": "backup-services",
+      "name": "Integrations",
+      "access": "full",
+      "subCategory": "backups"
     },
     {
-      "id": 64,
-      "code": "scheduling-execute",
-      "name": "Library: Scheduling - Execute",
-      "access": "full"
+      "id": 109,
+      "code": "operations-invoices",
+      "name": "Invoices",
+      "access": "full",
+      "subCategory": "operations"
     },
     {
-      "id": 55,
-      "code": "scheduling-power",
-      "name": "Library: Scheduling - Power",
-      "access": "full"
+      "id": 96,
+      "code": "infrastructure-ippools",
+      "name": "IP Pools",
+      "access": "full",
+      "subCategory": "networks"
     },
     {
-      "id": 30,
-      "code": "tasks",
-      "name": "Library: Tasks",
-      "access": "full"
+      "id": 78,
+      "code": "job-executions",
+      "name": "Job Executions",
+      "access": "read",
+      "subCategory": "provisioning"
     },
     {
-      "id": 31,
-      "code": "task-scripts",
-      "name": "Library: Tasks - Script Engines",
-      "access": "full"
+      "id": 79,
+      "code": "job-templates",
+      "name": "Jobs",
+      "access": "full",
+      "subCategory": "provisioning"
     },
     {
-      "id": 129,
-      "code": "library-templates",
-      "name": "Library: Templates",
-      "access": "full"
+      "id": 20,
+      "code": "admin-keypairs",
+      "name": "Keypairs",
+      "access": "full",
+      "subCategory": "infrastructure"
     },
     {
-      "id": 60,
-      "code": "thresholds",
-      "name": "Library: Thresholds",
-      "access": "full"
+      "id": 73,
+      "code": "services-kubernetes",
+      "name": "Kubernetes",
+      "access": "full",
+      "subCategory": "tools"
     },
     {
-      "id": 32,
-      "code": "virtual-images",
-      "name": "Library: Virtual Images",
-      "access": "full"
+      "id": 231,
+      "code": "infrastructure-kube-cntl",
+      "name": "Kubernetes Control",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 50,
+      "code": "admin-licenses",
+      "name": "License Settings",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 35,
+      "code": "infrastructure-loadbalancer",
+      "name": "Load Balancers",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 161,
+      "code": "services-vdi-printer",
+      "name": "Local Printer",
+      "access": "full",
+      "subCategory": "virtual-desktop"
+    },
+    {
+      "id": 16,
+      "code": "admin-logSettings",
+      "name": "Log Settings",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 24,
+      "code": "logs",
+      "name": "Logs",
+      "access": "full",
+      "subCategory": "monitoring"
+    },
+    {
+      "id": 92,
+      "code": "admin-motd",
+      "name": "Message of the day",
+      "access": "full",
+      "subCategory": "admin"
     },
     {
       "id": 25,
       "code": "monitoring",
       "name": "Monitoring",
-      "access": "full"
+      "access": "full",
+      "subCategory": "monitoring"
     },
     {
-      "id": 24,
-      "code": "logs",
-      "name": "Monitoring: Logs",
-      "access": "full"
+      "id": 14,
+      "code": "admin-monitorSettings",
+      "name": "Monitoring Settings",
+      "access": "full",
+      "subCategory": "admin"
     },
     {
-      "id": 75,
-      "code": "activity",
-      "name": "Operations: Activity",
-      "access": "read"
+      "id": 259,
+      "code": "infrastructure-move-server",
+      "name": "Move Servers",
+      "access": "full",
+      "subCategory": "infrastructure"
     },
     {
-      "id": 104,
-      "code": "operations-alarms",
-      "name": "Operations: Alarms",
-      "access": "full"
+      "id": 36,
+      "code": "infrastructure-networks",
+      "name": "Networks",
+      "access": "full",
+      "subCategory": "infrastructure"
     },
     {
-      "id": 43,
-      "code": "reports-analytics",
-      "name": "Operations: Analytics",
-      "access": "full"
-    },
-    {
-      "id": 39,
-      "code": "operations-approvals",
-      "name": "Operations: Approvals",
-      "access": "full"
-    },
-    {
-      "id": 74,
-      "code": "operations-budgets",
-      "name": "Operations: Budgets",
-      "access": "full"
-    },
-    {
-      "id": 23,
-      "code": "dashboard",
-      "name": "Operations: Dashboard",
-      "access": "read"
-    },
-    {
-      "id": 54,
-      "code": "guidance",
-      "name": "Operations: Guidance",
-      "access": "full"
+      "id": 227,
+      "code": "library-options",
+      "name": "Options",
+      "access": "full",
+      "subCategory": "library"
     },
     {
       "id": 115,
-      "code": "operations-invoices",
-      "name": "Operations: Invoices",
-      "access": "full"
+      "code": "service-catalog-inventory",
+      "name": "Order History",
+      "access": "full",
+      "subCategory": "catalog"
     },
     {
-      "id": 33,
-      "code": "reports",
-      "name": "Operations: Reports",
-      "access": "full"
+      "id": 196,
+      "code": "admin-packages",
+      "name": "Packages",
+      "access": "full",
+      "subCategory": "admin"
     },
     {
-      "id": 48,
-      "code": "account-usage",
-      "name": "Operations: Usage",
-      "access": "full"
+      "id": 112,
+      "code": "admin-plugins",
+      "name": "Plugins",
+      "access": "full",
+      "subCategory": "admin"
     },
     {
-      "id": 79,
-      "code": "operations-wiki",
-      "name": "Operations: Wiki",
-      "access": "none"
+      "id": 19,
+      "code": "admin-policies",
+      "name": "Policies",
+      "access": "full",
+      "subCategory": "infrastructure"
     },
     {
-      "id": 91,
+      "id": 68,
+      "code": "admin-global-policies",
+      "name": "Policies",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 279,
+      "code": "provisioning-power",
+      "name": "Power Control",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 187,
+      "code": "admin-profiles",
+      "name": "Profiles",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 100,
       "code": "projects",
       "name": "Projects",
-      "access": "none"
+      "access": "full",
+      "subCategory": "projects"
     },
     {
-      "id": 67,
-      "code": "provisioning-admin",
-      "name": "Provisioning Administrator",
-      "access": "full"
-    },
-    {
-      "id": 77,
-      "code": "library-advanced-node-type-options",
-      "name": "Provisioning: Advanced Node Type Options",
-      "access": "full"
-    },
-    {
-      "id": 51,
-      "code": "provisioning-force-delete",
-      "name": "Provisioning: Allow Force Delete",
-      "access": "full"
-    },
-    {
-      "id": 21,
-      "code": "apps",
-      "name": "Provisioning: Apps",
-      "access": "full"
-    },
-    {
-      "id": 92,
-      "code": "provisioning-clone",
-      "name": "Provisioning: Clone Instance",
-      "access": "full"
-    },
-    {
-      "id": 29,
-      "code": "deployments",
-      "name": "Provisioning: Code Deployments",
-      "access": "full"
-    },
-    {
-      "id": 56,
-      "code": "deployment-services",
-      "name": "Provisioning: Code Integrations",
-      "access": "full"
-    },
-    {
-      "id": 124,
-      "code": "code-repositories",
-      "name": "Provisioning: Code Repositories",
-      "access": "full"
-    },
-    {
-      "id": 94,
-      "code": "provisioning-execute-script",
-      "name": "Provisioning: Execute Script",
-      "access": "full"
+      "id": 15,
+      "code": "admin-provisioningSettings",
+      "name": "Provisioning Settings",
+      "access": "full",
+      "subCategory": "admin"
     },
     {
       "id": 95,
-      "code": "provisioning-execute-task",
-      "name": "Provisioning: Execute Task",
-      "access": "full"
+      "code": "infrastructure-proxies",
+      "name": "Proxies",
+      "access": "full",
+      "subCategory": "networks"
     },
     {
-      "id": 96,
-      "code": "provisioning-execute-workflow",
-      "name": "Provisioning: Execute Workflow",
-      "access": "full"
+      "id": 254,
+      "code": "provisioning-reassign-type",
+      "name": "Re-Assign Instance Type",
+      "access": "none",
+      "subCategory": "provisioning"
     },
     {
-      "id": 131,
-      "code": "executions",
-      "name": "Provisioning: Executions",
-      "access": "full"
-    },
-    {
-      "id": 93,
-      "code": "provisioning-import-image",
-      "name": "Provisioning: Import Image",
-      "access": "full"
-    },
-    {
-      "id": 26,
-      "code": "provisioning",
-      "name": "Provisioning: Instances",
-      "access": "full"
-    },
-    {
-      "id": 80,
-      "code": "job-executions",
-      "name": "Provisioning: Job Executions",
-      "access": "read"
-    },
-    {
-      "id": 81,
-      "code": "job-templates",
-      "name": "Provisioning: Jobs",
-      "access": "full"
-    },
-    {
-      "id": 71,
-      "code": "services-network-registry",
-      "name": "Provisioning: Service Mesh",
-      "access": "none"
-    },
-    {
-      "id": 90,
+      "id": 97,
       "code": "provisioning-reconfigure",
-      "name": "Reconfigure Servers",
-      "access": "full"
+      "name": "Reconfigure",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 280,
+      "code": "provisioning-reconfigure-change-plan",
+      "name": "Reconfigure: Change Plan",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 285,
+      "code": "provisioning-reconfigure-add-disk",
+      "name": "Reconfigure: Disk Add",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 287,
+      "code": "provisioning-reconfigure-disk-type",
+      "name": "Reconfigure: Disk Change Type",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 284,
+      "code": "provisioning-reconfigure-modify-disk",
+      "name": "Reconfigure: Disk Modify",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 286,
+      "code": "provisioning-reconfigure-remove-disk",
+      "name": "Reconfigure: Disk Remove",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 282,
+      "code": "provisioning-reconfigure-add-network",
+      "name": "Reconfigure: Network Add",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 281,
+      "code": "provisioning-reconfigure-modify-network",
+      "name": "Reconfigure: Network Modify",
+      "access": "full",
+      "subCategory": "lifecycle"
+    },
+    {
+      "id": 283,
+      "code": "provisioning-reconfigure-remove-network",
+      "name": "Reconfigure: Network Remove",
+      "access": "full",
+      "subCategory": "lifecycle"
     },
     {
       "id": 27,
       "code": "terminal",
       "name": "Remote Console",
-      "access": "full"
+      "access": "full",
+      "subCategory": "provisioning"
     },
     {
       "id": 49,
       "code": "terminal-access",
-      "name": "Remote Console: Auto Login",
-      "access": "yes"
+      "name": "Remote Console Auto Login",
+      "access": "yes",
+      "subCategory": "provisioning"
     },
     {
-      "id": 100,
+      "id": 33,
+      "code": "reports",
+      "name": "Reports",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 7,
+      "code": "admin-roles",
+      "name": "Roles",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 131,
+      "code": "infrastructure-network-router-firewalls",
+      "name": "Router Firewalls",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 130,
+      "code": "infrastructure-network-router-interfaces",
+      "name": "Router Interfaces",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 128,
+      "code": "infrastructure-nat",
+      "name": "Router NAT",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 132,
+      "code": "infrastructure-network-router-redistribution",
+      "name": "Router Redistribution",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 129,
+      "code": "infrastructure-network-router-routes",
+      "name": "Router Routes",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 93,
+      "code": "infrastructure-routers",
+      "name": "Routers",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 125,
       "code": "security-scan",
-      "name": "Security: Scanning",
-      "access": "full"
+      "name": "Scanning",
+      "access": "full",
+      "subCategory": "security"
     },
     {
-      "id": 78,
-      "code": "snapshots",
-      "name": "Snapshots",
-      "access": "full"
+      "id": 65,
+      "code": "scheduling-execute",
+      "name": "Scheduling - Execute",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 47,
-      "code": "services-archives",
-      "name": "Tools: Archives",
-      "access": "full"
+      "id": 56,
+      "code": "scheduling-power",
+      "name": "Scheduling - Power",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 44,
-      "code": "services-cypher",
-      "name": "Tools: Cypher",
-      "access": "full_decrypted"
+      "id": 37,
+      "code": "infrastructure-securityGroups",
+      "name": "Security Groups",
+      "access": "full",
+      "subCategory": "infrastructure"
     },
     {
-      "id": 53,
-      "code": "services-image-builder",
-      "name": "Tools: Image Builder",
-      "access": "full"
+      "id": 204,
+      "code": "infrastructure-network-server-groups",
+      "name": "Server Groups",
+      "access": "full",
+      "subCategory": "networks"
     },
     {
       "id": 72,
-      "code": "services-kubernetes",
-      "name": "Tools: Kubernetes",
-      "access": "full"
+      "code": "services-network-registry",
+      "name": "Service Mesh",
+      "access": "full",
+      "subCategory": "provisioning"
     },
     {
-      "id": 116,
+      "id": 6,
+      "code": "admin-servicePlans",
+      "name": "Service Plans",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 90,
+      "code": "snapshots",
+      "name": "Snapshots",
+      "access": "full",
+      "subCategory": "snapshots"
+    },
+    {
+      "id": 337,
+      "code": "snapshots-linked-clone",
+      "name": "Snapshots: Linked Clone",
+      "access": "full",
+      "subCategory": "snapshots"
+    },
+    {
+      "id": 260,
+      "code": "provisioning-state",
+      "name": "State",
+      "access": "full",
+      "subCategory": "provisioning"
+    },
+    {
+      "id": 74,
+      "code": "infrastructure-state",
+      "name": "State",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 236,
+      "code": "infrastructure-network-dhcp-routes",
+      "name": "Static Routes",
+      "access": "full",
+      "subCategory": "networks"
+    },
+    {
+      "id": 34,
+      "code": "infrastructure-storage",
+      "name": "Storage",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 67,
+      "code": "infrastructure-storage-browser",
+      "name": "Storage Browser",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 30,
+      "code": "tasks",
+      "name": "Tasks",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
+      "id": 31,
+      "code": "task-scripts",
+      "name": "Tasks - Script Engines",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
+      "id": 228,
+      "code": "library-templates",
+      "name": "Templates",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
+      "id": 4,
+      "code": "admin-accounts",
+      "name": "Tenant",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 5,
+      "code": "admin-accounts-users",
+      "name": "Tenant - Impersonate Users",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 63,
+      "code": "thresholds",
+      "name": "Thresholds",
+      "access": "full",
+      "subCategory": "library"
+    },
+    {
+      "id": 64,
+      "code": "trust-services",
+      "name": "Trust Integrations",
+      "access": "full",
+      "subCategory": "infrastructure"
+    },
+    {
+      "id": 46,
+      "code": "account-usage",
+      "name": "Usage",
+      "access": "full",
+      "subCategory": "operations"
+    },
+    {
+      "id": 10,
+      "code": "admin-users",
+      "name": "Users",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 151,
       "code": "services-vdi-pools",
-      "name": "Tools: VDI Pools",
-      "access": "full"
+      "name": "VDI Pools",
+      "access": "full",
+      "subCategory": "virtual-desktop"
     },
     {
-      "id": 121,
-      "code": "services-vdi-copy",
-      "name": "VDI: Copy/Paste",
-      "access": "none"
+      "id": 32,
+      "code": "virtual-images",
+      "name": "Virtual Images",
+      "access": "full",
+      "subCategory": "library"
     },
     {
-      "id": 122,
-      "code": "services-vdi-printer",
-      "name": "VDI: Local Printer",
-      "access": "none"
+      "id": 12,
+      "code": "admin-whitelabel",
+      "name": "Whitelabel Settings",
+      "access": "full",
+      "subCategory": "admin"
+    },
+    {
+      "id": 84,
+      "code": "operations-wiki",
+      "name": "Wiki",
+      "access": "full",
+      "subCategory": "operations"
     }
   ],
   "globalSiteAccess": "full",

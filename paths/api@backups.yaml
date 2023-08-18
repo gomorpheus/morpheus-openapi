@@ -1,0 +1,77 @@
+get:
+  summary: Retrieves all Backups
+  description: |
+    Retrieves all backups.
+  operationId: listBackups
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                backups:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/backup.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Backups Response:
+              value:
+                $ref: ../components/examples/backups.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a Backup
+  description: |
+    This endpoint allows creating a Backup.
+  operationId: addBackups
+  tags:
+    - Backups
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - backup
+          properties:
+            backup:
+              type: object
+              anyOf: 
+                - $ref: ../components/schemas/backupTypeInstance.yaml
+                - $ref: ../components/schemas/backupTypeServer.yaml
+                - $ref: ../components/schemas/backupTypeProvider.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                backup:
+                  $ref: ../components/schemas/backup.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Backup Response:
+              value:
+                $ref: ../components/examples/backupSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

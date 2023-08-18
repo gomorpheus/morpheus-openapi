@@ -1,0 +1,94 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+    description: Backup Result ID
+  backup: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: Backup ID
+      name: 
+        type: string
+        description: Backup Name
+  backupSetId: 
+    type: string
+    nullable: true
+  instanceId: 
+    type: integer
+    format: int64
+    nullable: true
+  containerId: 
+    type: integer
+    format: int64
+    nullable: true
+  serverId: 
+    type: integer
+    format: int64
+    nullable: true
+  status: 
+    type: string
+    nullable: true
+  errorMessage: 
+    type: string
+    nullable: true
+  startDate: 
+    type: string
+    format: date-time
+    nullable: true
+  endDate: 
+    type: string
+    format: date-time
+    nullable: true
+  durationMillis: 
+    type: integer
+    format: int64
+    nullable: true
+  sizeInBytes: 
+    type: integer
+    format: int64
+    nullable: true
+  sizeInMb: 
+    type: integer
+    format: int64
+    nullable: true
+  volumePath: 
+    type: string
+    nullable: true
+  resultArchive: 
+    type: string
+    nullable: true
+  resultPath: 
+    type: string
+    nullable: true
+  externalId: 
+    type: string
+    nullable: true
+  snapshotId: 
+    type: string
+    nullable: true
+  snapshotExternalId: 
+    type: string
+    nullable: true
+  createdBy: 
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+        description: User ID
+      username: 
+        type: string
+        description: Username
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+    description: Date Created
+  lastUpdated: 
+    type: string
+    format: date-time
+    description: Last Updated

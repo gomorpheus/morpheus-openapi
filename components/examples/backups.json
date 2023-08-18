@@ -1,0 +1,178 @@
+{
+  "backups": [
+    {
+      "id": 48,
+      "name": "a backup",
+      "locationType": "instance",
+      "instance": {
+        "id": 432,
+        "name": "jd-azure-234"
+      },
+      "containerId": 1210,
+      "job": {
+        "id": 37,
+        "name": "a backup"
+      },
+      "schedule": {
+        "id": 2,
+        "name": "Weekly on Sunday at Midnight",
+        "cron": "0 0 * * 7"
+      },
+      "retentionCount": 2,
+      "backupType": {
+        "id": 20,
+        "code": "azureSnapshot",
+        "name": "Azure VM Snapshot"
+      },
+      "backupProvider": null,
+      "storageProvider": {
+        "id": 10,
+        "name": "Backup Storage"
+      },
+      "backupRepository": null,
+      "cronExpression": "0 0 * * 7",
+      "nextFire": "2023-04-02T00:00:00Z",
+      "lastStatus": null,
+      "lastResult": {
+        "id": 868,
+        "status": "SUCCEEDED",
+        "dateCreated": "2023-06-11T00:01:02Z"
+      },
+      "stats": {
+        "totalSize": 0,
+        "success": 2,
+        "failed": 0,
+        "totalCompleted": 2,
+        "successRate": 1,
+        "failRate": 0,
+        "avgSize": 0,
+        "lastFiveResults": [
+          "SUCCEEDED",
+          "SUCCEEDED"
+        ],
+        "failedRate": 0
+      },
+      "enabled": true,
+      "dateCreated": "2023-03-29T14:59:15Z",
+      "lastUpdated": "2023-06-11T00:01:03Z"
+    },
+    {
+      "id": 58,
+      "name": "amazon-backup",
+      "locationType": "instance",
+      "instance": {
+        "id": 436,
+        "name": "amazon-may-2"
+      },
+      "containerId": 1214,
+      "job": {
+        "id": 51,
+        "name": "amazon-backup"
+      },
+      "schedule": {
+        "id": 2,
+        "name": "Weekly on Sunday at Midnight",
+        "cron": "0 0 * * 7"
+      },
+      "retentionCount": null,
+      "backupType": {
+        "id": 11,
+        "code": "amazonSnapshot",
+        "name": "Amazon VM Snapshot"
+      },
+      "backupProvider": null,
+      "storageProvider": {
+        "id": 10,
+        "name": "Backup Storage"
+      },
+      "backupRepository": null,
+      "cronExpression": "0 0 * * 7",
+      "nextFire": "2023-06-04T00:00:00Z",
+      "lastStatus": null,
+      "lastResult": {
+        "id": 873,
+        "status": "FAILED",
+        "dateCreated": "2023-06-11T00:01:02Z"
+      },
+      "stats": {
+        "totalSize": 0,
+        "success": 0,
+        "failed": 2,
+        "totalCompleted": 2,
+        "successRate": 0,
+        "failRate": 0,
+        "avgSize": 0,
+        "lastFiveResults": [
+          "FAILED",
+          "FAILED"
+        ],
+        "failedRate": 1
+      },
+      "enabled": true,
+      "dateCreated": "2023-05-30T15:02:33Z",
+      "lastUpdated": "2023-06-11T00:01:02Z"
+    },
+    {
+      "id": 59,
+      "name": "amazon-backup-1",
+      "locationType": "instance",
+      "instance": {
+        "id": 436,
+        "name": "amazon-may-2"
+      },
+      "containerId": 1214,
+      "job": {
+        "id": 52,
+        "name": "amazon-backup-1"
+      },
+      "schedule": {
+        "id": 2,
+        "name": "Weekly on Sunday at Midnight",
+        "cron": "0 0 * * 7"
+      },
+      "retentionCount": null,
+      "backupType": {
+        "id": 11,
+        "code": "amazonSnapshot",
+        "name": "Amazon VM Snapshot"
+      },
+      "backupProvider": null,
+      "storageProvider": {
+        "id": 10,
+        "name": "Backup Storage"
+      },
+      "backupRepository": null,
+      "cronExpression": "0 0 * * 7",
+      "nextFire": "2023-06-04T00:00:00Z",
+      "lastStatus": null,
+      "lastResult": {
+        "id": 864,
+        "status": "FAILED",
+        "dateCreated": "2023-06-11T00:01:02Z"
+      },
+      "stats": {
+        "totalSize": 0,
+        "success": 0,
+        "failed": 2,
+        "totalCompleted": 2,
+        "successRate": 0,
+        "failRate": 0,
+        "avgSize": 0,
+        "lastFiveResults": [
+          "FAILED",
+          "FAILED"
+        ],
+        "failedRate": 1
+      },
+      "enabled": true,
+      "dateCreated": "2023-05-30T15:12:34Z",
+      "lastUpdated": "2023-06-11T00:01:02Z"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 3,
+    "total": 3
+  }
+}

@@ -21,6 +21,8 @@ properties:
     type: boolean
   allowCustomMappings: 
     type: boolean
+  manualRoleAssignment:
+    type: boolean
   account: 
     type: object
     properties: 

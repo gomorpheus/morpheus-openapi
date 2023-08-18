@@ -1,0 +1,47 @@
+get:
+  summary: Retrieves a Specific Backup Restore
+  description: |
+    Retrieves a specific backup restore.
+  operationId: getBackupRestores
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              restore:
+                $ref: ../components/schemas/backupRestore.yaml
+          examples:
+            Backup Restore Response:
+              value:
+                $ref: ../components/examples/backupRestore.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Deletes a Backup Restore
+  description: |
+    Deletes a specified backup restore.
+  operationId: removeBackupRestores
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

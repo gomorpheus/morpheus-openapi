@@ -3,12 +3,11 @@ required:
   - taskSetId
   - access
 properties:
-  taskId:
+  taskSetId:
     type: integer
     description: "`id` of the workflow (taskSet)"
   access:
     type: string
     description: The new access level.
     enum:
-      - full
-      - none
+      $ref: rolePermissionAccessLevelsForResource.yaml

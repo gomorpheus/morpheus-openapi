@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "backup": {
+    "id": 48,
+    "name": "a backup",
+    "locationType": "instance",
+    "instance": {
+      "id": 432,
+      "name": "dev-234"
+    },
+    "containerId": 1210,
+    "job": {
+      "id": 37,
+      "name": "a backup"
+    },
+    "schedule": null,
+    "retentionCount": 2,
+    "backupType": {
+      "id": 20,
+      "code": "azureSnapshot",
+      "name": "Azure VM Snapshot"
+    },
+    "backupProvider": null,
+    "storageProvider": {
+      "id": 10,
+      "name": "Backup Storage"
+    },
+    "backupRepository": null,
+    "cronExpression": null,
+    "nextFire": null,
+    "lastStatus": null,
+    "lastResult": {
+      "id": 878,
+      "status": "START_REQUESTED",
+      "dateCreated": "2023-06-16T17:13:17Z"
+    },
+    "stats": {
+      "totalSize": 0,
+      "success": 2,
+      "failed": 0,
+      "totalCompleted": 2,
+      "successRate": 1,
+      "failRate": 0,
+      "avgSize": 0,
+      "lastFiveResults": [
+        "SUCCEEDED",
+        "SUCCEEDED",
+        "START_REQUESTED"
+      ],
+      "failedRate": 0
+    },
+    "enabled": true,
+    "dateCreated": "2023-03-29T14:59:15Z",
+    "lastUpdated": "2023-06-16T17:13:17Z"
+  }
+}

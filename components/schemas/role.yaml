@@ -6,8 +6,12 @@ properties:
       id: 
         type: integer
         format: int64
+      name:
+        type: string
+        description: a unique name of the role
       authority: 
         type: string
+        description: Alias for name
       description: 
         type: string
         nullable: true
@@ -57,6 +61,8 @@ properties:
         name: 
           type: string
         access: 
+          type: string
+        subCategory: 
           type: string
   globalSiteAccess: 
     type: string

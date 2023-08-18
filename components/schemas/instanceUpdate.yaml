@@ -80,5 +80,9 @@ properties:
         format: int64
         description: User ID, can be used to change instance owner.
         example: 5
+      displayName:
+        type: string
+        description: Name used in the UI for display
+        example: myInstanceDisplayName
   config:
     $ref: instancesConfigCustomOptions.yaml

@@ -1,0 +1,93 @@
+get:
+  summary: Retrieves all Backup Jobs
+  description: |
+    Retrieves all backup jobs.
+  operationId: listBackupJobs
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/code.yaml
+    - $ref: ../components/parameters/externalId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                jobs:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/backupJob.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Backup Jobs Response:
+              value:
+                $ref: ../components/examples/backupJobs.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a Backup Job
+  description: |
+    This endpoint allows creating a Backup Job.
+  operationId: addBackupJobs
+  tags:
+    - Backups
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - job
+          properties:
+            job:
+              type: object
+              required:
+                - name
+              properties:
+                name: 
+                  type: string
+                  description: A name for the backup job
+                code: 
+                  type: string
+                  description: A code for the backup job
+                scheduleId: 
+                  type: integer
+                  format: int64
+                  description: Execute Schedule ID to use for the backup job
+                  nullable: true
+                retentionCount:
+                  type: integer
+                  format: int64
+                  description: Retention Count. By default the backup settings value will be used.
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                job:
+                  $ref: ../components/schemas/backupJob.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Backup Job Response:
+              value:
+                $ref: ../components/examples/backupJobSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

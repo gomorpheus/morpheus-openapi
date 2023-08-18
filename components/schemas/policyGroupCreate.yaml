@@ -180,7 +180,7 @@ properties:
               maxCores:
                 type: string 
               excludeContainers:
-                type: boolean 
+                $ref: checkbox.yaml
           - type: object
             description: |
               - Max Hosts
@@ -200,7 +200,7 @@ properties:
               maxMemory:
                 type: string
               excludeContainers:
-                type: boolean 
+                $ref: checkbox.yaml
           - type: object
             description: |
               - Max Pool Members
@@ -215,7 +215,7 @@ properties:
               maxStorage:
                 type: string
               excludeContainers:
-                type: boolean 
+                $ref: checkbox.yaml
           - type: object
             description: |
               - Max Virtual Servers

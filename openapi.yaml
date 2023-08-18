@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 6.1.1
+  version: 6.2.1
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -102,6 +102,26 @@ paths:
     $ref: paths/api@execution-request@uniqueId.yaml
   /api/backup-settings:
     $ref: paths/api@backup-settings.yaml
+  /api/backups:
+    $ref: paths/api@backups.yaml
+  /api/backups/{id}:
+    $ref: paths/api@backups@id.yaml
+  /api/backups/{id}/execute:
+    $ref: paths/api@backups@id@execute.yaml
+  /api/backups/jobs:
+    $ref: paths/api@backups@jobs.yaml
+  /api/backups/jobs/{id}:
+    $ref: paths/api@backups@jobs@id.yaml
+  /api/backups/jobs/{id}/execute:
+    $ref: paths/api@backups@jobs@id@execute.yaml
+  /api/backups/results:
+    $ref: paths/api@backups@results.yaml
+  /api/backups/results/{id}:
+    $ref: paths/api@backups@results@id.yaml
+  /api/backups/restores:
+    $ref: paths/api@backups@restores.yaml
+  /api/backups/restores/{id}:
+    $ref: paths/api@backups@restores@id.yaml
   /api/billing/account:
     $ref: paths/api@billing@account.yaml
   /api/billing/account/{id}:
@@ -342,12 +362,6 @@ paths:
     $ref: paths/api@deploys@id.yaml
   /api/deploys/{id}/deploy:
     $ref: paths/api@deploys@id@deploy.yaml
-  /api/doc:
-    $ref: paths/api@doc.yaml
-  /api/doc/openapi:
-    $ref: paths/api@doc@openapi.yaml
-  /api/doc/openapi.yaml:
-    $ref: paths/api@doc@openapi.yaml.yaml
   /api/environments:
     $ref: paths/api@environments.yaml
   /api/environments/{id}:
@@ -751,6 +765,10 @@ paths:
     $ref: paths/api@networks@servers@id@firewall-rule-groups.yaml
   /api/networks/servers/{serverId}/firewall-rule-groups/{id}:
     $ref: paths/api@networks@servers@id@firewall-rule-groups@id.yaml
+  /api/networks/servers/{serverId}/groups:
+    $ref: paths/api@networks@servers@id@groups.yaml
+  /api/networks/servers/{serverId}/groups/{id}:
+    $ref: paths/api@networks@servers@id@groups@id.yaml
   /api/networks/servers/{serverId}/scopes:
     $ref: paths/api@networks@servers@id@scopes.yaml
   /api/networks/servers/{serverId}/scopes/{id}:
@@ -783,8 +801,6 @@ paths:
     $ref: paths/api@plugins@upload.yaml
   /api/plugins/{id}:
     $ref: paths/api@plugins@id.yaml
-  /api/plugins/check-updates:
-    $ref: paths/api@plugins@check-updates.yaml
   /api/policies:
     $ref: paths/api@policies.yaml
   /api/policies/{id}:
@@ -1175,6 +1191,8 @@ tags:
     description: Manage Tasks and Workflows
   - name: Backup Settings
     description: Manage Backup Settings
+  - name: Backups
+    description: Manage Backups
   - name: Billing
     description: Manage Billing
   - name: Blueprints

@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "job": {
+    "id": 51,
+    "name": "test-backup",
+    "code": "test-backup",
+    "retentionCount": null,
+    "schedule": {
+      "id": 2,
+      "name": "Weekly on Sunday at Midnight",
+      "cron": "0 0 * * 7"
+    },
+    "externalId": null,
+    "backupProvider": null,
+    "backupRepository": null,
+    "cronExpression": "0 0 * * 7",
+    "nextFire": "2023-06-18T00:00:00Z",
+    "source": "user",
+    "visibility": "private",
+    "account": {
+      "id": 1,
+      "name": "root"
+    },
+    "dateCreated": "2023-05-30T15:02:33Z",
+    "lastUpdated": "2023-06-11T00:01:01Z",
+    "backups": [
+      {
+        "id": 58,
+        "name": "test-backup"
+      }
+    ]
+  }
+}

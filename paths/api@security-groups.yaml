@@ -70,29 +70,10 @@ post:
                   type: boolean
                   description: Set to `false` to disable a security group.
                 customOptions:
-                  type: array
-                  nullable: true
-                  items:
-                    anyOf:
-                    - type: object
-                      required:
-                        - vpc
-                      properties:
-                        vpc:
-                          type: integer
-                          format: int64
-                          description: External ID of Amazon VPC
-                          example: 13
-                    - type: object
-                      required:
-                        - resourceGroup
-                      properties:
-                        resourceGroup:
-                          type: integer
-                          format: int64
-                          description: External ID of the Azure Resource Group to scope to
-                          example: 11
-                    - type: object
+                  anyOf:
+                  - $ref: ../components/schemas/securityGroupLocationAzureCustomOptions.yaml
+                  - $ref: ../components/schemas/securityGroupLocationAwsCustomOptions.yaml
+                  - $ref: ../components/schemas/securityGroupLocationOpenstackCustomOptions.yaml
                 tenantPermissions:
                   type: array
                   items:

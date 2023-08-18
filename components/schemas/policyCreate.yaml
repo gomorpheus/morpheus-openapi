@@ -55,7 +55,7 @@ properties:
           - workflow
   config:
     description: A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
-    oneOf:
+    anyOf:
       - type: object
         title: Approve Policy Type Configuration
         description: |
@@ -208,7 +208,7 @@ properties:
           maxCores:
             type: string
           excludeContainers:
-            type: boolean 
+            $ref: checkbox.yaml
       - type: object
         title: Max Hosts Policy Type Configuration
         description: |
@@ -230,11 +230,17 @@ properties:
         description: |
           Configuration settings for the following policy types:
           - Max Memory
+        required:
+          - maxMemory
         properties:
           maxMemory:
-            type: string
+            anyOf:
+              - type: string
+              - type: integer
+                format: int64
+            description: "Max Memory (GB)"
           excludeContainers:
-            type: boolean 
+            $ref: checkbox.yaml
       - type: object
         title: Max Pool Members Policy Type Configuration
         description: |
@@ -253,7 +259,7 @@ properties:
           maxStorage:
             type: string
           excludeContainers:
-            type: boolean 
+            $ref: checkbox.yaml
       - type: object
         title: Max Virtual Servers Policy Type Configuration
         description: |

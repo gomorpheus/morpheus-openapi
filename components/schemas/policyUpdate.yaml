@@ -9,7 +9,7 @@ properties:
     description: A description for the policy
   config:
     description: A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
-    oneOf:
+    anyOf:
       - type: object
         title: Approve Policy Type Configuration
         description: |
@@ -186,9 +186,18 @@ properties:
           - Max Memory
         properties:
           maxMemory:
-            type: string
+            anyOf:
+              - type: string
+              - type: integer
+                format: int64
+            description: "Max Memory (GB)"
           excludeContainers:
-            type: boolean 
+            type: string
+            description: Set to on to exclude containers
+            enum:
+              - on
+              - off
+            default: off
       - type: object
         title: Max Pool Members Policy Type Configuration
         description: |

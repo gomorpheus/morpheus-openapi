@@ -9,3 +9,20 @@ properties:
         description: Object containing any custom option type configuration parameters
         example:
           foo: bar
+  taskPhase:
+    type: string
+    description: Task Phase to run for Provisioning workflows. The default is `provision`.
+    default: provision
+    enum:
+      - start
+      - stop
+      - preProvision
+      - provision
+      - postProvision
+      - preDeploy
+      - deploy
+      - reconfigure
+      - teardown
+      - startup
+      - shutdown
+

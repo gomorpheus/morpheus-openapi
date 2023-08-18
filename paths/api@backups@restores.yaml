@@ -1,0 +1,68 @@
+get:
+  summary: Retrieves all Backup Restores
+  description: |
+    Retrieves all backup restores.
+  operationId: listBackupRestores
+  tags:
+    - Backups
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: sort
+      in: query
+      description: Sort order, the name of the property to sort by. The default sort order is `startDate` descending
+      schema:
+        type: string
+    - $ref: ../components/parameters/direction.yaml
+    - name: name
+      in: query
+      description: Filter by backup name
+      schema:
+        type: string
+      example: test-backup
+    - name: phrase
+      in: query
+      description: |
+        Search phrase for partial matches on backup name, wildcard may be specified as %, eg. example-%
+      schema:
+        type: string
+      example: test
+    - name: backupId
+      in: query
+      description: Filter by backup ID
+      schema:
+        type: integer
+        format: int64
+    - name: backupResultId
+      in: query
+      description: Filter by backup result ID
+      schema:
+        type: string
+    - name: containerId
+      in: query
+      description: Filter by container ID
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                restores:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/backupRestore.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Backup Restores Response:
+              value:
+                $ref: ../components/examples/backupRestores.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
