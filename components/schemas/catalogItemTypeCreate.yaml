@@ -97,6 +97,8 @@ properties:
           properties: 
             id: 
               type: string
+  instanceSpec:
+    type: string
   optionTypes: 
     type: array
     items: 

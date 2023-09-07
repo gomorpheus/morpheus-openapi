@@ -50,6 +50,9 @@ properties:
     default: false
   config: 
     $ref: catalogItemTypeInstanceScribe.yaml
+  instanceSpec:
+    type: string
+    description: The instance `config` can be passed here as a String instead of an object. This replaces the entire config instead of updating individual properties.
   optionTypes: 
     type: array
     description: Array of option type IDs. Only applies to type instance and blueprint.
