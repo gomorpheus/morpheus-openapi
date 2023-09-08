@@ -49,6 +49,9 @@ properties:
   config: 
     type: object
     nullable: true
+  instanceSpec:
+    type: string
+    nullable: true
   workflow:
     type: object
     nullable: true
