@@ -87,16 +87,14 @@ post:
                   type: number
                   description: Max disks allowed
                 provisionType:
-                  type: array
-                  items: 
-                    type: object
-                    required:
-                      - id
-                    properties: 
-                      id: 
-                        type: integer
-                        format: int64
-                        description: Provision type ID
+                  type: object
+                  required:
+                    - id
+                  properties: 
+                    id: 
+                      type: integer
+                      format: int64
+                      description: Provision type ID
                 customCores:
                   type: boolean
                   description: Can be used to enable / disable customizable cores
