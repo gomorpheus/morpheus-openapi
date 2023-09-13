@@ -121,9 +121,13 @@ post:
                 priceSets:
                   type: array
                   description: List of price sets to include in service plan
-                  items:
-                    type: integer
-                    format: int64
+                  items: 
+                    type: object
+                    properties: 
+                      id: 
+                        type: integer
+                        format: int64
+                        description: Price Set ID
                 config: 
                   type: object
                   properties: 
