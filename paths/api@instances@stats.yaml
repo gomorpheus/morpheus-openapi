@@ -1,0 +1,78 @@
+get:
+  summary: Get Statistics for all Instances
+  description: |
+    This endpoint retrieves aggregated statistics for all instances the user has access to, or only the specified clouds, such as total and running counts and total usedStorage, cpuUsage, etc. These values represent the current time and are not historical.
+  operationId: getInstanceStats
+  tags:
+    - Instances
+  parameters:
+    - $ref: ../components/parameters/zoneId.yaml
+  responses: 
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Contains aggregated statistics for all the scoped instances.
+            properties:
+              instanceStats:
+                type: object
+                properties: 
+                  maxCpu: 
+                    type: number
+                    format: int64
+                    description: Total CPUs for all instances
+                  maxCores: 
+                    type: number
+                    format: int64
+                    description: Total cores for all instances
+                  cpuUsageAverage: 
+                    type: number
+                    description: Average current CPU Usage across all instances
+                  cpuUsagePeak: 
+                    type: number
+                    description: Max current CPU Usage across all instances
+                  usedMemory: 
+                    type: number
+                    format: int64
+                    description: Total used memory across all instances
+                  maxMemory: 
+                    type: number
+                    format: int64
+                    description: Total memory across all instances
+                  usedStorage: 
+                    type: number
+                    format: int64
+                    description: Total used storage total across all instances
+                  maxStorage: 
+                    type: number
+                    format: int64
+                    description: Total storage across all instances
+                  running: 
+                    type: number
+                    format: int64
+                    description: Total number of running instances
+                  total: 
+                    type: number
+                    format: int64
+                    description: Total number of instances
+                  totalContainers: 
+                    type: number
+                    format: int64
+                    description: Total number of containers across all instances
+              zoneIds:
+                type: array
+                description: Array of Cloud IDs that are included in the stats. By default all the clouds the user has access to are returned.
+                items:
+                  type: integer
+                  format: int64
+
+          examples:
+            Instance Statistics Response:
+              value:
+                $ref: ../components/examples/instancesStats.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
