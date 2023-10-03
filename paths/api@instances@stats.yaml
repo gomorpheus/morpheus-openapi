@@ -6,7 +6,13 @@ get:
   tags:
     - Instances
   parameters:
-    - $ref: ../components/parameters/zoneId.yaml
+    - name: zoneId
+      in: query
+      description: The ID of the cloud(s) for filtering
+      schema:
+        type: integer
+        format: int64
+      example: 3
   responses: 
     '200':
       description: Successful Request
