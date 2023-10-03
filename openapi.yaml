@@ -540,6 +540,8 @@ paths:
     $ref: paths/api@instances@remove-from-control.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
+  /api/instances/stats:
+    $ref: paths/api@instances@stats.yaml
   /api/integration-types:
     $ref: paths/api@integration-types.yaml
   /api/integration-types/{id}:
