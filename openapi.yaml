@@ -753,6 +753,8 @@ paths:
     $ref: paths/api@networks@servers.yaml
   /api/networks/servers/{id}:
     $ref: paths/api@networks@servers@id.yaml
+  /api/networks/servers/{id}/refresh:
+    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:
@@ -787,12 +789,12 @@ paths:
     $ref: paths/api@networks@pool-servers.yaml
   /api/networks/pool-servers/{id}:
     $ref: paths/api@networks@pool-servers@id.yaml
+  /api/networks/pool-servers/{id}/refresh:
+    $ref: paths/api@networks@pool-servers@id@refresh.yaml
   /api/networks/pool-server-types:
     $ref: paths/api@networks@pool-server-types.yaml
   /api/networks/pool-server-types/{id}:
     $ref: paths/api@networks@pool-server-types@id.yaml
-  /api/networks/servers/{id}/refresh:
-    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/options/codeRepositories:
     $ref: paths/api@options@codeRepositories.yaml
   /api/options/{optionSource}:
