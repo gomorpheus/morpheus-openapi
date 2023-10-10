@@ -1,0 +1,62 @@
+{
+  "networkServers": [
+  	{
+      "id": 58,
+      "name": "Labs NSX",
+      "description": null,
+      "type": {
+        "id": 9,
+        "code": "nsx-t",
+        "name": "VMware NSX"
+      },
+      "integration": {
+        "id": 106,
+        "name": "Labs NSX",
+        "type": "nsx-t",
+        "integrationType": {
+          "id": 31,
+          "code": "nsx-t",
+          "name": "NSX"
+        }
+      },
+      "account": {
+        "id": 1,
+        "name": "root"
+      },
+      "visibility": "private",
+      "internalId": null,
+      "externalId": null,
+      "serviceUrl": "https://nsxt-server",
+      "serviceHost": null,
+      "servicePort": 22,
+      "serviceMode": null,
+      "servicePath": null,
+      "serviceUsername": "admin",
+      "servicePassword": "************",
+      "servicePasswordHash": "7a57dc216ae5c9dec2f3068b14b8113ffe8a59f37821a747ad62dd41c66b266e",
+      "serviceToken": null,
+      "serviceTokenHash": null,
+      "apiPort": null,
+      "adminPort": null,
+      "status": "ok",
+      "statusMessage": null,
+      "statusDate": "2023-10-10T20:07:54Z",
+      "lastSync": "2023-10-10T20:07:35Z",
+      "nextRunDate": null,
+      "lastSyncDuration": 18956,
+      "config": {
+        "systemVersion": "4.1.0.2.0.21761695",
+        "firewall": {
+          "enabled": true
+        }
+      },
+      "networkFilter": null,
+      "tenantMatch": null,
+      "zoneId": 121,
+      "dateCreated": "2023-10-10T20:04:34Z",
+      "lastUpdated": "2023-10-10T20:07:54Z",
+      "enabled": true,
+      "visible": true
+    }
+  ]
+}

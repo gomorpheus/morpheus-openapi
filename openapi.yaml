@@ -749,6 +749,10 @@ paths:
     $ref: paths/api@networks@proxies.yaml
   /api/networks/proxies/{id}:
     $ref: paths/api@networks@proxies@id.yaml
+  /api/networks/servers:
+    $ref: paths/api@networks@servers.yaml
+  /api/networks/servers/{id}:
+    $ref: paths/api@networks@servers@id.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:

@@ -1,0 +1,41 @@
+title: NSX Network Server
+type: object
+required:
+  - type
+  - name
+  - serviceUrl
+  - serviceUsername
+  - servicePassword
+properties:
+  type: 
+    type: string
+    description: Type Code (nsx-t)
+    enum:
+      - nsx-t
+  name: 
+    type: string
+    description: Name
+  enabled:
+    type: boolean
+    description: Can be used to enable / disable the network server.
+    default: true
+  serviceUrl: 
+    type: string
+    description: URL
+    nullable: true
+    example: "https://nsxt-server"
+  serviceUsername: 
+    type: string
+    description: Username
+    nullable: true
+  servicePassword: 
+    type: string
+    description: Password
+    nullable: true
+  visibility: 
+    type: string
+    description: Visibility - Set to public to allow all tenants
+    default: private
+    enum:
+      - public
+      - private
