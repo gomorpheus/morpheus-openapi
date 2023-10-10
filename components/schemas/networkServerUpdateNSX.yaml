@@ -1,0 +1,26 @@
+title: NSX Network Server Update
+type: object
+properties:
+  name: 
+    type: string
+    description: Name
+  serviceUrl: 
+    type: string
+    description: URL
+    nullable: true
+    example: "https://bluecat-server"
+  serviceUsername: 
+    type: string
+    description: Username
+    nullable: true
+  servicePassword: 
+    type: string
+    description: Password
+    nullable: true
+  visibility: 
+    type: string
+    description: Visibility - Set to public to allow all tenants
+    default: private
+    enum:
+      - public
+      - private
