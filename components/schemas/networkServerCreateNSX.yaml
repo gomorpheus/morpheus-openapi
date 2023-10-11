@@ -6,6 +6,7 @@ required:
   - serviceUrl
   - serviceUsername
   - servicePassword
+  - zoneId
 properties:
   type: 
     type: string
@@ -39,3 +40,7 @@ properties:
     enum:
       - public
       - private
+  zoneId: 
+    type: integer
+    format: int64
+    description: ID of the Cloud that the NSX network server integration should be attached to.

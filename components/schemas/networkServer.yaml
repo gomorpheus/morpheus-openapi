@@ -31,6 +31,21 @@ properties:
         format: int64
       name: 
         type: string
+      type:
+        type: string
+        description: Integration Type Code
+      integrationType:
+        type: object
+        description: Integration Type
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          code: 
+            type: string
+          name: 
+            type: string
+        nullable: true
     nullable: true
   account: 
     type: object
@@ -112,6 +127,21 @@ properties:
     type: string
     format: date-time
     nullable: true
+  lastSync: 
+    type: string
+    format: date-time
+    description: Last Sync Date
+    nullable: true
+  nextRunDate: 
+    type: string
+    format: date-time
+    description: Next Run Date
+    nullable: true
+  lastSyncDuration: 
+    type: integer
+    format: int64
+    description: Last Sync Duration in milliseconds
+    nullable: true
   config: 
     type: object
     description: Config object varies with network server type. 
@@ -122,6 +152,11 @@ properties:
   tenantMatch: 
     type: string
     description: Tenant Match
+    nullable: true
+  zoneId: 
+    type: integer
+    format: int64
+    description: Cloud ID
     nullable: true
   dateCreated: 
     type: string
