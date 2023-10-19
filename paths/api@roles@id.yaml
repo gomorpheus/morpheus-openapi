@@ -50,6 +50,10 @@ put:
                   type: string
                   nullable: true
                   description: Description
+                landingUrl:
+                  type: string
+                  nullable: true
+                  description: Landing URL
                 defaultPersona:
                   type: string
                   enum:

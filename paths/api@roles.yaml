@@ -74,6 +74,10 @@ post:
                   type: string
                   nullable: true
                   description: Description
+                landingUrl:
+                  type: string
+                  nullable: true
+                  description: Landing URL
                 roleType:
                   type: string
                   description: Role type
