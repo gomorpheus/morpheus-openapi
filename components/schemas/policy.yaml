@@ -177,11 +177,11 @@ properties:
         lifecycleMessage:
           type: string
         lifecycleAutoRenew:
-          type: string
+          $ref: checkbox.yaml
           nullable: true
-          enum: 
-            - on
-            - off
+        lifecycleAllowExtend:
+          $ref: checkbox.yaml
+          nullable: true
         lifecycleExtensionsBeforeApproval:
           type: string
         accountIntegrationId:
@@ -390,11 +390,11 @@ properties:
         shutdownMessage:
           type: string
         shutdownAutoRenew:
-          type: string
+          $ref: checkbox.yaml
           nullable: true
-          enum: 
-            - on
-            - off
+        shutdownAllowExtend:
+          $ref: checkbox.yaml
+          nullable: true
         shutdownExtensionsBeforeApproval:
           type: string
         accountIntegrationId:

@@ -22,6 +22,7 @@
             "lifecycleNotify": "1",
             "lifecycleMessage": "Instance ${instance?.name} is set to expire on ${instance?.expireDate}",
             "lifecycleAutoRenew": "on",
+            "lifecycleAllowExtend": "off",
             "lifecycleExtensionsBeforeApproval": "0",
             "accountIntegrationId": "-100",
             "lifecycleHideFixed": false

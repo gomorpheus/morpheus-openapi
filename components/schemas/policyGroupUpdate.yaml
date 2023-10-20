@@ -132,7 +132,9 @@ properties:
               lifecycleMessage:
                 type: string
               lifecycleAutoRenew:
-                type: boolean
+                $ref: checkbox.yaml
+              lifecycleAllowExtend:
+                $ref: checkbox.yaml
               lifecycleExtensionsBeforeApproval:
                 type: string
               accountIntegrationId:
@@ -289,7 +291,9 @@ properties:
               shutdownMessage:
                 type: string
               shutdownAutoRenew:
-                type: boolean
+                $ref: checkbox.yaml
+              shutdownAllowExtend:
+                $ref: checkbox.yaml
               shutdownExtensionsBeforeApproval:
                 type: string
               accountIntegrationId:
