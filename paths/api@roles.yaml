@@ -74,7 +74,7 @@ post:
                   type: string
                   nullable: true
                   description: Description
-              landingUrl:
+                landingUrl:
                   type: string
                   nullable: true
                   description: An optional override for the default landing page after login for a user. If a user belongs to multiple roles, the first assigned role will take precedence.
