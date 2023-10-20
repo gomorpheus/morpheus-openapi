@@ -53,7 +53,7 @@ put:
                 landingUrl:
                   type: string
                   nullable: true
-                  description: Landing URL
+                  description: An optional override for the default landing page after login for a user. If a user belongs to multiple roles, the first assigned role will take precedence.
                 defaultPersona:
                   type: string
                   enum:
