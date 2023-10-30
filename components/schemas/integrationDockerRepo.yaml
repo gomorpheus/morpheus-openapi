@@ -29,6 +29,10 @@ properties:
     type: string
   passwordHash: 
     type: string
+  token:
+    type: string
+  tokenHash:
+    type: string
   isPlugin: 
     type: boolean
   config: 

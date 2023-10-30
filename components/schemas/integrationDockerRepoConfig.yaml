@@ -10,6 +10,7 @@ properties:
       - serviceUrl
       - serviceUsername
       - servicePassword
+      - serviceToken
     properties:
       name: 
         type: string
@@ -29,3 +30,6 @@ properties:
       servicePassword:
         type: string
         description: Password
+      serviceToken:
+        type: string
+        description: Access Token
