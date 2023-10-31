@@ -7,10 +7,6 @@ properties:
     required:
       - name
       - type
-      - serviceUrl
-      - serviceUsername
-      - servicePassword
-      - serviceToken
     properties:
       name: 
         type: string
