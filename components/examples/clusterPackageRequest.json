@@ -1,0 +1,15 @@
+{
+  "clusterPackage": {
+    "name": "Sample K8 Package",
+    "code": "sample-k8-package",
+    "description": null,
+    "enabled": true,
+    "type": "network",
+    "packageType": "calico",
+    "packageVersion": "1.x",
+    "specTemplates": [
+      95,
+      98
+    ]
+  }
+}

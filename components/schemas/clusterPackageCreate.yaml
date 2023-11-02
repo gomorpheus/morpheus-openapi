@@ -1,0 +1,39 @@
+type: object
+required: 
+  - name
+  - code
+  - enabled
+  - packageVersion
+  - packageType
+  - type
+  - specTemplates
+properties: 
+  name: 
+    type: string
+    description: Cluster Package name
+  description: 
+    type: string
+    description: Cluster Package description
+    nullable: true
+  code: 
+    type: string
+    description: Cluster Package code
+  packageVersion: 
+    type: string
+    description: Version of the cluster package
+  packageType:
+    type: string
+    description: Package Type
+  type:
+    type: string
+    description: type
+  enabled: 
+    type: boolean
+    description: Can be used to enable / disable the cluster package.
+    default: true
+  specTemplates: 
+    type: array
+    description: Array of resource spec templates
+    items: 
+      type: integer
+      format: int64

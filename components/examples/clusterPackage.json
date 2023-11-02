@@ -1,0 +1,23 @@
+{
+  "clusterPackage": {
+      "id": 5,
+      "code": "kubernetes-helm-3-5-package",
+      "name": "helm 3.5 package",
+      "description": "install helm 3.5 package",
+      "enabled": true,
+      "packageVersion": "3.5",
+      "packageType": "helm",
+      "type": "apps",
+      "account": null,
+      "repeatInstall": false,
+      "restartDns": false,
+      "sortOrder": 50,
+      "specTemplates": [
+        {
+            "id": 214,
+            "name": "Hello World",
+            "code": "hello-code"
+        }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description:
+    type: string 
+  account:
+    type: integer
+    format: int64
+    nullable: true
+  code:
+    type: string
+  repeatInstall:
+    type: boolean
+  restartDns:
+    type: boolean
+  type:
+    type: string
+  packageType:
+    type: string
+  packageVersion:
+    type: string
+  enabled:
+    type: boolean
+  sortOrder:
+    type: integer
+    format: int64
+  specTemplates: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        account: 
+          type: string
+          nullable: true
+        name: 
+          type: string
+        labels:
+          type: array
+          nullable: true
+          items:
+            type: string
+        code: 
+          type: string
+        type: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            name: 
+              type: string
+            code: 
+              type: string
+        externalId: 
+          type: string
+          nullable: true
+        externalType: 
+          type: string
+          nullable: true
+        deploymentId: 
+          type: string
+          nullable: true
+        status: 
+          type: string
+          nullable: true
+        file: 
+          type: object
+          properties: 
+            id: 
+              type: integer
+              format: int64
+            sourceType: 
+              type: string
+            contentRef: 
+              type: string
+              nullable: true
+            contentPath: 
+              type: string
+              nullable: true
+            repository: 
+              type: string
+              nullable: true
+            content: 
+              type: string
+        config: 
+          type: object
+        createdBy: 
+          type: string
+          nullable: true
+        updatedBy: 
+          type: string
+          nullable: true
+        dateCreated: 
+          type: string
+          format: date-time
+        lastUpdated: 
+          type: string
+          format: date-time
+
