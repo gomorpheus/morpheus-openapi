@@ -1,18 +1,47 @@
-accountId: 
-  type: integer
-  format: int64
-certFile: 
-  type: string
-domainName: 
-  type: string
-generated: 
-  type: boolean
 id: 
   type: integer
   format: int64
-keyFile: 
-  type: string
 name: 
   type: string
+description: 
+  type: string
+  nullable: true
+domainName: 
+  type: string
+  nullable: true
+accountId: 
+  type: integer
+  format: int64
+integrationId: 
+  type: integer
+  format: int64
+  nullable: true
+enabled: 
+  type: boolean
+generated: 
+  type: boolean
 wildcard: 
   type: boolean
+selfSigned:
+  type: boolean
+type: 
+  type: object
+  properties:
+    id: 
+      type: integer
+      format: int64
+    code: 
+      type: string
+  nullable: true
+category: 
+  type: string
+  nullable: true
+commonName: 
+  type: string
+  nullable: true
+certType: 
+  type: string
+  nullable: true
+keyFileMD5: 
+  type: string
+  nullable: true
