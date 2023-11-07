@@ -1,16 +1,30 @@
 name: 
   type: string
   description: A unique name scoped to your account for the key
+description: 
+  type: string
+  description: A description of the certificate
 certFile: 
   type: string
   description: The contents of the certificate file
 keyFile: 
   type: string
   description: The contents of the key file
+chainFile: 
+  type: string
+  description: The contents of the root certificate file
 domainName: 
   type: string
   description: The domain name this certificate is tied to
 wildcard: 
   type: boolean
-  description: Wether or not this certificate is a wildcard cert
+  description: Whether or not this certificate is a wildcard cert
   default: false
+type: 
+  type: string
+  description: Certificate Type Code to create a certificate of a type other than the default 'internal'.
+  default: 'internal'
+integrationId:
+  type: integer
+  format: int64
+  description: ID of the Service (Trust Integration) to create the certificate with, if using a type other than 'internal'. eg. Internal, NSXT or Venafi

@@ -1,15 +1,69 @@
 {
-  "certificateCount": 1,
   "certificates": [
     {
+      "id": 263,
+      "name": "Certificate 1",
+      "description": null,
+      "domainName": null,
       "accountId": 1,
-      "certFile": "certFileContent",
-      "domainName": "test.local",
+      "integrationId": null,
+      "enabled": true,
       "generated": false,
-      "id": 1,
-      "keyFile": "keyFileContent",
-      "name": "Test Cert",
-      "wildcard": true
+      "wildcard": false,
+      "selfSigned": false,
+      "type": {
+        "id": 1,
+        "code": "internal"
+      },
+      "category": null,
+      "commonName": null,
+      "certType": "server",
+      "keyFileMD5": "2f3949be9d591e4f6847e946db2fba78"
+    },
+    {
+      "id": 262,
+      "name": "Certificate 2",
+      "description": null,
+      "domainName": null,
+      "accountId": 1,
+      "integrationId": null,
+      "enabled": true,
+      "generated": false,
+      "wildcard": false,
+      "selfSigned": false,
+      "type": {
+        "id": 1,
+        "code": "internal"
+      },
+      "category": null,
+      "commonName": null,
+      "certType": "server",
+      "keyFileMD5": "2f3949be9d591e4f6847e946db2fba78"
+    },
+    {
+      "id": 313,
+      "name": "tomcat certificate for node nsxt-m01",
+      "description": null,
+      "domainName": null,
+      "accountId": 1,
+      "integrationId": 72,
+      "enabled": true,
+      "generated": false,
+      "wildcard": true,
+      "selfSigned": true,
+      "type": {
+        "id": 9,
+        "code": "nsxtSelfSignedCertificate"
+      },
+      "category": "nsxt.certificate.23",
+      "commonName": null,
+      "certType": "selfSigned"
     }
-  ]
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 100,
+    "size": 3,
+    "total": 3
+  }
 }
