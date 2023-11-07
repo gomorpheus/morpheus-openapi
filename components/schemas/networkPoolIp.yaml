@@ -59,10 +59,12 @@ refType:
   type: string
   nullable: true
 refId:
-  type: string
+  type: integer
+  format: int64
   nullable: true
 subRefId:
-  type: string
+  type: integer
+  format: int64
   nullable: true
 networkDomain:
   type: string
