@@ -1,12 +1,22 @@
 {
   "certificate": {
-    "accountId": 1,
-    "certFile": "certFileContent",
-    "domainName": "test.local",
-    "generated": false,
     "id": 1,
-    "keyFile": "keyFileContent",
-    "name": "Test Cert",
-    "wildcard": true
+    "name": "Certificate 1",
+    "description": null,
+    "domainName": null,
+    "accountId": 1,
+    "integrationId": null,
+    "enabled": true,
+    "generated": false,
+    "wildcard": false,
+    "selfSigned": false,
+    "type": {
+      "id": 1,
+      "code": "internal"
+    },
+    "category": null,
+    "commonName": null,
+    "certType": "server",
+    "keyFileMD5": "2f3949be9d591e4f6847e946db2fba78"
   }
 }
