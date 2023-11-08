@@ -64,10 +64,25 @@ properties:
   content: 
     type: string
     nullable: true
+  formType: 
+    type: string
+    enum:
+      - optionTypes
+      - form
+    nullable: true
+  form:
+    type: object
+    description: Form object that contains input options and/or field groups
+    nullable: true
+  formConfig:
+    type: object
+    description: Form config object
+    nullable: true
   optionTypes: 
     type: array
     items:
       $ref: optionType.yaml
+    nullable: true
   createdBy: 
     type: string
     nullable: true

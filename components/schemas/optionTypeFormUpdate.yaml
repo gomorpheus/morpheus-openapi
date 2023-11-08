@@ -1,0 +1,27 @@
+type: object
+properties: 
+  name:
+    type: string
+    description: Form name
+  code:
+    type: string
+    description: Unique form code
+  description:
+    type: string
+    description: A short description of the form
+    nullable: true
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
+  options:
+    type: array
+    description: Inputs
+    items:
+      $ref: formField.yaml
+  fieldGroups:
+    type: array
+    description: Field Groups
+    items:
+      $ref: optionTypeFieldGroup.yaml

@@ -1,0 +1,30 @@
+type: object
+properties: 
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+    nullable: true
+  context:
+    type: string
+    nullable: true
+  locked:
+    type: boolean
+  labels:
+    type: array
+    nullable: true
+    items: 
+      type: string
+  options:
+    type: array
+    items:
+      $ref: formField.yaml
+  fieldGroups:
+    type: array
+    items:
+      $ref: optionTypeFieldGroup.yaml
