@@ -64,7 +64,7 @@ properties:
       - form
   form:
     type: object
-    description: Object containing the form id. Only applies to formType 'form' and to type instance and blueprint.
+    description: Object containing the form id. Only applies to formType 'form'.
     properties: 
       id: 
         type: integer
@@ -73,7 +73,7 @@ properties:
     nullable: true
   optionTypes: 
     type: array
-    description: Array of option type IDs. Only applies to formType 'optionTypes' and to type instance and blueprint.
+    description: Array of option type IDs. Only applies to formType 'optionTypes'.
     items: 
       type: integer
       format: int64

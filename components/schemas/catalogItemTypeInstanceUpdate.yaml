@@ -62,7 +62,7 @@ properties:
       - form
   form:
     type: object
-    description: Object containing the form id. Only applies to formType 'form' and to type instance and blueprint.
+    description: Object containing the form id. Only applies to formType 'form'.
     properties: 
       id: 
         type: integer
@@ -71,7 +71,10 @@ properties:
     nullable: true
   optionTypes: 
     type: array
-    description: Array of option type IDs. Only applies to type instance and blueprint.
+    description: Array of option type IDs. Only applies to formType 'optionTypes'.
     items: 
       type: integer
       format: int64
+  content:
+    type: string
+    description: Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
