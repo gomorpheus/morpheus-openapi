@@ -31,6 +31,9 @@ properties:
     type: boolean
     description: Can be used to enable / disable the cluster package.
     default: true
+  iconPath: 
+    type: string
+    description: Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
   specTemplates: 
     type: array
     description: Array of resource spec templates

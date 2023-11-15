@@ -1,66 +1,66 @@
-# get:
-#   summary: Get All Cluster Packages
-#   description: This endpoint retrieves all cluster packages.
-#   operationId: listClusterPackages
-#   tags:
-#     - Cluster Packages
-#   parameters:
-#     - $ref: ../components/parameters/max.yaml
-#     - $ref: ../components/parameters/offset.yaml
-#     - $ref: ../components/parameters/sort.yaml
-#     - $ref: ../components/parameters/direction.yaml
-#   responses:
-#     '200':
-#       description: Successful Request
-#       content:
-#         application/json:
-#           schema:
-#             allOf:
-#             - type: object
-#               properties:
-#                 clusterPackages:
-#                   type: array
-#                   items:
-#                     $ref: ../components/schemas/clusterPackage.yaml
-#             - $ref: ../components/schemas/meta.yaml
-#           examples:
-#             Cluster Packages Response:
-#               value:
-#                 $ref: ../components/examples/clusterPackages.json 
-#     '4XX':
-#       $ref: ../components/responses/4xx.yaml
-#     '5XX':
-#       $ref: ../components/responses/5xx.yaml
-# post: 
-#   summary: Create a Cluster Package
-#   description: Use this command to create a cluster package.
-#   operationId: addClusterPackage
-#   tags: 
-#     -  Cluster Packages
-#   requestBody: 
-#     content: 
-#       application/json: 
-#         schema: 
-#           type: object
-#           properties: 
-#             clusterPackage:
-#               $ref: ../components/schemas/clusterPackageCreate.yaml
-#         examples:
-#           Cluster Package Request:
-#             value:
-#               $ref: ../components/examples/clusterPackageRequest.json
-#   responses:
-#     '200':
-#       description: Successful Request
-#       content:
-#         application/json:
-#           schema:
-#             $ref: ../components/schemas/successId.yaml
-#           examples:
-#             Cluster Package Response:
-#               value:
-#                 $ref: ../components/examples/successId.json
-#     '4XX':
-#       $ref: ../components/responses/4xx.yaml
-#     '5XX':
-#       $ref: ../components/responses/5xx.yaml
+get:
+  summary: Get All Cluster Packages
+  description: This endpoint retrieves all cluster packages.
+  operationId: listClusterPackages
+  tags:
+    - Cluster Packages
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                clusterPackages:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/clusterPackage.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Packages Response:
+              value:
+                $ref: ../components/examples/clusterPackages.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create a Cluster Package
+  description: Use this command to create a cluster package.
+  operationId: addClusterPackage
+  tags: 
+    -  Cluster Packages
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            clusterPackage:
+              $ref: ../components/schemas/clusterPackageCreate.yaml
+        examples:
+          Cluster Package Request:
+            value:
+              $ref: ../components/examples/clusterPackageRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Cluster Package Response:
+              value:
+                $ref: ../components/examples/successId.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -15,8 +15,6 @@ properties:
     type: string
   repeatInstall:
     type: boolean
-  restartDns:
-    type: boolean
   type:
     type: string
   packageType:
@@ -25,6 +23,15 @@ properties:
     type: string
   enabled:
     type: boolean
+  iconPath: 
+    type: string
+    nullable: true
+  imagePath: 
+    type: string
+    nullable: true
+  darkImagePath: 
+    type: string
+    nullable: true
   sortOrder:
     type: integer
     format: int64

@@ -1,84 +1,84 @@
-# get:
-#   summary: Get a Specific Cluster Package
-#   description: This endpoint retrieves a specific cluster package.
-#   operationId: getClusterPackage
-#   tags:
-#     - Cluster Packages
-#   parameters:
-#     - $ref: ../components/parameters/id-path.yaml
-#   responses:
-#     '200':
-#       description: Successful Request
-#       content:
-#         application/json:
-#           schema:
-#             type: object
-#             properties:
-#               clusterPackage:
-#                 $ref: ../components/schemas/clusterPackage.yaml
-#           examples:
-#             Cluster Package Response:
-#               value:
-#                 $ref: ../components/examples/clusterPackage.json 
-#     '4XX':
-#       $ref: ../components/responses/4xx.yaml
-#     '5XX':
-#       $ref: ../components/responses/5xx.yaml
-# put: 
-#   summary: Update a Cluster Package
-#   description: Use this command to update an existing cluster package.
-#   operationId: updateClusterPackage
-#   tags: 
-#     -  Cluster Packages
-#   parameters:
-#     - $ref: ../components/parameters/id-path.yaml
-#   requestBody: 
-#     content: 
-#       application/json: 
-#         schema: 
-#           type: object
-#           properties: 
-#             clusterPackage:
-#               $ref: ../components/schemas/clusterPackageUpdate.yaml
-#         examples:
-#           Cluster Package Request:
-#             value:
-#               $ref: ../components/examples/clusterPackageUpdateRequest.json
-#   responses:
-#     '200':
-#       description: Successful Request
-#       content:
-#         application/json:
-#           schema:
-#             $ref: ../components/schemas/successId.yaml
-#           examples:
-#             Cluster Package Response:
-#               value:
-#                 $ref: ../components/examples/successId.json
-#     '4XX':
-#       $ref: ../components/responses/4xx.yaml
-#     '5XX':
-#       $ref: ../components/responses/5xx.yaml
-# delete:
-#   summary: Delete a Cluster Package
-#   description: Will delete a cluster package
-#   operationId: deleteClusterPackage
-#   tags:
-#     - Cluster Packages
-#   parameters:
-#     - $ref: ../components/parameters/id-path.yaml
-#   responses:
-#     '200':
-#       description: Successful Request
-#       content:
-#         application/json:
-#           schema:
-#             $ref: ../components/schemas/200-success.yaml
-#           examples:
-#             Response:
-#               value:
-#                 $ref: ../components/examples/success.json 
-#     '4XX':
-#       $ref: ../components/responses/4xx.yaml
-#     '5XX':
-#       $ref: ../components/responses/5xx.yaml
+get:
+  summary: Get a Specific Cluster Package
+  description: This endpoint retrieves a specific cluster package.
+  operationId: getClusterPackage
+  tags:
+    - Cluster Packages
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              clusterPackage:
+                $ref: ../components/schemas/clusterPackage.yaml
+          examples:
+            Cluster Package Response:
+              value:
+                $ref: ../components/examples/clusterPackage.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update a Cluster Package
+  description: Use this command to update an existing cluster package.
+  operationId: updateClusterPackage
+  tags: 
+    -  Cluster Packages
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            clusterPackage:
+              $ref: ../components/schemas/clusterPackageUpdate.yaml
+        examples:
+          Cluster Package Request:
+            value:
+              $ref: ../components/examples/clusterPackageUpdateRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Cluster Package Response:
+              value:
+                $ref: ../components/examples/successId.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete a Cluster Package
+  description: Will delete a cluster package
+  operationId: deleteClusterPackage
+  tags:
+    - Cluster Packages
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

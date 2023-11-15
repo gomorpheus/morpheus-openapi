@@ -228,10 +228,10 @@ paths:
     $ref: paths/api@library@cluster-layouts@id.yaml
   /api/library/cluster-layouts/{id}/clone:
     $ref: paths/api@library@cluster-layouts@id@clone.yaml
-  # /api/library/cluster-packages:
-  #   $ref: paths/api@library@cluster-packages.yaml
-  # /api/library/cluster-packages/{id}:
-  #   $ref: paths/api@library@cluster-packages@id.yaml
+  /api/library/cluster-packages:
+    $ref: paths/api@library@cluster-packages.yaml
+  /api/library/cluster-packages/{id}:
+    $ref: paths/api@library@cluster-packages@id.yaml
   /api/cluster-types:
     $ref: paths/api@cluster-types.yaml
   /api/clusters:
