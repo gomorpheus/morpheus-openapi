@@ -1,22 +1,24 @@
 {
   "clusterPackage": {
-      "id": 5,
-      "code": "kubernetes-helm-3-5-package",
-      "name": "helm 3.5 package",
-      "description": "install helm 3.5 package",
+      "id": 102,
+      "code": "sample-package",
+      "name": "Sample Package",
+      "description": null,
       "enabled": true,
-      "packageVersion": "3.5",
-      "packageType": "helm",
+      "packageVersion": "1.0.x",
+      "packageType": "personal",
       "type": "apps",
-      "account": null,
-      "repeatInstall": false,
-      "sortOrder": 50,
+      "account": 1,
+      "repeatInstall": true,
+      "iconPath": "/branding/140x40/almalinux.svg",
+      "imagePath": "/branding/140x40/almalinux.svg",
+      "darkImagePath": "/branding/140x40/aws-api-gateway.svg",
       "specTemplates": [
-        {
-            "id": 214,
-            "name": "Hello World",
-            "code": "hello-code"
-        }
-    ]
+          {
+              "id": 97,
+              "name": "calico 3.21.0 api install v1",
+              "code": "kubernetes-calico-3-21-0-api-install-v1"
+          }
+      ]
   }
 }

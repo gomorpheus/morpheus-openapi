@@ -50,11 +50,11 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/successId.yaml
+            $ref: ../components/schemas/success.yaml
           examples:
             Cluster Package Response:
               value:
-                $ref: ../components/examples/successId.json
+                $ref: ../components/examples/success.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
