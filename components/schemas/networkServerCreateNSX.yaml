@@ -33,10 +33,14 @@ properties:
     type: string
     description: Password
     nullable: true
-  config.project:
-    type: string
-    description: NSX Project (NSX 4.1+)
+  config:
+    type: object
     nullable: true
+    properties:
+      project:
+        type: string
+        description: NSX Project (NSX 4.1+)
+        nullable: true
   visibility: 
     type: string
     description: Visibility - Set to public to allow all tenants
