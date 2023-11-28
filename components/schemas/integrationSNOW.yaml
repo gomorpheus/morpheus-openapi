@@ -55,6 +55,12 @@ properties:
         type: string
       webServiceOperationUrl: 
         type: string
+      cmdbMode:
+        type: string
+        default: TABLE
+        enum: 
+        - TABLE
+        - IRE
       preparedForSync: 
         type: boolean
   status: 

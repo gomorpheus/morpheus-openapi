@@ -58,3 +58,9 @@ properties:
             type: boolean
             description: Ignore SSL Errors.
             default: false
+          cmdbMode:
+            type: string 
+            default: TABLE
+            enum: 
+            - TABLE
+            - IRE
