@@ -1,6 +1,6 @@
 name: max
 in: query
-description: Maximum number of records to return, -1 can be used to fetch all records
+description: Maximum number of records to return
 schema:
   type: integer
   format: int64
