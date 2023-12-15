@@ -7,6 +7,21 @@ get:
     - Networks
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+    - name: phrase
+      in: query
+      description: Search phrase for partial matches on ipAddress or hostname
+      schema:
+        type: string
+    - name: ipAddress
+      in: query
+      description: If specified will return an exact match on ipAddress
+      schema:
+        type: string
+    - name: hostname
+      in: query
+      description: If specified will return an exact match on hostname
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
