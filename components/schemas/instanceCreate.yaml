@@ -19,8 +19,8 @@ properties:
         example: myinstance
       description:
         type: string
-        description: Short description of the instance.
-        nullable: true
+        description: Optional description field.
+        example: "my new instance"
       site:
         type: object
         required:
