@@ -17,6 +17,10 @@ properties:
         type: string
         description: Name of the instance to be created.
         example: myinstance
+      description:
+        type: string
+        description: Short description of the instance.
+        nullable: true
       site:
         type: object
         required:
