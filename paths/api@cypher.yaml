@@ -7,6 +7,7 @@ get:
   parameters:
     - $ref: ../components/parameters/leaseToken.yaml
     - $ref: ../components/parameters/list.yaml
+    - $ref: ../components/parameters/key.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
