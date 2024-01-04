@@ -1,0 +1,6 @@
+name: key
+in: query
+description: If specified will return Cypher items with the matching Key value
+schema:
+  type: string
+example: "secret/test"
