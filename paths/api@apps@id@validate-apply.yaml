@@ -2,6 +2,8 @@ post:
   summary: Validate Apply State for an App
   description: |
     This endpoint provides a way to validate app configuration and templateParameter variables before executing the apply. This only validates the configuration to see any planned changes and it does not actually apply the changes. This action only applies to Terraform, CloudFormation and ARM and will return an HTTP 400 error for other types.
+    
+    Note: This call is asyncronous and returns the execution-id. For the results of the proposed change see [/api/execution-request/{uniqueId}](/reference/getexecutionrequest)
   operationId: validateAppState
   tags:
     - Apps
