@@ -8,6 +8,18 @@ properties:
     type: string
     description: Optional description field.
     example: "my new server"
+  enabled:
+    type: boolean
+    description: Flag to determine if a host can be selected for provisioning
+    default: true
+  manageInternalFirewall:
+    type: boolean
+    description: Flag to enable/disable managment of internal firewall
+    default: true
+  enableLogs:
+    type: boolean
+    description: Flag to enable/disable logs
+    default: true
   sshUsername:
     type: string
     description: SSH Username
