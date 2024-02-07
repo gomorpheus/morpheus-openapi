@@ -15,6 +15,11 @@ properties:
     type: string
     description: Optional code for use with policies
     example: mycloud
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    items:
+      type: string
   location:
     type: string
     description: Optional location for your cloud

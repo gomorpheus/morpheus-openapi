@@ -8,6 +8,11 @@ properties:
   code:
     type: string
     description: Optional code for use with policies
+  labels: 
+    type: array
+    description: Array of label strings, can be used for filtering.
+    items:
+      type: string
   location:
     type: string
     description: Optional location argument for your group

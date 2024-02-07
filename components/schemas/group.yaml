@@ -10,6 +10,10 @@ properties:
   code: 
     type: string
     nullable: true
+  labels:
+    type: array
+    items: 
+      type: string
   location: 
     type: string
     nullable: true
