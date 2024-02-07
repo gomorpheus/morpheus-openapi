@@ -232,6 +232,10 @@ properties:
     type: integer
     format: int64
     nullable: true
+  manageInternalFirewall:
+    type: boolean
+  enableLogs:
+    type: boolean
   hourlyCost: 
     type: number
   hourlyPrice: 
