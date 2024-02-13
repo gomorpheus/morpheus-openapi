@@ -14,7 +14,7 @@
 
 	    ],
 	    "taskOptions": {
-			"conditionalScript": "'<%=results.greeting%>' == 'hello'",
+			"conditionalScript": "'results.greeting == 'hello'",
 			"ifOperationalWorkflowId": "8217",
 			"ifOperationalWorkflowName": "Hello World",
 			"elseOperationalWorkflowId": "8760",
