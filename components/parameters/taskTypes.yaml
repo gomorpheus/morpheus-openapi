@@ -18,6 +18,7 @@ schema:
   - containerTemplate
   - localScript
   - nestedWorkflow
+  - conditionalWorkflow
   - winrmTask
   - puppetTask
   - jythonTask

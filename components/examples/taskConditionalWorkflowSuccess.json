@@ -1,0 +1,38 @@
+{
+    "task": {
+	    "id": 23001,
+	    "accountId": 1,
+	    "name": "Conditional Greeting",
+	    "code": "conditionalgreeting",
+	    "taskType": {
+	    	"id": 24,
+	    	"code": "conditionalWorkflow",
+	    	"name": "Conditional Workflow"
+	    },
+	    "visibility": "private",
+	    "labels": [
+
+	    ],
+	    "taskOptions": {
+			"conditionalScript": "'<%=results.greeting%>' == 'hello'",
+			"ifOperationalWorkflowId": "8217",
+			"ifOperationalWorkflowName": "Hello World",
+			"elseOperationalWorkflowId": "8760",
+			"elseOperationalWorkflowName": "Good Day World"
+	    },
+	    "file": null,
+	    "resultType": null,
+	    "executeTarget": "local",
+	    "continueOnError": false,
+	    "retryable": false,
+	    "retryCount": 5,
+	    "retryDelaySeconds": 10,
+	    "allowCustomConfig": false,
+	    "credential": {
+			"type": "local"
+	    },
+	    "dateCreated": "2024-02-09T23:00:31Z",
+	    "lastUpdated": "2024-02-09T23:24:32Z"
+  	},
+    "success": true
+}

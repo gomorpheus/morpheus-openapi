@@ -39,6 +39,7 @@ get:
                     - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                     - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
                     - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
+                    - $ref: ../components/schemas/taskConditionalWorkflowConfig.yaml
                     - $ref: ../components/schemas/taskPowershellConfig.yaml
                     - $ref: ../components/schemas/taskPuppetConfig.yaml
                     - $ref: ../components/schemas/taskPythonConfig.yaml
@@ -113,6 +114,7 @@ post:
                         - containerTemplate
                         - localScript
                         - nestedWorkflow
+                        - conditionalWorkflow
                         - winrmTask
                         - puppetTask
                         - jythonTask
@@ -222,6 +224,7 @@ post:
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
                   - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
+                  - $ref: ../components/schemas/taskConditionalWorkflowConfig.yaml
                   - $ref: ../components/schemas/taskPowershellConfig.yaml
                   - $ref: ../components/schemas/taskPuppetConfig.yaml
                   - $ref: ../components/schemas/taskPythonConfig.yaml
@@ -264,6 +267,9 @@ post:
             Task Response - Create Nested Workflow:
               value:
                 $ref: ../components/examples/taskNestedWorkflowSuccess.json
+            Task Response - Create Conditional Workflow:
+              value:
+                $ref: ../components/examples/taskConditionalWorkflowSuccess.json
             Task Response - Create PowerShell:
               value:
                 $ref: ../components/examples/taskPowershellSuccess.json
