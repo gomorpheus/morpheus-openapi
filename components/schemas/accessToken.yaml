@@ -8,7 +8,7 @@ properties:
     description: Token that can request an new API access_token
   expires_in:
     type: number
-    description: Epoch time when token expires
+    description: Seconds until token expires
   token_type:
     type: string
     description: Token type granted
