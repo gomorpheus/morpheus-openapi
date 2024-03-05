@@ -30,5 +30,6 @@ properties:
     format: int64
     description: SSL Server Certificate ID
   config:
-    type: object
-    description: Configuration object with parameters that vary by type.
+    oneOf:
+      - $ref: loadBalancerInstanceGenericConfig.yaml
+      - $ref: loadBalancerInstanceNSXTConfig.yaml
