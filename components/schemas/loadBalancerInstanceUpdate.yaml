@@ -10,7 +10,8 @@ properties:
     type: string
     description: VIP Address
   vipPort: 
-    type: string
+    type: integer
+    format: int64
     description: VIP Port
   vipProtocol: 
     type: string
