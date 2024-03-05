@@ -1,0 +1,9 @@
+title: NSX Virtual Server Config Object
+type: object
+properties: 
+  applicationProfile: 
+    type: string
+    nullable: true
+    description: |
+      The Load Balancer Application Profile ID
+      The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
