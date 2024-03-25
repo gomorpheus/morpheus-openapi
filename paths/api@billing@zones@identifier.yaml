@@ -20,6 +20,7 @@ get:
     - $ref: ../components/parameters/includeVirtualImages.yaml
     - $ref: ../components/parameters/includeSnapshots.yaml
     - $ref: ../components/parameters/identifier-path.yaml
+    - $ref: ../components/parameters/includeMs.yaml
   responses:
     '200':
       description: Array of Billing

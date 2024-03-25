@@ -1,0 +1,6 @@
+name: includeMs
+in: query
+description: Optional ability to include milliseconds
+schema:
+  type: boolean
+  default: false
