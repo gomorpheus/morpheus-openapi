@@ -6,7 +6,17 @@
     "maxInstances": 5000,
     "maxMemory": 0,
     "maxStorage": 0,
-    "hardLimit": false,
+    "limitType": "standard",
+    "maxManagedServers": 15,
+    "maxDiscoveredServers": 100,
+    "maxHosts": 20,
+    "maxMvm": 5,
+    "maxIac": 5,
+    "maxXaas": 5,
+    "maxExecutions": 1000,
+    "maxDistributedWorkers": 3,
+    "maxDiscoveredObjects": null,
+    "hardLimit": true,
     "freeTrial": false,
     "multiTenant": true,
     "whitelabel": true,
@@ -70,12 +80,22 @@
       "securityServices": true
     },
     "zoneTypes": null,
+    "zoneTypesExcluded": null,
     "lastUpdated": "2021-10-07T14:36:08Z",
     "dateCreated": "2021-10-07T14:36:08Z"
   },
   "currentUsage": {
     "memory": 531366034976,
     "storage": 6017299099648,
-    "workloads": 631
+    "workloads": 631,
+    "managedServers": 14,
+    "discoveredServers": 21,
+    "hosts": 5,
+    "mvm": 0,
+    "iac": 0,
+    "xaas": 5,
+    "executions": 43,
+    "distributedWorkers": 0,
+    "discoveredObjects": 0
   }
 }
