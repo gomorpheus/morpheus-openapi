@@ -56,7 +56,7 @@ properties:
         type: integer
         format: int64
         nullable: true
-        description: IAX Deployments Limit. 0 is enforced and null is used for unlimited.
+        description: IAC Deployments Limit. 0 is enforced and null is used for unlimited.
       maxXaas: 
         type: integer
         format: int64
