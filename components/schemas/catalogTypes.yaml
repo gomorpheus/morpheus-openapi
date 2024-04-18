@@ -22,3 +22,8 @@ items:
       type: string
     darkImagePath: 
       type: string
+    formType: 
+      type: string
+      enum:
+        - optionTypes
+        - form

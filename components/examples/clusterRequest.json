@@ -18,7 +18,8 @@
         "podCidr": "172.20.0.0/16",
         "serviceCidr": "172.30.0.0/16",
         "nodeCount": 3,
-        "createUser": true
+        "createUser": true,
+        "defaultRepoAccount": 22
       },
       "name": "testpool",
       "plan": {

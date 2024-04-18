@@ -8,7 +8,8 @@ vipAddress:
   type: string
   description: VIP Address
 vipPort: 
-  type: string
+  type: integer
+  format: int64
   description: VIP Port
 vipProtocol: 
   type: string
@@ -25,5 +26,6 @@ sslServerCert:
   format: int64
   description: SSL Server Certificate ID
 config:
-  type: object
-  description: Configuration object with parameters that vary by type.
+  oneOf:
+    - $ref: loadBalancerInstanceGenericConfig.yaml
+    - $ref: loadBalancerInstanceNSXTConfig.yaml

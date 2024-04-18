@@ -1,0 +1,47 @@
+type: object
+properties: 
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  description:
+    type: string 
+    nullable: true
+  account:
+    type: integer
+    format: int64
+    nullable: true
+  code:
+    type: string
+  repeatInstall:
+    type: boolean
+  type:
+    type: string
+  packageType:
+    type: string
+  packageVersion:
+    type: string
+  enabled:
+    type: boolean
+  iconPath: 
+    type: string
+    nullable: true
+  imagePath: 
+    type: string
+    nullable: true
+  darkImagePath: 
+    type: string
+    nullable: true
+  specTemplates: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string
+        code: 
+          type: string

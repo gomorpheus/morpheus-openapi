@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 6.2.1
+  version: 7.0.1
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -228,6 +228,10 @@ paths:
     $ref: paths/api@library@cluster-layouts@id.yaml
   /api/library/cluster-layouts/{id}/clone:
     $ref: paths/api@library@cluster-layouts@id@clone.yaml
+  /api/library/cluster-packages:
+    $ref: paths/api@library@cluster-packages.yaml
+  /api/library/cluster-packages/{id}:
+    $ref: paths/api@library@cluster-packages@id.yaml
   /api/cluster-types:
     $ref: paths/api@cluster-types.yaml
   /api/clusters:
@@ -301,6 +305,8 @@ paths:
     $ref: paths/api@clusters@id@worker-count.yaml
   /api/clusters/{clusterId}/workers:
     $ref: paths/api@clusters@id@workers.yaml
+  /api/clusters/{clusterId}/refresh:
+    $ref: paths/api@clusters@id@refresh.yaml
     
   /api/monitoring/contacts:
     $ref: paths/api@monitoring@contacts.yaml
@@ -344,8 +350,6 @@ paths:
     $ref: paths/api@cypher.yaml
   /api/cypher/{cypherPath}:
     $ref: paths/api@cypher@id.yaml
-  /api/dashboard:
-    $ref: paths/api@dashboard.yaml
   /api/deployments:
     $ref: paths/api@deployments.yaml
   /api/deployments/{deploymentId}:
@@ -538,6 +542,8 @@ paths:
     $ref: paths/api@instances@remove-from-control.yaml
   /api/instances/service-plans:
     $ref: paths/api@instances@service-plans.yaml
+  /api/instances/stats:
+    $ref: paths/api@instances@stats.yaml
   /api/integration-types:
     $ref: paths/api@integration-types.yaml
   /api/integration-types/{id}:
@@ -623,6 +629,10 @@ paths:
     $ref: paths/api@library@option-types.yaml
   /api/library/option-types/{id}:
     $ref: paths/api@library@option-types@id.yaml
+  /api/library/option-type-forms:
+    $ref: paths/api@library@option-type-forms.yaml
+  /api/library/option-type-forms/{id}:
+    $ref: paths/api@library@option-type-forms@id.yaml
   /api/library/spec-templates:
     $ref: paths/api@library@spec-templates.yaml
   /api/library/spec-templates/{id}:
@@ -745,6 +755,12 @@ paths:
     $ref: paths/api@networks@proxies.yaml
   /api/networks/proxies/{id}:
     $ref: paths/api@networks@proxies@id.yaml
+  /api/networks/servers:
+    $ref: paths/api@networks@servers.yaml
+  /api/networks/servers/{id}:
+    $ref: paths/api@networks@servers@id.yaml
+  /api/networks/servers/{id}/refresh:
+    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/networks/servers/{serverId}/dhcp-relays:
     $ref: paths/api@networks@servers@id@dhcp-relays.yaml
   /api/networks/servers/{serverId}/dhcp-relays/{id}:
@@ -783,8 +799,6 @@ paths:
     $ref: paths/api@networks@pool-server-types.yaml
   /api/networks/pool-server-types/{id}:
     $ref: paths/api@networks@pool-server-types@id.yaml
-  /api/networks/servers/{id}/refresh:
-    $ref: paths/api@networks@servers@id@refresh.yaml
   /api/options/codeRepositories:
     $ref: paths/api@options@codeRepositories.yaml
   /api/options/{optionSource}:
@@ -1210,6 +1224,8 @@ tags:
     description: Manage Clouds
   - name: Cluster Layouts
     description: Manage Cluster Layouts
+  - name: Cluster Packages
+    description: Manage Cluster Packages
   - name: Clusters
     description: Manage Kubernetes Clusters
   - name: Contacts
@@ -1223,8 +1239,6 @@ tags:
       Cypher at its core is a secure Key/Value store. But what makes cypher useful is the ability to securely store or generate credentials to connect to your instances. Not only are these credentials encrypted but by using a cypher you don't have to burn in connection credentials between instances into your apps.
 
       Cypher keys can be revoked, either through lease timeouts or manually. So even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
-  - name: Dashboard
-    description: View Dashboard Details
   - name: Deployments
     description: Manage File Deployments
   - name: Deploys

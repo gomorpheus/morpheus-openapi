@@ -1,0 +1,13 @@
+{
+  "networkServer": {
+    "type": "nsx-t",
+    "name": "Labs NSX",
+    "serviceUrl": "https://nsxt-server",
+    "serviceUsername": "username",
+    "servicePassword": "password",
+    "zoneId": 121,
+    "config:": {
+      "project": "project1"
+    }
+  }
+}

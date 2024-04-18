@@ -1,0 +1,93 @@
+get:
+  summary: Get a Specific Network Server
+  description: |
+    This endpoint retrieves a specific Network Server.
+  operationId: getNetworkServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              networkServer:
+                $ref: ../components/schemas/networkServer.yaml
+          examples:
+            Network Server Response:
+              value:
+                $ref: ../components/examples/networkServer.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+put: 
+  summary: Update a Network Server
+  description: |
+    This endpoint allows updating a Network Server. Configuration options vary by type.
+  operationId: updateNetworkServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            networkServer:
+              type: object
+              description: Payload for updating a Network Server
+              oneOf:
+                - $ref: ../components/schemas/networkServerUpdateNSX.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  networkServer:
+                    $ref: ../components/schemas/networkServer.yaml
+          examples: 
+            Network Server Update Success:
+              value:
+                $ref: ../components/examples/networkServerSuccess.json
+
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+
+delete: 
+  summary: Delete a Network Server
+  description: Will delete a Network Server from the system and make it no longer usable.
+  operationId: deleteNetworkServer
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

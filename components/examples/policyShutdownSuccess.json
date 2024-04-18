@@ -22,6 +22,7 @@
             "shutdownNotify": "1",
             "shutdownMessage": "Instance ${instance?.name} is set to shutdown on ${instance?.shutdownDate}",
             "shutdownAutoRenew": "on",
+            "shutdownAllowExtend": "off",
             "shutdownExtensionsBeforeApproval": "0",
             "accountIntegrationId": "-100",
             "shutdownHideFixed": false

@@ -12,6 +12,10 @@ properties:
     type: string
   code: 
     type: string
+  labels:
+    type: array
+    items: 
+      type: string
   location: 
     type: string
     nullable: true

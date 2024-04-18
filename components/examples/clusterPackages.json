@@ -1,0 +1,888 @@
+{
+    "clusterPackages": [
+        {
+            "id": 102,
+            "code": "asdf",
+            "name": "aaaaa",
+            "description": null,
+            "enabled": true,
+            "packageVersion": "asdf",
+            "packageType": "asdf",
+            "type": "apps",
+            "account": 1,
+            "repeatInstall": true,
+            "iconPath": "/branding/140x40/almalinux.svg",
+            "imagePath": "/branding/140x40/almalinux.svg",
+            "darkImagePath": "/branding/140x40/aws-api-gateway.svg",
+            "specTemplates": [
+                {
+                    "id": 97,
+                    "name": "calico 3.21.0 api install v1",
+                    "code": "kubernetes-calico-3-21-0-api-install-v1"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "code": "kubernetes-calico-3-17-2-package",
+            "name": "calico 3.17.2 package",
+            "description": "install calico networking",
+            "enabled": true,
+            "packageVersion": "3.17.2",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 10,
+                    "name": "tigera calico operator bgp resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-bgp-resources-v1"
+                },
+                {
+                    "id": 11,
+                    "name": "tigera calico operator policy resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-policy-resources-v1"
+                },
+                {
+                    "id": 12,
+                    "name": "tigera calico operator ipam resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-ipam-resources-v1"
+                },
+                {
+                    "id": 13,
+                    "name": "tigera calico operator network resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-network-resources-v1"
+                },
+                {
+                    "id": 14,
+                    "name": "tigera calico operator resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-operator-resources-v1"
+                },
+                {
+                    "id": 15,
+                    "name": "tigera calico operator spec v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-spec-v1"
+                },
+                {
+                    "id": 16,
+                    "name": "calico install v1",
+                    "code": "kubernetes-calico-3-17-2-install-v1"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "code": "kubernetes-calico-3-17-2-package-ipinip",
+            "name": "calico 3.17.2 package IP-in-IP Encapsulation",
+            "description": "install calico networking",
+            "enabled": true,
+            "packageVersion": "3.17.2",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 10,
+                    "name": "tigera calico operator bgp resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-bgp-resources-v1"
+                },
+                {
+                    "id": 11,
+                    "name": "tigera calico operator policy resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-policy-resources-v1"
+                },
+                {
+                    "id": 12,
+                    "name": "tigera calico operator ipam resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-ipam-resources-v1"
+                },
+                {
+                    "id": 13,
+                    "name": "tigera calico operator network resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-network-resources-v1"
+                },
+                {
+                    "id": 14,
+                    "name": "tigera calico operator resources v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-operator-resources-v1"
+                },
+                {
+                    "id": 15,
+                    "name": "tigera calico operator spec v1",
+                    "code": "kubernetes-tigera-calico-3-17-2-operator-spec-v1"
+                },
+                {
+                    "id": 31,
+                    "name": "calico install v1",
+                    "code": "kubernetes-calico-3-17-2-install-v1-ipinip"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "code": "kubernetes-calico-3-20-0-package",
+            "name": "calico 3.20.0 package",
+            "description": "install calico networking",
+            "enabled": true,
+            "packageVersion": "3.20.0",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 32,
+                    "name": "tigera calico operator bgp resources v1",
+                    "code": "kubernetes-tigera-calico-3-20-0-operator-bgp-resources-v1"
+                },
+                {
+                    "id": 33,
+                    "name": "tigera calico operator policy resources v1",
+                    "code": "kubernetes-tigera-calico-3-20-0-operator-policy-resources-v1"
+                },
+                {
+                    "id": 34,
+                    "name": "tigera calico operator ipam resources v1",
+                    "code": "kubernetes-tigera-calico-3-20-0-operator-ipam-resources-v1"
+                },
+                {
+                    "id": 35,
+                    "name": "tigera calico operator network resources v1",
+                    "code": "kubernetes-tigera-calico-3-20-0-operator-network-resources-v1"
+                },
+                {
+                    "id": 36,
+                    "name": "tigera calico operator resources v1",
+                    "code": "kubernetes-tigera-calico-3-20-0-operator-operator-resources-v1"
+                },
+                {
+                    "id": 37,
+                    "name": "tigera calico operator spec v1",
+                    "code": "kubernetes-tigera-calico-3-20-0-operator-spec-v1"
+                },
+                {
+                    "id": 38,
+                    "name": "calico install v1",
+                    "code": "kubernetes-calico-3-20-0-install-v1"
+                },
+                {
+                    "id": 39,
+                    "name": "calico api install v1",
+                    "code": "kubernetes-calico-3-20-0-api-install-v1"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "code": "kubernetes-calico-3-21-0-package",
+            "name": "calico 3.21.0 package",
+            "description": "install calico 3.21 networking",
+            "enabled": true,
+            "packageVersion": "3.21.0",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 95,
+                    "name": "tigera calico operator 3.21.0 spec v1",
+                    "code": "kubernetes-tigera-calico-3-21-0-operator-spec-v1"
+                },
+                {
+                    "id": 96,
+                    "name": "calico 3.21.0 install v1",
+                    "code": "kubernetes-calico-3-21-0-install-v1"
+                },
+                {
+                    "id": 97,
+                    "name": "calico 3.21.0 api install v1",
+                    "code": "kubernetes-calico-3-21-0-api-install-v1"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "code": "kubernetes-calico-3-22-0-package",
+            "name": "calico 3.22.0 package",
+            "description": "install calico 3.22 networking",
+            "enabled": true,
+            "packageVersion": "3.22.0",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 136,
+                    "name": "tigera calico operator 3.22.0 spec v1",
+                    "code": "kubernetes-tigera-calico-3-22-0-b-operator-spec-v1"
+                },
+                {
+                    "id": 152,
+                    "name": "calico 3.22.0 install v1",
+                    "code": "kubernetes-calico-3-22-0-b-install-v1"
+                },
+                {
+                    "id": 100,
+                    "name": "calico 3.22.0 api install v1",
+                    "code": "kubernetes-calico-3-22-0-api-install-v1"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "code": "kubernetes-calico-3-22-1-package",
+            "name": "calico 3.22.1 package",
+            "description": "install calico 3.22.1 networking",
+            "enabled": true,
+            "packageVersion": "3.22.1",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 127,
+                    "name": "tigera calico operator 3.22.1 spec v1",
+                    "code": "kubernetes-tigera-calico-3-22-1-operator-spec-v3"
+                },
+                {
+                    "id": 164,
+                    "name": "tigera calico operator 3.22.1 deploy spec",
+                    "code": "kubernetes-tigera-calico-3-22-1-tigera-deploy"
+                },
+                {
+                    "id": 120,
+                    "name": "calico 3.22.1 install v1",
+                    "code": "kubernetes-calico-3-22-1-install-v1"
+                },
+                {
+                    "id": 143,
+                    "name": "calico 3.22.1 api install v2",
+                    "code": "kubernetes-calico-3-22-1-api-install-v2"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "code": "kubernetes-calico-3-24-2-package",
+            "name": "calico 3.24.2 package",
+            "description": "install calico 3.24.2 networking",
+            "enabled": true,
+            "packageVersion": "3.24.2",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 158,
+                    "name": "tigera calico operator 3.24.2 spec v1",
+                    "code": "kubernetes-tigera-calico-3-24-2-operator-spec-v1"
+                },
+                {
+                    "id": 174,
+                    "name": "tigera calico operator 3.24.2 deployment v1",
+                    "code": "kubernetes-calico-3-24-2-operator-spec-deployment-v1"
+                },
+                {
+                    "id": 159,
+                    "name": "calico 3.24.2 install v1",
+                    "code": "kubernetes-calico-3-24-2-install-v1"
+                },
+                {
+                    "id": 160,
+                    "name": "calico 3.24.2 api install v1",
+                    "code": "kubernetes-calico-3-24-2-api-install-v1"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "code": "kubernetes-calico-3-26-0-package",
+            "name": "calico 3.26.0 package",
+            "description": "install calico 3.26.0 networking",
+            "enabled": true,
+            "packageVersion": "3.26.0",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 177,
+                    "name": "calico 3.26.0 service-accounts",
+                    "code": "kubernetes-calico-3-26-0-calico-service-accounts"
+                },
+                {
+                    "id": 178,
+                    "name": "tigera calico typha 3.26.0 spec",
+                    "code": "kubernetes-calico-3-26-0-calico-typha"
+                },
+                {
+                    "id": 179,
+                    "name": "tigera csi driver 3.26.0 spec",
+                    "code": "kubernetes-calico-3-26-0-csi-driver"
+                },
+                {
+                    "id": 180,
+                    "name": "tigera calico 3.26.0 spec",
+                    "code": "kubernetes-calico-3-26-2"
+                },
+                {
+                    "id": 181,
+                    "name": "tigera calico operator 3.26.0",
+                    "code": "kubernetes-tigera-calico-3-26-0-operator-spec"
+                },
+                {
+                    "id": 182,
+                    "name": "tigera calico operator 3.26.0 deploy",
+                    "code": "kubernetes-tigera-calico-3-26-0-operator-deploy"
+                },
+                {
+                    "id": 183,
+                    "name": "calico 3.26.0 install",
+                    "code": "kubernetes-calico-3-26-0-install"
+                },
+                {
+                    "id": 184,
+                    "name": "calico 3.26.0 api install",
+                    "code": "kubernetes-calico-3-26-0-api-install"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "code": "kubernetes-fluentbit-1-7-package",
+            "name": "fluentbit 1.7 package",
+            "description": "install fluentbit logging",
+            "enabled": true,
+            "packageVersion": "1.7",
+            "packageType": "fluentbit",
+            "type": "logging",
+            "account": null,
+            "repeatInstall": false,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/fluentbit@2x.png",
+            "darkImagePath": "/assets/package-types/fluentbit@2x.png",
+            "specTemplates": [
+                {
+                    "id": 30,
+                    "name": "fluentbit 1.7 resources v1",
+                    "code": "kubernetes-fluentbit-1-7-resources-v1"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "code": "kubernetes-fluentbit-1-8-3-package",
+            "name": "fluentbit 1.8.3 package",
+            "description": "install fluentbit logging",
+            "enabled": true,
+            "packageVersion": "1.8.3",
+            "packageType": "fluentbit",
+            "type": "logging",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/fluentbit@2x.png",
+            "darkImagePath": "/assets/package-types/fluentbit@2x.png",
+            "specTemplates": [
+                {
+                    "id": 53,
+                    "name": "fluentbit 1.8.3 resources v1",
+                    "code": "kubernetes-fluentbit-1-8-3-resources-v1"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "code": "kubernetes-fluentbit-1-8-9-package",
+            "name": "fluentbit 1.8.9 package",
+            "description": "install fluentbit logging",
+            "enabled": true,
+            "packageVersion": "1.8.9",
+            "packageType": "fluentbit",
+            "type": "logging",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/fluentbit@2x.png",
+            "darkImagePath": "/assets/package-types/fluentbit@2x.png",
+            "specTemplates": [
+                {
+                    "id": 94,
+                    "name": "fluentbit 1.8.9 resources v1",
+                    "code": "kubernetes-fluentbit-1-8-9-resources-v1"
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "code": "kubernetes-fluentbit-1-8-9-1-modified-package",
+            "name": "fluentbit 1.8.9.1 modified package",
+            "description": "install fluentbit logging",
+            "enabled": true,
+            "packageVersion": "1.8.9.1",
+            "packageType": "fluentbit",
+            "type": "logging",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/fluentbit@2x.png",
+            "darkImagePath": "/assets/package-types/fluentbit@2x.png",
+            "specTemplates": [
+                {
+                    "id": 202,
+                    "name": "fluentbit 1.8.9.1 modified resources v1",
+                    "code": "kubernetes-fluentbit-1-8-9-1-modified-resources-v1"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "code": "kubernetes-fluentbit-1-8-9-1-package",
+            "name": "fluentbit 1.8.9.1 package",
+            "description": "install fluentbit logging",
+            "enabled": true,
+            "packageVersion": "1.8.9.1",
+            "packageType": "fluentbit",
+            "type": "logging",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/fluentbit@2x.png",
+            "darkImagePath": "/assets/package-types/fluentbit@2x.png",
+            "specTemplates": [
+                {
+                    "id": 118,
+                    "name": "fluentbit 1.8.9.1 resources v1",
+                    "code": "kubernetes-fluentbit-1-8-9-1-resources-v1"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "code": "kubernetes-helm-3-5-package",
+            "name": "helm 3.5 package",
+            "description": "install helm 3.5 package",
+            "enabled": true,
+            "packageVersion": "3.5",
+            "packageType": "helm",
+            "type": "apps",
+            "account": null,
+            "repeatInstall": false,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/helm@2x.png",
+            "darkImagePath": "/assets/package-types/helm@2x.png",
+            "specTemplates": []
+        },
+        {
+            "id": 18,
+            "code": "kubernetes-calico-3-22-0-package-ipinip",
+            "name": "kubernetes calico 3.22.0 package IP-in-IP Encapsulation",
+            "description": "install calico networking",
+            "enabled": true,
+            "packageVersion": "3.22.0",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 98,
+                    "name": "tigera calico operator 3.22.0 spec v1",
+                    "code": "kubernetes-tigera-calico-3-22-0-operator-spec-v1"
+                },
+                {
+                    "id": 99,
+                    "name": "calico 3.22.0 install v1",
+                    "code": "kubernetes-calico-3-22-0-install-v1"
+                },
+                {
+                    "id": 100,
+                    "name": "calico 3.22.0 api install v1",
+                    "code": "kubernetes-calico-3-22-0-api-install-v1"
+                },
+                {
+                    "id": 104,
+                    "name": "calico install v1",
+                    "code": "kubernetes-calico-3-22-0-install-v1-ipinip"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "code": "kubernetes-calico-3-25-0-package",
+            "name": "kubernetes calico 3.25.0 package",
+            "description": "install calico 3.25.0 networking",
+            "enabled": true,
+            "packageVersion": "3.25.0",
+            "packageType": "calico",
+            "type": "network",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/calico@2x.png",
+            "darkImagePath": "/assets/package-types/calico@2x.png",
+            "specTemplates": [
+                {
+                    "id": 156,
+                    "name": "tigera calico operator 3.25.0 spec v1",
+                    "code": "kubernetes-tigera-calico-3-25-0-operator-spec-v2"
+                },
+                {
+                    "id": 145,
+                    "name": "calico 3.25.0 install v1",
+                    "code": "kubernetes-calico-3-25-0-install-v1"
+                },
+                {
+                    "id": 157,
+                    "name": "calico 3.25.0 api install v3",
+                    "code": "kubernetes-calico-3-25-0-api-install-v4"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "code": "kubernetes-istio-1-9-package",
+            "name": "kubernetes istio 1.9 package",
+            "description": "install istio",
+            "enabled": true,
+            "packageVersion": "1.9",
+            "packageType": "istio",
+            "type": "service-mesh",
+            "account": null,
+            "repeatInstall": false,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/istio@2x.png",
+            "darkImagePath": "/assets/package-types/istio@2x.png",
+            "specTemplates": []
+        },
+        {
+            "id": 23,
+            "code": "kubernetes-prometheus-1-0-package",
+            "name": "kubernetes prometheus 1.0 package",
+            "description": "install prometheus cluster monitoring",
+            "enabled": true,
+            "packageVersion": "1.0",
+            "packageType": "prometheus",
+            "type": "monitoring",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/prometheus@2x.png",
+            "darkImagePath": "/assets/package-types/prometheus@2x.png",
+            "specTemplates": [
+                {
+                    "id": 128,
+                    "name": "prometheus 1.0 operator setup v1",
+                    "code": "kubernetes-prometheus-1-0-setup-v1"
+                },
+                {
+                    "id": 129,
+                    "name": "prometheus 1.0 operator grafana v1",
+                    "code": "kubernetes-prometheus-1-0-grafana-v1"
+                },
+                {
+                    "id": 130,
+                    "name": "prometheus 1.0 operator metrics v1",
+                    "code": "kubernetes-prometheus-1-0-metrics-v1"
+                },
+                {
+                    "id": 131,
+                    "name": "prometheus 1.0 operator node exporter v1",
+                    "code": "kubernetes-prometheus-1-0-node-exporter-v1"
+                },
+                {
+                    "id": 132,
+                    "name": "prometheus 1.0 operator adapter v1",
+                    "code": "kubernetes-prometheus-1-0-adapter-v1"
+                },
+                {
+                    "id": 133,
+                    "name": "prometheus 1.0 operator resources v1",
+                    "code": "kubernetes-prometheus-1-0-resources-v1"
+                },
+                {
+                    "id": 134,
+                    "name": "prometheus 1.0 operator blackbox v1",
+                    "code": "kubernetes-prometheus-1-0-blackbox-v1"
+                },
+                {
+                    "id": 135,
+                    "name": "prometheus 1.0 operator service v1",
+                    "code": "kubernetes-prometheus-1-0-service-v1"
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "code": "kubernetes-rook-1-11-2-package",
+            "name": "kubernetes rook 1.11.2 package",
+            "description": "install rook storage",
+            "enabled": true,
+            "packageVersion": "1.11.2",
+            "packageType": "rook",
+            "type": "storage",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/rook@2x.png",
+            "darkImagePath": "/assets/package-types/rook@2x.png",
+            "specTemplates": [
+                {
+                    "id": 147,
+                    "name": "rook 1.11.2 operator resources v1",
+                    "code": "kubernetes-rook-1-11-2-resources-v1"
+                },
+                {
+                    "id": 148,
+                    "name": "rook 1.11.2 operator common v1",
+                    "code": "kubernetes-rook-1-11-2-common-v1"
+                },
+                {
+                    "id": 149,
+                    "name": "rook 1.11.2 operator install v1",
+                    "code": "kubernetes-rook-1-11-2-operator-v1"
+                },
+                {
+                    "id": 150,
+                    "name": "rook 1.11.2 cluster install v1",
+                    "code": "kubernetes-rook-1-11-2-cluster-v1"
+                },
+                {
+                    "id": 151,
+                    "name": "rook 1.11.2 storage install v1",
+                    "code": "kubernetes-rook-1-11-2-storage-v1"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "code": "kubernetes-rook-1-11-3-package",
+            "name": "kubernetes rook 1.11.3 package",
+            "description": "install rook storage",
+            "enabled": true,
+            "packageVersion": "1.11.3",
+            "packageType": "rook",
+            "type": "storage",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/rook@2x.png",
+            "darkImagePath": "/assets/package-types/rook@2x.png",
+            "specTemplates": [
+                {
+                    "id": 210,
+                    "name": "rook 1.11.3 operator common v1",
+                    "code": "kubernetes-rook-1-11-3-common-v1"
+                },
+                {
+                    "id": 213,
+                    "name": "rook 1.11.3 storage install v1",
+                    "code": "kubernetes-rook-1-11-3-storage-v1"
+                },
+                {
+                    "id": 209,
+                    "name": "rook 1.11.3 operator resources v1",
+                    "code": "kubernetes-rook-1-11-3-a-resources-v1"
+                },
+                {
+                    "id": 211,
+                    "name": "rook 1.11.3 operator install v1",
+                    "code": "kubernetes-rook-1-11-3-operator-v1"
+                },
+                {
+                    "id": 212,
+                    "name": "rook 1.11.3 cluster install v1",
+                    "code": "kubernetes-rook-1-11-3-cluster-v1"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "code": "kubernetes-morpheus-agent-2-3-3-package",
+            "name": "morpheus agent 2.3.3 package",
+            "description": "install morpheus agent",
+            "enabled": true,
+            "packageVersion": "2.3.3",
+            "packageType": "morpheus",
+            "type": "morpheus",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/morpheus@2x.png",
+            "darkImagePath": "/assets/package-types/morpheus@2x.png",
+            "specTemplates": [
+                {
+                    "id": 107,
+                    "name": "morpheus agent 2.3.3 namespace v1",
+                    "code": "kubernetes-morpheus-agent-2-3-3-namespace-v1"
+                },
+                {
+                    "id": 108,
+                    "name": "morpheus agent 2.3.3 daemonset v1",
+                    "code": "kubernetes-morpheus-agent-2-3-3-daemonset-v1"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "code": "kubernetes-morpheus-agent-2-3-5-package",
+            "name": "morpheus agent 2.3.5 package",
+            "description": "install morpheus agent",
+            "enabled": true,
+            "packageVersion": "2.3.5",
+            "packageType": "morpheus",
+            "type": "morpheus",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/morpheus@2x.png",
+            "darkImagePath": "/assets/package-types/morpheus@2x.png",
+            "specTemplates": [
+                {
+                    "id": 122,
+                    "name": "morpheus agent 2.3.5 namespace v1",
+                    "code": "kubernetes-morpheus-agent-2-3-5-namespace-v1"
+                },
+                {
+                    "id": 123,
+                    "name": "morpheus agent 2.3.5 daemonset v1",
+                    "code": "kubernetes-morpheus-agent-2-3-5-daemonset-v1"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "code": "kubernetes-nginx-ingress-operator-0-30-modified-package",
+            "name": "nginx ingress operator 0.30 modified package",
+            "description": "install nnginx ingress modified controllers",
+            "enabled": true,
+            "packageVersion": "0.30",
+            "packageType": "nginx",
+            "type": "ingress",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/nginx@2x.png",
+            "darkImagePath": "/assets/package-types/nginx@2x.png",
+            "specTemplates": [
+                {
+                    "id": 203,
+                    "name": "nginx ingress operator 0.30 modified manager config",
+                    "code": "kubernetes-nginx-operator-0-30-modified-manager-config"
+                },
+                {
+                    "id": 204,
+                    "name": "nginx ingress operator 0.30 modified metrics reader role",
+                    "code": "kubernetes-nginx-operator-0-30-modified-metrics-reader-role"
+                },
+                {
+                    "id": 205,
+                    "name": "nginx ingress operator 0.30 modified controller metrics service",
+                    "code": "kubernetes-nginx-operator-0-30-modified-controller-metrics-service"
+                },
+                {
+                    "id": 206,
+                    "name": "nginx ingress operator 0.30 modified controller manager service account",
+                    "code": "kubernetes-nginx-operator-0-30-modified-controller-manager-service-account"
+                },
+                {
+                    "id": 207,
+                    "name": "nginx ingress operator 0.30 ingress controllers modified",
+                    "code": "kubernetes-nginx-operator-0-30-modified-ingress-controllers"
+                },
+                {
+                    "id": 208,
+                    "name": "nginx ingress operator 0.30 modified",
+                    "code": "kubernetes-nginx-operator-0-30-modified-ingress-operator"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "code": "kubernetes-nginx-ingress-operator-0-30-package",
+            "name": "nginx ingress operator 0.30 package",
+            "description": "install nnginx ingress controllers",
+            "enabled": true,
+            "packageVersion": "0.30",
+            "packageType": "nginx",
+            "type": "ingress",
+            "account": null,
+            "repeatInstall": true,
+            "iconPath": null,
+            "imagePath": "/assets/package-types/nginx@2x.png",
+            "darkImagePath": "/assets/package-types/nginx@2x.png",
+            "specTemplates": [
+                {
+                    "id": 54,
+                    "name": "nginx ingress operator 0.30 manager config v1",
+                    "code": "kubernetes-nginx-operator-0-30-manager-config-v1"
+                },
+                {
+                    "id": 55,
+                    "name": "nginx ingress operator 0.30 metrics reader role",
+                    "code": "kubernetes-nginx-operator-0-30-metrics-reader-role-v1"
+                },
+                {
+                    "id": 56,
+                    "name": "nginx ingress operator 0.30 controller metrics service",
+                    "code": "kubernetes-nginx-operator-0-30-controller-metrics-service-v1"
+                },
+                {
+                    "id": 57,
+                    "name": "nginx ingress operator 0.30 controller manager service account",
+                    "code": "kubernetes-nginx-operator-0-30-controller-manager-service-account-v1"
+                },
+                {
+                    "id": 58,
+                    "name": "nginx ingress operator 0.30 ingress controllers",
+                    "code": "kubernetes-nginx-operator-0-30-ingress-controllers-v1"
+                },
+                {
+                    "id": 59,
+                    "name": "nginx ingress operator 0.30",
+                    "code": "kubernetes-nginx-operator-0-30-ingress-operator-v1"
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 25,
+        "total": 36
+    }
+}

@@ -1,0 +1,135 @@
+{
+  "optionTypeForm": {
+    "id": 21,
+    "name": "Form Example",
+    "description": "A form example",
+    "code": "example",
+    "context": null,
+    "locked": false,
+    "labels": [
+
+    ],
+    "options": [
+      {
+        "id": 2708,
+        "name": "88ea6d08-a7c3-4649-8248-90ac37ffeac4",
+        "description": null,
+        "labels": [
+
+        ],
+        "code": "88ea6d08-a7c3-4649-8248-90ac37ffeac4",
+        "fieldName": "input1",
+        "fieldLabel": "Input 1",
+        "fieldCode": null,
+        "fieldContext": "config.customOptions",
+        "fieldGroup": null,
+        "fieldClass": null,
+        "fieldAddOn": null,
+        "fieldComponent": null,
+        "fieldInput": null,
+        "placeHolder": null,
+        "verifyPattern": null,
+        "helpBlock": null,
+        "helpBlockFieldCode": null,
+        "defaultValue": null,
+        "optionSource": null,
+        "optionSourceType": null,
+        "optionList": null,
+        "type": "text",
+        "advanced": false,
+        "required": false,
+        "exportMeta": false,
+        "editable": false,
+        "creatable": true,
+        "config": {
+          "addon": "",
+          "addonPosition": ""
+        },
+        "displayOrder": 0,
+        "wrapperClass": null,
+        "enabled": true,
+        "noBlank": false,
+        "dependsOnCode": null,
+        "visibleOnCode": null,
+        "requireOnCode": null,
+        "contextualDefault": false,
+        "displayValueOnDetails": false,
+        "showOnCreate": true,
+        "showOnEdit": true,
+        "localCredential": false,
+        "formField": true,
+        "excludeFromSearch": false,
+        "isHidden": false,
+        "isLocked": false,
+        "minVal": null,
+        "maxVal": null
+      }
+    ],
+    "fieldGroups": [
+      {
+        "name": "Additional Settings",
+        "code": "3b7dd4bb-f05e-4ccb-be2d-e129d1bc2b95",
+        "description": null,
+        "localizedName": null,
+        "collapsible": false,
+        "defaultCollapsed": false,
+        "visibleOnCode": null,
+        "options": [
+          {
+            "id": 2709,
+            "name": "57339016-4b55-414b-a171-56b054d286fa",
+            "description": null,
+            "labels": [
+
+            ],
+            "code": "57339016-4b55-414b-a171-56b054d286fa",
+            "fieldName": "forceIt",
+            "fieldLabel": "Force It",
+            "fieldCode": null,
+            "fieldContext": "config.customOptions",
+            "fieldGroup": null,
+            "fieldClass": null,
+            "fieldAddOn": null,
+            "fieldComponent": null,
+            "fieldInput": null,
+            "placeHolder": null,
+            "verifyPattern": null,
+            "helpBlock": null,
+            "helpBlockFieldCode": null,
+            "defaultValue": null,
+            "optionSource": null,
+            "optionSourceType": null,
+            "optionList": null,
+            "type": "checkbox",
+            "advanced": false,
+            "required": false,
+            "exportMeta": false,
+            "editable": false,
+            "creatable": true,
+            "config": {
+              "addonPosition": ""
+            },
+            "displayOrder": 0,
+            "wrapperClass": null,
+            "enabled": true,
+            "noBlank": false,
+            "dependsOnCode": null,
+            "visibleOnCode": null,
+            "requireOnCode": null,
+            "contextualDefault": false,
+            "displayValueOnDetails": false,
+            "showOnCreate": true,
+            "showOnEdit": true,
+            "localCredential": false,
+            "formField": true,
+            "excludeFromSearch": false,
+            "isHidden": false,
+            "isLocked": false,
+            "minVal": null,
+            "maxVal": null
+          }
+        ]
+      }
+    ]
+  }
+}

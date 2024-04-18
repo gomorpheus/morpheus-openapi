@@ -1,0 +1,86 @@
+get:
+  summary: Get a Specific Option Form
+  description: This endpoint retrieves a specific option form.
+  operationId: getOptionForm
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              optionTypes:
+                type: array
+                items:
+                  $ref: ../components/schemas/optionTypeForm.yaml
+          examples: 
+            Option Types Response:
+              value: 
+                $ref: ../components/examples/optionTypeForm.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update an Option Form
+  description: Use this command to update an existing option form.
+  operationId: updateOptionForm
+  tags: 
+    -  Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            optionTypeForm:
+              $ref: ../components/schemas/optionTypeFormUpdate.yaml
+        examples:
+          Option Type Form Request:
+            value: 
+              $ref: ../components/examples/optionTypeFormUpdate.json
+  responses: 
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema: 
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete an Option Form
+  description: Will delete an option form.
+  operationId: deleteOptionForm
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

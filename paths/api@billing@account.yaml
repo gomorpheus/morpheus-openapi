@@ -19,6 +19,7 @@ get:
     - $ref: ../components/parameters/includeLoadBalancers.yaml
     - $ref: ../components/parameters/includeVirtualImages.yaml
     - $ref: ../components/parameters/includeSnapshots.yaml
+    - $ref: ../components/parameters/includeMs.yaml
   responses:
     '200':
       description: Array of Billing

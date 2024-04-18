@@ -1,0 +1,77 @@
+get:
+  summary: Get All Network Servers
+  description: |
+    This endpoint retrieves all Network Servers associated with the account.
+  operationId: listNetworkServers
+  tags:
+    - Networks
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                networkServers:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/networkServer.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            Network Servers Response:
+              value:
+                $ref: ../components/examples/networkServers.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create a Network Server
+  description: This endpoint allows creating a Network Server. Only certain types of integrations support creating and deleting network servers, such as VMware. Configuration options vary by type. Note that creating a server will automatically create and associate the corresponding network integration object, but management is done via the network server object.
+  operationId: createNetworkServer
+  tags:
+    - Networks
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties:
+            networkServer:
+              type: object
+              description: Payload for creating a new Network Server
+              anyOf:
+                - $ref: ../components/schemas/networkServerCreateNSX.yaml
+        examples:
+          Network Server Request - NSX:
+            value: 
+              $ref: ../components/examples/networkServerCreateNSX.json
+  responses:
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  networkServer:
+                    $ref: ../components/schemas/networkServer.yaml
+          examples:
+            Network Server Request Success:
+              value:
+                $ref: ../components/examples/networkServerSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -10,9 +10,9 @@ properties:
     description: Domain
     example: fqdn.com
   useSSL:
-    type: boolean
-    description: Use SSL
-    default: false
+    type: string
+    description: Use SSL ("on" or "off")
+    example: "off"
   bindingUsername:
     type: string
     description: Binding Username

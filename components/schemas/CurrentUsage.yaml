@@ -13,3 +13,39 @@ properties:
     type: integer
     format: int64
     description: Total Workloads
+  managedServers:
+    type: integer
+    format: int64
+    description: Total Managed Servers
+  discoveredServers:
+    type: integer
+    format: int64
+    description: Total Discovered Servers
+  hosts:
+    type: integer
+    format: int64
+    description: Total Hosts
+  mvm:
+    type: integer
+    format: int64
+    description: Total MVM Hosts
+  iac:
+    type: integer
+    format: int64
+    description: Total IAC Deployments
+  xaas:
+    type: integer
+    format: int64
+    description: Total Xaas Instances
+  executions:
+    type: integer
+    format: int64
+    description: Total Executions
+  distributedWorkers:
+    type: integer
+    format: int64
+    description: Total Distributed Workers
+  discoveredObjects:
+    type: integer
+    format: int64
+    description: Total Discovered Objects

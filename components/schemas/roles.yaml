@@ -12,6 +12,10 @@ properties:
   description: 
     type: string
     nullable: true
+  landingUrl:
+    type: string
+    nullable: true
+    description: An optional override for the default landing page after login for a user.
   scope: 
     type: string
   roleType: 

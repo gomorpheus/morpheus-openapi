@@ -50,6 +50,10 @@ put:
                   type: string
                   nullable: true
                   description: Description
+                landingUrl:
+                  type: string
+                  nullable: true
+                  description: An optional override for the default landing page after login for a user.
                 defaultPersona:
                   type: string
                   enum:

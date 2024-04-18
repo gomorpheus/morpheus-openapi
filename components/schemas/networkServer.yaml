@@ -1,0 +1,170 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+    description: Network Server ID
+  name: 
+    type: string
+    description: Name
+  description: 
+    type: string
+    description: Description
+    nullable: true
+  type: 
+    type: object
+    description: Network Server Type
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      code: 
+        type: string
+  integration: 
+    type: object
+    description: Integration
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      type:
+        type: string
+        description: Integration Type Code
+      integrationType:
+        type: object
+        description: Integration Type
+        properties: 
+          id: 
+            type: integer
+            format: int64
+          code: 
+            type: string
+          name: 
+            type: string
+        nullable: true
+    nullable: true
+  account: 
+    type: object
+    description: Owner Tenant
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+    nullable: true
+  visibility:
+    type: string
+  internalId: 
+    type: string
+    description: Internal ID
+    nullable: true
+  externalId: 
+    type: string
+    description: External ID
+    nullable: true
+  serviceUrl: 
+    type: string
+    description: Service URL
+    nullable: true
+    example: "https://example-infoblox-fqdn/wapi/v2.9"
+  serviceHost: 
+    type: string
+    description: Service Host
+    nullable: true
+  servicePort: 
+    type: integer
+    description: Service Port
+    nullable: true
+    example: 22
+  serviceMode: 
+    type: string
+    description: Service Mode
+    nullable: true
+  servicePath: 
+    type: string
+    description: Service Path
+    nullable: true
+  serviceUsername: 
+    type: string
+    description: Service Username
+    nullable: true
+  servicePassword: 
+    type: string
+    description: Service Password
+    nullable: true
+  servicePasswordHash: 
+    type: string
+    nullable: true
+  serviceToken: 
+    type: string
+    description: Service Token
+    nullable: true
+  serviceTokenHash: 
+    type: string
+    nullable: true
+  apiPort:
+    type: integer
+    format: int32
+    nullable: true
+  adminPort:
+    type: integer
+    format: int32
+    nullable: true
+  status: 
+    type: string
+    description: Status
+    example: ok
+  statusMessage: 
+    type: string
+    description: Status Message
+    nullable: true
+  statusDate: 
+    type: string
+    format: date-time
+    nullable: true
+  lastSync: 
+    type: string
+    format: date-time
+    description: Last Sync Date
+    nullable: true
+  nextRunDate: 
+    type: string
+    format: date-time
+    description: Next Run Date
+    nullable: true
+  lastSyncDuration: 
+    type: integer
+    format: int64
+    description: Last Sync Duration in milliseconds
+    nullable: true
+  config: 
+    type: object
+    description: Config object varies with network server type. 
+  networkFilter: 
+    type: string
+    description: Network Filter
+    nullable: true
+  tenantMatch: 
+    type: string
+    description: Tenant Match
+    nullable: true
+  zoneId: 
+    type: integer
+    format: int64
+    description: Cloud ID
+    nullable: true
+  dateCreated: 
+    type: string
+    format: date-time
+  lastUpdated: 
+    type: string
+    format: date-time
+  enabled: 
+    type: boolean
+  visible: 
+    type: boolean
