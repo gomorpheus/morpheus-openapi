@@ -1,0 +1,92 @@
+get: 
+  summary: Retrieves a Specific Email Template
+  description: |
+    Retrieves a specific email template.
+  operationId: getEmailTemplate
+  tags: 
+    -  Email Templates
+  parameters: 
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf: 
+              - type: object
+                properties:
+                  emailTemplate:
+                    $ref: ../components/schemas/emailTemplate.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Email Template Response:
+              value:
+                $ref: ../components/examples/emailTemplate.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Updates an Email Template
+  description: Use this command to update an email template.
+  operationId: updateEmailTemplate
+  tags: 
+    -  Email Templates
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json:
+        schema: 
+          type: object
+          required: 
+            -  emailTemplate
+          properties: 
+            emailTemplate:
+              properties:
+                template:
+                  type: string
+                  description: The email template
+                enabled:
+                  type: boolean
+                  description: Whether the email template is enabled
+                  default: true
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              emailTemplate:
+                $ref: ../components/schemas/emailTemplate.yaml
+          examples:
+            Update Email Template Response:
+              value:
+                $ref: ../components/examples/emailTemplateUpdateSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete: 
+  summary: Deletes an Email Template
+  description: Use this command to delete an email template.
+  operationId: deleteEmailTemplate
+  tags: 
+    -  Email Templates
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses: 
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+  

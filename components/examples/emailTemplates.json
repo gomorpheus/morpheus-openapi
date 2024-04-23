@@ -1,0 +1,175 @@
+{
+    "emailTemplates": [
+        {
+            "id": 31,
+            "name": "Confirm Email on Register Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "confirmEmail",
+            "template": "<h4>{{user.email}}</h4>\n<p>{{{i18n \"gomorpheus.auth.email.confirm\" url}}}</p>\n<p class=\"italic\">{{{i18n \"gomorpheus.auth.email.welcome\"}}}</p>\n<h4>{{{i18n \"gomorpheus.auth.email.teamMorph\"}}}</h4>\n",
+            "enabled": true
+        },
+        {
+            "id": 28,
+            "name": "Confirm Password Update Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "confirmPassUpdate",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.password.email.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.password.email.message\"}}}</p>\n<a href={{{url}}}>{{{i18n \"com.bertramlabs.plugins.accounts.password.email.linkLabel\"}}}</a>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.password.email.signature\"}}} </p>\n<!-- available hbs variables are user.displayName and user.username -->\n",
+            "enabled": true
+        },
+        {
+            "id": 26,
+            "name": "Disable Inactive User Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "disableInactiveUser",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.resetAccount.email.body\"}}}</p>\n<p>\n<a href='{{{forgotPasswordUrl}}}' class=\"btn-primary\">\n{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.linkLabel\"}}}\n</a>\n</p>\n<!-- available hbs variables are user.displayName and user.username -->\n",
+            "enabled": true
+        },
+        {
+            "id": 21,
+            "name": "Forgot Password Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "forgotPassword",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.message\"}}}</p>\n<p>\n<a href='{{{forgotPasswordUrl}}}' class=\"btn-primary\">\n{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.linkLabel\"}}}\n</a>\n</p>\n<!-- available hbs variables are user.displayName and user.username -->\n",
+            "enabled": true
+        },
+        {
+            "id": 23,
+            "name": "Inactive User Warning Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "inactiveWarning",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.inactiveAccountWarning.email.body\"}}}</p>\n<p>\n<a href='{{{forgotPasswordUrl}}}' class=\"btn-primary\">\n{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.linkLabel\"}}}\n</a>\n</p>\n<!-- available hbs variables are user.displayName and user.username -->\n",
+            "enabled": true
+        },
+        {
+            "id": 13,
+            "name": "Instance About to Expire Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "instanceNotifyExpiring",
+            "template": "{{{i18n \"gomorpheus.email.instanceExpiring\" user.displayName instance.displayName instance.expireDate}}}\n<p>\n<strong class=\"detail-title\">{{{i18n \"gomorpheus.label.info\"}}}</strong><br/>\n<dl>\n{{#if instance.description}}\n<dt>{{{i18n \"gomorpheus.label.description\"}}}:</dt>\n<dd>{{instance.description}}</dd>\n{{/if}}\n<dt>{{{i18n \"gomorpheus.label.createdBy\"}}}:</dt>\n<dd>{{user.userName}} ({{{user.displayName}}})</dd>\n{{#if instance.instanceContext}}\n<dt>{{{i18n \"gomorpheus.label.environment\"}}}: </dt>\n<dd>{{instance.instanceContext}}</dd>\n{{/if}}\n<dt>{{{i18n \"gomorpheus.label.group\"}}}:</dt>\n<dd>{{instance.site.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.layout\"}}}:</dt>\n<dd>{{instance.layout.name}}</dd>\n{{#each instance.metadata}}\n  {{#if name}}\n    <dt>{{name}}:</dt>\n    <dd>{{value}}</dd>\n    {{/if}}\n  {{/each}}\n</dl>\n</p>\n{{#each instance.containers}}\n  {{#if isDocker}}\n    <p>\n    <strong>{{{i18n \"gomorpheus.label.detailsFor\" name}}} </strong>\n  <br/>\n  <dl>\n  <dt>{{{i18n \"gomorpheus.label.plan\"}}}: </dt>\n<dd>{{plan.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.memory\"}}}: </dt>\n<dd>{{maxMemory}}</dd>\n<dt>{{{i18n \"gomorpheus.label.totalStorage\"}}}: </dt>\n<dd>{{maxStorage}}</dd>\n<dt>{{{i18n \"gomorpheus.label.status\"}}}: </dt>\n<dd>{{status}}</dd>\n<dt>{{{i18n \"gomorpheus.label.cloud\"}}}: </dt>\n<dd>{{server.zone.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.type\"}}}: </dt>\n<dd>{{containerType.name}}</dd>\n</dl>\n</p>\n{{else}}\n<p>\n<strong>{{{i18n \"gomorpheus.label.detailsFor\" server.displayName}}}</strong>\n<dl>\n<dt>{{{i18n \"gomorpheus.label.plan\"}}}: </dt>\n<dd>{{plan.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.cpuCores\"}}}</dt>\n<dd>{{maxCores}}</dd>\n<dt>{{{i18n \"gomorpheus.label.memory\"}}}: </dt>\n<dd>{{maxMemory}}</dd>\n<dt>{{{i18n \"gomorpheus.label.totalStorage\"}}}: </dt>\n<dd>{{maxStorage}}</dd>\n<dt>{{{i18n \"gomorpheus.label.status\"}}}: </dt>\n<dd>{{status}}</dd>\n<dt>{{{i18n \"gomorpheus.label.cloud\"}}}: </dt>\n<dd>{{server.zone.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.platform\"}}}: </dt>\n<dd>{{server.serverOs.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.sourceImage\"}}}: </dt>\n<dd>{{server.sourceImage.name}}</dd>\n<dt>{{{i18n \"gomorpheus.label.hostname\"}}}: </dt>\n<dd>{{server.externalFqdn}}</dd>\n</dl>\n</p>\n<br/><br/>\n<strong class=\"detail-title\">{{{i18n \"gomorpheus.label.networks\"}}}</strong><br/>\n<ul class=\"list-unstyled\">\n{{#each server.interfaces}}\n  <li>\n  <strong>{{network.name}}</strong>\n  <dl>\n  <dt>{{{i18n \"gomorpheus.label.ipAddress\"}}}:</dt>\n<dd>{{ipAddress}}</dd>\n{{#if macAddresss}}\n<dt>{{{i18n \"gomorpheus.label.macAddress\"}}}: </dt>\n<dd>{{macAddress}}\n{{/if}}\n{{#if type}}\n  <dt>{{{i18n \"gomorpheus.label.interfaceType\"}}}:</dt>\n<dd>{{type.name}}</dd>\n{{/if}}\n</dl>\n</li>\n{{/each}}\n</ul>\n{{/if}}\n{{/each}}\n<p>\n{{{extendLink}}}\n</p>\n",
+            "enabled": true
+        },
+        {
+            "id": 3,
+            "name": "Instance Expired Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "instanceExpired",
+            "template": "{{#if deleteApprovedRequired}}\n  {{{i18n \"gomorpheus.email.instanceExpired.deleteApprovalRequired\" user.displayName instance.displayName instance.site.name}}}\n{{else if delayedRemovalApplied}}\n  {{{i18n \"gomorpheus.email.instanceExpired.delayedRemovalApplied\" user.displayName instance.displayName instance.site.name}}}\n{{else}}\n  {{{i18n \"gomorpheus.email.instanceExpired\" user.displayName instance.displayName instance.site.name}}}\n{{/if}}\n",
+            "enabled": true
+        },
+        {
+            "id": 35,
+            "name": "Instance Provision Complete Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "instanceComplete",
+            "template": "{{#if success}}\n  <p>{{{i18n \"gomorpheus.email.instanceComplete\" user.displayName instance.displayName}}}</p>\n{{else}}\n  <p>{{{i18n \"gomorpheus.email.instanceCompleteError\" user.displayName instance.displayName}}}</p>\n{{/if}}\n{{#if instance.statusMessage}}\n  <p>{{instance.statusMessage}}</p>\n{{/if}}\n{{#if instance.errorMessage}}\n  <p>{{instance.errorMessage}}</p>\n{{else}}\n  <a href='{{instanceUrl}}' style=\"display: inline-block;    margin-top:38px;    color: #fff;    background-color:#b33535;    height:48px;    line-height: 48px;    padding: 0 36px;    text-align: center;    text-decoration: none;    font-size: 16px;    border: 1px solid #53c68e;    border-radius: 2px;    font-size: 18px;\">{{{i18n \"gomorpheus.action.viewInstance\"}}}</a>\n{{/if}}\n",
+            "enabled": true
+        },
+        {
+            "id": 44,
+            "name": "Instance Provision Complete Template",
+            "account": {
+                "id": 1,
+                "name": "Morpheus QA"
+            },
+            "code": "instanceComplete",
+            "template": "Testesss",
+            "enabled": false
+        },
+        {
+            "id": 37,
+            "name": "Instance Scale Complete Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "instanceScaleComplete",
+            "template": "{{#if success}}\n  <p>{{{i18n \"gomorpheus.email.instanceScaleComplete\" user.displayName instance.displayName}}}</p>\n{{else}}\n<p>{{{i18n \"gomorpheus.email.instanceScaleCompleteError\" user.displayName instance.displayName}}}</p>\n{{/if}}\n<p>\n  <a href='{{instanceUrl}}' style=\"display: inline-block;    margin-top:38px;    color: #fff;    background-color:#b33535;    height:48px;    line-height: 48px;    padding: 0 36px;    text-align: center;    text-decoration: none;    font-size: 16px;    border: 1px solid #53c68e;    border-radius: 2px;    font-size: 18px;\">{{{i18n \"gomorpheus.action.viewInstance\"}}}</a>\n</p>\n",
+            "enabled": true
+        },
+        {
+            "id": 11,
+            "name": "Instance Shutdown Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "instanceShutdown",
+            "template": "<p>{{{i18n \"gomorpheus.help.instance.shutdownEmailMessage\" user.displayName instance.displayName}}} </p>\n",
+            "enabled": false
+        },
+        {
+            "id": 14,
+            "name": "Instance Shutdown Warning Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "notifyShutdownWarningInstance",
+            "template": "<p>{{{i18n \"gomorpheus.help.instance.shutdownWarningEmailMessage\" user.displayName instance.displayName instance.shutdownDate}}} </p>\n<p>{{{extendLink}}}</p>\n",
+            "enabled": true
+        },
+        {
+            "id": 33,
+            "name": "Register Successful Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "registerSuccess",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.register.email.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.register.email.message\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.register.email.signature\"}}}</p>\n",
+            "enabled": true
+        },
+        {
+            "id": 29,
+            "name": "User Account Updated Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "userAccountConfirmEmail",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.userAccount.email.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.userAccount.email.message\"}}}</p>\n<a href={{{url}}}>{{{i18n \"com.bertramlabs.plugins.accounts.userAccount.email.linkLabel\"}}}</a>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.password.email.signature\"}}} </p>\n<!-- available hbs variables are user.displayName and user.username -->\n",
+            "enabled": true
+        },
+        {
+            "id": 25,
+            "name": "Warn Old Password Template",
+            "account": {
+                "id": null,
+                "name": null
+            },
+            "code": "warnOldPassword",
+            "template": "<p>{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.greeting\"}}}</p>\n<p>{{{i18n \"com.bertramlabs.plugins.accounts.oldPasswordWarning.email.body\"}}}</p>\n<p>\n<a href='{{{forgotPasswordUrl}}}' class=\"btn-primary\">\n{{{i18n \"com.bertramlabs.plugins.accounts.forgotPasswordEmail.linkLabel\"}}}\n</a>\n</p>\n<!-- available hbs variables are user.displayName and user.username -->\n",
+            "enabled": true
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 15,
+        "total": 15
+    }
+}
