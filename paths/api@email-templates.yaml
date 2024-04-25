@@ -45,34 +45,9 @@ post:
       application/json:
         schema: 
           type: object
-          required: 
-            -  emailTemplate
-          properties: 
-            code:
-              type: string
-              enum:
-                - instanceExpired
-                - instanceShutdown
-                - instanceNotifyExpiring
-                - notifyShutdownWarningInstance
-                - forgotPassword
-                - inactiveWarning
-                - warnOldPassword
-                - confirmPassUpdate
-                - userAccountConfirmEmail
-                - confirmEmail
-                - registerSuccess
-                - instanceComplete
-                - instanceScaleComplete
-            template:
-              type: string
-              description: |
-                The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript)
-            enabled:
-              type: boolean
-              default: true
-              description: |
-                Whether the email template is enabled or not.
+          properties:
+            emailTemplate:
+              $ref: ../components/schemas/emailTemplate.yaml
   responses: 
     '200':
       description: Successful Request

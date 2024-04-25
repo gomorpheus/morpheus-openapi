@@ -3,12 +3,12 @@
     "emailTemplate": {
         "id": 11,
         "name": "Instance Shutdown Template",
-        "account": {
+        "owner": {
             "id": null,
             "name": null
         },
         "code": "instanceShutdown",
         "template": "<p>{{{i18n \"gomorpheus.help.instance.shutdownEmailMessage\" user.displayName instance.displayName}}} </p>\n",
-        "enabled": false
+        "accounts": []
     }
 }

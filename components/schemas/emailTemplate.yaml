@@ -9,9 +9,23 @@ properties:
       The name of the email template. This is set by morpheus.
   code:
     type: string
+    enum:
+      - instanceExpired
+      - instanceShutdown
+      - instanceNotifyExpiring
+      - notifyShutdownWarningInstance
+      - forgotPassword
+      - inactiveWarning
+      - warnOldPassword
+      - confirmPassUpdate
+      - userAccountConfirmEmail
+      - confirmEmail
+      - registerSuccess
+      - instanceComplete
+      - instanceScaleComplete
     description: |
       A unique code for the email template. This code is used to reference the email template and as a reference of the templates type.
-  account:
+  owner:
     type: object
     nullable: true
     properties:
@@ -23,11 +37,18 @@ properties:
         type: string
         nullable: true
     description: |
-      The account that the email template is associated with. This is set by morpheus.
-  enabled:
-    type: boolean
-    description: |
-      Whether the email template is enabled or not.
+      The account that owns the email template is associated with. This is set by morpheus.
+  accounts: 
+    type: array
+    nullable: true
+    items: 
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
   template:   
     type: string
     description: |

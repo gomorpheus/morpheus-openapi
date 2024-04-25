@@ -38,20 +38,12 @@ put:
   requestBody: 
     content: 
       application/json:
-        schema: 
-          type: object
-          required: 
-            -  emailTemplate
-          properties: 
-            emailTemplate:
-              properties:
-                template:
-                  type: string
-                  description: The email template
-                enabled:
-                  type: boolean
-                  description: Whether the email template is enabled
-                  default: true
+        schema:
+          allOf:
+          - type: object
+            properties:
+              policy:
+                $ref: ../components/schemas/emailTemplate.yaml
   responses:
     '200':
       description: Successful Request
