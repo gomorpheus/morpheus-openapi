@@ -16,6 +16,16 @@ properties:
         format: int64
       name: 
         type: string
+  forecastType: 
+    type: object
+    description: Forecast Model type
+    nullable: true
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
   enabled: 
     type: boolean
   refScope: 
