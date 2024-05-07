@@ -25,7 +25,6 @@ get:
                   - $ref: ../components/schemas/taskGroovyConfig.yaml
                   - $ref: ../components/schemas/taskHttpConfig.yaml
                   - $ref: ../components/schemas/taskJavaConfig.yaml
-                  - $ref: ../components/schemas/taskJrubyConfig.yaml
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
                   - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
@@ -58,9 +57,6 @@ get:
             Task Response - Get Java:
               value:
                 $ref: ../components/examples/taskJava.json
-            Task Response - Get JRuby:
-              value:
-                $ref: ../components/examples/taskJruby.json
             Task Response - Get Library Script:
               value:
                 $ref: ../components/examples/taskLibraryScript.json
@@ -143,7 +139,6 @@ put:
                         - groovyTask
                         - httpTask
                         - javascriptTask
-                        - jrubyTask
                         - containerScript
                         - containerTemplate
                         - localScript
@@ -254,7 +249,6 @@ put:
                   - $ref: ../components/schemas/taskGroovyConfig.yaml
                   - $ref: ../components/schemas/taskHttpConfig.yaml
                   - $ref: ../components/schemas/taskJavaConfig.yaml
-                  - $ref: ../components/schemas/taskJrubyConfig.yaml
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
                   - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
@@ -288,9 +282,6 @@ put:
             Task Response - Update Java:
               value:
                 $ref: ../components/examples/taskJavaSuccess.json
-            Task Response - Update JRuby:
-              value:
-                $ref: ../components/examples/taskJrubySuccess.json
             Task Response - Update Library Script:
               value:
                 $ref: ../components/examples/taskLibraryScriptSuccess.json
