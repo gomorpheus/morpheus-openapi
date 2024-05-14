@@ -29,7 +29,6 @@ get:
     - $ref: ../components/parameters/labels.yaml
     - $ref: ../components/parameters/allLabels.yaml
     - $ref: ../components/parameters/tags.yaml
-    - $ref: ../components/parameters/metadata.yaml
     - $ref: ../components/parameters/detailsFalse.yaml
   responses:
     '200':
