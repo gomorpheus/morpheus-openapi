@@ -116,6 +116,10 @@ properties:
     nullable: true
     items: 
       type: string
+  autoRecoverPowerState:
+    type: boolean
+    description: Automatically Power on VMs
+    default: false
   serviceEntry: 
     type: string
     nullable: true

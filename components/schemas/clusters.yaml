@@ -105,6 +105,8 @@ properties:
     type: array
     items: 
       type: string
+  autoRecoverPowerState:
+    type: boolean
   serviceEntry: 
     type: string
     nullable: true
