@@ -4,8 +4,6 @@ required:
   - type
   - name
   - serviceUrl
-  - serviceUsername
-  - servicePassword
   - zoneId
 properties:
   type: 
@@ -52,3 +50,21 @@ properties:
     type: integer
     format: int64
     description: ID of the Cloud that the NSX network server integration should be attached to.
+  credential: 
+    type: object
+    description: 'Map containing Credential ID or the default `{"type": "local"}` which means use the values set in the local serviceUsername and servicePassword instead of associating a credential.'
+    properties: 
+      type: 
+        type: string
+      id:
+        type: integer
+        format: int64
+  tenants:
+    type: array
+    description: Array of tenant account ids that are allowed access
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
