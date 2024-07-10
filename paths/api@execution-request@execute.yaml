@@ -21,6 +21,10 @@ post:
               type: string
               description: A script or command to be executed
               example: "uname -a"
+            sendKeys:
+              type: boolean
+              description: Pass true to send key mappings to the hypervisor console so commands such as <LEFT>, <RIGHT> and <WAIT> can be used.
+              default: false
   responses:
     '200':
       description: Successful Execution Request Response
