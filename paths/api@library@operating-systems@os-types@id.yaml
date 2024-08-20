@@ -1,0 +1,26 @@
+get:
+  summary: Get a OsType
+  description: This endpoint retrieves a specific osType.
+  operationId: getOsType
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              osType:
+                $ref: ../components/schemas/osType.yaml
+          examples:
+            OsTypes Response:
+              value:
+                $ref: ../components/examples/osType.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

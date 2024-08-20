@@ -1,0 +1,21 @@
+type: object
+required: 
+  - osType
+  - virtualImage
+properties: 
+  osType: 
+    type: integer
+    format: int64
+    description: OsType id that the image will be attached to
+  virtualImage: 
+    type: integer
+    format: int64
+    description: VirtualImage id that the image will be using
+  provisionType: 
+    type: integer
+    format: int64
+    description: Provision Type id of the image.
+  zone: 
+    type: integer
+    format: int64
+    description: Cloud id that will be attached to the image

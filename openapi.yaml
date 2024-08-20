@@ -1064,6 +1064,15 @@ paths:
   /api/task-sets/{id}/execute:
     $ref: paths/api@task-sets@id@execute.yaml
   
+  /api/library/operating-systems/os-types:
+    $ref: paths/api@library@operating-systems@os-types.yaml
+  /api/library/operating-systems/os-types/{id}:
+    $ref: paths/api@library@operating-systems@os-types@id.yaml
+  /api/library/operating-systems/os-types/images/{id}:
+    $ref: paths/api@library@operating-systems@os-types@images@id.yaml
+  /api/library/operating-systems/os-types/create-image:
+    $ref: paths/api@library@operating-systems@os-types@create-image.yaml
+  
   /api/task-types:
     $ref: paths/api@task-types.yaml
   /api/task-types/{id}:

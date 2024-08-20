@@ -1,0 +1,31 @@
+post: 
+  summary: Create an OsTypeImage
+  description: This endpoint will create an osTypeImage.
+  operationId: addOsTypeImage
+  tags: 
+    - Library
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            cluster:
+              $ref: ../components/schemas/clusterCreate.yaml
+        examples:
+          Cluster Request:
+            value:
+              $ref: ../components/examples/osTypeImageRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          examples:
+             OsTypeImage Response:
+              value:
+                $ref: ../components/examples/osTypeImageCreate.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
