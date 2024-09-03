@@ -972,6 +972,12 @@ paths:
     $ref: paths/api@servers@id@workflow.yaml
   /api/servers/{id}/networkInterfaces/{networkInterfaceId}:
     $ref: paths/api@servers@id@networkInterfaces@id.yaml
+  /api/servers/{id}/maintenance:
+    $ref: paths/api@servers@id@maintenance.yaml
+  /api/servers/{id}/leave-maintenance:
+    $ref: paths/api@servers@id@leave-maintenance.yaml
+  /api/servers/{id}/placement:
+    $ref: paths/api@servers@id@placement.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
   /api/catalog/cart:

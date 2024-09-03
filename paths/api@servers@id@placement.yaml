@@ -1,0 +1,48 @@
+put:
+  summary: Manage Host Placement
+  description: This will update the host placement settings for the virtual machine. Only available for supported server types such as MVM virtual machines.
+  operationId: serverMaintenanceMode
+  tags:
+    - Hosts
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema:
+          type: object
+          properties:
+            server:
+              type: object
+              properties:
+                name: 
+                  type: string
+                  description: Placement Strategy
+                  enum:
+                    - auto
+                    - failover
+                    - pinned
+                preferredServer:
+                  type: object
+                  description: Object containing id of preferred target host to place VM on
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      example: 1
+                      description: Server ID
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
