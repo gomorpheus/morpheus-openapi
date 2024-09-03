@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 7.0.4
+  version: 7.0.6
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -972,6 +972,12 @@ paths:
     $ref: paths/api@servers@id@workflow.yaml
   /api/servers/{id}/networkInterfaces/{networkInterfaceId}:
     $ref: paths/api@servers@id@networkInterfaces@id.yaml
+  /api/servers/{id}/maintenance:
+    $ref: paths/api@servers@id@maintenance.yaml
+  /api/servers/{id}/leave-maintenance:
+    $ref: paths/api@servers@id@leave-maintenance.yaml
+  /api/servers/{id}/placement:
+    $ref: paths/api@servers@id@placement.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
   /api/catalog/cart:
