@@ -34,9 +34,8 @@ properties:
       code: 
         type: string
         description: The code for the memory and storage option pre-configured within Morpheus.
-      options: 
-        type: object
-        description: Map of custom options depending on selected service plan . An example would be `maxMemory`, or `maxCores`.
+  servicePlanOptions: 
+    $ref: servicePlanOptions.yaml
   volumes: 
     type: array
     description: The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects
