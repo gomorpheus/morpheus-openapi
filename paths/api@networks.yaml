@@ -10,6 +10,12 @@ get:
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/labels.yaml
     - $ref: ../components/parameters/allLabels.yaml
+    - $ref: ../components/parameters/zoneId.yaml
+    - name: cidr
+      in: query
+      description: Filter by cidr, matches beginning of value.
+      schema:
+        type: string
   responses:
     '200':
       description: Successful Request
