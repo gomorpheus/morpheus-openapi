@@ -43,6 +43,12 @@ properties:
   portRange: 
     type: string
     nullable: true
+  sourcePortRange: 
+    type: string
+    nullable: true
+  destinationPortRange: 
+    type: string
+    nullable: true
   protocol: 
     type: string
   destinationType: 

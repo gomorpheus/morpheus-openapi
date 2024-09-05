@@ -260,6 +260,9 @@ networkRouter:
                     sourcePortRange:
                       type: string
                       nullable: true
+                    destinationPortRange:
+                      type: string
+                      nullable: true
                     sourceGroup:
                       type: string
                       nullable: true
