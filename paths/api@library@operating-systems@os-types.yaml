@@ -34,3 +34,36 @@ get:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Create an OsType
+  description: Use this command to create an ostype.
+  operationId: addOsTypes
+  tags: 
+    -  Cluster Layouts
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            layout:
+              $ref: ../components/schemas/clusterLayoutCreate.yaml
+        examples:
+          Cluster Layout Request:
+            value:
+              $ref: ../components/examples/clusterLayoutRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successId.yaml
+          examples:
+            Cluster Layout Response:
+              value:
+                $ref: ../components/examples/successId.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -24,3 +24,61 @@ get:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
+put: 
+  summary: Update an OsType
+  description: Use this command to update an existing ostype.
+  operationId: updateOsType
+  tags: 
+    -  Library
+  parameters: 
+    - $ref: ../components/parameters/id-path.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          properties: 
+            instanceTypeLayout:
+              $ref: ../components/schemas/osTypeUpdate.yaml
+        examples:
+          Layout Request:
+            value: 
+              $ref: ../components/examples/osTypeUpdate.json
+  responses: 
+    '200':
+      description: Successful Response
+      content: 
+        application/json: 
+          schema: 
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete an OsType
+  description: Will delete an osType
+  operationId: deleteOsType
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -11,9 +11,9 @@ post:
           type: object
           properties: 
             cluster:
-              $ref: ../components/schemas/clusterCreate.yaml
+              $ref: ../components/schemas/createOsTypeImage.yaml
         examples:
-          Cluster Request:
+          OsTypeImage Request:
             value:
               $ref: ../components/examples/osTypeImageRequest.json
   responses:
