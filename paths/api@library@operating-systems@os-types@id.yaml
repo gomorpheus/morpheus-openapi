@@ -1,5 +1,5 @@
 get:
-  summary: Get a OsType
+  summary: Get an OsType
   description: This endpoint retrieves a specific osType.
   operationId: getOsType
   tags:
@@ -38,7 +38,7 @@ put:
         schema: 
           type: object
           properties: 
-            instanceTypeLayout:
+            osType:
               $ref: ../components/schemas/osTypeUpdate.yaml
         examples:
           Layout Request:
