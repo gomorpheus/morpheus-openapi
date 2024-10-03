@@ -35,6 +35,10 @@ properties:
     type: integer
     format: int64
     description: Virtual image ID
+  osTypeId: 
+    type: integer
+    format: int64
+    description: OsType ID
   statTypeCode: 
     type: string
     description: Stat type code.  Varies with node type, see Provision Types (customOptionTypes) for allowed values within selected type.
