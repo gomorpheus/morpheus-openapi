@@ -10,7 +10,7 @@ post:
         schema: 
           type: object
           properties: 
-            cluster:
+            osTypeImage:
               $ref: ../components/schemas/createOsTypeImage.yaml
         examples:
           OsTypeImage Request:
