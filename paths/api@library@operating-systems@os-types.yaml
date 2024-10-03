@@ -46,12 +46,12 @@ post:
         schema: 
           type: object
           properties: 
-            layout:
-              $ref: ../components/schemas/clusterLayoutCreate.yaml
+            osType:
+              $ref: ../components/schemas/osTypeCreate.yaml
         examples:
-          Cluster Layout Request:
+          OsType Request:
             value:
-              $ref: ../components/examples/clusterLayoutRequest.json
+              $ref: ../components/examples/osTypeRequest.json
   responses:
     '200':
       description: Successful Request
@@ -60,7 +60,7 @@ post:
           schema:
             $ref: ../components/schemas/successId.yaml
           examples:
-            Cluster Layout Response:
+            OsType Response:
               value:
                 $ref: ../components/examples/successId.json
     '4XX':

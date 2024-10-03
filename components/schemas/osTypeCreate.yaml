@@ -1,0 +1,67 @@
+type: object
+required: 
+  - platform
+  - name
+properties: 
+  name:
+    type: string
+    nullable: false
+    description: |
+      The name of the osType.
+  description:
+    type: string
+    nullable: true
+    description: |
+      The description of the osType. 
+  platform:
+    type: string
+    nullable: false
+    description: |
+      The platform of the osType. 
+  category:
+    type: string
+    nullable: true
+    description: |
+      The category of the osType.
+  vendor:
+    type: string
+    nullable: true
+    description: |
+      The vendor of the osType.
+  osName:
+    type: string
+    nullable: true
+    description: |
+      The osName of the osType.
+  osVersion:
+    type: string
+    nullable: true
+    description: |
+      The osVersion of the osType.
+  osCodename:
+    type: string
+    nullable: true
+    description: |
+      The osCodename of the osType.
+  osFamily:
+    type: string
+    nullable: true
+    description: |
+      The family of the osType.
+  bitCount:
+    type: integer
+    format: int64
+    nullable: false
+    description: |
+      The bitCount/architecture of the osType.
+  cloudInitVersion:
+    type: string
+    nullable: false
+    description: |
+      The version of CloudInit being used.
+  installAgent:
+    type: boolean
+    nullable: true
+    description: |
+      Whether the morpheus agent is installed.
+
