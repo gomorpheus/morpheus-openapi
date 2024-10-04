@@ -2,6 +2,7 @@ type: object
 required: 
   - platform
   - name
+  - bitCount
 properties: 
   name:
     type: string

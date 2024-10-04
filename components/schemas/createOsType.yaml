@@ -14,6 +14,9 @@ properties:
   platform: 
     type: string
     description: OsType platform, must be "linux", ""
+  bitCount:
+    type: integer
+    description: BitCount of OsType e.g. 32/64
   description: 
     type: string
     description: Cluster layout description
@@ -42,10 +45,6 @@ properties:
     type: string
     description: OsType osFamily
     nullable: true
-  bitCount:
-    type: integer
-    description: BitCount of OsType e.g. 32/64
-    nullable: false
   cloudInitVersion:
     type: string
     description: OsType cloudInitVersion
@@ -56,7 +55,7 @@ properties:
     nullable: true
   visibility:
     type: string
-    description: 'public' or 'private'
+    description: "'public' or 'private'"
     nullable: true
   
 
