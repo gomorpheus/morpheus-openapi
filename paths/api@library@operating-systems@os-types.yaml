@@ -36,7 +36,7 @@ get:
       $ref: ../components/responses/5xx.yaml
 post: 
   summary: Create an OsType
-  description: Use this command to create an ostype.
+  description: Use command to create an ostype.
   operationId: addOsTypes
   tags: 
     - Library
