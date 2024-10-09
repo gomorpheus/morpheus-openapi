@@ -3,6 +3,7 @@ required:
   - platform
   - name
   - bitCount
+  - code
 properties: 
   name:
     type: string
@@ -19,6 +20,11 @@ properties:
     nullable: false
     description: |
       The platform of the osType. 
+  code:
+    type: string
+    nullable: false
+    description: |
+      The code morph uses as an identifier
   category:
     type: string
     nullable: true
