@@ -104,4 +104,4 @@ properties:
       syntheticFullSchedule:
         type: integer
         format: int64
-        descripton: the ID of the execute schedule for the synthetic full backup to be created. Only applies to `kvm` backup type.
+        description: the ID of the execute schedule for the synthetic full backup to be created. Only applies to `kvm` backup type.
