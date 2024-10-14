@@ -94,4 +94,14 @@ properties:
   retentionCount:
     type: integer
     format: int64
-    description: Retention Count for new job. By default the backup settings value will be used. Only applies to jobAction `new` and `clone`. 
+    description: Retention Count for new job. By default the backup settings value will be used. Only applies to jobAction `new` and `clone`. \
+  backupJob:
+    type: object
+    properties:
+      syntheticFullEnabled:
+        type: boolean
+        description: Enable synthetic full backups on this backup jobAction. Only applies to `kvm` backup type.
+      syntheticFullSchedule:
+        type: integer
+        format: int64
+        descripton: the ID of the execute schedule for the synthetic full backup to be created. Only applies to `kvm` backup type.
