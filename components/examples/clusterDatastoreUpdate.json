@@ -1,21 +1,26 @@
 {
   "datastore": {
     "active": true,
-    "permissions": {
-      "resourcePermissions": {
-        "all": true,
-        "sites": [
-          {
-            "id": 2
-          }
-        ]
-      },
-      "tenantPermissions": {
-        "accounts": [
-          1
-        ]
-      }
+    "resourcePermissions": {
+      "all": true,
+      "sites": [
+        {
+          "id": 2
+        }
+      ]
     },
+    "tenants": [
+      {
+        "id": 1,
+        "defaultStore": true,
+        "defaultTarget": true
+      },
+      {
+        "id": 3,
+        "defaultStore": false,
+        "defaultTarget": false
+      }
+    ],
     "visibility": "private"
   }
 }
