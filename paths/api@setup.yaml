@@ -66,6 +66,9 @@ post:
                     - register
                     - login
                   default: skip
+                licenseKey:
+                  type: string
+                  description: License Key to install on setup.
             - oneOf:
               - $ref: ../components/schemas/hubLoginObject.yaml
               - $ref: ../components/schemas/hubRegisterObject.yaml

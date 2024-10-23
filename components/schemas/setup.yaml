@@ -5,6 +5,9 @@ properties:
   buildVersion:
     type: string
     description: Morpheus build version that the server is running.
+  uuid:
+    type: string
+    description: The Appliance Unique ID that is auto generated.
   applianceUrl:
     type: string
     description: The Appliance Server URL as defined under Appliance Settings.
