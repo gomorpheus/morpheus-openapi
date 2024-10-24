@@ -1,9 +1,10 @@
 get: 
-  summary: Get a Specific Datastore
+  summary: Get a Specific Cluster Datastore
   description: This endpoint retrieves a specific cluster datastore.
   operationId: getClusterDatastore
   tags: 
     -  Clusters
+    -  Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
@@ -26,11 +27,12 @@ get:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 put: 
-  summary: Update Datastore
-  description: Update Datastore
+  summary: Update Cluster Datastore
+  description: Update Cluster Datastore
   operationId: updateClusterDatastore
   tags: 
     -  Clusters
+    -  Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
@@ -72,6 +74,7 @@ delete:
   operationId: deleteClusterDatastore
   tags:
     - Clusters
+    -  Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
