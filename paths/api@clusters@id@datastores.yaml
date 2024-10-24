@@ -1,5 +1,5 @@
 get: 
-  summary: Get Datastores
+  summary: Get Cluster Datastores
   description: This endpoint retrieves datastores of a specified cluster.
   operationId: listClusterDatastores
   tags: 
@@ -42,7 +42,7 @@ post:
   operationId: saveClusterDatastore
   tags:
     - Clusters
-    - Datastore
+    - Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
   requestBody:
