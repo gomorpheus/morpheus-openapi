@@ -52,7 +52,7 @@ post:
           type: object
           properties:
             cluster:
-              $ref: ../components/schemas/clusterDatastore.yaml
+              $ref: ../components/schemas/clusterDatastoreCreate.yaml
         examples:
           Cluster Datastore Request:
             value:
