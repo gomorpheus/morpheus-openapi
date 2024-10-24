@@ -1258,6 +1258,8 @@ tags:
       Cypher at its core is a secure Key/Value store. But what makes cypher useful is the ability to securely store or generate credentials to connect to your instances. Not only are these credentials encrypted but by using a cypher you don't have to burn in connection credentials between instances into your apps.
 
       Cypher keys can be revoked, either through lease timeouts or manually. So even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
+  - name: Datastores
+    description: Manage Datastores
   - name: Deployments
     description: Manage File Deployments
   - name: Deploys
