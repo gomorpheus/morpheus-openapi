@@ -28,7 +28,11 @@ properties:
   mvm:
     type: integer
     format: int64
-    description: Total MVM Hosts
+    description: Total HPE VM Hosts
+  mvmSockets:
+    type: integer
+    format: int64
+    description: Total HPE VM Sockets
   iac:
     type: integer
     format: int64
