@@ -418,8 +418,10 @@ paths:
     $ref: paths/api@processes.yaml
   /api/processes/{id}:
     $ref: paths/api@processes@id.yaml
-  /api/processes/events/{id}:
-    $ref: paths/api@processes@events@id.yaml
+  /api/processes/{id}/retry:
+    $ref: paths/api@processes@id@retry.yaml
+  /api/processes/{id}/cancel:
+    $ref: paths/api@processes@id@cancel.yaml
 
   /api/server-types:
     $ref: paths/api@server-types.yaml
