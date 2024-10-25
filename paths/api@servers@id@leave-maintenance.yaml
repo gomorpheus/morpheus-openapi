@@ -1,6 +1,6 @@
 put:
   summary: Leave Maintenance Mode
-  description: This will leave maintenance mode on the host. Only available for supported server types such as MVM hosts.
+  description: This will leave maintenance mode on the host. Only available for supported server types such as HPE VM hosts.
   operationId: leaveMaintenanceMode
   tags:
     - Hosts
