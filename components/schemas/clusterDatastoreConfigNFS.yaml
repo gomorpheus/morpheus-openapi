@@ -1,0 +1,8 @@
+type: object
+properties:
+  sourceHostname:
+    type: string
+    description: Host name or IP address for target NFS instance.
+  sourceDirPath:
+    type: string
+    description: Path to the target NFS export directory.

@@ -20,6 +20,10 @@ properties:
     type: boolean
   defaultStore:
     type: boolean
+  config:
+    anyOf:
+      - $ref: clusterDatastoreConfigNFS.yaml
+      - $ref: clusterDatastoreConfigGFS2.yaml
   tenants:
     type: array
     items: 
