@@ -1,0 +1,22 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  title:
+    type: string
+  name: 
+    type: string
+  status: 
+    type: string
+  metadata: 
+    type: object
+  spec:
+    type: object
+    nullable: true
+  config: 
+    type: object
+    nullable: true
+  rawSec: 
+    type: object
+    nullable: true

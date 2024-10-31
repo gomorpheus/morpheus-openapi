@@ -1,0 +1,30 @@
+get: 
+  summary: Get Daemonsets
+  description: This endpoint retrieves daemonsets of a specified cluster.
+  operationId: listClusterDaemonsets
+  tags: 
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  daemonsets:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/clusterResources.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterDaemonsets.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,0 +1,55 @@
+{
+    "volumeclaims": [
+        {
+            "id": 35643,
+            "name": "data-ld-amazon-apacheweb-45-0",
+            "description": null,
+            "controllerId": null,
+            "controllerMountPoint": null,
+            "resizeable": true,
+            "rootVolume": true,
+            "unitNumber": null,
+            "deviceName": "data",
+            "deviceDisplayName": "data",
+            "type": {
+                "id": 10,
+                "code": "rook-ceph-volume",
+                "name": "Ceph Volume"
+            },
+            "typeId": 10,
+            "category": "volume",
+            "status": "bound",
+            "statusMessage": null,
+            "configurableIOPS": false,
+            "maxStorage": 1073741824,
+            "displayOrder": 0,
+            "maxIOPS": null,
+            "uuid": "b87174d6-ad57-44b8-83aa-8dd937811868",
+            "active": true,
+            "zone": {
+                "id": 1,
+                "name": "ld-amazon"
+            },
+            "zoneId": 1,
+            "datastore": {
+                "id": 507,
+                "name": "rook-ceph-block"
+            },
+            "datastoreId": 507,
+            "storageGroup": null,
+            "namespace": null,
+            "storageServer": null,
+            "source": "ld-amazon",
+            "owner": {
+                "id": 1,
+                "name": "lukedavitt"
+            }
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 1,
+        "total": 1
+    }
+}

@@ -1,0 +1,171 @@
+{
+    "endpoints": [
+        {
+            "id": 116566,
+            "name": "alertmanager-main",
+            "code": "kubernetes.endpoint.cluster.699.f11e5e77-62b0-4a30-a7b9-1bf79bd39a9d",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116567,
+            "name": "alertmanager-operated",
+            "code": "kubernetes.endpoint.cluster.699.7a203189-05f5-45e9-bf19-651a83332a45",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116568,
+            "name": "blackbox-exporter",
+            "code": "kubernetes.endpoint.cluster.699.63fade2f-fb08-4df3-88ff-cf8bc82198bc",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116563,
+            "name": "calico-typha",
+            "code": "kubernetes.endpoint.cluster.699.72a06a4c-8f54-408b-839c-11697e366cce",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116602,
+            "name": "grafana",
+            "code": "kubernetes.endpoint.cluster.699.b5aa16c8-7b6e-4e71-b3af-968ba73943e9",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116561,
+            "name": "ingress-nginx-controller",
+            "code": "kubernetes.endpoint.cluster.699.d08a4132-6f4f-44ba-a588-25a930bc7483",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116562,
+            "name": "ingress-nginx-controller-admission",
+            "code": "kubernetes.endpoint.cluster.699.78ae01a4-f1f7-4c9a-976b-e5aea7d2950b",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116564,
+            "name": "kube-dns",
+            "code": "kubernetes.endpoint.cluster.699.d68fa397-7a28-491b-b436-21fe852bbbc0",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116569,
+            "name": "kube-state-metrics",
+            "code": "kubernetes.endpoint.cluster.699.cf0cabb9-3234-42ae-9c66-cc4571839dc1",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116565,
+            "name": "kubelet",
+            "code": "kubernetes.endpoint.cluster.699.e9d34742-0c58-4ed2-ae5e-df8ff5f3eb08",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116560,
+            "name": "kubernetes",
+            "code": "kubernetes.endpoint.cluster.699.19b59e51-e993-4d7e-9ece-35367e929fb2",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116626,
+            "name": "ld-amazon-apacheweb-45-http",
+            "code": "kubernetes.endpoint.cluster.699.91b52671-1c79-457d-b539-2181c7685f38",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116570,
+            "name": "node-exporter",
+            "code": "kubernetes.endpoint.cluster.699.36ca9301-014b-49e7-8403-a5db90a3c9c2",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116571,
+            "name": "prometheus-adapter",
+            "code": "kubernetes.endpoint.cluster.699.6fc935db-cd30-4678-8b24-f045d8e3e451",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116572,
+            "name": "prometheus-k8s",
+            "code": "kubernetes.endpoint.cluster.699.baa1c7d4-9e6a-47d6-af34-2ce8cc9c290c",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116573,
+            "name": "prometheus-operated",
+            "code": "kubernetes.endpoint.cluster.699.6fa50486-778c-4a1c-aab9-00b8f67d688e",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116574,
+            "name": "prometheus-operator",
+            "code": "kubernetes.endpoint.cluster.699.c2b6a210-b559-4040-bc7c-4f66d4bdb155",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116603,
+            "name": "rook-ceph-exporter",
+            "code": "kubernetes.endpoint.cluster.699.433ad74c-2462-4574-b789-43aa8daa99b6",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116604,
+            "name": "rook-ceph-mgr",
+            "code": "kubernetes.endpoint.cluster.699.309c6b78-68e9-4652-825d-3393ec5801a4",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116605,
+            "name": "rook-ceph-mgr-dashboard",
+            "code": "kubernetes.endpoint.cluster.699.cf756f2c-d33a-4b8e-9390-66c5c6d5c948",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116606,
+            "name": "rook-ceph-mon-a",
+            "code": "kubernetes.endpoint.cluster.699.c968e0aa-5eda-4328-82d5-a5b905267440",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116607,
+            "name": "rook-ceph-mon-b",
+            "code": "kubernetes.endpoint.cluster.699.4f86b9e5-2a8b-4d81-ab49-33c4d9d4bc34",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        },
+        {
+            "id": 116608,
+            "name": "rook-ceph-mon-c",
+            "code": "kubernetes.endpoint.cluster.699.1eab3d85-665f-43e0-b40a-c71d7d7220d2",
+            "description": null,
+            "category": "kubernetes.endpoint.cluster.699"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 23,
+        "total": 23
+    }
+}
