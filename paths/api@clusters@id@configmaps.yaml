@@ -23,7 +23,7 @@ get:
           examples:
             Cluster Request:
               value:
-                $ref: ../components/examples/clusterConfigMaps.json
+                $ref: ../components/examples/clusterConfigmaps.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
