@@ -1,0 +1,435 @@
+{
+    "replicasets": [
+        {
+            "id": 34229,
+            "name": "blackbox-exporter-d4448d7f5",
+            "code": "kubernetes.replicaset.cluster.699.blackbox-exporter-d4448d7f5",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34225,
+            "name": "calico-kube-controllers-78c5bb6c68",
+            "code": "kubernetes.replicaset.cluster.699.calico-kube-controllers-78c5bb6c68",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "system",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34226,
+            "name": "calico-typha-9dccb567",
+            "code": "kubernetes.replicaset.cluster.699.calico-typha-9dccb567",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "system",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "warning",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34227,
+            "name": "coredns-7c65d6cfc9",
+            "code": "kubernetes.replicaset.cluster.699.coredns-7c65d6cfc9",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "system",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0,
+            "stats": {}
+        },
+        {
+            "id": 34228,
+            "name": "coredns-875966845",
+            "code": "kubernetes.replicaset.cluster.699.coredns-875966845",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "system",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34290,
+            "name": "csi-cephfsplugin-provisioner-fc44fc7d",
+            "code": "kubernetes.replicaset.cluster.699.csi-cephfsplugin-provisioner-fc44fc7d",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34291,
+            "name": "csi-rbdplugin-provisioner-76cf8b4f4b",
+            "code": "kubernetes.replicaset.cluster.699.csi-rbdplugin-provisioner-76cf8b4f4b",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34287,
+            "name": "grafana-5c868b8d9d",
+            "code": "kubernetes.replicaset.cluster.699.grafana-5c868b8d9d",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34286,
+            "name": "ingress-nginx-controller-6bb485db4b",
+            "code": "kubernetes.replicaset.cluster.699.ingress-nginx-controller-6bb485db4b",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34288,
+            "name": "kube-state-metrics-5c44bc68bf",
+            "code": "kubernetes.replicaset.cluster.699.kube-state-metrics-5c44bc68bf",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34289,
+            "name": "prometheus-adapter-784f566c54",
+            "code": "kubernetes.replicaset.cluster.699.prometheus-adapter-784f566c54",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34232,
+            "name": "prometheus-operator-6c6dbd9848",
+            "code": "kubernetes.replicaset.cluster.699.prometheus-operator-6c6dbd9848",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34292,
+            "name": "rook-ceph-crashcollector-ld-k8-host-worker-1-5df779dfd7",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-crashcollector-ld-k8-host-worker-1-5df779dfd7",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0,
+            "stats": {}
+        },
+        {
+            "id": 34293,
+            "name": "rook-ceph-crashcollector-ld-k8-host-worker-1-6bf5d95c4f",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-crashcollector-ld-k8-host-worker-1-6bf5d95c4f",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34294,
+            "name": "rook-ceph-crashcollector-ld-k8-host-worker-2-65f8d477d4",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-crashcollector-ld-k8-host-worker-2-65f8d477d4",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0,
+            "stats": {}
+        },
+        {
+            "id": 34295,
+            "name": "rook-ceph-crashcollector-ld-k8-host-worker-2-8448c4c58b",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-crashcollector-ld-k8-host-worker-2-8448c4c58b",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34296,
+            "name": "rook-ceph-crashcollector-ld-k8-host-worker-3-6cd5559d6c",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-crashcollector-ld-k8-host-worker-3-6cd5559d6c",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34297,
+            "name": "rook-ceph-exporter-ld-k8-host-worker-1-5ff96f8d8f",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-exporter-ld-k8-host-worker-1-5ff96f8d8f",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0,
+            "stats": {}
+        },
+        {
+            "id": 34298,
+            "name": "rook-ceph-exporter-ld-k8-host-worker-1-7cd8674c4c",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-exporter-ld-k8-host-worker-1-7cd8674c4c",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34299,
+            "name": "rook-ceph-exporter-ld-k8-host-worker-2-868d6c5696",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-exporter-ld-k8-host-worker-2-868d6c5696",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34300,
+            "name": "rook-ceph-exporter-ld-k8-host-worker-2-d9b856f98",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-exporter-ld-k8-host-worker-2-d9b856f98",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0,
+            "stats": {}
+        },
+        {
+            "id": 34301,
+            "name": "rook-ceph-exporter-ld-k8-host-worker-3-7bc665d9b9",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-exporter-ld-k8-host-worker-3-7bc665d9b9",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34302,
+            "name": "rook-ceph-mgr-a-f6b965ccc",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-mgr-a-f6b965ccc",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34303,
+            "name": "rook-ceph-mgr-b-db7d58c9b",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-mgr-b-db7d58c9b",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34304,
+            "name": "rook-ceph-mon-a-7cdc6d46b9",
+            "code": "kubernetes.replicaset.cluster.699.rook-ceph-mon-a-7cdc6d46b9",
+            "description": null,
+            "category": "kubernetes.replicaset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "replicaset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:41Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 25,
+        "total": 32
+    }
+}

@@ -1,0 +1,30 @@
+get: 
+  summary: Get Configmaps
+  description: This endpoint retrieves configmaps of a specified cluster.
+  operationId: listClusterConfigmaps
+  tags: 
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  replicasets:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/clusterResources.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterConfigmaps.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -304,7 +304,39 @@ paths:
     $ref: paths/api@clusters@id@volumes.yaml
   /api/clusters/{clusterId}/volumes/{id}:
     $ref: paths/api@clusters@id@volumes@id.yaml
-
+  /api/clusters/{clusterId}/replicasets:
+    $ref: paths/api@clusters@id@replicasets.yaml
+  /api/clusters/{clusterId}/replicasets/{id}:
+    $ref: paths/api@clusters@id@replicasets@id.yaml
+  /api/clusters/{clusterId}/daemonsets:
+    $ref: paths/api@clusters@id@daemonsets.yaml
+  /api/clusters/{clusterId}/daemonsets/{id}:
+    $ref: paths/api@clusters@id@daemonsets@id.yaml
+  /api/clusters/{clusterId}/endpoints:
+    $ref: paths/api@clusters@id@endpoints.yaml
+  /api/clusters/{clusterId}/endpoints/{id}:
+    $ref: paths/api@clusters@id@endpoints@id.yaml
+  /api/clusters/{clusterId}/ingresses:
+    $ref: paths/api@clusters@id@ingresses.yaml
+  /api/clusters/{clusterId}/ingresses/{id}:
+    $ref: paths/api@clusters@id@ingresses@id.yaml
+  /api/clusters/{clusterId}/policies:
+    $ref: paths/api@clusters@id@policies.yaml
+  /api/clusters/{clusterId}/policies/{id}:
+    $ref: paths/api@clusters@id@policies@id.yaml
+  /api/clusters/{clusterId}/volumeclaims:
+    $ref: paths/api@clusters@id@volumeclaims.yaml
+  /api/clusters/{clusterId}/volumeclaims/{id}:
+    $ref: paths/api@clusters@id@volumeclaims@id.yaml
+  /api/clusters/{clusterId}/configmaps:
+    $ref: paths/api@clusters@id@configmaps.yaml
+  /api/clusters/{clusterId}/configmaps/{id}:
+    $ref: paths/api@clusters@id@configmaps@id.yaml
+  /api/clusters/{clusterId}/secrets:
+    $ref: paths/api@clusters@id@secrets.yaml
+  /api/clusters/{clusterId}/secrets/{id}:
+    $ref: paths/api@clusters@id@secrets@id.yaml
+   
   /api/clusters/{clusterId}/worker-count:
     $ref: paths/api@clusters@id@worker-count.yaml
   /api/clusters/{clusterId}/workers:
