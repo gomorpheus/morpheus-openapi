@@ -282,6 +282,8 @@ paths:
     $ref: paths/api@clusters@id@permissions.yaml
   /api/clusters/{clusterId}/pods:
     $ref: paths/api@clusters@id@pods.yaml
+  /api/clusters/{clusterId}/pods/{id}:
+    $ref: paths/api@clusters@id@pods@id.yaml
   /api/clusters/{clusterId}/pods/{id}/restart:
     $ref: paths/api@clusters@id@pods@id@restart.yaml
   /api/clusters/{clusterId}/servers:

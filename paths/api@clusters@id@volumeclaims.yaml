@@ -15,10 +15,10 @@ get:
             allOf:
               - type: object
                 properties:
-                  replicasets:
+                  volumeclaims:
                     type: array
                     items:
-                      $ref: ../components/schemas/clusterResources.yaml
+                      $ref: ../components/schemas/storageVolume.yaml
               - $ref: ../components/schemas/meta.yaml
           examples:
             Cluster Request:
