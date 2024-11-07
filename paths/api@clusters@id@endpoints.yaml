@@ -15,7 +15,7 @@ get:
             allOf:
               - type: object
                 properties:
-                  replicasets:
+                  endpoints:
                     type: array
                     items:
                       $ref: ../components/schemas/clusterEndpoint.yaml

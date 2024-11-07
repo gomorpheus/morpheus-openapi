@@ -11,14 +11,18 @@ properties:
   controllerId: 
     type: integer
     format: int64
+    nullable: true
   controllerMountPoint: 
     type: string
+    nullable: true
   resizeable: 
     type: boolean
+    nullable: true
   rootVolume: 
     type: boolean
   unitNumber: 
     type: string
+    nullable: true
   deviceName: 
     type: string
   deviceDisplayName: 
