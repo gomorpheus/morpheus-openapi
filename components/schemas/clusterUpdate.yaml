@@ -27,6 +27,9 @@ properties:
   managed: 
     type: boolean
     description: Cluster managed
+  autoRecoverPowerState:
+    type: boolean
+    description: Automatically Power on VMs
   integrations: 
     type: array
     description: Cluster integrations
