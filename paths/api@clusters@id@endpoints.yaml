@@ -18,7 +18,7 @@ get:
                   endpoints:
                     type: array
                     items:
-                      $ref: ../components/schemas/clusterEndpoint.yaml
+                      $ref: ../components/schemas/resourceData.yaml
               - $ref: ../components/schemas/meta.yaml
           examples:
             Cluster Request:

@@ -15,10 +15,10 @@ get:
             allOf:
               - type: object
                 properties:
-                  replicasets:
+                  policies:
                     type: array
                     items:
-                      $ref: ../components/schemas/clusterResources.yaml
+                      $ref: ../components/schemas/resourceData.yaml
               - $ref: ../components/schemas/meta.yaml
           examples:
             Cluster Request:
