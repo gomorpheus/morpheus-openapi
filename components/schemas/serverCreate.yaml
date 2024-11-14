@@ -19,6 +19,14 @@ properties:
         type: string
       sshPassword: 
         type: string
+      sshKeyPair:
+        type: object
+        description: SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
+        properties:
+          id:
+            type: integer
+            format: int64
+            description: Key Pair ID
       dataDevice: 
         type: string
   networkInterfaces:

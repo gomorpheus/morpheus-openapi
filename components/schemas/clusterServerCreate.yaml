@@ -152,3 +152,33 @@ properties:
     description: Array of strings (keywords). This will set labels on the server and also on the cluster as well by default.
     items: 
       type: string
+  sshHosts:
+    type: array
+    description: Array of Host IPs and Names. This is used in conjunction with sshUsername and sshPassword/sshKeyPair to add existing hosts such as with HPE VM clusters.
+    items: 
+      type: object
+      properties: 
+        ip: 
+          type: string
+          description: Host IP
+        name: 
+          type: string
+          description: Host Name
+  sshUsername:
+    type: string
+    description: SSH Username
+    example: myuser
+  sshPassword:
+    type: string
+    description: SSH Password
+    example: mypassword
+    nullable: true
+  sshKeyPair:
+    type: object
+    description: SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: Key Pair ID
+    nullable: true
