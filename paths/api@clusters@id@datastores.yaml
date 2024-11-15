@@ -1,5 +1,5 @@
 get: 
-  summary: Get Datastores
+  summary: Get Cluster Datastores
   description: This endpoint retrieves datastores of a specified cluster.
   operationId: listClusterDatastores
   tags: 
@@ -32,6 +32,47 @@ get:
             Cluster Request:
               value:
                 $ref: ../components/examples/clusterDatastores.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Create a Cluster Datastore
+  description: This endpoint will create a datastore for a specific cluster.
+  operationId: saveClusterDatastore
+  tags:
+    - Clusters
+    - Datastores
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            cluster:
+              $ref: ../components/schemas/clusterDatastoreCreate.yaml
+        examples:
+          NFS Datastore Request:
+            value:
+              $ref: ../components/examples/clusterDatastoreCreateNFS.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  cluster:
+                    $ref: ../components/schemas/cluster.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Cluster Response:
+              value:
+                $ref: ../components/examples/clusterDatastore.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

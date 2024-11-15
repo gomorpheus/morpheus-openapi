@@ -69,61 +69,37 @@ properties:
           format: int64
         name: 
           type: string
+        defaultStore:
+          type: boolean
+        defaultTarget:
+          type: boolean
   datastores: 
     type: array
     nullable: true
     items: 
       type: object
-  permissions:
+  resourcePermissions:
     type: object
-    properties: 
-      resourcePermissions:
+    properties:
+      defaultStore:
+        type: boolean
+      allPlans:
+        type: boolean
+      defaultTarget:
+        type: boolean
+      canManage:
+        type: boolean
+      all:
+        type: boolean
+      account:
         type: object
-        properties: 
-          defaultStore:
-            type: boolean
-          allPlans:
-            type: boolean
-          defaultTarget:
-            type: boolean
-          canManage: 
-            type: boolean
-          all: 
-            type: boolean
-          account:
-            type: object
-            properties:
-              id:
-                type: integer
-                format: int64
-          sites: 
-            type: array
-            nullable: true
-            items: 
-              type: object
-              properties: 
-                id: 
-                  type: integer
-                  format: int64
-                name: 
-                  type: string
-                default: 
-                  type: boolean
-          plans: 
-            type: array
-            nullable: true
-            items: 
-              type: object
-              properties: 
-                id: 
-                  type: integer
-                  format: int64
-                name: 
-                  type: string
-                default: 
-                  type: boolean
-      tenants:
+        properties:
+          id:
+            type: integer
+            format: int64
+      sites:
         type: array
+        nullable: true
         items:
           type: object
           properties:
@@ -132,3 +108,18 @@ properties:
               format: int64
             name:
               type: string
+            default:
+              type: boolean
+      plans:
+        type: array
+        nullable: true
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+            default:
+              type: boolean

@@ -35,7 +35,6 @@ get:
                     - $ref: ../components/schemas/taskGroovyConfig.yaml
                     - $ref: ../components/schemas/taskHttpConfig.yaml
                     - $ref: ../components/schemas/taskJavaConfig.yaml
-                    - $ref: ../components/schemas/taskJrubyConfig.yaml
                     - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                     - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
                     - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
@@ -108,7 +107,6 @@ post:
                         - groovyTask
                         - httpTask
                         - javascriptTask
-                        - jrubyTask
                         - containerScript
                         - containerTemplate
                         - localScript
@@ -218,7 +216,6 @@ post:
                   - $ref: ../components/schemas/taskGroovyConfig.yaml
                   - $ref: ../components/schemas/taskHttpConfig.yaml
                   - $ref: ../components/schemas/taskJavaConfig.yaml
-                  - $ref: ../components/schemas/taskJrubyConfig.yaml
                   - $ref: ../components/schemas/taskLibraryScriptConfig.yaml
                   - $ref: ../components/schemas/taskLibraryTemplateConfig.yaml
                   - $ref: ../components/schemas/taskNestedWorkflowConfig.yaml
@@ -252,9 +249,6 @@ post:
             Task Response - Create Java:
               value:
                 $ref: ../components/examples/taskJavaSuccess.json
-            Task Response - Create JRuby:
-              value:
-                $ref: ../components/examples/taskJrubySuccess.json
             Task Response - Create Library Script:
               value:
                 $ref: ../components/examples/taskLibraryScriptSuccess.json

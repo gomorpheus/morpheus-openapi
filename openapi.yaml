@@ -5,7 +5,7 @@ info:
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 7.0.1
+  version: 8.0.0
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -164,6 +164,10 @@ paths:
   /api/clients/{id}:
     $ref: paths/api@clients@id.yaml
   
+  /api/email-templates:
+    $ref: paths/api@email-templates.yaml
+  /api/email-templates/{id}:
+    $ref: paths/api@email-templates@id.yaml
     
   /api/monitoring/apps:
     $ref: paths/api@monitoring@apps.yaml
@@ -278,6 +282,8 @@ paths:
     $ref: paths/api@clusters@id@permissions.yaml
   /api/clusters/{clusterId}/pods:
     $ref: paths/api@clusters@id@pods.yaml
+  /api/clusters/{clusterId}/pods/{id}:
+    $ref: paths/api@clusters@id@pods@id.yaml
   /api/clusters/{clusterId}/pods/{id}/restart:
     $ref: paths/api@clusters@id@pods@id@restart.yaml
   /api/clusters/{clusterId}/servers:
@@ -300,7 +306,39 @@ paths:
     $ref: paths/api@clusters@id@volumes.yaml
   /api/clusters/{clusterId}/volumes/{id}:
     $ref: paths/api@clusters@id@volumes@id.yaml
-
+  /api/clusters/{clusterId}/replicasets:
+    $ref: paths/api@clusters@id@replicasets.yaml
+  /api/clusters/{clusterId}/replicasets/{id}:
+    $ref: paths/api@clusters@id@replicasets@id.yaml
+  /api/clusters/{clusterId}/daemonsets:
+    $ref: paths/api@clusters@id@daemonsets.yaml
+  /api/clusters/{clusterId}/daemonsets/{id}:
+    $ref: paths/api@clusters@id@daemonsets@id.yaml
+  /api/clusters/{clusterId}/endpoints:
+    $ref: paths/api@clusters@id@endpoints.yaml
+  /api/clusters/{clusterId}/endpoints/{id}:
+    $ref: paths/api@clusters@id@endpoints@id.yaml
+  /api/clusters/{clusterId}/ingresses:
+    $ref: paths/api@clusters@id@ingresses.yaml
+  /api/clusters/{clusterId}/ingresses/{id}:
+    $ref: paths/api@clusters@id@ingresses@id.yaml
+  /api/clusters/{clusterId}/policies:
+    $ref: paths/api@clusters@id@policies.yaml
+  /api/clusters/{clusterId}/policies/{id}:
+    $ref: paths/api@clusters@id@policies@id.yaml
+  /api/clusters/{clusterId}/volumeclaims:
+    $ref: paths/api@clusters@id@volumeclaims.yaml
+  /api/clusters/{clusterId}/volumeclaims/{id}:
+    $ref: paths/api@clusters@id@volumeclaims@id.yaml
+  /api/clusters/{clusterId}/configmaps:
+    $ref: paths/api@clusters@id@configmaps.yaml
+  /api/clusters/{clusterId}/configmaps/{id}:
+    $ref: paths/api@clusters@id@configmaps@id.yaml
+  /api/clusters/{clusterId}/secrets:
+    $ref: paths/api@clusters@id@secrets.yaml
+  /api/clusters/{clusterId}/secrets/{id}:
+    $ref: paths/api@clusters@id@secrets@id.yaml
+   
   /api/clusters/{clusterId}/worker-count:
     $ref: paths/api@clusters@id@worker-count.yaml
   /api/clusters/{clusterId}/workers:
@@ -414,8 +452,10 @@ paths:
     $ref: paths/api@processes.yaml
   /api/processes/{id}:
     $ref: paths/api@processes@id.yaml
-  /api/processes/events/{id}:
-    $ref: paths/api@processes@events@id.yaml
+  /api/processes/{id}/retry:
+    $ref: paths/api@processes@id@retry.yaml
+  /api/processes/{id}/cancel:
+    $ref: paths/api@processes@id@cancel.yaml
 
   /api/server-types:
     $ref: paths/api@server-types.yaml
@@ -968,6 +1008,12 @@ paths:
     $ref: paths/api@servers@id@workflow.yaml
   /api/servers/{id}/networkInterfaces/{networkInterfaceId}:
     $ref: paths/api@servers@id@networkInterfaces@id.yaml
+  /api/servers/{id}/maintenance:
+    $ref: paths/api@servers@id@maintenance.yaml
+  /api/servers/{id}/leave-maintenance:
+    $ref: paths/api@servers@id@leave-maintenance.yaml
+  /api/servers/{id}/placement:
+    $ref: paths/api@servers@id@placement.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
   /api/catalog/cart:
@@ -1059,6 +1105,15 @@ paths:
     $ref: paths/api@task-sets@id.yaml
   /api/task-sets/{id}/execute:
     $ref: paths/api@task-sets@id@execute.yaml
+  
+  /api/library/operating-systems/os-types:
+    $ref: paths/api@library@operating-systems@os-types.yaml
+  /api/library/operating-systems/os-types/{id}:
+    $ref: paths/api@library@operating-systems@os-types@id.yaml
+  /api/library/operating-systems/os-types/images/{id}:
+    $ref: paths/api@library@operating-systems@os-types@images@id.yaml
+  /api/library/operating-systems/os-types/create-image:
+    $ref: paths/api@library@operating-systems@os-types@create-image.yaml
   
   /api/task-types:
     $ref: paths/api@task-types.yaml
@@ -1239,6 +1294,8 @@ tags:
       Cypher at its core is a secure Key/Value store. But what makes cypher useful is the ability to securely store or generate credentials to connect to your instances. Not only are these credentials encrypted but by using a cypher you don't have to burn in connection credentials between instances into your apps.
 
       Cypher keys can be revoked, either through lease timeouts or manually. So even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
+  - name: Datastores
+    description: Manage Datastores
   - name: Deployments
     description: Manage File Deployments
   - name: Deploys
@@ -1247,6 +1304,8 @@ tags:
     description: >-
       View documentation for your [Morpheus Data](https://morpheusdata.com)
       appliance.
+  - name: Email Templates
+    description: Manage Email Templates
   - name: Environments
     description: Manage Environments
   - name: File Templates

@@ -1,0 +1,30 @@
+get: 
+  summary: Get VolumeClaims
+  description: This endpoint retrieves volumeclaims of a specified cluster.
+  operationId: listClusterVolumeclaims
+  tags: 
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  volumeclaims:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/storageVolume.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterVolumeClaims.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

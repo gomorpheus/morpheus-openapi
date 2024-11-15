@@ -168,3 +168,15 @@ properties:
     type: boolean
   visible: 
     type: boolean
+  credential: 
+    $ref: creds.yaml
+  tenants: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        id: 
+          type: integer
+          format: int64
+        name: 
+          type: string

@@ -553,45 +553,6 @@
             "lastUpdated": "2022-08-04T13:53:03Z"
         },
         {
-            "id": 888,
-            "accountId": 1,
-            "name": "8. jruby",
-            "code": null,
-            "taskType": {
-                "id": 25,
-                "code": "jrubyTask",
-                "name": "jRuby Script"
-            },
-            "visibility": "private",
-            "labels": [],
-            "taskOptions": {
-                "localScriptGitRef": null,
-                "port": null,
-                "host": null,
-                "sshKey": null,
-                "localScriptGitId": null,
-                "username": null,
-                "password": null,
-                "passwordHash": null
-            },
-            "file": {
-                "id": 1065,
-                "sourceType": "local",
-                "contentRef": null,
-                "contentPath": null,
-                "repository": null,
-                "content": null
-            },
-            "resultType": null,
-            "executeTarget": "local",
-            "retryable": false,
-            "retryCount": 5,
-            "retryDelaySeconds": 10,
-            "allowCustomConfig": false,
-            "dateCreated": "2022-08-04T13:53:15Z",
-            "lastUpdated": "2022-08-04T13:53:15Z"
-        },
-        {
             "id": 891,
             "accountId": 1,
             "name": "9. library script",
@@ -628,8 +589,8 @@
     ],
     "meta": {
         "offset": 0,
-        "max": 17,
-        "size": 17,
+        "max": 16,
+        "size": 16,
         "total": 62
     }
 }

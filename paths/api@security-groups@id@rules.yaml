@@ -103,6 +103,11 @@ post:
                     Either a single value (i.e. 55) or a port range (i.e. 1-65535) for which to open access to the source.
                     Required if customRule is true, otherwise, ignored.
                   example: "55-72"
+                destinationPortRange:
+                  type: string
+                  description: |
+                    Either a single value (i.e. 55) or a port range (i.e. 1-65535) for which to open access to the destination.
+                  example: "55-72"
                 protocol:
                   type: string
                   description: Either tcp, udp, icmp. Required if customRule is true, otherwise, ignored.

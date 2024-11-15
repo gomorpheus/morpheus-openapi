@@ -1,0 +1,31 @@
+post:
+  summary: Retry a Specific Process
+  description: |
+    Retry a specific process. This will return an error if the process is not retryable.
+  operationId: retryProcess
+  tags:
+    - History
+  parameters:
+    - name: id
+      in: path
+      description: Process ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 42
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/success.yaml
+          examples:
+            Successful Response:
+              value:
+                $ref: ../components/examples/success.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

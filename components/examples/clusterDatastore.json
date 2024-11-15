@@ -29,30 +29,29 @@
     "tenants": [
       {
         "id": 1,
-        "name": "Stubby Toes Inc."
+        "defaultStore": true,
+        "defaultTarget": true
+      },
+      {
+        "id": 3,
+        "defaultStore": false,
+        "defaultTarget": false
       }
     ],
-    "permissions": {
-      "resourcePermissions": {
-        "allGroups": true,
-        "defaultStore": false,
-        "allPlans": false,
-        "defaultTarget": false,
-        "morpheusResourceType": "Datastore",
-        "morpheusResourceId": 4,
-        "canManage": false,
-        "all": true,
-        "account": {
-          "id": 1
-        },
-        "sites": [],
-        "plans": []
+    "resourcePermissions": {
+      "allGroups": true,
+      "defaultStore": false,
+      "allPlans": false,
+      "defaultTarget": false,
+      "morpheusResourceType": "Datastore",
+      "morpheusResourceId": 4,
+      "canManage": false,
+      "all": true,
+      "account": {
+        "id": 1
       },
-      "tenantPermissions": {
-        "accounts": [
-          1
-        ]
-      }
+      "sites": [],
+      "plans": []
     },
     "datastores": []
   }

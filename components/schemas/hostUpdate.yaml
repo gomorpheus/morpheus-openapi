@@ -28,6 +28,16 @@ properties:
     type: string
     description: SSH Password
     example: mypassword
+    nullable: true
+  sshKeyPair:
+    type: object
+    description: SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: Key Pair ID
+    nullable: true
   powerScheduleType:
     description: Power schedule ID.
     type: integer

@@ -14,6 +14,13 @@ properties:
     type: integer
     format: int64
     description: The id of type of the network interface.
+  ipMode:
+    type: string
+    description: The mode for determining ip address. Use 'static' when specifying an ipAddress, otherwise 'dhcp' is used.
+    enum:
+      - static
+      - dhcp
+    default: dhcp
   ipAddress:
     type: string
     description: The ip address. Not applicable when using DHCP or IP Pools.

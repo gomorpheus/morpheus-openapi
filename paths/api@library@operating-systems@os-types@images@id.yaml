@@ -1,0 +1,49 @@
+get:
+  summary: Get an OsTypeImage
+  description: This endpoint retrieves a specific osTypeImage.
+  operationId: getOsTypeImage
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              osType:
+                $ref: ../components/schemas/osTypeImage.yaml
+          examples:
+            OsTypes Response:
+              value:
+                $ref: ../components/examples/osTypeImage.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+delete:
+  summary: Delete an OsTypeImage
+  description: Will delete an osTypeImage
+  operationId: deleteOsTypeImage
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

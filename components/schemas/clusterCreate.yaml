@@ -51,3 +51,7 @@ properties:
         description: The Layout ID for the host type(s) that will be provisioned for the cluster
   server: 
     $ref: clusterServerCreate.yaml
+  autoRecoverPowerState:
+    type: boolean
+    description: Automatically Power on VMs
+    default: false

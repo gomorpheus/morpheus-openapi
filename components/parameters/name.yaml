@@ -1,6 +1,6 @@
 name: name
 in: query
-description: Filter by name, wildcard may be specified as %, eg. example-%
+description: Filter by name
 schema:
   type: string
-example: example-%
+example: example

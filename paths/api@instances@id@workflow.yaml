@@ -23,11 +23,18 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties: 
+                  processId:
+                    type: integer
+                    format: int64
+                    description: Process ID to track execution results with, use `/api/processes/$processId`
           examples:
-            Response:
-              value:
-                $ref: ../components/examples/success.json 
+            Successful Run Workflow Response:
+              value: 
+                $ref: ../components/examples/runWorkflowSuccess.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

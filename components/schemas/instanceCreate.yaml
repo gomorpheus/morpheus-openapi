@@ -64,6 +64,10 @@ properties:
         type: string
         description: Environment
         example: "dev"
+      hostName:
+        type: string
+        description: Hostname of the instance to be created.  Can be the same as the instance name.
+        example: myinstance
   zoneId:
     type: integer
     format: int64

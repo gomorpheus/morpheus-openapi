@@ -1,0 +1,160 @@
+{
+    "configmaps": [
+        {
+            "id": 14300,
+            "name": "adapter-config",
+            "code": "kubernetes.configMap.cluster.699.6462ef82-88a9-4a94-8aaf-f377fa8b32e8",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14301,
+            "name": "blackbox-exporter-configuration",
+            "code": "kubernetes.configMap.cluster.699.8978cc43-4669-4aaa-ac94-ac44cf420781",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14290,
+            "name": "calico-config",
+            "code": "kubernetes.configMap.cluster.699.ab73d222-9c8f-46f4-b0b6-26209c5cd47a",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14288,
+            "name": "cluster-info",
+            "code": "kubernetes.configMap.cluster.699.fe80e7dd-6152-48e9-9603-16047505ad69",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14291,
+            "name": "coredns",
+            "code": "kubernetes.configMap.cluster.699.c8a942a3-541c-4985-96a1-ffb200aeff21",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14292,
+            "name": "extension-apiserver-authentication",
+            "code": "kubernetes.configMap.cluster.699.649ecd84-e428-49b1-bc8b-e100a72b998d",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14298,
+            "name": "fluent-bit-config",
+            "code": "kubernetes.configMap.cluster.699.3223b6c4-e288-4b90-929b-29a587b37fb2",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14302,
+            "name": "grafana-dashboard-alertmanager-overview",
+            "code": "kubernetes.configMap.cluster.699.ef70d2b1-9558-49ba-83dd-f4ad37651c3f",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14303,
+            "name": "grafana-dashboard-apiserver",
+            "code": "kubernetes.configMap.cluster.699.b9f7531c-0cdd-476d-a090-7ecbbdb6d1a8",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14304,
+            "name": "grafana-dashboard-cluster-total",
+            "code": "kubernetes.configMap.cluster.699.01bcedd6-c7d5-481f-a448-40f68af66356",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14305,
+            "name": "grafana-dashboard-controller-manager",
+            "code": "kubernetes.configMap.cluster.699.e9f8a5da-0704-4d63-8e2d-affff6a9e2ba",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14306,
+            "name": "grafana-dashboard-grafana-overview",
+            "code": "kubernetes.configMap.cluster.699.b63d2a34-d2a8-4dd1-9cbc-b8d672ba0387",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14307,
+            "name": "grafana-dashboard-k8s-resources-cluster",
+            "code": "kubernetes.configMap.cluster.699.4362365a-0ce4-4d7a-8ea2-1ab32d48aa9b",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14308,
+            "name": "grafana-dashboard-k8s-resources-multicluster",
+            "code": "kubernetes.configMap.cluster.699.0f6040d6-9ecc-4f67-8f6c-635d85f211e7",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14309,
+            "name": "grafana-dashboard-k8s-resources-namespace",
+            "code": "kubernetes.configMap.cluster.699.756e7be9-a94f-44b0-a4fd-8a9f8af686d8",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14310,
+            "name": "grafana-dashboard-k8s-resources-node",
+            "code": "kubernetes.configMap.cluster.699.5c344a88-0f7f-4a19-8154-97058aa78d16",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14311,
+            "name": "grafana-dashboard-k8s-resources-pod",
+            "code": "kubernetes.configMap.cluster.699.104f8ab6-2995-4b35-87e3-6de69c6993e0",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14312,
+            "name": "grafana-dashboard-k8s-resources-workload",
+            "code": "kubernetes.configMap.cluster.699.e3db89f5-00ba-4d0c-880a-21e433dfd3ff",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14313,
+            "name": "grafana-dashboard-k8s-resources-workloads-namespace",
+            "code": "kubernetes.configMap.cluster.699.399dd230-cf14-4d90-8465-5fab8bf3a1c7",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14314,
+            "name": "grafana-dashboard-kubelet",
+            "code": "kubernetes.configMap.cluster.699.57ceb021-f6b2-4ed9-b4a3-ddb708d8757d",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14315,
+            "name": "grafana-dashboard-namespace-by-pod",
+            "code": "kubernetes.configMap.cluster.699.3371384c-b4c6-410d-837d-89b3fb7a0b5e",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14324,
+            "name": "grafana-dashboard-namespace-by-workload",
+            "code": "kubernetes.configMap.cluster.699.59ef03f3-2549-4207-95d7-ffc3802175c4",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14325,
+            "name": "grafana-dashboard-node-cluster-rsrc-use",
+            "code": "kubernetes.configMap.cluster.699.5c8f6381-d651-46a0-93a8-4ead5ef74ce1",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14326,
+            "name": "grafana-dashboard-node-rsrc-use",
+            "code": "kubernetes.configMap.cluster.699.4739d654-d69e-47bf-89ab-cc12c8281ae4",
+            "category": "kubernetes.configMap.cluster.699"
+        },
+        {
+            "id": 14327,
+            "name": "grafana-dashboard-nodes",
+            "code": "kubernetes.configMap.cluster.699.6f692d40-3658-4e31-8c3a-7a1df28dbef4",
+            "category": "kubernetes.configMap.cluster.699"
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 25,
+        "total": 57
+    }
+}

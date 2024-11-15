@@ -1,0 +1,30 @@
+get: 
+  summary: Get Endpoints
+  description: This endpoint retrieves network endpoints of a specified cluster.
+  operationId: listClusterNetworkEndpoints
+  tags: 
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  endpoints:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/resourceData.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterEndpoints.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

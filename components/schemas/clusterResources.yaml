@@ -1,0 +1,42 @@
+type: object
+properties:
+  id: 
+    type: integer
+    format: int64
+  name: 
+    type: string
+  code: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  category: 
+    type: string
+  resourceLevel: 
+    type: string
+    nullable: true
+  resourceType: 
+    type: string
+  managed: 
+    type: boolean
+    nullable: true
+  status: 
+    type: string
+  lastUpdated: 
+    type: string
+    format: date-time
+    nullable: true
+  owner: 
+    nullable: true
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+  totalCpuUsage: 
+    nullable: true
+    type: integer
+    format: int64
+  stats: 
+    nullable: true
+    type: object

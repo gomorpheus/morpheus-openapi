@@ -116,6 +116,13 @@ properties:
   sshPasswordHash: 
     type: string
     nullable: true
+  sshKeyPair:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+    nullable: true
   osDevice: 
     type: string
   osType: 

@@ -3,6 +3,8 @@ properties:
   id: 
     type: integer
     format: int64
+  uuid: 
+    type: string
   name: 
     type: string
   code: 
@@ -116,6 +118,10 @@ properties:
     nullable: true
     items: 
       type: string
+  autoRecoverPowerState:
+    type: boolean
+    description: Automatically Power on VMs
+    default: false
   serviceEntry: 
     type: string
     nullable: true

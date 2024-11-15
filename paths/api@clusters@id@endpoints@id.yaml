@@ -1,0 +1,27 @@
+get: 
+  summary: Get a Specific Cluster Endpoint
+  description: This endpoint retrieves a specific cluster endpoint.
+  operationId: getClusterNetworkEndpoing
+  tags: 
+    -  Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+    - $ref: ../components/parameters/id-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            type: object
+            properties:
+              resource:
+                $ref: ../components/schemas/clusterResource.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterResource.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

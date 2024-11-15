@@ -1,0 +1,55 @@
+{
+    "osTypes": [
+        {
+            "id": 98,
+            "code": "ubuntu.22.04.64",
+            "name": "ubuntu 22.04 64-bit",
+            "description": null,
+            "platform": "linux",
+            "category": "ubuntu",
+            "vendor": "canonical",
+            "osName": "ubuntu",
+            "osVersion": "22.04",
+            "osCodename": "jammy",
+            "osFamily": "debian",
+            "bitCount": 64,
+            "cloudInitVersion": "23",
+            "installAgent": true,
+            "images": [
+                {
+                    "id": 4,
+                    "virtualImageId": 6328,
+                    "virtualImageName": "Morpheus Ubuntu 22.04 20230131",
+                    "account": null,
+                    "provisionType": 6,
+                    "computeZoneType": 28,
+                    "zone": null
+                },
+                {
+                    "id": 33,
+                    "virtualImageId": 4551,
+                    "virtualImageName": "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20220420",
+                    "account": 1,
+                    "provisionType": 7,
+                    "computeZoneType": 4,
+                    "zone": 1
+                },
+                {
+                    "id": 3,
+                    "virtualImageId": 4551,
+                    "virtualImageName": "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20220420",
+                    "account": null,
+                    "provisionType": 7,
+                    "computeZoneType": 4,
+                    "zone": null
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 1,
+        "total": 1
+    }
+}

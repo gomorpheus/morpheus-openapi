@@ -1,0 +1,30 @@
+get: 
+  summary: Get Policies
+  description: This endpoint retrieves policies of a specified cluster.
+  operationId: listClusterPolicies
+  tags: 
+    - Clusters
+  parameters:
+    - $ref: ../components/parameters/clusterId-path.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content: 
+        application/json: 
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  policies:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/resourceData.yaml
+              - $ref: ../components/schemas/meta.yaml
+          examples:
+            Cluster Request:
+              value:
+                $ref: ../components/examples/clusterPolicies.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

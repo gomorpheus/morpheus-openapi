@@ -125,4 +125,7 @@ properties:
           type: string
         value:
           type: string
+  url: 
+    type: string
+    description: Image File URL, a virtual image file will be created by fetching the specified URL
 

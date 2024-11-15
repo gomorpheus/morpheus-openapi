@@ -1,0 +1,129 @@
+{
+    "daemonsets": [
+        {
+            "id": 34248,
+            "name": "calico-node",
+            "code": "kubernetes.daemonset.cluster.699.calico-node",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "system",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34327,
+            "name": "csi-cephfsplugin",
+            "code": "kubernetes.daemonset.cluster.699.csi-cephfsplugin",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:42Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34247,
+            "name": "csi-node-driver",
+            "code": "kubernetes.daemonset.cluster.699.csi-node-driver",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "network",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34328,
+            "name": "csi-rbdplugin",
+            "code": "kubernetes.daemonset.cluster.699.csi-rbdplugin",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "storage",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:42Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34250,
+            "name": "fluent-bit",
+            "code": "kubernetes.daemonset.cluster.699.fluent-bit",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "logging",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34249,
+            "name": "kube-proxy",
+            "code": "kubernetes.daemonset.cluster.699.kube-proxy",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "system",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:11:43Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        },
+        {
+            "id": 34251,
+            "name": "node-exporter",
+            "code": "kubernetes.daemonset.cluster.699.node-exporter",
+            "description": null,
+            "category": "kubernetes.daemonset.cluster.699",
+            "resourceLevel": "app",
+            "resourceType": "daemonset",
+            "managed": true,
+            "status": "running",
+            "lastUpdated": "2024-10-29T15:34:42Z",
+            "owner": {
+                "id": 1
+            },
+            "totalCpuUsage": 0.0,
+            "stats": {}
+        }
+    ],
+    "meta": {
+        "offset": 0,
+        "max": 25,
+        "size": 0,
+        "total": 7
+    }
+}
