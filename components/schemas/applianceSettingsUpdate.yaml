@@ -128,3 +128,55 @@ properties:
   disableAllZoneTypes: 
     type: boolean
     description: Set all cloud types enabled status off, can be used in conjunction with enableZoneTypes
+  twilioAccountSid:
+    type: string
+    description: Twilio SMS Account SID
+  twilioSmsFrom:
+    type: string
+    description: Twilio SMS From
+  twilioAuthToken:
+    type: string
+    description: Twilio SMS Auth Token
+  cloudSyncIntervalSeconds:
+    type: integer
+    format: int64
+    description: Cloud Sync Interval (Seconds)
+  clusterSyncIntervalSeconds:
+    type: integer
+    format: int64
+    description: Cluster Sync Interval (Seconds)
+  usageRetainmentPeriod:
+    type: integer
+    format: int64
+    description: Usage Retainment (Days)
+  invoiceRetainmentPeriod:
+    type: integer
+    format: int64
+    description: Invoice Retainment (Days)
+  statsRetainmentPeriod:
+    type: integer
+    format: int64
+    description: The number of days stats will be retained. (30, 60 or 90)
+  reportsRetainmentPeriod:
+    type: integer
+    format: int64
+    description: The number of days reports will be retained.
+  httpBlacklistHosts:
+    type: string
+    description: Provide a comma delimited list of ips/hostnames to be blocked when using HTTP Task Types or REST Datasource Option Lists
+  httpApprovelistHosts:
+    type: string
+    description: Provide a comma delimited list of ips/hostnames to be allowed when using HTTP Task Types or REST Datasource Option Lists. If not specified, only deny list is filtered out.
+  noAgent:
+    type: boolean
+    description: If true, disables Agent installation globally.
+  agentSSLVerify:
+    type: boolean
+    description: Enable/Disable SSL Verification of Agent
+  defaultLocale:
+    type: string
+    description: Default appliance Locale. Setting a default locale for the application will override user browser preferences.
+  maxOptionListSize:
+    type: integer
+    format: int64
+    description: Max option list size. Units are x10^3 (thousand). Increasing this value can adversely affect Morpheus performance. Increase with caution.
