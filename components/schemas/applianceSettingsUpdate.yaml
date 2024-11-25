@@ -153,6 +153,10 @@ properties:
     type: integer
     format: int64
     description: Invoice Retainment (Days)
+  incidentRetainmentPeriod:
+    type: integer
+    format: int64
+    description: Incident Retainment (Days)
   statsRetainmentPeriod:
     type: integer
     format: int64
@@ -173,10 +177,19 @@ properties:
   agentSSLVerify:
     type: boolean
     description: Enable/Disable SSL Verification of Agent
+  disableSSHPasswordAuth:
+    type: boolean
+    description: Enable/Disable SSH Password Authentication for the Appliance
   defaultLocale:
     type: string
     description: Default appliance Locale. Setting a default locale for the application will override user browser preferences.
+  defaultVdiGateway:
+    type: Integer
+    description: ID of the VDI gateway.
   maxOptionListSize:
     type: integer
     format: int64
     description: Max option list size. Units are x10^3 (thousand). Increasing this value can adversely affect Morpheus performance. Increase with caution.
+  exchangeUrl:
+    type: string
+    description: The url used for checking if there is an update for plugins. Default https\://share.morpheusdata.com
