@@ -500,6 +500,10 @@ paths:
     $ref: paths/api@instances.yaml
   /api/instances/{id}:
     $ref: paths/api@instances@id.yaml
+  /api/instances/{id}/action:
+    $ref: paths/api@instances@id@action.yaml
+  /api/instances/{id}/actions:
+    $ref: paths/api@instances@id@actions.yaml
   /api/instances/{id}/apply:
     $ref: paths/api@instances@id@apply.yaml
   /api/instances/{id}/backup:
