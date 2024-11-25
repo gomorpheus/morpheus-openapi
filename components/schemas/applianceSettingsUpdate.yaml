@@ -184,7 +184,8 @@ properties:
     type: string
     description: Default appliance Locale. Setting a default locale for the application will override user browser preferences.
   defaultVdiGateway:
-    type: Integer
+    type: integer
+    format: int64
     description: ID of the VDI gateway.
   maxOptionListSize:
     type: integer
