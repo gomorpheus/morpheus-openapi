@@ -1,9 +1,9 @@
 get:
-  summary: List Container Actions
-  description: This endpoint lists available actions for specific container, such as the Remove Node action.
-  operationId: getContainerActions
+  summary: List Instance Actions
+  description: This endpoint lists available actions for specific instance, such as the Add Node action.
+  operationId: getInstanceActions
   tags:
-    - Containers
+    - Instances
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -14,7 +14,7 @@ get:
           schema:
             type: object
             properties:
-              containerIds:
+              instanceIds:
                 type: array
                 items:
                   type: integer
@@ -29,9 +29,9 @@ get:
                     code:
                       type: string
           examples:
-            Container Actions Response:
+            Instance Actions Response:
               value:
-                $ref: ../components/examples/containerActions.json
+                $ref: ../components/examples/instanceActions.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
