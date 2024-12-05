@@ -1,7 +1,7 @@
 post:
-  summary: Upload Virtual Image File
-  description: This will upload the file and associate it to the Virtual Image.
-  operationId: addVirtualImageFile
+  summary: Convert Virtual Image File
+  description: This will convert an existing virtual image to a new virtual image in specified format.
+  operationId: convertImage
   tags:
     - Library
   parameters:
@@ -14,7 +14,7 @@ post:
           properties:
             name:
               type: string
-              example: Sample Doc
+              example: New Image Name
             format:
               type: string
               example: qcow2
