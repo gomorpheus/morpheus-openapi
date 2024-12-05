@@ -1172,6 +1172,8 @@ paths:
     $ref: paths/api@virtual-images.yaml
   /api/virtual-images/{virtualImageId}:
     $ref: paths/api@virtual-images@id.yaml
+  /api/virtual-images/{virtualImageId}/convert:
+    $ref: paths/api@virtual-images@id@convert.yaml
   /api/virtual-images/{virtualImageId}/files:
     $ref: paths/api@virtual-images@id@files.yaml
   /api/virtual-images/{virtualImageId}/locations:
