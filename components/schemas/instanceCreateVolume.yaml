@@ -38,4 +38,9 @@ properties:
         format: int64
         nullable: true
     description: The ID of the specific datastore. Auto selection can be specified as auto or autoCluster (for clusters).
-    
+  controllerMountPoint:
+    type: string
+    description: |
+      The controller mount point specification for this volume. This value has the following format: `"${controller.id}:${controller.busNumber}:${controller.type.id}:${unitNumber}"`
+      For new controllers the id should be passed as -1, so an example value would be: `"-1:1:6:0"` which translates to busNumber: 1, storage controller type id: 6, unit number: 0.
+      Use `/api/options/storageControllerTypes?layoutId=42` to get the list of available storage controller types for a particular layout.
