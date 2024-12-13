@@ -41,6 +41,7 @@ properties:
   controllerMountPoint:
     type: string
     description: |
-      The controller mount point specification for this volume. This value has the following format: `"${controller.id}:${controller.busNumber}:${controller.type.id}:${unitNumber}"`
-      For new controllers the id should be passed as -1, so an example value would be: `"-1:1:6:0"` which translates to busNumber: 1, storage controller type id: 6, unit number: 0.
-      Use `/api/options/storageControllerTypes?provisionTypeId=5` to get the list of available storage controller types for a particular provision type.
+      The controller mount point specification for this volume in the format: `"id:busNumber:typeId:unitNumber"`
+      For new storage controllers the id is passed as -1, so an example value would be: `"-1:1:6:0"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0.
+      The current list of storage controllers is returned for instances and servers for determining existing id values.
+      Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware.
