@@ -17,6 +17,8 @@
     "refType": "ComputeServerGroup",
     "refId": 3,
     "externalId": "datastore-58601",
+    "status": "provisioned",
+    "statusMessage": null,
     "zone": {
       "id": 4
     },
@@ -53,6 +55,14 @@
       "sites": [],
       "plans": []
     },
-    "datastores": []
+    "datastores": [],
+    "locations": [
+      {
+        "refType": "ComputeServer",
+        "refId": 7813,
+        "status": "provisioned",
+        "statusMessage": null
+      }
+    ]
   }
 }
