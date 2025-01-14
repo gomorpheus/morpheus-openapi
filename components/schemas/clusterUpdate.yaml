@@ -15,6 +15,9 @@ properties:
   enabled: 
     type: boolean
     description: Cluster enabled
+  useAgent: 
+    type: boolean
+    description: Use the Agent to relay communications for the Kubernetes API instead of direct.
   serviceUrl: 
     type: string
     description: Cluster API Url
