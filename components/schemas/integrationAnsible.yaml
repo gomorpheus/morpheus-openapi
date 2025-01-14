@@ -71,8 +71,9 @@ properties:
   lastSync: 
     type: string
     nullable: true
-  lastSyncDuration: 
-    type: string
+  lastSyncDuration:
+    type: integer
+    format: int64
     nullable: true
   credential: 
     $ref: creds.yaml
