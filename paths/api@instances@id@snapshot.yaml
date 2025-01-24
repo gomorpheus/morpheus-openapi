@@ -21,11 +21,21 @@ put:
       content:
         application/json:
           schema:
+            type: object
+            properties:
+              success: 
+                type: boolean
+              containers: 
+                type: array
+                description: Process ID(s) to track execution results with, use `/api/processes/$processId`. Instances with more than one server will result in multiple processes, one for each snapshot.
+                items: 
+                  type: integer
+                  format: int64
             $ref: ../components/schemas/200-success.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/success.json 
+                $ref: ../components/examples/createSnapshot.json 
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
