@@ -31,7 +31,6 @@ put:
                 items: 
                   type: integer
                   format: int64
-            $ref: ../components/schemas/200-success.yaml
           examples:
             Response:
               value:
