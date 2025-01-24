@@ -25,7 +25,7 @@ put:
             properties:
               success: 
                 type: boolean
-              containers: 
+              processIds: 
                 type: array
                 description: Process ID(s) to track execution results with, use `/api/processes/$processId`. Instances with more than one server will result in multiple processes, one for each snapshot.
                 items: 
