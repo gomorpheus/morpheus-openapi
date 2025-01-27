@@ -75,6 +75,13 @@ properties:
   duration: 
     type: integer
     format: int64
+  resultType:
+    type: string
+    nullable: true
+  resultId:
+    type: integer
+    format: int64
+    nullable: true
   dateCreated: 
     type: string
     format: date-time
