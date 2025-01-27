@@ -15,6 +15,20 @@
     "datastore": null,
     "parentSnapshot": null,
     "currentlyActive": true,
+    "snapshotFiles": [
+      {
+        "id": 1,
+        "name": "vda",
+        "type": "file",
+        "externalId": "dd-local-standard-rocky-477/rocky_5-disk-0-snap-1733411239041",
+        "path": "/var/morpheus/kvm/local/dd-local-standard-rocky-477/rocky_5-disk-0-snap-1733411239041",
+        "exportPath": "/var/morpheus/kvm/local/dd-local-standard-rocky-477/rocky_5-disk-0",
+        "volume": {
+          "id": 1
+        },
+        "diskIndex": 0
+      }
+    ],
     "dateCreated": "2022-07-20T18:35:42Z"
   }
 }
