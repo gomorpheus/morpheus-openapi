@@ -55,3 +55,7 @@ properties:
     type: boolean
     description: Automatically Power on VMs
     default: false
+  taskSetId:
+    type: integer
+    format: int64
+    description: Optional Workflow Id desired to be run
