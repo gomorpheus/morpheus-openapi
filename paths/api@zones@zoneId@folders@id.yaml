@@ -75,6 +75,20 @@ put:
                         type: integer
                         format: int64
                       example: [1, 3]
+                    defaultTarget:
+                      type: array
+                      description: Array of tenant account ids which should use the folder as the Default
+                      items: 
+                        type: integer
+                        format: int64
+                      example: [1, 3]
+                    defaultStore:
+                      type: array
+                      description: Array of tenant account ids which should use the folder as the Image Target
+                      items: 
+                        type: integer
+                        format: int64
+                      example: [1, 3]
                 resourcePermissions:
                   type: object
                   properties:
