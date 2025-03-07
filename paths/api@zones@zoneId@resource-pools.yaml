@@ -90,17 +90,15 @@ post:
                     - $ref: ../components/schemas/AwsResourcePoolConfig.yaml
                     - $ref: ../components/schemas/CloudFoundryResourcePoolConfig.yaml
                 tenantPermissions:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      accounts:
-                        type: array
-                        description: Array of tenant account ids that are allowed access
-                        items:
-                          type: integer
-                          format: int64
-                        example: [1, 3]
+                  type: object
+                  properties:
+                    accounts:
+                      type: array
+                      description: Array of tenant account ids that are allowed access
+                      items:
+                        type: integer
+                        format: int64
+                      example: [1, 3]
                 resourcePermissions:
                   type: object
                   properties:
