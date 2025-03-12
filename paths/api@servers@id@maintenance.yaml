@@ -6,6 +6,27 @@ put:
     - Hosts
   parameters:
     - $ref: ../components/parameters/id-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            server:
+              properties:
+                ignoreDaemonsets:
+                  type: boolean
+                  description: option relevant to kubernetes nodes
+                force:
+                  type: boolean
+                  description: option relevant to kubernetes nodes
+                deleteEmptyDir:
+                  type: boolean
+                  description: option relevant to kubernetes nodes
+                deleteLocalData:
+                  type: boolean
+                  description: option relevant to kubernetes nodes
+                
   responses:
     '200':
       description: Successful Request
