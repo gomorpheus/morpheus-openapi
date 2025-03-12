@@ -70,7 +70,10 @@ put:
       $ref: ../components/responses/5xx.yaml
 delete:
   summary: Delete a Cluster Datastore
-  description: Will delete a cluster datastore
+  description: |
+    Will initiate delete of a cluster datastore.
+    
+    **Note**: This will initiate a delete request but does not guarantee success.
   operationId: deleteClusterDatastore
   tags:
     - Clusters
@@ -84,11 +87,13 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/200-success.yaml
+            allOf:
+              - $ref: ../components/schemas/200-success.yaml
+              - $ref: ../components/schemas/executionId.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/success.json
+                $ref: ../components/examples/successExecution.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':

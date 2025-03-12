@@ -1,18 +1,18 @@
 put:
-  summary: Execute Container Action
-  description: This endpoint executes a container action on specific container, such as the Remove Node action.
-  operationId: executeContainerAction
+  summary: Execute Instance Action
+  description: This endpoint executes an instance action on specific instance, such as the Add Node action.
+  operationId: executeInstanceAction
   tags:
-    - Containers
+    - Instances
   parameters:
     - $ref: ../components/parameters/id-path.yaml
     - name: code
       in: query
       required: true
-      description: Action code to be executed on a specific container.
+      description: Action code to be executed on a specific instance.
       schema:
         type: string
-      example: apache-remove-node
+      example: generic-add-node
   responses:
     '200':
       description: Successful Request
@@ -21,7 +21,7 @@ put:
           schema:
             $ref: ../components/schemas/successMessage.yaml
           examples:
-            Execute Container Action Response:
+            Execute Instance Action Response:
               value:
                 $ref: ../components/examples/success.json
     '4XX':

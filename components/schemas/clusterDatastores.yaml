@@ -41,6 +41,10 @@ properties:
     format: int64
   externalId: 
     type: string
+  status:
+    type: string
+  statusMessage:
+    type: string
   zone: 
     type: object
     properties: 
@@ -78,6 +82,20 @@ properties:
     nullable: true
     items: 
       type: object
+  locations:
+    type: array
+    items:
+      type: object
+      properties:
+        refType:
+          type: string
+        refId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        statusMessage:
+          type: string
   resourcePermissions:
     type: object
     properties:

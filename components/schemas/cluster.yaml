@@ -122,6 +122,13 @@ properties:
     type: boolean
     description: Automatically Power on VMs
     default: false
+  useAgent:
+    type: string
+    description: Use the Agent to relay communications for the Kubernetes API instead of direct.
+    nullable: true
+  provisionComplete:
+    type: boolean
+    description: Changes from false to true once provisioning is finished.
   serviceEntry: 
     type: string
     nullable: true

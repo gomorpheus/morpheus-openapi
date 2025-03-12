@@ -1,4 +1,4 @@
-post:
+delete:
   summary: Remove From Control
   description: Will delete a brownfield instance (or instances) asynchronously (Only deletes records local to Morpheus, actual VMs remain unchanged).
   operationId: removeInstancesFromControl

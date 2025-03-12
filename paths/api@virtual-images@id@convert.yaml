@@ -1,0 +1,41 @@
+post:
+  summary: Convert Virtual Image File
+  description: This will convert an existing virtual image to a new virtual image in specified format.
+  operationId: convertImage
+  tags:
+    - Library
+  parameters:
+    - $ref: ../components/parameters/virtualImageId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              example: New Image Name
+            format:
+              type: string
+              example: qcow2
+            storageProvider:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+        examples:
+          Virtual Image Convert:
+            value:
+              $ref: ../components/examples/virtualImageConvert.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

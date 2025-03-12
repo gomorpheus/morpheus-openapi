@@ -37,6 +37,33 @@ properties:
       parentSnapshot: 
         type: string
         nullable: true
+      snapshotFiles:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              type: string
+            type:
+              type: string
+            externalId:
+              type: string
+            path:
+              type: string
+            exportPath:
+              type: string
+            volume:
+              type: object
+              nullable: true
+              properties:
+                id:
+                  type: integer
+                  format: int32
+            diskIndex:
+              type: integer
       currentlyActive: 
         type: boolean
       dateCreated: 

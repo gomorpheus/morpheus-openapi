@@ -138,6 +138,18 @@ properties:
   scalePriority: 
     type: integer
     format: int64
+  defaultDatastoreSyncActive:
+    type: boolean
+  defaultNetworkSyncActive:
+    type: boolean
+  defaultFolderSyncActive:
+    type: boolean
+  defaultSecurityGroupSyncActive:
+    type: boolean
+  defaultPoolSyncActive:
+    type: boolean
+  defaultPlanSyncActive:
+    type: boolean
   config: 
     anyOf:
     - $ref: zoneVcenterConfig.yaml
