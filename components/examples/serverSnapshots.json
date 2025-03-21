@@ -1,22 +1,36 @@
 {
-  "snapshots": [
-      {
-          "id": 6,
-          "name": "null-2022-09-06T15:34:31.965Z",
-          "description": null,
-          "externalId": null,
-          "status": "failed",
-          "state": null,
-          "snapshotType": "vm",
-          "snapshotCreated": null,
-          "zone": {
-              "id": 15,
-              "name": "vcenter1 - homelab"
-          },
-          "datastore": null,
-          "parentSnapshot": null,
-          "currentlyActive": false,
-          "dateCreated": "2022-09-06T15:34:35Z"
-      }
-  ]
+    "snapshots": [
+        {
+            "id": 5,
+            "name": "groovydev-2022-07-20T18:35:39.626Z",
+            "description": null,
+            "externalId": "snapshot-93001",
+            "status": "complete",
+            "state": null,
+            "snapshotType": "vm",
+            "snapshotCreated": "2022-07-20T18:35:58Z",
+            "zone": {
+                "id": 15,
+                "name": "vcenter1 - homelab"
+            },
+            "datastore": null,
+            "parentSnapshot": null,
+            "currentlyActive": true,
+            "snapshotFiles": [
+                {
+                    "id": 1,
+                    "name": "vda",
+                    "type": "file",
+                    "externalId": "dd-local-standard-rocky-477/rocky_5-disk-0-snap-1733411239041",
+                    "path": "/var/morpheus/kvm/local/dd-local-standard-rocky-477/rocky_5-disk-0-snap-1733411239041",
+                    "exportPath": "/var/morpheus/kvm/local/dd-local-standard-rocky-477/rocky_5-disk-0",
+                    "volume": {
+                        "id": 1
+                    },
+                    "diskIndex": 0
+                }
+            ],
+            "dateCreated": "2022-07-20T18:35:42Z"
+        }
+    ]
 }

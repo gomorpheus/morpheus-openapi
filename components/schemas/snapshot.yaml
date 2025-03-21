@@ -1,6 +1,28 @@
 type: object
-properties:
-  snapshot: 
+properties: 
+  id: 
+    type: integer
+    format: int32
+  name: 
+    type: string
+  description: 
+    type: string
+    nullable: true
+  externalId: 
+    type: string
+    nullable: true
+  status: 
+    type: string
+  state: 
+    type: string
+    nullable: true
+  snapshotType: 
+    type: string
+  snapshotCreated: 
+    type: string
+    format: date-time
+    nullable: true
+  zone: 
     type: object
     properties: 
       id: 
@@ -8,64 +30,41 @@ properties:
         format: int32
       name: 
         type: string
-      description: 
-        type: string
-        nullable: true
-      externalId: 
-        type: string
-      status: 
-        type: string
-      state: 
-        type: string
-        nullable: true
-      snapshotType: 
-        type: string
-      snapshotCreated: 
-        type: string
-        format: date-time
-      zone: 
-        type: object
-        properties: 
-          id: 
-            type: integer
-            format: int32
-          name: 
-            type: string
-      datastore: 
-        type: string
-        nullable: true
-      parentSnapshot: 
-        type: string
-        nullable: true
-      snapshotFiles:
-        type: array
-        items:
+  datastore: 
+    type: string
+    nullable: true
+  parentSnapshot: 
+    type: string
+    nullable: true
+  snapshotFiles:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        type:
+          type: string
+        externalId:
+          type: string
+        path:
+          type: string
+        exportPath:
+          type: string
+        volume:
           type: object
+          nullable: true
           properties:
             id:
               type: integer
               format: int32
-            name:
-              type: string
-            type:
-              type: string
-            externalId:
-              type: string
-            path:
-              type: string
-            exportPath:
-              type: string
-            volume:
-              type: object
-              nullable: true
-              properties:
-                id:
-                  type: integer
-                  format: int32
-            diskIndex:
-              type: integer
-      currentlyActive: 
-        type: boolean
-      dateCreated: 
-        type: string
-        format: date-time
+        diskIndex:
+          type: integer
+  currentlyActive: 
+    type: boolean
+  dateCreated: 
+    type: string
+    format: date-time
