@@ -1,0 +1,52 @@
+put: 
+  summary: Assign a Host Device
+  description: Will assign a host device to the specified target server (VM). The device must be detached before it can be assigned.
+  operationId: assignDevice
+  tags: 
+    -  Hosts
+  parameters:
+    - name: id
+      in: path
+      description: The ID of the host
+      required: true
+      schema:
+        type: integer
+      example: 5
+    - name: deviceId
+      in: path
+      description: The ID of the device
+      required: true
+      schema:
+        type: integer
+      example: 99
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          type: object
+          required:
+            - targetServerId
+          properties:
+            targetServerId:
+              type: integer
+              format: int64
+              description: Target Server (VM) ID
+        examples:
+          Assign Device Request:
+            value:
+              $ref: ../components/examples/assignDevice.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successError.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/successError.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

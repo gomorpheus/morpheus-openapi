@@ -1020,6 +1020,12 @@ paths:
     $ref: paths/api@servers@id@placement.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
+  /api/servers/{id}/devices/{deviceId}/assign:
+    $ref: paths/api@servers@id@assignDevice.yaml
+  /api/servers/{id}/devices/{deviceId}/detach:
+    $ref: paths/api@servers@id@detachDevice.yaml
+  /api/servers/{id}/devices/{deviceId}/attach:
+    $ref: paths/api@servers@id@attachDevice.yaml
   /api/catalog/cart:
     $ref: paths/api@catalog@cart.yaml
   /api/catalog/cart/items:

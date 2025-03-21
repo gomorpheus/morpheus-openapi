@@ -1,0 +1,34 @@
+get:
+  summary: Get list of devices for a Host
+  description: Get list of devices for a Host
+  operationId: listHostDevices
+  tags:
+    - Hosts
+  parameters:
+    - name: id
+      in: path
+      description: The ID of the host
+      required: true
+      schema:
+        type: integer
+      example: 5
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              devices:
+                type: array
+                items:
+                  $ref: ../components/schemas/serverDevice.yaml
+          examples:
+            Host Devices Response:
+              value:
+                $ref: ../components/examples/serverDevices.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
