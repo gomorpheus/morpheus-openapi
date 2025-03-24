@@ -1,6 +1,6 @@
 put: 
   summary: Detach a Host Device
-  description: Will detach a host device. This must be done before assigning a device a to new target.
+  description: Will detach a host device. This must be done before assigning a device to a new target.
   operationId: detachDevice
   tags: 
     -  Hosts
