@@ -1020,6 +1020,8 @@ paths:
     $ref: paths/api@servers@id@placement.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
+  /api/servers/{id}/devices:
+    $ref: paths/api@servers@id@devices.yaml
   /api/servers/{id}/devices/{deviceId}/assign:
     $ref: paths/api@servers@id@assignDevice.yaml
   /api/servers/{id}/devices/{deviceId}/detach:
