@@ -28,7 +28,11 @@ get:
                 zones:
                   type: array
                   items:
-                    $ref: ../components/schemas/zone.yaml
+                    anyOf:
+                    - $ref: ../components/schemas/zoneVcenterConfig.yaml
+                    - $ref: ../components/schemas/zoneAwsConfig.yaml
+                    - $ref: ../components/schemas/zoneAzureConfig.yaml
+                    - $ref: ../components/schemas/zoneGcpConfig.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Clouds Response:
