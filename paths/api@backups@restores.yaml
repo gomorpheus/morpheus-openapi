@@ -66,3 +66,67 @@ get:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
+post:
+  summary: Executes a Backup Restore
+  description: |
+    Executes a backup restore.
+  operationId: executeBackupRestore
+  tags:
+    - Backups
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - restore
+          properties:
+            restore:
+              type: object
+              required:
+                - backupResultId
+                - restoreInstance
+              properties:
+                backupResultId: 
+                  type: integer
+                  format: int64
+                  description: Id of backup result
+                restoreInstance: 
+                  type: string
+                  description: Type of restore
+                  enum:
+                    - new
+                    - existing
+                  example: existing
+                instanceId:
+                  type: integer
+                  format: int64
+                  description: Id of instance
+                config: 
+                  type: object
+                  description: Additional config
+                instanceConfig:
+                  type: object
+                  description: Instance config for restore to new.
+                  example:
+                    $ref: ../components/examples/backupRestoreInstanceConfig.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                backup:
+                  $ref: ../components/schemas/backup.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Restore Response:
+              value:
+                $ref: ../components/examples/backupRestoreExecuteSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

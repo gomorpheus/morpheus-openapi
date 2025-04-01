@@ -1,0 +1,51 @@
+{
+    "zoneId": 6,
+    "instance": {
+      "name": "dev-234",
+      "cloud": "Dev Azure",
+      "site": {
+        "id": 1
+      },
+      "type": "ubuntu",
+      "instanceType": {
+        "code": "ubuntu"
+      },
+      "layout": {
+        "id": 217,
+        "code": "ubuntu-azure-22.04-single"
+      },
+      "plan": {
+        "id": 1271,
+        "code": "azure.plan.centralus.Standard_B1s",
+        "name": "Standard_B1s (1 Core, 1GB Memory)"
+      }
+    },
+    "config": {
+      "resourcePoolId": "pool-41",
+      "azureRegion": "",
+      "availabilityOptions": "",
+      "azurefloatingIp": "on",
+      "osGuestDiagnostics": "off"
+    },
+    "volumes": [
+      {
+        "id": -1,
+        "rootVolume": true,
+        "name": "root",
+        "size": 32,
+        "sizeId": null,
+        "storageType": 32,
+        "datastoreId": 27
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "network": {
+          "id": "subnet-34"
+        },
+        "ipMode": "dhcp"
+      }
+    ],
+    "layoutSize": 1
+}
+  
