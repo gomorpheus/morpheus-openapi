@@ -23,9 +23,8 @@ get:
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/lastUpdated.yaml
     - $ref: ../components/parameters/createdBy.yaml
-    - $ref: ../components/parameters/labels.yaml
-    - $ref: ../components/parameters/allLabels.yaml
     - $ref: ../components/parameters/tags.yaml
+    - $ref: ../components/parameters/metadata.yaml
     - $ref: ../components/parameters/uuid.yaml
     - $ref: ../components/parameters/externalId.yaml
     - $ref: ../components/parameters/internalId.yaml
@@ -45,7 +44,7 @@ get:
                     $ref: ../components/schemas/server.yaml
                 stats:
                   type: object
-                multiTenant:
+                multitenant:
                   type: boolean
             - $ref: ../components/schemas/meta.yaml
           examples:
@@ -56,37 +55,38 @@ get:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
-# post: 
-#   summary: Provision a Host
-#   description: Provision a Host
-#   operationId: addHost
-#   tags: 
-#     -  Hosts
-#   requestBody: 
-#     content: 
-#       application/json: 
-#         schema: 
-#           $ref: ../components/schemas/serverCreate.yaml
-#         examples:
-#           Host Request:
-#             value:
-#               $ref: ../components/examples/serverCreateRequest.json
-#   responses:
-#     '200':
-#       description: Successful Response
-#       content: 
-#         application/json: 
-#           schema:
-#             allOf:   
-#               - oneOf: 
-#                 - $ref: ../components/schemas/instanceCreateSuccess.yaml
-#                 - $ref: ../components/schemas/successError.yaml
-#               - $ref: ../components/schemas/200-success.yaml
-#           examples:
-#             Successful Instance Creation - VMWare:
-#               value:
-#                 $ref: ../components/examples/instanceCreateVmwareSuccess.json
-#     '4XX':
-#       $ref: ../components/responses/4xx.yaml
-#     '5XX':
-#       $ref: ../components/responses/5xx.yaml
+post: 
+  summary: Add a Baremetal Host
+  description: Add a Baremetal Host
+  operationId: addBaremetalHost
+  tags: 
+    -  Hosts
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../components/schemas/serverBaremetalCreate.yaml
+        examples:
+          Host Request:
+            value:
+              $ref: ../components/examples/serverCreateBaremetalRequest.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              server:
+                $ref: ../components/schemas/server.yaml
+          examples:
+            Successful Baremetal Creation:
+              value:
+                $ref: ../components/examples/serverCreateBaremetalSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

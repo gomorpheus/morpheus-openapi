@@ -1,0 +1,66 @@
+type: object
+properties: 
+  server:
+    type: object
+    properties:
+      cloud:
+        type: object
+        properties:
+          id:
+            type: integer
+            example: 34
+      computeServerType:
+        type: object
+        oneOf:
+          - type: object
+            properties:
+              code:
+                type: string
+                description: The ComputeServerType's code
+                example: "IloBareMetalUnmanaged"
+          - type: object
+            properties:
+              id:
+                type: integer
+                description: The ComputeServerType's id
+                example: 1
+      description:
+        type: string
+        example: ""
+      group:
+        type: object
+        properties:
+          id:
+            type: integer
+            example: 2
+      labels:
+        type: array
+        items:
+          type: string
+        example: []
+      name:
+        type: string
+        example: example
+      visibility:
+        type: string
+        enum:
+          - private
+          - public
+        example: private
+  config:
+    type: object
+    properties:
+      iloIpAddress:
+        type: string
+        format: ipv4
+        example: 192.168.1.1
+      iloUsername:
+        type: string
+        example: ""
+      iloPassword:
+        type: string
+        example: ""
+      macAddress:
+        type: string
+        example: "ba:dc:0f:fe:ca:fe"
+
