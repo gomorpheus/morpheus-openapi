@@ -11,7 +11,7 @@ properties:
             example: 34
       computeServerType:
         type: object
-        oneOf:
+        anyOf:
           - type: object
             properties:
               code:
@@ -47,20 +47,20 @@ properties:
           - private
           - public
         example: private
-  config:
-    type: object
-    properties:
-      iloIpAddress:
-        type: string
-        format: ipv4
-        example: 192.168.1.1
-      iloUsername:
-        type: string
-        example: ""
-      iloPassword:
-        type: string
-        example: ""
-      macAddress:
-        type: string
-        example: "ba:dc:0f:fe:ca:fe"
+      config:
+        type: object
+        properties:
+          iloIpAddress:
+            type: string
+            format: ipv4
+            example: 192.168.1.1
+          iloUsername:
+            type: string
+            example: ""
+          iloPassword:
+            type: string
+            example: ""
+          macAddress:
+            type: string
+            example: "ba:dc:0f:fe:ca:fe"
 
