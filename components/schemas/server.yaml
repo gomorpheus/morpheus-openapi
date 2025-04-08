@@ -97,13 +97,16 @@ properties:
     nullable: true
   sshHost: 
     type: string
+    nullable: true
   sshPort: 
     type: integer
     format: int64
   externalIp: 
     type: string
+    nullable: true
   internalIp: 
     type: string
+    nullable: true
   volumeId: 
     type: string
     nullable: true
@@ -115,6 +118,7 @@ properties:
     nullable: true
   sshUsername: 
     type: string
+    nullable: true
   sshPassword: 
     type: string
     nullable: true
@@ -241,6 +245,10 @@ properties:
     type: integer
     format: int64
   maxCpu: 
+    type: integer
+    format: int64
+    nullable: true
+  maxGpus: 
     type: integer
     format: int64
     nullable: true
@@ -512,7 +520,12 @@ properties:
         format: int64
         nullable: true
       createUser: 
-        type: boolean
+        oneOf:
+          - type: boolean
+          - type: string
+            enum:
+            - on
+            - off
       nestedVirtualization: 
         type: string
         nullable: true
