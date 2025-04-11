@@ -4,7 +4,6 @@ get:
     This endpoint retrieves an app Wiki page.
   operationId: getWikiApp
   tags:
-    - Wiki
     - Apps
   parameters:
     - $ref: ../components/parameters/id-path.yaml
@@ -35,7 +34,6 @@ put:
     Updates an app Wiki page.
   operationId: updateWikiApp
   tags:
-    - Wiki
     - Apps
   parameters:
     - $ref: ../components/parameters/id-path.yaml
@@ -48,16 +46,15 @@ put:
             page:
               type: object
               properties:
-                name: 
+                name:
                   type: string
                   example: Sample Doc
                 category:
                   type: string
                   example: info
-                content: 
+                content:
                   type: string
-                  example: #Sample Doc
-                    A sample document in **markdown**.`
+                  example: A sample document in **markdown**.` #Sample Doc
   responses:
     '200':
       description: Successful Request
@@ -65,11 +62,11 @@ put:
         application/json:
           schema:
             allOf:
-            - type: object
-              properties:
-                page:
-                  $ref: ../components/schemas/wikiPage.yaml
-            - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  page:
+                    $ref: ../components/schemas/wikiPage.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Wiki Response:
               value:
