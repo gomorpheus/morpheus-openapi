@@ -17,21 +17,16 @@ properties:
     type: string
   rpcMode: 
     type: string
-  _hideHostSelection: 
-    type: string
   hideHostSelection: 
-    type: string
-  _importExisting: 
     type: string
   importExisting: 
     type: string
-  _enableVnc: 
-    type: string
   enableVnc: 
     type: string
-  _enableDiskTypeSelection: 
+  enableDiskTypeSelection: 
     type: string
-  _enableNetworkTypeSelection: 
+    nullable: true
+  enableNetworkTypeSelection: 
     type: string
   diskStorageType: 
     type: string
@@ -84,9 +79,6 @@ properties:
     type: string
     nullable: true
   serviceRegistryId: 
-    type: string
-    nullable: true
-  enableDiskTypeSelection: 
     type: string
     nullable: true
   kubeUrl: 
