@@ -42,7 +42,6 @@ post:
   operationId: saveClusterDatastore
   tags:
     - Clusters
-    - Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
   requestBody:

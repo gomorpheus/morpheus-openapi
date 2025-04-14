@@ -4,7 +4,6 @@ get:
   operationId: getClusterDatastore
   tags: 
     -  Clusters
-    -  Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
@@ -32,7 +31,6 @@ put:
   operationId: updateClusterDatastore
   tags: 
     -  Clusters
-    -  Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
@@ -77,7 +75,6 @@ delete:
   operationId: deleteClusterDatastore
   tags:
     - Clusters
-    -  Datastores
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
     - $ref: ../components/parameters/id-path.yaml
