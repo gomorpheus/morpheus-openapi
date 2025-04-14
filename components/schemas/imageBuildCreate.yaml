@@ -61,13 +61,14 @@ properties:
     description: Build Output Name
     nullable: true
   conversionFormats: 
-    type: string
     description: Conversion Formats
-    enum:
-      - ovf
-      - qcow2
-      - vhd
-    nullable: true
+    anyOf:
+    - type: "null"
+    - type: string
+      enum:
+        - ovf
+        - qcow2
+        - vhd
   keepResults: 
     type: integer
     format: int64
