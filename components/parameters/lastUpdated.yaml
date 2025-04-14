@@ -1,7 +1,7 @@
 name: lastUpdated
 in: query
 description: Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601)
-example: 2019-03-06T17:52:29+0000
+example: 2019-03-06T17:52:29+00:00
 schema:
   type: string
   format: date-time
