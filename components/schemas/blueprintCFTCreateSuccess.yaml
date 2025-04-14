@@ -54,33 +54,33 @@ properties:
       IAM: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: CloudFormation Attribute CAPABILITY_IAM
-        default: false
       CAPABILITY_NAMED_IAM: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: CloudFormation Attribute CAPABILITY_NAMED_IAM
-        default: false
       CAPABILITY_AUTO_EXPAND: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: CloudFormation Attribute CAPABILITY_AUTO_EXPAND
-        default: false
       installAgent: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: Install Morpheus Agent
-        default: false
       cloudInitEnabled: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: Cloud Init Enabled
-        default: false
   visibility:
     type: string
     description: Private or Public Access
