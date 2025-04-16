@@ -1,0 +1,9 @@
+# OpenAPI Generator Ignore
+# Lines beginning with a # are comments
+
+# Exclude all recursively
+# We don't want to generate docs or tests in CI
+docs/**
+test/**
+# The generated `api` directory contains a copy of the OpenAPI spec. We don't need it in CI.
+api/**
