@@ -71,7 +71,7 @@ delete:
   description: |
     Will initiate delete of a cluster datastore.
     
-    **Note**: This will initiate a delete request but does not guarantee success.
+    **Please Note**: This will initiate a delete request but does not guarantee success.
   operationId: deleteClusterDatastore
   tags:
     - Clusters
