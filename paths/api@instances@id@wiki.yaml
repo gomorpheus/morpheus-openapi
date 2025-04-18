@@ -4,7 +4,7 @@ get:
     This endpoint retrieves an instance Wiki page.
   operationId: getWikiInstance
   tags:
-    - Instances
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -34,7 +34,7 @@ put:
     Updates an instance Wiki page.
   operationId: updateWikiInstance
   tags:
-    - Instances
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:

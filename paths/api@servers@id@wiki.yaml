@@ -4,7 +4,7 @@ get:
     This endpoint retrieves a server Wiki page.
   operationId: getWikiServer
   tags:
-    - Hosts
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -34,7 +34,7 @@ put:
     Updates a server Wiki page.
   operationId: updateWikiServer
   tags:
-    - Hosts
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:

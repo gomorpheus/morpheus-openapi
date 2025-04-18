@@ -4,7 +4,7 @@ get:
     This endpoint retrieves a cluster Wiki page.
   operationId: getWikiCluster
   tags:
-    - Clusters
+    - Wiki
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
   responses:
@@ -34,7 +34,7 @@ put:
     Updates a cluster Wiki page.
   operationId: updateWikiCluster
   tags:
-    - Clusters
+    - Wiki
   parameters:
     - $ref: ../components/parameters/clusterId-path.yaml
   requestBody:

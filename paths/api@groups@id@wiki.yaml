@@ -4,7 +4,7 @@ get:
     This endpoint retrieves a group Wiki page.
   operationId: getWikiGroup
   tags:
-    - Groups
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -34,7 +34,7 @@ put:
     Updates a group Wiki page.
   operationId: updateWikiGroup
   tags:
-    - Groups
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:

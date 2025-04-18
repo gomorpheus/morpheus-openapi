@@ -4,7 +4,7 @@ get:
     This endpoint retrieves an app Wiki page.
   operationId: getWikiApp
   tags:
-    - Apps
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -34,7 +34,7 @@ put:
     Updates an app Wiki page.
   operationId: updateWikiApp
   tags:
-    - Apps
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:

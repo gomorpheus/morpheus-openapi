@@ -4,7 +4,7 @@ get:
     This endpoint retrieves a cloud Wiki page.
   operationId: getWikiCloud
   tags:
-    - Clouds
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   responses:
@@ -34,7 +34,7 @@ put:
     Updates a cloud Wiki page.
   operationId: updateWikiCloud
   tags:
-    - Clouds
+    - Wiki
   parameters:
     - $ref: ../components/parameters/id-path.yaml
   requestBody:
