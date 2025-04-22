@@ -1,7 +1,7 @@
 put:
   summary: Manage Host Placement
   description: This will update the host placement settings for the virtual machine. Only available for supported server types such as HPE VM virtual machines.
-  operationId: maangeHostPlacement
+  operationId: manageHostPlacement
   tags:
     - Hosts
   parameters:
