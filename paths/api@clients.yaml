@@ -71,11 +71,11 @@ post:
               properties:
                 clientId:
                   type: string
-                  description: ClientId
+                  description: Client ID
                   example: Test Client
                 clientSecret:
                   type: string
-                  description: ClientSecret
+                  description: Client Secret
                   example: thisIsaClientSecretKeyPhrase
                 accessTokenValiditySeconds:
                   type: integer
@@ -87,6 +87,11 @@ post:
                   nullable: true
                   description: Length of time refreshToken is valid in seconds.
                   example: 43200
+                redirectUris:
+                  type: array
+                  description: List of Redirect URIs for use with the OpenID Authorization Code Flow
+                  items: 
+                    type: string
   responses:
     '200':
       description: Client Object
