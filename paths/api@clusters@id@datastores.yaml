@@ -50,7 +50,7 @@ post:
         schema:
           type: object
           properties:
-            cluster:
+            datastore:
               $ref: ../components/schemas/clusterDatastoreCreate.yaml
         examples:
           NFS Datastore Request:
@@ -65,7 +65,7 @@ post:
             allOf:
               - type: object
                 properties:
-                  cluster:
+                  datastore:
                     $ref: ../components/schemas/clusterDatastore.yaml
               - $ref: ../components/schemas/200-success.yaml
               - $ref: ../components/schemas/executionId.yaml

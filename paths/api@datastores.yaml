@@ -1,13 +1,11 @@
 get:
-  summary: Retrieves all Datastores for Specified Cloud
+  summary: Retrieves all Datastores
   description: |
-    Data Stores can be managed for each Compute Zone (Cloud) in your infrastructure.
-    This endpoint retrieves all data stores under a cloud.
+    This endpoint retrieves all data stores.
   operationId: listCloudDatastores
   tags:
-    - Clouds
+    - Datastores
   parameters:
-    - $ref: ../components/parameters/zoneId-path.yaml
     - $ref: ../components/parameters/name.yaml
     - $ref: ../components/parameters/phrase.yaml
     - $ref: ../components/parameters/max.yaml
@@ -36,13 +34,11 @@ get:
     '5XX':
       $ref: ../components/responses/5xx.yaml
 post:
-  summary: Create a Datastore for Specified Cloud
-  description: This endpoint will create a datastore for a specific cloud.
-  operationId: saveCloudDatastore
+  summary: Create a Datastore
+  description: This endpoint will create a datastore.
+  operationId: saveDatastore
   tags:
-    - Clouds
-  parameters:
-    - $ref: ../components/parameters/cloudId-path.yaml
+    - Datastores
   requestBody:
     content:
       application/json:
@@ -50,11 +46,11 @@ post:
           type: object
           properties:
             datastore:
-              $ref: ../components/schemas/zoneDatastoreCreate.yaml
+              $ref: ../components/schemas/storageDatastoreCreate.yaml
         examples:
           NFS Datastore Request:
             value:
-              $ref: ../components/examples/clusterDatastoreCreateNFS.json
+              $ref: ../components/examples/storageDatastoreCreateNFS.json
   responses:
     '200':
       description: Successful Request
@@ -65,13 +61,13 @@ post:
               - type: object
                 properties:
                   datastore:
-                    $ref: ../components/schemas/clusterDatastore.yaml
+                    $ref: ../components/schemas/storageDatastore.yaml
               - $ref: ../components/schemas/200-success.yaml
               - $ref: ../components/schemas/executionId.yaml
           examples:
             Response:
               value:
-                $ref: ../components/examples/zoneDatastore.json
+                $ref: ../components/examples/storageDatastore.json
     '4XX':
       $ref: ../components/responses/4xx.yaml
     '5XX':
