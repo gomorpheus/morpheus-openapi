@@ -390,7 +390,7 @@ paths:
     $ref: paths/api@cypher@id.yaml
   /api/data-stores:
     $ref: paths/api@datastores.yaml
-  /api/data-stores/${datastoreId}:
+  /api/data-stores/{id}:
     $ref: paths/api@datastores@id.yaml
   /api/deployments:
     $ref: paths/api@deployments.yaml

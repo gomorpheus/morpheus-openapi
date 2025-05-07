@@ -2,7 +2,7 @@ get:
   summary: Retrieves all Datastores
   description: |
     This endpoint retrieves all data stores.
-  operationId: listCloudDatastores
+  operationId: listDatastores
   tags:
     - Datastores
   parameters:
