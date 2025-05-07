@@ -42,3 +42,66 @@ get:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a Subtenant Identity Source
+  description: |
+    Creates an identity source for the provided subtenant ID.
+  operationId: addSubtenantIdentitySources
+  tags:
+    - Tenants
+  parameters:
+    - $ref: ../components/parameters/accountId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/userSourceCreate.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                task:
+                  oneOf:
+                  - $ref: ../components/schemas/identitySourcesLDAPConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesJumpCloudConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesADConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesOktaConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesOneLoginConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesSAMLConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesAzureADConfig.yaml
+                  - $ref: ../components/schemas/identitySourcesCustomSSOConfig.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Identity Source - LDAP Response:
+              value:
+                $ref: ../components/examples/identitySourcesLDAPSuccess.json
+            Identity Source - Jump Cloud Response:
+              value:
+                $ref: ../components/examples/identitySourcesJumpCloudSuccess.json
+            Identity Source - Active Directory Response:
+              value:
+                $ref: ../components/examples/identitySourcesADSuccess.json
+            Identity Source - Okta Response:
+              value:
+                $ref: ../components/examples/identitySourcesOktaSuccess.json
+            Identity Source - OneLogin Response:
+              value:
+                $ref: ../components/examples/identitySourcesOneLoginSuccess.json
+            Identity Source - SAML Response:
+              value:
+                $ref: ../components/examples/identitySourcesSAMLSuccess.json
+            Identity Source - Azure AD Response:
+              value:
+                $ref: ../components/examples/identitySourcesAzureADSuccess.json
+            Identity Source - Custom SSO Response:
+              value:
+                $ref: ../components/examples/identitySourcesCustomSSOSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
