@@ -42,7 +42,7 @@ post:
   tags:
     - Clouds
   parameters:
-    - $ref: ../components/parameters/cloudId-path.yaml
+    - $ref: ../components/parameters/zoneId-path.yaml
   requestBody:
     content:
       application/json:
