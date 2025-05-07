@@ -1,0 +1,68 @@
+{
+    "datastore": {
+      "id": 4,
+      "name": "vsanDatastore",
+      "code": null,
+      "type": "vsan",
+      "visibility": "privates",
+      "storageSize": 3000483446784,
+      "freeSpace": 1634729396798,
+      "drsEnabled": false,
+      "active": true,
+      "allowWrite": true,
+      "defaultStore": false,
+      "online": true,
+      "allowRead": true,
+      "allowProvision": true,
+      "refType": "ComputeServerGroup",
+      "refId": 3,
+      "externalId": "datastore-58601",
+      "status": "provisioned",
+      "statusMessage": null,
+      "zone": {
+        "id": 4
+      },
+      "zonePool": {
+        "id": 9
+      },
+      "owner": {
+        "id": 1
+      },
+      "tenants": [
+        {
+          "id": 1,
+          "defaultStore": true,
+          "defaultTarget": true
+        },
+        {
+          "id": 3,
+          "defaultStore": false,
+          "defaultTarget": false
+        }
+      ],
+      "resourcePermissions": {
+        "allGroups": true,
+        "defaultStore": false,
+        "allPlans": false,
+        "defaultTarget": false,
+        "morpheusResourceType": "Datastore",
+        "morpheusResourceId": 4,
+        "canManage": false,
+        "all": true,
+        "account": {
+          "id": 1
+        },
+        "sites": [],
+        "plans": []
+      },
+      "datastores": [],
+      "locations": [
+        {
+          "refType": "ComputeServer",
+          "refId": 7813,
+          "status": "provisioned",
+          "statusMessage": null
+        }
+      ]
+    }
+  }
