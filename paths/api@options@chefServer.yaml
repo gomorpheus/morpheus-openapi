@@ -7,10 +7,6 @@ get:
     - Options
   parameters:
     - $ref: ../components/parameters/accountId.yaml
-
-    - $ref: ../components/parameters/configValues.yaml
-    - $ref: ../components/parameters/accountIntegrationId.yaml
-
   responses:
     '200':
       description: Successful Request
