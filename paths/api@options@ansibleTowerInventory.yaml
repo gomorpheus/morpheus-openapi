@@ -1,0 +1,36 @@
+get:
+  summary: Retrieves available Ansible Tower Inventories
+  description: |
+    This endpoint can be used to see which Ansible Tower Inventories are available for the current user/tenant
+  operationId: listOptionAnsibleTowerInventoryOptions
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/zoneId.yaml
+    - $ref: ../components/parameters/siteId.yaml
+    - $ref: ../components/parameters/taskId.yaml
+    - $ref: ../components/parameters/accountId.yaml
+    - $ref: ../components/parameters/ansibleTowerIntegrationId.yaml
+
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/ansibleTowerInventoryOptions.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Ansible Tower Inventory Options Response:
+              value:
+                $ref: ../components/examples/ansibleTowerInventoryOptions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

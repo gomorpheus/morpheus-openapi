@@ -6,7 +6,6 @@ get:
   tags:
     - Identity Sources
   parameters:
-    - $ref: ../components/parameters/taskTypes.yaml
     - $ref: ../components/parameters/max.yaml
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/sort.yaml

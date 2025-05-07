@@ -1,0 +1,8 @@
+name: ansibleTowerIntegrationId
+in: query
+description: >-
+  Filter by an integration Id of an Ansible Tower Integration.
+schema:
+  type: integer
+  format: int64
+example: 33

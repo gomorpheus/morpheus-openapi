@@ -1,0 +1,7 @@
+name: taskId
+in: query
+description: The Task ID for filtering
+schema:
+  type: integer
+  format: int64
+example: 5

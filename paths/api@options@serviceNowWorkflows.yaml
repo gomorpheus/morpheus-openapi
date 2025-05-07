@@ -1,0 +1,35 @@
+get:
+  summary: Retrieves available ServiceNow workflows
+  description: |
+    This endpoint can be used to see which ServiceNow workflows are available for the current user/tenant
+  operationId: listOptionServiceNowWorkflowsOptions
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/accountId.yaml
+
+    - $ref: ../components/parameters/configValues.yaml
+    - $ref: ../components/parameters/accountIntegrationId.yaml
+
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items: 
+                      $ref: ../components/schemas/serviceNowWorkflowsOptions.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            ServiceNow Workflow Options Response:
+              value:
+                $ref: ../components/examples/serviceNowWorkflowsOptions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
