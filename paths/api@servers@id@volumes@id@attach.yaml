@@ -4,9 +4,6 @@ put:
   operationId: attachServerVolume
   tags:
     - Storage
-    - Volumes
-    - Server
-    - Attach
   parameters:
     - name: id
       in: path
