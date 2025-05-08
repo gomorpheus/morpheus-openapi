@@ -1,0 +1,73 @@
+get:
+  summary: Retrieves all User Groups
+  description: |
+    Retrieves all user groups
+  operationId: listUserGroups
+  tags:
+    - Users
+  parameters:
+    - $ref: ../components/parameters/max.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/sort.yaml
+    - $ref: ../components/parameters/direction.yaml
+    - $ref: ../components/parameters/phrase.yaml
+    - $ref: ../components/parameters/name.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                userGroups:
+                  type: array
+                  items:
+                    $ref: ../components/schemas/userGroup.yaml
+            - $ref: ../components/schemas/meta.yaml
+          examples:
+            User Groups Response:
+              value:
+                $ref: ../components/examples/userGroups.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml
+post:
+  summary: Creates a User Group
+  description: |
+    Creates a User Group.
+  operationId: addUserGroup
+  tags:
+    - Users
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - userGroup
+          properties:
+            userGroup:
+              $ref: ../components/schemas/userGroupCreate.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+            - type: object
+              properties:
+                userGroup:
+                  $ref: ../components/schemas/userGroup.yaml
+            - $ref: ../components/schemas/200-success.yaml
+          examples:
+            User Groups - Create Response:
+              value:
+                $ref: ../components/examples/userGroupSuccess.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

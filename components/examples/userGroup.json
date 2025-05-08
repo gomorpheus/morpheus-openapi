@@ -1,0 +1,24 @@
+{
+  "userGroup": {
+    "id": 108,
+    "accountId": 1,
+    "name": "MyGroup",
+    "description": "test user group",
+    "enabled": true,
+    "sudoUser": false,
+    "serverGroup": null,
+    "users": [
+      {
+        "id": 5,
+        "username": "admin@123.com",
+        "displayName": "admin123"
+      }
+    ],
+    "account": {
+      "id": 1,
+      "name": "QA Tenant"
+    },
+    "dateCreated": "2024-04-07T10:32:11Z",
+    "lastUpdated": "2024-04-07T10:32:11Z"
+  }
+}

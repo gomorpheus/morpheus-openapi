@@ -855,6 +855,16 @@ paths:
     $ref: paths/api@options@list.yaml
   /api/options/zoneNetworkOptions:
     $ref: paths/api@options@zoneNetworkOptions.yaml
+  /api/options/zoneTypes:
+    $ref: paths/api@options@zoneTypes.yaml
+  /api/options/ansibleTowerInventory:
+    $ref: paths/api@options@ansibleTowerInventory.yaml
+  /api/options/ansibleTowerJobTemplate:
+    $ref: paths/api@options@ansibleTowerJobTemplate.yaml
+  /api/options/chefServer:
+    $ref: paths/api@options@chefServer.yaml
+  /api/options/serviceNowWorkflows:
+    $ref: paths/api@options@serviceNowWorkflows.yaml
   /api/ping:
     $ref: paths/api@ping.yaml
   /api/plugins:
@@ -1107,6 +1117,8 @@ paths:
     $ref: paths/api@accounts@id@groups@id@update-zones.yaml
   /api/accounts/{accountId}/users:
     $ref: paths/api@accounts@id@users.yaml
+  /api/accounts/{accountId}/user-sources:
+    $ref: paths/api@accounts@id@user-sources.yaml
   /api/subnet-types:
     $ref: paths/api@subnet-types.yaml
   /api/subnets:
@@ -1142,6 +1154,10 @@ paths:
   /api/usage:
     $ref: paths/api@usage.yaml
   
+  /api/user-groups:
+    $ref: paths/api@user-groups.yaml
+  /api/user-groups/{id}:
+    $ref: paths/api@user-groups@id.yaml
   /api/user-settings:
     $ref: paths/api@user-settings.yaml
   /api/user-settings/api-clients:

@@ -1,0 +1,60 @@
+{
+  "userGroups": [
+    {
+      "id": 1,
+      "accountId": 1,
+      "name": "Auto",
+      "description": "autos",
+      "enabled": true,
+      "sudoUser": true,
+      "serverGroup": "GroupA",
+      "users": [
+        {
+          "id": 8,
+          "username": "auto2",
+          "displayName": "Auto User2"
+        },
+        {
+          "id": 7,
+          "username": "auto",
+          "displayName": "Auto User"
+        }
+      ],
+      "account": {
+        "id": 1,
+        "name": "Morpheus"
+      },
+      "dateCreated": "2023-03-13T19:00:38Z",
+      "lastUpdated": "2023-03-13T19:00:38Z"
+    },
+    {
+      "id": 2,
+      "accountId": 1,
+      "name": "Group B",
+      "description": "Contains users",
+      "enabled": true,
+      "sudoUser": true,
+      "serverGroup": "GroupB",
+      "users": [
+        {
+          "id": 10,
+          "username": "john",
+          "displayName": "John Doe"
+        }
+      ],
+      "account": {
+        "id": 1,
+        "name": "Morpheus QA"
+      },
+      "dateCreated": "2023-03-16T04:25:23Z",
+      "lastUpdated": "2025-02-06T14:26:47Z"
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "max": 25,
+    "size": 3,
+    "total": 3
+  }
+}
+

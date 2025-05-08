@@ -1,0 +1,31 @@
+get:
+  summary: Retrieves available Chef Servers
+  description: |
+    This endpoint can be used to see which Chef Servers are available for the current user/tenant
+  operationId: listOptionChefServerOptions
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/accountId.yaml
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/chefServerOptions.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Zone Types Option Response:
+              value:
+                $ref: ../components/examples/chefServerOptions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

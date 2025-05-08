@@ -1,0 +1,29 @@
+get:
+  summary: Retrieves enabled zones/clouds
+  description: |
+    This endpoint can be used to see which zone/cloud types are enabled for the current tenant
+  operationId: listOptionZoneTypesOptions
+  tags:
+    - Options
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/zoneTypesOptions.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Zone Types Option Response:
+              value:
+                $ref: ../components/examples/zoneTypesOptions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

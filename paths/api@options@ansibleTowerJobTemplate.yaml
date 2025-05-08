@@ -1,0 +1,36 @@
+get:
+  summary: Retrieves available Ansible Tower Job Templates
+  description: |
+    This endpoint can be used to see which Ansible Tower Job Templates are available for the current user/tenant
+  operationId: listOptionAnsibleTowerJobTemplateOptions
+  tags:
+    - Options
+  parameters:
+    - $ref: ../components/parameters/zoneId.yaml
+    - $ref: ../components/parameters/siteId.yaml
+    - $ref: ../components/parameters/taskId.yaml
+    - $ref: ../components/parameters/accountId.yaml
+    - $ref: ../components/parameters/ansibleTowerIntegrationId.yaml
+
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: ../components/schemas/ansibleTowerJobTemplateOptions.yaml
+              - $ref: ../components/schemas/200-success.yaml
+          examples:
+            Ansible Tower Job Template Options Response:
+              value:
+                $ref: ../components/examples/ansibleTowerJobTemplateOptions.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

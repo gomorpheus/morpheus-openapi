@@ -20,6 +20,11 @@ properties:
     type: array
     items: 
       type: object
+      properties:
+        id: 
+          type: string
+        name: 
+          type: string
   networkTypes: 
     type: array
     items: 
@@ -45,12 +50,29 @@ properties:
     type: array
     items: 
       type: object
+      properties: 
+        id: 
+          type: string
+        name: 
+          type: string
+        code: 
+          type: string
+        active: 
+          type: boolean
+        dhcpServer: 
+          type: boolean
+        allowStaticOverride: 
+          type: boolean
   hasNetworks: 
     type: boolean
+    nullable: true
   maxNetworks: 
     type: integer
     format: int64
+    nullable: true
   enableNetworkTypeSelection: 
     type: string
+    nullable: true
   supportsNetworkSelection: 
     type: boolean
+    nullable: true

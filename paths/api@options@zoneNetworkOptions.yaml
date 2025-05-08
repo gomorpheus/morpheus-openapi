@@ -15,8 +15,13 @@ get:
         application/json:
           schema:
             allOf:
-            - $ref: ../components/schemas/zoneNetworkOptions.yaml
-            - $ref: ../components/schemas/200-success.yaml
+              - type: object
+                properties:
+                  data:
+                    type: object
+                    items:
+                      $ref: ../components/schemas/zoneNetworkOptions.yaml
+              - $ref: ../components/schemas/200-success.yaml
           examples:
             Zone Network Options Response:
               value:
