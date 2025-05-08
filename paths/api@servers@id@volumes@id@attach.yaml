@@ -6,6 +6,7 @@ put:
     - Storage
     - Volumes
     - Server
+    - Attach
   parameters:
     - name: serverId
       in: path

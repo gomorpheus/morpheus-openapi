@@ -6,6 +6,7 @@ put:
     - Storage
     - Volumes
     - Server
+    - Detach
   parameters:
     - name: serverId
       in: path
