@@ -286,61 +286,8 @@ properties:
         format: int64
       platform: 
         type: string
-  volumes: 
-    type: array
-    items: 
-      type: object
-      properties: 
-        id: 
-          type: integer
-          format: int64
-        name: 
-          type: string
-        controllerId: 
-          type: integer
-          format: int64
-          nullable: true
-        controllerMountPoint: 
-          type: string
-          nullable: true
-        resizeable: 
-          type: boolean
-        planResizable: 
-          type: boolean
-        rootVolume: 
-          type: boolean
-        unitNumber: 
-          type: string
-          nullable: true
-        typeId: 
-          type: integer
-          format: int64
-        configurableIOPS: 
-          type: boolean
-        datastoreId: 
-          type: integer
-          format: int64
-          nullable: true
-        maxStorage: 
-          type: integer
-          format: int64
-        displayOrder: 
-          type: integer
-          format: int64
-        maxIOPS: 
-          type: string
-          nullable: true
-        uuid: 
-          type: string
-        uniqueId: 
-          type: string
-          nullable: true
-        externalId: 
-          type: string
-          nullable: true
-        internalId: 
-          type: string
-          nullable: true
+  volumes:
+    $ref: storageVolume.yaml
   controllers: 
     type: array
     items: 
