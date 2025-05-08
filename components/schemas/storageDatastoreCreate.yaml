@@ -3,11 +3,8 @@ properties:
   name:
     type: string
   datastoreType:
-    type: object
-    properties:
-      id:
-        type: integer
-        format: int64
+    type: string
+    description: The code of the datatoreType
   refType:
     type: string
   refId:
