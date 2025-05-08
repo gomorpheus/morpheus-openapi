@@ -8,7 +8,7 @@ put:
     - Server
     - Detach
   parameters:
-    - name: serverId
+    - name: id
       in: path
       required: true
       schema:
