@@ -1,15 +1,23 @@
 {
     "storageVolume": {
-        "id": 284946,
-        "name": "Ceph",
+        "id": 55796,
+        "name": "root",
         "description": null,
-        "controllerId": 19131,
-        "controllerMountPoint": "19131:0:10:1",
+        "controller": null,
+        "controllerId": null,
+        "controllerMountPoint": null,
         "resizeable": true,
-        "rootVolume": false,
-        "unitNumber": "1",
-        "deviceName": "/dev/sdb",
-        "deviceDisplayName": "sdb",
+        "rootVolume": true,
+        "unitNumber": null,
+        "deviceName": "/dev/vda",
+        "deviceDisplayName": "vda",
+        "volumeName": "rocky_122-disk-0",
+        "volumePath": "/var/morpheus/kvm/images/rocky-1/rocky_122-disk-0",
+        "volumeType": "disk",
+        "refType": "ComputeServerGroup",
+        "refId": 586,
+        "diskMode": "virtio",
+        "diskType": "file",
         "type": {
             "id": 1,
             "code": "standard",
@@ -20,28 +28,48 @@
         "status": "provisioned",
         "statusMessage": null,
         "configurableIOPS": false,
-        "maxStorage": 1073741824000,
-        "displayOrder": 1,
+        "maxStorage": 5368709120,
+        "usedStorage": 0,
+        "displayOrder": 0,
         "maxIOPS": null,
-        "uuid": "90998cf1-e47a-454e-a105-9864c92d70eb",
+        "uuid": "4a702ab8-5e18-49f9-afd9-b209edae6d45",
         "active": true,
+        "readOnly": false,
+        "removable": false,
+        "poolName": "morpheus-images",
         "zone": {
             "id": 1,
-            "name": "vCenter"
+            "name": "Morpheus"
         },
         "zoneId": 1,
         "datastore": {
-            "id": 7,
-            "name": "vsanDatastore"
+            "id": 1136,
+            "name": "morpheus-images"
         },
-        "datastoreId": 7,
+        "datastoreId": 1136,
         "storageGroup": null,
         "namespace": null,
         "storageServer": null,
-        "source": "vCenter",
+        "source": "Morpheus",
+        "uniqueId": "morpheus-vol-116-122-0",
+        "externalId": "rocky-1/rocky_122-disk-0",
+        "provisionType": null,
+        "copyType": null,
+        "fiberWwn": null,
+        "fileName": null,
+        "claimName": null,
+        "sharePath": null,
+        "sourceId": "6f36ea97-8a72-45db-ad2e-079f6b416c63",
+        "sourceImage": "morpheus-rocky-9-x86_64-20250218.qcow2",
+        "imageType": "qcow2",
+        "online": true,
+        "account": {
+            "id": 1,
+            "name": "Daniel DeVilbiss"
+        },
         "owner": {
             "id": 1,
-            "name": "Home"
+            "name": "Daniel DeVilbiss"
         }
     },
     "success": true

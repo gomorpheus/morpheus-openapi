@@ -1,0 +1,39 @@
+put:
+  summary: Detach storage volume
+  description: This will detach a storage volume from the server. Available for HVM only.
+  operationId: detachServerVolume
+  tags:
+    - Storage
+    - Volumes
+    - Server
+    - Detach
+  parameters:
+    - name: serverId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+      description: The ID of the server
+    - name: volumeId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+      description: The ID of the storage volume
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

@@ -1,12 +1,19 @@
 {
   "datastore": {
-    "id": 4,
-    "name": "vsanDatastore",
+    "id": 1112,
+    "name": "local",
     "code": null,
-    "type": "vsan",
-    "visibility": "privates",
-    "storageSize": 3000483446784,
-    "freeSpace": 1634729396798,
+    "datastoreType": {
+      "id": 1,
+      "code": "libvirt-dir"
+    },
+    "config": {
+      "targetPath": "/var/morpheus/kvm/local"
+    },
+    "type": "Directory Pool",
+    "visibility": "private",
+    "storageSize": 84445941760,
+    "freeSpace": 78657544192,
     "drsEnabled": false,
     "active": true,
     "allowWrite": true,
@@ -14,54 +21,64 @@
     "online": true,
     "allowRead": true,
     "allowProvision": true,
+    "heartbeatTarget": false,
     "refType": "ComputeServerGroup",
-    "refId": 3,
-    "externalId": "datastore-58601",
+    "refId": 586,
+    "externalId": "local",
+    "externalPath": "/var/morpheus/kvm/local",
+    "externalType": "dir",
     "status": "provisioned",
     "statusMessage": null,
     "zone": {
-      "id": 4
-    },
-    "zonePool": {
-      "id": 9
+      "id": 1
     },
     "owner": {
       "id": 1
     },
-    "tenants": [
+    "datastores": [
+
+    ],
+    "locations": [
       {
-        "id": 1,
-        "defaultStore": true,
-        "defaultTarget": true
+        "refType": "ComputeServer",
+        "refId": 11710,
+        "status": "provisioned",
+        "statusMessage": null
       },
       {
-        "id": 3,
-        "defaultStore": false,
-        "defaultTarget": false
+        "refType": "ComputeServer",
+        "refId": 11712,
+        "status": "provisioned",
+        "statusMessage": null
+      },
+      {
+        "refType": "ComputeServer",
+        "refId": 11711,
+        "status": "provisioned",
+        "statusMessage": null
       }
     ],
     "resourcePermissions": {
-      "allGroups": true,
       "defaultStore": false,
-      "allPlans": false,
+      "allPlans": true,
       "defaultTarget": false,
-      "morpheusResourceType": "Datastore",
-      "morpheusResourceId": 4,
       "canManage": false,
       "all": true,
       "account": {
         "id": 1
       },
-      "sites": [],
-      "plans": []
+      "sites": [
+
+      ],
+      "plans": [
+
+      ]
     },
-    "datastores": [],
-    "locations": [
+    "tenants": [
       {
-        "refType": "ComputeServer",
-        "refId": 7813,
-        "status": "provisioned",
-        "statusMessage": null
+        "id": 1,
+        "defaultStore": false,
+        "defaultTarget": false
       }
     ]
   }

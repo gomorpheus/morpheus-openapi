@@ -1,0 +1,70 @@
+put:
+  summary: Attach existing storage volume
+  description: This will attach an existing storage volume, optionally specifying the mount point (controller and unit number). Available for HVM only.
+  operationId: attachServerVolume
+  tags:
+    - Storage
+    - Volumes
+    - Server
+    - Attach
+  parameters:
+    - name: serverId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+      description: The ID of the server
+    - name: volumeId
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+      description: The ID of the storage volume
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            mountPoint:
+              type: object
+              properties:
+                controller:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      description: The ID of the storage controller
+                  required:
+                    - id
+                unitNumber:
+                  type: string
+                  description: The unit number for the disk (e.g., "3")
+              required:
+                - controller
+                - unitNumber
+          required:
+            - mountPoint
+        examples:
+          Mount Point:
+            value:
+              $ref: ../components/examples/attachVolumeMountPoint.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/200-success.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/success.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

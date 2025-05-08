@@ -1032,6 +1032,10 @@ paths:
     $ref: paths/api@servers@id@detachDevice.yaml
   /api/servers/{id}/devices/{deviceId}/attach:
     $ref: paths/api@servers@id@attachDevice.yaml
+  /api/servers/{id}/volumes/{volumeId}/attach:
+    $ref: paths/api@servers@id@volumes@id@attach.yaml
+  /api/servers/{id}/volumes/{volumeId}/detach:
+    $ref: paths/api@servers@id@volumes@id@detach.yaml
   /api/catalog/cart:
     $ref: paths/api@catalog@cart.yaml
   /api/catalog/cart/items:
