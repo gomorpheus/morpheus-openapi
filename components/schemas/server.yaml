@@ -300,7 +300,9 @@ properties:
       platform: 
         type: string
   volumes:
-    $ref: storageVolume.yaml
+    type: array
+    items: 
+      $ref: storageVolume.yaml
   controllers: 
     type: array
     items: 

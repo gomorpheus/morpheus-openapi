@@ -4,9 +4,6 @@ put:
   operationId: detachServerVolume
   tags:
     - Storage
-    - Volumes
-    - Server
-    - Detach
   parameters:
     - name: id
       in: path

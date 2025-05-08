@@ -1,9 +1,7 @@
 {
     "datastore": {
       "name": "NFS",
-      "datastoreType": {
-        "id": 3
-      },
+      "datastoreType": "3par",
       "active": true,
       "config": {
         "sourceHostname": "10.32.150.167",
