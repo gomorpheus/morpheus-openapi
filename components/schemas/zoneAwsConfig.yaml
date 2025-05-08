@@ -6,7 +6,7 @@ properties:
     type: string
   secretKey: 
     type: string
-  _useHostCredentials: 
+  useHostCredentials: 
     type: string
   stsAssumeRole: 
     type: string

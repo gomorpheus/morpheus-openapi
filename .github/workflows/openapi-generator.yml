@@ -1,0 +1,35 @@
+name: OpenAPI Generator Validate and Generate
+on: [pull_request, push, workflow_dispatch]
+jobs:
+  openapi-generator-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bundle Spec
+        uses: docker://redocly/cli:latest
+        with:
+          args: bundle --dereferenced openapi.yaml -o bundle.yaml
+      - name: OpenAPI Generator Validate
+        uses: docker://openapitools/openapi-generator-cli:latest
+        with:
+          args: validate -i bundle.yaml
+        env:
+          JAVA_OPTS: -DmaxYamlCodePoints=99999999 # Required or else openapi-generator will run out of memory
+      - name: OpenAPI Generator Generate - Setup
+        run: |
+          mkdir client-go
+          cp .openapi-generator/.openapi-generator-ignore client-go
+      - name: OpenAPI Generator Generate
+        uses: docker://openapitools/openapi-generator-cli:latest
+        with:
+          args: generate -i bundle.yaml -g go -t .openapi-generator/go/templates -o client-go
+        env:
+          JAVA_OPTS: -DmaxYamlCodePoints=99999999 # Required or else openapi-generator will run out of memory
+      - name: List Contents of Generated Client
+        run: |
+          find client-go
+      - name: Go Build
+        uses: docker://golang:alpine
+        with:
+          entrypoint: sh
+          args: -c "cd client-go && go build"

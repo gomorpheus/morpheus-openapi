@@ -12,7 +12,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/snapshot.yaml
+            type: object
+            properties:
+              snapshot:
+                $ref: ../components/schemas/snapshot.yaml
           examples:
             Response:
               value:

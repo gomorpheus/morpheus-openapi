@@ -60,15 +60,15 @@ properties:
       installAgent: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: Install Morpheus Agent
-        default: false
       cloudInitEnabled: 
         oneOf:
           - type: boolean
+            default: false
           - type: string
         description: Cloud Init Enabled
-        default: false
   visibility:
     type: string
     description: Private or Public Access

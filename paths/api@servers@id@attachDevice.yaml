@@ -1,0 +1,36 @@
+put: 
+  summary: Attach a Host Device
+  description: Will attach a host device.
+  operationId: attachDevice
+  tags: 
+    -  Hosts
+  parameters:
+    - name: id
+      in: path
+      description: The ID of the host
+      required: true
+      schema:
+        type: integer
+      example: 5
+    - name: deviceId
+      in: path
+      description: The ID of the device
+      required: true
+      schema:
+        type: integer
+      example: 99
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/successError.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/successError.json 
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

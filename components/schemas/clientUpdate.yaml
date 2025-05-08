@@ -8,3 +8,8 @@ properties:
   refreshTokenValiditySeconds: 
     type: integer
     format: int64
+  redirectUris:
+    type: array
+    description: List of Redirect URIs for use with the OpenID Authorization Code Flow
+    items: 
+      type: string

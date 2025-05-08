@@ -39,9 +39,9 @@ properties:
     type: boolean
   hasFolders: 
     type: boolean
-  hasFloatingIps: 
-    type: boolean
   hasMarketplace: 
+    type: boolean
+  hasNativePlans:
     type: boolean
   canCreateResourcePools: 
     type: boolean

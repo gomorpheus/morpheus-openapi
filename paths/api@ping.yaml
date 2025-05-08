@@ -7,7 +7,6 @@ get:
   operationId: ping
   tags:
     - Ping
-    - Health
   responses:
     '200':
       description: Successful Request

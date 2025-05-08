@@ -70,6 +70,24 @@ properties:
     format: int64
     description: Scale Priority
     default: 1
+  defaultDatastoreSyncActive:
+    type: boolean
+    description: Sets the default active state during discovery of new datastores.
+  defaultNetworkSyncActive:
+    type: boolean
+    description: Sets the default active state during discovery of new networks.
+  defaultFolderSyncActive:
+    type: boolean
+    description: Sets the default active state during discovery of new folders.
+  defaultSecurityGroupSyncActive:
+    type: boolean
+    description: Sets the default active state during discovery of new security groups.
+  defaultPoolSyncActive:
+    type: boolean
+    description: Sets the default active state during discovery of new resource pools.
+  defaultPlanSyncActive:
+    type: boolean
+    description: Sets the default active state during discovery of new plans.
   linkedAccountId:
     type: integer
     format: int64

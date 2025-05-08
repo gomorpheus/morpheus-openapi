@@ -7,7 +7,6 @@ get:
   operationId: whoami
   tags:
     - Authentication
-    - Users
   responses:
     '200':
       description: Successful Request

@@ -35,3 +35,44 @@ get:
       $ref: ../components/responses/4xx.yaml
     '5XX':
       $ref: ../components/responses/5xx.yaml
+post:
+  summary: Create a Datastore for Specified Cloud
+  description: This endpoint will create a datastore for a specific cloud.
+  operationId: saveCloudDatastore
+  tags:
+    - Clouds
+  parameters:
+    - $ref: ../components/parameters/zoneId-path.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            datastore:
+              $ref: ../components/schemas/zoneDatastoreCreate.yaml
+        examples:
+          NFS Datastore Request:
+            value:
+              $ref: ../components/examples/clusterDatastoreCreateNFS.json
+  responses:
+    '200':
+      description: Successful Request
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  datastore:
+                    $ref: ../components/schemas/clusterDatastore.yaml
+              - $ref: ../components/schemas/200-success.yaml
+              - $ref: ../components/schemas/executionId.yaml
+          examples:
+            Response:
+              value:
+                $ref: ../components/examples/zoneDatastore.json
+    '4XX':
+      $ref: ../components/responses/4xx.yaml
+    '5XX':
+      $ref: ../components/responses/5xx.yaml

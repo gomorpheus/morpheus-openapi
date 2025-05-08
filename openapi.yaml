@@ -1,11 +1,11 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: Morpheus API
   description: |-
     Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.
 
     This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
-  version: 8.0.2
+  version: 8.0.6
   termsOfService: https://morpheusdata.com/terms-and-conditions/
   contact:
     email: dev@morpheusdata.com
@@ -388,6 +388,10 @@ paths:
     $ref: paths/api@cypher.yaml
   /api/cypher/{cypherPath}:
     $ref: paths/api@cypher@id.yaml
+  /api/data-stores:
+    $ref: paths/api@datastores.yaml
+  /api/data-stores/{id}:
+    $ref: paths/api@datastores@id.yaml
   /api/deployments:
     $ref: paths/api@deployments.yaml
   /api/deployments/{deploymentId}:
@@ -1020,6 +1024,14 @@ paths:
     $ref: paths/api@servers@id@placement.yaml
   /api/servers/change-cloud:
     $ref: paths/api@servers@change-cloud.yaml
+  /api/servers/{id}/devices:
+    $ref: paths/api@servers@id@devices.yaml
+  /api/servers/{id}/devices/{deviceId}/assign:
+    $ref: paths/api@servers@id@assignDevice.yaml
+  /api/servers/{id}/devices/{deviceId}/detach:
+    $ref: paths/api@servers@id@detachDevice.yaml
+  /api/servers/{id}/devices/{deviceId}/attach:
+    $ref: paths/api@servers@id@attachDevice.yaml
   /api/catalog/cart:
     $ref: paths/api@catalog@cart.yaml
   /api/catalog/cart/items:
@@ -1301,7 +1313,7 @@ tags:
 
       Cypher keys can be revoked, either through lease timeouts or manually. So even if somebody were to gain access to your keys you could revoke access to the keys and generate new ones for your applications.
   - name: Datastores
-    description: Manage Datastores
+    description: Manage Storage Datastores
   - name: Deployments
     description: Manage File Deployments
   - name: Deploys
