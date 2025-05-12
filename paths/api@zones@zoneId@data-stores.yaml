@@ -50,7 +50,7 @@ post:
           type: object
           properties:
             datastore:
-              $ref: ../components/schemas/storageDatastoreCreate.yaml
+              $ref: ../components/schemas/zoneDatastoreCreate.yaml
         examples:
           NFS Datastore Request:
             value:
