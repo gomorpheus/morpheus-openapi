@@ -136,12 +136,15 @@ properties:
     nullable: true
   internalId:
     type: string
+    nullable: true
   externalId:
     type: string
   provisionType:
     type: string
+    nullable: true
   copyType:
     type: string
+    nullable: true
   fiberWwn:
     type: string
   fileName:

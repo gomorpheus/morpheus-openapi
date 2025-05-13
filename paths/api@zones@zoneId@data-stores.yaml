@@ -54,7 +54,7 @@ post:
         examples:
           NFS Datastore Request:
             value:
-              $ref: ../components/examples/clusterDatastoreCreateNFS.json
+              $ref: ../components/examples/zoneDatastoreCreateNFS.json
   responses:
     '200':
       description: Successful Request
