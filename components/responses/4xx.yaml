@@ -2,7 +2,7 @@ description: Error Codes
 content:
   application/json:
     schema:
-      $ref: ../schemas/default-error.yaml
+      $ref: ../schemas/Error.yaml
     examples:
       '400':
         value:
