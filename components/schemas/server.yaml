@@ -40,7 +40,14 @@ properties:
       name: 
         type: string
   owner: 
-    $ref: owner.yaml
+    type: object
+    properties: 
+      id: 
+        type: integer
+        format: int64
+      username: 
+        type: string
+    nullable: true
   zone: 
     type: object
     properties: 

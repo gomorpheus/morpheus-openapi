@@ -488,6 +488,7 @@ properties:
         format: int64
       username: 
         type: string
+    nullable: true
   notes: 
     type: string
     nullable: true

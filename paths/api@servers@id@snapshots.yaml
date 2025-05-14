@@ -19,7 +19,7 @@ get:
                 items:
                   $ref: ../components/schemas/snapshot.yaml
           examples:
-            Hosts Response:
+            Hosts Snapshots Response:
               value:
                 $ref: ../components/examples/serverSnapshots.json
     '4XX':
