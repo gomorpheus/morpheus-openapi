@@ -147,12 +147,16 @@ properties:
     nullable: true
   fiberWwn:
     type: string
+    nullable: true
   fileName:
     type: string
+    nullable: true
   claimName:
     type: string
+    nullable: true
   sharePath:
     type: string
+    nullable: true
   sourceId:
     type: string
   sourceImage:
