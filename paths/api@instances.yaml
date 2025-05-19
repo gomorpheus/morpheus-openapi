@@ -84,8 +84,11 @@ post:
         application/json: 
           schema:
             allOf:   
-              - oneOf: 
-                - $ref: ../components/schemas/instanceCreateSuccess.yaml
+              - oneOf:
+                - type: object
+                  properties:
+                    instance:
+                      $ref: ../components/schemas/instance.yaml
                 - $ref: ../components/schemas/successError.yaml
               - $ref: ../components/schemas/200-success.yaml
           examples:
