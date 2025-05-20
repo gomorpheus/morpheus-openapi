@@ -129,8 +129,10 @@ properties:
         type: boolean
       isVpcSelectable: 
         type: boolean
-      noAgent: 
-        type: string
+      noAgent:
+        oneOf:
+          - type: boolean
+          - type: string
       securityGroups:
         type: array
         nullable: true
@@ -151,7 +153,10 @@ properties:
       customOptions: 
         type: object
       resourcePoolId: 
-        type: string
+        oneOf:
+          - type: integer
+            format: int64
+          - type: string
       poolProviderType: 
         type: string
         nullable: true
