@@ -44,6 +44,26 @@ properties:
         format: int64
       name: 
         type: string
+      type:
+        type: string
+  cluster:
+    type: object
+    properties:
+      id: 
+        type: integer
+        format: int64
+      name: 
+        type: string
+      type:
+        type: object
+        properties:
+          id: 
+            type: integer
+            format: int64
+          code: 
+            type: string
+          name:
+            type: string
   containers: 
     type: array
     items: 
@@ -64,6 +84,8 @@ properties:
         port: 
           type: integer
           nullable: true
+        name:
+          type: string
   layout: 
     type: object
     properties: 
@@ -89,23 +111,28 @@ properties:
         type: string
   name: 
     type: string
+  displayName:
+    type: string
   description: 
     type: string
     nullable: true
   environment: 
     type: string
     nullable: true
-  config: 
+  config:
     type: object
-    properties: 
+    additionalProperties: true
+    properties:
       createUser: 
         type: boolean
       isEC2: 
         type: boolean
       isVpcSelectable: 
         type: boolean
-      noAgent: 
-        type: boolean
+      noAgent:
+        oneOf:
+          - type: boolean
+          - type: string
       securityGroups:
         type: array
         nullable: true
@@ -126,8 +153,10 @@ properties:
       customOptions: 
         type: object
       resourcePoolId: 
-        type: integer
-        format: int64
+        oneOf:
+          - type: integer
+            format: int64
+          - type: string
       poolProviderType: 
         type: string
         nullable: true
@@ -335,7 +364,7 @@ properties:
         ipMode: 
           type: string
           nullable: true
-  customOptions: 
+  customOptions:
     type: object
   instanceVersion: 
     type: string
@@ -349,11 +378,28 @@ properties:
     nullable: true
     items:
       type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+          nullable: true
   evars: 
     type: array
     nullable: true
     items:
       type: object
+      properties:
+        name:
+          type: string
+        value:
+          oneOf:
+            - type: string
+            - type: number
+        export:
+          type: boolean
+        masked:
+          type: boolean
   maxMemory: 
     type: integer
     format: int64
