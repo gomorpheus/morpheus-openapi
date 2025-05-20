@@ -83,14 +83,11 @@ post:
       content: 
         application/json: 
           schema:
-            allOf:   
-              - oneOf:
-                - type: object
-                  properties:
-                    instance:
-                      $ref: ../components/schemas/instance.yaml
-                - $ref: ../components/schemas/successError.yaml
-              - $ref: ../components/schemas/200-success.yaml
+            oneOf:
+              - $ref: ../components/schemas/successError.yaml
+              - allOf:
+                - $ref: ../components/schemas/instanceCreate.yaml
+                - $ref: ../components/schemas/200-success.yaml
           examples:
             Successful Instance Creation - VMWare:
               value:
