@@ -383,6 +383,7 @@ properties:
           type: string
         value:
           type: string
+          nullable: true
   evars: 
     type: array
     nullable: true
