@@ -39,7 +39,7 @@ post:
   description: |
     This endpoint allows creating a Storage Volume.
     Only certain types of storage servers support creating and deleting storage volumes, such as 3Par and Isilon.
-    Configuration options vary by `Storage Volume Type`.
+    Configuration options vary by `Storage Volume Type`. Plugin-based Storage Volume Types do not require a `storageGroup`, while built-in Storage Volume Types do.
   operationId: addStorageVolumes
   tags:
     - Storage
@@ -57,7 +57,6 @@ post:
                 - name
                 - type
                 - storageServer
-                - storageGroup
               properties:
                 name: 
                   type: string
