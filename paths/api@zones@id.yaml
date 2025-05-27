@@ -189,6 +189,13 @@ delete:
   tags:
     - Clouds
   parameters:
+    - name: force
+      in: query
+      description: Force the deletion of the cloud.
+      required: false
+      schema:
+        type: boolean
+        default: false
     - name: removeResources
       in: query
       description: Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute.
