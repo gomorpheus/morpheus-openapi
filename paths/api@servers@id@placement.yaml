@@ -15,7 +15,7 @@ put:
             server:
               type: object
               properties:
-                name: 
+                placementStrategy: 
                   type: string
                   description: Placement Strategy
                   enum:
