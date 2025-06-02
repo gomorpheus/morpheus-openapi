@@ -22,7 +22,7 @@ put:
                     - auto
                     - failover
                     - pinned
-                preferredServer:
+                preferredParentServer:
                   type: object
                   description: Object containing id of preferred target host to place VM on
                   properties:
