@@ -319,12 +319,12 @@ post:
                   items: 
                     type: object
                     required:
-                      - id
+                      - code
                       - access
                     properties:
-                      id:
-                        type: integer
-                        description: "`id` of the report type"
+                      code:
+                        type: string
+                        description: "`code` of the report type"
                       access:
                         type: string
                         description: The new access level.
