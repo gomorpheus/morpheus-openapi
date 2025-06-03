@@ -322,7 +322,7 @@ post:
                       - id
                       - access
                     properties:
-                      code:
+                      id:
                         type: integer
                         description: "`id` of the report type"
                       access:
