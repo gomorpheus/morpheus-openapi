@@ -113,7 +113,7 @@ post:
                     - serviceCatalog
                     - vdi
                   nullable: true
-                permissions: 
+                featurePermissions:
                   type: array
                   description: Set the access level for the specified permissions.
                   items: 
@@ -269,7 +269,7 @@ post:
                   items: 
                     type: object
                     required:
-                      - id
+                      - code
                       - access
                     properties:
                       code:
@@ -319,12 +319,12 @@ post:
                   items: 
                     type: object
                     required:
-                      - code
+                      - id
                       - access
                     properties:
                       code:
-                        type: string
-                        description: "`code` of the report type"
+                        type: integer
+                        description: "`id` of the report type"
                       access:
                         type: string
                         description: The new access level.
