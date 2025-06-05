@@ -28,7 +28,7 @@ get:
 put:
   summary: Update user
   description: Update an existing user.
-  operationId: updateUsers
+  operationId: updateUser
   tags:
     - Users
   parameters:
