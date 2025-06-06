@@ -64,8 +64,11 @@ post:
       description: Successful Response
       content: 
         application/json: 
-          schema: 
-            $ref: ../components/schemas/successId.yaml
+          schema:
+            type: object
+            properties:
+              instanceTypeLayout:
+                $ref: ../components/schemas/instanceTypeLayout.yaml
           examples:
             Response:
               value:
