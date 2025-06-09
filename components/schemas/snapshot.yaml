@@ -65,6 +65,8 @@ properties:
           type: integer
   currentlyActive: 
     type: boolean
+  memorySnapshot: 
+    type: boolean
   dateCreated: 
     type: string
     format: date-time
