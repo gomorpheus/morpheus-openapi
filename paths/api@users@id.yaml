@@ -45,10 +45,14 @@ put:
               type: object
               properties:
                 firstName:
-                  type: string
+                  type:
+                    - string
+                    - 'null'
                   description: First Name
                 lastName:
-                  type: string
+                  type:
+                    - string
+                    - 'null'
                   description: Last Name
                 username:
                   type: string
