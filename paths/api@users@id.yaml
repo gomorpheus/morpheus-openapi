@@ -57,6 +57,28 @@ put:
                 username:
                   type: string
                   description: Username (unique per tenant).
+                windowsPassword:
+                  format: password
+                  type:
+                    - string
+                    - 'null'
+                linuxPassword:
+                  format: password
+                  type:
+                    - string
+                    - 'null'
+                linuxKeyPairId:
+                  type:
+                    - string
+                    - 'null'
+                linuxUsername:
+                  type:
+                    - string
+                    - 'null'
+                windowsUsername:
+                  type:
+                    - string
+                    - 'null'
                 email:
                   type: string
                   description: Email address
