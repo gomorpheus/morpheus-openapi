@@ -45,33 +45,40 @@ put:
               type: object
               properties:
                 firstName:
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                   description: First Name
                 lastName:
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                   description: Last Name
                 username:
                   type: string
                   description: Username (unique per tenant).
                 linuxUsername:
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                 linuxPassword:
+                  type:
+                    - 'null'
+                    - string
                   format: password
-                  type: string
-                  nullable: true
                 linuxKeyPairId:
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                 windowsUsername:
-                  type: string
-                  nullable: true
+                  type:
+                    - 'null'
+                    - string
                 windowsPassword:
+                  type:
+                    - 'null'
+                    - string
                   format: password
-                  type: string
-                  nullable: true
                 email:
                   type: string
                   description: Email address
