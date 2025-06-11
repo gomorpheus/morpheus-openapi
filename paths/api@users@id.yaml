@@ -67,9 +67,10 @@ put:
                     - string
                   format: password
                 linuxKeyPairId:
+                  format: int64
                   type:
                     - 'null'
-                    - string
+                    - integer
                 windowsUsername:
                   type:
                     - 'null'
