@@ -14,6 +14,10 @@ properties:
   description: 
     type: string
     description: Layout description
+  sortOrder:
+    type: integer
+    format: int64
+    description: Display order of the layout, higher to lower
   creatable: 
     type: boolean
     description: Can be used to enable / disable the creatability of the layout.
