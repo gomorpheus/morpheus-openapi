@@ -1,4 +1,6 @@
 type: object
+required:
+ - instance
 properties:
   instance:
-    $ref: ../components/schemas/instance.yaml
+    $ref: instance.yaml

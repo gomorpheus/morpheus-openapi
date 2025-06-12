@@ -27,7 +27,7 @@ get:
                 servicePlans:
                   type: array
                   items:
-                    $ref: ../components/schemas/servicePlan.yaml
+                    $ref: ../components/schemas/servicePlanRow.yaml
             - $ref: ../components/schemas/meta.yaml
           examples:
             Service Plans Response:

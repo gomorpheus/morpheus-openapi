@@ -1,4 +1,5 @@
 type: object
+additionalProperties: true
 properties:
   id: 
     type: integer
@@ -27,6 +28,8 @@ properties:
       category: 
         type: string
       name: 
+        type: string
+      image:
         type: string
   group: 
     type: object
@@ -130,7 +133,7 @@ properties:
       isVpcSelectable: 
         type: boolean
       noAgent:
-        oneOf:
+        anyOf:
           - type: boolean
           - type: string
       securityGroups:

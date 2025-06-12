@@ -8,6 +8,10 @@ keyId:
 hash:
   type: string
   description: Hash of the license content which can be used as a fingerprint identifier
+licenseVersion:
+  type: integer
+  format: int64
+  description: License Version which determines the required appliance version to install this license.
 productTier: 
   type: string
   description: Product Tier
@@ -62,6 +66,11 @@ maxMvmSockets:
   format: int64
   nullable: true
   description: HPE VM Host Limit. 0 is enforced and null is used for unlimited.
+maxSockets: 
+  type: integer
+  format: int64
+  nullable: true
+  description: Global Socket Limit. 0 is enforced and null is used for unlimited.
 maxIac: 
   type: integer
   format: int64
