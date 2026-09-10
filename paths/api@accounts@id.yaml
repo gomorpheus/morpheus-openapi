@@ -64,7 +64,26 @@ put:
                     - 'null'
                   description: The subdomain. This will be part of the login URL and username for sub tenant users.
                 currency:
-                  $ref: ../components/schemas/CurrencyCode.yaml
+                  type: string
+                  description: Currency ISO 4217 code for the tenant (e.g. USD, EUR, GBP). Must be a currency enabled on the target appliance; see the `currencies` option source (GET /api/options/currencies) for the live set. See CurrencyCode for the canonical ISO 4217 list.
+                active:
+                  type: boolean
+                  description: Whether the tenant is enabled. Disabled tenants cannot be logged into.
+                accountNumber:
+                  type:
+                    - string
+                    - 'null'
+                  description: An optional field that can be used for billing and accounting.
+                accountName:
+                  type:
+                    - string
+                    - 'null'
+                  description: An optional field that can be used for billing and accounting.
+                customerNumber:
+                  type:
+                    - string
+                    - 'null'
+                  description: An optional field that can be used for billing and accounting.
   responses:
     '200':
       description: Tenant Object
